@@ -1,0 +1,188 @@
+:root {
+  --bg: #eeece7;
+  --surface: #f8f7f4;
+  --text: #292723;
+  --muted: #625f59;
+  --faint: #96928b;
+  --line: #d7d4ce;
+  --line-soft: #dfdcd6;
+  --accent: #6570a3;
+
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 24px 96px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: min(100%, 720px); margin: 0 auto; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- header ---------- */
+
+.site-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 28px;
+  padding: 40px 0 36px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  margin: 0;
+  margin-right: auto;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.brand a { color: inherit; }
+.brand a:hover { text-decoration: none; color: var(--accent); }
+
+.site-nav { display: flex; flex-wrap: wrap; gap: 20px; }
+.site-nav a {
+  color: var(--muted);
+  font-size: 14px;
+}
+.site-nav a:hover { color: var(--accent); text-decoration: none; }
+.site-nav a[aria-current="page"] { color: var(--text); font-weight: 500; }
+
+/* ---------- typography ---------- */
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+h2 {
+  margin: 52px 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+p { margin: 0 0 16px; }
+p:last-child { margin-bottom: 0; }
+
+.lede {
+  font-size: 17px;
+  line-height: 1.58;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 13.5px; }
+
+/* ---------- generic list ---------- */
+
+.plain { margin: 0; padding: 0; list-style: none; }
+
+.stack > * + * { margin-top: 26px; }
+
+/* ---------- cards ---------- */
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.card > * + * { border-top: 1px solid var(--line-soft); }
+.card-row { padding: 16px 18px; }
+
+/* ---------- research areas ---------- */
+
+.area + .area { margin-top: 24px; }
+.area p { margin: 0; color: var(--muted); }
+
+/* ---------- news ---------- */
+
+.news li {
+  display: flex;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 14px;
+}
+.news li:last-child { border-bottom: 0; }
+.news time {
+  flex: none;
+  width: 74px;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- people ---------- */
+
+.people { display: grid; gap: 2px; }
+.person { padding: 11px 0; border-bottom: 1px solid var(--line-soft); }
+.person:last-child { border-bottom: 0; }
+.person .role { color: var(--muted); font-size: 13.5px; }
+
+.prof { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+.prof-body { flex: 1 1 340px; min-width: 0; }
+
+/* ---------- publications ---------- */
+
+.pubs li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.pubs li:last-child { border-bottom: 0; }
+.pubs .title { display: block; font-weight: 600; letter-spacing: -0.005em; }
+.pubs .authors { color: var(--muted); }
+.pubs .venue { color: var(--faint); }
+.pubs .me { color: var(--text); font-weight: 600; }
+
+/* ---------- footer ---------- */
+
+.site-foot {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 13px;
+}
+.site-foot p { margin: 0 0 4px; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 560px) {
+  body { padding: 0 16px 64px; }
+  .site-head { padding: 28px 0 24px; margin-bottom: 32px; }
+  .brand { margin-right: 0; flex-basis: 100%; }
+  .site-nav { gap: 16px; }
+  h1 { font-size: 23px; }
+  .lede { font-size: 16px; }
+  .news li { flex-direction: column; gap: 2px; }
+  .news time { width: auto; }
+}

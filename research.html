@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research — MOAI Lab</title>
-<meta name="description" content="Research directions of MOAI Lab at POSTECH: structural priors, statistical priors, agentic AI, physical AI, and manufacturing AI.">
+<meta name="description" content="Research of MOAI Lab at POSTECH: vision and multimodal, language and reasoning, robotics and embodied AI; current focus on agentic, physical, and manufacturing AI.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="page-research">
@@ -40,22 +40,22 @@
       <div class="area">
         <h3>Agentic AI</h3>
         <p>
-          Multimodal LLMs, long-context reasoning, and structured reasoning for agents that
-          decompose a problem and repair their own mistakes.
+          Multimodal LLMs, long contexts, and reasoning for agents that decompose a problem
+          and repair their own mistakes.
         </p>
       </div>
       <div class="area">
         <h3>Physical AI</h3>
         <p>
-          Vision-language-action models, world models, and adaptation to novel contexts, so that
-          embodied agents generalize beyond their demonstrations.
+          Vision-language-action models, world models, and personalized robots that adapt to
+          their users and generalize beyond their demonstrations.
         </p>
       </div>
       <div class="area">
         <h3>Manufacturing AI</h3>
         <p>
-          Time-series analysis and decision-level monitoring for industrial settings, where data
-          is scarce, noisy, and costly to label.
+          Time-series and process analytics for industrial settings, where data is scarce,
+          noisy, and costly to label.
         </p>
       </div>
     </div>
@@ -63,69 +63,89 @@
     </section>
 
     <section class="content-section">
-    <h2>Structural priors for effective learning</h2>
+    <h2>Vision &amp; Multimodal</h2>
     <div class="section-body">
-    <p class="muted">
-      Encoding domain-specific structure to improve both accuracy and interpretability.
-    </p>
     <div class="card">
       <div class="card-row">
-        <h3>Visual structure</h3>
-        <p class="small muted">InstaGAN (ICLR'19) &middot; OACon (NeurIPS'21) &middot; OAMixer (CVPRW'22) &middot; CAST (ICLR'24)</p>
+        <h3>Visual Structure</h3>
+        <div>
+          <p>scenes as objects, parts, and motion</p>
+          <p class="small muted"><a href="https://arxiv.org/abs/1812.10889">InstaGAN (ICLR&#x27;19)</a>, <a href="https://arxiv.org/abs/2108.00049">OACon (NeurIPS&#x27;21)</a>, <a href="https://arxiv.org/abs/2212.06595">OAMixer (CVPRW&#x27;22)</a>, <a href="https://arxiv.org/abs/2202.10571">DIGAN (ICLR&#x27;22)</a>, <a href="https://arxiv.org/abs/2210.00314">CAST (ICLR&#x27;24)</a>, <a href="https://arxiv.org/abs/2602.02977">CAFT (NeurIPS&#x27;26)</a>, <a href="https://www.arxiv.org/abs/2601.22529">SHED (arXiv&#x27;25)</a></p>
+        </div>
       </div>
       <div class="card-row">
-        <h3>Temporal structure</h3>
-        <p class="small muted">DIGAN (ICLR'22) &middot; HOMER (ICLR'24) &middot; Simba (TMLR'25)</p>
+        <h3>Learning in the Wild</h3>
+        <div>
+          <p>limited, uncurated, or novel data</p>
+          <p class="small muted"><a href="https://arxiv.org/abs/2007.08176">CSI (NeurIPS&#x27;20)</a>, <a href="https://arxiv.org/abs/2012.09392">MASKER (AAAI&#x27;21)</a>, <a href="https://arxiv.org/abs/2302.14483">RoPAWS (ICLR&#x27;23)</a>, <a href="https://arxiv.org/abs/2305.14095">S-CLIP (NeurIPS&#x27;23)</a>, <a href="https://arxiv.org/abs/2512.16202">OAK (CVPR&#x27;25)</a>, <a href="https://arxiv.org/abs/2602.19756">PDS (ICLR&#x27;26)</a>, <a href="https://arxiv.org/abs/2604.26370">ToMA (NeurIPS&#x27;26)</a>, <a href="https://arxiv.org/abs/2609.27252">T-PRH (arXiv&#x27;26)</a></p>
+        </div>
       </div>
       <div class="card-row">
-        <h3>Structured reasoning</h3>
-        <p class="small muted">SuRe (ICLR'24) &middot; PRIS (CVPR'26)</p>
-      </div>
-      <div class="card-row">
-        <h3>Physical structure</h3>
-        <p class="small muted">EIT-NN (IROS'19) &middot; EIT-NN2 (T-RO'21)</p>
-      </div>
-      <div class="card-row">
-        <h3>Relational structure</h3>
-        <p class="small muted">LoGe (ICMLW'21) &middot; DPM-SNC (NeurIPS'23)</p>
+        <h3>Reliable Generation</h3>
+        <div>
+          <p>under bias, noise, and scarce data</p>
+          <p class="small muted"><a href="https://arxiv.org/abs/1910.09170">GOLD (NeurIPS&#x27;19)</a>, <a href="https://arxiv.org/abs/2002.10964">FreezeD (CVPRW&#x27;20)</a>, <a href="https://arxiv.org/abs/2212.02090">FICS (TMLR&#x27;23)</a>, <a href="https://arxiv.org/abs/2605.28036">StayFair (NeurIPS&#x27;26)</a></p>
+        </div>
       </div>
     </div>
     </div>
     </section>
 
     <section class="content-section">
-    <h2>Statistical priors for reliable learning</h2>
+    <h2>Language &amp; Reasoning</h2>
     <div class="section-body">
-    <p class="muted">
-      Estimating and exploiting dataset statistics to improve robustness and generalization.
-    </p>
     <div class="card">
       <div class="card-row">
-        <h3>Robust representation</h3>
-        <p class="small muted">CSI (NeurIPS'20) &middot; MASKER (AAAI'21) &middot; RoPAWS (ICLR'23)</p>
+        <h3>Reasoning &amp; Agents</h3>
+        <div>
+          <p>long-horizon tasks with memory</p>
+          <p class="small muted"><a href="https://arxiv.org/abs/2404.13081">SuRe (ICLR&#x27;24)</a>, <a href="https://arxiv.org/abs/2511.21397">Idis (EMNLP&#x27;26)</a>, TEG (arXiv&#39;26), LoC (arXiv&#39;26)</p>
+        </div>
       </div>
       <div class="card-row">
-        <h3>Reliable generation</h3>
-        <p class="small muted">GOLD (NeurIPS'19) &middot; FICS (TMLR'23)</p>
+        <h3>Efficient LLMs</h3>
+        <div>
+          <p>cutting compute, extending context</p>
+          <p class="small muted"><a href="https://arxiv.org/abs/2002.04809">LAP (ICLR&#x27;20)</a>, <a href="https://arxiv.org/abs/2010.07611">LAMP (ICLR&#x27;21)</a>, <a href="https://arxiv.org/abs/2404.10308">HOMER (ICLR&#x27;24)</a>, <a href="https://arxiv.org/abs/2505.20698">Simba (TMLR&#x27;25)</a></p>
+        </div>
       </div>
       <div class="card-row">
-        <h3>Novel domains</h3>
-        <p class="small muted">FreezeD (CVPRW'20) &middot; S-CLIP (NeurIPS'23)</p>
+        <h3>MLLM Applications</h3>
+        <div>
+          <p>real-world problems across domains</p>
+          <p class="small muted"><a href="https://arxiv.org/abs/2301.11104">B2T (CVPR&#x27;24)</a>, <a href="https://arxiv.org/abs/2512.03534">PRIS (CVPR&#x27;26)</a>, I2A (arXiv&#39;26)</p>
+        </div>
       </div>
       <div class="card-row">
-        <h3>Novel contexts</h3>
-        <p class="small muted">OAK (CVPR'25) &middot; VAP (ICML'26)</p>
-      </div>
-      <div class="card-row">
-        <h3>Understanding foundation models</h3>
-        <p class="small muted">B2T (CVPR'24) &middot; PDS (ICLR'26) &middot; Idis (EMNLP'26)</p>
-      </div>
-      <div class="card-row">
-        <h3>Architecture design</h3>
-        <p class="small muted">LAP (ICLR'20) &middot; LAMP (ICLR'21)</p>
+        <h3>Structured Data</h3>
+        <div>
+          <p>graphs, tables, and time-series</p>
+          <p class="small muted"><a href="https://arxiv.org/abs/2107.10493">LoGe (ICMLW&#x27;21)</a>, <a href="https://arxiv.org/abs/2302.10506">DPM-SNC (NeurIPS&#x27;23)</a>, PRISM (arXiv&#39;26)</p>
+        </div>
       </div>
     </div>
+    </div>
+    </section>
 
+    <section class="content-section">
+    <h2>Robotics &amp; Embodied AI</h2>
+    <div class="section-body">
+    <div class="card">
+      <div class="card-row">
+        <h3>VLA &amp; World Models</h3>
+        <div>
+          <p>robots that perceive, plan, and act</p>
+          <p class="small muted"><a href="https://arxiv.org/abs/2512.20014">VAP (ICML&#x27;26)</a>, <a href="https://arxiv.org/abs/2608.23478">INDI (arXiv&#x27;26)</a></p>
+        </div>
+      </div>
+      <div class="card-row">
+        <h3>Multisensory Learning</h3>
+        <div>
+          <p>touch and other non-visual modalities</p>
+          <p class="small muted"><a href="https://ieeexplore.ieee.org/document/8968532">EIT-NN (IROS&#x27;19)</a>, <a href="https://ieeexplore.ieee.org/document/9376677">EIT-NN2 (T-RO&#x27;21)</a></p>
+        </div>
+      </div>
+    </div>
     <p class="small muted" style="margin-top:28px">
       Full list on the <a href="publications.html">Publications</a> page.
     </p>

@@ -22,8 +22,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 .wrap { width: min(1120px, calc(100% - 96px)); margin-inline: auto; }
-a { color: var(--accent); text-decoration: underline; text-decoration-color: #b9cbe7; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-a:hover { color: var(--text); text-decoration-color: currentColor; }
+a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--text); text-decoration: underline; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 1px; }
 ::selection { background: #dce8fa; color: var(--text); }
 

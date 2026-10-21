@@ -32,3 +32,9 @@
 ## 남은 것
 
 - 좁은 지도(휴대폰)에서는 Google 이 핀 대신 학교 표시만 보여 준다. 정확한 건물 핀이 필요하면 교수가 건물 좌표나 지도 링크를 정해 주면 바꾼다.
+
+## 소개 문장 우선순위 (2026-10-22 교수)
+
+- 교수 기준: 가장 중요한 것은 열정, 그다음이 logical thinking. 수학·코딩 실력을 앞세우지 않는다.
+- "We look for intellectual curiosity and a genuine passion for AI. A solid foundation in algorithms and coding matters more than a long CV." → "Above all, we look for a genuine passion for AI. Next comes clear logical thinking, which matters more than a long CV."
+- 기각: curiosity 를 따로 두는 안(열정과 겹침), algorithms and coding 을 남기는 안(교수가 우선순위에서 내림).

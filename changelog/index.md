@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- |
 | 2026-10-22 | [publications-typography](2026-10-22-publications-typography.md) | Sangwoo Mo(moai-postech) | Publications | 번호와 제목 기준선 맞춤, 위첨자가 저자 줄을 늘리지 않게, 논문 사이를 `--item-gap` 으로, 연도 제목 자간을 Talks 와 같게 |
 | 2026-10-22 | [canonical-source](2026-10-22-canonical-source.md) | Sangwoo Mo(moai-postech) | AGENTS.md | 이 사이트가 연구 사실의 정본, 교수 프로필만 개인 사이트·CV 와 맞춤 |
-| 2026-10-22 | [contact-visual](2026-10-22-contact-visual.md) | Sangwoo Mo(moai-postech) | Contact | Join us 를 단계 카드 둘과 경로 그림으로, Before you apply 를 1단계로 합침, Visit us 에 핀 아이콘과 Google 지도, 문장 짧게 |
+| 2026-10-22 | [contact-visual](2026-10-22-contact-visual.md) | Sangwoo Mo(moai-postech) | Contact | Join us 를 단계 카드 둘과 경로 그림으로, Before you apply 를 1단계로 합침, Visit us 에 핀 아이콘과 Google 지도, 문장 짧게, 소개를 열정 → logical thinking 순으로 |
 | 2026-10-22 | [research-overview-polish](2026-10-22-research-overview-polish.md) | Sangwoo Mo(moai-postech) | Research | 소개에 세 분야 링크, 분야 설명이 카드 이름을 반복하지 않게, `FM Applications` → `Applications of VLMs`, 분야 머리 sticky와 홀수 카드 전체 폭 |
 | 2026-10-21 | [postech-red](2026-10-21-postech-red.md) | Sangwoo Mo(moai-postech) | 테마, 그림 | 강조색을 POSTECH Red 로, 배지·그림의 면은 무채색, hero 의 MOAI 원만 빨강 |
 | 2026-10-21 | [mentees-rows](2026-10-21-mentees-rows.md) | Sangwoo Mo(moai-postech) | Mentees, AGENTS.md | 멘티를 한 사람 한 줄로(이름·소속 왼쪽, 논문 venue 오른쪽) |

@@ -35,7 +35,7 @@ nav:
     children:
       - title: Courses
         url: teaching.html
-      - title: Selected Talks
+      - title: Talks
         url: talks.html
   - title: Contact
     url: contact.html

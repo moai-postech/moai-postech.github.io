@@ -21,3 +21,10 @@
 ## 남은 것
 
 - `FM Applications` 라벨, Paper Stella 한/영 방식, Lab seminar 위치(저장소 밖 상위 `TODO.md` 질문 목록).
+
+## 추가(같은 날): Paper Stella 는 한국어로만
+
+- 교수: Paper Stella 에 영어판을 두지 않고 한국어로만 쓴다.
+- 영어판 작업(EN/KO 전환, 노트별 영어 한 줄 요약 `tldr_en`, Codex 백필)을 별도 세션으로 시작했다가 취소했다. 그 세션은 코드를 읽기만 하고 멈춰서 Paper Stella 저장소와 vault 모두 바뀐 것이 없다(확인: 저장소 `git status`, vault 에 `tldr_en` 0건).
+- Research 맨 위 iframe 은 지금 주소(한국어 화면) 그대로 둔다.
+- 기각: md 를 두 언어로 복제(1만 편 유지 비용), `tldr_en` 필드 방식(교수가 영어판 자체를 두지 않기로 함).

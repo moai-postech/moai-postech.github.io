@@ -4,7 +4,7 @@
 # 논문 url 이 없으면 칩이 링크 없이 보인다. 2026-10-21 마크다운 한 줄 형식에서 목록으로 바꿨다.
 - area: "Vision & Multimodal"
   icon: vision
-  blurb: "How models see: structure in scenes, learning from imperfect data, and generation you can trust."
+  blurb: "How models see: understanding and generating images and video, even from imperfect data."
   topics:
     - name: "Visual Structure"
       summary: "Representing scenes as objects, parts, and motion."
@@ -35,7 +35,7 @@
         - { short: "StayFair", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2605.28036" }
 - area: "Language & Reasoning"
   icon: language
-  blurb: "How models think and work: reasoning agents, efficient LLMs, and foundation models applied to real problems."
+  blurb: "How models think and work: reasoning reliably, running efficiently, and solving real-world problems."
   topics:
     - name: "Reasoning & Agents"
       summary: "Grounding reasoning in evidence and correcting its errors."
@@ -51,8 +51,8 @@
         - { short: "LAMP", venue: "ICLR'21", url: "https://arxiv.org/abs/2010.07611" }
         - { short: "HOMER", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.10308" }
         - { short: "Simba", venue: "TMLR'25", url: "https://arxiv.org/abs/2505.20698" }
-    - name: "FM Applications"
-      summary: "Solving real-world problems with foundation models."
+    - name: "Applications of VLMs"
+      summary: "Using vision-language models to solve real-world problems."
       papers:
         - { short: "B2T", venue: "CVPR'24", url: "https://arxiv.org/abs/2301.11104" }
         - { short: "PDS", venue: "ICLR'26", url: "https://arxiv.org/abs/2602.19756" }
@@ -66,7 +66,7 @@
         - { short: "PRISM", venue: "arXiv'26" }
 - area: "Robotics & Embodied AI"
   icon: robotics
-  blurb: "How models act: robots that perceive, plan, and sense the physical world."
+  blurb: "How models act: robots that plan their actions and sense the physical world beyond vision."
   topics:
     - name: "VLA & World Models"
       summary: "Building robots that perceive, plan, and act."

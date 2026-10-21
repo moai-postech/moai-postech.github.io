@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [research-overview-polish](2026-10-22-research-overview-polish.md) | Sangwoo Mo(moai-postech) | Research | 소개에 세 분야 링크, 분야 설명이 카드 이름을 반복하지 않게, `FM Applications` → `Applications of VLMs`, 분야 머리 sticky와 홀수 카드 전체 폭 |
 | 2026-10-21 | [postech-red](2026-10-21-postech-red.md) | Sangwoo Mo(moai-postech) | 테마, 그림 | 강조색을 POSTECH Red 로, 배지·그림의 면은 무채색, hero 의 MOAI 원만 빨강 |
 | 2026-10-21 | [mentees-rows](2026-10-21-mentees-rows.md) | Sangwoo Mo(moai-postech) | Mentees, AGENTS.md | 멘티를 한 사람 한 줄로(이름·소속 왼쪽, 논문 venue 오른쪽) |
 | 2026-10-21 | [design-sweep](2026-10-21-design-sweep.md) | Sangwoo Mo(moai-postech) | Home, 테마, 여러 페이지 | Hero 를 multimodal orchestration 중심으로, 소개 아래 여백, 지도 로딩 표시, 휴대폰 전화·사진·멘티 줄, NeurIPS 뉴스 키워드 |

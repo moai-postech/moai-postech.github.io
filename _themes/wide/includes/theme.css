@@ -188,11 +188,12 @@ a.mentee-name:hover { color: var(--accent); }
 .area-topics { color: var(--muted); font-size: var(--text-meta); }
 .area-topics span + span::before { content: " · "; }
 .research-area { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
-.research-head { grid-column: span 4; }
+.research-head { grid-column: span 4; position: sticky; top: var(--space-6); }  /* the area name stays beside its cards while they scroll */
 .research-head .area-icon { display: block; width: 72px; height: 72px; margin-bottom: var(--space-4); object-fit: contain; }
 .research-head h2 { margin-bottom: var(--space-3); }
 .research-head p { margin: 0; color: var(--muted); }
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.topic-card:last-child:nth-child(odd) { grid-column: 1 / -1; }  /* an odd last card fills the row instead of leaving a hole */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
 .topic-card h3 { margin: 0; font-size: var(--text-body); }
 .topic-card p { margin: 0 0 var(--space-2); color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
@@ -307,6 +308,7 @@ a.person-name:hover { color: var(--accent); }
   .focus-tab { flex-direction: column; justify-content: flex-start; gap: var(--space-2); text-align: center; }
   .focus-papers, .research-overview .cards { grid-template-columns: 1fr; gap: var(--space-5); }
   .research-head, .topic-cards { grid-column: 1 / -1; }
+  .research-head { position: static; }
   .research-head { display: grid; grid-template-columns: auto 1fr; column-gap: var(--space-4); align-items: center; margin-bottom: var(--space-5); }
   .research-head .area-icon { width: 48px; height: 48px; margin: 0; grid-row: span 2; }
   .research-head h2 { margin: 0; }

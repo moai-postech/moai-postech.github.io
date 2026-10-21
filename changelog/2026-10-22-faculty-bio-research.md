@@ -12,3 +12,10 @@
 ## 기각한 안
 
 - "reason and act reliably" 같은 수식: 홈 hero 문장에서 교수가 빼기로 한 표현이라 쓰지 않았다.
+
+## 다시 고침 (같은 날, 교수)
+
+- 교수 의견: 위 문장은 "여전히 뭐 하는지 모르겠다". 이전 문장이 낫고, 그 뒤에 scalable priors 관심을 덧붙이는 톤이 좋다.
+- 최종: "His research centers on multimodal foundation models for vision, language, and robotics. He is particularly interested in designing scalable priors that improve their performance, reliability, and interpretability."
+- 뒷문장의 "performance, reliability, and interpretability" 는 옛 개인 사이트 연구 문단(교수가 쓴 글)의 표현이다.
+- 기각: "designs scalable priors ... and orchestrates them across vision, language, and physical sensors to drive AI agents, robots, and automated factories." 한 문장에 개념어(priors, orchestrate)와 적용처를 몰아넣어 무엇을 연구하는지 오히려 흐려졌다.

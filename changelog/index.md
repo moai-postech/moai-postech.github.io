@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [hero-orchestrate](2026-10-21-hero-orchestrate.md) | Sangwoo Mo(moai-postech) | Home | Hero 문장에 orchestrate·멀티모달 입력을 넣어 랩 이름과 잇고 scalable priors 유지, meta description 맞춤 |
 | 2026-10-21 | [appointments-no-location](2026-10-21-appointments-no-location.md) | Sangwoo Mo(moai-postech) | Faculty | Appointments 오른쪽 칸에서 지역 표시를 빼고 기간만, Services 학회는 왼쪽에 쉼표로 |
 | 2026-10-21 | [faculty-honors](2026-10-21-faculty-honors.md) | Sangwoo Mo(moai-postech) | Faculty, AGENTS.md | Reviewer Award 삭제, 수상은 박사 과정 때로 표시, Reviewer 학회 목록을 왼쪽 한 줄로 |
 | 2026-10-21 | [publication-numbers](2026-10-21-publication-numbers.md) | Sangwoo Mo(moai-postech) | Publications | 게재 논문에 C/J/W 번호(연구실 전체 기준, venue 로 자동 분류) |

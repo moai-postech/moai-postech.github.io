@@ -57,6 +57,7 @@
 
 /* Base */
 * { box-sizing: border-box; }
+html { scrollbar-gutter: stable; }  /* the scrollbar keeps its place, so a page never shifts sideways when a tab makes it shorter or longer */
 body { margin: 0; background: var(--bg); color: var(--text); font-size: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
 .wrap { width: min(var(--container), calc(100% - 2 * var(--page-margin))); margin-inline: auto; }
 a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; text-decoration-thickness: 1px; }
@@ -206,6 +207,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .filter-btn[aria-pressed="true"] { color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
 .filter-link { margin-left: auto; font-size: var(--text-meta); font-weight: 600; }
 .schedule { width: 100%; border-collapse: collapse; }
+.schedule.is-locked { table-layout: fixed; }  /* column widths measured once over all talks (scripts.html), so filtering never moves a column */
 .schedule td { padding: var(--space-2) 0; vertical-align: baseline; }
 .schedule-year th { padding: var(--space-6) 0 var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 700; text-align: left; }
 .year-head { margin: var(--space-6) 0 var(--space-2); font-size: var(--text-lead); font-weight: 700; }  /* same year heading as the seminar list */
@@ -242,7 +244,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); margin-top: 2px; }
 .venue-honor { color: var(--accent); font-size: var(--text-small); font-weight: 700; margin-left: calc(-1 * var(--space-1)); }  /* oral, spotlight, highlight: an honour, so it sits right next to the venue in the accent colour, no box */
 .venue-track { color: var(--muted); font-size: var(--text-small); font-weight: 600; margin-left: calc(-1 * var(--space-1)); }  /* 8px from the venue badge, closer than the 12px between links */
-.venue + .pub-link, .venue-honor + .pub-link, .venue-track + .pub-link { margin-left: var(--space-3); }  /* 24px between the venue group and the links, 12px between links */
+.venue + .pub-link::before, .venue-honor + .pub-link::before, .venue-track + .pub-link::before { content: ""; display: inline-block; width: 1px; height: .9em; margin-right: var(--space-3); vertical-align: -.1em; background: var(--line); }  /* a hairline splits the venue group from the links: venue | arXiv code, 12px either side */
 .pub-link { white-space: nowrap; color: var(--muted); font-size: var(--text-small); font-weight: 600; letter-spacing: .02em; }
 .pub-link:hover { color: var(--accent); text-decoration: none; }
 

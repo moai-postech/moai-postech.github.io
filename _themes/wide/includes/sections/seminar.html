@@ -15,6 +15,7 @@
       {% if site.data.seminar.sheet %}<a class="filter-link" href="{{ site.data.seminar.sheet }}">Full schedule ↗</a>{% endif %}
     </div>
     <table class="schedule">
+      <colgroup><col class="col-date"><col class="col-title"><col class="col-speaker"></colgroup>
       <tbody>
       {% assign year = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y != year %}{% assign year = y %}<tr class="schedule-year"><th colspan="3" scope="rowgroup">{{ y }}</th></tr>{% endif %}
       <tr data-kind="{% if t.invited %}invited{% else %}lab{% endif %}">

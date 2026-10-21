@@ -26,9 +26,6 @@ sections:
       Study group contact: Jian Choi
       (chjohn1105 [at] postech.ac.kr)
       {: .small .muted}
-
-      To learn about our current research, check our [lab seminar](seminar.html) and
-      [selected talks](talks.html).
   - title: "Visit us"
     type: contact-block
     id: visit

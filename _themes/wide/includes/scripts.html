@@ -20,9 +20,26 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
   show(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0]);
 });
 // Filters for [data-filter]: buttons with data-show pick rows by data-kind; a year row hides when none of its talks show.
+// Column widths are measured with every row shown and then fixed, so switching filters never moves a column.
 document.querySelectorAll('[data-filter]').forEach(function (box) {
   var btns = Array.prototype.slice.call(box.querySelectorAll('[data-show]'));
   var rows = Array.prototype.slice.call(box.querySelectorAll('tbody tr'));
+  var table = box.querySelector('table');
+  var cols = Array.prototype.slice.call(box.querySelectorAll('col'));
+  function lock() {
+    var hidden = rows.filter(function (r) { return r.hidden; });
+    table.classList.remove('is-locked');
+    cols.forEach(function (c) { c.style.width = ''; });
+    if (getComputedStyle(table).display !== 'table') return;  /* phones stack the cells; nothing to fix */
+    hidden.forEach(function (r) { r.hidden = false; });
+    var row = rows.filter(function (r) { return r.hasAttribute('data-kind'); })[0];
+    var widths = Array.prototype.map.call(row.children, function (td) { return td.getBoundingClientRect().width; });
+    hidden.forEach(function (r) { r.hidden = true; });
+    cols.forEach(function (c, i) { if (i !== 1) c.style.width = widths[i] + 'px'; });  /* the title column takes the rest */
+    table.classList.add('is-locked');
+  }
+  lock();
+  var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(lock, 150); });
   btns.forEach(function (b) {
     b.addEventListener('click', function () {
       var kind = b.getAttribute('data-show'), head = null, any = false;

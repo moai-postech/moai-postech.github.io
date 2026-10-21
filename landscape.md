@@ -9,5 +9,5 @@ sections:
     url: "https://moai-lab.duckdns.org/paper-stella-public/"
     label: "Paper Stella: our papers in the landscape of the papers we read"
     ratio: "16 / 10"
-    caption: "Each point is a paper we read, and our papers are labeled. Drag to explore, or [open Paper Stella in full screen →](https://moai-lab.duckdns.org/paper-stella-public/)"
+    caption: "[Open in full screen →](https://moai-lab.duckdns.org/paper-stella-public/)"
 ---

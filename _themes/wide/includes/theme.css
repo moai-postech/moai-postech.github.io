@@ -249,9 +249,9 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 /* Publications: title, authors, then venue and links under them */
 .page-publications h2 { margin-bottom: var(--space-4); font-size: var(--text-lead); letter-spacing: normal; }  /* year headings: same size and tracking as the Seminar and Talks years; 16px below keeps a year closer to its first paper than papers are to each other */
 .page-publications sup { line-height: 0; }  /* the equal-contribution marks no longer push their author line 2.5px taller than the others */
-.pubs li { display: grid; grid-template-columns: 2.75em minmax(0, 1fr); row-gap: var(--space-1); padding: var(--item-gap) 0; }  /* number column, then title, authors, venue, award with one even 4px gap; --item-gap between papers */
+.pubs li { display: grid; grid-template-columns: 2.25em minmax(0, 1fr); gap: var(--space-1) var(--space-3); padding: var(--item-gap) 0; }  /* number column, then title, authors, venue, award with one even 4px gap; --item-gap between papers */
 .pubs li > * { grid-column: 2; }
-.pubs li > .pub-num { grid-column: 1; grid-row: 1; align-self: baseline; color: var(--faint); font-size: var(--text-meta); font-weight: 600; font-variant-numeric: tabular-nums; }  /* shares its baseline with the title (it sat 1px high) */
+.pubs li > .pub-num { grid-column: 1; grid-row: 1; align-self: baseline; color: var(--faint); font-size: var(--text-meta); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }  /* shares its baseline with the title; right-aligned so every number sits 12px before its title */
 .pubs li:first-child { padding-top: 0; }
 .pubs .title { display: block; align-self: baseline; font-weight: 600; line-height: 1.5; }
 .pubs .title a { color: var(--text); }
@@ -355,7 +355,7 @@ a.person-name:hover { color: var(--accent); }
   .focus-tabs { align-items: stretch; }  /* a two-line label keeps the three icons on one line */
   .focus-tab img { width: 36px; height: 36px; }
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
-  .pubs li { grid-template-columns: 2.5em minmax(0, 1fr); }
+  .pubs li { grid-template-columns: 2.25em minmax(0, 1fr); }
   .topic-cards { grid-template-columns: 1fr; }
   .item-list li { flex-wrap: wrap; gap: 2px var(--space-3); padding: var(--space-2) 0; }  /* on phones one-line items wrap to two or three lines, so they need the wider gap */
   .funding li { grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--space-3); }

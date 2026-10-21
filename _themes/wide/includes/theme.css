@@ -182,15 +182,24 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 .row h3 { margin: 0 0 2px; font-size: var(--text-body); line-height: 1.65; }
 .row p { margin: 0; }
 
-/* Seminar schedule: a plain table, no rules; the speaker stands out, the title carries the weight */
+/* Seminar: one list, newest first, filtered by kind. One row per talk: date, title (takes all spare width), speaker at the right end */
+.filter-bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-5); margin-bottom: var(--space-5); box-shadow: inset 0 -1px 0 var(--line); }
+.filter-btn { padding: 0 0 var(--space-3); border: 0; background: none; color: var(--muted); font: inherit; font-size: var(--text-meta); font-weight: 600; cursor: pointer; }
+.filter-btn span { margin-left: 2px; color: var(--faint); font-weight: 500; }
+.filter-btn:hover { color: var(--text); }
+.filter-btn[aria-pressed="true"] { color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
+.filter-link { margin-left: auto; font-size: var(--text-meta); font-weight: 600; }
 .schedule { width: 100%; border-collapse: collapse; }
-.schedule th { padding: 0 var(--space-4) var(--space-3) 0; color: var(--muted); font-size: var(--text-small); font-weight: 600; text-align: left; text-transform: uppercase; letter-spacing: .06em; }
-.schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; vertical-align: baseline; }
-.schedule-date { width: 120px; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.schedule-speaker { width: 200px; font-weight: 600; white-space: nowrap; }
+.schedule td { padding: var(--space-2) 0; vertical-align: baseline; }
+.schedule-year th { padding: var(--space-6) 0 var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 700; text-align: left; }
+.schedule tbody > .schedule-year:first-child th { padding-top: 0; }
+.schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--faint); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.schedule-title { font-weight: 500; line-height: 1.5; }
+.schedule-speaker { width: 1%; padding-left: var(--space-6) !important; font-size: var(--text-meta); font-weight: 600; text-align: right; white-space: nowrap; }
 .schedule-speaker a { color: var(--text); }
 .schedule-speaker a:hover { color: var(--accent); }
-.schedule-aff { width: 170px; color: var(--muted); font-size: var(--text-meta); white-space: nowrap; }
+.schedule-aff { margin-left: var(--space-2); color: var(--muted); font-weight: 400; }
+.schedule [hidden] { display: none; }
 
 /* Wide media */
 .embed { position: relative; width: 100%; min-height: 360px; overflow: hidden; border-radius: var(--radius-2); background: #0b1220; border: 1px solid var(--line); }
@@ -274,12 +283,11 @@ a.person-name:hover { color: var(--accent); }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); }
   .profile-photo { width: 140px; height: 140px; }
   .embed { aspect-ratio: 4 / 5 !important; }
-  .schedule thead { display: none; }
-  .schedule, .schedule tbody, .schedule tr, .schedule td { display: block; width: auto; }
-  .schedule tr { padding: var(--space-3) 0; }
-  .schedule td { padding: 0; white-space: normal; }
-  .schedule-speaker { display: inline !important; }
-  .schedule-aff { display: inline !important; margin-left: var(--space-2); }
+  .schedule, .schedule tbody, .schedule tr, .schedule td, .schedule th { display: block; width: auto; }
+  .schedule tr[hidden] { display: none; }
+  .schedule tr:not(.schedule-year) { padding: var(--space-3) 0; }
+  .schedule td { padding: 0 !important; text-align: left; white-space: normal; }
+  .schedule-speaker { margin-top: 2px; }
   main { overflow-wrap: anywhere; }
 }
 @media print {

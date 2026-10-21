@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [seminar-all-talks](2026-10-21-seminar-all-talks.md) | Sangwoo Mo(moai-postech) | Seminar, 테마 | 초청과 내부 발표를 한 목록(All/Invited/Lab 거르기), 제목 한 줄, 발표자 오른쪽, 원본 시트 링크 |
 | 2026-10-21 | [focus-tabs](2026-10-21-focus-tabs.md) | Sangwoo Mo(moai-postech) | 테마, Home | focus 탭을 기준선과 강조색 밑줄로, 회색 패널 제거, 카드만 면으로, People 줄 간격과 이름 색 통일 |
 | 2026-10-21 | [official-links](2026-10-21-official-links.md) | Sangwoo Mo(moai-postech) | Publications | 제목은 공식 페이지(27편)일 때만 링크, Paper 는 arXiv, IROS·T-RO 는 IEEE 하나, InstaGAN·FreezeD Code |
 | 2026-10-21 | [seminar](2026-10-21-seminar.md) | Sangwoo Mo(moai-postech) | Research > Seminar | Lab Seminar → Seminar, 초청 연사 8명 표(날짜·연사·소속·제목), 홈페이지 링크 |

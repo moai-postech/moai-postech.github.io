@@ -19,4 +19,21 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
   });
   show(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0]);
 });
+// Filters for [data-filter]: buttons with data-show pick rows by data-kind; a year row hides when none of its talks show.
+document.querySelectorAll('[data-filter]').forEach(function (box) {
+  var btns = Array.prototype.slice.call(box.querySelectorAll('[data-show]'));
+  var rows = Array.prototype.slice.call(box.querySelectorAll('tbody tr'));
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var kind = b.getAttribute('data-show'), head = null, any = false;
+      btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      rows.forEach(function (r) {
+        if (!r.hasAttribute('data-kind')) { if (head) head.hidden = !any; head = r; any = false; return; }
+        r.hidden = kind !== 'all' && r.getAttribute('data-kind') !== kind;
+        if (!r.hidden) any = true;
+      });
+      if (head) head.hidden = !any;
+    });
+  });
+});
 </script>

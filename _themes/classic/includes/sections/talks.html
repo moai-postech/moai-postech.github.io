@@ -1,16 +1,12 @@
+{% comment %}연도 묶음 중 앞의 open 개는 펼쳐 두고 나머지는 "Earlier talks" 로 접는다{% endcomment %}
+{% assign open = include.section.open | default: site.data.talks.size %}
     <section class="content-section">
-    <h2>{{ include.section.title }}</h2>
+    <h2{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>{{ include.section.title }}</h2>
     <div class="section-body">
-    {% for y in site.data.talks %}
-    <h3 class="sub">{{ y.year }}</h3>
-    <ul class="plain item-list">
-      {% for t in y.talks %}<li>
-        <span class="item-main"><strong>{{ t.title }}</strong></span>
-        <span class="item-side">{{ t.venues | join: " · " }}</span>
-      </li>
-      {% endfor %}
-    </ul>
-    {% endfor %}
-    {% if include.section.more %}<p class="more">{% include inline.html text=include.section.more %}</p>{% endif %}
+    {% for y in site.data.talks limit: open %}{% include talk-year.html year=y %}{% endfor %}
+    {% if site.data.talks.size > open %}<details class="more-news">
+      <summary>Earlier talks</summary>
+      {% for y in site.data.talks offset: open %}{% include talk-year.html year=y %}{% endfor %}
+    </details>{% endif %}
     </div>
     </section>

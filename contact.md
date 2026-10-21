@@ -25,7 +25,7 @@ sections:
       {: .muted}
 
       To learn about our current research, check our [lab seminar](https://docs.google.com/spreadsheets/d/1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U/edit?usp=sharing) and
-      [research talks](https://sites.google.com/view/sangwoomo/talks).
+      [invited talks](teaching.html#talks).
       {: .small .muted}
   - title: "Visit us"
     id: visit

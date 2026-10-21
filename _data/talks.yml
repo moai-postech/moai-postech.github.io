@@ -1,5 +1,6 @@
-# Teaching 의 Invited talks. 올해와 작년 발표만 둔다(교수 결정 2026-10-21, 대표 논문과 같은 원칙).
-# 정본은 개인 사이트 Talks(https://sites.google.com/view/sangwoomo/talks). 같은 발표의 장소가 여럿이면 venues 에 나열한다.
+# Teaching 의 Invited talks. 발표 전체를 둔다(연구실 사이트는 개인 사이트로 링크하지 않는다).
+# 위에서 두 묶음(올해, 작년)은 펼쳐 보이고 나머지는 "Earlier talks" 로 접는다(teaching.md 의 open).
+# url 은 발표 자료(슬라이드). 내용은 개인 사이트 Talks 와 같게 맞춘다. 같은 발표의 장소가 여럿이면 venues 에 나열한다.
 - year: "2026"
   talks:
     - title: "Multimodal Agents that Reason and Remember"
@@ -7,20 +8,38 @@
     - title: "Towards Personalized Household Robots"
       venues: ["POSTECH Physical AI Workshop"]
     - title: "Manufacturing Data Analysis via Time-Series Foundation Models"
+      url: "https://drive.google.com/file/d/1zkIQOYAKENtK4D3NHYqe3nQSBWzAlzWc/view?usp=sharing"
       venues: ["KSS (Statistics Society), Invited Talk"]
     - title: "Aligning Vision and Language via Geometry and Topology"
+      url: "https://drive.google.com/file/d/10Tp6XGMI_2haKTI_gJW88unSLZHKBgAf/view?usp=sharing"
       venues: ["KSIAM (Applied Math Society), Invited Talk"]
     - title: "Opportunities in IME as an AI Researcher (and Vice Versa)"
+      url: "https://drive.google.com/file/d/1HNB911caHLsHZOu4ZKuSjYSyD8WhpUeu/view?usp=sharing"
       venues: ["POSTECH, Graduate Seminar"]
     - title: "Foundation Models for Vision, Language, and Robotics"
+      url: "https://drive.google.com/file/d/1OkBi2m-ZotIL5VCgjunXWFQNl6umM9Op/view?usp=sharing"
       venues: ["Ajou univ."]
 - year: "2025"
   talks:
     - title: "Foundation Models for Vision and Language (with Code)"
+      url: "https://drive.google.com/drive/folders/128OAwpZ6hNG1ScD5SaTfLkcoQiTktdW_?usp=sharing"
       venues: ["KSS (Statistics Society), Winter School"]
     - title: "Foundation Models for Vision, Language, and Robotics"
+      url: "https://drive.google.com/file/d/1OkBi2m-ZotIL5VCgjunXWFQNl6umM9Op/view?usp=sharing"
       venues: ["KSS (Statistics Society), Tutorial"]
     - title: "Revisiting the 3Rs in Computer Vision"
+      url: "https://drive.google.com/file/d/1rcxeyh6RhjaMz_PjmzEaGir7FZI9Z7LK/view?usp=sharing"
       venues: ["Korea univ.", "Kyunghee univ.", "POSTECH MINDS"]
     - title: "Scalable Priors for Foundation Models"
+      url: "https://drive.google.com/file/d/1GergS_BJ7_RUksPY_1iZtL3kW7RbSake/view?usp=sharing"
       venues: ["POSTECH", "UNIST", "DGIST"]
+- year: "Before 2025"
+  talks:
+    - title: "A Closer and Broader Look at Foundation Models"
+      venues: ["Yonsei univ.", "Korea univ."]
+    - title: "Foundation Models for Vision, Language, and Multimodality"
+      venues: ["Hanyang univ."]
+    - title: "Learning Visual Representations from Uncurated Data"
+      venues: ["Stanford", "UCSD", "University of Michigan"]
+    - title: "Brief History of Visual Representation Learning"
+      venues: ["Korea univ."]

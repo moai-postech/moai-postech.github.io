@@ -6,6 +6,7 @@ sections:
   - title: "Courses"
     type: teaching
   - title: "Invited talks"
+    id: talks
     type: talks
-    more: "[All talks →](https://sites.google.com/view/sangwoomo/talks)"
+    open: 2
 ---

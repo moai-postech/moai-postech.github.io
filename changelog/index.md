@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [self-contained](2026-10-21-self-contained.md) | Sangwoo Mo(moai-postech) | Teaching, Contact, AGENTS.md | 개인 사이트 링크 제거(발표 전체를 Teaching 으로, 예전 것은 접기), 강의 학기별 시트·발표 슬라이드 링크 |
 | 2026-10-21 | [pub-links-teaching-list](2026-10-21-pub-links-teaching-list.md) | Sangwoo Mo(moai-postech) | Publications, Teaching, Mentees | 논문 33편에 project·code·slides·poster 링크, Teaching 한 줄 목록, Mentees 에 연구실 학생 아님 설명 |
 | 2026-10-21 | [lab-authors](2026-10-21-lab-authors.md) | Sangwoo Mo(moai-postech) | Publications, 테마 | 연구실 멤버(교수·학생) 저자를 같은 양식으로 강조(굵게 없이 본문색, 다른 저자는 연한 회색) |
 | 2026-10-21 | [home-people-redesign](2026-10-21-home-people-redesign.md) | Sangwoo Mo(moai-postech) | Home, People, 꼬리말 | Home 첫 화면 M·O·A·I 2×2 머리글자, News 5개+펼치기, 언론 카드, 꼬리말 축소, People 에 Mentees 탭, Students 명단형 |

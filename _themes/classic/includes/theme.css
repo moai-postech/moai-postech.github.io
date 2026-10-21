@@ -99,11 +99,12 @@ h3.sub:first-child { margin-top: 0; }
 /* Item lists (courses, talks): one row each, the main line left and details right. */
 .item-list li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, auto); align-items: baseline; gap: 6px 32px; padding: 14px 0; border-bottom: 1px solid var(--line-soft); }
 .item-list li:last-child { border-bottom: 0; }
-.item-main strong { font-weight: 600; }
+.item-main strong { font-weight: 600; margin-right: 8px; }
 .item-main strong a { color: var(--text); }
 .item-sub { display: block; color: var(--muted); font-size: var(--fs-sm); }
 .item-side { color: var(--muted); font-size: var(--fs-sm); text-align: right; }
-.item-list + h3.sub { margin-top: 36px; }
+.item-list + h3.sub, .more-news h3.sub { margin-top: 36px; }
+.more-news > h3.sub:first-of-type { margin-top: 20px; }
 
 /* Focus explorer: three big buttons, the chosen one opens its papers and people. */
 .focus-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
@@ -131,7 +132,7 @@ h3.sub:first-child { margin-top: 0; }
 .area-topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .area-topics span { padding: 2px 10px; background: var(--bg); border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: var(--fs-xs); }
 .page-intro + .research-overview { border-top: 0; padding-top: 28px; }
-.research-area { scroll-margin-top: 16px; }
+.research-area, [id] { scroll-margin-top: 16px; }
 
 /* News overflow and media cards. */
 .more-news { margin-top: 14px; }
@@ -180,7 +181,7 @@ h3.sub:first-child { margin-top: 0; }
 .pubs .lab { color: var(--text); }
 .pubs .note { display: block; margin-top: 5px; color: var(--muted); font-size: var(--fs-xs); }
 .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin-top: 8px; }
-.pub-link { font-size: var(--fs-xs); font-weight: 600; letter-spacing: .02em; }
+.pub-link { white-space: nowrap; font-size: var(--fs-xs); font-weight: 600; letter-spacing: .02em; }
 .pub-link::before { content: "↗ "; opacity: .55; }
 
 /* People: students as a three-column roster on thin rules, mentees as a list. */

@@ -9,7 +9,7 @@ talks:
     invited: true
     speaker: "Donghoon Ahn"
     affiliation: "UC Berkeley"
-    title: "TBA"
+    title: "Correction Training for Diffusion Models"
   - date: "2026-10-30"
     speaker: "Suchan Lee"
     title: "Diffusion Will Be Everywhere"

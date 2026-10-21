@@ -39,3 +39,4 @@
 - 이상훈 인턴 이름: 본인 메일 표시 이름(Outlook)으로 `Sanghun Lee` 를 확인해 "Lab intern" 대신 썼다.
 - 거르기 버튼 순서를 `All / Lab / Invited` 로. 랩 내부 발표가 먼저다(교수).
 - 교수: 제목을 누르면 발표 자료로 가게. 내부 발표 14개에 랩 세미나 Drive 폴더(링크가 있으면 누구나 보기, 공유 설정은 바꾸지 않음)의 파일을 `slides` 로 달고 제목을 링크로 했다. 3개(TRM, Claude, MemEye)는 PDF 가 없고 pptx 라 Drive 미리보기로 열린다. 10/30 은 아직 자료가 없다. 초청 연사 자료(예: 폴더의 `20261015 POSTECH.pdf`)는 비공개 원칙대로 링크하지 않는다. 제목 링크는 Publications 처럼 본문색, hover 때 강조색.
+- 교수: 11/4 Donghoon Ahn 발표 제목은 "Correction Training for Diffusion Models". 사이트(`TBA` 대체)와 랩 세미나 시트 53행을 고쳤다. 공개된 논문 페이지·연사 홈페이지는 찾지 못해 링크 없음.

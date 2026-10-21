@@ -164,6 +164,8 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
 .item-sub, .item-side { color: var(--muted); font-size: var(--text-meta); }
 .item-sub::before { content: "·"; margin: 0 var(--space-2) 0 calc(-1 * var(--space-5)); color: var(--line); }  /* a course code stays next to its title */
 .item-side { margin-left: auto; text-align: right; }
+.item-side a { color: var(--muted); }  /* the right column is grey meta; a link there stays grey until hovered */
+.item-side a:hover { color: var(--accent); }
 .mentee-name { color: var(--text); font-weight: 600; }
 a.mentee-name:hover { color: var(--accent); }
 .mentee-aff { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); }  /* who they were and whom they worked with, right after the name */

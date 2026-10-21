@@ -13,10 +13,12 @@ nav:
     url: research.html
   - title: Publications
     url: publications.html
-  - title: Members
-    url: members.html
-  - title: Join Us
-    url: join.html
+  - title: People
+    url: people.html
+  - title: Teaching
+    url: teaching.html
+  - title: Contact
+    url: contact.html
 
 # 테마 선택. 테마를 바꾸려면 아래 두 줄의 "classic" 을 새 테마 폴더 이름으로 바꾼다.
 layouts_dir: _themes/classic/layouts

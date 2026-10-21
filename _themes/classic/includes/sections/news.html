@@ -5,5 +5,6 @@
       {% for n in site.data[include.section.data] %}<li><time>{{ n.date }}</time><span>{% include inline.html text=n.text %}{% if n.source %} <span class="muted">{{ n.source }}</span>{% endif %}</span></li>
       {% endfor %}
     </ul>
+    {% if include.section.note %}<p class="more">{% include inline.html text=include.section.note %}</p>{% endif %}
     </div>
     </section>

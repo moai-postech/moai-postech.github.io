@@ -9,17 +9,21 @@ GitHub Pages 가 push 때마다 Jekyll 로 빌드한다. 콘텐츠는 테마를 
 ```
 _config.yml          사이트 이름, 메뉴, 사용할 테마
 _data/               콘텐츠 데이터(YAML)
-  focus.yml          연구 방향. Home·Research·Join Us 가 함께 쓴다
+  focus.yml          연구 방향. Home·Research·Contact 가 함께 쓴다
   news.yml           Home 의 Research news
   media.yml          Home 의 Media coverage
   research.yml       Research 의 분야별 표
-  publications.yml   Publications 목록
-  members.yml        Members(교수, 학생, 멘티)
+  publications.yml   Publications 목록(featured 는 Home 의 Highlights 카드)
+  members.yml        People(교수, 학생, 멘티)
+  teaching.yml       Teaching 의 강의
+  funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
 index.md 외 *.md     페이지 하나에 파일 하나. front matter 에 제목, 소개글, 절 순서
 _themes/classic/     테마(현재 사용 중)
   layouts/           default.html(머리·메뉴·꼬리), page.html(소개 + 절 목록)
   includes/          section.html, sections/<type>.html, theme.css 등
 assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 않는다)
+assets/img/          그림과 아이콘(hero.svg, icons/). 콘텐츠가 이름으로 가리킨다
+members.html, join.html  옛 주소를 people.html, contact.html 로 넘기는 리다이렉트
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
 tools/               검사 스크립트
@@ -29,7 +33,8 @@ tools/               검사 스크립트
 
 | 바꾸려는 것 | 고칠 곳 |
 | --- | --- |
-| 뉴스, 논문, 멤버, 연구 분류 | `_data/*.yml` |
+| 뉴스, 논문, 멤버, 연구 분류, 강의, 과제 | `_data/*.yml` |
+| 그림, 아이콘 | `assets/img/` |
 | 페이지 소개글, 절 제목, 절 순서, 자유 문단 | 해당 `*.md` 의 front matter |
 | 메뉴, 사이트 이름, 꼬리말 | `_config.yml` |
 | 색, 글꼴, 배치, HTML 구조 | `_themes/<테마>/` |
@@ -42,11 +47,26 @@ tools/               검사 스크립트
 
 - `layouts/page.html`: 페이지 front matter 의 `heading`(없으면 `title`), `intro`(마크다운), `sections` 를 그린다.
 - `includes/section.html`: 절 하나를 그린다. `type` 이 없으면 `title` + `body`(마크다운), 있으면 `includes/sections/<type>.html` 로 넘긴다.
-- `includes/sections/` 의 type 별 파일: `focus`, `topics`, `news`(`data: news|media`), `research`, `publications`, `professor`, `members`.
+- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `highlights`, `news`(`data: news|media`), `research`, `funding`, `publications`, `professor`, `members`, `teaching`.
+- 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다.
 - 논문 저자 문자열 규칙: 쉼표로 구분, 이름 끝의 `*` 는 equal contribution, `†` 는 equal advising, `_config.yml` 의 `highlight_name` 은 강조.
 
 테마를 바꾼 뒤에는 다섯 페이지를 모두 빌드해 콘텐츠가 빠짐없이 나오는지 확인한다.
+
+## 누구를 위한 사이트인가: 방문자 세 부류
+
+이 사이트는 아래 세 부류 모두에게 매력적이어야 한다. 페이지나 디자인을 고칠 때마다 세 관점에서 다시 본다. 한 부류에게만 좋아지고 다른 부류가 원하는 것을 찾기 어려워지는 수정은 "논의가 필요한 수정"으로 올린다.
+
+| 방문자 | 찾는 것 | 첫 화면에서 바로 보여야 하는 것 |
+| --- | --- | --- |
+| 지원하려는 학생 | 무슨 연구를 하나, 함께하고 싶은 곳인가, 어떻게 지원하나 | 연구 방향, 최근 성과, Join us 버튼 |
+| 과제 지원 기관·산업체 | 무엇을 잘하나, 믿고 맡길 실적이 있나, 누구에게 연락하나 | 연구 방향, 대표 논문과 venue, Funding 이력, 연락처 |
+| 동료 연구자 | 어떤 문제를 푸나, 최근 논문, 누가 있나 | Highlights, Publications, People |
+
+- 글보다 그림을 먼저 쓴다. 같은 내용이면 카드, 아이콘, 그림으로 보여 주고 문장은 짧게 줄인다.
+- 랜딩 페이지(Home)가 가장 중요하다. 스크롤 없이 보이는 첫 화면에서 세 부류가 각자 다음에 누를 곳을 찾을 수 있어야 한다.
+- 리뷰 방법: 사람이든 리뷰어 에이전트든 세 부류를 하나씩 맡아 그 사람이 되어 사이트를 훑는다. 부류마다 (1) 30초 안에 찾고 싶은 것을 찾았나 (2) 매력적이지 않거나 헷갈린 곳 (3) 고칠 점 세 개를 적는다. 결과는 바로 반영하지 않고 `discussions/` 안건으로 올린다.
 
 ## 고치는 절차
 
@@ -147,7 +167,7 @@ tools/               검사 스크립트
 - 교수 이름 링크는 그 교수의 개인 페이지나 연구실 사이트 안 교수 프로필로 건다.
 - Venue 의 track·발표 형식 표시(`(application)`, `(oral)`)는 Publications, News, Other mentees 에만 붙인다. Research 는 `약칭 (학회'연도)` 만 쓴다.
 - News 의 `Paper(s) on X` 는 두 단어 안팎으로 짧게 쓴다. 셀 수 있는 명사는 복수로 쓴다(`personal robots`).
-- Join Us 의 Topics 는 `_data/focus.yml` 에서 자동으로 나오니 따로 고치지 않는다.
+- Contact 의 Research topics 는 `_data/focus.yml` 에서 자동으로 나오니 따로 고치지 않는다.
 
 ## 에이전트 호환
 

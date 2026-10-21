@@ -1,9 +1,9 @@
 {% for area in site.data.research %}
-    <section class="content-section">
-    <h2>{{ area.area }}</h2>
+    <section class="content-section research-area">
+    <h2>{% if area.icon %}<img class="area-icon" src="assets/img/icons/{{ area.icon }}.png" alt="">{% endif %}{{ area.area }}</h2>
     <div class="section-body">
-    <div class="card">
-      {% for t in area.topics %}<div class="card-row">
+    <div class="rows">
+      {% for t in area.topics %}<div class="row">
         <h3>{{ t.name }}</h3>
         <div>
           <p>{% include inline.html text=t.summary %}</p>
@@ -12,7 +12,7 @@
       </div>
       {% endfor %}
     </div>
-    {% if area.note %}<p class="small muted section-note">{% include inline.html text=area.note %}</p>{% endif %}
+    {% if area.note %}<p class="more">{% include inline.html text=area.note %}</p>{% endif %}
     </div>
     </section>
 {% endfor %}

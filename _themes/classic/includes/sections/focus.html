@@ -1,8 +1,9 @@
     <section class="content-section">
     <h2>{{ include.section.title }}</h2>
     <div class="section-body">
-    <div class="stack">
-      {% for f in site.data.focus %}<div class="area">
+    <div class="cards cards-3">
+      {% for f in site.data.focus %}<div class="card focus-card">
+        {% if f.icon %}<img class="card-icon" src="assets/img/icons/{{ f.icon }}.svg" alt="">{% endif %}
         <h3>{{ f.name }}</h3>
         <p>{{ f.topics }}</p>
       </div>

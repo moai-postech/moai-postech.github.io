@@ -1,0 +1,14 @@
+    <section class="content-section">
+    <h2>{{ include.section.title }}</h2>
+    <div class="section-body">
+    <div class="cards cards-3">
+      {% for c in site.data.teaching %}<div class="card course-card">
+        <h3>{% if c.url %}<a href="{{ c.url }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</h3>
+        {% if c.code %}<p class="muted small">{{ c.code }}, {{ c.institution }}</p>{% else %}<p class="muted small">{{ c.institution }}</p>{% endif %}
+        <p class="terms">{% for t in c.terms %}<span class="venue">{{ t }}</span>{% endfor %}</p>
+        {% if c.note %}<p class="small">{{ c.note }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    </div>
+    </section>

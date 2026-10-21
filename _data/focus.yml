@@ -1,8 +1,11 @@
 # 연구실의 현재 연구 방향. Home 의 "Our focus", Research 의 "Current directions",
-# Join Us 의 "Topics" 가 모두 이 파일 하나에서 나온다.
+# Contact 의 "Research topics" 가 모두 이 파일 하나에서 나온다. icon 은 assets/img/icons/<icon>.svg.
 - name: "Agentic AI"
+  icon: agentic
   topics: "multimodal LLM, long-context, reasoning"
 - name: "Physical AI"
+  icon: physical
   topics: "VLA, world models, personalized robots"
 - name: "Manufacturing AI"
+  icon: manufacturing
   topics: "time-series, process analytics"

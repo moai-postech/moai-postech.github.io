@@ -9,7 +9,7 @@
       {% endfor %}
     </ul>
     {% endfor %}{% elsif g.people.size > 0 %}
-    <ul class="plain people">
+    <ul class="plain people people-grid">
       {% for person in g.people %}{% include person.html person=person %}
       {% endfor %}
     </ul>

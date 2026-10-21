@@ -1,6 +1,7 @@
 # Research 페이지의 분야별 표. area 가 절 제목, topics 가 그 안의 줄이다.
-# papers 는 마크다운 한 줄: [약칭 (학회'연도)](주소), ... 형식. 표기 규칙은 AGENTS.md.
+# icon 은 assets/img/icons/<icon>.png. papers 는 마크다운 한 줄: [약칭 (학회'연도)](주소), ... 형식. 표기 규칙은 AGENTS.md.
 - area: "Vision & Multimodal"
+  icon: vision
   topics:
     - name: "Visual Structure"
       summary: "scenes as objects, parts, and motion"
@@ -12,6 +13,7 @@
       summary: "under bias, noise, and scarce data"
       papers: "[GOLD (NeurIPS'19)](https://arxiv.org/abs/1910.09170), [FreezeD (CVPRW'20)](https://arxiv.org/abs/2002.10964), [FICS (TMLR'23)](https://arxiv.org/abs/2212.02090), [StayFair (NeurIPS'26)](https://arxiv.org/abs/2605.28036)"
 - area: "Language & Reasoning"
+  icon: language
   topics:
     - name: "Reasoning & Agents"
       summary: "long-horizon tasks with memory"
@@ -26,6 +28,7 @@
       summary: "graphs, tables, and time-series"
       papers: "[LoGe (ICMLW'21)](https://arxiv.org/abs/2107.10493), [DPM-SNC (NeurIPS'23)](https://arxiv.org/abs/2302.10506), PRISM (arXiv'26)"
 - area: "Robotics & Embodied AI"
+  icon: robotics
   topics:
     - name: "VLA & World Models"
       summary: "robots that perceive, plan, and act"
@@ -33,4 +36,3 @@
     - name: "Multisensory Learning"
       summary: "touch and other non-visual modalities"
       papers: "[EIT-NN (IROS'19)](https://ieeexplore.ieee.org/document/8968532), [EIT-NN2 (T-RO'21)](https://ieeexplore.ieee.org/document/9376677)"
-  note: "Full list on the [Publications](publications.html) page."

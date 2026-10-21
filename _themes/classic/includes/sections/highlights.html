@@ -1,0 +1,15 @@
+{% comment %}_data/publications.yml 에서 featured: true 인 논문을 카드로 보인다{% endcomment %}
+    <section class="content-section">
+    <h2>{{ include.section.title }}</h2>
+    <div class="section-body">
+    <div class="cards cards-4">
+      {% for group in site.data.publications %}{% for p in group.papers %}{% if p.featured %}<a class="card paper-card" href="{{ p.url | default: 'publications.html' }}">
+        {% if p.icon %}<img class="card-icon" src="assets/img/icons/{{ p.icon }}.png" alt="">{% endif %}
+        {% if p.venue %}<span class="venue">{{ p.venue }}</span>{% endif %}
+        <span class="paper-title">{{ p.title }}</span>
+      </a>
+      {% endif %}{% endfor %}{% endfor %}
+    </div>
+    {% if include.section.more %}<p class="more">{% include inline.html text=include.section.more %}</p>{% endif %}
+    </div>
+    </section>

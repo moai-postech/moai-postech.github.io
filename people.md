@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Members
-description: "Members of MOAI Lab at POSTECH, led by Prof. Sangwoo Mo."
+title: People
+description: "People of MOAI Lab at POSTECH, led by Prof. Sangwoo Mo."
 sections:
   - title: "Professor"
     id: professor

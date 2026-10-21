@@ -3,35 +3,31 @@ layout: page
 title: Home
 head_title: "MOAI Lab — POSTECH"
 description: "Multimodal Orchestration of Artificial Intelligence (MOAI) Lab at POSTECH. We build foundation models that orchestrate vision, language, and physical sensors."
-heading: "Multimodal Orchestration of Artificial Intelligence"
-intro: |
-  The MOAI Lab at [POSTECH](https://www.postech.ac.kr/eng/index.do) focuses on
-  foundation models that orchestrate multiple modalities, including vision, language, and
-  physical sensors.
-  {: .lede}
-
-  Some might say MOAI stands for "Mo's AI Lab."
-  {: .muted}
-
-  Explore our publications on [Paper Stella](https://moai-lab.duckdns.org/paper-stella-public),
-  an atlas of the papers we read. If you are interested in joining, see [Join Us](join.html).
-  {: .callout}
 sections:
+  # 첫 화면. heading 은 큰 제목, body 는 그 아래 글(마크다운), image 는 오른쪽 그림.
+  - type: hero
+    heading: "Multimodal Orchestration of Artificial Intelligence"
+    body: |
+      The MOAI Lab at [POSTECH](https://www.postech.ac.kr/eng/index.do) builds foundation models
+      that orchestrate vision, language, and physical sensors.
+    image: assets/img/hero.svg
+    image_alt: "Vision, language, and sensor inputs flow into MOAI, which drives agents, robots, and manufacturing."
+    buttons:
+      - label: "Explore our research"
+        url: research.html
+      - label: "Join us"
+        url: contact.html
   - title: "Our focus in 2026"
     type: focus
-  - title: "Research news"
+  - title: "Highlights"
+    type: highlights
+    more: "[All publications →](publications.html)"
+  - title: "News"
     type: news
     data: news
   - title: "Media coverage"
     type: news
     data: media
-  - title: "Contact"
-    body: |
-      Science Building 4, Room 319<br>
-      [Department of Industrial and Management Engineering](https://ime.postech.ac.kr/), POSTECH<br>
-      77 Cheongam-ro, Nam-gu, Pohang, Gyeongbuk 37673, Korea
-      {: .muted}
-
-      Prof. Sangwoo Mo ({first_name}.{last_name} [at] postech.ac.kr) · +82-54-279-2202
-      {: .muted}
+    note: |
+      Explore our publications on [Paper Stella](https://moai-lab.duckdns.org/paper-stella-public), an atlas of the papers we read.
 ---

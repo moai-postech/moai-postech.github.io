@@ -12,4 +12,6 @@ sections:
     type: focus
   # _data/research.yml 의 분야마다 절 하나씩
   - type: research
+  - title: "Funding"
+    type: funding
 ---

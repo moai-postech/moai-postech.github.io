@@ -19,9 +19,9 @@ nav:
         url: funding.html
   - title: Publications
     children:
-      - title: List
+      - title: By Year
         url: publications.html
-      - title: Visualization
+      - title: By Topic
         url: landscape.html
   - title: People
     children:

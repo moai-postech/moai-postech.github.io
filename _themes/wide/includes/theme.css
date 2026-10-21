@@ -208,15 +208,15 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 
 /* Publications: title, authors, then venue and links under them */
 .page-publications .lede { font-size: var(--text-body); }
-.pubs li { padding: var(--space-3) 0; }
+.pubs li { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4) 0; }  /* one even gap inside a paper, a wider one between papers */
 .pubs li:first-child { padding-top: 0; }
 .pubs .title { display: block; font-weight: 600; line-height: 1.5; }
 .pubs .title a { color: var(--text); }
 .pubs .title a:hover { color: var(--accent); }
-.pubs .authors { display: block; color: var(--faint); font-size: var(--text-meta); }
+.pubs .authors { color: var(--faint); font-size: var(--text-meta); line-height: 1.5; }
 .pubs .lab { color: var(--text); }
-.pubs .note { display: block; margin-top: var(--space-1); color: var(--muted); font-size: var(--text-small); }
-.pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-4); margin-top: var(--space-2); }
+.pubs .note { color: var(--muted); font-size: var(--text-small); line-height: 1.5; }
+.pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-4); margin-top: 2px; }
 .pub-link { white-space: nowrap; color: var(--muted); font-size: var(--text-small); font-weight: 600; letter-spacing: .02em; }
 .pub-link:hover { color: var(--accent); text-decoration: none; }
 

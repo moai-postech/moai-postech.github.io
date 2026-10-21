@@ -211,6 +211,8 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--faint); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .schedule-title { font-weight: 500; line-height: 1.5; }
+.schedule-title a { color: var(--text); }
+.schedule-title a:hover { color: var(--accent); }
 .schedule-speaker { width: 1%; padding-left: var(--space-6) !important; font-size: var(--text-meta); font-weight: 600; text-align: right; white-space: nowrap; }
 .schedule-speaker a { color: var(--text); }
 .schedule-speaker a:hover { color: var(--accent); }

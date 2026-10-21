@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [right-align-rhythm](2026-10-21-right-align-rhythm.md) | Sangwoo Mo(moai-postech) | AGENTS.md, 테마, Publications | 한 줄 항목 딸린 정보 오른쪽 정렬, Funding 3칸 격자, 세로 간격 두 단계 토큰, Scholar 문구 |
 | 2026-10-21 | [publications-labels-spacing](2026-10-21-publications-labels-spacing.md) | Sangwoo Mo(moai-postech) | Publications | Paper→arXiv, 하위 탭 By Year/By Topic, 논문 항목 안 간격 통일 |
 | 2026-10-21 | [seminar-all-talks](2026-10-21-seminar-all-talks.md) | Sangwoo Mo(moai-postech) | Seminar, 테마 | 초청과 내부 발표를 한 목록(All/Invited/Lab 거르기), 제목 한 줄, 발표자 오른쪽, 원본 시트 링크 |
 | 2026-10-21 | [focus-tabs](2026-10-21-focus-tabs.md) | Sangwoo Mo(moai-postech) | 테마, Home | focus 탭을 기준선과 강조색 밑줄로, 회색 패널 제거, 카드만 면으로, People 줄 간격과 이름 색 통일 |

@@ -27,3 +27,9 @@
 ## 남은 것
 
 - News 문구는 개인 사이트 News 와 같은 사실이다. 개인 사이트 정리 때 맞춘다(TODO).
+
+## 이어서: Hero 문장 (교수: 새 정보가 없다, 연구실 TLDR 은 알아서 잘 써 달라)
+
+- 제목과 그림이 "무엇을(multimodal orchestration)"과 "어디에(agents, robots, manufacturing)"를 이미 말하므로, 문장은 "왜 orchestration 인가"를 맡게 했다.
+- 새 문장: "No single model sees, reasons, and acts well on its own. We **orchestrate** foundation models across **modalities** into AI systems that work reliably in the real world." 첫 문장이 필요(한 모델로는 부족하다), 둘째 문장이 랩이 하는 일과 목표(현실에서 믿을 만하게 동작)를 준다. 강조어 둘이 제목의 O 와 M 을 받는다. meta description 도 같은 문장.
+- 기각: "Real-world tasks need AI that sees, reads, and acts at once. ..."(신뢰성이라는 랩의 가치가 빠진다), "We study how foundation models ... turning perception into reliable action."(왜 필요한지가 약하다), 바로 앞의 "We build multimodal foundation models that orchestrate ... for agents, robots, and manufacturing."(제목과 그림을 되풀이할 뿐).

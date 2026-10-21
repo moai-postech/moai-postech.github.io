@@ -12,7 +12,7 @@
       authors: "Sanghyung Lee*, Chaewon Park*, Suchan Lee, Sangwoo Mo"
     - title: "Loud and Clear: Making Visual Evidence Count in Multimodal Document RAG"
       url: "https://arxiv.org/abs/2610.21318"
-      authors: "Eunchan Jo*, Seunghyun Jang*, Sangwoo Mo"
+      authors: "Eunchan Jo*, Seounghyun Jang*, Sangwoo Mo"
       links:
         code: "https://github.com/Chipmunk-g4/Loud-and-Clear"
     - title: "Why, Where, How: Taxonomy-guided Error Grounding for Code Repair in NL2SQL"

@@ -27,3 +27,8 @@
 - 교수: Courses 와 Invited talks 는 특별한 이유가 없으면 예전처럼 한 row 가 더 깔끔하다(publication 은 정보량이 많아 multi row). "Foundation Models for Vision, Language, and Robotics" 의 2026 Ajou 는 2025 KSS 쪽으로 두거나, tutorial 을 강조하고 싶으니 아주대는 빼도 된다.
 - 반영: 강의·발표·과제는 한 줄(제목 뒤에 `·` 와 회색 정보를 이어 붙임, 오른쪽 끝으로 밀지 않음). 2026 아주대 항목을 빼고 그 슬라이드 링크를 2025 KSS Tutorial 에 둔다. `AGENTS.md` 원칙을 "정보가 적은 항목은 한 줄(정보는 제목 바로 뒤), 정보가 많은 항목(논문, 멘티)만 여러 줄, 오른쪽 끝에는 두지 않음"으로 고쳤다.
 - 기각: 딸린 정보를 모두 아래 줄로(정보가 적은 항목까지 두 줄이 되어 길어진다, 교수).
+
+## 이어서: 장승현 (2026-10-22)
+
+- 교수: https://jang1751.github.io/ 추가. Students 에 홈페이지 링크와 사진(홈페이지 portrait.jpg 를 얼굴 중심 400px 정사각으로, `assets/img/people/seounghyun-jang.jpg`)을 넣었다.
+- 영문 이름: 본인 홈페이지와 arXiv(LoC, 2610.21318) 모두 `Seounghyun Jang` 이라 사이트의 `Seunghyun Jang` 을 본인 표기로 고쳤다(Students, Seminar, Publications 저자). 랩 멤버 강조는 이름이 같아야 걸리므로 셋을 함께 바꿨다. CV 와 개인 사이트에는 이 이름이 없다.

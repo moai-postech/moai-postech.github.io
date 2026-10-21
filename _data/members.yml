@@ -75,8 +75,10 @@ groups:
         focus: "Agentic AI"
         degree: "BS, POSTECH"
         topic: "Reasoning Agents"
-      - name: "Seunghyun Jang"
+      - name: "Seounghyun Jang"
+        photo: assets/img/people/seounghyun-jang.jpg
         focus: "Agentic AI"
+        url: "https://jang1751.github.io/"
         degree: "BS, SNU"
         topic: "Multimodal Agents"
       - name: "Gyeom Hwangbo"

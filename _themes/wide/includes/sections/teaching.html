@@ -1,5 +1,5 @@
     <section class="content-section">
-    <h2>{{ include.section.title }}</h2>
+    {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
     <div class="section-body">
     <ul class="plain item-list">
       {% for c in site.data.teaching %}<li>

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [teaching-tabs](2026-10-21-teaching-tabs.md) | Sangwoo Mo(moai-postech) | 메뉴, Teaching, Contact | Teaching 아래 Courses / Selected Talks 두 탭, 연도 머리 통일 |
 | 2026-10-21 | [research-cards-faculty-align](2026-10-21-research-cards-faculty-align.md) | Sangwoo Mo(moai-postech) | Research, Teaching, Faculty, AGENTS.md | Research 를 분야 띠와 주제 카드·논문 칩으로, 문구 다듬기, Talks Before 2025 삭제, 교수 이력 오른쪽 정렬, 좌우 정렬 원칙 |
 | 2026-10-21 | [right-align-rhythm](2026-10-21-right-align-rhythm.md) | Sangwoo Mo(moai-postech) | AGENTS.md, 테마, Publications | 한 줄 항목 딸린 정보 오른쪽 정렬, Funding 3칸 격자, 세로 간격 두 단계 토큰, Scholar 문구 |
 | 2026-10-21 | [publications-labels-spacing](2026-10-21-publications-labels-spacing.md) | Sangwoo Mo(moai-postech) | Publications | Paper→arXiv, 하위 탭 By Year/By Topic, 논문 항목 안 간격 통일 |

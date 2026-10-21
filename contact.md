@@ -28,7 +28,7 @@ sections:
       {: .small .muted}
 
       To learn about our current research, check our [lab seminar](seminar.html) and
-      [invited talks](teaching.html#talks).
+      [selected talks](talks.html).
   - title: "Visit us"
     type: contact-block
     id: visit

@@ -1,12 +1,9 @@
 ---
 layout: page
-title: Teaching
-description: "Courses and invited talks by Prof. Sangwoo Mo at POSTECH."
+title: Courses
+head_title: "Teaching — MOAI Lab"
+description: "Courses taught by Prof. Sangwoo Mo at POSTECH."
 sections:
-  - title: "Courses"
-    type: teaching
-  - title: "Invited talks"
-    id: talks
-    type: talks
-    open: 2
+  # 하위 탭 이름(Courses)이 제목 역할을 하므로 절 제목을 두지 않는다
+  - type: teaching
 ---

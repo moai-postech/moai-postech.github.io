@@ -32,7 +32,11 @@ nav:
       - title: Mentees
         url: mentees.html
   - title: Teaching
-    url: teaching.html
+    children:
+      - title: Courses
+        url: teaching.html
+      - title: Selected Talks
+        url: talks.html
   - title: Contact
     url: contact.html
 

@@ -16,7 +16,7 @@ _data/               콘텐츠 데이터(YAML)
   publications.yml   Publications 목록(제목은 논문 링크, links 에 project·code·slides·poster)
   members.yml        People 의 Faculty(교수, 사진, Bio, 이력 cv), Students(연구실 학생), Mentees(연구실 밖에서 지도한 학생). 학생의 focus 는 연구 방향 패널에 이름을 띄운다
   teaching.yml       Teaching 의 정규 강의
-  talks.yml          Teaching 의 Invited talks
+  talks.yml          Teaching > Selected Talks
   seminar.yml        Research > Seminar 의 초청 연사(외부 연사 슬라이드는 공개하지 않는다)
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
 index.md 외 *.md     페이지 하나에 파일 하나(research·seminar·funding, publications·landscape, faculty·students·mentees, teaching, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서

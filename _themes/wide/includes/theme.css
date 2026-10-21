@@ -208,6 +208,8 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule { width: 100%; border-collapse: collapse; }
 .schedule td { padding: var(--space-2) 0; vertical-align: baseline; }
 .schedule-year th { padding: var(--space-6) 0 var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 700; text-align: left; }
+.year-head { margin: var(--space-6) 0 var(--space-2); font-size: var(--text-lead); font-weight: 700; }  /* same year heading as the seminar list */
+.section-body > .year-head:first-child { margin-top: 0; }
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--faint); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .schedule-title { font-weight: 500; line-height: 1.5; }

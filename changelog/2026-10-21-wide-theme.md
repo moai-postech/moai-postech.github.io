@@ -25,3 +25,8 @@
 ## 남은 것
 
 - 로고 확정, Funding Advisory 와 과제명 언어, FM Applications 라벨(저장소 밖 상위 `TODO.md`).
+
+## 추가(같은 날): 제목 첫 줄에 "of"
+
+- 교수: 첫 페이지에서 of 를 첫 줄로 올리면 어떤가.
+- 반영: `**M**ultimodal **O**rchestration of <br>**A**rtificial **I**ntelligence`. 1440px 에서 첫 줄 590px 로 제목 칸(680px)에 들어간다. 1024px 에서는 칸이 513px 로 줄어 세 줄이 되어, 제목 크기 토큰 `--fs-6` 를 `clamp(36px, 3.9vw, 48px)` 로 바꿨다(전역 토큰 한 곳). 970·1024·1100·1280·1440px 모두 두 줄로 확인.

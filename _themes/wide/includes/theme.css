@@ -212,6 +212,7 @@ a.person-name:hover { color: var(--accent); }
 .person-degree, .person .role { display: block; color: var(--muted); font-size: var(--text-meta); }
 .people-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5) var(--gutter); }
 .people-grid .person { padding: 0; }
+.person-photo { display: block; width: 100%; max-width: 180px; aspect-ratio: 1; margin-bottom: var(--space-4); border-radius: 50%; object-fit: cover; background: var(--surface); }
 .people-grid .person-name { font-size: var(--text-lead); }
 .person-work { display: block; margin-top: 2px; font-size: var(--text-meta); }
 
@@ -248,7 +249,7 @@ a.person-name:hover { color: var(--accent); }
   .focus-panels { padding: var(--space-4); }
   .focus-tab img { width: 36px; height: 36px; }
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
-  .people-grid { grid-template-columns: 1fr; }
+  .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); }
   .profile-photo { width: 140px; height: 140px; }
   .embed { aspect-ratio: 4 / 5 !important; }
   main { overflow-wrap: anywhere; }

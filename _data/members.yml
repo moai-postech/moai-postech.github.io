@@ -1,6 +1,7 @@
 # People 메뉴의 세 페이지. professor 는 Faculty, groups 는 Students(연구실 학생), mentees 는 Mentees 페이지다(순서대로 나온다).
 # bio 는 마크다운 문단(빈 줄로 문단을 나눈다). photo 는 정사각형 사진 경로.
-# 학생 항목: name(필수), url(개인 페이지, 없으면 생략), topic(연구 주제), degree(이전 학위와 학교),
+# 학생 항목: name(필수), photo(정사각형 400px, assets/img/people/이름.jpg, 없으면 회색 실루엣), url(개인 페이지, 없으면 생략),
+# topic(연구 주제), degree(이전 학위와 학교),
 # 멘티 항목은 affiliation(학위 @ 학교, w/ 지도교수: 이름 오른쪽)과 work(함께 한 논문: 아래 줄)를 쓴다. 둘 다 마크다운 링크 가능.
 # focus(_data/focus.yml 의 name. 그 연구 방향 패널에 이름이 나온다).
 professor:
@@ -59,11 +60,13 @@ groups:
   - title: "Ph.D. students"
     people:
       - name: "Myeongsoo Kim"
+        photo: assets/img/people/myeongsoo-kim.jpg
         focus: "Agentic AI"
         url: "https://kim-myeong-soo.github.io/"
         degree: "MS, POSTECH"
         topic: "Reliable Agents"
       - name: "Eunchan Jo"
+        photo: assets/img/people/eunchan-jo.jpg
         focus: "Agentic AI"
         url: "https://eunchanjo.github.io/"
         degree: "MS, POSTECH"
@@ -79,16 +82,19 @@ groups:
         degree: "BS, SNU"
         topic: "Multimodal Agents"
       - name: "Gyeom Hwangbo"
+        photo: assets/img/people/gyeom-hwangbo.jpg
         focus: "Physical AI"
         url: "https://gyeomh.github.io/"
         degree: "BS, U of Seoul"
         topic: "Physical AI"
       - name: "Sanghyung Lee"
+        photo: assets/img/people/sanghyung-lee.jpg
         focus: "Manufacturing AI"
         url: "https://idealtype.github.io/"
         degree: "BS, Korea univ."
         topic: "Manufacturing AI"
       - name: "Chaewon Park"
+        photo: assets/img/people/chaewon-park.jpg
         focus: "Manufacturing AI"
         url: "https://onehanap.github.io/"
         degree: "BS, POSTECH"

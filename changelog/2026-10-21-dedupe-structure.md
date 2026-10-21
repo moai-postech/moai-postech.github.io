@@ -52,3 +52,9 @@
 - 교수: Research 아래에 Overview / Lab Seminar / Funding. Publications 아래에 논문 리스트와 visualization(Paper Stella). (그 전에 Paper Stella 를 Publication 탭으로 옮기는 것을 물었다.)
 - 반영: `_config.yml` 메뉴. Research → Overview(`research.html`), Lab Seminar(새 `seminar.md`), Funding(`funding.html`). Publications → List(`publications.html`), Visualization(`landscape.html`, Paper Stella). Contact 의 "lab seminar" 링크는 외부 시트 대신 `seminar.html` 로(사이트 안에서 이어지게). `AGENTS.md` 의 "지금 자리" 목록과 페이지 목록 갱신.
 - 경위: Paper Stella 는 논문 지도라 논문 목록과 같은 메뉴에 두는 편이 자연스럽다. Lab seminar 는 Teaching(교수가 가르치는 것)도 Contact(지원 안내)도 아닌 연구실 연구 활동이라 Research 아래로.
+
+## 추가(같은 날): 이름·세부 점검 중 고친 오류
+
+- 교수: 각 서브페이지의 네이밍과 디테일 점검.
+- 바로 고친 것(명백한 오류): Students 페이지 설명에서 "and mentees" 삭제(멘티는 따로 탭이 있다). Lab Seminar, News 페이지에서 페이지 이름과 같은 절 제목을 없앴다(절 `title` 을 비우면 제목 없이 그리도록 `section.html`, `news.html` 을 고침).
+- 이름 바꾸기는 교수 판단이 필요해 제안으로 올렸다(저장소 밖 상위 `TODO.md` 질문 목록).

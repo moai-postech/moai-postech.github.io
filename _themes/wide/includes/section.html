@@ -5,7 +5,7 @@
 {% assign s = include.section %}
 {% if s.type %}{% include sections/{{ s.type }}.html section=s %}{% else %}
     <section class="content-section">
-    <h2{% if s.id %} id="{{ s.id }}"{% endif %}>{{ s.title }}</h2>
+    {% if s.title %}<h2{% if s.id %} id="{{ s.id }}"{% endif %}>{{ s.title }}</h2>{% endif %}
     <div class="section-body">
     {{ s.body | markdownify }}
     </div>

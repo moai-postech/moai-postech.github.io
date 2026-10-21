@@ -1,0 +1,18 @@
+{% comment %}_data/seminar.yml 의 초청 연사를 표로: 날짜, 연사(홈페이지 링크), 소속, 발표 제목{% endcomment %}
+    <section class="content-section">
+    {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
+    <div class="section-body">
+    <table class="schedule">
+      <thead><tr><th scope="col">Date</th><th scope="col">Speaker</th><th scope="col">Affiliation</th><th scope="col">Title</th></tr></thead>
+      <tbody>
+      {% for t in site.data.seminar.invited %}<tr>
+        <td class="schedule-date">{{ t.date | date: "%Y/%m/%d" }}</td>
+        <td class="schedule-speaker">{% if t.url %}<a href="{{ t.url }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}</td>
+        <td class="schedule-aff">{{ t.affiliation }}</td>
+        <td class="schedule-title">{{ t.title }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    </section>

@@ -13,7 +13,7 @@ nav:
     children:
       - title: Overview
         url: research.html
-      - title: Lab Seminar
+      - title: Seminar
         url: seminar.html
       - title: Funding
         url: funding.html

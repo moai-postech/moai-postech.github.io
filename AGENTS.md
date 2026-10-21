@@ -16,7 +16,8 @@ _data/               콘텐츠 데이터(YAML)
   publications.yml   Publications 목록(제목은 논문 링크, links 에 project·code·slides·poster)
   members.yml        People 의 Faculty(교수, 사진, Bio, 이력 cv), Students(연구실 학생), Mentees(연구실 밖에서 지도한 학생). 학생의 focus 는 연구 방향 패널에 이름을 띄운다
   teaching.yml       Teaching 의 정규 강의
-  talks.yml          Teaching 의 Invited talks(올해와 작년)
+  talks.yml          Teaching 의 Invited talks
+  seminar.yml        Research > Seminar 의 초청 연사(외부 연사 슬라이드는 공개하지 않는다)
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
 index.md 외 *.md     페이지 하나에 파일 하나(research·seminar·funding, publications·landscape, faculty·students·mentees, teaching, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
 _themes/wide/        테마(현재 사용 중: 넓은 화면 전제, 12칸 격자, 전역 토큰)
@@ -50,7 +51,7 @@ tools/               검사 스크립트
 
 - `layouts/page.html`: 페이지 front matter 의 `heading`(없으면 `title`), `intro`(마크다운), `sections` 를 그린다.
 - `includes/section.html`: 절 하나를 그린다. `type` 이 없으면 `title` + `body`(마크다운), 있으면 `includes/sections/<type>.html` 로 넘긴다.
-- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `research-overview`(Research 맨 위 분야 카드), `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `mentees`, `media`, `profile-cv`(Faculty 의 이력), `teaching`, `talks`.
+- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `research-overview`(Research 맨 위 분야 카드), `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `mentees`, `media`, `profile-cv`(Faculty 의 이력), `teaching`, `talks`, `seminar`(초청 연사 표).
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
 - `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글꼴은 Pretendard 하나(로고 글자만 Outfit), 굵기는 400·600·700.
@@ -70,7 +71,7 @@ tools/               검사 스크립트
 | 동료 연구자 | 어떤 문제를 푸나, 최근 논문, 누가 있나 | 연구 방향, News, Publications, People |
 
 - **사이트 안에서 끝나게(self-contained) 만든다.** 교수 개인 사이트(Google Sites)로 링크하지 않는다. 필요한 내용(발표 목록 등)은 이 사이트 안으로 들여온다. 논문, 코드, 발표 자료, 강의 시트, 다른 사람의 페이지, 외부 프로필(Google Scholar, GitHub) 같은 원자료 링크는 괜찮다.
-- **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Publications > Visualization, 랩 세미나는 Research > Lab Seminar, 과제는 Research > Funding, 교수 이메일·전화는 Faculty, 연구실 주소와 지원 방법은 Contact.
+- **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Publications > Visualization, 랩 세미나와 초청 연사는 Research > Seminar(`_data/seminar.yml`), 과제는 Research > Funding, 교수 이메일·전화는 Faculty, 연구실 주소와 지원 방법은 Contact.
 - **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
 - **컴퓨터 화면에서는 넓게 쓴다.** 전체 폭은 `--container`(1200px), 모바일처럼 좁은 기둥으로 줄이지 않는다(교수 2026-10-21). 긴 문단만 `--measure`(760px)로 묶는다. 좁은 화면에서만 한 칸으로 접는다.
 - **넓은 화면을 전제로 설계하고 12칸 격자에 칸을 배분한다.** 좁은 기둥을 늘려 쓰지 않는다(교수 2026-10-21: "공간은 넓은데 컨텐츠는 좁은 걸 상정해 억지로 늘리면 안 예쁘다"). 나란히 놓는 것은 내용이 대등할 때만(예: 연구 분야 셋) 쓰고, 긴 목록(뉴스 등)은 전체 폭을 쓴다.  절 이름만 왼쪽 칸에 세우는 라벨 칸은 쓰지 않는다.

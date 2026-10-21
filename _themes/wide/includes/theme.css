@@ -186,6 +186,16 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 .row h3 { margin: 0 0 2px; font-size: var(--text-body); line-height: 1.65; }
 .row p { margin: 0; }
 
+/* Seminar schedule: a plain table, no rules; the speaker stands out, the title carries the weight */
+.schedule { width: 100%; border-collapse: collapse; }
+.schedule th { padding: 0 var(--space-4) var(--space-3) 0; color: var(--muted); font-size: var(--text-small); font-weight: 600; text-align: left; text-transform: uppercase; letter-spacing: .06em; }
+.schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; vertical-align: baseline; }
+.schedule-date { width: 120px; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.schedule-speaker { width: 200px; font-weight: 600; white-space: nowrap; }
+.schedule-speaker a { color: var(--text); }
+.schedule-speaker a:hover { color: var(--accent); }
+.schedule-aff { width: 170px; color: var(--muted); font-size: var(--text-meta); white-space: nowrap; }
+
 /* Wide media */
 .embed { position: relative; width: 100%; min-height: 360px; overflow: hidden; border-radius: var(--radius-2); background: #0b1220; border: 1px solid var(--line); }
 .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -269,6 +279,12 @@ a.person-name:hover { color: var(--accent); }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); }
   .profile-photo { width: 140px; height: 140px; }
   .embed { aspect-ratio: 4 / 5 !important; }
+  .schedule thead { display: none; }
+  .schedule, .schedule tbody, .schedule tr, .schedule td { display: block; width: auto; }
+  .schedule tr { padding: var(--space-3) 0; }
+  .schedule td { padding: 0; white-space: normal; }
+  .schedule-speaker { display: inline !important; }
+  .schedule-aff { display: inline !important; margin-left: var(--space-2); }
   main { overflow-wrap: anywhere; }
 }
 @media print {

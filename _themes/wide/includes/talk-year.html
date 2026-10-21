@@ -1,0 +1,8 @@
+    <h3 class="sub">{{ include.year.year }}</h3>
+    <ul class="plain item-list">
+      {% for t in include.year.talks %}<li>
+        <span class="item-main"><strong>{{ t.title }}</strong>{% if t.url %} <a class="pub-link" href="{{ t.url }}">Slides</a>{% endif %}</span>
+        <span class="item-side">{{ t.venues | join: " · " }}</span>
+      </li>
+      {% endfor %}
+    </ul>

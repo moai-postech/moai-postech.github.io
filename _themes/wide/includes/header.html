@@ -1,0 +1,14 @@
+{% assign current = page.url | remove_first: "/" %}{% if current == "" %}{% assign current = "index.html" %}{% endif %}
+  <header class="site-head">
+    <p class="brand"><a href="index.html">{% if site.logo %}<img class="brand-mark" src="{{ site.logo }}" alt="">{% endif %}<span class="brand-word">{{ site.title }}</span></a></p>
+    <nav class="site-nav">
+      {% for item in site.nav %}{% if item.children %}{% assign inside = false %}{% for c in item.children %}{% if c.url == current %}{% assign inside = true %}{% endif %}{% endfor %}<div class="nav-group">
+        <a href="{{ item.children[0].url }}" aria-haspopup="true"{% if inside %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        <div class="nav-menu">
+          {% for c in item.children %}<a href="{{ c.url }}">{{ c.title }}</a>{% endfor %}
+        </div>
+      </div>
+      {% else %}<a href="{{ item.url }}"{% if item.url == current %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endif %}{% endfor %}
+    </nav>
+  </header>

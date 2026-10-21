@@ -19,8 +19,9 @@ _data/               콘텐츠 데이터(YAML)
   talks.yml          Teaching 의 Invited talks(올해와 작년)
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
 index.md 외 *.md     페이지 하나에 파일 하나(research·landscape·funding, publications, faculty·students·mentees, teaching, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
-_themes/editorial/   테마(현재 사용 중: 한 기둥 편집형)
-_themes/classic/     예전 테마(카드·좌우 배치, 되돌릴 때 쓴다)
+_themes/wide/        테마(현재 사용 중: 넓은 화면 전제, 12칸 격자, 전역 토큰)
+_themes/editorial/   예전 테마(한 기둥 편집형)
+_themes/classic/     예전 테마(카드·좌우 배치). 둘 다 되돌릴 때만 쓴다
   layouts/           default.html(머리·메뉴·꼬리), page.html(소개 + 절 목록)
   includes/          section.html, sections/<type>.html, theme.css 등
 assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 않는다)
@@ -52,7 +53,8 @@ tools/               검사 스크립트
 - `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `research-overview`(Research 맨 위 분야 카드), `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `mentees`, `media`, `teaching`, `talks`.
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
-- `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글자 크기는 `:root` 의 여섯 단계(`--fs-xs`~`--fs-2xl`)와 굵기 400·600·700 만 쓰고, 글꼴은 Pretendard 하나다.
+- `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글꼴은 Pretendard 하나(로고 글자만 Outfit), 굵기는 400·600·700.
+- **크기와 배치는 전역 토큰으로만 정한다.** `theme.css` 맨 위 `:root` 에 세 층으로 둔다. (1) 기본값: 색, 글자 크기 6단계(`--fs-1`~`--fs-6`), 간격 단계(`--space-1`~`--space-9`), 둥글기. (2) 레이아웃: 전체 폭 `--container`, 격자 `--columns`(12), 칸 사이 `--gutter`, 문단 최대 폭 `--measure`, 절 간격 `--section-gap`. (3) 역할: `--text`, `--accent`, `--text-h2` 같은 용도 이름. 컴포넌트의 폭·간격·글자 크기는 2·3층 토큰만 쓴다. 아이콘, 사진, 머리글 높이처럼 요소 자체의 크기만 px 로 둔다. 페이지별로 폭·간격·글자 크기를 따로 정하지 않는다. 사이트 전체를 바꿀 때(예: 더 넓게)는 토큰 하나를 고친다. 좁은 화면은 미디어 쿼리에서 토큰 값만 바꾸고, 여러 칸 배치를 한 칸으로 접는다(교수 2026-10-21).
 - 논문 저자 문자열 규칙: 쉼표로 구분, 이름 끝의 `*` 는 equal contribution, `†` 는 equal advising, 연구실 멤버(`_data/members.yml` 의 교수와 학생)는 교수와 학생 구분 없이 같은 양식으로 강조한다(굵게 하지 않고 회색 저자 사이에서 본문색).
 
 테마를 바꾼 뒤에는 다섯 페이지를 모두 빌드해 콘텐츠가 빠짐없이 나오는지 확인한다.
@@ -70,8 +72,8 @@ tools/               검사 스크립트
 - **사이트 안에서 끝나게(self-contained) 만든다.** 교수 개인 사이트(Google Sites)로 링크하지 않는다. 필요한 내용(발표 목록 등)은 이 사이트 안으로 들여온다. 논문, 코드, 발표 자료, 강의 시트, 다른 사람의 페이지, 외부 프로필(Google Scholar, GitHub) 같은 원자료 링크는 괜찮다.
 - **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Research > Landscape, 과제는 Research > Funding, 교수 이메일·전화는 Faculty, 연구실 주소와 지원 방법과 랩 세미나는 Contact.
 - **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
-- **컴퓨터 화면에서는 넓게 쓴다.** 본문 폭은 1120px 안팎이고, 모바일처럼 좁은 기둥으로 줄이지 않는다(교수 2026-10-21). 긴 문단만 읽기 좋은 폭(약 820px)으로 묶고, 목록은 한 항목을 한 줄에 가로로 펼쳐 폭을 쓴다. 좁은 화면(680px 이하)에서만 세로로 쌓는다.
-- **한 기둥으로 위에서 아래로 읽게 둔다.** 카드 격자, 좌우 2단, 왼쪽 라벨 칸을 쓰지 않는다(교수 2026-10-21). 지도처럼 넓어야 하는 것만 기둥 밖으로 넓힌다. 버튼 줄(탭)처럼 조작하는 요소는 가로로 놓아도 된다.
+- **컴퓨터 화면에서는 넓게 쓴다.** 전체 폭은 `--container`(1200px), 모바일처럼 좁은 기둥으로 줄이지 않는다(교수 2026-10-21). 긴 문단만 `--measure`(760px)로 묶는다. 좁은 화면에서만 한 칸으로 접는다.
+- **넓은 화면을 전제로 설계하고 12칸 격자에 칸을 배분한다.** 좁은 기둥을 늘려 쓰지 않는다(교수 2026-10-21: "공간은 넓은데 컨텐츠는 좁은 걸 상정해 억지로 늘리면 안 예쁘다"). 나란히 놓는 것은 내용이 대등할 때만(예: 연구 분야 셋, 뉴스와 언론 보도) 쓰고, 절 이름만 왼쪽 칸에 세우는 라벨 칸은 쓰지 않는다.
 - **구분선은 꼭 필요할 때만 쓴다.** 절과 목록 줄은 간격으로 나누고 선을 긋지 않는다. 지금 남은 선은 메뉴 아래 하나다.
 - **탭이나 버튼으로 내용을 바꾸는 요소는 바꿔도 세로 길이가 변하지 않게 한다.** 모든 패널을 같은 자리에 겹쳐 두고 가장 긴 패널 높이에 맞춘다(연구 방향 버튼 `.focus-panels`). 아래 내용이 들썩이지 않게 하려는 것이다.
 - 글보다 그림을 먼저 쓴다. 같은 내용이면 카드, 아이콘, 그림으로 보여 주고 문장은 짧게 줄인다.

@@ -33,8 +33,8 @@ nav:
     url: contact.html
 
 # 테마 선택. 테마를 바꾸려면 아래 두 줄의 "classic" 을 새 테마 폴더 이름으로 바꾼다.
-layouts_dir: _themes/editorial/layouts
-includes_dir: _themes/editorial/includes
+layouts_dir: _themes/wide/layouts
+includes_dir: _themes/wide/includes
 
 markdown: kramdown
 kramdown:

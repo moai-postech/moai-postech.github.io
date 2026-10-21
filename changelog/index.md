@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [wide-theme](2026-10-21-wide-theme.md) | Sangwoo Mo(moai-postech) | 테마 전체, Home, AGENTS.md | editorial → wide 테마(넓은 화면 전제, 12칸 격자, 전역 토큰 3층), 첫 화면 제목을 이름 풀이 두 줄로, 사명 문장 삭제 |
 | 2026-10-21 | [editorial-theme](2026-10-21-editorial-theme.md) | Sangwoo Mo(moai-postech) | 테마 전체, Home | classic → editorial 테마(한 기둥, 카드·좌우·구분선 없음), 모아이 로고, 첫 화면 이름 풀이+사명, 뉴스 전부·보관 페이지, 탭 높이 고정 |
 | 2026-10-21 | [codes-mentees-links](2026-10-21-codes-mentees-links.md) | Sangwoo Mo(moai-postech) | Teaching, Mentees, Publications | 학수번호 제거(개인 사이트 포함), 멘티 소속은 이름 옆·논문은 아래 줄, 링크 화살표 제거 |
 | 2026-10-21 | [self-contained](2026-10-21-self-contained.md) | Sangwoo Mo(moai-postech) | Teaching, Contact, AGENTS.md | 개인 사이트 링크 제거(발표 전체를 Teaching 으로, 예전 것은 접기), 강의 학기별 시트·발표 슬라이드 링크 |

@@ -1,0 +1,13 @@
+{% comment %}limit 이 있으면 최근 limit 개만 보이고, 넘치면 아래에 전체 보관 페이지(more_url, 기본 news.html) 링크를 둔다{% endcomment %}
+{% assign items = site.data[include.section.data] %}{% assign limit = include.section.limit | default: items.size %}
+    <section class="content-section sec-news">
+    <h2>{{ include.section.title }}</h2>
+    <div class="section-body">
+    <ul class="plain news">
+      {% for n in items limit: limit %}<li><time>{{ n.date }}</time><span>{% include inline.html text=n.text %}{% if n.source %} <span class="muted">{{ n.source }}</span>{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+    {% if items.size > limit %}<p class="more"><a href="{{ include.section.more_url | default: 'news.html' }}">All news →</a></p>{% endif %}
+    {% if include.section.note %}<p class="more">{% include inline.html text=include.section.note %}</p>{% endif %}
+    </div>
+    </section>

@@ -1,0 +1,19 @@
+{% comment %}
+  Home 첫 화면. eyebrow 는 제목 위 작은 줄(마크다운, 굵게 쓴 글자는 강조색). acronym 이 있으면 큰 머리글자를 2×2 로 보이고 각 글자 아래에 단어를 둔다
+  (화면 낭독기와 검색에는 heading 이 제목으로 읽힌다). acronym 이 없으면 heading 을 큰 제목으로 쓴다.
+  body 는 그 아래 글(마크다운), image 는 오른쪽 그림, buttons 는 버튼.
+{% endcomment %}
+{% assign s = include.section %}
+    <section class="hero-band"><div class="hero">
+      <div class="hero-copy">
+        {% if s.eyebrow %}<p class="eyebrow">{% include inline.html text=s.eyebrow %}</p>{% endif %}
+        {% if s.acronym %}<h1 class="visually-hidden">{{ s.heading | strip_html }}</h1>
+        <div class="acronym" aria-hidden="true">
+          {% for a in s.acronym %}<div class="acro-cell"><span class="acro-letter">{{ a.letter }}</span><span class="acro-word">{{ a.word }}</span></div>
+          {% endfor %}
+        </div>{% else %}<h1>{% include inline.html text=s.heading %}</h1>{% endif %}
+        {% if s.body %}<div class="hero-text">{{ s.body | markdownify }}</div>{% endif %}
+        {% if s.buttons %}<p class="hero-actions">{% for b in s.buttons %}<a class="button{% if forloop.first %} primary{% endif %}" href="{{ b.url }}">{{ b.label }}</a>{% endfor %}</p>{% endif %}
+      </div>
+      {% if s.image %}<img class="hero-art" src="{{ s.image }}" alt="{{ s.image_alt }}">{% endif %}
+    </div></section>

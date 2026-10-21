@@ -16,3 +16,4 @@
 - slides, poster 를 접어서 보이기: 링크 하나 때문에 조작이 늘어난다.
 - 교수: Oral, Spotlight, Highlight 를 진한 사각형으로 쓰니 별로다. 배경 없이 강조색 굵은 글자로 바꿨다. venue 배지 바로 옆에 붙는 것은 그대로다.
 - 교수: Highlight, Applications Track 이 venue 배지에 너무 붙었다. 배지와의 간격이 4px 이었다(줄 간격 16px 에서 12px 를 당김). 8px 로 늘렸다. 링크 사이 16px 보다는 가까워서 venue 에 딸린 표시로 읽힌다(측정: Oral·Highlight·Spotlight·Track 모두 배지와 8px, 뒤 링크와 16px).
+- 교수: arXiv, code 사이가 너무 넓다. 링크 사이 16px → 12px. venue 배지와 Oral·Track 사이는 8px 그대로. 링크는 venue 와 같은 줄에 둔다(아래 줄로 내리면 논문마다 한 줄씩 늘어 목록이 길어진다).

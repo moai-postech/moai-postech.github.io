@@ -239,9 +239,9 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pubs .authors { color: var(--faint); font-size: var(--text-meta); line-height: 1.5; }
 .pubs .lab { color: var(--text); }
 .pubs .note { margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: 600; line-height: 1.5; }  /* awards: a line of their own, in the accent colour */
-.pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-4); margin-top: 2px; }
-.venue-honor { color: var(--accent); font-size: var(--text-small); font-weight: 700; margin-left: calc(-1 * var(--space-2)); }  /* oral, spotlight, highlight: an honour, so it sits right next to the venue in the accent colour, no box */
-.venue-track { color: var(--muted); font-size: var(--text-small); font-weight: 600; margin-left: calc(-1 * var(--space-2)); }  /* 8px from the venue badge, closer than the 16px between links */
+.pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); margin-top: 2px; }
+.venue-honor { color: var(--accent); font-size: var(--text-small); font-weight: 700; margin-left: calc(-1 * var(--space-1)); }  /* oral, spotlight, highlight: an honour, so it sits right next to the venue in the accent colour, no box */
+.venue-track { color: var(--muted); font-size: var(--text-small); font-weight: 600; margin-left: calc(-1 * var(--space-1)); }  /* 8px from the venue badge, closer than the 12px between links */
 .pub-link { white-space: nowrap; color: var(--muted); font-size: var(--text-small); font-weight: 600; letter-spacing: .02em; }
 .pub-link:hover { color: var(--accent); text-decoration: none; }
 

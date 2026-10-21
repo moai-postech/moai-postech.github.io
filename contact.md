@@ -27,7 +27,7 @@ sections:
       (chjohn1105 [at] postech.ac.kr)
       {: .small .muted}
 
-      To learn about our current research, check our [lab seminar](https://docs.google.com/spreadsheets/d/1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U/edit?usp=sharing) and
+      To learn about our current research, check our [lab seminar](seminar.html) and
       [invited talks](teaching.html#talks).
   - title: "Visit us"
     type: contact-block

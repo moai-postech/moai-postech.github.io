@@ -13,12 +13,16 @@ nav:
     children:
       - title: Overview
         url: research.html
-      - title: Landscape
-        url: landscape.html
+      - title: Lab Seminar
+        url: seminar.html
       - title: Funding
         url: funding.html
   - title: Publications
-    url: publications.html
+    children:
+      - title: List
+        url: publications.html
+      - title: Visualization
+        url: landscape.html
   - title: People
     children:
       - title: Faculty

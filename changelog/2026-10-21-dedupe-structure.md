@@ -46,3 +46,9 @@
 
 - 교수: 분야 카드(아이콘, 이름, 주제들)는 아래에 어차피 나오니 불필요하지 않나.
 - 반영: `research.md` 에서 `research-overview` 절을 뺐다. 바로 아래 분야별 절 제목이 같은 아이콘과 이름으로 나온다. 이 카드는 지도를 Research 맨 위에 두던 때 "정돈된 분류를 먼저" 보이려고 넣은 것인데, 지도를 Landscape 탭으로 옮긴 뒤로는 같은 내용의 반복이 됐다. 테마의 `research-overview` include 는 남겨 둔다.
+
+## 추가(같은 날): Research·Publications 하위 탭 재구성
+
+- 교수: Research 아래에 Overview / Lab Seminar / Funding. Publications 아래에 논문 리스트와 visualization(Paper Stella). (그 전에 Paper Stella 를 Publication 탭으로 옮기는 것을 물었다.)
+- 반영: `_config.yml` 메뉴. Research → Overview(`research.html`), Lab Seminar(새 `seminar.md`), Funding(`funding.html`). Publications → List(`publications.html`), Visualization(`landscape.html`, Paper Stella). Contact 의 "lab seminar" 링크는 외부 시트 대신 `seminar.html` 로(사이트 안에서 이어지게). `AGENTS.md` 의 "지금 자리" 목록과 페이지 목록 갱신.
+- 경위: Paper Stella 는 논문 지도라 논문 목록과 같은 메뉴에 두는 편이 자연스럽다. Lab seminar 는 Teaching(교수가 가르치는 것)도 Contact(지원 안내)도 아닌 연구실 연구 활동이라 Research 아래로.

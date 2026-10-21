@@ -41,3 +41,8 @@
 - 반영: `research.md`(Overview: 소개, 분야 카드, 분야별 표), `landscape.md`(Paper Stella 지도, 16:10 크게), `funding.md`(Government, Industry 를 각각 절로). 메뉴 Research 에 `children`, 각 페이지 위에 전환 탭. Funding 묶음 렌더링은 `includes/funding-list.html` 로 나눴다.
 - 탭 이름: 지도 탭은 `Stella` 대신 `Landscape`. 처음 오는 사람은 Stella 가 무엇인지 모른다. 탭을 열면 Paper Stella 라는 것이 보인다.
 - Funding 위치: Research 아래 유지. 과제 지원 기관이 "어떤 지원으로 무슨 연구를 했나"를 보는 자리라 연구와 붙어 있는 편이 자연스럽다. 기각: 별도 메뉴(6건이라 얇다), Faculty(교수 개인 이력처럼 보인다).
+
+## 추가(같은 날): Research 맨 위 분야 카드 제거
+
+- 교수: 분야 카드(아이콘, 이름, 주제들)는 아래에 어차피 나오니 불필요하지 않나.
+- 반영: `research.md` 에서 `research-overview` 절을 뺐다. 바로 아래 분야별 절 제목이 같은 아이콘과 이름으로 나온다. 이 카드는 지도를 Research 맨 위에 두던 때 "정돈된 분류를 먼저" 보이려고 넣은 것인데, 지도를 Landscape 탭으로 옮긴 뒤로는 같은 내용의 반복이 됐다. 테마의 `research-overview` include 는 남겨 둔다.

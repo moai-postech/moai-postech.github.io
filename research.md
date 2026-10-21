@@ -9,8 +9,6 @@ intro: |
   assumptions improve performance, reliability, and interpretability.
   {: .lede}
 sections:
-  # 맨 위: 분야 카드(누르면 아래 그 분야로)
-  - type: research-overview
   # _data/research.yml 의 분야마다 절 하나씩
   - type: research
 ---

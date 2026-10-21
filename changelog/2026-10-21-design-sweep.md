@@ -61,3 +61,5 @@
 - 교수: Hero 문장이 너무 길다("...and manufacturing" 을 빼는 안을 물음). manufacturing 은 focus 탭과 그림에 있는 세 분야 중 하나라 남기고, 군더더기를 뺐다: "We orchestrate foundation models across vision, language, and sensors for agents, robots, and manufacturing." 22단어 → 15단어. 입력 셋과 출력 셋이 그림 라벨과 같은 말이다. 교수가 goal 로 알아서 진행하라고 해서 추천안을 먼저 적용했다(manufacturing 을 빼는 안도 바로 바꿀 수 있다).
 - 교수: "We orchestrate foundation models across vision, language, and physical sensors to build AI agents, robots, and factories." 가 낫다. 그대로 바꿨다(meta 도 같은 문장). factories 가 manufacturing systems 보다 짧고 agents, robots 와 같은 꼴의 명사라 나란히 읽힌다.
 - Hero 그림 오른쪽 아래 라벨 "Manufacturing" → "Factories". 문장의 agents, robots, factories 와 그림 라벨 Agents, Robots, Factories 가 그대로 짝을 이룬다. 링크 미리보기 이미지도 다시 찍었다.
+- 휴대폰: Faculty 이력, Talks, Teaching 처럼 한 줄 항목이 두세 줄로 꺾이면 항목끼리 붙어 보였다. 휴대폰에서만 항목 위아래 8px(항목 사이 16px)로 넓혔다.
+- 교수 질문(smart factories): 넣지 않는다. 앞의 "AI" 와 겹치고, agents, robots, factories 의 한 단어 리듬이 깨진다.

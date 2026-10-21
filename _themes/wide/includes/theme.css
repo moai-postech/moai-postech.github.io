@@ -332,7 +332,7 @@ a.person-name:hover { color: var(--accent); }
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
   .pubs li { grid-template-columns: 2.5em minmax(0, 1fr); }
   .topic-cards { grid-template-columns: 1fr; }
-  .item-list li { flex-wrap: wrap; gap: 2px var(--space-3); }
+  .item-list li { flex-wrap: wrap; gap: 2px var(--space-3); padding: var(--space-2) 0; }  /* on phones one-line items wrap to two or three lines, so they need the wider gap */
   .funding li { grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--space-3); }
   .funding li span { grid-column: 1 / -1; grid-row: 2; }
   .item-side { margin-left: 0; text-align: left; flex-basis: 100%; }

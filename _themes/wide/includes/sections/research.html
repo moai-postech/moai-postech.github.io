@@ -1,6 +1,8 @@
 {% comment %}
   _data/research.yml 의 분야마다 한 띠: 왼쪽 4칸에 아이콘, 분야 이름, 한 줄 설명. 오른쪽 8칸에 주제 카드(2열).
-  카드: 주제 이름, 문장 하나, 논문 칩(약칭 + venue).
+  카드: 주제 이름, 문장 하나, 대표 논문 한 편(약칭·venue 배지와 전체 제목), 나머지 논문 칩(약칭 + venue, 마우스를 올리면 전체 제목).
+  대표 논문은 고르지 않고 규칙으로 정한다: papers 가 publications.yml 순서(최신이 위)이므로 그중 첫 게재 논문(venue 가 있는 것).
+  전체 제목은 publications.yml(정본)에서 url 이 같은 논문, url 이 없으면 제목이 match 를 담은 논문에서 가져온다.
 {% endcomment %}
 {% for area in site.data.research %}
     <section class="content-section research-area" id="{{ area.area | slugify }}">
@@ -10,10 +12,19 @@
       {% if area.blurb %}<p>{{ area.blurb }}</p>{% endif %}
     </div>
     <div class="topic-cards">
-      {% for t in area.topics %}<div class="topic-card">
+      {% for t in area.topics %}{% assign lead = false %}{% assign lead_title = "" %}{% assign titles = "" | split: "" %}
+      {% for p in t.papers %}{% assign pt = "" %}{% assign pub = false %}
+        {% for g in site.data.publications %}{% for q in g.papers %}{% if p.url %}{% if q.url == p.url or q.official == p.url %}{% assign pub = q %}{% endif %}{% elsif p.match %}{% if q.title contains p.match %}{% assign pub = q %}{% endif %}{% endif %}{% endfor %}{% endfor %}
+        {% if pub %}{% assign pt = pub.title %}{% unless lead %}{% if pub.venue %}{% assign lead = p %}{% assign lead_title = pub.title %}{% endif %}{% endunless %}{% endif %}
+        {% assign titles = titles | push: pt %}
+      {% endfor %}<div class="topic-card">
         <h3>{{ t.name }}</h3>
         <p>{{ t.summary }}</p>
-        <div class="paper-chips">{% for p in t.papers %}{% if p.url %}<a class="chip" href="{{ p.url }}">{% else %}<span class="chip">{% endif %}{{ p.short }} <small>{{ p.venue }}</small>{% if p.url %}</a>{% else %}</span>{% endif %}{% endfor %}</div>
+        {% if lead %}{% if lead.url %}<a class="topic-lead" href="{{ lead.url }}">{% else %}<div class="topic-lead">{% endif %}
+          <span class="venue">{{ lead.short }} · {{ lead.venue }}</span>
+          <span class="paper-title">{{ lead_title }}</span>
+        {% if lead.url %}</a>{% else %}</div>{% endif %}{% endif %}
+        <div class="paper-chips">{% for p in t.papers %}{% if p.short != lead.short %}{% assign pt = titles[forloop.index0] %}{% if p.url %}<a class="chip" href="{{ p.url }}"{% if pt != "" %} title="{{ pt | escape }}"{% endif %}>{% else %}<span class="chip"{% if pt != "" %} title="{{ pt | escape }}"{% endif %}>{% endif %}{{ p.short }} <small>{{ p.venue }}</small>{% if p.url %}</a>{% else %}</span>{% endif %}{% endif %}{% endfor %}</div>
       </div>
       {% endfor %}
     </div>

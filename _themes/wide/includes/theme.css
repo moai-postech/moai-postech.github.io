@@ -202,6 +202,9 @@ a.mentee-name:hover { color: var(--accent); }
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
 .topic-card h3 { margin: 0; font-size: var(--text-body); }
 .topic-card p { margin: 0 0 var(--space-2); color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
+.topic-lead { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-3); background: var(--bg); border-radius: var(--radius-1); color: var(--text); }  /* the newest published paper of the topic, with its full title, so a visitor sees the actual work and not only acronyms */
+.topic-lead .paper-title { font-size: var(--text-meta); font-weight: 600; line-height: 1.45; }
+a.topic-lead:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .paper-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: auto; }
 .chip { display: inline-flex; align-items: baseline; gap: var(--space-1); padding: 2px var(--space-2); background: var(--bg); border-radius: var(--radius-1); color: var(--text); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
 .chip small { color: var(--faint); font-size: var(--text-small); font-weight: 500; }

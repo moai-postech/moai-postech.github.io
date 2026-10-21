@@ -49,3 +49,9 @@
 - 교수: "The lab started at POSTECH." → "MOAI Lab started" 가 낫다. Our focus 아래 논문이 현재 탭에 속한다는 게 안 드러난다(LoC 가 Physical AI 아래 있어 그쪽 같다), 논문과 멤버를 그룹으로 묶어야 한다. 탭을 넘겨도 세로 길이는 같아야 하고 멤버의 세로 위치가 같아야 한다, 논문 제목이 짧으면 여백(phantom)을 둔다.
 - 반영: `_data/news.yml` 마지막 줄 "MOAI Lab started at POSTECH.". 선택한 탭과 패널을 같은 연한 배경의 한 상자로 이어 붙였다(탭 아래 모서리를 없애고 패널과 맞닿게, 다른 탭은 테두리만). 논문 카드는 상자 안의 흰 카드라 위 탭 칸과 줄이 맞아 보이지 않는다. 패널마다 상자 전체 높이로 늘리고 멤버 줄을 바닥에 붙였다(`margin-top: auto`). 세 탭 모두 상자 385px, 멤버 줄 304px 로 측정. `AGENTS.md` 탭 높이 규칙에 "아래쪽 요소는 탭마다 같은 세로 위치" 를 더했다.
 - 기각: 논문을 세 칸 격자로 탭 바로 아래 맞춰 두기(어느 탭 것인지 헷갈린다, 교수).
+
+## 추가(같은 날): 제목에 "Lab", 연구 철학 한 줄
+
+- 교수: "MOAI Lab at POSTECH" 줄은 별로, 연구 철학을 짧게 쓰자. 제목은 "Multimodal Orchestration of / Artificial Intelligence Lab" 으로 Lab 을 넣자. 철학 문장의 scalable priors 를 강조.
+- 반영: 제목 `**M**ultimodal **O**rchestration of <br>**A**rtificial **I**ntelligence Lab`. "Lab" 이 들어가 두 줄이 27/27자로 같아져, 앞서 "of" 를 아래로 내린 이유(길이 균형)가 사라져 이 배치로 했다. 970~1440px 모두 두 줄. 아래 문장은 "We design **scalable priors** that make foundation models more capable, reliable, and interpretable."(강조색), `--text-lead` 크기. 소속 줄은 지웠다(POSTECH 은 머리글 로고 옆이 아니라 탭 제목, Faculty, Contact 에 있다).
+- 기각: "(MOAI)" 를 덧붙이기(머리글자 강조와 로고와 중복, 둘째 줄이 넘친다). 철학 후보 "Scalable priors for AI."(뜻이 덜 전해진다), "Even in the era of foundation models, well-designed priors matter."(무엇을 하는지 덜 드러난다).

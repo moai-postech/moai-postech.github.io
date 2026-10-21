@@ -46,3 +46,11 @@
 - 교수: "reason and act reliably" 가 꼭 필요한가. 뺐다. "We orchestrate foundation models across vision, language, and physical sensors to build AI for the real world." 무엇을 하는지는 그대로이고, 어디에 쓰는지는 그림(Agents, Robots, Manufacturing)과 focus 탭이 보여 준다.
 - 교수: "to build AI for the real world" 에 구체성을. "We orchestrate foundation models across vision, language, and physical sensors to build AI agents, robots, and manufacturing systems." 입력 셋과 출력 셋이 그림의 왼쪽·오른쪽과 같은 말이고, 출력 순서는 바로 아래 focus 탭(Agentic, Physical, Manufacturing)과 같다.
 - 태블릿(820px) 점검: hero 그림이 화면 폭 거의 전체(640px)를 차지해 focus 가 첫 화면 밖으로 밀렸다. 960px 이하에서 최대 440px, 가운데 정렬. focus 탭은 "Manufacturing AI" 만 두 줄이 되어 아이콘 높이가 어긋나던 것을, 960px 이하에서 아이콘 위·글자 아래로 세우고 탭 높이를 맞췄다.
+
+## 이어서: 전체 점검(교수 goal: 꼼꼼하게 살펴보고 리비전)
+
+- 링크 미리보기: Slack·카카오·X 에 링크를 붙이면 제목만 나오던 것을, 모든 페이지에 og/twitter 메타(제목, 설명, 이미지, 주소)를 넣었다. 이미지 `assets/img/og.png`(1200×630)는 로고, 제목(MOAI 머리글자 강조), POSTECH, hero 그림을 한 장에 담았다. 만드는 법과 원본은 `tools/og/`(색이나 그림을 바꾸면 다시 찍는다).
+- iOS 홈 화면 아이콘 `assets/img/apple-touch-icon.png`(로고, 흰 배경).
+- 404 페이지: GitHub 기본 404 대신 사이트 머리·메뉴가 있는 "This page does not exist." 페이지. 어떤 주소에서 열려도 CSS 가 깨지지 않게 그 페이지에만 `<base href="/">`.
+- 교수 질문(Seminar 의 Lab 에 인턴·멘티가 포함된다고 밝힐까): 밝히지 않는다. Lab 은 "랩 세미나의 내부 발표"로 읽히고, 인턴·멘티도 그 세미나의 사람이다.
+- 교수 질문(Chung-Ang univ. → CAU): 그대로 둔다. 같은 칸의 KAIST, UMich, Stanford 와 달리 CAU 는 해외에서 알아보기 어렵다.

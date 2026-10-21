@@ -3,9 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{% if page.url == '/404.html' %}<base href="/">{% endif %}
 <title>{% if page.head_title %}{{ page.head_title }}{% else %}{{ page.title }} — {{ site.title }}{% endif %}</title>
 <meta name="description" content="{{ page.description }}">
 {% if site.logo %}<link rel="icon" href="{{ site.logo }}" type="image/svg+xml">{% endif %}
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{% if page.head_title %}{{ page.head_title }}{% else %}{{ page.title }} — {{ site.title }}{% endif %}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:image" content="https://moai-postech.github.io/assets/img/og.png">
+<meta property="og:url" content="https://moai-postech.github.io{{ page.url | replace: 'index.html', '' }}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">

@@ -1,0 +1,11 @@
+{% comment %}
+  Contact 의 절 하나: 일반 절(title + body)과 같지만 section 에 contact-<id> 클래스를 달아
+  theme.css 가 Join us 상자와 아래 두 칸(Before you apply, Visit us)을 배치할 수 있게 한다.
+{% endcomment %}
+{% assign s = include.section %}
+    <section class="content-section contact-block{% if s.id %} contact-{{ s.id }}{% endif %}">
+    <h2{% if s.id %} id="{{ s.id }}"{% endif %}>{{ s.title }}</h2>
+    <div class="section-body">
+    {{ s.body | markdownify }}
+    </div>
+    </section>

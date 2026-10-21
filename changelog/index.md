@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [contact-redesign](2026-10-21-contact-redesign.md) | Sangwoo Mo(moai-postech) | Contact | Join us 전체 폭 패널, Before you apply·Visit us 6:6, 글자 위계 정리 |
 | 2026-10-21 | [student-photos-talks](2026-10-21-student-photos-talks.md) | Sangwoo Mo(moai-postech) | Students, Teaching | 학생 사진 5장(개인 사이트), 2명은 실루엣, 발표 제목에 슬라이드 링크, 장소 표기 정리 |
 | 2026-10-21 | [below-not-right-faculty-cv](2026-10-21-below-not-right-faculty-cv.md) | Sangwoo Mo(moai-postech) | wide 테마, Publications, Faculty | 딸린 정보는 아래로(오른쪽은 여백), 논문 링크 Paper 부터, Faculty 에 Appointments·Education·Services·Honors |
 | 2026-10-21 | [wide-theme](2026-10-21-wide-theme.md) | Sangwoo Mo(moai-postech) | 테마 전체, Home, AGENTS.md | editorial → wide 테마(넓은 화면 전제, 12칸 격자, 전역 토큰 3층), 첫 화면 제목을 이름 풀이 두 줄로, 사명 문장 삭제 |

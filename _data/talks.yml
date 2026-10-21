@@ -30,13 +30,3 @@
     - title: "Scalable Priors for Foundation Models"
       url: "https://drive.google.com/file/d/1GergS_BJ7_RUksPY_1iZtL3kW7RbSake/view?usp=sharing"
       venues: ["POSTECH", "UNIST", "DGIST"]
-- year: "Before 2025"
-  talks:
-    - title: "A Closer and Broader Look at Foundation Models"
-      venues: ["Yonsei univ.", "Korea univ."]
-    - title: "Foundation Models for Vision, Language, and Multimodality"
-      venues: ["Hanyang univ."]
-    - title: "Learning Visual Representations from Uncurated Data"
-      venues: ["Stanford", "UCSD", "University of Michigan"]
-    - title: "Brief History of Visual Representation Learning"
-      venues: ["Korea univ."]

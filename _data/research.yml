@@ -1,38 +1,80 @@
-# Research 페이지의 분야별 표. area 가 절 제목, topics 가 그 안의 줄이다.
-# icon 은 assets/img/icons/<icon>.png. papers 는 마크다운 한 줄: [약칭 (학회'연도)](주소), ... 형식. 표기 규칙은 AGENTS.md.
+# Research > Overview 의 분야. area 가 분야 이름, blurb 가 분야 한 줄 설명, topics 가 그 안의 주제 카드다.
+# icon 은 assets/img/icons/<icon>.png. 주제마다 summary(문장 하나, 대문자로 시작, 마침표)와 papers(약칭, venue, url).
+# venue 는 `학회'연도` 꼴(AGENTS.md 표기 규칙). 연도가 '26 이후인 논문은 MOAI Lab 논문으로 강조된다(템플릿).
+# 논문 url 이 없으면 칩이 링크 없이 보인다. 2026-10-21 마크다운 한 줄 형식에서 목록으로 바꿨다.
 - area: "Vision & Multimodal"
   icon: vision
+  blurb: "How models see: structure in scenes, learning from imperfect data, and generation you can trust."
   topics:
     - name: "Visual Structure"
-      summary: "scenes as objects, parts, and motion"
-      papers: "[InstaGAN (ICLR'19)](https://arxiv.org/abs/1812.10889), [OACon (NeurIPS'21)](https://arxiv.org/abs/2108.00049), [OAMixer (CVPRW'22)](https://arxiv.org/abs/2212.06595), [DIGAN (ICLR'22)](https://arxiv.org/abs/2202.10571), [CAST (ICLR'24)](https://arxiv.org/abs/2210.00314), [CAFT (NeurIPS'26)](https://arxiv.org/abs/2602.02977), [SHED (TMLR'26)](https://www.arxiv.org/abs/2601.22529)"
+      summary: "Representing scenes as objects, parts, and motion."
+      papers:
+        - { short: "InstaGAN", venue: "ICLR'19", url: "https://arxiv.org/abs/1812.10889" }
+        - { short: "OACon", venue: "NeurIPS'21", url: "https://arxiv.org/abs/2108.00049" }
+        - { short: "OAMixer", venue: "CVPRW'22", url: "https://arxiv.org/abs/2212.06595" }
+        - { short: "DIGAN", venue: "ICLR'22", url: "https://arxiv.org/abs/2202.10571" }
+        - { short: "CAST", venue: "ICLR'24", url: "https://arxiv.org/abs/2210.00314" }
+        - { short: "CAFT", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2602.02977" }
+        - { short: "SHED", venue: "TMLR'26", url: "https://www.arxiv.org/abs/2601.22529" }
     - name: "Learning in the Wild"
-      summary: "limited, uncurated, or novel data"
-      papers: "[CSI (NeurIPS'20)](https://arxiv.org/abs/2007.08176), [MASKER (AAAI'21)](https://arxiv.org/abs/2012.09392), [RoPAWS (ICLR'23)](https://arxiv.org/abs/2302.14483), [S-CLIP (NeurIPS'23)](https://arxiv.org/abs/2305.14095), [OAK (CVPR'25)](https://arxiv.org/abs/2512.16202), [ToMA (NeurIPS'26)](https://arxiv.org/abs/2604.26370), [T-PRH (arXiv'26)](https://arxiv.org/abs/2609.27252)"
+      summary: "Learning from limited, uncurated, or novel data."
+      papers:
+        - { short: "CSI", venue: "NeurIPS'20", url: "https://arxiv.org/abs/2007.08176" }
+        - { short: "MASKER", venue: "AAAI'21", url: "https://arxiv.org/abs/2012.09392" }
+        - { short: "RoPAWS", venue: "ICLR'23", url: "https://arxiv.org/abs/2302.14483" }
+        - { short: "S-CLIP", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2305.14095" }
+        - { short: "OAK", venue: "CVPR'25", url: "https://arxiv.org/abs/2512.16202" }
+        - { short: "ToMA", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2604.26370" }
+        - { short: "T-PRH", venue: "arXiv'26", url: "https://arxiv.org/abs/2609.27252" }
     - name: "Reliable Generation"
-      summary: "under bias, noise, and scarce data"
-      papers: "[GOLD (NeurIPS'19)](https://arxiv.org/abs/1910.09170), [FreezeD (CVPRW'20)](https://arxiv.org/abs/2002.10964), [FICS (TMLR'23)](https://arxiv.org/abs/2212.02090), [StayFair (NeurIPS'26)](https://arxiv.org/abs/2605.28036)"
+      summary: "Generating faithfully under bias, noise, and scarce data."
+      papers:
+        - { short: "GOLD", venue: "NeurIPS'19", url: "https://arxiv.org/abs/1910.09170" }
+        - { short: "FreezeD", venue: "CVPRW'20", url: "https://arxiv.org/abs/2002.10964" }
+        - { short: "FICS", venue: "TMLR'23", url: "https://arxiv.org/abs/2212.02090" }
+        - { short: "StayFair", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2605.28036" }
 - area: "Language & Reasoning"
   icon: language
+  blurb: "How models think and work: reasoning agents, efficient LLMs, and foundation models applied to real problems."
   topics:
     - name: "Reasoning & Agents"
-      summary: "long-horizon tasks with memory"
-      papers: "[SuRe (ICLR'24)](https://arxiv.org/abs/2404.13081), [Idis (EMNLP'26)](https://arxiv.org/abs/2511.21397), [TEG (arXiv'26)](https://arxiv.org/abs/2610.05060), [LoC (arXiv'26)](https://arxiv.org/abs/2610.21318)"
+      summary: "Grounding reasoning in evidence and correcting its errors."
+      papers:
+        - { short: "SuRe", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.13081" }
+        - { short: "Idis", venue: "EMNLP'26", url: "https://arxiv.org/abs/2511.21397" }
+        - { short: "TEG", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.05060" }
+        - { short: "LoC", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.21318" }
     - name: "Efficient LLMs"
-      summary: "cutting compute, extending context"
-      papers: "[LAP (ICLR'20)](https://arxiv.org/abs/2002.04809), [LAMP (ICLR'21)](https://arxiv.org/abs/2010.07611), [HOMER (ICLR'24)](https://arxiv.org/abs/2404.10308), [Simba (TMLR'25)](https://arxiv.org/abs/2505.20698)"
+      summary: "Cutting compute and extending context."
+      papers:
+        - { short: "LAP", venue: "ICLR'20", url: "https://arxiv.org/abs/2002.04809" }
+        - { short: "LAMP", venue: "ICLR'21", url: "https://arxiv.org/abs/2010.07611" }
+        - { short: "HOMER", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.10308" }
+        - { short: "Simba", venue: "TMLR'25", url: "https://arxiv.org/abs/2505.20698" }
     - name: "FM Applications"
-      summary: "real-world problems across domains"
-      papers: "[B2T (CVPR'24)](https://arxiv.org/abs/2301.11104), [PDS (ICLR'26)](https://arxiv.org/abs/2602.19756), [PRIS (CVPR'26)](https://arxiv.org/abs/2512.03534), I2A (WACV'27)"
+      summary: "Solving real-world problems with foundation models."
+      papers:
+        - { short: "B2T", venue: "CVPR'24", url: "https://arxiv.org/abs/2301.11104" }
+        - { short: "PDS", venue: "ICLR'26", url: "https://arxiv.org/abs/2602.19756" }
+        - { short: "PRIS", venue: "CVPR'26", url: "https://arxiv.org/abs/2512.03534" }
+        - { short: "I2A", venue: "WACV'27" }
     - name: "Structured Data"
-      summary: "graphs, tables, and time-series"
-      papers: "[LoGe (ICMLW'21)](https://arxiv.org/abs/2107.10493), [DPM-SNC (NeurIPS'23)](https://arxiv.org/abs/2302.10506), PRISM (arXiv'26)"
+      summary: "Learning on graphs, tables, and time series."
+      papers:
+        - { short: "LoGe", venue: "ICMLW'21", url: "https://arxiv.org/abs/2107.10493" }
+        - { short: "DPM-SNC", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2302.10506" }
+        - { short: "PRISM", venue: "arXiv'26" }
 - area: "Robotics & Embodied AI"
   icon: robotics
+  blurb: "How models act: robots that perceive, plan, and sense the physical world."
   topics:
     - name: "VLA & World Models"
-      summary: "robots that perceive, plan, and act"
-      papers: "[VAP (ICML'26)](https://arxiv.org/abs/2512.20014), [INDI (arXiv'26)](https://arxiv.org/abs/2608.23478)"
+      summary: "Building robots that perceive, plan, and act."
+      papers:
+        - { short: "VAP", venue: "ICML'26", url: "https://arxiv.org/abs/2512.20014" }
+        - { short: "INDI", venue: "arXiv'26", url: "https://arxiv.org/abs/2608.23478" }
     - name: "Multisensory Learning"
-      summary: "touch and other non-visual modalities"
-      papers: "[EIT-NN (IROS'19)](https://ieeexplore.ieee.org/document/8968532), [EIT-NN2 (T-RO'21)](https://ieeexplore.ieee.org/document/9376677)"
+      summary: "Sensing touch and other non-visual signals."
+      papers:
+        - { short: "EIT-NN", venue: "IROS'19", url: "https://ieeexplore.ieee.org/document/8968532" }
+        - { short: "EIT-NN2", venue: "T-RO'21", url: "https://ieeexplore.ieee.org/document/9376677" }

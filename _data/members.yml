@@ -15,47 +15,47 @@ professor:
 
     Previously, he was a postdoctoral fellow at the [University of Michigan](https://umich.edu/), working with Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/), and earned his Ph.D. from [KAIST](https://www.kaist.ac.kr/en/) under the supervision of Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html). He has collaborated with leading research labs including Google, Meta, and NVIDIA, and has been supported by fellowships from Samsung and Qualcomm.
   # Faculty 페이지 Bio 아래 절들. 개인 사이트 About 의 Appointments, Education, Services, Honors & Awards 와 같은 내용.
-  cv:
+  cv:   # 항목은 문자열, 또는 { text: 무엇, side: 언제·어디 } (side 는 오른쪽 끝에 붙는다)
     - title: "Appointments"
       groups:
         - title: "Faculty positions"
           items:
-            - "POSTECH, Assistant Professor, 2025–present (Korea)"
+            - { text: "POSTECH, Assistant Professor", side: "2025–present · Korea" }
         - title: "Research positions"
           items:
-            - "U Michigan, Postdoctoral Fellow (host: Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)), 2023–2025 (US)"
-            - "NVIDIA AI, Research Intern (host: Dr. [Weili Nie](https://weilinie.github.io/)), 2022 Winter (US, remote)"
-            - "Meta AI, Research Intern (host: Dr. [Jong-Chyi Su](https://jongchyisu.github.io/)), 2022 Summer (US)"
-            - "Naver AI, Collaborator (host: Dr. [Jung-Woo Ha](https://aidljwha.wordpress.com/)), 2021 Summer (Korea)"
-            - "Google AI, Collaborator (host: Dr. [Kihyuk Sohn](https://sites.google.com/site/kihyuksml/)), 2020 Winter (US, remote)"
-            - "Kakao Brain, Research Intern (host: Dr. [Sungwoong Kim](https://sites.google.com/view/swkim)), 2019 Spring (Korea)"
+            - { text: "U Michigan, Postdoctoral Fellow (host: Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/))", side: "2023–2025 · US" }
+            - { text: "NVIDIA AI, Research Intern (host: Dr. [Weili Nie](https://weilinie.github.io/))", side: "2022 Winter · US, remote" }
+            - { text: "Meta AI, Research Intern (host: Dr. [Jong-Chyi Su](https://jongchyisu.github.io/))", side: "2022 Summer · US" }
+            - { text: "Naver AI, Collaborator (host: Dr. [Jung-Woo Ha](https://aidljwha.wordpress.com/))", side: "2021 Summer · Korea" }
+            - { text: "Google AI, Collaborator (host: Dr. [Kihyuk Sohn](https://sites.google.com/site/kihyuksml/))", side: "2020 Winter · US, remote" }
+            - { text: "Kakao Brain, Research Intern (host: Dr. [Sungwoong Kim](https://sites.google.com/view/swkim))", side: "2019 Spring · Korea" }
     - title: "Education"
       groups:
         - items:
-            - "KAIST, M.S./Ph.D. in Electrical Engineering, 2023 (advisor: Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html))<br>Ph.D. Thesis: [Learning Visual Representations from Uncurated Data](https://koasas.kaist.ac.kr/handle/10203/320934)"
-            - "POSTECH, B.S. in Mathematics & Industrial Engineering (minor), 2016, summa cum laude"
+            - { text: "KAIST, M.S./Ph.D. in Electrical Engineering (advisor: Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html))<br>Ph.D. Thesis: [Learning Visual Representations from Uncurated Data](https://koasas.kaist.ac.kr/handle/10203/320934)", side: "2023" }
+            - { text: "POSTECH, B.S. in Mathematics & Industrial Engineering (minor), summa cum laude", side: "2016" }
     - title: "Services"
       groups:
         - title: "Senior committee (AC, Editor)"
           items:
-            - "Area Chair, ICLR 2027"
+            - { text: "Area Chair", side: "ICLR 2027" }
         - title: "Workshop organizer"
           items:
-            - "[Structural Priors for Vision (SP4V)](https://sp4v.github.io/) @ ICCV'25"
-            - "[Pixel-level Vision Foundation Models (PixFoundation)](https://sites.google.com/view/pixfoundation) @ CVPR'25"
-            - "[Virtual Humans for Robotics and Autonomous Driving (POETS)](https://poets2024.github.io/) @ CVPR'24"
+            - { text: "[Structural Priors for Vision (SP4V)](https://sp4v.github.io/)", side: "ICCV'25" }
+            - { text: "[Pixel-level Vision Foundation Models (PixFoundation)](https://sites.google.com/view/pixfoundation)", side: "CVPR'25" }
+            - { text: "[Virtual Humans for Robotics and Autonomous Driving (POETS)](https://poets2024.github.io/)", side: "CVPR'24" }
         - title: "Reviewer"
           items:
-            - "Conference: NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, COLM, etc."
-            - "Journal: TPAMI, TMLR, TNNLS, IJCV, etc."
+            - { text: "Conference", side: "NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, COLM, etc." }
+            - { text: "Journal", side: "TPAMI, TMLR, TNNLS, IJCV, etc." }
     - title: "Honors & Awards"
       groups:
         - items:
-            - "Bronze Prize, Samsung Humantech Paper Awards, 2019 (₩5M)"
-            - "Qualcomm Innovation Fellowship Korea, 2020 (₩4M)"
-            - "Qualcomm Innovation Fellowship Korea, 2021 (₩4M)"
-            - "Best Paper Award, Korean AI Association Fall Conference, 2022 (₩2M)"
-            - "Reviewer Award: NeurIPS'20, ICML'20/21, ICLR'21/25"
+            - { text: "Bronze Prize, Samsung Humantech Paper Awards (₩5M)", side: "2019" }
+            - { text: "Qualcomm Innovation Fellowship Korea (₩4M)", side: "2020" }
+            - { text: "Qualcomm Innovation Fellowship Korea (₩4M)", side: "2021" }
+            - { text: "Best Paper Award, Korean AI Association Fall Conference (₩2M)", side: "2022" }
+            - { text: "Reviewer Award", side: "NeurIPS'20, ICML'20/21, ICLR'21/25" }
 groups:
   - title: "Ph.D. students"
     people:

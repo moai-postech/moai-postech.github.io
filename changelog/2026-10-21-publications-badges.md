@@ -15,3 +15,4 @@
 - 발표 형식을 venue 글자 안에 유지: 배지 안 글자가 길어지고, 성과(oral)가 venue 이름에 묻힌다.
 - slides, poster 를 접어서 보이기: 링크 하나 때문에 조작이 늘어난다.
 - 교수: Oral, Spotlight, Highlight 를 진한 사각형으로 쓰니 별로다. 배경 없이 강조색 굵은 글자로 바꿨다. venue 배지 바로 옆에 붙는 것은 그대로다.
+- 교수: Highlight, Applications Track 이 venue 배지에 너무 붙었다. 배지와의 간격이 4px 이었다(줄 간격 16px 에서 12px 를 당김). 8px 로 늘렸다. 링크 사이 16px 보다는 가까워서 venue 에 딸린 표시로 읽힌다(측정: Oral·Highlight·Spotlight·Track 모두 배지와 8px, 뒤 링크와 16px).

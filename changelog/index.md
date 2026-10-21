@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [publications-typography](2026-10-22-publications-typography.md) | Sangwoo Mo(moai-postech) | Publications | 번호와 제목 기준선 맞춤, 위첨자가 저자 줄을 늘리지 않게, 논문 사이를 `--item-gap` 으로, 연도 제목 자간을 Talks 와 같게 |
 | 2026-10-22 | [canonical-source](2026-10-22-canonical-source.md) | Sangwoo Mo(moai-postech) | AGENTS.md | 이 사이트가 연구 사실의 정본, 교수 프로필만 개인 사이트·CV 와 맞춤 |
 | 2026-10-22 | [contact-visual](2026-10-22-contact-visual.md) | Sangwoo Mo(moai-postech) | Contact | Join us 를 단계 카드 둘과 경로 그림으로, Before you apply 를 1단계로 합침, Visit us 에 핀 아이콘과 Google 지도, 문장 짧게 |
 | 2026-10-22 | [research-overview-polish](2026-10-22-research-overview-polish.md) | Sangwoo Mo(moai-postech) | Research | 소개에 세 분야 링크, 분야 설명이 카드 이름을 반복하지 않게, `FM Applications` → `Applications of VLMs`, 분야 머리 sticky와 홀수 카드 전체 폭 |

@@ -247,12 +247,13 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .embed-caption { margin-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); }
 
 /* Publications: title, authors, then venue and links under them */
-.page-publications h2 { font-size: var(--text-lead); }  /* year headings: same size as the Seminar and Talks years */
-.pubs li { display: grid; grid-template-columns: 2.75em minmax(0, 1fr); row-gap: var(--space-1); padding: var(--space-4) 0; }  /* number column, then title, authors, venue, award with one even gap; a wider gap between papers */
+.page-publications h2 { margin-bottom: var(--space-4); font-size: var(--text-lead); letter-spacing: normal; }  /* year headings: same size and tracking as the Seminar and Talks years; 16px below keeps a year closer to its first paper than papers are to each other */
+.page-publications sup { line-height: 0; }  /* the equal-contribution marks no longer push their author line 2.5px taller than the others */
+.pubs li { display: grid; grid-template-columns: 2.75em minmax(0, 1fr); row-gap: var(--space-1); padding: var(--item-gap) 0; }  /* number column, then title, authors, venue, award with one even 4px gap; --item-gap between papers */
 .pubs li > * { grid-column: 2; }
-.pubs li > .pub-num { grid-column: 1; grid-row: 1; color: var(--faint); font-size: var(--text-meta); font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.65; }
+.pubs li > .pub-num { grid-column: 1; grid-row: 1; align-self: baseline; color: var(--faint); font-size: var(--text-meta); font-weight: 600; font-variant-numeric: tabular-nums; }  /* shares its baseline with the title (it sat 1px high) */
 .pubs li:first-child { padding-top: 0; }
-.pubs .title { display: block; font-weight: 600; line-height: 1.5; }
+.pubs .title { display: block; align-self: baseline; font-weight: 600; line-height: 1.5; }
 .pubs .title a { color: var(--text); }
 .pubs .title a:hover { color: var(--accent); }
 .pubs .authors { color: var(--faint); font-size: var(--text-meta); line-height: 1.5; }

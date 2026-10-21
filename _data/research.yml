@@ -1,6 +1,6 @@
 # Research > Overview 의 분야. area 가 분야 이름, blurb 가 분야 한 줄 설명, topics 가 그 안의 주제 카드다.
 # icon 은 assets/img/icons/<icon>.png. 주제마다 summary(문장 하나, 대문자로 시작, 마침표)와 papers(약칭, venue, url).
-# venue 는 `학회'연도` 꼴(AGENTS.md 표기 규칙). 연도가 '26 이후인 논문은 MOAI Lab 논문으로 강조된다(템플릿).
+# venue 는 `학회'연도` 꼴(AGENTS.md 표기 규칙). 교수의 논문은 시기와 무관하게 모두 MOAI Lab 논문이다. 랩 시작 전후로 나누지 않는다.
 # 논문 url 이 없으면 칩이 링크 없이 보인다. 2026-10-21 마크다운 한 줄 형식에서 목록으로 바꿨다.
 - area: "Vision & Multimodal"
   icon: vision

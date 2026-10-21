@@ -6,7 +6,7 @@ description: "Research of MOAI Lab at POSTECH: vision and multimodal, language a
 intro: |
   Our goal is to design scalable priors for AI. Even in the era of data-centric foundation models,
   the right inductive biases, such as domain structure and statistical assumptions, make models
-  perform better, fail less, and explain more. Papers since MOAI Lab started are <span class="chip chip-lab">highlighted</span>.
+  perform better, fail less, and explain more.
   {: .lede}
 sections:
   # _data/research.yml 의 분야마다 절 하나씩

@@ -1,6 +1,6 @@
 {% comment %}
   _data/research.yml 의 분야마다 한 띠: 왼쪽 4칸에 아이콘, 분야 이름, 한 줄 설명. 오른쪽 8칸에 주제 카드(2열).
-  카드: 주제 이름, 문장 하나, 논문 칩(약칭 + venue). venue 연도가 '26 이후면 MOAI Lab 논문으로 강조한다.
+  카드: 주제 이름, 문장 하나, 논문 칩(약칭 + venue).
 {% endcomment %}
 {% for area in site.data.research %}
     <section class="content-section research-area" id="{{ area.area | slugify }}">
@@ -13,7 +13,7 @@
       {% for t in area.topics %}<div class="topic-card">
         <h3>{{ t.name }}</h3>
         <p>{{ t.summary }}</p>
-        <div class="paper-chips">{% for p in t.papers %}{% assign yy = p.venue | split: "'" | last | plus: 0 %}{% if p.url %}<a class="chip{% if yy >= 26 %} chip-lab{% endif %}" href="{{ p.url }}">{% else %}<span class="chip{% if yy >= 26 %} chip-lab{% endif %}">{% endif %}{{ p.short }} <small>{{ p.venue }}</small>{% if p.url %}</a>{% else %}</span>{% endif %}{% endfor %}</div>
+        <div class="paper-chips">{% for p in t.papers %}{% if p.url %}<a class="chip" href="{{ p.url }}">{% else %}<span class="chip">{% endif %}{{ p.short }} <small>{{ p.venue }}</small>{% if p.url %}</a>{% else %}</span>{% endif %}{% endfor %}</div>
       </div>
       {% endfor %}
     </div>

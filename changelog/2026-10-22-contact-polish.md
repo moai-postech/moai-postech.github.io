@@ -1,0 +1,15 @@
+# Contact 문장, Join us 연락, 전화번호 위치 (2026-10-22)
+
+- 작성자: Sangwoo Mo(moai-postech), 교수 요청
+- 대상: `contact.md`, `_data/members.yml`(교수 `contact`, `bio`)
+
+## 바꾼 것
+
+- 소개: "Above all, we look for a genuine passion for AI. Next comes clear logical thinking, which matters more than a long CV." → "Above all, we look for a genuine passion for AI, backed by clear logical thinking. Both matter more than a long CV." 교수: logical thinking 은 "next comes" 로 밀릴 것이 아니다. 열정을 앞에 두되 둘을 한 문장으로 묶었다.
+- Join us 2단계: 이메일 주소를 적던 줄을 "Email them to Prof. Sangwoo Mo." 로 바꾸고 이름을 Faculty 페이지로 링크했다(이메일은 Faculty 에 있다).
+- 전화번호: Faculty 프로필의 `contact` 에서 빼고 Contact 의 Visit us 주소 아래 "Phone +82-54-279-2202" 로 옮겼다. 방문 정보와 한곳에 모인다.
+- Faculty Bio: "the Qualcomm Innovation Fellowship twice" → "the Qualcomm Innovation Fellowship"(교수: 굳이 자랑하지 않는다). 개인 사이트 Bio 도 같이 고친다.
+
+## 기각한 안
+
+- "We look for a genuine passion for AI and clear logical thinking." 처럼 둘을 대등하게 나열하는 안: 열정이 가장 중요하다는 교수 우선순위가 흐려진다.

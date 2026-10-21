@@ -3,8 +3,8 @@ layout: page
 title: Contact
 description: "Contact MOAI Lab at POSTECH, and how to join as a graduate student or undergraduate intern."
 intro: |
-  Above all, we look for a genuine passion for AI.
-  Next comes clear logical thinking, which matters more than a long CV.
+  Above all, we look for a genuine passion for AI, backed by clear logical thinking.
+  Both matter more than a long CV.
   {: .lede}
 sections:
   - title: "Join us"
@@ -24,7 +24,7 @@ sections:
           {: .small .muted}
       - title: "Send your CV and transcript"
         body: |
-          To Prof. Sangwoo Mo ({first_name}.{last_name} [at] postech.ac.kr).
+          Email them to [Prof. Sangwoo Mo](faculty.html).
   - title: "Visit us"
     type: contact-block
     id: visit
@@ -32,7 +32,8 @@ sections:
     body: |
       Science Building 4, Room 319<br>
       [Department of Industrial and Management Engineering](https://ime.postech.ac.kr/), POSTECH<br>
-      77 Cheongam-ro, Nam-gu, Pohang, Gyeongbuk 37673, Korea
+      77 Cheongam-ro, Nam-gu, Pohang, Gyeongbuk 37673, Korea<br>
+      Phone +82-54-279-2202
     map: "https://www.google.com/maps?q=Pohang+University+of+Science+and+Technology&hl=en&z=15&output=embed"
     map_label: "Map of POSTECH, Pohang"
 ---

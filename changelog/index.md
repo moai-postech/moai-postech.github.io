@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [contact-polish](2026-10-22-contact-polish.md) | Sangwoo Mo(moai-postech) | Contact, Faculty | 소개 문장 다듬기, Join us 는 Faculty 로 링크, 전화번호를 Visit us 로, Bio 의 twice 삭제 |
 | 2026-10-22 | [link-color](2026-10-22-link-color.md) | Sangwoo Mo(moai-postech) | 테마, Research | 링크 기본색을 본문색으로, 눌러야 할 링크만 강조색. Applications 설명을 foundation models 로 |
 | 2026-10-22 | [mentee-advisor-color](2026-10-22-mentee-advisor-color.md) | Sangwoo Mo(moai-postech) | Mentees | 지도교수 링크를 회색으로, hover 때만 강조색 |
 | 2026-10-22 | [faculty-bio-research](2026-10-22-faculty-bio-research.md) | Sangwoo Mo(moai-postech) | Faculty | Bio 연구 소개를 두 문장으로: 이전 문장 + scalable priors 관심(개인 사이트 Bio 와 동기화) |

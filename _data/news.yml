@@ -1,6 +1,6 @@
 # Home 의 Research news. 위가 최신이다. text 는 마크다운(링크는 [글](주소)).
 - date: "2026/10"
-  text: "Paper on safety monitoring (application) accepted at WACV'27."
+  text: "Paper on safety monitoring accepted at WACV'27 (Applications Track)."
 - date: "2026/10"
   text: "Paper on [dense prediction](https://www.arxiv.org/abs/2601.22529) accepted at TMLR'26."
 - date: "2026/09"

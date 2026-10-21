@@ -1,6 +1,5 @@
 # Publications 페이지. section 이 절 제목(Preprints, 연도)이고 위에서부터 그대로 나온다.
 # authors: 쉼표로 구분. 이름 뒤 * 는 equal contribution, † 는 equal advising.
-# featured: true 인 논문은 Home 의 Highlights 카드로 나온다(icon: vision|language|robotics, 4편 안팎).
 # 순서 규칙(같은 연도 안에서 venue 통보일 최신순 등)은 AGENTS.md.
 - section: "Preprints"
   papers:
@@ -21,15 +20,11 @@
 - section: "2027"
   papers:
     - title: "Instruct2Alert: Decoupling Visual Verification from Temporal Alert Control in Video Safety Monitoring"
-      featured: true
-      icon: language
       authors: "Yoel Shin, Byung-In Kim, Sangwoo Mo"
       venue: "WACV 2027 (application)"
 - section: "2026"
   papers:
     - title: "Stay Fair! Ensuring Group Fairness in Diffusion Models Across Guidance Scales"
-      featured: true
-      icon: vision
       url: "https://arxiv.org/abs/2605.28036"
       authors: "Myeongsoo Kim, Eunji Kim, Minwoo Chae, Sangwoo Mo"
       venue: "NeurIPS 2026"
@@ -42,14 +37,10 @@
       authors: "Byeongju Woo, Zilin Wang, Byeonghyun Pak, Sangwoo Mo, Stella X. Yu"
       venue: "NeurIPS 2026"
     - title: "Understanding the Effects of Distractors on Reasoning Vision-Language Models"
-      featured: true
-      icon: language
       url: "https://arxiv.org/abs/2511.21397"
       authors: "Jiyun Bae, Hyunjong Ok, Sangwoo Mo, Jaeho Lee"
       venue: "EMNLP 2026 (oral)"
     - title: "Bring My Cup! Personalizing Vision-Language-Action Models with Visual Attentive Prompting"
-      featured: true
-      icon: robotics
       url: "https://arxiv.org/abs/2512.20014"
       authors: "Sangoh Lee, Sangwoo Mo†, Wook-Shin Han†"
       venue: "ICML 2026"

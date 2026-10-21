@@ -13,7 +13,7 @@ _data/               콘텐츠 데이터(YAML)
   news.yml           Home 의 Research news
   media.yml          Home 의 Media coverage
   research.yml       Research 의 분야별 표
-  publications.yml   Publications 목록(featured 는 Home 의 Highlights 카드)
+  publications.yml   Publications 목록
   members.yml        People(교수, 학생, 멘티)
   teaching.yml       Teaching 의 강의
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
@@ -47,7 +47,7 @@ tools/               검사 스크립트
 
 - `layouts/page.html`: 페이지 front matter 의 `heading`(없으면 `title`), `intro`(마크다운), `sections` 를 그린다.
 - `includes/section.html`: 절 하나를 그린다. `type` 이 없으면 `title` + `body`(마크다운), 있으면 `includes/sections/<type>.html` 로 넘긴다.
-- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `highlights`, `news`(`data: news|media`), `research`, `funding`, `publications`, `professor`, `members`, `teaching`.
+- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `news`(`data: news|media`), `research`, `funding`, `publications`, `professor`, `members`, `teaching`.
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다.
 - 논문 저자 문자열 규칙: 쉼표로 구분, 이름 끝의 `*` 는 equal contribution, `†` 는 equal advising, `_config.yml` 의 `highlight_name` 은 강조.
@@ -60,9 +60,9 @@ tools/               검사 스크립트
 
 | 방문자 | 찾는 것 | 첫 화면에서 바로 보여야 하는 것 |
 | --- | --- | --- |
-| 지원하려는 학생 | 무슨 연구를 하나, 함께하고 싶은 곳인가, 어떻게 지원하나 | 연구 방향, 최근 성과, Join us 버튼 |
+| 지원하려는 학생 | 무슨 연구를 하나, 함께하고 싶은 곳인가, 어떻게 지원하나 | 연구 방향, 최근 소식, Join us 버튼 |
 | 과제 지원 기관·산업체 | 무엇을 잘하나, 믿고 맡길 실적이 있나, 누구에게 연락하나 | 연구 방향, 대표 논문과 venue, Funding 이력, 연락처 |
-| 동료 연구자 | 어떤 문제를 푸나, 최근 논문, 누가 있나 | Highlights, Publications, People |
+| 동료 연구자 | 어떤 문제를 푸나, 최근 논문, 누가 있나 | 연구 방향, News, Publications, People |
 
 - 글보다 그림을 먼저 쓴다. 같은 내용이면 카드, 아이콘, 그림으로 보여 주고 문장은 짧게 줄인다.
 - 랜딩 페이지(Home)가 가장 중요하다. 스크롤 없이 보이는 첫 화면에서 세 부류가 각자 다음에 누를 곳을 찾을 수 있어야 한다.
@@ -91,7 +91,7 @@ tools/               검사 스크립트
 
 1. **되돌리기**: 다른 사람이 changelog 에 남긴 결정을 되돌리거나 바꾼다. 또는 changelog 의 "기각한 안"을 다시 꺼낸다.
 2. **열린 안건과 겹침**: `discussions/index.md` 에 상태가 `논의 중` 인 안건과 같은 대상(같은 파일의 같은 부분, 같은 디자인 요소)을 고친다.
-3. **모두에게 걸리는 결정**: 테마 교체, 메뉴·페이지 구성, 색·글꼴·전체 배치, 이 `AGENTS.md` 의 규칙, 연구 방향(`_data/focus.yml`)을 바꾼다.
+3. **모두에게 걸리는 결정**: 테마 교체, 메뉴·페이지 구성, 색·글꼴·전체 배치, 이 `AGENTS.md` 의 규칙, 연구 방향(`_data/focus.yml`)을 바꾼다 어떤 논문이나 소식을 첫 화면에 앞세울지 고르는 것도 여기에 든다.
 4. **의견이 갈림**: 요청한 사람들끼리 의견이 다르거나, 어느 쪽이 맞는지 판단이 서지 않는다.
 
 **바로 반영해도 되는 것.** 본인 멤버 정보(이름, 링크, 주제), 오타, 깨진 링크, 이미 결정된 안건을 그대로 반영하는 것.

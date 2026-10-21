@@ -19,9 +19,6 @@ sections:
         url: contact.html
   - title: "Our focus in 2026"
     type: focus
-  - title: "Highlights"
-    type: highlights
-    more: "[All publications →](publications.html)"
   - title: "News"
     type: news
     data: news

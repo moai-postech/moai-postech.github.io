@@ -32,3 +32,9 @@
 - Highlights 카드와 연구 방향 카드에 실제 논문 그림이나 사진을 넣을지 결정.
 - Teaching 에 외부 강의(한국통계학회 겨울학교, 산업체 강의)를 넣을지 결정.
 - 학생 디자인 담당(박채원)과 이 개편안 공유.
+
+## 추가(같은 날): Highlights 제거, CSS 캐시 문제
+
+- **Highlights 제거**: 교수 지적. 어떤 논문을 앞세울지는 교수가 정할 일인데 에이전트가 임의로 4편을 골라 넣었다. Home 의 Highlights 절, `includes/sections/highlights.html`, `publications.yml` 의 `featured`·`icon` 표시, 관련 CSS 를 모두 지웠다.
+- **CSS 캐시 문제**: push 직후 교수 화면에서 숨긴 페이지 제목("Research")이 크게 보이고 배치가 깨졌다. 서버는 새 CSS 를 주고 있었지만 GitHub Pages 가 CSS 를 10분(`max-age=600`) 캐시해서 브라우저가 새 HTML 에 옛 CSS 를 붙인 것이다. `layouts/default.html` 의 CSS 주소에 빌드 시각을 붙여(`assets/style.css?v=...`) 빌드마다 새로 받게 했다.
+- 기각: 다음 개편부터 Highlights 처럼 무엇을 앞세울지 고르는 일은 에이전트가 정하지 않고 안건으로 묻는다(`AGENTS.md` "논의가 필요한 수정"의 "모두에게 걸리는 결정").

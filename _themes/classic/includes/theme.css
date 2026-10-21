@@ -68,17 +68,13 @@ h3.sub:first-child { margin-top: 0; }
 .button.primary:hover { background: var(--text); border-color: var(--text); color: #fff; }
 .hero-art { width: 100%; height: auto; }
 
-/* Cards: focus areas, highlighted papers, courses. */
+/* Cards: focus areas, courses. */
 .cards { display: grid; gap: 20px; }
 .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .card { display: block; padding: 26px; background: var(--surface); border-radius: 14px; }
 .card-icon { display: block; width: 64px; height: 64px; margin-bottom: 16px; object-fit: contain; }
 .focus-card p { margin: 0; color: var(--muted); font-size: 16px; }
-.paper-card { color: var(--text); background: var(--bg); border: 1px solid var(--line); transition: border-color .15s, transform .15s; }
-.paper-card:hover { color: var(--text); text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
-.paper-card .card-icon { width: 56px; height: 56px; }
-.paper-card .paper-title { display: block; margin-top: 12px; font-size: 16px; font-weight: 600; line-height: 1.45; }
 .venue { display: inline-block; padding: 2px 9px; background: var(--accent-soft); color: var(--accent); border-radius: 4px; font-size: 12px; font-weight: 650; letter-spacing: .02em; }
 .course-card .terms { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
 .course-card h3 a { color: var(--text); }

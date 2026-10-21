@@ -2,6 +2,8 @@
 # authors: 쉼표로 구분. 이름 뒤 * 는 equal contribution, † 는 equal advising.
 # official 은 학회·저널 공식 페이지(제목 링크, 없으면 제목에 링크 없음). url 은 arXiv(arXiv 링크).
 # links 에는 그 밖의 자료를 둔다. 화면에는 arXiv, project, code 순서로만 나온다(slides, poster 는 데이터에만 둔다, 2026-10-21).
+# 새 논문에는 slides, poster 를 모으지 않는다(교수 2026-10-22). 발표 자료는 각 논문의 project 페이지에 둔다. 기존 slides, poster 링크는
+# 교수 Drive 의 public/ 폴더(논문마다 `연도_학회_약칭`, 예: 26_icml_vap)를 가리키는 보관용이며 옮기거나 지우지 않는다.
 # venue 뒤 괄호: 트랙 (application), (industry), (findings) 는 venue 배지 안에, 발표 형식 (oral), (spotlight), (highlight) 는 배지 옆 강조색 글자로 나온다.
 # 번호(C, J, W)는 템플릿이 venue 로 매긴다. 연구실 전체 실적 번호라 교수 CV 번호와 달라도 된다.
 # 연구실 멤버(_data/members.yml 의 교수·학생)는 자동으로 강조된다. 이름 철자를 members.yml 과 똑같이 쓴다.

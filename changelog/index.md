@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [slides-poster-policy](2026-10-22-slides-poster-policy.md) | Sangwoo Mo(moai-postech) | Publications 데이터 | 새 논문엔 slide·poster 를 모으지 않음, 기존 Drive public/ 폴더는 보관용으로 그대로 |
 | 2026-10-22 | [research-overview-v2](2026-10-22-research-overview-v2.md) | Sangwoo Mo(moai-postech) | Research | 소개를 짧은 세 문장으로, 주제 카드마다 최신 게재 논문을 전체 제목으로, 칩은 최신순에 전체 제목 툴팁 |
 | 2026-10-22 | [contact-polish](2026-10-22-contact-polish.md) | Sangwoo Mo(moai-postech) | Contact, Faculty | 소개 문장 다듬기, Join us 는 Faculty 로 링크, 전화번호를 Visit us 로, Bio 의 twice 삭제 |
 | 2026-10-22 | [link-color](2026-10-22-link-color.md) | Sangwoo Mo(moai-postech) | 테마, Research | 링크 기본색을 본문색으로, 눌러야 할 링크만 강조색. Applications 설명을 foundation models 로 |

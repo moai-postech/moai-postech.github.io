@@ -15,3 +15,5 @@
 - 교수: 소제목 "During Ph.D. at KAIST" → "During PhD". Mentees 의 "During PhD" 와 같은 꼴이 됐다.
 - 교수: Bio 를 한 문단으로. 두 문단(현재 / 이전 경력)을 이어 붙였다. 문장은 그대로다.
 - 교수: Education 의 Ph.D. Thesis 줄이 너무 붙어 있다. 원인은 thesis 가 KAIST 와 같은 크기의 줄이라 별개 항목처럼 보이는데 간격은 항목 사이보다 좁았던 것. 교수 이력 항목에 `detail` 칸을 더해 thesis 를 KAIST 아래 작은 회색 보조 줄(2px 아래)로 두었다. 다음 항목(POSTECH)과는 항목 사이 간격을 그대로 둬서 KAIST 묶음과 갈린다.
+- 교수: Bio 의 IME 링크에서 "Department of" 는 강조(링크)에서 뺀다. "the Department of [Industrial and Management Engineering] at POSTECH". 링크는 학과 이름만.
+- 교수 질문(Bio 에 affiliated 도 넣을까): 넣지 않는다. 바로 위 머리 줄 "Assistant Professor, POSTECH IME (affiliated with AI, AX, and IDS)" 에 이미 있어 같은 정보가 두 번 나온다.

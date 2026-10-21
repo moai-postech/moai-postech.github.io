@@ -86,19 +86,19 @@ groups:
         focus: "Physical AI"
         url: "https://gyeomh.github.io/"
         degree: "BS, U of Seoul"
-        topic: "Physical AI"
+        topic: "Physical Agents"
       - name: "Sanghyung Lee"
         photo: assets/img/people/sanghyung-lee.jpg
         focus: "Manufacturing AI"
         url: "https://idealtype.github.io/"
         degree: "BS, Korea univ."
-        topic: "Manufacturing AI"
+        topic: "Time-Series Analysis"
       - name: "Chaewon Park"
         photo: assets/img/people/chaewon-park.jpg
         focus: "Manufacturing AI"
         url: "https://onehanap.github.io/"
         degree: "BS, POSTECH"
-        topic: "Manufacturing AI"
+        topic: "Time-Series Analysis"
   - title: "Alumni"
     people: []
     empty: "Stay tuned :)"

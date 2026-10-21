@@ -32,3 +32,4 @@
 
 - 교수: https://jang1751.github.io/ 추가. Students 에 홈페이지 링크와 사진(홈페이지 portrait.jpg 를 얼굴 중심 400px 정사각으로, `assets/img/people/seounghyun-jang.jpg`)을 넣었다.
 - 영문 이름: 본인 홈페이지와 arXiv(LoC, 2610.21318) 모두 `Seounghyun Jang` 이라 사이트의 `Seunghyun Jang` 을 본인 표기로 고쳤다(Students, Seminar, Publications 저자). 랩 멤버 강조는 이름이 같아야 걸리므로 셋을 함께 바꿨다. CV 와 개인 사이트에는 이 이름이 없다.
+- 교수: Students 연구 주제 라벨. 황보겸 `Physical AI` → `Physical Agents`, 이상형·박채원 `Manufacturing AI` → `Time-Series Analysis`(교수 후보 Analysis/Modeling 중 Analysis: PRISM 이 시계열 모델 해석이고 제조 데이터 분석 발표와도 맞는다. 표기는 Talks 의 "Time-Series" 와 같게). Home focus 탭 묶음(`focus`)은 그대로라 Physical AI, Manufacturing AI 탭의 사람 줄은 바뀌지 않는다.

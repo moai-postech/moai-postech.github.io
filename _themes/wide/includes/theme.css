@@ -148,7 +148,8 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 
 .venue { display: inline-block; padding: 1px var(--space-2); background: var(--accent-soft); color: var(--accent); border-radius: 4px; font-size: var(--text-small); font-weight: 600; letter-spacing: .01em; }
 
-/* Lists: the main line first, details under it. The right side stays empty rather than holding details. */
+/* Lists: light items (courses, talks, funding) are one row, details right after the title in grey, never pushed to the far right.
+   Information-heavy items (publications, mentees) use several lines. */
 .news li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-4); padding: var(--space-2) 0; }
 .news li:first-child { padding-top: 0; }
 .news time { color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
@@ -157,7 +158,8 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 .item-list li:first-child { padding-top: 0; }
 .item-main strong { font-weight: 600; margin-right: var(--space-2); }
 .item-main strong a { color: var(--text); }
-.item-sub, .item-side { display: block; color: var(--muted); font-size: var(--text-meta); }
+.item-sub, .item-side { color: var(--muted); font-size: var(--text-meta); }
+.item-sub::before, .item-side::before { content: "·"; margin: 0 var(--space-2) 0 var(--space-1); color: var(--line); }  /* one row: title, then details right after it */
 .item-list + h3.sub, .more-news h3.sub { margin-top: var(--space-6); }
 .more-news { margin-top: var(--space-4); }
 .more-news summary { display: inline-flex; cursor: pointer; color: var(--accent); font-size: var(--text-meta); font-weight: 600; list-style: none; }

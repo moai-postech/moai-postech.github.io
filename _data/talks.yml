@@ -16,9 +16,6 @@
     - title: "Opportunities in IME as an AI Researcher (and Vice Versa)"
       url: "https://drive.google.com/file/d/1HNB911caHLsHZOu4ZKuSjYSyD8WhpUeu/view?usp=sharing"
       venues: ["POSTECH Graduate Seminar"]
-    - title: "Foundation Models for Vision, Language, and Robotics"
-      url: "https://drive.google.com/file/d/1OkBi2m-ZotIL5VCgjunXWFQNl6umM9Op/view?usp=sharing"
-      venues: ["Ajou univ."]
 - year: "2025"
   talks:
     - title: "Foundation Models for Vision and Language (with Code)"

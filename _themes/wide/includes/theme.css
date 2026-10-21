@@ -151,7 +151,7 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
 .venue { align-self: flex-start; display: inline-block; padding: 1px var(--space-2); background: var(--accent-soft); color: var(--accent); border-radius: 4px; font-size: var(--text-small); font-weight: 600; letter-spacing: .01em; }
 
 /* Lists: light items (courses, talks, funding, seminar) are one row: the title on the left, term, place, or years right-aligned at the end.
-   Information-heavy items (publications, mentees) use several lines. */
+   Mentees too: name and affiliation on the left, papers at the right end. Publications use several lines. */
 .news li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-4); padding: var(--row-gap) 0; }
 .news li:first-child { padding-top: 0; }
 .news time { color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
@@ -163,6 +163,9 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
 .item-sub, .item-side { color: var(--muted); font-size: var(--text-meta); }
 .item-sub::before { content: "·"; margin: 0 var(--space-2) 0 calc(-1 * var(--space-5)); color: var(--line); }  /* a course code stays next to its title */
 .item-side { margin-left: auto; text-align: right; }
+.mentee-name { color: var(--text); font-weight: 600; }
+a.mentee-name:hover { color: var(--accent); }
+.mentee-aff { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); }  /* who they were and whom they worked with, right after the name */
 .item-detail { display: block; margin-top: 2px; color: var(--muted); font-size: var(--text-meta); }  /* a line that belongs to the item above it, e.g. the Ph.D. thesis under KAIST */
 .item-list + h3.sub, .more-news h3.sub { margin-top: var(--space-6); }
 .more-news { margin-top: var(--space-4); }
@@ -309,7 +312,8 @@ a.person-name:hover { color: var(--accent); }
   .brand { margin-bottom: var(--space-2); }
   .site-nav { gap: 0 var(--space-4); }  /* six items do not fit one line at 375px without shrinking the type; two lines keep every item visible */
   .person-photo { max-width: 120px; }
-  .person-aff { flex-basis: 100%; }  /* mentees: affiliation always on its own line */
+  .mentee-aff { display: block; margin-left: 0; }  /* phones: name, then affiliation, then papers */
+  .mentee-list li { padding: var(--item-gap) 0; }  /* three lines per person, so the wider multi-line gap */
   .nav-menu { display: none !important; }
   .hero { padding: var(--space-7) 0 var(--space-6); }
   .eyebrow { font-size: var(--text-meta); }

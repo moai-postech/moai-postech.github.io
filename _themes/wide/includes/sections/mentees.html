@@ -1,9 +1,16 @@
+{% comment %}
+  _data/members.yml 의 mentees. 시기마다 절 하나, 사람마다 한 줄:
+  왼쪽에 이름(링크)과 소속·지도교수(회색), 오른쪽 끝에 함께 낸 논문의 venue(papers).
+{% endcomment %}
 {% for g in site.data.members.mentees %}
     <section class="content-section">
     <h2>{{ g.title }}</h2>
     <div class="section-body">
-    <ul class="plain people">
-      {% for person in g.people %}{% include person.html person=person %}
+    <ul class="plain item-list mentee-list">
+      {% for p in g.people %}<li>
+        <span class="item-main">{% if p.url %}<a class="mentee-name" href="{{ p.url }}">{{ p.name }}</a>{% else %}<span class="mentee-name">{{ p.name }}</span>{% endif %}<span class="mentee-aff">{% include inline.html text=p.affiliation %}</span></span>
+        {% if p.papers %}<span class="item-side">{% include inline.html text=p.papers %}</span>{% endif %}
+      </li>
       {% endfor %}
     </ul>
     </div>

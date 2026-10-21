@@ -58,3 +58,4 @@
 - Faculty 링크 `Github` → `GitHub`(공식 표기).
 - 사이트 안 링크 전수 검사: 깨진 내부 링크 0.
 - 교수: 11/4 안동훈 발표 추가. 캘린더의 영문 이름으로 `Donghoon Ahn`(UC Berkeley) 초청 발표를 넣었다. 제목은 미정이라 `TBA`, 홈페이지는 아직 몰라 링크 없음. 랩 세미나 시트 53행 제목도 `TBD` → `TBA` 로 맞췄다. 추가 뒤에도 세 탭 칸 위치(113/178/1072px) 같고 두 줄 제목 0.
+- 교수: Hero 문장이 너무 길다("...and manufacturing" 을 빼는 안을 물음). manufacturing 은 focus 탭과 그림에 있는 세 분야 중 하나라 남기고, 군더더기를 뺐다: "We orchestrate foundation models across vision, language, and sensors for agents, robots, and manufacturing." 22단어 → 15단어. 입력 셋과 출력 셋이 그림 라벨과 같은 말이다. 교수가 goal 로 알아서 진행하라고 해서 추천안을 먼저 적용했다(manufacturing 을 빼는 안도 바로 바꿀 수 있다).

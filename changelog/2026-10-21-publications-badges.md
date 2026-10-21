@@ -17,3 +17,5 @@
 - 교수: Oral, Spotlight, Highlight 를 진한 사각형으로 쓰니 별로다. 배경 없이 강조색 굵은 글자로 바꿨다. venue 배지 바로 옆에 붙는 것은 그대로다.
 - 교수: Highlight, Applications Track 이 venue 배지에 너무 붙었다. 배지와의 간격이 4px 이었다(줄 간격 16px 에서 12px 를 당김). 8px 로 늘렸다. 링크 사이 16px 보다는 가까워서 venue 에 딸린 표시로 읽힌다(측정: Oral·Highlight·Spotlight·Track 모두 배지와 8px, 뒤 링크와 16px).
 - 교수: arXiv, code 사이가 너무 넓다. 링크 사이 16px → 12px. venue 배지와 Oral·Track 사이는 8px 그대로. 링크는 venue 와 같은 줄에 둔다(아래 줄로 내리면 논문마다 한 줄씩 늘어 목록이 길어진다).
+- 교수: venue(+Oral)와 링크가 붙어 있지 말고 구분되게. venue 묶음과 첫 링크 사이를 24px 로(링크끼리 12px, venue 와 Oral 8px). 8 → 12 → 24 로 가까운 것끼리 묶인다.
+- 공식 링크 조사(교수: 시간 지난 논문은 공식 링크가 있을 것): 링크 없는 게재 논문은 워크숍 셋과 아직 학회 전인 둘(WACV'27, EMNLP'26)이다. FreezeD(CVPRW'20)는 AI4CC 2020 워크숍 페이지가 arXiv 로만 링크해 공식 페이지가 없다. LoGe(ICMLW'21)는 OpenReview 항목이 없고 ICML 가상 사이트에는 제목 없는 "Contributed Talk #6" 페이지만 있어 넣지 않았다. OAMixer(CVPRW'22)는 공식 페이지를 찾지 못했고, 같은 연구가 ICLR 2022 워크숍(OSC)에 "ReMixer" 로 실린 기록이 있다. venue 표기가 맞는지 교수 확인이 필요해 바꾸지 않았다.

@@ -18,3 +18,8 @@
 ## 백업
 
 - 바꾸기 전 `members.yml`: scratchpad `backup/members-before-mentees.yml`(git 이력에도 있음).
+
+## 이어서 (2026-10-22)
+
+- 교수: (oral) 까지 링크로 묶는다. `[EMNLP'26](…) (oral)` → `[EMNLP'26 (oral)](…)`, CVPR'24 (highlight) 도 같다. venue 와 표시가 한 덩어리로 읽힌다.
+- 교수: 오른쪽이 무엇인지 불분명하니 맨 위에 한 줄. "Students from other labs we have mentored, with the papers we published together." 오른쪽 칸이 함께 낸 논문이라는 것이 첫 줄에서 풀린다.

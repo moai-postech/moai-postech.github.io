@@ -18,9 +18,6 @@
       venues: ["POSTECH Graduate Seminar"]
 - year: "2025"
   talks:
-    - title: "Foundation Models for Vision and Language (with Code)"
-      url: "https://drive.google.com/drive/folders/128OAwpZ6hNG1ScD5SaTfLkcoQiTktdW_?usp=sharing"
-      venues: ["KSS Winter School"]
     - title: "Foundation Models for Vision, Language, and Robotics"
       url: "https://drive.google.com/file/d/1OkBi2m-ZotIL5VCgjunXWFQNl6umM9Op/view?usp=sharing"
       venues: ["KSS Tutorial"]

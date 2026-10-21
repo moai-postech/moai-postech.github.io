@@ -14,3 +14,4 @@
 
 - 메뉴 이름을 `Teaching & Talks` 로: 메뉴 줄이 길어진다. 하위 탭으로 충분히 찾힌다.
 - 교수: `Selected Talks` → `Talks`(미니멀하게). 하위 탭, 페이지 제목, 문서 표기를 모두 바꿨다.
+- 교수: 2025 의 "Foundation Models for Vision and Language (with Code)"(KSS Winter School)는 바로 아래 "Foundation Models for Vision, Language, and Robotics"(KSS Tutorial)와 겹쳐 뺐다. `_data/talks.yml` 에서 지웠다(git 이력과 CV·개인 사이트에는 남아 있다).

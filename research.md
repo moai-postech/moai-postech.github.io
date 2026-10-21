@@ -6,9 +6,7 @@ description: "Research of MOAI Lab at POSTECH: vision and multimodal, language a
 intro: |
   We design scalable priors for AI. Even as foundation models learn mostly from data, the right
   inductive biases, such as domain structure and statistical assumptions, help them perform better,
-  fail less, and explain more. We pursue this in three areas:
-  [vision and multimodal](#vision-multimodal), [language and reasoning](#language-reasoning),
-  and [robotics and embodied AI](#robotics-embodied-ai).
+  fail less, and explain more.
   {: .lede}
 sections:
   # _data/research.yml 의 분야마다 절 하나씩

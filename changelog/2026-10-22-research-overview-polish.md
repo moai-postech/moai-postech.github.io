@@ -26,3 +26,7 @@
 
 ## 남은 것
 - 개인 사이트 Research 탭의 같은 문구(분야 설명, 소개, Applications of VLMs 라벨)는 고치지 않았다. 교수가 개인 사이트를 맞출 때 이 회차의 전/후 문구를 쓴다.
+
+## 이어서
+
+- 교수: 소개의 "We pursue this in three areas: vision and multimodal, language and reasoning, and robotics and embodied AI." 는 바로 아래 세 분야와 겹친다. 뺐다(분야로 가는 페이지 안 링크도 함께 빠짐).

@@ -1,10 +1,19 @@
+{% comment %}limit 이 있으면 최근 limit 개만 보이고 나머지는 "All news" 로 펼친다{% endcomment %}
+{% assign items = site.data[include.section.data] %}{% assign limit = include.section.limit | default: items.size %}
     <section class="content-section">
     <h2>{{ include.section.title }}</h2>
     <div class="section-body">
     <ul class="plain news">
-      {% for n in site.data[include.section.data] %}<li><time>{{ n.date }}</time><span>{% include inline.html text=n.text %}{% if n.source %} <span class="muted">{{ n.source }}</span>{% endif %}</span></li>
+      {% for n in items limit: limit %}<li><time>{{ n.date }}</time><span>{% include inline.html text=n.text %}{% if n.source %} <span class="muted">{{ n.source }}</span>{% endif %}</span></li>
       {% endfor %}
     </ul>
+    {% if items.size > limit %}<details class="more-news">
+      <summary>All news</summary>
+      <ul class="plain news">
+        {% for n in items offset: limit %}<li><time>{{ n.date }}</time><span>{% include inline.html text=n.text %}</span></li>
+        {% endfor %}
+      </ul>
+    </details>{% endif %}
     {% if include.section.note %}<p class="more">{% include inline.html text=include.section.note %}</p>{% endif %}
     </div>
     </section>

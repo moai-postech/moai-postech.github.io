@@ -1,2 +1,4 @@
-<li class="person">{% if include.person.url %}<a href="{{ include.person.url }}">{{ include.person.name }}</a>{% else %}{{ include.person.name }}{% endif %}
-        <span class="role">{% include inline.html text=include.person.detail %}</span></li>
+{% assign p = include.person %}<li class="person">{% if p.url %}<a class="person-name" href="{{ p.url }}">{{ p.name }}</a>{% else %}<span class="person-name">{{ p.name }}</span>{% endif %}
+        {% if p.topic %}<span class="person-topic">{{ p.topic }}</span>{% endif %}
+        {% if p.degree %}<span class="person-degree">{{ p.degree }}</span>{% endif %}
+        {% if p.detail %}<span class="role">{% include inline.html text=p.detail %}</span>{% endif %}</li>

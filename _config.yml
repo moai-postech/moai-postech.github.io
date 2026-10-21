@@ -19,6 +19,8 @@ nav:
         url: faculty.html
       - title: Students
         url: students.html
+      - title: Mentees
+        url: mentees.html
   - title: Teaching
     url: teaching.html
   - title: Contact

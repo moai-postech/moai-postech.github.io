@@ -1,0 +1,13 @@
+{% comment %}_data/media.yml 을 카드로: 매체 이름, 기사 제목(링크), 연도{% endcomment %}
+    <section class="content-section">
+    <h2>{{ include.section.title }}</h2>
+    <div class="section-body">
+    <div class="cards cards-2">
+      {% for m in site.data.media %}{% assign link = m.text | markdownify | split: 'href="' | last | split: '"' | first %}<a class="card media-card" href="{{ link }}">
+        <span class="media-source">{{ m.source }} · {{ m.date }}</span>
+        <span class="media-title">{{ m.text | markdownify | strip_html | strip }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    </div>
+    </section>

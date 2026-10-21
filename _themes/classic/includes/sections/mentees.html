@@ -1,0 +1,11 @@
+{% for g in site.data.members.mentees %}
+    <section class="content-section">
+    <h2>{{ g.title }}</h2>
+    <div class="section-body">
+    <ul class="plain people">
+      {% for person in g.people %}{% include person.html person=person %}
+      {% endfor %}
+    </ul>
+    </div>
+    </section>
+{% endfor %}

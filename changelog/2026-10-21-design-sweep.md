@@ -68,3 +68,4 @@
 - 교수: power 대신 drive. "…to drive AI agents, robots, and automated factories." 뜻은 같고 홍보 문구 느낌이 덜하다. meta 도 같은 문장.
 - 교수: News 의 괄호 표시도 링크 안에. "[VLM reasoning (oral)](…)", "[SP4V (structural priors for vision)](…)". 강조색 링크는 지금 그대로. Mentees 와 같은 방식이다.
 - 교수: Oral·Spotlight·Highlight 가 venue 와 너무 떨어졌다, 자간 전체를 신경 써라. 한 줄 안의 가로 간격을 재 보니 같은 묶음끼리도 4~32px 로 제각각이었다. 단계를 정해 맞췄다: 붙어 있어야 하는 것 4px(venue 배지와 Oral), 같은 묶음 8px(멘티 이름과 소속, 강의명과 학수번호, 칩끼리), 나란한 항목 12px(링크끼리, focus 사람 이름끼리), 묶음 사이 24px(venue 묶음과 링크, 구분선 양쪽 12px). 바꾼 값: venue→Oral 8→4, focus 사람 이름 24→12(라벨 뒤 16), 강의명→학수번호 32→8(가운뎃점 제거), 멘티 이름→소속 12→8. 토큰 주석에 단계를 적었다.
+- 교수: News 의 괄호(`(oral)`, `(structural priors for vision)`)는 링크 안에 두되 색칠은 하지 않는다. 링크 안 괄호를 `link-aside` span 으로 감싸 본문색으로 둔다. 링크 범위와 hover 밑줄은 그대로다.

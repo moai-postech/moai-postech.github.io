@@ -157,6 +157,7 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
 .news li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-4); padding: var(--row-gap) 0; }
 .news li:first-child { padding-top: 0; }
 .news time { color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
+.link-aside { color: var(--text); }  /* a parenthetical inside a link, e.g. "(oral)": part of the link, but not painted */
 .news .muted { margin-left: var(--space-2); font-size: var(--text-meta); }
 .item-list li { display: flex; align-items: baseline; gap: var(--space-1) var(--space-6); padding: var(--row-gap) 0; }
 .item-list li:first-child { padding-top: 0; }

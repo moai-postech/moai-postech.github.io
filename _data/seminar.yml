@@ -102,7 +102,7 @@ talks:
   - date: "2026-01-21"
     invited: true
     speaker: "Jongmin Lee"
-    affiliation: "Chung-Ang univ."
+    affiliation: "CAU"
     url: "https://bluedream1121.github.io/"
     title: "Toward Spatial Intelligence: Learning Equivariant Features for Visual Correspondence and Pose Estimation"
   - date: "2025-12-10"

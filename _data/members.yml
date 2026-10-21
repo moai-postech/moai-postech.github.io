@@ -18,10 +18,10 @@ professor:
       groups:
         - title: "Faculty positions"
           items:
-            - { text: "POSTECH, Assistant Professor", side: "2025–present" }
+            - { text: "POSTECH, Assistant Professor", side: "2025 – present" }
         - title: "Research positions"
           items:
-            - { text: "U Michigan, Postdoctoral Fellow (host: Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/))", side: "2023–2025" }
+            - { text: "U Michigan, Postdoctoral Fellow (host: Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/))", side: "2023 – 2025" }
             - { text: "NVIDIA AI, Research Intern (host: Dr. [Weili Nie](https://weilinie.github.io/))", side: "2022 Winter" }
             - { text: "Meta AI, Research Intern (host: Dr. [Jong-Chyi Su](https://jongchyisu.github.io/))", side: "2022 Summer" }
             - { text: "Naver AI, Collaborator (host: Dr. [Jung-Woo Ha](https://aidljwha.wordpress.com/))", side: "2021 Summer" }

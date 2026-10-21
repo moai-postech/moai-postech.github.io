@@ -3,6 +3,7 @@
   --surface: #f3f6fa;
   --text: #172b40;
   --muted: #596574;
+  --faint: #6b7683;  /* other authors: lighter, still 4.6:1 on white */
   --line: #d8e0e8;
   --line-soft: #e9eef3;
   --accent: #245bb5;
@@ -172,8 +173,8 @@ h3.sub:first-child { margin-top: 0; }
 .pubs .title { display: block; margin-bottom: 4px; font-size: var(--fs-md); font-weight: 600; letter-spacing: -.15px; line-height: 1.5; }
 .pubs .title a { color: var(--text); text-decoration: none; }
 .pubs .title a:hover { color: var(--accent); text-decoration: underline; }
-.pubs .authors { display: block; color: var(--muted); font-size: var(--fs-sm); }
-.pubs .me { color: var(--text); font-weight: 600; }
+.pubs .authors { display: block; color: var(--faint); font-size: var(--fs-sm); }
+.pubs .lab { color: var(--text); }
 .pubs .note { display: block; margin-top: 5px; color: var(--muted); font-size: var(--fs-xs); }
 .pubs .venue { margin-top: 8px; }
 

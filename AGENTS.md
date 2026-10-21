@@ -52,7 +52,7 @@ tools/               검사 스크립트
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
 - `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글자 크기는 `:root` 의 여섯 단계(`--fs-xs`~`--fs-2xl`)와 굵기 400·600·700 만 쓰고, 글꼴은 Pretendard 하나다.
-- 논문 저자 문자열 규칙: 쉼표로 구분, 이름 끝의 `*` 는 equal contribution, `†` 는 equal advising, `_config.yml` 의 `highlight_name` 은 강조.
+- 논문 저자 문자열 규칙: 쉼표로 구분, 이름 끝의 `*` 는 equal contribution, `†` 는 equal advising, 연구실 멤버(`_data/members.yml` 의 교수와 학생)는 교수와 학생 구분 없이 같은 양식으로 강조한다(굵게 하지 않고 회색 저자 사이에서 본문색).
 
 테마를 바꾼 뒤에는 다섯 페이지를 모두 빌드해 콘텐츠가 빠짐없이 나오는지 확인한다.
 

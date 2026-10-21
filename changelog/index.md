@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [lab-authors](2026-10-21-lab-authors.md) | Sangwoo Mo(moai-postech) | Publications, 테마 | 연구실 멤버(교수·학생) 저자를 같은 양식으로 강조(굵게 없이 본문색, 다른 저자는 연한 회색) |
 | 2026-10-21 | [home-people-redesign](2026-10-21-home-people-redesign.md) | Sangwoo Mo(moai-postech) | Home, People, 꼬리말 | Home 첫 화면 M·O·A·I 2×2 머리글자, News 5개+펼치기, 언론 카드, 꼬리말 축소, People 에 Mentees 탭, Students 명단형 |
 | 2026-10-21 | [dedupe-structure](2026-10-21-dedupe-structure.md) | Sangwoo Mo(moai-postech) | Research, Contact, Teaching, Publications, Faculty | 같은 내용은 한 곳에만: 연구 방향 버튼은 Home, Paper Stella 는 Research 분야 아래, 랩 세미나는 Contact, 교수 연락처는 Faculty. Research 맨 위에 분야 카드 |
 | 2026-10-21 | [answers-talks](2026-10-21-answers-talks.md) | Sangwoo Mo(moai-postech) | `_data/focus.yml`, Teaching | 대표 논문을 올해·작년 것으로(Idis, LoC, TEG / VAP, INDI / I2A, PRISM), Teaching 을 정규 강의와 Invited talks(2025–2026)로 |

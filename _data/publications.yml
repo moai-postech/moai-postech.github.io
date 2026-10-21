@@ -1,5 +1,6 @@
 # Publications 페이지. section 이 절 제목(Preprints, 연도)이고 위에서부터 그대로 나온다.
 # authors: 쉼표로 구분. 이름 뒤 * 는 equal contribution, † 는 equal advising.
+# 연구실 멤버(_data/members.yml 의 교수·학생)는 자동으로 강조된다. 이름 철자를 members.yml 과 똑같이 쓴다.
 # 순서 규칙(같은 연도 안에서 venue 통보일 최신순 등)은 AGENTS.md.
 - section: "Preprints"
   papers:

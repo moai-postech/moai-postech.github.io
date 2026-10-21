@@ -1,11 +1,14 @@
 ---
 layout: page
 title: Teaching
-description: "Courses and seminars at MOAI Lab, POSTECH."
+description: "Courses and invited talks by Prof. Sangwoo Mo at POSTECH."
 sections:
   - title: "Courses"
     type: teaching
-  - title: "Seminar"
+  - title: "Invited talks"
+    type: talks
+    more: "[All talks →](https://sites.google.com/view/sangwoomo/talks)"
+  - title: "Lab seminar"
     id: seminar
     body: |
       Lab members present recent papers and their own work at our lab seminar.

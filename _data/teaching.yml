@@ -1,4 +1,4 @@
-# Teaching 페이지. 위가 최신이다. terms 는 개설 학기 목록(최신이 앞).
+# Teaching 의 Courses(정규 강의만). 위가 최신이다. terms 는 개설 학기 목록(최신이 앞).
 - title: "Data Engineering"
   code: "IMEN891K / IDSC501 / AXGS-501"
   institution: "POSTECH"
@@ -7,8 +7,3 @@
   code: "IMEN574"
   institution: "POSTECH"
   terms: ["Spring 2026"]
-- title: "Undergraduate AI Study"
-  institution: "POSTECH"
-  terms: ["Weekly during the semester"]
-  url: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit?usp=sharing"
-  note: "A study group for undergraduates who want to build a background in AI."

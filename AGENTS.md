@@ -15,7 +15,8 @@ _data/               콘텐츠 데이터(YAML)
   research.yml       Research 의 분야별 표
   publications.yml   Publications 목록
   members.yml        People 의 Faculty(교수, 사진, Bio)와 Students(학생, 멘티). 학생의 focus 는 연구 방향 패널에 이름을 띄운다
-  teaching.yml       Teaching 의 강의
+  teaching.yml       Teaching 의 정규 강의
+  talks.yml          Teaching 의 Invited talks(올해와 작년)
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
 index.md 외 *.md     페이지 하나에 파일 하나(research, publications, faculty, students, teaching, contact). front matter 에 소개글, 절 순서
 _themes/classic/     테마(현재 사용 중)
@@ -47,7 +48,7 @@ tools/               검사 스크립트
 
 - `layouts/page.html`: 페이지 front matter 의 `heading`(없으면 `title`), `intro`(마크다운), `sections` 를 그린다.
 - `includes/section.html`: 절 하나를 그린다. `type` 이 없으면 `title` + `body`(마크다운), 있으면 `includes/sections/<type>.html` 로 넘긴다.
-- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `teaching`.
+- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `teaching`, `talks`.
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
 - `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글자 크기는 `:root` 의 여섯 단계(`--fs-xs`~`--fs-2xl`)와 굵기 400·600·700 만 쓰고, 글꼴은 Pretendard 하나다.

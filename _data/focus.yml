@@ -1,7 +1,7 @@
 # 연구실의 현재 연구 방향. Home 의 "Our focus", Research 의 "Current directions",
 # Contact 의 "Research topics" 가 모두 이 파일 하나에서 나온다.
 # 버튼(name, icon)을 누르면 papers(대표 논문)와 그 방향을 하는 사람(_data/members.yml 의 focus)이 펼쳐진다.
-# icon 은 assets/img/icons/<icon>.svg. papers 의 short 는 Research 의 약칭, venue 는 학회'연도.
+# 대표 논문은 올해와 작년 것만 둔다(교수 결정 2026-10-21). icon 은 assets/img/icons/<icon>.svg. papers 의 short 는 Research 의 약칭, venue 는 학회'연도.
 - name: "Agentic AI"
   icon: agentic
   papers:
@@ -17,10 +17,6 @@
       venue: "arXiv'26"
       title: "Why, Where, How: Taxonomy-guided Error Grounding for Code Repair in NL2SQL"
       url: "https://arxiv.org/abs/2610.05060"
-    - short: "HOMER"
-      venue: "ICLR'24"
-      title: "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs"
-      url: "https://arxiv.org/abs/2404.10308"
 - name: "Physical AI"
   icon: physical
   papers:
@@ -32,10 +28,6 @@
       venue: "arXiv'26"
       title: "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models"
       url: "https://arxiv.org/abs/2608.23478"
-    - short: "EIT-NN2"
-      venue: "T-RO'21"
-      title: "Deep Neural Network Based Electrical Impedance Tomographic Sensing Methodology for Large-Area Robotic Tactile Sensing"
-      url: "https://ieeexplore.ieee.org/document/9376677"
 - name: "Manufacturing AI"
   icon: manufacturing
   papers:

@@ -1,0 +1,26 @@
+# Teaching 의 Invited talks. 올해와 작년 발표만 둔다(교수 결정 2026-10-21, 대표 논문과 같은 원칙).
+# 정본은 개인 사이트 Talks(https://sites.google.com/view/sangwoomo/talks). 같은 발표의 장소가 여럿이면 venues 에 나열한다.
+- year: "2026"
+  talks:
+    - title: "Multimodal Agents that Reason and Remember"
+      venues: ["KAIST", "Korea univ."]
+    - title: "Towards Personalized Household Robots"
+      venues: ["POSTECH Physical AI Workshop"]
+    - title: "Manufacturing Data Analysis via Time-Series Foundation Models"
+      venues: ["KSS (Statistics Society), Invited Talk"]
+    - title: "Aligning Vision and Language via Geometry and Topology"
+      venues: ["KSIAM (Applied Math Society), Invited Talk"]
+    - title: "Opportunities in IME as an AI Researcher (and Vice Versa)"
+      venues: ["POSTECH, Graduate Seminar"]
+    - title: "Foundation Models for Vision, Language, and Robotics"
+      venues: ["Ajou univ."]
+- year: "2025"
+  talks:
+    - title: "Foundation Models for Vision and Language (with Code)"
+      venues: ["KSS (Statistics Society), Winter School"]
+    - title: "Foundation Models for Vision, Language, and Robotics"
+      venues: ["KSS (Statistics Society), Tutorial"]
+    - title: "Revisiting the 3Rs in Computer Vision"
+      venues: ["Korea univ.", "Kyunghee univ.", "POSTECH MINDS"]
+    - title: "Scalable Priors for Foundation Models"
+      venues: ["POSTECH", "UNIST", "DGIST"]

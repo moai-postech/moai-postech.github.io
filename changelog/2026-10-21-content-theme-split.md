@@ -31,5 +31,4 @@
 
 ## 남은 것
 
-- Eunchan Jo(`Chipmunk-g4`) collaborator 초대.
-- 학생들의 초대 수락.
+- 학생들의 초대 수락. 7명 모두 write 권한으로 초대했다(Eunchan Jo 는 `eunchanjo` 가 organization 이라 개인 계정 `Chipmunk-g4` 로 초대).

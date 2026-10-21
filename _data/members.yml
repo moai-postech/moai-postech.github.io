@@ -38,12 +38,12 @@ professor:
       groups:
         - title: "Senior committee (AC, Editor)"
           items:
-            - { text: "Area Chair", side: "ICLR 2027" }
+            - "Area Chair, ICLR 2027"
         - title: "Workshop organizer"
           items:
-            - { text: "[Structural Priors for Vision (SP4V)](https://sp4v.github.io/)", side: "ICCV'25" }
-            - { text: "[Pixel-level Vision Foundation Models (PixFoundation)](https://sites.google.com/view/pixfoundation)", side: "CVPR'25" }
-            - { text: "[Virtual Humans for Robotics and Autonomous Driving (POETS)](https://poets2024.github.io/)", side: "CVPR'24" }
+            - "[Structural Priors for Vision (SP4V)](https://sp4v.github.io/), ICCV'25"
+            - "[Pixel-level Vision Foundation Models (PixFoundation)](https://sites.google.com/view/pixfoundation), CVPR'25"
+            - "[Virtual Humans for Robotics and Autonomous Driving (POETS)](https://poets2024.github.io/), CVPR'24"
         - title: "Reviewer"
           items:
             - "Conference: NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, COLM, etc."

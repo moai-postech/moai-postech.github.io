@@ -122,17 +122,19 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 .hero-text { margin-top: var(--space-5); color: var(--muted); font-size: var(--text-lead); line-height: 1.55; max-width: var(--measure); }
 .hero-text strong { color: var(--accent); font-weight: 600; }
 
-/* Focus explorer: three tabs on one baseline rule, the chosen one marked by accent text and an accent bar.
-   The panel below sits on the page background; paper cards are the only filled shapes, so nothing competes with them. */
-.focus-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); box-shadow: inset 0 -1px 0 var(--line); }
-.focus-tab { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-2) var(--space-5); border: 0; background: none; color: var(--muted); font: inherit; font-size: var(--text-lead); font-weight: 600; text-align: left; cursor: pointer; }
+/* Focus explorer: the chosen tab opens into one outlined box that holds its papers and people, so it is clear which field they belong to.
+   One hairline outline, no grey fill; paper cards are the only filled shapes. */
+.focus-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; }
+.focus-tab { position: relative; display: flex; align-items: center; gap: var(--space-4); margin-bottom: -1px; padding: var(--space-4) var(--space-5); border: 1px solid transparent; border-bottom: 0; border-radius: var(--radius-2) var(--radius-2) 0 0; background: none; color: var(--muted); font: inherit; font-size: var(--text-lead); font-weight: 600; text-align: left; cursor: pointer; }
 .focus-tab img { width: 40px; height: 40px; flex-shrink: 0; opacity: .55; }
 .focus-tab:hover { color: var(--text); }
 .focus-tab:hover img { opacity: .8; }
-.focus-tab[aria-selected="true"] { color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
+.focus-tab[aria-selected="true"] { z-index: 1; border-color: var(--line); background: var(--bg); color: var(--accent); box-shadow: inset 0 3px 0 var(--accent); }
 .focus-tab[aria-selected="true"] img { opacity: 1; }
 .focus-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-.focus-panels { display: grid; padding-top: var(--space-6); }
+.focus-panels { display: grid; padding: var(--space-6); border: 1px solid var(--line); border-radius: 0 var(--radius-2) var(--radius-2) var(--radius-2); }
+.focus-explorer:has(.focus-tab:last-child[aria-selected="true"]) .focus-panels { border-radius: var(--radius-2) 0 var(--radius-2) var(--radius-2); }
+.focus-explorer:has(.focus-tab:nth-child(2)[aria-selected="true"]) .focus-panels { border-radius: var(--radius-2); }
 .focus-panels > .focus-panel { grid-area: 1 / 1; display: flex; flex-direction: column; }  /* every panel fills the tallest one */
 .focus-panels > .focus-panel[hidden] { display: block; visibility: hidden; }  /* keeps the tallest panel's height */
 .focus-papers { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: var(--space-5); }  /* cards take the spare height, so the people line stays put */
@@ -303,8 +305,9 @@ a.person-name:hover { color: var(--accent); }
   .nav-menu { display: none !important; }
   .hero { padding: var(--space-7) 0 var(--space-6); }
   .eyebrow { font-size: var(--text-meta); }
-  .focus-tab { flex-direction: column; justify-content: flex-start; gap: var(--space-2); padding: var(--space-3) var(--space-1) var(--space-4); font-size: var(--text-meta); line-height: 1.3; text-align: center; }
-  .focus-panels { padding-top: var(--space-5); }
+  .focus-tab { flex-direction: column; justify-content: flex-start; gap: var(--space-2); padding: var(--space-3) var(--space-1); font-size: var(--text-meta); line-height: 1.3; text-align: center; }
+  .focus-panels { padding: var(--space-4); }
+  .focus-tabs { align-items: stretch; }  /* a two-line label keeps the three icons on one line */
   .focus-tab img { width: 36px; height: 36px; }
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
   .pubs li { grid-template-columns: 2.75em minmax(0, 1fr); }

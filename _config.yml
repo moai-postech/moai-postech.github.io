@@ -9,6 +9,14 @@ footer: MOAI Lab, POSTECH
 nav:
   - title: Home
     url: index.html
+  - title: People
+    children:
+      - title: Faculty
+        url: faculty.html
+      - title: Students
+        url: students.html
+      - title: Mentees
+        url: mentees.html
   - title: Research
     children:
       - title: Overview
@@ -23,14 +31,6 @@ nav:
         url: publications.html
       - title: By Topic
         url: landscape.html
-  - title: People
-    children:
-      - title: Faculty
-        url: faculty.html
-      - title: Students
-        url: students.html
-      - title: Mentees
-        url: mentees.html
   - title: Teaching
     children:
       - title: Courses

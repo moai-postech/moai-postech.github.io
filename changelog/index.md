@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [type-focus-people](2026-10-21-type-focus-people.md) | Sangwoo Mo(moai-postech) | 테마, Home, Research, People | Pretendard·6단계 크기, 연구 방향 버튼(논문·사람 패널), People 을 Faculty·Students 로, 교수 사진·Bio, Research 맨 위 Paper Stella iframe, 제목 MOAI 강조 |
 | 2026-10-21 | [visual-redesign](2026-10-21-visual-redesign.md) | Sangwoo Mo(moai-postech) | 메뉴, 모든 페이지, 테마 | 메뉴 Home·Research·Publications·People·Teaching·Contact, 그림·카드 중심 디자인, 방문자 세 부류 원칙. 이어서 임의로 넣은 Highlights 제거, CSS 캐시 버전 붙임 |
 | 2026-10-21 | [content-not-structure](2026-10-21-content-not-structure.md) | Sangwoo Mo(moai-postech) | AGENTS.md | 개인 사이트와는 사실(논문, 소식 등)만 맞추고 페이지 구성·배치는 이 사이트에서 따로 정함 |
 | 2026-10-21 | [discussions](2026-10-21-discussions.md) | Sangwoo Mo(moai-postech) | AGENTS.md, discussions/, 검사 스크립트 | 의견이 부딪히는 수정은 `discussions/` 안건으로 올려 결정 후 반영, 열린 안건 대상 파일은 검사에서 막음 |

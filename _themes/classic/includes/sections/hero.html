@@ -1,7 +1,7 @@
 {% assign s = include.section %}
     <section class="hero">
       <div class="hero-copy">
-        <h1>{{ s.heading }}</h1>
+        <h1>{% include inline.html text=s.heading %}</h1>
         <div class="hero-text">{{ s.body | markdownify }}</div>
         {% if s.buttons %}<p class="hero-actions">{% for b in s.buttons %}<a class="button{% if forloop.first %} primary{% endif %}" href="{{ b.url }}">{{ b.label }}</a>{% endfor %}</p>{% endif %}
       </div>

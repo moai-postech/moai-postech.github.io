@@ -1,33 +1,46 @@
-# Members 페이지. professor 는 맨 위 소개, groups 는 그 아래 절들이다(순서대로 나온다).
-# 사람 항목: name(필수), url(개인 페이지, 없으면 생략), detail(괄호 안 학위·주제 등, 마크다운 링크 가능).
+# People 메뉴의 두 페이지. professor 는 Faculty 페이지, groups 는 Students 페이지의 절들이다(순서대로 나온다).
+# bio 는 마크다운 문단(빈 줄로 문단을 나눈다). photo 는 정사각형 사진 경로.
+# 사람 항목: name(필수), url(개인 페이지, 없으면 생략), detail(괄호 안 학위·주제 등, 마크다운 링크 가능),
+# focus(_data/focus.yml 의 name. 그 연구 방향 패널에 이름이 나온다).
 professor:
   name: "Sangwoo Mo"
+  photo: assets/img/people/sangwoo-mo.jpg
   position: "Assistant Professor, [POSTECH IME](https://ime.postech.ac.kr/) (affiliated with [AI](https://ai.postech.ac.kr/), [AX](https://ax.postech.ac.kr/), and [IDS](https://ids.postech.ac.kr/index_en))"
   contact: "Science Building 4, Room 319 · {first_name}.{last_name} [at] postech.ac.kr · +82-54-279-2202"
   links: "[Google Scholar](https://scholar.google.com/citations?user=Sq9y3NMAAAAJ) / [Github](https://github.com/sangwoomo) / [CV](https://www.overleaf.com/read/yhzsgvyrfsvj) / [X (Twitter)](https://twitter.com/sangwoomo)"
-  bio: "Previously, he was a postdoctoral fellow at the [University of Michigan](https://umich.edu/), working with Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/), and earned his Ph.D. from [KAIST](https://www.kaist.ac.kr/en/) under the supervision of Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html). He has collaborated with leading research labs including Google, Meta, and NVIDIA, and has been supported by fellowships from Samsung and Qualcomm."
+  bio: |
+    Sangwoo Mo is an Assistant Professor in the [Department of Industrial and Management Engineering](https://ime.postech.ac.kr/) at POSTECH, where he leads the MOAI Lab. His research focuses on foundation models that orchestrate multiple modalities, including vision, language, and physical sensors.
+
+    Previously, he was a postdoctoral fellow at the [University of Michigan](https://umich.edu/), working with Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/), and earned his Ph.D. from [KAIST](https://www.kaist.ac.kr/en/) under the supervision of Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html). He has collaborated with leading research labs including Google, Meta, and NVIDIA, and has been supported by fellowships from Samsung and Qualcomm.
 groups:
   - title: "Ph.D. students"
     people:
       - name: "Myeongsoo Kim"
+        focus: "Agentic AI"
         url: "https://kim-myeong-soo.github.io/"
         detail: "(MS, POSTECH): Reliable Agents"
       - name: "Eunchan Jo"
+        focus: "Agentic AI"
         url: "https://eunchanjo.github.io/"
         detail: "(MS, POSTECH): Multimodal Agents"
   - title: "Master students"
     people:
       - name: "Suchan Lee"
+        focus: "Agentic AI"
         detail: "(BS, POSTECH): Reasoning Agents"
       - name: "Seunghyun Jang"
+        focus: "Agentic AI"
         detail: "(BS, SNU): Multimodal Agents"
       - name: "Gyeom Hwangbo"
+        focus: "Physical AI"
         url: "https://gyeomh.github.io/"
         detail: "(BS, U of Seoul): Physical AI"
       - name: "Sanghyung Lee"
+        focus: "Manufacturing AI"
         url: "https://idealtype.github.io/"
         detail: "(BS, Korea univ.): Manufacturing AI"
       - name: "Chaewon Park"
+        focus: "Manufacturing AI"
         url: "https://onehanap.github.io/"
         detail: "(BS, POSTECH): Manufacturing AI"
   - title: "Alumni"

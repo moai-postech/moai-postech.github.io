@@ -1,0 +1,14 @@
+{% comment %}
+  다른 사이트를 페이지 안에 넣는다(iframe). url(필수), title(절 제목, 없으면 생략),
+  label(화면 낭독기용 이름), caption(아래 설명, 마크다운), ratio(가로/세로, 기본 16/9).
+{% endcomment %}
+{% assign s = include.section %}
+    <section class="content-section embed-section">
+    {% if s.title %}<h2{% if s.id %} id="{{ s.id }}"{% endif %}>{{ s.title }}</h2>{% endif %}
+    <div class="section-body">
+    <div class="embed" style="aspect-ratio: {{ s.ratio | default: '16 / 9' }}">
+      <iframe src="{{ s.url }}" title="{{ s.label | default: s.title }}" loading="lazy" allowfullscreen referrerpolicy="no-referrer"></iframe>
+    </div>
+    {% if s.caption %}<p class="embed-caption">{% include inline.html text=s.caption %}</p>{% endif %}
+    </div>
+    </section>

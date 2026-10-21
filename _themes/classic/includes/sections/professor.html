@@ -1,11 +1,16 @@
 {% assign p = site.data.members.professor %}
-    <section class="content-section">
-    <h2{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>{{ include.section.title }}</h2>
-    <div class="section-body">
-    <h3>{{ p.name }}</h3>
-    <p class="role muted">{% include inline.html text=p.position %}<br>
-      {{ p.contact }}</p>
-    <p class="small muted prof-links">{% include inline.html text=p.links %}</p>
-    <p class="prof-bio">{% include inline.html text=p.bio %}</p>
-    </div>
+    <section class="content-section profile">
+      {% if p.photo %}<img class="profile-photo" src="{{ p.photo }}" alt="{{ p.name }}">{% endif %}
+      <div class="profile-head">
+        <h2{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>{{ p.name }}</h2>
+        <p class="profile-role">{% include inline.html text=p.position %}</p>
+        <p class="muted small">{{ p.contact }}</p>
+        <p class="small profile-links">{% include inline.html text=p.links %}</p>
+      </div>
     </section>
+    {% if p.bio %}<section class="content-section">
+    <h2>Bio</h2>
+    <div class="section-body profile-bio">
+    {{ p.bio | markdownify }}
+    </div>
+    </section>{% endif %}

@@ -5,7 +5,7 @@ footer: MOAI Lab, POSTECH
 # Publications 에서 굵게 표시할 이름
 highlight_name: Sangwoo Mo
 
-# 위쪽 메뉴. url 은 페이지 파일 이름(.md → .html)
+# 위쪽 메뉴. url 은 페이지 파일 이름(.md → .html). children 이 있으면 마우스를 올렸을 때 하위 메뉴가 뜬다
 nav:
   - title: Home
     url: index.html
@@ -14,7 +14,11 @@ nav:
   - title: Publications
     url: publications.html
   - title: People
-    url: people.html
+    children:
+      - title: Faculty
+        url: faculty.html
+      - title: Students
+        url: students.html
   - title: Teaching
     url: teaching.html
   - title: Contact

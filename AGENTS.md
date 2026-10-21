@@ -9,21 +9,21 @@ GitHub Pages 가 push 때마다 Jekyll 로 빌드한다. 콘텐츠는 테마를 
 ```
 _config.yml          사이트 이름, 메뉴, 사용할 테마
 _data/               콘텐츠 데이터(YAML)
-  focus.yml          연구 방향. Home·Research·Contact 가 함께 쓴다
+  focus.yml          연구 방향(버튼)과 방향별 대표 논문. Home·Research·Contact 가 함께 쓴다
   news.yml           Home 의 Research news
   media.yml          Home 의 Media coverage
   research.yml       Research 의 분야별 표
   publications.yml   Publications 목록
-  members.yml        People(교수, 학생, 멘티)
+  members.yml        People 의 Faculty(교수, 사진, Bio)와 Students(학생, 멘티). 학생의 focus 는 연구 방향 패널에 이름을 띄운다
   teaching.yml       Teaching 의 강의
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
-index.md 외 *.md     페이지 하나에 파일 하나. front matter 에 제목, 소개글, 절 순서
+index.md 외 *.md     페이지 하나에 파일 하나(research, publications, faculty, students, teaching, contact). front matter 에 소개글, 절 순서
 _themes/classic/     테마(현재 사용 중)
   layouts/           default.html(머리·메뉴·꼬리), page.html(소개 + 절 목록)
   includes/          section.html, sections/<type>.html, theme.css 등
 assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 않는다)
-assets/img/          그림과 아이콘(hero.svg, icons/). 콘텐츠가 이름으로 가리킨다
-members.html, join.html  옛 주소를 people.html, contact.html 로 넘기는 리다이렉트
+assets/img/          그림, 아이콘(icons/), 사진(people/). 콘텐츠가 경로로 가리킨다
+members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
 tools/               검사 스크립트
@@ -36,7 +36,7 @@ tools/               검사 스크립트
 | 뉴스, 논문, 멤버, 연구 분류, 강의, 과제 | `_data/*.yml` |
 | 그림, 아이콘 | `assets/img/` |
 | 페이지 소개글, 절 제목, 절 순서, 자유 문단 | 해당 `*.md` 의 front matter |
-| 메뉴, 사이트 이름, 꼬리말 | `_config.yml` |
+| 메뉴(하위 메뉴는 `children`), 사이트 이름, 꼬리말 | `_config.yml` |
 | 색, 글꼴, 배치, HTML 구조 | `_themes/<테마>/` |
 
 문장 안 링크와 강조는 마크다운으로 쓴다(`[글](주소)`). 문단에 CSS 클래스를 주려면 문단 바로 아랫줄에 `{: .muted}` 처럼 쓴다.
@@ -47,9 +47,10 @@ tools/               검사 스크립트
 
 - `layouts/page.html`: 페이지 front matter 의 `heading`(없으면 `title`), `intro`(마크다운), `sections` 를 그린다.
 - `includes/section.html`: 절 하나를 그린다. `type` 이 없으면 `title` + `body`(마크다운), 있으면 `includes/sections/<type>.html` 로 넘긴다.
-- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `news`(`data: news|media`), `research`, `funding`, `publications`, `professor`, `members`, `teaching`.
+- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `teaching`.
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
-- `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다.
+- `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
+- `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글자 크기는 `:root` 의 여섯 단계(`--fs-xs`~`--fs-2xl`)와 굵기 400·600·700 만 쓰고, 글꼴은 Pretendard 하나다.
 - 논문 저자 문자열 규칙: 쉼표로 구분, 이름 끝의 `*` 는 equal contribution, `†` 는 equal advising, `_config.yml` 의 `highlight_name` 은 강조.
 
 테마를 바꾼 뒤에는 다섯 페이지를 모두 빌드해 콘텐츠가 빠짐없이 나오는지 확인한다.
@@ -91,7 +92,7 @@ tools/               검사 스크립트
 
 1. **되돌리기**: 다른 사람이 changelog 에 남긴 결정을 되돌리거나 바꾼다. 또는 changelog 의 "기각한 안"을 다시 꺼낸다.
 2. **열린 안건과 겹침**: `discussions/index.md` 에 상태가 `논의 중` 인 안건과 같은 대상(같은 파일의 같은 부분, 같은 디자인 요소)을 고친다.
-3. **모두에게 걸리는 결정**: 테마 교체, 메뉴·페이지 구성, 색·글꼴·전체 배치, 이 `AGENTS.md` 의 규칙, 연구 방향(`_data/focus.yml`)을 바꾼다 어떤 논문이나 소식을 첫 화면에 앞세울지 고르는 것도 여기에 든다.
+3. **모두에게 걸리는 결정**: 테마 교체, 메뉴·페이지 구성, 색·글꼴·전체 배치, 이 `AGENTS.md` 의 규칙, 연구 방향(`_data/focus.yml`)을 바꾼다. 어떤 논문이나 소식을 첫 화면에 앞세울지 고르는 것도 여기에 든다.
 4. **의견이 갈림**: 요청한 사람들끼리 의견이 다르거나, 어느 쪽이 맞는지 판단이 서지 않는다.
 
 **바로 반영해도 되는 것.** 본인 멤버 정보(이름, 링크, 주제), 오타, 깨진 링크, 이미 결정된 안건을 그대로 반영하는 것.

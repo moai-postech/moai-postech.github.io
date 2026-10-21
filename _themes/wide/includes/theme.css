@@ -297,7 +297,9 @@ a.person-name:hover { color: var(--accent); }
   :root { --gutter: var(--space-6); --page-margin: 32px; --fs-6: 44px; }
   .hero h1 br { display: none; }
   .hero-copy, .hero-art { grid-column: 1 / -1; }
-  .hero-art { max-width: 640px; margin-top: var(--space-6); }
+  .hero-art { max-width: 440px; margin: var(--space-6) auto 0; }  /* tablets: the picture stays a picture, the focus tabs still show on the first screen */
+  .focus-tabs { align-items: stretch; }
+  .focus-tab { flex-direction: column; justify-content: flex-start; gap: var(--space-2); text-align: center; }
   .focus-papers, .research-overview .cards { grid-template-columns: 1fr; gap: var(--space-5); }
   .research-head, .topic-cards { grid-column: 1 / -1; }
   .research-head { display: grid; grid-template-columns: auto 1fr; column-gap: var(--space-4); align-items: center; margin-bottom: var(--space-5); }

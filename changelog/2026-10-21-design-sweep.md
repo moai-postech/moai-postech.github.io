@@ -44,3 +44,5 @@
 - 교수: multimodal 이 무엇인지 구체적으로, vision, language, physical sensors 로. "We **orchestrate** foundation models across **vision, language, and physical sensors** into AI systems that reason and act reliably in the real world." 세 입력은 그림의 Vision, Language, Sensors 와 같은 말이다. "see" 는 vision 과 겹쳐 뺐다. meta description 도 같은 문장.
 - 교수: Hero 문장에 굵은 강조가 필요한가. 뺐다. 바로 위 제목이 이미 M·O·A·I 를 강조색으로 칠하고 있어서, 문장의 강조는 제목과 시선을 다퉜다. 문장은 회색 본문 한 덩어리로 읽힌다.
 - 교수: "reason and act reliably" 가 꼭 필요한가. 뺐다. "We orchestrate foundation models across vision, language, and physical sensors to build AI for the real world." 무엇을 하는지는 그대로이고, 어디에 쓰는지는 그림(Agents, Robots, Manufacturing)과 focus 탭이 보여 준다.
+- 교수: "to build AI for the real world" 에 구체성을. "We orchestrate foundation models across vision, language, and physical sensors to build AI agents, robots, and manufacturing systems." 입력 셋과 출력 셋이 그림의 왼쪽·오른쪽과 같은 말이고, 출력 순서는 바로 아래 focus 탭(Agentic, Physical, Manufacturing)과 같다.
+- 태블릿(820px) 점검: hero 그림이 화면 폭 거의 전체(640px)를 차지해 focus 가 첫 화면 밖으로 밀렸다. 960px 이하에서 최대 440px, 가운데 정렬. focus 탭은 "Manufacturing AI" 만 두 줄이 되어 아이콘 높이가 어긋나던 것을, 960px 이하에서 아이콘 위·글자 아래로 세우고 탭 높이를 맞췄다.

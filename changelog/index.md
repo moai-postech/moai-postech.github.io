@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [faculty-honors](2026-10-21-faculty-honors.md) | Sangwoo Mo(moai-postech) | Faculty, AGENTS.md | Reviewer Award 삭제, 수상은 박사 과정 때로 표시, Reviewer 학회 목록을 왼쪽 한 줄로 |
 | 2026-10-21 | [publication-numbers](2026-10-21-publication-numbers.md) | Sangwoo Mo(moai-postech) | Publications | 게재 논문에 C/J/W 번호(연구실 전체 기준, venue 로 자동 분류) |
 | 2026-10-21 | [publications-badges](2026-10-21-publications-badges.md) | Sangwoo Mo(moai-postech) | Publications | 링크 소문자, slides·poster 숨김, 수상 줄 강조, oral 등 발표 형식을 venue 옆 배지로 |
 | 2026-10-21 | [teaching-tabs](2026-10-21-teaching-tabs.md) | Sangwoo Mo(moai-postech) | 메뉴, Teaching, Contact | Teaching 아래 Courses / Selected Talks 두 탭, 연도 머리 통일 |

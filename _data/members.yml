@@ -46,16 +46,16 @@ professor:
             - { text: "[Virtual Humans for Robotics and Autonomous Driving (POETS)](https://poets2024.github.io/)", side: "CVPR'24" }
         - title: "Reviewer"
           items:
-            - { text: "Conference", side: "NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, COLM, etc." }
-            - { text: "Journal", side: "TPAMI, TMLR, TNNLS, IJCV, etc." }
+            - "Conference: NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, COLM, etc."
+            - "Journal: TPAMI, TMLR, TNNLS, IJCV, etc."
     - title: "Honors & Awards"
       groups:
-        - items:
+        - title: "During Ph.D. at KAIST"
+          items:
             - { text: "Bronze Prize, Samsung Humantech Paper Awards (₩5M)", side: "2019" }
             - { text: "Qualcomm Innovation Fellowship Korea (₩4M)", side: "2020" }
             - { text: "Qualcomm Innovation Fellowship Korea (₩4M)", side: "2021" }
             - { text: "Best Paper Award, Korean AI Association Fall Conference (₩2M)", side: "2022" }
-            - { text: "Reviewer Award", side: "NeurIPS'20, ICML'20/21, ICLR'21/25" }
 groups:
   - title: "Ph.D. students"
     people:

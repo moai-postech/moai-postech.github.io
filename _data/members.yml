@@ -50,7 +50,7 @@ professor:
             - "Journal: TPAMI, TMLR, TNNLS, IJCV, etc."
     - title: "Honors & Awards"
       groups:
-        - title: "During Ph.D. at KAIST"
+        - title: "During PhD"
           items:
             - { text: "Bronze Prize, Samsung Humantech Paper Awards (₩5M)", side: "2019" }
             - { text: "Qualcomm Innovation Fellowship Korea (₩4M)", side: "2020" }

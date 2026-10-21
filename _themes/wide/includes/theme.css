@@ -229,6 +229,9 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule-aff { margin-right: var(--space-2); color: var(--muted); font-weight: 400; }
 .schedule [hidden] { display: none; }
 
+.sec-media a { color: var(--text); }  /* a whole headline in red was the heaviest red on Home; titles read as titles, hover shows the link */
+.sec-media a:hover { color: var(--accent); }
+
 /* Wide media */
 .embed { position: relative; width: 100%; min-height: 360px; overflow: hidden; border-radius: var(--radius-2); background: #0b1220; border: 1px solid var(--line); }
 .embed::before { content: "Loading the map\2026"; position: absolute; inset: 0; display: grid; place-items: center; color: #9aa7b8; font-size: var(--text-meta); }  /* shows until the map paints over it */

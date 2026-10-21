@@ -25,3 +25,5 @@
 - Students 의 연구 주제(Reliable Agents 등) 일곱 줄이 모두 빨간 글자였다. 본문색 굵은 글자로. 강조할 것이 아니라 분류다.
 - Contact 의 Join us 제목만 빨간 h2 였다. 다른 절 제목과 같은 본문색으로(회색 상자가 이미 구분한다).
 - Faculty 머리의 이메일·전화 줄과 링크 줄이 13px 각주 크기라 읽기 어려웠다. 15px 로.
+- Home Media coverage: 기사 제목 줄 전체가 빨간 링크라 Home 에서 가장 무거운 빨강이었다. 제목은 본문색, 마우스를 올리면 빨강. News 의 짧은 키워드 링크는 그대로 빨강.
+- Research 분야 아이콘(vision, language, robotics PNG): 그림 둘레 여백이 3분의 1이라 72px 칸에서 36px 처럼 작고 흐릿했다. 여백을 잘라 288px 정사각으로 다시 만들어 칸을 채운다.

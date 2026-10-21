@@ -120,20 +120,27 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 .hero h1 strong { color: var(--accent); font-weight: inherit; }
 .hero-text { margin-top: var(--space-5); color: var(--muted); }
 
-/* Focus explorer: three buttons across, the open panel shows three paper cards across */
-.focus-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); }
+/* Focus explorer: the chosen tab and its panel form one box, so the papers and people read as belonging to that tab */
+.focus-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); align-items: end; }
 .focus-tab { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); border: 1.5px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: var(--text); font: inherit; font-size: var(--text-lead); font-weight: 600; text-align: left; cursor: pointer; }
 .focus-tab img { width: 44px; height: 44px; flex-shrink: 0; }
 .focus-tab:hover { border-color: var(--accent); }
-.focus-tab[aria-selected="true"] { border-color: var(--accent); background: var(--surface); color: var(--accent); }
+.focus-tab[aria-selected="true"] { position: relative; z-index: 1; margin-bottom: -1px; padding-bottom: calc(var(--space-4) + var(--space-3)); border-color: var(--surface); border-radius: var(--radius-2) var(--radius-2) 0 0; background: var(--surface); color: var(--accent); }
+.focus-tab:not([aria-selected="true"]) { margin-bottom: var(--space-3); }
 .focus-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.focus-panels { display: grid; margin-top: var(--space-5); }
-.focus-panels > .focus-panel { grid-area: 1 / 1; }
+.focus-panels { display: grid; padding: var(--space-6); background: var(--surface); border-radius: 0 0 var(--radius-2) var(--radius-2); }
+.focus-panels > .focus-panel { grid-area: 1 / 1; display: flex; flex-direction: column; }  /* every panel fills the tallest one */
 .focus-panels > .focus-panel[hidden] { display: block; visibility: hidden; }  /* keeps the tallest panel's height */
-.focus-papers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); }
-.paper-chip { display: flex; flex-direction: column; gap: var(--space-3); color: var(--text); }
-.paper-chip:hover { color: var(--accent); text-decoration: none; }
+.focus-papers { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: var(--space-5); }  /* cards take the spare height, so short titles leave space inside the card */
+.paper-chip { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-5); background: var(--bg); border-radius: var(--radius-1); color: var(--text); }
+.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .paper-chip .venue { align-self: flex-start; }
+.paper-chip .paper-title { font-weight: 600; line-height: 1.45; }
+.focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-4); margin: auto 0 0; padding-top: var(--space-5); font-size: var(--text-meta); font-weight: 600; }
+.focus-people .label { color: var(--muted); font-size: var(--text-small); text-transform: uppercase; letter-spacing: .06em; }
+.focus-people span:not(.label) { color: var(--text); }
+
+.venue { align-self: flex-start; }
 .paper-chip .paper-title { font-weight: 600; line-height: 1.45; }
 .focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-4); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 600; }
 .focus-people .label { color: var(--muted); font-size: var(--text-small); text-transform: uppercase; letter-spacing: .06em; }
@@ -238,6 +245,8 @@ a.person-name:hover { color: var(--accent); }
   .hero { padding: var(--space-7) 0 var(--space-6); }
   .eyebrow { font-size: var(--text-meta); }
   .focus-tab { flex-direction: column; gap: var(--space-2); padding: var(--space-3) var(--space-1); font-size: var(--text-meta); text-align: center; }
+  .focus-tab[aria-selected="true"] { padding-bottom: calc(var(--space-3) + var(--space-3)); }
+  .focus-panels { padding: var(--space-4); }
   .focus-tab img { width: 36px; height: 36px; }
   .news li, .item-list li, .funding li, .row, .pubs li, .people:not(.people-grid) .person, .profile { grid-template-columns: 1fr; gap: 2px; }
   .pub-meta { grid-column: 1; grid-row: auto; margin-top: var(--space-2); }

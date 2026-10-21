@@ -30,3 +30,9 @@
 
 - 교수: 첫 페이지에서 of 를 첫 줄로 올리면 어떤가.
 - 반영: `**M**ultimodal **O**rchestration of <br>**A**rtificial **I**ntelligence`. 1440px 에서 첫 줄 590px 로 제목 칸(680px)에 들어간다. 1024px 에서는 칸이 513px 로 줄어 세 줄이 되어, 제목 크기 토큰 `--fs-6` 를 `clamp(36px, 3.9vw, 48px)` 로 바꿨다(전역 토큰 한 곳). 970·1024·1100·1280·1440px 모두 두 줄로 확인.
+
+## 추가(같은 날): 제목 최종본, "of" 는 아래 줄
+
+- 교수: of 를 아래로 두는 게 나은 것 같기도 하다, 판단해서 최종본을 달라.
+- 결정: `Multimodal Orchestration / of Artificial Intelligence`. 줄 끝에 전치사를 남기지 않는 제목 조판 관례(“of Artificial Intelligence” 가 한 구로 붙어 읽힌다), 두 줄 길이가 24/26자로 더 고르다. 머리글자 배치(M·O / A·I)는 같다. 970~1440px 모두 두 줄로 확인. 제목 크기 토큰(`clamp`)은 그대로 둔다.
+- 기각: `Multimodal Orchestration of / Artificial Intelligence`(줄 끝 전치사, 27/23자).

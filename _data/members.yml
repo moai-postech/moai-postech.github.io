@@ -30,8 +30,8 @@ professor:
     - title: "Education"
       groups:
         - items:
-            - { text: "KAIST, M.S./Ph.D. in Electrical Engineering (advisor: Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html))", detail: "Ph.D. Thesis: [Learning Visual Representations from Uncurated Data](https://koasas.kaist.ac.kr/handle/10203/320934)", side: "2023" }
-            - { text: "POSTECH, B.S. in Mathematics & Industrial Engineering (minor), summa cum laude", side: "2016" }
+            - { text: "KAIST, MS/PhD in Electrical Engineering (advisor: Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html))", detail: "PhD thesis: [Learning Visual Representations from Uncurated Data](https://koasas.kaist.ac.kr/handle/10203/320934)", side: "2023" }
+            - { text: "POSTECH, BS in Mathematics & Industrial Engineering (minor), summa cum laude", side: "2016" }
     - title: "Services"
       groups:
         - title: "Senior committee (AC, Editor)"
@@ -55,7 +55,7 @@ professor:
             - { text: "Qualcomm Innovation Fellowship Korea (₩4M)", side: "2021" }
             - { text: "Best Paper Award, Korean AI Association Fall Conference (₩2M)", side: "2022" }
 groups:
-  - title: "Ph.D. students"
+  - title: "PhD students"
     people:
       - name: "Myeongsoo Kim"
         photo: assets/img/people/myeongsoo-kim.jpg

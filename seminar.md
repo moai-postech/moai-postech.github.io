@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Seminar
-head_title: "Seminar — MOAI Lab"
+head_title: "Seminar · MOAI Lab"
 description: "The MOAI Lab seminar at POSTECH and the researchers we have invited."
 intro: |
   We hold a weekly lab seminar and host invited speakers.

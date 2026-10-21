@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Overview
-head_title: "Research — MOAI Lab"
+head_title: "Research · MOAI Lab"
 description: "Research of MOAI Lab at POSTECH: vision and multimodal, language and reasoning, robotics and embodied AI; current focus on agentic, physical, and manufacturing AI."
 intro: |
   We design scalable priors for AI. Foundation models learn mostly from data, but data alone misses

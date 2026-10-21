@@ -41,7 +41,7 @@
   --surface: var(--gray-50);
   --text: var(--ink-900);
   --muted: var(--ink-600);
-  --faint: var(--ink-500);
+  --faint: var(--muted);  /* one secondary grey: --faint is kept as an alias so older rules read the same (2026-10-22) */
   --line: var(--gray-200);
   --accent: var(--red-700);
   --accent-soft: var(--red-100);
@@ -147,7 +147,7 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .paper-chip .venue { background: var(--bg); }  /* the card is already grey, so its badge is white */
 .paper-chip .paper-title { font-weight: 600; line-height: 1.45; }
-.focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 500; }
+.focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 400; }
 .focus-people .label { margin-right: var(--space-1); color: var(--faint); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
 .focus-people a, .focus-people span:not(.label) { color: var(--text); }
 .focus-people a:hover { color: var(--accent); }
@@ -156,7 +156,10 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
 
 /* Lists: light items (courses, talks, funding, seminar) are one row: the title on the left, term, place, or years right-aligned at the end.
    Mentees too: name and affiliation on the left, papers at the right end. Publications use several lines. */
-.news li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-4); padding: var(--row-gap) 0; }
+.news li { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: baseline; gap: var(--space-4); padding: var(--row-gap) 0; }
+.sec-media { word-break: keep-all; }  /* Korean headlines break between words, not inside them */
+.sec-media li { grid-template-columns: 96px minmax(0, 1fr) auto; }  /* the outlet goes to the right edge: what on the left, where on the right */
+.media-source { color: var(--muted); font-size: var(--text-meta); white-space: nowrap; }
 .news li:first-child { padding-top: 0; }
 .news time { color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 .link-aside { color: var(--text); }  /* a parenthetical inside a link, e.g. "(oral)": part of the link, but not painted */
@@ -173,7 +176,8 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
 .mentee-name { color: var(--text); font-weight: 600; }
 a.mentee-name:hover { color: var(--accent); }
 .mentee-aff { margin-left: var(--space-2); color: var(--muted); font-size: var(--text-meta); }  /* who they were and whom they worked with, right after the name */
-.item-detail { display: block; margin-top: 2px; color: var(--muted); font-size: var(--text-meta); }  /* a line that belongs to the item above it, e.g. the Ph.D. thesis under KAIST */
+.item-detail { display: block; margin-top: 0; color: var(--muted); font-size: var(--text-meta); line-height: 1.4; }
+.item-list li:has(.item-detail):not(:last-child) { padding-bottom: var(--space-2); }  /* a two-line item keeps its detail close and the next item clearly apart */  /* a line that belongs to the item above it, e.g. the Ph.D. thesis under KAIST */
 .item-list + h3.sub, .more-news h3.sub { margin-top: var(--space-6); }
 .more-news { margin-top: var(--space-4); }
 .more-news summary { display: inline-flex; cursor: pointer; color: var(--accent); font-size: var(--text-meta); font-weight: 600; list-style: none; }
@@ -205,9 +209,9 @@ a.mentee-name:hover { color: var(--accent); }
 .topic-lead { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-3); background: var(--bg); border-radius: var(--radius-1); color: var(--text); }  /* the newest published paper of the topic, with its full title, so a visitor sees the actual work and not only acronyms */
 .topic-lead .paper-title { font-size: var(--text-meta); font-weight: 600; line-height: 1.45; }
 a.topic-lead:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
-.paper-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: auto; }
+.paper-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }  /* chips follow the lead paper; a shorter card keeps its spare room at the bottom */
 .chip { display: inline-flex; align-items: baseline; gap: var(--space-1); padding: 2px var(--space-2); background: var(--bg); border-radius: var(--radius-1); color: var(--text); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
-.chip small { color: var(--faint); font-size: var(--text-small); font-weight: 500; }
+.chip small { color: var(--faint); font-size: var(--text-small); font-weight: 400; }
 a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .area-icon { width: 44px; height: 44px; }
 [id] { scroll-margin-top: var(--space-4); }
@@ -216,9 +220,9 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .row p { margin: 0; }
 
 /* Seminar: one list, newest first, filtered by kind. One row per talk: date, title (takes all spare width), speaker at the right end */
-.filter-bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-5); margin-bottom: var(--space-5); box-shadow: inset 0 -1px 0 var(--line); }
+.filter-bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-5); margin-bottom: var(--space-5); }  /* no full-width rule: the only line on a page is the one under the menu */
 .filter-btn { padding: 0 0 var(--space-3); border: 0; background: none; color: var(--muted); font: inherit; font-size: var(--text-meta); font-weight: 600; cursor: pointer; }
-.filter-btn span { margin-left: 2px; color: var(--faint); font-weight: 500; }
+.filter-btn span { margin-left: 2px; color: var(--faint); font-weight: 400; }
 .filter-btn:hover { color: var(--text); }
 .filter-btn[aria-pressed="true"] { color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
 .filter-link { margin-left: auto; font-size: var(--text-meta); font-weight: 600; }
@@ -226,11 +230,11 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule.is-locked { table-layout: fixed; }  /* column widths measured once over all talks (scripts.html), so filtering never moves a column */
 .schedule td { padding: var(--space-2) 0; vertical-align: baseline; }
 .schedule-year th { padding: var(--space-6) 0 var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 700; text-align: left; }
-.year-head { margin: var(--space-6) 0 var(--space-2); font-size: var(--text-lead); font-weight: 700; }  /* same year heading as the seminar list */
+.year-head { margin: var(--space-6) 0 var(--space-2); font-size: var(--text-lead); font-weight: 700; letter-spacing: normal; }  /* same year heading as the seminar list */
 .section-body > .year-head:first-child { margin-top: 0; }
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--faint); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.schedule-title { font-weight: 500; line-height: 1.5; }
+.schedule-title { font-weight: 400; line-height: 1.5; }
 .is-upcoming .schedule-date { color: var(--accent); font-weight: 600; }  /* talks still to come: the date alone turns accent */
 .schedule-title a { color: var(--text); }
 .schedule-title a:hover { color: var(--accent); }
@@ -260,6 +264,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pubs .title a { color: var(--text); }
 .pubs .title a:hover { color: var(--accent); }
 .pubs .authors { color: var(--faint); font-size: var(--text-meta); line-height: 1.5; }
+.author { white-space: nowrap; }  /* a name never breaks across lines */
 .pubs .lab { color: var(--text); }
 .pubs .note { margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: 600; line-height: 1.5; }  /* awards: a line of their own, in the accent colour */
 .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); margin-top: 2px; }
@@ -278,7 +283,7 @@ a.person-name:hover { color: var(--accent); }
 .person-degree, .person .role { display: block; color: var(--muted); font-size: var(--text-meta); }
 .people-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5) var(--gutter); }
 .people-grid .person { padding: 0; }
-.person-photo { display: block; width: 100%; max-width: 180px; aspect-ratio: 1; margin-bottom: var(--space-4); border-radius: 50%; object-fit: cover; background: var(--surface); }
+.person-photo { display: block; width: 100%; max-width: 180px; aspect-ratio: 1; margin-bottom: var(--space-4); border-radius: 50%; object-fit: cover; background: var(--surface); box-shadow: 0 0 0 1px var(--line); }  /* a hairline keeps white-background photos from melting into the page */
 .people-grid .person-name { font-size: var(--text-lead); }
 .person-work { display: block; margin-top: 2px; font-size: var(--text-meta); }
 

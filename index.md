@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Home
-head_title: "MOAI Lab — POSTECH"
+head_title: "MOAI Lab · POSTECH"
 description: "Multimodal Orchestration of Artificial Intelligence (MOAI) Lab at POSTECH. We orchestrate foundation models across vision, language, and physical sensors to drive AI agents, robots, and automated factories."
 sections:
   # 첫 화면. heading 은 큰 제목(마크다운, **굵게** 쓴 머리글자는 강조색, <br> 로 두 줄: "Multimodal Orchestration of / Artificial Intelligence Lab", 두 줄 길이가 같다),

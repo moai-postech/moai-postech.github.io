@@ -226,7 +226,9 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 
 /* Publications: title, authors, then venue and links under them */
 .page-publications .lede { font-size: var(--text-body); }
-.pubs li { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4) 0; }  /* one even gap inside a paper, a wider one between papers */
+.pubs li { display: grid; grid-template-columns: 3.5em minmax(0, 1fr); row-gap: var(--space-1); padding: var(--space-4) 0; }  /* number column, then title, authors, venue, award with one even gap; a wider gap between papers */
+.pubs li > * { grid-column: 2; }
+.pubs li > .pub-num { grid-column: 1; grid-row: 1; color: var(--faint); font-size: var(--text-meta); font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.65; }
 .pubs li:first-child { padding-top: 0; }
 .pubs .title { display: block; font-weight: 600; line-height: 1.5; }
 .pubs .title a { color: var(--text); }
@@ -305,6 +307,7 @@ a.person-name:hover { color: var(--accent); }
   .focus-panels { padding-top: var(--space-5); }
   .focus-tab img { width: 36px; height: 36px; }
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
+  .pubs li { grid-template-columns: 2.75em minmax(0, 1fr); }
   .topic-cards { grid-template-columns: 1fr; }
   .item-list li { flex-wrap: wrap; gap: 2px var(--space-3); }
   .funding li { grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--space-3); }

@@ -1,9 +1,19 @@
+{% comment %}
+  게재 논문마다 번호: C(학회), J(저널), W(워크숍). 연구실 전체 실적 기준이라 교수 CV 번호와 달라도 된다(교수 2026-10-21).
+  venue 의 첫 단어가 journals 목록에 있으면 J, workshops 목록에 있으면 W, 나머지는 C. 새 저널·워크숍 약칭은 목록에 더한다.
+  Preprints(venue 없음)는 번호가 없다. 화면은 최신이 위라 번호를 전체 개수에서 하나씩 줄인다.
+{% endcomment %}
+{% assign journals = "TMLR,T-RO,TPAMI,IJCV,TNNLS,JMLR,TIP,RA-L" | split: "," %}
+{% assign workshops = "CVPRW,ICMLW,ICCVW,ECCVW,NeurIPSW,ICLRW" | split: "," %}
+{% assign nc = 0 %}{% assign nj = 0 %}{% assign nw = 0 %}
+{% for group in site.data.publications %}{% for p in group.papers %}{% if p.venue %}{% assign vn = p.venue | split: " " | first %}{% if journals contains vn %}{% assign nj = nj | plus: 1 %}{% elsif workshops contains vn %}{% assign nw = nw | plus: 1 %}{% else %}{% assign nc = nc | plus: 1 %}{% endif %}{% endif %}{% endfor %}{% endfor %}
 {% for group in site.data.publications %}
     <section class="content-section">
     <h2>{{ group.section }}</h2>
     <div class="section-body">
     <ul class="plain pubs">
-      {% for p in group.papers %}<li>
+      {% for p in group.papers %}{% assign num = "" %}{% if p.venue %}{% assign vn = p.venue | split: " " | first %}{% if journals contains vn %}{% assign num = "J" | append: nj %}{% assign nj = nj | minus: 1 %}{% elsif workshops contains vn %}{% assign num = "W" | append: nw %}{% assign nw = nw | minus: 1 %}{% else %}{% assign num = "C" | append: nc %}{% assign nc = nc | minus: 1 %}{% endif %}{% endif %}<li>
+        <span class="pub-num">{{ num }}</span>
         <span class="title">{% if p.official %}<a href="{{ p.official }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
         <span class="authors">{% include authors.html authors=p.authors %}</span>
         {% if p.venue or p.links or p.url %}<span class="pub-meta">{% if p.venue %}{% assign vparts = p.venue | split: " (" %}<span class="venue">{{ vparts[0] }}</span>{% if vparts[1] %}{% assign vq = vparts[1] | remove: ")" %}{% if vq == "application" %}<span class="venue-track">Applications Track</span>{% else %}<span class="venue-honor">{{ vq | capitalize }}</span>{% endif %}{% endif %}{% endif %}{% if p.url %}<a class="pub-link" href="{{ p.url }}">arXiv</a>{% endif %}{% if p.links %}{% assign kinds = "code,project" | split: "," %}{% for k in kinds %}{% if p.links[k] %}<a class="pub-link" href="{{ p.links[k] }}">{{ k }}</a>{% endif %}{% endfor %}{% endif %}</span>{% endif %}

@@ -31,6 +31,8 @@
   --gutter: var(--space-7);
   --measure: 100%;         /* prose uses the full content width; a narrower cap broke short paragraphs at 760px and read as hard line breaks (2026-10-21) */
   --section-gap: var(--space-8);
+  /* horizontal gaps inside a line: 4px for parts that belong together (venue + Oral), 8px within a group
+     (name + affiliation, title + course code, chips), 12px between peer items (links, names), 24px between groups */
   --row-gap: var(--space-1);   /* between one-line rows in a list; multi-line items use --item-gap */
   --item-gap: var(--space-3);
 
@@ -143,8 +145,8 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .paper-chip .venue { background: var(--bg); }  /* the card is already grey, so its badge is white */
 .paper-chip .paper-title { font-weight: 600; line-height: 1.45; }
-.focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-5); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 500; }
-.focus-people .label { color: var(--faint); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 500; }
+.focus-people .label { margin-right: var(--space-1); color: var(--faint); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
 .focus-people a, .focus-people span:not(.label) { color: var(--text); }
 .focus-people a:hover { color: var(--accent); }
 
@@ -158,16 +160,16 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
 .news .muted { margin-left: var(--space-2); font-size: var(--text-meta); }
 .item-list li { display: flex; align-items: baseline; gap: var(--space-1) var(--space-6); padding: var(--row-gap) 0; }
 .item-list li:first-child { padding-top: 0; }
-.item-main strong { font-weight: 600; margin-right: var(--space-2); }
+.item-main strong { font-weight: 600; }
 .item-main strong a { color: var(--text); }
 .item-sub, .item-side { color: var(--muted); font-size: var(--text-meta); }
-.item-sub::before { content: "·"; margin: 0 var(--space-2) 0 calc(-1 * var(--space-5)); color: var(--line); }  /* a course code stays next to its title */
+.item-sub { margin-left: calc(var(--space-2) - var(--space-6)); }  /* a course code sits 8px after its title, not at the 24px gap of the right column */
 .item-side { margin-left: auto; text-align: right; }
 .item-side a { color: var(--muted); }  /* the right column is grey meta; a link there stays grey until hovered */
 .item-side a:hover { color: var(--accent); }
 .mentee-name { color: var(--text); font-weight: 600; }
 a.mentee-name:hover { color: var(--accent); }
-.mentee-aff { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); }  /* who they were and whom they worked with, right after the name */
+.mentee-aff { margin-left: var(--space-2); color: var(--muted); font-size: var(--text-meta); }  /* who they were and whom they worked with, right after the name */
 .item-detail { display: block; margin-top: 2px; color: var(--muted); font-size: var(--text-meta); }  /* a line that belongs to the item above it, e.g. the Ph.D. thesis under KAIST */
 .item-detail a { color: inherit; }  /* the thesis link keeps the grey of its line; accent only on hover */
 .item-detail a:hover { color: var(--accent); }
@@ -256,7 +258,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pubs .lab { color: var(--text); }
 .pubs .note { margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: 600; line-height: 1.5; }  /* awards: a line of their own, in the accent colour */
 .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); margin-top: 2px; }
-.venue-honor { color: var(--accent); font-size: var(--text-small); font-weight: 700; margin-left: calc(-1 * var(--space-1)); }  /* oral, spotlight, highlight: an honour, so it sits right next to the venue in the accent colour, no box */
+.venue-honor { color: var(--accent); font-size: var(--text-small); font-weight: 700; margin-left: calc(-1 * var(--space-2)); }  /* oral, spotlight, highlight: an honour, so it sits right next to the venue in the accent colour, no box */
 .venue + .pub-link::before, .venue-honor + .pub-link::before { content: ""; display: inline-block; width: 1px; height: .9em; margin-right: var(--space-3); vertical-align: -.1em; background: var(--line); }  /* a hairline splits the venue group from the links: venue | arXiv code, 12px either side */
 .pub-link { white-space: nowrap; color: var(--muted); font-size: var(--text-small); font-weight: 600; letter-spacing: .02em; }
 .pub-link:hover { color: var(--accent); text-decoration: none; }
@@ -341,7 +343,7 @@ a.person-name:hover { color: var(--accent); }
   .funding li span { grid-column: 1 / -1; grid-row: 2; }
   .item-side { margin-left: 0; text-align: left; flex-basis: 100%; }
   .item-sub { flex-basis: 100%; }
-  .item-sub::before { content: none; }
+  .item-sub { margin-left: 0; }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); }
   .profile-photo { width: 140px; height: 140px; }
   .embed { aspect-ratio: 4 / 5 !important; }

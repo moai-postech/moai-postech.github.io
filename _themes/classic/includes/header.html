@@ -1,0 +1,8 @@
+{% assign current = page.url | remove_first: "/" %}{% if current == "" %}{% assign current = "index.html" %}{% endif %}
+  <header class="site-head">
+    <p class="brand"><a href="index.html">{{ site.title }}</a></p>
+    <nav class="site-nav">
+      {% for item in site.nav %}<a href="{{ item.url }}"{% if item.url == current %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </header>

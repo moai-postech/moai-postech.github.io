@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.head_title %}{{ page.head_title }}{% else %}{{ page.title }} — {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="page-{{ page.name | remove: '.md' }}">
+<div class="wrap">
+{% include header.html %}
+  <main>
+{{ content }}
+  </main>
+{% include footer.html %}
+</div>
+</body>
+</html>

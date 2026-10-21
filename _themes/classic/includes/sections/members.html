@@ -1,0 +1,21 @@
+{% for g in site.data.members.groups %}
+    <section class="content-section">
+    <h2>{{ g.title }}</h2>
+    <div class="section-body">
+    {% if g.subgroups %}{% for sub in g.subgroups %}
+    <h3 class="sub">{{ sub.title }}</h3>
+    <ul class="plain people">
+      {% for person in sub.people %}{% include person.html person=person %}
+      {% endfor %}
+    </ul>
+    {% endfor %}{% elsif g.people.size > 0 %}
+    <ul class="plain people">
+      {% for person in g.people %}{% include person.html person=person %}
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="muted">{{ g.empty }}</p>
+    {% endif %}
+    </div>
+    </section>
+{% endfor %}

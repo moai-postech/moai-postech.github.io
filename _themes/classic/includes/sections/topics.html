@@ -1,0 +1,9 @@
+    <section class="content-section">
+    <h2>{{ include.section.title }}</h2>
+    <div class="section-body">
+    <ul class="plain people">
+      {% for f in site.data.focus %}<li class="person">{{ f.name }}: {{ f.topics }}</li>
+      {% endfor %}
+    </ul>
+    </div>
+    </section>

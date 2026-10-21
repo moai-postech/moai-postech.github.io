@@ -1,0 +1,17 @@
+# 모든 push 와 PR 에 changelog 기록이 들어 있는지 검사한다(AGENTS.md "Changelog 규칙").
+name: changelog
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: python3 tools/check_changelog.py "$BASE" "$HEAD"
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event.pull_request.head.sha || github.sha }}

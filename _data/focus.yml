@@ -1,0 +1,8 @@
+# 연구실의 현재 연구 방향. Home 의 "Our focus", Research 의 "Current directions",
+# Join Us 의 "Topics" 가 모두 이 파일 하나에서 나온다.
+- name: "Agentic AI"
+  topics: "multimodal LLM, long-context, reasoning"
+- name: "Physical AI"
+  topics: "VLA, world models, personalized robots"
+- name: "Manufacturing AI"
+  topics: "time-series, process analytics"

@@ -1,0 +1,40 @@
+# 사이트 전체 설정. 콘텐츠는 _data/ 와 페이지 *.md, 모양은 _themes/<테마>/ 에 있다.
+
+title: MOAI Lab
+footer: MOAI Lab, POSTECH
+# Publications 에서 굵게 표시할 이름
+highlight_name: Sangwoo Mo
+
+# 위쪽 메뉴. url 은 페이지 파일 이름(.md → .html)
+nav:
+  - title: Home
+    url: index.html
+  - title: Research
+    url: research.html
+  - title: Publications
+    url: publications.html
+  - title: Members
+    url: members.html
+  - title: Join Us
+    url: join.html
+
+# 테마 선택. 테마를 바꾸려면 아래 두 줄의 "classic" 을 새 테마 폴더 이름으로 바꾼다.
+layouts_dir: _themes/classic/layouts
+includes_dir: _themes/classic/includes
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  # 따옴표를 곡선 따옴표로 바꾸지 않는다(원문 그대로)
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - GEMINI.md
+  - README.md
+  - changelog
+  - tools
+  - Gemfile
+  - Gemfile.lock
+  - vendor

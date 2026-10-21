@@ -1,0 +1,2 @@
+<li class="person">{% if include.person.url %}<a href="{{ include.person.url }}">{{ include.person.name }}</a>{% else %}{{ include.person.name }}{% endif %}
+        <span class="role">{% include inline.html text=include.person.detail %}</span></li>

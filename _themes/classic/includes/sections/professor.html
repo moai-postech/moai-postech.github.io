@@ -1,0 +1,11 @@
+{% assign p = site.data.members.professor %}
+    <section class="content-section">
+    <h2{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>{{ include.section.title }}</h2>
+    <div class="section-body">
+    <h3>{{ p.name }}</h3>
+    <p class="role muted">{% include inline.html text=p.position %}<br>
+      {{ p.contact }}</p>
+    <p class="small muted prof-links">{% include inline.html text=p.links %}</p>
+    <p class="prof-bio">{% include inline.html text=p.bio %}</p>
+    </div>
+    </section>

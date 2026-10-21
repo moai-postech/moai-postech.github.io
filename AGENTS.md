@@ -1,0 +1,107 @@
+# MOAI Lab 홈페이지
+
+https://moai-postech.github.io 의 소스다. 사람과 AI 에이전트(Claude Code, Codex, Gemini, Cursor, Copilot 등) 모두 이 파일 하나를 규칙으로 따른다. `CLAUDE.md`, `GEMINI.md` 는 이 파일을 불러오는 포인터일 뿐이니 규칙은 여기에만 쓴다.
+
+## 구조: 콘텐츠와 테마를 나눈다
+
+GitHub Pages 가 push 때마다 Jekyll 로 빌드한다. 콘텐츠는 테마를 모르고, 테마는 콘텐츠를 담지 않는다. 테마를 갈아 끼워도 콘텐츠 파일은 그대로 둔다.
+
+```
+_config.yml          사이트 이름, 메뉴, 사용할 테마
+_data/               콘텐츠 데이터(YAML)
+  focus.yml          연구 방향. Home·Research·Join Us 가 함께 쓴다
+  news.yml           Home 의 Research news
+  media.yml          Home 의 Media coverage
+  research.yml       Research 의 분야별 표
+  publications.yml   Publications 목록
+  members.yml        Members(교수, 학생, 멘티)
+index.md 외 *.md     페이지 하나에 파일 하나. front matter 에 제목, 소개글, 절 순서
+_themes/classic/     테마(현재 사용 중)
+  layouts/           default.html(머리·메뉴·꼬리), page.html(소개 + 절 목록)
+  includes/          section.html, sections/<type>.html, theme.css 등
+assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 않는다)
+changelog/           수정 기록(아래 규칙)
+tools/               검사 스크립트
+```
+
+### 무엇을 어디서 고치나
+
+| 바꾸려는 것 | 고칠 곳 |
+| --- | --- |
+| 뉴스, 논문, 멤버, 연구 분류 | `_data/*.yml` |
+| 페이지 소개글, 절 제목, 절 순서, 자유 문단 | 해당 `*.md` 의 front matter |
+| 메뉴, 사이트 이름, 꼬리말 | `_config.yml` |
+| 색, 글꼴, 배치, HTML 구조 | `_themes/<테마>/` |
+
+문장 안 링크와 강조는 마크다운으로 쓴다(`[글](주소)`). 문단에 CSS 클래스를 주려면 문단 바로 아랫줄에 `{: .muted}` 처럼 쓴다.
+
+### 테마 계약
+
+새 테마는 `_themes/<새이름>/` 에 아래 파일을 모두 갖추면 된다. 그 뒤 `_config.yml` 의 `layouts_dir`, `includes_dir` 두 줄만 새 이름으로 바꾼다.
+
+- `layouts/page.html`: 페이지 front matter 의 `heading`(없으면 `title`), `intro`(마크다운), `sections` 를 그린다.
+- `includes/section.html`: 절 하나를 그린다. `type` 이 없으면 `title` + `body`(마크다운), 있으면 `includes/sections/<type>.html` 로 넘긴다.
+- `includes/sections/` 의 type 별 파일: `focus`, `topics`, `news`(`data: news|media`), `research`, `publications`, `professor`, `members`.
+- `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다.
+- 논문 저자 문자열 규칙: 쉼표로 구분, 이름 끝의 `*` 는 equal contribution, `†` 는 equal advising, `_config.yml` 의 `highlight_name` 은 강조.
+
+테마를 바꾼 뒤에는 다섯 페이지를 모두 빌드해 콘텐츠가 빠짐없이 나오는지 확인한다.
+
+## 고치는 절차
+
+1. `git pull` 로 최신을 받는다.
+2. 고친다.
+3. 로컬에서 본다(Ruby 3 이상 필요).
+   ```bash
+   bundle install
+   bundle exec jekyll serve
+   ```
+   http://localhost:4000 에서 확인한다.
+4. **changelog 를 쓴다(아래, 필수).**
+5. 커밋하고 `main` 에 push 한다. 문구·링크·항목 추가 같은 작은 수정은 바로 push 해도 된다. 테마 교체, 구조 변경처럼 큰 수정은 브랜치와 PR 로 올린다.
+6. 1~2분 뒤 https://moai-postech.github.io 에 반영됐는지 본다. Actions 탭의 changelog 검사가 실패하면 고친다.
+
+## Changelog 규칙 (필수)
+
+**저장소의 파일을 바꾼 커밋에는 반드시 `changelog/` 기록이 같이 들어간다.** 누가 고쳤든, 사람이든 에이전트든 같다. 기록이 없는 push 는 `tools/check_changelog.py` 검사(GitHub Actions)에서 실패한다.
+
+- 회차 파일: `changelog/{YYYY-MM-DD}-{slug}.md`. slug 는 영어 소문자와 하이픈(`2026-10-21-news-wacv`).
+- 같은 날 같은 작업을 이어서 하면 새 파일을 만들지 않고 그 파일에 덧붙인다.
+- `changelog/index.md` 의 표 맨 위에 한 줄을 추가한다. 열은 `날짜 | 회차(파일 링크) | 작성자 | 대상 | 한 줄 요약`.
+- 회차 파일 양식:
+  ```markdown
+  # 2026-10-21 한국어 제목
+  작성자: 이름(GitHub ID) | 대상: 바꾼 페이지나 파일 | 도구: 사람 직접, Claude Code, Codex 등
+
+  > **한줄 결론: 무엇을 바꿨는지 한 문장.**
+
+  ## 요청
+  누가 왜 바꾸자고 했는지.
+  ## 반영 내역
+  바꾼 파일과 내용.
+  ## 기각한 안과 이유
+  검토했다가 버린 안. 없으면 "없음".
+  ## 남은 것
+  다음에 할 일. 없으면 "없음".
+  ```
+- **기각한 안과 이유를 반드시 적는다.** 다음 사람이 같은 안을 다시 꺼내지 않게 하는 것이 이 폴더의 목적이다.
+- 현재 상태와 원칙은 changelog 가 아니라 이 파일과 `_data/` 에 둔다. changelog 에는 경위만 쓴다.
+- push 전에 로컬에서 검사할 수 있다: `python3 tools/check_changelog.py`
+
+## 콘텐츠 표기 규칙
+
+Research, Publications, news 의 내용은 교수 개인 사이트(https://sites.google.com/view/sangwoomo)와 맞춘다. 이 셋의 내용을 바꾸려면 교수에게 먼저 알린다. 디자인과 본인 멤버 정보는 자유롭게 고친다.
+
+- 논문 순서: 같은 연도 안에서 conference, journal, workshop 순. 각 묶음 안에서는 accept 통보일이 최신인 venue 가 위다.
+- 이메일은 `{first_name}.{last_name} [at] postech.ac.kr`, `id [at] domain` 처럼 가리고 mailto 링크를 걸지 않는다.
+- 링크에 밑줄을 넣지 않는다(hover 때만).
+- 교수 이름 링크는 그 교수의 개인 페이지나 연구실 사이트 안 교수 프로필로 건다.
+- Venue 의 track·발표 형식 표시(`(application)`, `(oral)`)는 Publications, News, Other mentees 에만 붙인다. Research 는 `약칭 (학회'연도)` 만 쓴다.
+- News 의 `Paper(s) on X` 는 두 단어 안팎으로 짧게 쓴다. 셀 수 있는 명사는 복수로 쓴다(`personal robots`).
+- Join Us 의 Topics 는 `_data/focus.yml` 에서 자동으로 나오니 따로 고치지 않는다.
+
+## 에이전트 호환
+
+- 규칙의 정본은 이 `AGENTS.md` 하나다. Codex, Cursor, GitHub Copilot 은 이 파일을 바로 읽는다.
+- `CLAUDE.md`(Claude Code), `GEMINI.md`(Gemini CLI)는 `@AGENTS.md` 한 줄로 이 파일을 불러온다. 규칙을 그 파일들에 복사하지 않는다.
+- 다른 도구가 별도 파일명을 요구하면 같은 방식의 포인터만 추가하고 이 절에 적는다.

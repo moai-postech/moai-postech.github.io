@@ -1,0 +1,9 @@
+    <section class="content-section">
+    <h2>{{ include.section.title }}</h2>
+    <div class="section-body">
+    <ul class="plain news">
+      {% for n in site.data[include.section.data] %}<li><time>{{ n.date }}</time><span>{% include inline.html text=n.text %}{% if n.source %} <span class="muted">{{ n.source }}</span>{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+    </div>
+    </section>

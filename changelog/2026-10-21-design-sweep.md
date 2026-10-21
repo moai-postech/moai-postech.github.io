@@ -42,3 +42,4 @@
 - 교수: Bio 등 문장이 자꾸 엔터로 끊긴다. 데이터에는 줄바꿈이 없었다. 산문 폭을 760px(`--measure`)로 묶어 둬서 1200px 화면에서도 760px 에서 꺾여 엔터처럼 보였다. `--measure` 를 100% 로 바꿔 Bio, 페이지 소개, Contact 문장이 본문 폭 전체를 쓴다. Hero 문장은 왼쪽 7칸 안이라 그대로다.
 - 교수: Home 의 Our focus 위 여백이 너무 크다. Hero 그림 아래에서 "Our focus" 제목까지 128px(hero 아래 64 + 절 위 64)였다. hero 아래 32 + 그다음 절 위 32 로 줄여 다른 절 사이와 같은 64px. 데스크톱·휴대폰 모두 64px 로 쟀다.
 - 교수: multimodal 이 무엇인지 구체적으로, vision, language, physical sensors 로. "We **orchestrate** foundation models across **vision, language, and physical sensors** into AI systems that reason and act reliably in the real world." 세 입력은 그림의 Vision, Language, Sensors 와 같은 말이다. "see" 는 vision 과 겹쳐 뺐다. meta description 도 같은 문장.
+- 교수: Hero 문장에 굵은 강조가 필요한가. 뺐다. 바로 위 제목이 이미 M·O·A·I 를 강조색으로 칠하고 있어서, 문장의 강조는 제목과 시선을 다퉜다. 문장은 회색 본문 한 덩어리로 읽힌다.

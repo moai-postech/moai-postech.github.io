@@ -9,7 +9,7 @@ sections:
   - type: hero
     heading: "**M**ultimodal **O**rchestration of <br>**A**rtificial **I**ntelligence Lab"
     body: |
-      We **orchestrate** foundation models across **vision, language, and physical sensors** into AI systems that reason and act reliably in the real world.
+      We orchestrate foundation models across vision, language, and physical sensors into AI systems that reason and act reliably in the real world.
     image: assets/img/hero.svg
     image_alt: "Vision, language, and sensor inputs flow into MOAI, which drives agents, robots, and manufacturing."
   - title: "Our focus in 2026"

@@ -18,7 +18,7 @@ _data/               콘텐츠 데이터(YAML)
   teaching.yml       Teaching 의 정규 강의
   talks.yml          Teaching 의 Invited talks(올해와 작년)
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
-index.md 외 *.md     페이지 하나에 파일 하나(research, publications, faculty, students, mentees, teaching, contact). front matter 에 소개글, 절 순서
+index.md 외 *.md     페이지 하나에 파일 하나(research·landscape·funding, publications, faculty·students·mentees, teaching, contact). 메뉴의 Research, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
 _themes/classic/     테마(현재 사용 중)
   layouts/           default.html(머리·메뉴·꼬리), page.html(소개 + 절 목록)
   includes/          section.html, sections/<type>.html, theme.css 등
@@ -66,7 +66,7 @@ tools/               검사 스크립트
 | 과제 지원 기관·산업체 | 무엇을 잘하나, 믿고 맡길 실적이 있나, 누구에게 연락하나 | 연구 방향, 대표 논문과 venue, Funding 이력, 연락처 |
 | 동료 연구자 | 어떤 문제를 푸나, 최근 논문, 누가 있나 | 연구 방향, News, Publications, People |
 
-- **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구와 Paper Stella 지도와 Funding 은 Research, 교수 이메일·전화는 Faculty, 연구실 주소와 지원 방법과 랩 세미나는 Contact.
+- **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Research > Landscape, 과제는 Research > Funding, 교수 이메일·전화는 Faculty, 연구실 주소와 지원 방법과 랩 세미나는 Contact.
 - **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
 - 글보다 그림을 먼저 쓴다. 같은 내용이면 카드, 아이콘, 그림으로 보여 주고 문장은 짧게 줄인다.
 - 랜딩 페이지(Home)가 가장 중요하다. 스크롤 없이 보이는 첫 화면에서 세 부류가 각자 다음에 누를 곳을 찾을 수 있어야 한다.

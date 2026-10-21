@@ -8,7 +8,13 @@ nav:
   - title: Home
     url: index.html
   - title: Research
-    url: research.html
+    children:
+      - title: Overview
+        url: research.html
+      - title: Landscape
+        url: landscape.html
+      - title: Funding
+        url: funding.html
   - title: Publications
     url: publications.html
   - title: People

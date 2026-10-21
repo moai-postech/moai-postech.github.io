@@ -34,3 +34,10 @@
 ## 남은 것
 
 - `FM Applications` 라벨(저장소 밖 상위 `TODO.md` 질문 목록).
+
+## 추가(같은 날): Research 하위 탭 Overview / Landscape / Funding
+
+- 교수: Research 아래 탭 셋(overview / stella / funding). Funding 이 여기 맞는지는 고민.
+- 반영: `research.md`(Overview: 소개, 분야 카드, 분야별 표), `landscape.md`(Paper Stella 지도, 16:10 크게), `funding.md`(Government, Industry 를 각각 절로). 메뉴 Research 에 `children`, 각 페이지 위에 전환 탭. Funding 묶음 렌더링은 `includes/funding-list.html` 로 나눴다.
+- 탭 이름: 지도 탭은 `Stella` 대신 `Landscape`. 처음 오는 사람은 Stella 가 무엇인지 모른다. 탭을 열면 Paper Stella 라는 것이 보인다.
+- Funding 위치: Research 아래 유지. 과제 지원 기관이 "어떤 지원으로 무슨 연구를 했나"를 보는 자리라 연구와 붙어 있는 편이 자연스럽다. 기각: 별도 메뉴(6건이라 얇다), Faculty(교수 개인 이력처럼 보인다).

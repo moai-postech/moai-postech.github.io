@@ -182,12 +182,16 @@ h3.sub:first-child { margin-top: 0; }
 .pubs .note { display: block; margin-top: 5px; color: var(--muted); font-size: var(--fs-xs); }
 .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin-top: 8px; }
 .pub-link { white-space: nowrap; font-size: var(--fs-xs); font-weight: 600; letter-spacing: .02em; }
-.pub-link::before { content: "↗ "; opacity: .55; }
+.pub-link { color: var(--muted); }
+.pub-link:hover { color: var(--accent); text-decoration: none; }
 
 /* People: students as a three-column roster on thin rules, mentees as a list. */
 .person { padding: 14px 0; border-bottom: 1px solid var(--line-soft); line-height: 1.5; }
 .person:first-child { padding-top: 0; }
 .person:last-child { border-bottom: 0; }
+.person-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+.person-aff { color: var(--muted); font-size: var(--fs-sm); }
+.person-work { display: block; margin-top: 4px; font-size: var(--fs-sm); }
 .person-name { display: block; color: var(--text); font-size: var(--fs-md); font-weight: 600; }
 a.person-name:hover { color: var(--accent); }
 .person .role { display: block; margin-top: 3px; font-size: var(--fs-sm); color: var(--muted); }

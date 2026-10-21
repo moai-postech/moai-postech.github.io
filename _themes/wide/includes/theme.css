@@ -285,21 +285,38 @@ a.person-name:hover { color: var(--accent); }
 .profile-head p { margin-bottom: var(--space-1); }
 .profile-head .small { font-size: var(--text-meta); }  /* contact and links read at meta size, not footnote size */
 
-/* Contact: Join us as one surface panel across the page (same surface and radius as the Home focus panel),
-   then Before you apply and Visit us side by side as equal halves. No accent bar, no lines. */
+/* Contact: Join us is one surface panel (same surface and radius as the Home focus panel) with the two steps
+   as white cards on the left and the path picture on the right. Visit us puts the address on the left and
+   the map on the right. Red only on the step numbers, the pin and the picture's MOAI circle. */
+.page-contact main > .contact-block { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; }
 .page-contact main > .contact-join { margin-top: var(--space-6); padding: var(--space-7); background: var(--surface); border-radius: var(--radius-2); }
-.contact-join h2 { color: var(--text); }  /* the panel already marks it; a red heading was the only coloured h2 */
-.contact-join .section-body > p { max-width: none; }  /* one sentence each, so the panel's full width keeps the email on one line */
-.contact-join .section-body > p:first-child { font-size: var(--text-body); }
-.contact-join .section-body > p + p { margin-top: var(--space-3); }
-.page-contact main > .contact-apply { grid-column: 1 / span 6; }
-.page-contact main > .contact-visit { grid-column: span 6; }
-.contact-apply .small { margin-top: calc(-1 * var(--space-2)); }
+.contact-join .contact-main { grid-column: span 7; }
+.contact-join .contact-art { grid-column: span 5; width: 100%; height: auto; }
+.contact-join h2 { margin-bottom: var(--space-2); color: var(--text); }
+.contact-join .section-body p { color: var(--muted); }
+.contact-steps { display: grid; gap: var(--item-gap); margin-top: var(--space-5); }
+.contact-step { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-4); align-items: start; padding: var(--space-5); background: var(--bg); border-radius: var(--radius-2); }
+.step-num { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: var(--text-meta); font-weight: 700; }
+.step-body h3 { margin: 2px 0 var(--space-1); font-size: var(--text-body); }
+.step-body p { margin-bottom: var(--space-1); }
+.step-body p:last-child { margin-bottom: 0; }
+.page-contact main > .contact-visit { align-items: start; }  /* the heading lines up with the top of the map */
+.contact-visit .contact-main { grid-column: span 6; display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: var(--space-4); align-items: start; }
+.contact-visit h2 { grid-column: 1 / -1; grid-row: 1; }
+.contact-visit .contact-icon { grid-column: 1; grid-row: 2; width: 48px; height: 48px; }
+.contact-visit .section-body { grid-column: 2; grid-row: 2; }
+.contact-map { grid-column: span 6; position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--surface); }
+.contact-map::before { content: "Loading the map\2026"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--faint); font-size: var(--text-meta); }  /* shows until the map paints over it */
+.contact-map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 @media (max-width: 960px) {
-  .page-contact main > .contact-apply, .page-contact main > .contact-visit { grid-column: 1 / -1; }
+  .contact-join .contact-main, .contact-visit .contact-main, .contact-map { grid-column: 1 / -1; }
+  .contact-join .contact-art { grid-column: 1 / -1; max-width: 400px; margin: var(--space-6) auto 0; }
+  .contact-map { margin-top: var(--space-5); }
 }
 @media (max-width: 680px) {
   .page-contact main > .contact-join { padding: var(--space-5); }
+  .contact-step { padding: var(--space-4); gap: var(--space-3); }
+  .contact-map { aspect-ratio: 4 / 3; }
 }
 
 

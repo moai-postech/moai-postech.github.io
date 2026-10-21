@@ -1,11 +1,32 @@
 {% comment %}
-  Contact 의 절 하나: 일반 절(title + body)과 같지만 section 에 contact-<id> 클래스를 달아
-  theme.css 가 Join us 상자와 아래 두 칸(Before you apply, Visit us)을 배치할 수 있게 한다.
+  Contact 의 절 하나. section 에 contact-<id> 클래스를 달아 theme.css 가 배치한다.
+  title, body(마크다운)는 일반 절과 같다. 아래는 있을 때만 그린다.
+  - steps: 번호 붙은 단계 카드 목록({ title, body(마크다운) }).
+  - image, image_alt: 오른쪽 그림.
+  - icon: body 왼쪽 작은 아이콘(Visit us 의 핀).
+  - map(iframe 주소), map_label(화면 낭독기용 이름): 오른쪽 지도. 지도 안에 지도 앱으로 여는 버튼이 있다.
 {% endcomment %}
 {% assign s = include.section %}
     <section class="content-section contact-block{% if s.id %} contact-{{ s.id }}{% endif %}">
+    <div class="contact-main">
+    {% if s.icon %}<img class="contact-icon" src="{{ s.icon }}" alt="">{% endif %}
     <h2{% if s.id %} id="{{ s.id }}"{% endif %}>{{ s.title }}</h2>
-    <div class="section-body">
+    {% if s.body %}<div class="section-body">
     {{ s.body | markdownify }}
+    </div>{% endif %}
+    {% if s.steps %}<ol class="contact-steps plain">
+      {% for st in s.steps %}<li class="contact-step">
+        <span class="step-num" aria-hidden="true">{{ forloop.index }}</span>
+        <div class="step-body">
+          <h3>{{ st.title }}</h3>
+          {{ st.body | markdownify }}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>{% endif %}
     </div>
+    {% if s.image %}<img class="contact-art" src="{{ s.image }}" alt="{{ s.image_alt }}">{% endif %}
+    {% if s.map %}<div class="contact-map">
+      <iframe src="{{ s.map }}" title="{{ s.map_label | default: s.title }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>{% endif %}
     </section>

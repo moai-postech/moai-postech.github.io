@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 56" role="img" aria-label="MOAI">
+  <!-- Moai head: flat crown, heavy brow, long nose, closed lips, long ears -->
+  <path d="M11 7C17 3 31 3 37 7L39 30C39.6 41 36 49 30 53H18C12 49 8.4 41 9 30Z" fill="#245bb5"/>
+  <path d="M7 21H11V37H8.5C7.6 37 7 36.3 7 35.4Z M41 21H37V37H39.5C40.4 37 41 36.3 41 35.4Z" fill="#245bb5"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 19.5H35" stroke-width="3.2"/>
+    <path d="M22.3 21.5L21 35.5C22.4 37.6 25.6 37.6 27 35.5L25.7 21.5" stroke-width="2.4"/>
+    <path d="M19 43.5H29" stroke-width="2.6"/>
+  </g>
+</svg>

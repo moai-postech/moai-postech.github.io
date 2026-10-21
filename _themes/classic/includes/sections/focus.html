@@ -2,6 +2,7 @@
   연구 방향 버튼. 누르면 그 방향의 대표 논문(_data/focus.yml 의 papers)과
   사람(_data/members.yml 에서 focus 가 같은 사람)이 아래 패널에 펼쳐진다.
   자바스크립트가 없으면 패널이 모두 펼쳐진 채로 보인다.
+  패널은 .focus-panels 한 칸에 겹쳐 두어, 탭을 바꿔도 높이가 가장 긴 패널에 맞춰 그대로다(AGENTS.md 규칙).
 {% endcomment %}
 {% assign sid = include.section.title | slugify %}
     <section class="content-section">
@@ -13,6 +14,7 @@
       </button>
       {% endfor %}
     </div>
+    <div class="focus-panels">
     {% for f in site.data.focus %}{% assign fid = f.name | slugify %}<div class="focus-panel" role="tabpanel" id="panel-{{ sid }}-{{ fid }}" aria-labelledby="tab-{{ sid }}-{{ fid }}">
       {% if f.papers %}<div class="focus-papers">
         {% for p in f.papers %}<a class="paper-chip" href="{{ p.url | default: 'publications.html' }}">
@@ -25,5 +27,6 @@
       {% if people.size > 0 %}<p class="focus-people"><span class="label">People</span>{% for person in people %}{% if person.url %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}<span>{{ person.name }}</span>{% endif %}{% endfor %}</p>{% endif %}
     </div>
     {% endfor %}
+    </div>
     </div>
     </section>

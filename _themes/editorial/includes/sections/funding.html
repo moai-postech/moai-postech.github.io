@@ -1,0 +1,19 @@
+{% comment %}title 이 있으면 한 절 안에 묶음을 소제목으로, 없으면(Funding 페이지) 묶음마다 절 하나{% endcomment %}
+{% if include.section.title %}
+    <section class="content-section">
+    <h2>{{ include.section.title }}</h2>
+    <div class="section-body">
+    {% for g in site.data.funding %}
+    <h3 class="sub">{{ g.group }}</h3>
+    {% include funding-list.html projects=g.projects %}
+    {% endfor %}
+    </div>
+    </section>
+{% else %}{% for g in site.data.funding %}
+    <section class="content-section">
+    <h2>{{ g.group }}</h2>
+    <div class="section-body">
+    {% include funding-list.html projects=g.projects %}
+    </div>
+    </section>
+{% endfor %}{% endif %}

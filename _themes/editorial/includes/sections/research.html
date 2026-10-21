@@ -1,0 +1,18 @@
+{% for area in site.data.research %}
+    <section class="content-section research-area" id="{{ area.area | slugify }}">
+    <h2>{% if area.icon %}<img class="area-icon" src="assets/img/icons/{{ area.icon }}.png" alt="">{% endif %}{{ area.area }}</h2>
+    <div class="section-body">
+    <div class="rows">
+      {% for t in area.topics %}<div class="row">
+        <h3>{{ t.name }}</h3>
+        <div>
+          <p>{% include inline.html text=t.summary %}</p>
+          <p class="small muted">{% include inline.html text=t.papers %}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if area.note %}<p class="more">{% include inline.html text=area.note %}</p>{% endif %}
+    </div>
+    </section>
+{% endfor %}

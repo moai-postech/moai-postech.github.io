@@ -41,6 +41,9 @@ img { max-width: 100%; }
 /* Shared navigation: the lab identity leads on every page. */
 .site-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 96px; border-bottom: 1px solid var(--line); }
 .brand { margin: 0; flex-shrink: 0; font-size: var(--fs-xl); font-weight: 700; line-height: 1.2; letter-spacing: -1px; }
+.brand a { display: inline-flex; align-items: center; gap: 10px; }
+.brand-mark { width: 28px; height: 33px; flex-shrink: 0; }
+.brand-word { font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: 23px; font-weight: 700; letter-spacing: -.3px; }
 .brand a { color: var(--text); text-decoration: none; }
 .brand a:hover { color: var(--accent); }
 .site-nav { display: flex; flex-wrap: wrap; gap: 8px 28px; }
@@ -76,11 +79,14 @@ h3.sub:first-child { margin-top: 0; }
 
 /* Home hero: the acronym as the picture (M·O·A·I, 2×2), the orchestration diagram beside it. */
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 64px; padding: 72px 0 64px; }
+.eyebrow { text-wrap: balance; margin: 0 0 22px; color: var(--muted); font-size: var(--fs-md); font-weight: 600; letter-spacing: .01em; }
+.eyebrow strong { color: var(--accent); font-weight: 700; }
+.hero h1 { text-wrap: balance; font-size: clamp(36px, 3.6vw, 48px); line-height: 1.18; letter-spacing: -1.2px; }
 .acronym { display: grid; grid-template-columns: repeat(2, max-content); gap: 18px 44px; }
 .acro-cell { display: flex; flex-direction: column; }
 .acro-letter { font-size: 112px; font-weight: 700; line-height: .92; letter-spacing: -4px; color: var(--accent); }
 .acro-word { margin-top: 8px; font-size: var(--fs-lg); font-weight: 600; letter-spacing: -.2px; }
-.hero-text { margin-top: 36px; max-width: 520px; font-size: var(--fs-lg); line-height: 1.6; color: var(--muted); }
+.hero-text { margin-top: 24px; max-width: 520px; font-size: var(--fs-md); line-height: 1.6; color: var(--muted); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .button { display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; border: 1.5px solid var(--accent); border-radius: 999px; font-size: var(--fs-sm); font-weight: 600; }
 .button:hover { text-decoration: none; background: var(--surface); color: var(--accent); }
@@ -113,6 +119,9 @@ h3.sub:first-child { margin-top: 0; }
 .focus-tab:hover { border-color: var(--accent); }
 .focus-tab[aria-selected="true"] { border-color: var(--accent); background: var(--surface); color: var(--accent); }
 .focus-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.focus-panels { display: grid; }
+.focus-panels > .focus-panel { grid-area: 1 / 1; }
+.focus-panels > .focus-panel[hidden] { display: block; visibility: hidden; }  /* keeps the tallest panel's height */
 .focus-panel { margin-top: 18px; padding: 24px; background: var(--surface); border-radius: 14px; }
 .focus-panel + .focus-panel { margin-top: 12px; }
 .focus-papers { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
@@ -140,7 +149,6 @@ h3.sub:first-child { margin-top: 0; }
 .more-news summary::-webkit-details-marker { display: none; }
 .more-news summary::after { content: " ↓"; white-space: pre; }
 .more-news[open] summary::after { content: " ↑"; }
-.more-news .news { margin-top: 14px; }
 .media-card { display: flex; flex-direction: column; gap: 8px; color: var(--text); border: 1.5px solid transparent; transition: border-color .15s, transform .15s; }
 .media-card:hover { color: var(--text); text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
 .media-source { color: var(--muted); font-size: var(--fs-xs); font-weight: 600; letter-spacing: .02em; }
@@ -235,6 +243,8 @@ a.person-name:hover { color: var(--accent); }
   .site-nav { gap: 0 16px; }
   .site-nav a { min-height: 40px; }
   .hero { padding: 36px 0 32px; }
+  .hero h1 { font-size: 30px; letter-spacing: -.8px; }
+  .eyebrow { font-size: var(--fs-sm); margin-bottom: 16px; }
   .acronym { gap: 14px 28px; }
   .acro-letter { font-size: 68px; letter-spacing: -2px; }
   .acro-word { font-size: var(--fs-md); margin-top: 4px; }

@@ -1,0 +1,16 @@
+{% for group in site.data.publications %}
+    <section class="content-section">
+    <h2>{{ group.section }}</h2>
+    <div class="section-body">
+    <ul class="plain pubs">
+      {% for p in group.papers %}<li>
+        <span class="title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
+        <span class="authors">{% include authors.html authors=p.authors %}</span>
+        {% if p.venue or p.links %}<span class="pub-meta">{% if p.venue %}<span class="venue">{{ p.venue }}</span>{% endif %}{% if p.links %}{% assign kinds = "project,code,slides,poster" | split: "," %}{% for k in kinds %}{% if p.links[k] %}<a class="pub-link" href="{{ p.links[k] }}">{{ k | capitalize }}</a>{% endif %}{% endfor %}{% endif %}</span>{% endif %}
+        {% if p.note %}<span class="note">{{ p.note }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    </div>
+    </section>
+{% endfor %}

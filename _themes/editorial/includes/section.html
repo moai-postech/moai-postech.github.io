@@ -1,0 +1,13 @@
+{% comment %}
+  페이지 front matter 의 sections 한 칸을 그린다.
+  type 이 없으면 title + body(마크다운) 절이고, type 이 있으면 sections/<type>.html 이 그린다.
+{% endcomment %}
+{% assign s = include.section %}
+{% if s.type %}{% include sections/{{ s.type }}.html section=s %}{% else %}
+    <section class="content-section">
+    <h2{% if s.id %} id="{{ s.id }}"{% endif %}>{{ s.title }}</h2>
+    <div class="section-body">
+    {{ s.body | markdownify }}
+    </div>
+    </section>
+{% endif %}

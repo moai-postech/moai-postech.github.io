@@ -1,0 +1,4 @@
+    <ul class="plain funding">
+      {% for f in include.projects %}<li><strong>{{ f.sponsor }}</strong><span lang="ko">{{ f.title }}</span><time>{{ f.years }}</time></li>
+      {% endfor %}
+    </ul>

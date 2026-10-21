@@ -18,12 +18,13 @@ _data/               콘텐츠 데이터(YAML)
   teaching.yml       Teaching 의 정규 강의
   talks.yml          Teaching 의 Invited talks(올해와 작년)
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
-index.md 외 *.md     페이지 하나에 파일 하나(research·landscape·funding, publications, faculty·students·mentees, teaching, contact). 메뉴의 Research, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
-_themes/classic/     테마(현재 사용 중)
+index.md 외 *.md     페이지 하나에 파일 하나(research·landscape·funding, publications, faculty·students·mentees, teaching, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
+_themes/editorial/   테마(현재 사용 중: 한 기둥 편집형)
+_themes/classic/     예전 테마(카드·좌우 배치, 되돌릴 때 쓴다)
   layouts/           default.html(머리·메뉴·꼬리), page.html(소개 + 절 목록)
   includes/          section.html, sections/<type>.html, theme.css 등
 assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 않는다)
-assets/img/          그림, 아이콘(icons/), 사진(people/). 콘텐츠가 경로로 가리킨다
+assets/img/          그림, 아이콘(icons/), 사진(people/), 로고 아이콘(logo-mark.svg, `_config.yml` 의 logo). 콘텐츠가 경로로 가리킨다
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
@@ -69,6 +70,9 @@ tools/               검사 스크립트
 - **사이트 안에서 끝나게(self-contained) 만든다.** 교수 개인 사이트(Google Sites)로 링크하지 않는다. 필요한 내용(발표 목록 등)은 이 사이트 안으로 들여온다. 논문, 코드, 발표 자료, 강의 시트, 다른 사람의 페이지, 외부 프로필(Google Scholar, GitHub) 같은 원자료 링크는 괜찮다.
 - **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Research > Landscape, 과제는 Research > Funding, 교수 이메일·전화는 Faculty, 연구실 주소와 지원 방법과 랩 세미나는 Contact.
 - **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
+- **한 기둥으로 위에서 아래로 읽게 둔다.** 카드 격자, 좌우 2단, 왼쪽 라벨 칸을 쓰지 않는다(교수 2026-10-21). 지도처럼 넓어야 하는 것만 기둥 밖으로 넓힌다. 버튼 줄(탭)처럼 조작하는 요소는 가로로 놓아도 된다.
+- **구분선은 꼭 필요할 때만 쓴다.** 절과 목록 줄은 간격으로 나누고 선을 긋지 않는다. 지금 남은 선은 메뉴 아래 하나다.
+- **탭이나 버튼으로 내용을 바꾸는 요소는 바꿔도 세로 길이가 변하지 않게 한다.** 모든 패널을 같은 자리에 겹쳐 두고 가장 긴 패널 높이에 맞춘다(연구 방향 버튼 `.focus-panels`). 아래 내용이 들썩이지 않게 하려는 것이다.
 - 글보다 그림을 먼저 쓴다. 같은 내용이면 카드, 아이콘, 그림으로 보여 주고 문장은 짧게 줄인다.
 - 랜딩 페이지(Home)가 가장 중요하다. 스크롤 없이 보이는 첫 화면에서 세 부류가 각자 다음에 누를 곳을 찾을 수 있어야 한다.
 - 리뷰 방법: 사람이든 리뷰어 에이전트든 세 부류를 하나씩 맡아 그 사람이 되어 사이트를 훑는다. 부류마다 (1) 30초 안에 찾고 싶은 것을 찾았나 (2) 매력적이지 않거나 헷갈린 곳 (3) 고칠 점 세 개를 적는다. 결과는 바로 반영하지 않고 `discussions/` 안건으로 올린다.

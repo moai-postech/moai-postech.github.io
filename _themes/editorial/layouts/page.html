@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{% include subnav.html %}
+{% assign first = page.sections | first %}{% if first.type != "hero" %}
+    <h1 class="visually-hidden">{{ page.heading | default: page.title }}</h1>
+    {% if page.intro %}<div class="page-intro">
+    {{ page.intro | markdownify }}
+    </div>{% endif %}
+{% endif %}
+{% for section in page.sections %}{% include section.html section=section %}{% endfor %}
+{{ content }}

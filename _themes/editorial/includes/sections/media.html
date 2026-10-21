@@ -1,0 +1,10 @@
+{% comment %}_data/media.yml 을 뉴스와 같은 목록으로: 연도, 기사 제목(링크)과 매체 이름{% endcomment %}
+    <section class="content-section">
+    <h2>{{ include.section.title }}</h2>
+    <div class="section-body">
+    <ul class="plain news">
+      {% for m in site.data.media %}<li><time>{{ m.date }}</time><span>{% include inline.html text=m.text %} <span class="muted">{{ m.source }}</span></span></li>
+      {% endfor %}
+    </ul>
+    </div>
+    </section>

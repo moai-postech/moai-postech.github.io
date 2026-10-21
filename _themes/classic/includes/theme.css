@@ -96,11 +96,14 @@ h3.sub:first-child { margin-top: 0; }
 .card { display: block; padding: 26px; background: var(--surface); border-radius: 14px; }
 .card-icon { display: block; width: 64px; height: 64px; margin-bottom: 16px; object-fit: contain; }
 .venue { display: inline-block; padding: 2px 9px; background: var(--accent-soft); color: var(--accent); border-radius: 4px; font-size: var(--fs-xs); font-weight: 600; letter-spacing: .01em; }
-.course-card .terms { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
-.course-card h3 a { color: var(--text); }
-.talk-card h3 { font-size: var(--fs-md); line-height: 1.45; }
-.talk-venues { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; }
-.talk-venues span { padding: 2px 10px; background: var(--bg); border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: var(--fs-xs); }
+/* Item lists (courses, talks): one row each, the main line left and details right. */
+.item-list li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, auto); align-items: baseline; gap: 6px 32px; padding: 14px 0; border-bottom: 1px solid var(--line-soft); }
+.item-list li:last-child { border-bottom: 0; }
+.item-main strong { font-weight: 600; }
+.item-main strong a { color: var(--text); }
+.item-sub { display: block; color: var(--muted); font-size: var(--fs-sm); }
+.item-side { color: var(--muted); font-size: var(--fs-sm); text-align: right; }
+.item-list + h3.sub { margin-top: 36px; }
 
 /* Focus explorer: three big buttons, the chosen one opens its papers and people. */
 .focus-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
@@ -176,7 +179,9 @@ h3.sub:first-child { margin-top: 0; }
 .pubs .authors { display: block; color: var(--faint); font-size: var(--fs-sm); }
 .pubs .lab { color: var(--text); }
 .pubs .note { display: block; margin-top: 5px; color: var(--muted); font-size: var(--fs-xs); }
-.pubs .venue { margin-top: 8px; }
+.pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin-top: 8px; }
+.pub-link { font-size: var(--fs-xs); font-weight: 600; letter-spacing: .02em; }
+.pub-link::before { content: "↗ "; opacity: .55; }
 
 /* People: students as a three-column roster on thin rules, mentees as a list. */
 .person { padding: 14px 0; border-bottom: 1px solid var(--line-soft); line-height: 1.5; }
@@ -240,6 +245,8 @@ a.person-name:hover { color: var(--accent); }
   .news li { grid-template-columns: 1fr; gap: 2px; }
   .news .muted { display: block; margin-left: 0; }
   .page-contact #join + .section-body { padding: 22px; }
+  .item-list li { grid-template-columns: 1fr; }
+  .item-side { text-align: left; }
   .profile { grid-template-columns: 1fr; gap: 20px; }
   .profile-photo { width: 140px; height: 140px; }
   .nav-menu { display: none !important; }

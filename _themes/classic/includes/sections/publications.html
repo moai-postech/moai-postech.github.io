@@ -6,7 +6,7 @@
       {% for p in group.papers %}<li>
         <span class="title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
         <span class="authors">{% include authors.html authors=p.authors %}</span>
-        {% if p.venue %}<span class="venue">{{ p.venue }}</span>{% endif %}
+        {% if p.venue or p.links %}<span class="pub-meta">{% if p.venue %}<span class="venue">{{ p.venue }}</span>{% endif %}{% if p.links %}{% assign kinds = "project,code,slides,poster" | split: "," %}{% for k in kinds %}{% if p.links[k] %}<a class="pub-link" href="{{ p.links[k] }}">{{ k | capitalize }}</a>{% endif %}{% endfor %}{% endif %}</span>{% endif %}
         {% if p.note %}<span class="note">{{ p.note }}</span>{% endif %}
       </li>
       {% endfor %}

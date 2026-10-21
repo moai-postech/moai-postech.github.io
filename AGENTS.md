@@ -13,7 +13,7 @@ _data/               콘텐츠 데이터(YAML)
   news.yml           Home 의 Research news
   media.yml          Home 의 Media coverage
   research.yml       Research 의 분야별 표
-  publications.yml   Publications 목록
+  publications.yml   Publications 목록(제목은 논문 링크, links 에 project·code·slides·poster)
   members.yml        People 의 Faculty(교수, 사진, Bio), Students(연구실 학생), Mentees(연구실 밖에서 지도한 학생). 학생의 focus 는 연구 방향 패널에 이름을 띄운다
   teaching.yml       Teaching 의 정규 강의
   talks.yml          Teaching 의 Invited talks(올해와 작년)

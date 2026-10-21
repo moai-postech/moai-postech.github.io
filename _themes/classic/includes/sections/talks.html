@@ -3,13 +3,13 @@
     <div class="section-body">
     {% for y in site.data.talks %}
     <h3 class="sub">{{ y.year }}</h3>
-    <div class="cards cards-3 talk-cards">
-      {% for t in y.talks %}<div class="card talk-card">
-        <h3>{{ t.title }}</h3>
-        <p class="talk-venues">{% for v in t.venues %}<span>{{ v }}</span>{% endfor %}</p>
-      </div>
+    <ul class="plain item-list">
+      {% for t in y.talks %}<li>
+        <span class="item-main"><strong>{{ t.title }}</strong></span>
+        <span class="item-side">{{ t.venues | join: " · " }}</span>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
     {% endfor %}
     {% if include.section.more %}<p class="more">{% include inline.html text=include.section.more %}</p>{% endif %}
     </div>

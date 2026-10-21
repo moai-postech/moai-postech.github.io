@@ -1,5 +1,5 @@
 {% for area in site.data.research %}
-    <section class="content-section research-area">
+    <section class="content-section research-area" id="{{ area.area | slugify }}">
     <h2>{% if area.icon %}<img class="area-icon" src="assets/img/icons/{{ area.icon }}.png" alt="">{% endif %}{{ area.area }}</h2>
     <div class="section-body">
     <div class="rows">

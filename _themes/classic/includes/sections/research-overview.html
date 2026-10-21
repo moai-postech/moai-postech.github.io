@@ -1,0 +1,14 @@
+{% comment %}Research 맨 위: 분야 카드(아이콘, 이름, 그 안의 주제들). 누르면 아래 그 분야 절로 이동한다{% endcomment %}
+    <section class="content-section research-overview">
+    {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
+    <div class="section-body">
+    <div class="cards cards-3">
+      {% for area in site.data.research %}<a class="card area-card" href="#{{ area.area | slugify }}">
+        {% if area.icon %}<img class="card-icon" src="assets/img/icons/{{ area.icon }}.png" alt="">{% endif %}
+        <h3>{{ area.area }}</h3>
+        <span class="area-topics">{% for t in area.topics %}<span>{{ t.name }}</span>{% endfor %}</span>
+      </a>
+      {% endfor %}
+    </div>
+    </div>
+    </section>

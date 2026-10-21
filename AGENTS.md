@@ -9,7 +9,7 @@ GitHub Pages 가 push 때마다 Jekyll 로 빌드한다. 콘텐츠는 테마를 
 ```
 _config.yml          사이트 이름, 메뉴, 사용할 테마
 _data/               콘텐츠 데이터(YAML)
-  focus.yml          연구 방향(버튼)과 방향별 대표 논문. Home·Research·Contact 가 함께 쓴다
+  focus.yml          연구 방향(버튼)과 방향별 대표 논문. Home 에만 나온다
   news.yml           Home 의 Research news
   media.yml          Home 의 Media coverage
   research.yml       Research 의 분야별 표
@@ -48,7 +48,7 @@ tools/               검사 스크립트
 
 - `layouts/page.html`: 페이지 front matter 의 `heading`(없으면 `title`), `intro`(마크다운), `sections` 를 그린다.
 - `includes/section.html`: 절 하나를 그린다. `type` 이 없으면 `title` + `body`(마크다운), 있으면 `includes/sections/<type>.html` 로 넘긴다.
-- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `teaching`, `talks`.
+- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `research-overview`(Research 맨 위 분야 카드), `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `teaching`, `talks`.
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
 - `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글자 크기는 `:root` 의 여섯 단계(`--fs-xs`~`--fs-2xl`)와 굵기 400·600·700 만 쓰고, 글꼴은 Pretendard 하나다.
@@ -66,6 +66,8 @@ tools/               검사 스크립트
 | 과제 지원 기관·산업체 | 무엇을 잘하나, 믿고 맡길 실적이 있나, 누구에게 연락하나 | 연구 방향, 대표 논문과 venue, Funding 이력, 연락처 |
 | 동료 연구자 | 어떤 문제를 푸나, 최근 논문, 누가 있나 | 연구 방향, News, Publications, People |
 
+- **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구와 Paper Stella 지도와 Funding 은 Research, 교수 이메일·전화는 Faculty, 연구실 주소와 지원 방법과 랩 세미나는 Contact.
+- **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
 - 글보다 그림을 먼저 쓴다. 같은 내용이면 카드, 아이콘, 그림으로 보여 주고 문장은 짧게 줄인다.
 - 랜딩 페이지(Home)가 가장 중요하다. 스크롤 없이 보이는 첫 화면에서 세 부류가 각자 다음에 누를 곳을 찾을 수 있어야 한다.
 - 리뷰 방법: 사람이든 리뷰어 에이전트든 세 부류를 하나씩 맡아 그 사람이 되어 사이트를 훑는다. 부류마다 (1) 30초 안에 찾고 싶은 것을 찾았나 (2) 매력적이지 않거나 헷갈린 곳 (3) 고칠 점 세 개를 적는다. 결과는 바로 반영하지 않고 `discussions/` 안건으로 올린다.
@@ -169,7 +171,6 @@ tools/               검사 스크립트
 - 교수 이름 링크는 그 교수의 개인 페이지나 연구실 사이트 안 교수 프로필로 건다.
 - Venue 의 track·발표 형식 표시(`(application)`, `(oral)`)는 Publications, News, Other mentees 에만 붙인다. Research 는 `약칭 (학회'연도)` 만 쓴다.
 - News 의 `Paper(s) on X` 는 두 단어 안팎으로 짧게 쓴다. 셀 수 있는 명사는 복수로 쓴다(`personal robots`).
-- Contact 의 Research topics 는 `_data/focus.yml` 에서 자동으로 나오니 따로 고치지 않는다.
 
 ## 에이전트 호환
 

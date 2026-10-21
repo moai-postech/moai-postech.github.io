@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [dedupe-structure](2026-10-21-dedupe-structure.md) | Sangwoo Mo(moai-postech) | Research, Contact, Teaching, Publications, Faculty | 같은 내용은 한 곳에만: 연구 방향 버튼은 Home, Paper Stella 는 Research 분야 아래, 랩 세미나는 Contact, 교수 연락처는 Faculty. Research 맨 위에 분야 카드 |
 | 2026-10-21 | [answers-talks](2026-10-21-answers-talks.md) | Sangwoo Mo(moai-postech) | `_data/focus.yml`, Teaching | 대표 논문을 올해·작년 것으로(Idis, LoC, TEG / VAP, INDI / I2A, PRISM), Teaching 을 정규 강의와 Invited talks(2025–2026)로 |
 | 2026-10-21 | [type-focus-people](2026-10-21-type-focus-people.md) | Sangwoo Mo(moai-postech) | 테마, Home, Research, People | Pretendard·6단계 크기, 연구 방향 버튼(논문·사람 패널), People 을 Faculty·Students 로, 교수 사진·Bio, Research 맨 위 Paper Stella iframe, 제목 MOAI 강조 |
 | 2026-10-21 | [visual-redesign](2026-10-21-visual-redesign.md) | Sangwoo Mo(moai-postech) | 메뉴, 모든 페이지, 테마 | 메뉴 Home·Research·Publications·People·Teaching·Contact, 그림·카드 중심 디자인, 방문자 세 부류 원칙. 이어서 임의로 넣은 Highlights 제거, CSS 캐시 버전 붙임 |

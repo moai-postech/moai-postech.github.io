@@ -4,9 +4,9 @@ title: Home
 head_title: "MOAI Lab — POSTECH"
 description: "Multimodal Orchestration of Artificial Intelligence (MOAI) Lab at POSTECH. We build foundation models that orchestrate vision, language, and physical sensors."
 sections:
-  # 첫 화면. heading 은 큰 제목(마크다운, **굵게** 쓴 글자는 강조색), body 는 그 아래 글, image 는 오른쪽 그림.
+  # 첫 화면. heading 은 큰 제목(마크다운, **굵게** 쓴 글자는 강조색, <br> 로 줄을 나눔. 머리글자 M·O·A·I 가 세로로 서도록 네 줄), body 는 그 아래 글, image 는 오른쪽 그림.
   - type: hero
-    heading: "**M**ultimodal **O**rchestration of **A**rtificial **I**ntelligence"
+    heading: "**M**ultimodal<br>**O**rchestration of<br>**A**rtificial<br>**I**ntelligence"
     body: |
       The MOAI Lab at [POSTECH](https://www.postech.ac.kr/eng/index.do) builds foundation models
       that orchestrate vision, language, and physical sensors.

@@ -30,3 +30,9 @@
 ## 남은 것
 
 - 교수에게 물을 것: 방향별 대표 논문, `FM Applications` 라벨과 구절(개인 사이트와 공통), Paper Stella 한국어 표시, Teaching 외부 강의, 박채원 학생 공유, discussions 공지. 목록은 저장소 밖 상위 `TODO.md`.
+
+## 추가(같은 날): Home 제목 네 줄
+
+- 교수: Intelligence 를 한 줄 내려야 앞글자가 잘 읽힌다.
+- 반영: `Multimodal / Orchestration of / Artificial / Intelligence` 네 줄(`index.md` 의 heading 에 `<br>`). M·O·A·I 가 왼쪽에 세로로 선다. 1440px·375px 에서 확인.
+- 기각: Intelligence 만 내리는 세 줄 안. `Artificial` 과 `Intelligence` 가 같은 줄 앞뒤로 갈리지 않고 A 와 I 가 한 줄에 남아 세로 머리글자가 끊긴다.

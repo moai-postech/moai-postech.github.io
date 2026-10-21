@@ -14,7 +14,7 @@ _data/               콘텐츠 데이터(YAML)
   media.yml          Home 의 Media coverage
   research.yml       Research 의 분야별 표
   publications.yml   Publications 목록(제목은 논문 링크, links 에 project·code·slides·poster)
-  members.yml        People 의 Faculty(교수, 사진, Bio), Students(연구실 학생), Mentees(연구실 밖에서 지도한 학생). 학생의 focus 는 연구 방향 패널에 이름을 띄운다
+  members.yml        People 의 Faculty(교수, 사진, Bio, 이력 cv), Students(연구실 학생), Mentees(연구실 밖에서 지도한 학생). 학생의 focus 는 연구 방향 패널에 이름을 띄운다
   teaching.yml       Teaching 의 정규 강의
   talks.yml          Teaching 의 Invited talks(올해와 작년)
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
@@ -50,7 +50,7 @@ tools/               검사 스크립트
 
 - `layouts/page.html`: 페이지 front matter 의 `heading`(없으면 `title`), `intro`(마크다운), `sections` 를 그린다.
 - `includes/section.html`: 절 하나를 그린다. `type` 이 없으면 `title` + `body`(마크다운), 있으면 `includes/sections/<type>.html` 로 넘긴다.
-- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `research-overview`(Research 맨 위 분야 카드), `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `mentees`, `media`, `teaching`, `talks`.
+- `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `research-overview`(Research 맨 위 분야 카드), `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `mentees`, `media`, `profile-cv`(Faculty 의 이력), `teaching`, `talks`.
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
 - `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글꼴은 Pretendard 하나(로고 글자만 Outfit), 굵기는 400·600·700.
@@ -74,6 +74,7 @@ tools/               검사 스크립트
 - **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
 - **컴퓨터 화면에서는 넓게 쓴다.** 전체 폭은 `--container`(1200px), 모바일처럼 좁은 기둥으로 줄이지 않는다(교수 2026-10-21). 긴 문단만 `--measure`(760px)로 묶는다. 좁은 화면에서만 한 칸으로 접는다.
 - **넓은 화면을 전제로 설계하고 12칸 격자에 칸을 배분한다.** 좁은 기둥을 늘려 쓰지 않는다(교수 2026-10-21: "공간은 넓은데 컨텐츠는 좁은 걸 상정해 억지로 늘리면 안 예쁘다"). 나란히 놓는 것은 내용이 대등할 때만(예: 연구 분야 셋) 쓰고, 긴 목록(뉴스 등)은 전체 폭을 쓴다.  절 이름만 왼쪽 칸에 세우는 라벨 칸은 쓰지 않는다.
+- **딸린 정보는 오른쪽이 아니라 아래에 둔다.** 논문의 venue·링크, 강의의 학기, 발표의 장소, 과제의 기간, 멘티의 논문처럼 주된 줄에 딸린 정보는 그 줄 아래에 둔다. 오른쪽은 차라리 여백으로 남긴다(교수 2026-10-21). 대등한 것끼리 나란히 놓는 것(연구 분야 셋, 학생 명단)과는 다르다.
 - **구분선은 꼭 필요할 때만 쓴다.** 절과 목록 줄은 간격으로 나누고 선을 긋지 않는다. 지금 남은 선은 메뉴 아래 하나다.
 - **탭이나 버튼으로 내용을 바꾸는 요소는 바꿔도 세로 길이가 변하지 않게 한다.** 모든 패널을 같은 자리에 겹쳐 두고 가장 긴 패널 높이에 맞춘다(연구 방향 버튼 `.focus-panels`) 패널 안의 아래쪽 요소(연구 방향의 멤버 줄)는 탭마다 같은 세로 위치에 두고, 내용이 짧은 탭은 위쪽 칸(논문 카드)에 여백을 둔다. 아래 내용이 들썩이지 않게 하려는 것이다.
 - 글보다 그림을 먼저 쓴다. 같은 내용이면 카드, 아이콘, 그림으로 보여 주고 문장은 짧게 줄인다.

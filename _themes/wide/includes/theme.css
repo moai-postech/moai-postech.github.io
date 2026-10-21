@@ -171,6 +171,8 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
 .mentee-name { color: var(--text); font-weight: 600; }
 a.mentee-name:hover { color: var(--accent); }
 .mentee-aff { margin-left: var(--space-2); color: var(--muted); font-size: var(--text-meta); }  /* who they were and whom they worked with, right after the name */
+.mentee-aff a { color: inherit; }  /* the advisor link keeps the grey of its line; accent only on hover */
+.mentee-aff a:hover { color: var(--accent); }
 .item-detail { display: block; margin-top: 2px; color: var(--muted); font-size: var(--text-meta); }  /* a line that belongs to the item above it, e.g. the Ph.D. thesis under KAIST */
 .item-detail a { color: inherit; }  /* the thesis link keeps the grey of its line; accent only on hover */
 .item-detail a:hover { color: var(--accent); }

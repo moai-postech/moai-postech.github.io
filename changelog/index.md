@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [mentee-advisor-color](2026-10-22-mentee-advisor-color.md) | Sangwoo Mo(moai-postech) | Mentees | 지도교수 링크를 회색으로, hover 때만 강조색 |
 | 2026-10-22 | [faculty-bio-research](2026-10-22-faculty-bio-research.md) | Sangwoo Mo(moai-postech) | Faculty | Bio 연구 소개 문장을 scalable priors, orchestration, 적용처까지 담게 보강(개인 사이트 Bio 와 동기화) |
 | 2026-10-22 | [nav-order](2026-10-22-nav-order.md) | Sangwoo Mo(moai-postech) | 메뉴 | People 을 Home 바로 다음으로, 그다음 Research |
 | 2026-10-22 | [publications-typography](2026-10-22-publications-typography.md) | Sangwoo Mo(moai-postech) | Publications | 번호와 제목 기준선 맞춤, 위첨자가 저자 줄을 늘리지 않게, 논문 사이를 `--item-gap` 으로, 연도 제목 자간을 Talks 와 같게 |

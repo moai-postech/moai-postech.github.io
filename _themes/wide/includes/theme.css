@@ -29,7 +29,7 @@
   --page-margin: 48px;     /* minimum space at the screen edge */
   --columns: 12;
   --gutter: var(--space-7);
-  --measure: 760px;        /* longest line for running prose */
+  --measure: 100%;         /* prose uses the full content width; a narrower cap broke short paragraphs at 760px and read as hard line breaks (2026-10-21) */
   --section-gap: var(--space-8);
   --row-gap: var(--space-1);   /* between one-line rows in a list; multi-line items use --item-gap */
   --item-gap: var(--space-3);

@@ -5,7 +5,7 @@
     <div class="section-body">
     {% for g in block.groups %}{% if g.title %}<h3 class="sub">{{ g.title }}</h3>{% endif %}
     <ul class="plain item-list">
-      {% for it in g.items %}<li>{% if it.text %}<span class="item-main">{% include inline.html text=it.text %}</span><span class="item-side">{% include inline.html text=it.side %}</span>{% else %}<span class="item-main">{% include inline.html text=it %}</span>{% endif %}</li>
+      {% for it in g.items %}<li>{% if it.text %}<span class="item-main">{% include inline.html text=it.text %}{% if it.detail %}<span class="item-detail">{% include inline.html text=it.detail %}</span>{% endif %}</span><span class="item-side">{% include inline.html text=it.side %}</span>{% else %}<span class="item-main">{% include inline.html text=it %}</span>{% endif %}</li>
       {% endfor %}
     </ul>
     {% endfor %}

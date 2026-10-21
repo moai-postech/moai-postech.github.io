@@ -14,3 +14,4 @@
 - CV(`cv/main.tex` 313행)에는 Reviewer Award 가 그대로 있다. CV 는 전체 기록이라 남겨 두었다. 빼려면 CV 도 고친다.
 - 교수: 소제목 "During Ph.D. at KAIST" → "During PhD". Mentees 의 "During PhD" 와 같은 꼴이 됐다.
 - 교수: Bio 를 한 문단으로. 두 문단(현재 / 이전 경력)을 이어 붙였다. 문장은 그대로다.
+- 교수: Education 의 Ph.D. Thesis 줄이 너무 붙어 있다. 원인은 thesis 가 KAIST 와 같은 크기의 줄이라 별개 항목처럼 보이는데 간격은 항목 사이보다 좁았던 것. 교수 이력 항목에 `detail` 칸을 더해 thesis 를 KAIST 아래 작은 회색 보조 줄(2px 아래)로 두었다. 다음 항목(POSTECH)과는 항목 사이 간격을 그대로 둬서 KAIST 묶음과 갈린다.

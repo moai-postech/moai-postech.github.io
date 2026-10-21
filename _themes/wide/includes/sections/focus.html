@@ -17,10 +17,10 @@
     <div class="focus-panels">
     {% for f in site.data.focus %}{% assign fid = f.name | slugify %}<div class="focus-panel" role="tabpanel" id="panel-{{ sid }}-{{ fid }}" aria-labelledby="tab-{{ sid }}-{{ fid }}">
       {% if f.papers %}<div class="focus-papers">
-        {% for p in f.papers %}<a class="paper-chip" href="{{ p.url | default: 'publications.html' }}">
+        {% for p in f.papers limit: 3 %}{% if p.url %}<a class="paper-chip" href="{{ p.url }}">{% else %}<div class="paper-chip">{% endif %}
           <span class="venue">{{ p.short }} · {{ p.venue }}</span>
           <span class="paper-title">{{ p.title }}</span>
-        </a>
+        {% if p.url %}</a>{% else %}</div>{% endif %}
         {% endfor %}
       </div>{% endif %}
       {% assign people = "" | split: "" %}{% for g in site.data.members.groups %}{% for person in g.people %}{% if person.focus == f.name %}{% assign people = people | push: person %}{% endif %}{% endfor %}{% endfor %}

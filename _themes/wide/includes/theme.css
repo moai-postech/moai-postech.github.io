@@ -141,7 +141,7 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 .focus-panels > .focus-panel[hidden] { display: block; visibility: hidden; }  /* keeps the tallest panel's height */
 .focus-papers { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: var(--space-5); }  /* cards take the spare height, so the people line stays put */
 .paper-chip { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); color: var(--text); }
-.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
+a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .paper-chip .paper-title { font-weight: 600; line-height: 1.45; }
 .focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-5); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 500; }
 .focus-people .label { color: var(--faint); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }

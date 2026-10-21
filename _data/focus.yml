@@ -1,6 +1,7 @@
 # 연구실의 현재 연구 방향. Home 의 "Our focus in 2026" 한 곳에만 나온다(같은 내용은 한 곳에만).
 # 버튼(name, icon)을 누르면 papers(대표 논문)와 그 방향을 하는 사람(_data/members.yml 의 focus)이 펼쳐진다.
-# 대표 논문은 올해와 작년 것만 둔다(교수 결정 2026-10-21). icon 은 assets/img/icons/<icon>.svg. papers 의 short 는 Research 의 약칭, venue 는 학회'연도.
+# 대표 논문은 올해와 작년 것만, 분야마다 최대 3편(화면도 3편까지만 보인다, 교수 결정 2026-10-21). 넘기기(캐러셀)는 쓰지 않는다.
+# url 이 없으면(아직 공개 전) 카드는 링크 없이 보인다. 다른 페이지로 보내지 않는다. icon 은 assets/img/icons/<icon>.svg. papers 의 short 는 Research 의 약칭, venue 는 학회'연도.
 - name: "Agentic AI"
   icon: agentic
   papers:

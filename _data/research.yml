@@ -52,7 +52,7 @@
         - { short: "HOMER", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.10308" }
         - { short: "Simba", venue: "TMLR'25", url: "https://arxiv.org/abs/2505.20698" }
     - name: "Applications of VLMs"
-      summary: "Using vision-language models to solve real-world problems."
+      summary: "Using foundation models to solve real-world problems."
       papers:
         - { short: "B2T", venue: "CVPR'24", url: "https://arxiv.org/abs/2301.11104" }
         - { short: "PDS", venue: "ICLR'26", url: "https://arxiv.org/abs/2602.19756" }

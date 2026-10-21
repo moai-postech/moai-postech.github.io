@@ -22,11 +22,6 @@ sections:
       that orchestrate vision, language, and physical sensors.
     image: assets/img/hero.svg
     image_alt: "Vision, language, and sensor inputs flow into MOAI, which drives agents, robots, and manufacturing."
-    buttons:
-      - label: "Explore our research"
-        url: research.html
-      - label: "Join us"
-        url: contact.html
   - title: "Our focus in 2026"
     type: focus
   # News: 최근 limit 개만 보이고 나머지는 "All news" 를 눌러 펼친다

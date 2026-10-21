@@ -28,3 +28,8 @@
 
 - 학생 사진을 넣을지(사진이 모이면 Students 카드에 넣을 자리를 만든다).
 - `FM Applications` 라벨(저장소 밖 상위 `TODO.md`).
+
+## 추가(같은 날): 첫 화면 버튼 제거
+
+- 교수: "Explore our research", "Join us" 버튼도 불필요하다.
+- 반영: Home 첫 화면의 버튼 둘을 지웠다. 위 메뉴의 Research, Contact 와 같은 곳으로 가는 중복이다(같은 내용은 한 곳에만). `hero` 의 `buttons` 필드는 테마에 남겨 두어 필요하면 다시 쓸 수 있다.

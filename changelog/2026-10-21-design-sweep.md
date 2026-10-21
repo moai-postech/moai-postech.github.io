@@ -64,3 +64,4 @@
 - 휴대폰: Faculty 이력, Talks, Teaching 처럼 한 줄 항목이 두세 줄로 꺾이면 항목끼리 붙어 보였다. 휴대폰에서만 항목 위아래 8px(항목 사이 16px)로 넓혔다.
 - 교수 질문(smart factories): 넣지 않는다. 앞의 "AI" 와 겹치고, agents, robots, factories 의 한 단어 리듬이 깨진다.
 - 링크 hover 통일: 본문 속 빨간 링크만 hover 때 남색으로 바뀌고 나머지 링크는 빨강으로 바뀌었다. 모든 링크가 hover 때 강조색+밑줄. 키보드 초점 테두리를 거르기 버튼(Seminar)에도 넣었다.
+- 교수: "automated factories" 는 어떤가, 지금 문장이 부족해 보인다. "…to power AI agents, robots, and automated factories." 연구실이 공장을 짓지는 않으니 build 대신 power 를 썼다(foundation model 이 에이전트·로봇·자동화 공장을 움직인다). meta 도 같은 문장.

@@ -36,3 +36,8 @@
 - 교수: Intelligence 를 한 줄 내려야 앞글자가 잘 읽힌다.
 - 반영: `Multimodal / Orchestration of / Artificial / Intelligence` 네 줄(`index.md` 의 heading 에 `<br>`). M·O·A·I 가 왼쪽에 세로로 선다. 1440px·375px 에서 확인.
 - 기각: Intelligence 만 내리는 세 줄 안. `Artificial` 과 `Intelligence` 가 같은 줄 앞뒤로 갈리지 않고 A 와 I 가 한 줄에 남아 세로 머리글자가 끊긴다.
+
+## 추가(같은 날): Publications 상단에 Paper Stella 링크
+
+- 교수: Paper Stella 를 Publications 상단에 Google Scholar 를 가리키는 것과 비슷한 느낌으로 넣는다.
+- 반영: Publications 소개 문장을 "Also on Google Scholar and Paper Stella, a map of our papers in the landscape of the papers we read." 로. Research 맨 위 iframe 은 그대로 두고, 남길지는 교수에게 묻는다.

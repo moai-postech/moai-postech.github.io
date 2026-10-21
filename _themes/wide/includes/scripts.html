@@ -19,6 +19,11 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
   });
   show(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0]);
 });
+// Talks dated after today read as upcoming (checked in the visitor's browser, so it never goes stale between builds).
+(function () {
+  var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  document.querySelectorAll('tr[data-date]').forEach(function (r) { if (r.getAttribute('data-date') >= today) r.classList.add('is-upcoming'); });
+})();
 // Filters for [data-filter]: buttons with data-show pick rows by data-kind; a year row hides when none of its talks show.
 // Column widths are measured with every row shown and then fixed, so switching filters never moves a column.
 document.querySelectorAll('[data-filter]').forEach(function (box) {

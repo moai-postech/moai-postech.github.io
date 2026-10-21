@@ -61,8 +61,8 @@ html { scrollbar-gutter: stable; }  /* the scrollbar keeps its place, so a page 
 body { margin: 0; background: var(--bg); color: var(--text); font-size: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
 .wrap { width: min(var(--container), calc(100% - 2 * var(--page-margin))); margin-inline: auto; }
 a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-a:hover { color: var(--text); text-decoration: underline; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+a:hover { color: var(--accent); text-decoration: underline; }  /* every link: accent and underline on hover */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
 ::selection { background: var(--accent-soft); color: var(--text); }
 img { max-width: 100%; }
 p { margin: 0 0 var(--space-4); }

@@ -9,7 +9,7 @@ sections:
   - type: hero
     heading: "**M**ultimodal **O**rchestration <br>of **A**rtificial **I**ntelligence"
     body: |
-      MOAI Lab at [POSTECH](https://www.postech.ac.kr/eng/index.do), Department of Industrial and Management Engineering
+      MOAI Lab at [POSTECH](https://www.postech.ac.kr/eng/index.do)
     image: assets/img/hero.svg
     image_alt: "Vision, language, and sensor inputs flow into MOAI, which drives agents, robots, and manufacturing."
   - title: "Our focus in 2026"

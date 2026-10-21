@@ -5,5 +5,6 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [content-not-structure](2026-10-21-content-not-structure.md) | Sangwoo Mo(moai-postech) | AGENTS.md | 개인 사이트와는 사실(논문, 소식 등)만 맞추고 페이지 구성·배치는 이 사이트에서 따로 정함 |
 | 2026-10-21 | [discussions](2026-10-21-discussions.md) | Sangwoo Mo(moai-postech) | AGENTS.md, discussions/, 검사 스크립트 | 의견이 부딪히는 수정은 `discussions/` 안건으로 올려 결정 후 반영, 열린 안건 대상 파일은 검사에서 막음 |
 | 2026-10-21 | [content-theme-split](2026-10-21-content-theme-split.md) | Sangwoo Mo(moai-postech) | 저장소 전체 | 정적 HTML 을 Jekyll 콘텐츠(`_data`, `*.md`)와 테마(`_themes/classic`)로 분리, 공개 AGENTS.md 와 에이전트 포인터, changelog 규칙과 검사 추가 |

@@ -139,7 +139,7 @@ tools/               검사 스크립트
 
 ## 콘텐츠 표기 규칙
 
-Research, Publications, news 의 내용은 교수 개인 사이트(https://sites.google.com/view/sangwoomo)와 맞춘다. 이 셋의 내용을 바꾸려면 교수에게 먼저 알린다. 디자인과 본인 멤버 정보는 자유롭게 고친다.
+논문, 저자, venue, 소식, 연구 방향 같은 **사실**은 교수 개인 사이트(https://sites.google.com/view/sangwoomo)와 같아야 한다. 이런 사실을 바꾸려면 교수에게 먼저 알린다. 그 사실을 **어떻게 보여 줄지**(페이지 구성, 순서, 묶음, 라벨)는 개인 사이트를 따라 할 필요 없이 이 사이트에 맞게 정한다. 다만 메뉴나 페이지 구성처럼 모두에게 걸리는 변경은 "논의가 필요한 수정"을 따른다. 본인 멤버 정보와 디자인 세부는 자유롭게 고친다.
 
 - 논문 순서: 같은 연도 안에서 conference, journal, workshop 순. 각 묶음 안에서는 accept 통보일이 최신인 venue 가 위다.
 - 이메일은 `{first_name}.{last_name} [at] postech.ac.kr`, `id [at] domain` 처럼 가리고 mailto 링크를 걸지 않는다.

@@ -18,3 +18,4 @@
 - 교수: Bio 의 IME 링크에서 "Department of" 는 강조(링크)에서 뺀다. "the Department of [Industrial and Management Engineering] at POSTECH". 링크는 학과 이름만.
 - 교수 질문(Bio 에 affiliated 도 넣을까): 넣지 않는다. 바로 위 머리 줄 "Assistant Professor, POSTECH IME (affiliated with AI, AX, and IDS)" 에 이미 있어 같은 정보가 두 번 나온다.
 - 교수: Ph.D. Thesis 제목 링크는 두되 크림슨 색은 뺀다. 보조 줄(`.item-detail`) 안의 링크는 그 줄의 회색을 그대로 쓰고, 마우스를 올렸을 때만 강조색과 밑줄.
+- 교수: Bio 의 학과 이름을 "Industrial and Management Engineering (IME)" 로. 머리 줄의 "POSTECH IME" 약어가 여기서 풀린다. 괄호까지 링크 안에 넣었다(News·Mentees 와 같은 방식).

@@ -1,7 +1,7 @@
 {% comment %}
   _data/seminar.yml 의 발표 목록. 초청 발표와 랩 내부 발표를 한 목록에 날짜순(최신이 위)으로 두고,
-  위의 All / Invited / Lab 버튼으로 거른다(자바스크립트가 없으면 전부 보인다).
-  한 줄: 날짜, 제목(남는 폭 전부), 오른쪽 끝에 발표자와 소속.
+  위의 All / Lab / Invited 버튼으로 거른다(자바스크립트가 없으면 전부 보인다).
+  한 줄: 날짜, 제목(남는 폭 전부), 오른쪽 끝에 소속과 발표자(이름이 늘 맨 오른쪽).
 {% endcomment %}
 {% assign talks = site.data.seminar.talks %}
 {% assign invited = talks | where: "invited", true %}
@@ -10,8 +10,8 @@
     <div class="section-body" data-filter>
     <div class="filter-bar" role="group" aria-label="Show talks">
       <button type="button" class="filter-btn" data-show="all" aria-pressed="true">All <span>{{ talks.size }}</span></button>
-      <button type="button" class="filter-btn" data-show="invited" aria-pressed="false">Invited <span>{{ invited.size }}</span></button>
       <button type="button" class="filter-btn" data-show="lab" aria-pressed="false">Lab <span>{{ talks.size | minus: invited.size }}</span></button>
+      <button type="button" class="filter-btn" data-show="invited" aria-pressed="false">Invited <span>{{ invited.size }}</span></button>
       {% if site.data.seminar.sheet %}<a class="filter-link" href="{{ site.data.seminar.sheet }}">Full schedule ↗</a>{% endif %}
     </div>
     <table class="schedule">
@@ -20,7 +20,7 @@
       <tr data-kind="{% if t.invited %}invited{% else %}lab{% endif %}">
         <td class="schedule-date">{{ t.date | date: "%m/%d" }}</td>
         <td class="schedule-title">{{ t.title }}</td>
-        <td class="schedule-speaker">{% if t.url %}<a href="{{ t.url }}">{{ t.speaker }}</a>{% elsif t.speaker != "" %}{{ t.speaker }}{% else %}Lab intern{% endif %}{% if t.affiliation %}<span class="schedule-aff">{{ t.affiliation }}</span>{% endif %}</td>
+        <td class="schedule-speaker">{% if t.affiliation %}<span class="schedule-aff">{{ t.affiliation }}</span>{% endif %}{% if t.url %}<a href="{{ t.url }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}</td>
       </tr>
       {% endfor %}
       </tbody>

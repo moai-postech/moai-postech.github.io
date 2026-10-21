@@ -1,7 +1,7 @@
 # Seminar 페이지의 발표 목록. 위가 최신이다. 정본은 랩 세미나 구글시트(sheet 의 주소, 링크 공개).
 # invited: true 는 외부 초청 연사(affiliation, url=연사 홈페이지). 나머지는 랩 내부 발표(논문 리뷰, 자기 연구).
 # 외부 연사 발표 자료는 공개하지 않는다(교수 원칙). 내부 발표 자료도 링크하지 않는다.
-# 영문 이름은 _data/members.yml, 연사 홈페이지, Slack 프로필 표기를 따른다. 확인 못 한 이름은 speaker 를 비워 둔다(화면에는 "Lab intern").
+# 영문 이름은 _data/members.yml, 연사 홈페이지, Slack 프로필, 본인 메일 표시 이름을 따른다.
 # 시험, 마감, monthly sync 처럼 발표가 아닌 행과 공개 전 연구 코드명(10/07 jev)은 넣지 않는다.
 sheet: "https://docs.google.com/spreadsheets/d/1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U/edit"
 talks:
@@ -54,7 +54,7 @@ talks:
     speaker: "Myeongsoo Kim"
     title: "DS-STAR: Data Science Agent via Iterative Planning and Verification"
   - date: "2026-04-09"
-    speaker: ""   # 이상훈(인턴), 영문 표기 미확인
+    speaker: "Sanghun Lee"
     title: "CliffordNet: All You Need is Geometric Algebra"
   - date: "2026-04-08"
     invited: true

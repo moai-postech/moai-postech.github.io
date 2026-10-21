@@ -54,3 +54,7 @@
 - 404 페이지: GitHub 기본 404 대신 사이트 머리·메뉴가 있는 "This page does not exist." 페이지. 어떤 주소에서 열려도 CSS 가 깨지지 않게 그 페이지에만 `<base href="/">`.
 - 교수 질문(Seminar 의 Lab 에 인턴·멘티가 포함된다고 밝힐까): 밝히지 않는다. Lab 은 "랩 세미나의 내부 발표"로 읽히고, 인턴·멘티도 그 세미나의 사람이다.
 - 교수 질문(Chung-Ang univ. → CAU): 그대로 둔다. 같은 칸의 KAIST, UMich, Stanford 와 달리 CAU 는 해외에서 알아보기 어렵다.
+- 글자 크기 점검(교수: Seminar 소개 문장 글자가 다른 내용보다 크다): 페이지마다 글자 크기와 굵기를 재서 비교했다. 맞지 않던 셋을 고쳤다. (1) 페이지 소개 문장 20px(Publications 만 17px) → 모두 본문 17px. (2) Contact 의 Join us 첫 문장 20px → 17px. (3) 연도 제목이 Publications 28px, Seminar·Talks 20px → Publications 도 20px. 나머지(절 제목 28, 카드 제목 17 굵게, 보조 15, 배지 13)는 페이지끼리 같았다.
+- Faculty 링크 `Github` → `GitHub`(공식 표기).
+- 사이트 안 링크 전수 검사: 깨진 내부 링크 0.
+- 교수: 11/4 안동훈 발표 추가. 캘린더의 영문 이름으로 `Donghoon Ahn`(UC Berkeley) 초청 발표를 넣었다. 제목은 미정이라 `TBA`, 홈페이지는 아직 몰라 링크 없음. 랩 세미나 시트 53행 제목도 `TBD` → `TBA` 로 맞췄다. 추가 뒤에도 세 탭 칸 위치(113/178/1072px) 같고 두 줄 제목 0.

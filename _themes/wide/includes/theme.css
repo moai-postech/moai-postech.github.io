@@ -78,7 +78,7 @@ h2 { margin: 0 0 var(--space-5); font-size: var(--text-h2); font-weight: 700; li
 h3 { margin: 0 0 var(--space-1); font-size: var(--text-lead); font-weight: 600; line-height: 1.4; letter-spacing: -.3px; }
 h3.sub { margin: var(--space-6) 0 var(--space-2); font-size: var(--text-small); font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 h3.sub:first-child { margin-top: 0; }
-.lede { font-size: var(--text-lead); line-height: 1.6; }
+.lede { font-size: var(--text-body); line-height: 1.65; }  /* page intros read as body text, not as a heading */
 .section-body > p, .page-intro > * { max-width: var(--measure); }
 .more { margin-top: var(--space-5); font-size: var(--text-meta); font-weight: 600; }
 
@@ -235,7 +235,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .embed-caption { margin-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); }
 
 /* Publications: title, authors, then venue and links under them */
-.page-publications .lede { font-size: var(--text-body); }
+.page-publications h2 { font-size: var(--text-lead); }  /* year headings: same size as the Seminar and Talks years */
 .pubs li { display: grid; grid-template-columns: 2.75em minmax(0, 1fr); row-gap: var(--space-1); padding: var(--space-4) 0; }  /* number column, then title, authors, venue, award with one even gap; a wider gap between papers */
 .pubs li > * { grid-column: 2; }
 .pubs li > .pub-num { grid-column: 1; grid-row: 1; color: var(--faint); font-size: var(--text-meta); font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.65; }
@@ -279,7 +279,7 @@ a.person-name:hover { color: var(--accent); }
 .page-contact main > .contact-join { margin-top: var(--space-6); padding: var(--space-7); background: var(--surface); border-radius: var(--radius-2); }
 .contact-join h2 { color: var(--accent); }
 .contact-join .section-body > p { max-width: none; }  /* one sentence each, so the panel's full width keeps the email on one line */
-.contact-join .section-body > p:first-child { font-size: var(--text-lead); line-height: 1.6; }
+.contact-join .section-body > p:first-child { font-size: var(--text-body); }
 .contact-join .section-body > p + p { margin-top: var(--space-3); }
 .page-contact main > .contact-apply { grid-column: 1 / span 6; }
 .page-contact main > .contact-visit { grid-column: span 6; }

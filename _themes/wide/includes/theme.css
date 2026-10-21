@@ -10,8 +10,8 @@
 */
 :root {
   /* 1. primitives */
-  --blue-700: #245bb5;
-  --blue-100: #d5e6f5;
+  --red-700: #a61955;     /* POSTECH Red (Pantone 215 C, RGB 166 25 85), the one accent */
+  --red-100: #f6e4ec;
   --ink-900: #172b40;
   --ink-600: #596574;
   --ink-500: #6b7683;   /* 4.6:1 on white */
@@ -41,8 +41,8 @@
   --muted: var(--ink-600);
   --faint: var(--ink-500);
   --line: var(--gray-200);
-  --accent: var(--blue-700);
-  --accent-soft: var(--blue-100);
+  --accent: var(--red-700);
+  --accent-soft: var(--red-100);
   --text-small: var(--fs-1);
   --text-meta: var(--fs-2);
   --text-body: var(--fs-3);
@@ -142,13 +142,14 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 .focus-papers { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: var(--space-5); }  /* cards take the spare height, so the people line stays put */
 .paper-chip { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); color: var(--text); }
 a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
+.paper-chip .venue { background: var(--bg); }  /* the card is already grey, so its badge is white */
 .paper-chip .paper-title { font-weight: 600; line-height: 1.45; }
 .focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-5); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 500; }
 .focus-people .label { color: var(--faint); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
 .focus-people a, .focus-people span:not(.label) { color: var(--text); }
 .focus-people a:hover { color: var(--accent); }
 
-.venue { align-self: flex-start; display: inline-block; padding: 1px var(--space-2); background: var(--accent-soft); color: var(--accent); border-radius: 4px; font-size: var(--text-small); font-weight: 600; letter-spacing: .01em; }
+.venue { align-self: flex-start; display: inline-block; padding: 1px var(--space-2); background: var(--surface); color: var(--text); border-radius: 4px; font-size: var(--text-small); font-weight: 600; letter-spacing: .01em; }
 
 /* Lists: light items (courses, talks, funding, seminar) are one row: the title on the left, term, place, or years right-aligned at the end.
    Mentees too: name and affiliation on the left, papers at the right end. Publications use several lines. */

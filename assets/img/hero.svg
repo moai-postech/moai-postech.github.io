@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" fill="none" stroke-linecap="round" stroke-linejoin="round" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
   <!-- links: modalities flow into the orchestrator, which drives agents, robots, factories -->
-  <g stroke="#90B8D8" stroke-width="4">
+  <g stroke="#BAC4CF" stroke-width="4">
     <path d="M128 80C200 80 200 200 240 200"/>
     <path d="M128 200H240"/>
     <path d="M128 320C200 320 200 200 240 200"/>
@@ -8,31 +8,31 @@
     <path d="M320 200H432"/>
     <path d="M320 200C360 200 360 320 432 320"/>
   </g>
-  <g fill="#2070B0"><circle cx="190" cy="120" r="5"/><circle cx="200" cy="200" r="5"/><circle cx="370" cy="280" r="5"/><circle cx="380" cy="200" r="5"/></g>
+  <g fill="#A61955"><circle cx="190" cy="120" r="5"/><circle cx="200" cy="200" r="5"/><circle cx="370" cy="280" r="5"/><circle cx="380" cy="200" r="5"/></g>
   <!-- inputs -->
-  <g stroke="#2070B0" stroke-width="5">
+  <g stroke="#3F4C5A" stroke-width="5">
     <rect x="40" y="40" width="88" height="80" rx="14" fill="#fff"/>
-    <path d="M52 108l22-26 14 14 10-10 18 22z" fill="#D5E6F5" stroke="#90B8D8" stroke-width="4"/>
-    <circle cx="104" cy="62" r="8" fill="#D5E6F5"/>
+    <path d="M52 108l22-26 14 14 10-10 18 22z" fill="#ECEFF3" stroke="#BAC4CF" stroke-width="4"/>
+    <circle cx="104" cy="62" r="8" fill="#ECEFF3"/>
     <rect x="40" y="160" width="88" height="80" rx="14" fill="#fff"/>
-    <path d="M58 184h52M58 200h40M58 216h48" stroke="#90B8D8" stroke-width="6"/>
+    <path d="M58 184h52M58 200h40M58 216h48" stroke="#BAC4CF" stroke-width="6"/>
     <rect x="40" y="280" width="88" height="80" rx="14" fill="#fff"/>
     <path d="M52 322l12-16 12 30 12-36 12 28 12-8" stroke-width="5"/>
   </g>
   <!-- orchestrator -->
-  <circle cx="280" cy="200" r="58" fill="#D5E6F5" stroke="#2070B0" stroke-width="6"/>
-  <circle cx="280" cy="200" r="78" stroke="#90B8D8" stroke-width="3" stroke-dasharray="6 10"/>
+  <circle cx="280" cy="200" r="58" fill="#F6E4EC" stroke="#A61955" stroke-width="6"/>
+  <circle cx="280" cy="200" r="78" stroke="#E2AFC4" stroke-width="3" stroke-dasharray="6 10"/>
   <text x="280" y="209" text-anchor="middle" font-size="26" font-weight="700" fill="#172b40" stroke="none" letter-spacing="-1">MOAI</text>
   <!-- outputs -->
-  <g stroke="#2070B0" stroke-width="5">
+  <g stroke="#3F4C5A" stroke-width="5">
     <rect x="432" y="40" width="88" height="80" rx="14" fill="#fff"/>
-    <path d="M454 62h44a6 6 0 0 1 6 6v20a6 6 0 0 1-6 6h-24l-10 9v-9h-10a6 6 0 0 1-6-6V68a6 6 0 0 1 6-6z" fill="#D5E6F5" stroke-width="4"/>
+    <path d="M454 62h44a6 6 0 0 1 6 6v20a6 6 0 0 1-6 6h-24l-10 9v-9h-10a6 6 0 0 1-6-6V68a6 6 0 0 1 6-6z" fill="#ECEFF3" stroke-width="4"/>
     <rect x="432" y="160" width="88" height="80" rx="14" fill="#fff"/>
-    <path d="M454 224h30l-3-8h-24z" fill="#D5E6F5" stroke-width="4"/>
+    <path d="M454 224h30l-3-8h-24z" fill="#ECEFF3" stroke-width="4"/>
     <path d="M468 216l8-30 20 8" stroke-width="5"/>
-    <path d="M496 194v6m-7 0h14v6c0 4-3 7-7 7s-7-3-7-7z" fill="#D5E6F5" stroke-width="4"/>
+    <path d="M496 194v6m-7 0h14v6c0 4-3 7-7 7s-7-3-7-7z" fill="#ECEFF3" stroke-width="4"/>
     <rect x="432" y="280" width="88" height="80" rx="14" fill="#fff"/>
-    <path d="M448 344v-24l14 8v-8l14 8v-8l14 8v-20h12v36z" fill="#D5E6F5" stroke-width="4"/>
+    <path d="M448 344v-24l14 8v-8l14 8v-8l14 8v-20h12v36z" fill="#ECEFF3" stroke-width="4"/>
   </g>
   <g font-size="13" fill="#596574" stroke="none" text-anchor="middle">
     <text x="84" y="138">Vision</text><text x="84" y="258">Language</text><text x="84" y="378">Sensors</text>

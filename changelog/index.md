@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [postech-red](2026-10-21-postech-red.md) | Sangwoo Mo(moai-postech) | 테마, 그림 | 강조색을 POSTECH Red 로, 배지·그림의 면은 무채색, hero 의 MOAI 원만 빨강 |
 | 2026-10-21 | [mentees-rows](2026-10-21-mentees-rows.md) | Sangwoo Mo(moai-postech) | Mentees, AGENTS.md | 멘티를 한 사람 한 줄로(이름·소속 왼쪽, 논문 venue 오른쪽) |
 | 2026-10-21 | [design-sweep](2026-10-21-design-sweep.md) | Sangwoo Mo(moai-postech) | Home, 테마, 여러 페이지 | Hero 를 multimodal orchestration 중심으로, 소개 아래 여백, 지도 로딩 표시, 휴대폰 전화·사진·멘티 줄, NeurIPS 뉴스 키워드 |
 | 2026-10-21 | [hero-orchestrate](2026-10-21-hero-orchestrate.md) | Sangwoo Mo(moai-postech) | Home | Hero 문장에 orchestrate·멀티모달 입력을 넣어 랩 이름과 잇고 scalable priors 유지, meta description 맞춤 |

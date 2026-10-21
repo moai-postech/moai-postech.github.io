@@ -28,3 +28,9 @@
 - 교수: Courses 는 Fall 2026 이 시트로 이어지니 과목명 링크를 빼고 학수번호를 더하자. Funding 은 한 과제당 한 줄이 좋았다. Advisory 를 넣어 달라고 했는데 왜 뺐나.
 - 반영: `_data/teaching.yml` 에 `code`(Data Engineering `IMEN891K / IDSC501 / AXGS-501`, Programming for Data Science `IMEN574 / IDSC574`), 과목명 링크 제거, 학수번호는 과목명 아래 회색 줄. Funding 은 한 줄에 기관 · 과제명 · 기간(기간은 오른쪽 끝이 아니라 과제명 바로 뒤). `_data/funding.yml` 에 Advisory 묶음 2건: Real Estate Board, Asset Price Forecasting(2026), Designovel, Generative Engine Optimization(2025–). 출처는 CV 의 옛 Advisory & Consulting 절(git 이력)과 개인 사이트 Projects 의 예전 표기.
 - 경위: Advisory 는 넣을 항목을 질문 목록에 올려 두고 넣지 않았다. 옛 CV 이력에 항목이 있었으니 찾아서 넣었어야 했다.
+
+## 추가(같은 날): Advisory 정정
+
+- 교수: 디자이노블은 결국 자문을 하지 않았으니 제거. 한국부동산원 과제명은 project 구글시트의 한글 원문으로.
+- 반영: Designovel 삭제. Real Estate Board 과제명을 시트(`project`, projects 탭 1행)의 정식 이름 "AI기반 표본가격 적합도 모니터링 시스템 개발 연구"로(기간 2026.02.10~2026.06.10, 종료). `_data/funding.yml` 머리 주석에 과제명 정본이 project 시트라고 적었다.
+- 기각: 옛 CV 의 영어 짧은 이름 "Asset Price Forecasting"(공식 명칭이 아니다).

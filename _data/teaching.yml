@@ -1,12 +1,14 @@
-# Teaching 의 Courses(POSTECH 정규 강의만). 위가 최신이다. 학수번호는 쓰지 않는다(교수 결정 2026-10-21).
-# terms 는 개설 학기(최신이 앞)와 그 학기의 강의 일정 시트(url). 강의 제목은 가장 최근 학기 시트로 이어진다.
+# Teaching 의 Courses(POSTECH 정규 강의만). 위가 최신이다. code 는 학수번호(크로스리스팅 포함, 과목 이름 아래 회색 줄).
+# terms 는 개설 학기(최신이 앞)와 그 학기의 강의 일정 시트(url). 과목 이름에는 링크를 걸지 않는다(학기가 시트로 이어진다).
 - title: "Data Engineering"
+  code: "IMEN891K / IDSC501 / AXGS-501"
   terms:
     - name: "Fall 2026"
       url: "https://docs.google.com/spreadsheets/d/1oPqM5g4XYwU_PZ0DFld4QVmYYWPAdWa8m3Cyl2n_rwY/edit?usp=sharing"
     - name: "Fall 2025"
       url: "https://docs.google.com/spreadsheets/d/1NBJrPN4CkLqL0IGGCTr1ZxOvPbRWSDlFF95h-5-zOY4/edit?usp=sharing"
 - title: "Programming for Data Science"
+  code: "IMEN574 / IDSC574"
   terms:
     - name: "Spring 2026"
       url: "https://docs.google.com/spreadsheets/d/1gKBQCv7Fkpwyn7DwXrKBqEHZNYjZsF1qXH5bUrSpANU/edit?usp=sharing"

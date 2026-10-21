@@ -164,9 +164,9 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 .more-news summary::-webkit-details-marker { display: none; }
 .more-news summary::after { content: " ↓"; white-space: pre; }
 .more-news[open] summary::after { content: " ↑"; }
-.funding li { padding: var(--row-gap) 0; }
+.funding li { padding: var(--space-2) 0; }  /* one project per line: sponsor, title, years */
 .funding strong { font-weight: 600; margin-right: var(--space-3); }
-.funding time { display: block; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
+.funding time { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 
 /* Research: three area cards across, then each area as rows (topic, summary and papers under it) */
 .research-overview .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); }

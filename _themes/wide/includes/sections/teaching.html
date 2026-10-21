@@ -2,8 +2,8 @@
     <h2>{{ include.section.title }}</h2>
     <div class="section-body">
     <ul class="plain item-list">
-      {% for c in site.data.teaching %}{% assign latest = c.terms | first %}<li>
-        <span class="item-main"><strong>{% if latest.url %}<a href="{{ latest.url }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</strong></span>
+      {% for c in site.data.teaching %}<li>
+        <span class="item-main"><strong>{{ c.title }}</strong></span>{% if c.code %}<span class="item-sub">{{ c.code }}</span>{% endif %}
         <span class="item-side">{% for t in c.terms %}{% if t.url %}<a href="{{ t.url }}">{{ t.name }}</a>{% else %}{{ t.name }}{% endif %}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
       </li>
       {% endfor %}

@@ -22,3 +22,11 @@
     - sponsor: "LG Electronics"
       title: "도메인 지식 활용을 위한 온톨로지 API 모듈 개발"
       years: "2025–2026"
+- group: "Advisory"
+  projects:
+    - sponsor: "Real Estate Board"
+      title: "Asset Price Forecasting"
+      years: "2026"
+    - sponsor: "Designovel"
+      title: "Generative Engine Optimization"
+      years: "2025–"

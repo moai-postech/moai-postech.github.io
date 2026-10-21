@@ -24,7 +24,7 @@ talks:
     speaker: "Jinwoo Kim"
     affiliation: "KAIST"
     url: "https://jw9730.github.io/"
-    title: "Thinking with Looped Flows"
+    title: "Flow Language Models"
   - date: "2026-08-05"
     invited: true
     speaker: "Jaehyeon Son"

@@ -42,3 +42,4 @@
 - 교수: 11/4 Donghoon Ahn 발표 제목은 "Correction Training for Diffusion Models". 사이트(`TBA` 대체)와 랩 세미나 시트 53행을 고쳤다. 공개된 논문 페이지·연사 홈페이지는 찾지 못해 링크 없음.
 - 교수: 중앙대는 `CAU` 로. Seminar 소속 `Chung-Ang univ.` → `CAU`.
 - 예정 발표 표시(교수 goal: 알아서 더 좋게): 아직 열리지 않은 발표(10/30, 11/4)가 지난 발표와 똑같아 보였다. 날짜가 오늘 이후인 행은 날짜만 강조색 굵은 글자. 오늘 날짜는 방문자 브라우저에서 계산해서, 사이트를 다시 빌드하지 않아도 발표가 지나면 저절로 회색이 된다. 칸 폭 고정(lock)보다 먼저 적용해 굵은 날짜도 폭 계산에 들어간다.
+- 교수: 10/15 김진우(KAIST) 발표 제목 "Thinking with Looped Flows" → "Flow Language Models". 사이트와 랩 세미나 시트 49행을 같이 고쳤다.

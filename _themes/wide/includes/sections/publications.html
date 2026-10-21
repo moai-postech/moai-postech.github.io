@@ -5,6 +5,8 @@
 {% endcomment %}
 {% assign journals = "TMLR,T-RO,TPAMI,IJCV,TNNLS,JMLR,TIP,RA-L" | split: "," %}
 {% assign workshops = "CVPRW,ICMLW,ICCVW,ECCVW,NeurIPSW,ICLRW" | split: "," %}
+{% comment %}venue 뒤 괄호: 트랙(어디에 실렸나)은 배지 안에 그대로, 발표 형식(oral, spotlight, highlight 등 성과)은 배지 밖 강조색 글자{% endcomment %}
+{% assign tracks = "application,industry,findings" | split: "," %}
 {% assign nc = 0 %}{% assign nj = 0 %}{% assign nw = 0 %}{% assign np = 0 %}
 {% for group in site.data.publications %}{% for p in group.papers %}{% if p.venue %}{% assign vn = p.venue | split: " " | first %}{% if journals contains vn %}{% assign nj = nj | plus: 1 %}{% elsif workshops contains vn %}{% assign nw = nw | plus: 1 %}{% else %}{% assign nc = nc | plus: 1 %}{% endif %}{% else %}{% assign np = np | plus: 1 %}{% endif %}{% endfor %}{% endfor %}
 {% for group in site.data.publications %}
@@ -16,7 +18,7 @@
         <span class="pub-num">{{ num }}</span>
         <span class="title">{% if p.official %}<a href="{{ p.official }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
         <span class="authors">{% include authors.html authors=p.authors %}</span>
-        {% if p.venue or p.links or p.url %}<span class="pub-meta">{% if p.venue %}{% assign vparts = p.venue | split: " (" %}{% assign vq = vparts[1] | remove: ")" %}{% if vq == "application" %}<span class="venue">{{ p.venue }}</span>{% else %}<span class="venue">{{ vparts[0] }}</span>{% if vq != "" %}<span class="venue-honor">{{ vq | capitalize }}</span>{% endif %}{% endif %}{% endif %}{% if p.url %}<a class="pub-link" href="{{ p.url }}">arXiv</a>{% endif %}{% if p.links %}{% assign kinds = "project,code" | split: "," %}{% for k in kinds %}{% if p.links[k] %}<a class="pub-link" href="{{ p.links[k] }}">{{ k }}</a>{% endif %}{% endfor %}{% endif %}</span>{% endif %}
+        {% if p.venue or p.links or p.url %}<span class="pub-meta">{% if p.venue %}{% assign vparts = p.venue | split: " (" %}{% assign vq = vparts[1] | remove: ")" %}{% if tracks contains vq %}<span class="venue">{{ p.venue }}</span>{% else %}<span class="venue">{{ vparts[0] }}</span>{% if vq != "" %}<span class="venue-honor">{{ vq | capitalize }}</span>{% endif %}{% endif %}{% endif %}{% if p.url %}<a class="pub-link" href="{{ p.url }}">arXiv</a>{% endif %}{% if p.links %}{% assign kinds = "project,code" | split: "," %}{% for k in kinds %}{% if p.links[k] %}<a class="pub-link" href="{{ p.links[k] }}">{{ k }}</a>{% endif %}{% endfor %}{% endif %}</span>{% endif %}
         {% if p.note %}<span class="note">{{ p.note }}</span>{% endif %}
       </li>
       {% endfor %}

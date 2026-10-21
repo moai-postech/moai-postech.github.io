@@ -24,3 +24,4 @@
 - 교수 질문(Highlight 같은 표시를 넣는 게 좋은가): 둔다. oral, spotlight, highlight 는 채택 논문 중 일부만 받는 성과 표시라 정보가 된다. 사이트 전체에 네 편뿐이다.
 - 교수: `WACV 2027 (application)` 을 venue 배지 안에 칠하고, 전부 예전처럼 `(application)` 으로. 바로 앞의 `Applications Track` 풀어 쓰기를 되돌렸다. Publications 는 배지 안에 `WACV 2027 (application)`, News "Paper on safety monitoring (application) accepted at WACV'27.", Mentees `WACV'27 (application)`. 발표 형식(Oral 등)은 배지 옆 강조색 글자 그대로. 상위 `AGENTS.md` 공통 표기 원칙도 이에 맞췄다.
 - 교수: 링크 순서를 `arXiv · project · code` 로. project 가 있는 8편만 code 자리가 한 칸 밀리지만 링크가 많아야 셋이라 눈에 띄지 않는다. project 가 논문 전체를 소개하는 페이지라 앞에 두는 것도 자연스럽다.
+- 규칙 확정(교수, 2026-10-22): 트랙(application, industry, findings)은 "어디에 실렸나"라서 venue 배지 안 괄호, 발표 형식(oral, spotlight, highlight)은 "어떤 대우를 받았나"라서 배지 밖 강조색 글자. 템플릿이 `application` 하나만 배지 안에 넣던 것을 트랙 목록(`tracks`)으로 일반화했다. 이제 findings·industry 논문이 들어와도 Oral 처럼 빨갛게 나오지 않는다. 상위 `AGENTS.md` 공통 표기 원칙과 `_data/publications.yml` 주석에 적었다.

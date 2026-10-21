@@ -1,6 +1,7 @@
 # Publications 페이지. section 이 절 제목(Preprints, 연도)이고 위에서부터 그대로 나온다.
 # authors: 쉼표로 구분. 이름 뒤 * 는 equal contribution, † 는 equal advising.
-# url 은 논문 링크(제목과 Paper 링크). links 에는 그 밖의 자료를 둔다. 화면에는 Paper, Project, Slides, Poster, Code 순서(개인 사이트와 같은 순서)로 나온다.
+# official 은 학회·저널 공식 페이지(제목 링크, 없으면 제목에 링크 없음). url 은 arXiv(Paper 링크).
+# links 에는 그 밖의 자료를 둔다. 화면에는 Paper, Project, Slides, Poster, Code 순서(개인 사이트와 같은 순서)로 나온다.
 # 연구실 멤버(_data/members.yml 의 교수·학생)는 자동으로 강조된다. 이름 철자를 members.yml 과 똑같이 쓴다.
 # 순서 규칙(같은 연도 안에서 venue 통보일 최신순 등)은 AGENTS.md.
 - section: "Preprints"
@@ -36,6 +37,7 @@
 - section: "2026"
   papers:
     - title: "Stay Fair! Ensuring Group Fairness in Diffusion Models Across Guidance Scales"
+      official: "https://openreview.net/forum?id=tIDWhFyqX7"
       url: "https://arxiv.org/abs/2605.28036"
       authors: "Myeongsoo Kim, Eunji Kim, Minwoo Chae, Sangwoo Mo"
       venue: "NeurIPS 2026"
@@ -43,12 +45,14 @@
         project: "https://kim-myeong-soo.github.io/stayfair/"
         code: "https://github.com/Kim-Myeong-Soo/stay-fair"
     - title: "Topology-Aware Representation Alignment for Semi-Supervised Vision-Language Learning"
+      official: "https://openreview.net/forum?id=JgmIV10Z6r"
       url: "https://arxiv.org/abs/2604.26370"
       authors: "Junwon You, Mihyun Jang, Sangwoo Mo†, Jae-Hun Jung†"
       venue: "NeurIPS 2026"
       links:
         code: "https://github.com/junwon0/ToMA"
     - title: "Aligning Forest and Trees in Images & Long Captions for Visually Grounded Understanding"
+      official: "https://openreview.net/forum?id=3zxG6gSB4n"
       url: "https://arxiv.org/abs/2602.02977"
       authors: "Byeongju Woo, Zilin Wang, Byeonghyun Pak, Sangwoo Mo, Stella X. Yu"
       venue: "NeurIPS 2026"
@@ -63,6 +67,7 @@
         project: "https://idis-rvlms.github.io/"
         code: "https://github.com/effl-lab/Idis"
     - title: "Bring My Cup! Personalizing Vision-Language-Action Models with Visual Attentive Prompting"
+      official: "https://proceedings.mlr.press/v306/lee26ax.html"
       url: "https://arxiv.org/abs/2512.20014"
       authors: "Sangoh Lee, Sangwoo Mo†, Wook-Shin Han†"
       venue: "ICML 2026"
@@ -71,18 +76,21 @@
         code: "https://github.com/Leesangoh/VAP"
         poster: "https://drive.google.com/file/d/1rW11A69oKIpmrtO59fsuZMm3w43scRsn/view?usp=sharing"
     - title: "Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation"
+      official: "https://openaccess.thecvf.com/content/CVPR2026/html/Kim_Rethinking_Prompt_Design_for_Inference-time_Scaling_in_Text-to-Visual_Generation_CVPR_2026_paper.html"
       url: "https://arxiv.org/abs/2512.03534"
       authors: "Subin Kim, Sangwoo Mo, Mamshad Nayeem Rizve, Yiran Xu, Difan Liu, Jinwoo Shin, Tobias Hinz"
       venue: "CVPR 2026"
       links:
         project: "https://subin-kim-cv.github.io/PRIS/"
     - title: "Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis"
+      official: "https://openreview.net/forum?id=bl3drImevi"
       url: "https://arxiv.org/abs/2602.19756"
       authors: "Junhyeok Choi, Sangwoo Mo, Minwoo Chae"
       venue: "ICLR 2026"
       links:
         code: "https://github.com/junhyeok9712/PDS"
     - title: "SHED Light on Segmentation for Dense Prediction"
+      official: "https://openreview.net/forum?id=gsRlLeHiiI"
       url: "https://www.arxiv.org/abs/2601.22529"
       authors: "Seung-Hyun Lee, Sangwoo Mo, Stella X. Yu"
       venue: "TMLR 2026"
@@ -91,6 +99,7 @@
 - section: "2025"
   papers:
     - title: "Open Ad-hoc Categorization with Contextualized Feature Learning"
+      official: "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Open_Ad-hoc_Categorization_with_Contextualized_Feature_Learning_CVPR_2025_paper.html"
       url: "https://arxiv.org/abs/2512.16202"
       authors: "Zilin Wang*, Sangwoo Mo*, Stella X. Yu, Sima Behpour, Liu Ren"
       venue: "CVPR 2025"
@@ -98,6 +107,7 @@
         project: "https://oak-2025.github.io/"
         code: "https://github.com/Wayne2Wang/OAK"
     - title: "Sparsified State-Space Models are Efficient Highway Networks"
+      official: "https://openreview.net/forum?id=G1p0YwrX8X"
       url: "https://arxiv.org/abs/2505.20698"
       authors: "Woomin Song, Jihoon Tack, Sangwoo Mo, Seunghyuk Oh, Jinwoo Shin"
       venue: "TMLR 2025"
@@ -106,6 +116,7 @@
 - section: "2024"
   papers:
     - title: "Discovering and Mitigating Visual Biases through Keyword Explanation"
+      official: "https://openaccess.thecvf.com/content/CVPR2024/html/Kim_Discovering_and_Mitigating_Visual_Biases_through_Keyword_Explanation_CVPR_2024_paper.html"
       url: "https://arxiv.org/abs/2301.11104"
       authors: "Younghyun Kim*, Sangwoo Mo*, Minkyu Kim, Kyungmin Lee, Jaeho Lee, Jinwoo Shin"
       venue: "CVPR 2024 (highlight)"
@@ -114,6 +125,7 @@
         slides: "https://drive.google.com/file/d/1hX6Z1RU_mxAp03yw1v6QUQM1ySWbg-vS/view?usp=sharing"
         poster: "https://drive.google.com/file/d/1jQr3DN4IMe25qszYI20borldWM6t9G1J/view?usp=sharing"
     - title: "Learning Hierarchical Image Segmentation For Recognition and By Recognition"
+      official: "https://openreview.net/forum?id=IRcv4yFX6z"
       url: "https://arxiv.org/abs/2210.00314"
       authors: "Tsung-Wei Ke*, Sangwoo Mo*, Stella X. Yu"
       venue: "ICLR 2024 (spotlight)"
@@ -122,6 +134,7 @@
         slides: "https://drive.google.com/file/d/1--gUNeW0APCkdgk31BbRfeCJH9n_DMl3/view?usp=sharing"
         poster: "https://drive.google.com/file/d/19sE6P48BgIqxJl_pE_7JeJ8LlPHVEFg5/view?usp=sharing"
     - title: "SuRe: Summarizing Retrievals using Answer Candidates for Open-domain QA of LLMs"
+      official: "https://openreview.net/forum?id=w4DW6qkRmt"
       url: "https://arxiv.org/abs/2404.13081"
       authors: "Jaehyung Kim, Jaehyun Nam, Sangwoo Mo, Jongjin Park, Sang-Woo Lee, Minjoon Seo, Jung-Woo Ha, Jinwoo Shin"
       venue: "ICLR 2024"
@@ -130,6 +143,7 @@
         slides: "https://drive.google.com/file/d/1rtAxJgmjxeKqod3WNoWxhuQBqTLNrWjX/view?usp=sharing"
         poster: "https://drive.google.com/file/d/1O9RGU7n6OikueOkrmPYG5ONR2tanBJ3M/view?usp=sharing"
     - title: "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs"
+      official: "https://openreview.net/forum?id=ulaUJFd96G"
       url: "https://arxiv.org/abs/2404.10308"
       authors: "Woomin Song*, Seunghyuk Oh*, Sangwoo Mo, Jaehyung Kim, Sukmin Yun, Jung-Woo Ha, Jinwoo Shin"
       venue: "ICLR 2024"
@@ -140,6 +154,7 @@
 - section: "2023"
   papers:
     - title: "S-CLIP: Semi-supervised Vision-Language Learning using Few Specialist Captions"
+      official: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/c06f788963f0ce069f5b2dbf83fe7822-Abstract-Conference.html"
       url: "https://arxiv.org/abs/2305.14095"
       authors: "Sangwoo Mo, Minkyu Kim, Kyungmin Lee, Jinwoo Shin"
       venue: "NeurIPS 2023"
@@ -148,12 +163,14 @@
         slides: "https://drive.google.com/file/d/1-m058Jh4uXx2Btqncz6jOKX3g2-4fhQg/view?usp=sharing"
         poster: "https://drive.google.com/file/d/1hycAnfR2-tDZh9UMJlIkHI2pmGShpuFp/view?usp=sharing"
     - title: "Diffusion Probabilistic Models for Structured Node Classification"
+      official: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/65d32185f73cbf4535449a792c63926f-Abstract-Conference.html"
       url: "https://arxiv.org/abs/2302.10506"
       authors: "Hyosoon Jang, Seonghyun Park, Sangwoo Mo, Sungsoo Ahn"
       venue: "NeurIPS 2023"
       links:
         code: "https://github.com/hsjang0/DPM-GSP"
     - title: "RoPAWS: Robust Semi-supervised Representation Learning from Uncurated Data"
+      official: "https://openreview.net/forum?id=G1H4NSATlr"
       url: "https://arxiv.org/abs/2302.14483"
       authors: "Sangwoo Mo, Jong-Chyi Su, Chih-Yao Ma, Mahmoud Assran, Ishan Misra, Licheng Yu, Sean Bell"
       venue: "ICLR 2023"
@@ -162,6 +179,7 @@
         slides: "https://drive.google.com/file/d/12XUizzNf3lzDEi6VC_Oyk1bJQLBTWowN/view?usp=sharing"
         poster: "https://drive.google.com/file/d/1zGwWP-JTgyGLBGOXfkhxl6Yoa32e-spC/view?usp=sharing"
     - title: "Breaking the Spurious Causality of Conditional Generation via Fairness Intervention with Corrective Sampling"
+      official: "https://openreview.net/forum?id=VV4zJwLwI7"
       url: "https://arxiv.org/abs/2212.02090"
       authors: "Junhyun Nam, Sangwoo Mo, Jaeho Lee, Jinwoo Shin"
       venue: "TMLR 2023"
@@ -172,6 +190,7 @@
 - section: "2022"
   papers:
     - title: "Generating Videos with Dynamics-aware Implicit Generative Adversarial Networks"
+      official: "https://openreview.net/forum?id=Czsdv-S4-w9"
       url: "https://arxiv.org/abs/2202.10571"
       authors: "Sihyun Yu*, Jihoon Tack*, Sangwoo Mo*, Hyunsu Kim, Junho Kim, Jung-Woo Ha, Jinwoo Shin"
       venue: "ICLR 2022"
@@ -189,6 +208,7 @@
 - section: "2021"
   papers:
     - title: "Object-aware Contrastive Learning for Debiased Scene Representation"
+      official: "https://proceedings.neurips.cc/paper_files/paper/2021/hash/65d2ea03425887a717c435081cfc5dbb-Abstract.html"
       url: "https://arxiv.org/abs/2108.00049"
       authors: "Sangwoo Mo*, Hyunwoo Kang*, Kihyuk Sohn, Chun-Liang Li, Jinwoo Shin"
       venue: "NeurIPS 2021"
@@ -198,6 +218,7 @@
         slides: "https://drive.google.com/file/d/1rMvTQV5e0OLaf4wLmlV954NUQwYVGBxV/view?usp=sharing"
         poster: "https://drive.google.com/file/d/1gDzBg7G5yBXlweWB7tS71THLKHqbRUPj/view?usp=sharing"
     - title: "Layer-adaptive Sparsity for the Magnitude-based Pruning"
+      official: "https://openreview.net/forum?id=H6ATjJ0TKdf"
       url: "https://arxiv.org/abs/2010.07611"
       authors: "Jaeho Lee, Sejun Park, Sangwoo Mo, Sungsoo Ahn, Jinwoo Shin"
       venue: "ICLR 2021"
@@ -205,6 +226,7 @@
         code: "https://github.com/jaeho-lee/layer-adaptive-sparsity"
         slides: "https://docs.google.com/presentation/d/1SumPYR7BolIYdHZZV9AsqW8b1F2K0T7LNpxxABUmmRM/edit#slide=id.p"
     - title: "MASKER: Masked Keyword Regularization for Reliable Text Classification"
+      official: "https://ojs.aaai.org/index.php/AAAI/article/view/17601"
       url: "https://arxiv.org/abs/2012.09392"
       authors: "Seung-Jun Moon*, Sangwoo Mo*, Kimin Lee, Jaeho Lee, Jinwoo Shin"
       venue: "AAAI 2021"
@@ -213,7 +235,7 @@
         slides: "https://drive.google.com/file/d/1xj5U5c_ERZl61-Z3fcgtH5_ou297-gql/view?usp=sharing"
         poster: "https://drive.google.com/file/d/1QrdLug3vwvyR8p6KAGPmedY2ndh0lrkp/view?usp=sharing"
     - title: "Deep Neural Network Based Electrical Impedance Tomographic Sensing Methodology for Large-Area Robotic Tactile Sensing"
-      url: "https://ieeexplore.ieee.org/document/9376677"
+      official: "https://ieeexplore.ieee.org/document/9376677"
       authors: "Hyunkyu Park, Kyungseo Park, Sangwoo Mo, Jung Kim"
       venue: "T-RO 2021"
     - title: "Abstract Reasoning via Logic-guided Generation"
@@ -225,6 +247,7 @@
 - section: "2020"
   papers:
     - title: "CSI: Novelty Detection via Contrastive Learning on Distributionally Shifted Instances"
+      official: "https://proceedings.neurips.cc/paper_files/paper/2020/hash/8965f76632d7672e7d3cf29c87ecaa0c-Abstract.html"
       url: "https://arxiv.org/abs/2007.08176"
       authors: "Jihoon Tack*, Sangwoo Mo*, Jongheon Jeong, Jinwoo Shin"
       venue: "NeurIPS 2020"
@@ -234,6 +257,7 @@
         slides: "https://drive.google.com/file/d/1tRjbb2_iMy-9-r9ivBceDXrdUKWzNkVf/view?usp=sharing"
         poster: "https://drive.google.com/file/d/1OlDCjG1aeDG_r5zAUVg7cFJ0n44Ims9d/view?usp=sharing"
     - title: "Lookahead: A Far-sighted Alternative of Magnitude-based Pruning"
+      official: "https://openreview.net/forum?id=ryl3ygHYDB"
       url: "https://arxiv.org/abs/2002.04809"
       authors: "Sejun Park*, Jaeho Lee*, Sangwoo Mo, Jinwoo Shin"
       venue: "ICLR 2020"
@@ -244,9 +268,12 @@
       url: "https://arxiv.org/abs/2002.10964"
       authors: "Sangwoo Mo, Minsu Cho, Jinwoo Shin"
       venue: "CVPRW 2020"
+      links:
+        code: "https://github.com/sangwoomo/FreezeD"
 - section: "2019"
   papers:
     - title: "Mining GOLD Samples for Conditional GANs"
+      official: "https://proceedings.neurips.cc/paper_files/paper/2019/hash/36ed197b3f31618fdbadb3df86f804bd-Abstract.html"
       url: "https://arxiv.org/abs/1910.09170"
       authors: "Sangwoo Mo, Chiheon Kim, Sungwoong Kim, Minsu Cho, Jinwoo Shin"
       venue: "NeurIPS 2019"
@@ -255,13 +282,16 @@
         slides: "https://drive.google.com/file/d/1QZODOxeTtZyA_9aCJ7tL-Z2-QL9aF2-l/view?usp=sharing"
         poster: "https://drive.google.com/file/d/1FGdjyXa3dReE-fFGvjtnXy8EZB_H0rVh/view?usp=sharing"
     - title: "Deep Neural Network Approach in Electrical Impedance Tomography-Based Real-Time Soft Tactile Sensor"
-      url: "https://ieeexplore.ieee.org/document/8968532"
+      official: "https://ieeexplore.ieee.org/document/8968532"
       authors: "Hyunkyu Park, Hyosang Lee, Kyungseo Park, Sangwoo Mo, Jung Kim"
       venue: "IROS 2019"
       links:
         slides: "https://drive.google.com/file/d/18rirPryviaVgSHVBWzTGQwiDX6_osN2d/view?usp=sharing"
     - title: "InstaGAN: Instance-aware Image-to-Image Translation"
+      official: "https://openreview.net/forum?id=ryxwJhC9YX"
       url: "https://arxiv.org/abs/1812.10889"
       authors: "Sangwoo Mo, Minsu Cho, Jinwoo Shin"
       venue: "ICLR 2019"
       note: "Bronze Prize, Samsung Humantech Paper Awards, 2019"
+      links:
+        code: "https://github.com/sangwoomo/instagan"

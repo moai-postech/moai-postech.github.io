@@ -4,7 +4,7 @@
     <div class="section-body">
     <ul class="plain pubs">
       {% for p in group.papers %}<li>
-        <span class="title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
+        <span class="title">{% if p.official %}<a href="{{ p.official }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
         <span class="authors">{% include authors.html authors=p.authors %}</span>
         {% if p.venue or p.links or p.url %}<span class="pub-meta">{% if p.venue %}<span class="venue">{{ p.venue }}</span>{% endif %}{% if p.url %}<a class="pub-link" href="{{ p.url }}">Paper</a>{% endif %}{% if p.links %}{% assign kinds = "project,slides,poster,code" | split: "," %}{% for k in kinds %}{% if p.links[k] %}<a class="pub-link" href="{{ p.links[k] }}">{{ k | capitalize }}</a>{% endif %}{% endfor %}{% endif %}</span>{% endif %}
         {% if p.note %}<span class="note">{{ p.note }}</span>{% endif %}

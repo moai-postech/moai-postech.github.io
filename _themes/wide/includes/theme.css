@@ -113,7 +113,8 @@ main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with sp
 
 /* Home hero: a full-width band, statement on the left, the orchestration picture on the right */
 .hero-band { margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); background: linear-gradient(180deg, var(--surface), var(--bg)); }
-.hero { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; padding: var(--space-9) 0 var(--space-8); }
+.hero { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; padding: var(--space-9) 0 var(--space-6); }
+.hero-band + .content-section { padding-top: var(--space-6); }  /* hero art to the first heading: 32 + 32 = the usual 64px section gap */
 .hero-copy { grid-column: span 7; }
 .hero-art { grid-column: span 5; width: 100%; height: auto; }
 .eyebrow { margin: 0 0 var(--space-5); color: var(--muted); font-size: var(--text-body); font-weight: 600; text-wrap: balance; }

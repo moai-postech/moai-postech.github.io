@@ -8,7 +8,7 @@ professor:
   name: "Sangwoo Mo"
   photo: assets/img/people/sangwoo-mo.jpg
   position: "Assistant Professor, [POSTECH IME](https://ime.postech.ac.kr/) (affiliated with [AI](https://ai.postech.ac.kr/), [AX](https://ax.postech.ac.kr/), and [IDS](https://ids.postech.ac.kr/index_en))"
-  contact: "{first_name}.{last_name} [at] postech.ac.kr · +82-54-279-2202"
+  contact: "{first_name}.{last_name} [at] postech.ac.kr · +82‑54‑279‑2202"
   links: "[Google Scholar](https://scholar.google.com/citations?user=Sq9y3NMAAAAJ) / [Github](https://github.com/sangwoomo) / [CV](https://www.overleaf.com/read/yhzsgvyrfsvj) / [X (Twitter)](https://twitter.com/sangwoomo)"
   bio: |
     Sangwoo Mo is an Assistant Professor in the [Department of Industrial and Management Engineering](https://ime.postech.ac.kr/) at POSTECH, where he leads the MOAI Lab. His research centers on multimodal foundation models for vision, language, and robotics.

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | [design-sweep](2026-10-21-design-sweep.md) | Sangwoo Mo(moai-postech) | Home, 테마, 여러 페이지 | Hero 를 multimodal orchestration 중심으로, 소개 아래 여백, 지도 로딩 표시, 휴대폰 전화·사진·멘티 줄, NeurIPS 뉴스 키워드 |
 | 2026-10-21 | [hero-orchestrate](2026-10-21-hero-orchestrate.md) | Sangwoo Mo(moai-postech) | Home | Hero 문장에 orchestrate·멀티모달 입력을 넣어 랩 이름과 잇고 scalable priors 유지, meta description 맞춤 |
 | 2026-10-21 | [appointments-no-location](2026-10-21-appointments-no-location.md) | Sangwoo Mo(moai-postech) | Faculty | Appointments 오른쪽 칸에서 지역 표시를 빼고 기간만, Services 학회는 왼쪽에 쉼표로 |
 | 2026-10-21 | [faculty-honors](2026-10-21-faculty-honors.md) | Sangwoo Mo(moai-postech) | Faculty, AGENTS.md | Reviewer Award 삭제, 수상은 박사 과정 때로 표시, Reviewer 학회 목록을 왼쪽 한 줄로 |

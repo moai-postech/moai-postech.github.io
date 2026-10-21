@@ -108,7 +108,7 @@ main > * { grid-column: 1 / -1; }
 .content-section { padding: var(--section-gap) 0 0; }
 main > :last-child { padding-bottom: var(--space-9); }  /* the page ends with space, no footer */
 .page-intro { padding-top: var(--space-7); }
-.page-intro + .content-section { padding-top: var(--space-6); }
+.page-intro + .content-section { padding-top: var(--space-7); }  /* intro to first block: the same 48px as subnav to first block */
 
 /* Home hero: a full-width band, statement on the left, the orchestration picture on the right */
 .hero-band { margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); background: linear-gradient(180deg, var(--surface), var(--bg)); }
@@ -223,6 +223,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 
 /* Wide media */
 .embed { position: relative; width: 100%; min-height: 360px; overflow: hidden; border-radius: var(--radius-2); background: #0b1220; border: 1px solid var(--line); }
+.embed::before { content: "Loading the map\2026"; position: absolute; inset: 0; display: grid; place-items: center; color: #9aa7b8; font-size: var(--text-meta); }  /* shows until the map paints over it */
 .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .embed-caption { margin-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); }
 
@@ -301,7 +302,9 @@ a.person-name:hover { color: var(--accent); }
   :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --fs-6: 34px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); }
   .site-head { display: block; padding: var(--space-5) 0 var(--space-2); }
   .brand { margin-bottom: var(--space-2); }
-  .site-nav { gap: 0 var(--space-4); }
+  .site-nav { gap: 0 var(--space-4); }  /* six items do not fit one line at 375px without shrinking the type; two lines keep every item visible */
+  .person-photo { max-width: 120px; }
+  .person-aff { flex-basis: 100%; }  /* mentees: affiliation always on its own line */
   .nav-menu { display: none !important; }
   .hero { padding: var(--space-7) 0 var(--space-6); }
   .eyebrow { font-size: var(--text-meta); }

@@ -20,15 +20,15 @@ professor:
       groups:
         - title: "Faculty positions"
           items:
-            - { text: "POSTECH, Assistant Professor", side: "2025–present · Korea" }
+            - { text: "POSTECH, Assistant Professor", side: "2025–present" }
         - title: "Research positions"
           items:
-            - { text: "U Michigan, Postdoctoral Fellow (host: Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/))", side: "2023–2025 · US" }
-            - { text: "NVIDIA AI, Research Intern (host: Dr. [Weili Nie](https://weilinie.github.io/))", side: "2022 Winter · US, remote" }
-            - { text: "Meta AI, Research Intern (host: Dr. [Jong-Chyi Su](https://jongchyisu.github.io/))", side: "2022 Summer · US" }
-            - { text: "Naver AI, Collaborator (host: Dr. [Jung-Woo Ha](https://aidljwha.wordpress.com/))", side: "2021 Summer · Korea" }
-            - { text: "Google AI, Collaborator (host: Dr. [Kihyuk Sohn](https://sites.google.com/site/kihyuksml/))", side: "2020 Winter · US, remote" }
-            - { text: "Kakao Brain, Research Intern (host: Dr. [Sungwoong Kim](https://sites.google.com/view/swkim))", side: "2019 Spring · Korea" }
+            - { text: "U Michigan, Postdoctoral Fellow (host: Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/))", side: "2023–2025" }
+            - { text: "NVIDIA AI, Research Intern (host: Dr. [Weili Nie](https://weilinie.github.io/))", side: "2022 Winter" }
+            - { text: "Meta AI, Research Intern (host: Dr. [Jong-Chyi Su](https://jongchyisu.github.io/))", side: "2022 Summer" }
+            - { text: "Naver AI, Collaborator (host: Dr. [Jung-Woo Ha](https://aidljwha.wordpress.com/))", side: "2021 Summer" }
+            - { text: "Google AI, Collaborator (host: Dr. [Kihyuk Sohn](https://sites.google.com/site/kihyuksml/))", side: "2020 Winter" }
+            - { text: "Kakao Brain, Research Intern (host: Dr. [Sungwoong Kim](https://sites.google.com/view/swkim))", side: "2019 Spring" }
     - title: "Education"
       groups:
         - items:

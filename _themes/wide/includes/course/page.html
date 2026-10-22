@@ -1,0 +1,95 @@
+{% comment %}
+  강의 페이지 한 장. 내용은 _data/courses/<page.course>.yml 이고 여기서는 모양만 정한다.
+  순서: 머리(과목명, 학수번호·학기, 교수, 링크) → Overview(소개, 파트 카드) → Schedule → Grading → Resources.
+  이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
+{% endcomment %}
+{% assign c = site.data.courses[page.course] %}
+{% include subnav.html %}
+    <header class="course-head">
+      <p class="course-back"><a href="teaching.html">All courses</a></p>
+      <h1>{{ c.title }}</h1>
+      <p class="course-meta"><span>{{ c.code }}</span><span>{{ c.term }}</span><span>POSTECH</span></p>
+      <p class="course-people">Instructor: <a href="{{ c.instructor.url }}">Prof. {{ c.instructor.name }}</a>{% if c.office_hours %}<span class="course-oh">Office hours: {{ c.office_hours }}</span>{% endif %}</p>
+      {% if c.links %}<p class="course-links">{% for l in c.links %}<a href="{{ l.url }}">{{ l.label }} ↗</a>{% endfor %}</p>{% endif %}
+    </header>
+
+    <section class="content-section course-overview">
+    <h2>Overview</h2>
+    <div class="section-body">
+    {% if c.summary %}<p>{{ c.summary }}</p>{% endif %}
+    {% if c.parts %}<ol class="plain course-parts">
+      {% for p in c.parts %}<li>
+        <span class="course-part-name">{{ p.name }}<small>{{ p.span }}</small></span>
+        <strong>{{ p.title }}</strong>
+        <span class="course-part-text">{{ p.text }}</span>
+      </li>{% endfor %}
+    </ol>{% endif %}
+    </div>
+    </section>
+
+    <section class="content-section">
+    <h2>Schedule</h2>
+    <div class="section-body">
+    <table class="course-schedule">
+      <thead><tr><th scope="col">Date</th><th scope="col">#</th><th scope="col">Topic</th><th scope="col">Slides</th><th scope="col">Reading</th></tr></thead>
+      <tbody>
+      {% for r in c.schedule %}{% if r.part %}{% assign p = c.parts | where: "id", r.part | first %}
+      <tr class="course-part-row"><th colspan="5" scope="rowgroup">{{ p.name }}<span>{{ p.title }}</span></th></tr>
+      {% else %}
+      <tr class="is-{{ r.kind }}" data-date="{{ r.date }}">
+        <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
+        <td class="cs-n">{{ r.n }}</td>
+        <td class="cs-topic">{% if r.kind == "guest" %}<span class="cs-tag">Guest lecture</span>{% elsif r.kind == "exam" %}<span class="cs-tag">Exam</span>{% elsif r.kind == "project" %}<span class="cs-tag">Project</span>{% endif %}<span class="cs-title">{{ r.title }}</span>{% if r.speaker %}<span class="cs-speaker">{{ r.speaker }}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}</td>
+        <td class="cs-slides">{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}</td>
+        <td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>
+      </tr>
+      {% endif %}{% endfor %}
+      </tbody>
+    </table>
+    </div>
+    </section>
+
+    {% if c.grading %}<section class="content-section">
+    <h2>Grading</h2>
+    <div class="section-body">
+    <ul class="plain course-grading">
+      {% for g in c.grading %}<li><span>{{ g.item }}</span><strong>{{ g.weight }}</strong></li>{% endfor %}
+    </ul>
+    {% if c.grading_note %}<p class="course-note">{{ c.grading_note }}</p>{% endif %}
+    </div>
+    </section>{% endif %}
+
+    {% if c.resources or c.exams or c.other_terms %}<section class="content-section">
+    <h2>Resources</h2>
+    <div class="section-body">
+    {% if c.resources %}<h3 class="sub">Reference courses</h3>
+    <ul class="plain item-list">
+      {% for x in c.resources %}<li>
+        <span class="item-main"><strong><a href="{{ x.url }}">[{{ x.abbr }}] {{ x.title }}</a></strong></span>
+        <span class="item-side">{{ x.source }}</span>
+      </li>{% endfor %}
+    </ul>{% endif %}
+    {% if c.exams %}<h3 class="sub">Past exams</h3>
+    <ul class="plain item-list">
+      {% for x in c.exams %}<li>
+        <span class="item-main"><strong><a href="{{ x.url }}">{{ x.label }}</a></strong></span>
+        {% if x.solution %}<span class="item-side"><a href="{{ x.solution }}">with solution</a></span>{% endif %}
+      </li>{% endfor %}
+    </ul>{% endif %}
+    {% if c.other_terms %}<h3 class="sub">Other terms</h3>
+    <ul class="plain item-list">
+      {% for x in c.other_terms %}<li><span class="item-main"><strong><a href="{{ x.url }}">{{ c.title }}, {{ x.name }}</a></strong></span></li>{% endfor %}
+    </ul>{% endif %}
+    </div>
+    </section>{% endif %}
+
+<script>
+// The next class (first row dated today or later) is marked, checked in the visitor's browser so it never goes stale.
+(function () {
+  var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  var rows = document.querySelectorAll('.course-schedule tr[data-date]');
+  for (var i = 0; i < rows.length; i++) {
+    if (rows[i].getAttribute('data-date') >= today) { rows[i].classList.add('is-next'); break; }
+  }
+})();
+</script>

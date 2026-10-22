@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [course-pages](2026-10-22-course-pages.md) | Sangwoo Mo(moai-postech) | Teaching, 테마 | 강의 페이지 양식(`includes/course/`)과 첫 페이지 `/teaching/26f-imen891k/`, Courses 의 Fall 2026 을 시트 대신 이 페이지로 |
 | 2026-10-22 | [funding-intro](2026-10-22-funding-intro.md) | Sangwoo Mo(moai-postech) | Funding, News | 소개 문장 한 줄(News 보관 페이지 포함), 링크 없는 자료는 숨김 유지로 확정 |
 | 2026-10-22 | [final-design-pass](2026-10-22-final-design-pass.md) | Sangwoo Mo(moai-postech) | 테마 전체 | 최종 점검 반영: 탭 제목 em dash, 굵기 500, 회색 하나, News 기준선, Media 출처 오른쪽, 칩 위치, 필터 선, 저자 줄바꿈, PhD 통일 |
 | 2026-10-22 | [slides-poster-policy](2026-10-22-slides-poster-policy.md) | Sangwoo Mo(moai-postech) | Publications 데이터 | 새 논문엔 slide·poster 를 모으지 않음, 기존 Drive public/ 폴더는 보관용으로 그대로 |

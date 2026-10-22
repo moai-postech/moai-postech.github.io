@@ -385,3 +385,6 @@ a.person-name:hover { color: var(--accent); }
   .hero-art, .site-nav, .subnav { display: none; }
   a { color: inherit; }
 }
+
+{% comment %}Course pages: their own folder so the template stays in one place{% endcomment %}
+{% include course/course.css %}

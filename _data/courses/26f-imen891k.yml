@@ -1,0 +1,255 @@
+# 강의 페이지 /teaching/26f-imen891k/ 의 내용. 모양은 _themes/wide/includes/course/ 가 정한다(그 폴더의 README.md).
+# 정본은 이 파일이다(2026-10-22부터 스케줄 구글시트를 대신한다). 슬라이드는 Drive lecture_note/ 의 배포본을 가리킨다.
+title: "Data Engineering"
+code: "IMEN891K / IDSC501 / AXGS-501"
+term: "Fall 2026"
+instructor:
+  name: "Sangwoo Mo"
+  url: "faculty.html"
+office_hours: "Tuesdays 11:00 – 12:00, Room 319"
+summary: >-
+  This course covers the data side of AI systems: everything that happens before and after the model.
+  We collect and prepare data, store and process it at scale, and then run models and agents on it.
+  In a team project, students build a product on a real data pipeline from end to end.
+links:
+  - label: "Lecture notes"
+    url: "https://drive.google.com/drive/folders/1GT9kK4hHtQhuCR6qhJf5idKy5F8q4jF8?usp=drive_link"
+  - label: "Team project"
+    url: "https://docs.google.com/spreadsheets/d/1SjOnpmdC4ZQcAQffTwqP2GWTv55ujObgNl_frRshPyk/edit?usp=sharing"
+
+# 세 파트. 스케줄의 part 줄과 이름이 같아야 한다.
+parts:
+  - id: "part-1"
+    name: "Part I"
+    title: "Collection and Preparation"
+    span: "Lectures 2 – 5"
+    text: "Collect data, explore it, and clean, integrate, transform and reduce it."
+  - id: "part-2"
+    name: "Part II"
+    title: "Storage"
+    span: "Lectures 6 – 14"
+    text: "Store and query it with SQL and NoSQL, then process it at scale in batches, warehouses and streams."
+  - id: "part-3"
+    name: "Part III"
+    title: "Monitoring and Updates"
+    span: "Lectures 15 – 18"
+    text: "Run models and agents on the data: ML systems, LLM systems, RAG and agents."
+
+# 한 줄 = 한 수업일. kind: lecture(번호 n), guest, exam, project, break(휴강·온라인 수업일. off 는 YAML 이 false 로 읽어 쓰지 않는다), event.
+# part 만 있는 줄은 파트 머리다. pdf·html 은 공개 링크가 생기면 채운다(없으면 칸이 빈다).
+# reading 의 약칭은 아래 resources 의 abbr 이다.
+schedule:
+  - date: "2026-09-08"
+    kind: lecture
+    n: 1
+    title: "Overview & Logistics"
+    pdf: "https://drive.google.com/file/d/19mfIkWJskdzzt1CegYrxTrufs88E0pTh/view"
+    html: "https://drive.google.com/file/d/1s0urhm_B_aUX8ghtUFFeJrpXa7qSDAvn/view"
+  - part: "part-1"
+  - date: "2026-09-10"
+    kind: lecture
+    n: 2
+    title: "Data Collection"
+    pdf: "https://drive.google.com/file/d/1HrGF9CEBnfwL-hg6hvrvNaXms9LMO5c0/view"
+    html: "https://drive.google.com/file/d/1nHeaJH3aXWaW850KF2eaxEF6rqe_hbD3/view"
+  - date: "2026-09-15"
+    kind: lecture
+    n: 3
+    title: "Data Exploration"
+    pdf: "https://drive.google.com/file/d/1z84KVIeFo4FEBmDsXnp6h9BLlM1YS9cy/view"
+    html: "https://drive.google.com/file/d/1VVQBSXCc2z1xIDM5RC3ytSv6lGV6dTfW/view"
+    reading:
+      - text: "DMCT Ch 2"
+        url: "https://hanj.cs.illinois.edu/cs412/bk3/02.pdf"
+  - date: "2026-09-17"
+    kind: lecture
+    n: 4
+    title: "Pre-processing I: Cleaning & Integration"
+    pdf: "https://drive.google.com/file/d/1QDN-xxkD9XNktcBek3vvJHSl66n2UYzz/view"
+    html: "https://drive.google.com/file/d/1HtPSTw8fyxu-vpAXmc_ZquXrtKckQ152/view"
+    reading:
+      - text: "DMCT Ch 3"
+        url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
+  - date: "2026-09-18"
+    kind: guest
+    title: "금융권 AI 어디까지 왔나? 기술 및 정책 동향"
+    speaker: "Dae-Young Park"
+    affiliation: "Financial Security Institute"
+  - date: "2026-09-22"
+    kind: lecture
+    n: 5
+    title: "Pre-processing II: Transformation & Reduction"
+    pdf: "https://drive.google.com/file/d/1s8NPFWV-MNBv8dOXQslqSVUdBwODD39v/view"
+    html: "https://drive.google.com/file/d/1BIMcXKeLrmywGKSN0lCwZtI3RxZzmlqw/view"
+    reading:
+      - text: "DMCT Ch 3"
+        url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
+  - date: "2026-09-24"
+    kind: break
+    title: "No class (Chuseok)"
+  - part: "part-2"
+  - date: "2026-09-29"
+    kind: lecture
+    n: 6
+    title: "SQL I: Basics"
+    pdf: "https://drive.google.com/file/d/11AzApeUUWK3OEfunhtixSNOjrEN7bs1t/view"
+    html: "https://drive.google.com/file/d/1z35TzlGehk12oFAQgakjtgXrWGcqcHBp/view"
+    reading:
+      - text: "DMS Lec 1 – 2"
+        url: "https://thodrek.github.io/cs564-fall17/"
+  - date: "2026-10-01"
+    kind: lecture
+    n: 7
+    title: "SQL II: Joins"
+    pdf: "https://drive.google.com/file/d/1pXarnhtSI1repfSpYjtODiynwSQgzise/view"
+    html: "https://drive.google.com/file/d/1tQd_LmUAufha4_hbdkJf-OZBgxGil2Yx/view"
+    reading:
+      - text: "DMS Lec 2 – 3"
+        url: "https://thodrek.github.io/cs564-fall17/"
+  - date: "2026-10-06"
+    kind: lecture
+    n: 8
+    title: "SQL III: Aggregation"
+    pdf: "https://drive.google.com/file/d/11CfTQg5XVD-0TVBSwfrZfMiunhoU-C1a/view"
+    html: "https://drive.google.com/file/d/1fzezoFalJ9SqlCtICkprIDUsR4Tlxk7d/view"
+    reading:
+      - text: "DMS Lec 3 – 4"
+        url: "https://thodrek.github.io/cs564-fall17/"
+  - date: "2026-10-08"
+    kind: lecture
+    n: 9
+    title: "NoSQL I: Landscape"
+    pdf: "https://drive.google.com/file/d/18pTG0_UcliDSN3eW0fyxrYkvbvRPS3vR/view"
+    html: "https://drive.google.com/file/d/1nBp3K2ZMYd0_w1orGhX5W6QtYb71ZlMj/view"
+    reading:
+      - text: "IDS Lec 22"
+        url: "https://cs186berkeley.net/fa24/"
+  - date: "2026-10-13"
+    kind: lecture
+    n: 10
+    title: "NoSQL II: Document Stores"
+    pdf: "https://drive.google.com/file/d/1tmKx8lMqOPmAIhA46YjgcYR8Fxj3RAXY/view"
+    html: "https://drive.google.com/file/d/1B4z0SKVtJtu52gI0A0R_D-Ng4IupI8l0/view"
+    reading:
+      - text: "IDS Lec 23"
+        url: "https://cs186berkeley.net/fa24/"
+  - date: "2026-10-15"
+    kind: lecture
+    n: 11
+    title: "Review Session"
+    pdf: "https://drive.google.com/file/d/1LQ9Zko3kcrGrL0AMUsfHctldQETuiPDO/view"
+    html: "https://drive.google.com/file/d/17kBVqKVoavdEkzojRP_UhF37ooiCrXro/view"
+  - date: "2026-10-20"
+    kind: project
+    title: "Project Proposal I"
+  - date: "2026-10-22"
+    kind: project
+    title: "Project Proposal II"
+  - date: "2026-10-27"
+    kind: break
+    title: "Peer Evaluation (online, no class)"
+  - date: "2026-10-29"
+    kind: exam
+    title: "Midterm Exam"
+  - date: "2026-11-03"
+    kind: lecture
+    n: 12
+    title: "Big Data I: Batch Processing"
+    pdf: "https://drive.google.com/file/d/16OyVyfnLUvD5Sj7IiHhBxYTKkm3RWlp1/view"
+    html: "https://drive.google.com/file/d/1Et-4qLbiuQK27SeA5csftCb-DCJd2h7U/view"
+  - date: "2026-11-05"
+    kind: lecture
+    n: 13
+    title: "Big Data II: Data Warehousing"
+    pdf: "https://drive.google.com/file/d/1bJexEyfaX1cdOZBwSFYSpDZ-j09Uv7Jo/view"
+    html: "https://drive.google.com/file/d/1TjV1N-CAO099sEFYQWy-D1x9jzUc_cs7/view"
+  - date: "2026-11-10"
+    kind: lecture
+    n: 14
+    title: "Big Data III: Stream Processing"
+    pdf: "https://drive.google.com/file/d/1s7j1LeZ5MpXV6jewl_fFp_2BBYVOQnAj/view"
+    html: "https://drive.google.com/file/d/1QuURUpFvSZFnVXfVRNsRmLx5ikJpsAP4/view"
+  - date: "2026-11-12"
+    kind: event
+    title: "Midterm & Proposal Review"
+  - part: "part-3"
+  - date: "2026-11-17"
+    kind: lecture
+    n: 15
+    title: "ML Systems"
+  - date: "2026-11-18"
+    kind: guest
+    title: "AI 시대의 경영 패러다임: 디맨드 드리븐 전략"
+    speaker: "Hyunkyu Lee"
+    affiliation: "Google Korea"
+  - date: "2026-11-19"
+    kind: lecture
+    n: 16
+    title: "LLM Systems"
+  - date: "2026-11-24"
+    kind: lecture
+    n: 17
+    title: "RAG"
+  - date: "2026-11-26"
+    kind: event
+    title: "IDS Capstone Workshop"
+  - date: "2026-12-01"
+    kind: lecture
+    n: 18
+    title: "Agents"
+  - date: "2026-12-03"
+    kind: break
+    title: "Project preparation (online, no class)"
+  - date: "2026-12-08"
+    kind: break
+    title: "Project preparation (online, no class)"
+  - date: "2026-12-10"
+    kind: break
+    title: "Project preparation (online, no class)"
+  - date: "2026-12-15"
+    kind: project
+    title: "Project Final I"
+  - date: "2026-12-17"
+    kind: project
+    title: "Project Final II"
+  - date: "2026-12-22"
+    kind: break
+    title: "Peer Evaluation (online, no class)"
+
+grading:
+  - item: "Midterm exam"
+    weight: "40%"
+  - item: "Project proposal"
+    weight: "20%"
+  - item: "Project final"
+    weight: "40%"
+grading_note: "Attendance is not graded, but excessive absence results in an F. AI tools such as ChatGPT are allowed."
+
+# 참고 강의. reading 의 약칭(abbr)이 여기를 가리킨다.
+resources:
+  - abbr: "DMCT"
+    title: "Data Mining: Concepts and Techniques"
+    source: "UIUC CS412"
+    url: "https://hanj.cs.illinois.edu/cs412/bk3/01.pdf"
+  - abbr: "DMS"
+    title: "Database Management Systems"
+    source: "Wisconsin CS564"
+    url: "https://thodrek.github.io/cs564-fall17/"
+  - abbr: "IDS"
+    title: "Introduction to Database Systems"
+    source: "Berkeley CS186"
+    url: "https://cs186berkeley.net/fa24/"
+
+# 지난 시험(문제와 풀이).
+exams:
+  - label: "Midterm 2025"
+    url: "https://drive.google.com/file/d/1a2qbRuKvPN9faYfjSP9830Y8ah-_FyQr/view"
+    solution: "https://drive.google.com/file/d/1BDVyaq0OkSLflng6dCEZ1u2kmdq04jud/view"
+  - label: "Final 2025"
+    url: "https://drive.google.com/file/d/1Q7Cgt1bSiMMlYRt253GPsvcipzCcRKjU/view"
+    solution: "https://drive.google.com/file/d/1fDomPBXTwPdJ5NrhMgNdOnmgRtKdHoyM/view"
+
+# 같은 과목의 다른 학기. 페이지가 생기면 url 을 /teaching/<id>/ 로 바꾼다.
+other_terms:
+  - name: "Fall 2025"
+    url: "https://docs.google.com/spreadsheets/d/1NBJrPN4CkLqL0IGGCTr1ZxOvPbRWSDlFF95h-5-zOY4/edit?usp=sharing"

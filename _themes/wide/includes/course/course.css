@@ -1,0 +1,79 @@
+/* Course pages (layout: course). Only theme tokens; the page reads like the rest of the site. Template: includes/course/README.md */
+.course-head { padding-top: var(--space-7); }
+.course-back { margin: 0 0 var(--space-4); font-size: var(--text-meta); }
+.course-back a { color: var(--muted); }
+.course-back a::before { content: "\2190\00a0"; }
+.course-head h1 { margin-bottom: var(--space-4); }
+.course-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0 0 var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 600; }
+.course-meta span + span::before { content: "\00b7"; margin-right: var(--space-3); color: var(--muted); font-weight: 400; }
+.course-people { margin: 0; color: var(--muted); }
+.course-people a { color: var(--text); font-weight: 600; }
+.course-people a:hover { color: var(--accent); }
+.course-oh { margin-left: var(--space-5); }
+.course-links { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-5) 0 0; }
+.course-links a { padding: 6px 16px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }  /* the two places a student goes first: the same tint as the current subnav tab */
+.course-links a:hover { text-decoration: none; box-shadow: inset 0 0 0 1.5px var(--accent); }
+
+/* Overview: the parts as three cards in a row */
+.course-parts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); margin-top: var(--space-5); }
+.course-parts li { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
+.course-part-name { display: flex; justify-content: space-between; gap: var(--space-2); color: var(--accent); font-size: var(--text-meta); font-weight: 700; }
+.course-part-name small { color: var(--muted); font-size: var(--text-meta); font-weight: 400; }
+.course-parts strong { font-size: var(--text-body); font-weight: 600; }
+.course-part-text { color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
+
+/* Schedule: one row per class day; lectures carry their number, other days only a tag */
+.course-schedule { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.course-schedule thead th { padding: 0 var(--space-4) var(--space-2) 0; border-bottom: 1px solid var(--text); color: var(--muted); font-size: var(--text-small); font-weight: 600; text-align: left; text-transform: uppercase; letter-spacing: .06em; }
+.course-schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.course-schedule td:last-child, .course-schedule th:last-child { padding-right: 0; }
+.course-part-row th { padding: var(--space-6) 0 var(--space-2); border-bottom: 1px solid var(--line); color: var(--accent); font-size: var(--text-meta); font-weight: 700; text-align: left; }
+.course-part-row span { margin-left: var(--space-2); color: var(--text); font-weight: 600; }
+.cs-date { width: 1%; white-space: nowrap; color: var(--muted); font-size: var(--text-meta); }
+.cs-date small { margin-left: var(--space-2); color: var(--muted); font-size: var(--text-small); }
+.cs-n { width: 1%; font-weight: 700; text-align: right; }
+.cs-topic { line-height: 1.5; }
+.cs-title { font-weight: 600; }
+.cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--surface); color: var(--muted); font-size: var(--text-small); font-weight: 600; vertical-align: 1px; }
+.is-exam .cs-tag, .is-project .cs-tag { background: var(--accent-soft); color: var(--accent); }  /* the days that are graded */
+.cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
+.is-break .cs-title, .is-event .cs-title { color: var(--muted); font-weight: 400; }
+.is-guest .cs-title { font-weight: 400; }
+.cs-slides { width: 1%; white-space: nowrap; }
+.cs-slides a { margin-right: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }  /* the links a student comes for, so they keep the accent at rest */
+.cs-slides a:last-child { margin-right: 0; }
+.cs-reading { width: 1%; white-space: nowrap; color: var(--muted); font-size: var(--text-meta); }
+.cs-reading a { color: var(--muted); }
+.cs-reading a:hover { color: var(--accent); }
+.is-next td { background: var(--accent-soft); }
+.is-next .cs-date { color: var(--accent); font-weight: 700; }
+.is-next .cs-tag { background: var(--bg); }  /* a tag keeps its edge on the tinted row */
+.is-next td:first-child { box-shadow: inset 3px 0 0 var(--accent); padding-left: var(--space-3); }
+.course-schedule td:first-child { padding-left: var(--space-3); }
+
+/* Grading: item and weight on one line */
+.course-grading { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.course-grading li { display: flex; justify-content: space-between; align-items: baseline; padding: var(--space-4) var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
+.course-grading strong { font-size: var(--text-lead); }
+.course-note { margin-top: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
+
+@media (max-width: 960px) {
+  .course-parts, .course-grading { grid-template-columns: 1fr; gap: var(--space-3); }
+}
+@media (max-width: 680px) {
+  .course-oh { display: block; margin-left: 0; }
+  .course-meta { font-size: var(--text-body); }
+  .course-schedule thead { display: none; }
+  .course-schedule, .course-schedule tbody, .course-schedule tr { display: block; width: auto; }
+  .course-schedule tr:not(.course-part-row) { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px var(--space-3); padding: var(--space-3); border-bottom: 1px solid var(--line); }
+  .course-part-row th { display: block; }
+  .course-schedule td { display: block; width: auto; padding: 0 !important; border: 0; background: none; white-space: normal; }
+  .is-next { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+  .is-next td { box-shadow: none !important; }
+  .cs-date { grid-column: 1 / -1; }
+  .cs-n { text-align: left; }
+  .cs-n:empty { display: none !important; }
+  .cs-n:empty + .cs-topic { grid-column: 1 / -1; }
+  .cs-slides, .cs-reading { grid-column: 1 / -1; }
+  .cs-slides:empty, .cs-reading:empty { display: none !important; }
+}

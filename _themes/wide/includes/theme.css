@@ -234,6 +234,13 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .filter-btn:hover { color: var(--text); }
 .filter-btn[aria-pressed="true"] { color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
 .filter-link { margin-left: auto; font-size: var(--text-meta); font-weight: 600; }
+.upnext-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-4); }  /* Seminar: the next talks as cards above the full list */
+.upnext-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
+.upnext-date { display: flex; align-items: center; gap: var(--space-2); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
+.upnext-tag { padding: 1px var(--space-2); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: var(--text-small); font-weight: 600; }
+.upnext-title { font-weight: 600; line-height: 1.4; }
+.upnext-speaker { color: var(--muted); font-size: var(--text-meta); }
+.upnext-name { color: var(--text); font-weight: 600; }
 .schedule { width: 100%; border-collapse: collapse; }
 .schedule.is-locked { table-layout: fixed; }  /* column widths measured once over all talks (scripts.html), so filtering never moves a column */
 .schedule td { padding: var(--space-2) 0; vertical-align: baseline; }

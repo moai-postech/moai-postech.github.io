@@ -2,9 +2,23 @@
   _data/seminar.yml 의 발표 목록. 초청 발표와 랩 내부 발표를 한 목록에 날짜순(최신이 위)으로 두고,
   위의 All / Lab / Invited 버튼으로 거른다(자바스크립트가 없으면 전부 보인다).
   한 줄: 날짜, 제목(남는 폭 전부), 오른쪽 끝에 소속과 발표자(이름이 늘 맨 오른쪽).
+  맨 위 Up next: 빌드 날짜 이후 발표를 가까운 순으로 카드로 보인다. 방문자 브라우저에서 지난 카드는 숨기고, 남는 카드가 없으면 줄째 숨긴다(교수 2026-10-22: 페이지가 너무 드라이하다).
 {% endcomment %}
 {% assign talks = site.data.seminar.talks %}
 {% assign invited = talks | where: "invited", true %}
+{% assign today = site.time | date: "%Y-%m-%d" %}{% assign upcoming = "" | split: "" %}{% for t in talks %}{% if t.date >= today %}{% assign upcoming = upcoming | push: t %}{% endif %}{% endfor %}
+{% if upcoming.size > 0 %}    <section class="content-section upnext" data-upnext>
+    <h2>Up next</h2>
+    <ol class="upnext-list plain">
+      {% for t in upcoming reversed %}<li class="upnext-card" data-date="{{ t.date }}">
+        <span class="upnext-date">{{ t.date | date: "%a, %b %-d" }}{% if t.invited %}<span class="upnext-tag">Invited</span>{% endif %}</span>
+        <span class="upnext-title">{{ t.title }}</span>
+        <span class="upnext-speaker">{% if t.url %}<a class="upnext-name" href="{{ t.url }}">{{ t.speaker }}</a>{% else %}<span class="upnext-name">{{ t.speaker }}</span>{% endif %}{% if t.affiliation %} · {{ t.affiliation }}{% endif %}</span>
+      </li>
+      {% endfor %}
+    </ol>
+    </section>
+{% endif %}
     <section class="content-section">
     {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
     <div class="section-body" data-filter>

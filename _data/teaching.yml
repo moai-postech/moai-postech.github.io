@@ -5,11 +5,11 @@
   code: "IMEN891K / IDSC501 / AXGS-501"
   terms:
     - name: "Fall 2026"
-      url: "teaching/26f-imen891k/"
+      url: "teaching/26f-data-engineering/"
     - name: "Fall 2025"
-      url: "teaching/25f-imen891k/"
+      url: "teaching/25f-data-engineering/"
 - title: "Programming for Data Science"
   code: "IMEN574 / IDSC574"
   terms:
     - name: "Spring 2026"
-      url: "teaching/26s-imen574/"
+      url: "teaching/26s-programming-for-data-science/"

@@ -1,4 +1,4 @@
-# 강의 페이지 /teaching/26f-imen891k/ 의 내용. 모양은 _themes/wide/includes/course/ 가 정한다(그 폴더의 README.md).
+# 강의 페이지 /teaching/26f-data-engineering/ 의 내용. 모양은 _themes/wide/includes/course/ 가 정한다(그 폴더의 README.md).
 # 정본은 이 파일이다(2026-10-22부터 스케줄 구글시트를 대신한다). 슬라이드는 Drive lecture_note/ 의 배포본을 가리킨다.
 title: "Data Engineering"
 code: "IMEN891K / IDSC501 / AXGS-501"
@@ -252,4 +252,4 @@ exams:
 # 같은 과목의 다른 학기(teaching/<id>/).
 other_terms:
   - name: "Fall 2025"
-    url: "teaching/25f-imen891k/"
+    url: "teaching/25f-data-engineering/"

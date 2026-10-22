@@ -1,4 +1,4 @@
-# 강의 페이지 /teaching/25f-imen891k/ 의 내용. 필드 설명은 26f-imen891k.yml 머리 주석, 모양은 _themes/wide/includes/course/.
+# 강의 페이지 /teaching/25f-data-engineering/ 의 내용. 필드 설명은 26f-data-engineering.yml 머리 주석, 모양은 _themes/wide/includes/course/.
 # 25F 스케줄 시트(2026-10-22)와 1강 슬라이드(평가, office hours)에서 옮겼다. 끝난 학기라 고칠 일이 거의 없다.
 title: "Data Engineering"
 code: "IMEN891K / IDSC501"
@@ -279,4 +279,4 @@ exams:
 
 other_terms:
   - name: "Fall 2026"
-    url: "teaching/26f-imen891k/"
+    url: "teaching/26f-data-engineering/"

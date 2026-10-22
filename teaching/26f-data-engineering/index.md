@@ -1,7 +1,7 @@
 ---
-# 내용은 _data/courses/26f-imen891k.yml, 모양은 _themes/wide/includes/course/
+# 내용은 _data/courses/26f-data-engineering.yml, 모양은 _themes/wide/includes/course/
 layout: course
-course: "26f-imen891k"
+course: "26f-data-engineering"
 nav_current: teaching.html
 title: "Data Engineering (Fall 2026)"
 head_title: "Data Engineering, Fall 2026 · MOAI Lab"

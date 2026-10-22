@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [course-slugs](2026-10-22-course-slugs.md) | Sangwoo Mo(moai-postech) | Teaching | 강의 페이지 주소를 학수번호 대신 학기-과목명으로(`/teaching/26f-data-engineering/` 등) |
 | 2026-10-22 | [course-pages-past](2026-10-22-course-pages-past.md) | Sangwoo Mo(moai-postech) | Teaching | 25F Data Engineering, 26S Programming for Data Science 강의 페이지, 양식에 Lab·세미나·Related·조건부 Reading 칸 |
 | 2026-10-22 | [course-pages](2026-10-22-course-pages.md) | Sangwoo Mo(moai-postech) | Teaching, 테마 | 강의 페이지 양식(`includes/course/`)과 첫 페이지 `/teaching/26f-imen891k/`, Courses 의 Fall 2026 을 시트 대신 이 페이지로 |
 | 2026-10-22 | [funding-intro](2026-10-22-funding-intro.md) | Sangwoo Mo(moai-postech) | Funding, News | 소개 문장 한 줄(News 보관 페이지 포함), 링크 없는 자료는 숨김 유지로 확정 |

@@ -1,4 +1,4 @@
-# 강의 페이지 /teaching/26s-imen574/ 의 내용. 필드 설명은 26f-imen891k.yml 머리 주석, 모양은 _themes/wide/includes/course/.
+# 강의 페이지 /teaching/26s-programming-for-data-science/ 의 내용. 필드 설명은 26f-data-engineering.yml 머리 주석, 모양은 _themes/wide/includes/course/.
 # 26S 스케줄 시트(2026-10-22)와 1강 슬라이드(파트, 평가, 팀 프로젝트)에서 옮겼다. 시트의 개인 메모(다음 학기 개선점)는 넣지 않는다.
 # 파트는 시트의 Outline 색: Software 3.0(2~6강), Software 1.0(7~14강), Software 2.0(15~22강). 가르친 순서대로 둔다.
 title: "Programming for Data Science"
@@ -222,7 +222,7 @@ resources:
 related:
   - title: "Data Engineering"
     source: "Fall 2025"
-    url: "teaching/25f-imen891k/"
+    url: "teaching/25f-data-engineering/"
   - title: "Foundation Models Overview"
     source: "Slides"
     url: "https://drive.google.com/file/d/1OkBi2m-ZotIL5VCgjunXWFQNl6umM9Op/view"

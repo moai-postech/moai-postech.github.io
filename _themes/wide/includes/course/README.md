@@ -10,7 +10,7 @@
 
 ## 새 강의 페이지 만들기
 
-1. `_data/courses/<id>.yml` 에 내용을 쓴다. `<id>` 는 `학기-학수번호` 소문자(`26f-imen891k`, `26s-imen574`). 필드 설명은 `_data/courses/26f-imen891k.yml` 머리 주석이 정본이다.
+1. `_data/courses/<id>.yml` 에 내용을 쓴다. `<id>` 는 `학기-과목명` 소문자와 하이픈이다. 학수번호는 쓰지 않는다(주소만 보고 무슨 강의인지 알게, 2026-10-22 사용자)(`26f-data-engineering`, `26s-programming-for-data-science`). 필드 설명은 `_data/courses/26f-data-engineering.yml` 머리 주석이 정본이다.
 2. `teaching/<id>/index.md` 를 만든다. 내용은 front matter 뿐이다.
    ```yaml
    ---

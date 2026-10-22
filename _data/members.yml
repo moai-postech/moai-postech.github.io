@@ -62,7 +62,7 @@ groups:
         photo: assets/img/people/myeongsoo-kim.jpg
         focus: "Agentic AI"
         url: "https://kim-myeong-soo.github.io/"
-        degree: "MS, POSTECH"
+        degree: ["MS, POSTECH", "BS, POSTECH"]
         topic: "Reliable Agents"
       - name: "Eunchan Jo"
         photo: assets/img/people/eunchan-jo.jpg

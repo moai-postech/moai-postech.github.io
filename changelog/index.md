@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-10-22 | [funding-intro](2026-10-22-funding-intro.md) | Sangwoo Mo(moai-postech) | Funding | 소개 문장 한 줄, 링크 없는 자료는 숨김 유지로 확정 |
+| 2026-10-22 | [funding-intro](2026-10-22-funding-intro.md) | Sangwoo Mo(moai-postech) | Funding, News | 소개 문장 한 줄(News 보관 페이지 포함), 링크 없는 자료는 숨김 유지로 확정 |
 | 2026-10-22 | [final-design-pass](2026-10-22-final-design-pass.md) | Sangwoo Mo(moai-postech) | 테마 전체 | 최종 점검 반영: 탭 제목 em dash, 굵기 500, 회색 하나, News 기준선, Media 출처 오른쪽, 칩 위치, 필터 선, 저자 줄바꿈, PhD 통일 |
 | 2026-10-22 | [slides-poster-policy](2026-10-22-slides-poster-policy.md) | Sangwoo Mo(moai-postech) | Publications 데이터 | 새 논문엔 slide·poster 를 모으지 않음, 기존 Drive public/ 폴더는 보관용으로 그대로 |
 | 2026-10-22 | [research-overview-v2](2026-10-22-research-overview-v2.md) | Sangwoo Mo(moai-postech) | Research | 소개를 짧은 세 문장으로, 주제 카드마다 최신 게재 논문을 전체 제목으로, 칩은 최신순에 전체 제목 툴팁 |

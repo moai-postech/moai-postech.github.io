@@ -1,0 +1,15 @@
+{% comment %}
+  Research 맨 위 흐름: 분야 셋을 Perception → Reasoning → Action 단계로 잇는다(_data/research.yml 의 stage, 교수 2026-10-22).
+  단계를 누르면 아래 그 분야 절로 간다.
+{% endcomment %}
+    <section class="content-section research-flow">
+    <ol class="flow plain">
+      {% for area in site.data.research %}<li><a class="flow-step" href="#{{ area.area | slugify }}">
+        <span class="flow-num">{{ forloop.index }}</span>
+        <span class="flow-stage">{{ area.stage }}</span>
+        <span class="flow-area">{{ area.area }}</span>
+      </a></li>{% unless forloop.last %}
+      <li class="flow-arrow" aria-hidden="true">→</li>{% endunless %}
+      {% endfor %}
+    </ol>
+    </section>

@@ -5,6 +5,7 @@
 # 크게 보이고, 나머지를 칩으로 보인다. 전체 제목은 publications.yml(정본)에서 url 로 찾는다. url 이 없는 논문은 match 에
 # publications.yml 제목의 앞부분을 쓴다. 논문 url 이 없으면 칩과 카드가 링크 없이 보인다.
 - area: "Vision & Multimodal"
+  stage: "Perception"
   icon: vision
   blurb: "How models see: understanding and generating images and video, even from imperfect data."
   topics:
@@ -36,6 +37,7 @@
         - { short: "FreezeD", venue: "CVPRW'20", url: "https://arxiv.org/abs/2002.10964" }
         - { short: "GOLD", venue: "NeurIPS'19", url: "https://arxiv.org/abs/1910.09170" }
 - area: "Language & Reasoning"
+  stage: "Reasoning"
   icon: language
   blurb: "How models think and work: reasoning reliably, running efficiently, and solving real-world problems."
   topics:
@@ -67,6 +69,7 @@
         - { short: "DPM-SNC", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2302.10506" }
         - { short: "LoGe", venue: "ICMLW'21", url: "https://arxiv.org/abs/2107.10493" }
 - area: "Robotics & Embodied AI"
+  stage: "Action"
   icon: robotics
   blurb: "How models act: robots that plan their actions and sense the physical world beyond vision."
   topics:

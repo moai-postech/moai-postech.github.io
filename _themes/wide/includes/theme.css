@@ -199,6 +199,14 @@ a.mentee-name:hover { color: var(--accent); }
 .area-card h3 { margin: 0; }
 .area-topics { color: var(--muted); font-size: var(--text-meta); }
 .area-topics span + span::before { content: " · "; }
+.flow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: var(--space-4); }  /* perception, reasoning, action: one row, each step a door to its area below */
+.flow-step { display: flex; flex-direction: column; gap: var(--space-1); height: 100%; padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); color: var(--text); }
+a.flow-step:hover { color: var(--text); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
+.flow-num { color: var(--accent); font-size: var(--text-small); font-weight: 700; letter-spacing: .06em; }
+.flow-stage { font-size: var(--text-lead); font-weight: 700; }
+.flow-area { color: var(--muted); font-size: var(--text-meta); }
+.flow-arrow { color: var(--faint); font-size: var(--text-lead); }
+.area-stage { display: block; margin-bottom: var(--space-1); color: var(--accent); font-size: var(--text-small); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }  /* the step this area plays in the flow above */
 .research-area { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
 .research-head { grid-column: span 4; position: sticky; top: var(--space-6); }  /* the area name stays beside its cards while they scroll */
 .research-head .area-icon { display: block; width: 72px; height: 72px; margin-bottom: var(--space-4); object-fit: contain; }
@@ -209,9 +217,6 @@ a.mentee-name:hover { color: var(--accent); }
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
 .topic-card h3 { margin: 0; font-size: var(--text-body); }
 .topic-card p { margin: 0 0 var(--space-2); color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
-.topic-lead { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-3); background: var(--bg); border-radius: var(--radius-1); color: var(--text); }  /* the newest published paper of the topic, with its full title, so a visitor sees the actual work and not only acronyms */
-.topic-lead .paper-title { font-size: var(--text-meta); font-weight: 600; line-height: 1.45; }
-a.topic-lead:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .paper-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }  /* chips follow the lead paper; a shorter card keeps its spare room at the bottom */
 .chip { display: inline-flex; align-items: baseline; gap: var(--space-1); padding: 2px var(--space-2); background: var(--bg); border-radius: var(--radius-1); color: var(--text); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
 .chip small { color: var(--faint); font-size: var(--text-small); font-weight: 400; }
@@ -345,7 +350,11 @@ a.person-name:hover { color: var(--accent); }
   .research-head, .topic-cards { grid-column: 1 / -1; }
   .research-head { position: static; }
   .research-head { display: grid; grid-template-columns: auto 1fr; column-gap: var(--space-4); align-items: center; margin-bottom: var(--space-5); }
-  .research-head .area-icon { width: 48px; height: 48px; margin: 0; grid-row: span 2; }
+  .research-head .area-icon { width: 48px; height: 48px; margin: 0; grid-row: span 3; }
+  .flow { grid-template-columns: 1fr; gap: var(--space-2); }  /* phones: the three steps stack, the arrows turn downward */
+  .flow-arrow { justify-self: center; transform: rotate(90deg); }
+  .flow-step { flex-direction: row; align-items: baseline; flex-wrap: wrap; column-gap: var(--space-2); padding: var(--space-3) var(--space-4); }  /* one compact line per step: number, stage, area */
+  .flow-area { flex-basis: 100%; }
   .research-head h2 { margin: 0; }
   .research-head p { grid-column: 1 / -1; margin-top: var(--space-3); }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

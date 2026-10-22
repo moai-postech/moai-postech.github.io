@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [research-flow](2026-10-22-research-flow.md) | Sangwoo Mo(moai-postech) | Research | 대표 논문 상자 제거, Perception → Reasoning → Action 흐름 줄과 분야 단계 표시 |
 | 2026-10-22 | [course-colour-template](2026-10-22-course-colour-template.md) | Sangwoo Mo(moai-postech) | Teaching | 강의 사이트 색을 템플릿 하나로: 파트 순서대로 slate blue·teal·ochre, 운영 rose, 초청 grey(원색 대신 차분한 세트) |
 | 2026-10-22 | [members-degree-bio](2026-10-22-members-degree-bio.md) | Sangwoo Mo(moai-postech) | People, Faculty | Students→Members, 박사과정 학부 줄, Bio 두 꼭지와 관사 |
 | 2026-10-22 | [course-site-project](2026-10-22-course-site-project.md) | Sangwoo Mo(moai-postech) | Teaching | 강의 페이지를 독립 강의 사이트로(자체 메뉴), 시트 색(파트별 파랑·초록·주황), 팀 프로젝트 페이지(팀원·발표 자료) |

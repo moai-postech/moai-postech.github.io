@@ -9,6 +9,8 @@ intro: |
   Building that structure in helps models perform better, fail less, and explain more.
   {: .lede}
 sections:
+  # 맨 위 흐름: Perception → Reasoning → Action, 각 단계가 아래 분야로 이어진다
+  - type: research-flow
   # _data/research.yml 의 분야마다 절 하나씩
   - type: research
 ---

@@ -20,3 +20,8 @@
 ## 되돌림: News 논문 링크 (같은 날, 교수)
 
 - 교수: "news 에 색칠했던 거 왜 지웠어? 논문들 하이라이트 해줘." News 는 논문 자체가 소식이라 링크를 강조색으로 되돌렸다(`.sec-news a`). 괄호 속 `(oral)`, `(application)` 은 `.link-aside` 로 계속 본문색. Media coverage 기사 제목은 본문색 그대로.
+
+## 추가: Faculty Bio 링크, thesis 줄 간격 (같은 날, 교수)
+
+- 교수: "구글 사이트에서 Bio 에 하이라이트 준 것처럼 랩 사이트도 동일하게." Faculty Bio 안 링크(IME, KAIST, Jinwoo Shin, University of Michigan, Stella X. Yu)를 강조색으로(`.profile-bio a`).
+- 교수: "PhD thesis 줄이 너무 위에 딱 붙어 있다." `.item-detail` 위 여백 0 → `--row-gap`(4px), 딸린 줄이 있는 항목 다음은 8px → `--item-gap`(12px). 학위 줄과 thesis 줄은 한 묶음으로, KAIST 와 POSTECH 항목은 분명히 갈라 보인다.

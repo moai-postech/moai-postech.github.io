@@ -2,10 +2,6 @@
 layout: page
 title: Contact
 description: "Contact MOAI Lab at POSTECH, and how to join as a graduate student or undergraduate intern."
-intro: |
-  Above all, we look for a genuine passion for AI, backed by clear logical thinking.
-  Both matter more than a long CV.
-  {: .lede}
 sections:
   - title: "Join us"
     type: contact-block
@@ -14,6 +10,8 @@ sections:
     image_alt: "The path to MOAI Lab: the undergraduate AI study, then a CV and transcript."
     body: |
       We mainly recruit undergraduate interns to foster long-term growth and collaboration.
+
+      Above all, we look for a genuine passion for AI, backed by clear logical thinking. Both matter more than a long CV.
     steps:
       - title: "Check the background we expect"
         body: |

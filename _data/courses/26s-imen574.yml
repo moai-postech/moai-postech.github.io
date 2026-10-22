@@ -1,0 +1,233 @@
+# 강의 페이지 /teaching/26s-imen574/ 의 내용. 필드 설명은 26f-imen891k.yml 머리 주석, 모양은 _themes/wide/includes/course/.
+# 26S 스케줄 시트(2026-10-22)와 1강 슬라이드(파트, 평가, 팀 프로젝트)에서 옮겼다. 시트의 개인 메모(다음 학기 개선점)는 넣지 않는다.
+# 파트는 시트의 Outline 색: Software 3.0(2~6강), Software 1.0(7~14강), Software 2.0(15~22강). 가르친 순서대로 둔다.
+title: "Programming for Data Science"
+code: "IMEN574 / IDSC574"
+term: "Spring 2026"
+instructor:
+  name: "Sangwoo Mo"
+  url: "faculty.html"
+summary: >-
+  This course teaches programming for data science in the era of AI. We start by writing code with AI,
+  then learn Python and classical machine learning, and end with deep learning and vision, language and multimodal models.
+  In a team project, students take on a Kaggle competition and share what they learned.
+links:
+  - label: "Team project"
+    url: "https://docs.google.com/spreadsheets/d/1ZHkM8KO2TC_gbfH7xdV5040B2zwJ0qd35VUnf0VvaCA/edit?usp=sharing"
+
+parts:
+  - id: "sw3"
+    name: "Software 3.0"
+    title: "Programming with AI"
+    span: "Lectures 2 – 6"
+    text: "Chat with LLMs, prompt them, and write code with AI in a modern IDE and with coding agents."
+  - id: "sw1"
+    name: "Software 1.0"
+    title: "Python and Machine Learning"
+    span: "Lectures 7 – 14"
+    text: "Python, NumPy and pandas, then regression, classification, clustering, dimensionality reduction and interpretable ML."
+  - id: "sw2"
+    name: "Software 2.0"
+    title: "Deep Learning"
+    span: "Lectures 15 – 22"
+    text: "Deep learning and PyTorch, vision and multimodal models, and AI for data science."
+
+schedule:
+  - date: "2026-02-24"
+    kind: lecture
+    n: 1
+    title: "Overview & Logistics"
+    pdf: "https://drive.google.com/file/d/1vL-yD4Tw7d0ud6009NJkbTGpZIH4hX-_/view"
+  - part: "sw3"
+  - date: "2026-02-26"
+    kind: lecture
+    n: 2
+    title: "Chatting with AI"
+    pdf: "https://drive.google.com/file/d/1TYi62fg9_AS18zs0h6yhSJg6QlutTun_/view"
+  - date: "2026-03-03"
+    kind: lecture
+    n: 3
+    title: "Coding with AI"
+    pdf: "https://drive.google.com/file/d/18InqzsK-m6Uq7gpQv293oWV8jPfFI_sn/view"
+  - date: "2026-03-05"
+    kind: lecture
+    n: 4
+    title: "LLM Prompting"
+    pdf: "https://drive.google.com/file/d/1FypkjTh7WOqCrVECyN2dXeRr09sX_GvH/view"
+  - date: "2026-03-10"
+    kind: lecture
+    n: 5
+    title: "Modern IDE"
+    pdf: "https://drive.google.com/file/d/1h01qbs_eIWC1hJkAGWHqwCyS9WcveufE/view"
+  - date: "2026-03-12"
+    kind: lecture
+    n: 6
+    title: "Coding Agents"
+    pdf: "https://drive.google.com/file/d/1sc3khy2ZPWoyjYAT2AOLMCq8QNa4_Ap0/view"
+  - part: "sw1"
+  - date: "2026-03-17"
+    kind: lecture
+    n: 7
+    title: "Python"
+    pdf: "https://drive.google.com/file/d/1y0zXNKGU3GzEnl9sGlPUB2rn9aLrRieZ/view"
+  - date: "2026-03-19"
+    kind: lecture
+    n: 8
+    title: "NumPy & pandas"
+    pdf: "https://drive.google.com/file/d/1w_4wcdbfmkrOojAtSXNu0AT8ED47LzoK/view"
+  - date: "2026-03-24"
+    kind: lecture
+    n: 9
+    title: "Regression"
+    pdf: "https://drive.google.com/file/d/1z3Fk7mukZuCWt9ZjkXVNQDnw55YY4oZS/view"
+  - date: "2026-03-26"
+    kind: lecture
+    n: 10
+    title: "Classification"
+    pdf: "https://drive.google.com/file/d/1jl_hwbG1nZQ5ksO237qPd_gl6ppPyYe4/view"
+  - date: "2026-03-31"
+    kind: lecture
+    n: 11
+    title: "Clustering"
+    pdf: "https://drive.google.com/file/d/1GAIQ3xjHv71wecU6P7qGuoESQMJ21x9i/view"
+  - date: "2026-04-02"
+    kind: lecture
+    n: 12
+    title: "Dimensionality Reduction"
+    pdf: "https://drive.google.com/file/d/10beObGlR4Suxt_AfTbROzORsokXHqNKO/view"
+  - date: "2026-04-07"
+    kind: lecture
+    n: 13
+    title: "Interpretable ML"
+    pdf: "https://drive.google.com/file/d/1AAYep5iITrLSj0pAuv0DfhA8NMb7oiKJ/view"
+  - date: "2026-04-09"
+    kind: lecture
+    n: 14
+    title: "Review Session"
+    pdf: "https://drive.google.com/file/d/1yTB1hSvHExoLhCUKzPcn8_vPJPXtBOyY/view"
+  - date: "2026-04-14"
+    kind: exam
+    title: "Midterm Exam"
+  - date: "2026-04-16"
+    kind: break
+    title: "No class (midterm exam period)"
+  - part: "sw2"
+  - date: "2026-04-21"
+    kind: lecture
+    n: 15
+    title: "Deep Learning"
+    pdf: "https://drive.google.com/file/d/1z2Cz6stF_TAStgseBu9HpCThygqoEND_/view"
+  - date: "2026-04-23"
+    kind: seminar
+    speaker: "Songyee Yoon"
+    affiliation: "Principal Venture Partners"
+  - date: "2026-04-28"
+    kind: lecture
+    n: 16
+    title: "PyTorch"
+    pdf: "https://drive.google.com/file/d/10aOmtQxFKwl328yOl5_mma3PBAP1_JUL/view"
+  - date: "2026-04-29"
+    kind: seminar
+    speaker: "Sangwoo Mo"
+    affiliation: "POSTECH"
+    pdf: "https://drive.google.com/file/d/1HNB911caHLsHZOu4ZKuSjYSyD8WhpUeu/view"
+  - date: "2026-04-30"
+    kind: break
+    title: "No class"
+  - date: "2026-05-05"
+    kind: break
+    title: "No class (Children's Day)"
+  - date: "2026-05-07"
+    kind: lecture
+    n: 17
+    title: "Vision Models I"
+    pdf: "https://drive.google.com/file/d/1AFi_W2dpu1zNTsMADur_6QbXKeWTgOBZ/view"
+    lab: "https://drive.google.com/file/d/1KcBIA1aSPpQqzKV4VPDtmM3zgMuom47j/view"
+  - date: "2026-05-12"
+    kind: lecture
+    n: 18
+    title: "Vision Models II"
+    pdf: "https://drive.google.com/file/d/1GNG9Joyn-ic0_ZzZSYsaLeTqJspUBwZ9/view"
+    lab: "https://drive.google.com/file/d/1fbB681cUsaE0UtDBPuMERHV2w4eAsJEd/view"
+  - date: "2026-05-14"
+    kind: lecture
+    n: 19
+    title: "Multimodal Models I"
+    pdf: "https://drive.google.com/file/d/1huWTQ6II_CUum77sllECe0J7MmRUN6Ca/view"
+    lab: "https://drive.google.com/file/d/1l327tMo_waxl8qWBmnECYSc1RPbW1xdB/view"
+  - date: "2026-05-19"
+    kind: lecture
+    n: 20
+    title: "Multimodal Models II"
+    pdf: "https://drive.google.com/file/d/1t1eTSVOMkkZ6tC5em3fzCB2CIwQw4e67/view"
+    lab: "https://drive.google.com/file/d/1d17GIHsvscldz-ARvHEBmw3dcGbv5gKK/view"
+  - date: "2026-05-21"
+    kind: lecture
+    n: 21
+    title: "Multimodal Models III"
+    pdf: "https://drive.google.com/file/d/1MTGR3Jufe56LAXMsBx4FU6HSCwYWHHbi/view"
+    lab: "https://drive.google.com/file/d/1qqKSF0hweXh873Z4jpVyHOtvFFkO7O0g/view"
+  - date: "2026-05-26"
+    kind: lecture
+    n: 22
+    title: "AI for Data Science"
+    pdf: "https://drive.google.com/file/d/1upWRnQ_m7cSh_S2mCMLe1tlv-CemB_Mj/view"
+    lab: "https://drive.google.com/file/d/10otAdN7s1X07d5zrAe58_5jPN4kesU-Z/view"
+  - date: "2026-05-28"
+    kind: project
+    title: "Project Presentation I"
+  - date: "2026-05-29"
+    kind: seminar
+    speaker: "Yeong-Hwan Jeon"
+    affiliation: "LG U+"
+  - date: "2026-06-02"
+    kind: project
+    title: "Project Presentation II"
+  - date: "2026-06-04"
+    kind: break
+    title: "No class (KIIE conference)"
+  - date: "2026-06-09"
+    kind: break
+    title: "No class (final exam period)"
+  - date: "2026-06-11"
+    kind: break
+    title: "No class (final exam period)"
+
+grading:
+  - item: "Midterm exam"
+    weight: "40%"
+  - item: "Final project"
+    weight: "60%"
+grading_note: "Attendance is not graded, but missing more than one third of the classes results in an F. The project is a Kaggle competition of the team's choice (up to 4 students), judged on problem, method, results, teamwork and presentation."
+
+resources_title: "References"  # 참고 강의만 있는 것이 아니라 책·문서도 있어 제목을 바꾼다(기본값 Reference courses)
+resources:
+  - title: "The Modern Software Developer"
+    source: "Stanford CS146S"
+    url: "https://themodernsoftware.dev/"
+  - title: "Intermediate Python"
+    source: "Book"
+    url: "https://book.pythontips.com/en/latest/"
+  - title: "scikit-learn"
+    source: "Documentation"
+    url: "https://scikit-learn.org/"
+  - title: "PyTorch"
+    source: "Documentation"
+    url: "https://pytorch.org/"
+  - title: "Hugging Face"
+    source: "Documentation"
+    url: "https://huggingface.co/"
+
+# 같은 사이트의 다른 강의나 자료. 이 과목과 이어지는 것만.
+related:
+  - title: "Data Engineering"
+    source: "Fall 2025"
+    url: "teaching/25f-imen891k/"
+  - title: "Foundation Models Overview"
+    source: "Slides"
+    url: "https://drive.google.com/file/d/1OkBi2m-ZotIL5VCgjunXWFQNl6umM9Op/view"
+
+exams:
+  - label: "Midterm 2026"
+    url: "https://drive.google.com/file/d/1r-G8C2LCbNeq09HjeJbYMnGQ8T1YCuym/view"
+    solution: "https://drive.google.com/file/d/1HK4dYgCEEvxaX98pBtXUuNmK_HA3zDJG/view"

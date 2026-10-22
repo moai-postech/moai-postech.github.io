@@ -38,7 +38,7 @@
 .is-exam .cs-tag, .is-project .cs-tag { background: var(--accent-soft); color: var(--accent); }  /* the days that are graded */
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
 .is-break .cs-title, .is-event .cs-title { color: var(--muted); font-weight: 400; }
-.is-guest .cs-title { font-weight: 400; }
+.is-guest .cs-title, .is-seminar .cs-title { font-weight: 400; }
 .cs-slides { width: 1%; white-space: nowrap; }
 .cs-slides a { margin-right: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }  /* the links a student comes for, so they keep the accent at rest */
 .cs-slides a:last-child { margin-right: 0; }
@@ -52,7 +52,7 @@
 .course-schedule td:first-child { padding-left: var(--space-3); }
 
 /* Grading: item and weight on one line */
-.course-grading { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.course-grading { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-5); }  /* two to four items share the row evenly */
 .course-grading li { display: flex; justify-content: space-between; align-items: baseline; padding: var(--space-4) var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
 .course-grading strong { font-size: var(--text-lead); }
 .course-note { margin-top: var(--space-4); color: var(--muted); font-size: var(--text-meta); }

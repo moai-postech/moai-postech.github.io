@@ -1,0 +1,282 @@
+# 강의 페이지 /teaching/25f-imen891k/ 의 내용. 필드 설명은 26f-imen891k.yml 머리 주석, 모양은 _themes/wide/includes/course/.
+# 25F 스케줄 시트(2026-10-22)와 1강 슬라이드(평가, office hours)에서 옮겼다. 끝난 학기라 고칠 일이 거의 없다.
+title: "Data Engineering"
+code: "IMEN891K / IDSC501"
+term: "Fall 2025"
+instructor:
+  name: "Sangwoo Mo"
+  url: "faculty.html"
+office_hours: "Thursdays 11:00 – 12:00, Room 319"
+summary: >-
+  This course covers the data side of AI systems: how data is collected and prepared, how it is stored and processed at scale,
+  and how models and LLM applications run on it. In a team project, students go through an end-to-end data engineering pipeline.
+links:
+  - label: "Lecture notes"
+    url: "https://drive.google.com/drive/folders/15RRyGd8LefLfr8EKnuMX_G3mXHn91m-q"
+  - label: "Team project"
+    url: "https://docs.google.com/spreadsheets/d/1XLgh0ILJ1VUgljXeaelXuAXfN5RmUB6fVRsMW6CKGKk/edit?usp=sharing"
+
+parts:
+  - id: "part-1"
+    name: "Part I"
+    title: "Collection and Preparation"
+    span: "Lectures 2 – 6"
+    text: "Collect data, explore it, and clean, integrate, transform and reduce it."
+  - id: "part-2"
+    name: "Part II"
+    title: "Storage"
+    span: "Lectures 7 – 15"
+    text: "Store and query it with SQL and NoSQL, then process it with MapReduce, Spark, BigQuery, Airflow and streams."
+  - id: "part-3"
+    name: "Part III"
+    title: "Monitoring and Updates"
+    span: "Lectures 16 – 19"
+    text: "Run models on the data: ML systems, LLM systems, RAG and agents."
+
+schedule:
+  - date: "2025-09-02"
+    kind: lecture
+    n: 1
+    title: "Overview & Logistics"
+    pdf: "https://drive.google.com/file/d/15iPoxYKQ0A-LUUUmhiL1PmDQesqaDIIn/view"
+  - part: "part-1"
+  - date: "2025-09-04"
+    kind: lecture
+    n: 2
+    title: "Data Collection"
+    pdf: "https://drive.google.com/file/d/1O3Rabtmic2YLhSRs9gyMhgEcj0X95rVb/view"
+  - date: "2025-09-09"
+    kind: lecture
+    n: 3
+    title: "Data Exploration"
+    pdf: "https://drive.google.com/file/d/1ShIR2tpRrohrwclhMCyMMsEUK6URCRgs/view"
+    reading:
+      - text: "DMCT Ch 2"
+        url: "https://hanj.cs.illinois.edu/cs412/bk3/02.pdf"
+  - date: "2025-09-11"
+    kind: lecture
+    n: 4
+    title: "Pre-processing I: Cleaning & Integration"
+    pdf: "https://drive.google.com/file/d/1Bh7RQqIs-4sM-eBFlE4wrV9jF6x5OjIA/view"
+    reading:
+      - text: "DMCT Ch 3"
+        url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
+  - date: "2025-09-16"
+    kind: lecture
+    n: 5
+    title: "Pre-processing II: Transformation"
+    pdf: "https://drive.google.com/file/d/1XjYfFW4MQkG_YHHwTyJZeHNXfM1aqmsR/view"
+    reading:
+      - text: "DMCT Ch 3"
+        url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
+  - date: "2025-09-18"
+    kind: lecture
+    n: 6
+    title: "Pre-processing III: Reduction"
+    pdf: "https://drive.google.com/file/d/1B1ukSkFvNzM_NJkVCZ-gV3teouQSVzIM/view"
+    reading:
+      - text: "DMCT Ch 3"
+        url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
+  - date: "2025-09-23"
+    kind: break
+    title: "No class"
+  - part: "part-2"
+  - date: "2025-09-25"
+    kind: lecture
+    n: 7
+    title: "SQL I: Basics"
+    pdf: "https://drive.google.com/file/d/1VP_YKU7KpNY8DHCIKOIMDFPwVURgdZQ6/view"
+    reading:
+      - text: "DMS Lec 1 – 2"
+        url: "https://thodrek.github.io/cs564-fall17/"
+  - date: "2025-09-30"
+    kind: lecture
+    n: 8
+    title: "SQL II: Joins & Multisets"
+    pdf: "https://drive.google.com/file/d/13r0kpsIgMlD9lWmdecnyg2DCyMGWoA78/view"
+    reading:
+      - text: "DMS Lec 2 – 3"
+        url: "https://thodrek.github.io/cs564-fall17/"
+  - date: "2025-10-02"
+    kind: lecture
+    n: 9
+    title: "SQL III: Subqueries & Aggregations"
+    pdf: "https://drive.google.com/file/d/1MU-nwqOuVtjKdiit27g0Ijl0oxsgnAib/view"
+    reading:
+      - text: "DMS Lec 3 – 4"
+        url: "https://thodrek.github.io/cs564-fall17/"
+  - date: "2025-10-07"
+    kind: break
+    title: "No class (Chuseok)"
+  - date: "2025-10-09"
+    kind: break
+    title: "No class (Chuseok)"
+  - date: "2025-10-14"
+    kind: project
+    title: "Project Proposal I"
+  - date: "2025-10-16"
+    kind: project
+    title: "Project Proposal II"
+  - date: "2025-10-21"
+    kind: break
+    title: "Study day (no class)"
+  - date: "2025-10-23"
+    kind: exam
+    title: "Midterm Exam"
+  - date: "2025-10-28"
+    kind: lecture
+    n: 10
+    title: "NoSQL I: Landscape"
+    pdf: "https://drive.google.com/file/d/1aAuY7hL7keVoAwINKlQZ_Y4pR3av-5Sn/view"
+    reading:
+      - text: "IDS Lec 22"
+        url: "https://cs186berkeley.net/fa24/"
+  - date: "2025-10-30"
+    kind: lecture
+    n: 11
+    title: "NoSQL II: MongoDB"
+    pdf: "https://drive.google.com/file/d/1rAovtOjT5Uy__5JdgkcZaeVw0r7Zw8qM/view"
+    reading:
+      - text: "IDS Lec 23"
+        url: "https://cs186berkeley.net/fa24/"
+  - date: "2025-11-04"
+    kind: lecture
+    n: 12
+    title: "Big Data I: MapReduce"
+    pdf: "https://drive.google.com/file/d/1quo0tP8FBJjsZghORHTlVfhH3RXJ_lLj/view"
+    reading:
+      - text: "IDS Lec 24"
+        url: "https://cs186berkeley.net/fa24/"
+  - date: "2025-11-06"
+    kind: lecture
+    n: 13
+    title: "Big Data II: Spark"
+    pdf: "https://drive.google.com/file/d/1TQI2_EVKT5pqtl-5q696pj870xvr2oAg/view"
+    reading:
+      - text: "IDS Lec 24"
+        url: "https://cs186berkeley.net/fa24/"
+  - date: "2025-11-11"
+    kind: lecture
+    n: 14
+    title: "Big Data III: BigQuery & Airflow"
+    pdf: "https://drive.google.com/file/d/1Phln502KzxcUTeEYyXPXrbFXGMV7dmcU/view"
+    reading:
+      - text: "DIS Lec 16"
+        url: "https://web.stanford.edu/class/cs245/"
+  - date: "2025-11-13"
+    kind: lecture
+    n: 15
+    title: "Big Data IV: Streaming"
+    pdf: "https://drive.google.com/file/d/1_1RP2844gP-_ol8FE8JQdaTdJGbpAb1y/view"
+    reading:
+      - text: "DIS Lec 17"
+        url: "https://web.stanford.edu/class/cs245/"
+  - part: "part-3"
+  - date: "2025-11-18"
+    kind: lecture
+    n: 16
+    title: "ML Systems"
+    pdf: "https://drive.google.com/file/d/1GVriXJeZMb-22Q12VSl0RpfpZhVBzgnM/view"
+    reading:
+      - text: "SML Lec 1 – 2, 8 – 10"
+        url: "https://id2223kth.github.io/schedule_2023/"
+  - date: "2025-11-20"
+    kind: lecture
+    n: 17
+    title: "LLM Systems I: Basics"
+    pdf: "https://drive.google.com/file/d/1YXCI29PRwAJxqbHeRBsjJt48ZAbUEFJN/view"
+    reading:
+      - text: "DLA LangChain"
+        url: "https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/"
+  - date: "2025-11-25"
+    kind: lecture
+    n: 18
+    title: "LLM Systems II: RAG"
+    pdf: "https://drive.google.com/file/d/1JduJIbLPolF64qm-0FEH_sCVi5aIpVlj/view"
+    reading:
+      - text: "DLA Chat with Your Data"
+        url: "https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/"
+  - date: "2025-11-27"
+    kind: guest
+    speaker: "Ki-Young Shin"
+    affiliation: "CEO, Designovel"
+  - date: "2025-12-02"
+    kind: lecture
+    n: 19
+    title: "LLM Systems III: Agents"
+    pdf: "https://drive.google.com/file/d/1XlVy8aWg3JH6SaO8IdECOm7rUJe3qm22/view"
+    reading:
+      - text: "DLA Tools and Agents"
+        url: "https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/"
+  - date: "2025-12-04"
+    kind: break
+    title: "No class"
+  - date: "2025-12-09"
+    kind: project
+    title: "Project Final I"
+  - date: "2025-12-11"
+    kind: project
+    title: "Project Final II"
+  - date: "2025-12-16"
+    kind: break
+    title: "Study day (no class)"
+  - date: "2025-12-18"
+    kind: exam
+    title: "Final Exam"
+
+grading:
+  - item: "Attendance"
+    weight: "10%"
+  - item: "Midterm exam"
+    weight: "25%"
+  - item: "Final exam"
+    weight: "25%"
+  - item: "Team project"
+    weight: "40%"
+grading_note: "Team project in teams of 3 to 5: a proposal at mid-semester and a product on a large-scale database at the end. AI tools are allowed."
+
+resources:
+  - abbr: "DMCT"
+    title: "Data Mining: Concepts and Techniques"
+    source: "UIUC CS412"
+    url: "https://hanj.cs.illinois.edu/cs412/bk3/01.pdf"
+  - abbr: "DMS"
+    title: "Database Management Systems"
+    source: "Wisconsin CS564"
+    url: "https://thodrek.github.io/cs564-fall17/"
+  - abbr: "IDS"
+    title: "Introduction to Database Systems"
+    source: "Berkeley CS186"
+    url: "https://cs186berkeley.net/fa24/"
+  - abbr: "DIS"
+    title: "Principles of Data-Intensive Systems"
+    source: "Stanford CS245"
+    url: "https://web.stanford.edu/class/cs245/"
+  - abbr: "BDS"
+    title: "Introduction to Big Data Systems"
+    source: "Wisconsin CS544"
+    url: "https://ms.sites.cs.wisc.edu/cs544/s24/schedule.html"
+  - abbr: "SML"
+    title: "Scalable Machine Learning and Deep Learning"
+    source: "KTH ID2223"
+    url: "https://id2223kth.github.io/schedule_2023/"
+  - abbr: "MLSD"
+    title: "Machine Learning Systems Design"
+    source: "Stanford CS329S"
+    url: "https://stanford-cs329s.github.io/"
+  - abbr: "DLA"
+    title: "DeepLearning.AI Short Courses"
+    source: "DeepLearning.AI"
+    url: "https://learn.deeplearning.ai"
+
+exams:
+  - label: "Midterm 2025"
+    url: "https://drive.google.com/file/d/1a2qbRuKvPN9faYfjSP9830Y8ah-_FyQr/view"
+    solution: "https://drive.google.com/file/d/1BDVyaq0OkSLflng6dCEZ1u2kmdq04jud/view"
+  - label: "Final 2025"
+    url: "https://drive.google.com/file/d/1Q7Cgt1bSiMMlYRt253GPsvcipzCcRKjU/view"
+    solution: "https://drive.google.com/file/d/1fDomPBXTwPdJ5NrhMgNdOnmgRtKdHoyM/view"
+
+other_terms:
+  - name: "Fall 2026"
+    url: "teaching/26f-imen891k/"

@@ -25,3 +25,8 @@
 
 - 교수: "구글 사이트에서 Bio 에 하이라이트 준 것처럼 랩 사이트도 동일하게." Faculty Bio 안 링크(IME, KAIST, Jinwoo Shin, University of Michigan, Stella X. Yu)를 강조색으로(`.profile-bio a`).
 - 교수: "PhD thesis 줄이 너무 위에 딱 붙어 있다." `.item-detail` 위 여백 0 → `--row-gap`(4px), 딸린 줄이 있는 항목 다음은 8px → `--item-gap`(12px). 학위 줄과 thesis 줄은 한 묶음으로, KAIST 와 POSTECH 항목은 분명히 갈라 보인다.
+
+## 추가: News 강조 기준 정리 (같은 날, 교수)
+
+- 교수: "safety monitoring (application) 이거 링크 없어도 색칠은 동일한 기준으로." 링크가 아직 없는 논문도 `<span class="news-paper">` 로 강조색. 링크가 생기면 `[...](url)` 로 바꾼다.
+- 교수: "SP4V 는 하이라이트 주지 말까?" News 의 강조는 논문(소식의 주인공)에만 준다. 워크숍 조직은 서비스라 링크는 두되 본문색(`a.news-quiet`, hover 때만 강조색). 괄호 `(structural priors for vision)` 도 같은 본문색이라 `link-aside` 는 뺐다.

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [personal-robot-slides](2026-10-22-personal-robot-slides.md) | Sangwoo Mo(moai-postech) | Talks | Towards Personalized Household Robots 최신 PDF 링크 공개 |
 | 2026-10-22 | [research-flow](2026-10-22-research-flow.md) | Sangwoo Mo(moai-postech) | Research | 2차: 소개 문단을 세 단계로 잇고 흐름 줄을 아이콘 카드로, 누르면 해당 분야로 스크롤·강조 |
 | 2026-10-22 | [seminar-upnext](2026-10-22-seminar-upnext.md) | Sangwoo Mo(moai-postech) | Seminar | 목록 위 Up next 카드(다가오는 발표), 지난 카드는 브라우저에서 숨김 |
 | 2026-10-22 | [course-layout](2026-10-22-course-layout.md) | Sangwoo Mo(moai-postech) | Teaching | 파트 카드 대신 스케줄 파트 줄에 설명, Term Project 는 Teams 를 평가 기준 위로, Overview 는 맨 위 유지 |

@@ -27,3 +27,4 @@
 - 교수: Bio 마지막 줄이 꽉 차 빽빽해 보인다, 한두 글자만 줄이자. `collaborated with research teams at` → `collaborated with teams at`(뜻 같음). 개인 사이트도 같은 문장.
 - 교수: 랩 페이지가 강조 없이 plain 하다, Faculty 경력 기관을 bold 로. Appointments 와 Education 의 기관명(POSTECH, U Michigan, NVIDIA AI, Meta AI, Naver AI, Google AI, Kakao Brain, KAIST)을 굵게(개인 사이트와 같은 방식).
 - 같은 이유로 Faculty Services(Area Chair, 워크숍 이름, Conference/Journal 머리)와 Honors(상 이름)의 핵심어도 굵게. 원칙을 저장소 `AGENTS.md` 에 적었다(목록 한 줄의 "무엇"은 굵게). 다른 페이지(Publications·Talks·Teaching 제목, 사람 이름, Funding 기관)는 이미 굵었다.
+- 교수: 박사과정의 BS 줄은 지우자. 김명수, 조은찬 모두 `MS, POSTECH` 한 줄로 되돌렸다(여러 줄 degree 기능은 템플릿에 남겨 둠).

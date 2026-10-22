@@ -62,13 +62,13 @@ groups:
         photo: assets/img/people/myeongsoo-kim.jpg
         focus: "Agentic AI"
         url: "https://kim-myeong-soo.github.io/"
-        degree: ["MS, POSTECH", "BS, POSTECH"]
+        degree: "MS, POSTECH"
         topic: "Reliable Agents"
       - name: "Eunchan Jo"
         photo: assets/img/people/eunchan-jo.jpg
         focus: "Agentic AI"
         url: "https://eunchanjo.github.io/"
-        degree: ["MS, POSTECH", "BS, POSTECH"]
+        degree: "MS, POSTECH"
         topic: "Multimodal Agents"
   - title: "Master students"
     people:

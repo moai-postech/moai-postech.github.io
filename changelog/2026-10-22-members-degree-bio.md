@@ -21,3 +21,4 @@
 ## 다듬기 (같은 날, 교수: "컨텐츠는 좋은데 중언부언하지 않고 깔끔하게")
 
 - 내용은 그대로 두고 겹치는 말만 줄였다: `in the Department of` → `of`, 연구 두 문장을 한 문장으로(`particularly on scalable priors that improve their ...`), `under the supervision of` → `advised by`, `leading research labs, including` → `research teams at`, `has received` → `received`. 개인 사이트 Bio 도 같은 문장.
+- 교수: "particularly 는 다른 문장으로 분리." → "... vision, language, and robotics. In particular, he designs scalable priors that improve their performance, reliability, and interpretability." 한 문장에 연구 분야와 관심 방향 두 생각이 있던 것을 나눴다. 개인 사이트 Bio 도 같은 문장.

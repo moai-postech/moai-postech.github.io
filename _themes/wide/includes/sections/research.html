@@ -8,7 +8,7 @@
     <section class="content-section research-area" id="{{ area.area | slugify }}">
     <div class="research-head">
       {% if area.icon %}<img class="area-icon" src="assets/img/icons/{{ area.icon }}.png" alt="">{% endif %}
-      {% if area.stage %}<span class="area-stage">{{ forloop.index }} · {{ area.stage }}</span>{% endif %}
+      {% if area.stage %}<span class="area-stage">0{{ forloop.index }} · {{ area.stage }}</span>{% endif %}
       <h2>{{ area.area }}</h2>
       {% if area.blurb %}<p>{{ area.blurb }}</p>{% endif %}
     </div>

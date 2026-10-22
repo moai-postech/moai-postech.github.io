@@ -1,15 +1,17 @@
 {% comment %}
-  Research 맨 위 흐름: 분야 셋을 Perception → Reasoning → Action 단계로 잇는다(_data/research.yml 의 stage, 교수 2026-10-22).
-  단계를 누르면 아래 그 분야 절로 간다.
+  Research 맨 위 흐름: 분야 셋을 Perception → Reasoning → Action 단계로 잇는다(_data/research.yml 의 stage, stage_note).
+  단계마다 그 분야 아이콘, 번호, 단계 이름, 그 단계에 넣는 구조(stage_note), 분야 이름. 누르면 아래 그 분야 절로 부드럽게 내려가고,
+  도착한 절의 단계 표시가 잠깐 강조된다(theme.css 의 :target).
 {% endcomment %}
     <section class="content-section research-flow">
     <ol class="flow plain">
-      {% for area in site.data.research %}<li><a class="flow-step" href="#{{ area.area | slugify }}">
-        <span class="flow-num">{{ forloop.index }}</span>
+      {% for area in site.data.research %}<li class="flow-item"><a class="flow-step" href="#{{ area.area | slugify }}">
+        <span class="flow-top">{% if area.icon %}<img class="flow-icon" src="assets/img/icons/{{ area.icon }}.png" alt="">{% endif %}<span class="flow-num">0{{ forloop.index }}</span></span>
         <span class="flow-stage">{{ area.stage }}</span>
-        <span class="flow-area">{{ area.area }}</span>
+        {% if area.stage_note %}<span class="flow-note">{{ area.stage_note }}</span>{% endif %}
+        <span class="flow-area">{{ area.area }} <span aria-hidden="true">↓</span></span>
       </a></li>{% unless forloop.last %}
-      <li class="flow-arrow" aria-hidden="true">→</li>{% endunless %}
+      <li class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 40 12" width="40" height="12"><path d="M0 6h36M31 1l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></li>{% endunless %}
       {% endfor %}
     </ol>
     </section>

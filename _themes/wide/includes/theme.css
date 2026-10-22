@@ -199,14 +199,23 @@ a.mentee-name:hover { color: var(--accent); }
 .area-card h3 { margin: 0; }
 .area-topics { color: var(--muted); font-size: var(--text-meta); }
 .area-topics span + span::before { content: " · "; }
-.flow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: var(--space-4); }  /* perception, reasoning, action: one row, each step a door to its area below */
-.flow-step { display: flex; flex-direction: column; gap: var(--space-1); height: 100%; padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); color: var(--text); }
-a.flow-step:hover { color: var(--text); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
-.flow-num { color: var(--accent); font-size: var(--text-small); font-weight: 700; letter-spacing: .06em; }
+.flow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; gap: var(--space-3); }  /* perception, reasoning, action: one row, each step a door to its area below */
+.flow-item { display: flex; }
+.flow-step { flex: 1; display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-5); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-2); color: var(--text); transition: border-color .15s, transform .15s; }  /* white like the icons, so the pictures sit in the card */
+a.flow-step:hover { color: var(--text); text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
+.flow-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-3); }
+.flow-icon { width: 48px; height: 48px; object-fit: contain; }
+.flow-num, .area-stage { color: var(--accent); font-size: var(--text-small); font-weight: 700; letter-spacing: .08em; }  /* the same step marker in the flow and on its area below */
 .flow-stage { font-size: var(--text-lead); font-weight: 700; }
-.flow-area { color: var(--muted); font-size: var(--text-meta); }
-.flow-arrow { color: var(--faint); font-size: var(--text-lead); }
-.area-stage { display: block; margin-bottom: var(--space-1); color: var(--accent); font-size: var(--text-small); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }  /* the step this area plays in the flow above */
+.flow-note { color: var(--muted); font-size: var(--text-meta); }
+.flow-area { margin-top: auto; padding-top: var(--space-3); color: var(--text); font-size: var(--text-meta); font-weight: 600; }
+a.flow-step:hover .flow-area { color: var(--accent); }
+.flow-arrow { display: flex; align-items: center; color: var(--faint); }
+.area-stage { display: inline-block; margin: 0 0 var(--space-1) calc(-1 * var(--space-2)); padding: 2px var(--space-2); border-radius: 999px; text-transform: uppercase; }  /* the padding is for the arrival glow; the negative margin keeps the text on the heading's left edge */
+.research-area { scroll-margin-top: var(--space-6); }
+.research-area:target .area-stage { animation: stage-arrive 1.8s ease-out; }  /* arriving from the flow: the step marker lights up once */
+@keyframes stage-arrive { 0%, 40% { background: var(--accent-soft); } 100% { background: transparent; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 .research-area { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
 .research-head { grid-column: span 4; position: sticky; top: var(--space-6); }  /* the area name stays beside its cards while they scroll */
 .research-head .area-icon { display: block; width: 72px; height: 72px; margin-bottom: var(--space-4); object-fit: contain; }
@@ -360,10 +369,12 @@ a.person-name:hover { color: var(--accent); }
   .research-head { position: static; }
   .research-head { display: grid; grid-template-columns: auto 1fr; column-gap: var(--space-4); align-items: center; margin-bottom: var(--space-5); }
   .research-head .area-icon { width: 48px; height: 48px; margin: 0; grid-row: span 3; }
-  .flow { grid-template-columns: 1fr; gap: var(--space-2); }  /* phones: the three steps stack, the arrows turn downward */
-  .flow-arrow { justify-self: center; transform: rotate(90deg); }
-  .flow-step { flex-direction: row; align-items: baseline; flex-wrap: wrap; column-gap: var(--space-2); padding: var(--space-3) var(--space-4); }  /* one compact line per step: number, stage, area */
-  .flow-area { flex-basis: 100%; }
+  .flow { grid-template-columns: 1fr; gap: var(--space-1); }  /* phones: the three steps stack, the arrows turn downward */
+  .flow-arrow { justify-content: center; transform: rotate(90deg); height: 24px; }
+  .flow-step { display: grid; grid-template-columns: auto 1fr; column-gap: var(--space-4); align-items: center; padding: var(--space-4); }
+  .flow-top { grid-row: span 3; flex-direction: column; margin: 0; gap: var(--space-1); }
+  .flow-icon { width: 40px; height: 40px; }
+  .flow-area { margin: 0; padding: 0; }
   .research-head h2 { margin: 0; }
   .research-head p { grid-column: 1 / -1; margin-top: var(--space-3); }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

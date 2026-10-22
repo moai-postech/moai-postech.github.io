@@ -11,8 +11,6 @@ summary: >-
   This course covers the data side of AI systems: how data is collected and prepared, how it is stored and processed at scale,
   and how models and LLM applications run on it. In a team project, students go through an end-to-end data engineering pipeline.
 links:
-  - label: "Lecture notes"
-    url: "https://drive.google.com/drive/folders/15RRyGd8LefLfr8EKnuMX_G3mXHn91m-q"
   - label: "Team project"
     url: "https://docs.google.com/spreadsheets/d/1XLgh0ILJ1VUgljXeaelXuAXfN5RmUB6fVRsMW6CKGKk/edit?usp=sharing"
 

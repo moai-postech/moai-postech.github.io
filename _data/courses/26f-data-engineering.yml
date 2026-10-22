@@ -12,8 +12,6 @@ summary: >-
   We collect and prepare data, store and process it at scale, and then run models and agents on it.
   In a team project, students build a product on a real data pipeline from end to end.
 links:
-  - label: "Lecture notes"
-    url: "https://drive.google.com/drive/folders/1GT9kK4hHtQhuCR6qhJf5idKy5F8q4jF8?usp=drive_link"
   - label: "Team project"
     url: "https://docs.google.com/spreadsheets/d/1SjOnpmdC4ZQcAQffTwqP2GWTv55ujObgNl_frRshPyk/edit?usp=sharing"
 

@@ -26,3 +26,4 @@
 - 교수: Bio 마지막 줄에 "Award." 한 단어만 넘어가 삐져나와 보인다. `Humantech&nbsp;Paper&nbsp;Award` 로 묶어 마지막 줄에 최소 세 단어가 같이 내려가게 했다(개인 사이트도 같은 줄바꿈 없는 공백). 문단 전체 `text-wrap: pretty` 도 시험했으나 중간 줄이 들쭉날쭉해져 기각.
 - 교수: Bio 마지막 줄이 꽉 차 빽빽해 보인다, 한두 글자만 줄이자. `collaborated with research teams at` → `collaborated with teams at`(뜻 같음). 개인 사이트도 같은 문장.
 - 교수: 랩 페이지가 강조 없이 plain 하다, Faculty 경력 기관을 bold 로. Appointments 와 Education 의 기관명(POSTECH, U Michigan, NVIDIA AI, Meta AI, Naver AI, Google AI, Kakao Brain, KAIST)을 굵게(개인 사이트와 같은 방식).
+- 같은 이유로 Faculty Services(Area Chair, 워크숍 이름, Conference/Journal 머리)와 Honors(상 이름)의 핵심어도 굵게. 원칙을 저장소 `AGENTS.md` 에 적었다(목록 한 줄의 "무엇"은 굵게). 다른 페이지(Publications·Talks·Teaching 제목, 사람 이름, Funding 기관)는 이미 굵었다.

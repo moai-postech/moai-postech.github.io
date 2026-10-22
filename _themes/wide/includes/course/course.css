@@ -1,14 +1,17 @@
 /* Course sites (layout: course). A course runs as its own small site: its own header and menu, the lab only in the footer.
    Template: includes/course/README.md */
 
-/* Part colours, taken from the original schedule sheets: blue, green, orange for the parts, rose for logistics
-   (overview, exams, project days; also the site accent), grey for guests. --tone is for text, --tone-row for row and card fills. */
-.tone-blue   { --tone: #1967d2; --tone-tint: #d2e3fc; --tone-row: #e8f0fe; }
-.tone-green  { --tone: #137333; --tone-tint: #ceead6; --tone-row: #e6f4ea; }
-.tone-orange { --tone: #b06000; --tone-tint: #feefc3; --tone-row: #fef7e0; }
-.tone-rose   { --tone: var(--accent); --tone-tint: #f6dfdc; --tone-row: #fcefed; }
-.tone-gray   { --tone: #5f6368; --tone-tint: #e8eaed; --tone-row: #f1f3f4; }
-.tone-none   { --tone: var(--muted); --tone-tint: transparent; --tone-row: transparent; }
+/* Colour template, one set for every course (2026-10-22). Parts take their colour from their position, never per course:
+   the first part is slate blue, the second teal, the third ochre. Logistics (overview, exams, project days, grading) are rose,
+   the site accent's family; guests and seminars grey; no-class days have no fill. Muted tones instead of primaries so the
+   POSTECH Red stays the only strong colour. --tone is text (4.5:1 or more on its row), --tone-tint bars and borders,
+   --tone-row the fill of rows and cards. */
+.tone-p1        { --tone: #34558b; --tone-tint: #c9d6ec; --tone-row: #e4ebf6; }
+.tone-p2        { --tone: #21695c; --tone-tint: #c3e1d7; --tone-row: #e1f0ea; }
+.tone-p3        { --tone: #8a5a14; --tone-tint: #ead6af; --tone-row: #f7ecd8; }
+.tone-logistics { --tone: var(--accent); --tone-tint: #eccbd9; --tone-row: #f8e6ee; }
+.tone-guest     { --tone: #545e6b; --tone-tint: #d9dee5; --tone-row: #eceff3; }
+.tone-none      { --tone: var(--muted); --tone-tint: transparent; --tone-row: transparent; }
 
 .course-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); flex-wrap: wrap; min-height: 72px; border-bottom: 1px solid var(--line); }
 .course-brand { display: inline-flex; align-items: baseline; gap: var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 700; letter-spacing: -.3px; }
@@ -47,6 +50,7 @@
 .course-schedule { width: 100%; border-collapse: separate; border-spacing: 0 3px; font-variant-numeric: tabular-nums; }  /* rows read as coloured blocks, as in the sheet */
 .course-schedule thead th { padding: 0 var(--space-4) var(--space-2) 0; border-bottom: 1px solid var(--text); color: var(--muted); font-size: var(--text-small); font-weight: 600; text-align: left; text-transform: uppercase; letter-spacing: .06em; }
 .course-schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; background: var(--tone-row); vertical-align: baseline; }
+.course-schedule td:not(:last-child) { box-shadow: 1px 0 0 var(--tone-row); }  /* covers the hairline between cells of one filled row */
 .course-schedule td:first-child { border-radius: var(--radius-1) 0 0 var(--radius-1); }
 .course-schedule td:last-child { border-radius: 0 var(--radius-1) var(--radius-1) 0; }
 .course-schedule tr.tone-none td { box-shadow: inset 0 -1px 0 var(--line); border-radius: 0; }
@@ -93,8 +97,8 @@ a.cs-title:hover { color: var(--accent); }
 
 /* Grading: item and weight on one line */
 .course-grading { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-5); }  /* two to four items share the row evenly */
-.course-grading li { display: flex; justify-content: space-between; align-items: baseline; padding: var(--space-4) var(--space-5); background: #fcefed; border-radius: var(--radius-2); }  /* grading is logistics: rose, as in the sheet */
-.course-grading strong { color: var(--accent); }
+.course-grading li { display: flex; justify-content: space-between; align-items: baseline; padding: var(--space-4) var(--space-5); background: var(--tone-row); border-radius: var(--radius-2); }  /* grading is logistics */
+.course-grading strong { color: var(--tone); }
 .course-grading strong { font-size: var(--text-lead); }
 .course-note { margin-top: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
 

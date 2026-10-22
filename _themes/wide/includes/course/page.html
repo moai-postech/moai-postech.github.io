@@ -1,7 +1,8 @@
 {% comment %}
   강의 페이지 한 장. 내용은 _data/courses/<page.course>.yml 이고 여기서는 모양만 정한다.
   순서: 머리(과목명, 학수번호·학기, 교수, 링크) → Overview(소개, 파트 카드) → Schedule → Grading → Resources(참고 자료, 관련 강의, 지난 시험, 다른 학기).
-  파트 색(parts[].color: blue, green, orange)은 그 파트 머리 아래 강의 줄에 이어지고, 시험·프로젝트·행사는 rose, 초청·세미나는 gray, 휴강은 색이 없다(원래 스케줄 시트의 색).
+  색은 course.css 의 템플릿 하나다. 파트는 순서대로 p1·p2·p3(강의마다 고르지 않는다), 시험·프로젝트·행사·평가는 logistics, 초청·세미나는 guest, 휴강은 none.
+  강의 줄은 바로 위 파트 머리의 색을 잇는다.
   Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다. 줄 종류의 태그 글자는 _data/course_tags.yml.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
@@ -13,7 +14,7 @@
     <div class="section-body">
     {% if c.summary %}<p>{{ c.summary }}</p>{% endif %}
     {% if c.parts %}<ol class="plain course-parts">
-      {% for p in c.parts %}<li class="tone-{{ p.color | default: 'gray' }}">
+      {% for p in c.parts %}<li class="tone-p{{ forloop.index }}">
         <span class="course-part-name">{{ p.name }}<small>{{ p.span }}</small></span>
         <strong>{{ p.title }}</strong>
         <span class="course-part-text">{{ p.text }}</span>
@@ -29,10 +30,10 @@
     <table class="course-schedule">
       <thead><tr><th scope="col">Date</th><th scope="col">#</th><th scope="col">Topic</th><th scope="col">Materials</th>{% if cols == 5 %}<th scope="col">Reading</th>{% endif %}</tr></thead>
       <tbody>
-      {% assign tone = "rose" %}{% for r in c.schedule %}{% if r.part %}{% assign p = c.parts | where: "id", r.part | first %}{% assign tone = p.color | default: "gray" %}
+      {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign p = q %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}
       <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup">{{ p.name }}<span>{{ p.title }}</span></th></tr>
       {% else %}
-      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "gray" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "rose" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
+      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "guest" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
         <td class="cs-n">{{ r.n }}</td>
         <td class="cs-topic">{% assign tag = site.data.course_tags[r.kind] %}{% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}{% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% if r.speaker %}<span class="cs-speaker">{{ r.speaker }}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% if r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}{% endif %}</td>
@@ -49,7 +50,7 @@
     <h2>Grading</h2>
     <div class="section-body">
     <ul class="plain course-grading">
-      {% for g in c.grading %}<li><span>{{ g.item }}</span><strong>{{ g.weight }}</strong></li>{% endfor %}
+      {% for g in c.grading %}<li class="tone-logistics"><span>{{ g.item }}</span><strong>{{ g.weight }}</strong></li>{% endfor %}
     </ul>
     {% if c.grading_note %}<p class="course-note">{{ c.grading_note }}</p>{% endif %}
     </div>

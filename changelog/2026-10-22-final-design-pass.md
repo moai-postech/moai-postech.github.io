@@ -20,6 +20,6 @@
 
 ## 남긴 것과 이유
 
-- Stella X. Yu 홈페이지(web.eecs.umich.edu) timeout: 점검 환경에서만 응답이 없을 수 있어 다른 네트워크에서 다시 확인한다.
+- Stella X. Yu 홈페이지(web.eecs.umich.edu): 점검 환경의 curl 에서는 timeout 이었으나 교수 맥 Chrome 에서 정상으로 열림을 확인했다(링크 유지).
 - Media 날짜를 월까지 쓰는 것: 데이터에 월이 없다(`media.yml` 은 연도만).
 - 링크 없는 자료(PRISM, I2A 의 paper·code)를 연구실 사이트에서도 글자로 남길지: 교수 결정 대기.

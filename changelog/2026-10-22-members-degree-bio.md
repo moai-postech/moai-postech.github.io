@@ -17,3 +17,7 @@
 ## 다시 고침: performance 살림 (같은 날, 교수)
 
 - 교수: "reliable, interpretable 얘기만 하니까 별로, 맨 앞에 performance 도 다시 살리자." → "designing scalable priors that improve the performance, reliability, and interpretability of these models." `these models` 로 무엇의 성능인지 분명히 했다. 개인 사이트 Bio 도 같은 문장.
+
+## 다듬기 (같은 날, 교수: "컨텐츠는 좋은데 중언부언하지 않고 깔끔하게")
+
+- 내용은 그대로 두고 겹치는 말만 줄였다: `in the Department of` → `of`, 연구 두 문장을 한 문장으로(`particularly on scalable priors that improve their ...`), `under the supervision of` → `advised by`, `leading research labs, including` → `research teams at`, `has received` → `received`. 개인 사이트 Bio 도 같은 문장.

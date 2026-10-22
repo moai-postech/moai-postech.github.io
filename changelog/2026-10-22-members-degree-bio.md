@@ -13,3 +13,7 @@
 
 - 페이지 이름 `Researchers`: 학부 인턴 등 학생 성격이 강한 사람도 들어갈 수 있어 넓은 `Members` 를 골랐다.
 - `degree` 를 `MS, POSTECH · BS, POSTECH` 한 줄로 잇는 안: 교수가 "한 줄 추가"를 원했고, 학위마다 줄을 나누면 석사과정 학생 카드와 줄 높이 규칙이 같다.
+
+## 다시 고침: performance 살림 (같은 날, 교수)
+
+- 교수: "reliable, interpretable 얘기만 하니까 별로, 맨 앞에 performance 도 다시 살리자." → "designing scalable priors that improve the performance, reliability, and interpretability of these models." `these models` 로 무엇의 성능인지 분명히 했다. 개인 사이트 Bio 도 같은 문장.

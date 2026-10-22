@@ -13,7 +13,7 @@ nav:
     children:
       - title: Faculty
         url: faculty.html
-      - title: Students
+      - title: Members
         url: students.html
       - title: Mentees
         url: mentees.html

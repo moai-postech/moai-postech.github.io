@@ -1,7 +1,8 @@
 # People 메뉴의 세 페이지. professor 는 Faculty, groups 는 Students(연구실 학생), mentees 는 Mentees 페이지다(순서대로 나온다).
 # bio 는 마크다운 문단(빈 줄로 문단을 나눈다). photo 는 정사각형 사진 경로.
+# 묶음(groups)은 위에서부터 그대로 나온다. 박사후연구원이 오면 맨 위에 - title: "Postdocs" 묶음을 더한다(페이지 이름이 Members 인 이유).
 # 학생 항목: name(필수), photo(정사각형 400px, assets/img/people/이름.jpg, 없으면 회색 실루엣), url(개인 페이지, 없으면 생략),
-# topic(연구 주제), degree(이전 학위와 학교),
+# topic(연구 주제), degree(이전 학위와 학교. 여럿이면 ["MS, POSTECH", "BS, POSTECH"] 처럼 최근 학위부터, 한 줄에 하나),
 # 멘티 항목은 affiliation(학위 @ 학교, w/ 지도교수: 이름 오른쪽)과 work(함께 한 논문: 아래 줄)를 쓴다. 둘 다 마크다운 링크 가능.
 # focus(_data/focus.yml 의 name. 그 연구 방향 패널에 이름이 나온다).
 professor:
@@ -11,7 +12,7 @@ professor:
   contact: "{first_name}.{last_name} [at] postech.ac.kr"
   links: "[Google Scholar](https://scholar.google.com/citations?user=Sq9y3NMAAAAJ) / [GitHub](https://github.com/sangwoomo) / [CV](https://www.overleaf.com/read/yhzsgvyrfsvj) / [X (Twitter)](https://twitter.com/sangwoomo)"
   bio: |
-    Sangwoo Mo is an Assistant Professor in the Department of [Industrial and Management Engineering (IME)](https://ime.postech.ac.kr/) at POSTECH, where he leads the MOAI Lab. His research centers on multimodal foundation models for vision, language, and robotics. He is particularly interested in designing scalable priors that improve their performance, reliability, and interpretability. He received his PhD from [KAIST](https://www.kaist.ac.kr/en/) under the supervision of Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html) and was a postdoctoral fellow at the [University of Michigan](https://umich.edu/) with Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/). He has collaborated with leading research labs, including Google, Meta, and NVIDIA, and has received the Qualcomm Innovation Fellowship and a Samsung Humantech Paper Award.
+    Sangwoo Mo is an Assistant Professor in the Department of [Industrial and Management Engineering (IME)](https://ime.postech.ac.kr/) at POSTECH, where he leads the MOAI Lab. His research centers on multimodal foundation models for vision, language, and robotics. He is particularly interested in designing scalable priors that make these models more reliable and interpretable. He received his PhD from [KAIST](https://www.kaist.ac.kr/en/) under the supervision of Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html) and was a postdoctoral fellow at the [University of Michigan](https://umich.edu/) with Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/). He has collaborated with leading research labs, including Google, Meta, and NVIDIA, and has received the Qualcomm Innovation Fellowship and the Samsung Humantech Paper Award.
   # Faculty 페이지 Bio 아래 절들. 개인 사이트 About 의 Appointments, Education, Services, Honors & Awards 와 같은 내용.
   cv:   # 항목은 문자열, 또는 { text: 무엇, side: 언제·어디, detail: 딸린 한 줄 } (side 는 오른쪽 끝, detail 은 text 아래 작은 회색 줄)
     - title: "Appointments"
@@ -67,7 +68,7 @@ groups:
         photo: assets/img/people/eunchan-jo.jpg
         focus: "Agentic AI"
         url: "https://eunchanjo.github.io/"
-        degree: "MS, POSTECH"
+        degree: ["MS, POSTECH", "BS, POSTECH"]
         topic: "Multimodal Agents"
   - title: "Master students"
     people:

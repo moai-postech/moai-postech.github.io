@@ -1,4 +1,4 @@
 {% assign p = include.person %}<li class="person">{% if include.photo %}<img class="person-photo" src="{{ p.photo | default: 'assets/img/people/placeholder.svg' }}" alt="{% if p.photo %}{{ p.name }}{% endif %}" loading="lazy">{% endif %}<span class="person-head">{% if p.url %}<a class="person-name" href="{{ p.url }}">{{ p.name }}</a>{% else %}<span class="person-name">{{ p.name }}</span>{% endif %}{% if p.affiliation %}<span class="person-aff">{% include inline.html text=p.affiliation %}</span>{% endif %}</span>
         {% if p.topic %}<span class="person-topic">{{ p.topic }}</span>{% endif %}
-        {% if p.degree %}<span class="person-degree">{{ p.degree }}</span>{% endif %}
+        {% if p.degree %}{% for d in p.degree %}<span class="person-degree">{{ d }}</span>{% endfor %}{% endif %}
         {% if p.work %}<span class="person-work">{% include inline.html text=p.work %}</span>{% endif %}{% if p.detail %}<span class="role">{% include inline.html text=p.detail %}</span>{% endif %}</li>

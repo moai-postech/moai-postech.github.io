@@ -1,13 +1,14 @@
 {% comment %}
   팀 프로젝트 페이지(teaching/<id>/project/). 내용은 _data/courses/<id>.yml 의 project 아래다.
-  순서: 머리(강의로 돌아가기) → Overview(소개, 팀 크기, 단계 카드, 평가 기준) → Teams(팀 번호, 제목·팀원, 발표 회차마다 날짜·순서·슬라이드).
+  순서: 머리 → Overview(소개, 팀 크기, 단계 카드) → Teams(팀 번호, 제목·팀원, 발표 회차마다 날짜·순서·슬라이드) → Evaluation(평가 기준).
+  팀 표를 평가 기준보다 위에 둔다: 기준은 학기 초에 한 번 읽고, 팀 표는 계속 찾아 들어온다(2026-10-22 교수).
   학생은 project.sheet(구글 시트)에 입력하고, 교수가 그 내용을 yml 의 teams 로 옮긴다. sheet 가 있을 때만 시트 링크가 보인다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
 {% assign pj = c.project %}
 {% include course/head.html heading="Term Project" %}
 
-    <section class="content-section">
+    <section class="content-section course-summary" id="overview">
     <h2>Overview</h2>
     <div class="section-body">
     {% if pj.summary %}<p>{{ pj.summary }}</p>{% endif %}
@@ -18,10 +19,6 @@
         <span class="course-part-text">{{ s.text }}</span>
       </li>{% endfor %}
     </ol>{% endif %}
-    {% if pj.criteria %}<h3 class="sub project-sub">Evaluation criteria</h3>
-    <ul class="plain project-criteria">
-      {% for x in pj.criteria %}<li><strong>{{ x.name }}</strong><span>{{ x.text }}</span></li>{% endfor %}
-    </ul>{% endif %}
     </div>
     </section>
 
@@ -40,5 +37,14 @@
       {% endfor %}
       </tbody>
     </table>
+    </div>
+    </section>{% endif %}
+
+    {% if pj.criteria %}<section class="content-section">
+    <h2>Evaluation</h2>
+    <div class="section-body">
+    <ul class="plain project-criteria">
+      {% for x in pj.criteria %}<li><strong>{{ x.name }}</strong><span>{{ x.text }}</span></li>{% endfor %}
+    </ul>
     </div>
     </section>{% endif %}

@@ -1,6 +1,6 @@
 {% comment %}
   강의 페이지 한 장. 내용은 _data/courses/<page.course>.yml 이고 여기서는 모양만 정한다.
-  순서: 머리(과목명, 학수번호·학기, 교수, 링크) → Overview(소개, 파트 카드) → Schedule → Grading → Resources(참고 자료, 관련 강의, 지난 시험, 다른 학기).
+  순서: 머리(과목명, 학수번호·학기, 교수, 링크) → Overview(소개 한 문단) → Schedule(파트 머리 줄에 파트 이름·범위·한 줄 설명) → Grading → Resources(참고 자료, 관련 강의, 지난 시험, 다른 학기).
   색은 course.css 의 템플릿 하나다. 파트는 순서대로 p1·p2·p3(강의마다 고르지 않는다), 시험·프로젝트·행사·평가는 logistics, 초청·세미나는 guest, 휴강은 none.
   강의 줄은 바로 위 파트 머리의 색을 잇는다.
   Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다. 줄 종류의 태그 글자는 _data/course_tags.yml.
@@ -9,19 +9,10 @@
 {% assign c = site.data.courses[page.course] %}
 {% include course/head.html %}
 
-    <section class="content-section course-overview" id="overview">
+    {% if c.summary %}<section class="content-section course-summary" id="overview">
     <h2>Overview</h2>
-    <div class="section-body">
-    {% if c.summary %}<p>{{ c.summary }}</p>{% endif %}
-    {% if c.parts %}<ol class="plain course-parts">
-      {% for p in c.parts %}<li class="tone-p{{ forloop.index }}">
-        <span class="course-part-name">{{ p.name }}<small>{{ p.span }}</small></span>
-        <strong>{{ p.title }}</strong>
-        <span class="course-part-text">{{ p.text }}</span>
-      </li>{% endfor %}
-    </ol>{% endif %}
-    </div>
-    </section>
+    <div class="section-body"><p>{{ c.summary }}</p></div>
+    </section>{% endif %}
 
     <section class="content-section" id="schedule">
     <h2>Schedule</h2>
@@ -31,7 +22,7 @@
       <thead><tr><th scope="col">Date</th><th scope="col">#</th><th scope="col">Topic</th><th scope="col">Materials</th>{% if cols == 5 %}<th scope="col">Reading</th>{% endif %}</tr></thead>
       <tbody>
       {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign p = q %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}
-      <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup">{{ p.name }}<span>{{ p.title }}</span></th></tr>
+      <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup"><span class="cp-name">{{ p.name }}</span><span class="cp-title">{{ p.title }}</span>{% if p.span %}<span class="cp-span">{{ p.span }}</span>{% endif %}{% if p.text %}<span class="cp-text">{{ p.text }}</span>{% endif %}</th></tr>
       {% else %}
       {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "guest" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>

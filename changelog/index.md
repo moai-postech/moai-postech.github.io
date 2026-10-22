@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [course-layout](2026-10-22-course-layout.md) | Sangwoo Mo(moai-postech) | Teaching | 파트 카드 대신 스케줄 파트 줄에 설명, Term Project 는 Teams 를 평가 기준 위로, Overview 는 맨 위 유지 |
 | 2026-10-22 | [course-two-tabs](2026-10-22-course-two-tabs.md) | Sangwoo Mo(moai-postech) | Teaching | 강의 사이트 메뉴를 Schedule · Term Project 두 탭으로, 프로젝트 페이지 이름 Term Project |
 | 2026-10-22 | [research-flow](2026-10-22-research-flow.md) | Sangwoo Mo(moai-postech) | Research | 대표 논문 상자 제거, Perception → Reasoning → Action 흐름 줄과 분야 단계 표시 |
 | 2026-10-22 | [course-colour-template](2026-10-22-course-colour-template.md) | Sangwoo Mo(moai-postech) | Teaching | 강의 사이트 색을 템플릿 하나로: 파트 순서대로 slate blue·teal·ochre, 운영 rose, 초청 grey(원색 대신 차분한 세트) |

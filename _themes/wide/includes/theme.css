@@ -308,7 +308,9 @@ a.person-name:hover { color: var(--accent); }
    the map on the right. Red only on the step numbers, the pin and the picture's MOAI circle. */
 .page-contact main > .contact-block { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; }
 .page-contact main > .contact-join { margin-top: var(--space-6); padding: var(--space-7); background: var(--surface); border-radius: var(--radius-2); }
-.contact-join .contact-main { grid-column: span 7; }
+.contact-join .contact-main { display: contents; }  /* its parts join the panel grid: heading and intro run the full width, the steps sit beside the picture */
+.contact-join h2, .contact-join .section-body { grid-column: 1 / -1; }
+.contact-join .contact-steps { grid-column: 1 / span 7; }
 .contact-join .contact-art { grid-column: span 5; width: 100%; height: auto; }
 .contact-join h2 { margin-bottom: var(--space-2); color: var(--text); }
 .contact-join .section-body p { color: var(--muted); }
@@ -327,7 +329,7 @@ a.person-name:hover { color: var(--accent); }
 .contact-map::before { content: "Loading the map\2026"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--faint); font-size: var(--text-meta); }  /* shows until the map paints over it */
 .contact-map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 @media (max-width: 960px) {
-  .contact-join .contact-main, .contact-visit .contact-main, .contact-map { grid-column: 1 / -1; }
+  .contact-join .contact-steps, .contact-visit .contact-main, .contact-map { grid-column: 1 / -1; }
   .contact-join .contact-art { grid-column: 1 / -1; max-width: 400px; margin: var(--space-6) auto 0; }
   .contact-map { margin-top: var(--space-5); }
 }

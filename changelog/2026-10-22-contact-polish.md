@@ -13,3 +13,4 @@
 ## 기각한 안
 
 - "We look for a genuine passion for AI and clear logical thinking." 처럼 둘을 대등하게 나열하는 안: 열정이 가장 중요하다는 교수 우선순위가 흐려진다.
+- 교수: Join us 의 "We mainly recruit undergraduate interns to foster long-term growth and collaboration." 이 두 줄로 잘리는 게 싫다. 문장이 그림 옆 7칸 안에 있어 좁았다. `.contact-main` 을 `display: contents` 로 풀어 제목과 소개 문장은 패널 전체 폭, 단계 카드만 7칸(그림 옆)으로 두었다. 문장은 그대로. 좁은 화면에서는 전부 한 칸.

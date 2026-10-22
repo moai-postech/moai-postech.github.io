@@ -273,7 +273,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); margin-top: 2px; }
 .venue-honor { color: var(--accent); font-size: var(--text-small); font-weight: 700; margin-left: calc(-1 * var(--space-2)); }  /* oral, spotlight, highlight: an honour, so it sits right next to the venue in the accent colour, no box */
 .venue + .pub-link::before, .venue-honor + .pub-link::before { content: ""; display: inline-block; width: 1px; height: .9em; margin-right: var(--space-3); vertical-align: -.1em; background: var(--line); }  /* a hairline splits the venue group from the links: venue | arXiv code, 12px either side */
-.pub-link { white-space: nowrap; color: var(--muted); font-size: var(--text-small); font-weight: 600; letter-spacing: .02em; }
+.pub-link { white-space: nowrap; color: var(--text); font-size: var(--text-small); font-weight: 600; letter-spacing: .02em; }  /* the paper's own links: dark enough to find at a glance, but not crimson, so Oral/Spotlight stays the one accent on the line */
 .pub-link:hover { color: var(--accent); text-decoration: none; }
 
 /* People: students as a four-column roster, mentees as rows (name and affiliation, work under it) */

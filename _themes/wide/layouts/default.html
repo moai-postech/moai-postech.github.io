@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{% if page.url == '/404.html' or page.layout == 'course' %}<base href="/">{% endif %}
+{% if page.url == '/404.html' %}<base href="/">{% endif %}
 <title>{% if page.head_title %}{{ page.head_title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
 <meta name="description" content="{{ page.description }}">
 {% if site.logo %}<link rel="icon" href="{{ site.logo }}" type="image/svg+xml">{% endif %}

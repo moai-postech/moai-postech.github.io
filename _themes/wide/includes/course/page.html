@@ -1,25 +1,19 @@
 {% comment %}
   강의 페이지 한 장. 내용은 _data/courses/<page.course>.yml 이고 여기서는 모양만 정한다.
   순서: 머리(과목명, 학수번호·학기, 교수, 링크) → Overview(소개, 파트 카드) → Schedule → Grading → Resources(참고 자료, 관련 강의, 지난 시험, 다른 학기).
+  파트 색(parts[].color: blue, green, orange)은 그 파트 머리 아래 강의 줄에 이어지고, 시험·프로젝트·행사는 rose, 초청·세미나는 gray, 휴강은 색이 없다(원래 스케줄 시트의 색).
   Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다. 줄 종류의 태그 글자는 _data/course_tags.yml.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
-{% include subnav.html %}
-    <header class="course-head">
-      <p class="course-back"><a href="teaching.html">All courses</a></p>
-      <h1>{{ c.title }}</h1>
-      <p class="course-meta"><span>{{ c.code }}</span><span>{{ c.term }}</span><span>POSTECH</span></p>
-      <p class="course-people">Instructor: <a href="{{ c.instructor.url }}">Prof. {{ c.instructor.name }}</a>{% if c.office_hours %}<span class="course-oh">Office hours: {{ c.office_hours }}</span>{% endif %}</p>
-      {% if c.links %}<p class="course-links">{% for l in c.links %}<a href="{{ l.url }}">{{ l.label }} ↗</a>{% endfor %}</p>{% endif %}
-    </header>
+{% include course/head.html %}
 
-    <section class="content-section course-overview">
+    <section class="content-section course-overview" id="overview">
     <h2>Overview</h2>
     <div class="section-body">
     {% if c.summary %}<p>{{ c.summary }}</p>{% endif %}
     {% if c.parts %}<ol class="plain course-parts">
-      {% for p in c.parts %}<li>
+      {% for p in c.parts %}<li class="tone-{{ p.color | default: 'gray' }}">
         <span class="course-part-name">{{ p.name }}<small>{{ p.span }}</small></span>
         <strong>{{ p.title }}</strong>
         <span class="course-part-text">{{ p.text }}</span>
@@ -28,20 +22,20 @@
     </div>
     </section>
 
-    <section class="content-section">
+    <section class="content-section" id="schedule">
     <h2>Schedule</h2>
     <div class="section-body">
     {% assign readings = c.schedule | map: "reading" | compact %}{% if readings.size > 0 %}{% assign cols = 5 %}{% else %}{% assign cols = 4 %}{% endif %}
     <table class="course-schedule">
       <thead><tr><th scope="col">Date</th><th scope="col">#</th><th scope="col">Topic</th><th scope="col">Materials</th>{% if cols == 5 %}<th scope="col">Reading</th>{% endif %}</tr></thead>
       <tbody>
-      {% for r in c.schedule %}{% if r.part %}{% assign p = c.parts | where: "id", r.part | first %}
-      <tr class="course-part-row"><th colspan="{{ cols }}" scope="rowgroup">{{ p.name }}<span>{{ p.title }}</span></th></tr>
+      {% assign tone = "rose" %}{% for r in c.schedule %}{% if r.part %}{% assign p = c.parts | where: "id", r.part | first %}{% assign tone = p.color | default: "gray" %}
+      <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup">{{ p.name }}<span>{{ p.title }}</span></th></tr>
       {% else %}
-      <tr class="is-{{ r.kind }}" data-date="{{ r.date }}">
+      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "gray" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "rose" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
         <td class="cs-n">{{ r.n }}</td>
-        <td class="cs-topic">{% assign tag = site.data.course_tags[r.kind] %}{% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}{% if r.title %}<span class="cs-title">{{ r.title }}</span>{% if r.speaker %}<span class="cs-speaker">{{ r.speaker }}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% if r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}{% endif %}</td>
+        <td class="cs-topic">{% assign tag = site.data.course_tags[r.kind] %}{% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}{% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% if r.speaker %}<span class="cs-speaker">{{ r.speaker }}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% if r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}{% endif %}</td>
         <td class="cs-slides">{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>
         {% if cols == 5 %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}
       </tr>
@@ -51,7 +45,7 @@
     </div>
     </section>
 
-    {% if c.grading %}<section class="content-section">
+    {% if c.grading %}<section class="content-section" id="grading">
     <h2>Grading</h2>
     <div class="section-body">
     <ul class="plain course-grading">
@@ -61,7 +55,7 @@
     </div>
     </section>{% endif %}
 
-    {% if c.resources or c.related or c.exams or c.other_terms %}<section class="content-section">
+    {% if c.resources or c.related or c.exams or c.other_terms %}<section class="content-section" id="resources">
     <h2>Resources</h2>
     <div class="section-body">
     {% if c.resources %}<h3 class="sub">{{ c.resources_title | default: "Reference courses" }}</h3>

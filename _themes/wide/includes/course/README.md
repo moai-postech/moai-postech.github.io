@@ -1,22 +1,25 @@
-# 강의 페이지 양식
+# 강의 사이트 양식
 
-`/teaching/<id>/` 강의 페이지의 양식이다. 모든 강의가 이 폴더 하나의 모양을 같이 쓴다. 디자인을 바꾸면 이 폴더만 고친다.
+`/teaching/<id>/`(강의 첫 페이지)와 `/teaching/<id>/project/`(팀 프로젝트)의 양식이다. 강의마다 연구실 사이트 메뉴 없이 독립된 작은 사이트처럼 돈다. 머리는 과목명과 강의 안 메뉴(Overview, Schedule, Grading, Team Project, Resources)이고 연구실 사이트는 바닥 한 줄로만 잇는다(2026-10-22 교수). 모든 강의가 이 폴더 하나의 모양을 같이 쓴다. 디자인을 바꾸면 이 폴더만 고친다.
 
 | 파일 | 역할 |
 | --- | --- |
-| `page.html` | 페이지 구조: 머리(과목명, 학수번호·학기, 교수, 링크) → Overview(소개, 파트 카드) → Schedule → Grading → Resources |
-| `course.css` | 강의 페이지 전용 스타일. 테마 토큰만 쓴다. `../theme.css` 끝에서 include 한다 |
-| `../../layouts/course.html` | `layout: course` 가 이 폴더의 `page.html` 을 부르는 한 줄짜리 레이아웃 |
+| `../../layouts/course.html` | 강의 사이트 문서 틀: 머리(과목명, 강의 메뉴), 본문, 바닥. `view: project` 면 `project.html`, 아니면 `page.html` |
+| `head.html` | 두 페이지가 같이 쓰는 제목 블록(과목명, 학수번호·학기, 교수, 바깥 링크) |
+| `page.html` | 강의 첫 페이지: Overview(소개, 파트 카드) → Schedule → Grading → Resources |
+| `project.html` | 팀 프로젝트: Overview(소개, 팀 크기, 단계, 평가 기준) → Teams(팀원, 발표 회차별 날짜·순서·슬라이드) |
+| `course.css` | 강의 사이트 전용 스타일과 색. `../theme.css` 끝에서 include 한다 |
+
+색은 원래 스케줄 시트의 색이다: 파트마다 `parts[].color`(blue, green, orange), 운영 일정(개요, 시험, 프로젝트, 평가)은 rose, 초청·세미나는 gray, 휴강은 색 없음. 강의 줄은 바로 위 파트 머리의 색을 잇는다.
 
 ## 새 강의 페이지 만들기
 
 1. `_data/courses/<id>.yml` 에 내용을 쓴다. `<id>` 는 `학기-과목명` 소문자와 하이픈이다. 학수번호는 쓰지 않는다(주소만 보고 무슨 강의인지 알게, 2026-10-22 사용자)(`26f-data-engineering`, `26s-programming-for-data-science`). 필드 설명은 `_data/courses/26f-data-engineering.yml` 머리 주석이 정본이다.
-2. `teaching/<id>/index.md` 를 만든다. 내용은 front matter 뿐이다.
+2. `teaching/<id>/index.md` 를 만든다. 내용은 front matter 뿐이다. 팀 프로젝트가 있으면 `teaching/<id>/project/index.md` 도 같은 꼴로 만들고 `view: project` 를 더한다.
    ```yaml
    ---
    layout: course
    course: "<id>"
-   nav_current: teaching.html
    title: "<과목명> (<학기>)"
    head_title: "<과목명>, <학기> · MOAI Lab"
    description: "<학수번호> <과목명> at POSTECH, <학기>: schedule, slides, and resources."
@@ -36,4 +39,8 @@
 - YAML 값 `off`, `no`, `yes`, `on` 은 true/false 로 읽힌다. 스케줄의 휴강 종류는 `break` 다.
 - 여기 올라간 것은 누구나 본다. 학생에게만 줄 자료(이번 학기 시험 등)는 넣지 않는다. 지난 시험과 풀이는 이미 공개한 것만 넣는다.
 - 슬라이드 폴더 전체 링크는 넣지 않는다. 슬라이드는 스케줄의 강의마다 링크한다(2026-10-22 사용자).
-- 학생 이름, 팀 구성, 성적은 넣지 않는다. 팀 프로젝트는 링크(구글 시트)로만 연결한다.
+- 성적은 넣지 않는다. 팀원 이름과 학생 발표 슬라이드는 프로젝트 페이지에 넣는다(2026-10-22 교수 결정).
+
+## 팀 프로젝트: 시트 → 페이지
+
+학생은 `project.sheet`(구글 시트, 링크 편집)에 팀·제목·발표 자료를 입력한다. 교수가 그 내용을 yml 의 `project.teams` 로 옮긴다. 시트 열 배치는 학기마다 다르니 옮길 때 팀원 수, 발표 순서, 슬라이드 링크(시트 칩이 가리키는 Drive 파일)를 하나씩 대조한다. 학생이 칸을 잘못 채운 경우(파일 대신 글자)는 Drive `term-project/` 폴더의 같은 팀 파일을 쓴다. 끝난 학기는 `sheet` 를 지워 시트 링크를 숨긴다.

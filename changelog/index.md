@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-22 | [course-site-project](2026-10-22-course-site-project.md) | Sangwoo Mo(moai-postech) | Teaching | 강의 페이지를 독립 강의 사이트로(자체 메뉴), 시트 색(파트별 파랑·초록·주황), 팀 프로젝트 페이지(팀원·발표 자료) |
 | 2026-10-22 | [course-no-folder-link](2026-10-22-course-no-folder-link.md) | Sangwoo Mo(moai-postech) | Teaching | 강의 페이지 머리에서 슬라이드 폴더 전체 링크(Lecture notes) 삭제 |
 | 2026-10-22 | [course-slugs](2026-10-22-course-slugs.md) | Sangwoo Mo(moai-postech) | Teaching | 강의 페이지 주소를 학수번호 대신 학기-과목명으로(`/teaching/26f-data-engineering/` 등) |
 | 2026-10-22 | [course-pages-past](2026-10-22-course-pages-past.md) | Sangwoo Mo(moai-postech) | Teaching | 25F Data Engineering, 26S Programming for Data Science 강의 페이지, 양식에 Lab·세미나·Related·조건부 Reading 칸 |

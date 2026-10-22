@@ -11,22 +11,21 @@ summary: >-
   This course teaches programming for data science in the era of AI. We start by writing code with AI,
   then learn Python and classical machine learning, and end with deep learning and vision, language and multimodal models.
   In a team project, students take on a Kaggle competition and share what they learned.
-links:
-  - label: "Team project"
-    url: "https://docs.google.com/spreadsheets/d/1ZHkM8KO2TC_gbfH7xdV5040B2zwJ0qd35VUnf0VvaCA/edit?usp=sharing"
-
 parts:
   - id: "sw3"
+    color: "orange"
     name: "Software 3.0"
     title: "Programming with AI"
     span: "Lectures 2 – 6"
     text: "Chat with LLMs, prompt them, and write code with AI in a modern IDE and with coding agents."
   - id: "sw1"
+    color: "blue"
     name: "Software 1.0"
     title: "Python and Machine Learning"
     span: "Lectures 7 – 14"
     text: "Python, NumPy and pandas, then regression, classification, clustering, dimensionality reduction and interpretable ML."
   - id: "sw2"
+    color: "green"
     name: "Software 2.0"
     title: "Deep Learning"
     span: "Lectures 15 – 22"
@@ -231,3 +230,131 @@ exams:
   - label: "Midterm 2026"
     url: "https://drive.google.com/file/d/1r-G8C2LCbNeq09HjeJbYMnGQ8T1YCuym/view"
     solution: "https://drive.google.com/file/d/1HK4dYgCEEvxaX98pBtXUuNmK_HA3zDJG/view"
+
+# 팀 프로젝트 페이지. 26S 프로젝트 시트에서 옮겼다(발표 한 번, Kaggle 등 대회 링크).
+project:
+  summary: >-
+    Each team chooses a Kaggle competition, solves it together, and shares the experience in a final presentation.
+  team_size: "up to 4 students"
+  steps:
+    - name: "Choose · Solve"
+      when: "During the semester"
+      text: "Pick a competition you care about and work on it as a team."
+    - name: "Presentation · 60%"
+      when: "May 28 & Jun 2"
+      text: "Share the problem, your approach, and what you learned."
+  criteria:
+    - name: "Problem"
+      text: "Why is this problem significant?"
+    - name: "Method"
+      text: "Is the solution original or trivial?"
+    - name: "Results"
+      text: "Final performance and leaderboard ranking"
+    - name: "Teamwork"
+      text: "Each member's individual contribution"
+    - name: "Presentation"
+      text: "Quality of delivery and storytelling"
+  rounds:
+    - id: "final"
+      name: "Presentation"
+  teams:
+    - n: 1
+      title: "VSB Power Line Fault Detection"
+      members: ["김명건", "문세희", "이민수", "추인곤"]
+      url: "https://www.kaggle.com/competitions/vsb-power-line-fault-detection/overview"
+      url_label: "Competition"
+      final:
+        date: "2026-05-28"
+        order: 6
+        slides: "https://drive.google.com/file/d/1QbR_qXvhoR6C8uAOglo87XrF9OnuH0E4/view"
+    - n: 2
+      title: "BirdCLEF+2026"
+      members: ["김동근", "장해원", "이승훈", "최우혁"]
+      url: "https://www.kaggle.com/competitions/birdclef-2026/overview"
+      url_label: "Competition"
+      final:
+        date: "2026-06-02"
+        order: 11
+        slides: "https://drive.google.com/file/d/13j9sUa9varVLJVFl2r9oGelv-J0_7zIg/view"
+    - n: 3
+      title: "TAHMO Incoming Solar Radiation Prediction Challenge"
+      members: ["이정우", "송지은", "백동선", "심민준"]
+      url: "https://zindi.africa/competitions/tahmo-incoming-solar-radiation-prediction-challenge"
+      url_label: "Competition"
+      final:
+        date: "2026-05-28"
+        order: 1
+        slides: "https://drive.google.com/file/d/1b5eFTzL0RueMQZekpNCbPJ2aQBZ0vr84/view"
+    - n: 4
+      title: "CMI - Detect Behavior with Sensor Data"
+      members: ["박시언", "홍규화", "박찬우"]
+      url: "https://www.kaggle.com/competitions/cmi-detect-behavior-with-sensor-data/data"
+      url_label: "Competition"
+      final:
+        date: "2026-05-28"
+        order: 5
+        slides: "https://drive.google.com/file/d/19KUjyK-CzTsW2i5Eow4n7G_99RGJl23w/view"
+    - n: 5
+      title: "Optiver Realized Volatility Prediction"
+      members: ["김세헌", "홍현종", "엄희규", "최병화"]
+      url: "https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/overview"
+      url_label: "Competition"
+      final:
+        date: "2026-05-28"
+        order: 2
+        slides: "https://drive.google.com/file/d/1lIC3yVjb8r8vCvUJuSErFdc_tC8bciGv/view"
+    - n: 6
+      title: "LLM Prompt Recovery"
+      members: ["조성범", "이창희", "전효택"]
+      url: "https://www.kaggle.com/competitions/llm-prompt-recovery/overview"
+      url_label: "Competition"
+      final:
+        date: "2026-06-02"
+        order: 8
+        slides: "https://drive.google.com/file/d/1PfF0fJ7YHookMcLJ8M3N6Qq4vuk1r0F9/view"
+    - n: 7
+      title: "Problematic Internet Use"
+      members: ["CLATIN Thibaut", "Olabode Jens-David", "EISENGARTEN Laurits"]
+      url: "https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use/overview"
+      url_label: "Competition"
+      final:
+        date: "2026-06-02"
+        order: 9
+        slides: "https://drive.google.com/file/d/1_WVZdWo_PtQnodwlJ31oxcnFUZtgqBbA/view"
+    - n: 8
+      title: "ASHRAE - Great Energy Predictor III"
+      members: ["Zhou Kongdan", "김재호", "강은수", "도경근"]
+      url: "https://www.kaggle.com/c/ashrae-energy-prediction"
+      url_label: "Competition"
+      final:
+        date: "2026-06-02"
+        order: 10
+        slides: "https://drive.google.com/file/d/1gu6_o5ifS_ZC6xIxoWY1rbBRjGGqvsfT/view"
+    - n: 9
+      title: "Prediction for player movement when the ball is in the air"
+      members: ["김정운", "이승아", "최승준", "신재윤"]
+      url: "https://www.kaggle.com/competitions/nfl-big-data-bowl-2026-prediction/overview"
+      url_label: "Competition"
+      final:
+        date: "2026-05-28"
+        order: 4
+        slides: "https://drive.google.com/file/d/1TZ_-lkVDI_ZV_7eKTrHCczOeDQJRnLGS/view"
+    - n: 10
+      title: "Nucleus Detection"
+      members: ["조해인", "정세윤", "김민직", "성민식"]
+      url: "https://www.kaggle.com/competitions/data-science-bowl-2018/overview"
+      url_label: "Competition"
+      final:
+        date: "2026-06-02"
+        order: 7
+        slides: "https://drive.google.com/file/d/1kaCJpTTH0Btni62a6ph-j34Vz_5zgbec/view"
+    - n: 11
+      title: "Mercari Price Suggestion Challenge"
+      members: ["조은국", "김현우", "나진우"]
+      url: "https://www.kaggle.com/competitions/mercari-price-suggestion-challenge/overview"
+      url_label: "Competition"
+      final:
+        date: "2026-05-28"
+        order: 3
+        slides: "https://drive.google.com/file/d/1J0QgONUw4UMaIyOm5e2DFNTjcEmck-KU/view"
+

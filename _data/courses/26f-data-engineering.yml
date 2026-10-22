@@ -11,23 +11,22 @@ summary: >-
   This course covers the data side of AI systems: everything that happens before and after the model.
   We collect and prepare data, store and process it at scale, and then run models and agents on it.
   In a team project, students build a product on a real data pipeline from end to end.
-links:
-  - label: "Team project"
-    url: "https://docs.google.com/spreadsheets/d/1SjOnpmdC4ZQcAQffTwqP2GWTv55ujObgNl_frRshPyk/edit?usp=sharing"
-
 # 세 파트. 스케줄의 part 줄과 이름이 같아야 한다.
 parts:
   - id: "part-1"
+    color: "blue"
     name: "Part I"
     title: "Collection and Preparation"
     span: "Lectures 2 – 5"
     text: "Collect data, explore it, and clean, integrate, transform and reduce it."
   - id: "part-2"
+    color: "green"
     name: "Part II"
     title: "Storage"
     span: "Lectures 6 – 14"
     text: "Store and query it with SQL and NoSQL, then process it at scale in batches, warehouses and streams."
   - id: "part-3"
+    color: "orange"
     name: "Part III"
     title: "Monitoring and Updates"
     span: "Lectures 15 – 18"
@@ -251,3 +250,154 @@ exams:
 other_terms:
   - name: "Fall 2025"
     url: "teaching/25f-data-engineering/"
+
+# 팀 프로젝트 페이지(teaching/<id>/project/). 학생은 sheet 에 입력하고, 교수가 teams 로 옮긴다(시트 → 이 파일).
+# 팀원은 시트 순서(첫 사람이 팀장). 발표 회차(rounds)마다 date(발표일), order(그날 순서), slides(발표 자료).
+project:
+  sheet: "https://docs.google.com/spreadsheets/d/1SjOnpmdC4ZQcAQffTwqP2GWTv55ujObgNl_frRshPyk/edit?usp=sharing"
+  summary: >-
+    Teams go through an end-to-end data engineering pipeline: they collect and prepare data, store it in a database,
+    and build a product that addresses a real-world problem on it. Any data source is fine if you are allowed to use it.
+  team_size: "up to 5 students"
+  steps:
+    - name: "Proposal · 20%"
+      when: "Oct 20 & 22"
+      text: "Ideation, data collection and preprocessing, and database management."
+    - name: "Final · 40%"
+      when: "Dec 15 & 17"
+      text: "A product that addresses a real-world problem using a large-scale database, possibly with an LLM."
+  criteria:
+    - name: "Novelty"
+      text: "Originality and creativity of the idea"
+    - name: "Impact"
+      text: "Relevance and potential usefulness of the solution"
+    - name: "Technology"
+      text: "Effective use of the techniques and tools covered in class"
+    - name: "Presentation"
+      text: "Clarity and professionalism of the report and presentation"
+  rounds:
+    - id: "proposal"
+      name: "Proposal"
+    - id: "final"
+      name: "Final"
+  teams:
+    - n: 1
+      title: "AI-based highway icing risk map integrating weather and road conditions"
+      members: ["추인곤", "이민수", "박희령", "최지안", "김태경"]
+      proposal:
+        date: "2026-10-22"
+        order: 4
+        slides: "https://drive.google.com/file/d/1zVXDkOXSgbDob1AJGkssrkEV2EDmnjj0/view"
+    - n: 2
+      title: "LLM-Assisted Financial Risk Monitoring"
+      members: ["Yassine Essakkati", "Luis Alan", "Jan Saal", "Marc David Sutjipto"]
+      proposal:
+        date: "2026-10-20"
+        order: 6
+        slides: "https://drive.google.com/file/d/1fkX0x2Z6XDs10XrzEk4EYPuQM4FvDuVx/view"
+    - n: 3
+      title: "Conference Networking Assistant"
+      members: ["하준엽", "이진우", "김제성", "이중재"]
+      proposal:
+        date: "2026-10-22"
+        order: 5
+        slides: "https://drive.google.com/file/d/1rrZYKBBYLx6Fzt_R9IBxVWFc67QKHAPs/view"
+    - n: 4
+      title: "BenefitLens: An End-to-End Data Pipeline for Personalized Student Support Discovery and Application Drafting"
+      members: ["장신형", "김혜빈", "서재은"]
+      proposal:
+        date: "2026-10-20"
+        order: 1
+        slides: "https://drive.google.com/file/d/1_79P48Sp26zpt5La-7aLIpHlbX7SaAKl/view"
+    - n: 5
+      title: "Anomaly-Based Hydraulic Pump Predictive Maintenance with Field Knowledge Accumulation"
+      members: ["장해원", "김동근", "김명건", "윤성규"]
+      proposal:
+        date: "2026-10-22"
+        order: 9
+        slides: "https://drive.google.com/file/d/1liPs6R_14_oUwQkV41TeW8ARPw5CnXVX/view"
+    - n: 6
+      title: "Unsupervised Anomaly Detection and Analysis of Stable Operating Conditions in a Spot-Welding Process"
+      members: ["조해인", "강태훈", "박태의", "이다연", "이희재"]
+      proposal:
+        date: "2026-10-22"
+        order: 1
+        slides: "https://drive.google.com/file/d/1O1rksmeCWSNHzMjR658jqueIICIGBYXv/view"
+    - n: 7
+      title: "Multi-Agent LLM System for Port Data Analytics"
+      members: ["선신욱", "조성범", "이창희", "윤수원"]
+      proposal:
+        date: "2026-10-20"
+        order: 2
+        slides: "https://drive.google.com/file/d/1xvWNBzeoOiXTq7IVZ5F7Hleyjf-SESHB/view"
+    - n: 8
+      title: "RecallLink: Cross-Border Recall Monitoring Database for Korean Safety Agencies"
+      members: ["박준희", "이승아", "엄희선", "이신영", "박규진"]
+      proposal:
+        date: "2026-10-22"
+        order: 7
+        slides: "https://drive.google.com/file/d/1eU2l1VF97Hh_Akt_g3YYwUCDoigMHypV/view"
+    - n: 9
+      title: "Performance History-Based Model Selection for Neonatal EEG Seizure Detection"
+      members: ["박민호", "박성범", "이인규", "김민성"]
+      proposal:
+        date: "2026-10-22"
+        order: 8
+        slides: "https://docs.google.com/presentation/d/1YN043YXool1KKtu6LgzNsyqwPWFUQUzR/edit"
+    - n: 10
+      title: "Parking Ordinance Impact Explorer"
+      members: ["이다민", "김소현", "류지희"]
+      proposal:
+        date: "2026-10-20"
+        order: 8
+        slides: "https://drive.google.com/file/d/1qtX527MIVvHaVkmjTdlGH0obiSQJ6xxY/view"
+    - n: 11
+      title: "Personalized Meal Recommendation System Based on Dietary Restrictions"
+      members: ["박채원", "이상형", "조은찬", "황보겸"]
+      proposal:
+        date: "2026-10-20"
+        order: 4
+        slides: "https://drive.google.com/file/d/1W44L3zr5W_rqAjWq0Rp0Ijqgkuhql0WS/view"
+    - n: 12
+      title: "Meme Coin Price Data Collection (Quantitative Analysis of Crypto Market)"
+      members: ["정인하", "김재호", "오승준"]
+      proposal:
+        date: "2026-10-20"
+        order: 7
+        slides: "https://drive.google.com/file/d/1Oz3uvfXAyr7C-VqP_8gW6DgK5jRMbuuE/view"
+    - n: 13
+      title: "Advice and Paper Recommendations from Experience Paths"
+      members: ["김진오", "남승범", "강상훈", "안세혁"]
+      proposal:
+        date: "2026-10-20"
+        order: 3
+        slides: "https://drive.google.com/file/d/1pSnZmdN5ibiuWP6-v_ltGcD3PeNNUF04/view"
+    - n: 14
+      title: "Difficulty-Aware Active 3D Scanning: An Object Difficulty Database for Curriculum-Guided NBV Learning"
+      members: ["김민규", "박수영", "임도유"]
+      proposal:
+        date: "2026-10-22"
+        order: 2
+        slides: "https://drive.google.com/file/d/16YMjcCnq7iFd7_DhyPnKKCAg8-rPtWNz/view"
+    - n: 15
+      title: "Long-Tail analysis in Medical Dataset and Synthetic data generation"
+      members: ["손장원", "구자빈", "엄희규"]
+      proposal:
+        date: "2026-10-22"
+        order: 3
+        slides: "https://drive.google.com/file/d/1Vm44NvL2aCeJ_JpkcHwCvqUnblrzLXgf/view"
+    - n: 16
+      title: "Lab Recommendation Service for Prospective Graduate Students"
+      members: ["이승언", "박제현"]
+      proposal:
+        date: "2026-10-20"
+        order: 5
+        slides: "https://drive.google.com/file/d/1fFuQO70DdLAtJYvOEs4lTa7gv0WEpkq2/view"
+    - n: 17
+      title: "Special Dietary Ingredients Detection Service"
+      members: ["Vinia Permata Kusuma"]
+      proposal:
+        date: "2026-10-22"
+        order: 6
+        slides: "https://drive.google.com/file/d/1Bnj96F1bfFRvo47ndNhg_nGPat4d8QRZ/view"
+

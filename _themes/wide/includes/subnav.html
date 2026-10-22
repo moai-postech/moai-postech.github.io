@@ -1,5 +1,5 @@
 {% comment %}메뉴 항목에 children 이 있으면, 그 아래 페이지들 위쪽에 전환 탭을 보인다(마우스 없는 화면용){% endcomment %}
-{% assign current = page.url | remove_first: "/" %}{% if page.nav_current %}{% assign current = page.nav_current %}{% endif %}
+{% assign current = page.url | remove_first: "/" %}
 {% for item in site.nav %}{% if item.children %}{% assign inside = false %}{% for c in item.children %}{% if c.url == current %}{% assign inside = true %}{% endif %}{% endfor %}{% if inside %}
     <nav class="subnav" aria-label="{{ item.title }}">
       {% for c in item.children %}<a href="{{ c.url }}"{% if c.url == current %} aria-current="page"{% endif %}>{{ c.title }}</a>{% endfor %}

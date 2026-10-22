@@ -10,22 +10,21 @@ office_hours: "Thursdays 11:00 – 12:00, Room 319"
 summary: >-
   This course covers the data side of AI systems: how data is collected and prepared, how it is stored and processed at scale,
   and how models and LLM applications run on it. In a team project, students go through an end-to-end data engineering pipeline.
-links:
-  - label: "Team project"
-    url: "https://docs.google.com/spreadsheets/d/1XLgh0ILJ1VUgljXeaelXuAXfN5RmUB6fVRsMW6CKGKk/edit?usp=sharing"
-
 parts:
   - id: "part-1"
+    color: "blue"
     name: "Part I"
     title: "Collection and Preparation"
     span: "Lectures 2 – 6"
     text: "Collect data, explore it, and clean, integrate, transform and reduce it."
   - id: "part-2"
+    color: "green"
     name: "Part II"
     title: "Storage"
     span: "Lectures 7 – 15"
     text: "Store and query it with SQL and NoSQL, then process it with MapReduce, Spark, BigQuery, Airflow and streams."
   - id: "part-3"
+    color: "orange"
     name: "Part III"
     title: "Monitoring and Updates"
     span: "Lectures 16 – 19"
@@ -278,3 +277,111 @@ exams:
 other_terms:
   - name: "Fall 2026"
     url: "teaching/26f-data-engineering/"
+
+# 팀 프로젝트 페이지. 25F 프로젝트 시트에는 팀원 이름이 없고 발표일 구분 없이 순서만 있다. 3팀 proposal 자료는 없다.
+project:
+  summary: >-
+    Teams go through an end-to-end data engineering pipeline: they collect and prepare data, store it in a database,
+    and build a product that addresses a real-world problem on it.
+  team_size: "3 to 5 students"
+  steps:
+    - name: "Proposal"
+      when: "Oct 14 & 16"
+      text: "Ideation, data collection and preprocessing, and database management."
+    - name: "Final"
+      when: "Dec 9 & 11"
+      text: "A product that addresses a real-world problem using a large-scale database, possibly with an LLM."
+  criteria:
+    - name: "Novelty"
+      text: "Originality and creativity of the idea"
+    - name: "Impact"
+      text: "Relevance and potential usefulness of the solution"
+    - name: "Technology"
+      text: "Effective use of the techniques and tools covered in class"
+    - name: "Presentation"
+      text: "Clarity and professionalism of the report and presentation"
+  rounds:
+    - id: "proposal"
+      name: "Proposal"
+    - id: "final"
+      name: "Final"
+  teams:
+    - n: 1
+      title: "개인 맞춤 논문 요약 메일링"
+      proposal:
+        order: 1
+        slides: "https://drive.google.com/file/d/1Z8ckFWK59zdYGhqiXYJhWHJT4OHFSmYs/view"
+      final:
+        order: 8
+        slides: "https://drive.google.com/file/d/1VqietT69kRqTjEUdVOXg27l9avjIHt56/view"
+    - n: 2
+      title: "소비자를 위한 리콜 상품 알리미"
+      proposal:
+        order: 8
+        slides: "https://drive.google.com/file/d/13vOkXcYQQAVte0EZ1K4fCWTLF401aouY/view"
+      final:
+        order: 3
+        slides: "https://drive.google.com/file/d/14lC6-45nyUNmKYjaTLX_J6NR67F7oXpP/view"
+    - n: 3
+      title: "Finflow Engineering (금융 파이프라인 구축 프로젝트)"
+      proposal:
+        order: 5
+      final:
+        order: 4
+        slides: "https://drive.google.com/file/d/1A90QbeFmafz6EbwdJEH1y8Hh0EMfO-FP/view"
+    - n: 4
+      title: "온톨로지 기반의 맞춤형 아트 큐레이션 시스템"
+      proposal:
+        order: 2
+        slides: "https://drive.google.com/file/d/17W5f1ZISiDdlwcmxx0Kcb62oJ1AAWHLa/view"
+      final:
+        order: 9
+        slides: "https://drive.google.com/file/d/1VTABcL99Kdm5ova_aOpeQh-Wyht77Ijl/view"
+    - n: 5
+      title: "대중교통 정류소 도착 예정 시간 계산 시스템"
+      proposal:
+        order: 6
+        slides: "https://drive.google.com/file/d/1ykK4Ptu8-rVcTIZxSEWYD4u1AhvezcyE/view"
+      final:
+        order: 10
+        slides: "https://drive.google.com/file/d/1rDRsq4O9M0cj5Bbce2lTVQzFchAnhev4/view"
+    - n: 6
+      title: "뉴스데이터활용 포트폴리오 최적화"
+      proposal:
+        order: 3
+        slides: "https://drive.google.com/file/d/1ijxydF6k3iGHFwyyehrYCRZqUIUnOmvY/view"
+      final:
+        order: 5
+        slides: "https://drive.google.com/file/d/1JTFPuoiBNRN2ypbl5SYlxF7Y0I1ZYUlW/view"
+    - n: 7
+      title: "실시간 PC 시스템 이상탐지 모델 및 파이프라인 구축"
+      proposal:
+        order: 7
+        slides: "https://drive.google.com/file/d/1VIXDOCe2RrD30AP8No03UIz6Gs63SaBM/view"
+      final:
+        order: 2
+        slides: "https://drive.google.com/file/d/1TcMG8cJSw02XllIVKxvnNUv7jrQHCN-B/view"
+    - n: 8
+      title: "주식 포트폴리오 최적화"
+      proposal:
+        order: 4
+        slides: "https://drive.google.com/file/d/1ueIP2Ac6s4cNfUBbXkfHCRD8FYDgkDP7/view"
+      final:
+        order: 7
+        slides: "https://drive.google.com/file/d/1uiG1jRA1H-adFR4zePrur_Et0Tkm4Des/view"
+    - n: 9
+      title: "뉴스 데이터 기반 맞춤형 기업 추천 서비스"
+      proposal:
+        order: 9
+        slides: "https://drive.google.com/file/d/1rADH_S96c61-XAtX9noGscm1ZeO6qNP_/view"
+      final:
+        order: 6
+        slides: "https://drive.google.com/file/d/1k4duxlUf8149D4K18w-xJQHm-7wG8DC-/view"
+    - n: 10
+      title: "로봇 팔 모터 이상징후 감지 시스템"
+      proposal:
+        order: 10
+        slides: "https://drive.google.com/file/d/1vis-8zq5M-RObNOlL2nZHbbNmN8JRtTR/view"
+      final:
+        order: 1
+        slides: "https://drive.google.com/file/d/1fTWr9O_-4ONlWRfq1hPBlEqtJg66tmRJ/view"

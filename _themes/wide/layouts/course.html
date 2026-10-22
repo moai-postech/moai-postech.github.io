@@ -1,7 +1,7 @@
 <!doctype html>
 {% comment %}
   강의 사이트 레이아웃. 연구실 사이트의 머리글·메뉴 없이 강의 하나가 독립된 사이트처럼 돈다(2026-10-22 교수 요청).
-  머리: 과목명(강의 첫 페이지로) + 강의 안 메뉴. 바닥: 연구실 사이트로 가는 한 줄. 모양은 includes/course/ 한 폴더(README.md).
+  머리: 과목명(강의 첫 페이지로) + 탭 두 개, Schedule(강의 첫 페이지: 개요·스케줄·평가·자료)과 Term Project. 페이지 안 이동 링크는 두지 않는다(2026-10-22 교수: 같은 페이지 이동과 다른 페이지 이동이 섞여 헷갈린다). 바닥: 연구실 사이트로 가는 한 줄. 모양은 includes/course/ 한 폴더(README.md).
   하위 폴더 주소라 <base href="/"> 를 두고 모든 링크를 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}{% assign root = "teaching/" | append: page.course | append: "/" %}
@@ -28,11 +28,8 @@
   <header class="course-top">
     <a class="course-brand" href="{{ root }}">{{ c.title }}<span>{{ c.term }}</span></a>
     <nav class="course-nav" aria-label="Course">
-      <a href="{{ root }}#overview">Overview</a>
-      <a href="{{ root }}#schedule">Schedule</a>
-      {% if c.grading %}<a href="{{ root }}#grading">Grading</a>{% endif %}
-      {% if c.project %}<a href="{{ root }}project/"{% if page.view == "project" %} aria-current="page"{% endif %}>Team Project</a>{% endif %}
-      {% if c.resources or c.related or c.exams or c.other_terms %}<a href="{{ root }}#resources">Resources</a>{% endif %}
+      <a href="{{ root }}"{% if page.view != "project" %} aria-current="page"{% endif %}>Schedule</a>
+      {% if c.project %}<a href="{{ root }}project/"{% if page.view == "project" %} aria-current="page"{% endif %}>Term Project</a>{% endif %}
     </nav>
   </header>
   <main>

@@ -22,4 +22,4 @@
 
 - 내용은 그대로 두고 겹치는 말만 줄였다: `in the Department of` → `of`, 연구 두 문장을 한 문장으로(`particularly on scalable priors that improve their ...`), `under the supervision of` → `advised by`, `leading research labs, including` → `research teams at`, `has received` → `received`. 개인 사이트 Bio 도 같은 문장.
 - 교수: "particularly 는 다른 문장으로 분리." → "... vision, language, and robotics. In particular, he designs scalable priors that improve their performance, reliability, and interpretability." 한 문장에 연구 분야와 관심 방향 두 생각이 있던 것을 나눴다. 개인 사이트 Bio 도 같은 문장.
-- 교수: Bio 내용이 부족하지 않은지. 연구가 실리는 곳 한 문장을 더했다: "His work has appeared at NeurIPS, ICML, ICLR, and CVPR." 제안한 EMNLP 와 ICLR Area Chair 는 교수가 뺐다. 개인 사이트 Bio 도 같은 문장.
+- 교수: Bio 내용이 부족하지 않은지. 연구가 실리는 곳 한 문장을 더했다: "His work has appeared at leading ML venues such as NeurIPS, ICML, and ICLR." 제안한 EMNLP, ICLR Area Chair, CVPR 은 교수가 뺐고 `leading ML venues such as` 로 묶었다. 개인 사이트 Bio 도 같은 문장.

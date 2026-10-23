@@ -56,6 +56,11 @@ professor:
             - { text: "**Qualcomm Innovation Fellowship Korea** (₩4M)", side: "2021" }
             - { text: "**Best Paper Award**, Korean AI Association Fall Conference (₩2M)", side: "2022" }
 groups:
+  - title: "Postdocs"
+    people:
+      - name: "Hyunwoo Seo"
+        url: "https://www.linkedin.com/in/hyunwoo-seo-844055280"
+        degree: "PhD, UNIST"
   - title: "PhD students"
     people:
       - name: "Myeongsoo Kim"
@@ -74,6 +79,7 @@ groups:
     people:
       - name: "Suchan Lee"
         focus: "Agentic AI"
+        url: "https://isuchan0212.github.io/"
         degree: "BS, POSTECH"
         topic: "Reasoning Agents"
       - name: "Seounghyun Jang"

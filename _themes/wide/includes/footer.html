@@ -1,3 +1,17 @@
   <footer class="site-foot">
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    <div class="foot-main">
+      <div class="foot-addr">
+        <p class="foot-lab"><a href="index.html">{{ site.title }}</a></p>
+        <p><a href="https://ime.postech.ac.kr/">Department of Industrial and Management Engineering</a>, POSTECH<br>
+        77 Cheongam-ro, Nam-gu, Pohang, Gyeongbuk 37673, Korea</p>
+        <p class="muted">Science Building 4, Room 319 &middot; Tel +82-54-279-2202</p>
+      </div>
+      <a class="foot-postech" href="https://www.postech.ac.kr/kor/index.do">
+        <img src="assets/img/postech-logo.png" alt="POSTECH" width="267" height="67">
+      </a>
+    </div>
+    <div class="foot-base">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+      <p><a href="https://www.postech.ac.kr/kor/usage-guide/privacy_policy.do">개인정보취급처리방침</a></p>
+    </div>
   </footer>

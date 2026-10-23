@@ -1,0 +1,36 @@
+# 2026-10-23 POSTECH 표준 꼬리말(정보기술팀 디자인 권장사항 반영)
+
+작성자: Sangwoo Mo(moai-postech) | 대상: `_themes/wide/includes/footer.html`, `_themes/wide/includes/theme.css`, `_themes/wide/layouts/default.html`, `assets/img/postech-logo.png` | 도구: Claude Code
+
+> **한줄 결론: 전 페이지에 POSTECH 소속 랩 사이트 표준 꼬리말을 새로 달아, POSTECH 대표홈·연구실 홈·학과 링크와 개인정보취급처리방침·주소·POSTECH 로고를 넣었다.**
+
+## 요청
+
+정보기술팀 남단비 선생님이 2026-09-15 메일로 보낸 홈페이지 디자인 권장사항(moai.postech.ac.kr 도메인 연결 전 선행 조건, 2026-10-22 메일에서 재확인)을 반영. 메일 첨부 안내 이미지(`모상우교수님 안내.jpg`)의 코멘트 5개가 근거다. 원본 첨부는 저장소 밖 `academic-profile/_backup/moai-site-danbinam-design-2026-09-15/` 에 백업했다.
+
+코멘트와 이 사이트 반영:
+- ① 대표홈페이지 링크(`https://www.postech.ac.kr/kor/index.do`) → 꼬리말 POSTECH 로고에 적용
+- ② 홈페이지 홈 링크 → 꼬리말 `MOAI Lab` 글자(머리글 로고는 이미 홈 링크)
+- ③ 개인정보취급처리방침 텍스트 링크(`.../usage-guide/privacy_policy.do`) → 꼬리말 하단
+- ④ POSTECH 하단 로고 → 대표홈 링크(첨부 `POSTECH-en.png` 사용)
+- ⑤ 학과·연구실 로고와 홈링크 → 학과(IME) 링크 + `MOAI Lab` 홈 링크
+
+## 반영 내역
+
+- `includes/footer.html`: 빈 자리였던 꼬리말을 다시 썼다. 윗줄에 `MOAI Lab`(홈)·학과(IME) 링크·주소, 오른쪽에 POSTECH 로고(대표홈). 아랫줄에 저작권과 개인정보취급처리방침. 이메일은 넣지 않았다(사이트 표기 규칙: 가린 형태만, mailto 금지).
+- `layouts/default.html`: `{% include footer.html %}` 를 `<main>` 뒤에 추가. 강의 사이트(`course.html`)는 자체 꼬리말이 있어 건드리지 않았다.
+- `theme.css`: `.site-foot` 등 꼬리말 스타일을 전역 토큰으로 추가(밝은 배경, Pretendard, 평소 본문색 링크·hover 때만 강조). `.wrap` 을 flex 세로 + `min-height:100dvh`, `main` 을 `flex:1` 로 바꿔 짧은 페이지(404 등)에서도 꼬리말이 화면 맨 아래에 붙게 했다. 본문 끝 여백은 `--space-9`→`--space-8`(꼬리말이 생겨 과한 여백을 줄임).
+- `assets/img/postech-logo.png`: 첨부 `POSTECH-en.png`(공식 영문 로고, 267×67 RGBA).
+- 검증: jekyll 4.4.1 로 전 페이지 빌드, 13개 본문 페이지 모두 꼬리말·개인정보방침 링크 출력 확인, 강의 2개 페이지는 미출력 확인. 데스크톱·375px 모바일·짧은 404 페이지를 브라우저로 눈으로 확인.
+
+## 기각한 안과 이유
+
+- 예시안(CSL 랩)의 어두운 회색 표준 꼬리말을 그대로 재현: 교수 결정으로 기각. 현재 사이트의 밝고 미니멀한 톤과 대비가 커서, 경량 꼬리말로 같은 정보를 담기로 함.
+- 머리글 좌상단에 POSTECH 심볼/워드마크 추가(코멘트 ①의 엠블럼): 교수 결정으로 기각. 첨부에 원형 엠블럼 파일이 없고 머리글을 미니멀하게 두기로 해, POSTECH 대표홈 링크는 꼬리말 로고(④)로 충족.
+- 꼬리말 POSTECH 로고로 `POSTECH8.png`(마젠타 워드마크, 118×10): 해상도가 낮아 기각. 공식 전체 로고 `POSTECH-en.png`(267×67) 사용.
+- 백업 첨부를 저장소 `_backup/` 에 커밋: 공개 저장소에 교수 사진·내부 안내가 들어가 기각. 저장소 밖 `academic-profile/_backup/` 로 옮김.
+
+## 남은 것
+
+- moai.postech.ac.kr 도메인 연결은 (1) 이 디자인 반영 회신 (2) sites.postech.ac.kr 웹 취약성 점검 통과 뒤 진행(정보기술팀). TODO "교수에게 물어볼 것" 참고.
+- 학과(IME) 전용 로고 파일은 받지 못해 ⑤의 학과 표시는 텍스트 링크로 둠. IME 로고를 받으면 꼬리말에 추가 검토.

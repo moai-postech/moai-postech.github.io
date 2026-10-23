@@ -59,6 +59,7 @@ groups:
   - title: "Postdocs"
     people:
       - name: "Hyunwoo Seo"
+        photo: assets/img/people/hyunwoo-seo.jpg
         url: "https://www.linkedin.com/in/hyunwoo-seo-844055280"
         degree: "PhD, UNIST"
   - title: "PhD students"
@@ -78,6 +79,7 @@ groups:
   - title: "Master students"
     people:
       - name: "Suchan Lee"
+        photo: assets/img/people/suchan-lee.jpg
         focus: "Agentic AI"
         url: "https://isuchan0212.github.io/"
         degree: "BS, POSTECH"

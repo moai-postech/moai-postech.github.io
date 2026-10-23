@@ -15,5 +15,10 @@
 ## 기각한 안과 이유
 - 서현우 박사에 `topic`·`focus`·`photo` 는 정보가 없어 넣지 않음(회색 실루엣, Research 패널 미표시). 정보가 생기면 추가.
 
+## 2차 반영: 프로필 사진
+- 교수: 둘 다 본인 사이트에 프로필 사진 있으니 넣어 달라.
+- Suchan Lee: 본인 홈페이지 `assets/portrait.jpg` 를 받아 정사각형 400px 로 가공, `assets/img/people/suchan-lee.jpg` 로 저장하고 `photo` 필드 추가.
+- Hyunwoo Seo: LinkedIn 프로필 사진(원본 800x800)을 받아 얼굴·어깨 중심으로 400px 정사각형 크롭, `assets/img/people/hyunwoo-seo.jpg` 로 저장하고 `photo` 필드 추가. 전신 캐주얼 샷이라 다른 멤버의 얼굴 중심 사진과 프레이밍이 약간 다르다. 더 나은 사진이 생기면 교체.
+
 ## 남은 것
-- Suchan Lee 사진(`assets/img/people/suchan-lee.jpg`)과 Hyunwoo Seo 사진이 없어 회색 실루엣으로 나온다. 본인이 사진을 주면 추가.
+- 없음.

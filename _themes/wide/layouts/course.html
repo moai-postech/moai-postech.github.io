@@ -1,7 +1,7 @@
 <!doctype html>
 {% comment %}
   강의 사이트 레이아웃. 연구실 사이트의 머리글·메뉴 없이 강의 하나가 독립된 사이트처럼 돈다(2026-10-22 교수 요청).
-  머리: 과목명(강의 첫 페이지로) + 탭 두 개, Schedule(강의 첫 페이지: 개요·스케줄·평가·자료)과 Term Project. 페이지 안 이동 링크는 두지 않는다(2026-10-22 교수: 같은 페이지 이동과 다른 페이지 이동이 섞여 헷갈린다). 바닥: 연구실 사이트로 가는 한 줄. 모양은 includes/course/ 한 폴더(README.md).
+  머리: 과목명(강의 첫 페이지로) + 탭 두 개, Schedule(강의 첫 페이지: 개요·스케줄·평가·자료)과 Term Project. 페이지 안 이동 링크는 두지 않는다(2026-10-22 교수: 같은 페이지 이동과 다른 페이지 이동이 섞여 헷갈린다). 바닥: 연구실 사이트로 가는 한 줄, 같은 줄에 POSTECH 대표홈과 개인정보 링크(학교 도메인 필수 요소, _config.yml 의 postech). 모양은 includes/course/ 한 폴더(README.md).
   하위 폴더 주소라 <base href="/"> 를 두고 모든 링크를 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}{% assign root = "teaching/" | append: page.course | append: "/" %}
@@ -35,7 +35,7 @@
   <main>
 {% if page.view == "project" %}{% include course/project.html %}{% else %}{% include course/page.html %}{% endif %}
   </main>
-  <footer class="course-foot"><a href="index.html"><img src="{{ site.logo }}" alt="">{{ site.title }}</a><span>POSTECH</span></footer>
+  <footer class="course-foot"><a href="index.html"><img src="{{ site.logo }}" alt="">{{ site.title }}</a><a class="course-postech" href="{{ site.postech.url }}">POSTECH</a><a class="course-privacy" href="{{ site.postech.privacy_url }}">{{ site.postech.privacy_label }}</a></footer>
 </div>
 </body>
 </html>

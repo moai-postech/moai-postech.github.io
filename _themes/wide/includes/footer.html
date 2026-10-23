@@ -1,5 +1,5 @@
 {% comment %}꼬리말. 내용은 _config.yml 의 footer 에 있다(POSTECH 도메인 필수 요소라 지우지 않는다){% endcomment %}
-{% assign f = site.footer %}
+{% assign f = site.footer %}{% assign u = site.postech %}
   <footer class="site-foot">
     <div class="foot-main">
       <div class="foot-addr">
@@ -8,12 +8,12 @@
         {{ f.address }}</p>
         <p class="muted">{{ f.office }} &middot; Tel {{ f.phone }}</p>
       </div>
-      <a class="foot-postech" href="{{ f.university_url }}">
-        <img src="{{ f.university_logo }}" alt="POSTECH" width="267" height="67">
+      <a class="foot-postech" href="{{ u.url }}">
+        <img src="{{ u.logo }}" alt="POSTECH" width="267" height="67">
       </a>
     </div>
     <div class="foot-base">
       <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-      <p><a class="foot-privacy" href="{{ f.privacy_url }}">{{ f.privacy_label }}</a></p>
+      <p><a class="foot-privacy" href="{{ u.privacy_url }}">{{ u.privacy_label }}</a></p>
     </div>
   </footer>

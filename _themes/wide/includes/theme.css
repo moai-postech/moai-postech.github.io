@@ -90,7 +90,10 @@ h3.sub:first-child { margin-top: 0; }
 .more { margin-top: var(--space-5); font-size: var(--text-meta); font-weight: 600; }
 
 /* Header */
-.site-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: 88px; border-bottom: 1px solid var(--line); }
+.site-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-5); min-height: 88px; padding-block: var(--space-3); border-bottom: 1px solid var(--line); }  /* when the logos and the menu do not fit one line (tablets), the whole menu moves to its own line instead of folding into two */
+.head-id { display: flex; align-items: center; gap: var(--space-5); flex-shrink: 0; }  /* POSTECH wordmark (university home), then the lab brand (lab home) */
+.head-postech { display: flex; }
+.head-postech img { display: block; width: auto; height: 16px; }
 .brand { margin: 0; flex-shrink: 0; }
 .brand a { display: inline-flex; align-items: center; gap: 10px; color: var(--text); }
 .brand a:hover { color: var(--accent); text-decoration: none; }
@@ -391,7 +394,7 @@ a.person-name:hover { color: var(--accent); }
 @media (max-width: 680px) {
   :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --fs-6: 34px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); }
   .site-head { display: block; padding: var(--space-5) 0 var(--space-2); }
-  .brand { margin-bottom: var(--space-2); }
+  .head-id { margin-bottom: var(--space-2); }
   .site-nav { gap: 0 var(--space-4); }  /* six items do not fit one line at 375px without shrinking the type; two lines keep every item visible */
   .person-photo { max-width: 120px; }
   .mentee-aff { display: block; margin-left: 0; }  /* phones: name, then affiliation, then papers */

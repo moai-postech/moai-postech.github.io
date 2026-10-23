@@ -54,7 +54,11 @@ tools/               검사 스크립트
 - `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `research-overview`(Research 맨 위 분야 카드), `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `mentees`, `media`, `profile-cv`(Faculty 의 이력), `teaching`, `talks`, `seminar`(초청 연사 표).
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
-- `includes/footer.html`: 전 페이지 꼬리말. POSTECH 정보기술팀이 moai.postech.ac.kr 연결 조건으로 요구한 요소다(2026-09-15 권장사항). POSTECH 로고(대표홈 링크), 연구실 로고와 이름(홈 링크), 학과 링크, 주소·전화, 개인정보처리방침 링크(영어판 공식 명칭 `Personal Information Policy`, 굵게 구분)를 담는다. POSTECH 링크는 영어판(`/eng/`)이다. 주소·전화는 Contact 에도 있지만 꼬리말 필수 요소라 "같은 내용은 한 곳에만"의 예외로 둔다. 내용은 `_config.yml` 의 `footer` 에 둔다. 테마를 바꾸거나 디자인을 고쳐도 이 요소는 빼지 않는다. 짧은 페이지에서도 화면 맨 아래에 붙인다(`main` 을 늘리지 않고 꼬리말의 `margin-top: auto` 로, 2026-10-23 `main` 을 늘렸다가 하위 탭이 세로로 늘어난 일이 있다).
+- **POSTECH 필수 요소**(정보기술팀이 moai.postech.ac.kr 연결 조건으로 요구, 2026-09-15 권장사항). 테마를 바꾸거나 디자인을 고쳐도 빼지 않는다. 값은 `_config.yml` 의 `postech`(대표홈·로고·개인정보 링크)와 `footer`(학과·주소·전화)에 둔다. POSTECH 링크는 영어판(`/eng/`)이고, 개인정보 링크 이름은 영어판 본부 꼬리말의 공식 명칭 `Personal Information Policy` 이며 굵게 구분한다.
+  - `includes/header.html`: 좌상단 POSTECH 워드마크(대표홈 링크), 그 오른쪽에 연구실 로고와 이름(홈 링크). 한 줄에 다 들어가지 않는 폭에서는 메뉴 전체를 아랫줄로 내린다(`.site-head` 의 `flex-wrap`).
+  - `includes/footer.html`: 전 페이지 꼬리말. 연구실 로고와 이름(홈 링크), 학과 링크, 주소·전화, POSTECH 로고(대표홈 링크), 개인정보 링크. 주소·전화는 Contact 에도 있지만 꼬리말 필수 요소라 "같은 내용은 한 곳에만"의 예외로 둔다.
+  - 강의 사이트 바닥 한 줄(`layouts/course.html`): 연구실 홈, POSTECH(대표홈), 개인정보 링크.
+  - 꼬리말은 짧은 페이지에서도 화면 맨 아래에 붙인다(`main` 을 늘리지 않고 꼬리말의 `margin-top: auto` 로, 2026-10-23 `main` 을 늘렸다가 하위 탭이 세로로 늘어난 일이 있다).
 - `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글꼴은 Pretendard 하나(로고 글자만 Outfit), 굵기는 400·600·700.
 - **링크는 주변 글자색 그대로 두고, 강조할 링크만 강조색으로 칠한다**(교수 2026-10-22: "하이퍼링크라고 무조건 색 넣지 말고 강조할 것만"). 마우스를 올리면 모든 링크가 강조색과 밑줄로 바뀐다. 평소에 강조색인 링크는 방문자가 눌러야 할 것뿐이다: Contact 단계 안 링크, Faculty 프로필 링크 줄, 페이지 소개(`.lede`) 링크, Seminar `Full schedule`, 그림의 `Open in full screen`, News 의 논문·워크숍 링크(괄호 속 `(oral)` 등은 칠하지 않음, 교수 2026-10-22 되돌림). 새로 강조할 링크는 `theme.css` 의 그 한 줄에 선택자를 더한다. 지도교수, Faculty 워크숍 이름, Bio 안 링크는 칠하지 않는다.
 - **목록 한 줄의 "무엇"은 굵게 한다**(교수 2026-10-22: "랩 사이트가 너무 plain, bold 가 들어가는 게 가독성이 좋다"). 기관(Appointments, Education), 역할·워크숍·상 이름(Services, Honors), 논문·강의·발표 제목, 사람 이름, 과제 기관이 해당한다. 그 뒤의 직함, 장소, 금액, 괄호는 보통 굵기다. 데이터에서는 `**이름**` 으로 쓴다.

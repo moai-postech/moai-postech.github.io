@@ -1,17 +1,19 @@
+{% comment %}꼬리말. 내용은 _config.yml 의 footer 에 있다(POSTECH 도메인 필수 요소라 지우지 않는다){% endcomment %}
+{% assign f = site.footer %}
   <footer class="site-foot">
     <div class="foot-main">
       <div class="foot-addr">
         <p class="foot-lab"><a href="index.html">{% if site.logo %}<img src="{{ site.logo }}" alt="">{% endif %}{{ site.title }}</a></p>
-        <p><a href="https://ime.postech.ac.kr/">Department of Industrial and Management Engineering</a>, POSTECH<br>
-        77 Cheongam-ro, Nam-gu, Pohang, Gyeongbuk 37673, Korea</p>
-        <p class="muted">Science Building 4, Room 319 &middot; Tel +82-54-279-2202</p>
+        <p><a href="{{ f.department_url }}">{{ f.department }}</a>, POSTECH<br>
+        {{ f.address }}</p>
+        <p class="muted">{{ f.office }} &middot; Tel {{ f.phone }}</p>
       </div>
-      <a class="foot-postech" href="https://www.postech.ac.kr/kor/index.do">
-        <img src="assets/img/postech-logo.png" alt="POSTECH" width="267" height="67">
+      <a class="foot-postech" href="{{ f.university_url }}">
+        <img src="{{ f.university_logo }}" alt="POSTECH" width="267" height="67">
       </a>
     </div>
     <div class="foot-base">
       <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-      <p><a href="https://www.postech.ac.kr/kor/usage-guide/privacy_policy.do">개인정보취급처리방침</a></p>
+      <p><a class="foot-privacy" href="{{ f.privacy_url }}">{{ f.privacy_label }}</a></p>
     </div>
   </footer>

@@ -3,7 +3,19 @@
 title: MOAI Lab
 # 머리글 로고 아이콘(브라우저 탭 아이콘으로도 쓴다). 글자는 title 을 테마의 로고 글꼴로 쓴다
 logo: assets/img/logo-mark.svg
-footer: MOAI Lab, POSTECH
+# 꼬리말(전 페이지). POSTECH 정보기술팀이 학교 도메인 연결 조건으로 요구한 요소라 지우지 않는다(2026-09-15 권장사항):
+# POSTECH 대표홈 로고, 연구실 홈, 학과, 주소, 개인정보처리방침. 모양은 테마의 includes/footer.html
+footer:
+  department: Department of Industrial and Management Engineering
+  department_url: https://ime.postech.ac.kr/
+  address: 77 Cheongam-ro, Nam-gu, Pohang, Gyeongbuk 37673, Korea
+  office: Science Building 4, Room 319
+  phone: +82-54-279-2202
+  # POSTECH 링크는 영어판(교수 2026-10-23). 개인정보 링크 이름은 영어판 본부 꼬리말의 공식 명칭을 그대로 쓴다
+  university_url: https://www.postech.ac.kr/eng/index.do
+  university_logo: assets/img/postech-logo.png
+  privacy_label: Personal Information Policy
+  privacy_url: https://www.postech.ac.kr/eng/usage-guide/privacy_policy.do
 
 # 위쪽 메뉴. url 은 페이지 파일 이름(.md → .html). children 이 있으면 마우스를 올렸을 때 하위 메뉴가 뜬다
 nav:

@@ -130,6 +130,7 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .foot-postech img { display: block; width: auto; height: 38px; }
 .foot-base { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-5); flex-wrap: wrap; margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--line); font-size: var(--text-small); }
 .foot-base p { margin: 0; }
+.site-foot .foot-privacy { color: var(--text); font-weight: 700; }  /* set apart from other notices, as on the POSTECH main footer (class "str") */
 .page-intro { padding-top: var(--space-7); }
 .page-intro + .content-section { padding-top: var(--space-7); }  /* intro to first block: the same 48px as subnav to first block */
 

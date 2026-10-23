@@ -6,7 +6,7 @@
         <p class="foot-lab"><a href="index.html">{% if site.logo %}<img src="{{ site.logo }}" alt="">{% endif %}{{ site.title }}</a></p>
         <p><a href="{{ f.department_url }}">{{ f.department }}</a>, POSTECH<br>
         {{ f.address }}</p>
-        <p class="muted">{{ f.office }} &middot; Tel {{ f.phone }}</p>
+        <p class="muted">{{ f.office }} &middot; <span class="foot-tel">Tel {{ f.phone }}</span></p>
       </div>
       <a class="foot-postech" href="{{ u.url }}">
         <img src="{{ u.logo }}" alt="POSTECH" width="267" height="67">

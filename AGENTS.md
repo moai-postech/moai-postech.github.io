@@ -22,7 +22,7 @@ _data/               콘텐츠 데이터(YAML)
 index.md 외 *.md     페이지 하나에 파일 하나(research·seminar·funding, publications·landscape, faculty·students·mentees, teaching, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
 _themes/wide/        테마(현재 사용 중: 넓은 화면 전제, 12칸 격자, 전역 토큰)
 _themes/editorial/   예전 테마(한 기둥 편집형)
-_themes/classic/     예전 테마(카드·좌우 배치). 둘 다 되돌릴 때만 쓴다
+_themes/classic/     예전 테마(카드·좌우 배치). 둘 다 참고용이다. 그 뒤에 생긴 절 종류(seminar, profile-cv, contact-block, talks, media 등)가 없어 그대로는 동작하지 않는다
   layouts/           default.html(머리·메뉴·꼬리), page.html(소개 + 절 목록)
   includes/          section.html, sections/<type>.html, theme.css 등
 assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 않는다)

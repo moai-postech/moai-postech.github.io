@@ -23,11 +23,6 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
 (function () {
   var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
   document.querySelectorAll('tr[data-date]').forEach(function (r) { if (r.getAttribute('data-date') >= today) r.classList.add('is-upcoming'); });
-  document.querySelectorAll('[data-upnext]').forEach(function (sec) {
-    var cards = sec.querySelectorAll('[data-date]'), left = 0;
-    cards.forEach(function (c) { if (c.getAttribute('data-date') < today) c.hidden = true; else left++; });
-    if (!left) sec.hidden = true;
-  });
 })();
 // Filters for [data-filter]: buttons with data-show pick rows by data-kind; a year row hides when none of its talks show.
 // Column widths are measured with every row shown and then fixed, so switching filters never moves a column.

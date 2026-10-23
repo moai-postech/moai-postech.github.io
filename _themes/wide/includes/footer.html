@@ -1,7 +1,7 @@
   <footer class="site-foot">
     <div class="foot-main">
       <div class="foot-addr">
-        <p class="foot-lab"><a href="index.html">{{ site.title }}</a></p>
+        <p class="foot-lab"><a href="index.html">{% if site.logo %}<img src="{{ site.logo }}" alt="">{% endif %}{{ site.title }}</a></p>
         <p><a href="https://ime.postech.ac.kr/">Department of Industrial and Management Engineering</a>, POSTECH<br>
         77 Cheongam-ro, Nam-gu, Pohang, Gyeongbuk 37673, Korea</p>
         <p class="muted">Science Building 4, Room 319 &middot; Tel +82-54-279-2202</p>

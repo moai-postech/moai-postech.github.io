@@ -5,7 +5,8 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-10-23 | [postech-footer](2026-10-23-postech-footer.md) | Sangwoo Mo(moai-postech) | 전 페이지 꼬리말 | 정보기술팀 권장사항 반영: POSTECH 대표홈·연구실 홈·학과 링크, 개인정보취급처리방침·주소·POSTECH 로고 꼬리말 신설 |
+| 2026-10-23 | [seminar-remove-upnext](2026-10-23-seminar-remove-upnext.md) | Sangwoo Mo(moai-postech) | Seminar | Up next 카드 제거(의도 오독 되돌림), 다가오는 발표는 목록 상단 날짜 하이라이트만 유지 |
+| 2026-10-23 | [postech-footer](2026-10-23-postech-footer.md) | Sangwoo Mo(moai-postech) | 전 페이지 꼬리말 | 정보기술팀 권장사항 반영: POSTECH·연구실·학과 링크, 개인정보방침·주소·POSTECH 로고·연구실 로고 꼬리말 신설(+짧은 페이지 탭 늘어남 수정) |
 | 2026-10-23 | [suchan-url](2026-10-23-suchan-url.md) | Sangwoo Mo(moai-postech) | People | Suchan Lee url·사진, Postdocs 묶음 신설·서현우 박사(사진 포함) 추가 |
 | 2026-10-22 | [personal-robot-slides](2026-10-22-personal-robot-slides.md) | Sangwoo Mo(moai-postech) | Talks | Towards Personalized Household Robots 최신 PDF 링크 공개 |
 | 2026-10-22 | [research-flow](2026-10-22-research-flow.md) | Sangwoo Mo(moai-postech) | Research | 2차: 소개 문단을 세 단계로 잇고 흐름 줄을 아이콘 카드로, 누르면 해당 분야로 스크롤·강조 |

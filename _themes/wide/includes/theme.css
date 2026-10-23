@@ -207,9 +207,10 @@ a.mentee-name:hover { color: var(--accent); }
 .more-news summary::-webkit-details-marker { display: none; }
 .more-news summary::after { content: " ↓"; white-space: pre; }
 .more-news[open] summary::after { content: " ↑"; }
-.funding li { display: grid; grid-template-columns: 11em minmax(0, 1fr) auto; align-items: baseline; gap: var(--space-5); padding: var(--row-gap) 0; }  /* one project per line: sponsor column, title, years at the right end; titles line up across groups */
+.funding li { display: grid; grid-template-columns: 12em minmax(0, 1fr) auto; align-items: baseline; gap: var(--space-5); padding: var(--row-gap) 0; }  /* one project per line: sponsor column, title, years at the right end; titles line up across groups */
 .funding strong { font-weight: 600; }
 .funding time { white-space: nowrap; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
+.funding abbr { text-decoration: none; cursor: help; }  /* the full agency name shows on hover; no dotted underline, the site uses none */
 
 /* Research: three area cards across, then each area as rows (topic, summary and papers under it) */
 .research-overview .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); }

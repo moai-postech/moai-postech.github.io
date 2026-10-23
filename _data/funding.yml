@@ -1,17 +1,22 @@
 # Research 의 Funding. 과제명은 공식 명칭 원문 그대로 쓴다(번역하지 않는다). 정본은 구글시트 project(projects 탭)의 과제명.
+# sponsor 가 약칭이면 sponsor_full 에 기관 영문 정식 명칭(마우스를 올리면 보인다).
 # 참여율만 빌려준 과제는 넣지 않는다. 진행 중과 종료를 나누지 않는다(교수 2026-10-21, 나중에 label 을 붙일 수 있음).
 - group: "Government"
   projects:
     - sponsor: "NRF"
+      sponsor_full: "National Research Foundation of Korea"
       title: "AI 기반 차세대 Operations Research 연구센터"
       years: "2026 – 2031"
     - sponsor: "KEIT"
+      sponsor_full: "Korea Evaluation Institute of Industrial Technology"
       title: "봉제 명장 암묵지의 디지털 영속화를 위한 멀티모달 AI 모델 개발"
       years: "2026 – 2027"
     - sponsor: "IITP"
+      sponsor_full: "Institute of Information & Communications Technology Planning & Evaluation"
       title: "차세대 옴니모달 에이전트를 위한 초장기 계층형 기억·추론 아키텍처"
       years: "2026 – 2030"
     - sponsor: "KEIT"
+      sponsor_full: "Korea Evaluation Institute of Industrial Technology"
       title: "제조 특화 파운데이션 모델 핵심 기술 개발"
       years: "2025 – 2028"
 - group: "Industry"
@@ -24,6 +29,6 @@
       years: "2025 – 2026"
 - group: "Advisory"
   projects:
-    - sponsor: "Real Estate Board"
+    - sponsor: "Korea Real Estate Board"
       title: "AI기반 표본가격 적합도 모니터링 시스템 개발 연구"
       years: "2026 – 2026"

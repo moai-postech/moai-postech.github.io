@@ -1,7 +1,7 @@
 # Research > Overview 의 분야. area 가 분야 이름, blurb 가 분야 한 줄 설명, topics 가 그 안의 주제 카드다.
 # stage 는 Perception → Reasoning → Action 중 이 분야가 맡는 단계.
 # 페이지는 단계를 앞에, 분야 이름을 그 아래에 둔다. 단계에 한 가지 구조(예: objects)를 붙이지 않는다. 주제 전체를 담지 못한다.
-# 소개의 scalable priors 와 잇는다: blurb 는 "Priors ..." 로 단계 전체를 넓게, summary 는 그 주제에 넣는 구조를
+# 소개의 scalable priors 와 잇는다: blurb 는 "Priors that ..." 로 시작해 그 단계의 주제를 카드 순서대로 한 구절씩 요약하고, summary 는 그 주제에 넣는 구조를
 # Building/Exploiting/Grounding/Bringing 꼴로 쓴다(교수 2026-10-26). 앞으로 할 방향(tables, multisensory)도 담아도 된다.
 # icon 은 assets/img/icons/<icon>.png. 주제마다 summary(문장 하나, 대문자로 시작, 마침표)와 papers(약칭, venue, url).
 # venue 는 `학회'연도` 꼴(AGENTS.md 표기 규칙). 교수의 논문은 시기와 무관하게 모두 MOAI Lab 논문이다. 랩 시작 전후로 나누지 않는다.
@@ -11,7 +11,7 @@
 - area: "Vision & Multimodal"
   stage: "Perception"
   icon: vision
-  blurb: "Priors on how the visual world is organized, so models see and generate well even when data is scarce, noisy, or biased."
+  blurb: "Priors that let models see scenes as objects and parts, learn from imperfect data, and generate images fairly and faithfully."
   topics:
     - name: "Visual Structure"
       summary: "Building objects, parts, and motion into visual representations."
@@ -46,7 +46,7 @@
 - area: "Language & Reasoning"
   stage: "Reasoning"
   icon: language
-  blurb: "Priors that ground reasoning in evidence and keep it efficient, from text to structured data."
+  blurb: "Priors that ground reasoning in evidence, make large models efficient, and bring the structure of logic and graphs into learning."
   topics:
     - name: "Reasoning & Agents"
       summary: "Grounding reasoning in evidence and structuring how it catches its errors."
@@ -72,7 +72,7 @@
 - area: "Robotics & Embodied AI"
   stage: "Action"
   icon: robotics
-  blurb: "Priors from users, intent, and touch that help robots plan and act in the physical world."
+  blurb: "Priors that adapt robot policies to each user's intent and let robots sense the world through touch as well as sight."
   topics:
     - name: "VLA & World Models"
       summary: "Building each user's cues and intent into robot policies."

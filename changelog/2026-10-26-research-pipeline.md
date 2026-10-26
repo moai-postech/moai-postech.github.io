@@ -170,3 +170,16 @@
 - Structured Data 에서 tables 빼기, Multisensory 를 sensor physics 로 좁히기: 교수가 앞으로 할 방향이라 넓게 둔다고 했다.
 - 주제 설명마다 "prior" 쓰기: 반복이 무겁다.
 - 아이콘을 줄여 단계 이름 옆에: 그림 크기를 줄이지 않는다(글보다 그림).
+
+## 15차: 분야 설명을 세 주제의 요약으로 (같은 날)
+- 교수: "vision & multimodal 아래에는 단순히 이게 뭔지가 아니라, 그 아래서 내가 한 세 꼭지의 연구를 간단히 설명하는 식으로 쓰면 좋겠어."
+- 세 분야 모두 같은 꼴로 바꿨다. "Priors that ..." 로 시작하고, 그 단계의 주제를 카드 순서대로 한 구절씩 잇는다.
+  - Perception: "Priors that let models see scenes as objects and parts, learn from imperfect data, and generate images fairly and faithfully."(Visual Structure, Learning in the Wild, Reliable Generation)
+  - Reasoning: "Priors that ground reasoning in evidence, make large models efficient, and bring the structure of logic and graphs into learning."(Reasoning & Agents, Efficient LLMs, Structured Data)
+  - Action: "Priors that adapt robot policies to each user's intent and let robots sense the world through touch as well as sight."(VLA & World Models, Multisensory Learning)
+- `_data/research.yml` 머리 주석의 쓰는 법도 고쳤다.
+- 확인: 로컬 빌드, 800px 화면.
+
+### 기각한 안과 이유(15차)
+- 14차의 분야 설명(단계가 무엇인지 넓게): 교수가 그 아래 주제를 요약하는 쪽을 원했다.
+- Perception 만 바꾸기: 세 분야 머리가 서로 다른 꼴이 된다.

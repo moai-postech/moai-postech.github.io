@@ -6,25 +6,25 @@
     - title: "Multimodal Agents that Reason and Remember"
       venues: ["KAIST", "Korea univ."]
     - title: "Towards Personalized Household Robots"
-      url: "https://drive.google.com/file/d/1U4IpE5cyQK18D0P5Kv68cVdekLySmIDC/view?usp=drivesdk"
+      url: "assets/talks/2026-towards-personalized-household-robots.pdf"
       venues: ["POSTECH Physical AI Workshop"]
     - title: "Manufacturing Data Analysis via Time-Series Foundation Models"
-      url: "https://drive.google.com/file/d/1zkIQOYAKENtK4D3NHYqe3nQSBWzAlzWc/view?usp=sharing"
+      url: "assets/talks/2026-manufacturing-data-analysis-via-time-series.pdf"
       venues: ["KSS Invited Talk"]
     - title: "Aligning Vision and Language via Geometry and Topology"
-      url: "https://drive.google.com/file/d/10Tp6XGMI_2haKTI_gJW88unSLZHKBgAf/view?usp=sharing"
+      url: "assets/talks/2026-aligning-vision-and-language-via-geometry-and.pdf"
       venues: ["KSIAM Invited Talk"]
     - title: "Opportunities in IME as an AI Researcher (and Vice Versa)"
-      url: "https://drive.google.com/file/d/1HNB911caHLsHZOu4ZKuSjYSyD8WhpUeu/view?usp=sharing"
+      url: "assets/talks/2026-opportunities-in-ime-as-an-ai-researcher-and-vice.pdf"
       venues: ["POSTECH Graduate Seminar"]
 - year: "2025"
   talks:
     - title: "Foundation Models for Vision, Language, and Robotics"
-      url: "https://drive.google.com/file/d/1OkBi2m-ZotIL5VCgjunXWFQNl6umM9Op/view?usp=sharing"
+      url: "assets/talks/2025-foundation-models-for-vision-language-and-robotics.pdf"
       venues: ["KSS Tutorial"]
     - title: "Revisiting the 3Rs in Computer Vision"
-      url: "https://drive.google.com/file/d/1rcxeyh6RhjaMz_PjmzEaGir7FZI9Z7LK/view?usp=sharing"
+      url: "assets/talks/2025-revisiting-the-3rs-in-computer-vision.pdf"
       venues: ["Korea univ.", "Kyunghee univ.", "POSTECH MINDS"]
     - title: "Scalable Priors for Foundation Models"
-      url: "https://drive.google.com/file/d/1GergS_BJ7_RUksPY_1iZtL3kW7RbSake/view?usp=sharing"
+      url: "assets/talks/2025-scalable-priors-for-foundation-models.pdf"
       venues: ["POSTECH", "UNIST", "DGIST"]

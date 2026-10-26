@@ -33,18 +33,18 @@ schedule:
     kind: lecture
     n: 1
     title: "Overview & Logistics"
-    pdf: "https://drive.google.com/file/d/15iPoxYKQ0A-LUUUmhiL1PmDQesqaDIIn/view"
+    pdf: "teaching/25f-data-engineering/slides/1_overview-logistics.pdf"
   - part: "part-1"
   - date: "2025-09-04"
     kind: lecture
     n: 2
     title: "Data Collection"
-    pdf: "https://drive.google.com/file/d/1O3Rabtmic2YLhSRs9gyMhgEcj0X95rVb/view"
+    pdf: "teaching/25f-data-engineering/slides/2_data-collection.pdf"
   - date: "2025-09-09"
     kind: lecture
     n: 3
     title: "Data Exploration"
-    pdf: "https://drive.google.com/file/d/1ShIR2tpRrohrwclhMCyMMsEUK6URCRgs/view"
+    pdf: "teaching/25f-data-engineering/slides/3_data-exploration.pdf"
     reading:
       - text: "DMCT Ch 2"
         url: "https://hanj.cs.illinois.edu/cs412/bk3/02.pdf"
@@ -52,7 +52,7 @@ schedule:
     kind: lecture
     n: 4
     title: "Pre-processing I: Cleaning & Integration"
-    pdf: "https://drive.google.com/file/d/1Bh7RQqIs-4sM-eBFlE4wrV9jF6x5OjIA/view"
+    pdf: "teaching/25f-data-engineering/slides/4_pre-processing-i-cleaning-integration.pdf"
     reading:
       - text: "DMCT Ch 3"
         url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
@@ -60,7 +60,7 @@ schedule:
     kind: lecture
     n: 5
     title: "Pre-processing II: Transformation"
-    pdf: "https://drive.google.com/file/d/1XjYfFW4MQkG_YHHwTyJZeHNXfM1aqmsR/view"
+    pdf: "teaching/25f-data-engineering/slides/5_pre-processing-ii-transformation.pdf"
     reading:
       - text: "DMCT Ch 3"
         url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
@@ -68,7 +68,7 @@ schedule:
     kind: lecture
     n: 6
     title: "Pre-processing III: Reduction"
-    pdf: "https://drive.google.com/file/d/1B1ukSkFvNzM_NJkVCZ-gV3teouQSVzIM/view"
+    pdf: "teaching/25f-data-engineering/slides/6_pre-processing-iii-reduction.pdf"
     reading:
       - text: "DMCT Ch 3"
         url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
@@ -80,7 +80,7 @@ schedule:
     kind: lecture
     n: 7
     title: "SQL I: Basics"
-    pdf: "https://drive.google.com/file/d/1VP_YKU7KpNY8DHCIKOIMDFPwVURgdZQ6/view"
+    pdf: "teaching/25f-data-engineering/slides/7_sql-i-basics.pdf"
     reading:
       - text: "DMS Lec 1 – 2"
         url: "https://thodrek.github.io/cs564-fall17/"
@@ -88,7 +88,7 @@ schedule:
     kind: lecture
     n: 8
     title: "SQL II: Joins & Multisets"
-    pdf: "https://drive.google.com/file/d/13r0kpsIgMlD9lWmdecnyg2DCyMGWoA78/view"
+    pdf: "teaching/25f-data-engineering/slides/8_sql-ii-joins-multisets.pdf"
     reading:
       - text: "DMS Lec 2 – 3"
         url: "https://thodrek.github.io/cs564-fall17/"
@@ -96,7 +96,7 @@ schedule:
     kind: lecture
     n: 9
     title: "SQL III: Subqueries & Aggregations"
-    pdf: "https://drive.google.com/file/d/1MU-nwqOuVtjKdiit27g0Ijl0oxsgnAib/view"
+    pdf: "teaching/25f-data-engineering/slides/9_sql-iii-subqueries-aggregations.pdf"
     reading:
       - text: "DMS Lec 3 – 4"
         url: "https://thodrek.github.io/cs564-fall17/"
@@ -122,7 +122,7 @@ schedule:
     kind: lecture
     n: 10
     title: "NoSQL I: Landscape"
-    pdf: "https://drive.google.com/file/d/1aAuY7hL7keVoAwINKlQZ_Y4pR3av-5Sn/view"
+    pdf: "teaching/25f-data-engineering/slides/10_nosql-i-landscape.pdf"
     reading:
       - text: "IDS Lec 22"
         url: "https://cs186berkeley.net/fa24/"
@@ -130,7 +130,7 @@ schedule:
     kind: lecture
     n: 11
     title: "NoSQL II: MongoDB"
-    pdf: "https://drive.google.com/file/d/1rAovtOjT5Uy__5JdgkcZaeVw0r7Zw8qM/view"
+    pdf: "teaching/25f-data-engineering/slides/11_nosql-ii-mongodb.pdf"
     reading:
       - text: "IDS Lec 23"
         url: "https://cs186berkeley.net/fa24/"
@@ -138,7 +138,7 @@ schedule:
     kind: lecture
     n: 12
     title: "Big Data I: MapReduce"
-    pdf: "https://drive.google.com/file/d/1quo0tP8FBJjsZghORHTlVfhH3RXJ_lLj/view"
+    pdf: "teaching/25f-data-engineering/slides/12_big-data-i-mapreduce.pdf"
     reading:
       - text: "IDS Lec 24"
         url: "https://cs186berkeley.net/fa24/"
@@ -146,7 +146,7 @@ schedule:
     kind: lecture
     n: 13
     title: "Big Data II: Spark"
-    pdf: "https://drive.google.com/file/d/1TQI2_EVKT5pqtl-5q696pj870xvr2oAg/view"
+    pdf: "teaching/25f-data-engineering/slides/13_big-data-ii-spark.pdf"
     reading:
       - text: "IDS Lec 24"
         url: "https://cs186berkeley.net/fa24/"
@@ -154,7 +154,7 @@ schedule:
     kind: lecture
     n: 14
     title: "Big Data III: BigQuery & Airflow"
-    pdf: "https://drive.google.com/file/d/1Phln502KzxcUTeEYyXPXrbFXGMV7dmcU/view"
+    pdf: "teaching/25f-data-engineering/slides/14_big-data-iii-bigquery-airflow.pdf"
     reading:
       - text: "DIS Lec 16"
         url: "https://web.stanford.edu/class/cs245/"
@@ -162,7 +162,7 @@ schedule:
     kind: lecture
     n: 15
     title: "Big Data IV: Streaming"
-    pdf: "https://drive.google.com/file/d/1_1RP2844gP-_ol8FE8JQdaTdJGbpAb1y/view"
+    pdf: "teaching/25f-data-engineering/slides/15_big-data-iv-streaming.pdf"
     reading:
       - text: "DIS Lec 17"
         url: "https://web.stanford.edu/class/cs245/"
@@ -171,7 +171,7 @@ schedule:
     kind: lecture
     n: 16
     title: "ML Systems"
-    pdf: "https://drive.google.com/file/d/1GVriXJeZMb-22Q12VSl0RpfpZhVBzgnM/view"
+    pdf: "teaching/25f-data-engineering/slides/16_ml-systems.pdf"
     reading:
       - text: "SML Lec 1 – 2, 8 – 10"
         url: "https://id2223kth.github.io/schedule_2023/"
@@ -179,7 +179,7 @@ schedule:
     kind: lecture
     n: 17
     title: "LLM Systems I: Basics"
-    pdf: "https://drive.google.com/file/d/1YXCI29PRwAJxqbHeRBsjJt48ZAbUEFJN/view"
+    pdf: "teaching/25f-data-engineering/slides/17_llm-systems-i-basics.pdf"
     reading:
       - text: "DLA LangChain"
         url: "https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/"
@@ -187,7 +187,7 @@ schedule:
     kind: lecture
     n: 18
     title: "LLM Systems II: RAG"
-    pdf: "https://drive.google.com/file/d/1JduJIbLPolF64qm-0FEH_sCVi5aIpVlj/view"
+    pdf: "teaching/25f-data-engineering/slides/18_llm-systems-ii-rag.pdf"
     reading:
       - text: "DLA Chat with Your Data"
         url: "https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/"
@@ -199,7 +199,7 @@ schedule:
     kind: lecture
     n: 19
     title: "LLM Systems III: Agents"
-    pdf: "https://drive.google.com/file/d/1XlVy8aWg3JH6SaO8IdECOm7rUJe3qm22/view"
+    pdf: "teaching/25f-data-engineering/slides/19_llm-systems-iii-agents.pdf"
     reading:
       - text: "DLA Tools and Agents"
         url: "https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/"
@@ -308,78 +308,78 @@ project:
       title: "개인 맞춤 논문 요약 메일링"
       proposal:
         order: 1
-        slides: "https://drive.google.com/file/d/1Z8ckFWK59zdYGhqiXYJhWHJT4OHFSmYs/view"
+        slides: "teaching/25f-data-engineering/project/proposal/proposal_team01.pdf"
       final:
         order: 8
-        slides: "https://drive.google.com/file/d/1VqietT69kRqTjEUdVOXg27l9avjIHt56/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team01.pdf"
     - n: 2
       title: "소비자를 위한 리콜 상품 알리미"
       proposal:
         order: 8
-        slides: "https://drive.google.com/file/d/13vOkXcYQQAVte0EZ1K4fCWTLF401aouY/view"
+        slides: "teaching/25f-data-engineering/project/proposal/proposal_team02.pdf"
       final:
         order: 3
-        slides: "https://drive.google.com/file/d/14lC6-45nyUNmKYjaTLX_J6NR67F7oXpP/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team02.pdf"
     - n: 3
       title: "Finflow Engineering (금융 파이프라인 구축 프로젝트)"
       proposal:
         order: 5
       final:
         order: 4
-        slides: "https://drive.google.com/file/d/1A90QbeFmafz6EbwdJEH1y8Hh0EMfO-FP/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team03.pdf"
     - n: 4
       title: "온톨로지 기반의 맞춤형 아트 큐레이션 시스템"
       proposal:
         order: 2
-        slides: "https://drive.google.com/file/d/17W5f1ZISiDdlwcmxx0Kcb62oJ1AAWHLa/view"
+        slides: "teaching/25f-data-engineering/project/proposal/proposal_team04.pdf"
       final:
         order: 9
-        slides: "https://drive.google.com/file/d/1VTABcL99Kdm5ova_aOpeQh-Wyht77Ijl/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team04.pdf"
     - n: 5
       title: "대중교통 정류소 도착 예정 시간 계산 시스템"
       proposal:
         order: 6
-        slides: "https://drive.google.com/file/d/1ykK4Ptu8-rVcTIZxSEWYD4u1AhvezcyE/view"
+        slides: "teaching/25f-data-engineering/project/proposal/proposal_team05.pdf"
       final:
         order: 10
-        slides: "https://drive.google.com/file/d/1rDRsq4O9M0cj5Bbce2lTVQzFchAnhev4/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team05.pdf"
     - n: 6
       title: "뉴스데이터활용 포트폴리오 최적화"
       proposal:
         order: 3
-        slides: "https://drive.google.com/file/d/1ijxydF6k3iGHFwyyehrYCRZqUIUnOmvY/view"
+        slides: "teaching/25f-data-engineering/project/proposal/proposal_team06.pdf"
       final:
         order: 5
-        slides: "https://drive.google.com/file/d/1JTFPuoiBNRN2ypbl5SYlxF7Y0I1ZYUlW/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team06.pdf"
     - n: 7
       title: "실시간 PC 시스템 이상탐지 모델 및 파이프라인 구축"
       proposal:
         order: 7
-        slides: "https://drive.google.com/file/d/1VIXDOCe2RrD30AP8No03UIz6Gs63SaBM/view"
+        slides: "teaching/25f-data-engineering/project/proposal/proposal_team07.pdf"
       final:
         order: 2
-        slides: "https://drive.google.com/file/d/1TcMG8cJSw02XllIVKxvnNUv7jrQHCN-B/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team07.pdf"
     - n: 8
       title: "주식 포트폴리오 최적화"
       proposal:
         order: 4
-        slides: "https://drive.google.com/file/d/1ueIP2Ac6s4cNfUBbXkfHCRD8FYDgkDP7/view"
+        slides: "teaching/25f-data-engineering/project/proposal/proposal_team08.pdf"
       final:
         order: 7
-        slides: "https://drive.google.com/file/d/1uiG1jRA1H-adFR4zePrur_Et0Tkm4Des/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team08.pdf"
     - n: 9
       title: "뉴스 데이터 기반 맞춤형 기업 추천 서비스"
       proposal:
         order: 9
-        slides: "https://drive.google.com/file/d/1rADH_S96c61-XAtX9noGscm1ZeO6qNP_/view"
+        slides: "teaching/25f-data-engineering/project/proposal/proposal_team09.pdf"
       final:
         order: 6
-        slides: "https://drive.google.com/file/d/1k4duxlUf8149D4K18w-xJQHm-7wG8DC-/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team09.pdf"
     - n: 10
       title: "로봇 팔 모터 이상징후 감지 시스템"
       proposal:
         order: 10
-        slides: "https://drive.google.com/file/d/1vis-8zq5M-RObNOlL2nZHbbNmN8JRtTR/view"
+        slides: "teaching/25f-data-engineering/project/proposal/proposal_team10.pdf"
       final:
         order: 1
-        slides: "https://drive.google.com/file/d/1fTWr9O_-4ONlWRfq1hPBlEqtJg66tmRJ/view"
+        slides: "teaching/25f-data-engineering/project/final/final_team10.pdf"

@@ -17,6 +17,7 @@ _data/               콘텐츠 데이터(YAML)
   members.yml        People 의 Faculty(교수, 사진, Bio, 이력 cv), Students(연구실 학생), Mentees(연구실 밖에서 지도한 학생). 멤버의 focus 는 연구 방향 패널에 이름을 띄운다. 연구실 멤버(Postdocs 포함, Alumni 제외)는 모두 Home 의 세 연구 방향 중 하나에 들어가야 하고, focus 가 빠진 멤버가 있으면 교수에게 물어 채운다(교수 2026-10-26)
   teaching.yml       Teaching 의 정규 강의
   talks.yml          Teaching > Talks
+  ai_study.yml       학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트에서 만든다. 손으로 고치지 않는다
   seminar.yml        Research > Seminar 의 발표 목록. tools/seminar_sync.py 가 랩 세미나 구글시트에서 만든다. 손으로 고치지 않는다(아래 "세미나 발표 올리기")
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
 index.md 외 *.md     페이지 하나에 파일 하나(research·seminar·funding, publications·landscape, faculty·students·mentees, teaching, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
@@ -80,6 +81,7 @@ tools/               검사 스크립트(check_changelog.py), 세미나 동기�
 | 동료 연구자 | 어떤 문제를 푸나, 최근 논문, 누가 있나 | 연구 방향, News, Publications, People |
 
 - **사이트 안에서 끝나게(self-contained) 만든다.** 교수 개인 사이트(Google Sites)로 링크하지 않는다. 필요한 내용(발표 목록 등)은 이 사이트 안으로 들여온다. 논문, 코드, 발표 자료, 강의 시트, 다른 사람의 페이지, 외부 프로필(Google Scholar, GitHub) 같은 원자료 링크는 괜찮다.
+- **슬라이드는 Drive 링크 대신 이 저장소의 파일로 링크한다**(교수 2026-10-26). 원본은 구글시트·Drive 에 그대로 두고, PDF 사본을 받아 올린다(Google Slides·pptx 는 PDF 로 굽고, 그림은 그대로). 받는 도구는 `tools/drive_pdf.py`, 사본과 원본 Drive 링크의 짝은 `tools/drive_sources.json` 이다. 자리: 강의 슬라이드 `teaching/<id>/slides/`, 학생 발표 `teaching/<id>/project/<회차>/`, 학부생 AI 스터디 `teaching/ai-study/<학기>/`(`tools/ai_study_sync.py` 가 시트에서 받는다), 초청 발표 `assets/talks/`. 강의·발표 yml 에 Drive 슬라이드 링크를 새로 넣었으면 `python3 tools/localize_slides.py` 를 돌린다. 예외: 노트북(Colab·ipynb), 시험, 시트는 Drive 링크 그대로다. Publications 의 slides·poster 는 화면에 나오지 않는 보관용 데이터라 옮기지 않는다(2026-10-22 결정). 링크가 비공개라 받을 수 없는 파일은 Drive 링크로 남기고 changelog 에 적는다. Pages 사이트는 1 GB 한도라 큰 파일(수십 MB)을 더할 때 전체 크기를 본다.
 - **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Publications > By Topic, 랩 세미나와 초청 연사는 Research > Seminar(`_data/seminar.yml`), 과제는 Research > Funding, 교수 이메일·전화는 Faculty, 연구실 주소와 지원 방법은 Contact.
 - **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
 - **컴퓨터 화면에서는 넓게 쓴다.** 전체 폭은 `--container`(1200px), 모바일처럼 좁은 기둥으로 줄이지 않는다(교수 2026-10-21). 긴 문단만 `--measure`(760px)로 묶는다. 좁은 화면에서만 한 칸으로 접는다.

@@ -34,74 +34,74 @@ schedule:
     kind: lecture
     n: 1
     title: "Overview & Logistics"
-    pdf: "https://drive.google.com/file/d/1vL-yD4Tw7d0ud6009NJkbTGpZIH4hX-_/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/1_overview-logistics.pdf"
   - part: "sw3"
   - date: "2026-02-26"
     kind: lecture
     n: 2
     title: "Chatting with AI"
-    pdf: "https://drive.google.com/file/d/1TYi62fg9_AS18zs0h6yhSJg6QlutTun_/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/2_chatting-with-ai.pdf"
   - date: "2026-03-03"
     kind: lecture
     n: 3
     title: "Coding with AI"
-    pdf: "https://drive.google.com/file/d/18InqzsK-m6Uq7gpQv293oWV8jPfFI_sn/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/3_coding-with-ai.pdf"
   - date: "2026-03-05"
     kind: lecture
     n: 4
     title: "LLM Prompting"
-    pdf: "https://drive.google.com/file/d/1FypkjTh7WOqCrVECyN2dXeRr09sX_GvH/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/4_llm-prompting.pdf"
   - date: "2026-03-10"
     kind: lecture
     n: 5
     title: "Modern IDE"
-    pdf: "https://drive.google.com/file/d/1h01qbs_eIWC1hJkAGWHqwCyS9WcveufE/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/5_modern-ide.pdf"
   - date: "2026-03-12"
     kind: lecture
     n: 6
     title: "Coding Agents"
-    pdf: "https://drive.google.com/file/d/1sc3khy2ZPWoyjYAT2AOLMCq8QNa4_Ap0/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/6_coding-agents.pdf"
   - part: "sw1"
   - date: "2026-03-17"
     kind: lecture
     n: 7
     title: "Python"
-    pdf: "https://drive.google.com/file/d/1y0zXNKGU3GzEnl9sGlPUB2rn9aLrRieZ/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/7_python.pdf"
   - date: "2026-03-19"
     kind: lecture
     n: 8
     title: "NumPy & pandas"
-    pdf: "https://drive.google.com/file/d/1w_4wcdbfmkrOojAtSXNu0AT8ED47LzoK/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/8_numpy-pandas.pdf"
   - date: "2026-03-24"
     kind: lecture
     n: 9
     title: "Regression"
-    pdf: "https://drive.google.com/file/d/1z3Fk7mukZuCWt9ZjkXVNQDnw55YY4oZS/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/9_regression.pdf"
   - date: "2026-03-26"
     kind: lecture
     n: 10
     title: "Classification"
-    pdf: "https://drive.google.com/file/d/1jl_hwbG1nZQ5ksO237qPd_gl6ppPyYe4/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/10_classification.pdf"
   - date: "2026-03-31"
     kind: lecture
     n: 11
     title: "Clustering"
-    pdf: "https://drive.google.com/file/d/1GAIQ3xjHv71wecU6P7qGuoESQMJ21x9i/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/11_clustering.pdf"
   - date: "2026-04-02"
     kind: lecture
     n: 12
     title: "Dimensionality Reduction"
-    pdf: "https://drive.google.com/file/d/10beObGlR4Suxt_AfTbROzORsokXHqNKO/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/12_dimensionality-reduction.pdf"
   - date: "2026-04-07"
     kind: lecture
     n: 13
     title: "Interpretable ML"
-    pdf: "https://drive.google.com/file/d/1AAYep5iITrLSj0pAuv0DfhA8NMb7oiKJ/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/13_interpretable-ml.pdf"
   - date: "2026-04-09"
     kind: lecture
     n: 14
     title: "Review Session"
-    pdf: "https://drive.google.com/file/d/1yTB1hSvHExoLhCUKzPcn8_vPJPXtBOyY/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/14_review-session.pdf"
   - date: "2026-04-14"
     kind: exam
     title: "Midterm Exam"
@@ -113,7 +113,7 @@ schedule:
     kind: lecture
     n: 15
     title: "Deep Learning"
-    pdf: "https://drive.google.com/file/d/1z2Cz6stF_TAStgseBu9HpCThygqoEND_/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/15_deep-learning.pdf"
   - date: "2026-04-23"
     kind: seminar
     speaker: "Songyee Yoon"
@@ -122,12 +122,12 @@ schedule:
     kind: lecture
     n: 16
     title: "PyTorch"
-    pdf: "https://drive.google.com/file/d/10aOmtQxFKwl328yOl5_mma3PBAP1_JUL/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/16_pytorch.pdf"
   - date: "2026-04-29"
     kind: seminar
     speaker: "Sangwoo Mo"
     affiliation: "POSTECH"
-    pdf: "https://drive.google.com/file/d/1HNB911caHLsHZOu4ZKuSjYSyD8WhpUeu/view"
+    pdf: "assets/talks/2026-opportunities-in-ime-as-an-ai-researcher-and-vice.pdf"
   - date: "2026-04-30"
     kind: break
     title: "No class"
@@ -138,37 +138,37 @@ schedule:
     kind: lecture
     n: 17
     title: "Vision Models I"
-    pdf: "https://drive.google.com/file/d/1AFi_W2dpu1zNTsMADur_6QbXKeWTgOBZ/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/17_vision-models-i.pdf"
     lab: "https://drive.google.com/file/d/1KcBIA1aSPpQqzKV4VPDtmM3zgMuom47j/view"
   - date: "2026-05-12"
     kind: lecture
     n: 18
     title: "Vision Models II"
-    pdf: "https://drive.google.com/file/d/1GNG9Joyn-ic0_ZzZSYsaLeTqJspUBwZ9/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/18_vision-models-ii.pdf"
     lab: "https://drive.google.com/file/d/1fbB681cUsaE0UtDBPuMERHV2w4eAsJEd/view"
   - date: "2026-05-14"
     kind: lecture
     n: 19
     title: "Multimodal Models I"
-    pdf: "https://drive.google.com/file/d/1huWTQ6II_CUum77sllECe0J7MmRUN6Ca/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/19_multimodal-models-i.pdf"
     lab: "https://drive.google.com/file/d/1l327tMo_waxl8qWBmnECYSc1RPbW1xdB/view"
   - date: "2026-05-19"
     kind: lecture
     n: 20
     title: "Multimodal Models II"
-    pdf: "https://drive.google.com/file/d/1t1eTSVOMkkZ6tC5em3fzCB2CIwQw4e67/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/20_multimodal-models-ii.pdf"
     lab: "https://drive.google.com/file/d/1d17GIHsvscldz-ARvHEBmw3dcGbv5gKK/view"
   - date: "2026-05-21"
     kind: lecture
     n: 21
     title: "Multimodal Models III"
-    pdf: "https://drive.google.com/file/d/1MTGR3Jufe56LAXMsBx4FU6HSCwYWHHbi/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/21_multimodal-models-iii.pdf"
     lab: "https://drive.google.com/file/d/1qqKSF0hweXh873Z4jpVyHOtvFFkO7O0g/view"
   - date: "2026-05-26"
     kind: lecture
     n: 22
     title: "AI for Data Science"
-    pdf: "https://drive.google.com/file/d/1upWRnQ_m7cSh_S2mCMLe1tlv-CemB_Mj/view"
+    pdf: "teaching/26s-programming-for-data-science/slides/22_ai-for-data-science.pdf"
     lab: "https://drive.google.com/file/d/10otAdN7s1X07d5zrAe58_5jPN4kesU-Z/view"
   - date: "2026-05-28"
     kind: project
@@ -264,7 +264,7 @@ project:
       final:
         date: "2026-05-28"
         order: 6
-        slides: "https://drive.google.com/file/d/1QbR_qXvhoR6C8uAOglo87XrF9OnuH0E4/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team01.pdf"
     - n: 2
       title: "BirdCLEF+2026"
       members: ["김동근", "장해원", "이승훈", "최우혁"]
@@ -273,7 +273,7 @@ project:
       final:
         date: "2026-06-02"
         order: 11
-        slides: "https://drive.google.com/file/d/13j9sUa9varVLJVFl2r9oGelv-J0_7zIg/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team02.pdf"
     - n: 3
       title: "TAHMO Incoming Solar Radiation Prediction Challenge"
       members: ["이정우", "송지은", "백동선", "심민준"]
@@ -282,7 +282,7 @@ project:
       final:
         date: "2026-05-28"
         order: 1
-        slides: "https://drive.google.com/file/d/1b5eFTzL0RueMQZekpNCbPJ2aQBZ0vr84/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team03.pdf"
     - n: 4
       title: "CMI - Detect Behavior with Sensor Data"
       members: ["박시언", "홍규화", "박찬우"]
@@ -291,7 +291,7 @@ project:
       final:
         date: "2026-05-28"
         order: 5
-        slides: "https://drive.google.com/file/d/19KUjyK-CzTsW2i5Eow4n7G_99RGJl23w/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team04.pdf"
     - n: 5
       title: "Optiver Realized Volatility Prediction"
       members: ["김세헌", "홍현종", "엄희규", "최병화"]
@@ -300,7 +300,7 @@ project:
       final:
         date: "2026-05-28"
         order: 2
-        slides: "https://drive.google.com/file/d/1lIC3yVjb8r8vCvUJuSErFdc_tC8bciGv/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team05.pdf"
     - n: 6
       title: "LLM Prompt Recovery"
       members: ["조성범", "이창희", "전효택"]
@@ -309,7 +309,7 @@ project:
       final:
         date: "2026-06-02"
         order: 8
-        slides: "https://drive.google.com/file/d/1PfF0fJ7YHookMcLJ8M3N6Qq4vuk1r0F9/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team06.pdf"
     - n: 7
       title: "Problematic Internet Use"
       members: ["CLATIN Thibaut", "Olabode Jens-David", "EISENGARTEN Laurits"]
@@ -318,7 +318,7 @@ project:
       final:
         date: "2026-06-02"
         order: 9
-        slides: "https://drive.google.com/file/d/1_WVZdWo_PtQnodwlJ31oxcnFUZtgqBbA/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team07.pdf"
     - n: 8
       title: "ASHRAE - Great Energy Predictor III"
       members: ["Zhou Kongdan", "김재호", "강은수", "도경근"]
@@ -327,7 +327,7 @@ project:
       final:
         date: "2026-06-02"
         order: 10
-        slides: "https://drive.google.com/file/d/1gu6_o5ifS_ZC6xIxoWY1rbBRjGGqvsfT/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team08.pdf"
     - n: 9
       title: "Prediction for player movement when the ball is in the air"
       members: ["김정운", "이승아", "최승준", "신재윤"]
@@ -336,7 +336,7 @@ project:
       final:
         date: "2026-05-28"
         order: 4
-        slides: "https://drive.google.com/file/d/1TZ_-lkVDI_ZV_7eKTrHCczOeDQJRnLGS/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team09.pdf"
     - n: 10
       title: "Nucleus Detection"
       members: ["조해인", "정세윤", "김민직", "성민식"]
@@ -345,7 +345,7 @@ project:
       final:
         date: "2026-06-02"
         order: 7
-        slides: "https://drive.google.com/file/d/1kaCJpTTH0Btni62a6ph-j34Vz_5zgbec/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team10.pdf"
     - n: 11
       title: "Mercari Price Suggestion Challenge"
       members: ["조은국", "김현우", "나진우"]
@@ -354,5 +354,5 @@ project:
       final:
         date: "2026-05-28"
         order: 3
-        slides: "https://drive.google.com/file/d/1J0QgONUw4UMaIyOm5e2DFNTjcEmck-KU/view"
+        slides: "teaching/26s-programming-for-data-science/project/final/final_team11.pdf"
 

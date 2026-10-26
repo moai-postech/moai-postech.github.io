@@ -157,7 +157,7 @@ tools/               검사 스크립트
 
 ## Changelog 규칙 (필수)
 
-**저장소의 파일을 바꾼 커밋에는 반드시 `changelog/` 기록이 같이 들어간다.** 누가 고쳤든, 사람이든 에이전트든 같다. 기록이 없는 push 는 `tools/check_changelog.py` 검사(GitHub Actions)에서 실패한다.
+**저장소의 파일을 바꾼 커밋에는 반드시 `changelog/` 기록이 같이 들어간다.** 누가 고쳤든, 사람이든 에이전트든 같다. 기록이 없는 push 는 `tools/check_changelog.py` 검사(GitHub Actions)에서 실패한다. 예외는 `CNAME` 하나다. Pages 의 커스텀 도메인 설정이 따로 커밋하므로, 설정을 바꾼 사람이 뒤이어 changelog 를 올린다.
 
 - 회차 파일: `changelog/{YYYY-MM-DD}-{slug}.md`. slug 는 영어 소문자와 하이픈(`2026-10-21-news-wacv`).
 - 같은 날 같은 작업을 이어서 하면 새 파일을 만들지 않고 그 파일에 덧붙인다.

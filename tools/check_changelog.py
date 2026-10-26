@@ -6,7 +6,8 @@ Usage:
 
 Passes when, among the changed files, at least one is changelog/YYYY-MM-DD-slug.md
 and changelog/index.md links to every such file. A change that only touches
-discussions/ needs no changelog. Discussion files must be named
+discussions/ or CNAME needs no changelog (the Pages custom-domain setting
+commits CNAME by itself). Discussion files must be named
 discussions/YYYY-MM-DD-slug.md, carry a "상태:" line and be linked from
 discussions/index.md. A file named on the "대상:" line of an open discussion
 (상태: 논의 중) cannot change unless that discussion file changes too.
@@ -22,6 +23,7 @@ ENTRY = re.compile(r"^changelog/(\d{4}-\d{2}-\d{2})-[a-z0-9]+(?:-[a-z0-9]+)*\.md
 TOPIC = re.compile(r"^discussions/(\d{4}-\d{2}-\d{2})-[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
 STATUSES = ("논의 중", "결정됨", "보류")
 ZERO = "0" * 40
+EXEMPT = {"CNAME"}  # written by the Pages custom-domain setting, logged afterwards
 
 
 def git(*args):
@@ -92,7 +94,7 @@ def main():
         print("변경 없음")
         return 0
     entries = [f for f in files if ENTRY.match(f)]
-    discussion_only = all(f.startswith("discussions/") for f in files)
+    discussion_only = all(f.startswith("discussions/") or f in EXEMPT for f in files)
     errors = []
     if not entries and not discussion_only:
         errors.append("changelog/YYYY-MM-DD-slug.md 회차 파일이 없다.")

@@ -19,10 +19,13 @@
 - Let's Encrypt 인증서는 약 20초 만에 `approved` 상태가 됐다(만료 2027-01-24, GitHub 가 자동 갱신). 그 뒤 `https_enforced=true` 로 HTTPS 를 강제했다.
 - 검증: `http://` 접속은 `301 → https://moai.postech.ac.kr/` 로 넘어간다. GitHub Pages IP 4개(185.199.108~111.153) 모두 HTTPS 200 을 낸다. 인증서 CN 은 `moai.postech.ac.kr` 이고 발급자는 Let's Encrypt YR2 다. `<title>MOAI Lab · POSTECH`, `/people`·`/publications`·`/seminar` 모두 200.
 - 인증서가 GitHub 의 모든 서버에 퍼지는 데 1분 정도 걸렸고, 그 사이에는 일부 요청이 이름 불일치 오류를 냈다.
+- `Create CNAME` 커밋에는 changelog 가 없어서 changelog 검사(run 40269477852)가 실패하고 실패 메일이 왔다. 바로 뒤 changelog 커밋은 통과했다. GitHub 가 만드는 커밋이라 기록을 같이 넣을 수 없으므로, `tools/check_changelog.py` 가 `CNAME` 만 바뀐 push 는 discussions 처럼 기록 없이 통과시키게 고쳤다. `AGENTS.md` 의 Changelog 규칙에도 이 예외를 적었다.
 
 ## 기각한 안과 이유
 
 - 저장소에 `CNAME` 파일을 직접 커밋: legacy(브랜치) 빌드에서는 설정 화면이나 API 로 등록하면 GitHub 가 같은 파일을 만들어 주고, 인증서 발급도 함께 시작된다.
+
+- changelog 워크플로에서 GitHub 커밋 작성자를 통째로 건너뛰기: 웹 UI 로 직접 고친 사람의 커밋까지 빠진다. 예외는 `CNAME` 파일 하나로 좁혔다.
 
 ## 남은 것
 

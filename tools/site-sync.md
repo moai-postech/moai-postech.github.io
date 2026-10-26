@@ -18,7 +18,7 @@
 | `publications.yml` | 연구 저장소 `moai-postech/research` 의 `done/*/index.md`(frontmatter `title`, `authors`, `venue`, `status`, `url`)와 `ongoing/*/index.md` 중 frontmatter `url` 이 arXiv 인 것 | accept 된 새 논문 추가, 이미 있는 논문의 venue·링크 갱신(arXiv 만 있던 논문이 accept 되면 Preprints 에서 그해 절로 옮긴다). 공개 arXiv 가 생긴 ongoing 논문은 Preprints 에 넣는다. 순서는 아래 "논문 순서" |
 | `news.yml` | 위와 같음 | 새로 accept 된 논문마다 `Paper(s) on X accepted at VENUE'YY.` 한 줄을 맨 위에 넣는다(같은 venue 는 한 줄로 묶음, 표기는 기존 줄과 `AGENTS.md`). 날짜는 accept 통보 달 |
 | `research.yml`, `focus.yml` | 위와 같음 | 고치지 않는다. 새 논문이 들어갈 만한 topic 이 있으면 보고에 제안 |
-| `funding.yml` | 구글시트 `project` 의 `projects` 탭(ID `12txPbCAW5lzXFftYpu6FlOaryWrGrVW9UuWTi2AsWQY`, Google Drive 커넥터 `read_file_content`) | 새 과제 추가, 기간·기관 갱신. 과제명은 시트 원문 그대로. 비고가 "참여율 대여"인 행은 넣지 않는다. 시트를 못 읽으면 건너뛰고 보고 |
+| `funding.yml` | 구글시트 `project` 의 `projects` 탭(ID `12txPbCAW5lzXFftYpu6FlOaryWrGrVW9UuWTi2AsWQY`, Google Drive 커넥터 `read_file_content`) | 새 과제 추가, 기간·기관 갱신. 과제명은 시트 원문 그대로 쓰되 부제(`:` 뒤)와 괄호 약어는 떼어도 된다(전역 규칙, 이미 뗀 것은 어긋남이 아니다). 비고가 "참여율 대여"인 행은 넣지 않는다. 연구 과제가 아닌 행(컴퓨팅 자원 지원, 교육 사업)과 `funding.yml` 주석에 넣지 않기로 적힌 과제는 보고하지 않는다. 사이트에는 있는데 시트에 없는 과제는 지우지 않는다. 시트를 못 읽으면 건너뛰고 보고 |
 | `talks.yml` | 교수 POSTECH 캘린더(Microsoft 365 커넥터 `outlook_calendar_search`)의 지난 초청 발표 일정과 Drive `moai-lab/1_lecture/invited-talks/` 폴더의 발표 자료 | `talks.yml` 에 없는 지난 발표를 찾으면 그해 묶음 맨 위에 넣는다(`url` 은 Drive 파일 주소, 장소는 짧게). 랩 세미나, 수업, 회의는 발표가 아니다. 확신이 없으면 보고만 |
 | `seminar.yml`, `assets/seminar/` | GitHub Actions `seminar-sync`(매일 06:00 KST, `tools/seminar_sync.py`) | 손대지 않는다. 최근 실행이 실패했으면 보고(`gh run list --workflow seminar-sync.yml --limit 3` 또는 저장소 Actions 페이지) |
 | `members.yml` | 정본이 사이트 자체 | 고치지 않는다. 연구 방향(`focus`)이 빠진 연구실 멤버가 있으면 보고 |

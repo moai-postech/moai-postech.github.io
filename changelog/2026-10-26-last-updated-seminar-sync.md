@@ -25,3 +25,7 @@
 - 루틴 이름 `seminar-site-sync` → `lab-site-sync`(월 09:00 KST 유지). 연구 저장소 `moai-postech/research` 를 함께 clone 하고 Microsoft 365 커넥터를 더했다.
 - 대상: publications·news(연구 저장소의 accept·공개 arXiv), funding(project 시트), talks(캘린더와 invited-talks 폴더)는 고친다. research·focus·members·media·teaching 은 정본이 사이트 자체이거나 배치 결정이라 보고만 한다. 개인 사이트·CV·Scholar 는 고치지 않고 어긋남만 보고한다.
 - 기각: 루틴이 research·focus 에 새 논문을 직접 배치하는 안. 첫 화면에 무엇을 앞세울지는 `AGENTS.md` 의 "논의가 필요한 수정"이다. 개인 사이트까지 루틴이 고치는 안: Google Sites 편집은 로그인한 브라우저가 필요해 클라우드에서 못 한다.
+
+## 덧붙임: 첫 lab-site-sync 시험 실행 뒤 Funding 기준 보강
+- 시험 실행(2026-10-26 16:13 KST)은 모든 정본을 읽었고 고칠 것이 없어 커밋하지 않았다. Funding 에서 시트보다 짧은 과제명 셋(CANOR, MFM, 암묵지 부제)과 시트에만 있는 컴퓨팅 지원·교육 사업 넷을 질문으로 올렸다.
+- 과제명 줄임은 전역 규칙(부제와 괄호 약어만 뗀다)대로 한 것이라 어긋남이 아니다. 매주 같은 질문이 오지 않게 `tools/site-sync.md` Funding 줄에 이 기준과, 연구 과제가 아닌 행은 보고하지 않는다는 기준을 넣었다.

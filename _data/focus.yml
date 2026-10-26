@@ -9,14 +9,17 @@
       venue: "EMNLP'26"
       title: "Understanding the Effects of Distractors on Reasoning Vision-Language Models"
       url: "https://arxiv.org/abs/2511.21397"
+      image: "https://arxiv.org/html/2511.21397v3/illustration_inverse_scaling_top.png"  # 시안 C: arXiv HTML 그림을 직접 건다. 채택하면 assets/img/papers/ 로 옮긴다
     - short: "LoC"
       venue: "arXiv'26"
       title: "Loud and Clear: Making Visual Evidence Count in Multimodal Document RAG"
       url: "https://arxiv.org/abs/2610.21318"
+      image: "https://arxiv.org/html/2610.21318v1/section32_loud_analysis.png"  # 시안 C: arXiv HTML 그림을 직접 건다. 채택하면 assets/img/papers/ 로 옮긴다
     - short: "TEG"
       venue: "arXiv'26"
       title: "Why, Where, How: Taxonomy-guided Error Grounding for Code Repair in NL2SQL"
       url: "https://arxiv.org/abs/2610.05060"
+      image: "https://arxiv.org/html/2610.05060v1/figure1.png"  # 시안 C: arXiv HTML 그림을 직접 건다. 채택하면 assets/img/papers/ 로 옮긴다
 - name: "Physical AI"
   icon: physical
   papers:
@@ -24,10 +27,12 @@
       venue: "ICML'26"
       title: "Bring My Cup! Personalizing Vision-Language-Action Models with Visual Attentive Prompting"
       url: "https://arxiv.org/abs/2512.20014"
+      image: "https://arxiv.org/html/2512.20014v3/Figure1.png"  # 시안 C: arXiv HTML 그림을 직접 건다. 채택하면 assets/img/papers/ 로 옮긴다
     - short: "INDI"
       venue: "arXiv'26"
       title: "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models"
       url: "https://arxiv.org/abs/2608.23478"
+      image: "https://arxiv.org/html/2608.23478v1/Figure1.png"  # 시안 C: arXiv HTML 그림을 직접 건다. 채택하면 assets/img/papers/ 로 옮긴다
 - name: "Manufacturing AI"
   icon: manufacturing
   papers:

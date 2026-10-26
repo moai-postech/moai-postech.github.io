@@ -8,7 +8,7 @@ logo: assets/img/logo-mark.svg
 # 개인정보 링크 이름은 영어판 본부 꼬리말의 공식 명칭 그대로
 postech:
   url: https://www.postech.ac.kr/eng/index.do
-  wordmark: assets/img/postech-wordmark.png
+  wordmark: assets/img/postech-wordmark-hd.png
   logo: assets/img/postech-logo.png
   privacy_label: Personal Information Policy
   privacy_url: https://www.postech.ac.kr/eng/usage-guide/privacy_policy.do

@@ -101,3 +101,12 @@
 
 ### 기각한 안과 이유(8차)
 - 4·5차의 세 링크 유지: 교수가 빼라고 했다. Focus, 주제 지도, Contact 는 메뉴와 하위 탭으로 이미 갈 수 있다.
+
+## 9차: 소개 문단에 굵은 글씨 (같은 날)
+- 교수: "여기 첫 문단이 너무 드라이한데 적당히 bold 좀 쳐줘."
+- `research.md` 소개에서 랩의 한 줄 정체성 **scalable priors** 와 세 단계 동사 **perceives**, **reasons**, **acts** 를 굵게 했다. 동사가 아래 단계 절(Perception, Reasoning, Action)과 짝이 된다. 문장은 바꾸지 않았다.
+- 확인: 로컬 빌드, 1280px 화면에서 소개 문단 확인.
+
+### 기각한 안과 이유(9차)
+- "Foundation models learn mostly from data", "data alone misses" 까지 굵게: 굵은 곳이 다섯을 넘으면 강조가 흐려진다. 문제 제기보다 우리 답(priors, 세 단계)을 앞세운다.
+- 굵은 글씨에 강조색: 소개 문단의 링크가 강조색이라 굵은 글씨까지 칠하면 링크와 헷갈린다.

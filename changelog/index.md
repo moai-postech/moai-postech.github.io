@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-26 | [research-pipeline](2026-10-26-research-pipeline.md) | Sangwoo Mo(moai-postech) | Research Overview | 세 단계를 한 줄 레일의 파이프라인으로, 분야 절 제목을 단계 이름으로 바꾸고 세로 레일로 잇는 대폭 개편 |
 | 2026-10-26 | [seminar-slides-sync](2026-10-26-seminar-slides-sync.md) | Sangwoo Mo(moai-postech) | Seminar, tools, Actions | 랩 슬라이드 14개를 16:9 PDF(날짜-제목별칭.pdf)로 저장소에, 시트·Drive 기반 매일 자동 동기화 |
 | 2026-10-26 | [seminar-sync](2026-10-26-seminar-sync.md) | seminar-site-sync 루틴(Claude) | Seminar | 시트에서 옮겨진 Suchan Lee 발표 날짜를 10/30 → 11/18 로 |
 | 2026-10-26 | [last-updated-seminar-sync](2026-10-26-last-updated-seminar-sync.md) | Sangwoo Mo(moai-postech) | 꼬리말, tools | 꼬리말에 Last updated(KST 빌드 날짜), 매주 월요일 lab-site-sync 루틴이 정본(연구 저장소, project 시트, 캘린더)과 _data 를 맞춤 |

@@ -13,7 +13,8 @@
       </a>
     </div>
     <div class="foot-base">
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+      {% comment %}Last updated 는 Pages 빌드 시각(UTC)을 KST 로 옮긴 날짜다. push 와 주간 세미나 동기화가 빌드를 일으킨다{% endcomment %}
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} &middot; Last updated {{ site.time | date: "%s" | plus: 32400 | date: "%b %-d, %Y" }}</p>
       <p><a class="foot-privacy" href="{{ u.privacy_url }}">{{ u.privacy_label }}</a></p>
     </div>
   </footer>

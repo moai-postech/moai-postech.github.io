@@ -5,6 +5,7 @@
 # 연사 이름은 모두 링크한다: 초청 연사와 인턴은 url(홈페이지, 없으면 본인이 공개한 블로그나 GitHub), 랩 멤버는 People 의 그 사람 자리(템플릿이 자동). 인턴은 People 에 올리지 않는다(교수 2026-10-26).
 # 영문 이름은 _data/members.yml, 연사 홈페이지, Slack 프로필, 본인 메일 표시 이름을 따른다.
 # 시험, 마감, monthly sync 처럼 발표가 아닌 행과 공개 전 연구 코드명(10/07 jev)은 넣지 않는다.
+# 매주 월요일 09:00 KST 클라우드 루틴이 시트를 읽고 이 파일을 맞춘다(절차는 tools/seminar-sync.md).
 sheet: "https://docs.google.com/spreadsheets/d/1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U/edit"
 talks:
   - date: "2026-11-04"

@@ -20,7 +20,6 @@
         - { short: "DIGAN", venue: "ICLR'22", url: "https://arxiv.org/abs/2202.10571" }
         - { short: "OAMixer", venue: "CVPRW'22", url: "https://arxiv.org/abs/2212.06595" }
         - { short: "OACon", venue: "NeurIPS'21", url: "https://arxiv.org/abs/2108.00049" }
-        - { short: "LoGe", venue: "ICMLW'21", url: "https://arxiv.org/abs/2107.10493" }
         - { short: "InstaGAN", venue: "ICLR'19", url: "https://arxiv.org/abs/1812.10889" }
     - name: "Learning in the Wild"
       summary: "Learning from limited, uncurated, or novel data."
@@ -70,6 +69,7 @@
       papers:
         - { short: "PRISM", venue: "arXiv'26", match: "PRISM:" }
         - { short: "DPM-SNC", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2302.10506" }
+        - { short: "LoGe", venue: "ICMLW'21", url: "https://arxiv.org/abs/2107.10493" }
 - area: "Robotics & Embodied AI"
   stage: "Action"
   icon: robotics

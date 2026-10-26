@@ -6,6 +6,7 @@
   (맨 위 가로 파이프라인은 같은 날 중복이라 뺐다).
   세 띠는 stage-track 하나로 묶어 왼쪽에 세로 레일을 긋고, 번호 마디가 sticky 머리와 함께 레일을 따라 내려간다.
   카드: 주제 이름, 문장 하나, 논문 칩(약칭 + venue, 마우스를 올리면 전체 제목). 한 편만 앞세우지 않는다(교수 2026-10-22).
+  칩은 옛 논문이 먼저다(교수 2026-10-26). 데이터는 최신이 위라 여기서 reverse 로 뒤집는다.
   전체 제목은 publications.yml(정본)에서 url 이 같은 논문, url 이 없으면 제목이 match 를 담은 논문에서 가져온다.
 {% endcomment %}
 <div class="stage-track">
@@ -21,15 +22,15 @@
       </div>
     </div>
     <div class="topic-cards">
-      {% for t in area.topics %}{% assign titles = "" | split: "" %}
-      {% for p in t.papers %}{% assign pt = "" %}{% assign pub = false %}
+      {% for t in area.topics %}{% assign titles = "" | split: "" %}{% assign papers = t.papers | reverse %}
+      {% for p in papers %}{% assign pt = "" %}{% assign pub = false %}
         {% for g in site.data.publications %}{% for q in g.papers %}{% if p.url %}{% if q.url == p.url or q.official == p.url %}{% assign pub = q %}{% endif %}{% elsif p.match %}{% if q.title contains p.match %}{% assign pub = q %}{% endif %}{% endif %}{% endfor %}{% endfor %}
         {% if pub %}{% assign pt = pub.title %}{% endif %}
         {% assign titles = titles | push: pt %}
       {% endfor %}<div class="topic-card">
         <h3>{{ t.name }}</h3>
         <p>{{ t.summary }}</p>
-        <div class="paper-chips">{% for p in t.papers %}{% assign pt = titles[forloop.index0] %}{% if p.url %}<a class="chip" href="{{ p.url }}"{% if pt != "" %} title="{{ pt | escape }}"{% endif %}>{% else %}<span class="chip"{% if pt != "" %} title="{{ pt | escape }}"{% endif %}>{% endif %}{{ p.short }} <small>{{ p.venue }}</small>{% if p.url %}</a>{% else %}</span>{% endif %}{% endfor %}</div>
+        <div class="paper-chips">{% for p in papers %}{% assign pt = titles[forloop.index0] %}{% if p.url %}<a class="chip" href="{{ p.url }}"{% if pt != "" %} title="{{ pt | escape }}"{% endif %}>{% else %}<span class="chip"{% if pt != "" %} title="{{ pt | escape }}"{% endif %}>{% endif %}{{ p.short }} <small>{{ p.venue }}</small>{% if p.url %}</a>{% else %}</span>{% endif %}{% endfor %}</div>
       </div>
       {% endfor %}
     </div>

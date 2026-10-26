@@ -3,9 +3,9 @@
 # 페이지는 단계를 앞에, 분야 이름을 그 아래에 둔다. 단계에 한 가지 구조(예: objects)를 붙이지 않는다. 주제 전체를 담지 못한다.
 # icon 은 assets/img/icons/<icon>.png. 주제마다 summary(문장 하나, 대문자로 시작, 마침표)와 papers(약칭, venue, url).
 # venue 는 `학회'연도` 꼴(AGENTS.md 표기 규칙). 교수의 논문은 시기와 무관하게 모두 MOAI Lab 논문이다. 랩 시작 전후로 나누지 않는다.
-# papers 는 _data/publications.yml 과 같은 순서(최신이 위)로 둔다. 카드는 그중 첫 게재 논문(arXiv 가 아닌 것)을 전체 제목과 함께
-# 크게 보이고, 나머지를 칩으로 보인다. 전체 제목은 publications.yml(정본)에서 url 로 찾는다. url 이 없는 논문은 match 에
-# publications.yml 제목의 앞부분을 쓴다. 논문 url 이 없으면 칩과 카드가 링크 없이 보인다.
+# papers 는 _data/publications.yml 과 같은 순서(최신이 위)로 둔다. 페이지는 이를 뒤집어 옛 논문부터 칩으로 보인다(교수 2026-10-26).
+# 칩에 마우스를 올리면 전체 제목이 뜬다. 전체 제목은 publications.yml(정본)에서 url 로 찾는다. url 이 없는 논문은 match 에
+# publications.yml 제목의 앞부분을 쓴다. 논문 url 이 없으면 칩이 링크 없이 보인다.
 - area: "Vision & Multimodal"
   stage: "Perception"
   icon: vision

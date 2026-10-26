@@ -228,16 +228,16 @@ a.mentee-name:hover { color: var(--accent); }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 .research-area { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
 .stage-track { position: relative; }
-.stage-track::before { content: ""; position: absolute; left: 17px; top: calc(var(--section-gap) + 18px); bottom: 0; width: 2px; background: var(--faint); }  /* one rail through the three stages; each node rides it with its sticky head */
+.stage-track::before { content: ""; position: absolute; left: 17px; top: calc(var(--section-gap) + 72px + var(--space-4) + 18px); bottom: 0; width: 2px; background: var(--faint); }  /* one rail through the three stages; each node rides it with its sticky head */
 .research-head { grid-column: span 4; position: sticky; top: var(--space-6); display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-4); }  /* the stage stays beside its cards while they scroll */
-.research-head .stage-node { position: relative; margin-top: 2px; }
+.research-head .stage-node { position: relative; margin-top: calc(72px + var(--space-4) + 2px); }  /* level with the stage name under the icon */
+.research-head .area-icon { display: block; width: 72px; height: 72px; margin-bottom: var(--space-4); object-fit: contain; }  /* the same size as before 2026-10-26: pictures before words */
 .research-head h2 { margin: 0; line-height: 1.2; }
 .research-head p { margin: 0; }
 .research-head .area-name { margin-top: var(--space-2); font-weight: 700; }
 .research-head .area-blurb { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-meta); }
 .research-next { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); margin: 0; font-weight: 600; }  /* closing line: where to go after the stages */
-.topic-cards { grid-column: span 8; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
-.topic-card:last-child:nth-child(odd) { grid-column: 1 / -1; }  /* an odd last card fills the row instead of leaving a hole */
+.topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
 .topic-card h3 { margin: 0; font-size: var(--text-body); }
 .topic-card p { margin: 0 0 var(--space-2); color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
@@ -397,7 +397,6 @@ a.person-name:hover { color: var(--accent); }
   .focus-tab img { width: 36px; height: 36px; }
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
   .pubs li { grid-template-columns: 2.25em minmax(0, 1fr); }
-  .topic-cards { grid-template-columns: 1fr; }
   .item-list li { flex-wrap: wrap; gap: 2px var(--space-3); padding: var(--space-2) 0; }  /* on phones one-line items wrap to two or three lines, so they need the wider gap */
   .funding li { grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--space-3); }
   .funding li span { grid-column: 1 / -1; grid-row: 2; }

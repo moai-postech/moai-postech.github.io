@@ -43,3 +43,4 @@
 - 요청: 교수가 제목 뒤 `slides`, `paper` 표시를 넣지 말고 제목에만 링크하라고 했다. 슬라이드가 있으면 슬라이드, 없으면 논문. 랩 발표는 슬라이드, 초청 발표는 논문.
 - `seminar.html`: 제목 링크는 `slides | default: paper`, 뒤 표시 글자를 지움. `theme.css`: `.schedule-slides` 규칙 삭제. 데이터는 이미 랩 발표에 slides, 초청 발표에 paper 가 있어 그대로 둔다.
 - 기각한 안: 제목 뒤 작은 slides·paper 링크(앞 회차에서 넣었던 것). 교수가 제목 링크 하나로 통일하라고 했다.
+- 고침: 교수가 Kwangmo Yang 링크를 본인 홈페이지 `https://kmyxng.github.io/` 로 바꾸라고 했다(GitHub `kwangmo24` 대신).

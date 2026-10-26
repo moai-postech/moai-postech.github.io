@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-10-26 | [seminar-name-right](2026-10-26-seminar-name-right.md) | Sangwoo Mo(moai-postech) | Seminar | 발표자 이름을 맨 오른쪽 열로(소속은 그 왼쪽), 연사 이름 모두 링크(인턴은 블로그·GitHub), 제목은 slides 없으면 연사 논문(paper)으로 링크 |
+| 2026-10-26 | [seminar-name-right](2026-10-26-seminar-name-right.md) | Sangwoo Mo(moai-postech) | Seminar | 발표자 이름을 맨 오른쪽 열로(소속은 그 왼쪽), 연사 이름 모두 링크(인턴은 블로그·GitHub), 제목 링크만(랩은 슬라이드, 초청은 논문), slides·paper 표시 없음 |
 | 2026-10-26 | [postech-lockup](2026-10-26-postech-lockup.md) | Sangwoo Mo(moai-postech) | 머리글, 꼬리말 | POSTECH 헤더 가이드대로 "POSTECH \| MOAI Lab" 가는 세로선 짜임, 꼬리말도 같은 워드마크, 2차에 공식 고해상도 워드마크(733×62)로 교체 |
 | 2026-10-26 | [custom-domain](2026-10-26-custom-domain.md) | Sangwoo Mo(moai-postech) | Pages 설정, CNAME | moai.postech.ac.kr 커스텀 도메인 등록·HTTPS 강제(DNS 는 정보기술팀이 먼저 바꿔 404 였음) |
 | 2026-10-26 | [hyphen-case](2026-10-26-hyphen-case.md) | Sangwoo Mo(moai-postech) | AGENTS | 하이픈 단어: 라벨은 `Time-Series`, 문장은 `time-series`, 원제·이름은 그대로 |

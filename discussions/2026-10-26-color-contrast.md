@@ -45,3 +45,5 @@
 
 ## 결정
 2026-10-26, Sangwoo Mo(교수): 안 A + 안 C 채택. Focus 절을 남색 띠로 깔고 대표 논문 카드에 논문 그림을 넣는다. 흰 화면에 명암 대비가 가장 크게 생기고, 그림이 연구 내용을 먼저 보여 준다. 안 B 는 Focus 패널 배경이 A 와 겹쳐 함께 쓸 수 없고, 안 D 는 밋밋하다는 문제를 풀지 못한다. 반영: [changelog](../changelog/2026-10-26-color-contrast.md).
+
+같은 날 교수가 화면을 보고 A 와 C 를 모두 되돌렸다(남색 칠이 어울리는지 확신이 없고, 그림이 일부 논문에만 작게 들어가 잘 보이지 않음). 대신 그림·아이콘 전용 보조색 teal 을 넣었다: [focus-revert](../changelog/2026-10-26-focus-revert.md), [illustration-teal](../changelog/2026-10-26-illustration-teal.md).

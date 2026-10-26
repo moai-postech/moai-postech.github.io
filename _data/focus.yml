@@ -2,7 +2,6 @@
 # 버튼(name, icon)을 누르면 papers(대표 논문)와 그 방향을 하는 사람(_data/members.yml 의 focus)이 펼쳐진다.
 # 대표 논문은 올해와 작년 것만, 분야마다 최대 3편(화면도 3편까지만 보인다, 교수 결정 2026-10-21). 넘기기(캐러셀)는 쓰지 않는다.
 # url 이 없으면(아직 공개 전) 카드는 링크 없이 보인다. 다른 페이지로 보내지 않는다. icon 은 assets/img/icons/<icon>.svg. papers 의 short 는 Research 의 약칭, venue 는 학회'연도.
-# image 는 카드 위쪽에 보이는 논문의 대표 그림(개념도나 예시, 결과 그래프는 피한다). assets/img/papers/<short 소문자>.png, 폭 1200px 이하. 없으면 글만 나온다.
 - name: "Agentic AI"
   icon: agentic
   papers:
@@ -10,17 +9,14 @@
       venue: "EMNLP'26"
       title: "Understanding the Effects of Distractors on Reasoning Vision-Language Models"
       url: "https://arxiv.org/abs/2511.21397"
-      image: assets/img/papers/idis.png
     - short: "LoC"
       venue: "arXiv'26"
       title: "Loud and Clear: Making Visual Evidence Count in Multimodal Document RAG"
       url: "https://arxiv.org/abs/2610.21318"
-      image: assets/img/papers/loc.png
     - short: "TEG"
       venue: "arXiv'26"
       title: "Why, Where, How: Taxonomy-guided Error Grounding for Code Repair in NL2SQL"
       url: "https://arxiv.org/abs/2610.05060"
-      image: assets/img/papers/teg.png
 - name: "Physical AI"
   icon: physical
   papers:
@@ -28,12 +24,10 @@
       venue: "ICML'26"
       title: "Bring My Cup! Personalizing Vision-Language-Action Models with Visual Attentive Prompting"
       url: "https://arxiv.org/abs/2512.20014"
-      image: assets/img/papers/vap.png
     - short: "INDI"
       venue: "arXiv'26"
       title: "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models"
       url: "https://arxiv.org/abs/2608.23478"
-      image: assets/img/papers/indi.png
 - name: "Manufacturing AI"
   icon: manufacturing
   papers:

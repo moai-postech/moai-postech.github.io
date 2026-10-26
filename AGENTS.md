@@ -26,7 +26,7 @@ _themes/classic/     예전 테마(카드·좌우 배치). 둘 다 참고용이�
   layouts/           default.html(머리·메뉴·꼬리), page.html(소개 + 절 목록)
   includes/          section.html, sections/<type>.html, theme.css 등
 assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 않는다)
-assets/seminar/      랩 발표 슬라이드 PDF(16:9 로 맞춘 사본, 날짜-발표자.pdf). seminar_sync.py 가 만들고 지운다
+assets/seminar/      랩 발표 슬라이드 PDF(16:9 로 맞춘 사본, 날짜-제목별칭.pdf). seminar_sync.py 가 만들고 지운다
 assets/img/          그림, 아이콘(icons/), 사진(people/), 로고 아이콘(logo-mark.svg, `_config.yml` 의 logo). 콘텐츠가 경로로 가리킨다
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
 changelog/           수정 기록(아래 규칙)
@@ -102,7 +102,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 3. 초청 발표는 `affiliation_en`(영문 소속), `slide` 칸에 연사 홈페이지, `paper` 에 연사의 해당 논문(arXiv 초록 주소, 여러 개면 연사가 1저자인 대표 하나)을 채운다. 외부 연사 슬라이드는 올리지 않는다. 인턴처럼 People 에 없는 랩 발표자는 `homepage` 에 본인 홈페이지를 넣는다.
 4. 바로 보고 싶으면 GitHub 의 Actions > seminar-sync > Run workflow 를 누른다. 1~2분 뒤 반영된다. 슬라이드를 못 찾으면 실행 기록에 경고가 남는다.
 
-동기화는 슬라이드를 PDF 로 바꾸고, 모든 쪽을 16:9(960x540pt)로 맞추고(비율이 다른 쪽은 줄여서 가운데), 이름을 `날짜-발표자.pdf` 로, PDF 정보에 제목과 발표자를 넣는다. 슬라이드 내용은 고치지 않는다. 바뀐 것이 있으면 `changelog/{날짜}-seminar-sync.md` 에 스스로 기록한다.
+동기화는 슬라이드를 PDF 로 바꾸고, 모든 쪽을 16:9(960x540pt)로 맞추고(비율이 다른 쪽은 줄여서 가운데), 이름을 `날짜-제목별칭.pdf`(예: `2026-07-22-memeye.pdf`)로, PDF 정보에 제목과 발표자를 넣는다. 제목 별칭은 시트 `nickname` 칸에 적은 것, 비어 있으면 제목의 콜론 앞 짧은 이름(`MemEye`, `ESI-Bench`)이나 기능어를 뺀 앞 3단어다. 자동 별칭이 어색하면 `nickname` 을 채운다(교수 2026-10-26). 슬라이드 내용은 고치지 않는다. 바뀐 것이 있으면 `changelog/{날짜}-seminar-sync.md` 에 스스로 기록한다.
 
 ## 고치는 절차
 

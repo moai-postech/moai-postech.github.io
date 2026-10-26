@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-26 | [hyphen-case](2026-10-26-hyphen-case.md) | Sangwoo Mo(moai-postech) | AGENTS | 하이픈 단어: 라벨은 `Time-Series`, 문장은 `time-series`, 원제·이름은 그대로 |
 | 2026-10-26 | [hyunwoo-seo-focus](2026-10-26-hyunwoo-seo-focus.md) | Sangwoo Mo(moai-postech) | Home, People | 서현우 박사 Manufacturing AI·Time-Series Analysis, 모든 멤버는 세 연구 방향 중 하나 규칙 |
 | 2026-10-26 | [seminar-title-bold](2026-10-26-seminar-title-bold.md) | Sangwoo Mo(moai-postech) | Seminar | 발표 제목 중간 굵기(500), 연사 굵게(600). 1차의 제목 굵게·연사 보통은 2차에서 되돌림 |
 | 2026-10-26 | [course-files-on-site](2026-10-26-course-files-on-site.md) | Sangwoo Mo(moai-postech) | 26F Data Engineering | 강의 슬라이드·프로포절 발표 PDF 를 사이트에 올리고 Drive 링크를 사이트 경로로 |

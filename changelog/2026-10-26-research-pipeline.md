@@ -128,3 +128,11 @@
 
 ## 남은 것(10차 이후)
 - Applications of VLMs(PDS, I2A)와 Structured Data(DPM-SNC, PRISM)가 두 편씩만 남았다. 주제 이름·설명(점검 2·3번)과 단계별 분량(4번)을 정할 때 함께 본다.
+
+## 11차: LoGe 를 Structured Data 로 되돌림 (같은 날)
+- 교수: "LoGe는 structured data로 두는게 나을거 같은데... visual보다는 logic이 메인이니까."
+- 10차에 Visual Structure 로 옮긴 LoGe 를 Structured Data 로 되돌렸다. 논문의 중심은 그림이 아니라 논리 규칙이다.
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(11차)
+- LoGe 를 Visual Structure 에(10차): RPM 이 그림 문제이긴 하지만 논문이 다루는 것은 논리 구조다.

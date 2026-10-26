@@ -223,8 +223,6 @@ a.mentee-name:hover { color: var(--accent); }
 /* Research stages: perception -> reasoning -> action as one vertical rail; each stage heads its area */
 .stage-node { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: var(--bg); font-size: var(--text-meta); font-weight: 700; }  /* the numbered stop on the stage rail */
 .stage-q { color: var(--muted); font-size: var(--text-lead); }
-.research-head .stage-prior { display: flex; flex-direction: column; margin-top: var(--space-4); font-weight: 600; }
-.stage-prior small { color: var(--muted); font-size: var(--text-small); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
 .area-name img { width: 32px; height: 32px; object-fit: contain; }
 .research-area { scroll-margin-top: var(--space-6); }
 .research-area:target .stage-node { animation: stage-arrive 1.8s ease-out; }  /* arriving by link: the stage node rings once */

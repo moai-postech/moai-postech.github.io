@@ -18,3 +18,10 @@
 
 ## 남은 것
 - 첫 실행(2026-11-02) 결과 확인. 시트의 다른 탭이나 다른 시트(과제 등)는 아직 대상이 아니다.
+
+## 덧붙임: 세미나 전용 루틴을 사이트 전체 주간 동기화로 넓힘
+- 요청: 교수, 세미나 말고도 사이트가 따라가야 하는 정본을 전부 동기화하고 루틴 이름도 일반적으로.
+- 세미나는 같은 날 교수의 다른 세션이 만든 GitHub Actions `seminar-sync`(매일, `tools/seminar_sync.py`)가 맡는다. 겹치지 않게 `tools/seminar-sync.md` 를 지우고 `tools/site-sync.md` 로 바꿨다.
+- 루틴 이름 `seminar-site-sync` → `lab-site-sync`(월 09:00 KST 유지). 연구 저장소 `moai-postech/research` 를 함께 clone 하고 Microsoft 365 커넥터를 더했다.
+- 대상: publications·news(연구 저장소의 accept·공개 arXiv), funding(project 시트), talks(캘린더와 invited-talks 폴더)는 고친다. research·focus·members·media·teaching 은 정본이 사이트 자체이거나 배치 결정이라 보고만 한다. 개인 사이트·CV·Scholar 는 고치지 않고 어긋남만 보고한다.
+- 기각: 루틴이 research·focus 에 새 논문을 직접 배치하는 안. 첫 화면에 무엇을 앞세울지는 `AGENTS.md` 의 "논의가 필요한 수정"이다. 개인 사이트까지 루틴이 고치는 안: Google Sites 편집은 로그인한 브라우저가 필요해 클라우드에서 못 한다.

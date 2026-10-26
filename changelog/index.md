@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- |
 | 2026-10-26 | [seminar-slides-sync](2026-10-26-seminar-slides-sync.md) | Sangwoo Mo(moai-postech) | Seminar, tools, Actions | 랩 슬라이드 14개를 16:9 PDF 로 저장소에, 시트·Drive 기반 매일 자동 동기화 |
 | 2026-10-26 | [seminar-sync](2026-10-26-seminar-sync.md) | seminar-site-sync 루틴(Claude) | Seminar | 시트에서 옮겨진 Suchan Lee 발표 날짜를 10/30 → 11/18 로 |
-| 2026-10-26 | [last-updated-seminar-sync](2026-10-26-last-updated-seminar-sync.md) | Sangwoo Mo(moai-postech) | 꼬리말, Seminar | 꼬리말에 Last updated(KST 빌드 날짜), 매주 월요일 루틴이 세미나 시트를 읽어 seminar.yml 갱신 |
+| 2026-10-26 | [last-updated-seminar-sync](2026-10-26-last-updated-seminar-sync.md) | Sangwoo Mo(moai-postech) | 꼬리말, tools | 꼬리말에 Last updated(KST 빌드 날짜), 매주 월요일 lab-site-sync 루틴이 정본(연구 저장소, project 시트, 캘린더)과 _data 를 맞춤 |
 | 2026-10-26 | [seminar-name-right](2026-10-26-seminar-name-right.md) | Sangwoo Mo(moai-postech) | Seminar | 발표자 이름을 맨 오른쪽 열로(소속은 그 왼쪽), 연사 이름 모두 링크(인턴은 블로그·GitHub), 제목 링크만(랩은 슬라이드, 초청은 논문), slides·paper 표시 없음 |
 | 2026-10-26 | [postech-lockup](2026-10-26-postech-lockup.md) | Sangwoo Mo(moai-postech) | 머리글, 꼬리말 | POSTECH 헤더 가이드대로 "POSTECH \| MOAI Lab" 가는 세로선 짜임, 꼬리말도 같은 워드마크, 2차에 공식 고해상도 워드마크(733×62)로 교체 |
 | 2026-10-26 | [custom-domain](2026-10-26-custom-domain.md) | Sangwoo Mo(moai-postech) | Pages 설정, CNAME | moai.postech.ac.kr 커스텀 도메인 등록·HTTPS 강제(DNS 는 정보기술팀이 먼저 바꿔 404 였음) |

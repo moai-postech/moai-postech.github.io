@@ -31,7 +31,7 @@ assets/img/          그림, 아이콘(icons/), 사진(people/), 로고 아이�
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
-tools/               검사 스크립트(check_changelog.py), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml)
+tools/               검사 스크립트(check_changelog.py), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml), 주간 사이트 동기화 절차(site-sync.md, 클라우드 루틴 lab-site-sync)
 ```
 
 ### 무엇을 어디서 고치나

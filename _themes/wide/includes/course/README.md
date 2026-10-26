@@ -5,7 +5,7 @@
 | 파일 | 역할 |
 | --- | --- |
 | `../../layouts/course.html` | 강의 사이트 문서 틀: 머리(과목명, 강의 메뉴), 본문, 바닥. `view: schedule` 면 `schedule.html`, `view: project` 면 `project.html`, 없으면 `home.html` |
-| `home.html` | Home: 제목·소개·버튼 옆에 운영 정보 칸(Instructor, Lectures, Office hours, Other terms) → Up next(오늘 이후 세 수업, 방문자 브라우저가 고른다. 끝난 학기는 숨는다) → Course outline(파트 카드) → Grading → Resources |
+| `home.html` | Home: 제목·소개·버튼 옆에 운영 정보 칸(Instructor, Lectures, Office hours, Other terms) → Course outline(파트 카드) → Grading → Resources |
 | `schedule.html` | Schedule: 전체 스케줄 표(파트 머리 줄, 다음 수업 표시) |
 | `head.html` | Schedule 과 Term Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |
 | `project.html` | 팀 프로젝트: Overview(소개, 팀 크기, 단계, 평가 기준) → Teams(팀원, 발표 회차별 날짜·순서·슬라이드) |

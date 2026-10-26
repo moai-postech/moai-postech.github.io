@@ -54,19 +54,6 @@
 .course-instructor dd span { display: flex; flex-direction: column; line-height: 1.4; }
 .course-instructor small { color: var(--muted); font-size: var(--text-small); }
 
-/* Up next: the coming three class days as cards in the colour of their part */
-.course-next-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
-.course-next-list li { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4) var(--space-5); background: var(--tone-row); border-left: 4px solid var(--tone-tint); border-radius: var(--radius-2); }
-.course-next-list li.tone-none { background: var(--bg); box-shadow: inset 0 0 0 1px var(--line); border-left-color: var(--line); }
-.course-next-list li[hidden] { display: none; }
-.cn-when { display: flex; justify-content: space-between; gap: var(--space-2); color: var(--tone); font-size: var(--text-meta); font-weight: 700; font-variant-numeric: tabular-nums; }
-.cn-when span { color: var(--muted); font-weight: 600; }
-.cn-title { font-weight: 600; line-height: 1.45; }
-.is-break .cn-title { color: var(--muted); font-weight: 400; }
-.cn-sub { color: var(--muted); font-size: var(--text-meta); }
-.cn-links { display: flex; gap: var(--space-3); margin-top: auto; padding-top: var(--space-2); }
-.cn-links a, .course-more a { color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
-.course-more { margin-top: var(--space-4); }
 .course-outline { margin-top: 0; }
 
 /* Schedule and Term Project: the page name as the title, the course on the line below */
@@ -148,7 +135,7 @@ a.cs-title:hover { color: var(--accent); }
 .course-note { margin-top: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
 
 @media (max-width: 960px) {
-  .course-parts, .course-grading, .course-next-list { grid-template-columns: 1fr; gap: var(--space-3); }
+  .course-parts, .course-grading { grid-template-columns: 1fr; gap: var(--space-3); }
   .course-hero { grid-template-columns: 1fr; gap: var(--space-6); }
 }
 @media (max-width: 680px) {

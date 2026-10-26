@@ -3,9 +3,10 @@
   사람(_data/members.yml 에서 focus 가 같은 사람)이 아래 패널에 펼쳐진다.
   자바스크립트가 없으면 패널이 모두 펼쳐진 채로 보인다.
   패널마다 자기 내용만큼의 높이다(가장 긴 패널에 맞춰 늘리지 않는다, 교수 2026-10-22).
+  id="focus" 는 Research > Overview 맨 아래 링크(index.html#focus)가 가리킨다.
 {% endcomment %}
 {% assign sid = include.section.title | slugify %}
-    <section class="content-section sec-focus">
+    <section class="content-section sec-focus" id="focus">
     <h2>{{ include.section.title }}</h2>
     <div class="section-body focus-explorer" data-tabs>
     <div class="focus-tabs" role="tablist">

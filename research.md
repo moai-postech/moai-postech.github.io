@@ -11,8 +11,8 @@ intro: |
 sections:
   # _data/research.yml 의 분야마다 절 하나씩, 단계 이름이 절 제목
   - type: research
-  # 맺음: 더 볼 곳(주제 지도)과 지원(Contact)으로 넘기는 한 줄
+  # 맺음: 지금의 연구 방향(Home 의 focus), 더 볼 곳(주제 지도), 지원(Contact)으로 넘기는 한 줄
   - body: |
-      [Explore every paper on the topic map →](landscape.html)  [Join the lab →](contact.html)
+      [Our focus in 2026 →](index.html#focus)  [Explore every paper on the topic map →](landscape.html)  [Join the lab →](contact.html)
       {: .research-next}
 ---

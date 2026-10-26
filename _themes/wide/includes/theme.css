@@ -425,3 +425,10 @@ a.person-name:hover { color: var(--accent); }
 
 {% comment %}Course pages: their own folder so the template stays in one place{% endcomment %}
 {% include course/course.css %}
+
+/* 시안 B(discussions/2026-10-26-color-contrast.md): 이미 있는 --accent-soft 를 넓은 면으로 써서 크림슨을 점이 아니라 면으로 보이게 한다. 색은 늘리지 않는다 */
+.focus-tab[aria-selected="true"] { border-color: var(--accent-soft); background: var(--accent-soft); }
+.focus-panels { border-color: var(--accent-soft); background: var(--accent-soft); }
+.paper-chip { background: var(--bg); }
+.paper-chip .venue { background: var(--accent-soft); color: var(--accent); }
+.hero-band { background: linear-gradient(180deg, var(--accent-soft), var(--bg)); }

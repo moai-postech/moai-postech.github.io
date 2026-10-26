@@ -1,5 +1,5 @@
 # Research > Overview 의 분야. area 가 분야 이름, blurb 가 분야 한 줄 설명, topics 가 그 안의 주제 카드다.
-# stage 는 Perception → Reasoning → Action 중 이 분야가 맡는 단계, stage_question 은 그 단계가 답하는 질문.
+# stage 는 Perception → Reasoning → Action 중 이 분야가 맡는 단계, tagline 은 단계 이름 아래 짧은 한 줄(How models see.).
 # 페이지는 단계를 앞에, 분야 이름을 그 아래에 둔다. 단계에 한 가지 구조(예: objects)를 붙이지 않는다. 주제 전체를 담지 못한다.
 # icon 은 assets/img/icons/<icon>.png. 주제마다 summary(문장 하나, 대문자로 시작, 마침표)와 papers(약칭, venue, url).
 # venue 는 `학회'연도` 꼴(AGENTS.md 표기 규칙). 교수의 논문은 시기와 무관하게 모두 MOAI Lab 논문이다. 랩 시작 전후로 나누지 않는다.
@@ -8,9 +8,9 @@
 # publications.yml 제목의 앞부분을 쓴다. 논문 url 이 없으면 칩과 카드가 링크 없이 보인다.
 - area: "Vision & Multimodal"
   stage: "Perception"
-  stage_question: "What is out there?"
+  tagline: "How models see."
   icon: vision
-  blurb: "How models see: understanding and generating images and video, even from imperfect data."
+  blurb: "Understanding and generating images and video, even when the data is scarce, noisy, or biased."
   topics:
     - name: "Visual Structure"
       summary: "Representing scenes as objects, parts, and motion."
@@ -33,7 +33,7 @@
         - { short: "MASKER", venue: "AAAI'21", url: "https://arxiv.org/abs/2012.09392" }
         - { short: "CSI", venue: "NeurIPS'20", url: "https://arxiv.org/abs/2007.08176" }
     - name: "Reliable Generation"
-      summary: "Generating faithfully under bias, noise, and scarce data."
+      summary: "Generating faithful images despite bias, noise, or little data."
       papers:
         - { short: "StayFair", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2605.28036" }
         - { short: "FICS", venue: "TMLR'23", url: "https://arxiv.org/abs/2212.02090" }
@@ -41,9 +41,9 @@
         - { short: "GOLD", venue: "NeurIPS'19", url: "https://arxiv.org/abs/1910.09170" }
 - area: "Language & Reasoning"
   stage: "Reasoning"
-  stage_question: "What follows from it?"
+  tagline: "How models think."
   icon: language
-  blurb: "How models think and work: reasoning reliably, running efficiently, and solving real-world problems."
+  blurb: "Grounded and efficient reasoning, foundation models applied to real-world problems, and learning on structured data."
   topics:
     - name: "Reasoning & Agents"
       summary: "Grounding reasoning in evidence and correcting its errors."
@@ -53,7 +53,7 @@
         - { short: "Idis", venue: "EMNLP'26", url: "https://arxiv.org/abs/2511.21397" }
         - { short: "SuRe", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.13081" }
     - name: "Efficient LLMs"
-      summary: "Cutting compute and extending context."
+      summary: "Cutting compute and reading longer context."
       papers:
         - { short: "Simba", venue: "TMLR'25", url: "https://arxiv.org/abs/2505.20698" }
         - { short: "HOMER", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.10308" }
@@ -74,9 +74,9 @@
         - { short: "LoGe", venue: "ICMLW'21", url: "https://arxiv.org/abs/2107.10493" }
 - area: "Robotics & Embodied AI"
   stage: "Action"
-  stage_question: "What should be done?"
+  tagline: "How models act."
   icon: robotics
-  blurb: "How models act: robots that plan their actions and sense the physical world beyond vision."
+  blurb: "Robots that plan their actions and sense the physical world through touch as well as sight."
   topics:
     - name: "VLA & World Models"
       summary: "Building robots that perceive, plan, and act."
@@ -84,7 +84,7 @@
         - { short: "INDI", venue: "arXiv'26", url: "https://arxiv.org/abs/2608.23478" }
         - { short: "VAP", venue: "ICML'26", url: "https://arxiv.org/abs/2512.20014" }
     - name: "Multisensory Learning"
-      summary: "Sensing touch and other non-visual signals."
+      summary: "Sensing touch and other signals beyond vision."
       papers:
         - { short: "EIT-NN2", venue: "T-RO'21", url: "https://ieeexplore.ieee.org/document/9376677" }
         - { short: "EIT-NN", venue: "IROS'19", url: "https://ieeexplore.ieee.org/document/8968532" }

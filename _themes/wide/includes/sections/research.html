@@ -1,6 +1,6 @@
 {% comment %}
   _data/research.yml 의 분야마다 한 띠: 왼쪽 4칸에 단계 머리, 오른쪽 8칸에 주제 카드(2열).
-  단계 머리: 번호 마디, 단계 이름(h2, 예: Perception), 단계가 답하는 질문, 분야 아이콘과 이름, 분야 한 줄 설명.
+  단계 머리: 번호 마디, 단계 이름(h2, 예: Perception), 한 줄(tagline, 예: How models see.), 분야 아이콘과 이름, 분야 한 줄 설명.
   단계가 제목이고 분야는 그 아래다(교수 2026-10-26, 세 단계가 더 잘 드러나게). 세 단계를 보여 주는 그림은 이 세로 레일 하나다
   (맨 위 가로 파이프라인은 같은 날 중복이라 뺐다).
   세 띠는 stage-track 하나로 묶어 왼쪽에 세로 레일을 긋고, 번호 마디가 sticky 머리와 함께 레일을 따라 내려간다.
@@ -14,7 +14,7 @@
       <span class="stage-node">{{ forloop.index }}</span>
       <div class="research-head-body">
         <h2>{{ area.stage | default: area.area }}</h2>
-        {% if area.stage_question %}<p class="stage-q">{{ area.stage_question }}</p>{% endif %}
+        {% if area.tagline %}<p class="stage-q">{{ area.tagline }}</p>{% endif %}
         {% if area.stage %}<p class="area-name">{% if area.icon %}<img class="area-icon" src="assets/img/icons/{{ area.icon }}.png" alt="">{% endif %}{{ area.area }}</p>{% endif %}
         {% if area.blurb %}<p class="area-blurb">{{ area.blurb }}</p>{% endif %}
       </div>

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-26 | [course-files-on-site](2026-10-26-course-files-on-site.md) | Sangwoo Mo(moai-postech) | 26F Data Engineering | 강의 슬라이드·프로포절 발표 PDF 를 사이트에 올리고 Drive 링크를 사이트 경로로 |
 | 2026-10-23 | [funding-sponsor-names](2026-10-23-funding-sponsor-names.md) | Sangwoo Mo(moai-postech) | Funding | NRF·KEIT·IITP 정식 명칭을 마우스 올림으로, Korea Real Estate Board |
 | 2026-10-23 | [mobile-tel-theme-note](2026-10-23-mobile-tel-theme-note.md) | Sangwoo Mo(moai-postech) | 꼬리말, AGENTS | 휴대폰 꼬리말 전화번호가 갈리지 않게, 옛 테마는 참고용이라고 바로잡음, 로고 alt(POSTECH 가이드) |
 | 2026-10-23 | [seminar-remove-upnext](2026-10-23-seminar-remove-upnext.md) | Sangwoo Mo(moai-postech) | Seminar | Up next 카드 제거(의도 오독 되돌림), 다가오는 발표는 목록 상단 날짜 하이라이트만 유지 |

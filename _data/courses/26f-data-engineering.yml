@@ -1,5 +1,5 @@
 # 강의 페이지 /teaching/26f-data-engineering/ 의 내용. 모양은 _themes/wide/includes/course/ 가 정한다(그 폴더의 README.md).
-# 정본은 이 파일이다(2026-10-22부터 스케줄 구글시트를 대신한다). 슬라이드는 Drive lecture_note/ 의 배포본을 가리킨다.
+# 정본은 이 파일이다(2026-10-22부터 스케줄 구글시트를 대신한다). 슬라이드·발표 자료는 이 저장소의 teaching/26f-data-engineering/ 에 둔 파일을 사이트 루트 기준 경로로 가리킨다(2026-10-26, Drive 는 백업). 강의 저장소의 tools/publish-site.py 가 Drive 배포본을 이 폴더로 복사한다.
 title: "Data Engineering"
 code: "IMEN891K / IDSC501 / AXGS-501"
 term: "Fall 2026"
@@ -37,21 +37,21 @@ schedule:
     kind: lecture
     n: 1
     title: "Overview & Logistics"
-    pdf: "https://drive.google.com/file/d/19mfIkWJskdzzt1CegYrxTrufs88E0pTh/view"
-    html: "https://drive.google.com/file/d/1s0urhm_B_aUX8ghtUFFeJrpXa7qSDAvn/view"
+    pdf: "teaching/26f-data-engineering/slides/1_overview.pdf"
+    html: "teaching/26f-data-engineering/slides/1_overview.html"
   - part: "part-1"
   - date: "2026-09-10"
     kind: lecture
     n: 2
     title: "Data Collection"
-    pdf: "https://drive.google.com/file/d/1HrGF9CEBnfwL-hg6hvrvNaXms9LMO5c0/view"
-    html: "https://drive.google.com/file/d/1nHeaJH3aXWaW850KF2eaxEF6rqe_hbD3/view"
+    pdf: "teaching/26f-data-engineering/slides/2_data-collection.pdf"
+    html: "teaching/26f-data-engineering/slides/2_data-collection.html"
   - date: "2026-09-15"
     kind: lecture
     n: 3
     title: "Data Exploration"
-    pdf: "https://drive.google.com/file/d/1z84KVIeFo4FEBmDsXnp6h9BLlM1YS9cy/view"
-    html: "https://drive.google.com/file/d/1VVQBSXCc2z1xIDM5RC3ytSv6lGV6dTfW/view"
+    pdf: "teaching/26f-data-engineering/slides/3_data-exploration.pdf"
+    html: "teaching/26f-data-engineering/slides/3_data-exploration.html"
     reading:
       - text: "DMCT Ch 2"
         url: "https://hanj.cs.illinois.edu/cs412/bk3/02.pdf"
@@ -59,8 +59,8 @@ schedule:
     kind: lecture
     n: 4
     title: "Pre-processing I: Cleaning & Integration"
-    pdf: "https://drive.google.com/file/d/1QDN-xxkD9XNktcBek3vvJHSl66n2UYzz/view"
-    html: "https://drive.google.com/file/d/1HtPSTw8fyxu-vpAXmc_ZquXrtKckQ152/view"
+    pdf: "teaching/26f-data-engineering/slides/4_preprocessing-I.pdf"
+    html: "teaching/26f-data-engineering/slides/4_preprocessing-I.html"
     reading:
       - text: "DMCT Ch 3"
         url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
@@ -73,8 +73,8 @@ schedule:
     kind: lecture
     n: 5
     title: "Pre-processing II: Transformation & Reduction"
-    pdf: "https://drive.google.com/file/d/1s8NPFWV-MNBv8dOXQslqSVUdBwODD39v/view"
-    html: "https://drive.google.com/file/d/1BIMcXKeLrmywGKSN0lCwZtI3RxZzmlqw/view"
+    pdf: "teaching/26f-data-engineering/slides/5_preprocessing-II.pdf"
+    html: "teaching/26f-data-engineering/slides/5_preprocessing-II.html"
     reading:
       - text: "DMCT Ch 3"
         url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
@@ -86,8 +86,8 @@ schedule:
     kind: lecture
     n: 6
     title: "SQL I: Basics"
-    pdf: "https://drive.google.com/file/d/11AzApeUUWK3OEfunhtixSNOjrEN7bs1t/view"
-    html: "https://drive.google.com/file/d/1z35TzlGehk12oFAQgakjtgXrWGcqcHBp/view"
+    pdf: "teaching/26f-data-engineering/slides/6_sql-I.pdf"
+    html: "teaching/26f-data-engineering/slides/6_sql-I.html"
     reading:
       - text: "DMS Lec 1 – 2"
         url: "https://thodrek.github.io/cs564-fall17/"
@@ -95,8 +95,8 @@ schedule:
     kind: lecture
     n: 7
     title: "SQL II: Joins"
-    pdf: "https://drive.google.com/file/d/1pXarnhtSI1repfSpYjtODiynwSQgzise/view"
-    html: "https://drive.google.com/file/d/1tQd_LmUAufha4_hbdkJf-OZBgxGil2Yx/view"
+    pdf: "teaching/26f-data-engineering/slides/7_sql-II.pdf"
+    html: "teaching/26f-data-engineering/slides/7_sql-II.html"
     reading:
       - text: "DMS Lec 2 – 3"
         url: "https://thodrek.github.io/cs564-fall17/"
@@ -104,8 +104,8 @@ schedule:
     kind: lecture
     n: 8
     title: "SQL III: Aggregation"
-    pdf: "https://drive.google.com/file/d/11CfTQg5XVD-0TVBSwfrZfMiunhoU-C1a/view"
-    html: "https://drive.google.com/file/d/1fzezoFalJ9SqlCtICkprIDUsR4Tlxk7d/view"
+    pdf: "teaching/26f-data-engineering/slides/8_sql-III.pdf"
+    html: "teaching/26f-data-engineering/slides/8_sql-III.html"
     reading:
       - text: "DMS Lec 3 – 4"
         url: "https://thodrek.github.io/cs564-fall17/"
@@ -113,8 +113,8 @@ schedule:
     kind: lecture
     n: 9
     title: "NoSQL I: Landscape"
-    pdf: "https://drive.google.com/file/d/18pTG0_UcliDSN3eW0fyxrYkvbvRPS3vR/view"
-    html: "https://drive.google.com/file/d/1nBp3K2ZMYd0_w1orGhX5W6QtYb71ZlMj/view"
+    pdf: "teaching/26f-data-engineering/slides/9_nosql-I.pdf"
+    html: "teaching/26f-data-engineering/slides/9_nosql-I.html"
     reading:
       - text: "IDS Lec 22"
         url: "https://cs186berkeley.net/fa24/"
@@ -122,8 +122,8 @@ schedule:
     kind: lecture
     n: 10
     title: "NoSQL II: Document Stores"
-    pdf: "https://drive.google.com/file/d/1tmKx8lMqOPmAIhA46YjgcYR8Fxj3RAXY/view"
-    html: "https://drive.google.com/file/d/1B4z0SKVtJtu52gI0A0R_D-Ng4IupI8l0/view"
+    pdf: "teaching/26f-data-engineering/slides/10_nosql-II.pdf"
+    html: "teaching/26f-data-engineering/slides/10_nosql-II.html"
     reading:
       - text: "IDS Lec 23"
         url: "https://cs186berkeley.net/fa24/"
@@ -131,8 +131,8 @@ schedule:
     kind: lecture
     n: 11
     title: "Review Session"
-    pdf: "https://drive.google.com/file/d/1LQ9Zko3kcrGrL0AMUsfHctldQETuiPDO/view"
-    html: "https://drive.google.com/file/d/17kBVqKVoavdEkzojRP_UhF37ooiCrXro/view"
+    pdf: "teaching/26f-data-engineering/slides/11_review.pdf"
+    html: "teaching/26f-data-engineering/slides/11_review.html"
   - date: "2026-10-20"
     kind: project
     title: "Project Proposal I"
@@ -149,20 +149,20 @@ schedule:
     kind: lecture
     n: 12
     title: "Big Data I: Batch Processing"
-    pdf: "https://drive.google.com/file/d/16OyVyfnLUvD5Sj7IiHhBxYTKkm3RWlp1/view"
-    html: "https://drive.google.com/file/d/1Et-4qLbiuQK27SeA5csftCb-DCJd2h7U/view"
+    pdf: "teaching/26f-data-engineering/slides/12_big-data-I.pdf"
+    html: "teaching/26f-data-engineering/slides/12_big-data-I.html"
   - date: "2026-11-05"
     kind: lecture
     n: 13
     title: "Big Data II: Data Warehousing"
-    pdf: "https://drive.google.com/file/d/1bJexEyfaX1cdOZBwSFYSpDZ-j09Uv7Jo/view"
-    html: "https://drive.google.com/file/d/1TjV1N-CAO099sEFYQWy-D1x9jzUc_cs7/view"
+    pdf: "teaching/26f-data-engineering/slides/13_big-data-II.pdf"
+    html: "teaching/26f-data-engineering/slides/13_big-data-II.html"
   - date: "2026-11-10"
     kind: lecture
     n: 14
     title: "Big Data III: Stream Processing"
-    pdf: "https://drive.google.com/file/d/1s7j1LeZ5MpXV6jewl_fFp_2BBYVOQnAj/view"
-    html: "https://drive.google.com/file/d/1QuURUpFvSZFnVXfVRNsRmLx5ikJpsAP4/view"
+    pdf: "teaching/26f-data-engineering/slides/14_big-data-III.pdf"
+    html: "teaching/26f-data-engineering/slides/14_big-data-III.html"
   - date: "2026-11-12"
     kind: event
     title: "Midterm & Proposal Review"
@@ -249,7 +249,7 @@ other_terms:
     url: "teaching/25f-data-engineering/"
 
 # 팀 프로젝트 페이지(teaching/<id>/project/). 학생은 sheet 에 입력하고, 교수가 teams 로 옮긴다(시트 → 이 파일).
-# 팀원은 시트 순서(첫 사람이 팀장). 발표 회차(rounds)마다 date(발표일), order(그날 순서), slides(발표 자료).
+# 팀원은 시트 순서(첫 사람이 팀장). 발표 회차(rounds)마다 date(발표일), order(그날 순서), slides(발표 자료, teaching/<id>/project/<회차>/<회차>_teamNN.pdf).
 project:
   sheet: "https://docs.google.com/spreadsheets/d/1SjOnpmdC4ZQcAQffTwqP2GWTv55ujObgNl_frRshPyk/edit?usp=sharing"
   summary: >-
@@ -284,117 +284,117 @@ project:
       proposal:
         date: "2026-10-22"
         order: 4
-        slides: "https://drive.google.com/file/d/1zVXDkOXSgbDob1AJGkssrkEV2EDmnjj0/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team01.pdf"
     - n: 2
       title: "LLM-Assisted Financial Risk Monitoring"
       members: ["Yassine Essakkati", "Luis Alan", "Jan Saal", "Marc David Sutjipto"]
       proposal:
         date: "2026-10-20"
         order: 6
-        slides: "https://drive.google.com/file/d/1fkX0x2Z6XDs10XrzEk4EYPuQM4FvDuVx/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team02.pdf"
     - n: 3
       title: "Conference Networking Assistant"
       members: ["하준엽", "이진우", "김제성", "이중재"]
       proposal:
         date: "2026-10-22"
         order: 5
-        slides: "https://drive.google.com/file/d/1rrZYKBBYLx6Fzt_R9IBxVWFc67QKHAPs/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team03.pdf"
     - n: 4
       title: "BenefitLens: An End-to-End Data Pipeline for Personalized Student Support Discovery and Application Drafting"
       members: ["장신형", "김혜빈", "서재은"]
       proposal:
         date: "2026-10-20"
         order: 1
-        slides: "https://drive.google.com/file/d/1_79P48Sp26zpt5La-7aLIpHlbX7SaAKl/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team04.pdf"
     - n: 5
       title: "Anomaly-Based Hydraulic Pump Predictive Maintenance with Field Knowledge Accumulation"
       members: ["장해원", "김동근", "김명건", "윤성규"]
       proposal:
         date: "2026-10-22"
         order: 9
-        slides: "https://drive.google.com/file/d/1liPs6R_14_oUwQkV41TeW8ARPw5CnXVX/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team05.pdf"
     - n: 6
       title: "Unsupervised Anomaly Detection and Analysis of Stable Operating Conditions in a Spot-Welding Process"
       members: ["조해인", "강태훈", "박태의", "이다연", "이희재"]
       proposal:
         date: "2026-10-22"
         order: 1
-        slides: "https://drive.google.com/file/d/1O1rksmeCWSNHzMjR658jqueIICIGBYXv/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team06.pdf"
     - n: 7
       title: "Multi-Agent LLM System for Port Data Analytics"
       members: ["선신욱", "조성범", "이창희", "윤수원"]
       proposal:
         date: "2026-10-20"
         order: 2
-        slides: "https://drive.google.com/file/d/1xvWNBzeoOiXTq7IVZ5F7Hleyjf-SESHB/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team07.pdf"
     - n: 8
       title: "RecallLink: Cross-Border Recall Monitoring Database for Korean Safety Agencies"
       members: ["박준희", "이승아", "엄희선", "이신영", "박규진"]
       proposal:
         date: "2026-10-22"
         order: 7
-        slides: "https://drive.google.com/file/d/1eU2l1VF97Hh_Akt_g3YYwUCDoigMHypV/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team08.pdf"
     - n: 9
       title: "Performance History-Based Model Selection for Neonatal EEG Seizure Detection"
       members: ["박민호", "박성범", "이인규", "김민성"]
       proposal:
         date: "2026-10-22"
         order: 8
-        slides: "https://docs.google.com/presentation/d/1YN043YXool1KKtu6LgzNsyqwPWFUQUzR/edit"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team09.pdf"
     - n: 10
       title: "Parking Ordinance Impact Explorer"
       members: ["이다민", "김소현", "류지희"]
       proposal:
         date: "2026-10-20"
         order: 8
-        slides: "https://drive.google.com/file/d/1qtX527MIVvHaVkmjTdlGH0obiSQJ6xxY/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team10.pdf"
     - n: 11
       title: "Personalized Meal Recommendation System Based on Dietary Restrictions"
       members: ["박채원", "이상형", "조은찬", "황보겸"]
       proposal:
         date: "2026-10-20"
         order: 4
-        slides: "https://drive.google.com/file/d/1W44L3zr5W_rqAjWq0Rp0Ijqgkuhql0WS/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team11.pdf"
     - n: 12
       title: "Meme Coin Price Data Collection (Quantitative Analysis of Crypto Market)"
       members: ["정인하", "김재호", "오승준"]
       proposal:
         date: "2026-10-20"
         order: 7
-        slides: "https://drive.google.com/file/d/1Oz3uvfXAyr7C-VqP_8gW6DgK5jRMbuuE/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team12.pdf"
     - n: 13
       title: "Advice and Paper Recommendations from Experience Paths"
       members: ["김진오", "남승범", "강상훈", "안세혁"]
       proposal:
         date: "2026-10-20"
         order: 3
-        slides: "https://drive.google.com/file/d/1pSnZmdN5ibiuWP6-v_ltGcD3PeNNUF04/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team13.pdf"
     - n: 14
       title: "Difficulty-Aware Active 3D Scanning: An Object Difficulty Database for Curriculum-Guided NBV Learning"
       members: ["김민규", "박수영", "임도유"]
       proposal:
         date: "2026-10-22"
         order: 2
-        slides: "https://drive.google.com/file/d/16YMjcCnq7iFd7_DhyPnKKCAg8-rPtWNz/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team14.pdf"
     - n: 15
       title: "Long-Tail analysis in Medical Dataset and Synthetic data generation"
       members: ["손장원", "구자빈", "엄희규"]
       proposal:
         date: "2026-10-22"
         order: 3
-        slides: "https://drive.google.com/file/d/1Vm44NvL2aCeJ_JpkcHwCvqUnblrzLXgf/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team15.pdf"
     - n: 16
       title: "Lab Recommendation Service for Prospective Graduate Students"
       members: ["이승언", "박제현"]
       proposal:
         date: "2026-10-20"
         order: 5
-        slides: "https://drive.google.com/file/d/1fFuQO70DdLAtJYvOEs4lTa7gv0WEpkq2/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team16.pdf"
     - n: 17
       title: "Special Dietary Ingredients Detection Service"
       members: ["Vinia Permata Kusuma"]
       proposal:
         date: "2026-10-22"
         order: 6
-        slides: "https://drive.google.com/file/d/1Bnj96F1bfFRvo47ndNhg_nGPat4d8QRZ/view"
+        slides: "teaching/26f-data-engineering/project/proposal/proposal_team17.pdf"
 

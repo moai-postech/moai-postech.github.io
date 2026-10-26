@@ -25,3 +25,11 @@
 - `seminar.html`, `theme.css`: 슬라이드가 있는 제목 뒤에 Publications 의 code·project 와 같은 모양(`pub-link`)의 작은 `slides` 링크. 제목 링크도 그대로 둔다.
 - 확인: 라이브 페이지에 같은 마크업을 입혀 봄. push 뒤 라이브 HTML 에서 링크 주소와 앵커를 확인.
 - 기각한 안: slides 를 아이콘으로 표시. 사이트에 같은 역할의 글자 링크(code, project)가 이미 있어 그 모양을 따랐다.
+
+## 이어서: 연사 이름 모두 링크, 자료 없는 발표는 논문 링크
+- 요청: 교수가 연사 이름은 모두 링크하고, 발표 자료가 없으면 연사의 해당 논문(여러 개면 대표 하나)으로 링크하자고 했다.
+- `_data/seminar.yml`: 새 칸 `paper`(arXiv 초록 주소). 자료 없는 발표 10건 중 9건에 넣음. Donghoon Ahn 은 Correction Training, Byeongju Woo 는 CAFT, Jinwoo Kim 은 Flow Map Language Models(2602.16813), Jaehyeon Son 은 SeeTraceAct, Yoonho Lee 는 Meta-Harness, Heejeong Nam 은 Causal-JEPA. 여러 논문을 묶은 발표는 연사가 1저자인 대표 논문 하나로 골랐다. Naihao Deng 은 One Example Is Enough to Pass Fairness Benchmarks(EMNLP 2026), Woomin Song 은 Accelerated Test-Time Scaling(EMNLP 2025 oral), Jongmin Lee 는 Learning Rotation-Equivariant Features(CVPR 2023). arXiv 에서 번호와 제목이 맞는지 확인했다.
+- Donghoon Ahn 홈페이지(`https://sunovivid.github.io/`)를 `url` 로 추가. 이제 초청 연사는 모두 링크가 있다.
+- `seminar.html`: 제목 링크는 slides 가 있으면 slides, 없으면 paper. 제목 뒤 작은 링크 글자도 `slides` 또는 `paper`.
+- 링크가 없는 곳: 10/30 Suchan Lee 발표(아직 자료 없음)의 제목, 인턴 Sanghun Lee·Kwangmo Yang 의 이름(공개 페이지 없음, 웹·Slack 에서 찾지 못함).
+- 기각한 안: 외부 연사 슬라이드를 대신 걸기. 외부 연사 자료는 공개하지 않는다는 원칙대로 논문만 건다.

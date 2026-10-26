@@ -1,21 +1,15 @@
 {% comment %}
-  강의 페이지 한 장. 내용은 _data/courses/<page.course>.yml 이고 여기서는 모양만 정한다.
-  순서: 머리(과목명, 학수번호·학기, 교수, 링크) → Overview(소개 한 문단) → Schedule(파트 머리 줄에 파트 이름·범위·한 줄 설명) → Grading → Resources(참고 자료, 관련 강의, 지난 시험, 다른 학기).
+  Schedule 페이지(teaching/<id>/schedule/). 내용은 _data/courses/<page.course>.yml 의 schedule 이고 여기서는 모양만 정한다.
+  머리(작은 제목) 다음 전체 스케줄 표 하나다. 파트 머리 줄에 파트 이름·범위·한 줄 설명. 개요·평가·자료는 Home(home.html)에 있다.
   색은 course.css 의 템플릿 하나다. 파트는 순서대로 p1·p2·p3(강의마다 고르지 않는다), 시험·프로젝트·행사·평가는 logistics, 초청·세미나는 guest, 휴강은 none.
   강의 줄은 바로 위 파트 머리의 색을 잇는다.
   Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다. 줄 종류의 태그 글자는 _data/course_tags.yml.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
-{% include course/head.html %}
+{% include course/head.html heading="Schedule" %}
 
-    {% if c.summary %}<section class="content-section course-summary" id="overview">
-    <h2>Overview</h2>
-    <div class="section-body"><p>{{ c.summary }}</p></div>
-    </section>{% endif %}
-
-    <section class="content-section" id="schedule">
-    <h2>Schedule</h2>
+    <section class="content-section course-first" id="schedule">
     <div class="section-body">
     {% assign readings = c.schedule | map: "reading" | compact %}{% if readings.size > 0 %}{% assign cols = 5 %}{% else %}{% assign cols = 4 %}{% endif %}
     <table class="course-schedule">
@@ -36,47 +30,6 @@
     </table>
     </div>
     </section>
-
-    {% if c.grading %}<section class="content-section" id="grading">
-    <h2>Grading</h2>
-    <div class="section-body">
-    <ul class="plain course-grading">
-      {% for g in c.grading %}<li class="tone-logistics"><span>{{ g.item }}</span><strong>{{ g.weight }}</strong></li>{% endfor %}
-    </ul>
-    {% if c.grading_note %}<p class="course-note">{{ c.grading_note }}</p>{% endif %}
-    </div>
-    </section>{% endif %}
-
-    {% if c.resources or c.related or c.exams or c.other_terms %}<section class="content-section" id="resources">
-    <h2>Resources</h2>
-    <div class="section-body">
-    {% if c.resources %}<h3 class="sub">{{ c.resources_title | default: "Reference courses" }}</h3>
-    <ul class="plain item-list">
-      {% for x in c.resources %}<li>
-        <span class="item-main"><strong><a href="{{ x.url }}">{% if x.abbr %}[{{ x.abbr }}] {% endif %}{{ x.title }}</a></strong></span>
-        <span class="item-side">{{ x.source }}</span>
-      </li>{% endfor %}
-    </ul>{% endif %}
-    {% if c.related %}<h3 class="sub">Related</h3>
-    <ul class="plain item-list">
-      {% for x in c.related %}<li>
-        <span class="item-main"><strong><a href="{{ x.url }}">{{ x.title }}</a></strong></span>
-        {% if x.source %}<span class="item-side">{{ x.source }}</span>{% endif %}
-      </li>{% endfor %}
-    </ul>{% endif %}
-    {% if c.exams %}<h3 class="sub">Past exams</h3>
-    <ul class="plain item-list">
-      {% for x in c.exams %}<li>
-        <span class="item-main"><strong><a href="{{ x.url }}">{{ x.label }}</a></strong></span>
-        {% if x.solution %}<span class="item-side"><a href="{{ x.solution }}">with solution</a></span>{% endif %}
-      </li>{% endfor %}
-    </ul>{% endif %}
-    {% if c.other_terms %}<h3 class="sub">Other terms</h3>
-    <ul class="plain item-list">
-      {% for x in c.other_terms %}<li><span class="item-main"><strong><a href="{{ x.url }}">{{ c.title }}, {{ x.name }}</a></strong></span></li>{% endfor %}
-    </ul>{% endif %}
-    </div>
-    </section>{% endif %}
 
 <script>
 // The next class (first row dated today or later) is marked, checked in the visitor's browser so it never goes stale.

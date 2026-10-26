@@ -29,17 +29,51 @@
 .course-foot .course-privacy { margin-left: auto; font-weight: 700; }
 .course-site main > :last-child { padding-bottom: var(--space-8); }
 
+/* Home: title, lead and buttons on the left (7 of 12 columns), the logistics a student looks up on the right (5 columns),
+   the shape of the MIT, Stanford, CMU and Berkeley course pages (2026-10-26) */
+.course-hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gutter); align-items: start; padding-top: var(--space-7); }
+.course-eyebrow { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0 0 var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
+.course-eyebrow span + span::before, .course-meta span + span::before { content: "\00b7"; margin-right: var(--space-3); color: var(--muted); font-weight: 400; }
+.course-hero h1 { margin-bottom: var(--space-5); text-wrap: balance; }
+.course-lead { color: var(--muted); font-size: var(--text-lead); line-height: 1.55; }
+.course-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0 0; }
+.course-btn { display: inline-flex; align-items: center; min-height: 40px; padding: 0 var(--space-5); border-radius: 999px; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--text); font-size: var(--text-meta); font-weight: 600; }
+.course-btn:hover { text-decoration: none; box-shadow: inset 0 0 0 1.5px var(--accent); }
+.course-btn.is-primary { background: var(--accent); box-shadow: none; color: var(--bg); }
+.course-btn.is-primary:hover { color: var(--bg); filter: brightness(.9); }
+.course-facts { margin: 0; padding: var(--space-3) var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
+.course-fact { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: var(--space-4); padding: var(--space-3) 0; }
+.course-fact + .course-fact { box-shadow: inset 0 1px 0 var(--line); }
+.course-fact dt { color: var(--muted); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; line-height: 1.9; }
+.course-fact dd { margin: 0; font-size: var(--text-meta); }
+.course-fact dd a { font-weight: 600; }
+.course-fact dd a + a { margin-left: var(--space-3); }
+.course-instructor { grid-template-columns: 1fr; gap: var(--space-2); }  /* the photo row needs the full width of the panel */
+.course-instructor dd { display: flex; align-items: center; gap: var(--space-3); }
+.course-instructor img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.course-instructor dd span { display: flex; flex-direction: column; line-height: 1.4; }
+.course-instructor small { color: var(--muted); font-size: var(--text-small); }
+
+/* Up next: the coming three class days as cards in the colour of their part */
+.course-next-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.course-next-list li { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4) var(--space-5); background: var(--tone-row); border-left: 4px solid var(--tone-tint); border-radius: var(--radius-2); }
+.course-next-list li.tone-none { background: var(--bg); box-shadow: inset 0 0 0 1px var(--line); border-left-color: var(--line); }
+.course-next-list li[hidden] { display: none; }
+.cn-when { display: flex; justify-content: space-between; gap: var(--space-2); color: var(--tone); font-size: var(--text-meta); font-weight: 700; font-variant-numeric: tabular-nums; }
+.cn-when span { color: var(--muted); font-weight: 600; }
+.cn-title { font-weight: 600; line-height: 1.45; }
+.is-break .cn-title { color: var(--muted); font-weight: 400; }
+.cn-sub { color: var(--muted); font-size: var(--text-meta); }
+.cn-links { display: flex; gap: var(--space-3); margin-top: auto; padding-top: var(--space-2); }
+.cn-links a, .course-more a { color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
+.course-more { margin-top: var(--space-4); }
+.course-outline { margin-top: 0; }
+
+/* Schedule and Term Project: the page name as the title, the course on the line below */
 .course-head { padding-top: var(--space-7); }
-.course-head h1 { margin-bottom: var(--space-4); }
-.course-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0 0 var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 600; }
-.course-meta span + span::before { content: "\00b7"; margin-right: var(--space-3); color: var(--muted); font-weight: 400; }
-.course-people { margin: 0; color: var(--muted); }
-.course-people a { color: var(--text); font-weight: 600; }
-.course-people a:hover { color: var(--accent); }
-.course-oh { margin-left: var(--space-5); }
-.course-links { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-5) 0 0; }
-.course-links a { padding: 6px 16px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }  /* the two places a student goes first: the same tint as the current subnav tab */
-.course-links a:hover { text-decoration: none; box-shadow: inset 0 0 0 1.5px var(--accent); }
+.course-head h1 { margin-bottom: var(--space-3); }
+.course-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0; color: var(--muted); font-size: var(--text-lead); font-weight: 600; }
+.course-first { padding-top: var(--space-6); }
 
 .course-summary { padding-top: var(--space-7); }
 .course-summary h2 { margin-bottom: var(--space-3); }
@@ -114,11 +148,12 @@ a.cs-title:hover { color: var(--accent); }
 .course-note { margin-top: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
 
 @media (max-width: 960px) {
-  .course-parts, .course-grading { grid-template-columns: 1fr; gap: var(--space-3); }
+  .course-parts, .course-grading, .course-next-list { grid-template-columns: 1fr; gap: var(--space-3); }
+  .course-hero { grid-template-columns: 1fr; gap: var(--space-6); }
 }
 @media (max-width: 680px) {
-  .course-oh { display: block; margin-left: 0; }
-  .course-meta { font-size: var(--text-body); }
+  .course-meta, .course-lead { font-size: var(--text-body); }
+  .course-fact { grid-template-columns: 1fr; gap: 0; }
   .course-schedule thead { display: none; }
   .course-schedule, .course-schedule tbody, .course-schedule tr { display: block; width: auto; }
   .course-schedule tr:not(.course-part-row) { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px var(--space-3); margin-bottom: 3px; padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }

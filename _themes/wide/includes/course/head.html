@@ -1,11 +1,9 @@
 {% comment %}
-  강의 첫 페이지와 프로젝트 페이지가 같이 쓰는 머리. include.heading 이 있으면 그 제목(프로젝트 페이지)을 크게 쓰고 과목명은 아래 줄로.
-  링크 버튼은 바깥 링크(c.links, ↗)만이다. 강의 안 페이지는 위 메뉴(layouts/course.html)가 맡는다.
+  Schedule 과 Term Project 페이지의 머리. include.heading(페이지 이름)을 제목으로 쓰고 과목명·학수번호·학기는 아래 한 줄로.
+  Home 의 머리는 운영 정보 칸이 붙은 큰 머리라 home.html 이 따로 그린다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
     <header class="course-head">
-      <h1>{% if include.heading %}{{ include.heading }}{% else %}{{ c.title }}{% endif %}</h1>
-      <p class="course-meta">{% if include.heading %}<span>{{ c.title }}</span>{% endif %}<span>{{ c.code }}</span><span>{{ c.term }}</span><span>POSTECH</span></p>
-      {% unless include.heading %}<p class="course-people">Instructor: <a href="{{ c.instructor.url }}">Prof. {{ c.instructor.name }}</a>{% if c.office_hours %}<span class="course-oh">Office hours: {{ c.office_hours }}</span>{% endif %}</p>
-      {% if c.links %}<p class="course-links">{% for l in c.links %}<a href="{{ l.url }}">{{ l.label }} ↗</a>{% endfor %}</p>{% endif %}{% endunless %}
+      <h1>{{ include.heading }}</h1>
+      <p class="course-meta"><span>{{ c.title }}</span><span>{{ c.code }}</span><span>{{ c.term }}</span><span>POSTECH</span></p>
     </header>

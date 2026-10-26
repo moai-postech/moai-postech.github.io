@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-26 | [course-site-structure](2026-10-26-course-site-structure.md) | Sangwoo Mo(moai-postech) | 강의 사이트 | 해외 강의 사이트 구조를 따라 Home · Schedule · Term Project 세 페이지로 |
 | 2026-10-26 | [focus-revert](2026-10-26-focus-revert.md) | Sangwoo Mo(moai-postech) | Home Focus 절, 탭 아이콘 | 남색 띠와 논문 그림을 빼고 흰 바탕 Focus 로 되돌림, 탭 아이콘은 흰 바탕용 teal |
 | 2026-10-26 | [illustration-teal](2026-10-26-illustration-teal.md) | Sangwoo Mo(moai-postech) | 그림, 아이콘, theme.css, AGENTS.md | 그림·아이콘 전용 보조 강조색 teal 추가, Research PNG 아이콘도 맞춤, 2차 연결선은 회색으로 |
 | 2026-10-26 | [color-contrast](2026-10-26-color-contrast.md) | Sangwoo Mo(moai-postech) | Home Focus 절 | 모노톤 개선: Focus 절을 남색 띠로, 대표 논문 카드에 논문 그림(안건 A + C), 2차 그림을 assets/img/papers 로 |

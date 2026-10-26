@@ -1,8 +1,7 @@
 {% comment %}
   강의 Home(teaching/<id>/). 내용은 _data/courses/<page.course>.yml 이고 여기서는 모양만 정한다.
   짜임은 MIT·Stanford·CMU·Berkeley 강의 사이트에서 가져왔다(2026-10-26 교수): 제목과 소개 옆에 운영 정보(교수, 수업, office hours, 지난 학기),
-  다음 수업 카드, 파트 카드, 평가, 자료. 전체 스케줄은 Schedule 페이지(schedule.html), 팀은 Term Project 페이지에 한 번만 둔다.
-  Up next 는 스케줄에서 오늘 이후 첫 세 줄을 방문자 브라우저에서 고른다. 끝난 학기는 남는 줄이 없어 절이 숨는다.
+  파트 카드, 평가, 자료. 지난 학기도 같은 모양으로 남는 기록용 페이지라 날짜에 따라 바뀌는 요소(다음 수업 카드)는 두지 않는다(2026-10-26 교수). 전체 스케줄은 Schedule 페이지(schedule.html), 팀은 Term Project 페이지에 한 번만 둔다.
   교수 사진은 _data/members.yml 의 professor, 이메일은 Faculty 한 곳에만 두므로 이름을 Faculty 로 잇는다.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
@@ -24,22 +23,6 @@
         {% if c.other_terms %}<div class="course-fact"><dt>Other terms</dt><dd>{% for x in c.other_terms %}<a href="{{ x.url }}">{{ x.name }}</a>{% endfor %}</dd></div>{% endif %}
       </dl>
     </header>
-
-    <section class="content-section course-next" id="next" hidden>
-    <h2>Up next</h2>
-    <div class="section-body">
-    <ol class="plain course-next-list">
-      {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}{% else %}
-      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "guest" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}{% assign tag = site.data.course_tags[r.kind] %}<li class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}" hidden>
-        <span class="cn-when"><time datetime="{{ r.date }}">{{ r.date | date: "%a %m/%d" }}</time>{% if r.n %}<span>Lecture {{ r.n }}</span>{% elsif tag %}<span>{{ tag }}</span>{% endif %}</span>
-        <span class="cn-title">{% if r.title %}{{ r.title }}{% else %}{{ r.speaker }}{% endif %}</span>
-        {% if r.speaker and r.title %}<span class="cn-sub">{{ r.speaker }}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.affiliation %}<span class="cn-sub">{{ r.affiliation }}</span>{% endif %}
-        {% if r.pdf or r.html or r.lab %}<span class="cn-links">{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</span>{% endif %}
-      </li>{% endif %}{% endfor %}
-    </ol>
-    <p class="course-more"><a href="{{ root }}schedule/">Full schedule</a></p>
-    </div>
-    </section>
 
     {% if c.parts %}<section class="content-section" id="outline">
     <h2>Course outline</h2>
@@ -90,15 +73,3 @@
     </ul>{% endif %}
     </div>
     </section>{% endif %}
-
-<script>
-// Up next: the first three schedule days dated today or later, chosen in the visitor's browser so the page never goes stale.
-(function () {
-  var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
-  var items = document.querySelectorAll('.course-next-list li[data-date]'), shown = 0;
-  for (var i = 0; i < items.length && shown < 3; i++) {
-    if (items[i].getAttribute('data-date') >= today) { items[i].hidden = false; shown++; }
-  }
-  if (shown) document.getElementById('next').hidden = false;
-})();
-</script>

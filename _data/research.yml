@@ -20,6 +20,7 @@
         - { short: "DIGAN", venue: "ICLR'22", url: "https://arxiv.org/abs/2202.10571" }
         - { short: "OAMixer", venue: "CVPRW'22", url: "https://arxiv.org/abs/2212.06595" }
         - { short: "OACon", venue: "NeurIPS'21", url: "https://arxiv.org/abs/2108.00049" }
+        - { short: "LoGe", venue: "ICMLW'21", url: "https://arxiv.org/abs/2107.10493" }
         - { short: "InstaGAN", venue: "ICLR'19", url: "https://arxiv.org/abs/1812.10889" }
     - name: "Learning in the Wild"
       summary: "Learning from limited, uncurated, or novel data."
@@ -27,14 +28,16 @@
         - { short: "T-PRH", venue: "arXiv'26", url: "https://arxiv.org/abs/2609.27252" }
         - { short: "ToMA", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2604.26370" }
         - { short: "OAK", venue: "CVPR'25", url: "https://arxiv.org/abs/2512.16202" }
+        - { short: "B2T", venue: "CVPR'24", url: "https://arxiv.org/abs/2301.11104" }
         - { short: "S-CLIP", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2305.14095" }
         - { short: "RoPAWS", venue: "ICLR'23", url: "https://arxiv.org/abs/2302.14483" }
         - { short: "MASKER", venue: "AAAI'21", url: "https://arxiv.org/abs/2012.09392" }
         - { short: "CSI", venue: "NeurIPS'20", url: "https://arxiv.org/abs/2007.08176" }
     - name: "Reliable Generation"
-      summary: "Generating faithful images despite bias, noise, or little data."
+      summary: "Generating images that are fair and faithful to the prompt, even from noisy or little data."
       papers:
         - { short: "StayFair", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2605.28036" }
+        - { short: "PRIS", venue: "CVPR'26", url: "https://arxiv.org/abs/2512.03534" }
         - { short: "FICS", venue: "TMLR'23", url: "https://arxiv.org/abs/2212.02090" }
         - { short: "FreezeD", venue: "CVPRW'20", url: "https://arxiv.org/abs/2002.10964" }
         - { short: "GOLD", venue: "NeurIPS'19", url: "https://arxiv.org/abs/1910.09170" }
@@ -61,15 +64,12 @@
       summary: "Using foundation models to solve real-world problems."
       papers:
         - { short: "I2A", venue: "WACV'27", match: "Instruct2Alert" }
-        - { short: "PRIS", venue: "CVPR'26", url: "https://arxiv.org/abs/2512.03534" }
         - { short: "PDS", venue: "ICLR'26", url: "https://arxiv.org/abs/2602.19756" }
-        - { short: "B2T", venue: "CVPR'24", url: "https://arxiv.org/abs/2301.11104" }
     - name: "Structured Data"
       summary: "Learning on graphs, tables, and time series."
       papers:
         - { short: "PRISM", venue: "arXiv'26", match: "PRISM:" }
         - { short: "DPM-SNC", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2302.10506" }
-        - { short: "LoGe", venue: "ICMLW'21", url: "https://arxiv.org/abs/2107.10493" }
 - area: "Robotics & Embodied AI"
   stage: "Action"
   icon: robotics

@@ -424,8 +424,8 @@ a.person-name:hover { color: var(--accent); }
   .schedule tr[hidden] { display: none; }
   .schedule tr:not(.schedule-year) { padding: var(--space-3) 0; }
   .schedule td { padding: 0 !important; text-align: left; white-space: normal; }
-  .schedule-speaker, .schedule-aff { display: inline-block; margin-top: 2px; }  /* name first, affiliation after it on one line */
-  .schedule-aff { margin-left: var(--space-2); }
+  .schedule td.schedule-speaker, .schedule td.schedule-aff { display: inline-block; margin-top: 2px; }  /* name first, affiliation after it on one line (td. beats .schedule td above) */
+  .schedule td.schedule-aff { margin-left: var(--space-2); }
   main { overflow-wrap: anywhere; }
 }
 @media print {

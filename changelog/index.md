@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-26 | [custom-domain](2026-10-26-custom-domain.md) | Sangwoo Mo(moai-postech) | Pages 설정, CNAME | moai.postech.ac.kr 커스텀 도메인 등록·HTTPS 강제(DNS 는 정보기술팀이 먼저 바꿔 404 였음) |
 | 2026-10-26 | [hyphen-case](2026-10-26-hyphen-case.md) | Sangwoo Mo(moai-postech) | AGENTS | 하이픈 단어: 라벨은 `Time-Series`, 문장은 `time-series`, 원제·이름은 그대로 |
 | 2026-10-26 | [hyunwoo-seo-focus](2026-10-26-hyunwoo-seo-focus.md) | Sangwoo Mo(moai-postech) | Home, People | 서현우 박사 Manufacturing AI·Time-Series Analysis, 모든 멤버는 세 연구 방향 중 하나 규칙 |
 | 2026-10-26 | [seminar-title-bold](2026-10-26-seminar-title-bold.md) | Sangwoo Mo(moai-postech) | Seminar | 제목 보통(400), 연사 굵게 왼쪽 정렬 열, 소속은 오른쪽 회색 열(3차). 1차 제목 굵게, 2차 제목 500 은 되돌림 |

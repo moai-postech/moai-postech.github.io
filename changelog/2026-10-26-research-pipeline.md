@@ -39,3 +39,11 @@
 
 ### 기각한 안과 이유(2차)
 - 가로 파이프라인을 남기고 세로 레일과 번호 원을 빼는 안: 첫 화면에 세 단계가 한눈에 보이는 장점은 있지만, 스크롤하면 단계가 다시 사라져 1차에서 고친 문제가 돌아온다. 소개 문단이 세 단계를 이미 말하고 첫 단계 절이 바로 이어진다.
+
+## 3차: 단계별 "Structure we build in" 줄 빼기 (같은 날)
+- 교수: "Structure we build in / Objects in a scene 이거는 전체 논문에서 scope 을 너무 제한하는 거 아니야?"
+- 맞다. Perception 아래에는 Learning in the Wild, Reliable Generation 이 있어 objects 만이 아니고, Reasoning 의 Efficient LLMs, Structured Data 는 evidence 와 무관하며, Action 의 Multisensory Learning 은 physics 보다 touch 다. 한 구절이 단계 전체를 대표하지 못한다.
+- `_data/research.yml` 의 `stage_note` 셋, 템플릿의 그 줄, `.stage-prior` CSS 를 지웠다. 단계 머리는 단계 이름, 질문, 분야 아이콘과 이름, 분야 한 줄 설명이다. 머리 주석에 "단계에 한 가지 구조를 붙이지 않는다"를 적었다.
+
+### 기각한 안과 이유(3차)
+- 구절을 넓혀 다시 쓰기(예: Perception "Structure in visual data"): 넓히면 분야 한 줄 설명(How models see ...)과 같은 말이 되어 중복이다.

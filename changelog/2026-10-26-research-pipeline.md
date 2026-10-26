@@ -92,3 +92,12 @@
 
 ### 기각한 안과 이유(7차)
 - `_data/research.yml` 의 papers 를 손으로 옛 논문부터 다시 적기: publications.yml(최신이 위)과 순서 규칙이 갈라져 논문을 더할 때마다 헷갈린다. 표시 순서는 템플릿에서만 정한다.
+
+## 8차: 맺음 링크를 Full publication list 하나로 (같은 날)
+- 교수: "맨 아래에 이거 없애라니까? 차라리 Full publication list만 남기고 Publications로 옮기던가."
+- `research.md` 의 맺음 줄에서 "Our focus in 2026 →", "Explore every paper on the topic map →", "Join the lab →" 를 지우고 "Full publication list →"(`publications.html`) 하나만 두었다. 스타일(`.research-next`)은 그대로 쓴다.
+- Home focus 절의 `id="focus"` 는 다른 곳에서 쓸 수 있어 남겼다.
+- 확인: 로컬 빌드, 맺음 줄에 링크 하나만 나온다.
+
+### 기각한 안과 이유(8차)
+- 4·5차의 세 링크 유지: 교수가 빼라고 했다. Focus, 주제 지도, Contact 는 메뉴와 하위 탭으로 이미 갈 수 있다.

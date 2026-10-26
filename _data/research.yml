@@ -26,6 +26,7 @@
       papers:
         - { short: "T-PRH", venue: "arXiv'26", url: "https://arxiv.org/abs/2609.27252" }
         - { short: "ToMA", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2604.26370" }
+        - { short: "PDS", venue: "ICLR'26", url: "https://arxiv.org/abs/2602.19756" }
         - { short: "OAK", venue: "CVPR'25", url: "https://arxiv.org/abs/2512.16202" }
         - { short: "B2T", venue: "CVPR'24", url: "https://arxiv.org/abs/2301.11104" }
         - { short: "S-CLIP", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2305.14095" }
@@ -43,13 +44,14 @@
 - area: "Language & Reasoning"
   stage: "Reasoning"
   icon: language
-  blurb: "Grounded and efficient reasoning, foundation models applied to real-world problems, and learning on structured data."
+  blurb: "Grounded and efficient reasoning, and learning on structured data."
   topics:
     - name: "Reasoning & Agents"
       summary: "Grounding reasoning in evidence and correcting its errors."
       papers:
         - { short: "LoC", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.21318" }
         - { short: "TEG", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.05060" }
+        - { short: "I2A", venue: "WACV'27", match: "Instruct2Alert" }
         - { short: "Idis", venue: "EMNLP'26", url: "https://arxiv.org/abs/2511.21397" }
         - { short: "SuRe", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.13081" }
     - name: "Efficient LLMs"
@@ -59,11 +61,6 @@
         - { short: "HOMER", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.10308" }
         - { short: "LAMP", venue: "ICLR'21", url: "https://arxiv.org/abs/2010.07611" }
         - { short: "LAP", venue: "ICLR'20", url: "https://arxiv.org/abs/2002.04809" }
-    - name: "Applications of VLMs"
-      summary: "Using foundation models to solve real-world problems."
-      papers:
-        - { short: "I2A", venue: "WACV'27", match: "Instruct2Alert" }
-        - { short: "PDS", venue: "ICLR'26", url: "https://arxiv.org/abs/2602.19756" }
     - name: "Structured Data"
       summary: "Learning on logic, graphs, tables, and time series."
       papers:

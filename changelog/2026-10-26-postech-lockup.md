@@ -34,6 +34,7 @@
 - 글자 크기는 그대로 둔다: 옛 그림 16px 의 글자 높이가 약 13.5px 이라 새 그림은 머리글·꼬리말 14px, 휴대폰 머리글 12px. 꼬리말 위 여백은 `--space-3` 으로 연구실 이름 줄 가운데에 맞춤.
 - `header.html`·`footer.html` 의 `width`/`height` 속성을 733×62 로.
 - 원본은 git 이력(`534a0e6` 이전 파일)에 남는다.
+- 같은 이름으로 바꾸니 브라우저·CDN 캐시(10분)가 옛 그림을 보여 줘서, 파일 이름을 `postech-wordmark-hd.png` 로 바꾸고 `_config.yml` 의 `postech.wordmark` 를 고쳤다.
 
 ## 남은 것
 

@@ -65,7 +65,7 @@
         - { short: "I2A", venue: "WACV'27", match: "Instruct2Alert" }
         - { short: "PDS", venue: "ICLR'26", url: "https://arxiv.org/abs/2602.19756" }
     - name: "Structured Data"
-      summary: "Learning on graphs, tables, and time series."
+      summary: "Learning on logic, graphs, tables, and time series."
       papers:
         - { short: "PRISM", venue: "arXiv'26", match: "PRISM:" }
         - { short: "DPM-SNC", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2302.10506" }

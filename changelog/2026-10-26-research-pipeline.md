@@ -136,3 +136,11 @@
 
 ### 기각한 안과 이유(11차)
 - LoGe 를 Visual Structure 에(10차): RPM 이 그림 문제이긴 하지만 논문이 다루는 것은 논리 구조다.
+
+## 12차: Structured Data 설명에 logic (같은 날)
+- 교수: "Structured Data 설명을 'Learning on logic, graphs, tables, and time series.'로 바꿔줘."
+- 11차에 되돌린 LoGe(논리 규칙)가 설명에 담기도록 `_data/research.yml` 의 summary 를 그 문장으로 바꿨다.
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(12차)
+- 3번 설명 문장 정리 때 한꺼번에 고치기: 교수가 지금 바꾸기로 했다.

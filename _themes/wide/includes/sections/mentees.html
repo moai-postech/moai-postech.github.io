@@ -7,7 +7,7 @@
     <h2>{{ g.title }}</h2>
     <div class="section-body">
     <ul class="plain item-list mentee-list">
-      {% for p in g.people %}<li>
+      {% for p in g.people %}<li id="{{ p.name | slugify }}">
         <span class="item-main">{% if p.url %}<a class="mentee-name" href="{{ p.url }}">{{ p.name }}</a>{% else %}<span class="mentee-name">{{ p.name }}</span>{% endif %}<span class="mentee-aff">{% include inline.html text=p.affiliation %}</span></span>
         {% if p.papers %}<span class="item-side">{% include inline.html text=p.papers %}</span>{% endif %}
       </li>

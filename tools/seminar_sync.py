@@ -95,11 +95,20 @@ def find_slide(name, files):
     if norm(name) in by_norm:
         k = by_norm[norm(name)]
         return k, files[k]
-    m = re.match(r"(\d{6})", name)  # 파일 이름 앞 yymmdd 가 같은 파일이 하나뿐이면 그것
+    m = re.match(r"(\d{4}-\d\d-\d\d|\d{6})", name)  # 앞 날짜(yyyy-mm-dd 나 yymmdd)가 같은 파일이 하나뿐이면 그것
     if m:
         same = [k for k in files if k.startswith(m.group(1))]
         if len(same) == 1:
             return same[0], files[same[0]]
+    return None, None
+
+
+def from_manifest(date, manifest, files):
+    """시트 글자가 Drive 이름과 어긋나도(이름을 바꿨는데 칩 글자가 옛 이름) 전에 받은 같은 날짜의 파일이 폴더에 있으면 그것."""
+    by_id = {v: k for k, v in files.items()}
+    hits = [(out, v["drive_id"]) for out, v in manifest.items() if out.startswith(date) and v["drive_id"] in by_id]
+    if len(hits) == 1:
+        return by_id[hits[0][1]], hits[0][1]
     return None, None
 
 
@@ -283,7 +292,13 @@ def main():
                 continue
             name, fid = find_slide(t["slide_name"], files)
             if not fid:
+                name, fid = from_manifest(t["date"], manifest, files)
+            if not fid:
                 warnings.append(f"{t['date']} {t['speaker']}: 슬라이드 '{t['slide_name']}' 을 폴더에서 못 찾음")
+                old = [out for out in manifest if out.startswith(t["date"]) and (PDF_DIR / out).exists()]
+                if len(old) == 1:  # 못 찾았다고 이미 올린 슬라이드를 지우지 않는다
+                    t["slides"] = f"assets/seminar/{old[0]}"
+                    keep.add(old[0])
                 continue
             out = f"{t['date']}-{t['nickname']}.pdf"
             t["slides"] = f"assets/seminar/{out}"

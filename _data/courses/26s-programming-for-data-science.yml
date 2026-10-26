@@ -4,7 +4,7 @@
 title: "Programming for Data Science"
 code: "IMEN574 / IDSC574"
 term: "Spring 2026"
-lectures: "Tuesdays & Thursdays 15:30 – 16:45, Engineering Building 4, Room 407"  # Home 의 운영 정보. 요일·시각·강의실(교수 캘린더의 수업 일정)
+lectures: "Tuesdays & Thursdays 15:30 – 16:45, Engineering Building 4, Room 302"  # Home 의 운영 정보. 요일·시각은 교수 캘린더, 강의실은 실제로 쓴 302호(교수 2026-10-26, 캘린더의 배정 강의실과 다르다)
 instructor:
   name: "Sangwoo Mo"
   url: "faculty.html"

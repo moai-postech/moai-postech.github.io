@@ -1,11 +1,10 @@
-# Seminar 페이지의 발표 목록. 위가 최신이다. 정본은 랩 세미나 구글시트(sheet 의 주소, 링크 공개).
-# invited: true 는 외부 초청 연사(affiliation, url=연사 홈페이지). 나머지는 랩 내부 발표(논문 리뷰, 자기 연구).
-# 외부 연사 발표 자료는 공개하지 않는다(교수 원칙). 내부 발표는 slides 에 랩 세미나 Drive 폴더의 파일 주소를 두면 제목이 그 파일로 링크된다(폴더가 링크 공개).
-# 발표 자료가 없으면 paper 에 연사의 해당 논문(arXiv 초록 주소)을 둔다. 링크는 제목에만 걸리고 slides 가 우선이다. 여러 논문을 묶은 발표면 대표 하나(연사가 1저자인 최근 논문). 둘 다 없으면 제목은 링크 없이 둔다(교수 2026-10-26).
-# 연사 이름은 모두 링크한다: 초청 연사와 인턴은 url(홈페이지, 없으면 본인이 공개한 블로그나 GitHub), 랩 멤버는 People 의 그 사람 자리(템플릿이 자동). 인턴은 People 에 올리지 않는다(교수 2026-10-26).
-# 영문 이름은 _data/members.yml, 연사 홈페이지, Slack 프로필, 본인 메일 표시 이름을 따른다.
-# 시험, 마감, monthly sync 처럼 발표가 아닌 행과 공개 전 연구 코드명(10/07 jev)은 넣지 않는다.
-# 매주 월요일 09:00 KST 클라우드 루틴이 시트를 읽고 이 파일을 맞춘다(절차는 tools/seminar-sync.md).
+# Seminar 페이지의 발표 목록. tools/seminar_sync.py 가 랩 세미나 구글시트에서 만든다. 이 파일을 손으로 고치지 말고 시트를 고친다.
+# 시트: https://docs.google.com/spreadsheets/d/1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U/edit
+# 시트 칸: date, name, topic, slide(랩 발표는 Drive 슬라이드 파일 이름, 초청은 연사 홈페이지), note, name_en, affiliation_en, homepage, paper.
+# name_en 을 채운 행만 사이트에 나온다. affiliation_en 이 있으면 초청 발표다(외부 연사 슬라이드는 공개하지 않는다, 교수 원칙).
+# 제목 링크: slides(랩 발표, assets/seminar/ 의 PDF)가 있으면 그것, 없으면 paper(연사의 해당 논문, 여러 개면 연사가 1저자인 대표 하나). 교수 2026-10-26.
+# 연사 이름 링크: url(초청 연사와 인턴의 홈페이지), 없으면 랩 멤버는 People 의 그 사람 자리(템플릿이 자동).
+
 sheet: "https://docs.google.com/spreadsheets/d/1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U/edit"
 talks:
   - date: "2026-11-18"
@@ -49,36 +48,36 @@ talks:
   - date: "2026-07-22"
     speaker: "Eunchan Jo"
     title: "MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory"
-    slides: "https://drive.google.com/file/d/15sLu4YVHAtHJF89-iMdd_cLVaztnfZ0l/view"
+    slides: "assets/seminar/2026-07-22-eunchan-jo.pdf"
   - date: "2026-06-24"
     speaker: "Chaewon Park"
     title: "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models"
-    slides: "https://drive.google.com/file/d/1qqKii_PriwcKmvkiLBqDefCHPqN5qDEo/view"
+    slides: "assets/seminar/2026-06-24-chaewon-park.pdf"
   - date: "2026-06-17"
     speaker: "Sangoh Lee"
     title: "ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception–Action Loop"
-    slides: "https://drive.google.com/file/d/1kfH2psJDa3F3e51yU1ttoEgPck4XS6SQ/view"
+    slides: "assets/seminar/2026-06-17-sangoh-lee.pdf"
   - date: "2026-05-28"
     speaker: "Gyeom Hwangbo"
     title: "LEGO-Eval: Towards Fine-grained Evaluation on Synthesizing 3D Embodied Environments with Tool Augmentation"
-    slides: "https://drive.google.com/file/d/1jYM43i-no3as4o2KgdUNGOfv8N-lzqmQ/view"
+    slides: "assets/seminar/2026-05-28-gyeom-hwangbo.pdf"
   - date: "2026-05-21"
     speaker: "Suchan Lee"
     title: "ELF: Embedded Language Flows"
-    slides: "https://drive.google.com/file/d/123_ktA-gmhcR6FY8I3JJQCyF1_GG8wjF/view"
+    slides: "assets/seminar/2026-05-21-suchan-lee.pdf"
   - date: "2026-05-14"
     speaker: "Sanghyung Lee"
     title: "TabPFN-2.5: Advancing the State of the Art in Tabular Foundation Models"
-    slides: "https://drive.google.com/file/d/1KvWItcN-333PbZ2iq1hyukGOEwmOa6ZE/view"
+    slides: "assets/seminar/2026-05-14-sanghyung-lee.pdf"
   - date: "2026-04-23"
     speaker: "Myeongsoo Kim"
     title: "DS-STAR: Data Science Agent via Iterative Planning and Verification"
-    slides: "https://drive.google.com/file/d/1LAp2resqADGWRjXsUIkZyYyyjckb4KBb/view"
+    slides: "assets/seminar/2026-04-23-myeongsoo-kim.pdf"
   - date: "2026-04-09"
     speaker: "Sanghun Lee"
     url: "https://shleeubu.notion.site/sthunblog"
     title: "CliffordNet: All You Need is Geometric Algebra"
-    slides: "https://drive.google.com/file/d/1ZFMpXzop2IHANcA0WhDWTIwetMykL0UA/view"
+    slides: "assets/seminar/2026-04-09-sanghun-lee.pdf"
   - date: "2026-04-08"
     invited: true
     speaker: "Yoonho Lee"
@@ -89,12 +88,12 @@ talks:
   - date: "2026-04-02"
     speaker: "Chaewon Park"
     title: "Discovering Symbolic Models from Deep Learning with Inductive Biases"
-    slides: "https://drive.google.com/file/d/1bvVfoVWhReTZbDi_YtzX5lJgmj_3u7Xr/view"
+    slides: "assets/seminar/2026-04-02-chaewon-park.pdf"
   - date: "2026-03-26"
     speaker: "Kwangmo Yang"
     url: "https://kmyxng.github.io/"
     title: "OK-Robot: What Really Matters in Integrating Open-Knowledge Models for Robotics"
-    slides: "https://drive.google.com/file/d/1ShAk5SfWSID3WVByWPUcSNuSJIlqB3vd/view"
+    slides: "assets/seminar/2026-03-26-kwangmo-yang.pdf"
   - date: "2026-03-19"
     invited: true
     speaker: "Heejeong Nam"
@@ -105,7 +104,7 @@ talks:
   - date: "2026-03-19"
     speaker: "Sangoh Lee"
     title: "How to Effectively Use the Claude Ecosystem?"
-    slides: "https://drive.google.com/file/d/18H4BPKlhc41z6yrikRv1ghAelInyghjm/view"
+    slides: "assets/seminar/2026-03-19-sangoh-lee.pdf"
   - date: "2026-02-12"
     invited: true
     speaker: "Woomin Song"
@@ -123,12 +122,12 @@ talks:
   - date: "2025-12-10"
     speaker: "Seounghyun Jang"
     title: "Cambrian-S: Towards Spatial Supersensing in Video"
-    slides: "https://drive.google.com/file/d/1sVeR7Fg1xlMHBqiSu1CYS1x6b2jb2GGS/view"
+    slides: "assets/seminar/2025-12-10-seounghyun-jang.pdf"
   - date: "2025-12-03"
     speaker: "Suchan Lee"
     title: "Less is More: Recursive Reasoning with Tiny Networks"
-    slides: "https://drive.google.com/file/d/1MYYR7BW99o69-hXAre-Qm-hjg0BB24rD/view"
+    slides: "assets/seminar/2025-12-03-suchan-lee.pdf"
   - date: "2025-11-26"
     speaker: "Myeongsoo Kim"
     title: "Discovering Latent Graphs with GFlowNets for Diverse Conditional Image Generation"
-    slides: "https://drive.google.com/file/d/13vcCgyx98WdMyy86khGrei3ytDxH3BiR/view"
+    slides: "assets/seminar/2025-11-26-myeongsoo-kim.pdf"

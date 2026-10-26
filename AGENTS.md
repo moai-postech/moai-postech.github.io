@@ -17,7 +17,7 @@ _data/               콘텐츠 데이터(YAML)
   members.yml        People 의 Faculty(교수, 사진, Bio, 이력 cv), Students(연구실 학생), Mentees(연구실 밖에서 지도한 학생). 멤버의 focus 는 연구 방향 패널에 이름을 띄운다. 연구실 멤버(Postdocs 포함, Alumni 제외)는 모두 Home 의 세 연구 방향 중 하나에 들어가야 하고, focus 가 빠진 멤버가 있으면 교수에게 물어 채운다(교수 2026-10-26)
   teaching.yml       Teaching 의 정규 강의
   talks.yml          Teaching > Talks
-  seminar.yml        Research > Seminar 의 초청 연사(외부 연사 슬라이드는 공개하지 않는다)
+  seminar.yml        Research > Seminar 의 발표 목록. tools/seminar_sync.py 가 랩 세미나 구글시트에서 만든다. 손으로 고치지 않는다(아래 "세미나 발표 올리기")
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
 index.md 외 *.md     페이지 하나에 파일 하나(research·seminar·funding, publications·landscape, faculty·students·mentees, teaching, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
 _themes/wide/        테마(현재 사용 중: 넓은 화면 전제, 12칸 격자, 전역 토큰)
@@ -26,11 +26,12 @@ _themes/classic/     예전 테마(카드·좌우 배치). 둘 다 참고용이�
   layouts/           default.html(머리·메뉴·꼬리), page.html(소개 + 절 목록)
   includes/          section.html, sections/<type>.html, theme.css 등
 assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 않는다)
+assets/seminar/      랩 발표 슬라이드 PDF(16:9 로 맞춘 사본, 날짜-발표자.pdf). seminar_sync.py 가 만들고 지운다
 assets/img/          그림, 아이콘(icons/), 사진(people/), 로고 아이콘(logo-mark.svg, `_config.yml` 의 logo). 콘텐츠가 경로로 가리킨다
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
-tools/               검사 스크립트
+tools/               검사 스크립트(check_changelog.py), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml)
 ```
 
 ### 무엇을 어디서 고치나
@@ -38,6 +39,7 @@ tools/               검사 스크립트
 | 바꾸려는 것 | 고칠 곳 |
 | --- | --- |
 | 뉴스, 논문, 멤버, 연구 분류, 강의, 과제 | `_data/*.yml` |
+| 세미나 발표(일정, 제목, 슬라이드, 연사 링크) | 랩 세미나 구글시트와 Drive 폴더(아래 "세미나 발표 올리기") |
 | 그림, 아이콘 | `assets/img/` |
 | 페이지 소개글, 절 제목, 절 순서, 자유 문단 | 해당 `*.md` 의 front matter |
 | 메뉴(하위 메뉴는 `children`), 사이트 이름, 꼬리말 | `_config.yml` |
@@ -90,6 +92,17 @@ tools/               검사 스크립트
 - 글보다 그림을 먼저 쓴다. 같은 내용이면 카드, 아이콘, 그림으로 보여 주고 문장은 짧게 줄인다.
 - 랜딩 페이지(Home)가 가장 중요하다. 스크롤 없이 보이는 첫 화면에서 세 부류가 각자 다음에 누를 곳을 찾을 수 있어야 한다.
 - 리뷰 방법: 사람이든 리뷰어 에이전트든 세 부류를 하나씩 맡아 그 사람이 되어 사이트를 훑는다. 부류마다 (1) 30초 안에 찾고 싶은 것을 찾았나 (2) 매력적이지 않거나 헷갈린 곳 (3) 고칠 점 세 개를 적는다. 결과는 바로 반영하지 않고 `discussions/` 안건으로 올린다.
+
+## 세미나 발표 올리기
+
+Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` 의 `sheet`)와 랩 세미나 Drive 폴더다(교수 2026-10-26). 학생이 시트와 Drive 만 고치면 GitHub Actions(`seminar-sync`)가 매일 06:00 KST 에 사이트를 고친다. 저장소의 `_data/seminar.yml`, `assets/seminar/` 를 손으로 고치면 다음 동기화에 덮어쓰인다.
+
+1. 슬라이드를 Drive 폴더의 그해 폴더에 올린다. PDF 를 권장한다(pptx 도 받지만 LibreOffice 로 바꿔 글꼴이 달라질 수 있다). 파일 이름은 `yymmdd_짧은제목.pdf`.
+2. 시트의 그 날짜 행에 `topic`(발표 제목), `slide`(올린 파일 이름), `name_en`(영문 이름, `_data/members.yml` 과 같은 표기)을 채운다. **`name_en` 을 채운 행만 사이트에 나온다.** 시험, 휴식, 공개 전 연구(코드명)는 비워 둔다.
+3. 초청 발표는 `affiliation_en`(영문 소속), `slide` 칸에 연사 홈페이지, `paper` 에 연사의 해당 논문(arXiv 초록 주소, 여러 개면 연사가 1저자인 대표 하나)을 채운다. 외부 연사 슬라이드는 올리지 않는다. 인턴처럼 People 에 없는 랩 발표자는 `homepage` 에 본인 홈페이지를 넣는다.
+4. 바로 보고 싶으면 GitHub 의 Actions > seminar-sync > Run workflow 를 누른다. 1~2분 뒤 반영된다. 슬라이드를 못 찾으면 실행 기록에 경고가 남는다.
+
+동기화는 슬라이드를 PDF 로 바꾸고, 모든 쪽을 16:9(960x540pt)로 맞추고(비율이 다른 쪽은 줄여서 가운데), 이름을 `날짜-발표자.pdf` 로, PDF 정보에 제목과 발표자를 넣는다. 슬라이드 내용은 고치지 않는다. 바뀐 것이 있으면 `changelog/{날짜}-seminar-sync.md` 에 스스로 기록한다.
 
 ## 고치는 절차
 

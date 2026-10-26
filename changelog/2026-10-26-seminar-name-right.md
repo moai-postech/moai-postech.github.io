@@ -33,3 +33,8 @@
 - `seminar.html`: 제목 링크는 slides 가 있으면 slides, 없으면 paper. 제목 뒤 작은 링크 글자도 `slides` 또는 `paper`.
 - 링크가 없는 곳: 10/30 Suchan Lee 발표(아직 자료 없음)의 제목, 인턴 Sanghun Lee·Kwangmo Yang 의 이름(공개 페이지 없음, 웹·Slack 에서 찾지 못함).
 - 기각한 안: 외부 연사 슬라이드를 대신 걸기. 외부 연사 자료는 공개하지 않는다는 원칙대로 논문만 건다.
+
+## 이어서: 인턴 두 명 이름도 링크
+- 요청: 교수가 인턴은 People 에 올리지 말고 Seminar 에서만 링크하자고 했다.
+- `_data/seminar.yml`: Sanghun Lee 는 본인이 지원 메일에 적은 공개 블로그(`shleeubu.notion.site/sthunblog`, 논문 리뷰 포함), Kwangmo Yang 은 GitHub(`github.com/kwangmo24`, POSTECH 메일 아이디와 같고 저장소가 이력서의 Apple Developer Foundation 2025 활동과 맞음)를 `url` 로 넣음. 이제 Seminar 의 모든 연사 이름에 링크가 있다.
+- 기각한 안: Students 에 Interns 절을 만들어 올리기. 교수가 원하지 않았다.

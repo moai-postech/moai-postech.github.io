@@ -6,7 +6,7 @@
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
 | 2026-10-26 | [focus-revert](2026-10-26-focus-revert.md) | Sangwoo Mo(moai-postech) | Home Focus 절, 탭 아이콘 | 남색 띠와 논문 그림을 빼고 흰 바탕 Focus 로 되돌림, 탭 아이콘은 흰 바탕용 teal |
-| 2026-10-26 | [illustration-teal](2026-10-26-illustration-teal.md) | Sangwoo Mo(moai-postech) | 그림, 아이콘, theme.css, AGENTS.md | 그림·아이콘 전용 보조 강조색 teal 추가, Research PNG 아이콘도 맞춤 |
+| 2026-10-26 | [illustration-teal](2026-10-26-illustration-teal.md) | Sangwoo Mo(moai-postech) | 그림, 아이콘, theme.css, AGENTS.md | 그림·아이콘 전용 보조 강조색 teal 추가, Research PNG 아이콘도 맞춤, 2차 연결선은 회색으로 |
 | 2026-10-26 | [color-contrast](2026-10-26-color-contrast.md) | Sangwoo Mo(moai-postech) | Home Focus 절 | 모노톤 개선: Focus 절을 남색 띠로, 대표 논문 카드에 논문 그림(안건 A + C), 2차 그림을 assets/img/papers 로 |
 | 2026-10-26 | [research-pipeline](2026-10-26-research-pipeline.md) | Sangwoo Mo(moai-postech) | Research Overview | 분야 절 제목을 단계 이름으로 바꾸고 세로 레일로 잇는 대폭 개편, 2차에 위 가로 파이프라인은 중복이라 뺌, 3차 단계별 구절 삭제, 4차 문장 다듬기와 맺음 링크, 5차 tagline 삭제와 2026 focus 링크, 6차 아이콘 되살림과 주제 카드 한 열 |
 | 2026-10-26 | [seminar-slides-sync](2026-10-26-seminar-slides-sync.md) | Sangwoo Mo(moai-postech) | Seminar, tools, Actions | 랩 슬라이드 14개를 16:9 PDF(날짜-제목별칭.pdf)로 저장소에, 시트·Drive 기반 매일 자동 동기화 |

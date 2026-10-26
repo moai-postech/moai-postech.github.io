@@ -1,5 +1,5 @@
 # 2026-10-26 Home 의 밋밋한 색감: 명암 띠, tint 면, 논문 그림
-상태: 논의 중 | 제안자: Sangwoo Mo(moai-postech) | 대상: Home 의 Focus 절과 hero, `_themes/wide/includes/sections/focus.html`
+상태: 결정됨 | 제안자: Sangwoo Mo(moai-postech) | 대상: Home 의 Focus 절과 hero, `_themes/wide/includes/sections/focus.html`
 
 ## 쟁점
 사이트가 흰 바탕, 남색 글자, POSTECH 크림슨 하나로 되어 있어 모노톤으로 보인다는 의견이 나왔다(교수 2026-10-26). 강조색을 하나로 두는 것은 POSTECH 브랜드 일관성과 전역 팔레트 규칙(종류를 가르려고 색을 늘리지 않는다)에 맞는다. 밋밋함의 원인은 색 개수보다 명암 대비와 그림 부족에 있다.
@@ -44,3 +44,4 @@
 ## 의견
 
 ## 결정
+2026-10-26, Sangwoo Mo(교수): 안 A + 안 C 채택. Focus 절을 남색 띠로 깔고 대표 논문 카드에 논문 그림을 넣는다. 흰 화면에 명암 대비가 가장 크게 생기고, 그림이 연구 내용을 먼저 보여 준다. 안 B 는 Focus 패널 배경이 A 와 겹쳐 함께 쓸 수 없고, 안 D 는 밋밋하다는 문제를 풀지 못한다. 반영: [changelog](../changelog/2026-10-26-color-contrast.md).

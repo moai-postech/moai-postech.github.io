@@ -227,8 +227,8 @@ a.mentee-name:hover { color: var(--accent); }
 @keyframes stage-arrive { 0%, 40% { box-shadow: 0 0 0 8px var(--accent-soft); } 100% { box-shadow: 0 0 0 0 var(--accent-soft); } }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 .research-area { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
-.stage-track { position: relative; }
-.stage-track::before { content: ""; position: absolute; left: 17px; top: calc(var(--section-gap) + 36px); bottom: 0; width: 2px; background: var(--faint); }  /* one rail through the three stages, passing each node */
+.research-area { position: relative; }
+.research-area:not(:last-child)::before { content: ""; position: absolute; left: 17px; top: calc(var(--section-gap) + 36px); height: 100%; width: 2px; background: var(--faint); }  /* rail from this stage node to the next; it stops at the last node */
 .research-head { grid-column: span 4; align-self: start; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-4); }  /* fixed at the top of its stage; it does not follow the scroll (2026-10-26) */
 .research-head .stage-node { position: relative; margin-top: 18px; }  /* centred on the icon and stage-name row */
 .research-head .stage-title { display: flex; align-items: center; gap: var(--space-3); }  /* icon left of the stage name (2026-10-26) */
@@ -376,7 +376,7 @@ a.person-name:hover { color: var(--accent); }
   .focus-papers, .research-overview .cards { grid-template-columns: 1fr; gap: var(--space-5); }
   .research-head, .topic-cards { grid-column: 1 / -1; }
   .research-head { position: static; margin-bottom: var(--space-5); }
-  .stage-track::before { display: none; }  /* stacked stages: the node beside each heading is enough */
+  .research-area::before { display: none; }  /* stacked stages: the node beside each heading is enough */
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 680px) {

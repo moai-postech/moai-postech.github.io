@@ -183,3 +183,18 @@
 ### 기각한 안과 이유(15차)
 - 14차의 분야 설명(단계가 무엇인지 넓게): 교수가 그 아래 주제를 요약하는 쪽을 원했다.
 - Perception 만 바꾸기: 세 분야 머리가 서로 다른 꼴이 된다.
+
+## 16차: 주제마다 prior 종류를 붙이고 분야 설명을 평이하게, 레일은 마지막 마디에서 멈춤 (같은 날)
+- 교수: 디자인, scalable prior 아래 정렬, 표현을 점검해 달라. "너무 억지로 표현 맞추지는 말고. learning in the wild는 내가 원래 'statistical prior'라고 표현했었어. 약간 notation abuse는 괜찮은데 그래도 이쁘고 깔끔하게 정돈해줘."
+- 주제 설명(`summary`)을 "<종류> priors ..." 한 꼴로 짧게 바꿨다. 14차의 Building/Exploiting 동사 맞추기는 억지스러워 버렸다.
+  - Visual Structure "Structural priors on objects, parts, and motion.", Learning in the Wild "Statistical priors for limited, biased, uncurated, or novel data.", Reliable Generation "Fairness and alignment priors for faithful generation, even from imperfect data."
+  - Reasoning & Agents "Evidence priors that ground reasoning and catch its errors.", Efficient LLMs "Sparsity and hierarchy priors for less compute and longer context.", Structured Data "Relational priors for logic, graphs, tables, and time series."
+  - VLA & World Models "User and intent priors for robot policies.", Multisensory Learning "Sensory priors beyond vision, starting with touch."
+- "prior" 가 주제 설명에 들어가니 분야 설명(`blurb`)에서는 뺐다. 세 주제를 카드 순서대로 잇는 동명사 나열이다. Perception "Seeing scenes as structure, learning from imperfect data, and generating images fairly and faithfully.", Reasoning "Grounding reasoning in evidence, making large models efficient, and learning on structured data.", Action "Adapting robots to each user's intent and sensing the world through touch as well as sight."
+- 세로 레일: 트랙 하나에 긋던 선(`.stage-track::before`)이 마지막 Action 마디 아래 카드 끝까지 이어졌다. 단계 절마다 그 마디에서 다음 마디까지 긋고(`.research-area:not(:last-child)::before`) 마지막 마디에서 멈춘다.
+- 확인: 로컬 빌드, 1440px·375px, 375px 가로 넘침 없음, 레일이 1→2→3 마디 가운데를 지나 3에서 멈춤.
+
+### 기각한 안과 이유(16차)
+- 14·15차처럼 분야와 주제 설명 모두에 prior 를 쓰기: 열한 번 되풀이돼 무겁다. 주제에만 둔다.
+- 14차의 Building/Exploiting/Grounding/Bringing 동사 맞추기: 문장이 길고 억지스럽다.
+- prior 종류를 카드 위 작은 꼬리표(배지)로 따로 달기: 설명 문장 맨 앞에 이미 있어 같은 말이 두 번 나온다.

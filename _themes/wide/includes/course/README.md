@@ -7,6 +7,7 @@
 | `../../layouts/course.html` | 강의 사이트 문서 틀: 머리(과목명, 강의 메뉴), 본문, 바닥. `view: schedule` 면 `schedule.html`, `view: project` 면 `project.html`, 없으면 `home.html` |
 | `home.html` | Home: 제목·소개·버튼 옆에 운영 정보 칸(Instructor, Lectures, Office hours, Other terms) → Course outline(파트 카드) → Grading → Resources |
 | `schedule.html` | Schedule: 전체 스케줄 표(파트 머리 줄, 다음 수업 표시) |
+| `study.html` | 학부생 AI 스터디(`teaching/ai-study/`, `view: study`): 강의 Home 같은 머리 + 학기 탭. 일정은 `_data/ai_study.yml`(시트에서 `tools/ai_study_sync.py`) |
 | `head.html` | Schedule 과 Term Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |
 | `project.html` | 팀 프로젝트: Overview(소개, 팀 크기, 단계, 평가 기준) → Teams(팀원, 발표 회차별 날짜·순서·슬라이드) |
 | `course.css` | 강의 사이트 전용 스타일과 색. `../theme.css` 끝에서 include 한다 |
@@ -53,4 +54,4 @@
 - 강의: `teaching/<id>/slides/<n>_<slug>.{pdf,html}`. HTML 은 자산을 인라인한 단일 파일이라 그대로 열린다
 - 학생 발표: `teaching/<id>/project/<회차>/<회차>_teamNN.pdf`(pptx 는 올리지 않는다)
 - 파일 하나는 GitHub 한도(100 MB) 아래여야 한다. 지금 가장 큰 파일은 수 MB 다
-- 새 파일이 생기면 Drive 와 이 저장소에 각각 복사한다. 26F Data Engineering 은 강의 저장소의 `tools/publish-site.py` 가 Drive 배포본을 이 폴더로 복사하고 yml 링크를 점검한다 끝난 학기는 `sheet` 를 지워 시트 링크를 숨긴다.
+- 새 파일이 생기면 Drive 와 이 저장소에 각각 복사한다. yml 에 Drive 링크를 넣었으면 `python3 tools/localize_slides.py` 가 받아서 링크를 바꾼다(사이트 전체 원칙, 저장소 `AGENTS.md`). 26F Data Engineering 은 강의 저장소의 `tools/publish-site.py` 가 Drive 배포본을 이 폴더로 복사하고 yml 링크를 점검한다 끝난 학기는 `sheet` 를 지워 시트 링크를 숨긴다.

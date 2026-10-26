@@ -127,6 +127,35 @@ a.cs-title:hover { color: var(--accent); }
 .project-when { margin-right: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 .project-round a { color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
 
+/* Undergraduate AI study: one page, a tab per term. The table columns are fixed so switching terms never moves a column */
+.study-terms { padding-top: var(--space-7); }
+.study-tablist { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+.study-tablist button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: var(--space-2) var(--space-5); border: 0; border-radius: var(--radius-2); background: var(--surface); color: var(--muted); font: inherit; font-size: var(--text-meta); line-height: 1.4; text-align: left; cursor: pointer; }
+.study-tablist button strong { font-weight: 600; }
+.study-tablist button span { font-size: var(--text-small); }
+.study-tablist button:hover { color: var(--accent); }
+.study-tablist button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }  /* the same tint as the current subnav tab */
+.study-panel h2 { display: flex; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-2); }
+.study-panel h2 span { color: var(--muted); font-size: var(--text-lead); font-weight: 600; }
+.study-note { margin-bottom: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
+.study-note strong { margin-right: var(--space-1); color: var(--text); font-weight: 600; }
+.study-note a { color: var(--accent); font-weight: 600; }
+.study-table { table-layout: fixed; }
+.study-table .sc-n { width: 3.2em; }
+.study-table .sc-date { width: 4.6em; }
+.study-table .sc-topic { width: 27%; }
+.study-table .sc-papers { width: 21%; }
+.study-table .sc-demo { width: 13%; }
+.study-table .sc-who { width: 11%; }
+.study-table td { overflow-wrap: anywhere; }
+.study-table .cs-n { text-align: left; }
+.study-table .cs-slides { width: auto; white-space: normal; }
+.st-links a, .st-links span { display: inline-block; margin-right: var(--space-3); font-size: var(--text-meta); }
+.st-links a { color: var(--text); }
+.st-links a:hover { color: var(--accent); }
+.st-who { color: var(--muted); font-size: var(--text-meta); }
+.is-optional .cs-title { color: var(--muted); font-weight: 400; }
+
 /* Grading: item and weight on one line */
 .course-grading { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-5); }  /* two to four items share the row evenly */
 .course-grading li { display: flex; justify-content: space-between; align-items: baseline; padding: var(--space-4) var(--space-5); background: var(--tone-row); border-radius: var(--radius-2); }  /* grading is logistics */
@@ -161,4 +190,7 @@ a.cs-title:hover { color: var(--accent); }
   .project-round:empty { display: none !important; }
   .project-round::before { content: attr(data-round) "\00a0\00a0"; color: var(--muted); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
   .project-criteria li { grid-template-columns: 1fr; gap: 0; padding: var(--space-2) 0; }
+  .study-table colgroup { display: none; }
+  .st-links, .st-who { grid-column: 1 / -1; }
+  .st-links:empty, .st-who:empty { display: none !important; }
 }

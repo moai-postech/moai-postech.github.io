@@ -13,7 +13,7 @@ sections:
     steps:
       - title: "Check the background we expect"
         body: |
-          Look through our [undergraduate AI study](https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit?usp=sharing).
+          Look through our [undergraduate AI study](teaching/ai-study/).
           It meets weekly during the semester; reach out to join.
 
           Study group contact: Jian Choi (chjohn1105 [at] postech.ac.kr)

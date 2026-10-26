@@ -1,0 +1,231 @@
+#!/usr/bin/env python3
+"""학부생 AI 스터디 구글시트(schedule 탭)로 _data/ai_study.yml 을 다시 만든다.
+
+정본은 스터디 시트(링크 공개)다. 로그인 없이 시트의 HTML 보기를 읽는다(CSV 는 칸 안 링크를 잃는다).
+  - "26 Fall | 3: physical AI" 같은 줄이 학기 머리다. 그 아래 번호 줄이 회차, A1 같은 줄은 선택 주제, 0 줄은 학기 안내다.
+  - References, Demo 칸의 링크는 그대로, Slide 칸부터 오른쪽 칸들의 링크는 발표 자료(Slides, Notebook, Notes, Figure)로 옮긴다.
+  - 발표 자료(Slides, Notes, Figure)와 칸 안의 Google Slides 링크는 tools/drive_pdf.py 로 PDF(그림은 그대로)를 받아
+    teaching/ai-study/<학기>/<회차>-<주제>-<종류>.pdf 에 두고 사이트 파일을 가리킨다(Drive 대신, 교수 2026-10-26). 이미 받은 것은 건너뛴다.
+    Colab·ipynb 노트북은 Drive 링크 그대로 둔다. 받은 사본과 원본 링크의 짝은 tools/drive_sources.json.
+  - _data/ai_study.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
+
+  python3 tools/ai_study_sync.py
+
+필요한 것: Python 3.9+ (표준 라이브러리만).
+"""
+import html.parser
+import json
+import os
+import re
+import sys
+import unicodedata
+import urllib.parse
+import urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import drive_pdf  # noqa: E402
+
+SHEET_ID = "1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA"
+GID = "719507979"  # schedule 탭
+SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit?usp=sharing"
+HTML_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/htmlview/sheet?headers=true&gid={GID}"
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_data", "ai_study.yml")
+SEASONS = {"Spring": "03", "Summer": "06", "Fall": "09", "Winter": "12"}
+KEEP = {"ai", "llm", "llms", "vlm", "vla", "nn", "dl", "3d", "rl"}
+
+
+class Table(html.parser.HTMLParser):
+    """시트 HTML 보기의 표를 [[{"text", "links"}]] 로 읽는다."""
+
+    def __init__(self):
+        super().__init__()
+        self.rows, self.cell, self.link = [], None, None
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "tr":
+            self.rows.append([])
+        elif tag == "td" and self.rows:
+            self.cell = {"text": "", "links": []}
+        elif tag == "br" and self.cell is not None:
+            self.cell["text"] += " "
+        elif tag == "a" and self.cell is not None:
+            href = a.get("href", "")
+            q = urllib.parse.parse_qs(urllib.parse.urlparse(href).query).get("q")
+            self.link = [q[0] if q and "google.com/url" in href else href, ""]
+
+    def handle_endtag(self, tag):
+        if tag == "a" and self.link is not None:
+            self.link[1] = self.link[1].strip()
+            self.cell["links"].append(self.link)
+            self.link = None
+        elif tag == "td" and self.cell is not None:
+            self.cell["text"] = re.sub(r"\s+", " ", self.cell["text"]).strip()
+            self.rows[-1].append(self.cell)
+            self.cell = None
+
+    def handle_data(self, data):
+        if self.cell is not None:
+            self.cell["text"] += data
+        if self.link is not None:
+            self.link[1] += data
+
+
+def label(s):
+    """학기 주제처럼 단어마다 대문자로 쓰는 라벨. 약어(AI, LLM)는 대문자로 둔다."""
+    return " ".join(w.upper() if w.lower() in KEEP else w[:1].upper() + w[1:] for w in s.split())
+
+
+def sentence(s):
+    return s[:1].upper() + s[1:]
+
+
+def links(cell):
+    return [{"text": t, "url": u} for u, t in cell["links"] if t]
+
+
+def material_kind(text, url):
+    text = unicodedata.normalize("NFC", text)
+    t = text.lower()
+    if t.endswith(".ipynb") or "colab.research.google.com" in url:
+        return "Notebook"
+    if "필기" in text or "notes" in t:
+        return "Notes"
+    if t.endswith((".png", ".jpg", ".jpeg")):
+        return "Figure"
+    return "Slides"
+
+
+def materials(cells):
+    out, seen = [], {}
+    for c in cells:
+        for u, t in c["links"]:
+            k = material_kind(t, u)
+            seen[k] = seen.get(k, 0) + 1
+            out.append({"text": k if seen[k] == 1 else f"{k} {seen[k]}", "url": u})
+    return out
+
+
+def parse(rows):
+    terms, term = [], None
+    for r in rows:
+        cells = r + [{"text": "", "links": []}] * (8 - len(r))  # 행 번호 머리는 th 라 읽지 않는다
+        n, date, topic = cells[0]["text"], cells[1]["text"], cells[2]["text"]
+        m = re.fullmatch(r"(\d\d) (Spring|Summer|Fall|Winter)", date)
+        if not n and m:
+            theme = re.sub(r"^\w+:\s*", "", topic)
+            year = "20" + m.group(1)
+            term = {"id": f"{m.group(2).lower()}-{year}", "name": f"{m.group(2)} {year}", "theme": label(theme),
+                    "note": None, "sessions": []}
+            terms.append(term)
+            continue
+        if term is None or not topic or n in ("#",):
+            continue
+        if n == "0":
+            note = {"label": sentence(topic.rstrip("!")), "text": cells[3]["text"], "links": links(cells[3])}
+            term["note"] = note
+            continue
+        s = {"n": n}
+        m2 = re.fullmatch(r"(\d\d)/(\d\d)", date)
+        if m2:
+            s["date"] = f"{term['name'][-4:]}-{m2.group(1)}-{m2.group(2)}"
+        optional = "(optional)" in topic
+        s["title"] = sentence(topic.replace("(optional)", "").strip())
+        if optional:
+            s["optional"] = True
+        if links(cells[3]):
+            s["papers"] = links(cells[3])
+        elif cells[3]["text"]:
+            s["papers"] = [{"text": cells[3]["text"]}]
+        if links(cells[4]):
+            s["demos"] = links(cells[4])
+        if cells[5]["text"]:
+            s["keywords"] = cells[5]["text"]
+        if cells[6]["text"] and cells[6]["text"] != "-":
+            s["presenters"] = cells[6]["text"]
+        mats = materials(cells[7:])
+        if mats:
+            s["materials"] = mats
+        term["sessions"].append(s)
+    return terms
+
+
+def slug(s):
+    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:40] or "item"
+
+
+def localize_all(terms):
+    """Drive 의 발표 자료를 이 저장소로 받아 링크를 바꾼다. 받지 못한 것은 Drive 링크로 두고 경고한다."""
+    src = drive_pdf.load_sources()
+    for t in terms:
+        for s in t["sessions"]:
+            base = f"teaching/ai-study/{t['id']}/{s['n'].zfill(2)}-{slug(s['title'])}"
+            for field in ("papers", "materials"):
+                for l in s.get(field, []):
+                    u = l.get("url", "")
+                    if not drive_pdf.is_drive(u) or l["text"].startswith("Notebook"):
+                        continue
+                    tail = slug(l["text"]) if field == "materials" else "ref-" + slug(l["text"])
+                    try:
+                        l["url"] = drive_pdf.localize(u, f"{base}-{tail}", src)
+                    except Exception as e:  # noqa: BLE001
+                        print("경고:", s["title"], l["text"], e, file=sys.stderr)
+    drive_pdf.save_sources(src)
+
+
+def q(s):
+    return json.dumps(s, ensure_ascii=False)  # JSON 문자열은 YAML 의 큰따옴표 문자열과 같다
+
+
+def dump(terms):
+    out = [
+        "# 학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트 schedule 탭에서 만든다.",
+        "# 이 파일을 손으로 고치지 말고 시트를 고친 뒤 스크립트를 돌린다. 소개글과 운영 정보는 teaching/ai-study/index.md 에 있다.",
+        f"sheet: {q(SHEET_URL)}",
+        "terms:",
+    ]
+    for t in terms:
+        out += [f"  - id: {q(t['id'])}", f"    name: {q(t['name'])}", f"    theme: {q(t['theme'])}"]
+        if t["note"]:
+            nt = t["note"]
+            out += ["    note:", f"      label: {q(nt['label'])}", f"      text: {q(nt['text'])}"]
+            if nt["links"]:
+                out.append("      links:")
+                out += [f"        - {{ text: {q(l['text'])}, url: {q(l['url'])} }}" for l in nt["links"]]
+        out.append("    sessions:")
+        for s in t["sessions"]:
+            out.append(f"      - n: {q(s['n'])}")
+            for k in ("date", "title", "keywords", "presenters"):
+                if k in s:
+                    out.append(f"        {k}: {q(s[k])}")
+            if s.get("optional"):
+                out.append("        optional: true")
+            for k in ("papers", "demos", "materials"):
+                if k in s:
+                    out.append(f"        {k}:")
+                    for l in s[k]:
+                        out.append(f"          - {{ text: {q(l['text'])}" + (f", url: {q(l['url'])}" if l.get("url") else "") + " }")
+    return "\n".join(out) + "\n"
+
+
+def main():
+    with urllib.request.urlopen(HTML_URL, timeout=60) as r:
+        page = r.read().decode("utf-8")
+    t = Table()
+    t.feed(page)
+    terms = parse(t.rows)
+    if not terms:
+        sys.exit("시트에서 학기를 찾지 못했다(시트 모양이 바뀌었나?)")
+    localize_all(terms)
+    text = dump(terms)
+    old = open(OUT, encoding="utf-8").read() if os.path.exists(OUT) else ""
+    if text == old:
+        print("바뀐 것 없음")
+        return
+    with open(OUT, "w", encoding="utf-8") as f:
+        f.write(text)
+    print("갱신:", ", ".join(f"{x['name']} {len(x['sessions'])}회" for x in terms))
+
+
+if __name__ == "__main__":
+    main()

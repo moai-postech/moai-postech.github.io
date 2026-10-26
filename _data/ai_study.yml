@@ -1,0 +1,476 @@
+# 학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트 schedule 탭에서 만든다.
+# 이 파일을 손으로 고치지 말고 시트를 고친 뒤 스크립트를 돌린다. 소개글과 운영 정보는 teaching/ai-study/index.md 에 있다.
+sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit?usp=sharing"
+terms:
+  - id: "fall-2026"
+    name: "Fall 2026"
+    theme: "Physical AI"
+    note:
+      label: "Review"
+      text: "check foundation models (CLIP, VLM, RLHF, etc.)"
+    sessions:
+      - n: "1"
+        date: "2026-09-15"
+        title: "Data sources"
+        keywords: "teleoperation, simulation, human video"
+        presenters: "최지안, 김하은"
+        papers:
+          - { text: "OXE", url: "https://robotics-transformer-x.github.io/" }
+          - { text: "RoboCasa", url: "https://robocasa.ai/" }
+          - { text: "Ego4D", url: "https://ego4d-data.org/" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2026/01-data-sources-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/fall-2026/01-data-sources-slides-2.pdf" }
+          - { text: "Notebook", url: "https://drive.google.com/file/d/1lMtwnJfvlCx1TwgcuPD7aM9Mu7ZPfP6H/view?usp=sharing" }
+      - n: "2"
+        date: "2026-09-21"
+        title: "Manipulation"
+        keywords: "imitation learning, action chunking, diffusion policy"
+        presenters: "김재원, 고정윤"
+        papers:
+          - { text: "ALOHA", url: "https://arxiv.org/abs/2304.13705" }
+          - { text: "Diffusion Policy", url: "https://arxiv.org/abs/2303.04137" }
+        demos:
+          - { text: "LeRobot", url: "https://huggingface.co/spaces/lerobot/visualize_dataset" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2026/02-manipulation-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/fall-2026/02-manipulation-slides-2.pdf" }
+      - n: "3"
+        date: "2026-09-29"
+        title: "Locomotion"
+        keywords: "privileged information, proprioception, exteroception"
+        presenters: "진동환, 정윤"
+        papers:
+          - { text: "RMA", url: "https://arxiv.org/abs/2107.04034" }
+          - { text: "perceptive locomotion", url: "https://arxiv.org/abs/2201.08117" }
+        demos:
+          - { text: "MuJoCo Playground", url: "https://playground.mujoco.org/" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2026/03-locomotion-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/fall-2026/03-locomotion-slides-2.pdf" }
+          - { text: "Notebook", url: "https://colab.research.google.com/drive/1TQpshn8PjXt_tjVFy9vfwG5JkdZDQ99c?usp=sharing" }
+      - n: "4"
+        date: "2026-10-06"
+        title: "Navigation"
+        keywords: "goal-conditioned navigation, topological map, SLAM"
+        presenters: "이수겸, 유소은"
+        papers:
+          - { text: "Active Neural SLAM", url: "https://arxiv.org/abs/2004.05155" }
+          - { text: "ViNT", url: "https://arxiv.org/abs/2306.14846" }
+        demos:
+          - { text: "OmniVLA", url: "https://github.com/NHirose/OmniVLA" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2026/04-navigation-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/fall-2026/04-navigation-slides-2.pdf" }
+      - n: "5"
+        date: "2026-10-12"
+        title: "Humanoid"
+        keywords: "whole-body control, motion retargeting, tracking"
+        presenters: "최원준, 윤서현"
+        papers:
+          - { text: "DeepMimic", url: "https://arxiv.org/abs/1804.02717" }
+          - { text: "OmniRetarget", url: "https://arxiv.org/abs/2509.26633" }
+        demos:
+          - { text: "ASAP", url: "https://agile.human2humanoid.com/" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2026/05-humanoid-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/fall-2026/05-humanoid-slides-2.pdf" }
+      - n: "6"
+        date: "2026-11-03"
+        title: "Dexterous manipulation"
+        keywords: "in-hand manipulation, visuo-tactile"
+        presenters: "이지윤, 윤서현"
+        papers:
+          - { text: "Visual Dexterity", url: "https://arxiv.org/abs/2211.11744" }
+          - { text: "3D-ViTac", url: "https://arxiv.org/abs/2410.24091" }
+        demos:
+          - { text: "T-Rex", url: "https://tactile-reactive-dexterous.github.io/" }
+      - n: "7"
+        date: "2026-11-10"
+        title: "3D representation"
+        keywords: "ray tracing, rasterization"
+        presenters: "안준서, 김태하"
+        papers:
+          - { text: "NeRF", url: "https://arxiv.org/abs/2003.08934" }
+          - { text: "3DGS", url: "https://arxiv.org/abs/2308.04079" }
+        demos:
+          - { text: "SuperSplat", url: "https://superspl.at/editor" }
+      - n: "8"
+        date: "2026-11-17"
+        title: "3D reconstruction"
+        keywords: "multi-view geometry, feed-forward 3D"
+        presenters: "김나령, 이유찬"
+        papers:
+          - { text: "DUSt3R", url: "https://arxiv.org/abs/2312.14132" }
+          - { text: "VGGT", url: "https://arxiv.org/abs/2503.11651" }
+        demos:
+          - { text: "VGGT-Ω", url: "https://huggingface.co/spaces/facebook/vggt-omega" }
+      - n: "9"
+        date: "2026-11-24"
+        title: "Spatial reasoning"
+        keywords: "visual grounding, affordance"
+        presenters: "최진현, 김태경"
+        papers:
+          - { text: "SpatialVLM", url: "https://arxiv.org/abs/2401.12168" }
+          - { text: "RoboPoint", url: "https://arxiv.org/abs/2406.10721" }
+        demos:
+          - { text: "MolmoPoint", url: "https://huggingface.co/spaces/allenai/MolmoPoint-8B-Demo" }
+      - n: "10"
+        date: "2026-12-01"
+        title: "VLA"
+        keywords: "vision-language-action, action tokenization, flow matching"
+        presenters: "최지안, 정윤"
+        papers:
+          - { text: "SayCan", url: "https://arxiv.org/abs/2204.01691" }
+          - { text: "OpenVLA", url: "https://arxiv.org/abs/2406.09246" }
+          - { text: "π0", url: "https://arxiv.org/abs/2410.24164" }
+        demos:
+          - { text: "π0.7", url: "https://www.pi.website/blog/pi07" }
+      - n: "11"
+        date: "2026-12-08"
+        title: "World model"
+        keywords: "model-based RL, latent dynamics"
+        presenters: "진동환, 신예원"
+        papers:
+          - { text: "DreamerV3", url: "https://arxiv.org/abs/2301.04104" }
+          - { text: "DreamDojo", url: "https://arxiv.org/abs/2602.06949" }
+        demos:
+          - { text: "DreamDojo", url: "https://dreamdojo-world.github.io/" }
+      - n: "A1"
+        title: "RL"
+        keywords: "policy gradient, on-policy, off-policy"
+        optional: true
+        papers:
+          - { text: "PPO", url: "https://arxiv.org/abs/1707.06347" }
+          - { text: "SAC", url: "https://arxiv.org/abs/1801.01290" }
+      - n: "A2"
+        title: "Sim-to-real"
+        keywords: "domain randomization, system identification"
+        optional: true
+        papers:
+          - { text: "domain randomization", url: "https://arxiv.org/abs/1703.06907" }
+          - { text: "actuator network", url: "https://arxiv.org/abs/1901.08652" }
+      - n: "A3"
+        title: "Control"
+        keywords: "optimal control, MPC"
+        optional: true
+        papers:
+          - { text: "PETS", url: "https://arxiv.org/abs/1805.12114" }
+          - { text: "TD-MPC2", url: "https://arxiv.org/abs/2310.16828" }
+      - n: "A4"
+        title: "3D data structures"
+        keywords: "point cloud, voxel, mesh, surfel"
+        optional: true
+        papers:
+          - { text: "PointNet", url: "https://arxiv.org/abs/1612.00593" }
+          - { text: "VoxelNet", url: "https://arxiv.org/abs/1711.06396" }
+          - { text: "MeshCNN", url: "https://arxiv.org/abs/1809.05910" }
+  - id: "summer-2026"
+    name: "Summer 2026"
+    theme: "Deep Learning Basics"
+    note:
+      label: "Reference lecture"
+      text: "MIT Deep Learning"
+      links:
+        - { text: "MIT Deep Learning", url: "https://deeplearning6-7960.github.io/" }
+    sessions:
+      - n: "1"
+        date: "2026-06-23"
+        title: "How to train a NN"
+        keywords: "backpropagation, computational graph"
+        presenters: "최지안"
+        papers:
+          - { text: "Lec 2", url: "https://www.dropbox.com/scl/fi/kv1ddh7ss8oxohtvzlsjh/2_backprop_2025.pdf?rlkey=wck8o09edebcay7mp6gohygj5&e=1&st=17v992ys&dl=0" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/summer-2026/01-how-to-train-a-nn-slides.pdf" }
+      - n: "2"
+        date: "2026-06-30"
+        title: "Architectures: Grid"
+        keywords: "CNN, neural field"
+        presenters: "정윤"
+        papers:
+          - { text: "Lec 4", url: "https://www.dropbox.com/scl/fi/g9hozgna3ralnpibg30oz/4_grid_archs_2025.pdf?rlkey=d0wbf24wck84rayhbj1q0d01m&e=1&st=vnt61skl&dl=0" }
+      - n: "3"
+        date: "2026-07-07"
+        title: "Architectures: Sequence"
+        keywords: "RNN, Transformer"
+        papers:
+          - { text: "Lec 5", url: "https://www.dropbox.com/scl/fi/lu2osug2lswj8gqyyuxut/5_mem_seq_2025.pdf?rlkey=z0o79n6suzrhanv9wzqo89bbs&e=1&st=3tpzzlec&dl=0" }
+          - { text: "Lec 6", url: "https://www.dropbox.com/scl/fi/yorf3fw3ovrptaaoyh441/6_transformers_2025.pdf?rlkey=zkjpma8flvy5ksjc333hxp9q8&e=1&st=v403dfgl&dl=0" }
+      - n: "4"
+        date: "2026-07-14"
+        title: "Representation Learning: Reconstruction-based"
+        keywords: "MAE, BERT"
+        presenters: "진동환"
+        papers:
+          - { text: "Lec 8", url: "https://www.dropbox.com/scl/fi/8p20mfl0w66df5pjf3z9c/8_representation_rec_2025.pdf?rlkey=8okp1xd19bq9ox59kpx93a94o&e=1&st=9butpzi3&dl=0" }
+      - n: "5"
+        date: "2026-07-21"
+        title: "Representation Learning: Similarity-based"
+        keywords: "contrastive learning"
+        presenters: "장연종"
+        papers:
+          - { text: "Lec 9", url: "https://www.dropbox.com/scl/fi/grbb1avecuwal4wndihrd/9_similarity_2025.pdf?rlkey=77916kh9nlw3b8n2m27p5otb7&e=1&st=qbd43cd5&dl=0" }
+          - { text: "Lec 10", url: "https://www.dropbox.com/scl/fi/mrlthxaaa5kg36ro6ripp/10_representation_info_2025.pdf?rlkey=v1wo7nw0hbbf14it77y95dtei&e=1&st=td6wzebh&dl=0" }
+      - n: "6"
+        date: "2026-07-28"
+        title: "Generative Models: VAE and GAN"
+        keywords: "VAE, GAN"
+        presenters: "오승준"
+        papers:
+          - { text: "Lec 13", url: "https://www.dropbox.com/scl/fi/7jswvwe1c8rtherjaboh9/lec13_gen_intro.pdf?rlkey=vqx2mjujz2hc93eny55a761ij&e=1&st=mnagglkh&dl=0" }
+          - { text: "Lec 14", url: "https://www.dropbox.com/scl/fi/3c4mwxeweqnb84bmftgt3/lec14_vae_gan.pdf?rlkey=dw2kkoc05wf449bydqic663j8&e=1&st=le610sta&dl=0" }
+        materials:
+          - { text: "Notes", url: "teaching/ai-study/summer-2026/06-generative-models-vae-and-gan-notes.pdf" }
+          - { text: "Notes 2", url: "teaching/ai-study/summer-2026/06-generative-models-vae-and-gan-notes-2.pdf" }
+      - n: "7"
+        date: "2026-08-04"
+        title: "Generative Models: Diffusion and Flows"
+        keywords: "diffusion, flow"
+        presenters: "최지안"
+        papers:
+          - { text: "Lec 16", url: "https://www.dropbox.com/scl/fi/aoaddpf7wjcv28xtbwe12/lec16_diffusion.pdf?rlkey=k9op9towe7u2d4k9q4n2wu1xz&e=1&st=g8zsdbui&dl=0" }
+      - n: "8"
+        date: "2026-08-11"
+        title: "Generalization"
+        keywords: "distribution shift"
+        presenters: "김도연"
+        papers:
+          - { text: "Lec 17", url: "https://www.dropbox.com/scl/fi/pk81c0p4mk68lli60sikl/17_ood_2025.pdf?rlkey=4ddc1nkqwpuc74130pi2wuvpy&e=1&st=7ko1cc6p&dl=0" }
+        materials:
+          - { text: "Slides", url: "https://docs.google.com/presentation/d/18wYyj8DqqHumT6c2xOD8H4BtsJNObelt/edit?usp=sharing&ouid=103570127772147721916&rtpof=true&sd=true" }
+      - n: "9"
+        date: "2026-08-20"
+        title: "Transfer Learning"
+        keywords: "fine-tuning, few-shot, meta-learning"
+        presenters: "오승준"
+        papers:
+          - { text: "Lec 18", url: "https://www.dropbox.com/scl/fi/jfa2ampn4zj98txbn29r9/18_transfer_learning_2025.pdf?rlkey=chv4b0ujjpj8512emteus9kdl&e=1&st=p74qi6jn&dl=0" }
+        materials:
+          - { text: "Notes", url: "teaching/ai-study/summer-2026/09-transfer-learning-notes.pdf" }
+      - n: "10"
+        date: "2026-08-27"
+        title: "DL Theory"
+        keywords: "UAT, generalization bound"
+        presenters: "박채원"
+        optional: true
+        papers:
+          - { text: "Lec 3", url: "https://www.dropbox.com/scl/fi/0uo7xhho5ws0bts6k9f5m/3_approximation_2025.pdf?rlkey=77t08souixt42rpny8v8e5sqc&e=1&st=kitgis2x&dl=0" }
+          - { text: "Lec 7", url: "https://www.dropbox.com/scl/fi/megb5rm0teodtw04fskxw/7_generalization_2025.pdf?rlkey=l88wzorvkbbgq5z584kh3tn71&e=1&st=3fie7jl6&dl=0" }
+  - id: "spring-2026"
+    name: "Spring 2026"
+    theme: "Large Language Models"
+    note:
+      label: "Review"
+      text: "check lec 2, 8 from the last semester"
+    sessions:
+      - n: "1"
+        date: "2026-03-10"
+        title: "LLM review"
+        keywords: "review transformer & LLM"
+        papers:
+          - { text: "why decoder-only?", url: "teaching/ai-study/spring-2026/01-llm-review-ref-why-decoder-only.pdf" }
+      - n: "2"
+        date: "2026-03-17"
+        title: "CoT"
+        keywords: "chain-of-thought"
+        presenters: "김승호, 정윤"
+        papers:
+          - { text: "CoT", url: "https://arxiv.org/abs/2201.11903" }
+          - { text: "zero-shot CoT", url: "https://arxiv.org/abs/2205.11916" }
+          - { text: "self-consistency", url: "https://arxiv.org/abs/2203.11171" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/spring-2026/02-cot-slides.pdf" }
+      - n: "3"
+        date: "2026-03-24"
+        title: "SFT"
+        keywords: "instruction fine-tuning"
+        presenters: "박채원, 임성은"
+        papers:
+          - { text: "FLAN", url: "https://arxiv.org/abs/2109.01652" }
+          - { text: "FLAN-T5", url: "https://arxiv.org/abs/2210.11416" }
+          - { text: "LIMA", url: "https://arxiv.org/abs/2305.11206" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/spring-2026/03-sft-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/spring-2026/03-sft-slides-2.pdf" }
+      - n: "4"
+        date: "2026-03-31"
+        title: "RLHF"
+        keywords: "reinforcement learning, human feedback"
+        presenters: "양광모, 안준서"
+        papers:
+          - { text: "RLHF", url: "https://arxiv.org/abs/1706.03741" }
+          - { text: "InstructGPT", url: "https://arxiv.org/abs/2203.02155" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/spring-2026/04-rlhf-slides.pdf" }
+      - n: "5"
+        date: "2026-04-21"
+        title: "RLAIF (rubric)"
+        keywords: "alignment, rubric-based RL"
+        presenters: "이수겸, 최주연"
+        papers:
+          - { text: "HH", url: "https://arxiv.org/abs/2204.05862" }
+          - { text: "Constitutional AI", url: "https://arxiv.org/abs/2212.08073" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/spring-2026/05-rlaif-rubric-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/spring-2026/05-rlaif-rubric-slides-2.pdf" }
+      - n: "6"
+        date: "2026-04-28"
+        title: "Reasoning models"
+        keywords: "test-time scaling, reward model (verifier)"
+        presenters: "고현민, 지은수"
+        papers:
+          - { text: "test-time scale", url: "https://arxiv.org/abs/2408.03314" }
+          - { text: "PRM", url: "https://arxiv.org/abs/2305.20050" }
+          - { text: "DeepSeek-R1", url: "https://arxiv.org/abs/2501.12948" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/spring-2026/06-reasoning-models-slides.pdf" }
+      - n: "7"
+        date: "2026-05-12"
+        title: "Long-context"
+        keywords: "long-context, efficient attention, attention sink"
+        presenters: "장세림, 정민호"
+        papers:
+          - { text: "lost in the middle", url: "https://arxiv.org/abs/2307.03172" }
+          - { text: "StreamingLLM", url: "https://arxiv.org/abs/2309.17453" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/spring-2026/07-long-context-slides.pdf" }
+      - n: "8"
+        date: "2026-05-19"
+        title: "RAG"
+        keywords: "retrieval-augmeted generation"
+        presenters: "최지안, 진동환"
+        papers:
+          - { text: "RAG", url: "https://arxiv.org/abs/2005.11401" }
+          - { text: "long-context vs RAG", url: "https://arxiv.org/abs/2407.16833" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/spring-2026/08-rag-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/spring-2026/08-rag-slides-2.pdf" }
+          - { text: "Figure", url: "teaching/ai-study/spring-2026/08-rag-figure.png" }
+          - { text: "Figure 2", url: "teaching/ai-study/spring-2026/08-rag-figure-2.png" }
+      - n: "9"
+        date: "2026-05-26"
+        title: "Agent"
+        keywords: "tool-augmeted LLM, autonomous agent"
+        presenters: "이현수, 박선영"
+        papers:
+          - { text: "ReAct", url: "https://arxiv.org/abs/2210.03629" }
+          - { text: "Toolformer", url: "https://arxiv.org/abs/2302.04761" }
+        demos:
+          - { text: "OpenClaw", url: "https://openclaw.ai/" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/spring-2026/09-agent-slides.pdf" }
+  - id: "fall-2025"
+    name: "Fall 2025"
+    theme: "Foundation Models"
+    sessions:
+      - n: "1"
+        date: "2025-09-17"
+        title: "Deep learning primer"
+        keywords: "NN, loss function, SGD"
+        presenters: "박채원, 이현수"
+        papers:
+          - { text: "MIT DL primer", url: "https://www.youtube.com/watch?v=alfdI7S6wCY" }
+          - { text: "(full lecture)", url: "https://introtodeeplearning.com/" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/01-deep-learning-primer-slides.pdf" }
+      - n: "2"
+        date: "2025-09-24"
+        title: "Transformer"
+        keywords: "attention, next token prediction, language modeling"
+        presenters: "고현민, 지은수"
+        papers:
+          - { text: "Transformer", url: "https://arxiv.org/abs/1706.03762" }
+        demos:
+          - { text: "annotated transformer", url: "https://nlp.seas.harvard.edu/annotated-transformer/" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/02-transformer-slides.pdf" }
+      - n: "3"
+        date: "2025-10-01"
+        title: "Visual perception"
+        keywords: "image patches, self-supervised learning"
+        presenters: "이현수, 최주연"
+        papers:
+          - { text: "ViT", url: "https://arxiv.org/abs/2010.11929" }
+          - { text: "DINOv3", url: "https://arxiv.org/abs/2508.10104" }
+        demos:
+          - { text: "DINOv3 applications", url: "https://github.com/facebookresearch/dinov3?tab=readme-ov-file#getting-started" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/03-visual-perception-slides.pdf" }
+      - n: "4"
+        date: "2025-10-29"
+        title: "Multimodal perception"
+        keywords: "image-text encoder (CLIP), text encoder (BERT)"
+        presenters: "최지안, 공현성"
+        papers:
+          - { text: "CLIP", url: "https://arxiv.org/abs/2103.00020" }
+          - { text: "BERT", url: "https://arxiv.org/abs/1810.04805" }
+        demos:
+          - { text: "CLIP semantic search", url: "https://colab.research.google.com/github/vivien000/clip-demo/blob/master/clip.ipynb" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/04-multimodal-perception-slides.pdf" }
+      - n: "5"
+        date: "2025-11-05"
+        title: "Visual grounding"
+        keywords: "open-world detection, segmentation"
+        presenters: "박선영, 박채원"
+        papers:
+          - { text: "GroundingDINO", url: "https://arxiv.org/abs/2303.05499" }
+          - { text: "SAM", url: "https://arxiv.org/abs/2304.02643" }
+        demos:
+          - { text: "GDINO", url: "https://huggingface.co/spaces/merve/Grounding_DINO_demo" }
+          - { text: "SAM", url: "https://segment-anything.com/demo" }
+          - { text: "SAM2", url: "https://sam2.metademolab.com/demo" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/05-visual-grounding-slides.pdf" }
+      - n: "6"
+        date: "2025-11-12"
+        title: "Image generation"
+        keywords: "text-to-image generation, diffusion/flow"
+        presenters: "박주연, 김유진"
+        papers:
+          - { text: "SD3", url: "https://arxiv.org/abs/2403.03206" }
+          - { text: "Diffusion=Flow", url: "https://diffusionflow.github.io/" }
+        demos:
+          - { text: "SD3", url: "https://huggingface.co/spaces/stabilityai/stable-diffusion-3-medium" }
+          - { text: "Suno (audio)", url: "https://suno.com/" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/06-image-generation-slides.pdf" }
+      - n: "7"
+        date: "2025-11-19"
+        title: "Video generation"
+        keywords: "text-to-video generation, world models"
+        presenters: "이수겸, 장승현"
+        papers:
+          - { text: "Sora", url: "https://openai.com/sora/" }
+          - { text: "Veo3 abilities", url: "https://video-zero-shot.github.io/" }
+        demos:
+          - { text: "Veo3", url: "https://aistudio.google.com/models/veo-3" }
+          - { text: "Genie3", url: "https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/07-video-generation-slides.pdf" }
+      - n: "8"
+        date: "2025-11-26"
+        title: "LLM, scaling law"
+        keywords: "LLM, scaling law, in-context learning"
+        presenters: "이민주, 이수겸"
+        papers:
+          - { text: "GPT-3", url: "https://arxiv.org/abs/2005.14165" }
+          - { text: "scaling law", url: "https://arxiv.org/abs/2001.08361" }
+          - { text: "emergent abilities", url: "https://arxiv.org/abs/2206.07682" }
+        demos:
+          - { text: "Qwen3", url: "https://huggingface.co/spaces/Qwen/Qwen3-Demo" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/08-llm-scaling-law-slides.pdf" }
+      - n: "9"
+        date: "2025-12-03"
+        title: "Multimodal LLM"
+        keywords: "multimodal perception & generation"
+        presenters: "최지안, 최주연"
+        papers:
+          - { text: "Cambrian-1", url: "https://arxiv.org/abs/2406.16860" }
+          - { text: "Transfusion", url: "https://arxiv.org/abs/2408.11039" }
+        demos:
+          - { text: "Gemini 3", url: "https://deepmind.google/models/gemini/" }
+        materials:
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/09-multimodal-llm-slides.pdf" }

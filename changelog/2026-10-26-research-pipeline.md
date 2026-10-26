@@ -47,3 +47,16 @@
 
 ### 기각한 안과 이유(3차)
 - 구절을 넓혀 다시 쓰기(예: Perception "Structure in visual data"): 넓히면 분야 한 줄 설명(How models see ...)과 같은 말이 되어 중복이다.
+
+## 4차: 문장 다듬기와 맺음 링크 (같은 날)
+- 교수: "문장이나 표현도 자연스럽게 쓰고, 이 페이지 더 자연스럽고 매력적으로 개선해줘."
+- 소개(`research.md`): "An intelligent system works in three steps ... one research area per step" 이 딱딱해 다시 썼다. "We design scalable priors for AI. Foundation models learn mostly from data, but data alone misses much of what we already know about the world. We build that knowledge into every step of an intelligent system: how it perceives the world, how it reasons about what it perceives, and how it acts." 단계를 좁히는 예시(objects 등)는 3차 이유로 넣지 않았다.
+- 단계 아래 질문(What is out there? 등)이 어색해 `stage_question` 을 `tagline` 으로 바꾸고 "How models see. / think. / act." 로 했다. 이 말은 원래 분야 설명 앞머리에 있던 것이라, 분야 설명(`blurb`)에서는 떼고 내용만 남겨 같은 말이 두 번 나오지 않게 했다.
+- 분야 설명: Perception "Understanding and generating images and video, even when the data is scarce, noisy, or biased." Reasoning "Grounded and efficient reasoning, foundation models applied to real-world problems, and learning on structured data."(이전 "think and work" 는 Structured Data 주제를 담지 못했다) Action "Robots that plan their actions and sense the physical world through touch as well as sight."
+- 주제 문장 세 개를 자연스럽게: Reliable Generation "Generating faithful images despite bias, noise, or little data.", Efficient LLMs "Cutting compute and reading longer context.", Multisensory Learning "Sensing touch and other signals beyond vision." 주제 이름과 논문은 그대로.
+- 맺음 한 줄(`.research-next`, 강조색 링크): "Explore every paper on the topic map →"(Publications > By Topic), "Join the lab →"(Contact). 세 단계를 다 본 학생과 동료가 다음에 누를 곳이다. 내용 복사가 아니라 링크라 "같은 내용은 한 곳에만"과 맞는다.
+- 확인: 로컬 빌드, 1440px·375px, 375px 가로 넘침 없음.
+
+### 기각한 안과 이유(4차)
+- 단계 아래 질문을 다듬어 유지(예: "What is in front of it?"): 질문형이 단계마다 억지스러웠고, 분야 설명과 겹친다.
+- 맺음에 Funding·Seminar 링크까지: 하위 탭이 페이지 위에 이미 있고, 링크가 늘면 강조가 흐려진다.

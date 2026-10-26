@@ -65,7 +65,7 @@ body { margin: 0; background: var(--bg); color: var(--text); font-size: var(--te
 a { color: inherit; text-decoration: none; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { color: var(--accent); text-decoration: underline; }  /* a link reads as its surrounding text; accent and underline only on hover */
 /* Links painted in the accent at rest: only the ones a visitor should act on (2026-10-22, "hyperlinks get colour only when they are the emphasis") */
-.lede a, .profile-links a, .step-body a, .filter-link, .embed-caption a, .sec-news a, .profile-bio a { color: var(--accent); }
+.lede a, .research-next a, .profile-links a, .step-body a, .filter-link, .embed-caption a, .sec-news a, .profile-bio a { color: var(--accent); }
 .sec-news .news-paper { color: var(--accent); }  /* a paper with no link yet is painted like the linked ones */
 .sec-news a.news-quiet { color: inherit; }  /* News paints papers; a workshop we organized stays in text colour, accent on hover */
 .sec-news a.news-quiet:hover { color: var(--accent); }  /* News: the papers are the news, so their links stay painted (2026-10-22) */
@@ -238,6 +238,7 @@ a.mentee-name:hover { color: var(--accent); }
 .research-head .stage-q { margin-top: var(--space-1); }
 .research-head .area-name { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-5); font-weight: 700; }
 .research-head .area-blurb { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-meta); }
+.research-next { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); margin: 0; font-weight: 600; }  /* closing line: where to go after the stages */
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
 .topic-card:last-child:nth-child(odd) { grid-column: 1 / -1; }  /* an odd last card fills the row instead of leaving a hole */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }

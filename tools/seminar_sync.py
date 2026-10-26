@@ -5,7 +5,8 @@
   - name_en 칸을 채운 행만 사이트에 나온다(시험, 휴식, 비공개 발표는 비워 둔다).
   - affiliation_en 이 있으면 초청 발표다. 초청 연사 슬라이드는 공개하지 않는다.
   - 랩 발표의 slide 칸 파일 이름을 슬라이드 폴더에서 찾아 받고, PDF 로 바꿔 assets/seminar/ 에 둔다.
-    모든 쪽을 16:9(960x540pt)로 맞추고(비율이 다르면 줄여서 가운데), 이름은 날짜-발표자.pdf, PDF 정보에 제목과 발표자를 넣는다.
+    모든 쪽을 16:9(960x540pt)로 맞추고(비율이 다르면 줄여서 가운데), 이름은 날짜-제목별칭.pdf, PDF 정보에 제목과 발표자를 넣는다.
+    제목 별칭은 시트 nickname 칸, 비면 nickname() 규칙(콜론 앞 짧은 이름, 아니면 기능어를 뺀 앞 3단어).
   - _data/seminar.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
 
   python3 tools/seminar_sync.py                       # 로컬에서 한 번
@@ -47,7 +48,7 @@ MANIFEST = PDF_DIR / "manifest.json"
 HEADER = """\
 # Seminar 페이지의 발표 목록. tools/seminar_sync.py 가 랩 세미나 구글시트에서 만든다. 이 파일을 손으로 고치지 말고 시트를 고친다.
 # 시트: {sheet}
-# 시트 칸: date, name, topic, slide(랩 발표는 Drive 슬라이드 파일 이름, 초청은 연사 홈페이지), note, name_en, affiliation_en, homepage, paper.
+# 시트 칸: date, name, topic, slide(랩 발표는 Drive 슬라이드 파일 이름, 초청은 연사 홈페이지), note, name_en, affiliation_en, homepage, paper, nickname(슬라이드 파일 이름에 쓸 제목 별칭, 비면 자동).
 # name_en 을 채운 행만 사이트에 나온다. affiliation_en 이 있으면 초청 발표다(외부 연사 슬라이드는 공개하지 않는다, 교수 원칙).
 # 제목 링크: slides(랩 발표, assets/seminar/ 의 PDF)가 있으면 그것, 없으면 paper(연사의 해당 논문, 여러 개면 연사가 1저자인 대표 하나). 교수 2026-10-26.
 # 연사 이름 링크: url(초청 연사와 인턴의 홈페이지), 없으면 랩 멤버는 People 의 그 사람 자리(템플릿이 자동).
@@ -106,6 +107,20 @@ def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
+STOPWORDS = {"a", "an", "the", "of", "for", "to", "via", "with", "from", "in", "on", "and", "by", "is", "how"}
+
+
+def nickname(title):
+    """파일 이름에 쓸 제목 별칭. 콜론 앞이 3단어 이하면 그것(MemEye, ESI-Bench), 아니면 기능어를 뺀 앞 3단어."""
+    title = title.replace("\xa0", " ")
+    if ":" in title:
+        head = title.split(":", 1)[0].strip()
+        if len(head.split()) <= 3:
+            return slug(head)
+    words = [w for w in re.sub(r"[^\w\s-]", "", title).split() if w.lower() not in STOPWORDS]
+    return slug(" ".join(words[:3]))
+
+
 def parse_talks(head, rows):
     col = {h: i for i, h in enumerate(head)}
     get = lambda r, k: r[col[k]].strip() if k in col and col[k] < len(r) else ""
@@ -128,6 +143,7 @@ def parse_talks(head, rows):
             "title": get(r, "topic"),
             "slide_name": "" if invited or slide_cell.startswith("http") else slide_cell,
             "paper": get(r, "paper"),
+            "nickname": slug(get(r, "nickname")) or nickname(get(r, "topic")),
         }
         talks.append(t)
     talks.sort(key=lambda t: t["date"], reverse=True)  # 같은 날은 시트 순서 그대로
@@ -269,7 +285,7 @@ def main():
             if not fid:
                 warnings.append(f"{t['date']} {t['speaker']}: 슬라이드 '{t['slide_name']}' 을 폴더에서 못 찾음")
                 continue
-            out = f"{t['date']}-{slug(t['speaker'])}.pdf"
+            out = f"{t['date']}-{t['nickname']}.pdf"
             t["slides"] = f"assets/seminar/{out}"
             keep.add(out)
             if manifest.get(out, {}).get("drive_id") == fid and (PDF_DIR / out).exists():

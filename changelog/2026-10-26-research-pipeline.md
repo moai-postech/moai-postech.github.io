@@ -1,7 +1,7 @@
 # 2026-10-26 Research Overview 대폭 개편: Perception → Reasoning → Action 파이프라인
 작성자: Sangwoo Mo(moai-postech) | 대상: `research.md`, `_data/research.yml`, `_themes/wide/includes/sections/research-flow.html`, `_themes/wide/includes/sections/research.html`, `_themes/wide/includes/theme.css`(research 규칙만) | 도구: Claude Code
 
-> **한줄 결론: 맨 위 세 카드를 한 줄 레일 위의 파이프라인으로 바꾸고, 아래 분야 절의 제목을 분야 이름에서 단계 이름(Perception, Reasoning, Action)으로 바꿔 세 단계가 페이지 끝까지 이어지게 했다.**
+> **한줄 결론: 분야 절의 제목을 분야 이름에서 단계 이름(Perception, Reasoning, Action)으로 바꾸고 세로 레일로 이어 세 단계가 페이지 끝까지 이어지게 했다. 1차에 넣은 맨 위 가로 파이프라인은 2차에 중복이라 뺐다.**
 
 ## 요청
 교수: "랩 홈페이지 research overview 이 부분 별로인거 같아... perception reasoning action의 3단계가 더 잘 드러나도록 Major revision 해줘".
@@ -29,3 +29,13 @@
 
 ## 남은 것
 - 없음
+
+## 2차: 가로 파이프라인 빼고 세로 레일 하나로 (같은 날)
+- 교수: "위쪽에 가로형으로 하나, 아래쪽에 세로형으로 하나 쓰니까 중복돼보여서 싫어."
+- 맨 위 가로 파이프라인(`sections/research-flow.html`, `.pipeline`, `.pipe-*`)을 지웠다. 세 단계를 보이는 그림은 단계 절을 잇는 세로 레일 하나다.
+- 파이프라인에만 있던 `STRUCTURE WE BUILD IN` + stage_note 를 단계 머리의 질문 아래로 옮겨 잃은 정보가 없다.
+- 세로 레일이 유일한 흐름 그림이 되어 색을 `--line` 에서 `--faint`(회색 글자색)로 진하게 했다. 휴대폰에서는 그대로 숨기고 번호 원만 둔다.
+- 확인: 로컬 빌드, 1440px·375px, 375px 가로 넘침 없음.
+
+### 기각한 안과 이유(2차)
+- 가로 파이프라인을 남기고 세로 레일과 번호 원을 빼는 안: 첫 화면에 세 단계가 한눈에 보이는 장점은 있지만, 스크롤하면 단계가 다시 사라져 1차에서 고친 문제가 돌아온다. 소개 문단이 세 단계를 이미 말하고 첫 단계 절이 바로 이어진다.

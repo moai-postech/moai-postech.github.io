@@ -9,8 +9,6 @@ intro: |
   misses structure we already know. We build that structure into all three steps, one research area per step.
   {: .lede}
 sections:
-  # 맨 위 파이프라인: Perception → Reasoning → Action, 각 단계가 아래 분야 절로 이어진다
-  - type: research-flow
   # _data/research.yml 의 분야마다 절 하나씩, 단계 이름이 절 제목
   - type: research
 ---

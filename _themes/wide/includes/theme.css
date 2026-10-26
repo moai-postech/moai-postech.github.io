@@ -276,6 +276,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .is-upcoming .schedule-date { color: var(--accent); font-weight: 600; }  /* talks still to come: the date alone turns accent */
 .schedule-title a { color: var(--text); }
 .schedule-title a:hover { color: var(--accent); }
+.schedule-title .schedule-slides { margin-left: var(--space-3); }  /* same small "slides" link as a paper's code/project links, so talks with slides stand out */
 .schedule-speaker { width: 1%; padding-left: var(--space-4) !important; font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }  /* names left-aligned in the last column, so they line up at the right end */
 .schedule-speaker a { color: var(--text); }
 .schedule-speaker a:hover { color: var(--accent); }

@@ -2,6 +2,8 @@
   _data/seminar.yml 의 발표 목록. 초청 발표와 랩 내부 발표를 한 목록에 날짜순(최신이 위)으로 두고,
   위의 All / Lab / Invited 버튼으로 거른다(자바스크립트가 없으면 전부 보인다).
   한 줄: 날짜, 제목(남는 폭 전부), 소속(회색, 오른쪽 정렬), 맨 오른쪽에 발표자 이름(굵게, 왼쪽 정렬 열). 이름이 한 세로선에 맞는다(교수 2026-10-26).
+  초청 연사 이름은 연사 홈페이지(url)로, 랩 발표자 이름은 _data/members.yml 에 있으면 Students 나 Mentees 의 그 사람 자리(#이름)로 건다.
+  슬라이드가 있는 내부 발표는 제목을 그 파일로 걸고, 제목 뒤에 Publications 와 같은 모양의 작은 slides 링크를 단다.
   다가오는 발표는 목록 맨 위(최신순)에 오고, 방문자 브라우저에서 날짜가 강조된다(scripts.html 의 is-upcoming). 교수 2026-10-23: Up next 카드는 빼고 이 상단 하이라이트만 둔다.
 {% endcomment %}
 {% assign talks = site.data.seminar.talks %}
@@ -21,9 +23,10 @@
       {% assign year = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y != year %}{% assign year = y %}<tr class="schedule-year"><th colspan="4" scope="rowgroup">{{ y }}</th></tr>{% endif %}
       <tr data-kind="{% if t.invited %}invited{% else %}lab{% endif %}" data-date="{{ t.date }}">
         <td class="schedule-date">{{ t.date | date: "%m/%d" }}</td>
-        <td class="schedule-title">{% if t.slides %}<a href="{{ t.slides }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</td>
+        <td class="schedule-title">{% if t.slides %}<a href="{{ t.slides }}">{{ t.title }}</a><a class="pub-link schedule-slides" href="{{ t.slides }}">slides</a>{% else %}{{ t.title }}{% endif %}</td>
         <td class="schedule-aff">{{ t.affiliation }}</td>
-        <td class="schedule-speaker">{% if t.url %}<a href="{{ t.url }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}</td>
+        {% assign href = t.url %}{% unless href or t.invited %}{% for g in site.data.members.groups %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "students.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% for g in site.data.members.mentees %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "mentees.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% endunless %}
+        <td class="schedule-speaker">{% if href %}<a href="{{ href }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}</td>
       </tr>
       {% endfor %}
       </tbody>

@@ -19,7 +19,6 @@
     {% for f in site.data.focus %}{% assign fid = f.name | slugify %}<div class="focus-panel" role="tabpanel" id="panel-{{ sid }}-{{ fid }}" aria-labelledby="tab-{{ sid }}-{{ fid }}">
       {% if f.papers %}<div class="focus-papers">
         {% for p in f.papers limit: 3 %}{% if p.url %}<a class="paper-chip" href="{{ p.url }}">{% else %}<div class="paper-chip">{% endif %}
-          {% if p.image %}<span class="paper-fig"><img src="{{ p.image }}" alt="" loading="lazy"></span>{% endif %}
           <span class="venue">{{ p.short }} · {{ p.venue }}</span>
           <span class="paper-title">{{ p.title }}</span>
         {% if p.url %}</a>{% else %}</div>{% endif %}

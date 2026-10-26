@@ -18,7 +18,6 @@
   --ink-600: #596574;
   --ink-500: #6b7683;   /* 4.6:1 on white */
   --gray-200: #d8e0e8;
-  --gray-400: #9aa7b8;   /* secondary text on the navy band */
   --gray-50: #f3f6fa;
   --white: #ffffff;
 
@@ -44,7 +43,6 @@
   --surface: var(--gray-50);
   --text: var(--ink-900);
   --muted: var(--ink-600);
-  --muted-on-dark: var(--gray-400);
   --faint: var(--muted);  /* one secondary grey: --faint is kept as an alias so older rules read the same (2026-10-22) */
   --line: var(--gray-200);
   --accent: var(--red-700);
@@ -156,7 +154,7 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .hero-text strong { color: var(--accent); font-weight: 600; }
 
 /* Focus explorer: the chosen tab opens into one outlined box that holds its papers and people, so it is clear which field they belong to.
-   The section sits on a navy band; one hairline outline, and the white paper cards are the only filled shapes. */
+   One hairline outline, no grey fill; paper cards are the only filled shapes. */
 .focus-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; }
 .focus-tab { position: relative; display: flex; align-items: center; gap: var(--space-4); margin-bottom: -1px; padding: var(--space-4) var(--space-5); border: 1px solid transparent; border-bottom: 0; border-radius: var(--radius-2) var(--radius-2) 0 0; background: none; color: var(--muted); font: inherit; font-size: var(--text-lead); font-weight: 600; text-align: left; cursor: pointer; }
 .focus-tab img { width: 40px; height: 40px; flex-shrink: 0; opacity: .55; }
@@ -165,15 +163,6 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .focus-tab[aria-selected="true"] { z-index: 1; border-color: var(--line); background: var(--bg); color: var(--accent); box-shadow: inset 0 3px 0 var(--accent); }
 .focus-tab[aria-selected="true"] img { opacity: 1; }
 .focus-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-.sec-focus { margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); margin-top: var(--space-6); padding-block: var(--space-8); background: var(--ink-900); color: var(--white); }  /* a full-width navy band between the white hero and News: one strong value contrast, no new hue (discussions/2026-10-26-color-contrast.md) */
-.sec-focus + .content-section { padding-top: var(--section-gap); }
-.sec-focus h2 { color: var(--white); }
-.sec-focus .focus-tab { color: var(--muted-on-dark); }
-.sec-focus .focus-tab img { opacity: .6; }  /* the icons are drawn for the navy band: white lines, secondary-accent fills */
-.sec-focus .focus-tab:hover { color: var(--white); }
-.sec-focus .focus-tab[aria-selected="true"] { border-color: rgba(255, 255, 255, .18); background: var(--ink-900); color: var(--white); box-shadow: inset 0 3px 0 var(--accent); }
-.sec-focus .focus-tab[aria-selected="true"] img { opacity: 1; }
-.sec-focus .focus-panels { border-color: rgba(255, 255, 255, .18); }
 .focus-panels { padding: var(--space-6); border: 1px solid var(--line); border-radius: 0 var(--radius-2) var(--radius-2) var(--radius-2); }
 .focus-explorer:has(.focus-tab:last-child[aria-selected="true"]) .focus-panels { border-radius: var(--radius-2) 0 var(--radius-2) var(--radius-2); }
 .focus-explorer:has(.focus-tab:nth-child(2)[aria-selected="true"]) .focus-panels { border-radius: var(--radius-2); }
@@ -183,16 +172,10 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .paper-chip .venue { background: var(--bg); }  /* the card is already grey, so its badge is white */
 .paper-chip .paper-title { font-weight: 600; line-height: 1.45; }
-.sec-focus .paper-chip { background: var(--white); }
-.sec-focus .paper-chip .venue { background: var(--accent-soft); color: var(--accent); }
-.paper-fig { display: block; aspect-ratio: 16 / 9; margin: calc(-1 * var(--space-5)) calc(-1 * var(--space-5)) var(--space-1); border-radius: var(--radius-2) var(--radius-2) 0 0; background: var(--white); overflow: hidden; }  /* the paper's key figure on top of its card (focus.yml image); cards without one stay text only */
-.paper-fig img { display: block; width: 100%; height: 100%; object-fit: contain; padding: var(--space-3); }
 .focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 400; }
 .focus-people .label { margin-right: var(--space-1); color: var(--faint); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
 .focus-people a, .focus-people span:not(.label) { color: var(--text); }
 .focus-people a:hover { color: var(--accent); }
-.sec-focus .focus-people .label { color: var(--muted-on-dark); }
-.sec-focus .focus-people a, .sec-focus .focus-people span:not(.label) { color: var(--white); }
 
 .venue { align-self: flex-start; display: inline-block; padding: 1px var(--space-2); background: var(--surface); color: var(--text); border-radius: 4px; font-size: var(--text-small); font-weight: 600; letter-spacing: .01em; }
 
@@ -443,4 +426,3 @@ a.person-name:hover { color: var(--accent); }
 
 {% comment %}Course pages: their own folder so the template stays in one place{% endcomment %}
 {% include course/course.css %}
-

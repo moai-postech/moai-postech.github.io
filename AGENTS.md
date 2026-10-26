@@ -55,7 +55,7 @@ tools/               검사 스크립트
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
 - **POSTECH 필수 요소**(정보기술팀이 moai.postech.ac.kr 연결 조건으로 요구, 2026-09-15 권장사항). 테마를 바꾸거나 디자인을 고쳐도 빼지 않는다. 값은 `_config.yml` 의 `postech`(대표홈·로고·개인정보 링크)와 `footer`(학과·주소·전화)에 둔다. POSTECH 링크는 영어판(`/eng/`)이고, 개인정보 링크 이름은 영어판 본부 꼬리말의 공식 명칭 `Personal Information Policy` 이며 굵게 구분한다.
-  - `includes/header.html`: 좌상단 POSTECH 워드마크(대표홈 링크), 그 오른쪽에 연구실 로고와 이름(홈 링크). 한 줄에 다 들어가지 않는 폭에서는 메뉴 전체를 아랫줄로 내린다(`.site-head` 의 `flex-wrap`).
+  - `includes/header.html`: 좌상단 POSTECH 워드마크(대표홈 링크), 가는 세로선, 그 오른쪽에 연구실 로고와 이름(홈 링크). "POSTECH | 연구실" 은 POSTECH SITES 헤더 가이드(sites.postech.ac.kr/guide/gui/GUI0501.do) 예시의 짜임이다. 꼬리말의 POSTECH 로고도 같은 워드마크를 쓴다(2026-10-26). 한 줄에 다 들어가지 않는 폭에서는 메뉴 전체를 아랫줄로 내린다(`.site-head` 의 `flex-wrap`).
   - `includes/footer.html`: 전 페이지 꼬리말. 연구실 로고와 이름(홈 링크), 학과 링크, 주소·전화, POSTECH 로고(대표홈 링크), 개인정보 링크. 주소·전화는 Contact 에도 있지만 꼬리말 필수 요소라 "같은 내용은 한 곳에만"의 예외로 둔다.
   - 강의 사이트 바닥 한 줄(`layouts/course.html`): 연구실 홈, POSTECH(대표홈), 개인정보 링크.
   - 꼬리말은 짧은 페이지에서도 화면 맨 아래에 붙인다(`main` 을 늘리지 않고 꼬리말의 `margin-top: auto` 로, 2026-10-23 `main` 을 늘렸다가 하위 탭이 세로로 늘어난 일이 있다).

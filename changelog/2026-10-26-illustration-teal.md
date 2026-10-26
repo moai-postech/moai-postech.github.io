@@ -31,3 +31,15 @@
 - 탭 아이콘과 Research PNG 아이콘은 이미 같은 기준이라 고치지 않았다.
 
 기각한 안: 연결선까지 teal(1차). 가장 넓은 색 면적이 teal 이 되어 크림슨 MOAI 원이 묻히고, teal 선 위 크림슨 점이 보색끼리 부딪힌다. 이전 회색+크림슨: 깔끔하지만 무채색만 남아 처음의 "드라이하다"는 문제로 돌아간다.
+
+## 3차: teal 전부 되돌림, 회색 + 크림슨으로
+교수가 2차를 보고 애매하게 초록이 들어가 더 별로이고 회색+크림슨이 더 깔끔하다고 했고, 되돌리기로 했다.
+
+- `hero.svg`, `contact-join.svg`, `icons/visit.svg`, `icons/agentic.svg`, `physical.svg`, `manufacturing.svg`, `icons/vision.png`, `language.png`, `robotics.png`: 오늘 색 작업 이전 파일로 되돌렸다.
+- `theme.css`: `--illus-500`, `--illus-100` 를 지웠다. `theme.css` 와 위 그림 파일은 [color-contrast](2026-10-26-color-contrast.md) 이전과 같다.
+- `AGENTS.md`: "강조 1색과 일러스트 보조 1색" 규칙을 지웠다. 색은 다시 크림슨 하나다.
+
+기각한 안: 상자 안만 teal(2차). teal 이 원래 연한 선·면이 있던 상자에만 들어가 Sensors, Robots 처럼 빈 상자와 섞이고, 의도한 강조가 아니라 칠하다 만 것처럼 읽힌다. 면적이 작아 생기도 주지 못하면서 색만 둘로 늘었다.
+
+## 남은 것 (갱신)
+Home 이 밋밋하다는 문제는 그림 색이 아니라 News·Media 가 글 목록뿐인 데서 온다. 다시 다룬다면 색보다 랩·멤버 사진 같은 콘텐츠로 푼다.

@@ -12,8 +12,6 @@
   /* 1. primitives */
   --red-700: #a61955;     /* POSTECH Red (Pantone 215 C, RGB 166 25 85), the one accent */
   --red-100: #f6e4ec;
-  --illus-500: #2A9D96;   /* teal: the secondary accent, only inside the boxes of illustrations and icons (hero, contact, icons/*); links between boxes stay grey. Never text, links or buttons */
-  --illus-100: #DAF1EE;   /* its tint, for fills inside illustrations. SVG and PNG files hold these values directly */
   --ink-900: #172b40;
   --ink-600: #596574;
   --ink-500: #6b7683;   /* 4.6:1 on white */

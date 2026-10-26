@@ -110,3 +110,21 @@
 ### 기각한 안과 이유(9차)
 - "Foundation models learn mostly from data", "data alone misses" 까지 굵게: 굵은 곳이 다섯을 넘으면 강조가 흐려진다. 문제 제기보다 우리 답(priors, 세 단계)을 앞세운다.
 - 굵은 글씨에 강조색: 소개 문단의 링크가 강조색이라 굵은 글씨까지 칠하면 링크와 헷갈린다.
+
+## 10차: 주제와 맞지 않던 논문 세 편 옮기기 (같은 날)
+- 교수와 논문별로 상의해 정했다. 기준은 논문이 실제로 푸는 문제와 주제 설명이 맞는가, 그리고 멀티모달 논문은 Perception(Vision & Multimodal)에 둔다는 것이다.
+- B2T(CVPR'24): Applications of VLMs → Learning in the Wild. VLM 을 써서 biased data 의 문제를 찾고 줄이는 멀티모달 논문이다.
+- LoGe(ICMLW'21): Structured Data → Visual Structure. Raven's Progressive Matrices 는 그림 속 객체 속성의 규칙을 찾는 문제라 "graphs, tables, and time series" 와 맞지 않았다.
+- PRIS(CVPR'26): Applications of VLMs → Reliable Generation. test-time scaling 은 수단이고 목적은 생성 결과가 prompt 를 따르게 하는 것이다. 주제 설명을 "Generating images that are fair and faithful to the prompt, even from noisy or little data." 로 넓혔다(fair: FICS, StayFair, faithful to the prompt: PRIS, noisy or little data: GOLD, FreezeD).
+- 그대로 둔 것: T-PRH(vision 과 language 표현 비교, 멀티모달), DIGAN·InstaGAN(움직임과 instance 구조가 핵심), MASKER(텍스트지만 주제가 데이터 조건으로 묶여 있다).
+- `_data/research.yml` 안 순서는 publications.yml 과 같은 최신순을 지켰다.
+- 확인: 로컬 빌드, 아홉 주제 칩 순서, 37개 칩 모두 전체 제목.
+
+### 기각한 안과 이유(10차)
+- 주제 이름을 Visual Generation 이나 Generative Models 로 넓히기: Generative Models 는 생성 모델을 수단으로 쓰는 다른 논문(InstaGAN, DIGAN, DPM-SNC, LoGe)도 여기 있어야 할 것처럼 읽힌다. Visual Generation 은 교수가 Reliable Generation 이 낫다고 했다. reliable 이 우리가 생성의 어느 문제를 푸는지까지 말한다.
+- DIGAN·InstaGAN 을 생성 주제로: 생성보다 구조(dynamics, instance)가 핵심이다.
+- LoGe 를 Reasoning & Agents 로: 교수가 구조 쪽이 낫다고 했다.
+- PRIS 를 Reasoning 에 두기: 그 단계에 생성 논문이 하나만 따로 남는다.
+
+## 남은 것(10차 이후)
+- Applications of VLMs(PDS, I2A)와 Structured Data(DPM-SNC, PRISM)가 두 편씩만 남았다. 주제 이름·설명(점검 2·3번)과 단계별 분량(4번)을 정할 때 함께 본다.

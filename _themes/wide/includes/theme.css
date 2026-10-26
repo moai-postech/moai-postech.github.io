@@ -222,8 +222,6 @@ a.mentee-name:hover { color: var(--accent); }
 .area-topics span + span::before { content: " · "; }
 /* Research stages: perception -> reasoning -> action as one vertical rail; each stage heads its area */
 .stage-node { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: var(--bg); font-size: var(--text-meta); font-weight: 700; }  /* the numbered stop on the stage rail */
-.stage-q { color: var(--muted); font-size: var(--text-lead); }
-.area-name img { width: 32px; height: 32px; object-fit: contain; }
 .research-area { scroll-margin-top: var(--space-6); }
 .research-area:target .stage-node { animation: stage-arrive 1.8s ease-out; }  /* arriving by link: the stage node rings once */
 @keyframes stage-arrive { 0%, 40% { box-shadow: 0 0 0 8px var(--accent-soft); } 100% { box-shadow: 0 0 0 0 var(--accent-soft); } }
@@ -235,8 +233,7 @@ a.mentee-name:hover { color: var(--accent); }
 .research-head .stage-node { position: relative; margin-top: 2px; }
 .research-head h2 { margin: 0; line-height: 1.2; }
 .research-head p { margin: 0; }
-.research-head .stage-q { margin-top: var(--space-1); }
-.research-head .area-name { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-5); font-weight: 700; }
+.research-head .area-name { margin-top: var(--space-2); font-weight: 700; }
 .research-head .area-blurb { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-meta); }
 .research-next { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); margin: 0; font-weight: 600; }  /* closing line: where to go after the stages */
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
@@ -379,7 +376,6 @@ a.person-name:hover { color: var(--accent); }
   .research-head, .topic-cards { grid-column: 1 / -1; }
   .research-head { position: static; margin-bottom: var(--space-5); }
   .stage-track::before { display: none; }  /* stacked stages: the node beside each heading is enough */
-  .stage-q { font-size: var(--text-body); }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 680px) {

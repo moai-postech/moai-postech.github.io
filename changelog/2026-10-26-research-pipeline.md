@@ -60,3 +60,16 @@
 ### 기각한 안과 이유(4차)
 - 단계 아래 질문을 다듬어 유지(예: "What is in front of it?"): 질문형이 단계마다 억지스러웠고, 분야 설명과 겹친다.
 - 맺음에 Funding·Seminar 링크까지: 하위 탭이 페이지 위에 이미 있고, 링크가 늘면 강조가 흐려진다.
+
+## 5차: 단계 아래 한 줄과 분야 아이콘 빼기, 2026 focus 링크 (같은 날)
+- 교수: 점검 결과 중 "불필요한 것 둘(tagline, Vision 아이콘)을 빼고, 맨 아래에 Home 의 2026 focus 로 가는 링크를 넣어줘. 주제 배치는 내가 따로 정할게." 이어서 "generation 도 일단 vision & multimodal 에 들어가니까 위치는 거기에."
+- tagline("How models see." 등): 바로 위 단계 이름, 아래 분야 이름과 같은 말이라 데이터(`tagline`), 템플릿, CSS(`.stage-q`)에서 지웠다.
+- 분야 아이콘: Vision 아이콘(사진 모양)이 깨진 이미지 표시처럼 보였다. 하나만 빼면 그 분야만 빈 것처럼 보여 세 분야 모두 단계 머리에서 뺐다. `_data/research.yml` 의 `icon` 과 아이콘 파일은 남겨 두었다.
+- 단계 머리는 번호, 단계 이름, 분야 이름(굵게), 분야 한 줄 설명이다.
+- 맺음 링크 줄 맨 앞에 "Our focus in 2026 →"(`index.html#focus`)를 더했다. Home 의 focus 절(`sections/focus.html`)에 `id="focus"` 를 붙였다. 내용을 복사하지 않고 링크만 둔다.
+- 주제 배치 결정(교수): Reliable Generation 은 Vision & Multimodal(Perception) 에 둔다. Structured Data 의 위치와 Efficient LLMs 이름(LAMP, LAP 는 LLM 이전 pruning 논문)은 교수가 따로 정한다.
+- 확인: 로컬 빌드, 1440px·375px, 375px 가로 넘침 없음, 링크가 `index.html#focus` 로 열린다.
+
+### 기각한 안과 이유(5차)
+- Vision 아이콘만 빼기: 세 분야 중 하나만 그림이 없어 빠진 것처럼 보인다.
+- focus 의 세 방향과 대표 논문을 이 페이지에도 보이기: 같은 내용은 한 곳에만(Home) 둔다.

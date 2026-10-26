@@ -20,3 +20,6 @@
 ## 남은 것
 - 그림은 arXiv 주소를 직접 건다. arXiv 판이 바뀌거나 막히면 깨지므로, 저자가 고른 teaser 를 `assets/img/papers/` 에 두고 그 경로로 바꾸는 편이 낫다.
 - 시안 브랜치 `design/navy-band`, `design/tint-cards`, `design/paper-figures` 는 안건의 스크린샷 링크 때문에 남겨 둔다.
+
+## 2차: 논문 그림을 저장소로
+교수 요청으로 arXiv HTML 주소에 직접 걸던 그림 5개를 `assets/img/papers/`(idis, loc, teg, vap, indi .png)에 받아 두고 `_data/focus.yml` 의 `image` 를 그 경로로 바꿨다. 폭이 2000px 넘는 그림(vap, indi)과 teg 는 1200px 로 줄였다. 머리 주석에 파일 이름 규칙(`<short 소문자>.png`, 폭 1200px 이하)을 적었다. 위 "남은 것"의 첫 항목은 끝났다.

@@ -144,3 +144,15 @@
 
 ### 기각한 안과 이유(12차)
 - 3번 설명 문장 정리 때 한꺼번에 고치기: 교수가 지금 바꾸기로 했다.
+
+## 13차: PDS·I2A 옮기고 Applications of VLMs 삭제, 단계 머리 sticky 해제 (같은 날)
+- 교수: "PDS는 Learning in the Wild, I2A는 Reasoning & Agents로 옮기고 Applications of VLMs는 지워줘."
+- PDS(ICLR'26, 멀티모달 dataset distillation): 작은 합성 데이터로 배우는 문제라 Learning in the Wild 로. 멀티모달 논문은 Perception 에 둔다는 10차 기준과도 맞다.
+- I2A(WACV'27): 화면 증거를 확인하고 경보를 따로 제어하는 agent 구조라 Reasoning & Agents("Grounding reasoning in evidence") 로.
+- 빈 주제 Applications of VLMs 를 지웠다. 단계별 주제 수는 3, 3, 2 다. Reasoning 분야 설명에서 그 주제를 가리키던 "foundation models applied to real-world problems" 를 빼고 "Grounded and efficient reasoning, and learning on structured data." 로 줄였다.
+- 교수: "왼쪽에 있는 거 스크롤 다운했을 때 따라오는 거 별로인 것 같아, 없애자." `.research-head` 의 `position: sticky` 를 뺐다. 단계 머리는 각 단계 맨 위에 고정되고, 세로 레일은 그대로 세 마디를 잇는다.
+- 확인: 로컬 빌드, 37개 칩 모두 전체 제목, 1280px 에서 스크롤해 머리가 따라오지 않는 것.
+
+### 기각한 안과 이유(13차)
+- Applications of VLMs 를 이름만 바꿔 남기기: 남은 논문이 없다.
+- 1차의 sticky 머리(번호 마디가 레일을 따라 내려감): 교수가 스크롤할 때 보기 싫다고 했다.

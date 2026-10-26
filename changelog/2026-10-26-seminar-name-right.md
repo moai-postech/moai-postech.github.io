@@ -38,3 +38,8 @@
 - 요청: 교수가 인턴은 People 에 올리지 말고 Seminar 에서만 링크하자고 했다.
 - `_data/seminar.yml`: Sanghun Lee 는 본인이 지원 메일에 적은 공개 블로그(`shleeubu.notion.site/sthunblog`, 논문 리뷰 포함), Kwangmo Yang 은 GitHub(`github.com/kwangmo24`, POSTECH 메일 아이디와 같고 저장소가 이력서의 Apple Developer Foundation 2025 활동과 맞음)를 `url` 로 넣음. 이제 Seminar 의 모든 연사 이름에 링크가 있다.
 - 기각한 안: Students 에 Interns 절을 만들어 올리기. 교수가 원하지 않았다.
+
+## 이어서: slides·paper 표시 빼고 제목 링크로 통일
+- 요청: 교수가 제목 뒤 `slides`, `paper` 표시를 넣지 말고 제목에만 링크하라고 했다. 슬라이드가 있으면 슬라이드, 없으면 논문. 랩 발표는 슬라이드, 초청 발표는 논문.
+- `seminar.html`: 제목 링크는 `slides | default: paper`, 뒤 표시 글자를 지움. `theme.css`: `.schedule-slides` 규칙 삭제. 데이터는 이미 랩 발표에 slides, 초청 발표에 paper 가 있어 그대로 둔다.
+- 기각한 안: 제목 뒤 작은 slides·paper 링크(앞 회차에서 넣었던 것). 교수가 제목 링크 하나로 통일하라고 했다.

@@ -156,3 +156,17 @@
 ### 기각한 안과 이유(13차)
 - Applications of VLMs 를 이름만 바꿔 남기기: 남은 논문이 없다.
 - 1차의 sticky 머리(번호 마디가 레일을 따라 내려감): 교수가 스크롤할 때 보기 싫다고 했다.
+
+## 14차: 설명 문장을 scalable priors 로 잇기, 아이콘을 단계 이름 왼쪽으로 (같은 날)
+- 교수: 주제 이름(Efficient LLMs, VLA & World Models)은 그대로 둔다. 설명은 "전체적으로 scalable prior 랑 어떻게 연결되는지 일관성 있게". "근거 없이 세게 말해도 돼. table 도 언젠간 할 거고, multisensory 는 나중에 더 확장할 거야."
+- 분야 설명(`blurb`)은 "Priors ..." 로 시작해 단계 전체를 넓게 덮는다. Perception "Priors on how the visual world is organized, so models see and generate well even when data is scarce, noisy, or biased.", Reasoning "Priors that ground reasoning in evidence and keep it efficient, from text to structured data.", Action "Priors from users, intent, and touch that help robots plan and act in the physical world."
+- 주제 설명(`summary`)은 그 주제에 넣는 구조를 Building/Exploiting/Grounding/Bringing 꼴로 쓴다. Visual Structure "Building objects, parts, and motion into visual representations.", Learning in the Wild "Exploiting structure in the data to learn when it is limited, biased, uncurated, or novel.", Reliable Generation "Building fairness and prompt faithfulness into generation, even from noisy or little data.", Reasoning & Agents "Grounding reasoning in evidence and structuring how it catches its errors.", Efficient LLMs "Exploiting sparsity and hierarchy to cut compute and extend context.", Structured Data "Building the structure of logic, graphs, tables, and time series into learning.", VLA & World Models "Building each user's cues and intent into robot policies.", Multisensory Learning "Bringing touch and other signals beyond vision into learning."
+- "prior" 라는 낱말은 분야 설명 세 곳에만 쓴다. 열한 번 되풀이하면 무겁다. `_data/research.yml` 머리 주석에 이 쓰는 법을 적었다.
+- 교수: "아이콘이 위쪽이 아니라 Perception 이런 제목의 왼쪽으로 가는 건 어때?" `sections/research.html` 에서 아이콘과 단계 이름을 `.stage-title` 한 줄(flex)로 묶었다. 아이콘 크기(72px)는 그대로, 번호 마디는 그 줄 가운데에, 세로 레일 시작점도 거기에 맞췄다.
+- 확인: 로컬 빌드, 800px·375px 화면, 375px 가로 넘침 없음.
+
+### 기각한 안과 이유(14차)
+- 주제 이름 바꾸기(Efficient LLMs → Efficient Models, VLA & World Models → VLA Models 등): 교수가 그대로 두기로 했다. 이름은 앞으로 할 방향(LLM, world model)까지 담는다.
+- Structured Data 에서 tables 빼기, Multisensory 를 sensor physics 로 좁히기: 교수가 앞으로 할 방향이라 넓게 둔다고 했다.
+- 주제 설명마다 "prior" 쓰기: 반복이 무겁다.
+- 아이콘을 줄여 단계 이름 옆에: 그림 크기를 줄이지 않는다(글보다 그림).

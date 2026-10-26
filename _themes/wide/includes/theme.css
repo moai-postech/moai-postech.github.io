@@ -228,13 +228,14 @@ a.mentee-name:hover { color: var(--accent); }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 .research-area { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
 .stage-track { position: relative; }
-.stage-track::before { content: ""; position: absolute; left: 17px; top: calc(var(--section-gap) + 72px + var(--space-4) + 18px); bottom: 0; width: 2px; background: var(--faint); }  /* one rail through the three stages, passing each node */
+.stage-track::before { content: ""; position: absolute; left: 17px; top: calc(var(--section-gap) + 36px); bottom: 0; width: 2px; background: var(--faint); }  /* one rail through the three stages, passing each node */
 .research-head { grid-column: span 4; align-self: start; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-4); }  /* fixed at the top of its stage; it does not follow the scroll (2026-10-26) */
-.research-head .stage-node { position: relative; margin-top: calc(72px + var(--space-4) + 2px); }  /* level with the stage name under the icon */
-.research-head .area-icon { display: block; width: 72px; height: 72px; margin-bottom: var(--space-4); object-fit: contain; }  /* the same size as before 2026-10-26: pictures before words */
+.research-head .stage-node { position: relative; margin-top: 18px; }  /* centred on the icon and stage-name row */
+.research-head .stage-title { display: flex; align-items: center; gap: var(--space-3); }  /* icon left of the stage name (2026-10-26) */
+.research-head .area-icon { display: block; flex-shrink: 0; width: 72px; height: 72px; object-fit: contain; }  /* the same size as before 2026-10-26: pictures before words */
 .research-head h2 { margin: 0; line-height: 1.2; }
 .research-head p { margin: 0; }
-.research-head .area-name { margin-top: var(--space-2); font-weight: 700; }
+.research-head .area-name { margin-top: var(--space-3); font-weight: 700; }
 .research-head .area-blurb { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-meta); }
 .research-next { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); margin: 0; font-weight: 600; }  /* closing line: where to go after the stages */
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */

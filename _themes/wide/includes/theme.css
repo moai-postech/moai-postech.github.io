@@ -257,7 +257,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .row h3 { margin: 0 0 2px; font-size: var(--text-body); line-height: 1.65; }
 .row p { margin: 0; }
 
-/* Seminar: one list, newest first, filtered by kind. One row per talk: date, title (takes all spare width), speaker at the right end */
+/* Seminar: one list, newest first, filtered by kind. One row per talk: date, title (takes all spare width), affiliation, speaker at the far right */
 .filter-bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-5); margin-bottom: var(--space-5); }  /* no full-width rule: the only line on a page is the one under the menu */
 .filter-btn { padding: 0 0 var(--space-3); border: 0; background: none; color: var(--muted); font: inherit; font-size: var(--text-meta); font-weight: 600; cursor: pointer; }
 .filter-btn span { margin-left: 2px; color: var(--faint); font-weight: 400; }
@@ -276,10 +276,10 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .is-upcoming .schedule-date { color: var(--accent); font-weight: 600; }  /* talks still to come: the date alone turns accent */
 .schedule-title a { color: var(--text); }
 .schedule-title a:hover { color: var(--accent); }
-.schedule-speaker { width: 1%; padding-left: var(--space-6) !important; font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }  /* names left-aligned in their own column, so they line up */
+.schedule-speaker { width: 1%; padding-left: var(--space-4) !important; font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }  /* names left-aligned in the last column, so they line up at the right end */
 .schedule-speaker a { color: var(--text); }
 .schedule-speaker a:hover { color: var(--accent); }
-.schedule-aff { width: 1%; padding-left: var(--space-4) !important; color: var(--muted); font-size: var(--text-meta); white-space: nowrap; }
+.schedule-aff { width: 1%; padding-left: var(--space-6) !important; color: var(--muted); font-size: var(--text-meta); text-align: right; white-space: nowrap; }  /* right-aligned so it sits next to the name */
 .schedule [hidden] { display: none; }
 
 .sec-media a { color: var(--text); }  /* a whole headline in red was the heaviest red on Home; titles read as titles, hover shows the link */
@@ -426,8 +426,11 @@ a.person-name:hover { color: var(--accent); }
   .schedule tr[hidden] { display: none; }
   .schedule tr:not(.schedule-year) { padding: var(--space-3) 0; }
   .schedule td { padding: 0 !important; text-align: left; white-space: normal; }
-  .schedule td.schedule-speaker, .schedule td.schedule-aff { display: inline-block; margin-top: 2px; }  /* name first, affiliation after it on one line (td. beats .schedule td above) */
-  .schedule td.schedule-aff { margin-left: var(--space-2); }
+  .schedule tr[data-kind]:not([hidden]) { display: flex; flex-wrap: wrap; align-items: baseline; }
+  .schedule td.schedule-date, .schedule td.schedule-title { flex-basis: 100%; }
+  .schedule td.schedule-speaker, .schedule td.schedule-aff { margin-top: 2px; }  /* name first, affiliation after it on one line, though the affiliation comes first in the row (td. beats .schedule td above) */
+  .schedule td.schedule-speaker { order: 1; }
+  .schedule td.schedule-aff { order: 2; margin-left: var(--space-2); }
   main { overflow-wrap: anywhere; }
 }
 @media print {

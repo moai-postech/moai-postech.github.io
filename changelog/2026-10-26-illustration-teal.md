@@ -1,0 +1,23 @@
+# 2026-10-26 그림과 아이콘에 보조 강조색 teal
+작성자: Sangwoo Mo(moai-postech) | 대상: `assets/img/hero.svg`, `assets/img/contact-join.svg`, `assets/img/icons/`, `_themes/wide/includes/theme.css`, `AGENTS.md` | 도구: Claude Code
+
+> **한줄 결론: 그림과 아이콘 안에만 쓰는 보조 강조색 teal(#2A9D96)을 더했다. 글자와 링크의 강조는 크림슨 하나 그대로다.**
+
+## 요청
+남색 Focus 띠와 논문 그림([color-contrast](2026-10-26-color-contrast.md)) 뒤에도 교수가 사이트가 드라이하다고 했다. 그림·아이콘에만 쓰는 보조색 시안 세 개(Amber, Teal, Blue)를 Home 과 Contact 스크린샷으로 비교했고, 교수가 Teal 을 골랐다. Research PNG 아이콘도 같은 색으로 맞추라고 했다.
+
+## 반영 내역
+- `hero.svg`, `contact-join.svg`, `icons/visit.svg`: 연한 회색 선(#BAC4CF)을 teal, 연한 면(#ECEFF3)을 tint(#DAF1EE)로 바꿨다. 진한 선, 크림슨 MOAI 원은 그대로다.
+- `icons/agentic.svg`, `physical.svg`, `manufacturing.svg`: 남색 띠 위에 맞춰 선은 흰색, 면은 teal, 안쪽 선은 tint 로 다시 칠했다. `theme.css` 의 흰색 필터(`brightness(0) invert(1)`)는 뺐다.
+- `icons/vision.png`, `language.png`, `robotics.png`(Research): 연한 면을 tint, 연한 선을 teal 로 바꿨다. 진한 회색 선과 그 경계 2px 는 건드리지 않아 테두리에 색 번짐이 없다.
+- `theme.css`: `:root` 에 `--illus-500`, `--illus-100` 기준값과 쓰임을 적었다. SVG·PNG 는 같은 값을 파일 안에 직접 갖는다.
+- `AGENTS.md`: 테마 계약에 "강조 1색 + 일러스트 보조 1색" 규칙을 더했다.
+
+## 기각한 안과 이유
+- Amber(#E0A030): 가장 따뜻하지만 크림슨 옆에서 주황 계열끼리 붙어 경고 표시처럼 읽힌다.
+- Blue(#3B7DD8): 남색과 계열이 같아 대비가 약하고 기업 사이트 같다.
+- 보조색을 글자·링크·버튼에도 쓰는 안: UI 강조가 둘로 갈려 무엇을 눌러야 하는지 흐려진다.
+- 연구 방향마다 다른 색: 색이 늘어 POSTECH 브랜드가 흐려진다.
+
+## 남은 것
+- 시안 브랜치 `design/illus-amber`, `design/illus-teal`, `design/illus-blue` 는 로컬에만 있었고 지웠다. 비교 스크린샷은 교수에게 보냈다.

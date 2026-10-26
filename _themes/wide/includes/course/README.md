@@ -1,12 +1,13 @@
 # 강의 사이트 양식
 
-`/teaching/<id>/`(강의 첫 페이지)와 `/teaching/<id>/project/`(Term Project)의 양식이다. 강의마다 연구실 사이트 메뉴 없이 독립된 작은 사이트처럼 돈다. 머리는 과목명과 탭 두 개(Schedule = 강의 첫 페이지, Term Project)이고 연구실 사이트는 바닥 한 줄로만 잇는다(2026-10-22 교수). 그 줄에 POSTECH 대표홈과 개인정보 링크도 둔다(학교 도메인 필수 요소, 저장소 `AGENTS.md` 의 "POSTECH 필수 요소", 2026-10-23). 모든 강의가 이 폴더 하나의 모양을 같이 쓴다. 디자인을 바꾸면 이 폴더만 고친다.
+`/teaching/<id>/`(Home), `/teaching/<id>/schedule/`(Schedule), `/teaching/<id>/project/`(Term Project)의 양식이다. 강의마다 연구실 사이트 메뉴 없이 독립된 작은 사이트처럼 돈다. 짜임은 MIT·Stanford·CMU·Berkeley 강의 사이트의 home/schedule/project 구성을 따르고 디자인은 이 사이트 것이다(2026-10-26 교수). 머리는 과목명과 탭 세 개이고 연구실 사이트는 바닥 한 줄로만 잇는다(2026-10-22 교수). 그 줄에 POSTECH 대표홈과 개인정보 링크도 둔다(학교 도메인 필수 요소, 저장소 `AGENTS.md` 의 "POSTECH 필수 요소", 2026-10-23). 모든 강의가 이 폴더 하나의 모양을 같이 쓴다. 디자인을 바꾸면 이 폴더만 고친다.
 
 | 파일 | 역할 |
 | --- | --- |
-| `../../layouts/course.html` | 강의 사이트 문서 틀: 머리(과목명, 강의 메뉴), 본문, 바닥. `view: project` 면 `project.html`, 아니면 `page.html` |
-| `head.html` | 두 페이지가 같이 쓰는 제목 블록(과목명, 학수번호·학기, 교수, 바깥 링크) |
-| `page.html` | 강의 첫 페이지: Overview(소개, 파트 카드) → Schedule → Grading → Resources |
+| `../../layouts/course.html` | 강의 사이트 문서 틀: 머리(과목명, 강의 메뉴), 본문, 바닥. `view: schedule` 면 `schedule.html`, `view: project` 면 `project.html`, 없으면 `home.html` |
+| `home.html` | Home: 제목·소개·버튼 옆에 운영 정보 칸(Instructor, Lectures, Office hours, Other terms) → Up next(오늘 이후 세 수업, 방문자 브라우저가 고른다. 끝난 학기는 숨는다) → Course outline(파트 카드) → Grading → Resources |
+| `schedule.html` | Schedule: 전체 스케줄 표(파트 머리 줄, 다음 수업 표시) |
+| `head.html` | Schedule 과 Term Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |
 | `project.html` | 팀 프로젝트: Overview(소개, 팀 크기, 단계, 평가 기준) → Teams(팀원, 발표 회차별 날짜·순서·슬라이드) |
 | `course.css` | 강의 사이트 전용 스타일과 색. `../theme.css` 끝에서 include 한다 |
 
@@ -15,7 +16,7 @@
 ## 새 강의 페이지 만들기
 
 1. `_data/courses/<id>.yml` 에 내용을 쓴다. `<id>` 는 `학기-과목명` 소문자와 하이픈이다. 학수번호는 쓰지 않는다(주소만 보고 무슨 강의인지 알게, 2026-10-22 사용자)(`26f-data-engineering`, `26s-programming-for-data-science`). 필드 설명은 `_data/courses/26f-data-engineering.yml` 머리 주석이 정본이다.
-2. `teaching/<id>/index.md` 를 만든다. 내용은 front matter 뿐이다. 팀 프로젝트가 있으면 `teaching/<id>/project/index.md` 도 같은 꼴로 만들고 `view: project` 를 더한다.
+2. `teaching/<id>/index.md`(Home)와 `teaching/<id>/schedule/index.md`(`view: schedule`)를 만든다. 내용은 front matter 뿐이다. 팀 프로젝트가 있으면 `teaching/<id>/project/index.md` 도 같은 꼴로 만들고 `view: project` 를 더한다.
    ```yaml
    ---
    layout: course
@@ -29,7 +30,7 @@
 
 ## 강의마다 달라도 되는 것
 
-- 칸과 절은 데이터가 있을 때만 나온다: Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Related(`related`), Past exams(`exams`), Other terms(`other_terms`).
+- 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Lectures(`lectures`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Related(`related`), Past exams(`exams`).
 - 파트 이름은 자유다(`Part I`, `Software 3.0`). 자료 절 제목은 `resources_title`(기본 `Reference courses`).
 - 줄 종류 앞 태그 글자는 `_data/course_tags.yml` 한 곳에서 정한다(guest, seminar, exam, project).
 

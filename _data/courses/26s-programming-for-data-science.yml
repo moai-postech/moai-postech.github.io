@@ -4,6 +4,7 @@
 title: "Programming for Data Science"
 code: "IMEN574 / IDSC574"
 term: "Spring 2026"
+lectures: "Tuesdays & Thursdays"  # Home 의 운영 정보. 시각·강의실이 정해지면 덧붙인다
 instructor:
   name: "Sangwoo Mo"
   url: "faculty.html"

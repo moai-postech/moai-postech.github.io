@@ -1,0 +1,104 @@
+{% comment %}
+  강의 Home(teaching/<id>/). 내용은 _data/courses/<page.course>.yml 이고 여기서는 모양만 정한다.
+  짜임은 MIT·Stanford·CMU·Berkeley 강의 사이트에서 가져왔다(2026-10-26 교수): 제목과 소개 옆에 운영 정보(교수, 수업, office hours, 지난 학기),
+  다음 수업 카드, 파트 카드, 평가, 자료. 전체 스케줄은 Schedule 페이지(schedule.html), 팀은 Term Project 페이지에 한 번만 둔다.
+  Up next 는 스케줄에서 오늘 이후 첫 세 줄을 방문자 브라우저에서 고른다. 끝난 학기는 남는 줄이 없어 절이 숨는다.
+  교수 사진은 _data/members.yml 의 professor, 이메일은 Faculty 한 곳에만 두므로 이름을 Faculty 로 잇는다.
+  이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
+{% endcomment %}
+{% assign c = site.data.courses[page.course] %}{% assign root = "teaching/" | append: page.course | append: "/" %}{% assign prof = site.data.members.professor %}
+    <header class="course-hero">
+      <div class="course-hero-main">
+        <p class="course-eyebrow"><span>{{ c.code }}</span><span>{{ c.term }}</span><span>POSTECH</span></p>
+        <h1>{{ c.title }}</h1>
+        {% if c.summary %}<p class="course-lead">{{ c.summary }}</p>{% endif %}
+        <p class="course-actions"><a class="course-btn is-primary" href="{{ root }}schedule/">Schedule &amp; slides</a>{% if c.project %}<a class="course-btn" href="{{ root }}project/">Term Project</a>{% endif %}{% for l in c.links %}<a class="course-btn" href="{{ l.url }}">{{ l.label }} ↗</a>{% endfor %}</p>
+      </div>
+      <dl class="course-facts">
+        <div class="course-fact course-instructor">
+          <dt>Instructor</dt>
+          <dd>{% if prof.photo and c.instructor.name == prof.name %}<img src="{{ prof.photo }}" alt="" width="48" height="48">{% endif %}<span><a href="{{ c.instructor.url }}">Prof. {{ c.instructor.name }}</a><small>POSTECH IME</small></span></dd>
+        </div>
+        {% if c.lectures %}<div class="course-fact"><dt>Lectures</dt><dd>{{ c.lectures }}</dd></div>{% endif %}
+        {% if c.office_hours %}<div class="course-fact"><dt>Office hours</dt><dd>{{ c.office_hours }}</dd></div>{% endif %}
+        {% if c.other_terms %}<div class="course-fact"><dt>Other terms</dt><dd>{% for x in c.other_terms %}<a href="{{ x.url }}">{{ x.name }}</a>{% endfor %}</dd></div>{% endif %}
+      </dl>
+    </header>
+
+    <section class="content-section course-next" id="next" hidden>
+    <h2>Up next</h2>
+    <div class="section-body">
+    <ol class="plain course-next-list">
+      {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}{% else %}
+      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "guest" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}{% assign tag = site.data.course_tags[r.kind] %}<li class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}" hidden>
+        <span class="cn-when"><time datetime="{{ r.date }}">{{ r.date | date: "%a %m/%d" }}</time>{% if r.n %}<span>Lecture {{ r.n }}</span>{% elsif tag %}<span>{{ tag }}</span>{% endif %}</span>
+        <span class="cn-title">{% if r.title %}{{ r.title }}{% else %}{{ r.speaker }}{% endif %}</span>
+        {% if r.speaker and r.title %}<span class="cn-sub">{{ r.speaker }}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.affiliation %}<span class="cn-sub">{{ r.affiliation }}</span>{% endif %}
+        {% if r.pdf or r.html or r.lab %}<span class="cn-links">{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</span>{% endif %}
+      </li>{% endif %}{% endfor %}
+    </ol>
+    <p class="course-more"><a href="{{ root }}schedule/">Full schedule</a></p>
+    </div>
+    </section>
+
+    {% if c.parts %}<section class="content-section" id="outline">
+    <h2>Course outline</h2>
+    <div class="section-body">
+    <ol class="plain course-parts course-outline">
+      {% for p in c.parts %}<li class="tone-p{{ forloop.index }}">
+        <span class="course-part-name">{{ p.name }}{% if p.span %}<small>{{ p.span }}</small>{% endif %}</span>
+        <strong>{{ p.title }}</strong>
+        {% if p.text %}<span class="course-part-text">{{ p.text }}</span>{% endif %}
+      </li>{% endfor %}
+    </ol>
+    </div>
+    </section>{% endif %}
+
+    {% if c.grading %}<section class="content-section" id="grading">
+    <h2>Grading</h2>
+    <div class="section-body">
+    <ul class="plain course-grading">
+      {% for g in c.grading %}<li class="tone-logistics"><span>{{ g.item }}</span><strong>{{ g.weight }}</strong></li>{% endfor %}
+    </ul>
+    {% if c.grading_note %}<p class="course-note">{{ c.grading_note }}</p>{% endif %}
+    </div>
+    </section>{% endif %}
+
+    {% if c.resources or c.related or c.exams %}<section class="content-section" id="resources">
+    <h2>Resources</h2>
+    <div class="section-body">
+    {% if c.resources %}<h3 class="sub">{{ c.resources_title | default: "Reference courses" }}</h3>
+    <ul class="plain item-list">
+      {% for x in c.resources %}<li>
+        <span class="item-main"><strong><a href="{{ x.url }}">{% if x.abbr %}[{{ x.abbr }}] {% endif %}{{ x.title }}</a></strong></span>
+        <span class="item-side">{{ x.source }}</span>
+      </li>{% endfor %}
+    </ul>{% endif %}
+    {% if c.related %}<h3 class="sub">Related</h3>
+    <ul class="plain item-list">
+      {% for x in c.related %}<li>
+        <span class="item-main"><strong><a href="{{ x.url }}">{{ x.title }}</a></strong></span>
+        {% if x.source %}<span class="item-side">{{ x.source }}</span>{% endif %}
+      </li>{% endfor %}
+    </ul>{% endif %}
+    {% if c.exams %}<h3 class="sub">Past exams</h3>
+    <ul class="plain item-list">
+      {% for x in c.exams %}<li>
+        <span class="item-main"><strong><a href="{{ x.url }}">{{ x.label }}</a></strong></span>
+        {% if x.solution %}<span class="item-side"><a href="{{ x.solution }}">with solution</a></span>{% endif %}
+      </li>{% endfor %}
+    </ul>{% endif %}
+    </div>
+    </section>{% endif %}
+
+<script>
+// Up next: the first three schedule days dated today or later, chosen in the visitor's browser so the page never goes stale.
+(function () {
+  var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  var items = document.querySelectorAll('.course-next-list li[data-date]'), shown = 0;
+  for (var i = 0; i < items.length && shown < 3; i++) {
+    if (items[i].getAttribute('data-date') >= today) { items[i].hidden = false; shown++; }
+  }
+  if (shown) document.getElementById('next').hidden = false;
+})();
+</script>

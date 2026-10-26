@@ -1,7 +1,7 @@
 {% comment %}
   _data/seminar.yml 의 발표 목록. 초청 발표와 랩 내부 발표를 한 목록에 날짜순(최신이 위)으로 두고,
   위의 All / Lab / Invited 버튼으로 거른다(자바스크립트가 없으면 전부 보인다).
-  한 줄: 날짜, 제목(남는 폭 전부), 오른쪽 끝에 소속과 발표자(이름이 늘 맨 오른쪽).
+  한 줄: 날짜, 제목(남는 폭 전부), 오른쪽에 발표자 이름(굵게, 왼쪽 정렬 열)과 그 오른쪽 소속(회색 열). 이름이 한 세로선에 맞는다(교수 2026-10-26).
   다가오는 발표는 목록 맨 위(최신순)에 오고, 방문자 브라우저에서 날짜가 강조된다(scripts.html 의 is-upcoming). 교수 2026-10-23: Up next 카드는 빼고 이 상단 하이라이트만 둔다.
 {% endcomment %}
 {% assign talks = site.data.seminar.talks %}
@@ -16,13 +16,14 @@
       {% if site.data.seminar.sheet %}<a class="filter-link" href="{{ site.data.seminar.sheet }}">Full schedule ↗</a>{% endif %}
     </div>
     <table class="schedule">
-      <colgroup><col class="col-date"><col class="col-title"><col class="col-speaker"></colgroup>
+      <colgroup><col class="col-date"><col class="col-title"><col class="col-speaker"><col class="col-aff"></colgroup>
       <tbody>
-      {% assign year = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y != year %}{% assign year = y %}<tr class="schedule-year"><th colspan="3" scope="rowgroup">{{ y }}</th></tr>{% endif %}
+      {% assign year = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y != year %}{% assign year = y %}<tr class="schedule-year"><th colspan="4" scope="rowgroup">{{ y }}</th></tr>{% endif %}
       <tr data-kind="{% if t.invited %}invited{% else %}lab{% endif %}" data-date="{{ t.date }}">
         <td class="schedule-date">{{ t.date | date: "%m/%d" }}</td>
         <td class="schedule-title">{% if t.slides %}<a href="{{ t.slides }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</td>
-        <td class="schedule-speaker">{% if t.affiliation %}<span class="schedule-aff">{{ t.affiliation }}</span>{% endif %}{% if t.url %}<a href="{{ t.url }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}</td>
+        <td class="schedule-speaker">{% if t.url %}<a href="{{ t.url }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}</td>
+        <td class="schedule-aff">{{ t.affiliation }}</td>
       </tr>
       {% endfor %}
       </tbody>

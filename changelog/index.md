@@ -5,6 +5,8 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [contact-prof-email](2026-10-27-contact-prof-email.md) | Sangwoo Mo(moai-postech) | Contact, AGENTS.md | 2단계에 교수 이메일 한 줄 |
+| 2026-10-27 | [callout-pubs-link](2026-10-27-callout-pubs-link.md) | Sangwoo Mo(moai-postech) | Home | 학회 문장 뒤 See our publications 링크, 띠 링크 줄바꿈 방지 |
 | 2026-10-27 | [mobile-hero-photo](2026-10-27-mobile-hero-photo.md) | Sangwoo Mo(moai-postech) | Home(휴대폰) | 휴대폰에서 히어로 그림을 숨겨 단체사진을 바로 아래에 |
 | 2026-10-27 | [course-slides-renumbered](2026-10-27-course-slides-renumbered.md) | Sangwoo Mo(moai-postech) | `teaching/26f-data-engineering/slides/` | 26F Data Engineering: 배포된 슬라이드 28개 안의 강 번호를 새 번호로 |
 | 2026-10-27 | [research-focus-bridge](2026-10-27-research-focus-bridge.md) | Sangwoo Mo(moai-postech) | Research | 맺음에 Our focus 와 잇는 한 문장 |

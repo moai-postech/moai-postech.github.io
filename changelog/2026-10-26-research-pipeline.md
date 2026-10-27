@@ -275,3 +275,21 @@
 - Relational: Structural 의 하위라 층위가 작다.
 - Mathematical: 교수 "좀 별로". Formal, Domain, Abstract: 교수가 Symbolic 을 골랐다.
 - Computational(22차): 교수도 고민했고, Algorithmic 이 칩 넷(Simba, HOMER, LAMP, LAP)의 알고리즘 구조를 더 정확히 덮는다.
+
+## 24차: 정밀함보다 모양으로 문구 정돈 (2026-10-27)
+- 교수: "한번 검토하고, precise하지 않아도 되니까 이쁘게 정돈해줘."
+- 주제 설명을 모두 "<종류> priors for ..." 한 꼴로 맞추고 짧게 줄였다.
+  - Visual Structure "Structural priors for seeing objects, parts, and motion."
+  - Learning in the Wild "Statistical priors for learning from imperfect data."
+  - Reasoning & Agents "Cognitive priors for grounded, self-correcting reasoning."
+  - VLA & World Models "Behavioral priors for robots that adapt to each person."
+  - Multisensory Learning "Sensory priors for robots that feel, not just see."
+  - Social, Algorithmic, Symbolic 은 이미 그 꼴이라 그대로.
+- 분야 설명 셋을 "<단계> should <동사> ...: ..." 꼴로 맞췄다. Reasoning "Reasoning should rest on more than text: on evidence, abstraction, and relations.", Action 은 begin with 를 start from 으로. Perception 은 그대로.
+- 소개 문단은 그대로.
+- 확인: 로컬 빌드, 1440px.
+
+### 기각한 안과 이유(24차)
+- 주제 설명마다 on, for, that 을 섞던 꼴: 여덟 줄이 들쭉날쭉하다.
+- Learning in the Wild 의 "limited, biased, uncurated, or novel data": 정확하지만 길다. imperfect data 로 묶었다.
+- Reasoning 분야 설명 "Reasoning should follow how knowledge is built, from evidence, abstraction, and relations, not from patterns in text alone.": 다른 두 분야와 꼴이 다르고 길다.

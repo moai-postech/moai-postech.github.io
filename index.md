@@ -22,6 +22,6 @@ sections:
   - title: "News"
     type: news
     data: news
-  - title: "Media coverage"
+  - title: "Media"
     type: media
 ---

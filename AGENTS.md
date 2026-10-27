@@ -11,7 +11,7 @@ _config.yml          사이트 이름, 메뉴, 사용할 테마
 _data/               콘텐츠 데이터(YAML)
   focus.yml          연구 방향(버튼)과 방향별 대표 논문. Home 에만 나온다
   news.yml           Home 의 Research news
-  media.yml          Home 의 Media coverage
+  media.yml          Home 의 Media
   research.yml       Research 의 분야별 표
   publications.yml   Publications 목록(제목은 논문 링크, links 에 project·code·slides·poster)
   members.yml        People 의 Faculty(교수, 사진, Bio, 이력 cv), Students(연구실 학생), Mentees(연구실 밖에서 지도한 학생). 멤버의 focus 는 연구 방향 패널에 이름을 띄운다. 연구실 멤버(Postdocs 포함, Alumni 제외)는 모두 Home 의 세 연구 방향 중 하나에 들어가야 하고, focus 가 빠진 멤버가 있으면 교수에게 물어 채운다(교수 2026-10-26)

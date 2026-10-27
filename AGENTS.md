@@ -209,7 +209,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 - **막혔을 때.** 고집하지 말고 `discussions/` 에 안건을 올린다(상대의 회차를 링크하고, 상대의 안을 "현재 상태 유지" 안으로 넣는다). 교수나 랩 미팅이 결정하면, 대상에 그 파일이 들어간 결정된 안건을 changelog 회차에 링크해서 push 하면 통과한다.
 - **교수.** `tools/maintainers.txt` 의 사람(교수)은 막히지 않고 알림만 받는다. 결정 권한이 있기 때문이다. 교수가 다른 사람의 수정을 바꿨으면 그 사람에게 알린다.
 - **기각한 안.** 검사는 30일이 지난 되돌리기나 "기각한 안"을 다시 꺼내는 것까지는 잡지 못한다. 고치기 전에 그 파일의 changelog 회차에서 "기각한 안과 이유"를 읽는 것은 여전히 사람과 에이전트의 몫이다.
-- **브랜치 보호와 올리는 길.** 사이트 주소(`moai-postech.github.io`)를 지키려고 저장소는 개인 계정 `moai-postech` 에 둔다. 개인 계정 저장소는 다른 사람에게 관리자 권한을 줄 수 없으므로, 교수(`sangwoomo`)와 에이전트를 포함한 모두가 같은 길로 올린다: 브랜치에 push 하고 PR 을 연다. 작은 수정은 auto-merge 를 켜고, 큰 수정은 교수가 merge 한다(고치는 절차 7). 필수 검사 `changelog`·`format` 이 통과하면 저절로 `main` 에 들어간다. 승인은 필수가 아니고, 보호는 검사가 한다. `main` 에 바로 push 할 수 있는 것은 저장소 주인 계정과 GitHub Actions(동기화 봇)뿐이다. 설정은 `tools/setup_main_ruleset.sh` 를 저장소 주인 계정으로 한 번 돌린다. Claude 같은 앱이 올린 PR 은 GitHub 계정으로 사람을 가릴 수 없어서 changelog 작성자 ID 로 교수인지 본다. 남의 ID 를 쓰지 않는다.
+- **브랜치 보호와 올리는 길.** 사이트 주소(`moai-postech.github.io`)를 지키려고 저장소는 개인 계정 `moai-postech` 에 둔다. 개인 계정 저장소는 다른 사람에게 관리자 권한을 줄 수 없으므로, 교수(`sangwoomo`)와 에이전트를 포함한 모두가 같은 길로 올린다: 브랜치에 push 하고 PR 을 연다. 작은 수정은 auto-merge 를 켜고, 큰 수정은 교수가 merge 한다(고치는 절차 7). 필수 검사 `changelog`·`format` 이 통과하면 저절로 `main` 에 들어간다. 승인은 필수가 아니고, 보호는 검사가 한다. `main` 에 바로 push 할 수 있는 것은 저장소 주인 계정과 GitHub Actions(동기화 봇)뿐이다. 설정은 `tools/setup_main_ruleset.sh` 를 저장소 주인 계정으로 한 번 돌린다. **지금은 보류다(2026-10-27 교수): ruleset 이 걸려 있지 않아 `main` 에 바로 push 할 수 있고, 검사는 push 마다 Actions 에서 돌아 위반을 빨간불로 알린다. 구성원이 저장소를 고치기 시작하면 다시 켠다.** Claude 같은 앱이 올린 PR 은 GitHub 계정으로 사람을 가릴 수 없어서 changelog 작성자 ID 로 교수인지 본다. 남의 ID 를 쓰지 않는다.
 
 ## Changelog 규칙 (필수)
 

@@ -293,3 +293,16 @@
 - 주제 설명마다 on, for, that 을 섞던 꼴: 여덟 줄이 들쭉날쭉하다.
 - Learning in the Wild 의 "limited, biased, uncurated, or novel data": 정확하지만 길다. imperfect data 로 묶었다.
 - Reasoning 분야 설명 "Reasoning should follow how knowledge is built, from evidence, abstraction, and relations, not from patterns in text alone.": 다른 두 분야와 꼴이 다르고 길다.
+
+## 25차: Reliable Generation 을 Reliable AI 로, B2T 옮김 (2026-10-27)
+- 교수: "Reliable Generation 이거를 차라리 reliable을 남기고 Generation을 안 남기는건 어때?", "Reliable AI로 할까? 그러면 B2T도 여기로 옮길까?"
+- 카드 이름 Reliable AI, 설명 "Social priors for fair and faithful models.". B2T(편향 발견과 완화)를 Learning in the Wild 에서 Reliable AI 로 옮겼다(publications.yml 순서대로 PRIS 와 FICS 사이).
+- Perception 세 카드는 세상의 구조(Visual Structure), 불완전한 데이터(Learning in the Wild), 사람이 바라는 것(Reliable AI)으로 나뉜다.
+- 확인: 로컬 빌드, 칩 37개.
+
+### 기각한 안과 이유(25차)
+- Reliable Generation(이름): 지금 논문의 형태(생성)만 가리켜 좁다(교수).
+- Reliability(한 단어), Trustworthy AI: 다른 카드 이름과 꼴이 다르거나 reliable 을 남기자는 뜻에서 벗어난다.
+- 설명을 generation 그대로 두기: 이름을 넓힌 뜻이 다시 좁아진다.
+- MASKER 도 옮기기: 제목에 Reliable 이 있지만 CSI 와 같은 novelty detection 이라 Learning in the Wild 의 novel data 에 맞는다.
+- FreezeD 를 Learning in the Wild 로: 적은 데이터 GAN fine-tuning 이지만 GOLD, PRIS 와 faithful generation 쪽에 두는 편이 균형이 맞는다.

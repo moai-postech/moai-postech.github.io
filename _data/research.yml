@@ -31,16 +31,16 @@
         - { short: "ToMA", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2604.26370" }
         - { short: "PDS", venue: "ICLR'26", url: "https://arxiv.org/abs/2602.19756" }
         - { short: "OAK", venue: "CVPR'25", url: "https://arxiv.org/abs/2512.16202" }
-        - { short: "B2T", venue: "CVPR'24", url: "https://arxiv.org/abs/2301.11104" }
         - { short: "S-CLIP", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2305.14095" }
         - { short: "RoPAWS", venue: "ICLR'23", url: "https://arxiv.org/abs/2302.14483" }
         - { short: "MASKER", venue: "AAAI'21", url: "https://arxiv.org/abs/2012.09392" }
         - { short: "CSI", venue: "NeurIPS'20", url: "https://arxiv.org/abs/2007.08176" }
-    - name: "Reliable Generation"
-      summary: "Social priors for fair and faithful generation."
+    - name: "Reliable AI"
+      summary: "Social priors for fair and faithful models."
       papers:
         - { short: "StayFair", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2605.28036" }
         - { short: "PRIS", venue: "CVPR'26", url: "https://arxiv.org/abs/2512.03534" }
+        - { short: "B2T", venue: "CVPR'24", url: "https://arxiv.org/abs/2301.11104" }
         - { short: "FICS", venue: "TMLR'23", url: "https://arxiv.org/abs/2212.02090" }
         - { short: "FreezeD", venue: "CVPRW'20", url: "https://arxiv.org/abs/2002.10964" }
         - { short: "GOLD", venue: "NeurIPS'19", url: "https://arxiv.org/abs/1910.09170" }

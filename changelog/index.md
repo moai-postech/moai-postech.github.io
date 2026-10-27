@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [design-balance](2026-10-27-design-balance.md) | Sangwoo Mo(sangwoomo) | 테마·Publications·형식 검사 | 논문 위계, 공통 여백·카드, 모바일 메뉴와 Contact 정리 |
 | 2026-10-27 | [link-hierarchy-selection](2026-10-27-link-hierarchy-selection.md) | Sangwoo Mo(sangwoomo) | 전체 링크·선택·Media·Contact | 본문 링크 강조 정리, 텍스트 드래그 검증, 중복 연락처 삭제 |
 | 2026-10-27 | [callout-one-cta-link-drag](2026-10-27-callout-one-cta-link-drag.md) | Sangwoo Mo(moai-postech) | Home, 테마 | 알림 띠 화살표 링크 하나로(Our work 문장 링크), 링크 글자 드래그 선택 |
 | 2026-10-27 | [study-contact-move](2026-10-27-study-contact-move.md) | Sangwoo Mo(moai-postech) | Contact, AI Study, Home | 스터디 연락처를 Study 페이지 Organizer 칸으로, 알림 띠 학회 NeurIPS·ICML·ICLR |

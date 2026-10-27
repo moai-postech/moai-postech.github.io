@@ -114,7 +114,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 1. **고칠 요소의 역할부터 정한다.** "Teaching 의 Study group 제목"이 아니라 "목록을 묶는 제목"처럼 사이트 전체에서 쓰는 역할 이름으로 본다.
 2. **그 역할의 전역 규칙을 따른다(아래 표).** 규칙이 정한 토큰을 그대로 쓰고, 페이지 전용 크기·간격을 새로 만들지 않는다.
 3. **규칙이 마음에 안 들거나 규칙에 없는 모양이 필요하면 규칙을 고친다.** 이 표와 `theme.css` 의 역할 토큰을 먼저 고치고, 같은 역할을 쓰는 모든 페이지에 한 번에 적용한다. 한 페이지만 예외로 두지 않는다.
-4. **사이트 전체를 검사한다.** 빌드한 뒤 `node tools/check_format.js` 를 돌린다(13개 메뉴 페이지를 1280px·390px 에서 잰다). 고친 페이지만이 아니라 전체가 통과해야 한다. `main` push 와 PR 마다 GitHub Actions(`format`)가 같은 검사를 돌린다. 새 역할 규칙을 만들면 이 검사에도 더한다.
+4. **사이트 전체를 검사한다.** 빌드한 뒤 `node tools/check_format.js` 를 돌린다(13개 메뉴 페이지를 1440px·1280px·768px·390px·320px 에서 잰다). 고친 페이지만이 아니라 전체가 통과해야 한다. `main` push 와 PR 마다 GitHub Actions(`format`)가 같은 검사를 돌린다. 새 역할 규칙을 만들면 이 검사에도 더한다.
 
 | 역할 | 예 | 글자 | 간격 |
 | --- | --- | --- | --- |
@@ -123,6 +123,10 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 | 목록 한 줄 | 뉴스, 과제, 강의, 발표 | `--text-body`, 무엇은 굵게 | 줄 사이 `--row-gap`·`--item-gap`. 목록의 첫 줄 위와 마지막 줄 아래에는 줄 간격을 두지 않는다(제목·다음 묶음과의 간격은 위 규칙만 따른다) |
 | 절을 닫는 안내 줄 | Research 의 Full publication list | `--text-body`, 링크만 보통 굵기(400) 강조색(`.section-next`) | 따로 한 절, 위아래 `--section-gap` |
 | 알림 띠 | Home 의 학회·모집 안내(Our focus 아래) | `--text-body`, 연한 강조색 바탕(`--accent-soft`), 링크 보통 굵기(400) 강조색(`class: section-callout`). 머리말을 굵게 쓰면 강조색 | 위 절에 붙여 위 `--space-5`, 아래 `--section-gap`. 사이트에 하나만 둔다 |
+| 논문 제목 | Publications 목록, Home 대표 논문 카드 | `--text-paper`(데스크톱 20px, 모바일 18px), 굵기 600 | 목록의 제목·저자·venue 줄 사이는 `--detail-gap`(4px), 목록의 논문 사이는 `--item-gap`의 위아래 합(32px) |
+| 논문 메타정보 | 저자, venue, arXiv·project·code | `--text-meta`(15px). venue는 굵기 700, 저자는 400, 링크는 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
+| 페이지 시작 | 하위 탭 뒤 첫 내용, 소개 뒤 첫 절 | | `--page-start`(데스크톱 48px, 모바일 32px) |
+| 카드 안 여백 | Home 논문, Research 주제, Contact 단계 카드 | | `--card-padding`(데스크톱 24px, 모바일 16px) |
 | 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
 | 작은 머리 | Faculty 의 FACULTY POSITIONS | `--text-small` | |
 

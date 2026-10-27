@@ -71,6 +71,7 @@ exclude:
   - CLAUDE.md
   - GEMINI.md
   - README.md
+  - TODO.md
   - changelog
   - discussions
   - tools

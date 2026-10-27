@@ -123,6 +123,8 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 | 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
 | 작은 머리 | Faculty 의 FACULTY POSITIONS | `--text-small` | |
 
+**문단 안의 굵게는 짧은 핵심어만 쓴다.** 문장을 통째로 굵게 하지 않고, 한 문단에 두세 개를 넘기지 않는다. 그 문단이 말하려는 "누구·무엇·무엇을 하라"만 고른다(예: Research 소개의 *scalable priors*, Contact 의 *undergraduate interns*·*genuine passion for AI*·*Contact us first*). 문장째 굵게 하면 강조가 흩어지고 굵지 않은 핵심 문장이 묻힌다(교수 2026-10-27). 목록 한 줄의 "무엇"을 굵게 하는 규칙(테마 계약)은 그대로다.
+
 굵게, 링크 색, 왼쪽·오른쪽 배치, 구분선은 위 "테마 계약"과 "방문자 세 부류"의 규칙이 전역 규칙이다.
 
 ## 고치는 절차

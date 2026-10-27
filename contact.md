@@ -9,7 +9,7 @@ sections:
     image: assets/img/contact-join.svg
     image_alt: "The path to MOAI Lab: the undergraduate AI study, then a CV and transcript."
     body: |
-      **We mainly recruit undergraduate interns**, so that we can grow together over the long term. Above all, we look for a genuine passion for AI, backed by clear logical thinking; both count far more than a long CV. **Planning to apply? Contact us first.**
+      We mainly recruit **undergraduate interns**, so that we can grow together over the long term. Above all, we look for a **genuine passion for AI**, backed by clear logical thinking; both count far more than a long CV. Planning to apply? **Contact us first.**
     steps:
       - title: "Check the background we expect"
         body: |

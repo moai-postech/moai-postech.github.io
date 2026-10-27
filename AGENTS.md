@@ -206,7 +206,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 - **막혔을 때.** 고집하지 말고 `discussions/` 에 안건을 올린다(상대의 회차를 링크하고, 상대의 안을 "현재 상태 유지" 안으로 넣는다). 교수나 랩 미팅이 결정하면, 대상에 그 파일이 들어간 결정된 안건을 changelog 회차에 링크해서 push 하면 통과한다.
 - **교수.** `tools/maintainers.txt` 의 사람(교수)은 막히지 않고 알림만 받는다. 결정 권한이 있기 때문이다. 교수가 다른 사람의 수정을 바꿨으면 그 사람에게 알린다.
 - **기각한 안.** 검사는 30일이 지난 되돌리기나 "기각한 안"을 다시 꺼내는 것까지는 잡지 못한다. 고치기 전에 그 파일의 changelog 회차에서 "기각한 안과 이유"를 읽는 것은 여전히 사람과 에이전트의 몫이다.
-- **브랜치 보호(권장).** GitHub 설정에서 `main` 에 "Require status checks"(changelog, format)를 걸면, 검사를 통과하지 못한 수정은 `main` 에 들어가지 못한다. 구성원은 브랜치와 PR 로 올리고, 교수가 merge 한다.
+- **브랜치 보호.** `main` 은 ruleset 으로 보호한다(`tools/setup_main_ruleset.sh`, 저장소 관리자가 한 번 돌린다). 구성원은 `main` 에 바로 push 하지 못하고 브랜치에서 PR 을 연다. 필수 검사 `changelog`·`format` 을 통과하고 승인 1개가 있어야 merge 된다. 교수(관리자), GitHub Actions(동기화 봇), Claude 앱은 막지 않는다.
 
 ## Changelog 규칙 (필수)
 

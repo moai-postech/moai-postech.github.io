@@ -4,11 +4,10 @@ on:
   push:
     branches: [main]
     paths-ignore: ["changelog/**", "discussions/**"]
-  pull_request:
-    paths-ignore: ["changelog/**", "discussions/**"]
+  pull_request:  # PR 에서는 늘 돈다. 브랜치 보호가 이 검사를 필수로 요구하므로 건너뛰면 merge 가 막힌다
   workflow_dispatch:
 jobs:
-  check:
+  format:  # 브랜치 보호의 필수 검사 이름(tools/setup_main_ruleset.sh)
     runs-on: ubuntu-latest
     env:
       LANG: C.UTF-8

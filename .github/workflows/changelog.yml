@@ -5,7 +5,7 @@ on:
     branches: [main]
   pull_request:
 jobs:
-  check:
+  changelog:  # 브랜치 보호의 필수 검사 이름(tools/setup_main_ruleset.sh)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

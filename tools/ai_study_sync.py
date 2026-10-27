@@ -9,10 +9,13 @@
     Colab·ipynb 노트북은 Drive 링크 그대로 둔다. 받은 사본과 원본 링크의 짝은 tools/drive_sources.json.
   - _data/ai_study.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
 
-  python3 tools/ai_study_sync.py
+  python3 tools/ai_study_sync.py               # 로컬에서 한 번
+  python3 tools/ai_study_sync.py --changelog   # GitHub Actions(ai-study-sync, 매일): 바뀐 것이 있으면 changelog 도 쓴다
 
 필요한 것: Python 3.9+ (표준 라이브러리만).
 """
+import argparse
+import datetime
 import html.parser
 import json
 import os
@@ -157,6 +160,7 @@ def slug(s):
 def localize_all(terms):
     """Drive 의 발표 자료를 이 저장소로 받아 링크를 바꾼다. 받지 못한 것은 Drive 링크로 두고 경고한다."""
     src = drive_pdf.load_sources()
+    before = set(src)
     for t in terms:
         for s in t["sessions"]:
             base = f"teaching/ai-study/{t['id']}/{s['n'].zfill(2)}-{slug(s['title'])}"
@@ -171,6 +175,7 @@ def localize_all(terms):
                     except Exception as e:  # noqa: BLE001
                         print("경고:", s["title"], l["text"], e, file=sys.stderr)
     drive_pdf.save_sources(src)
+    return sorted(set(src) - before)
 
 
 def q(s):
@@ -208,7 +213,40 @@ def dump(terms):
     return "\n".join(out) + "\n"
 
 
+def write_changelog(summary):
+    """seminar_sync.py 와 같은 방식: 그날 회차 파일 changelog/{날짜}-ai-study-sync.md 에 한 줄씩 덧붙인다."""
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "changelog")
+    now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))  # KST
+    today = now.date().isoformat()
+    name = f"{today}-ai-study-sync.md"
+    path = os.path.join(root, name)
+    if not os.path.exists(path):
+        open(path, "w", encoding="utf-8").write(
+            f"# {today} 학부생 AI 스터디 자동 동기화\n"
+            "작성자: GitHub Actions(ai-study-sync) | 대상: `_data/ai_study.yml`, `teaching/ai-study/` | 도구: `tools/ai_study_sync.py`\n\n"
+            "> **한줄 결론: 스터디 시트의 변경을 학부생 AI 스터디 페이지에 반영했다.**\n\n"
+            "## 요청\n교수 2026-10-27: 스터디 시트를 seminar-sync 처럼 매일 자동 동기화.\n"
+            "## 반영 내역\n")
+        index = os.path.join(root, "index.md")
+        s = open(index, encoding="utf-8").read()
+        sep = "| --- | --- | --- | --- | --- |\n"
+        row = (f"| {today} | [ai-study-sync]({name}) | GitHub Actions(ai-study-sync) | AI Study | "
+               "스터디 시트에서 자동 동기화 |\n")
+        open(index, "w", encoding="utf-8").write(s.replace(sep, sep + row, 1))
+        tail = "## 기각한 안과 이유\n없음\n## 남은 것\n없음\n"
+    else:
+        body = open(path, encoding="utf-8").read()
+        cut = body.index("## 기각한 안과 이유")
+        tail = body[cut:]
+        open(path, "w", encoding="utf-8").write(body[:cut])
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(f"- {now.strftime('%H:%M KST')}: " + "; ".join(summary) + "\n" + tail)
+
+
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--changelog", action="store_true")
+    args = ap.parse_args()
     with urllib.request.urlopen(HTML_URL, timeout=60) as r:
         page = r.read().decode("utf-8")
     t = Table()
@@ -216,7 +254,7 @@ def main():
     terms = parse(t.rows)
     if not terms:
         sys.exit("시트에서 학기를 찾지 못했다(시트 모양이 바뀌었나?)")
-    localize_all(terms)
+    new_files = localize_all(terms)
     text = dump(terms)
     old = open(OUT, encoding="utf-8").read() if os.path.exists(OUT) else ""
     if text == old:
@@ -224,7 +262,13 @@ def main():
         return
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(text)
-    print("갱신:", ", ".join(f"{x['name']} {len(x['sessions'])}회" for x in terms))
+    counts = ", ".join(f"{x['name']} {len(x['sessions'])}회" for x in terms)
+    print("갱신:", counts)
+    if args.changelog:
+        summary = [f"일정 갱신({counts})"]
+        if new_files:
+            summary.append("새 자료 " + ", ".join(f"`{p}`" for p in new_files))
+        write_changelog(summary)
 
 
 if __name__ == "__main__":

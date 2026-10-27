@@ -1,0 +1,32 @@
+# 학부생 AI 스터디 구글시트(schedule 탭)를 읽어 스터디 페이지(_data/ai_study.yml, teaching/ai-study/)를 갱신한다.
+# 매일 06:30 KST 에 돌고(seminar-sync 30분 뒤), Actions 탭에서 "Run workflow" 로 바로 돌릴 수도 있다. 비밀값은 쓰지 않는다(시트와 자료가 링크 공개).
+# 바뀐 것이 있으면 changelog/{날짜}-ai-study-sync.md 에 기록하고 main 에 push 한다. 절차는 tools/ai_study_sync.py 머리말.
+name: ai-study-sync
+on:
+  schedule:
+    - cron: "30 21 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ai-study-sync
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Drive 에 pptx 로 올린 자료를 PDF 로 바꿀 때만 쓴다. 한글 슬라이드가 있어 CJK 글꼴도 넣는다
+      - run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends libreoffice-impress fonts-noto-cjk
+      - run: python3 tools/ai_study_sync.py --changelog
+      - name: commit and push
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "바뀐 것 없음"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/ai_study.yml teaching/ai-study tools/drive_sources.json changelog
+          git commit -m "AI study: sync from the study sheet"
+          git pull --rebase -q origin main
+          git push origin HEAD:main

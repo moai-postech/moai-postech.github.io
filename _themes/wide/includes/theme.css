@@ -69,7 +69,7 @@ html { scrollbar-gutter: stable; }  /* the scrollbar keeps its place, so a page 
 }
 body { margin: 0; background: var(--bg); color: var(--text); font-size: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
 .wrap { width: min(var(--container), calc(100% - 2 * var(--page-margin))); margin-inline: auto; display: flex; flex-direction: column; min-height: 100dvh; }
-a { color: inherit; text-decoration: none; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a { color: inherit; text-decoration: none; text-underline-offset: 3px; text-decoration-thickness: 1px; -webkit-user-drag: none; }  /* a drag that starts on link text selects the text instead of dragging the link away, so every word on the site can be copied (교수 2026-10-27) */
 a:hover { color: var(--accent); text-decoration: underline; }  /* a link reads as its surrounding text; accent and underline only on hover */
 /* Links painted in the accent at rest: only the ones a visitor should act on (2026-10-22, "hyperlinks get colour only when they are the emphasis") */
 .lede a, .hero-text a, .section-next a, .section-callout a, .profile-links a, .step-body a, .filter-link, .embed-caption a, .sec-news a, .profile-bio a { color: var(--accent); }
@@ -251,6 +251,7 @@ a.mentee-name:hover { color: var(--accent); }
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }
 .section-callout a { font-weight: 600; white-space: nowrap; }  /* a short "… →" link moves to the next line whole instead of breaking in two on phones */
+.section-callout a.callout-inline { font-weight: inherit; white-space: normal; }  /* a link inside the sentence stays regular weight; the one bold "… →" link is the band's call to action */
 /* a photo band (Home: the lab group photo under the hero, 2026-10-27). The band height is the photo's own size; the crop keeps the people and trims the sky */
 .hero-band + .section-photo { padding-top: 0; }  /* the photo sits right under the hero: only the hero's own 32px bottom padding between them (교수 2026-10-27) */
 .section-photo p { margin: 0; }

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [callout-one-cta-link-drag](2026-10-27-callout-one-cta-link-drag.md) | Sangwoo Mo(moai-postech) | Home, 테마 | 알림 띠 화살표 링크 하나로(Our work 문장 링크), 링크 글자 드래그 선택 |
 | 2026-10-27 | [study-contact-move](2026-10-27-study-contact-move.md) | Sangwoo Mo(moai-postech) | Contact, AI Study, Home | 스터디 연락처를 Study 페이지 Organizer 칸으로, 알림 띠 학회 NeurIPS·ICML·ICLR |
 | 2026-10-27 | [contact-prof-email](2026-10-27-contact-prof-email.md) | Sangwoo Mo(moai-postech) | Contact, AGENTS.md | 2단계에 교수 이메일 한 줄 |
 | 2026-10-27 | [callout-pubs-link](2026-10-27-callout-pubs-link.md) | Sangwoo Mo(moai-postech) | Home | 학회 문장 뒤 See our publications 링크, 띠 링크 줄바꿈 방지 |

@@ -6,7 +6,7 @@
 | 날짜 | 안건 | 제안자 | 대상 | 상태 | 결정 changelog |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-27 | [dark-mode](2026-10-27-dark-mode.md) | Claude Code | 테마 색 | 결정됨 | 없음(원본 유지) |
-| 2026-10-27 | [home-lab-photo](2026-10-27-home-lab-photo.md) | Claude Code | Home | 결정됨 | 없음(현재 유지) |
+| 2026-10-27 | [home-lab-photo](2026-10-27-home-lab-photo.md) | Claude Code | Home | 결정됨 | [home-group-photo](../changelog/2026-10-27-home-group-photo.md)(같은 날 안 B → 안 A) |
 | 2026-10-27 | [home-recruiting](2026-10-27-home-recruiting.md) | Claude Code | Home | 결정됨 | [home-recruiting](../changelog/2026-10-27-home-recruiting.md) |
 | 2026-10-27 | [contact-structure](2026-10-27-contact-structure.md) | Sangwoo Mo(moai-postech) | Contact | 결정됨 | [contact-structure](../changelog/2026-10-27-contact-structure.md) |
 | 2026-10-26 | [color-contrast](2026-10-26-color-contrast.md) | Sangwoo Mo(moai-postech) | Home Focus 절, hero | 결정됨 | [color-contrast](../changelog/2026-10-26-color-contrast.md) |

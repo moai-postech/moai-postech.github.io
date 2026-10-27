@@ -12,6 +12,10 @@ sections:
       We orchestrate foundation models across vision, language, and physical sensors to drive AI agents, robots, and automated factories.
     image: assets/img/hero.svg
     image_alt: "Vision, language, and sensor inputs flow into MOAI, which drives agents, robots, and manufacturing."
+  # 히어로 아래 랩 단체사진 띠(교수 2026-10-27). 사진은 assets/img/lab/, 높이와 자르는 위치는 theme.css 의 .section-photo
+  - class: section-photo
+    body: |
+      ![MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026.jpg)
   - title: "Our focus in 2026"
     type: focus
   # 연구 방향 바로 아래 모집 알림 띠(section-callout). 다른 연구실의 "We are hiring!" 공지 모양(2026-10-27 교수)

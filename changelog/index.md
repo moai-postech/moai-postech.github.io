@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [media-source-inline](2026-10-27-media-source-inline.md) | Sangwoo Mo(moai-postech) | Home Media, AGENTS.md | 매체 이름을 제목 뒤 쉼표로 |
 | 2026-10-27 | [venue-badge-size](2026-10-27-venue-badge-size.md) | Sangwoo Mo(moai-postech) | 테마, Home | venue 배지 한 단계 크게, 히어로-사진 간격 32px, top AI venues |
 | 2026-10-27 | [pubs-scholar-line](2026-10-27-pubs-scholar-line.md) | Sangwoo Mo(moai-postech) | Publications | 소개 줄을 Also on Google Scholar 로 |
 | 2026-10-27 | [callout-venues](2026-10-27-callout-venues.md) | Sangwoo Mo(moai-postech) | Home, AGENTS.md | 알림 띠: 논문 내는 학회 한 줄 + 모집 한 줄, We are hiring! 머리말 뺌 |

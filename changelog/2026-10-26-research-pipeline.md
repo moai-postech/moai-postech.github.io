@@ -336,3 +336,14 @@
 - "robots that feel the world, not just see it": 25차 이전의 좁은 꼴로 돌아간다.
 - "robots that feel the world through every sense": Sensory 와 sense 가 겹친다.
 - "Cognitive priors for AI that knows what it knows": Reliable AI 의 "AI that people can trust" 와 AI 가 겹친다.
+
+## 29차: Reliable AI 에 생성의 뉘앙스, FreezeD 되돌림 (2026-10-27)
+- 교수: "GOLD도 사실 reliable은 아니긴 한데.. 그렇다고 wild로 옮기는것도 별로지?", "wild의 첫 논문으로 CSI가 나오는게 좋아보이긴 하는데, 그러면 다시 freezed를 아래로 내릴까? reliable AI에서 특히 generation이라는 뉘앙스를 주는건 어떻게 생각해."
+- Reliable AI "Social priors for AI that people can trust, in what it sees and what it makes." what it sees 는 B2T, what it makes 는 GOLD, FreezeD, FICS, PRIS, StayFair.
+- FreezeD 를 Learning in the Wild 에서 Reliable AI 로 되돌렸다(publications.yml 순서대로 FICS 와 GOLD 사이). Learning in the Wild 는 CSI 로 시작한다.
+- 확인: 로컬 빌드, 칩 37개.
+
+### 기각한 안과 이유(29차)
+- GOLD 를 Learning in the Wild 로: 조건부 GAN 샘플의 품질을 가려내는 논문이라 불완전한 데이터와 거리가 있다.
+- 설명을 "generative AI" 로 못박기: 분류기 편향을 찾는 B2T 가 빠진다.
+- FreezeD 를 Learning in the Wild 에 두기(27차): 설명에 what it makes 가 들어가 Reliable AI 가 더 자연스럽고, Learning in the Wild 가 CSI 로 시작하는 편이 낫다(교수).

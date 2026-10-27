@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# main 브랜치 보호(ruleset)를 만든다. 저장소 관리자(교수)가 자기 컴퓨터에서 한 번 돌린다.
+# main 브랜치 보호(ruleset)를 만든다. 저장소 관리자 계정(moai-postech)으로 자기 컴퓨터에서 한 번 돌린다.
 #   gh auth login            # 처음 한 번
+#   gh auth switch -u moai-postech   # 관리자 계정으로(끝나면 다시 sangwoomo 로)
 #   bash tools/setup_main_ruleset.sh
 # - 구성원: main 에 바로 push 할 수 없고, 브랜치에서 PR 을 연다. changelog·format 검사를 통과하고 승인 1개가 있어야 merge 된다.
 # - 막지 않는 쪽(bypass): 저장소 관리자(교수), GitHub Actions(세미나·스터디 매일 동기화), Claude 앱(에이전트 push).
@@ -9,7 +10,11 @@ set -euo pipefail
 REPO=moai-postech/moai-postech.github.io
 NAME="main 보호"
 ACTIONS_APP=15368  # GitHub Actions 앱의 고정 ID
+# 저장소 주인(moai-postech)이 조직이든 개인 계정이든 Claude 앱을 찾는다
 CLAUDE_APP=$(gh api orgs/moai-postech/installations --jq '.installations[] | select(.app_slug=="claude") | .app_id' 2>/dev/null || true)
+[ -z "$CLAUDE_APP" ] && CLAUDE_APP=$(gh api user/installations --jq '.installations[] | select(.app_slug=="claude") | .app_id' 2>/dev/null || true)
+admin=$(gh api "repos/$REPO" --jq .permissions.admin)
+if [ "$admin" != "true" ]; then echo "지금 gh 계정은 이 저장소의 관리자가 아니다. 'gh auth switch -u moai-postech' 로 바꾸고 다시 돌린다."; exit 1; fi
 bypass='{"actor_id":5,"actor_type":"RepositoryRole","bypass_mode":"always"},{"actor_id":'$ACTIONS_APP',"actor_type":"Integration","bypass_mode":"always"}'
 if [ -n "$CLAUDE_APP" ]; then bypass="$bypass"',{"actor_id":'$CLAUDE_APP',"actor_type":"Integration","bypass_mode":"always"}'; fi
 old=$(gh api "repos/$REPO/rulesets" --jq ".[] | select(.name==\"$NAME\") | .id" || true)

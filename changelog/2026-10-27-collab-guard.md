@@ -20,6 +20,8 @@ POSTECH 요구사항: P1~P9 확인. 요구사항을 바꾸지 않았고, `_confi
 - 2차(같은 날): 브랜치 보호 준비. 이 세션은 저장소 관리자 권한이 없고(설정 API 403), 데스크톱 도구도 교수 컴퓨터가 아니라 클라우드 컨테이너에 닿아 직접 켜지 못했다. 대신 `tools/setup_main_ruleset.sh` 를 만들었다. 교수가 자기 컴퓨터에서 `gh auth login` 뒤 한 번 돌리면 `main` ruleset(삭제·강제 push 금지, PR 필수와 승인 1, 필수 검사 changelog·format, bypass: 관리자·GitHub Actions·Claude 앱)이 생긴다. 필수 검사 이름이 겹치지 않게 두 워크플로의 job 이름을 `check` 에서 `changelog`, `format` 으로 바꿨고, format 은 PR 에서 경로와 상관없이 늘 돌게 했다(필수 검사가 건너뛰어지면 merge 가 막힌다).
 - 사이트용 Claude 클라우드 루틴 `lab-site-sync` 는 10/26 에 그만두기로 하고 절차서(`tools/site-sync.md`)도 지웠지만 루틴은 켜진 채였다. 웹에서 만든 루틴이라 에이전트가 지우거나 끄지 못해 교수에게 넘겼다. 사이트 동기화는 GitHub Actions(`seminar-sync`, `ai-study-sync`)로 통일한다.
 
+- 3차(같은 날): 교수의 `sangwoomo` 계정은 이 저장소의 관리자가 아니라(push 권한만) ruleset 을 만들지 못했다. 관리자는 저장소 주인 `moai-postech` 계정이다. 스크립트가 관리자 권한을 먼저 확인해 알려 주고, Claude 앱을 개인 계정 설치 목록에서도 찾게 했다.
+
 ## 기각한 안과 이유
 - 파일 단위로 막기(다른 사람이 30일 안에 고친 파일은 손대지 못함): `theme.css`, `members.yml` 처럼 모두가 고치는 파일은 늘 막힌다. 줄 단위로 좁혔다.
 - 커밋 작성자(git author)로 주인 판단: 에이전트 커밋은 작성자가 "Claude" 라 사람을 가리지 못한다. changelog 회차의 작성자 ID 를 쓰고 Actions 에서 push 계정과 맞춘다.

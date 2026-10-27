@@ -25,13 +25,13 @@
     {% if pj.teams %}<section class="content-section">
     <h2>Teams</h2>
     <div class="section-body">
-    {% if pj.sheet %}<p class="project-sheet">Teams edit their own entry in the <a href="{{ pj.sheet }}">project sheet ↗</a>. This page is updated from it.</p>{% endif %}
+    {% if pj.sheet %}<p class="project-sheet">Teams edit their own entry in the <a href="{{ pj.sheet }}">project sheet</a>. This page is updated from it.</p>{% endif %}
     <table class="course-schedule project-teams">
       <thead><tr><th scope="col">#</th><th scope="col">Project</th>{% for rd in pj.rounds %}<th scope="col">{{ rd.name }}</th>{% endfor %}</tr></thead>
       <tbody>
       {% for t in pj.teams %}<tr class="tone-guest">
         <td class="cs-n">{{ t.n }}</td>
-        <td class="cs-topic"><span class="cs-title">{{ t.title }}</span>{% if t.members %}<span class="cs-speaker">{{ t.members | join: ", " }}</span>{% endif %}{% if t.url %}<a class="project-link" href="{{ t.url }}">{{ t.url_label | default: "Link" }} ↗</a>{% endif %}</td>
+        <td class="cs-topic"><span class="cs-title">{{ t.title }}</span>{% if t.members %}<span class="cs-speaker">{{ t.members | join: ", " }}</span>{% endif %}{% if t.url %}<a class="project-link" href="{{ t.url }}">{{ t.url_label | default: "Link" }}</a>{% endif %}</td>
         {% for rd in pj.rounds %}{% assign x = t[rd.id] %}<td class="project-round" data-round="{{ rd.name }}">{% if x.date or x.order %}<span class="project-when">{% if x.date %}{{ x.date | date: "%m/%d" }}{% endif %}{% if x.order %}{% if x.date %} · {% endif %}#{{ x.order }}{% endif %}</span>{% endif %}{% if x.slides %}<a href="{{ x.slides }}">Slides</a>{% endif %}</td>{% endfor %}
       </tr>
       {% endfor %}

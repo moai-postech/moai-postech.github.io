@@ -59,7 +59,7 @@
 }
 
 /* Base */
-* { box-sizing: border-box; }
+* { box-sizing: border-box; -webkit-user-select: text; user-select: text; }
 html { scrollbar-gutter: stable; }  /* the scrollbar keeps its place, so a page never shifts sideways when a tab makes it shorter or longer */
 /* Computers: the header stays at the top while the page scrolls (교수 2026-10-27). Phones and tablets keep it in the flow: there it is two lines and would cover a fifth of the screen */
 @media (min-width: 961px) {
@@ -77,7 +77,7 @@ a:hover { color: var(--accent); text-decoration: underline; }  /* a link reads a
 .sec-news a.news-quiet { color: inherit; }  /* News paints papers; a workshop we organized stays in text colour, accent on hover */
 .sec-news a.news-quiet:hover { color: var(--accent); }  /* News: the papers are the news, so their links stay painted (2026-10-22) */
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
-::selection { background: var(--accent-soft); color: var(--text); }
+::selection { background: var(--accent); color: var(--bg); }  /* selection stays visible even on the rose notice band */
 img { max-width: 100%; }
 p { margin: 0 0 var(--space-4); }
 p:last-child { margin-bottom: 0; }
@@ -96,7 +96,7 @@ h3.sub { margin: var(--space-6) 0 var(--space-2); font-size: var(--text-small); 
 h3.sub:first-child { margin-top: 0; }
 .lede { font-size: var(--text-body); line-height: 1.65; }  /* page intros read as body text, not as a heading */
 .section-body > p, .page-intro > * { max-width: var(--measure); }
-.more { margin-top: var(--space-5); font-size: var(--text-meta); font-weight: 600; }
+.more { margin-top: var(--space-5); font-size: var(--text-meta); font-weight: 400; }
 
 /* Header */
 .site-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-5); min-height: 88px; padding-block: var(--space-3); border-bottom: 1px solid var(--line); }  /* when the logos and the menu do not fit one line (tablets), the whole menu moves to its own line instead of folding into two */
@@ -190,7 +190,8 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
    Mentees too: name and affiliation on the left, papers at the right end. Publications use several lines. */
 .news li { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: baseline; gap: var(--space-4); padding: var(--row-gap) 0; }
 .sec-media { word-break: keep-all; }  /* Korean headlines break between words, not inside them */
-.media-source { color: var(--muted); white-space: nowrap; }  /* the outlet follows the headline after a comma, like a citation (교수 2026-10-27) */
+.media-source { color: var(--muted); font-size: var(--text-meta); white-space: nowrap; }
+.media-source::before { content: "·"; margin-inline: var(--space-3); }  /* a quiet separator keeps the publication name apart from the headline */
 .news li:first-child { padding-top: 0; }
 .news time { color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 .link-aside { color: var(--text); }  /* a parenthetical inside a link, e.g. "(oral)": part of the link, but not painted */
@@ -246,17 +247,16 @@ a.mentee-name:hover { color: var(--accent); }
 .research-head .area-name { margin-top: var(--space-3); font-weight: 700; }
 .research-head .area-blurb { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-meta); }
 .section-next { margin: 0; }  /* a section's closing line: where to go next (Research: all papers; Home: Join us) */
-.section-next a { font-weight: 600; }
+.section-next a { font-weight: 400; }
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }
-.section-callout a { font-weight: 600; white-space: nowrap; }  /* a short "… →" link moves to the next line whole instead of breaking in two on phones */
-.section-callout a.callout-inline { font-weight: inherit; white-space: normal; }  /* a link inside the sentence stays regular weight; the one bold "… →" link is the band's call to action */
+.section-callout a { font-weight: 400; }
 /* a photo band (Home: the lab group photo under the hero, 2026-10-27). The band height is the photo's own size; the crop keeps the people and trims the sky */
 .hero-band + .section-photo { padding-top: 0; }  /* the photo sits right under the hero: only the hero's own 32px bottom padding between them (교수 2026-10-27) */
 .section-photo p { margin: 0; }
 .list-intro { margin: 0 0 var(--space-4); color: var(--muted); }  /* one line under a group heading that says what the list is (Teaching: the AI study, 교수 2026-10-27) */
-.list-intro a { color: var(--accent); font-weight: 600; }
+.list-intro a { color: var(--accent); font-weight: 400; }
 .section-photo img { display: block; width: 100%; height: 380px; object-fit: cover; object-position: 50% 72%; border-radius: var(--radius-2); }
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
@@ -278,7 +278,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .filter-btn span { margin-left: 2px; color: var(--faint); font-weight: 400; }
 .filter-btn:hover { color: var(--text); }
 .filter-btn[aria-pressed="true"] { color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
-.filter-link { margin-left: auto; font-size: var(--text-meta); font-weight: 600; }
+.filter-link { margin-left: auto; font-size: var(--text-meta); font-weight: 400; }
 .schedule { width: 100%; border-collapse: collapse; }
 .schedule.is-locked { table-layout: fixed; }  /* column widths measured once over all talks (scripts.html), so filtering never moves a column */
 .schedule td { padding: var(--space-2) 0; vertical-align: baseline; }

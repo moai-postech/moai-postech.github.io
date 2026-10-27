@@ -76,7 +76,7 @@
   blurb: "Action should begin with people and the physical world: what each person wants, and what a body can sense."
   topics:
     - name: "VLA & World Models"
-      summary: "Intent priors that adapt robot policies to each person."
+      summary: "Human priors that adapt robot policies to each person."
       papers:
         - { short: "INDI", venue: "arXiv'26", url: "https://arxiv.org/abs/2608.23478" }
         - { short: "VAP", venue: "ICML'26", url: "https://arxiv.org/abs/2512.20014" }

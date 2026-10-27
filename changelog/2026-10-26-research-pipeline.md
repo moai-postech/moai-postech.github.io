@@ -236,3 +236,10 @@
 - 두 단어 prior(Fairness and alignment, Sparsity and hierarchy, User and intent): 여덟 카드의 꼴이 어긋난다(교수).
 - Reliable Generation 을 "Fairness priors" 로: 주제에 정렬(PRIS, GOLD 등)이 더 넓다. fairness 는 뒤 구절 "fair and faithful" 에 남겼다.
 - Efficient LLMs 를 "Hierarchy priors" 로: 칩 넷 중 셋(Simba, LAMP, LAP)이 sparsity 쪽이다.
+
+## 20차: Intent priors 를 Human priors 로 (2026-10-27)
+- 교수: "intent prior라고 하지 말고 human prior라고 하는게 더 일반적이지 않아?" VLA & World Models "Human priors that adapt robot policies to each person."
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(20차)
+- Intent priors(19차): 의도 하나로 좁다. human 은 의도, 선호, 시연을 모두 담는다.

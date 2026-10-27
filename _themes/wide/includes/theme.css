@@ -246,6 +246,9 @@ a.mentee-name:hover { color: var(--accent); }
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }
 .section-callout a { font-weight: 600; }
+/* a photo band (Home: the lab group photo under the hero, 2026-10-27). The band height is the photo's own size; the crop keeps the people and trims the sky */
+.section-photo p { margin: 0; }
+.section-photo img { display: block; width: 100%; height: 380px; object-fit: cover; object-position: 50% 72%; border-radius: var(--radius-2); }
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
 .topic-card h3 { margin: 0; font-size: var(--text-body); }
@@ -395,6 +398,7 @@ a.person-name:hover { color: var(--accent); }
   .focus-panels { padding: var(--space-4); }
   .focus-tabs { align-items: stretch; }  /* a two-line label keeps the three icons on one line */
   .focus-tab img { width: 36px; height: 36px; }
+  .section-photo img { height: 220px; }
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
   .pubs li { grid-template-columns: 2.25em minmax(0, 1fr); }
   .item-list li { flex-wrap: wrap; gap: 2px var(--space-3); padding: var(--space-2) 0; }  /* on phones one-line items wrap to two or three lines, so they need the wider gap */

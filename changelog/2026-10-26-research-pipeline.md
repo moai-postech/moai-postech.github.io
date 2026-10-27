@@ -324,5 +324,5 @@
 - 확인: 로컬 빌드, 칩 37개.
 
 ### 기각한 안과 이유(27차)
-- T-PRH 를 Visual Structure 로: 같은 현실 구조로의 수렴이라 철학적으로 맞지만 시각 구조보다 표현 분석에 가깝다. 교수가 그대로 두기로 했다.
+- T-PRH 를 Visual Structure 로: 교수 "T-PRH는 시각구조가 아니기도 하고, 결국 Unsup alignment라 저기가 맞아." 비지도 정렬이라 Learning in the Wild 다.
 - FreezeD 를 Reliable AI 에 두기(25차): 신뢰보다 적은 데이터가 핵심이다.

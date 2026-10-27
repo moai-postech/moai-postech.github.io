@@ -1,16 +1,16 @@
 /* Course sites (layout: course). A course runs as its own small site: its own header and menu, the lab only in the footer.
    Template: includes/course/README.md */
 
-/* Colour template, one set for every course (2026-10-22). Parts take their colour from their position, never per course:
-   the first part is slate blue, the second teal, the third ochre. Logistics (overview, exams, project days, grading) are rose,
-   the site accent's family; guests and seminars grey; no-class days have no fill. Muted tones instead of primaries so the
-   POSTECH Red stays the only strong colour. --tone is text (4.5:1 or more on its row), --tone-tint bars and borders,
+/* Colour template, one set for every course (2026-10-27). Parts take their colour from their position, never per course:
+   the first part is blue, the second teal, the third violet. Logistics (overview, exams, project days, grading) use the
+   neutral site surface; guests and seminars a lighter grey; no-class days have no fill. Light, muted fills keep the
+   POSTECH Red for navigation and materials. --tone is text (4.5:1 or more on its row), --tone-tint bars and borders,
    --tone-row the fill of rows and cards. */
-.tone-p1        { --tone: #34558b; --tone-tint: #c9d6ec; --tone-row: #e4ebf6; }
-.tone-p2        { --tone: #21695c; --tone-tint: #c3e1d7; --tone-row: #e1f0ea; }
-.tone-p3        { --tone: #8a5a14; --tone-tint: #ead6af; --tone-row: #f7ecd8; }
-.tone-logistics { --tone: var(--accent); --tone-tint: #eccbd9; --tone-row: #f8e6ee; }
-.tone-guest     { --tone: #545e6b; --tone-tint: #d9dee5; --tone-row: #eceff3; }
+.tone-p1        { --tone: #405f82; --tone-tint: #cdd9e8; --tone-row: #edf2f8; }
+.tone-p2        { --tone: #3f7069; --tone-tint: #cadfd8; --tone-row: #edf5f2; }
+.tone-p3        { --tone: #725f87; --tone-tint: #dcd1e6; --tone-row: #f3eff7; }
+.tone-logistics { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
+.tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
 .tone-none      { --tone: var(--muted); --tone-tint: transparent; --tone-row: transparent; }
 
 .course-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); flex-wrap: wrap; min-height: 72px; border-bottom: 1px solid var(--line); }
@@ -29,7 +29,7 @@
 .course-foot .course-privacy { margin-left: auto; font-weight: 700; }
 .course-site main > :last-child { padding-bottom: var(--space-8); }
 
-/* Home: title, lead and buttons on the left (7 of 12 columns), the logistics a student looks up on the right (5 columns),
+/* Home: title, lead and optional resource links on the left (7 of 12 columns), logistics on the right (5 columns),
    the shape of the MIT, Stanford, CMU and Berkeley course pages (2026-10-26) */
 .course-hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gutter); align-items: start; padding-top: var(--space-7); }
 .course-eyebrow { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0 0 var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }

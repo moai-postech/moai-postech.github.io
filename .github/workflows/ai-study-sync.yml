@@ -23,10 +23,12 @@ jobs:
       - run: python3 tools/ai_study_sync.py --changelog
       - name: commit and push
         run: |
-          if [ -z "$(git status --porcelain)" ]; then echo "바뀐 것 없음"; exit 0; fi
+          # drive_pdf 를 불러오면 tools/__pycache__/ 가 생기므로 동기화 대상 경로만 본다
+          paths="_data/ai_study.yml teaching/ai-study tools/drive_sources.json changelog"
+          if [ -z "$(git status --porcelain -- $paths)" ]; then echo "바뀐 것 없음"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _data/ai_study.yml teaching/ai-study tools/drive_sources.json changelog
+          git add $paths
           git commit -m "AI study: sync from the study sheet"
           git pull --rebase -q origin main
           git push origin HEAD:main

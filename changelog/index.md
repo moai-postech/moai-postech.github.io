@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-10-27 | [site-review](2026-10-27-site-review.md) | Sangwoo Mo(moai-postech) | 사이트 전체 | 전체 점검, 스터디 자료 줄바꿈·26S 슬라이드 링크·AGENTS 강조 링크 목록 수정 |
+| 2026-10-27 | [site-review](2026-10-27-site-review.md) | Sangwoo Mo(moai-postech) | 사이트 전체 | 전체 점검, 스터디 자료 줄바꿈·AGENTS 강조 링크 목록 수정, 26S Related 삭제 |
 | 2026-10-27 | [bold-keywords](2026-10-27-bold-keywords.md) | Sangwoo Mo(moai-postech) | Contact, Home, AGENTS.md | 문단 안 굵게는 짧은 핵심어만(전역 규칙), Join us·hero 에 적용 |
 | 2026-10-27 | [study-row](2026-10-27-study-row.md) | Sangwoo Mo(moai-postech) | Teaching | 스터디를 학기마다 한 줄(주제와 학기)로, 제목도 최신 판으로 링크 |
 | 2026-10-27 | [format-actions](2026-10-27-format-actions.md) | Sangwoo Mo(moai-postech) | Actions, AGENTS.md | 사이트 전체 형식 검사를 push·PR 마다 Actions 로 |

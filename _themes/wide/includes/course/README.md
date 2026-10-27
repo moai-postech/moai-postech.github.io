@@ -31,7 +31,7 @@
 
 ## 강의마다 달라도 되는 것
 
-- 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Lectures(`lectures`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Related(`related`), Past exams(`exams`).
+- 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Lectures(`lectures`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 다른 강의나 자료로 잇는 Related 는 두지 않는다(2026-10-27 교수: 강의 사이트끼리 cross reference 하지 않는다).
 - 파트 이름은 자유다(`Part I`, `Software 3.0`). 자료 절 제목은 `resources_title`(기본 `Reference courses`).
 - 줄 종류 앞 태그 글자는 `_data/course_tags.yml` 한 곳에서 정한다(guest, seminar, exam, project).
 

@@ -16,3 +16,7 @@ POSTECH 요구사항: 영향 없음
 - People 의 빈 Alumni 절 숨기기: 교수가 그대로 두기로 함.
 ## 남은 것
 없음
+
+## 덧붙임: Contact 의 Join us 카드와 꼬리말 사이 여백
+- Contact 를 검토하다 회색 Join us 카드 아래가 꼬리말 구분선에 바로 붙어 있는 것을 찾았다(간격 0px). `main > :last-child` 의 아래 여백(`--space-8`)을 카드 자체의 `padding` 이 덮어써서 생긴 일이다.
+- `theme.css`: `.page-contact main > .contact-join` 에 `margin-bottom: var(--space-8)`. 이제 1280·390px 모두 카드와 꼬리말 사이 64px, 다른 페이지와 같다.

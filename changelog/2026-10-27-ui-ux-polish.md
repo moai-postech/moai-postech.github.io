@@ -40,4 +40,5 @@ POSTECH 요구사항: P1~P9 영향 없음. 공식 로고, 링크, 비례, 팔레
 
 ## 남은 것
 - Home 대표 논문의 진행 연구·게재 실적 비중: [TODO](../TODO.md)와 [논의](../discussions/2026-10-27-design-balance-recheck.md)에 기록. 기존 선정 유지.
-- 여러 페이지의 디자인과 공통 레이아웃 변경이므로 PR을 준비하고 검사 후 교수의 병합 결정 대기.
+- 모든 검사가 통과한 [PR #19](https://github.com/moai-postech/moai-postech.github.io/pull/19)를 교수가 "병합하고 배포"로 승인. main `d64a978`로 squash merge하고 GitHub Pages 자동 배포 실행. 원격 브랜치는 유지.
+- Pages `d64a978` built 확인. 라이브 Chrome 1280·390px에서 Publications 제목 18·17px, Media 가운데점 간격 8px, 새 Home 안내·독립 모집 절, 링크 텍스트 실제 드래그와 본문 바로가기 정상 확인.

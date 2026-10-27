@@ -87,8 +87,8 @@ img { max-width: 100%; }
 p { margin: 0 0 var(--space-4); }
 p:last-child { margin-bottom: 0; }
 .plain { margin: 0; padding: 0; list-style: none; }
-.section-body > .plain > li:first-child { padding-top: 0; }  /* a list's row padding spaces rows apart, never the list from its heading or the next group (2026-10-27) */
-.section-body > .plain > li:last-child { padding-bottom: 0; }
+.section-body > .plain:not(.course-parts):not(.course-grading) > li:first-child { padding-top: 0; }  /* trim row-list edges; filled cards keep their own internal padding */
+.section-body > .plain:not(.course-parts):not(.course-grading) > li:last-child { padding-bottom: 0; }
 .muted { color: var(--muted); }
 .small { font-size: var(--text-meta); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

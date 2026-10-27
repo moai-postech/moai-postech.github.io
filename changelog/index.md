@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [format-actions](2026-10-27-format-actions.md) | Sangwoo Mo(moai-postech) | Actions, AGENTS.md | 사이트 전체 형식 검사를 push·PR 마다 Actions 로 |
 | 2026-10-27 | [group-heading-size](2026-10-27-group-heading-size.md) | Sangwoo Mo(moai-postech) | theme.css, AGENTS.md, tools | 목록 묶음 제목의 크기·간격을 사이트 전체 통일, 전역 형식 규칙과 검사 도구(check_format.js) |
 | 2026-10-27 | [teaching-sections](2026-10-27-teaching-sections.md) | Sangwoo Mo(moai-postech) | Teaching | Courses 에 Regular courses 절 제목, Study group 과 대등하게 |
 | 2026-10-27 | [home-recruiting](2026-10-27-home-recruiting.md) | Sangwoo Mo(moai-postech) | Home | 첫 화면 hero 에 인턴 모집 한 줄과 Join us 링크 |

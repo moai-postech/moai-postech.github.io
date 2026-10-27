@@ -4,7 +4,7 @@
 //   bundle exec jekyll build
 //   node tools/check_format.js            # 1280px 와 390px 에서 검사
 //
-// Playwright 가 있어야 한다(npm i playwright, 또는 이미 설치된 환경).
+// Playwright 가 있어야 한다(npm i playwright, 또는 이미 설치된 환경). GitHub Actions 의 format 워크플로가 push 마다 돌린다.
 const http = require('http');
 const fs = require('fs');
 const path = require('path');

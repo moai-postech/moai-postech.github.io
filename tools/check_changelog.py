@@ -186,7 +186,9 @@ def check_flipflop(base, head, files):
             status, target = discussion_meta(path) if path.exists() else (None, "")
             if status == "결정됨":
                 decided[name] = target
-    is_maintainer = (actor in people) if actor else bool(mine & set().union(*people.values()) if people else False)
+    # 사람이 push 했으면 그 GitHub 계정으로, 앱(Claude 등)이나 로컬 검사면 changelog 작성자 ID 로 교수인지 본다
+    human = actor and not actor.endswith("[bot]")
+    is_maintainer = (actor in people) if human else bool(mine & set(people))
     if not mine:
         return errors, notes
     for f in files:

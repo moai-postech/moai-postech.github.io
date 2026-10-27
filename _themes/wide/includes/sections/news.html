@@ -7,7 +7,7 @@
       {% for n in items limit: limit %}<li><time>{{ n.date }}</time><span>{% include inline.html text=n.text %}{% if n.source %} <span class="muted">{{ n.source }}</span>{% endif %}</span></li>
       {% endfor %}
     </ul>
-    {% if items.size > limit %}<p class="more"><a href="{{ include.section.more_url | default: 'news.html' }}">All news →</a></p>{% endif %}
+    {% if items.size > limit %}<p class="more"><a href="{{ include.section.more_url | default: 'news.html' }}">All news</a></p>{% endif %}
     {% if include.section.note %}<p class="more">{% include inline.html text=include.section.note %}</p>{% endif %}
     </div>
     </section>

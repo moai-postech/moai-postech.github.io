@@ -1,8 +1,5 @@
+{% include text-selection.html %}
 <script>
-// Firefox ignores -webkit-user-drag: turn link dragging off so a drag on link text selects it (theme.css, 교수 2026-10-27).
-document.querySelectorAll('a').forEach(function (a) { a.draggable = false; });
-// A press-drag-release inside one link fires a click; when it selected text, keep the selection instead of following the link.
-document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a'); var sel = window.getSelection(); if (a && sel && !sel.isCollapsed && a.contains(sel.anchorNode)) e.preventDefault(); }, true);
 // Tabs for [data-tabs]: the first tab is open; clicking or arrow keys switch panels.
 document.querySelectorAll('[data-tabs]').forEach(function (box) {
   var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));

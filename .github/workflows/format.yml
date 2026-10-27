@@ -25,4 +25,5 @@ jobs:
       - run: npm install --no-save --no-package-lock playwright@1.48.2
       - run: npx playwright install --with-deps chromium
       - run: node tools/check_format.js
+      - run: node tools/check_selection.js
       - run: node tools/check_postech.js

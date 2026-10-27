@@ -1,0 +1,35 @@
+<script>
+// Links behave like selectable text when dragged, and like links when clicked.
+(function () {
+  document.querySelectorAll('a').forEach(function (a) { a.draggable = false; });
+  var start = null;
+  function caret(x, y) {
+    if (document.caretPositionFromPoint) {
+      var p = document.caretPositionFromPoint(x, y);
+      return p && { node: p.offsetNode, offset: p.offset };
+    }
+    var r = document.caretRangeFromPoint && document.caretRangeFromPoint(x, y);
+    return r && { node: r.startContainer, offset: r.startOffset };
+  }
+  document.addEventListener('mousedown', function (e) {
+    start = null;
+    if (e.button || e.shiftKey || e.ctrlKey || e.metaKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a');
+    var p = a && caret(e.clientX, e.clientY);
+    if (p && a.contains(p.node)) start = { node: p.node, offset: p.offset, x: e.clientX, y: e.clientY };
+  });
+  document.addEventListener('mousemove', function (e) {
+    if (!start || !(e.buttons & 1) || Math.hypot(e.clientX - start.x, e.clientY - start.y) < 4) return;
+    var p = caret(e.clientX, e.clientY);
+    if (!p) return;
+    window.getSelection().setBaseAndExtent(start.node, start.offset, p.node, p.offset);
+    e.preventDefault();
+  });
+  document.addEventListener('mouseup', function () { start = null; });
+  window.addEventListener('blur', function () { start = null; });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a'), sel = window.getSelection();
+    if (e.detail && a && sel && !sel.isCollapsed && a.contains(sel.anchorNode)) e.preventDefault();
+  }, true);
+})();
+</script>

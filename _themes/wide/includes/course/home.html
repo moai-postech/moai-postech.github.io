@@ -11,7 +11,7 @@
         <p class="course-eyebrow"><span>{{ c.code }}</span><span>{{ c.term }}</span><span>POSTECH</span></p>
         <h1>{{ c.title }}</h1>
         {% if c.summary %}<p class="course-lead">{{ c.summary }}</p>{% endif %}
-        <p class="course-actions"><a class="course-btn is-primary" href="{{ root }}schedule/">Schedule &amp; slides</a>{% if c.project %}<a class="course-btn" href="{{ root }}project/">Project</a>{% endif %}{% for l in c.links %}<a class="course-btn" href="{{ l.url }}">{{ l.label }} ↗</a>{% endfor %}</p>
+        <p class="course-actions"><a class="course-btn is-primary" href="{{ root }}schedule/">Schedule &amp; slides</a>{% if c.project %}<a class="course-btn" href="{{ root }}project/">Project</a>{% endif %}{% for l in c.links %}<a class="course-btn" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
       </div>
       <dl class="course-facts">
         <div class="course-fact course-instructor">

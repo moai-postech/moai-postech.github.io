@@ -50,7 +50,7 @@
   blurb: "Reasoning should rest on more than text: on evidence, abstraction, and relations."
   topics:
     - name: "Reasoning & Agents"
-      summary: "Cognitive priors for thinking that knows what it knows."
+      summary: "Cognitive priors for minds that know what they know."
       papers:
         - { short: "LoC", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.21318" }
         - { short: "TEG", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.05060" }

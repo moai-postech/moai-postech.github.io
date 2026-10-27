@@ -347,3 +347,13 @@
 - GOLD 를 Learning in the Wild 로: 조건부 GAN 샘플의 품질을 가려내는 논문이라 불완전한 데이터와 거리가 있다.
 - 설명을 "generative AI" 로 못박기: 분류기 편향을 찾는 B2T 가 빠진다.
 - FreezeD 를 Learning in the Wild 에 두기(27차): 설명에 what it makes 가 들어가 Reliable AI 가 더 자연스럽고, Learning in the Wild 가 CSI 로 시작하는 편이 낫다(교수).
+
+## 30차: 최종 점검(Claude + GPT Astra), Cognitive 문장 (2026-10-27)
+- 교수: "꼼꼼한 최종 검토 해줘. GPT astra도 호출해서 같이 검토." Astra(gpt-6-astra, medium, 읽기 전용)에게 교수가 정한 원칙만 주고 독립 검토를 맡겼다. 두 검토 모두 37편 누락·중복 없음, 구조 자연스러움.
+- Reasoning & Agents "Cognitive priors for minds that know what they know."(Astra 지적: thinking 이 안다는 의인화가 어색하다)
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(30차)
+- Astra 의 FreezeD 를 Learning in the Wild 로: 29차에 교수가 정한 대로 what it makes 가 FreezeD 를 덮고 Learning in the Wild 는 CSI 로 시작한다.
+- Astra 의 "agents that know what they know": 카드 이름 Reasoning & Agents 와 겹친다.
+- see(Perception 안 세 번), people(세 번), Reliable AI 와 설명의 AI 반복: 단계를 잇는 말이라 그대로 둔다.

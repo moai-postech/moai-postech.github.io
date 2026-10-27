@@ -222,7 +222,7 @@ related:
     url: "teaching/25f-data-engineering/"
   - title: "Foundation Models Overview"
     source: "Slides"
-    url: "https://drive.google.com/file/d/1OkBi2m-ZotIL5VCgjunXWFQNl6umM9Op/view"
+    url: "assets/talks/2025-foundation-models-for-vision-language-and-robotics.pdf"
 
 exams:
   - label: "Midterm 2026"

@@ -37,7 +37,7 @@
         - { short: "MASKER", venue: "AAAI'21", url: "https://arxiv.org/abs/2012.09392" }
         - { short: "CSI", venue: "NeurIPS'20", url: "https://arxiv.org/abs/2007.08176" }
     - name: "Reliable Generation"
-      summary: "Alignment priors for fair and faithful generation."
+      summary: "Social priors for fair and faithful generation."
       papers:
         - { short: "StayFair", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2605.28036" }
         - { short: "PRIS", venue: "CVPR'26", url: "https://arxiv.org/abs/2512.03534" }
@@ -50,7 +50,7 @@
   blurb: "Reasoning should follow how knowledge is built, from evidence, abstraction, and relations, not from patterns in text alone."
   topics:
     - name: "Reasoning & Agents"
-      summary: "Evidence priors that ground reasoning and catch its errors."
+      summary: "Cognitive priors that ground reasoning and catch its errors."
       papers:
         - { short: "LoC", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.21318" }
         - { short: "TEG", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.05060" }
@@ -58,7 +58,7 @@
         - { short: "Idis", venue: "EMNLP'26", url: "https://arxiv.org/abs/2511.21397" }
         - { short: "SuRe", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.13081" }
     - name: "Efficient LLMs"
-      summary: "Sparsity priors for less compute and longer context."
+      summary: "Architectural priors for less compute and longer context."
       papers:
         - { short: "Simba", venue: "TMLR'25", url: "https://arxiv.org/abs/2505.20698" }
         - { short: "HOMER", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.10308" }

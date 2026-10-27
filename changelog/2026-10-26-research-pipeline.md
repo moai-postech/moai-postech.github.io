@@ -306,3 +306,13 @@
 - 설명을 generation 그대로 두기: 이름을 넓힌 뜻이 다시 좁아진다.
 - MASKER 도 옮기기: 제목에 Reliable 이 있지만 CSI 와 같은 novelty detection 이라 Learning in the Wild 의 novel data 에 맞는다.
 - FreezeD 를 Learning in the Wild 로: 적은 데이터 GAN fine-tuning 이지만 GOLD, PRIS 와 faithful generation 쪽에 두는 편이 균형이 맞는다.
+
+## 26차: 주제 설명의 for 뒤를 넓고 철학적으로 (2026-10-27)
+- 교수: "xx priors for yyy 돼있자나? 여기서 yyy가 내가 한 연구들만 너무 좁게 커버하는거 같은데 좀 더 넓게 철학적으로 써도 돼."
+- Structural "for seeing how the world is put together", Statistical "for learning from an imperfect, open-ended world", Social "for AI that people can trust", Cognitive "for reasoning that knows what it knows", Algorithmic "for doing more with less", Symbolic "for knowledge that lives in rules and relations", Behavioral "for robots that understand the people they serve", Sensory "for robots that perceive with every sense".
+- `_data/research.yml` 머리 주석에 for 뒤는 논문보다 넓게 지향을 쓴다고 적었다.
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(26차)
+- 24·25차의 for 뒤(objects, parts, and motion / imperfect data / fair and faithful models / grounded, self-correcting reasoning / leaner models and longer context / logic, graphs, tables, and time series / adapt to each person / feel, not just see): 지금 논문만 좁게 덮는다(교수).
+- Symbolic "for knowledge that lives beyond text": Reasoning 분야 설명 "more than text" 와 겹친다.

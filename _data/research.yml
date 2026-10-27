@@ -58,7 +58,7 @@
         - { short: "Idis", venue: "EMNLP'26", url: "https://arxiv.org/abs/2511.21397" }
         - { short: "SuRe", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.13081" }
     - name: "Efficient LLMs"
-      summary: "Architectural priors for less compute and longer context."
+      summary: "Computational priors for leaner models and longer context."
       papers:
         - { short: "Simba", venue: "TMLR'25", url: "https://arxiv.org/abs/2505.20698" }
         - { short: "HOMER", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.10308" }
@@ -76,7 +76,7 @@
   blurb: "Action should begin with people and the physical world: what each person wants, and what a body can sense."
   topics:
     - name: "VLA & World Models"
-      summary: "Human priors that adapt robot policies to each person."
+      summary: "Behavioral priors that adapt robot policies to each person."
       papers:
         - { short: "INDI", venue: "arXiv'26", url: "https://arxiv.org/abs/2608.23478" }
         - { short: "VAP", venue: "ICML'26", url: "https://arxiv.org/abs/2512.20014" }

@@ -254,3 +254,14 @@
 - Value, Knowledge, Simplicity: 교수 "다 별로".
 - Reasoning 의 Logical(Structured Data 의 logic 과 겹침), Grounding(뒤 구절 ground 와 반복). Efficient 의 Computational(흐림). Generation 의 Fairness(뒤 fair 와 겹침), Semantic(fair 를 덜 덮음). 교수가 고르지 않았다.
 - 검토만 하고 후보로 내지 않은 것: Ethical(무거움), Trust(prior 보다 결과), Epistemic(전문 용어), Efficiency(주제 이름 반복).
+
+## 22차: prior 이름의 층위 맞추기, Computational·Behavioral (2026-10-27)
+- 교수: "전부 같은 레벨의 충분히 큰 이름들이야?" 점검: Architectural 은 세상이 아니라 모델 설계에 대한 지식이라 축이 다르고 작다. Human 은 Social·Cognitive 를 덮는 상위 이름이다. Relational 은 Structural 의 하위다.
+- 교수가 "computational, behavior는 좋은데" 로 골랐다. Efficient LLMs "Computational priors for leaner models and longer context."(뒤에 compute 가 겹치지 않게 leaner models), VLA & World Models "Behavioral priors that adapt robot policies to each person."(cognitive, social, behavioral 이 같은 층위)
+- Structured Data 의 Relational 은 교수 답을 기다려 아직 그대로다.
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(22차)
+- Architectural(21차): 모델 설계에 대한 이름이라 다른 이름과 층위가 다르다.
+- Human(20차): Social·Cognitive 를 덮는 상위 이름이라 층위가 다르다.
+- Structured Data 를 Symbolic 으로: 교수 "음.. 저거보다 더 넓은건 없나?"

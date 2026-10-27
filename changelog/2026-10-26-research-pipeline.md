@@ -225,3 +225,14 @@
 ### 기각한 안과 이유(18차)
 - 16차의 세 주제 동명사 나열: 맥락이 없다(교수).
 - 단계마다 데이터만으로 부족한 문제를 말하고 카드가 답하는 꼴("Images show pixels, not the objects behind them, and real-world data is rarely clean or fair." 등): 이 세션에서 먼저 썼으나 여전히 지금 논문에 맞춘 문제라 작다. 교수는 논문이 작은 일부가 되는 큰 철학을 원했다.
+
+## 19차: prior 이름을 모두 한 단어로 (2026-10-27)
+- 교수: "User and intent priors" 를 줄이고, "xx and yy prior 대신 전부 xx prior로 한글자로 정리하자."
+- Reliable Generation "Alignment priors for fair and faithful generation."(fairness 는 뒤 구절로), Efficient LLMs "Sparsity priors for less compute and longer context.", VLA & World Models "Intent priors that adapt robot policies to each person." 나머지 다섯은 이미 한 단어다.
+- `_data/research.yml` 머리 주석에 한 단어 규칙을 적었다.
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(19차)
+- 두 단어 prior(Fairness and alignment, Sparsity and hierarchy, User and intent): 여덟 카드의 꼴이 어긋난다(교수).
+- Reliable Generation 을 "Fairness priors" 로: 주제에 정렬(PRIS, GOLD 등)이 더 넓다. fairness 는 뒤 구절 "fair and faithful" 에 남겼다.
+- Efficient LLMs 를 "Hierarchy priors" 로: 칩 넷 중 셋(Simba, LAMP, LAP)이 sparsity 쪽이다.

@@ -2,7 +2,7 @@
 # stage 는 Perception → Reasoning → Action 중 이 분야가 맡는 단계.
 # 페이지는 단계를 앞에, 분야 이름을 그 아래에 둔다. 단계에 한 가지 구조(예: objects)를 붙이지 않는다. 주제 전체를 담지 못한다.
 # 소개의 scalable priors 와 잇는다(교수 2026-10-26): blurb 는 그 단계의 큰 철학을 말한다. 카드의 논문은 그 철학의 작은 일부라 blurb 에 나열하지 않는다(교수 2026-10-27),
-# summary 는 "<종류> priors <for|on|that> ..." 꼴로 그 주제가 넣는 prior 를 이름 붙인다(Learning in the Wild 는 교수의 원래 표현 statistical prior).
+# summary 는 한 단어 "<종류> priors <for|on|that> ..." 꼴로 그 주제가 넣는 prior 를 이름 붙인다(Learning in the Wild 는 교수의 원래 표현 statistical prior).
 # 앞으로 할 방향(tables, multisensory)도 담아도 된다.
 # icon 은 assets/img/icons/<icon>.png. 주제마다 summary(문장 하나, 대문자로 시작, 마침표)와 papers(약칭, venue, url).
 # venue 는 `학회'연도` 꼴(AGENTS.md 표기 규칙). 교수의 논문은 시기와 무관하게 모두 MOAI Lab 논문이다. 랩 시작 전후로 나누지 않는다.
@@ -37,7 +37,7 @@
         - { short: "MASKER", venue: "AAAI'21", url: "https://arxiv.org/abs/2012.09392" }
         - { short: "CSI", venue: "NeurIPS'20", url: "https://arxiv.org/abs/2007.08176" }
     - name: "Reliable Generation"
-      summary: "Fairness and alignment priors for faithful generation."
+      summary: "Alignment priors for fair and faithful generation."
       papers:
         - { short: "StayFair", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2605.28036" }
         - { short: "PRIS", venue: "CVPR'26", url: "https://arxiv.org/abs/2512.03534" }
@@ -58,7 +58,7 @@
         - { short: "Idis", venue: "EMNLP'26", url: "https://arxiv.org/abs/2511.21397" }
         - { short: "SuRe", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.13081" }
     - name: "Efficient LLMs"
-      summary: "Sparsity and hierarchy priors for less compute and longer context."
+      summary: "Sparsity priors for less compute and longer context."
       papers:
         - { short: "Simba", venue: "TMLR'25", url: "https://arxiv.org/abs/2505.20698" }
         - { short: "HOMER", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.10308" }
@@ -76,7 +76,7 @@
   blurb: "Action should begin with people and the physical world: what each person wants, and what a body can sense."
   topics:
     - name: "VLA & World Models"
-      summary: "User and intent priors that adapt robot policies to each person."
+      summary: "Intent priors that adapt robot policies to each person."
       papers:
         - { short: "INDI", venue: "arXiv'26", url: "https://arxiv.org/abs/2608.23478" }
         - { short: "VAP", venue: "ICML'26", url: "https://arxiv.org/abs/2512.20014" }

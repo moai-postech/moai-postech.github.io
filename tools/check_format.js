@@ -5,32 +5,15 @@
 //   node tools/check_format.js            # 1280px 와 390px 에서 검사
 //
 // Playwright 가 있어야 한다(npm i playwright, 또는 이미 설치된 환경). GitHub Actions 의 format 워크플로가 push 마다 돌린다.
-const http = require('http');
 const fs = require('fs');
-const path = require('path');
 const { chromium } = require('playwright');
+const { SITE, serve } = require('./lib/site');
 
-const SITE = path.join(__dirname, '..', '_site');
 // 검사할 페이지. 연구실 사이트의 모든 메뉴 페이지와 News 보관 페이지
 const PAGES = ['index', 'research', 'seminar', 'funding', 'publications', 'landscape',
   'faculty', 'students', 'mentees', 'teaching', 'talks', 'contact', 'news'];
 const WIDTHS = [1280, 390];
 const TOL = 2; // px
-
-const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml',
-  '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.json': 'application/json' };
-function serve() {
-  return new Promise(resolve => {
-    const srv = http.createServer((req, res) => {
-      let p = decodeURIComponent(req.url.split('?')[0]);
-      if (p.endsWith('/')) p += 'index.html';
-      const f = path.join(SITE, p);
-      if (!f.startsWith(SITE) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404); return res.end(); }
-      res.writeHead(200, { 'Content-Type': TYPES[path.extname(f)] || 'application/octet-stream' });
-      fs.createReadStream(f).pipe(res);
-    }).listen(0, () => resolve(srv));
-  });
-}
 
 // 브라우저 안에서 도는 측정. 제목 역할은 글자 크기로 가른다:
 // --text-h2(한 절인 제목), --text-group(목록을 묶는 제목), 그 밖(카드 제목, 작은 머리)은 크기 검사만.

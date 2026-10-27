@@ -1,10 +1,11 @@
 {% comment %}
   페이지 front matter 의 sections 한 칸을 그린다.
   type 이 없으면 title + body(마크다운) 절이고, type 이 있으면 sections/<type>.html 이 그린다.
+  class 가 있으면 절에 붙인다(예: section-callout, 바로 위 절에 붙는 알림 띠).
 {% endcomment %}
 {% assign s = include.section %}
 {% if s.type %}{% include sections/{{ s.type }}.html section=s %}{% else %}
-    <section class="content-section">
+    <section class="content-section{% if s.class %} {{ s.class }}{% endif %}">
     {% if s.title %}<h2{% if s.id %} id="{{ s.id }}"{% endif %}>{{ s.title }}</h2>{% endif %}
     <div class="section-body">
     {{ s.body | markdownify }}

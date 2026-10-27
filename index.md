@@ -14,10 +14,10 @@ sections:
     image_alt: "Vision, language, and sensor inputs flow into MOAI, which drives agents, robots, and manufacturing."
   - title: "Our focus in 2026"
     type: focus
-  # 연구 방향 다음에 모집 한 줄. 절을 닫는 안내 줄(.section-next)이라 Research 의 Full publication list 와 같은 모양(2026-10-27 교수)
-  - body: |
-      We are always looking for motivated students to [join us](contact.html#join).
-      {: .section-next}
+  # 연구 방향 바로 아래 모집 알림 띠(section-callout). 다른 연구실의 "We are hiring!" 공지 모양(2026-10-27 교수)
+  - class: section-callout
+    body: |
+      **We are hiring!** We are always looking for motivated students to join our team. [See how to apply →](contact.html#join)
   # News: 지금은 전부 보인다. 많아지면 limit: 8 처럼 개수를 정하면 그 아래에 "All news →"(news.html) 링크가 생긴다
   - title: "News"
     type: news

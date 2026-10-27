@@ -58,6 +58,22 @@
   font-synthesis: none;
 }
 
+/* Dark mode: follows the visitor's system setting. Only the role colours change; POSTECH Red is lifted
+   to a lighter crimson because #a61955 reads at 2.4:1 on the dark page (text needs 4.5:1). */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1a26;
+    --surface: #172b40;      /* the light theme's ink, so the two themes share one navy */
+    --text: #e6ebf1;         /* 14.6:1 on --bg */
+    --muted: #a3adb9;        /* 7.7:1 */
+    --line: #2a3c50;
+    --accent: #e5689b;       /* 5.7:1 on --bg, 4.7:1 on --surface */
+    --accent-soft: #3a1d2e;
+    color-scheme: dark;
+  }
+  img[src*="/icons/"] { filter: invert(1) hue-rotate(180deg); }  /* grey line icons drawn for white: flip lightness, keep hue */
+}
+
 /* Base */
 * { box-sizing: border-box; }
 html { scrollbar-gutter: stable; }  /* the scrollbar keeps its place, so a page never shifts sideways when a tab makes it shorter or longer */

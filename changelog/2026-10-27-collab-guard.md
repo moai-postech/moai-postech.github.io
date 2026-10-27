@@ -24,14 +24,19 @@ POSTECH 요구사항: P1~P9 확인. 요구사항을 바꾸지 않았고, `_confi
 
 - 4차(같은 날): 저장소 주인 `moai-postech` 는 조직이 아니라 개인 계정이라 `sangwoomo` 에게 관리자 권한을 줄 수 없다(개인 계정 저장소의 협업자는 쓰기까지). 교수는 이 저장소에 push 할 때 관리자 계정 `moai-postech` 를 쓰기로 하고, `tools/maintainers.txt` 의 한 줄에 적힌 계정·ID 는 어느 것으로 push 해도 같은 교수로 보도록 `check_changelog.py` 를 고쳤다(두 계정 모두 시험).
 
+- 5차(같은 날): 교수 결정으로 사이트 저장소는 `moai-postech` 에 남긴다(사이트 주소 `moai-postech.github.io` 를 지키는 것이 이 계정의 존재 이유). `research` 는 `MOAI-Lab-POSTECH` 조직으로, `llm-wiki` 는 `sangwoomo` 비공개로 옮긴다(교수가 한 번 실행). 개인 계정 저장소라 `sangwoomo` 를 관리자로 둘 수 없으므로 브랜치 보호를 "모두 PR, 검사 통과 시 auto-merge, 승인 필수 아님, bypass 는 저장소 주인과 GitHub Actions 만" 으로 바꿨다(`tools/setup_main_ruleset.sh` 가 auto-merge 와 merge 후 브랜치 삭제도 켠다). Claude 앱 bypass 는 뺐다(구성원의 Claude 도 같은 앱이라 bypass 하면 검사를 건너뛴다). 앱이 연 PR 은 changelog 작성자 ID 로 교수를 알아보게 `check_changelog.py` 를 고쳤다. `AGENTS.md` 고치는 절차 7·8단계를 PR·auto-merge 로 바꿨다.
+
 ## 기각한 안과 이유
 - 파일 단위로 막기(다른 사람이 30일 안에 고친 파일은 손대지 못함): `theme.css`, `members.yml` 처럼 모두가 고치는 파일은 늘 막힌다. 줄 단위로 좁혔다.
 - 커밋 작성자(git author)로 주인 판단: 에이전트 커밋은 작성자가 "Claude" 라 사람을 가리지 못한다. changelog 회차의 작성자 ID 를 쓰고 Actions 에서 push 계정과 맞춘다.
+- 사이트 저장소를 조직으로 옮기기(이름 `moai-lab-postech.github.io`): 교수 결정으로 기각. 사이트 주소 `moai-postech.github.io` 를 유지한다.
+- 승인 1개 필수: 교수 본인 PR 을 승인할 사람이 없어 막힌다. 검사 통과만 조건으로 둔다.
+- Claude 앱을 bypass 에 넣기: 구성원이 쓰는 Claude 도 같은 앱이라 검사를 건너뛸 길이 생긴다.
 - 교수 수정도 똑같이 막기: 결정 권한이 교수에게 있어 막으면 결정을 반영할 길이 없다. 알림만 낸다.
 - `moai-postech` 를 조직으로 바꾸고 `sangwoomo` 를 owner 로: 되돌릴 수 없고 `moai-postech` 로그인이 사라져 연결된 서비스에 영향이 있을 수 있다. 교수가 관리자 계정으로 push 하는 쪽을 골랐다.
 - 요구사항을 `AGENTS.md` 안에만 두기: 교수가 따로 박아 두길 원했고, 외부 요구사항은 출처와 함께 한 파일로 보는 편이 검토하기 쉽다. `AGENTS.md` 는 요약과 링크만 둔다.
 
 ## 남은 것
-- 교수가 `bash tools/setup_main_ruleset.sh` 를 한 번 돌린다.
+- 교수가 `moai-postech` 계정으로 한 번: `research`·`llm-wiki` 이전, `bash tools/setup_main_ruleset.sh`.
 - 교수가 claude.ai 루틴 화면에서 `lab-site-sync` 를 지운다.
 - 구성원의 GitHub 계정이 정해지면 changelog 작성자 ID 를 그 계정으로 쓰도록 안내한다.

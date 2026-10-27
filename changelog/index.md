@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [sticky-header](2026-10-27-sticky-header.md) | Sangwoo Mo(moai-postech) | 테마 머리글 | 컴퓨터(961px 이상)에서 머리글 고정 |
 | 2026-10-27 | [media-source-inline](2026-10-27-media-source-inline.md) | Sangwoo Mo(moai-postech) | Home Media, AGENTS.md | 매체 이름을 제목 뒤 쉼표로 |
 | 2026-10-27 | [course-renumber-lec12](2026-10-27-course-renumber-lec12.md) | Sangwoo Mo(moai-postech) | `_data/courses/26f-data-engineering.yml`, `teaching/26f-data-engineering/slides/` | 26F Data Engineering: 12강 Midterm Review 신설, Big Data 13~15강·Part III 16~19강으로 번호 이동 |
 | 2026-10-27 | [venue-badge-size](2026-10-27-venue-badge-size.md) | Sangwoo Mo(moai-postech) | 테마, Home | venue 배지 한 단계 크게, 히어로-사진 간격 32px, top AI venues |

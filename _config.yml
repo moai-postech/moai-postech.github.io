@@ -67,6 +67,7 @@ kramdown:
 
 exclude:
   - AGENTS.md
+  - POSTECH.md
   - CLAUDE.md
   - GEMINI.md
   - README.md
@@ -76,3 +77,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - node_modules

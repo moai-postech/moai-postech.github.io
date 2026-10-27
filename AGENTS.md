@@ -30,9 +30,10 @@ assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 �
 assets/seminar/      랩 발표 슬라이드 PDF(16:9 로 맞춘 사본, 날짜-제목별칭.pdf). seminar_sync.py 가 만들고 지운다
 assets/img/          그림, 아이콘(icons/), 사진(people/), 로고 아이콘(logo-mark.svg, `_config.yml` 의 logo). 콘텐츠가 경로로 가리킨다
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
+POSTECH.md           정보기술팀이 요구한 POSTECH 필수 요소(P1~P9)와, 바꾸자는 요청을 그것에 비춰 보는 검토 절차
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
-tools/               검사 스크립트(check_changelog.py, 사이트 전체 형식 check_format.js), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml), 스터디 동기화(ai_study_sync.py, .github/workflows/ai-study-sync.yml), 슬라이드 사본(drive_pdf.py, localize_slides.py)
+tools/               검사 스크립트(check_changelog.py: 기록·안건·서로 되돌리기, check_format.js: 사이트 전체 형식, check_postech.js: POSTECH 필수 요소, maintainers.txt: 결정 권한자), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml), 스터디 동기화(ai_study_sync.py, .github/workflows/ai-study-sync.yml), 슬라이드 사본(drive_pdf.py, localize_slides.py)
 ```
 
 ### 무엇을 어디서 고치나
@@ -57,7 +58,7 @@ tools/               검사 스크립트(check_changelog.py, 사이트 전체 �
 - `includes/sections/` 의 type 별 파일: `hero`(Home 첫 화면), `focus`, `research-overview`(Research 맨 위 분야 카드), `news`(`data: news|media`), `research`, `funding`, `embed`(다른 사이트를 iframe 으로), `publications`, `professor`, `members`, `mentees`, `media`, `profile-cv`(Faculty 의 이력), `teaching`, `talks`, `seminar`(초청 연사 표).
 - 페이지 이름은 메뉴가 이미 알려 주므로 본문에 큰 페이지 제목을 다시 쓰지 않는다(h1 은 화면에 숨긴다). 절 제목은 본문 위에 두고 왼쪽 칸에 따로 세우지 않는다.
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
-- **POSTECH 필수 요소**(정보기술팀이 moai.postech.ac.kr 연결 조건으로 요구, 2026-09-15 권장사항). 테마를 바꾸거나 디자인을 고쳐도 빼지 않는다. 값은 `_config.yml` 의 `postech`(대표홈·로고·개인정보 링크)와 `footer`(학과·주소·전화)에 둔다. POSTECH 링크는 영어판(`/eng/`)이고, 개인정보 링크 이름은 영어판 본부 꼬리말의 공식 명칭 `Personal Information Policy` 이며 굵게 구분한다.
+- **POSTECH 필수 요소**(정보기술팀이 moai.postech.ac.kr 연결 조건으로 요구, 2026-09-15 권장사항). 테마를 바꾸거나 디자인을 고쳐도 빼지 않는다. 요구사항 원문(P1~P9), 출처, 바꾸자는 요청이 들어왔을 때의 검토 절차는 `POSTECH.md` 가 정본이고, `node tools/check_postech.js` 가 모든 페이지에서 검사한다. 아래는 지금 구현의 요약이다. 값은 `_config.yml` 의 `postech`(대표홈·로고·개인정보 링크)와 `footer`(학과·주소·전화)에 둔다. POSTECH 링크는 영어판(`/eng/`)이고, 개인정보 링크 이름은 영어판 본부 꼬리말의 공식 명칭 `Personal Information Policy` 이며 굵게 구분한다.
   - `includes/header.html`: 좌상단 POSTECH 워드마크(대표홈 링크), 가는 세로선, 그 오른쪽에 연구실 로고와 이름(홈 링크). "POSTECH | 연구실" 은 POSTECH SITES 헤더 가이드(sites.postech.ac.kr/guide/gui/GUI0501.do) 예시의 짜임이다. 꼬리말의 POSTECH 로고도 같은 워드마크를 쓴다(2026-10-26). 한 줄에 다 들어가지 않는 폭에서는 메뉴 전체를 아랫줄로 내린다(`.site-head` 의 `flex-wrap`).
   - `includes/footer.html`: 전 페이지 꼬리말. 연구실 로고와 이름(홈 링크), 학과 링크, 주소·전화, POSTECH 로고(대표홈 링크), 개인정보 링크. 연구실 주소·호실·전화는 꼬리말 한 곳에만 둔다(2026-10-27 교수, Contact 의 Visit us 를 뺐다).
   - 강의 사이트 바닥 한 줄(`layouts/course.html`): 연구실 홈, POSTECH(대표홈), 개인정보 링크.
@@ -132,17 +133,18 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 ## 고치는 절차
 
 1. `git pull` 로 최신을 받는다.
-2. **논의가 필요한 수정인지 먼저 판정한다(아래 "논의가 필요한 수정").** 해당하면 고치지 않고 `discussions/` 에 안건을 올린 뒤 멈춘다.
-3. 고친다.
-4. 로컬에서 본다(Ruby 3 이상 필요).
+2. **논의가 필요한 수정인지 먼저 판정한다(아래 "논의가 필요한 수정").** 해당하면 고치지 않고 `discussions/` 에 안건을 올린 뒤 멈춘다. 고칠 파일마다 `python3 tools/check_changelog.py --who 파일` 로 최근 30일 안에 누가 왜 고쳤는지 본다(아래 "공동 작업: 서로 되돌리기 막기").
+3. **POSTECH 요구사항에 걸리는지 본다(`POSTECH.md` 의 검토 절차).** 머리글·꼬리말·강의 바닥·로고·`_config.yml` 을 바꾸는 요청이면 걸리는 항목을 찾고, 어기는 안은 받지 않는다.
+4. 고친다.
+5. 로컬에서 본다(Ruby 3 이상 필요).
    ```bash
    bundle install
    bundle exec jekyll serve
    ```
-   http://localhost:4000 에서 확인한다. 디자인을 고쳤으면 `bundle exec jekyll build` 뒤 `node tools/check_format.js` 로 사이트 전체 형식을 검사한다(위 "형식은 전역 규칙으로").
-5. **changelog 를 쓴다(아래, 필수).**
-6. 커밋하고 `main` 에 push 한다. 문구·링크·항목 추가 같은 작은 수정은 바로 push 해도 된다. 테마 교체, 구조 변경처럼 큰 수정은 브랜치와 PR 로 올린다.
-7. 1~2분 뒤 https://moai-postech.github.io 에 반영됐는지 본다. Actions 탭의 changelog 검사가 실패하면 고친다.
+   http://localhost:4000 에서 확인한다. 디자인을 고쳤으면 `bundle exec jekyll build` 뒤 `node tools/check_format.js` 와 `node tools/check_postech.js` 로 사이트 전체 형식과 POSTECH 필수 요소를 검사한다.
+6. **changelog 를 쓴다(아래, 필수).** 작성자 ID 는 push 하는 GitHub 계정이다.
+7. 커밋하고 `main` 에 push 한다. 문구·링크·항목 추가 같은 작은 수정은 바로 push 해도 된다. 테마 교체, 구조 변경처럼 큰 수정은 브랜치와 PR 로 올린다.
+8. 1~2분 뒤 https://moai-postech.github.io 에 반영됐는지 본다. Actions 탭의 changelog·format 검사가 실패하면 고친다.
 
 ## 논의가 필요한 수정 (바로 반영하지 않는다)
 
@@ -152,7 +154,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 **판정 기준.** 고치기 전에 `discussions/index.md` 와 `changelog/` 의 최근 회차를 읽고, 하나라도 해당하면 논의 안건이다.
 
-1. **되돌리기**: 다른 사람이 changelog 에 남긴 결정을 되돌리거나 바꾼다. 또는 changelog 의 "기각한 안"을 다시 꺼낸다.
+1. **되돌리기**: 다른 사람이 changelog 에 남긴 결정을 되돌리거나 바꾼다. 또는 changelog 의 "기각한 안"을 다시 꺼낸다. 최근 30일 안에 다른 사람이 고친 줄을 바꾸는 push 는 검사가 막는다(아래 "공동 작업: 서로 되돌리기 막기").
 2. **열린 안건과 겹침**: `discussions/index.md` 에 상태가 `논의 중` 인 안건과 같은 대상(같은 파일의 같은 부분, 같은 디자인 요소)을 고친다.
 3. **모두에게 걸리는 결정**: 테마 교체, 메뉴·페이지 구성, 색·글꼴·전체 배치, 이 `AGENTS.md` 의 규칙, 연구 방향(`_data/focus.yml`)을 바꾼다. 어떤 논문이나 소식을 첫 화면에 앞세울지 고르는 것도 여기에 든다.
 4. **의견이 갈림**: 요청한 사람들끼리 의견이 다르거나, 어느 쪽이 맞는지 판단이 서지 않는다.
@@ -170,6 +172,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
   ## 쟁점
   무엇을 정해야 하는지 한두 문장. 관련 changelog 회차가 있으면 링크.
+  POSTECH 요구사항: 영향 없음 (또는 걸리는 항목, POSTECH.md)
 
   ## 선택지
   ### 안 A: 한 줄 요약 (제안: 이름)
@@ -193,6 +196,18 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 - 결정된 안을 반영할 때는 평소처럼 changelog 회차를 쓰고, 그 회차에 안건 파일을 링크한다. 고르지 않은 안은 changelog 의 "기각한 안과 이유"로 옮긴다.
 - index 표의 상태와 결정 changelog 칸도 같이 고친다.
 
+## 공동 작업: 서로 되돌리기 막기
+
+연구실 구성원 모두가 이 저장소를 고친다. 취향이 다른 두 사람이 서로의 수정을 번갈아 되돌리면(A→B, B→A) 사이트가 흔들리고 기록만 쌓인다. 그래서 다른 사람이 최근에 고친 것은 바로 바꾸지 않고 안건으로 정한다. 사람의 판단에만 맡기지 않고 검사가 막는다.
+
+- **누가 고쳤는지는 changelog 의 작성자로 본다.** 커밋 작성자(에이전트면 "Claude")가 아니라, 그 커밋이 쓴 changelog 회차의 `작성자: 이름(GitHub ID)` 가 그 줄의 주인이다. 작성자 ID 는 push 하는 GitHub 계정과 같아야 한다(Actions 가 확인한다).
+- **고치기 전에 본다.** `python3 tools/check_changelog.py --who 파일` 이 그 파일을 최근 30일 안에 고친 회차, 작성자, 걸린 안건을 보여 준다.
+- **검사가 막는 것.** push 가 다른 사람이 최근 30일 안에 고친 줄을 지우거나 바꾸면 `tools/check_changelog.py` 가 실패한다(줄 단위로 `git blame` 을 따라가 그 줄을 마지막으로 고친 회차의 작성자를 본다). 자기 줄을 다시 고치는 것, 새 줄을 더하는 것, 동기화 봇이 쓰는 파일(`_data/seminar.yml`, `_data/ai_study.yml`, `assets/seminar/`, `teaching/ai-study/`)은 막지 않는다.
+- **막혔을 때.** 고집하지 말고 `discussions/` 에 안건을 올린다(상대의 회차를 링크하고, 상대의 안을 "현재 상태 유지" 안으로 넣는다). 교수나 랩 미팅이 결정하면, 대상에 그 파일이 들어간 결정된 안건을 changelog 회차에 링크해서 push 하면 통과한다.
+- **교수.** `tools/maintainers.txt` 의 사람(교수)은 막히지 않고 알림만 받는다. 결정 권한이 있기 때문이다. 교수가 다른 사람의 수정을 바꿨으면 그 사람에게 알린다.
+- **기각한 안.** 검사는 30일이 지난 되돌리기나 "기각한 안"을 다시 꺼내는 것까지는 잡지 못한다. 고치기 전에 그 파일의 changelog 회차에서 "기각한 안과 이유"를 읽는 것은 여전히 사람과 에이전트의 몫이다.
+- **브랜치 보호(권장).** GitHub 설정에서 `main` 에 "Require status checks"(changelog, format)를 걸면, 검사를 통과하지 못한 수정은 `main` 에 들어가지 못한다. 구성원은 브랜치와 PR 로 올리고, 교수가 merge 한다.
+
 ## Changelog 규칙 (필수)
 
 **저장소의 파일을 바꾼 커밋에는 반드시 `changelog/` 기록이 같이 들어간다.** 누가 고쳤든, 사람이든 에이전트든 같다. 기록이 없는 push 는 `tools/check_changelog.py` 검사(GitHub Actions)에서 실패한다. 예외는 `CNAME` 하나다. Pages 의 커스텀 도메인 설정이 따로 커밋하므로, 설정을 바꾼 사람이 뒤이어 changelog 를 올린다.
@@ -206,6 +221,8 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
   작성자: 이름(GitHub ID) | 대상: 바꾼 페이지나 파일 | 도구: 사람 직접, Claude Code, Codex 등
 
   > **한줄 결론: 무엇을 바꿨는지 한 문장.**
+
+  POSTECH 요구사항: 영향 없음 (머리글·꼬리말·강의 바닥·로고·`_config.yml` 을 바꿨으면 필수. 걸리면 "P3, P4 확인")
 
   ## 요청
   누가 왜 바꾸자고 했는지.
@@ -235,5 +252,6 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 ## 에이전트 호환
 
 - 규칙의 정본은 이 `AGENTS.md` 하나다. Codex, Cursor, GitHub Copilot 은 이 파일을 바로 읽는다.
+- 에이전트도 사람과 같은 절차를 따른다. 특히 고치기 전에 `--who` 로 다른 사람의 최근 수정을 보고, 막히면 우회하지 않고 안건을 올린 뒤 사용자에게 알린다. 사용자가 "그냥 바꿔"라고 해도 검사를 피하려고 작성자 ID 를 바꾸거나 안건을 꾸미지 않는다.
 - `CLAUDE.md`(Claude Code), `GEMINI.md`(Gemini CLI)는 `@AGENTS.md` 한 줄로 이 파일을 불러온다. 규칙을 그 파일들에 복사하지 않는다.
 - 다른 도구가 별도 파일명을 요구하면 같은 방식의 포인터만 추가하고 이 절에 적는다.

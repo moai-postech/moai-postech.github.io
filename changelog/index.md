@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [teaching-sections](2026-10-27-teaching-sections.md) | Sangwoo Mo(moai-postech) | Teaching | Courses 에 Regular courses 절 제목, Study group 과 대등하게 |
 | 2026-10-27 | [home-recruiting](2026-10-27-home-recruiting.md) | Sangwoo Mo(moai-postech) | Home | 첫 화면 hero 에 인턴 모집 한 줄과 Join us 링크 |
 | 2026-10-27 | [contact-structure](2026-10-27-contact-structure.md) | Sangwoo Mo(moai-postech) | Contact, AGENTS.md | Visit us 를 빼고 Join us 하나로, 주소·전화는 꼬리말에만 |
 | 2026-10-27 | [contact-join-emphasis](2026-10-27-contact-join-emphasis.md) | Sangwoo Mo(moai-postech) | Contact | Join us 에서 학부 인턴 모집과 지원 전 연락을 굵게 강조 |

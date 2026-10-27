@@ -150,6 +150,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-table td { overflow-wrap: anywhere; }
 .study-table .cs-n { text-align: left; }
 .study-table .cs-slides { width: auto; white-space: normal; }
+.study-table .cs-slides a { display: inline-block; white-space: nowrap; }  /* the cell may wrap between links, never inside one ("Slides 2" stays on one line) */
 .st-links a, .st-links span { display: inline-block; margin-right: var(--space-3); font-size: var(--text-meta); }
 .st-links a { color: var(--text); }
 .st-links a:hover { color: var(--accent); }

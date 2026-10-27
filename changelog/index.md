@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [media-title](2026-10-27-media-title.md) | Sangwoo Mo(moai-postech) | Home | Media coverage 절 제목을 Media 로 |
 | 2026-10-27 | [collab-guard](2026-10-27-collab-guard.md) | Sangwoo Mo(moai-postech) | tools, POSTECH.md, AGENTS.md | 서로 되돌리기 검사, POSTECH 요구사항 문서와 자동 검사 |
 | 2026-10-27 | [site-review](2026-10-27-site-review.md) | Sangwoo Mo(moai-postech) | 사이트 전체 | 전체 점검, 스터디 자료 줄바꿈·AGENTS 강조 링크 목록 수정, 26S Related 삭제 |
 | 2026-10-27 | [bold-keywords](2026-10-27-bold-keywords.md) | Sangwoo Mo(moai-postech) | Contact, Home, AGENTS.md | 문단 안 굵게는 짧은 핵심어만(전역 규칙), Join us·hero 에 적용 |

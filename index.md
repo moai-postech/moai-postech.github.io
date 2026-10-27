@@ -11,7 +11,7 @@ sections:
     body: |
       We orchestrate foundation models across vision, language, and physical sensors to drive AI agents, robots, and automated factories.
 
-      **We are recruiting undergraduate interns.** [Join us →](contact.html#join)
+      We are recruiting **undergraduate interns**. [Join us →](contact.html#join)
     image: assets/img/hero.svg
     image_alt: "Vision, language, and sensor inputs flow into MOAI, which drives agents, robots, and manufacturing."
   - title: "Our focus in 2026"

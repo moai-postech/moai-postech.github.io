@@ -265,3 +265,13 @@
 - Architectural(21차): 모델 설계에 대한 이름이라 다른 이름과 층위가 다르다.
 - Human(20차): Social·Cognitive 를 덮는 상위 이름이라 층위가 다르다.
 - Structured Data 를 Symbolic 으로: 교수 "음.. 저거보다 더 넓은건 없나?"
+
+## 23차: Symbolic·Algorithmic priors (2026-10-27)
+- 교수: "symbolic이라고 할까? 그러면 어쨌든 statistical이랑 층위가 맞을듯", "Algorithmic 이것도 괜찮지 않아?"
+- Structured Data "Symbolic priors for logic, graphs, tables, and time series.", Efficient LLMs "Algorithmic priors for leaner models and longer context."
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(23차)
+- Relational: Structural 의 하위라 층위가 작다.
+- Mathematical: 교수 "좀 별로". Formal, Domain, Abstract: 교수가 Symbolic 을 골랐다.
+- Computational(22차): 교수도 고민했고, Algorithmic 이 칩 넷(Simba, HOMER, LAMP, LAP)의 알고리즘 구조를 더 정확히 덮는다.

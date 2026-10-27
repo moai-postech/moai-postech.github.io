@@ -58,14 +58,14 @@
         - { short: "Idis", venue: "EMNLP'26", url: "https://arxiv.org/abs/2511.21397" }
         - { short: "SuRe", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.13081" }
     - name: "Efficient LLMs"
-      summary: "Computational priors for leaner models and longer context."
+      summary: "Algorithmic priors for leaner models and longer context."
       papers:
         - { short: "Simba", venue: "TMLR'25", url: "https://arxiv.org/abs/2505.20698" }
         - { short: "HOMER", venue: "ICLR'24", url: "https://arxiv.org/abs/2404.10308" }
         - { short: "LAMP", venue: "ICLR'21", url: "https://arxiv.org/abs/2010.07611" }
         - { short: "LAP", venue: "ICLR'20", url: "https://arxiv.org/abs/2002.04809" }
     - name: "Structured Data"
-      summary: "Relational priors for logic, graphs, tables, and time series."
+      summary: "Symbolic priors for logic, graphs, tables, and time series."
       papers:
         - { short: "PRISM", venue: "arXiv'26", match: "PRISM:" }
         - { short: "DPM-SNC", venue: "NeurIPS'23", url: "https://arxiv.org/abs/2302.10506" }

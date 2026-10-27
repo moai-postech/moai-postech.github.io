@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [mobile-hero-photo](2026-10-27-mobile-hero-photo.md) | Sangwoo Mo(moai-postech) | Home(휴대폰) | 휴대폰에서 히어로 그림을 숨겨 단체사진을 바로 아래에 |
 | 2026-10-27 | [course-slides-renumbered](2026-10-27-course-slides-renumbered.md) | Sangwoo Mo(moai-postech) | `teaching/26f-data-engineering/slides/` | 26F Data Engineering: 배포된 슬라이드 28개 안의 강 번호를 새 번호로 |
 | 2026-10-27 | [research-focus-bridge](2026-10-27-research-focus-bridge.md) | Sangwoo Mo(moai-postech) | Research | 맺음에 Our focus 와 잇는 한 문장 |
 | 2026-10-27 | [teaching-study-intro](2026-10-27-teaching-study-intro.md) | Sangwoo Mo(moai-postech) | Teaching | AI Study 제목 아래 한 줄 소개와 스터디 링크 |

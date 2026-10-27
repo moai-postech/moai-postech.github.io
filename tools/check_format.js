@@ -2,7 +2,7 @@
 // 규칙은 AGENTS.md 의 "형식은 전역 규칙으로". 페이지 하나를 고쳐도 이 검사가 사이트 전체에서 통과해야 한다.
 //
 //   bundle exec jekyll build
-//   node tools/check_format.js            # 1280px 와 390px 에서 검사
+//   node tools/check_format.js            # 320px~1440px 에서 검사
 //
 // Playwright 가 있어야 한다(npm i playwright, 또는 이미 설치된 환경). GitHub Actions 의 format 워크플로가 push 마다 돌린다.
 const fs = require('fs');
@@ -12,7 +12,7 @@ const { SITE, serve } = require('./lib/site');
 // 검사할 페이지. 연구실 사이트의 모든 메뉴 페이지와 News 보관 페이지
 const PAGES = ['index', 'research', 'seminar', 'funding', 'publications', 'landscape',
   'faculty', 'students', 'mentees', 'teaching', 'talks', 'contact', 'news'];
-const WIDTHS = [1280, 390];
+const WIDTHS = [1440, 1280, 768, 390, 320];
 const TOL = 2; // px
 
 // 브라우저 안에서 도는 측정. 제목 역할은 글자 크기로 가른다:
@@ -20,7 +20,7 @@ const TOL = 2; // px
 function measure(TOL) {
   const css = getComputedStyle(document.documentElement);
   const px = v => parseFloat(css.getPropertyValue(v));
-  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'),
+  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: px('--text-paper'),
     sectionGap: parseFloat(getComputedStyle(document.body).getPropertyValue('--section-gap')) || px('--section-gap'),
     below: px('--space-4') };
   const allowed = [tok.h2, tok.group, tok.body, tok.meta, tok.small];
@@ -35,7 +35,7 @@ function measure(TOL) {
   const ITEM = 'li, tr, .person, figure';
   // 글줄 하나의 상자: 인라인 요소는 글자 높이만 잡히므로 가장 가까운 블록(표 칸 포함)까지 올라간다
   const block = el => { while (el !== main && getComputedStyle(el).display.startsWith('inline')) el = el.parentElement; return el; };
-  const group = leaf => { const it = leaf.closest(ITEM); return (it ? leaves.filter(l => it.contains(l)) : [leaf]).map(block); };
+  const group = leaf => { const it = leaf.closest('.people-grid') || leaf.closest(ITEM); return (it ? leaves.filter(l => it.contains(l)) : [leaf]).map(block); };
   const problems = [];
   for (const h of heads) {
     const fsz = parseFloat(getComputedStyle(h).fontSize);
@@ -52,6 +52,18 @@ function measure(TOL) {
     if (before && before.closest(ITEM)) { const above = hb.top - Math.max(...group(before).map(l => content(l).bottom));
       if (Math.abs(above - tok.sectionGap) > TOL) problems.push(`"${name}" 위 간격 ${Math.round(above)}px (규칙 ${tok.sectionGap}px)`); }
   }
+  // Paper hierarchy and wrapping are shared by the list and Home focus cards.
+  for (const title of main.querySelectorAll('.pubs .title, .paper-chip .paper-title')) {
+    if (!visible(title)) continue;
+    if (Math.abs(parseFloat(getComputedStyle(title).fontSize) - tok.paper) > 0.5)
+      problems.push('논문 제목이 --text-paper 크기가 아니다');
+  }
+  for (const meta of main.querySelectorAll('.venue, .pub-link')) {
+    if (visible(meta) && Math.abs(parseFloat(getComputedStyle(meta).fontSize) - tok.meta) > 0.5)
+      problems.push('venue·자료 링크가 --text-meta 크기가 아니다');
+  }
+  if (document.documentElement.scrollWidth > window.innerWidth + TOL)
+    problems.push('화면 밖으로 가로 넘침');
   return problems;
 }
 

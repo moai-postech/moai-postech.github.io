@@ -12,4 +12,5 @@ summary: >-
   Each term follows one theme, and each session pairs the papers with a hands-on demo.
 meetings: "Weekly during the semester and the summer"
 organizer: "Jian Choi"
+organizer_contact: "chjohn1105 [at] postech.ac.kr"
 ---

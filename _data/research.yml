@@ -1,7 +1,7 @@
 # Research > Overview 의 분야. area 가 분야 이름, blurb 가 분야 한 줄 설명, topics 가 그 안의 주제 카드다.
 # stage 는 Perception → Reasoning → Action 중 이 분야가 맡는 단계.
 # 페이지는 단계를 앞에, 분야 이름을 그 아래에 둔다. 단계에 한 가지 구조(예: objects)를 붙이지 않는다. 주제 전체를 담지 못한다.
-# 소개의 scalable priors 와 잇는다(교수 2026-10-26): blurb 는 그 단계의 주제를 카드 순서대로 한 구절씩 요약한 동명사 나열,
+# 소개의 scalable priors 와 잇는다(교수 2026-10-26): blurb 는 그 단계의 큰 철학을 말한다. 카드의 논문은 그 철학의 작은 일부라 blurb 에 나열하지 않는다(교수 2026-10-27),
 # summary 는 "<종류> priors <for|on|that> ..." 꼴로 그 주제가 넣는 prior 를 이름 붙인다(Learning in the Wild 는 교수의 원래 표현 statistical prior).
 # 앞으로 할 방향(tables, multisensory)도 담아도 된다.
 # icon 은 assets/img/icons/<icon>.png. 주제마다 summary(문장 하나, 대문자로 시작, 마침표)와 papers(약칭, venue, url).
@@ -12,7 +12,7 @@
 - area: "Vision & Multimodal"
   stage: "Perception"
   icon: vision
-  blurb: "Seeing scenes as structure, learning from imperfect data, and generating images fairly and faithfully."
+  blurb: "Perception should see the world behind the pixels: its objects, its structure, and the regularities that data only hints at."
   topics:
     - name: "Visual Structure"
       summary: "Structural priors on objects, parts, and motion."
@@ -25,7 +25,7 @@
         - { short: "OACon", venue: "NeurIPS'21", url: "https://arxiv.org/abs/2108.00049" }
         - { short: "InstaGAN", venue: "ICLR'19", url: "https://arxiv.org/abs/1812.10889" }
     - name: "Learning in the Wild"
-      summary: "Statistical priors for limited, biased, uncurated, or novel data."
+      summary: "Statistical priors for learning from limited, biased, uncurated, or novel data."
       papers:
         - { short: "T-PRH", venue: "arXiv'26", url: "https://arxiv.org/abs/2609.27252" }
         - { short: "ToMA", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2604.26370" }
@@ -37,7 +37,7 @@
         - { short: "MASKER", venue: "AAAI'21", url: "https://arxiv.org/abs/2012.09392" }
         - { short: "CSI", venue: "NeurIPS'20", url: "https://arxiv.org/abs/2007.08176" }
     - name: "Reliable Generation"
-      summary: "Fairness and alignment priors for faithful generation, even from imperfect data."
+      summary: "Fairness and alignment priors for faithful generation."
       papers:
         - { short: "StayFair", venue: "NeurIPS'26", url: "https://arxiv.org/abs/2605.28036" }
         - { short: "PRIS", venue: "CVPR'26", url: "https://arxiv.org/abs/2512.03534" }
@@ -47,7 +47,7 @@
 - area: "Language & Reasoning"
   stage: "Reasoning"
   icon: language
-  blurb: "Grounding reasoning in evidence, making large models efficient, and learning on structured data."
+  blurb: "Reasoning should follow how knowledge is built, from evidence, abstraction, and relations, not from patterns in text alone."
   topics:
     - name: "Reasoning & Agents"
       summary: "Evidence priors that ground reasoning and catch its errors."
@@ -73,15 +73,15 @@
 - area: "Robotics & Embodied AI"
   stage: "Action"
   icon: robotics
-  blurb: "Adapting robots to each user's intent and sensing the world through touch as well as sight."
+  blurb: "Action should begin with people and the physical world: what each person wants, and what a body can sense."
   topics:
     - name: "VLA & World Models"
-      summary: "User and intent priors for robot policies."
+      summary: "User and intent priors that adapt robot policies to each person."
       papers:
         - { short: "INDI", venue: "arXiv'26", url: "https://arxiv.org/abs/2608.23478" }
         - { short: "VAP", venue: "ICML'26", url: "https://arxiv.org/abs/2512.20014" }
     - name: "Multisensory Learning"
-      summary: "Sensory priors beyond vision, starting with touch."
+      summary: "Sensory priors that let robots feel, not just see."
       papers:
         - { short: "EIT-NN2", venue: "T-RO'21", url: "https://ieeexplore.ieee.org/document/9376677" }
         - { short: "EIT-NN", venue: "IROS'19", url: "https://ieeexplore.ieee.org/document/8968532" }

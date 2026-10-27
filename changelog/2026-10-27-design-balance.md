@@ -27,6 +27,9 @@ POSTECH 요구사항: P1, P2, P8 확인. 공식 로고, 링크, 비례와 강조
 - Home focus 탭과 Seminar 필터를 320·390·768·1024·1440px에서 전환하고 가로 위치 유지 검사.
 - `git diff --check` 통과. 원본 복구 경로: 작업 전 Git 커밋 `82c7a98`.
 
+## 작업 중 정리
+iCloud가 만든 동일 내용 사본 4개(text-selection HTML, check_selection JS, callout-one-cta-link-drag와 link-hierarchy-selection 기록)를 원본과 비교 후 정리. 복구 사본은 세션 scratchpad `moai-icloud-conflicts-20261027/`. 내용 차이 없음.
+
 ## 기각한 안과 이유
 - venue를 다시 13px로 축소: 실적을 강조하려는 교수의 기존 의도 유지.
 - venue를 제목 오른쪽으로 이동, 연도 옆 학회 요약, 논문 썸네일: 기존 [venue-badge-size](2026-10-27-venue-badge-size.md)의 기각 이유 유지.

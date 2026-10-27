@@ -1,5 +1,5 @@
 # 2026-10-27 공동 작업 장치: 서로 되돌리기 검사와 POSTECH 요구사항 문서
-작성자: Sangwoo Mo(moai-postech) | 대상: `tools/check_changelog.py`, `tools/maintainers.txt`, `POSTECH.md`, `tools/check_postech.js`, `tools/lib/site.js`, `tools/check_format.js`, `.github/workflows/format.yml`, `_config.yml`, `AGENTS.md` | 도구: Claude Code
+작성자: Sangwoo Mo(moai-postech) | 대상: `tools/check_changelog.py`, `tools/maintainers.txt`, `POSTECH.md`, `tools/check_postech.js`, `tools/lib/site.js`, `tools/check_format.js`, `.github/workflows/`, `tools/setup_main_ruleset.sh`, `_config.yml`, `AGENTS.md` | 도구: Claude Code
 
 > **한줄 결론: 구성원 모두가 고치는 저장소에서 서로의 최근 수정을 번갈아 되돌리지 못하게 검사로 막고, 정보기술팀 요구사항을 `POSTECH.md` 로 문서화해 모든 페이지에서 자동 검사하게 했다.**
 
@@ -17,6 +17,9 @@ POSTECH 요구사항: P1~P9 확인. 요구사항을 바꾸지 않았고, `_confi
 - `.github/workflows/format.yml`: `check_postech.js` 를 더했다. `tools/lib/site.js` 로 두 검사가 같은 서버 코드를 쓴다. `_config.yml`: `POSTECH.md`, `node_modules` 를 빌드에서 뺐다.
 - `AGENTS.md`: "공동 작업: 서로 되돌리기 막기" 절, 고치는 절차에 `--who` 와 POSTECH 검토 단계, 안건·changelog 양식에 "POSTECH 요구사항:" 줄, 에이전트도 검사를 우회하지 않는다는 규칙.
 
+- 2차(같은 날): 브랜치 보호 준비. 이 세션은 저장소 관리자 권한이 없고(설정 API 403), 데스크톱 도구도 교수 컴퓨터가 아니라 클라우드 컨테이너에 닿아 직접 켜지 못했다. 대신 `tools/setup_main_ruleset.sh` 를 만들었다. 교수가 자기 컴퓨터에서 `gh auth login` 뒤 한 번 돌리면 `main` ruleset(삭제·강제 push 금지, PR 필수와 승인 1, 필수 검사 changelog·format, bypass: 관리자·GitHub Actions·Claude 앱)이 생긴다. 필수 검사 이름이 겹치지 않게 두 워크플로의 job 이름을 `check` 에서 `changelog`, `format` 으로 바꿨고, format 은 PR 에서 경로와 상관없이 늘 돌게 했다(필수 검사가 건너뛰어지면 merge 가 막힌다).
+- 사이트용 Claude 클라우드 루틴 `lab-site-sync` 는 10/26 에 그만두기로 하고 절차서(`tools/site-sync.md`)도 지웠지만 루틴은 켜진 채였다. 웹에서 만든 루틴이라 에이전트가 지우거나 끄지 못해 교수에게 넘겼다. 사이트 동기화는 GitHub Actions(`seminar-sync`, `ai-study-sync`)로 통일한다.
+
 ## 기각한 안과 이유
 - 파일 단위로 막기(다른 사람이 30일 안에 고친 파일은 손대지 못함): `theme.css`, `members.yml` 처럼 모두가 고치는 파일은 늘 막힌다. 줄 단위로 좁혔다.
 - 커밋 작성자(git author)로 주인 판단: 에이전트 커밋은 작성자가 "Claude" 라 사람을 가리지 못한다. changelog 회차의 작성자 ID 를 쓰고 Actions 에서 push 계정과 맞춘다.
@@ -24,5 +27,6 @@ POSTECH 요구사항: P1~P9 확인. 요구사항을 바꾸지 않았고, `_confi
 - 요구사항을 `AGENTS.md` 안에만 두기: 교수가 따로 박아 두길 원했고, 외부 요구사항은 출처와 함께 한 파일로 보는 편이 검토하기 쉽다. `AGENTS.md` 는 요약과 링크만 둔다.
 
 ## 남은 것
-- GitHub 설정에서 `main` 브랜치 보호(Require status checks: changelog, format)를 켜면 검사를 통과하지 못한 수정이 `main` 에 들어가지 못한다. 교수가 설정 화면에서 켠다.
+- 교수가 `bash tools/setup_main_ruleset.sh` 를 한 번 돌린다.
+- 교수가 claude.ai 루틴 화면에서 `lab-site-sync` 를 지운다.
 - 구성원의 GitHub 계정이 정해지면 changelog 작성자 ID 를 그 계정으로 쓰도록 안내한다.

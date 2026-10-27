@@ -352,7 +352,7 @@ a.person-name:hover { color: var(--accent); }
    as white cards on the left and the path picture on the right. Red only on the step numbers and the
    picture's MOAI circle. */
 .page-contact main > .contact-block { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; }
-.page-contact main > .contact-join { margin-top: var(--space-6); padding: var(--space-7); background: var(--surface); border-radius: var(--radius-2); }
+.page-contact main > .contact-join { margin-top: var(--space-6); margin-bottom: var(--space-8); padding: var(--space-7); background: var(--surface); border-radius: var(--radius-2); }  /* the panel sets its own padding, so the usual room before the footer (--space-8) comes back as a margin */
 .contact-join .contact-main { display: contents; }  /* its parts join the panel grid: heading and intro run the full width, the steps sit beside the picture */
 .contact-join h2, .contact-join .section-body { grid-column: 1 / -1; }
 .contact-join .contact-steps { grid-column: 1 / span 7; }

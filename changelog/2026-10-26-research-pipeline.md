@@ -243,3 +243,14 @@
 
 ### 기각한 안과 이유(20차)
 - Intent priors(19차): 의도 하나로 좁다. human 은 의도, 선호, 시연을 모두 담는다.
+
+## 21차: 와닿지 않는 prior 이름 셋을 일반적인 말로 (2026-10-27)
+- 교수: "Alignment priors, Evidence priors, Sparsity priors 이거 잘 안 와닿는데... 더 제너럴하게 표현하는건 어떄?" 후보를 보이고 교수가 골랐다.
+- Reliable Generation "Social priors for fair and faithful generation.", Reasoning & Agents "Cognitive priors that ground reasoning and catch its errors.", Efficient LLMs "Architectural priors for less compute and longer context."
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(21차)
+- Alignment, Evidence, Sparsity(19차): 기법 이름이라 와닿지 않는다(교수).
+- Value, Knowledge, Simplicity: 교수 "다 별로".
+- Reasoning 의 Logical(Structured Data 의 logic 과 겹침), Grounding(뒤 구절 ground 와 반복). Efficient 의 Computational(흐림). Generation 의 Fairness(뒤 fair 와 겹침), Semantic(fair 를 덜 덮음). 교수가 고르지 않았다.
+- 검토만 하고 후보로 내지 않은 것: Ethical(무거움), Trust(prior 보다 결과), Epistemic(전문 용어), Efficiency(주제 이름 반복).

@@ -14,10 +14,7 @@ sections:
       - title: "Check the background we expect"
         body: |
           Look through our [undergraduate AI study](teaching/ai-study/).
-          It meets weekly during the semester; reach out to join.
-
-          Study group contact: Jian Choi (chjohn1105 [at] postech.ac.kr)
-          {: .small .muted}
+          It meets weekly during the semester; reach out to its organizer to join.
       - title: "Contact us before you apply"
         body: |
           Email your CV and transcript to [Prof. Sangwoo Mo](faculty.html), for an internship or before applying to graduate school.

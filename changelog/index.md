@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [study-contact-move](2026-10-27-study-contact-move.md) | Sangwoo Mo(moai-postech) | Contact, AI Study, Home | 스터디 연락처를 Study 페이지 Organizer 칸으로, 알림 띠 학회 NeurIPS·ICML·ICLR |
 | 2026-10-27 | [contact-prof-email](2026-10-27-contact-prof-email.md) | Sangwoo Mo(moai-postech) | Contact, AGENTS.md | 2단계에 교수 이메일 한 줄 |
 | 2026-10-27 | [callout-pubs-link](2026-10-27-callout-pubs-link.md) | Sangwoo Mo(moai-postech) | Home | 학회 문장 뒤 See our publications 링크, 띠 링크 줄바꿈 방지 |
 | 2026-10-27 | [mobile-hero-photo](2026-10-27-mobile-hero-photo.md) | Sangwoo Mo(moai-postech) | Home(휴대폰) | 휴대폰에서 히어로 그림을 숨겨 단체사진을 바로 아래에 |

@@ -5,4 +5,5 @@
 
 | 날짜 | 안건 | 제안자 | 대상 | 상태 | 결정 changelog |
 | --- | --- | --- | --- | --- | --- |
+| 2026-10-27 | [contact-structure](2026-10-27-contact-structure.md) | Sangwoo Mo(moai-postech) | Contact | 논의 중 | |
 | 2026-10-26 | [color-contrast](2026-10-26-color-contrast.md) | Sangwoo Mo(moai-postech) | Home Focus 절, hero | 결정됨 | [color-contrast](../changelog/2026-10-26-color-contrast.md) |

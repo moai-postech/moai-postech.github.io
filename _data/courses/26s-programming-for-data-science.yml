@@ -215,15 +215,6 @@ resources:
     source: "Documentation"
     url: "https://huggingface.co/"
 
-# 같은 사이트의 다른 강의나 자료. 이 과목과 이어지는 것만.
-related:
-  - title: "Data Engineering"
-    source: "Fall 2025"
-    url: "teaching/25f-data-engineering/"
-  - title: "Foundation Models Overview"
-    source: "Slides"
-    url: "assets/talks/2025-foundation-models-for-vision-language-and-robotics.pdf"
-
 exams:
   - label: "Midterm 2026"
     url: "https://drive.google.com/file/d/1r-G8C2LCbNeq09HjeJbYMnGQ8T1YCuym/view"

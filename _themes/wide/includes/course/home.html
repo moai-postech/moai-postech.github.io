@@ -47,7 +47,7 @@
     </div>
     </section>{% endif %}
 
-    {% if c.resources or c.related or c.exams %}<section class="content-section" id="resources">
+    {% if c.resources or c.exams %}<section class="content-section" id="resources">
     <h2>Resources</h2>
     <div class="section-body">
     {% if c.resources %}<h3 class="sub">{{ c.resources_title | default: "Reference courses" }}</h3>
@@ -55,13 +55,6 @@
       {% for x in c.resources %}<li>
         <span class="item-main"><strong><a href="{{ x.url }}">{% if x.abbr %}[{{ x.abbr }}] {% endif %}{{ x.title }}</a></strong></span>
         <span class="item-side">{{ x.source }}</span>
-      </li>{% endfor %}
-    </ul>{% endif %}
-    {% if c.related %}<h3 class="sub">Related</h3>
-    <ul class="plain item-list">
-      {% for x in c.related %}<li>
-        <span class="item-main"><strong><a href="{{ x.url }}">{{ x.title }}</a></strong></span>
-        {% if x.source %}<span class="item-side">{{ x.source }}</span>{% endif %}
       </li>{% endfor %}
     </ul>{% endif %}
     {% if c.exams %}<h3 class="sub">Past exams</h3>

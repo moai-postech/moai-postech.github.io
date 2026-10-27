@@ -1,5 +1,5 @@
 # 2026-10-27 사이트 전체 점검과 작은 수정
-작성자: Sangwoo Mo(moai-postech) | 대상: `_themes/wide/includes/course/course.css`, `_data/courses/26s-programming-for-data-science.yml`, `AGENTS.md` | 도구: Claude Code
+작성자: Sangwoo Mo(moai-postech) | 대상: `_themes/wide/includes/course/`, `_data/courses/26s-programming-for-data-science.yml`, `AGENTS.md` | 도구: Claude Code
 
 > **한줄 결론: 사이트 전체(27개 페이지)를 자동·화면 점검하고, 바로 고칠 수 있는 셋(스터디 자료 링크 줄바꿈, 26S 슬라이드 Drive 링크, AGENTS 의 강조 링크 목록)을 고쳤다.**
 
@@ -16,4 +16,10 @@
 - 점검에서 나온 판단이 필요한 항목(Paper Stella 지도의 한국어 화면, Publications 소개의 "최신 목록은 Google Scholar", 26S Related 의 Data Engineering 이 Fall 2025 를 가리킴, 메뉴에 없는 News 보관 페이지가 Home 과 같은 내용)은 고치지 않고 교수에게 물었다.
 
 ## 남은 것
-- 위 판단 항목들의 교수 결정.
+없음
+
+## 2차(같은 날): 교수 결정
+- Paper Stella 지도의 한국어 화면: 외부 도구라 그대로 둔다.
+- 26S 강의 Home 의 Related(Data Engineering Fall 2025, Foundation Models Overview): 강의 사이트끼리 cross reference 할 필요가 없어 지웠다. `_data/courses/26s-programming-for-data-science.yml` 의 `related`, 강의 Home 템플릿(`course/home.html`)의 Related 칸, `course/README.md` 의 설명을 함께 지웠다(쓰는 강의가 없다).
+- Publications 소개("For the most up-to-date list, see Google Scholar"): 그대로 둔다.
+- News 보관 페이지: 일단 둔다.

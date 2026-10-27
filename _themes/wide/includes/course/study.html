@@ -3,7 +3,7 @@
   소개와 운영 정보는 페이지 front matter, 학기별 일정은 _data/ai_study.yml(tools/ai_study_sync.py 가 스터디 시트에서 만든다).
   머리는 강의 Home 과 같은 짜임(왼쪽 소개, 오른쪽 운영 정보 칸)이고, 표는 강의 스케줄 표의 모양을 쓴다.
   탭을 바꿔도 칸의 가로 위치가 움직이지 않게 표 칸 폭을 colgroup 으로 고정한다(AGENTS.md).
-  스터디에 들어오는 연락처(운영자 이메일, organizer_contact)는 이 페이지의 Organizer 칸에만 둔다. Contact 1단계는 이 페이지로 잇는다(교수 2026-10-27).
+  스터디에 들어오는 연락처(운영자 이메일, organizer_contact)는 이 페이지의 Organizer 칸에만 둔다. Contact 1단계는 이 페이지로 잇고, How to join 버튼은 이 칸(#organizer)으로 내린다(교수 2026-10-27).
 {% endcomment %}
 {% assign d = site.data.ai_study %}{% assign prof = site.data.members.professor %}
     <header class="course-hero">
@@ -11,7 +11,7 @@
         <p class="course-eyebrow"><span>Study group</span><span>POSTECH</span></p>
         <h1>{{ page.title }}</h1>
         <p class="course-lead">{{ page.summary }}</p>
-        <p class="course-actions"><a class="course-btn is-primary" href="contact.html#join">How to join</a>{% if d.sheet %}<a class="course-btn" href="{{ d.sheet }}">Study sheet ↗</a>{% endif %}</p>
+        <p class="course-actions"><a class="course-btn is-primary" href="{{ page.url | remove_first: "/" }}#organizer">How to join</a>{% if d.sheet %}<a class="course-btn" href="{{ d.sheet }}">Study sheet ↗</a>{% endif %}</p>
       </div>
       <dl class="course-facts">
         <div class="course-fact course-instructor">

@@ -110,13 +110,13 @@ def check_discussions(files):
 
 
 def maintainers():
-    """GitHub account -> set of IDs that person signs changelog entries with."""
+    """Any of a maintainer's GitHub accounts or IDs -> all of that person's accounts and IDs."""
     out = {}
     path = ROOT / "tools" / "maintainers.txt"
     for line in path.read_text(encoding="utf-8").splitlines() if path.exists() else []:
-        words = line.split("#")[0].split()
-        if words:
-            out[words[0]] = set(words)
+        words = set(line.split("#")[0].split())
+        for w in words:
+            out[w] = words
     return out
 
 

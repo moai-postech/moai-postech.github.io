@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [course-renumber-lec12](2026-10-27-course-renumber-lec12.md) | Sangwoo Mo(moai-postech) | `_data/courses/26f-data-engineering.yml`, `teaching/26f-data-engineering/slides/` | 26F Data Engineering: 12강 Midterm Review 신설, Big Data 13~15강·Part III 16~19강으로 번호 이동 |
 | 2026-10-27 | [venue-badge-size](2026-10-27-venue-badge-size.md) | Sangwoo Mo(moai-postech) | 테마, Home | venue 배지 한 단계 크게, 히어로-사진 간격 32px, top AI venues |
 | 2026-10-27 | [pubs-scholar-line](2026-10-27-pubs-scholar-line.md) | Sangwoo Mo(moai-postech) | Publications | 소개 줄을 Also on Google Scholar 로 |
 | 2026-10-27 | [callout-venues](2026-10-27-callout-venues.md) | Sangwoo Mo(moai-postech) | Home, AGENTS.md | 알림 띠: 논문 내는 학회 한 줄 + 모집 한 줄, We are hiring! 머리말 뺌 |

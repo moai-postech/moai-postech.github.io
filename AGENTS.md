@@ -143,7 +143,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
    ```
    http://localhost:4000 에서 확인한다. 디자인을 고쳤으면 `bundle exec jekyll build` 뒤 `node tools/check_format.js` 와 `node tools/check_postech.js` 로 사이트 전체 형식과 POSTECH 필수 요소를 검사한다.
 6. **changelog 를 쓴다(아래, 필수).** 작성자 ID 는 push 하는 GitHub 계정이다.
-7. 커밋하고 `main` 에 push 한다. 문구·링크·항목 추가 같은 작은 수정은 바로 push 해도 된다. 테마 교체, 구조 변경처럼 큰 수정은 브랜치와 PR 로 올린다.
+7. 커밋하고 `main` 에 push 한다. 문구·링크·항목 추가 같은 작은 수정은 바로 push 해도 된다. 테마 교체, 구조 변경처럼 큰 수정은 브랜치와 PR 로 올린다. 에이전트는 세션이 작업 브랜치를 지정해도, 작은 수정은 검사를 돌린 뒤 `main` 에 바로 push 한다(교수 2026-10-27). 큰 수정만 그 브랜치에서 PR 로 올린다.
 8. 1~2분 뒤 https://moai-postech.github.io 에 반영됐는지 본다. Actions 탭의 changelog·format 검사가 실패하면 고친다.
 
 ## 논의가 필요한 수정 (바로 반영하지 않는다)

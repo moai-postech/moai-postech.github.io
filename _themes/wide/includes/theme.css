@@ -254,6 +254,8 @@ a.mentee-name:hover { color: var(--accent); }
 /* a photo band (Home: the lab group photo under the hero, 2026-10-27). The band height is the photo's own size; the crop keeps the people and trims the sky */
 .hero-band + .section-photo { padding-top: 0; }  /* the photo sits right under the hero: only the hero's own 32px bottom padding between them (교수 2026-10-27) */
 .section-photo p { margin: 0; }
+.list-intro { margin: 0 0 var(--space-4); color: var(--muted); }  /* one line under a group heading that says what the list is (Teaching: the AI study, 교수 2026-10-27) */
+.list-intro a { color: var(--accent); font-weight: 600; }
 .section-photo img { display: block; width: 100%; height: 380px; object-fit: cover; object-position: 50% 72%; border-radius: var(--radius-2); }
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
@@ -350,7 +352,7 @@ a.person-name:hover { color: var(--accent); }
    as white cards on the left and the path picture on the right. Red only on the step numbers and the
    picture's MOAI circle. */
 .page-contact main > .contact-block { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; }
-.page-contact main > .contact-join { margin-top: var(--space-6); padding: var(--space-7); background: var(--surface); border-radius: var(--radius-2); }
+.page-contact main > .contact-join { margin-top: var(--space-6); margin-bottom: var(--space-8); padding: var(--space-7); background: var(--surface); border-radius: var(--radius-2); }  /* the panel sets its own padding, so the usual room before the footer (--space-8) comes back as a margin */
 .contact-join .contact-main { display: contents; }  /* its parts join the panel grid: heading and intro run the full width, the steps sit beside the picture */
 .contact-join h2, .contact-join .section-body { grid-column: 1 / -1; }
 .contact-join .contact-steps { grid-column: 1 / span 7; }

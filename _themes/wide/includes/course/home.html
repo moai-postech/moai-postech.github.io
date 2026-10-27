@@ -1,7 +1,7 @@
 {% comment %}
   강의 Home(teaching/<id>/). 내용은 _data/courses/<page.course>.yml 이고 여기서는 모양만 정한다.
   짜임은 MIT·Stanford·CMU·Berkeley 강의 사이트에서 가져왔다(2026-10-26 교수): 제목과 소개 옆에 운영 정보(교수, 수업, office hours, 지난 학기),
-  파트 카드, 평가, 자료. 지난 학기도 같은 모양으로 남는 기록용 페이지라 날짜에 따라 바뀌는 요소(다음 수업 카드)는 두지 않는다(2026-10-26 교수). 전체 스케줄은 Schedule 페이지(schedule.html), 팀은 Term Project 페이지에 한 번만 둔다.
+  파트 카드, 평가, 자료. 지난 학기도 같은 모양으로 남는 기록용 페이지라 날짜에 따라 바뀌는 요소(다음 수업 카드)는 두지 않는다(2026-10-26 교수). 전체 스케줄은 Schedule 페이지(schedule.html), 팀은 Project 페이지에 한 번만 둔다.
   교수 사진은 _data/members.yml 의 professor, 이메일은 Faculty 한 곳에만 두므로 이름을 Faculty 로 잇는다.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
@@ -11,7 +11,7 @@
         <p class="course-eyebrow"><span>{{ c.code }}</span><span>{{ c.term }}</span><span>POSTECH</span></p>
         <h1>{{ c.title }}</h1>
         {% if c.summary %}<p class="course-lead">{{ c.summary }}</p>{% endif %}
-        <p class="course-actions"><a class="course-btn is-primary" href="{{ root }}schedule/">Schedule &amp; slides</a>{% if c.project %}<a class="course-btn" href="{{ root }}project/">Term Project</a>{% endif %}{% for l in c.links %}<a class="course-btn" href="{{ l.url }}">{{ l.label }} ↗</a>{% endfor %}</p>
+        <p class="course-actions"><a class="course-btn is-primary" href="{{ root }}schedule/">Schedule &amp; slides</a>{% if c.project %}<a class="course-btn" href="{{ root }}project/">Project</a>{% endif %}{% for l in c.links %}<a class="course-btn" href="{{ l.url }}">{{ l.label }} ↗</a>{% endfor %}</p>
       </div>
       <dl class="course-facts">
         <div class="course-fact course-instructor">

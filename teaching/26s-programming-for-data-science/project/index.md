@@ -3,7 +3,7 @@
 layout: course
 course: "26s-programming-for-data-science"
 view: project
-title: "Term Project · Programming for Data Science (Spring 2026)"
-head_title: "Term Project, Programming for Data Science Spring 2026 · MOAI Lab"
+title: "Project · Programming for Data Science (Spring 2026)"
+head_title: "Project, Programming for Data Science Spring 2026 · MOAI Lab"
 description: "Term project of Programming for Data Science at POSTECH, Spring 2026: teams, projects, and presentation slides."
 ---

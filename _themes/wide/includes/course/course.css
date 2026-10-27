@@ -51,6 +51,7 @@
 .course-instructor { grid-template-columns: 1fr; gap: var(--space-2); }  /* the photo row needs the full width of the panel */
 .course-instructor dd { display: flex; align-items: center; gap: var(--space-3); }
 .course-instructor img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.course-organizer small { display: block; color: var(--muted); font-size: var(--text-small); }  /* the study organizer's address sits under the name, the one place it appears (교수 2026-10-27) */
 .course-instructor dd span { display: flex; flex-direction: column; line-height: 1.4; }
 .course-instructor small { color: var(--muted); font-size: var(--text-small); }
 

@@ -3,7 +3,7 @@
 layout: course
 course: "25f-data-engineering"
 view: project
-title: "Term Project · Data Engineering (Fall 2025)"
-head_title: "Term Project, Data Engineering Fall 2025 · MOAI Lab"
+title: "Project · Data Engineering (Fall 2025)"
+head_title: "Project, Data Engineering Fall 2025 · MOAI Lab"
 description: "Term project of Data Engineering at POSTECH, Fall 2025: teams, projects, and presentation slides."
 ---

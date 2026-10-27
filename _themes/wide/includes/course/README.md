@@ -1,6 +1,6 @@
 # 강의 사이트 양식
 
-`/teaching/<id>/`(Home), `/teaching/<id>/schedule/`(Schedule), `/teaching/<id>/project/`(Term Project)의 양식이다. 강의마다 연구실 사이트 메뉴 없이 독립된 작은 사이트처럼 돈다. 짜임은 MIT·Stanford·CMU·Berkeley 강의 사이트의 home/schedule/project 구성을 따르고 디자인은 이 사이트 것이다(2026-10-26 교수). 머리는 과목명과 탭 세 개이고 연구실 사이트는 바닥 한 줄로만 잇는다(2026-10-22 교수). 그 줄에 POSTECH 대표홈과 개인정보 링크도 둔다(학교 도메인 필수 요소, 저장소 `AGENTS.md` 의 "POSTECH 필수 요소", 2026-10-23). 모든 강의가 이 폴더 하나의 모양을 같이 쓴다. 디자인을 바꾸면 이 폴더만 고친다.
+`/teaching/<id>/`(Home), `/teaching/<id>/schedule/`(Schedule), `/teaching/<id>/project/`(Project)의 양식이다. 강의마다 연구실 사이트 메뉴 없이 독립된 작은 사이트처럼 돈다. 짜임은 MIT·Stanford·CMU·Berkeley 강의 사이트의 home/schedule/project 구성을 따르고 디자인은 이 사이트 것이다(2026-10-26 교수). 머리는 과목명과 탭 세 개이고 연구실 사이트는 바닥 한 줄로만 잇는다(2026-10-22 교수). 그 줄에 POSTECH 대표홈과 개인정보 링크도 둔다(학교 도메인 필수 요소, 저장소 `AGENTS.md` 의 "POSTECH 필수 요소", 2026-10-23). 모든 강의가 이 폴더 하나의 모양을 같이 쓴다. 디자인을 바꾸면 이 폴더만 고친다.
 
 | 파일 | 역할 |
 | --- | --- |
@@ -8,7 +8,7 @@
 | `home.html` | Home: 제목·소개·버튼 옆에 운영 정보 칸(Instructor, Lectures, Office hours, Other terms) → Course outline(파트 카드) → Grading → Resources |
 | `schedule.html` | Schedule: 전체 스케줄 표(파트 머리 줄, 다음 수업 표시) |
 | `study.html` | 학부생 AI 스터디(`teaching/ai-study/`, `view: study`): 강의 Home 같은 머리 + 학기 탭. 일정은 `_data/ai_study.yml`(시트에서 `tools/ai_study_sync.py`) |
-| `head.html` | Schedule 과 Term Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |
+| `head.html` | Schedule 과 Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |
 | `project.html` | 팀 프로젝트: Overview(소개, 팀 크기, 단계, 평가 기준) → Teams(팀원, 발표 회차별 날짜·순서·슬라이드) |
 | `course.css` | 강의 사이트 전용 스타일과 색. `../theme.css` 끝에서 include 한다 |
 

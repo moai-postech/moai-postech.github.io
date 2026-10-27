@@ -316,3 +316,13 @@
 ### 기각한 안과 이유(26차)
 - 24·25차의 for 뒤(objects, parts, and motion / imperfect data / fair and faithful models / grounded, self-correcting reasoning / leaner models and longer context / logic, graphs, tables, and time series / adapt to each person / feel, not just see): 지금 논문만 좁게 덮는다(교수).
 - Symbolic "for knowledge that lives beyond text": Reasoning 분야 설명 "more than text" 와 겹친다.
+
+## 27차: FreezeD 를 Learning in the Wild 로 (2026-10-27)
+- 교수: "FreezeD의 위치가 좀 고민되긴 하네", 논문 위치 전체 최종 점검 요청. 점검 뒤 "FreezeD만 Learning in the Wild로 옮기고 T-PRH는 그대로."
+- FreezeD(적은 데이터로 GAN fine-tuning)를 Reliable AI 에서 Learning in the Wild 로 옮겼다(publications.yml 순서대로 CSI 뒤). Reliable AI 가 "AI that people can trust" 로 넓어져 FreezeD 가 가장 약하게 걸렸고, imperfect world 와는 바로 맞는다.
+- 나머지 35편은 새 설명과 맞아 그대로. PRIS(Reliable AI), PRISM(Structured Data)은 약하게 걸리지만 더 맞는 자리가 없다.
+- 확인: 로컬 빌드, 칩 37개.
+
+### 기각한 안과 이유(27차)
+- T-PRH 를 Visual Structure 로: 같은 현실 구조로의 수렴이라 철학적으로 맞지만 시각 구조보다 표현 분석에 가깝다. 교수가 그대로 두기로 했다.
+- FreezeD 를 Reliable AI 에 두기(25차): 신뢰보다 적은 데이터가 핵심이다.

@@ -18,3 +18,6 @@ POSTECH 요구사항: 영향 없음(강의 바닥 줄은 건드리지 않음)
 - 멤버 사진 톤 통일 안내: 교수가 지금 그대로 괜찮다고 함.
 ## 남은 것
 Study 페이지의 "How to join" 버튼은 아직 Contact 의 Join us 로 간다(연구실 지원 방법). 스터디 참여 방법으로 바꿀지 정하지 않았다.
+
+## 덧붙임: Study 페이지 How to join 버튼
+- 교수가 알아서 정리해 달라고 함. Contact 1단계가 Study 페이지로 보내고 Study 의 How to join 이 다시 Contact 로 보내 서로를 가리키던 것을, 버튼이 같은 페이지의 Organizer 칸(`#organizer`, 운영자 이름과 이메일)으로 내려가게 했다. 사이트에 `<base href="/">` 가 있어 `#organizer` 만 쓰면 사이트 첫 화면으로 가므로 `teaching/ai-study/#organizer` 로 쓴다. 1280·390px 에서 눌러 Organizer 칸으로 내려가고 학기 탭은 그대로 최신 학기인 것을 확인.

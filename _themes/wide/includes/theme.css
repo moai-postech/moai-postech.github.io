@@ -76,6 +76,8 @@ img { max-width: 100%; }
 p { margin: 0 0 var(--space-4); }
 p:last-child { margin-bottom: 0; }
 .plain { margin: 0; padding: 0; list-style: none; }
+.section-body > .plain > li:first-child { padding-top: 0; }  /* a list's row padding spaces rows apart, never the list from its heading or the next group (2026-10-27) */
+.section-body > .plain > li:last-child { padding-bottom: 0; }
 .muted { color: var(--muted); }
 .small { font-size: var(--text-meta); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -263,8 +265,8 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule { width: 100%; border-collapse: collapse; }
 .schedule.is-locked { table-layout: fixed; }  /* column widths measured once over all talks (scripts.html), so filtering never moves a column */
 .schedule td { padding: var(--space-2) 0; vertical-align: baseline; }
-.schedule-year th { padding: var(--space-6) 0 var(--space-2); color: var(--text); font-size: var(--text-group); font-weight: 700; text-align: left; }
-.year-head { margin: var(--space-6) 0 var(--space-2); font-size: var(--text-group); font-weight: 700; letter-spacing: normal; }  /* same year heading as the seminar list */
+.schedule-year th { padding: calc(var(--section-gap) - var(--space-2)) 0 calc(var(--space-4) - var(--space-2));  /* minus the rows' own padding, so the year sits at the same gaps as every group heading */ color: var(--text); font-size: var(--text-group); font-weight: 700; text-align: left; }
+.year-head { margin: var(--section-gap) 0 var(--space-4); font-size: var(--text-group); font-weight: 700; letter-spacing: normal; }  /* same year heading as the seminar list */
 .section-body > .year-head:first-child { margin-top: 0; }
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--faint); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -289,7 +291,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 
 /* Publications: title, authors, then venue and links under them */
 .page-publications h2 { margin-bottom: var(--space-4); font-size: var(--text-group); letter-spacing: normal; }  /* year headings: same size and tracking as the Seminar and Talks years; 16px below keeps a year closer to its first paper than papers are to each other */
-.page-funding h2, .page-students h2, .page-mentees h2, .page-teaching h2, .page-faculty h2:not(#professor) { font-size: var(--text-group); letter-spacing: normal; }  /* list groups read at the year-heading size, not as page sections (2026-10-27, "one type scale across the site") */
+.page-funding h2, .page-students h2, .page-mentees h2, .page-teaching h2, .page-faculty h2:not(#professor) { margin-bottom: var(--space-4); font-size: var(--text-group); letter-spacing: normal; }  /* list groups read at the year-heading size, not as page sections (2026-10-27, "one type scale across the site") */
 .page-publications sup { line-height: 0; }  /* the equal-contribution marks no longer push their author line 2.5px taller than the others */
 .pubs li { display: grid; grid-template-columns: 2.25em minmax(0, 1fr); gap: var(--space-1) var(--space-3); padding: var(--item-gap) 0; }  /* number column, then title, authors, venue, award with one even 4px gap; --item-gap between papers */
 .pubs li > * { grid-column: 2; }
@@ -402,6 +404,7 @@ a.person-name:hover { color: var(--accent); }
   .schedule, .schedule tbody, .schedule tr, .schedule td, .schedule th { display: block; width: auto; }
   .schedule tr[hidden] { display: none; }
   .schedule tr:not(.schedule-year) { padding: var(--space-3) 0; }
+  .schedule-year th { padding: calc(var(--section-gap) - var(--space-3)) 0 calc(var(--space-4) - var(--space-3)); }  /* rows pad by --space-3 here */
   .schedule td { padding: 0 !important; text-align: left; white-space: normal; }
   .schedule tr[data-kind]:not([hidden]) { display: flex; flex-wrap: wrap; align-items: baseline; }
   .schedule td.schedule-date, .schedule td.schedule-title { flex-basis: 100%; }

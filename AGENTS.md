@@ -32,7 +32,7 @@ assets/img/          그림, 아이콘(icons/), 사진(people/), 로고 아이�
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
-tools/               검사 스크립트(check_changelog.py), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml), 스터디 동기화(ai_study_sync.py, .github/workflows/ai-study-sync.yml), 슬라이드 사본(drive_pdf.py, localize_slides.py)
+tools/               검사 스크립트(check_changelog.py, 사이트 전체 형식 check_format.js), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml), 스터디 동기화(ai_study_sync.py, .github/workflows/ai-study-sync.yml), 슬라이드 사본(drive_pdf.py, localize_slides.py)
 ```
 
 ### 무엇을 어디서 고치나
@@ -106,6 +106,25 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 동기화는 슬라이드를 PDF 로 바꾸고, 모든 쪽을 16:9(960x540pt)로 맞추고(비율이 다른 쪽은 줄여서 가운데), 이름을 `날짜-제목별칭.pdf`(예: `2026-07-22-memeye.pdf`)로, PDF 정보에 제목과 발표자를 넣는다. 제목 별칭은 시트 `nickname` 칸에 적은 것, 비어 있으면 제목의 콜론 앞 짧은 이름(`MemEye`, `ESI-Bench`)이나 기능어를 뺀 앞 3단어다. 자동 별칭이 어색하면 `nickname` 을 채운다(교수 2026-10-26). 슬라이드 내용은 고치지 않는다. 바뀐 것이 있으면 `changelog/{날짜}-seminar-sync.md` 에 스스로 기록한다.
 
+## 형식은 전역 규칙으로 (페이지 하나만 보고 고치지 않는다)
+
+형식은 사이트 전체에서 같아야 깔끔하다(교수 2026-10-27: "페이지만 보고 고치지 말고 사이트 전체에 통용되는 global rule 을 정하고, 그 룰을 따라 개별 페이지를 고친다"). 사람이든 에이전트든 디자인을 고칠 때 아래 순서를 지킨다.
+
+1. **고칠 요소의 역할부터 정한다.** "Teaching 의 Study group 제목"이 아니라 "목록을 묶는 제목"처럼 사이트 전체에서 쓰는 역할 이름으로 본다.
+2. **그 역할의 전역 규칙을 따른다(아래 표).** 규칙이 정한 토큰을 그대로 쓰고, 페이지 전용 크기·간격을 새로 만들지 않는다.
+3. **규칙이 마음에 안 들거나 규칙에 없는 모양이 필요하면 규칙을 고친다.** 이 표와 `theme.css` 의 역할 토큰을 먼저 고치고, 같은 역할을 쓰는 모든 페이지에 한 번에 적용한다. 한 페이지만 예외로 두지 않는다.
+4. **사이트 전체를 검사한다.** 빌드한 뒤 `node tools/check_format.js` 를 돌린다(13개 메뉴 페이지를 1280px·390px 에서 잰다). 고친 페이지만이 아니라 전체가 통과해야 한다. 새 역할 규칙을 만들면 이 검사에도 더한다.
+
+| 역할 | 예 | 글자 | 간격 |
+| --- | --- | --- | --- |
+| 한 절인 제목 | Home 의 Our focus·News, Contact 의 Join us, Research 의 Perception, Faculty 이름 | `--text-h2` | 절 사이 `--section-gap` |
+| 목록을 묶는 제목 | 연도(Publications, Seminar, Talks), Funding 기관 묶음, 멤버·멘티 묶음, Regular courses·Study group, Faculty 의 Bio·Appointments | `--text-group`, 굵기 700 | 위 `--section-gap`(앞 묶음의 마지막 줄부터), 아래 `--space-4` |
+| 목록 한 줄 | 뉴스, 과제, 강의, 발표 | `--text-body`, 무엇은 굵게 | 줄 사이 `--row-gap`·`--item-gap`. 목록의 첫 줄 위와 마지막 줄 아래에는 줄 간격을 두지 않는다(제목·다음 묶음과의 간격은 위 규칙만 따른다) |
+| 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
+| 작은 머리 | Faculty 의 FACULTY POSITIONS | `--text-small` | |
+
+굵게, 링크 색, 왼쪽·오른쪽 배치, 구분선은 위 "테마 계약"과 "방문자 세 부류"의 규칙이 전역 규칙이다.
+
 ## 고치는 절차
 
 1. `git pull` 로 최신을 받는다.
@@ -116,7 +135,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
    bundle install
    bundle exec jekyll serve
    ```
-   http://localhost:4000 에서 확인한다.
+   http://localhost:4000 에서 확인한다. 디자인을 고쳤으면 `bundle exec jekyll build` 뒤 `node tools/check_format.js` 로 사이트 전체 형식을 검사한다(위 "형식은 전역 규칙으로").
 5. **changelog 를 쓴다(아래, 필수).**
 6. 커밋하고 `main` 에 push 한다. 문구·링크·항목 추가 같은 작은 수정은 바로 push 해도 된다. 테마 교체, 구조 변경처럼 큰 수정은 브랜치와 PR 로 올린다.
 7. 1~2분 뒤 https://moai-postech.github.io 에 반영됐는지 본다. Actions 탭의 changelog 검사가 실패하면 고친다.

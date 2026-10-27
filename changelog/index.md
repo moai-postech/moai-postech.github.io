@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [ui-ux-polish](2026-10-27-ui-ux-polish.md) | Sangwoo Mo(sangwoomo) | 전체 글자·Home·태블릿·키보드 | 논문 제목 18px, 출처 간격 8px, Home 안내 분리와 조작 개선 |
 | 2026-10-27 | [design-balance](2026-10-27-design-balance.md) | Sangwoo Mo(sangwoomo) | 테마·Publications·형식 검사 | 논문 위계, 공통 여백·카드, 모바일 메뉴와 Contact 정리 |
 | 2026-10-27 | [link-hierarchy-selection](2026-10-27-link-hierarchy-selection.md) | Sangwoo Mo(sangwoomo) | 전체 링크·선택·Media·Contact | 본문 링크 강조 정리, 텍스트 드래그 검증, 중복 연락처 삭제 |
 | 2026-10-27 | [callout-one-cta-link-drag](2026-10-27-callout-one-cta-link-drag.md) | Sangwoo Mo(moai-postech) | Home, 테마 | 알림 띠 화살표 링크 하나로(Our work 문장 링크), 링크 글자 드래그 선택 |

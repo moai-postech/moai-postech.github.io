@@ -15,7 +15,8 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
     t.addEventListener('click', function () { show(t); });
     t.addEventListener('keydown', function (e) {
       var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (d) { var n = tabs[(i + d + tabs.length) % tabs.length]; show(n); n.focus(); }
+      var index = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : d ? (i + d + tabs.length) % tabs.length : -1;
+      if (index >= 0) { e.preventDefault(); var n = tabs[index]; show(n); n.focus(); }
     });
   });
   show(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0]);
@@ -45,6 +46,7 @@ document.querySelectorAll('[data-filter]').forEach(function (box) {
     table.classList.add('is-locked');
   }
   lock();
+  if (document.fonts) document.fonts.ready.then(lock);
   var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(lock, 150); });
   btns.forEach(function (b) {
     b.addEventListener('click', function () {

@@ -34,7 +34,7 @@
   /* horizontal gaps inside a line: 4px for parts that belong together (venue + Oral), 8px within a group
      (name + affiliation, title + course code, chips), 12px between peer items (links, names), 24px between groups */
   --row-gap: var(--space-1);   /* between one-line rows in a list; multi-line items use --item-gap */
-  --item-gap: var(--space-4);
+  --item-gap: var(--space-3);
 
   /* 3. roles */
   --bg: var(--white);
@@ -52,7 +52,8 @@
   --text-h2: var(--fs-5);   /* a section of its own: Home, Contact, the Research stages, the Faculty name */
   --text-group: var(--fs-4);  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27) */
   --text-display: var(--fs-6);
-  --text-paper: var(--text-lead);  /* paper titles lead their authors and venue in lists and focus cards */
+  --text-paper: calc(var(--text-body) + 1px);  /* 18px desktop, 17px mobile: below group headings, above metadata */
+  --photo-height: clamp(220px, 26vw, 380px);
   --page-start: var(--space-7);
   --card-padding: var(--space-5);
   --detail-gap: var(--space-1);
@@ -101,6 +102,9 @@ h3.sub:first-child { margin-top: 0; }
 .lede { font-size: var(--text-body); line-height: 1.6; }  /* page intros read as body text, not as a heading */
 .section-body > p, .page-intro > * { max-width: var(--measure); }
 .more { margin-top: var(--space-5); font-size: var(--text-meta); font-weight: 400; }
+
+.skip-link { position: fixed; top: var(--space-2); left: var(--space-2); z-index: 100; padding: var(--space-3) var(--space-4); border-radius: var(--radius-1); background: var(--text); color: var(--bg); transform: translateY(calc(-100% - var(--space-4))); }
+.skip-link:focus { transform: none; color: var(--bg); }
 
 /* Header */
 .site-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-5); min-height: 88px; padding-block: var(--space-3); border-bottom: 1px solid var(--line); }  /* when the logos and the menu do not fit one line (tablets), the whole menu moves to its own line instead of folding into two */
@@ -189,14 +193,14 @@ a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 
 .focus-people a, .focus-people span:not(.label) { color: var(--text); }
 .focus-people a:hover { color: var(--accent); }
 
-.venue { align-self: flex-start; display: inline-block; padding: 1px var(--space-2); background: var(--surface); color: var(--text); border-radius: var(--radius-1); font-size: var(--text-meta); font-weight: 700; line-height: 1.4; }
+.venue { align-self: flex-start; display: inline-block; padding: 1px var(--space-2); background: var(--surface); color: var(--text); border-radius: var(--radius-1); font-size: var(--text-meta); font-weight: 600; line-height: 1.4; }
 
 /* Lists: light items (courses, talks, funding, seminar) are one row: the title on the left, term, place, or years right-aligned at the end.
    Mentees too: name and affiliation on the left, papers at the right end. Publications use several lines. */
 .news li { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: baseline; gap: var(--space-4); padding: var(--row-gap) 0; }
 .sec-media { word-break: keep-all; }  /* Korean headlines break between words, not inside them */
 .media-source { color: var(--muted); font-size: var(--text-meta); white-space: nowrap; }
-.media-source::before { content: "·"; margin-inline: var(--space-3); }  /* a quiet separator keeps the publication name apart from the headline */
+.media-source::before { content: "·"; margin-inline: var(--space-2); }  /* a quiet separator keeps the publication name apart from the headline */
 .news li:first-child { padding-top: 0; }
 .news time { color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 .link-aside { color: var(--text); }  /* a parenthetical inside a link, e.g. "(oral)": part of the link, but not painted */
@@ -251,7 +255,8 @@ a.mentee-name:hover { color: var(--accent); }
 .research-head p { margin: 0; }
 .research-head .area-name { margin-top: var(--space-3); font-weight: 700; }
 .research-head .area-blurb { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-meta); }
-.section-next { margin: 0; }  /* a section's closing line: where to go next (Research: all papers; Home: Join us) */
+.section-next { margin: 0; }
+.content-section.section-next { padding-top: var(--space-5); }  /* a section's closing line: where to go next (Research and Home: publications) */
 .section-next a { font-weight: 400; }
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
@@ -262,7 +267,7 @@ a.mentee-name:hover { color: var(--accent); }
 .section-photo p { margin: 0; }
 .list-intro { margin: 0 0 var(--space-4); color: var(--muted); }  /* one line under a group heading that says what the list is (Teaching: the AI study, 교수 2026-10-27) */
 .list-intro a { color: var(--accent); font-weight: 400; }
-.section-photo img { display: block; width: 100%; height: 380px; object-fit: cover; object-position: 50% 72%; border-radius: var(--radius-2); }
+.section-photo img { display: block; width: 100%; height: var(--photo-height); object-fit: cover; object-position: 50% 72%; border-radius: var(--radius-2); }
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
 .topic-card h3 { margin: 0; font-size: var(--text-body); }
@@ -330,7 +335,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pub-venue, .pub-links { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1); }
 .pub-links { gap: var(--space-3); }
 .venue-honor { color: var(--accent); font-size: var(--text-meta); font-weight: 700; }  /* presentation honours stay beside the venue, including when the links wrap */
-.pub-link { white-space: nowrap; color: var(--muted); font-size: var(--text-meta); font-weight: 600; }  /* one readable metadata size; the bold venue remains the lead */
+.pub-link { white-space: nowrap; color: var(--muted); font-size: var(--text-meta); font-weight: 400; }  /* one readable metadata size; the bold venue remains the lead */
 .pub-link:hover { color: var(--accent); text-decoration: underline; }
 
 /* People: students as a four-column roster, mentees as rows (name and affiliation, work under it) */
@@ -387,7 +392,7 @@ a.person-name:hover { color: var(--accent); }
   :root { --gutter: var(--space-6); --page-margin: 32px; --fs-6: 44px; }
   .hero h1 br { display: none; }
   .hero-copy, .hero-art { grid-column: 1 / -1; }
-  .hero-art { max-width: 440px; margin: var(--space-6) auto 0; }  /* tablets: the picture stays a picture, the focus tabs still show on the first screen */
+  .hero-art { display: none; }  /* tablets keep the statement and lab photo without a second tall illustration */
   .focus-tabs { align-items: stretch; }
   .focus-tab { flex-direction: column; justify-content: flex-start; gap: var(--space-2); text-align: center; }
   .focus-papers, .research-overview .cards { grid-template-columns: 1fr; gap: var(--space-5); }

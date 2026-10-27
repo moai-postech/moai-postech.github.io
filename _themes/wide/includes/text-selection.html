@@ -28,6 +28,7 @@
   document.addEventListener('mouseup', function () { start = null; });
   window.addEventListener('blur', function () { start = null; });
   document.addEventListener('click', function (e) {
+    if (e.button || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) return;
     var a = e.target.closest && e.target.closest('a'), sel = window.getSelection();
     if (e.detail && a && sel && !sel.isCollapsed && a.contains(sel.anchorNode)) e.preventDefault();
   }, true);

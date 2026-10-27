@@ -20,7 +20,14 @@ const TOL = 2; // px
 function measure(TOL) {
   const css = getComputedStyle(document.documentElement);
   const px = v => parseFloat(css.getPropertyValue(v));
-  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: px('--text-paper'),
+  const font = token => {
+    const probe = document.createElement('span');
+    probe.style.cssText = `display:none;font-size:var(${token})`;
+    document.body.append(probe);
+    const size = parseFloat(getComputedStyle(probe).fontSize);
+    probe.remove(); return size;
+  };
+  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'),
     sectionGap: parseFloat(getComputedStyle(document.body).getPropertyValue('--section-gap')) || px('--section-gap'),
     below: px('--space-4') };
   const allowed = [tok.h2, tok.group, tok.body, tok.meta, tok.small];

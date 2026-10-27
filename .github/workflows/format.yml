@@ -26,4 +26,5 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: node tools/check_format.js
       - run: node tools/check_selection.js
+      - run: node tools/check_interaction.js
       - run: node tools/check_postech.js

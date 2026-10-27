@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [contact-join-emphasis](2026-10-27-contact-join-emphasis.md) | Sangwoo Mo(moai-postech) | Contact | Join us 에서 학부 인턴 모집과 지원 전 연락을 굵게 강조 |
 | 2026-10-27 | [course-tab-project](2026-10-27-course-tab-project.md) | Sangwoo Mo(moai-postech) | 강의 사이트 | Term Project 를 탭·버튼·페이지 제목 모두 Project 로 |
 | 2026-10-27 | [ai-study-sync-workflow](2026-10-27-ai-study-sync-workflow.md) | Sangwoo Mo(moai-postech) | 학부생 AI 스터디 | 스터디 시트를 GitHub Actions 로 매일 자동 동기화 |
 | 2026-10-26 | [slides-on-site](2026-10-26-slides-on-site.md) | Sangwoo Mo(moai-postech) | 학부생 AI 스터디, 강의·발표 슬라이드 | 스터디 학기 탭 페이지, 사이트의 슬라이드 115개를 Drive 대신 저장소 파일로 |

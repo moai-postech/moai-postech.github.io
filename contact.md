@@ -9,7 +9,7 @@ sections:
     image: assets/img/contact-join.svg
     image_alt: "The path to MOAI Lab: the undergraduate AI study, then a CV and transcript."
     body: |
-      We mainly recruit undergraduate interns, so that we can grow and collaborate over the long term. Above all, we look for a genuine passion for AI and the clear logical thinking to pursue it. These matter more to us than a long CV.
+      **We mainly recruit undergraduate interns**, so that we can grow together over the long term. Above all, we look for a genuine passion for AI, backed by clear logical thinking; both count far more than a long CV. **Planning to apply? Contact us first.**
     steps:
       - title: "Check the background we expect"
         body: |
@@ -18,9 +18,9 @@ sections:
 
           Study group contact: Jian Choi (chjohn1105 [at] postech.ac.kr)
           {: .small .muted}
-      - title: "Send your CV and transcript"
+      - title: "Contact us before you apply"
         body: |
-          Email them to [Prof. Sangwoo Mo](faculty.html).
+          Email your CV and transcript to [Prof. Sangwoo Mo](faculty.html), for an internship or before applying to graduate school.
   - title: "Visit us"
     type: contact-block
     id: visit

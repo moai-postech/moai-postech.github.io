@@ -21,15 +21,4 @@ sections:
       - title: "Contact us before you apply"
         body: |
           Email your CV and transcript to [Prof. Sangwoo Mo](faculty.html), for an internship or before applying to graduate school.
-  - title: "Visit us"
-    type: contact-block
-    id: visit
-    icon: assets/img/icons/visit.svg
-    body: |
-      Science Building 4, Room 319<br>
-      [Department of Industrial and Management Engineering](https://ime.postech.ac.kr/), POSTECH<br>
-      77 Cheongam-ro, Nam-gu, Pohang, Gyeongbuk 37673, Korea<br>
-      Phone +82-54-279-2202
-    map: "https://www.google.com/maps?q=Pohang+University+of+Science+and+Technology&hl=en&z=15&output=embed"
-    map_label: "Map of POSTECH, Pohang"
 ---

@@ -14,5 +14,5 @@ sections:
   # 맺음: 전체 논문 목록(Publications)으로 가는 링크 하나만 둔다(교수 2026-10-26)
   - body: |
       [Full publication list →](publications.html)
-      {: .research-next}
+      {: .section-next}
 ---

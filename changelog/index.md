@@ -10,7 +10,7 @@
 | 2026-10-27 | [format-actions](2026-10-27-format-actions.md) | Sangwoo Mo(moai-postech) | Actions, AGENTS.md | 사이트 전체 형식 검사를 push·PR 마다 Actions 로 |
 | 2026-10-27 | [group-heading-size](2026-10-27-group-heading-size.md) | Sangwoo Mo(moai-postech) | theme.css, AGENTS.md, tools | 목록 묶음 제목의 크기·간격을 사이트 전체 통일, 전역 형식 규칙과 검사 도구(check_format.js) |
 | 2026-10-27 | [teaching-sections](2026-10-27-teaching-sections.md) | Sangwoo Mo(moai-postech) | Teaching | Courses 에 Regular courses 절 제목, Study group 과 대등하게 |
-| 2026-10-27 | [home-recruiting](2026-10-27-home-recruiting.md) | Sangwoo Mo(moai-postech) | Home | 첫 화면 hero 에 인턴 모집 한 줄과 Join us 링크 |
+| 2026-10-27 | [home-recruiting](2026-10-27-home-recruiting.md) | Sangwoo Mo(moai-postech) | Home | 모집 한 줄(motivated students to join us)을 Our focus 아래에 |
 | 2026-10-27 | [contact-structure](2026-10-27-contact-structure.md) | Sangwoo Mo(moai-postech) | Contact, AGENTS.md | Visit us 를 빼고 Join us 하나로, 주소·전화는 꼬리말에만 |
 | 2026-10-27 | [contact-join-emphasis](2026-10-27-contact-join-emphasis.md) | Sangwoo Mo(moai-postech) | Contact | Join us 에서 학부 인턴 모집과 지원 전 연락을 굵게 강조 |
 | 2026-10-27 | [course-tab-project](2026-10-27-course-tab-project.md) | Sangwoo Mo(moai-postech) | 강의 사이트 | Term Project 를 탭·버튼·페이지 제목 모두 Project 로 |

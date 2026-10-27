@@ -207,3 +207,21 @@
 - B 눈에서 두 물체로 시선 점선: 같은 이유.
 - C 장면 틀 안 사람 뼈대(관절 점)와 공을 각각 점선 상자로: 같은 이유.
 - 세 시안의 teal(#2A9D96) 강조판: 같은 이유. teal 은 10-26 f36fcf3 에서 이미 되돌렸다.
+
+## 18차: 분야 설명은 단계의 큰 철학으로, 주제 설명 넷은 하는 일을 드러내게 (2026-10-27)
+- 교수: "표현이 잘 정돈된게 맞아? 통일감 있고 연구가 뭐하는건지가 잘 드러나?", 분야 설명은 "너무 이렇게 쓰면 맥락이 없지 않아?", "좀 더 철학적이고 커다랗게. 내가 한것만 넣는다는 느낌보단 큰 철학을 말하고, 그 안에서 구체적으로 내가 쓴 논문은 철학의 아주 작은 파트만 다루는거야."
+- 분야 설명(`blurb`): 세 주제를 나열하지 않고 단계의 철학을 한 문장으로 쓴다. prior 는 16차대로 넣지 않는다.
+  - Perception "Perception should see the world behind the pixels: its objects, its structure, and the regularities that data only hints at."
+  - Reasoning "Reasoning should follow how knowledge is built, from evidence, abstraction, and relations, not from patterns in text alone."
+  - Action "Action should begin with people and the physical world: what each person wants, and what a body can sense."
+- 주제 설명(`summary`) 넷:
+  - Learning in the Wild "Statistical priors for learning from limited, biased, uncurated, or novel data."(하는 일 learning from 을 넣음)
+  - Reliable Generation "Fairness and alignment priors for faithful generation."(Learning in the Wild 와 겹치던 "even from imperfect data" 를 뺌)
+  - VLA & World Models "User and intent priors that adapt robot policies to each person."
+  - Multisensory Learning "Sensory priors that let robots feel, not just see."
+- `_data/research.yml` 머리 주석의 blurb 규칙도 고쳤다.
+- 확인: 로컬 빌드, 1440px.
+
+### 기각한 안과 이유(18차)
+- 16차의 세 주제 동명사 나열: 맥락이 없다(교수).
+- 단계마다 데이터만으로 부족한 문제를 말하고 카드가 답하는 꼴("Images show pixels, not the objects behind them, and real-world data is rarely clean or fair." 등): 이 세션에서 먼저 썼으나 여전히 지금 논문에 맞춘 문제라 작다. 교수는 논문이 작은 일부가 되는 큰 철학을 원했다.

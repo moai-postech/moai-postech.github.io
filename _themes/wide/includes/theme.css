@@ -250,7 +250,7 @@ a.mentee-name:hover { color: var(--accent); }
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }
-.section-callout a { font-weight: 600; }
+.section-callout a { font-weight: 600; white-space: nowrap; }  /* a short "… →" link moves to the next line whole instead of breaking in two on phones */
 /* a photo band (Home: the lab group photo under the hero, 2026-10-27). The band height is the photo's own size; the crop keeps the people and trims the sky */
 .hero-band + .section-photo { padding-top: 0; }  /* the photo sits right under the hero: only the hero's own 32px bottom padding between them (교수 2026-10-27) */
 .section-photo p { margin: 0; }

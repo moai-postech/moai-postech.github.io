@@ -21,4 +21,7 @@ sections:
       - title: "Contact us before you apply"
         body: |
           Email your CV and transcript to [Prof. Sangwoo Mo](faculty.html), for an internship or before applying to graduate school.
+
+          Contact: Prof. Sangwoo Mo ({first_name}.{last_name} [at] postech.ac.kr)
+          {: .small .muted}
 ---

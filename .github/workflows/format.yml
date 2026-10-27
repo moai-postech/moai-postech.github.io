@@ -1,0 +1,28 @@
+# 사이트 전체 형식 검사(AGENTS.md "형식은 전역 규칙으로"). 사이트를 빌드해 모든 메뉴 페이지의 제목 크기와 간격을 잰다.
+name: format
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["changelog/**", "discussions/**"]
+  pull_request:
+    paths-ignore: ["changelog/**", "discussions/**"]
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - run: bundle exec jekyll build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-save --no-package-lock playwright@1.48.2
+      - run: npx playwright install --with-deps chromium
+      - run: node tools/check_format.js

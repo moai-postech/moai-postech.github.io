@@ -1,9 +1,9 @@
 {% comment %}
   Teaching 의 강의 목록. 기본은 _data/teaching.yml(정규 강의).
-  study 가 있으면 그 한 줄(title, code)을 같은 모양으로 그린다. 매 학기 이어지는 활동이라 학기를 늘어놓지 않고
-  _data/ai_study.yml 의 첫 학기부터 "Fall 2025 – present" 처럼 기간 하나로 쓰고 스터디 페이지로 잇는다(2026-10-27 교수).
+  study: true 이면 학부생 AI 스터디의 학기를 한 줄씩 그린다. 학기마다 주제가 달라서 주제(무엇)를 왼쪽에 굵게,
+  학기(언제)를 오른쪽에 두고 스터디 페이지의 그 학기 탭(teaching/ai-study/#<id>)으로 잇는다. 학기는 _data/ai_study.yml(최신이 위)(2026-10-27 교수).
 {% endcomment %}
-{% if include.section.study %}{% assign st = include.section.study %}{% assign rows = "" | split: "" %}{% else %}{% assign rows = site.data.teaching %}{% endif %}
+{% if include.section.study %}{% assign rows = "" | split: "" %}{% else %}{% assign rows = site.data.teaching %}{% endif %}
     <section class="content-section">
     {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
     <div class="section-body">
@@ -12,10 +12,11 @@
         <span class="item-main"><strong>{{ c.title }}</strong></span>{% if c.code %}<span class="item-sub">{{ c.code }}</span>{% endif %}
         <span class="item-side">{% for t in c.terms %}{% if t.url %}<a href="{{ t.url }}">{{ t.name }}</a>{% else %}{{ t.name }}{% endif %}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
       </li>
-      {% endfor %}{% if st %}<li>
-        <span class="item-main"><strong>{{ st.title }}</strong></span>{% if st.code %}<span class="item-sub">{{ st.code }}</span>{% endif %}
-        {% assign first = site.data.ai_study.terms | last %}<span class="item-side"><a href="teaching/ai-study/">{{ first.name }} – present</a></span>
-      </li>{% endif %}
+      {% endfor %}{% if include.section.study %}{% for t in site.data.ai_study.terms %}<li>
+        <span class="item-main"><strong>{{ t.theme }}</strong></span>
+        <span class="item-side"><a href="teaching/ai-study/#{{ t.id }}">{{ t.name }}</a></span>
+      </li>
+      {% endfor %}{% endif %}
     </ul>
     </div>
     </section>

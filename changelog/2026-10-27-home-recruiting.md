@@ -1,5 +1,5 @@
 # 2026-10-27 Home 첫 화면에 인턴 모집 한 줄
-작성자: Sangwoo Mo(moai-postech) | 대상: `index.md`, `research.md`, `_themes/wide/includes/theme.css`, `AGENTS.md` | 도구: Claude Code
+작성자: Sangwoo Mo(moai-postech) | 대상: `index.md`, `research.md`, `_themes/wide/includes/theme.css`, `_themes/wide/includes/section.html`, `AGENTS.md` | 도구: Claude Code
 
 > **한줄 결론: Home hero 소개 아래에 "We are recruiting undergraduate interns. Join us →" 한 줄을 넣고 Contact 의 Join us 로 잇는다.**
 
@@ -23,7 +23,16 @@
 - 이 줄은 Research 맨 아래 "Full publication list →" 와 같은 역할(절을 닫는 안내 줄)이라 클래스를 `.research-next` → `.section-next` 로 일반화해 함께 쓴다. 링크만 굵기 600 강조색, 문장은 보통 글자. Research 화면은 픽셀까지 그대로.
 - `AGENTS.md` 전역 규칙 표에 "절을 닫는 안내 줄" 역할을 더했다.
 
+
+## 4차(같은 날): 알림 띠
+교수: 위(Our focus)와 간격이 길다, 더 붙이자. 너무 눈에 안 띈다, 다른 랩을 참고해 잘 써 보라.
+- 다른 연구실은 "We are hiring!", "We are looking for motivated students" 같은 공지를 눈에 띄는 줄로 둔다. 그 모양을 따랐다.
+- `index.md`: "**We are hiring!** We are always looking for motivated students to join our team. [See how to apply →](contact.html#join)" 를 `class: section-callout` 절로.
+- `section.html`: 일반 절에 `class` 를 붙일 수 있게. `theme.css`: `.section-callout` 은 위 절에 `--space-5` 로 붙고, 연한 강조색 바탕(`--accent-soft`, 하위 탭과 같은 색) 띠, 머리말 강조색 굵게, 링크 600 강조색.
+- `AGENTS.md` 전역 규칙 표에 "알림 띠" 역할을 더하고, "절을 닫는 안내 줄"의 예에서 Home 을 뺐다. 형식 검사 통과, 1280·390px 화면 확인.
+
 ## 기각한 안과 이유
+- (3차) 절을 닫는 안내 줄 모양: 위 절과 64px 떨어지고 보통 글자라 눈에 띄지 않았다.
 - hero 안에 모집 문장(1·2차): 교수가 hero 에 두는 것을 원하지 않았다.
 - "We are recruiting undergraduate interns": 학부 인턴만 말한다. 대학원 지원자도 포함하는 흔한 표현으로 바꿨다(학부 인턴 위주라는 말은 Contact 에 있다).
 - "Join us →" 를 따로 두기(1차): 한 줄에 강조가 둘(굵은 말, 화살표 링크)이라 과하다.

@@ -326,3 +326,13 @@
 ### 기각한 안과 이유(27차)
 - T-PRH 를 Visual Structure 로: 교수 "T-PRH는 시각구조가 아니기도 하고, 결국 Unsup alignment라 저기가 맞아." 비지도 정렬이라 Learning in the Wild 다.
 - FreezeD 를 Reliable AI 에 두기(25차): 신뢰보다 적은 데이터가 핵심이다.
+
+## 28차: 단어 겹침 두 곳 (2026-10-27)
+- 최종 점검에서 짚은 겹침을 교수가 "고쳐줘".
+- Reasoning & Agents "Cognitive priors for thinking that knows what it knows."(Reasoning 단계 안 reasoning 세 번을 두 번으로), Multisensory Learning "Sensory priors for robots that touch, hear, and feel the world."(1단계 이름 Perception 과 겹치던 perceive 를 뺌).
+- 확인: 로컬 빌드.
+
+### 기각한 안과 이유(28차)
+- "robots that feel the world, not just see it": 25차 이전의 좁은 꼴로 돌아간다.
+- "robots that feel the world through every sense": Sensory 와 sense 가 겹친다.
+- "Cognitive priors for AI that knows what it knows": Reliable AI 의 "AI that people can trust" 와 AI 가 겹친다.

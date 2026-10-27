@@ -50,7 +50,7 @@
   blurb: "Reasoning should rest on more than text: on evidence, abstraction, and relations."
   topics:
     - name: "Reasoning & Agents"
-      summary: "Cognitive priors for reasoning that knows what it knows."
+      summary: "Cognitive priors for thinking that knows what it knows."
       papers:
         - { short: "LoC", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.21318" }
         - { short: "TEG", venue: "arXiv'26", url: "https://arxiv.org/abs/2610.05060" }
@@ -81,7 +81,7 @@
         - { short: "INDI", venue: "arXiv'26", url: "https://arxiv.org/abs/2608.23478" }
         - { short: "VAP", venue: "ICML'26", url: "https://arxiv.org/abs/2512.20014" }
     - name: "Multisensory Learning"
-      summary: "Sensory priors for robots that perceive with every sense."
+      summary: "Sensory priors for robots that touch, hear, and feel the world."
       papers:
         - { short: "EIT-NN2", venue: "T-RO'21", url: "https://ieeexplore.ieee.org/document/9376677" }
         - { short: "EIT-NN", venue: "IROS'19", url: "https://ieeexplore.ieee.org/document/8968532" }

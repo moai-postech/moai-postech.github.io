@@ -143,7 +143,10 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
    ```
    http://localhost:4000 에서 확인한다. 디자인을 고쳤으면 `bundle exec jekyll build` 뒤 `node tools/check_format.js` 와 `node tools/check_postech.js` 로 사이트 전체 형식과 POSTECH 필수 요소를 검사한다.
 6. **changelog 를 쓴다(아래, 필수).** 작성자 ID 는 push 하는 GitHub 계정이다.
-7. 커밋하고 브랜치에 push 한 뒤 PR 을 열고 auto-merge 를 켠다(`gh pr create --fill && gh pr merge --auto --merge`). 검사가 통과하면 1~2분 안에 `main` 에 들어간다. 실패하면 PR 의 검사 기록을 보고 고친다. 에이전트는 세션이 작업 브랜치를 지정해도, 작은 수정은 검사를 돌린 뒤 `main` 에 바로 push 한다(교수 2026-10-27). 큰 수정만 그 브랜치에서 PR 로 올린다.
+7. 커밋하고 브랜치에 push 한 뒤 PR 을 연다. PR 이 쌓이지 않게 두 가지로 나눈다(교수 2026-10-27).
+   - **작은 수정**(문구·링크·항목 추가, 오타, 본인 멤버 정보, 이미 결정된 안 반영): auto-merge 를 squash 로 켠다(`gh pr create --fill && gh pr merge --auto --squash`). 검사가 통과하면 1~2분 안에 `main` 에 커밋 하나로 들어가고 브랜치는 저절로 지워진다. 에이전트는 묻지 않고 이 길로 끝까지 올린다. 한 요청의 작은 수정은 PR 하나로 묶고, 수정마다 PR 을 따로 열지 않는다. auto-merge 를 켤 수 없으면 검사 통과를 확인하고 바로 merge 한다.
+   - **큰 수정**(테마 교체, 구조 변경, 이 파일의 규칙, 여러 페이지에 걸친 디자인): auto-merge 없이 PR 만 열고 교수가 보고 merge 한다.
+   - 검사가 실패하면 PR 의 검사 기록을 보고 고친다.
 8. merge 된 뒤 1~2분이면 https://moai-postech.github.io 에 반영된다.
 
 ## 논의가 필요한 수정 (바로 반영하지 않는다)
@@ -206,7 +209,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 - **막혔을 때.** 고집하지 말고 `discussions/` 에 안건을 올린다(상대의 회차를 링크하고, 상대의 안을 "현재 상태 유지" 안으로 넣는다). 교수나 랩 미팅이 결정하면, 대상에 그 파일이 들어간 결정된 안건을 changelog 회차에 링크해서 push 하면 통과한다.
 - **교수.** `tools/maintainers.txt` 의 사람(교수)은 막히지 않고 알림만 받는다. 결정 권한이 있기 때문이다. 교수가 다른 사람의 수정을 바꿨으면 그 사람에게 알린다.
 - **기각한 안.** 검사는 30일이 지난 되돌리기나 "기각한 안"을 다시 꺼내는 것까지는 잡지 못한다. 고치기 전에 그 파일의 changelog 회차에서 "기각한 안과 이유"를 읽는 것은 여전히 사람과 에이전트의 몫이다.
-- **브랜치 보호와 올리는 길.** 사이트 주소(`moai-postech.github.io`)를 지키려고 저장소는 개인 계정 `moai-postech` 에 둔다. 개인 계정 저장소는 다른 사람에게 관리자 권한을 줄 수 없으므로, 교수(`sangwoomo`)와 에이전트를 포함한 모두가 같은 길로 올린다: 브랜치에 push 하고 PR 을 열고 auto-merge 를 켠다. 필수 검사 `changelog`·`format` 이 통과하면 저절로 `main` 에 들어간다. 승인은 필수가 아니고, 보호는 검사가 한다. `main` 에 바로 push 할 수 있는 것은 저장소 주인 계정과 GitHub Actions(동기화 봇)뿐이다. 설정은 `tools/setup_main_ruleset.sh` 를 저장소 주인 계정으로 한 번 돌린다. Claude 같은 앱이 올린 PR 은 GitHub 계정으로 사람을 가릴 수 없어서 changelog 작성자 ID 로 교수인지 본다. 남의 ID 를 쓰지 않는다.
+- **브랜치 보호와 올리는 길.** 사이트 주소(`moai-postech.github.io`)를 지키려고 저장소는 개인 계정 `moai-postech` 에 둔다. 개인 계정 저장소는 다른 사람에게 관리자 권한을 줄 수 없으므로, 교수(`sangwoomo`)와 에이전트를 포함한 모두가 같은 길로 올린다: 브랜치에 push 하고 PR 을 연다. 작은 수정은 auto-merge 를 켜고, 큰 수정은 교수가 merge 한다(고치는 절차 7). 필수 검사 `changelog`·`format` 이 통과하면 저절로 `main` 에 들어간다. 승인은 필수가 아니고, 보호는 검사가 한다. `main` 에 바로 push 할 수 있는 것은 저장소 주인 계정과 GitHub Actions(동기화 봇)뿐이다. 설정은 `tools/setup_main_ruleset.sh` 를 저장소 주인 계정으로 한 번 돌린다. Claude 같은 앱이 올린 PR 은 GitHub 계정으로 사람을 가릴 수 없어서 changelog 작성자 ID 로 교수인지 본다. 남의 ID 를 쓰지 않는다.
 
 ## Changelog 규칙 (필수)
 

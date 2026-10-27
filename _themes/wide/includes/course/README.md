@@ -5,14 +5,14 @@
 | 파일 | 역할 |
 | --- | --- |
 | `../../layouts/course.html` | 강의 사이트 문서 틀: 머리(과목명, 강의 메뉴), 본문, 바닥. `view: schedule` 면 `schedule.html`, `view: project` 면 `project.html`, 없으면 `home.html` |
-| `home.html` | Home: 제목·소개·버튼 옆에 운영 정보 칸(Instructor, Lectures, Office hours, Other terms) → Course outline(파트 카드) → Grading → Resources |
+| `home.html` | Home: 제목·소개 옆에 운영 정보 칸(Instructor, Lectures, Office hours, Other terms) → Course outline(파트 카드) → Grading → Resources. Schedule·Project는 상단 탭에서만 탐색 |
 | `schedule.html` | Schedule: 전체 스케줄 표(파트 머리 줄, 다음 수업 표시) |
 | `study.html` | 학부생 AI 스터디(`teaching/ai-study/`, `view: study`): 강의 Home 같은 머리 + 학기 탭. 일정은 `_data/ai_study.yml`(시트에서 `tools/ai_study_sync.py`) |
 | `head.html` | Schedule 과 Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |
 | `project.html` | 팀 프로젝트: Overview(소개, 팀 크기, 단계, 평가 기준) → Teams(팀원, 발표 회차별 날짜·순서·슬라이드) |
 | `course.css` | 강의 사이트 전용 스타일과 색. `../theme.css` 끝에서 include 한다 |
 
-색은 `course.css` 맨 위의 템플릿 하나를 모든 강의가 같이 쓴다. 파트는 순서로 색이 정해진다: 첫 파트 slate blue, 둘째 teal, 셋째 ochre. 운영 일정(개요, 시험, 프로젝트, 평가)은 rose(사이트 강조색 계열), 초청·세미나는 grey, 휴강은 색 없음. yml 에 색을 적지 않는다. 강의 줄은 바로 위 파트 머리의 색을 잇는다.
+색은 `course.css` 맨 위의 템플릿 하나를 모든 강의가 같이 쓴다. 파트는 순서로 색이 정해진다: 첫 파트 blue(`#405f82`), 둘째 teal(`#3f7069`), 셋째 violet(`#725f87`). 배경은 같은 계열의 옅은 tint다. 공통 운영 일정(개요, 시험, 프로젝트, 평가)은 사이트의 중립 회색, 초청·세미나는 더 옅은 회색, 휴강은 색 없음. POSTECH Red는 선택 상태와 자료 링크에 쓴다. yml 에 색을 적지 않는다. 강의 줄은 바로 위 파트 머리의 색을 잇는다.
 
 ## 새 강의 페이지 만들기
 

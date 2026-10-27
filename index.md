@@ -18,10 +18,11 @@ sections:
       ![MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026.jpg)
   - title: "Our focus in 2026"
     type: focus
-  # 연구 방향 바로 아래 모집 알림 띠(section-callout). 다른 연구실의 "We are hiring!" 공지 모양(2026-10-27 교수)
+  # 연구 방향 바로 아래 알림 띠(section-callout). 첫 줄은 논문을 내는 학회(강조 없이), 둘째 줄은 모집과 지원 링크(교수 2026-10-27)
   - class: section-callout
     body: |
-      **We are hiring!** We are always looking for motivated students to join our team. [See how to apply →](contact.html#join)
+      Our work appears at venues such as NeurIPS, ICML, ICLR, and CVPR.<br>
+      We are always looking for motivated students to join our team. [See how to apply →](contact.html#join)
   # News: 지금은 전부 보인다. 많아지면 limit: 8 처럼 개수를 정하면 그 아래에 "All news →"(news.html) 링크가 생긴다
   - title: "News"
     type: news

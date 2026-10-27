@@ -17,7 +17,7 @@ _data/               콘텐츠 데이터(YAML)
   members.yml        People 의 Faculty(교수, 사진, Bio, 이력 cv), Students(연구실 학생), Mentees(연구실 밖에서 지도한 학생). 멤버의 focus 는 연구 방향 패널에 이름을 띄운다. 연구실 멤버(Postdocs 포함, Alumni 제외)는 모두 Home 의 세 연구 방향 중 하나에 들어가야 하고, focus 가 빠진 멤버가 있으면 교수에게 물어 채운다(교수 2026-10-26)
   teaching.yml       Teaching 의 정규 강의
   talks.yml          Teaching > Talks
-  ai_study.yml       학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트에서 만든다. 손으로 고치지 않는다
+  ai_study.yml       학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트에서 만든다(GitHub Actions `ai-study-sync` 가 매일 06:30 KST, Actions 탭 Run workflow 로 바로). 손으로 고치지 않는다
   seminar.yml        Research > Seminar 의 발표 목록. tools/seminar_sync.py 가 랩 세미나 구글시트에서 만든다. 손으로 고치지 않는다(아래 "세미나 발표 올리기")
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
 index.md 외 *.md     페이지 하나에 파일 하나(research·seminar·funding, publications·landscape, faculty·students·mentees, teaching, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
@@ -32,7 +32,7 @@ assets/img/          그림, 아이콘(icons/), 사진(people/), 로고 아이�
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
-tools/               검사 스크립트(check_changelog.py), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml)
+tools/               검사 스크립트(check_changelog.py), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml), 스터디 동기화(ai_study_sync.py, .github/workflows/ai-study-sync.yml), 슬라이드 사본(drive_pdf.py, localize_slides.py)
 ```
 
 ### 무엇을 어디서 고치나

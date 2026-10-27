@@ -122,7 +122,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 | 목록을 묶는 제목 | 연도(Publications, Seminar, Talks), Funding 기관 묶음, 멤버·멘티 묶음, Regular courses·Undergraduate AI Study, Faculty 의 Bio·Appointments | `--text-group`, 굵기 700 | 위 `--section-gap`(앞 묶음의 마지막 줄부터), 아래 `--space-4` |
 | 목록 한 줄 | 뉴스, 과제, 강의, 발표 | `--text-body`, 무엇은 굵게 | 줄 사이 `--row-gap`·`--item-gap`. 목록의 첫 줄 위와 마지막 줄 아래에는 줄 간격을 두지 않는다(제목·다음 묶음과의 간격은 위 규칙만 따른다) |
 | 절을 닫는 안내 줄 | Research 의 Full publication list | `--text-body`, 링크만 굵기 600 강조색(`.section-next`) | 따로 한 절, 위아래 `--section-gap` |
-| 알림 띠 | Home 의 모집("We are hiring!", Our focus 아래) | `--text-body`, 연한 강조색 바탕(`--accent-soft`), 머리말 굵게 강조색, 링크 굵기 600(`class: section-callout`) | 위 절에 붙여 위 `--space-5`, 아래 `--section-gap`. 사이트에 하나만 둔다 |
+| 알림 띠 | Home 의 학회·모집 안내(Our focus 아래) | `--text-body`, 연한 강조색 바탕(`--accent-soft`), 링크 굵기 600 강조색(`class: section-callout`). 머리말을 굵게 쓰면 강조색 | 위 절에 붙여 위 `--space-5`, 아래 `--section-gap`. 사이트에 하나만 둔다 |
 | 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
 | 작은 머리 | Faculty 의 FACULTY POSITIONS | `--text-small` | |
 

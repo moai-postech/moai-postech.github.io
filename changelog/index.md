@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [callout-venues](2026-10-27-callout-venues.md) | Sangwoo Mo(moai-postech) | Home, AGENTS.md | 알림 띠: 논문 내는 학회 한 줄 + 모집 한 줄, We are hiring! 머리말 뺌 |
 | 2026-10-27 | [home-group-photo](2026-10-27-home-group-photo.md) | Sangwoo Mo(moai-postech) | Home | 히어로 아래에 랩 단체사진 띠 |
 | 2026-10-27 | [news-venue-links](2026-10-27-news-venue-links.md) | Sangwoo Mo(moai-postech) | Home News | News 의 venue 를 학회 공식 페이지로 링크(색 없이) |
 | 2026-10-27 | [agent-direct-push](2026-10-27-agent-direct-push.md) | Sangwoo Mo(moai-postech) | AGENTS.md | 작은 수정은 에이전트가 PR 을 열어 auto-merge(squash), 큰 수정은 교수가 merge (1차 main 바로 push 는 2차에서 바꿈) |

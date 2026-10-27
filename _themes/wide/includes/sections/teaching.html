@@ -3,11 +3,13 @@
   오른쪽 학기는 각 학기 페이지로 잇는다(2026-10-27 교수: 제목과 학기 둘 다 누를 수 있게).
   study: true 이면 학부생 AI 스터디의 학기를 한 줄씩 그린다. 학기마다 주제가 달라서 주제(무엇)를 왼쪽에 굵게,
   학기(언제)를 오른쪽에 두고, 둘 다 스터디 페이지의 그 학기 탭(teaching/ai-study/#<id>)으로 잇는다. 학기는 _data/ai_study.yml(최신이 위)(2026-10-27 교수).
+  intro 가 있으면 제목과 목록 사이에 한 줄 소개(마크다운, 회색)를 둔다(교수 2026-10-27).
 {% endcomment %}
 {% if include.section.study %}{% assign rows = "" | split: "" %}{% else %}{% assign rows = site.data.teaching %}{% endif %}
     <section class="content-section">
     {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
     <div class="section-body">
+    {% if include.section.intro %}<p class="list-intro">{% include inline.html text=include.section.intro %}</p>{% endif %}
     <ul class="plain item-list">
       {% for c in rows %}<li>
         {% assign latest = c.terms | first %}<span class="item-main"><strong>{% if latest.url %}<a href="{{ latest.url }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</strong></span>{% if c.code %}<span class="item-sub">{{ c.code }}</span>{% endif %}

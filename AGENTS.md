@@ -28,7 +28,7 @@ _themes/classic/     예전 테마(카드·좌우 배치). 둘 다 참고용이�
   includes/          section.html, sections/<type>.html, theme.css 등
 assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 않는다)
 assets/seminar/      랩 발표 슬라이드 PDF(16:9 로 맞춘 사본, 날짜-제목별칭.pdf). seminar_sync.py 가 만들고 지운다
-assets/img/          그림, 아이콘(icons/), 사진(people/), 로고 아이콘(logo-mark.svg, `_config.yml` 의 logo). 콘텐츠가 경로로 가리킨다
+assets/img/          그림, 아이콘(icons/), 사진(people/, 랩 단체사진 lab/), 로고 아이콘(logo-mark.svg, `_config.yml` 의 logo). 콘텐츠가 경로로 가리킨다
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
 POSTECH.md           정보기술팀이 요구한 POSTECH 필수 요소(P1~P9)와, 바꾸자는 요청을 그것에 비춰 보는 검토 절차
 changelog/           수정 기록(아래 규칙)

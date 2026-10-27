@@ -26,6 +26,8 @@ POSTECH 요구사항: P1~P9 확인. 요구사항을 바꾸지 않았고, `_confi
 
 - 5차(같은 날): 교수 결정으로 사이트 저장소는 `moai-postech` 에 남긴다(사이트 주소 `moai-postech.github.io` 를 지키는 것이 이 계정의 존재 이유). `research` 는 `MOAI-Lab-POSTECH` 조직으로, `llm-wiki` 는 `sangwoomo` 비공개로 옮긴다(교수가 한 번 실행). 개인 계정 저장소라 `sangwoomo` 를 관리자로 둘 수 없으므로 브랜치 보호를 "모두 PR, 검사 통과 시 auto-merge, 승인 필수 아님, bypass 는 저장소 주인과 GitHub Actions 만" 으로 바꿨다(`tools/setup_main_ruleset.sh` 가 auto-merge 와 merge 후 브랜치 삭제도 켠다). Claude 앱 bypass 는 뺐다(구성원의 Claude 도 같은 앱이라 bypass 하면 검사를 건너뛴다). 앱이 연 PR 은 changelog 작성자 ID 로 교수를 알아보게 `check_changelog.py` 를 고쳤다. `AGENTS.md` 고치는 절차 7·8단계를 PR·auto-merge 로 바꿨다.
 
+- 6차(같은 날): 저장소 정리 결과. 개인(`sangwoomo`): `research`, `paper-stella`, `llm-wiki`. 조직(`MOAI-Lab-POSTECH`): `funding-radar`, `ids-homepage`, `moai-lab-internal`, `gpu-monitoring`, `curriculum-of-one`. `moai-postech`: 사이트만(교수 기준: 커밋한 사람이 아니라 누구를 위한 것인가). Claude GitHub 앱을 `sangwoomo` 에 설치했다. ruleset 은 저장소 주인 계정으로 돌려도 만들어지지 않았고(원인 미확인, 개인 계정 저장소의 bypass 제한으로 추정) 교수가 더 손대지 않기로 해 보류했다. 검사는 Actions 에서 계속 돈다.
+
 ## 기각한 안과 이유
 - 파일 단위로 막기(다른 사람이 30일 안에 고친 파일은 손대지 못함): `theme.css`, `members.yml` 처럼 모두가 고치는 파일은 늘 막힌다. 줄 단위로 좁혔다.
 - 커밋 작성자(git author)로 주인 판단: 에이전트 커밋은 작성자가 "Claude" 라 사람을 가리지 못한다. changelog 회차의 작성자 ID 를 쓰고 Actions 에서 push 계정과 맞춘다.
@@ -37,6 +39,7 @@ POSTECH 요구사항: P1~P9 확인. 요구사항을 바꾸지 않았고, `_confi
 - 요구사항을 `AGENTS.md` 안에만 두기: 교수가 따로 박아 두길 원했고, 외부 요구사항은 출처와 함께 한 파일로 보는 편이 검토하기 쉽다. `AGENTS.md` 는 요약과 링크만 둔다.
 
 ## 남은 것
-- 교수가 `moai-postech` 계정으로 한 번: `research`·`llm-wiki` 이전, `bash tools/setup_main_ruleset.sh`.
+- ruleset(보류): 구성원이 저장소를 고치기 시작할 때 원인 확인 뒤 다시 켠다.
+- `paper-stella` 의 `atlas-deploy.yml` 이 아직 `moai-postech/llm-wiki` 를 가리킨다(GitHub 주소 넘김으로 동작). `sangwoomo/llm-wiki` 로 고친다.
 - 교수가 claude.ai 루틴 화면에서 `lab-site-sync` 를 지운다.
 - 구성원의 GitHub 계정이 정해지면 changelog 작성자 ID 를 그 계정으로 쓰도록 안내한다.

@@ -11,7 +11,13 @@
 - `theme.css`: 평소 강조색 링크 줄에 `.hero-text a` 를 더했다(방문자가 눌러야 할 링크).
 - 1280px 에서 한 줄, 390px 에서 두 줄. 첫 화면 안에 보인다.
 
+
+## 2차(같은 날): 한 문장으로
+교수: "We are recruiting undergraduate interns. Join us →" 는 과하다, Join us 없이 한 문장으로.
+- `index.md`: "We are recruiting **[undergraduate interns](contact.html#join)**." 굵은 핵심어가 그대로 Contact 의 Join us 로 이어진다(강조색은 hero 규칙). 화살표 링크 "Join us →" 는 뺐다.
+
 ## 기각한 안과 이유
+- "Join us →" 를 따로 두기(1차): 한 줄에 강조가 둘(굵은 말, 화살표 링크)이라 과하다.
 - hero 버튼(Join us) 되살리기: 2026-10-21 에 메뉴와 중복이라 지운 결정이 있다. 글 한 줄로 대신했다.
 - 메뉴 순서를 Research 먼저로: 다른 연구실(Stanford SVL, SNU Vision, KAIST ALIN, Berkeley RAIL)도 Home 다음에 People 을 두어 지금 순서를 유지한다.
 

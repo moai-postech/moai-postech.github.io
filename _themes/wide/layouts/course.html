@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="assets/style.css?v={{ site.time | date: '%s' }}">
 </head>
 <body class="course-site">
+<a class="skip-link" href="{{ page.url }}#main-content">Skip to content</a>
 <div class="wrap">
   <header class="course-top">
     <a class="course-brand" href="{{ root }}">{{ c.title }}<span>{{ c.term }}</span></a>
@@ -33,7 +34,7 @@
       {% if c.project %}<a href="{{ root }}project/"{% if page.view == "project" %} aria-current="page"{% endif %}>Project</a>{% endif %}
     </nav>{% endunless %}
   </header>
-  <main>
+  <main id="main-content" tabindex="-1">
 {% if page.view == "project" %}{% include course/project.html %}{% elsif page.view == "study" %}{% include course/study.html %}{% elsif page.view == "schedule" %}{% include course/schedule.html %}{% else %}{% include course/home.html %}{% endif %}
   </main>
   <footer class="course-foot"><a href="index.html"><img src="{{ site.logo }}" alt="{{ site.title }} logo">{{ site.title }}</a><a class="course-postech" href="{{ site.postech.url }}">POSTECH</a><a class="course-privacy" href="{{ site.postech.privacy_url }}">{{ site.postech.privacy_label }}</a></footer>

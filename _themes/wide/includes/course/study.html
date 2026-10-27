@@ -70,7 +70,8 @@
     t.addEventListener('click', function () { show(t, true); });
     t.addEventListener('keydown', function (e) {
       var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (d) { var n = tabs[(i + d + tabs.length) % tabs.length]; show(n, true); n.focus(); }
+      var index = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : d ? (i + d + tabs.length) % tabs.length : -1;
+      if (index >= 0) { e.preventDefault(); var n = tabs[index]; show(n, true); n.focus(); }
     });
   });
   var want = location.hash.slice(1);

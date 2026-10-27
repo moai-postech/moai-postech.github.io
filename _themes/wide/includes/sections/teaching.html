@@ -1,12 +1,20 @@
+{% comment %}
+  Teaching 의 강의 목록. 기본은 _data/teaching.yml(정규 강의).
+  study 가 있으면 그 한 줄(title, code)을 같은 모양으로 그리고, 학기는 _data/ai_study.yml 의 terms 에서 가져와 스터디 페이지의 학기 탭(teaching/ai-study/#<id>)으로 잇는다.
+{% endcomment %}
+{% if include.section.study %}{% assign st = include.section.study %}{% assign rows = "" | split: "" %}{% else %}{% assign rows = site.data.teaching %}{% endif %}
     <section class="content-section">
     {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
     <div class="section-body">
     <ul class="plain item-list">
-      {% for c in site.data.teaching %}<li>
+      {% for c in rows %}<li>
         <span class="item-main"><strong>{{ c.title }}</strong></span>{% if c.code %}<span class="item-sub">{{ c.code }}</span>{% endif %}
         <span class="item-side">{% for t in c.terms %}{% if t.url %}<a href="{{ t.url }}">{{ t.name }}</a>{% else %}{{ t.name }}{% endif %}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
       </li>
-      {% endfor %}
+      {% endfor %}{% if st %}<li>
+        <span class="item-main"><strong>{{ st.title }}</strong></span>{% if st.code %}<span class="item-sub">{{ st.code }}</span>{% endif %}
+        <span class="item-side">{% for t in site.data.ai_study.terms %}<a href="teaching/ai-study/#{{ t.id }}">{{ t.name }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
+      </li>{% endif %}
     </ul>
     </div>
     </section>

@@ -1,5 +1,5 @@
 # 2026-10-27 Contact 페이지 정돈: Visit us 를 뺄까
-상태: 논의 중 | 제안자: Sangwoo Mo(moai-postech), Claude Code 정리 | 대상: `contact.md`, `AGENTS.md`
+상태: 결정됨 | 제안자: Sangwoo Mo(moai-postech), Claude Code 정리 | 대상: `contact.md`, `AGENTS.md`
 
 ## 쟁점
 교수: "Visit us 가 꼭 필요한가? 남들이 어떻게 하는지 보고 Contact 를 정돈하자." Contact 는 Join us(지원 방법)와 Visit us(주소·전화·지도) 두 절이다. Visit us 의 주소·호실·전화는 바로 아래 꼬리말(POSTECH 필수 요소)에 이미 모두 있다. 관련 회차: [contact-visual](../changelog/2026-10-22-contact-visual.md), [contact-polish](../changelog/2026-10-22-contact-polish.md), [contact-join-emphasis](../changelog/2026-10-27-contact-join-emphasis.md).
@@ -23,3 +23,4 @@
 - Claude Code(2026-10-27): 안 A 를 권한다. 조사한 연구실들은 지도·주소 절을 두지 않고, 우리 꼬리말에 같은 정보가 이미 있다. 메뉴 이름(안 B)은 과제 기관·동료 연구자 쪽도 보는 자리라 Contact 유지가 낫다고 본다.
 
 ## 결정
+2026-10-27, 교수(Sangwoo Mo). 안 A: Visit us 를 빼고 Join us 하나만 둔다. 주소·호실·전화는 꼬리말에 이미 있고, 다른 연구실들도 지원 안내 중심으로 꾸린다. 반영: [contact-structure](../changelog/2026-10-27-contact-structure.md).

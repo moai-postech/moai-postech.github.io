@@ -37,4 +37,4 @@ iCloud가 만든 동일 내용 사본 4개(text-selection HTML, check_selection 
 - 메뉴·페이지 구성이나 콘텐츠 변경: 이번 요청의 디자인 범위에서 필요하지 않음.
 
 ## 남은 것
-디자인 PR #18의 로컬·GitHub 검사 통과. 교수가 전체 디자인 개선을 맡겼으나 자동 승인 검토가 main 병합과 원격 브랜치 삭제를 명시적 승인 부족으로 거부. 병합만 별도로 승인 요청했고 브랜치 삭제는 제외. 배포는 승인 대기이며 `TODO.md`에 다시 기록. Home 링크·선택·Media·Contact의 작은 수정은 main `dde3c36`으로 별도 배포 완료.
+없음. 교수가 "병합하고 배포"를 명시적으로 승인한 뒤, 모든 검사가 통과한 [PR #18](https://github.com/moai-postech/moai-postech.github.io/pull/18)을 main `2100bea`로 squash merge. 원격 브랜치는 유지. GitHub Pages 자동 배포 실행, 승인 대기 TODO 완료 처리. Home 링크·선택·Media·Contact의 작은 수정은 main `dde3c36`으로 먼저 배포.

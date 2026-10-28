@@ -3,15 +3,15 @@
 
 /* Colour template, one set for every course (2026-10-28). Parts take their colour from their position, never per course:
    sky blue, mint and coral; logistics (overview, exams, project days, grading) use butter yellow.
-   Distinct pastel fills share a lightness range, with darker matching labels. Guests and seminars stay light grey;
-   no-class days have no fill. POSTECH Red stays on navigation and materials.
+   Distinct pastel fills share a lightness range, with darker matching labels. Guest lectures and seminars use the logistics yellow on the course schedule;
+   no-class days use a quiet grey fill. POSTECH Red stays on navigation and materials.
    --tone is text (4.5:1 or more on its row), --tone-tint bars and borders, --tone-row rows and cards. */
 .tone-p1        { --tone: #315f91; --tone-tint: #a9c9ee; --tone-row: #e6f1fd; }
 .tone-p2        { --tone: #356c4b; --tone-tint: #a6d9bf; --tone-row: #e4f5ed; }
 .tone-p3        { --tone: #9a4746; --tone-tint: #e9aaa4; --tone-row: #fce7e5; }
 .tone-logistics { --tone: #78601f; --tone-tint: #e9cd73; --tone-row: #fff5d6; }
 .tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
-.tone-none      { --tone: var(--muted); --tone-tint: transparent; --tone-row: transparent; }
+.tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
 .course-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); flex-wrap: wrap; min-height: 72px; border-bottom: 1px solid var(--line); }
 .course-brand { display: inline-flex; align-items: baseline; gap: var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 700; letter-spacing: -.3px; }
@@ -98,8 +98,11 @@
 .cs-title { font-weight: 600; }
 .cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: 600; vertical-align: 1px; }
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
-.is-break .cs-title, .is-event .cs-title { color: var(--muted); font-weight: 400; }
-.is-guest .cs-title, .is-seminar .cs-title { font-weight: 400; }
+.is-break .cs-title { color: var(--muted); font-weight: 400; }
+.cs-session-type { display: block; margin-bottom: var(--space-1); color: var(--tone); font-size: var(--text-small); font-weight: 600; }
+.cs-speaker-name { color: var(--text); font-weight: 600; }
+.cs-session-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin-top: var(--space-1); color: var(--muted); font-size: var(--text-meta); }
+.cs-session-time { color: var(--tone); font-weight: 600; }
 .cs-slides { width: 1%; white-space: nowrap; }
 .cs-slides a { margin-right: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }  /* the links a student comes for, so they keep the accent at rest */
 .cs-slides a:last-child { margin-right: 0; }
@@ -210,6 +213,7 @@ a.cs-title:hover { color: var(--accent); }
   .course-nav { gap: 0 var(--space-4); }
   .course-part-row th { display: block; }
   .course-schedule td { display: block; width: auto; padding: 0 !important; border: 0; background: none; white-space: normal; }
+  .course-schedule tr.tone-none td { box-shadow: none; }
   .is-next { box-shadow: inset 0 0 0 2px var(--accent) !important; }
   .is-next td { box-shadow: none !important; }
   .cs-date { grid-column: 1 / -1; }

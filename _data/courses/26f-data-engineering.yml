@@ -32,6 +32,7 @@ parts:
 
 # 한 줄 = 한 수업일. kind: lecture(번호 n), guest, seminar(학과 세미나), exam, project, break(휴강·온라인 수업일. off 는 YAML 이 false 로 읽어 쓰지 않는다), event.
 # part 만 있는 줄은 파트 머리다. title 이 없으면 speaker 가 제목 자리에 온다. pdf·html·lab 은 공개 링크가 생기면 채운다(없으면 칸이 빈다).
+# time·location은 회차별 별도 시간(KST)·장소다. 확인된 값만 적고 없으면 생략한다.
 # reading 의 약칭은 아래 resources 의 abbr 이다.
 schedule:
   - date: "2026-09-08"
@@ -70,6 +71,8 @@ schedule:
     title: "금융권 AI 어디까지 왔나? 기술 및 정책 동향"
     speaker: "Dae-Young Park"
     affiliation: "Financial Security Institute"
+    time: "10:30 – 11:30 KST"
+    location: "Engineering Building 4, Room 302"
   - date: "2026-09-22"
     kind: lecture
     n: 5
@@ -178,6 +181,8 @@ schedule:
     title: "AI 시대의 경영 패러다임: 디맨드 드리븐 전략"
     speaker: "Hyunkyu Lee"
     affiliation: "Google Korea"
+    time: "17:00 – 18:00 KST"
+    location: "Engineering Building 4, Room 302"
   - date: "2026-11-19"
     kind: lecture
     n: 17

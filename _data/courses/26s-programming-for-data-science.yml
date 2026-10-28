@@ -118,6 +118,8 @@ schedule:
     kind: seminar
     speaker: "Songyee Yoon"
     affiliation: "Principal Venture Partners"
+    time: "16:00 – 18:00 KST"
+    location: "CHANGeUP GROUND, Event Hall"
   - date: "2026-04-28"
     kind: lecture
     n: 16
@@ -128,6 +130,8 @@ schedule:
     speaker: "Sangwoo Mo"
     affiliation: "POSTECH"
     pdf: "assets/talks/2026-opportunities-in-ime-as-an-ai-researcher-and-vice.pdf"
+    time: "17:00 – 18:00 KST"
+    location: "Engineering Building 4, Room 302"
   - date: "2026-04-30"
     kind: break
     title: "No class"
@@ -177,6 +181,8 @@ schedule:
     kind: seminar
     speaker: "Yeong-Hwan Jeon"
     affiliation: "LG U+"
+    time: "10:30 – 11:30 KST"
+    location: "Engineering Building 4, Room 202"
   - date: "2026-06-02"
     kind: project
     title: "Project Presentation II"

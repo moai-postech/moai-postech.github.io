@@ -1,18 +1,8 @@
 // 글자 역할과 실제 줄바꿈 검사. 토큰 일치만으로 디자인이 좋은지는 판정하지 않는다.
 // 모든 페이지의 텍스트, 숨은 탭, 큰 제목의 반응형 경계를 검사한다.
-const fs = require('fs');
-const path = require('path');
 const { chromium } = require('playwright');
-const { SITE, serve } = require('./lib/site');
-const PAGES = ['index', 'research', 'seminar', 'funding', 'publications', 'landscape',
-  'faculty', 'students', 'mentees', 'teaching', 'talks', 'contact', 'news', '404'].map(n => n + '.html');
-(function walk(dir) {
-  for (const e of fs.readdirSync(path.join(SITE, dir), { withFileTypes: true })) {
-    const rel = path.join(dir, e.name);
-    if (e.isDirectory() && e.name !== 'slides') walk(rel);
-    else if (e.name === 'index.html') PAGES.push(rel);
-  }
-})('teaching');
+const { serve, templatePages } = require('./lib/site');
+const PAGES = templatePages();
 
 function inspect() {
   const problems = [];
@@ -22,23 +12,7 @@ function inspect() {
   const check = (ok, text) => { if (!ok) problems.push(text); };
   const main = document.querySelector('main');
   check([...document.fonts].some(f => f.status === 'loaded' && /Pretendard/.test(f.family)), 'Pretendard 실제 글꼴이 로드되지 않았다');
-  // 크기가 같은 묶음 제목도 h2/h3/th의 기본 행간에 기대지 않는다.
-  const groups = '.page-publications h2, .page-funding h2, .page-students h2, .page-mentees h2, .page-teaching h2, .page-faculty h2:not(#professor), .year-head, .schedule-year th';
-  for (const e of document.querySelectorAll(groups)) {
-    if (!visible(e)) continue;
-    check(Math.abs(parseFloat(css(e).lineHeight) / size(e) - 1.3) < .02 && css(e).letterSpacing === 'normal', `묶음 제목 행간·자간: ${e.textContent.trim().slice(0,35)}`);
-  }
-  for (const e of main.querySelectorAll('.pubs .title, .pubs .authors, .pub-meta, .pub-links')) {
-    if (visible(e)) check(Math.abs(parseFloat(css(e).lineHeight) / size(e) - 1.5) < .02, `논문 행간: ${e.className}`);
-  }
-  for (const e of main.querySelectorAll('.pubs .venue')) {
-    check(css(e).fontWeight === '600' && size(e) < size(e.closest('li').querySelector('.title')) && parseFloat(css(e).paddingTop) === 0 && parseFloat(css(e).paddingBottom) === 0, '논문 venue는 600 굵기를 쓰고 제목보다 작아야 한다');
-    check(css(e).backgroundColor === 'rgba(0, 0, 0, 0)' && parseFloat(css(e).paddingLeft) === 0 && parseFloat(css(e).paddingRight) === 0, '논문 venue에 배경이나 들여쓰기가 남는다');
-    check(Math.abs(e.getBoundingClientRect().left - e.closest('li').querySelector('.title').getBoundingClientRect().left) < 1, '논문 venue와 제목의 시작선이 다르다');
-  }
-  for (const e of main.querySelectorAll('.paper-chip .paper-title')) {
-    if (visible(e)) check(size(e) === parseFloat(css(document.body).fontSize), '대표 논문 제목이 일반 본문 크기가 아니다');
-  }
+  // Role typography is validated once by check_design.js using base + documented page adjustments.
   for (const e of main.querySelectorAll('.section-next .section-body > p:not(:last-child)')) {
     const gap = e.closest('.section-actions') ? 12 : 16;
     check(Math.abs(parseFloat(css(e).marginBottom) - gap) < 1, '안내 문단 간격이 역할 간격과 다르다');

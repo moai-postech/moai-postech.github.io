@@ -11,7 +11,7 @@
     </section>
 {% else %}{% for g in site.data.funding %}
     <section class="content-section">
-    <h2>{{ g.group }}</h2>
+    <h2 class="group-heading">{{ g.group }}</h2>
     <div class="section-body">
     {% include funding-list.html projects=g.projects %}
     </div>

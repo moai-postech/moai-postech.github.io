@@ -1,0 +1,318 @@
+{
+  "sharedDecisions": [
+    {
+      "target": "상단 메뉴",
+      "change": "14px → 본문 크기 16px, 모든 항목 600 유지",
+      "reason": "상시 탐색하는 짧은 라벨이므로 논문 보조정보보다 크게 표시. 탭 이동 후 위치·폭은 유지."
+    },
+    {
+      "target": "하위 탭·헤더 동작 링크",
+      "change": "14px → 전용 control 크기 15px",
+      "reason": "내용을 읽는 보조 글자와 실제 탐색 동작을 구분. 16px은 좁은 필터 줄을 불필요하게 자주 접어 15px 선택."
+    },
+    {
+      "target": "스터디 학기 탭",
+      "change": "학기 14→16px, 주제 13→14px",
+      "reason": "학기는 일정 선택의 주 정보이며 두 열 모바일 배치에 여유가 있음. 주제는 한 단계 작게 유지."
+    },
+    {
+      "target": "운영 정보",
+      "change": "교수·TA·시간·장소 14→16px, 인물 보조 설명 13→14px",
+      "reason": "강의·스터디 운영 정보는 방문자가 직접 찾아야 할 핵심 정보. 사진과 패널의 여백을 이용해 본문 크기로 표시."
+    },
+    {
+      "target": "초청 연사 이름",
+      "change": "14px → 본문 크기 16px",
+      "reason": "발표자를 식별하는 주 정보. 팀 구성원 전체 목록·참고문헌과 구분하고 600 강조는 유지."
+    }
+  ],
+  "reviews": [
+    {
+      "page": "index.html",
+      "template": "연구실 · hero/카드",
+      "decision": "기본 유지",
+      "reason": "큰 제목·소개·대표 논문·사진의 밀도가 다르므로 기존 크기 단계 유지. 탐색 메뉴만 공통 가독성 조정.",
+      "adjustments": []
+    },
+    {
+      "page": "research.html",
+      "template": "연구실 · 연구 카드",
+      "decision": "페이지 조정",
+      "reason": "한 열의 넓은 설명 카드는 읽는 본문으로 취급. 짧은 논문 칩은 보조 크기로 분리.",
+      "adjustments": [
+        "research-card-reading"
+      ]
+    },
+    {
+      "page": "seminar.html",
+      "template": "연구실 · 발표 표",
+      "decision": "페이지 조정",
+      "reason": "연사 식별이 중요하고 제목·소속과 다른 역할이므로 이름만 본문 크기로 확대.",
+      "adjustments": [
+        "seminar-speaker-reading"
+      ]
+    },
+    {
+      "page": "funding.html",
+      "template": "연구실 · 과제 목록",
+      "decision": "기본 유지",
+      "reason": "기관·과제명이 본문 크기이며, 짧은 연도는 보조 크기여도 식별 가능. 열 정렬과 목록 밀도 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "publications.html",
+      "template": "연구실 · 긴 논문 목록",
+      "decision": "기본 유지",
+      "reason": "긴 목록에서 제목16px·저자14px·venue14px의 위계가 필요. 최근 요청한 venue600·자료 링크400 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "landscape.html",
+      "template": "연구실 · 외부 지도",
+      "decision": "기본 유지",
+      "reason": "지도는 독립된 삽입 화면. 주변 탐색과 전체 화면 링크는 사이트 템플릿, 지도 내부는 원 화면 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "faculty.html",
+      "template": "연구실 · 교수 프로필/CV",
+      "decision": "페이지 조정",
+      "reason": "사진 옆 연락처와 프로필 링크를 읽기 쉽게 확대. 긴 이력 목록의 보조 연도까지 확대하지 않음.",
+      "adjustments": [
+        "faculty-contact-reading"
+      ]
+    },
+    {
+      "page": "students.html",
+      "template": "연구실 · 인물 카드",
+      "decision": "페이지 조정",
+      "reason": "사진 카드에 여백이 충분하며 학력·소속은 핵심 정보. 이름과 상세의 크기 차이는 유지.",
+      "adjustments": [
+        "student-card-reading"
+      ]
+    },
+    {
+      "page": "mentees.html",
+      "template": "연구실 · 멘티 목록",
+      "decision": "페이지 조정",
+      "reason": "학위·소속은 관계를 설명하는 본문, 성과와 연도는 보조정보로 구분.",
+      "adjustments": [
+        "mentee-affiliation-reading"
+      ]
+    },
+    {
+      "page": "teaching.html",
+      "template": "연구실 · 강의 목록",
+      "decision": "페이지 조정",
+      "reason": "학기 선택은 실제 탐색 동작. 학수번호와 달리 15px로 표시.",
+      "adjustments": [
+        "teaching-term-navigation"
+      ]
+    },
+    {
+      "page": "talks.html",
+      "template": "연구실 · 발표 목록",
+      "decision": "기본 유지",
+      "reason": "제목16px·장소14px의 짧은 행. 두 줄로 접히는 모바일에서도 본문 위계를 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "contact.html",
+      "template": "연구실 · 지원 안내",
+      "decision": "기본 유지",
+      "reason": "지원 단계와 본문이 이미16px이고 카드 여백이 충분. 별도 축소나 확대보다 현재 읽기 흐름 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "news.html",
+      "template": "연구실 · 소식 목록",
+      "decision": "기본 유지",
+      "reason": "소식 본문16px, 반복되는 연·월14px. 날짜를 키우면 본문보다 눈에 띄어 기존 위계 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "404.html",
+      "template": "연구실 · 짧은 안내",
+      "decision": "기본 유지",
+      "reason": "문장 하나와 홈 이동 링크16px. 넓은 빈 공간은 오류 안내 페이지의 의도된 구성.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/25f-data-engineering/index.html",
+      "template": "강의 · Home",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/25f-data-engineering/schedule/index.html",
+      "template": "강의 · Schedule",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 자료 동작15px와 초청 연사 이름16px로 식별 강화.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/25f-data-engineering/project/index.html",
+      "template": "강의 · Project",
+      "decision": "기본 유지",
+      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/26f-data-engineering/index.html",
+      "template": "강의 · Home",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/26f-data-engineering/schedule/index.html",
+      "template": "강의 · Schedule",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 자료 동작15px와 초청 연사 이름16px로 식별 강화.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/26f-data-engineering/project/index.html",
+      "template": "강의 · Project",
+      "decision": "기본 유지",
+      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/26s-programming-for-data-science/index.html",
+      "template": "강의 · Home",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/26s-programming-for-data-science/schedule/index.html",
+      "template": "강의 · Schedule",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 자료 동작15px와 초청 연사 이름16px로 식별 강화.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/26s-programming-for-data-science/project/index.html",
+      "template": "강의 · Project",
+      "decision": "기본 유지",
+      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/ai-study/index.html",
+      "template": "스터디 · Home",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "소개·학습 흐름·통계가 함께 있어 각 블록의 밀도에 맞춘 크기 유지. 학기 선택16/14px, 카드 설명14px, 본문16px.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/ai-study/schedule/index.html",
+      "template": "스터디 · Schedule",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "긴 표는16/14/13px 위계 유지. 운영 정보16px·학기 선택16/14px·파트 선택14px로 조작 영역은 읽기 쉽게 조정.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/ai-study/members/index.html",
+      "template": "스터디 · 잠긴 명단",
+      "decision": "기본 유지",
+      "reason": "잠금 폼16px과 동작15px 적용. 명단은 데이터 열이 많아 본문16px·표 머리13px, 모바일 카드 표시 유지. 가상 데이터로 해제 상태 검토.",
+      "adjustments": []
+    }
+  ],
+  "adjustments": [
+    {
+      "id": "student-card-reading",
+      "pages": [
+        "students.html"
+      ],
+      "roles": [
+        "metadata",
+        "person-card-secondary"
+      ],
+      "selector": ".person-aff, .person-degree, .person-topic, .person-work, .person .role",
+      "style": {
+        "fontSize": "var(--text-body)"
+      },
+      "change": "학력·소속·연구 주제 14→16px. 이름 19/18px와 사진 배치 유지.",
+      "reason": "사진 카드의 학력과 소속은 사람을 이해하는 핵심 정보이며 주변 여백이 넓다. 논문 목록의 보조정보 크기를 그대로 적용하면 작게 보인다."
+    },
+    {
+      "id": "faculty-contact-reading",
+      "pages": [
+        "faculty.html"
+      ],
+      "roles": [
+        "profile-secondary"
+      ],
+      "selector": ".profile-contact, .profile-links",
+      "style": {
+        "fontSize": "var(--text-body)"
+      },
+      "change": "연락처와 프로필 링크 14→16px. CV의 연도·상세 설명은 14px 유지.",
+      "reason": "사진 옆 연락처는 독립된 짧은 정보 블록이고 실제로 찾아 눌러야 한다. 긴 CV 목록의 보조 연도와 동일 크기로 묶지 않는다."
+    },
+    {
+      "id": "mentee-affiliation-reading",
+      "pages": [
+        "mentees.html"
+      ],
+      "roles": [
+        "metadata"
+      ],
+      "selector": ".mentee-aff",
+      "style": {
+        "fontSize": "var(--text-body)"
+      },
+      "change": "멘티 학위·소속 14→16px. 오른쪽 논문·연도는 14px 유지.",
+      "reason": "학위와 소속은 멘토링 관계를 설명하는 주요 내용이다. 간단한 행 구성이므로 본문 크기로 읽히게 하고 성과 표시는 보조 크기로 남긴다."
+    },
+    {
+      "id": "research-card-reading",
+      "pages": [
+        "research.html"
+      ],
+      "roles": [
+        "card-description"
+      ],
+      "selector": ".topic-card p",
+      "style": {
+        "fontSize": "var(--text-body)"
+      },
+      "change": "주제 설명 14→16px. 논문 칩의 약칭·venue는 14/13px 유지.",
+      "reason": "넓은 한 열 카드의 설명 문장은 연구 방향을 이해하는 본문이다. 세 열의 강의 요약 카드나 논문 칩과 달리 읽기 공간이 충분하다."
+    },
+    {
+      "id": "teaching-term-navigation",
+      "pages": [
+        "teaching.html"
+      ],
+      "roles": [
+        "metadata"
+      ],
+      "selector": ".item-side",
+      "style": {
+        "fontSize": "var(--text-control)"
+      },
+      "change": "학기 이동 링크 14→15px. 학수번호는 14px 유지.",
+      "reason": "학기는 단순한 날짜가 아니라 해당 강의로 이동하는 선택지다. 짧은 강의 목록의 오른쪽 여백에 맞춰 한 단계 크게 표시."
+    },
+    {
+      "id": "seminar-speaker-reading",
+      "pages": [
+        "seminar.html"
+      ],
+      "roles": [
+        "seminar-name"
+      ],
+      "selector": ".schedule-speaker",
+      "style": {
+        "fontSize": "var(--text-body)"
+      },
+      "change": "연사 이름 14→16px. 소속·날짜 14px, 제목 16px 유지.",
+      "reason": "연사가 발표 목록의 핵심 정보라는 기존 결정에 맞춘다. 사람 이름은 본문 크기로 식별하고 소속·날짜만 보조 크기로 남긴다."
+    }
+  ]
+}

@@ -14,47 +14,47 @@
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
 .course-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); flex-wrap: wrap; min-height: 72px; border-bottom: 1px solid var(--line); }
-.course-brand { display: inline-flex; align-items: baseline; gap: var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 700; letter-spacing: -.3px; }
-.course-brand span { white-space: nowrap; color: var(--muted); font-size: var(--text-meta); font-weight: 600; letter-spacing: 0; }
+.course-brand { display: inline-flex; align-items: baseline; gap: var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: var(--weight-heading); letter-spacing: -.3px; }
+.course-brand span { white-space: nowrap; color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-emphasis); letter-spacing: 0; }
 .study-lab-brand img { width: auto; height: 28px; }
 .course-brand:hover { color: var(--accent); text-decoration: none; }
 .course-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-5); }
-.course-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-meta); border-bottom: 2px solid transparent; }
+.course-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }
 .course-nav a:hover, .course-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .course-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-5) 0 var(--space-7); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--text-meta); }
-.course-foot a { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text); font-weight: 600; }
+.course-foot a { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text); font-weight: var(--weight-emphasis); }
 .course-foot img { width: auto; height: 19px; }
 /* POSTECH (university home) and the privacy link are required on every page of the school domain (IT team 2026-09-15) */
-.course-foot .course-postech { color: var(--muted); font-weight: 400; }
+.course-foot .course-postech { color: var(--muted); font-weight: var(--weight-regular); }
 .course-foot .course-postech::before { content: "\00b7"; margin-right: var(--space-2); color: var(--muted); }
-.course-foot .course-privacy { margin-left: auto; font-weight: 700; }
+.course-foot .course-privacy { margin-left: auto; font-weight: var(--weight-heading); }
 .course-site main > :last-child { padding-bottom: var(--space-8); }
 
 /* Home: title, lead and optional resource links on the left (7 of 12 columns), logistics on the right (5 columns),
    the shape of the MIT, Stanford, CMU and Berkeley course pages (2026-10-26) */
 .course-hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gutter); align-items: start; padding-top: var(--space-7); }
-.course-eyebrow { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0 0 var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
-.course-eyebrow span + span::before, .course-meta span + span::before { content: "\00b7"; margin-right: var(--space-3); color: var(--muted); font-weight: 400; }
+.course-eyebrow { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0 0 var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
+.course-eyebrow span + span::before, .course-meta span + span::before { content: "\00b7"; margin-right: var(--space-3); color: var(--muted); font-weight: var(--weight-regular); }
 .course-hero h1 { margin-bottom: var(--space-5); text-wrap: balance; }
 .course-lead { color: var(--muted); font-size: var(--text-lead); line-height: 1.55; }
 .course-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0 0; }
-.course-btn { display: inline-flex; align-items: center; min-height: 40px; padding: 0 var(--space-5); border-radius: 999px; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--text); font-size: var(--text-meta); font-weight: 600; }
+.course-btn { display: inline-flex; align-items: center; min-height: 40px; padding: 0 var(--space-5); border-radius: 999px; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--text); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .course-btn:hover { text-decoration: none; box-shadow: inset 0 0 0 1.5px var(--accent); }
 .course-btn.is-primary { background: var(--accent); box-shadow: none; color: var(--bg); }
 .course-btn.is-primary:hover { color: var(--bg); filter: brightness(.9); }
 .course-facts { margin: 0; padding: var(--space-3) var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
 .course-fact { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: var(--space-4); padding: var(--space-3) 0; }
 .course-fact + .course-fact { box-shadow: inset 0 1px 0 var(--line); }
-.course-fact dt { color: var(--muted); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; line-height: 1.9; }
-.course-fact dd { margin: 0; font-size: var(--text-meta); }
-.course-fact dd a { font-weight: 600; }
+.course-fact dt { color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; line-height: 1.9; }
+.course-fact dd { margin: 0; font-size: var(--text-body); }
+.course-fact dd a { font-weight: var(--weight-emphasis); }
 .course-fact dd a + a { margin-left: var(--space-3); }
 .course-instructor { grid-template-columns: 1fr; gap: var(--space-2); }  /* the photo row needs the full width of the panel */
 .course-person { display: flex; align-items: center; gap: var(--space-3); }
 .course-person + .course-person { margin-top: var(--space-3); }
 .course-person img { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; object-fit: cover; }
 .course-person-details { display: flex; flex-direction: column; min-width: 0; line-height: 1.5; }
-.course-person small { color: var(--muted); font-size: var(--text-small); overflow-wrap: anywhere; }
+.course-person small { color: var(--muted); font-size: var(--text-meta); overflow-wrap: anywhere; }
 .course-support dd { min-width: 0; }
 .course-meeting p { margin: 0; }
 .course-meeting p + p { margin-top: var(--detail-gap); }
@@ -65,7 +65,7 @@
 .course-head { padding-top: var(--space-7); }
 .course-heading-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3) var(--space-5); margin-bottom: var(--space-3); }
 .course-heading-row h1 { margin: 0; }
-.course-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0; color: var(--muted); font-size: var(--text-body); font-weight: 400; }
+.course-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-regular); }
 .course-first { padding-top: var(--space-6); }
 
 .course-summary { padding-top: var(--space-7); }
@@ -76,15 +76,15 @@
 
 /* Step cards on the project page (the course page no longer has part cards: each part is described in its own row of the schedule) */
 .course-parts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); margin-top: var(--space-5); }
-.course-parts li { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-5); background: var(--tone-row, var(--surface)); border-top: 4px solid var(--tone-tint, var(--line)); border-radius: var(--radius-2); }
-.course-part-name { display: flex; justify-content: space-between; gap: var(--space-2); color: var(--tone, var(--accent)); font-size: var(--text-meta); font-weight: 700; }
-.course-part-name small { color: var(--muted); font-size: var(--text-meta); font-weight: 400; }
-.course-parts strong { font-size: var(--text-body); font-weight: 600; }
+.course-parts li { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--card-padding); background: var(--tone-row, var(--surface)); border-top: 4px solid var(--tone-tint, var(--line)); border-radius: var(--radius-2); }
+.course-part-name { display: flex; justify-content: space-between; gap: var(--space-2); color: var(--tone, var(--accent)); font-size: var(--text-meta); font-weight: var(--weight-heading); }
+.course-part-name small { color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-regular); }
+
 .course-part-text { color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
 
 /* Schedule: one row per class day; lectures carry their number, other days only a tag */
 .course-schedule { width: 100%; border-collapse: separate; border-spacing: 0 3px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }  /* rows read as coloured blocks, as in the sheet */
-.course-schedule thead th { padding: 0 var(--space-4) var(--space-2) 0; border-bottom: 1px solid var(--text); color: var(--muted); font-size: var(--text-small); font-weight: 600; text-align: left; text-transform: uppercase; letter-spacing: .06em; }
+.course-schedule thead th { padding: 0 var(--space-4) var(--space-2) 0; border-bottom: 1px solid var(--text); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-align: left; text-transform: uppercase; letter-spacing: .06em; }
 .course-schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; background: var(--tone-row); vertical-align: baseline; }
 .course-schedule td:not(:last-child) { box-shadow: 1px 0 0 var(--tone-row); }  /* covers the hairline between cells of one filled row */
 .course-schedule td:first-child { border-radius: var(--radius-1) 0 0 var(--radius-1); }
@@ -92,24 +92,24 @@
 .course-schedule tr.tone-none td { box-shadow: inset 0 -1px 0 var(--line); border-radius: 0; }
 .course-schedule td:last-child { padding-right: var(--space-3); }  /* text keeps off the edge of a filled row */
 .course-schedule th:last-child { padding-right: 0; }
-.course-part-row th { padding: var(--space-6) 0 var(--space-2); box-shadow: inset 0 -2px 0 var(--tone-tint); color: var(--tone); font-size: var(--text-meta); font-weight: 700; text-align: left; }
-.course-part-row .cp-title { margin-left: var(--space-2); color: var(--text); font-weight: 600; }
-.course-part-row .cp-span { margin-left: var(--space-3); color: var(--muted); font-weight: 400; }
-.course-part-row .cp-text { display: block; margin-top: 2px; color: var(--muted); font-weight: 400; }
+.course-part-row th { padding: var(--space-6) 0 var(--space-2); box-shadow: inset 0 -2px 0 var(--tone-tint); color: var(--tone); font-size: var(--text-meta); font-weight: var(--weight-heading); text-align: left; }
+.course-part-row .cp-title { margin-left: var(--space-2); color: var(--text); font-weight: var(--weight-emphasis); }
+.course-part-row .cp-span { margin-left: var(--space-3); color: var(--muted); font-weight: var(--weight-regular); }
+.course-part-row .cp-text { display: block; margin-top: 2px; color: var(--muted); font-weight: var(--weight-regular); }
 .cs-date { width: 1%; white-space: nowrap; color: var(--muted); font-size: var(--text-meta); }
 .cs-date small { margin-left: var(--space-2); color: var(--muted); font-size: var(--text-small); }
-.cs-n { width: 1%; color: var(--tone); font-weight: 700; text-align: right; }
+.cs-n { width: 1%; color: var(--tone); font-weight: var(--weight-heading); text-align: right; }
 .cs-topic { line-height: 1.5; }
-.cs-title { font-weight: 600; }
-.cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: 600; vertical-align: 1px; }
+.cs-title { font-weight: var(--weight-emphasis); }
+.cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
-.is-break .cs-title { color: var(--muted); font-weight: 400; }
-.cs-session-type { display: block; margin-bottom: var(--space-1); color: var(--tone); font-size: var(--text-small); font-weight: 600; }
-.cs-speaker-name { color: var(--text); font-weight: 600; }
+.is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
+.cs-session-type { display: block; margin-bottom: var(--space-1); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
+.cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .cs-session-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin-top: var(--space-1); color: var(--muted); font-size: var(--text-meta); }
-.cs-session-time { color: var(--tone); font-weight: 600; }
+.cs-session-time { color: var(--tone); font-weight: var(--weight-emphasis); }
 .cs-slides { width: 1%; white-space: nowrap; }
-.cs-slides a { margin-right: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }  /* the links a student comes for, so they keep the accent at rest */
+.cs-slides a { margin-right: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }  /* the links a student comes for, so they keep the accent at rest */
 .cs-slides a:last-child { margin-right: 0; }
 .cs-reading { width: 1%; white-space: nowrap; color: var(--muted); font-size: var(--text-meta); }
 .cs-reading a { color: var(--muted); }
@@ -117,7 +117,7 @@
 .is-next td { box-shadow: inset 0 2px 0 var(--accent), inset 0 -2px 0 var(--accent) !important; }  /* the next class: a red frame around its own colour */
 .is-next td:first-child { box-shadow: inset 2px 2px 0 var(--accent), inset 0 -2px 0 var(--accent) !important; }
 .is-next td:last-child { box-shadow: inset -2px 2px 0 var(--accent), inset 0 -2px 0 var(--accent) !important; }
-.is-next .cs-date { color: var(--accent); font-weight: 700; }
+.is-next .cs-date { color: var(--accent); font-weight: var(--weight-heading); }
 .course-schedule td:first-child { padding-left: var(--space-3); }
 
 a.cs-title { color: var(--text); }  /* project days lead to the project page */
@@ -126,14 +126,14 @@ a.cs-title:hover { color: var(--accent); }
 /* Team project page: criteria as name + one line, then one row per team with a cell per presentation round */
 .project-sub { margin-top: var(--space-6); }
 .project-criteria li { display: grid; grid-template-columns: 9em minmax(0, 1fr); gap: var(--space-4); padding: var(--row-gap) 0; }
-.project-criteria strong { font-weight: 600; }
+.project-criteria strong { font-weight: var(--weight-emphasis); }
 .project-criteria span { color: var(--muted); }
-.course-sheet { display: inline-flex; align-items: baseline; gap: var(--space-1); margin-left: auto; color: var(--accent); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
+.course-sheet { display: inline-flex; align-items: baseline; gap: var(--space-1); margin-left: auto; color: var(--accent); white-space: nowrap; }
 .project-teams .cs-n { padding-left: var(--space-3); }
-.project-link { display: inline-block; margin-top: 2px; color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
+.project-link { display: inline-block; margin-top: 2px; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .project-round { width: 1%; white-space: nowrap; }
 .project-when { display: block; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
-.project-round a { display: block; margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
+.project-round a { display: block; margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 
 /* Undergraduate AI Study Schedule: a tab per term. The table columns are fixed so switching terms never moves a column */
 .study-intro { padding-top: var(--space-7); }
@@ -154,32 +154,32 @@ a.cs-title:hover { color: var(--accent); }
 .study-learning-path { display: grid; grid-template-columns: repeat(var(--study-steps), minmax(0, 1fr)); list-style: none; padding: 0; margin: var(--space-5) 0 0; gap: var(--space-5); }
 .study-learning-path li { position: relative; border-top: 1px solid var(--line); padding-top: var(--space-3); min-width: 0; }
 .study-learning-path li + li::before { content: "→"; position: absolute; right: calc(100% + var(--space-2)); top: -.85em; padding-inline: var(--space-1); color: var(--muted); background: var(--bg); }
-.study-step-label { color: var(--accent); font-size: var(--text-small); font-weight: 600; }
+.study-step-label { color: var(--accent); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
 .study-step { display: block; width: 100%; border: 0; padding: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
-.study-step-title { display: block; margin: var(--space-2) 0; font-size: var(--text-body); font-weight: 600; }
+.study-step-title { display: block; margin: var(--space-2) 0; }
 .study-step-text { display: block; color: var(--muted); font-size: var(--text-meta); }
 .study-step:hover .study-step-title, .study-step[aria-pressed="true"] .study-step-title { color: var(--accent); }
 .study-step:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: var(--radius-1); }
 .study-learning-path li.is-selected { border-top-color: var(--accent); }
 .study-table tr[data-session] { scroll-margin-top: var(--space-5); }
 .study-table tr.is-part-selected { --tone-row: var(--accent-soft); }
-.study-table tr.is-part-selected .cs-n { color: var(--accent); font-weight: 700; }
-.study-table tr.is-part-selected .cs-title { color: var(--text); font-weight: 600; }
-.study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: 600; }
+.study-table tr.is-part-selected .cs-n { color: var(--accent); font-weight: var(--weight-heading); }
+.study-table tr.is-part-selected .cs-title { color: var(--text); font-weight: var(--weight-emphasis); }
+.study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .study-overview p { margin: 0; color: var(--muted); }
 .study-overview .study-reference { margin-top: var(--space-2); font-size: var(--text-meta); }
-.study-reference a { color: var(--accent); font-weight: 600; }
+.study-reference a { color: var(--accent); font-weight: var(--weight-emphasis); }
 .study-tablist { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
-.study-tablist button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: var(--space-2) var(--space-5); border: 0; border-radius: var(--radius-2); background: var(--surface); color: var(--muted); font: inherit; font-size: var(--text-meta); line-height: 1.4; text-align: left; cursor: pointer; }
-.study-tablist button strong { font-weight: 600; }
-.study-tablist button span { font-size: var(--text-small); }
+.study-tablist button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: var(--space-2) var(--space-5); border: 0; border-radius: var(--radius-2); background: var(--surface); color: var(--muted); font: inherit; font-size: var(--text-body); line-height: 1.4; text-align: left; cursor: pointer; }
+.study-tablist button strong { font-weight: var(--weight-emphasis); }
+.study-tablist button span { font-size: var(--text-meta); }
 .study-tablist button:hover { color: var(--accent); }
 .study-tablist button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }  /* the same tint as the current subnav tab */
 .study-panel h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); margin-bottom: 0; }
-.study-panel h2 span { white-space: nowrap; color: var(--muted); font-size: var(--text-lead); font-weight: 600; }
+.study-panel h2 span { white-space: nowrap; color: var(--muted); font-size: var(--text-lead); font-weight: var(--weight-emphasis); }
 .study-note { margin-bottom: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
-.study-note strong { margin-right: var(--space-1); color: var(--text); font-weight: 600; }
-.study-note a { color: var(--accent); font-weight: 600; }
+.study-note strong { margin-right: var(--space-1); color: var(--text); font-weight: var(--weight-emphasis); }
+.study-note a { color: var(--accent); font-weight: var(--weight-emphasis); }
 .study-table { table-layout: fixed; }
 .study-table .sc-n { width: 3.2em; }
 .study-table .sc-date { width: 4.6em; }
@@ -194,7 +194,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-table-lectures .sc-mat { width: 16%; }
 .study-table .cs-n { text-align: left; }
 .study-table .cs-slides { width: auto; white-space: nowrap; }
-.study-table .st-material-group { display: inline-block; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
+.study-table .st-material-group { display: inline-block; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-table .st-material-group + .st-material-group { margin-left: var(--space-2); }
 .study-table .cs-slides a { display: inline-block; margin-right: 0; }  /* Keep all material links on one line. */
 .st-links a, .st-links span { display: inline-block; margin-right: var(--space-3); font-size: var(--text-meta); }
@@ -202,19 +202,18 @@ a.cs-title:hover { color: var(--accent); }
 .st-links a:hover { color: var(--accent); }
 .st-lectures a { color: var(--accent); }
 .st-who { color: var(--muted); font-size: var(--text-meta); }
-.is-optional .cs-title { color: var(--muted); font-weight: 400; }
+.is-optional .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
 
 /* Public aggregate statistics; member details are rendered only after decrypting. */
-.study-home-overview > h2, .study-member-stats h2, .study-full-list h2 { font-size: var(--text-group); line-height: var(--leading-group); letter-spacing: normal; }
 .study-stat-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); margin: 0; padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
 .study-stat-summary dt { color: var(--muted); font-size: var(--text-meta); }
-.study-stat-summary dd { margin: var(--space-2) 0 0; font-size: var(--text-h2); font-weight: 700; line-height: 1.2; }
+.study-stat-summary dd { margin: var(--space-2) 0 0; font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; }
 .study-stat-breakdowns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-7); margin-top: var(--space-6); }
-.study-stat-breakdowns h3 { margin: 0 0 var(--space-4); font-size: var(--text-body); font-weight: 600; }
+.study-stat-breakdowns h3 { margin: 0 0 var(--space-4); }
 .study-stat-bars { display: grid; gap: var(--space-3); }
 .study-stat-bars li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-1) var(--space-3); font-size: var(--text-meta); }
 .study-stat-bars small { margin-left: var(--space-2); color: var(--muted); font-size: var(--text-small); }
-.study-stat-bars strong { font-weight: 600; font-variant-numeric: tabular-nums; }
+.study-stat-bars strong { font-weight: var(--weight-emphasis); font-variant-numeric: tabular-nums; }
 .study-stat-bar { grid-column: 1 / -1; height: 4px; background: var(--surface); border-radius: var(--radius-1); overflow: hidden; }
 .study-stat-bar > span { display: block; height: 100%; background: var(--accent); border-radius: inherit; }
 .study-stat-note { margin: var(--space-3) 0 0; color: var(--muted); font-size: var(--text-small); }
@@ -224,13 +223,13 @@ a.cs-title:hover { color: var(--accent); }
 .study-unlock-fields { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); }
 .study-unlock-fields label { font-size: var(--text-meta); }
 .study-unlock-fields input { min-width: 0; max-width: 100%; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-1); color: var(--text); background: var(--bg); font: inherit; }
-.study-unlock-fields button, .study-lock-button { padding: var(--space-2) var(--space-4); border: 1px solid var(--accent); border-radius: var(--radius-1); color: var(--accent); background: var(--bg); font: inherit; font-size: var(--text-meta); cursor: pointer; }
+.study-unlock-fields button, .study-lock-button { padding: var(--space-2) var(--space-4); border: 1px solid var(--accent); border-radius: var(--radius-1); color: var(--accent); background: var(--bg); font: inherit; font-size: var(--text-control); font-weight: var(--weight-emphasis); cursor: pointer; }
 .study-unlock-fields button:disabled { opacity: .6; cursor: wait; }
 .study-unlock-message { margin: var(--space-3) 0 0; color: var(--muted); font-size: var(--text-meta); }
 .study-unlock-message:empty { display: none; }
 .study-full-list-heading:not(:empty) { margin-bottom: var(--space-3); }
-.study-home-overview .study-term-heading h3 { margin: 0; font-size: var(--text-lead); }
-.study-home-overview .study-term-heading h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: 400; }
+.study-home-overview .study-term-heading h3 { margin: 0; }
+.study-home-overview .study-term-heading h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-regular); }
 @media (max-width: 680px) {
   .study-stat-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .study-stat-breakdowns { grid-template-columns: 1fr; gap: var(--space-6); }
@@ -239,8 +238,7 @@ a.cs-title:hover { color: var(--accent); }
 }
 
 /* Study member directory: source-sheet column order, one row per person. */
-.study-member-group h3 { font-size: var(--text-group); line-height: var(--leading-group); letter-spacing: normal; }
-.study-member-group h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: 400; }
+.study-member-group h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-regular); }
 .study-members-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: var(--text-body); }
 .study-members-table .sm-cohort { width: 7%; }
 .study-members-table .sm-name { width: 12%; }
@@ -249,8 +247,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-members-table .sm-email { width: 35%; }
 .study-members-table .sm-participation { width: 24%; }
 .study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); }
-.study-members-table thead th { padding-top: 0; color: var(--muted); font-size: var(--text-small); font-weight: 600; }
-.study-members-table tbody th { font-weight: 600; white-space: nowrap; }
+.study-members-table thead th { padding-top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
+.study-members-table tbody th { font-weight: var(--weight-emphasis); white-space: nowrap; }
 .study-members-table th:last-child, .study-members-table td:last-child { padding-right: 0; }
 .study-member-email { color: var(--muted); overflow-wrap: anywhere; }
 .study-member-markers { display: flex; flex-wrap: wrap; gap: var(--space-1); }
@@ -270,7 +268,7 @@ a.cs-title:hover { color: var(--accent); }
 /* Grading: item and weight on one line */
 .course-grading { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-5); }  /* two to four items share the row evenly */
 .course-grading li { display: flex; justify-content: space-between; align-items: baseline; padding: var(--space-4) var(--space-5); background: var(--tone-row); border-radius: var(--radius-2); }  /* grading is logistics */
-.course-grading strong { color: var(--tone); }
+.course-grading strong { color: var(--tone); font-weight: var(--weight-heading); }
 .course-grading strong { font-size: var(--text-lead); }
 .course-note { margin-top: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
 
@@ -310,7 +308,7 @@ a.cs-title:hover { color: var(--accent); }
   .cs-slides:empty, .cs-reading:empty { display: none !important; }
   .project-round { grid-column: 1 / -1; }
   .project-round:empty { display: none !important; }
-  .project-round::before { content: attr(data-round) "\00a0\00a0"; color: var(--muted); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+  .project-round::before { content: attr(data-round) "\00a0\00a0"; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }
   .project-criteria li { grid-template-columns: 1fr; gap: 0; padding: var(--space-2) 0; }
   .study-table colgroup { display: none; }
   .st-links, .st-who { grid-column: 1 / -1; }
@@ -325,9 +323,9 @@ a.cs-title:hover { color: var(--accent); }
 /* Project milestones: dates and actions, with no repeated Overview card. */
 .project-timeline { display: grid; gap: var(--space-5); margin-top: var(--space-5); }
 .project-timeline li { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(0, 5fr); gap: var(--space-4); }
-.project-timeline-when { color: var(--text); font-size: var(--text-body); font-weight: 600; font-variant-numeric: tabular-nums; }
-.project-timeline-when small { display: block; color: var(--muted); font-size: var(--text-small); font-weight: 400; }
-.project-timeline-title { font-size: var(--text-body); font-weight: 600; }
+.project-timeline-when { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); font-variant-numeric: tabular-nums; }
+.project-timeline-when small { display: block; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-regular); }
+.project-timeline-title { font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .project-timeline p { margin: var(--space-1) 0 0; font-size: var(--text-meta); color: var(--muted); }
 .project-timeline p strong { color: var(--text); }
 @media (max-width: 680px) {
@@ -337,5 +335,5 @@ a.cs-title:hover { color: var(--accent); }
 
 /* Compact part selection keeps the schedule actionable after moving the overview home. */
 .study-part-filters { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
-.study-part-filters .study-step { width: auto; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-1); font-size: var(--text-small); }
+.study-part-filters .study-step { width: auto; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-1); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-part-filters .study-step[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }

@@ -1,6 +1,6 @@
 {% for g in site.data.members.groups %}
     <section class="content-section">
-    <h2>{{ g.title }}</h2>
+    <h2 class="group-heading">{{ g.title }}</h2>
     <div class="section-body">
     {% if g.subgroups %}{% for sub in g.subgroups %}
     <h3 class="sub">{{ sub.title }}</h3>

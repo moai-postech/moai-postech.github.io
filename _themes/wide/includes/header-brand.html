@@ -1,0 +1,5 @@
+{% comment %}Shared identity: POSTECH + lab brand, or the course title in the same slot.{% endcomment %}
+<div class="head-id">
+  {% if site.postech %}<a class="head-postech" href="{{ site.postech.url }}"><img src="{{ site.postech.wordmark }}" alt="POSTECH" width="733" height="62"></a>{% endif %}
+  <p class="brand"><a href="{{ include.url | default: 'index.html' }}"{% if include.title %} title="{{ include.title | escape }}"{% endif %}>{% unless include.title %}{% if site.logo %}<img class="brand-mark" src="{{ site.logo }}" alt="{{ site.title }} logo">{% endif %}{% endunless %}<span class="brand-word">{{ include.title | default: site.title }}</span></a></p>
+</div>

@@ -60,7 +60,11 @@ function inspect() {
         const range = document.createRange();
         range.setStart(wordNode, match.index); range.setEnd(wordNode, match.index + match[0].length);
         const rects = [...range.getClientRects()].filter(r => r.width && r.height);
-        if (e.closest('.focus-tab')) check(new Set(rects.map(r => Math.round(r.top))).size <= 1, `연구 방향 단어가 중간에서 갈라짐: ${match[0]}`);
+        if (e.closest('.focus-tab')) {
+          check(new Set(rects.map(r => Math.round(r.top))).size <= 1, `연구 방향 단어가 중간에서 갈라짐: ${match[0]}`);
+          const tab = e.closest('.focus-tab').getBoundingClientRect();
+          check(rects.every(r => r.left >= tab.left-1 && r.right <= tab.right+1), `연구 방향 단어가 탭 영역을 넘음: ${match[0]}`);
+        }
         for (const r of rects) {
           const key = Math.round(r.top);
           lines.set(key, [...(lines.get(key) || []), match[0]]);

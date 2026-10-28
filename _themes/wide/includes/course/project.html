@@ -25,6 +25,7 @@
     {% if pj.teams %}<section class="content-section">
     <h2>Teams</h2>
     <div class="section-body">
+    {% if pj.sheet %}<p class="course-note">Teams edit their own entry in the project sheet. This page is updated from it.</p>{% endif %}
     <table class="course-schedule project-teams">
       <thead><tr><th scope="col">#</th><th scope="col">Project</th>{% for rd in pj.rounds %}<th scope="col">{{ rd.name }}</th>{% endfor %}</tr></thead>
       <tbody>

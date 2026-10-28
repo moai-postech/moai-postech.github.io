@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 const { ROOT, SITE, serve, templatePages } = require('./lib/site');
-const contract = require('../_themes/wide/design-contract.json');
+const { contract, renderReview } = require('./lib/design-spec');
 const { loadSyntheticDirectory } = require('./lib/design-fixture');
 
 // Changing page content must not create a second styling surface.
@@ -25,8 +25,21 @@ function checkSources() {
       if (size && !/^(var\(|inherit$)/.test(size[1].trim()) && !(m[1].trim()==='.brand-word' && size[1].trim()==='23px')) failures.push(`${file}: ${m[1].trim()} 글자 크기는 역할 토큰 사용`);
     }
     if (/font-weight:\s*(400|600|700)\b/.test(source)) failures.push(`${file}: 굵기 역할 토큰 대신 숫자 사용`);
-    if (/\.page-[\w-]+\s+h[1-6]\s*\{/.test(source)) failures.push(`${file}: 페이지 이름으로 제목 역할 지정`);
+
   }
+  const allPages = templatePages();
+  const documented = contract.pageDesign.reviews.map(r=>r.page);
+  for (const page of allPages) if (!documented.includes(page)) failures.push(`${page}: 페이지별 검토와 기본 유지/조정 근거가 없음`);
+  if (new Set(documented).size !== documented.length) failures.push('페이지 검토 기록 중복');
+  for (const review of contract.pageDesign.reviews) for (const id of review.adjustments) if (!contract.pageDesign.adjustments.some(a=>a.id===id && a.pages.includes(review.page))) failures.push(`${review.page}: 조정 기록 ${id}와 연결 불일치`);
+  for (const adjustment of contract.pageDesign.adjustments) {
+    if (adjustment.roles.some(id=>['primary-navigation','current-navigation'].includes(id))) failures.push(`${adjustment.id}: 상단 메뉴는 페이지별 조정 대신 같은 문서 틀의 공통 크기·위치 유지`);
+    if (!adjustment.reason.trim() || !adjustment.change.trim() || !Object.keys(adjustment.style).length) failures.push(`${adjustment.id}: 왜/어떻게 조정했는지 기록 필요`);
+    if (adjustment.pages.some(p=>!allPages.includes(p))) failures.push(`${adjustment.id}: 존재하지 않는 페이지 지정`);
+    if (adjustment.roles.some(id=>!contract.roles.some(r=>r.id===id))) failures.push(`${adjustment.id}: 기본 역할 지정 누락`);
+    for (const page of adjustment.pages) if (!contract.pageDesign.reviews.find(r=>r.page===page)?.adjustments.includes(adjustment.id)) failures.push(`${adjustment.id}: 해당 페이지의 검토 기록과 연결 필요`);
+  }
+  if (fs.readFileSync(path.join(ROOT,'_themes/wide/page-design.md'),'utf8') !== renderReview()) failures.push('page-design.md가 기록 JSON과 다름. --write-review로 갱신');
   return failures;
 }
 
@@ -46,14 +59,26 @@ function inspect(contract) {
   }
   const same = (actual, target) => typeof target === 'number' ? Math.abs(parseFloat(actual)-target) < .6 :
     actual === target || /px$/.test(actual) && /px$/.test(target) && Math.abs(parseFloat(actual)-parseFloat(target)) < .6;
+  const pagePath = location.pathname.replace(/^\//,'') || 'index.html';
+  const pageAdjustments = (contract.pageDesign?.adjustments || []).filter(a=>a.pages.includes(pagePath));
+  const adjustmentCounts = {};
+  for (const adjustment of pageAdjustments) {
+    const targets = [...document.querySelectorAll(adjustment.selector)].filter(visible);
+    adjustmentCounts[adjustment.id] = targets.length;
+    for (const e of targets) if (!contract.roles.some(r=>adjustment.roles.includes(r.id) && e.matches(r.selector))) failures.push(`${adjustment.id}: 조정 대상의 기본 역할이 없음: ${label(e)}`);
+  }
   for (const role of contract.roles) {
-    const style = Object.assign({}, role.style, ...(role.variants || []).filter(v => innerWidth <= v.maxWidth).map(v=>v.style));
+    const baseStyle = Object.assign({}, role.style, ...(role.variants || []).filter(v => innerWidth <= v.maxWidth).map(v=>v.style));
     const elements = [...document.querySelectorAll(role.selector)].filter(visible);
     counts[role.id] = elements.length;
-    if (elements.length) samples[role.id] = Object.fromEntries(Object.keys(style).map(k => [k, getComputedStyle(elements[0])[k]]));
-    for (const e of elements) for (const [property, value] of Object.entries(style)) {
-      const actual = getComputedStyle(e)[property], target = expected(property, value, e);
-      if (!same(actual, target)) failures.push(`${role.id}: ${property} ${actual}, 규칙 ${target}: ${label(e)}`);
+    for (const e of elements) {
+      const applied = pageAdjustments.filter(a=>a.roles.includes(role.id) && e.matches(a.selector));
+      const style = Object.assign({},baseStyle,...applied.map(a=>a.style));
+      if (!samples[role.id]) samples[role.id] = Object.fromEntries(Object.keys(style).map(k=>[k,getComputedStyle(e)[k]]));
+      for (const [property, value] of Object.entries(style)) {
+        const actual = getComputedStyle(e)[property], target = expected(property, value, e);
+        if (!same(actual, target)) failures.push(`${role.id}${applied.length?' ['+applied.map(a=>a.id).join(',')+']':''}: ${property} ${actual}, 규칙 ${target}: ${label(e)}`);
+      }
     }
   }
   for (const e of document.querySelectorAll('main h1,main h2,main h3,main h4,main h5,main h6')) {
@@ -106,11 +131,12 @@ function inspect(contract) {
   }
   if (document.documentElement.scrollWidth > innerWidth+2) failures.push('가로 넘침');
   probe.remove();
-  return { failures: [...new Set(failures)], counts, samples, textNodes };
+  return { failures: [...new Set(failures)], counts, samples, adjustmentCounts, textNodes };
 }
 
 async function run() {
-  const failures = checkSources(), pages = templatePages(), report = { version: contract.version, pages: [], roleCoverage: {}, failures };
+  if (process.argv.includes('--write-review')) fs.writeFileSync(path.join(ROOT,'_themes/wide/page-design.md'),renderReview());
+  const failures = checkSources(), pages = templatePages(), report = { version: contract.version, pages: [], roleCoverage: {}, adjustmentCoverage: {}, failures };
   if (!pages.length) throw new Error('_site에 공통 템플릿 페이지가 없다. 먼저 Jekyll build');
   const srv = await serve(); let browser;
   const navigation = new Map();
@@ -127,6 +153,7 @@ async function run() {
           const result = await page.evaluate(inspect, contract);
           entry.states.push({ state, ...result });
           for (const [role, count] of Object.entries(result.counts)) report.roleCoverage[role] = (report.roleCoverage[role] || 0) + count;
+          for (const [id,count] of Object.entries(result.adjustmentCounts)) report.adjustmentCoverage[id]=(report.adjustmentCoverage[id]||0)+count;
           for (const failure of result.failures) failures.push(`${file} ${width}px ${state}: ${failure}`);
         }
         await check('default');
@@ -192,11 +219,12 @@ async function run() {
   } finally { if (browser) await browser.close(); await new Promise(resolve=>srv.close(resolve)); }
   // A role present in current templates cannot silently disappear from all views.
   for (const role of contract.roles) if (!role.optional && !report.roleCoverage[role.id]) failures.push(`역할 검증 누락: ${role.id} (새 역할은 실제 렌더 사례가 필요)`);
+  for (const adjustment of contract.pageDesign.adjustments) if (!report.adjustmentCoverage[adjustment.id]) failures.push(`페이지 조정 검증 누락: ${adjustment.id}`);
   const reportFlag = process.argv.indexOf('--report');
   if (reportFlag >= 0) fs.writeFileSync(process.argv[reportFlag+1], JSON.stringify(report,null,2)+'\n');
   const unique = [...new Set(failures)];
   if (unique.length) { unique.forEach(f=>console.error('✗ '+f)); process.exitCode=1; }
-  console.log(`디자인 계약 ${unique.length?'실패':'통과'}: ${pages.length}페이지, ${contract.roles.length}역할, ${contract.widths.length}폭, ${report.pages.reduce((n,p)=>n+p.states.length,0)}상태, 위반 ${unique.length}건`);
+  console.log(`디자인 계약 ${unique.length?'실패':'통과'}: ${pages.length}페이지, ${contract.roles.length}기본 역할·${contract.pageDesign.adjustments.length}페이지 조정, ${contract.widths.length}폭, ${report.pages.reduce((n,p)=>n+p.states.length,0)}상태, 위반 ${unique.length}건`);
 }
 if (require.main === module) run().catch(e=>{console.error(e);process.exitCode=1;});
 module.exports = { inspect, checkSources };

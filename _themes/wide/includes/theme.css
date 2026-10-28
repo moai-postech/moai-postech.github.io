@@ -5,7 +5,7 @@
     1. primitives  - raw colors, the type scale, the spacing scale, radii
     2. layout      - container width, 12-column grid, gutter, reading measure, section rhythm
     3. roles       - what each primitive is used for (text, accent, headings ...)
-  Components only use layer 2 and 3 tokens. No page sets its own width, spacing, or font size.
+  Components only use layer 2 and 3 tokens. Page adaptations are permitted when their scope, values and rationale are recorded in page-design.json.
   To change the whole site (e.g. wider pages), change a token here, never a single page.
 */
 :root {
@@ -19,6 +19,7 @@
   --gray-50: #f3f6fa;
   --white: #ffffff;
 
+  --fs-control: 15px;  /* compact navigation keeps a readable step between table metadata and prose */
   --fs-1: 13px;  --fs-2: 14px;  --fs-3: 16px;  --fs-4: 19px;  --fs-5: 26px;  --fs-6: clamp(32px, 4vw, 46px);  /* display shrinks with the screen so the two-line headline holds */
   --space-1: 4px;  --space-2: 8px;  --space-3: 12px;  --space-4: 16px;  --space-5: 24px;
   --space-6: 32px; --space-7: 48px; --space-8: 64px;  --space-9: 96px;
@@ -50,6 +51,7 @@
   --callout-shadow: 0 var(--space-1) var(--space-4) color-mix(in srgb, var(--text) 4%, transparent);
   --text-small: var(--fs-1);
   --text-meta: var(--fs-2);
+  --text-control: var(--fs-control);
   --text-body: var(--fs-3);
   --text-lead: var(--fs-4);
   --text-h2: var(--fs-5);   /* a section of its own: Home, Contact, the Research stages, the Faculty name */
@@ -135,7 +137,7 @@ h3.sub:first-child { margin-top: 0; }
 .brand-mark { width: auto; height: 32px; flex-shrink: 0; }
 .brand-word { font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: 23px; font-weight: var(--weight-heading); letter-spacing: -.3px; }
 .site-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); }
-.site-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }
+.site-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }
 .site-nav a:hover, .site-nav a[aria-current="page"], .course-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .site-nav a[aria-current="page"], .course-nav a[aria-current="page"] { font-weight: var(--weight-emphasis); }
 .nav-group { position: relative; display: inline-flex; }
@@ -144,7 +146,7 @@ h3.sub:first-child { margin-top: 0; }
 .site-nav .nav-menu a { display: flex; min-height: 38px; padding: 0 var(--space-3); border: 0; border-radius: var(--radius-1); color: var(--text); }
 .site-nav .nav-menu a:hover { background: var(--surface); color: var(--accent); }
 .subnav { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--space-6); }
-.subnav a { display: inline-flex; align-items: center; min-height: 40px; padding: var(--space-1) var(--space-4); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
+.subnav a { display: inline-flex; align-items: center; min-height: 40px; padding: var(--space-1) var(--space-4); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: var(--text-control); font-weight: var(--weight-emphasis); }
 .subnav a:hover { color: var(--accent); text-decoration: none; }
 .subnav a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); }  /* a tint, not a solid red block */
 
@@ -308,7 +310,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 
 /* Seminar: one list, newest first, filtered by kind. One row per talk: date, title (takes all spare width), affiliation, speaker at the far right */
 .filter-bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-5); margin-bottom: var(--space-5); }  /* no full-width rule: the only line on a page is the one under the menu */
-.filter-btn, .filter-link, .course-sheet, .study-sheet { font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
+.filter-btn, .filter-link, .course-sheet, .study-sheet { font-size: var(--text-control); font-weight: var(--weight-emphasis); }
 .filter-btn { padding: 0 0 var(--space-3); border: 0; background: none; color: var(--muted); font-family: inherit; line-height: inherit; cursor: pointer; }
 .filter-btn span { margin-left: 2px; color: var(--faint); font-weight: var(--weight-regular); }
 .filter-btn:hover { color: var(--text); }
@@ -486,6 +488,15 @@ a.person-name:hover { color: var(--accent); }
   .hero-art, .site-nav, .subnav { display: none; }
   a { color: inherit; }
 }
+
+/* Documented page adaptations. IDs, before/after and rationale: page-design.json. */
+.page-students .person-aff, .page-students .person-degree, .page-students .person-topic,
+.page-students .person-work, .page-students .person .role { font-size: var(--text-body); }
+.page-faculty .profile-head .small { font-size: var(--text-body); }
+.page-mentees .mentee-aff { font-size: var(--text-body); }
+.page-research .topic-card p { font-size: var(--text-body); }
+.page-teaching .item-side { font-size: var(--text-control); }
+.page-seminar .schedule-speaker { font-size: var(--text-body); }
 
 {% comment %}Course pages: their own folder so the template stays in one place{% endcomment %}
 {% include course/course.css %}

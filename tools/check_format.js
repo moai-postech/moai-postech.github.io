@@ -11,12 +11,15 @@ const { SITE, serve, templatePages } = require('./lib/site');
 
 // 검사할 페이지. 연구실 사이트의 모든 메뉴 페이지와 News 보관 페이지
 const PAGES = templatePages().filter(p => !p.startsWith('teaching/'));
+const { contract } = require('./lib/design-spec');
 const WIDTHS = [1440, 1280, 768, 390, 320];
 const TOL = 2; // px
 
-// 브라우저 안에서 도는 측정. 제목 역할은 글자 크기로 가른다:
+// 브라우저 안에서 도는 측정. 제목 역할은 템플릿의 역할 클래스로 가른다:
 // --text-h2(한 절인 제목), --text-group(목록을 묶는 제목), 그 밖(카드 제목, 작은 머리)은 크기 검사만.
-function measure(TOL) {
+function measure({ TOL, adjustments }) {
+  const local = adjustments.filter(a=>a.pages.includes(location.pathname.slice(1)));
+  const adjusted = (e, props) => local.some(a=>e.matches(a.selector) && props.some(p=>p in a.style));
   const css = getComputedStyle(document.documentElement);
   const px = v => parseFloat(css.getPropertyValue(v));
   const font = token => {
@@ -46,8 +49,9 @@ function measure(TOL) {
   for (const h of heads) {
     const fsz = parseFloat(getComputedStyle(h).fontSize);
     const name = h.textContent.trim().slice(0, 30);
-    if (!allowed.some(a => Math.abs(a - fsz) < 0.5)) problems.push(`"${name}" 글자 ${fsz}px: 토큰 크기가 아니다`);
+    if (!allowed.some(a => Math.abs(a - fsz) < 0.5) && !adjusted(h,['fontSize'])) problems.push(`"${name}" 글자 ${fsz}px: 토큰 크기가 아니다`);
     if (!h.matches('.group-heading, .year-head, .schedule-year th')) continue;
+    if (adjusted(h,['marginTop','marginBottom','paddingTop','paddingBottom'])) continue;
     // 묶음 제목: 아래 첫 항목과 --space-4, 앞 묶음의 마지막 항목과 --section-gap
     const hb = content(h);
     const after = leaves.find(l => !h.contains(l) && !l.contains(h) && (h.compareDocumentPosition(l) & Node.DOCUMENT_POSITION_FOLLOWING));
@@ -58,26 +62,7 @@ function measure(TOL) {
     if (before && before.closest(ITEM)) { const above = hb.top - Math.max(...group(before).map(l => content(l).bottom));
       if (Math.abs(above - tok.sectionGap) > TOL) problems.push(`"${name}" 위 간격 ${Math.round(above)}px (규칙 ${tok.sectionGap}px)`); }
   }
-  // Paper hierarchy and wrapping are shared by the list and Home focus cards.
-  for (const title of main.querySelectorAll('.pubs .title, .paper-chip .paper-title')) {
-    if (!visible(title)) continue;
-    if (Math.abs(parseFloat(getComputedStyle(title).fontSize) - (title.closest('.paper-chip') ? tok.featuredPaper : tok.paper)) > 0.5)
-      problems.push('논문 제목이 목록·대표 카드의 역할 크기가 아니다');
-  }
-  for (const author of main.querySelectorAll('.pubs .authors')) {
-    if (visible(author) && Math.abs(parseFloat(getComputedStyle(author).fontSize) - tok.author) > 0.5)
-      problems.push('논문 저자가 --text-author 크기가 아니다');
-  }
-  for (const meta of main.querySelectorAll('.venue, .pub-link, .venue-honor')) {
-    if (visible(meta) && Math.abs(parseFloat(getComputedStyle(meta).fontSize) - (meta.closest('.paper-chip') ? tok.featuredMeta : tok.paperMeta)) > 0.5)
-      problems.push('venue·자료 링크가 --text-paper-meta 크기가 아니다');
-  }
-  if (!(tok.paper === tok.body && tok.author === tok.meta && tok.paperMeta === tok.meta))
-    problems.push('논문 제목은 본문, 저자·venue는 공통 보조 글자 크기여야 한다');
-  for (const link of main.querySelectorAll('.section-next a')) {
-    if (visible(link) && (Math.abs(parseFloat(getComputedStyle(link).fontSize) - tok.body) > 0.5 || getComputedStyle(link).fontWeight !== '400'))
-      problems.push('닫는 안내 링크가 본문 크기·보통 굵기가 아니다');
-  }
+  // Text sizes/weights, including page adaptations, are checked by check_design.js.
   for (const section of main.querySelectorAll('.content-section.section-next')) {
     if (visible(section) && Math.abs(parseFloat(getComputedStyle(section).paddingTop) - px('--space-5')) > TOL)
       problems.push('닫는 안내 절이 앞 내용과 --space-5 간격이 아니다');
@@ -100,7 +85,7 @@ function measure(TOL) {
     const page = await browser.newPage({ viewport: { width: w, height: 900 } });
     for (const n of PAGES) {
       await page.goto(`http://localhost:${port}/${n}`);
-      const probs = await page.evaluate(measure, TOL);
+      const probs = await page.evaluate(measure, { TOL, adjustments: contract.pageDesign.adjustments });
       for (const p of probs) { console.log(`✗ ${w}px ${n}: ${p}`); failed++; }
     }
     await page.close();

@@ -168,7 +168,7 @@
       "id": "toolbar-action",
       "selector": ".filter-btn, .filter-bar > a, .course-heading-row > a, .study-term-heading > a",
       "style": {
-        "fontSize": "var(--text-meta)",
+        "fontSize": "var(--text-control)",
         "fontWeight": "var(--weight-emphasis)"
       }
     },
@@ -183,7 +183,7 @@
       "id": "primary-navigation",
       "selector": ".site-nav a, .course-nav a",
       "style": {
-        "fontSize": "var(--text-meta)",
+        "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-emphasis)"
       }
     },
@@ -199,7 +199,7 @@
       "id": "subnavigation",
       "selector": ".subnav a",
       "style": {
-        "fontSize": "var(--text-meta)",
+        "fontSize": "var(--text-control)",
         "fontWeight": "var(--weight-emphasis)"
       }
     },
@@ -215,7 +215,7 @@
       "id": "study-tab-title",
       "selector": ".study-tablist strong",
       "style": {
-        "fontSize": "var(--text-meta)",
+        "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-emphasis)"
       }
     },
@@ -223,7 +223,7 @@
       "id": "study-tab-detail",
       "selector": ".study-tablist button span",
       "style": {
-        "fontSize": "var(--text-small)",
+        "fontSize": "var(--text-meta)",
         "fontWeight": "var(--weight-regular)"
       }
     },
@@ -399,7 +399,7 @@
       "id": "form-action",
       "selector": ".study-unlock-fields button, .study-lock-button",
       "style": {
-        "fontSize": "var(--text-meta)",
+        "fontSize": "var(--text-control)",
         "fontWeight": "var(--weight-emphasis)",
         "color": "var(--accent)"
       }
@@ -442,7 +442,7 @@
       "id": "part-filter",
       "selector": ".study-part-filters .study-step",
       "style": {
-        "fontSize": "var(--text-small)",
+        "fontSize": "var(--text-meta)",
         "fontWeight": "var(--weight-emphasis)"
       }
     },
@@ -453,6 +453,42 @@
         "fontSize": "var(--text-paper-meta)",
         "fontWeight": "var(--weight-emphasis)",
         "lineHeight": "1.5"
+      }
+    },
+    {
+      "id": "card-description",
+      "selector": ".topic-card p, .course-part-text, .study-step-text",
+      "style": {
+        "fontSize": "var(--text-meta)"
+      }
+    },
+    {
+      "id": "person-card-secondary",
+      "selector": ".person-topic, .person-work, .person .role",
+      "style": {
+        "fontSize": "var(--text-meta)"
+      }
+    },
+    {
+      "id": "profile-secondary",
+      "selector": ".profile-contact, .profile-links",
+      "style": {
+        "fontSize": "var(--text-meta)"
+      }
+    },
+    {
+      "id": "operating-fact",
+      "selector": ".course-fact dd",
+      "style": {
+        "fontSize": "var(--text-body)"
+      }
+    },
+    {
+      "id": "session-speaker",
+      "selector": ".cs-speaker-name",
+      "style": {
+        "fontSize": "var(--text-body)",
+        "fontWeight": "var(--weight-emphasis)"
       }
     }
   ]

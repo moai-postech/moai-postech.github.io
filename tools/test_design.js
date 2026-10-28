@@ -6,7 +6,7 @@ const path = require('path');
 const { chromium } = require('playwright');
 const { serve, templatePages } = require('./lib/site');
 const { inspect, checkSources } = require('./check_design');
-const contract = require('../_themes/wide/design-contract.json');
+const { contract } = require('./lib/design-spec');
 const { loadSyntheticDirectory } = require('./lib/design-fixture');
 
 (async () => {
@@ -27,6 +27,10 @@ const { loadSyntheticDirectory } = require('./lib/design-fixture');
     const base = `http://localhost:${srv.address().port}/`;
     async function load(file) { await page.goto(base+file); await page.evaluate(()=>document.fonts.ready); await page.mouse.move(0,0); }
     async function failures() { return (await page.evaluate(inspect,contract)).failures; }
+    await load('students.html');
+    assert.deepEqual(await failures(),[], '근거를 기록한 멤버 카드 조정은 기본 metadata 크기와 달라도 통과해야 한다');
+    await page.addStyleTag({content:'.page-students .person-degree {font-size:14px !important}'});
+    assert((await failures()).some(f=>f.includes('student-card-reading') && f.includes('fontSize')), '조정한 학력 글자를 다시 작게 만들면 실패해야 한다');
     await load('seminar.html');
     assert.deepEqual(await failures(),[], '세미나 정상 템플릿이 통과해야 한다');
     await page.addStyleTag({content:'.filter-link {font-weight:400 !important}'});

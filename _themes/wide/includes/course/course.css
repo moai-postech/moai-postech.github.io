@@ -22,7 +22,7 @@
 .course-nav a:hover, .course-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .course-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-5) 0 var(--space-7); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--text-meta); }
 .course-foot a { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text); font-weight: 600; }
-.course-foot img { width: 16px; height: 19px; }
+.course-foot img { width: auto; height: 19px; }
 /* POSTECH (university home) and the privacy link are required on every page of the school domain (IT team 2026-09-15) */
 .course-foot .course-postech { color: var(--muted); font-weight: 400; }
 .course-foot .course-postech::before { content: "\00b7"; margin-right: var(--space-2); color: var(--muted); }

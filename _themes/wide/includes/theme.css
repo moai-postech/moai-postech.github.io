@@ -124,7 +124,7 @@ h3.sub:first-child { margin-top: 0; }
 .brand { margin: 0; flex-shrink: 0; }
 .brand a { display: inline-flex; align-items: center; gap: 10px; color: var(--text); }
 .brand a:hover { color: var(--accent); text-decoration: none; }
-.brand-mark { width: 28px; height: 33px; flex-shrink: 0; }
+.brand-mark { width: auto; height: 40px; flex-shrink: 0; }
 .brand-word { font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: 23px; font-weight: 700; letter-spacing: -.3px; }
 .site-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); }
 .site-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-meta); border-bottom: 2px solid transparent; }
@@ -156,7 +156,7 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .foot-addr p { margin: 0 0 var(--space-1); }
 .foot-lab a { display: inline-flex; align-items: center; gap: 10px; font-family: "Outfit", "Pretendard Variable", sans-serif; font-weight: 700; font-size: var(--text-lead); letter-spacing: -.3px; color: var(--text); }
 .foot-lab a:hover { text-decoration: none; }
-.foot-lab img { width: 26px; height: 30px; flex-shrink: 0; }
+.foot-lab img { width: auto; height: 30px; flex-shrink: 0; }
 .foot-postech { flex-shrink: 0; }
 .foot-postech img { display: block; width: auto; height: 14px; margin-top: var(--space-3); }  /* the same wordmark as the header, centred on the lab name line */
 .foot-base { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-5); flex-wrap: wrap; margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--line); font-size: var(--text-small); }

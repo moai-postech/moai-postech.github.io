@@ -10,27 +10,30 @@
     </div>
     {% for t in d.terms %}<div class="study-panel" role="tabpanel" id="{{ t.id }}" aria-labelledby="tab-{{ t.id }}"{% unless forloop.first %} hidden{% endunless %}>
       {% assign info = site.data.ai_study_terms[t.id] %}
+      {% assign lecture_format = false %}{% if info.format == "lectures" %}{% assign lecture_format = true %}{% endif %}
       <div class="study-term-heading">
         <h2>{{ t.theme }}<span>{{ t.name }}</span></h2>
         {% if t.sheet %}{% include course/sheet-link.html url=t.sheet label="Study sheet" class_name="study-sheet" %}{% endif %}
       </div>
       <div class="study-term-details">
-        {% if info.overview %}<div class="study-overview"><h3>Overview</h3><p>{{ info.overview }}</p>{% if info.learning_path %}<ol class="study-learning-path" style="--study-steps: {{ info.learning_path.size }}">{% for step in info.learning_path %}<li><span class="study-step-label">{{ step.label }}</span><h4>{{ step.title }}</h4><p>{{ step.text }}</p></li>{% endfor %}</ol>{% endif %}</div>{% endif %}
+        {% if info.overview %}<div class="study-overview"><h3>Overview</h3><p>{{ info.overview }}</p>{% if info.reference_course %}<p class="study-reference">Based on <a href="{{ info.reference_course.url }}">{{ info.reference_course.title }}</a> ({{ info.reference_course.term }}).</p>{% endif %}{% if info.learning_path %}<ol class="study-learning-path" style="--study-steps: {{ info.learning_path.size }}">{% for step in info.learning_path %}<li><span class="study-step-label">{{ step.label }}</span><h4>{{ step.title }}</h4><p>{{ step.text }}</p></li>{% endfor %}</ol>{% endif %}</div>{% endif %}
         {% if info %}{% include course/facts.html instructor=info.advisor instructor_label="Advisor" representative=info.representative location=info.location meetings=info.meetings %}{% endif %}
       </div>
       {% if t.note %}<p class="study-note"><strong>{{ t.note.label }}</strong> {% if t.note.links %}{% for l in t.note.links %}<a href="{{ l.url }}">{{ l.text }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% else %}{{ t.note.text }}{% endif %}</p>{% endif %}
-      <table class="course-schedule study-table">
-        <colgroup><col class="sc-n"><col class="sc-date"><col class="sc-topic"><col class="sc-papers"><col class="sc-demo"><col class="sc-who"><col class="sc-mat"></colgroup>
-        <thead><tr><th scope="col">#</th><th scope="col">Date</th><th scope="col">Topic</th><th scope="col">Papers</th><th scope="col">Demo</th><th scope="col">Presenters</th><th scope="col">Materials</th></tr></thead>
+      <table class="course-schedule study-table{% if lecture_format %} study-table-lectures{% endif %}">
+        <colgroup><col class="sc-n"><col class="sc-date"><col class="sc-topic">{% if lecture_format %}<col class="sc-lec">{% else %}<col class="sc-papers"><col class="sc-demo">{% endif %}<col class="sc-who"><col class="sc-mat"></colgroup>
+        <thead><tr><th scope="col">#</th><th scope="col">Date</th><th scope="col">Topic</th>{% if lecture_format %}<th scope="col">Lec</th>{% else %}<th scope="col">Papers</th><th scope="col">Demo</th>{% endif %}<th scope="col">Presenters</th><th scope="col">Materials</th></tr></thead>
         <tbody>
         {% for s in t.sessions %}<tr class="{% if s.optional %}is-optional tone-none{% else %}tone-guest{% endif %}">
           <td class="cs-n">{{ s.n }}</td>
           <td class="cs-date">{% if s.date %}<time datetime="{{ s.date }}">{{ s.date | date: "%m/%d" }}</time>{% endif %}</td>
           <td class="cs-topic">{% if s.optional %}<span class="cs-tag">Optional</span>{% endif %}<span class="cs-title">{{ s.title }}</span>{% if s.keywords %}<span class="cs-speaker">{{ s.keywords }}</span>{% endif %}</td>
+          {% if lecture_format %}<td class="st-links st-lectures">{% for l in s.lectures %}<a href="{{ l.url }}">{{ l.text }}</a>{% endfor %}</td>{% else %}
           <td class="st-links">{% for l in s.papers %}{% if l.url %}<a href="{{ l.url }}">{{ l.text }}</a>{% else %}<span>{{ l.text }}</span>{% endif %}{% endfor %}</td>
           <td class="st-links">{% for l in s.demos %}<a href="{{ l.url }}">{{ l.text }}</a>{% endfor %}</td>
+          {% endif %}
           <td class="st-who">{{ s.presenters }}</td>
-          <td class="cs-slides">{% assign material_groups = "Slides,Demo" | split: "," %}{% for group in material_groups %}{% assign items = s.materials | where_exp: "l", "l.text contains group" %}{% if items.size == 1 %}<span class="st-material-group"><a href="{{ items[0].url }}">{{ group }}</a></span>{% elsif items.size > 1 %}<span class="st-material-group">{{ group }} {% for l in items %}<a href="{{ l.url }}" aria-label="{{ s.title | escape }} {{ group }} {{ forloop.index }}">{{ forloop.index }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}{% endfor %}</td>
+          <td class="cs-slides">{% if lecture_format %}{% assign material_groups = "Slides,Notes,Demo" | split: "," %}{% else %}{% assign material_groups = "Slides,Demo" | split: "," %}{% endif %}{% for group in material_groups %}{% assign items = s.materials | where_exp: "l", "l.text contains group" %}{% if items.size == 1 %}<span class="st-material-group"><a href="{{ items[0].url }}">{{ group }}</a></span>{% elsif items.size > 1 %}<span class="st-material-group">{{ group }} {% for l in items %}<a href="{{ l.url }}" aria-label="{{ s.title | escape }} {{ group }} {{ forloop.index }}">{{ forloop.index }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}{% endfor %}</td>
         </tr>
         {% endfor %}
         </tbody>

@@ -140,5 +140,15 @@
 - 학기 표기는 기존 Fall 2026처럼 계절 → 연도 순서를 유지.
 - 기각한 안: 없음. 원본 복구: Git 이력.
 
+## 14차: Deep Learning 원 강의와 학생 자료 분리
+- 교수 요청: MIT 참고 강의명·원 강의 링크를 명시하고 Lec에서 원 강의를 연결. Papers·Demo 형식 대신 강의형 표를 쓰며 Materials는 학생 추가 자료가 있을 때만 표시.
+- [공식 원 강의 페이지](https://deeplearning6-7960.github.io/2025/index.html)에서 MIT 6.7960 Deep Learning, Fall 2025 명칭과 주제·슬라이드 링크를 확인. 연도가 바뀌는 사이트 루트 대신 2025 강의 페이지로 연결.
+- Summer 2026에 `format: lectures`, `reference_course` 추가. 표 열을 #·Date·Topic·Lec·Presenters·Materials로 변경. 나머지 세 학기의 Papers·Demo 형식 유지.
+- 동기화 데이터의 `lectures`에 원 강의 링크 14개를 보존하고 Lec 2 등 번호를 클릭해 해당 PDF를 열도록 변경.
+- 원본 시트 Slide 이후 열에 실제로 학생이 올린 1·6·8·9회 자료 다섯 개만 Materials로 표시. 6·9회 필기는 Notes, 1회 MoAI 버전과 8회 공개 사본은 Slides. 추가 자료가 없는 나머지 여섯 회차는 빈 칸.
+- 추가 다운로드 없이 기존 공개 PDF 사본을 재사용. 원본 복구는 Git 이력.
+- 검증: 네 학기 × 7개 화면 폭에서 여름의 6개 열·Lec 링크 14개·학생 자료 5개·나머지 학기 기존 열·가로 넘침 없음 확인. PC·모바일 렌더 확인, 동기화 재실행 변경 없음.
+- 기각: MIT 원 강의 PDF를 Materials에도 반복(원 강의·학생 자료 구분 불가), Papers·Demo 빈 열 유지(강의형 학기에 맞지 않음), MIT 사이트 루트 링크(현재 다른 연도 강의로 바뀜).
+
 ## 남은 것
 없음

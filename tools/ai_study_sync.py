@@ -7,7 +7,7 @@
   - 발표 자료와 칸 안의 Google Slides 링크는 tools/drive_pdf.py 로 PDF 를 받아
     teaching/ai-study/<학기>/<회차>-<주제>-<종류>.pdf 에 두고 사이트 파일을 가리킨다(Drive 대신, 교수 2026-10-26). 이미 받은 것은 건너뛴다.
     Colab·ipynb 노트북은 Drive 링크 그대로 둔다. 받은 사본과 원본 링크의 짝은 tools/drive_sources.json.
-  - Summer 2026 은 학생 발표자료 대신 References 칸의 MIT 원 강의 슬라이드를 Materials 로 쓴다(교수 2026-10-28).
+  - Summer 2026 은 References의 MIT 원 강의를 Lec으로, 학생의 추가 발표자료·필기만 Materials로 쓴다(교수 2026-10-28).
   - _data/ai_study.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
 
   python3 tools/ai_study_sync.py               # 로컬에서 한 번
@@ -175,13 +175,14 @@ def parse(rows):
         if cells[6]["text"] and cells[6]["text"] != "-":
             s["presenters"] = cells[6]["text"]
         if term["id"] == "summer-2026":
-            # 이 학기는 별도 발표자료를 만들지 않고 MIT 원 강의 슬라이드를 사용한다.
-            mats = materials([cells[3]])
-            # 공개가 확인된 Generalization 사본은 해당 회차의 Slides로 사용한다(교수 2026-10-28).
-            if n == "8" and any(c["links"] for c in cells[7:]):
-                mats = materials(cells[7:])
-            # Papers는 다루는 강의 번호, Materials는 원 강의 PDF 링크다.
-            s["papers"] = [{"text": l["text"]} for l in links(cells[3])]
+            # 원 강의는 Lec, 학생이 올린 추가 자료만 Materials로 분리한다(교수 2026-10-28).
+            s["lectures"] = links(cells[3])
+            s.pop("papers", None)
+            s.pop("demos", None)
+            mats = materials(cells[7:])
+            for material in mats:
+                if material["storage_label"].startswith("Notes"):
+                    material["text"] = material["storage_label"]
         else:
             mats = materials(cells[7:])
         if mats:
@@ -242,7 +243,7 @@ def dump(terms):
                     out.append(f"        {k}: {q(s[k])}")
             if s.get("optional"):
                 out.append("        optional: true")
-            for k in ("papers", "demos", "materials"):
+            for k in ("lectures", "papers", "demos", "materials"):
                 if k in s:
                     out.append(f"        {k}:")
                     for l in s[k]:

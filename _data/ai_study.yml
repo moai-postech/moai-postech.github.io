@@ -173,76 +173,64 @@ terms:
         title: "How to train a NN"
         keywords: "backpropagation, computational graph"
         presenters: "최지안"
-        papers:
-          - { text: "Lec 2" }
+        lectures:
+          - { text: "Lec 2", url: "https://www.dropbox.com/scl/fi/kv1ddh7ss8oxohtvzlsjh/2_backprop_2025.pdf?rlkey=wck8o09edebcay7mp6gohygj5&e=1&st=17v992ys&dl=0" }
         materials:
-          - { text: "Slides", url: "https://www.dropbox.com/scl/fi/kv1ddh7ss8oxohtvzlsjh/2_backprop_2025.pdf?rlkey=wck8o09edebcay7mp6gohygj5&e=1&st=17v992ys&dl=0" }
+          - { text: "Slides", url: "teaching/ai-study/summer-2026/01-how-to-train-a-nn-slides.pdf" }
       - n: "2"
         date: "2026-06-30"
         title: "Architectures: Grid"
         keywords: "CNN, neural field"
         presenters: "정윤"
-        papers:
-          - { text: "Lec 4" }
-        materials:
-          - { text: "Slides", url: "https://www.dropbox.com/scl/fi/g9hozgna3ralnpibg30oz/4_grid_archs_2025.pdf?rlkey=d0wbf24wck84rayhbj1q0d01m&e=1&st=vnt61skl&dl=0" }
+        lectures:
+          - { text: "Lec 4", url: "https://www.dropbox.com/scl/fi/g9hozgna3ralnpibg30oz/4_grid_archs_2025.pdf?rlkey=d0wbf24wck84rayhbj1q0d01m&e=1&st=vnt61skl&dl=0" }
       - n: "3"
         date: "2026-07-07"
         title: "Architectures: Sequence"
         keywords: "RNN, Transformer"
-        papers:
-          - { text: "Lec 5" }
-          - { text: "Lec 6" }
-        materials:
-          - { text: "Slides 1", url: "https://www.dropbox.com/scl/fi/lu2osug2lswj8gqyyuxut/5_mem_seq_2025.pdf?rlkey=z0o79n6suzrhanv9wzqo89bbs&e=1&st=3tpzzlec&dl=0" }
-          - { text: "Slides 2", url: "https://www.dropbox.com/scl/fi/yorf3fw3ovrptaaoyh441/6_transformers_2025.pdf?rlkey=zkjpma8flvy5ksjc333hxp9q8&e=1&st=v403dfgl&dl=0" }
+        lectures:
+          - { text: "Lec 5", url: "https://www.dropbox.com/scl/fi/lu2osug2lswj8gqyyuxut/5_mem_seq_2025.pdf?rlkey=z0o79n6suzrhanv9wzqo89bbs&e=1&st=3tpzzlec&dl=0" }
+          - { text: "Lec 6", url: "https://www.dropbox.com/scl/fi/yorf3fw3ovrptaaoyh441/6_transformers_2025.pdf?rlkey=zkjpma8flvy5ksjc333hxp9q8&e=1&st=v403dfgl&dl=0" }
       - n: "4"
         date: "2026-07-14"
         title: "Representation Learning: Reconstruction-based"
         keywords: "MAE, BERT"
         presenters: "진동환"
-        papers:
-          - { text: "Lec 8" }
-        materials:
-          - { text: "Slides", url: "https://www.dropbox.com/scl/fi/8p20mfl0w66df5pjf3z9c/8_representation_rec_2025.pdf?rlkey=8okp1xd19bq9ox59kpx93a94o&e=1&st=9butpzi3&dl=0" }
+        lectures:
+          - { text: "Lec 8", url: "https://www.dropbox.com/scl/fi/8p20mfl0w66df5pjf3z9c/8_representation_rec_2025.pdf?rlkey=8okp1xd19bq9ox59kpx93a94o&e=1&st=9butpzi3&dl=0" }
       - n: "5"
         date: "2026-07-21"
         title: "Representation Learning: Similarity-based"
         keywords: "contrastive learning"
         presenters: "장연종"
-        papers:
-          - { text: "Lec 9" }
-          - { text: "Lec 10" }
-        materials:
-          - { text: "Slides 1", url: "https://www.dropbox.com/scl/fi/grbb1avecuwal4wndihrd/9_similarity_2025.pdf?rlkey=77916kh9nlw3b8n2m27p5otb7&e=1&st=qbd43cd5&dl=0" }
-          - { text: "Slides 2", url: "https://www.dropbox.com/scl/fi/mrlthxaaa5kg36ro6ripp/10_representation_info_2025.pdf?rlkey=v1wo7nw0hbbf14it77y95dtei&e=1&st=td6wzebh&dl=0" }
+        lectures:
+          - { text: "Lec 9", url: "https://www.dropbox.com/scl/fi/grbb1avecuwal4wndihrd/9_similarity_2025.pdf?rlkey=77916kh9nlw3b8n2m27p5otb7&e=1&st=qbd43cd5&dl=0" }
+          - { text: "Lec 10", url: "https://www.dropbox.com/scl/fi/mrlthxaaa5kg36ro6ripp/10_representation_info_2025.pdf?rlkey=v1wo7nw0hbbf14it77y95dtei&e=1&st=td6wzebh&dl=0" }
       - n: "6"
         date: "2026-07-28"
         title: "Generative Models: VAE and GAN"
         keywords: "VAE, GAN"
         presenters: "오승준"
-        papers:
-          - { text: "Lec 13" }
-          - { text: "Lec 14" }
+        lectures:
+          - { text: "Lec 13", url: "https://www.dropbox.com/scl/fi/7jswvwe1c8rtherjaboh9/lec13_gen_intro.pdf?rlkey=vqx2mjujz2hc93eny55a761ij&e=1&st=mnagglkh&dl=0" }
+          - { text: "Lec 14", url: "https://www.dropbox.com/scl/fi/3c4mwxeweqnb84bmftgt3/lec14_vae_gan.pdf?rlkey=dw2kkoc05wf449bydqic663j8&e=1&st=le610sta&dl=0" }
         materials:
-          - { text: "Slides 1", url: "https://www.dropbox.com/scl/fi/7jswvwe1c8rtherjaboh9/lec13_gen_intro.pdf?rlkey=vqx2mjujz2hc93eny55a761ij&e=1&st=mnagglkh&dl=0" }
-          - { text: "Slides 2", url: "https://www.dropbox.com/scl/fi/3c4mwxeweqnb84bmftgt3/lec14_vae_gan.pdf?rlkey=dw2kkoc05wf449bydqic663j8&e=1&st=le610sta&dl=0" }
+          - { text: "Notes", url: "teaching/ai-study/summer-2026/06-generative-models-vae-and-gan-notes.pdf" }
+          - { text: "Notes 2", url: "teaching/ai-study/summer-2026/06-generative-models-vae-and-gan-notes-2.pdf" }
       - n: "7"
         date: "2026-08-04"
         title: "Generative Models: Diffusion and Flows"
         keywords: "diffusion, flow"
         presenters: "최지안"
-        papers:
-          - { text: "Lec 16" }
-        materials:
-          - { text: "Slides", url: "https://www.dropbox.com/scl/fi/aoaddpf7wjcv28xtbwe12/lec16_diffusion.pdf?rlkey=k9op9towe7u2d4k9q4n2wu1xz&e=1&st=g8zsdbui&dl=0" }
+        lectures:
+          - { text: "Lec 16", url: "https://www.dropbox.com/scl/fi/aoaddpf7wjcv28xtbwe12/lec16_diffusion.pdf?rlkey=k9op9towe7u2d4k9q4n2wu1xz&e=1&st=g8zsdbui&dl=0" }
       - n: "8"
         date: "2026-08-11"
         title: "Generalization"
         keywords: "distribution shift"
         presenters: "김도연"
-        papers:
-          - { text: "Lec 17" }
+        lectures:
+          - { text: "Lec 17", url: "https://www.dropbox.com/scl/fi/pk81c0p4mk68lli60sikl/17_ood_2025.pdf?rlkey=4ddc1nkqwpuc74130pi2wuvpy&e=1&st=7ko1cc6p&dl=0" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/summer-2026/08-generalization-slides.pdf" }
       - n: "9"
@@ -250,22 +238,19 @@ terms:
         title: "Transfer Learning"
         keywords: "fine-tuning, few-shot, meta-learning"
         presenters: "오승준"
-        papers:
-          - { text: "Lec 18" }
+        lectures:
+          - { text: "Lec 18", url: "https://www.dropbox.com/scl/fi/jfa2ampn4zj98txbn29r9/18_transfer_learning_2025.pdf?rlkey=chv4b0ujjpj8512emteus9kdl&e=1&st=p74qi6jn&dl=0" }
         materials:
-          - { text: "Slides", url: "https://www.dropbox.com/scl/fi/jfa2ampn4zj98txbn29r9/18_transfer_learning_2025.pdf?rlkey=chv4b0ujjpj8512emteus9kdl&e=1&st=p74qi6jn&dl=0" }
+          - { text: "Notes", url: "teaching/ai-study/summer-2026/09-transfer-learning-notes.pdf" }
       - n: "10"
         date: "2026-08-27"
         title: "DL Theory"
         keywords: "UAT, generalization bound"
         presenters: "박채원"
         optional: true
-        papers:
-          - { text: "Lec 3" }
-          - { text: "Lec 7" }
-        materials:
-          - { text: "Slides 1", url: "https://www.dropbox.com/scl/fi/0uo7xhho5ws0bts6k9f5m/3_approximation_2025.pdf?rlkey=77t08souixt42rpny8v8e5sqc&e=1&st=kitgis2x&dl=0" }
-          - { text: "Slides 2", url: "https://www.dropbox.com/scl/fi/megb5rm0teodtw04fskxw/7_generalization_2025.pdf?rlkey=l88wzorvkbbgq5z584kh3tn71&e=1&st=3fie7jl6&dl=0" }
+        lectures:
+          - { text: "Lec 3", url: "https://www.dropbox.com/scl/fi/0uo7xhho5ws0bts6k9f5m/3_approximation_2025.pdf?rlkey=77t08souixt42rpny8v8e5sqc&e=1&st=kitgis2x&dl=0" }
+          - { text: "Lec 7", url: "https://www.dropbox.com/scl/fi/megb5rm0teodtw04fskxw/7_generalization_2025.pdf?rlkey=l88wzorvkbbgq5z584kh3tn71&e=1&st=3fie7jl6&dl=0" }
   - id: "spring-2026"
     name: "Spring 2026"
     theme: "Large Language Models"

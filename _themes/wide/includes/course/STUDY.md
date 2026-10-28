@@ -13,7 +13,7 @@
 - 학기 제목·시간·장소·지도교수·학생대표·Study sheet는 해당 학기 패널 안에 둔다. 지난 학기 정보와 현재 학기 정보를 섞지 않는다.
 - 장소는 이전 세 학기 공학4동 307호, Fall 2026부터 공학4동 302호다. 앞으로도 특별한 이슈가 없으면 302호를 기본으로 사용한다(교수 2026-10-28). 개별 회차의 임시 장소 변경을 학기 기본 장소에 나열하지 않는다.
 - 학기 탭은 클릭·좌우 화살표·Home·End를 지원한다. 학기별 주소 fragment를 유지하고 탭을 바꿔도 표의 열 위치가 움직이지 않게 한다.
-- 표 열은 번호·날짜·Topic·Papers·Demo·Presenters·Materials 순이다. 좁은 화면에서는 카드로 접는다.
+- 논문 중심 학기는 번호·날짜·Topic·Papers·Demo·Presenters·Materials 순이다. 강의 중심 학기는 `format: lectures`로 번호·날짜·Topic·Lec·Presenters·Materials 순으로 표시한다. 좁은 화면에서는 카드로 접는다.
 - 표 마감선은 [공통 규칙](README.md#표의-마감선)을 따른다. 학기마다 예외를 두지 않는다.
 
 ## 데이터 정본
@@ -25,7 +25,7 @@
 | 학기별 운영 정보 | `_data/ai_study_terms.yml`, 일정과 같은 학기 ID 사용 |
 | 멤버 명단 | `_data/ai_study_members.yml`, member 시트의 Apps Script 셀 읽기 결과를 `tools/ai_study_members_sync.py`로 변환 |
 
-`ai_study_terms.yml`은 `overview`, `learning_path`(label, title, text), `advisor`(사진 `photo` 포함), `meetings`, `location`, `representative`를 학기별로 둔다. 값이 없으면 해당 칸을 생략한다. 자료 시트 링크는 동기화 데이터의 `sheet`다.
+`ai_study_terms.yml`은 `format`(강의 중심이면 lectures), `reference_course`(title, term, url), `overview`, `learning_path`(label, title, text), `advisor`(사진 `photo` 포함), `meetings`, `location`, `representative`를 학기별로 둔다. 값이 없으면 해당 칸을 생략한다. 자료 시트 링크는 동기화 데이터의 `sheet`다.
 
 ## Members
 
@@ -39,7 +39,7 @@
 
 - 발표자료 하나면 Slides, 여러 개면 Slides 1, 2처럼 묶는다. 실습 자료는 Demo로 구분하고 Materials 안에서 한 줄에 표시한다.
 - Papers·Demo 열은 읽을 논문과 실습, Materials는 발표자료와 연결된 자료다. 같은 링크를 중복 나열하지 않는다.
-- 여름 2026은 MIT 원 강의 자료를 Slides로 사용하며, 8회 Generalization은 공유가 공개된 원 강의 사본의 PDF를 연결한다(2026-10-28). 다른 학기는 원본 시트의 운영 방침을 따른다.
+- Summer 2026은 MIT 6.7960 Deep Learning, Fall 2025를 참고했다고 Overview에 명시하고 해당 연도 원 강의 페이지를 연결한다. Lec에는 시트 References의 원 강의 슬라이드를, Materials에는 학생이 별도 업로드한 발표자료·필기만 표시한다. 학생 추가 자료가 없는 회차는 Materials를 비워 둔다. 필기는 Notes, 발표자료는 Slides로 구분한다. 8회 Generalization 공개 사본도 학생 추가 자료로 보존한다.
 - 자료 사본과 동기화 경로는 저장소 `AGENTS.md`의 슬라이드 규칙을 따른다. 탭 전체 학기와 모바일에서 링크 잘림·가로 넘침·마감선 한 줄을 확인한다.
 
 기존 Home의 학기 fragment 링크는 Schedule의 같은 탭으로 이동한다. Teaching의 학기 링크도 Schedule을 가리킨다.

@@ -14,5 +14,5 @@ sections:
   # 맺음: 올해 응용을 요약한 뒤 관련 논문을 보는 한 경로로 닫는다
   - class: section-next
     body: |
-      In 2026, we apply these priors to agents, robots, and factories. [See our publications](publications.html)
+      In 2026, we apply these priors to agents, robots, and factories. [Full publication list](publications.html)
 ---

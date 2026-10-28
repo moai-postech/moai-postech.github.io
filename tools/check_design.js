@@ -139,7 +139,7 @@ async function run() {
   const failures = checkSources(), pages = templatePages(), report = { version: contract.version, pages: [], roleCoverage: {}, adjustmentCoverage: {}, failures };
   if (!pages.length) throw new Error('_site에 공통 템플릿 페이지가 없다. 먼저 Jekyll build');
   const srv = await serve(); let browser;
-  const navigation = new Map();
+  const navigation = new Map(), headers = new Map();
   try {
     browser = await chromium.launch();
     for (const width of contract.widths) {
@@ -168,6 +168,18 @@ async function run() {
         if (!baseline) navigation.set(navKey,{file,nav});
         else if (JSON.stringify(nav.map(({text,href})=>({text,href}))) !== JSON.stringify(baseline.nav.map(({text,href})=>({text,href}))) || nav.some((a,i)=>['x','y','width','height'].some(k=>Math.abs(a[k]-baseline.nav[i][k])>1))) failures.push(`${file} ${width}px: 상단 메뉴가 ${baseline.file}와 다르거나 이동함`);
         entry.navigation=nav;
+        // Lab, study and courses share the header geometry; only the brand text differs.
+        const header = await page.evaluate(() => {
+          const h = document.querySelector('.site-head').getBoundingClientRect();
+          const logo = document.querySelector('.head-postech img').getBoundingClientRect();
+          const nav = document.querySelector('.site-nav, .course-nav').getBoundingClientRect();
+          return { height: h.height, logoX: logo.x, logoY: logo.y, logoWidth: logo.width, logoHeight: logo.height, navY: nav.y, navHeight: nav.height };
+        });
+        const headerBase = headers.get(width);
+        if (!headerBase) headers.set(width, { file, header });
+        else if (Object.keys(header).some(k => Math.abs(header[k] - headerBase.header[k]) > 1)) failures.push(`${file} ${width}px: 공통 헤더 높이·로고·탭 위치가 ${headerBase.file}와 다름`);
+        entry.header = header;
+
 
         for (const selector of ['.focus-tab','.filter-btn','.study-tablist button']) {
           const controls = page.locator(selector);

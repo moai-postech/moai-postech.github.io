@@ -6,6 +6,7 @@
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
 | 2026-10-28 | [visual-review-process](2026-10-28-visual-review-process.md) | Sangwoo Mo(sangwoomo) | 검수 도구·CI·배포 | 고정 화면·별도 검토 기록·배포 차단 절차 구축 |
+| 2026-10-28 | [ai-study-home](2026-10-28-ai-study-home.md) | Sangwoo Mo(sangwoomo) | AI Study Home | 학습·참여 흐름 개편, 랩·스터디·강의 헤더 통일, first-year·Undeclared 표기 |
 | 2026-10-28 | [news-lab-start-links](2026-10-28-news-lab-start-links.md) | Sangwoo Mo(sangwoomo) | News | MOAI Lab self-link와 POSTECH 링크를 본문색으로 추가 |
 | 2026-10-28 | [faculty-bio-flow](2026-10-28-faculty-bio-flow.md) | Sangwoo Mo(sangwoomo) | Faculty Bio·갱신 규칙 | 한 문단 Bio 문장 연결과 연구실 사이트 우선 갱신, CV 분량 유지 |
 | 2026-10-28 | [design-template-contract](2026-10-28-design-template-contract.md) | Sangwoo Mo(sangwoomo) | 공통 템플릿·전체 페이지 | 템플릿+페이지별 근거·가독성 조정, PR #25 승인 배포 |

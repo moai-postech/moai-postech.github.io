@@ -68,3 +68,6 @@ POSTECH 요구사항: P1~P9 영향 없음. 학교·연구실 로고, 공식 링�
 - GitHub Pages의 해당 커밋 built 확인. 실제 moai.postech.ac.kr의 Home·Publications·Teaching·Faculty를1440·390·320px, 총12화면에서 검증. Home Join us!·공통 안내 박스, 논문 핵심 정보17/16px, Teaching with·주변 글자색 링크, Faculty 사무실·전화 모두 정상.
 - 최신 강의·스터디·세미나 변경을 보존. 병합 전 로컬 재검사는24페이지·167상태·텍스트17,880개와 형식13페이지×5폭 통과.
 - 이 기록 외에 남은 사이트 수정 없음. Talks 추가는 의견 요청 범위라 추천만 전달. Paper Stella reset은 독립 저장소의 회차 기록에 남김.
+
+## Talks 후보에 대한 교수 결정
+- How to Use Agents는 연구 내용이 아니므로 추가하지 않기로 결정. Talks는 본인이 수행한 연구 발표가 기본이고 VLA tutorial 같은 학회 튜토리얼만 예외로 포함. 정본 기준은 AGENTS.md, 후속 회차는 minor-workflow-link-finishes.

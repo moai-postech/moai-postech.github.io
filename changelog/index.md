@@ -5,6 +5,8 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-28 | [logo-candidate-review](2026-10-28-logo-candidate-review.md) | Sangwoo Mo(sangwoomo) | 로고 원본·교체 검토 | 원본 보관, 헤더 40px 권장·16px favicon 보완 의견 |
+| 2026-10-28 | [minor-workflow-link-finishes](2026-10-28-minor-workflow-link-finishes.md) | Sangwoo Mo(sangwoomo) | 반영 경로·이동 링크·Talks | Minor 직접 반영, 모집 로켓·짧은 이동 화살표, 연구 발표 수록 원칙 |
 | 2026-10-28 | [course-guest-seminars](2026-10-28-course-guest-seminars.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 초청·세미나 노랑, 휴강 회색, 회차별 시간·장소 |
 | 2026-10-28 | [teaching-template-rules](2026-10-28-teaching-template-rules.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 템플릿 | 공통·강의·스터디 안내 분리, 표 마감선 한 줄 |
 | 2026-10-28 | [course-material-order](2026-10-28-course-material-order.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 자료 링크를 HTML·PDF·Lab 순서로 통일 |

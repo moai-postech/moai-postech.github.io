@@ -267,11 +267,10 @@ a.mentee-name:hover { color: var(--accent); }
 .research-head .area-blurb { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-meta); }
 .section-next { margin: 0; font-size: var(--text-body); }
 .content-section.section-next { padding-top: var(--space-5); }  /* a section's closing line: where to go next (Research and Home: publications) */
-.section-next a { font-weight: 400; }
+.section-next a { font-weight: 400; white-space: nowrap; }
 /* Both next steps belong to one floating callout; the links remain part of each sentence. */
 .section-actions .section-body { padding: var(--card-padding); background: var(--callout-surface); border: 1px solid var(--callout-line); border-inline-start: 3px solid var(--accent); border-radius: var(--radius-2); box-shadow: var(--callout-shadow); }
 .section-actions .section-body > p:not(:last-child) { margin-bottom: var(--space-3); }
-.section-actions a { white-space: nowrap; }
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }

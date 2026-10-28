@@ -343,7 +343,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pubs .title { display: block; align-self: baseline; font-size: var(--text-paper); font-weight: 600; line-height: var(--leading-paper); text-wrap: pretty; }
 .pubs .title a { color: var(--text); }
 .pubs .title a:hover { color: var(--accent); }
-.pubs .venue { padding: 0; background: none; border-radius: 0; font-size: inherit; font-weight: 400; line-height: inherit; }  /* venue reads as bibliographic text and shares the title/authors start line */
+.pubs .venue { padding: 0; background: none; border-radius: 0; font-size: inherit; font-weight: 600; line-height: inherit; }  /* venue reads as bibliographic text and shares the title/authors start line */
 .pubs .authors { color: var(--faint); font-size: var(--text-author); line-height: var(--leading-paper); }
 .author { white-space: nowrap; }  /* a name never breaks across lines */
 .pubs .lab { color: var(--text); }

@@ -15,7 +15,7 @@
 
 .course-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); flex-wrap: wrap; min-height: 72px; border-bottom: 1px solid var(--line); }
 .course-brand { display: inline-flex; align-items: baseline; gap: var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: 700; letter-spacing: -.3px; }
-.course-brand span { color: var(--muted); font-size: var(--text-meta); font-weight: 600; letter-spacing: 0; }
+.course-brand span { white-space: nowrap; color: var(--muted); font-size: var(--text-meta); font-weight: 600; letter-spacing: 0; }
 .course-brand:hover { color: var(--accent); text-decoration: none; }
 .course-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-5); }
 .course-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-meta); border-bottom: 2px solid transparent; }
@@ -60,7 +60,7 @@
 /* Schedule and Term Project: the page name as the title, the course on the line below */
 .course-head { padding-top: var(--space-7); }
 .course-head h1 { margin-bottom: var(--space-3); }
-.course-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0; color: var(--muted); font-size: var(--text-lead); font-weight: 600; }
+.course-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0; color: var(--muted); font-size: var(--text-body); font-weight: 400; }
 .course-first { padding-top: var(--space-6); }
 
 .course-summary { padding-top: var(--space-7); }
@@ -136,8 +136,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-tablist button span { font-size: var(--text-small); }
 .study-tablist button:hover { color: var(--accent); }
 .study-tablist button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }  /* the same tint as the current subnav tab */
-.study-panel h2 { display: flex; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-2); }
-.study-panel h2 span { color: var(--muted); font-size: var(--text-lead); font-weight: 600; }
+.study-panel h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-2); }
+.study-panel h2 span { white-space: nowrap; color: var(--muted); font-size: var(--text-lead); font-weight: 600; }
 .study-note { margin-bottom: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
 .study-note strong { margin-right: var(--space-1); color: var(--text); font-weight: 600; }
 .study-note a { color: var(--accent); font-weight: 600; }
@@ -173,7 +173,11 @@ a.cs-title:hover { color: var(--accent); }
   .course-hero { grid-template-columns: 1fr; gap: var(--space-6); }
 }
 @media (max-width: 680px) {
-  .course-meta, .course-lead { font-size: var(--text-body); }
+  .course-lead { font-size: var(--text-body); }
+  .course-brand { flex-wrap: wrap; }
+  .course-meta span + span::before, .course-eyebrow span + span::before { content: none; }
+  .study-tablist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .study-tablist button { min-width: 0; padding-inline: var(--space-3); }
   .course-fact { grid-template-columns: 1fr; gap: 0; }
   .course-schedule thead { display: none; }
   .course-schedule, .course-schedule tbody, .course-schedule tr { display: block; width: auto; }

@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-10-28 | [publications-type-hierarchy](2026-10-28-publications-type-hierarchy.md) | Sangwoo Mo(sangwoomo) | Publications | venue 배지 제거, 제목 17px·저자와 메타 15px, 세 줄 시작선 정렬 |
+| 2026-10-28 | [publications-type-hierarchy](2026-10-28-publications-type-hierarchy.md) | Sangwoo Mo(sangwoomo) | Publications | venue 배지 제거·세 줄 시작선 정렬, 공통 글자 크기 축소(본문 16px·보조 14px) |
 | 2026-10-28 | [course-project-layout](2026-10-28-course-project-layout.md) | Sangwoo Mo(sangwoomo) | 시트 링크·Project | 우측 ↗ 통일, 팀 구성 Timeline, Slides 줄바꿈·Final 미정 |
 | 2026-10-28 | [seminar-toolbar-weight](2026-10-28-seminar-toolbar-weight.md) | Sangwoo Mo(sangwoomo) | Seminar 필터 도구 모음 | Full schedule과 필터 버튼의 공통 굵기 600 |
 | 2026-10-28 | [ai-study-members](2026-10-28-ai-study-members.md) | Sangwoo Mo(sangwoomo) | Undergraduate AI Study Members·member 시트 | 40명 기수별 명단·참여 마커, 이메일 28셀 학교 주소로 통일 |

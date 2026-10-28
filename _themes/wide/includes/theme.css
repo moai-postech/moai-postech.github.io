@@ -264,11 +264,9 @@ a.mentee-name:hover { color: var(--accent); }
 .section-next { margin: 0; font-size: var(--text-body); }
 .content-section.section-next { padding-top: var(--space-5); }  /* a section's closing line: where to go next (Research and Home: publications) */
 .section-next a { font-weight: 400; }
-/* A compact pair of next steps: a neutral surface and quiet controls, without another section heading. */
-.section-actions .section-body { padding: var(--space-4); background: var(--surface); border-radius: var(--radius-2); }
+/* Both next steps belong to one floating callout; the links remain part of each sentence. */
+.section-actions .section-body { padding: var(--card-padding); background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--bg)); border-radius: var(--radius-2); box-shadow: 0 4px 16px color-mix(in srgb, var(--text) 7%, transparent); }
 .section-actions .section-body > p:not(:last-child) { margin-bottom: var(--space-3); }
-.section-actions a { display: inline-flex; align-items: center; min-height: 36px; padding: var(--space-1) var(--space-3); border: 1px solid var(--line); border-radius: 999px; background: var(--bg); }
-.section-actions a:hover { border-color: var(--accent); text-decoration: none; }
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }

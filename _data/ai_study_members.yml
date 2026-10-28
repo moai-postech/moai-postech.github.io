@@ -1,0 +1,215 @@
+# member 시트에서 생성. tools/ai_study_members_sync.py 사용.
+# 가입 기수 내림차순, 같은 기수는 시트 순서. 참여 기수는 학기별 명단의 합집합.
+cohorts:
+  - number: 4
+    term: "Fall 2026"
+    members:
+      - name: "고정윤"
+        department: "컴공"
+        entry_year: "25"
+        email: "jungyoonko@postech.ac.kr"
+        participation: [4]
+      - name: "김나령"
+        department: "산경"
+        entry_year: "25"
+        email: "kimnr@postech.ac.kr"
+        participation: [4]
+      - name: "김재원"
+        department: "무은재"
+        entry_year: "26"
+        email: "jaewonkim@postech.ac.kr"
+        participation: [4]
+      - name: "김태경"
+        department: "산경"
+        entry_year: "24"
+        email: "tkjk0507@postech.ac.kr"
+        participation: [4]
+      - name: "김태하"
+        department: "컴공"
+        entry_year: "25"
+        email: "pcmgo21@postech.ac.kr"
+        participation: [4]
+      - name: "김하은"
+        department: "산경"
+        entry_year: "25"
+        email: "khe45@postech.ac.kr"
+        participation: [4]
+      - name: "신예원"
+        department: "산경"
+        entry_year: "24"
+        email: "chloemel0113@postech.ac.kr"
+        participation: [4]
+      - name: "유소은"
+        department: "전전"
+        entry_year: "24"
+        email: "seyou@postech.ac.kr"
+        participation: [4]
+      - name: "윤서현"
+        department: "무은재"
+        entry_year: "26"
+        email: "yunseohyun07@postech.ac.kr"
+        participation: [4]
+      - name: "이유찬"
+        department: "산경"
+        entry_year: "25"
+        email: "uchan0417@postech.ac.kr"
+        participation: [4]
+      - name: "이지윤"
+        department: "무은재"
+        entry_year: "26"
+        email: "jylee796@postech.ac.kr"
+        participation: [4]
+      - name: "최원준"
+        department: "무은재"
+        entry_year: "26"
+        email: "choi2657707@postech.ac.kr"
+        participation: [4]
+      - name: "최진현"
+        department: "산경"
+        entry_year: "25"
+        email: "jinhyeonchoi@postech.ac.kr"
+        participation: [4]
+      - name: "황인관"
+        department: "컴공"
+        entry_year: "21"
+        email: "ikhwang@postech.ac.kr"
+        participation: [4]
+  - number: 3
+    term: "Summer 2026"
+    members:
+      - name: "오승준"
+        department: "산경"
+        entry_year: "21"
+        email: "seungjunoh@postech.ac.kr"
+        participation: [3, 4]
+      - name: "김도연"
+        department: "산경"
+        entry_year: "22"
+        email: "kimdoyeun14@postech.ac.kr"
+        participation: [3]
+      - name: "장연종"
+        department: "산경"
+        entry_year: "22"
+        email: "jang23517@postech.ac.kr"
+        participation: [3]
+  - number: 2
+    term: "Spring 2026"
+    members:
+      - name: "정민호"
+        department: "산경"
+        entry_year: "22"
+        email: "jmh200303@postech.ac.kr"
+        participation: [2, 4]
+      - name: "정윤"
+        department: "산경"
+        entry_year: "24"
+        email: "babbabuni@postech.ac.kr"
+        participation: [2, 3, 4]
+      - name: "진동환"
+        department: "산경"
+        entry_year: "24"
+        email: "justinchin@postech.ac.kr"
+        participation: [2, 3, 4]
+      - name: "안준서"
+        department: "산경"
+        entry_year: "25"
+        email: "anj35879@postech.ac.kr"
+        participation: [2, 4]
+      - name: "김승호"
+        department: "산경"
+        entry_year: "19"
+        email: "shkim23@postech.ac.kr"
+        participation: [2]
+      - name: "장세림"
+        department: "산경"
+        entry_year: "21"
+        email: "sljang@postech.ac.kr"
+        participation: [2]
+      - name: "양광모"
+        department: "컴공"
+        entry_year: "22"
+        email: "kwangmo24@postech.ac.kr"
+        participation: [2]
+      - name: "임성은"
+        department: "산경"
+        entry_year: "22"
+        email: "limsungeun@postech.ac.kr"
+        participation: [2]
+      - name: "김홍근"
+        department: "컴공"
+        entry_year: "23"
+        email: "hongsimi7@postech.ac.kr"
+        participation: [2]
+      - name: "김원호"
+        department: "IT융공"
+        entry_year: "23"
+        email: "huwinaro@postech.ac.kr"
+        participation: [2]
+  - number: 1
+    term: "Fall 2025"
+    members:
+      - name: "최지안"
+        department: "산경"
+        entry_year: "24"
+        email: "chjohn1105@postech.ac.kr"
+        participation: [1, 2, 3, 4]
+      - name: "박채원"
+        department: "산경"
+        entry_year: "22"
+        email: "cw150@postech.ac.kr"
+        participation: [1, 2, 3, 4]
+      - name: "박선영"
+        department: "산경"
+        entry_year: "24"
+        email: "seonyeong@postech.ac.kr"
+        participation: [1, 2, 4]
+      - name: "이수겸"
+        department: "물리"
+        entry_year: "24"
+        email: "andrewlee05@postech.ac.kr"
+        participation: [1, 2, 4]
+      - name: "고현민"
+        department: "산경"
+        entry_year: "20"
+        email: "minn2422@postech.ac.kr"
+        participation: [1, 2]
+      - name: "이현수"
+        department: "컴공"
+        entry_year: "23"
+        email: "hyunsoo13@postech.ac.kr"
+        participation: [1, 2]
+      - name: "최주연"
+        department: "산경"
+        entry_year: "24"
+        email: "chlwndus@postech.ac.kr"
+        participation: [1, 2]
+      - name: "지은수"
+        department: "산경"
+        entry_year: "24"
+        email: "eunham@postech.ac.kr"
+        participation: [1, 2]
+      - name: "박주연"
+        department: "수학"
+        entry_year: "22"
+        email: "juyeon@postech.ac.kr"
+        participation: [1]
+      - name: "김유진"
+        department: "IT융합"
+        entry_year: "23"
+        email: "urjeansr@postech.ac.kr"
+        participation: [1]
+      - name: "이민주"
+        department: "컴공"
+        entry_year: "23"
+        email: "minjoo303@postech.ac.kr"
+        participation: [1]
+      - name: "공현성"
+        department: "컴공"
+        entry_year: "24"
+        email: "hyunseong@postech.ac.kr"
+        participation: [1]
+      - name: "장승현"
+        department: "IDS"
+        entry_year: "석사 25"
+        email: "shyun1751@postech.ac.kr"
+        participation: [1]

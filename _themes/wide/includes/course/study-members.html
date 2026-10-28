@@ -1,0 +1,24 @@
+<header class="course-head">
+  <p class="course-eyebrow"><span>Study group</span><span>POSTECH</span></p>
+  <h1>Members</h1>
+  <p class="course-lead">Members are grouped by their first cohort, newest first. Markers show every cohort they participated in.</p>
+</header>
+{% for cohort in site.data.ai_study_members.cohorts %}
+<section class="content-section study-member-group" aria-labelledby="cohort-{{ cohort.number }}">
+  <h2 id="cohort-{{ cohort.number }}">{{ cohort.number }}기 <span>{{ cohort.term }}</span></h2>
+  <table class="study-members-table">
+    <caption class="visually-hidden">{{ cohort.number }}기 members</caption>
+    <colgroup><col class="sm-name"><col class="sm-department"><col class="sm-year"><col class="sm-email"><col class="sm-participation"></colgroup>
+    <thead><tr><th scope="col">Name</th><th scope="col">Department</th><th scope="col">Entry year</th><th scope="col">POSTECH email</th><th scope="col">Participation</th></tr></thead>
+    <tbody>{% for member in cohort.members %}
+      <tr>
+        <th scope="row" data-label="Name">{{ member.name }}</th>
+        <td data-label="Department">{{ member.department }}</td>
+        <td data-label="Entry year">{{ member.entry_year }}</td>
+        <td class="study-member-email" data-label="POSTECH email">{{ member.email | replace: '@', ' [at] ' }}</td>
+        <td data-label="Participation"><span class="study-member-markers">{% for n in member.participation %}<span class="study-member-marker">{{ n }}기</span>{% endfor %}</span></td>
+      </tr>{% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endfor %}

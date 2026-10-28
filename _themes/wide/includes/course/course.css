@@ -185,6 +185,33 @@ a.cs-title:hover { color: var(--accent); }
 .st-who { color: var(--muted); font-size: var(--text-meta); }
 .is-optional .cs-title { color: var(--muted); font-weight: 400; }
 
+/* Study member directory: source-sheet column order, one row per person. */
+.study-member-group h2 { font-size: var(--text-group); line-height: var(--leading-group); letter-spacing: normal; }
+.study-member-group h2 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: 400; }
+.study-members-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: var(--text-body); }
+.study-members-table .sm-name { width: 12%; }
+.study-members-table .sm-department { width: 14%; }
+.study-members-table .sm-year { width: 12%; }
+.study-members-table .sm-email { width: 40%; }
+.study-members-table .sm-participation { width: 22%; }
+.study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); }
+.study-members-table thead th { padding-top: 0; color: var(--muted); font-size: var(--text-small); font-weight: 600; }
+.study-members-table tbody th { font-weight: 600; white-space: nowrap; }
+.study-members-table th:last-child, .study-members-table td:last-child { padding-right: 0; }
+.study-member-email { color: var(--muted); overflow-wrap: anywhere; }
+.study-member-markers { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.study-member-marker { padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--surface); color: var(--muted); font-size: var(--text-small); white-space: nowrap; }
+@media (max-width: 680px) {
+  .study-members-table, .study-members-table tbody { display: block; }
+  .study-members-table thead { display: none; }
+  .study-members-table colgroup { display: none; }
+  .study-members-table tr { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--space-2) var(--space-3); padding: var(--space-4) 0; border-bottom: 1px solid var(--line); }
+  .study-members-table th, .study-members-table td { display: block; padding: 0; border: 0; }
+  .study-members-table tbody th { grid-column: 1 / -1; }
+  .study-members-table td::before { display: block; content: attr(data-label); color: var(--muted); font-size: var(--text-small); }
+  .study-members-table td:nth-last-child(-n + 2) { grid-column: 1 / -1; }
+}
+
 /* Grading: item and weight on one line */
 .course-grading { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-5); }  /* two to four items share the row evenly */
 .course-grading li { display: flex; justify-content: space-between; align-items: baseline; padding: var(--space-4) var(--space-5); background: var(--tone-row); border-radius: var(--radius-2); }  /* grading is logistics */

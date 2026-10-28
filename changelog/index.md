@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-28 | [course-attendance-sheets](2026-10-28-course-attendance-sheets.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 출석 1/3 초과 F, AI 문구 제거, 페이지별 시트 링크 하나 |
 | 2026-10-28 | [logo-candidate-review](2026-10-28-logo-candidate-review.md) | Sangwoo Mo(sangwoomo) | 운영 로고·favicon | C 기반 순수 SVG 적용, 헤더40px·비율 보존·공통 심볼 |
 | 2026-10-28 | [minor-workflow-link-finishes](2026-10-28-minor-workflow-link-finishes.md) | Sangwoo Mo(sangwoomo) | 반영 경로·이동 링크·Talks | Minor 직접 반영, 모집 로켓·짧은 이동 화살표, 연구 발표 수록 원칙 |
 | 2026-10-28 | [course-guest-seminars](2026-10-28-course-guest-seminars.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 초청·세미나 노랑, 휴강 회색, 회차별 시간·장소 |

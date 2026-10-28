@@ -24,6 +24,23 @@ function copySite(dest) {
 async function serveDirectory(dir) {
   return new Promise(resolve=>{const s=require('http').createServer((req,res)=>{try{let rel=decodeURIComponent(req.url.split('?')[0]).replace(/^\//,'');if(!rel||rel.endsWith('/'))rel+='index.html';const file=vr.relativeFile(dir,rel);if(!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404);return res.end();}const types={'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.woff2':'font/woff2'};res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream'});fs.createReadStream(file).pipe(res);}catch{res.writeHead(400);res.end();}}).listen(0,'127.0.0.1',()=>resolve(s));});
 }
+async function installFontEvidence(context, manifest, cache) {
+  // Intercept font bytes before rendering. Page-response bodies can disappear on navigation.
+  await context.route(/\.(woff2?|ttf|otf)(\?|$)/,async route=>{
+    const url=route.request().url();
+    try {
+      if(!cache.has(url))cache.set(url,(async()=>{
+        const response=await route.fetch({timeout:45000});
+        if(!response.ok())throw Error(`HTTP ${response.status()}`);
+        const body=await response.body(),headers={...response.headers()};
+        for(const name of ['content-encoding','content-length','transfer-encoding'])delete headers[name];
+        return {body,headers,sha256:vr.hash(body)};
+      })());
+      const font=await cache.get(url);
+      await route.fulfill({status:200,headers:font.headers,body:font.body});
+    } catch(e) {manifest.captureErrors.push(`폰트 바이트 고정 실패: ${url}: ${e.message}`);await route.abort().catch(()=>{});}
+  });
+}
 async function capture(out,manifest) {
   const {chromium}=require('playwright');
   const server=await serveDirectory(path.join(out,'site'));
@@ -31,15 +48,15 @@ async function capture(out,manifest) {
   const {loadSyntheticDirectory}=require('./lib/design-fixture');
   const base=`http://127.0.0.1:${server.address().port}/`;
   const browser=await chromium.launch();
-  const fonts=new Map(),fontTasks=[];
+  const fonts=new Map();
   const pageUnits=new Map(),stateUnits=new Map(),groups=new Map(vr.policy.comparisons.map(g=>[g.id,[]]));
   try {
     manifest.engine=browser.version();manifest.platform=process.platform;
     for(const width of vr.policy.widths) {
       const context=await browser.newContext({viewport:{width,height:vr.policy.height},deviceScaleFactor:1,reducedMotion:'reduce',locale:'en-US',timezoneId:'Asia/Seoul'});
       await context.addInitScript(({now})=>{const D=Date;window.Date=new Proxy(D,{construct:(t,a)=>Reflect.construct(t,a.length?a:[now]),apply:()=>new D(now).toString(),get:(t,k)=>k==='now'?()=>now:Reflect.get(t,k)});},{now:Date.parse(manifest.createdAt)});
+      await installFontEvidence(context,manifest,fonts);
       const page=await context.newPage();
-      page.on('response',response=>{if(response.request().resourceType()==='font')fontTasks.push(response.body().then(b=>fonts.set(response.url(),vr.hash(b))).catch(()=>manifest.captureErrors.push('폰트 응답 저장 실패: '+response.url())));});
       for(const file of templatePages(path.join(out,'site'))) {
         await page.goto(base+file,{waitUntil:'domcontentloaded',timeout:45000});
         await page.evaluate(()=>document.fonts.ready);
@@ -113,9 +130,9 @@ async function capture(out,manifest) {
       }
       await context.close();
     }
-    await Promise.all(fontTasks);
+
   } finally {await browser.close();await new Promise(resolve=>server.close(resolve));}
-  manifest.fontResources=[...fonts].map(([url,sha256])=>({url,sha256})).sort((a,b)=>a.url.localeCompare(b.url));
+  manifest.fontResources=[];for(const [url,pending]of fonts){try{manifest.fontResources.push({url,sha256:(await pending).sha256});}catch{}}manifest.fontResources.sort((a,b)=>a.url.localeCompare(b.url));
   const uniqueImages=ids=>{const seen=new Set();return ids.filter(id=>{const im=manifest.cases.flatMap(c=>c.images).find(i=>i.id===id);if(!im||seen.has(im.sha256))return false;seen.add(im.sha256);return true;});};
   manifest.units=[...pageUnits].map(([file,ids])=>({id:'page:'+file,title:'페이지 '+file,caseIds:ids}));
   for(const [file,ids]of stateUnits)manifest.units.push({id:'states:'+file,title:'상태 '+file,caseIds:ids});
@@ -145,7 +162,7 @@ async function prepare() {
   manifest.mode='frozen-visual';
   const files=copySite(path.join(out,'site'));manifest.frozenFiles=files.map(f=>({path:'site/'+f,sha256:vr.hash(fs.readFileSync(path.join(out,'site',f)))}));
   manifest.buildFingerprint=vr.normalizedBuild(path.join(out,'site'));
-  await capture(out,manifest);
+  try{await capture(out,manifest);}catch(e){manifest.captureErrors.push('캡처 실행 실패: '+e.message);}
   if(vr.sourceFingerprint()!==before)manifest.captureErrors.push('검수 중 소스 변경: 새 수정본을 다시 고정해야 함');
   manifest.complete=manifest.captureErrors.length===0;manifest.digest=vr.manifestDigest(manifest);
   const compare=arg('--compare-to');let previous;
@@ -203,4 +220,4 @@ function installHooks() {
 }
 async function main(){if(command==='prepare')await prepare();else if(command==='verify')verify();else if(command==='gate')gate();else if(command==='record')record();else if(command==='install-hooks')installHooks();else if(command==='fingerprint')console.log(vr.sourceFingerprint());else if(command==='impact')console.log(JSON.stringify(vr.impact(arg('--base')),null,2));else if(command==='serve'){const s=await serveDirectory(path.resolve(arg('--bundle')));console.log(`http://127.0.0.1:${s.address().port}/`);}else throw Error('명령: prepare, verify, gate, record, install-hooks, fingerprint, impact, serve');}
 if(require.main===module)main().catch(e=>{console.error(e.message);process.exitCode=1});
-module.exports={capture,copySite,serveDirectory};
+module.exports={capture,copySite,serveDirectory,installFontEvidence};

@@ -68,7 +68,7 @@
     },
     {
       "id": "card-heading",
-      "selector": ".topic-card h3, .step-body h3, .study-overview h3, .study-learning-path h4, .course-parts strong, .study-step-title, .study-stat-breakdowns h3",
+      "selector": ".topic-card h3, .step-body h3, .study-overview h3, .study-learning-path h4, .course-parts strong, .study-step-title, .study-stat-breakdowns h3, .study-format-steps h3",
       "style": {
         "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-emphasis)",
@@ -457,7 +457,7 @@
     },
     {
       "id": "card-description",
-      "selector": ".topic-card p, .course-part-text, .study-step-text",
+      "selector": ".topic-card p, .course-part-text, .study-step-text, .study-format-steps p",
       "style": {
         "fontSize": "var(--text-meta)"
       }

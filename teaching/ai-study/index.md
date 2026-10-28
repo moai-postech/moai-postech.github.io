@@ -8,12 +8,20 @@ term: "POSTECH"
 head_title: "Undergraduate AI Study · MOAI Lab"
 description: "A weekly AI study group with POSTECH undergraduates and Prof. Sangwoo Mo: each term's topics, papers, demos, and slides."
 summary: >-
-  POSTECH undergraduates read and present AI papers together, one topic a week.
-  Each term follows one theme, and each session pairs the papers with a hands-on demo.
+  Learn AI by reading papers, explaining ideas, and trying them in code.
+  A weekly study group for POSTECH undergraduates, with one theme each term.
+format:
+  title: "How we study"
+  steps:
+    - title: "Read the ideas"
+      text: "Explore the papers and learning materials for each topic. Connect the problem, the method, and the evidence."
+    - title: "Explain and discuss"
+      text: "Student presentations make the key ideas explicit. Questions and discussion connect different ways of understanding them."
+    - title: "Try it in practice"
+      text: "Demos and code connect the ideas to working systems. Follow the materials to revisit what you learned."
 join:
   title: "How to join"
   body: >-
-    Interested in AI? We welcome POSTECH undergraduates from every department, including IME and Mueunjae students.
-    To join, contact this semester's student representative listed under the current term in the [schedule](teaching/ai-study/schedule/).
-    Get to know our [members](teaching/ai-study/members/).
+    We welcome **POSTECH undergraduates from every department**, including IME and Mueunjae students.
+    To join, contact the student representative for the latest term listed in the schedule.
 ---

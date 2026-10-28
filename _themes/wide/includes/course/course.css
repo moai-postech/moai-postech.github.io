@@ -138,6 +138,10 @@ a.cs-title:hover { color: var(--accent); }
 .study-intro { padding-top: var(--space-7); }
 .study-intro h1 { margin-bottom: var(--space-4); text-wrap: balance; }
 .study-intro .course-lead { margin-bottom: 0; }
+.study-join { padding-top: var(--space-6); }
+.study-join h2 { font-size: var(--text-group); line-height: var(--leading-group); letter-spacing: normal; }
+.study-join p { margin: 0; color: var(--muted); }
+.study-join a { color: var(--accent); }
 .study-terms { padding-top: var(--space-6); }
 .study-term-heading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3) var(--space-5); flex-wrap: wrap; margin-bottom: var(--space-5); }
 .study-term-heading h2 { margin-bottom: 0; }

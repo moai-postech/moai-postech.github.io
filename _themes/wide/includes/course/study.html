@@ -1,5 +1,5 @@
 {% comment %}
-  스터디 소개 → 학기 탭 → 선택 학기의 운영 정보와 일정. 학기별 시트·자료는 ai_study.yml,
+  스터디 소개 → Join us → 학기 탭 → 선택 학기의 운영 정보와 일정. 학기별 시트·자료는 ai_study.yml,
   시간·장소·지도교수·학생대표는 ai_study_terms.yml에서 읽는다(교수 2026-10-28).
   학기별 운영 정보가 전역 머리말에 섞이지 않게 하고, 탭을 바꿔도 표의 열 위치는 유지한다.
 {% endcomment %}
@@ -9,6 +9,11 @@
       <h1>{{ page.title }}</h1>
       <p class="course-lead">{{ page.summary }}</p>
     </header>
+
+    {% if page.join %}<section class="content-section study-join" aria-labelledby="study-join">
+      <h2 id="study-join">{{ page.join.title }}</h2>
+      {{ page.join.body | markdownify }}
+    </section>{% endif %}
 
     <section class="content-section study-terms" data-study-tabs>
     <div class="study-tablist" role="tablist" aria-label="Terms">

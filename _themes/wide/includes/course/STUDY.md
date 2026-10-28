@@ -4,7 +4,9 @@
 
 ## 구성
 
-상단 Home·Members 메뉴에서 일정과 멤버 명단을 오간다. Home은 소개 → 학기 탭 → 선택 학기의 Overview·학습 흐름(전체 폭) → 가로 운영 정보 → 일정 표 순이다.
+상단 Home·Members 메뉴에서 일정과 멤버 명단을 오간다. Home은 소개 → Join us → 학기 탭 → 선택 학기의 Overview·학습 흐름(전체 폭) → 가로 운영 정보 → 일정 표 순이다.
+
+- Join us는 타과·무은재 학부생을 포함해 모든 POSTECH 학부생을 환영하고, 아래 학기 탭의 이번 학기 학생대표에게 연락하도록 안내한다. Members 명단 링크를 함께 둔다. 문구는 `teaching/ai-study/index.md`의 `join`에서 관리한다.
 
 
 - 학기별 Overview는 목표 한 문장과 실제 회차 순서에 맞춘 `learning_path`로 구성한다. 각 단계는 표의 Topic 열과 맞춘 `Topics n–m` 회차 범위·짧은 주제 제목·설명을 포함한다. 단계는 흰 배경과 가는 연결선·화살표로 잇고 별도 카드로 감싸지 않는다. Physical AI는 로봇 기초 → 3D 세계 이해 → foundation models와 로봇의 결합 흐름을 드러낸다.

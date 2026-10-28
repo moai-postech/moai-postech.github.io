@@ -62,3 +62,9 @@ POSTECH 요구사항: P1~P9 영향 없음. 학교·연구실 로고, 공식 링�
 - Talks는 Drive와 대조 후 의견만 제시하는 별도 읽기 작업이며 이 수정에서 발표를 추가하지 않음.
 - 변경 후 Jekyll, 타이포그래피24페이지·167상태·텍스트17,840개·제목 경계18조합, 형식13페이지×5폭, POSTECH24페이지×2폭 통과. Home·Faculty·Teaching·Publications는1440·390·320px에서 문구·색·연락처·핵심 정보 크기를 실제 확인.
 - Talks 검토 의견: invited-talks와2025하위 폴더를 대조하고 표지 확인. How to Use Agents(2026-09-21)는 기존 연구 발표와 다른 실용적 주제를 더해 추가 추천. AX Revolution with IME는 IMEN100 강의라 Talks 추가를 권하지 않음. POSTECH job talk는 이미 있는 Scalable Priors for Foundation Models와 같은 제목이라 중복 추가하지 않음. 이번에는 의견만 제시했고 데이터 수정 없음.
+
+## 병합과 배포 확인
+- 교수의 검사 통과 후 병합·배포 승인 및 이어진 요청에 따라 PR #24를9f10fc4cd71b76d84422cd203ff049836bb52480에 squash merge. changelog·format(형식·타이포그래피·선택·조작·POSTECH) 전부 성공.
+- GitHub Pages의 해당 커밋 built 확인. 실제 moai.postech.ac.kr의 Home·Publications·Teaching·Faculty를1440·390·320px, 총12화면에서 검증. Home Join us!·공통 안내 박스, 논문 핵심 정보17/16px, Teaching with·주변 글자색 링크, Faculty 사무실·전화 모두 정상.
+- 최신 강의·스터디·세미나 변경을 보존. 병합 전 로컬 재검사는24페이지·167상태·텍스트17,880개와 형식13페이지×5폭 통과.
+- 이 기록 외에 남은 사이트 수정 없음. Talks 추가는 의견 요청 범위라 추천만 전달. Paper Stella reset은 독립 저장소의 회차 기록에 남김.

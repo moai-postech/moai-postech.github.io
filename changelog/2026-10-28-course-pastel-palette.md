@@ -1,7 +1,7 @@
 # 2026-10-28 강의 페이지 파스텔 팔레트
 작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/course/course.css`, `_themes/wide/includes/course/README.md` | 도구: Codex
 
-> **한줄 결론: 공통은 살구, Part 1·2·3은 하늘·민트·라벤더로 통일해 화사함과 구분을 함께 높임.**
+> **한줄 결론: 최종 팔레트는 공통 버터 옐로, Part 1·2·3 하늘·민트·코랄로 결정.**
 
 POSTECH 요구사항: 영향 없음. 자료 링크와 선택 상태의 POSTECH Red 유지.
 
@@ -31,3 +31,12 @@ POSTECH 요구사항: 영향 없음. 자료 링크와 선택 상태의 POSTECH R
 
 ## 남은 것
 없음.
+
+## 2차: 노랑·파랑·초록·빨강 계열로 조정
+- 교수는 보라보다 익숙한 네 색을 선호해 공통은 노랑, Part 1·2·3은 파랑·초록·빨강 계열로 배치하도록 최종 승인.
+- Part 1 하늘과 Part 2 민트 유지. 공통은 버터 옐로(배경 `#fff2cc`, 글자 `#78601f`, 테두리 `#e9cd73`), Part 3은 코랄(배경 `#fbe1df`, 글자 `#9a4746`, 테두리 `#e9aaa4`)로 변경.
+- 1차 살구·라벤더는 최종안에서 제외. 노랑과 빨강을 파스텔로 풀어 네 역할의 색조를 더 익숙하게 구분.
+- 색상 외 최신 스터디·글자 조정은 유지. 원본 복구 경로: Git `321ab0c`.
+- 발견한 iCloud 충돌 사본 4개 비교: 중복된 typography 수정은 최신 정본에 포함되어 있고, 나머지는 이후 커밋에서 고친 스터디·논문 글자 크기의 옛 상태. 최신 정본을 유지하고 사본은 scratchpad로 옮겨 보존.
+- 사본 백업: /private/var/folders/qp/pfsxmgf56c748841mwnb1q9c0000gp/T/moai-icloud-copies-920xmedb (format 2.yml, course 2.css, theme 2.css, check_format 2.js).
+- 2차 검증: Jekyll 빌드, 전체 형식·typography·POSTECH 검사 통과. 세 강의의 27개 화면 조합에서 가로 넘침 없음, 네 역할의 글자·배경 대비 최소 5.04:1. 실제 Home 렌더에서 네 색을 함께 확인.

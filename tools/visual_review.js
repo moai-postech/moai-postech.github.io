@@ -7,7 +7,7 @@ const args=process.argv.slice(2),command=args.shift();
 function arg(name,fallback) {const i=args.indexOf(name);return i<0?fallback:args[i+1];}
 function write(file,value) {fs.writeFileSync(file,typeof value==='string'||Buffer.isBuffer(value)?value:JSON.stringify(value,null,2)+'\n');}
 function safeRun(bin,argv,log) {
-  const result=spawnSync(bin,argv,{cwd:ROOT,encoding:'utf8',maxBuffer:20e6});
+  const result=spawnSync(bin,argv,{cwd:ROOT,encoding:'utf8',maxBuffer:20e6,env:{...process.env,TZ:'UTC'}});
   fs.writeFileSync(log,(result.stdout||'')+(result.stderr||'')+(result.error?.message||''));
   return result.status===null?1:result.status;
 }

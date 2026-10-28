@@ -133,7 +133,8 @@ a.cs-title:hover { color: var(--accent); }
 .course-sheet { display: inline-flex; align-items: baseline; gap: var(--space-1); margin-left: auto; color: var(--accent); white-space: nowrap; }
 .project-teams .cs-n { padding-left: var(--space-3); }
 .project-link { display: inline-block; margin-top: 2px; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
-.project-round { width: 1%; white-space: nowrap; }
+.project-round { width: 1%; white-space: nowrap; text-align: center; }
+.project-teams thead th:nth-child(n + 3) { text-align: center; }
 .project-when { display: block; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 .project-round a { display: block; margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 
@@ -323,15 +324,16 @@ a.cs-title:hover { color: var(--accent); }
 .course-site main:has(.course-schedule) + .course-foot { border-top: 0; }
 
 /* Project milestones: dates and actions, with no repeated Overview card. */
-.project-timeline { display: grid; gap: var(--space-5); margin-top: var(--space-5); }
-.project-timeline li { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(0, 5fr); gap: var(--space-4); }
+.project-timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
+.project-timeline li { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
 .project-timeline-when { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); font-variant-numeric: tabular-nums; }
 .project-timeline-when small { display: block; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-regular); }
 .project-timeline-title { font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .project-timeline p { margin: var(--space-1) 0 0; font-size: var(--text-meta); color: var(--muted); }
 .project-timeline p strong { color: var(--text); }
 @media (max-width: 680px) {
-  .project-timeline li { grid-template-columns: 1fr; gap: var(--space-1); }
+  .project-timeline { grid-template-columns: 1fr; }
+  .project-timeline li { gap: var(--space-1); }
   .project-timeline-when small { display: inline; margin-left: var(--space-2); }
 }
 

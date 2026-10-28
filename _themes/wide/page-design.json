@@ -160,7 +160,7 @@
       "page": "teaching/25f-data-engineering/project/index.html",
       "template": "강의 · Project",
       "decision": "기본 유지",
-      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용.",
+      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용. Timeline은 세 블록 가로 배치, 발표 열은 가운데 정렬.",
       "adjustments": []
     },
     {
@@ -181,7 +181,7 @@
       "page": "teaching/26f-data-engineering/project/index.html",
       "template": "강의 · Project",
       "decision": "기본 유지",
-      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용.",
+      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용. Timeline은 세 블록 가로 배치, 발표 열은 가운데 정렬.",
       "adjustments": []
     },
     {
@@ -202,7 +202,7 @@
       "page": "teaching/26s-programming-for-data-science/project/index.html",
       "template": "강의 · Project",
       "decision": "기본 유지",
-      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용.",
+      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용. Timeline은 세 블록 가로 배치, 발표 열은 가운데 정렬.",
       "adjustments": []
     },
     {

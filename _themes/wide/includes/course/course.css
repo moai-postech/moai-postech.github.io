@@ -104,8 +104,7 @@
 .cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
-.cs-session-type { display: inline-block; margin-right: var(--space-2); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
-.cs-session-details { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--space-4); }
+.cs-session-details { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 var(--space-4); }
 .cs-session-details .cs-session-meta { margin-top: 0; }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .cs-session-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin-top: var(--space-1); color: var(--muted); font-size: var(--text-meta); }
@@ -127,9 +126,16 @@ a.cs-title:hover { color: var(--accent); }
 
 /* Team project page: criteria as name + one line, then one row per team with a cell per presentation round */
 .project-sub { margin-top: var(--space-6); }
-.project-criteria li { display: grid; grid-template-columns: 9em minmax(0, 1fr); gap: var(--space-4); padding: var(--row-gap) 0; }
+.project-criteria { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
+.project-criteria li { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
 .project-criteria strong { font-weight: var(--weight-emphasis); }
-.project-criteria span { color: var(--muted); }
+.project-criteria li > span { color: var(--muted); font-size: var(--text-meta); }
+.project-criterion-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.project-individual { padding: 0 var(--space-2); border-radius: var(--radius-1); color: var(--accent); background: var(--accent-soft); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
+.project-evaluation-flow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.project-evaluation-source, .project-evaluation-result { padding: var(--space-3) var(--space-4); border-radius: var(--radius-1); background: var(--surface); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
+.project-evaluation-result { background: var(--accent-soft); color: var(--accent); }
+@media (max-width: 680px) { .project-criteria { grid-template-columns: 1fr; } }
 .course-sheet { display: inline-flex; align-items: baseline; gap: var(--space-1); margin-left: auto; color: var(--accent); white-space: nowrap; }
 .project-teams .cs-n { padding-left: var(--space-3); }
 .project-link { display: inline-block; margin-top: 2px; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
@@ -312,7 +318,7 @@ a.cs-title:hover { color: var(--accent); }
   .project-round { grid-column: 1 / -1; }
   .project-round:empty { display: none !important; }
   .project-round::before { content: attr(data-round) "\00a0\00a0"; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }
-  .project-criteria li { grid-template-columns: 1fr; gap: 0; padding: var(--space-2) 0; }
+
   .study-table colgroup { display: none; }
   .st-links, .st-who { grid-column: 1 / -1; }
   .st-links:empty, .st-who:empty { display: none !important; }

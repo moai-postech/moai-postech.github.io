@@ -246,6 +246,8 @@ project:
     - name: "Presentation · 60%"
       when: "May 28 & Jun 2"
       text: "Share the problem, your approach, and what you learned."
+  evaluation_sources: ["Instructor evaluation", "Peer evaluation"]
+  evaluation_result: "Project score"
   evaluation_note: "Project scores combine instructor and peer evaluations. Teamwork is assessed individually based on each member's contribution."
   criteria:
     - name: "Problem"
@@ -255,6 +257,7 @@ project:
     - name: "Results"
       text: "Final performance and leaderboard ranking"
     - name: "Teamwork"
+      individual: true
       text: "Individual contribution to technical work, collaboration and shared responsibilities"
     - name: "Presentation"
       text: "Quality of delivery and storytelling"

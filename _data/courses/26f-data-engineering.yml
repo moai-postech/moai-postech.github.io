@@ -278,18 +278,19 @@ project:
     - name: "Final · 40%"
       when: "Dec 15 & 17"
       text: "Build a product for a real-world problem using a large-scale database and data you are allowed to access."
+  evaluation_sources: ["Instructor evaluation", "Peer evaluation"]
+  evaluation_result: "Project score"
   evaluation_note: "Project scores combine instructor and peer evaluations. Teamwork is assessed individually based on each member's contribution."
   criteria:
-    - name: "Novelty"
-      text: "Originality and creativity of the idea"
-    - name: "Impact"
-      text: "Relevance and potential usefulness of the solution"
-    - name: "Technology"
-      text: "Effective use of the techniques and tools covered in class"
+    - name: "Problem"
+      text: "Importance of the problem and clarity of the goal"
+    - name: "Method"
+      text: "Appropriateness and technical quality of the approach"
+    - name: "Results"
+      text: "Quality of the results and evidence supporting the conclusions"
     - name: "Teamwork"
+      individual: true
       text: "Individual contribution to technical work, collaboration and shared responsibilities"
-    - name: "Presentation"
-      text: "Clarity and professionalism of the report and presentation"
   rounds:
     - id: "proposal"
       name: "Proposal"

@@ -24,7 +24,7 @@
         {% assign compact_session = false %}{% if r.kind == "guest" or r.kind == "seminar" %}{% unless r.html or r.pdf or r.lab %}{% assign compact_session = true %}{% endunless %}{% endif %}
         <td class="cs-topic"{% if compact_session %} colspan="2"{% endif %}>
           {% assign tag = site.data.course_tags[r.kind] %}{% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
-          {% if tag %}<span class="{% if is_seminar %}cs-session-type{% else %}cs-tag{% endif %}">{{ tag }}</span>{% endif %}
+          {% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}
           {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}
           {% if is_seminar %}<span class="cs-session-details">{% endif %}
           {% if r.title and r.speaker %}<span class="cs-speaker"><span class="cs-speaker-name">{{ r.speaker }}</span>{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}

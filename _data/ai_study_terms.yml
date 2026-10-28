@@ -1,0 +1,22 @@
+# 학기별 운영 정보. 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
+# 시간·장소 근거는 changelog/2026-10-28-ai-study-materials.md 5차에 있다. 새 학기는 같은 키로 추가한다.
+fall-2026:
+  advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME" }
+  meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
+  location: { building: "Engineering Building 4", rooms: "Room 307" }
+  representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
+summer-2026:
+  advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME" }
+  meetings: { day: "Usually Tuesdays", time: "15:30 – 16:30 KST" }
+  location: { building: "Engineering Building 4", rooms: "Rooms 301 / 303 / 307" }
+  representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
+spring-2026:
+  advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME" }
+  meetings: { day: "Tuesdays", time: "21:00 – 22:30 KST" }
+  location: { building: "Engineering Building 4", rooms: "Rooms 302 / 307" }
+  representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
+fall-2025:
+  advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME" }
+  meetings: { day: "Wednesdays", time: "22:00 – 23:00 KST" }
+  location: { building: "Engineering Building 4", rooms: "Room 307" }
+  representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }

@@ -1,26 +1,13 @@
 {% comment %}
-  학부생 AI 스터디(teaching/ai-study/). 한 페이지에 학기마다 탭 하나(2026-10-26 교수). 최신 학기 탭이 먼저 열리고, 주소 끝 #fall-2025 처럼 학기를 고를 수 있다.
-  소개와 운영 정보는 페이지 front matter, 학기별 일정은 _data/ai_study.yml(tools/ai_study_sync.py 가 스터디 시트에서 만든다).
-  머리는 강의 Home 과 같은 짜임(왼쪽 소개, 오른쪽 운영 정보 칸)이고, 표는 강의 스케줄 표의 모양을 쓴다.
-  탭을 바꿔도 칸의 가로 위치가 움직이지 않게 표 칸 폭을 colgroup 으로 고정한다(AGENTS.md).
-  스터디에 들어오는 연락처(운영자 이메일, organizer_contact)는 이 페이지의 Organizer 칸에만 둔다. Contact 1단계는 이 페이지로 잇는다. 시트 링크는 각 학기 탭 아래 해당 학기 구간으로 잇는다(교수 2026-10-28).
+  스터디 소개 → 학기 탭 → 선택 학기의 운영 정보와 일정. 학기별 시트·자료는 ai_study.yml,
+  시간·장소·지도교수·학생대표는 ai_study_terms.yml에서 읽는다(교수 2026-10-28).
+  학기별 운영 정보가 전역 머리말에 섞이지 않게 하고, 탭을 바꿔도 표의 열 위치는 유지한다.
 {% endcomment %}
-{% assign d = site.data.ai_study %}{% assign prof = site.data.members.professor %}
-    <header class="course-hero">
-      <div class="course-hero-main">
-        <p class="course-eyebrow"><span>Study group</span><span>POSTECH</span></p>
-        <h1>{{ page.title }}</h1>
-        <p class="course-lead">{{ page.summary }}</p>
-      </div>
-      <dl class="course-facts">
-        <div class="course-fact course-instructor">
-          <dt>Advisor</dt>
-          <dd>{% if prof.photo %}<img src="{{ prof.photo }}" alt="" width="48" height="48">{% endif %}<span><a href="faculty.html">Prof. {{ prof.name }}</a><small>POSTECH IME</small></span></dd>
-        </div>
-        {% if page.meetings %}<div class="course-fact"><dt>Meetings</dt><dd>{{ page.meetings }}</dd></div>{% endif %}
-        {% if page.organizer %}<div class="course-fact course-organizer" id="organizer"><dt>Organizer</dt><dd>{{ page.organizer }}{% if page.organizer_contact %}<small>{{ page.organizer_contact }}</small>{% endif %}</dd></div>{% endif %}
-        <div class="course-fact"><dt>Terms</dt><dd>{% assign last = d.terms | last %}{{ d.terms.size }} since {{ last.name }}</dd></div>
-      </dl>
+{% assign d = site.data.ai_study %}
+    <header class="study-intro">
+      <p class="course-eyebrow"><span>Study group</span><span>POSTECH</span></p>
+      <h1>{{ page.title }}</h1>
+      <p class="course-lead">{{ page.summary }}</p>
     </header>
 
     <section class="content-section study-terms" data-study-tabs>
@@ -28,8 +15,17 @@
       {% for t in d.terms %}<button type="button" role="tab" id="tab-{{ t.id }}" aria-controls="{{ t.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}><strong>{{ t.name }}</strong><span>{{ t.theme }}</span></button>{% endfor %}
     </div>
     {% for t in d.terms %}<div class="study-panel" role="tabpanel" id="{{ t.id }}" aria-labelledby="tab-{{ t.id }}"{% unless forloop.first %} hidden{% endunless %}>
-      <h2>{{ t.theme }}<span>{{ t.name }}</span></h2>
-      {% if t.sheet %}<p class="study-note"><a href="{{ t.sheet }}">Study sheet</a></p>{% endif %}
+      {% assign info = site.data.ai_study_terms[t.id] %}
+      <div class="study-term-heading">
+        <h2>{{ t.theme }}<span>{{ t.name }}</span></h2>
+        {% if t.sheet %}<a class="study-sheet" href="{{ t.sheet }}">Study sheet</a>{% endif %}
+      </div>
+      {% if info %}<dl class="study-facts">
+        {% if info.meetings %}<div><dt>Meetings</dt><dd>{{ info.meetings.day }}<small>{{ info.meetings.time }}</small></dd></div>{% endif %}
+        {% if info.location %}<div><dt>Location</dt><dd>{{ info.location.building }}<small>{{ info.location.rooms }}</small></dd></div>{% endif %}
+        {% if info.advisor %}<div><dt>Advisor</dt><dd><a href="{{ info.advisor.url }}">{{ info.advisor.name }}</a><small>{{ info.advisor.affiliation }}</small></dd></div>{% endif %}
+        {% if info.representative %}<div><dt>Student representative</dt><dd>{{ info.representative.name }}<small>{{ info.representative.email }}</small></dd></div>{% endif %}
+      </dl>{% endif %}
       {% if t.note %}<p class="study-note"><strong>{{ t.note.label }}</strong> {% if t.note.links %}{% for l in t.note.links %}<a href="{{ l.url }}">{{ l.text }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% else %}{{ t.note.text }}{% endif %}</p>{% endif %}
       <table class="course-schedule study-table">
         <colgroup><col class="sc-n"><col class="sc-date"><col class="sc-topic"><col class="sc-papers"><col class="sc-demo"><col class="sc-who"><col class="sc-mat"></colgroup>

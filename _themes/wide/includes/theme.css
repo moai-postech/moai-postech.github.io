@@ -347,8 +347,8 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pubs .authors { color: var(--faint); font-size: var(--text-author); line-height: var(--leading-paper); }
 .author { white-space: nowrap; }  /* a name never breaks across lines */
 .pubs .lab { color: var(--text); }
-.pubs .note { margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: 600; line-height: 1.5; }  /* awards: a line of their own, in the accent colour */
-.pub-meta { font-size: var(--text-paper-meta); line-height: var(--leading-paper); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-5); }
+.pubs .note { margin-top: 0; color: var(--accent); font-size: var(--text-meta); font-weight: 600; line-height: 1.5; }  /* awards: a line of their own, in the accent colour */
+.pub-meta { font-size: var(--text-paper-meta); line-height: var(--leading-paper); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); }
 .pub-venue, .pub-links { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1); }
 .pub-links { gap: var(--space-3); }
 .venue-honor { color: var(--accent); font-size: var(--text-paper-meta); font-weight: 600; }  /* presentation honours stay beside the venue, including when the links wrap */

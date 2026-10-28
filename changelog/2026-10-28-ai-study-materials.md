@@ -45,7 +45,16 @@
 - 표 아래 이중선은 마지막 Optional 행의 inset 선과 바로 이어지는 footer 위 선이 3px 간격으로 함께 보인 것. 스터디의 마지막 Optional 행 선만 제거하고 footer의 한 줄은 유지.
 - 줄바꿈을 없앤 자료가 표에서 넘치지 않도록 Topic·Papers 열 비율만 필요한 만큼 조절. 원본과 이전 표시는 Git 이력으로 복구 가능.
 - 기존 Slides·Demo 두 줄 배치는 이번 요청으로 폐기.
+- 후속 요청: Fall 2026의 `Review check foundation models (CLIP, VLM, RLHF, etc.)` 안내를 제외. Spring 2026의 복습 안내는 유지하며 자동 동기화에서도 재등장하지 않게 처리.
 - 검증: 4개 학기 × 9개 화면 폭에서 Materials가 같은 줄이고 가로 넘침이 없으며, 탭마다 열 좌표가 같고 마지막 Optional 행에 추가 선이 없음을 확인. 렌더를 눈으로 확인. 형식·타이포그래피·POSTECH 필수 요소 검사 통과.
+
+## 4차: 학기별 시트 링크와 강의 번호
+- 교수 요청에 따라 상단 How to join·Study sheet 버튼을 제거하고, 각 학기 제목 아래 Study sheet 링크를 배치.
+- 학기들은 같은 schedule 탭에 있으므로 원본의 해당 학기 시작 행으로 이동하는 `gid`·`range` 링크를 사용. 현재 시작 행은 Fall 2026 A3, Summer 2026 A22, Spring 2026 A36, Fall 2025 A49이며, 동기화 때 행 위치를 다시 계산.
+- Deep Learning Basics의 Reference lecture 안내를 제거. Papers에는 다루는 `Lec N` 번호를 글자로 표시하고 Materials에는 원 강의 PDF 링크를 유지.
+- Foundation Models 첫 회의 `(full lecture)` 링크는 후속 요청으로 제외. MIT DL primer와 발표자료는 유지.
+- 2차의 Papers 칸 비우기는 이번 요청으로 교체. 동일 PDF 링크를 Papers와 Materials에 중복으로 두지 않음.
+- 검증: 1440·768·390px에서 네 학기의 시트 링크 `gid`·`range`, 여름학기 강의 번호 14개와 PDF 14개, 요청한 문구 제거와 Spring 복습 안내 유지, 가로 넘침 없음을 확인. Jekyll 빌드, 형식·타이포그래피·POSTECH 검사 통과.
 
 ## 남은 것
 - 기존 Generalization 사본의 공유 권한 요청 답변 대기. 사이트의 원 강의 링크 사용에는 영향 없음. `TODO.md`에 기록.

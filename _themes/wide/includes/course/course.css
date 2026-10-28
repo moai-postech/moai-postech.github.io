@@ -158,6 +158,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-learning-path p { font-size: var(--text-meta); }
 .study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: 600; }
 .study-overview p { margin: 0; color: var(--muted); }
+.study-overview .study-reference { margin-top: var(--space-2); font-size: var(--text-meta); }
+.study-reference a { color: var(--accent); font-weight: 600; }
 .study-tablist { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
 .study-tablist button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: var(--space-2) var(--space-5); border: 0; border-radius: var(--radius-2); background: var(--surface); color: var(--muted); font: inherit; font-size: var(--text-meta); line-height: 1.4; text-align: left; cursor: pointer; }
 .study-tablist button strong { font-weight: 600; }
@@ -177,6 +179,10 @@ a.cs-title:hover { color: var(--accent); }
 .study-table .sc-demo { width: 13%; }
 .study-table .sc-who { width: 11%; }
 .study-table td { overflow-wrap: anywhere; }
+.study-table-lectures .sc-topic { width: 39%; }
+.study-table-lectures .sc-lec { width: 17%; }
+.study-table-lectures .sc-who { width: 13%; }
+.study-table-lectures .sc-mat { width: 16%; }
 .study-table .cs-n { text-align: left; }
 .study-table .cs-slides { width: auto; white-space: nowrap; }
 .study-table .st-material-group { display: inline-block; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
@@ -185,6 +191,7 @@ a.cs-title:hover { color: var(--accent); }
 .st-links a, .st-links span { display: inline-block; margin-right: var(--space-3); font-size: var(--text-meta); }
 .st-links a { color: var(--text); }
 .st-links a:hover { color: var(--accent); }
+.st-lectures a { color: var(--accent); }
 .st-who { color: var(--muted); font-size: var(--text-meta); }
 .is-optional .cs-title { color: var(--muted); font-weight: 400; }
 

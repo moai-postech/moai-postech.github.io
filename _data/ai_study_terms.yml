@@ -12,6 +12,8 @@ fall-2026:
   location: { building: "Engineering Building 4", rooms: "Room 302" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
+  format: lectures
+  reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
   overview: "Follow how neural networks learn, how their architectures and representations enable generation, and why they generalize to new tasks."
   learning_path:
     - { label: "Topics 1–3", title: "Training and architectures", text: "Start with optimization, then study architectures for grids and sequences." }

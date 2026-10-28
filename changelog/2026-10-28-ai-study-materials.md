@@ -92,5 +92,14 @@
 - 원본은 Git 이력으로 복구 가능.
 - 검증: 실제 강의 세 개와 스터디 네 학기, TA 두 명을 넣은 임시 렌더를 9개 화면 폭에서 확인. TA 미등록 시 생략, 두 명 등록 시 교수 다음 표시, 이메일 가림, 사진 로드, 가로 넘침 없음, Teaching 소개 링크 제거를 검증. 임시 데이터·페이지는 검증 뒤 제거. 형식·타이포그래피·POSTECH·조작·텍스트 드래그 검사 통과. 공통 카드의 강의·스터디 렌더도 눈으로 확인.
 
+## 8차: 공개된 Generalization 슬라이드 반영
+- 사용자: 앞서 접근이 막혔던 슬라이드가 공개되었으므로 업데이트 요청.
+- Drive metadata에서 `18wYyj8DqqHumT6c2xOD8H4BtsJNObelt` 접근 확인. 파일은 `17_ood_2025+복사본.pptx`, 16,546,330바이트, 슬라이드 92장.
+- 해당 공개 사본을 PDF로 변환해 `teaching/ai-study/summer-2026/08-generalization-slides.pdf`에 저장하고 Summer 2026 8회 Slides 링크에 연결. 원본 Drive 링크는 `tools/drive_sources.json`에 기록.
+- Papers의 Lec 17 표시는 유지. Generalization 회차는 공개된 사본을 사용하도록 동기화 예외를 반영해 다음 실행에서도 유지.
+- PowerPoint 내보내기는 PDF를 생성하지 않아 규칙에 따라 LibreOffice로 변환. 실행 중이던 PowerPoint 앱은 종료하지 않음.
+- 권한 요청 대기 항목은 해결되어 TODO에서 제거. 이전 원 강의 링크와 변경 전 파일들은 Git 이력에 보존.
+- 검증: 원본 92장과 PDF 92페이지 일치, 92페이지 전체 렌더를 contact sheet로 확인. PDF 9,893,345바이트. 동기화 재실행 변경 없음, Jekyll 빌드와 생성 페이지의 링크·배포 PDF 크기 일치 확인. teaching·assets는 합계 약 664MB로 Pages 용량 한도 안.
+
 ## 남은 것
-- 기존 Generalization 사본의 공유 권한 요청 답변 대기. 사이트의 원 강의 링크 사용에는 영향 없음. `TODO.md`에 기록.
+없음

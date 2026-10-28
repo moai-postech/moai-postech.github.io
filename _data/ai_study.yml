@@ -244,7 +244,7 @@ terms:
         papers:
           - { text: "Lec 17" }
         materials:
-          - { text: "Slides", url: "https://www.dropbox.com/scl/fi/pk81c0p4mk68lli60sikl/17_ood_2025.pdf?rlkey=4ddc1nkqwpuc74130pi2wuvpy&e=1&st=7ko1cc6p&dl=0" }
+          - { text: "Slides", url: "teaching/ai-study/summer-2026/08-generalization-slides.pdf" }
       - n: "9"
         date: "2026-08-20"
         title: "Transfer Learning"

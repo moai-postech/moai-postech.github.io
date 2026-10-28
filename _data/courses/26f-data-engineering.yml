@@ -272,12 +272,12 @@ project:
     rule: "Sunday of Week 3"
     text: "Enter your team members in the project sheet."
   steps:
-    - name: "Proposal · 20%"
+    - name: "Proposal"
       when: "Oct 20 & 22"
-      text: "Ideation, data collection and preprocessing, and database management."
-    - name: "Final · 40%"
+      text: "Idea, data collection and preparation, database management."
+    - name: "Final"
       when: "Dec 15 & 17"
-      text: "Build a product for a real-world problem using a large-scale database and data you are allowed to access."
+      text: "Build a product for a real-world problem with a large-scale database using permitted data."
   evaluation_sources: ["Instructor evaluation", "Peer evaluation"]
   evaluation_result: "Project score"
   evaluation_note: "Project scores combine instructor and peer evaluations. Teamwork is assessed individually based on each member's contribution."

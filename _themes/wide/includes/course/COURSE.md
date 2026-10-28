@@ -69,12 +69,12 @@
 
 - 반복적인 Overview 제목·장문 소개 대신 Timeline → Evaluation → Teams 순으로 표시한다. 과제 요구사항은 단계 설명·평가 기준에 보존한다. `project.intro: false`이면 반복 소개를 생략한다.
 - 모든 수업의 팀 구성 마감은 첫 수업이 있는 주(월요일 시작)를 1주차로 센 3주차 일요일이다. 새 학기를 만들 때 첫 수업 날짜로 계산해 `project.team_formation.deadline`에 넣는다. 별도 마감 시각은 정하지 않는다.
-- Timeline은 팀 구성과 두 프로젝트 단계의 세 블록을 왼쪽부터 배치한다. 모바일에서는 순서대로 세로로 접는다.
-- Teams의 발표 열 제목과 날짜·순서·Slides 링크는 가운데 정렬한다.
+- Timeline은 팀 구성과 두 프로젝트 단계의 세 블록을 왼쪽부터 배치한다. 날짜·단계·핵심 할 일만 표시하고 주차 기준·배점은 반복하지 않는다. 모바일에서는 순서대로 세로로 접는다.
+- Teams의 발표 열 제목과 날짜·순서·Slides 링크는 가운데 정렬한다. PC에서는 발표 열 최소 폭과 좌우 여백으로 Proposal·Final을 구분한다.
 - `project.team_formation`에 마감 날짜·기준·시트 입력 안내를 둔다. 인원 제한은 `project.team_size`의 Up to 5처럼 짧게 쓰고 핵심 사실만 굵게 한다.
 - 발표 칸은 날짜·순서를 윗줄, Slides를 아랫줄에 둔다. 아직 배정하지 않은 회차는 `rounds[].date_placeholder`로 Date TBD만 표시한다. 순서는 확정된 값이 있을 때만 표시한다. 실제 값이 있으면 실제 값을 우선한다.
 - 26F Final의 팀별 날짜·순서는 미정이다. 전체 발표 예정일 Dec 15 & 17과 구분한다.
 - 외부 시트 링크는 [공통 규칙](README.md#외부-시트-링크)을 따른다.
 
-- Evaluation은 `evaluation_sources`와 `evaluation_result`로 교수 평가 + 동료 평가 → 프로젝트 점수의 흐름을 보여 주고, 평가 기준은 카드로 구조화한다. `individual: true`인 Teamwork 카드에는 Individual 라벨을 붙인다. `evaluation_note`는 구조화한 필드가 없는 경우의 설명이다. Teamwork 기준은 기술 기여·협업·역할 수행이다. 별도로 정하지 않은 교수·동료 평가 비중이나 계산식은 만들지 않는다.
+- Evaluation은 `evaluation_sources`와 `evaluation_result`로 교수 평가 + 동료 평가 → 프로젝트 점수의 흐름을 보여 주고, 평가 기준은 가로 한 줄 카드로 구조화한다(이번 학기 1×4). 2×2 배치는 사용하지 않고 모바일에서 한 열로 접는다. `individual: true`인 Teamwork 카드에는 Individual 라벨을 붙인다. `evaluation_note`는 구조화한 필드가 없는 경우의 설명이다. Teamwork 기준은 기술 기여·협업·역할 수행이다. 별도로 정하지 않은 교수·동료 평가 비중이나 계산식은 만들지 않는다.
 - 26F Data Engineering 평가 기준은 Problem·Method·Results·Teamwork 네 가지다(2026-10-28 교수 변경). 지난 학기의 기준은 별도로 유지한다.

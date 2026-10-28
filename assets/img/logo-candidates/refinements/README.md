@@ -7,7 +7,7 @@
 - `03-compact-angular.png`: 교수의 B 비율·각진 느낌 유지 선택을 반영한 후속안. B의 비율을 유지하고 둥글기를 줄인 현재 권고안.
 - 두 안 모두 built-in Imagegen 편집으로 생성. 투명 배경 보존. 입력은 `../moai-logo/png/moai-logo-brand-h512.png`.
 - 운영 파일은 `assets/img/logo-moai.svg`. C의 외곽과 글자 공간을 직접 정리한 5개 path이며 bitmap이나 자동 trace를 포함하지 않는다. 원형·A·B·C는 비교 원본으로 보존.
-- `assets/img/favicon-moai.svg`는 같은 전체 심볼을 정사각 viewport에 배치. `assets/img/apple-touch-icon-moai.png`는 이 SVG의 180px 렌더다.
+- `assets/img/favicon-moai.svg`는 작은 크기 전용 단순화와 흰 바탕을 적용한 운영 아이콘이다. `assets/img/apple-touch-icon-moai.png`는 기존 C 전체 심볼의 180px 렌더다.
 
 ## A의 생성 프롬프트
 
@@ -28,3 +28,10 @@ Edit the supplied typographic MOAI stone-statue logo into a slightly more sculpt
 ```text
 Refine IMAGE 1 only, using IMAGE 2 as a restrained reference for angular geometric character. IMAGE 1 is the approved compact MOAI typographic Moai logo proportion and layout. Preserve its compact width/height ratio, its exact overall construction, the M at the crown, O in the middle, A and I below, the left-facing projecting nose/profile formed by the M, and the thin integrated base. Make one targeted change: reduce the over-rounded bubble-like character by about one third, adding calm flatter planes and a few deliberate angular cuts inspired by IMAGE 2. Keep only small consistent optical corner radii. Do not restore the tall narrow proportions or heavy separate plinth of IMAGE 2. Do not move letters, replace letter topology, add a literal face, or add separate shapes. Preserve open counters and clean gaps so M O A I stay recognizable. The result should feel like carved geometric typography and a coherent Moai silhouette, refined, calm and distinctive for an academic research lab, not playful or cartoonish. Monochrome flat solid crimson #A61955; crisp clean vector-like boundaries; no gradients, shading, texture, noisy edges, highlights, outlines, additional text or labels. Only one isolated centered logo with comfortable margins on an actually transparent background. This is a subtle targeted refinement of IMAGE 1, not a redesign.
 ```
+
+## 모아이 인지성 재검토 (2026-10-28)
+- `04-sculptural-profile-concept.svg`: 모아이 얼굴을 먼저 읽히게 한 단색 벡터 비교 초안. 이마·긴 코·입·큰 턱을 하나의 외곽으로 연결. 현재 운영 로고를 교체하지 않음.
+- `04-profile-comparison.png`: 위는 현재 C, 아래는 얼굴 중심 초안. 큰 크기와32·16px를 나란히 렌더.
+- 현재 C는 MOAI 철자는 분명하나 M의 깊은 홈과 둥근 O 때문에 얼굴이 분절된다. 얼굴 중심 초안은 석상 인지성이 높고 작은 크기에서도 외곽이 남지만, 네 글자의 조합이라는 고유 아이디어가 약해진다.
+- Imagegen으로 기존 글자 배치 유지안과 얼굴 중심 생성안을 검토. 전자는 원래 문제를 해결하지 못했고 후자는 불필요한 그림자와 발광이 생겨 운영 후보에서 제외. 얼굴 중심 구도의 원리만 단색 SVG로 직접 정리했다. 자동 trace나 래스터 삽입 없음.
+- 권고: 이마·코·턱이 먼저 보이는 외곽을 바탕으로 하고 MOAI 글자는 보조적인 발견으로 남기는 방향. 이 SVG는 그 방향을 판단하는 초안이며 최종 로고가 아니다.

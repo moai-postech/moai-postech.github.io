@@ -16,7 +16,7 @@
       venues: ["KSIAM Invited Talk"]
     - title: "Opportunities in IME as an AI Researcher (and Vice Versa)"
       url: "assets/talks/2026-opportunities-in-ime-as-an-ai-researcher-and-vice.pdf"
-      venues: ["POSTECH Graduate Seminar"]
+      venues: ["POSTECH IME Seminar"]
 - year: "2025"
   talks:
     - title: "Foundation Models for Vision, Language, and Robotics"

@@ -264,6 +264,11 @@ a.mentee-name:hover { color: var(--accent); }
 .section-next { margin: 0; font-size: var(--text-body); }
 .content-section.section-next { padding-top: var(--space-5); }  /* a section's closing line: where to go next (Research and Home: publications) */
 .section-next a { font-weight: 400; }
+/* A compact pair of next steps: a neutral surface and quiet controls, without another section heading. */
+.section-actions .section-body { padding: var(--space-4); background: var(--surface); border-radius: var(--radius-2); }
+.section-actions .section-body > p:not(:last-child) { margin-bottom: var(--space-3); }
+.section-actions a { display: inline-flex; align-items: center; min-height: 36px; padding: var(--space-1) var(--space-3); border: 1px solid var(--line); border-radius: 999px; background: var(--bg); }
+.section-actions a:hover { border-color: var(--accent); text-decoration: none; }
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }
@@ -334,6 +339,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pubs .title { display: block; align-self: baseline; font-size: var(--text-paper); font-weight: 600; line-height: var(--leading-paper); text-wrap: pretty; }
 .pubs .title a { color: var(--text); }
 .pubs .title a:hover { color: var(--accent); }
+.pubs .venue { padding-block: 0; font-weight: 400; }  /* a list venue stays readable without competing with its title */
 .pubs .authors { color: var(--faint); font-size: var(--text-author); line-height: var(--leading-paper); }
 .author { white-space: nowrap; }  /* a name never breaks across lines */
 .pubs .lab { color: var(--text); }

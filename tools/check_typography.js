@@ -31,11 +31,15 @@ function inspect() {
   for (const e of main.querySelectorAll('.pubs .title, .pubs .authors, .pub-meta, .pub-links')) {
     if (visible(e)) check(Math.abs(parseFloat(css(e).lineHeight) / size(e) - 1.5) < .02, `논문 행간: ${e.className}`);
   }
+  for (const e of main.querySelectorAll('.pubs .venue')) {
+    check(css(e).fontWeight === '400' && parseFloat(css(e).paddingTop) === 0 && parseFloat(css(e).paddingBottom) === 0, '논문 venue 배지가 제목보다 과하게 강조된다');
+  }
   for (const e of main.querySelectorAll('.paper-chip .paper-title')) {
     if (visible(e)) check(size(e) === parseFloat(css(document.body).fontSize), '대표 논문 제목이 일반 본문 크기가 아니다');
   }
   for (const e of main.querySelectorAll('.section-next .section-body > p:not(:last-child)')) {
-    check(Math.abs(parseFloat(css(e).marginBottom) - 16) < 1, '안내 문단 간격이 본문 간격과 다르다');
+    const gap = e.closest('.section-actions') ? 12 : 16;
+    check(Math.abs(parseFloat(css(e).marginBottom) - gap) < 1, '안내 문단 간격이 역할 간격과 다르다');
   }
   if (innerWidth <= 680) {
     for (const e of document.querySelectorAll('.course-meta span + span, .course-eyebrow span + span')) {

@@ -122,13 +122,14 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 | 한 절인 제목 | Home 의 Our focus·News, Contact 의 Join us, Research 의 Perception, Faculty 이름 | `--text-h2` | 절 사이 `--section-gap` |
 | 목록을 묶는 제목 | 연도(Publications, Seminar, Talks), Funding 기관 묶음, 멤버·멘티 묶음, Regular courses·Undergraduate AI Study, Faculty 의 Bio·Appointments | `--text-group`, 굵기 700, `--leading-group`(1.3), 정상 자간 | 위 `--section-gap`(앞 묶음의 마지막 줄부터), 아래 `--space-4` |
 | 목록 한 줄 | 뉴스, 과제, 강의, 발표 | `--text-body`, 무엇은 굵게 | 줄 사이 `--row-gap`·`--item-gap`. 목록의 첫 줄 위와 마지막 줄 아래에는 줄 간격을 두지 않는다(제목·다음 묶음과의 간격은 위 규칙만 따른다) |
-| 절을 닫는 안내 줄 | Home·Research 의 See our publications, Paper Stella 의 Open in full screen | `--text-body`(데스크톱 17px·모바일 16px), 링크만 보통 굵기(400) 강조색(`.section-next`) | 위 내용에 붙여 위 `--space-5`(24px), 다음 절은 `--section-gap`. embed는 설명 `caption`과 탐색 `next`를 구분하고 next에 이 역할 적용 |
+| 절을 닫는 안내 줄 | Research 의 Full publication list, Paper Stella 의 Open in full screen | `--text-body`(데스크톱 17px·모바일 16px), 링크만 보통 굵기(400) 강조색(`.section-next`) | 위 내용에 붙여 위 `--space-5`(24px), 다음 절은 `--section-gap`. embed는 설명 `caption`과 탐색 `next`를 구분하고 next에 이 역할 적용 |
+| 묶음 행동 안내 | Home 의 실적·모집 두 문장 | 본문 크기, 링크 400·강조색. 흰 배경·중립 테두리의 작은 pill이며 새 절 제목·화살표 없음 | 중립 surface, 패딩 16px, 문단 사이 12px. 링크는 인라인으로 시작해 폭에 따라 자연스럽게 줄바꿈 |
 | 알림 띠 | 특별 공지(현재 사용 없음) | `--text-body`, 연한 강조색 바탕(`--accent-soft`), 링크 보통 굵기(400) 강조색(`class: section-callout`). 머리말을 굵게 쓰면 강조색 | 위 절에 붙여 위 `--space-5`, 아래 `--section-gap`. 사이트에 하나만 둔다 |
 | 논문 목록 제목 | Publications 목록 | `--text-paper`(15px, 저자·venue와 같은 크기), 굵기 600, `--leading-paper`(1.5), 정상 자간 | 목록의 제목·저자·venue 줄 사이는 `--detail-gap`(4px), 목록의 논문 사이는 `--item-gap`의 위아래 합(24px) |
 | 연구 방향 탭 | Home 의 세 분야 | 기본 20px, 모바일 15px, 360px 이하 13px. 단어 중간에서 자르지 않는다 | 세 칸의 위치는 유지하고 좁은 화면에서 작은 라벨 역할 사용 |
 | 대표 논문 카드 제목 | Home 연구 방향 카드 | `--text-featured-paper`(본문과 같은 17/16px), 굵기 600, 행간 1.4 | 배지와 제목 사이 `--space-3`, 카드 패딩은 공통 카드 역할 |
 | 논문 저자 | Publications 저자 이름 | `--text-author`(15px, 제목·venue와 같은 크기), 굵기 400, 행간 1.5. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
-| 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(15px, 목록 제목·저자와 같은 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. venue·발표 형식은 굵기 600, 자료 링크는 400. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
+| 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(15px, 목록 제목·저자와 같은 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. 논문 목록 venue·자료 링크는 400, 목록 배지의 세로 패딩은 0. Home 대표 카드 venue와 발표 형식은 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
 | 페이지 시작 | 하위 탭 뒤 첫 내용, 소개 뒤 첫 절 | | `--page-start`(데스크톱 48px, 모바일 32px) |
 | 카드 안 여백 | Home 논문, Research 주제, Contact 단계 카드 | | `--card-padding`(데스크톱 24px, 모바일 16px) |
 | 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |

@@ -73,8 +73,8 @@ function measure(TOL) {
     if (visible(meta) && Math.abs(parseFloat(getComputedStyle(meta).fontSize) - (meta.closest('.paper-chip') ? tok.featuredMeta : tok.paperMeta)) > 0.5)
       problems.push('venue·자료 링크가 --text-paper-meta 크기가 아니다');
   }
-  if (!(tok.paper === tok.author && tok.author === tok.paperMeta && tok.paper === tok.body))
-    problems.push('논문 제목·저자·venue가 공통 목록 글자 크기로 통일되지 않았다');
+  if (!(tok.paper === tok.body && tok.author === tok.meta && tok.paperMeta === tok.meta))
+    problems.push('논문 제목은 본문, 저자·venue는 공통 보조 글자 크기여야 한다');
   for (const link of main.querySelectorAll('.section-next a')) {
     if (visible(link) && (Math.abs(parseFloat(getComputedStyle(link).fontSize) - tok.body) > 0.5 || getComputedStyle(link).fontWeight !== '400'))
       problems.push('닫는 안내 링크가 본문 크기·보통 굵기가 아니다');

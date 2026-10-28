@@ -47,3 +47,10 @@ POSTECH 요구사항: P1~P9 영향 없음. 공식 로고, 학교 링크·개인�
 
 ## 남은 것
 이번 여섯 수정의 병합·배포·라이브 검증 완료. 대표 논문 선정에 대한 기존 TODO는 별도 유지.
+
+## 후속 결정: Home 안내 두 문단
+- 교수가 독립 Join us 제목과 박스를 빼고 실적·모집 두 문단을 이어 두도록 결정. 각 링크는 설명 문장 뒤에 붙임.
+- 실적은 `Our work appears at top AI conferences such as NeurIPS, ICML, and ICLR.`로 명확히 표현. 모집은 `We welcome applications from motivated students.`로 지원을 받는다는 뜻을 직접 전달. 링크는 `See our publications`, `How to apply`.
+- 기존 section-next 안의 본문 문단 간격을 사용. 전역 스타일과 다른 페이지는 변경하지 않음.
+- 기각한 안: Join MOAI Lab 독립 제목과 별도 링크 문단은 짧은 내용을 과하게 나눔. 붉은 박스는 공지처럼 강조가 커짐. `join our team` 대신 `applications`를 써 지원 안내와 자연스럽게 연결.
+- 원본 복구 경로: Git `93b78a6`. Jekyll 빌드, 형식 검사(13페이지×5폭), POSTECH 검사(24페이지×2폭), changelog·diff 검사 통과. Home 두 문단을 1440·390px에서 렌더해 제목 없음, 링크 인라인, 문단 간격 16px, 가로 넘침 없음 확인. 교수의 적용 요청에 따라 작은 콘텐츠 변경으로 main에 직접 반영.

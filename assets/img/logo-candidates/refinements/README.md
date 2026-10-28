@@ -1,12 +1,13 @@
 # MOAI 로고 정리안
 
-2026-10-28. 제공받은 글자형 SVG 로고를 베이스로 비교하는 초안이다. 운영 로고로 확정하지 않았다.
+2026-10-28. 제공받은 글자형 SVG 로고를 베이스로 비교하는 초안이다. 교수의 B 비율·절제된 각 선택을 반영해 C를 운영 로고의 기준으로 확정했다.
 
 - `01-soft-refinement.png`: 글자 간격과 둥글기를 정리한 보수적인 안.
 - `02-compact-refinement.png`: 폭을 넓히고 받침을 줄여 실루엣을 안정시킨 안. 현재 비교에서는 이 방향을 권고.
 - `03-compact-angular.png`: 교수의 B 비율·각진 느낌 유지 선택을 반영한 후속안. B의 비율을 유지하고 둥글기를 줄인 현재 권고안.
 - 두 안 모두 built-in Imagegen 편집으로 생성. 투명 배경 보존. 입력은 `../moai-logo/png/moai-logo-brand-h512.png`.
-- 헤더용 최종 결정 뒤 SVG 원본 정밀 조정과 작은 favicon 식별력을 별도 확인할 것. 생성 초안을 그대로 최종 벡터 로고로 취급하지 않음.
+- 운영 파일은 `assets/img/logo-moai.svg`. C의 외곽과 글자 공간을 직접 정리한 5개 path이며 bitmap이나 자동 trace를 포함하지 않는다. 원형·A·B·C는 비교 원본으로 보존.
+- `assets/img/favicon-moai.svg`는 같은 전체 심볼을 정사각 viewport에 배치. `assets/img/apple-touch-icon-moai.png`는 이 SVG의 180px 렌더다.
 
 ## A의 생성 프롬프트
 

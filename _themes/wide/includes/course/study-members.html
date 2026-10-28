@@ -1,31 +1,12 @@
-{% assign stats = site.data.ai_study_members %}
 <header class="course-head">
-  <p class="course-eyebrow"><span>Study group</span><span>POSTECH</span></p>
   <h1>Members</h1>
-  <p class="course-lead">A community of POSTECH undergraduates learning AI together.</p>
+  <p class="course-meta">{{ page.title }}</p>
 </header>
-<section class="content-section study-member-stats" aria-labelledby="member-statistics">
-  <h2 id="member-statistics">Statistics</h2>
-  <dl class="study-stat-summary">
-    <div><dt>Members to date</dt><dd>{{ stats.total }}</dd></div>
-    <div><dt>Current members</dt><dd>{{ stats.current }}</dd></div>
-    <div><dt>Cohorts</dt><dd>{{ stats.cohorts }}</dd></div>
-    <div><dt>Returning members</dt><dd>{{ stats.returning }}</dd></div>
-  </dl>
-  <div class="study-stat-breakdowns">
-    <div><h3>Participation by cohort</h3><ul class="plain study-stat-bars">
-      {% for t in stats.terms %}<li><span>{{ t.number }}기 <small>{{ t.term }}</small></span><strong>{{ t.count }}</strong><span class="study-stat-bar" aria-hidden="true"><span style="width: {{ t.count | times: 100.0 | divided_by: stats.total }}%"></span></span></li>{% endfor %}
-    </ul><p class="study-stat-note">Returning members are counted in each cohort they joined.</p></div>
-    <div><h3>Departments</h3><ul class="plain study-stat-bars">
-      {% for d in stats.departments %}<li><span>{{ d.name }}</span><strong>{{ d.count }}</strong><span class="study-stat-bar" aria-hidden="true"><span style="width: {{ d.count | times: 100.0 | divided_by: stats.total }}%"></span></span></li>{% endfor %}
-    </ul><p class="study-stat-note">Based on each member's most recent department.</p></div>
-  </div>
-</section>
-<section class="content-section study-full-list" aria-labelledby="full-list-title">
-  <div class="study-full-list-heading"><h2 id="full-list-title">Full list</h2><button type="button" class="study-lock-button" id="lock-member-list" hidden>Lock list</button></div>
+<section class="content-section study-full-list" aria-label="Member directory">
+  <div class="study-full-list-heading"><button type="button" class="study-lock-button" id="lock-member-list" hidden>Lock</button></div>
   <form class="study-member-unlock" id="member-unlock-form">
     <p>Enter the study password to view member details.</p>
-    <div class="study-unlock-fields"><label for="member-password">Password</label><input type="password" id="member-password" autocomplete="current-password" required aria-describedby="member-unlock-message"><button type="submit" aria-controls="member-full-list" aria-expanded="false">Unlock list</button></div>
+    <div class="study-unlock-fields"><label for="member-password">Password</label><input type="password" id="member-password" autocomplete="current-password" required aria-describedby="member-unlock-message"><button type="submit" aria-controls="member-full-list" aria-expanded="false">Unlock</button></div>
   </form>
   <p id="member-unlock-message" class="study-unlock-message" role="status" aria-live="polite"></p>
   <div id="member-full-list" hidden></div>

@@ -40,3 +40,10 @@ POSTECH 요구사항: 영향 없음. 자료 링크와 선택 상태의 POSTECH R
 - 발견한 iCloud 충돌 사본 4개 비교: 중복된 typography 수정은 최신 정본에 포함되어 있고, 나머지는 이후 커밋에서 고친 스터디·논문 글자 크기의 옛 상태. 최신 정본을 유지하고 사본은 scratchpad로 옮겨 보존.
 - 사본 백업: /private/var/folders/qp/pfsxmgf56c748841mwnb1q9c0000gp/T/moai-icloud-copies-920xmedb (format 2.yml, course 2.css, theme 2.css, check_format 2.js).
 - 2차 검증: Jekyll 빌드, 전체 형식·typography·POSTECH 검사 통과. 세 강의의 27개 화면 조합에서 가로 넘침 없음, 네 역할의 글자·배경 대비 최소 5.04:1. 실제 Home 렌더에서 네 색을 함께 확인.
+
+## 3차: 넓은 면의 배경 농도 완화
+- 실제 카드·표에서 배경이 진하게 느껴진다는 교수 피드백에 따라, 네 배경색을 흰색과 80:20으로 혼합. 색 계열·강조 글자·테두리는 유지.
+- 최종 배경: Part 1 `#e6f1fd`, Part 2 `#e4f5ed`, Part 3 `#fce7e5`, 공통 `#fff5d6`. README도 같은 값으로 갱신.
+- 기각: 제목·번호·테두리까지 동시에 연하게 하기. 배경만 낮춰도 넓은 색 면의 부담을 줄이며 파트 구분과 글자 대비를 유지할 수 있음.
+- 원본 복구 경로: Git `c9daad1`.
+- 3차 검증: Jekyll 빌드, 전체 형식·POSTECH 검사 통과. 세 강의의 27개 화면 조합에서 가로 넘침 없음, 역할 글자 대비 최소 5.26:1. 넓은 Schedule 렌더에서 연해진 네 색 확인.

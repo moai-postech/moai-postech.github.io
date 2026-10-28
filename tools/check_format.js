@@ -27,7 +27,7 @@ function measure(TOL) {
     const size = parseFloat(getComputedStyle(probe).fontSize);
     probe.remove(); return size;
   };
-  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'), author: font('--text-author'), paperMeta: font('--text-paper-meta'),
+  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'), featuredPaper: font('--text-featured-paper'), author: font('--text-author'), paperMeta: font('--text-paper-meta'),
     sectionGap: parseFloat(getComputedStyle(document.body).getPropertyValue('--section-gap')) || px('--section-gap'),
     below: px('--space-4') };
   const allowed = [tok.h2, tok.group, tok.body, tok.meta, tok.small];
@@ -62,8 +62,8 @@ function measure(TOL) {
   // Paper hierarchy and wrapping are shared by the list and Home focus cards.
   for (const title of main.querySelectorAll('.pubs .title, .paper-chip .paper-title')) {
     if (!visible(title)) continue;
-    if (Math.abs(parseFloat(getComputedStyle(title).fontSize) - tok.paper) > 0.5)
-      problems.push('논문 제목이 --text-paper 크기가 아니다');
+    if (Math.abs(parseFloat(getComputedStyle(title).fontSize) - (title.closest('.paper-chip') ? tok.featuredPaper : tok.paper)) > 0.5)
+      problems.push('논문 제목이 목록·대표 카드의 역할 크기가 아니다');
   }
   for (const author of main.querySelectorAll('.pubs .authors')) {
     if (visible(author) && Math.abs(parseFloat(getComputedStyle(author).fontSize) - tok.author) > 0.5)
@@ -73,8 +73,8 @@ function measure(TOL) {
     if (visible(meta) && Math.abs(parseFloat(getComputedStyle(meta).fontSize) - tok.paperMeta) > 0.5)
       problems.push('venue·자료 링크가 --text-paper-meta 크기가 아니다');
   }
-  if (!(tok.paper > tok.author && tok.author > tok.paperMeta))
-    problems.push('논문 제목·저자·보조정보의 크기 위계가 맞지 않는다');
+  if (!(tok.paper === tok.author && tok.author === tok.paperMeta && tok.paper === tok.meta))
+    problems.push('논문 제목·저자·venue가 공통 목록 글자 크기로 통일되지 않았다');
   for (const link of main.querySelectorAll('.section-next a')) {
     if (visible(link) && (Math.abs(parseFloat(getComputedStyle(link).fontSize) - tok.body) > 0.5 || getComputedStyle(link).fontWeight !== '400'))
       problems.push('닫는 안내 링크가 본문 크기·보통 굵기가 아니다');

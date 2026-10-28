@@ -1,9 +1,9 @@
-{% comment %}_data/media.yml 을 뉴스와 같은 목록으로: 연도, 기사 제목(링크), 그 뒤에 간격과 가운데점으로 매체 이름(교수 2026-10-27, 오른쪽 끝에서 옮김){% endcomment %}
+{% comment %}_data/media.yml 을 뉴스와 같은 목록으로: 연도, 기사 제목(링크), 그 뒤에 간격·작은 보조색 글자로 매체 이름. 구분점 없음(교수 2026-10-28){% endcomment %}
     <section class="content-section sec-media">
     <h2>{{ include.section.title }}</h2>
     <div class="section-body">
     <ul class="plain news">
-      {% for m in site.data.media %}<li><time>{{ m.date }}</time>{% capture t %}{% include inline.html text=m.text %}{% endcapture %}<span>{{ t | strip }}{% if m.source %} <span class="media-source">{{ m.source }}</span>{% endif %}</span></li>
+      {% for m in site.data.media %}<li><time>{{ m.date }}</time>{% capture t %}{% include inline.html text=m.text %}{% endcapture %}<span>{{ t | strip }}{% if m.source %}<span class="media-source">{{ m.source }}</span>{% endif %}</span></li>
       {% endfor %}
     </ul>
     </div>

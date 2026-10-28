@@ -27,7 +27,7 @@ function measure(TOL) {
     const size = parseFloat(getComputedStyle(probe).fontSize);
     probe.remove(); return size;
   };
-  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'),
+  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'), author: font('--text-author'), paperMeta: font('--text-paper-meta'),
     sectionGap: parseFloat(getComputedStyle(document.body).getPropertyValue('--section-gap')) || px('--section-gap'),
     below: px('--space-4') };
   const allowed = [tok.h2, tok.group, tok.body, tok.meta, tok.small];
@@ -65,9 +65,27 @@ function measure(TOL) {
     if (Math.abs(parseFloat(getComputedStyle(title).fontSize) - tok.paper) > 0.5)
       problems.push('논문 제목이 --text-paper 크기가 아니다');
   }
-  for (const meta of main.querySelectorAll('.venue, .pub-link')) {
-    if (visible(meta) && Math.abs(parseFloat(getComputedStyle(meta).fontSize) - tok.meta) > 0.5)
-      problems.push('venue·자료 링크가 --text-meta 크기가 아니다');
+  for (const author of main.querySelectorAll('.pubs .authors')) {
+    if (visible(author) && Math.abs(parseFloat(getComputedStyle(author).fontSize) - tok.author) > 0.5)
+      problems.push('논문 저자가 --text-author 크기가 아니다');
+  }
+  for (const meta of main.querySelectorAll('.venue, .pub-link, .venue-honor')) {
+    if (visible(meta) && Math.abs(parseFloat(getComputedStyle(meta).fontSize) - tok.paperMeta) > 0.5)
+      problems.push('venue·자료 링크가 --text-paper-meta 크기가 아니다');
+  }
+  if (!(tok.paper > tok.author && tok.author > tok.paperMeta))
+    problems.push('논문 제목·저자·보조정보의 크기 위계가 맞지 않는다');
+  for (const link of main.querySelectorAll('.section-next a')) {
+    if (visible(link) && (Math.abs(parseFloat(getComputedStyle(link).fontSize) - tok.body) > 0.5 || getComputedStyle(link).fontWeight !== '400'))
+      problems.push('닫는 안내 링크가 본문 크기·보통 굵기가 아니다');
+  }
+  for (const section of main.querySelectorAll('.content-section.section-next')) {
+    if (visible(section) && Math.abs(parseFloat(getComputedStyle(section).paddingTop) - px('--space-5')) > TOL)
+      problems.push('닫는 안내 절이 앞 내용과 --space-5 간격이 아니다');
+  }
+  for (const nav of main.querySelectorAll('.embed-next')) {
+    if (visible(nav) && Math.abs(nav.getBoundingClientRect().top - nav.previousElementSibling.getBoundingClientRect().bottom - px('--space-5')) > TOL)
+      problems.push('그림 아래 안내 링크가 --space-5 간격이 아니다');
   }
   if (document.documentElement.scrollWidth > window.innerWidth + TOL)
     problems.push('화면 밖으로 가로 넘침');

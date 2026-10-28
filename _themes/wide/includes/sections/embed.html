@@ -1,6 +1,7 @@
 {% comment %}
   다른 사이트를 페이지 안에 넣는다(iframe). url(필수), title(절 제목, 없으면 생략),
-  label(화면 낭독기용 이름), caption(아래 설명, 마크다운), ratio(가로/세로, 기본 16/9).
+  label(화면 낭독기용 이름), caption(아래 설명), next(다음 행동 링크), ratio(가로/세로, 기본 16/9).
+  caption은 작은 설명 글자, next는 본문 크기의 공통 section-next 역할이다. 둘 다 마크다운.
 {% endcomment %}
 {% assign s = include.section %}
     <section class="content-section embed-section">
@@ -10,5 +11,6 @@
       <iframe src="{{ s.url }}" title="{{ s.label | default: s.title }}" loading="lazy" allowfullscreen referrerpolicy="no-referrer"></iframe>
     </div>
     {% if s.caption %}<p class="embed-caption">{% include inline.html text=s.caption %}</p>{% endif %}
+    {% if s.next %}<p class="section-next embed-next">{% include inline.html text=s.next %}</p>{% endif %}
     </div>
     </section>

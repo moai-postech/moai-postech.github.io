@@ -11,9 +11,10 @@ intro: |
 sections:
   # _data/research.yml 의 분야마다 절 하나씩, 단계 이름이 절 제목
   - type: research
-  # 맺음: 위의 단계(방법)를 Home 의 Our focus(올해 응용)와 잇는 한 문장, 그다음 전체 논문 목록(Publications)으로 가는 링크(교수 2026-10-26, 2026-10-27)
-  - body: |
-      In 2026, we apply these priors to [agents, robots, and factories](index.html#focus).<br>
-      [Full publication list](publications.html)
-      {: .section-next}
+  # 맺음: 올해 응용을 요약한 뒤 관련 논문을 보는 한 경로로 닫는다
+  - class: section-next
+    body: |
+      In 2026, we apply these priors to agents, robots, and factories.
+
+      [See our publications](publications.html)
 ---

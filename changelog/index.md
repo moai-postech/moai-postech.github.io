@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-28 | [navigation-hierarchy](2026-10-28-navigation-hierarchy.md) | Sangwoo Mo(sangwoomo) | Home·Research·Publications·By Topic·Teaching | 모집 위치, 점 없는 출처, 저자 16px·보조정보 14px, 공통 탐색 링크 역할 |
 | 2026-10-27 | [course-palette-navigation](2026-10-27-course-palette-navigation.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 중복 버튼 제거, 블루·틸·바이올렛과 중립 회색으로 통일 |
 | 2026-10-27 | [ui-ux-polish](2026-10-27-ui-ux-polish.md) | Sangwoo Mo(sangwoomo) | 전체 글자·Home·태블릿·키보드 | 논문 제목 18px, 출처 간격 8px, Home 안내 분리와 조작 개선 |
 | 2026-10-27 | [design-balance](2026-10-27-design-balance.md) | Sangwoo Mo(sangwoomo) | 테마·Publications·형식 검사 | 논문 위계, 공통 여백·카드, 모바일 메뉴와 Contact 정리 |

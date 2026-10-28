@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-28 | [ai-study-materials](2026-10-28-ai-study-materials.md) | Sangwoo Mo(sangwoomo) | AI Study | Slides 1, 2와 Demo로 통일, Figure 제외와 누락 원본 대조 |
 | 2026-10-28 | [course-pastel-palette](2026-10-28-course-pastel-palette.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 살구·하늘·민트·라벤더 파스텔과 같은 계열 강조색 |
 | 2026-10-28 | [navigation-hierarchy](2026-10-28-navigation-hierarchy.md) | Sangwoo Mo(sangwoomo) | Home·Research·Publications·By Topic·Teaching | 모집 위치, 점 없는 출처, 저자 16px·보조정보 14px, 공통 탐색 링크 역할 |
 | 2026-10-27 | [course-palette-navigation](2026-10-27-course-palette-navigation.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 중복 버튼 제거, 블루·틸·바이올렛과 중립 회색으로 통일 |

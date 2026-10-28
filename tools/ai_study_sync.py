@@ -3,8 +3,8 @@
 
 정본은 스터디 시트(링크 공개)다. 로그인 없이 시트의 HTML 보기를 읽는다(CSV 는 칸 안 링크를 잃는다).
   - "26 Fall | 3: physical AI" 같은 줄이 학기 머리다. 그 아래 번호 줄이 회차, A1 같은 줄은 선택 주제, 0 줄은 학기 안내다.
-  - References, Demo 칸의 링크는 그대로, Slide 칸부터 오른쪽 칸들의 링크는 발표 자료(Slides, Notebook, Notes, Figure)로 옮긴다.
-  - 발표 자료(Slides, Notes, Figure)와 칸 안의 Google Slides 링크는 tools/drive_pdf.py 로 PDF(그림은 그대로)를 받아
+  - References, Demo 칸의 링크는 그대로, Slide 칸부터 오른쪽 칸들의 링크는 발표 자료로 옮긴다. 화면에는 Slides 와 Demo 두 묶음으로 표시하고, 단일 그림은 제외한다.
+  - 발표 자료와 칸 안의 Google Slides 링크는 tools/drive_pdf.py 로 PDF 를 받아
     teaching/ai-study/<학기>/<회차>-<주제>-<종류>.pdf 에 두고 사이트 파일을 가리킨다(Drive 대신, 교수 2026-10-26). 이미 받은 것은 건너뛴다.
     Colab·ipynb 노트북은 Drive 링크 그대로 둔다. 받은 사본과 원본 링크의 짝은 tools/drive_sources.json.
   - _data/ai_study.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
@@ -100,12 +100,26 @@ def material_kind(text, url):
 
 
 def materials(cells):
-    out, seen = [], {}
+    # 원본 종류는 저장 경로에만 쓴다. 화면의 필기 자료도 Slides, 노트북은 Demo 로 묶는다.
+    out, counts, seen = [], {}, set()
     for c in cells:
         for u, t in c["links"]:
-            k = material_kind(t, u)
-            seen[k] = seen.get(k, 0) + 1
-            out.append({"text": k if seen[k] == 1 else f"{k} {seen[k]}", "url": u})
+            identity = drive_pdf.drive_id(u) or u
+            if identity in seen:
+                continue
+            seen.add(identity)
+            kind = material_kind(t, u)
+            if kind == "Figure":
+                continue
+            counts[kind] = counts.get(kind, 0) + 1
+            storage = kind if counts[kind] == 1 else f"{kind} {counts[kind]}"
+            group = "Demo" if kind == "Notebook" else "Slides"
+            out.append({"text": group, "url": u, "storage_label": storage})
+    for group in ("Slides", "Demo"):
+        items = [m for m in out if m["text"] == group]
+        if len(items) > 1:
+            for i, m in enumerate(items, 1):
+                m["text"] = f"{group} {i}"
     return out
 
 
@@ -167,9 +181,9 @@ def localize_all(terms):
             for field in ("papers", "materials"):
                 for l in s.get(field, []):
                     u = l.get("url", "")
-                    if not drive_pdf.is_drive(u) or l["text"].startswith("Notebook"):
+                    if not drive_pdf.is_drive(u) or l["text"].startswith("Demo"):
                         continue
-                    tail = slug(l["text"]) if field == "materials" else "ref-" + slug(l["text"])
+                    tail = slug(l["storage_label"]) if field == "materials" else "ref-" + slug(l["text"])
                     try:
                         l["url"] = drive_pdf.localize(u, f"{base}-{tail}", src)
                     except Exception as e:  # noqa: BLE001

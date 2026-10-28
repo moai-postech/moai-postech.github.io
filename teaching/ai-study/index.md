@@ -10,4 +10,10 @@ description: "A weekly AI study group with POSTECH undergraduates and Prof. Sang
 summary: >-
   POSTECH undergraduates read and present AI papers together, one topic a week.
   Each term follows one theme, and each session pairs the papers with a hands-on demo.
+join:
+  title: "Join us"
+  body: >-
+    Interested in AI? We welcome POSTECH undergraduates from every department, including IME and Mueunjae students.
+    To join, contact this semester's student representative listed in the term tabs below.
+    Get to know our [members](teaching/ai-study/members/).
 ---

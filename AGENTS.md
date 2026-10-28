@@ -261,4 +261,4 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 ## 디자인 검수
 
-디자인을 고치거나 완료·배포를 판단하기 전에 `_qa/visual-review/README.md`와 별도 검토자 지시를 읽는다. 저장소를 처음 열면 `node tools/visual_review.js install-hooks`로 공통 pre-push 훅을 설치한다. 템플릿 수치 검사와 실제 화면 검토를 구분하고, 고정한 수정본의 별도 검토 기록 없이 디자인을 main에 올리지 않는다. 페이지별 예외는 기존 `page-design.json`에 이유를 남긴다. 자동 검사만 통과한 상태를 시각 검토 완료로 보고하지 않는다.
+디자인을 고치거나 완료·배포를 판단하기 전에 `_qa/visual-review/README.md`와 별도 검토자 지시를 읽는다. 저장소를 처음 열면 `node tools/visual_review.js install-hooks`로 공통 pre-push 훅을 설치한다. 디자인을 구현한 에이전트는 별도 fresh-context 리뷰 에이전트를 호출해 화면을 검토하게 한다. 템플릿 수치 검사와 실제 화면 검토를 구분하고, 고정한 수정본의 별도 검토 기록 없이 디자인을 main에 올리지 않는다. 페이지별 예외는 기존 `page-design.json`에 이유를 남긴다. 자동 검사만 통과한 상태를 시각 검토 완료로 보고하지 않는다.

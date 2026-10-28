@@ -151,7 +151,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-table td { overflow-wrap: anywhere; }
 .study-table .cs-n { text-align: left; }
 .study-table .cs-slides { width: auto; white-space: normal; }
-.study-table .cs-slides a { display: inline-block; white-space: nowrap; }  /* the cell may wrap between links, never inside one ("Slides 2" stays on one line) */
+.study-table .st-material-group { display: block; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
+.study-table .cs-slides a { display: inline-block; margin-right: 0; }  /* Keep Slides 1, 2 together; Demo starts on the next line. */
 .st-links a, .st-links span { display: inline-block; margin-right: var(--space-3); font-size: var(--text-meta); }
 .st-links a { color: var(--text); }
 .st-links a:hover { color: var(--accent); }
@@ -166,6 +167,8 @@ a.cs-title:hover { color: var(--accent); }
 .course-note { margin-top: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
 
 @media (max-width: 960px) {
+  .study-table .sc-topic { width: 22%; }
+  .study-table .sc-papers { width: 17%; }
   .course-parts, .course-grading { grid-template-columns: 1fr; gap: var(--space-3); }
   .course-hero { grid-template-columns: 1fr; gap: var(--space-6); }
 }

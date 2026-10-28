@@ -14,6 +14,7 @@ POSTECH 요구사항: P1~P9 영향 없음.
 - Media도 News처럼 YYYY/MM 표시. 기사 원문에서 포항공대신문은 2026-05-27, POSTECH 블로그는 2026-02-25 발행임을 확인해 2026/05·2026/02로 반영. 기사 원문 URL은 기존 데이터에 유지.
 - 사무실 전화는 Faculty와 꼬리말 모두 Tel.로 표시. 전화번호 값·주소·학교 필수 요소는 그대로.
 - 교수의 후속 양식 요청으로 Faculty·꼬리말을 `Tel.: +82-54-279-2202`로 통일. `Office:`와 같이 콜론을 표시하며 규칙에도 반영.
+- 교수 요청으로 Talks의 Opportunities in IME 발표 장소를 `POSTECH Graduate Seminar`에서 `POSTECH IME Seminar`로 변경. 제목·자료 링크·다른 발표는 유지.
 - 로고 실제 반영은 사용자 요청으로 별도 subagent의 격리 worktree에 위임. 이 커밋은 원본·초안 보관과 부모의 다른 minor만 포함.
 
 ## 검증

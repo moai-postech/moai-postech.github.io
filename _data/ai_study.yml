@@ -165,7 +165,7 @@ terms:
           - { text: "MeshCNN", url: "https://arxiv.org/abs/1809.05910" }
   - id: "summer-2026"
     name: "Summer 2026"
-    theme: "Deep Learning Basics"
+    theme: "Deep Learning"
     sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A22"
     sessions:
       - n: "1"

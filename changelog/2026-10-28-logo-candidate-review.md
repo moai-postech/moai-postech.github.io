@@ -46,4 +46,7 @@ POSTECH 요구사항: P1, P2, P3, P5, P7, P8, P9 확인. 학교 워드마크와 
 - 기존 로고·후보 삭제: 비교와 복구 경로를 남기기 위해 보존.
 
 ### 배포
-- 관련 변경만 한 커밋으로 묶어 부모 minor 변경이 반영된 main 위에 재배치. Pages 배포와 실제 사이트 확인 결과는 이어 기록.
+- 로고 변경 12파일만 커밋 `17c69c9`로 묶어 부모 minor `f9ab9c0` 위에 재배치하고 main 직접 push. 뒤이은 다른 minor 변경도 보존.
+- GitHub Actions의 로고 커밋 changelog·format 전체 검사 성공. 로고를 포함한 후속 `cb0433b`의 Pages 배포 success 및 Pages API `built` 확인(2026-10-28 15:33 KST).
+- `https://moai.postech.ac.kr/` 공개화면 1440/390/320px에서 새 `logo-moai.svg` 적용 확인. 운영 SVG, favicon SVG, apple-touch PNG 모두 HTTP200과 올바른 MIME 확인. 꼬리말 Tel.: 등 부모 후속 minor 표기도 보존.
+- 대표 검수 캡처는 세션 scratchpad의 `moai-logo-live-1440.png`, `moai-logo-live-320.png`, `moai-logo-live-footer-390.png`. 배포 결과 기록은 문서만 추가하며 로고 소스는 바꾸지 않음.

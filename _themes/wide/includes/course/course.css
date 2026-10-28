@@ -154,7 +154,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-learning-path { display: grid; grid-template-columns: repeat(var(--study-steps), minmax(0, 1fr)); list-style: none; padding: 0; margin: var(--space-5) 0 0; gap: var(--space-5); }
 .study-learning-path li { position: relative; border-top: 1px solid var(--line); padding-top: var(--space-3); min-width: 0; }
 .study-learning-path li + li::before { content: "→"; position: absolute; right: calc(100% + var(--space-2)); top: -.85em; padding-inline: var(--space-1); color: var(--muted); background: var(--bg); }
-.study-step-label { color: var(--muted); font-size: var(--text-small); font-weight: 600; }
+.study-step-label { color: var(--accent); font-size: var(--text-small); font-weight: 600; }
 .study-learning-path h4 { margin: var(--space-2) 0; font-size: var(--text-body); font-weight: 600; }
 .study-learning-path p { font-size: var(--text-meta); }
 .study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: 600; }

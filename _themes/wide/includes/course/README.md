@@ -29,7 +29,7 @@
 | `../../layouts/course.html` | 강의 사이트 문서 틀: 머리(과목명, 강의 메뉴), 본문, 바닥. `view: schedule` 면 `schedule.html`, `view: project` 면 `project.html`, 없으면 `home.html` |
 | `home.html` | Home: 제목·소개 옆에 운영 정보 칸(Instructor, Lectures, Office hours, Other terms) → Course outline(파트 카드) → Grading → Resources. Schedule·Project는 상단 탭에서만 탐색 |
 | `schedule.html` | Schedule: 전체 스케줄 표(파트 머리 줄, 다음 수업 표시) |
-| `study.html` | 학부생 AI 스터디(`teaching/ai-study/`, `view: study`): 소개 → 학기 탭 → 선택 학기의 운영 정보·일정. 일정은 `_data/ai_study.yml`(시트에서 `tools/ai_study_sync.py`), 시간·장소·지도교수·학생대표는 `_data/ai_study_terms.yml` |
+| `study.html` | 학부생 AI 스터디(`teaching/ai-study/`, `view: study`): 소개 → 학기 탭 → 선택 학기의 Overview·운영 정보·일정. 일정은 `_data/ai_study.yml`(시트에서 `tools/ai_study_sync.py`), Overview·시간·장소·지도교수·학생대표는 `_data/ai_study_terms.yml` |
 | `head.html` | Schedule 과 Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |
 | `project.html` | 팀 프로젝트: Overview(소개, 팀 크기, 단계, 평가 기준) → Teams(팀원, 발표 회차별 날짜·순서·슬라이드) |
 | `course.css` | 강의 사이트 전용 스타일과 색. `../theme.css` 끝에서 include 한다 |

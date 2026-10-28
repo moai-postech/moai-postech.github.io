@@ -441,7 +441,7 @@ terms:
           - { text: "Diffusion=Flow", url: "https://diffusionflow.github.io/" }
         demos:
           - { text: "SD3", url: "https://huggingface.co/spaces/stabilityai/stable-diffusion-3-medium" }
-          - { text: "Suno (audio)", url: "https://suno.com/" }
+          - { text: "Suno", url: "https://suno.com/" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/06-image-generation-slides.pdf" }
       - n: "7"

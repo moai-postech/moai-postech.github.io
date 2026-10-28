@@ -136,7 +136,12 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-heading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3) var(--space-5); flex-wrap: wrap; margin-bottom: var(--space-5); }
 .study-term-heading h2 { margin-bottom: 0; }
 .study-sheet { color: var(--accent); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
-.study-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); margin: 0 0 var(--space-6); padding: var(--card-padding); border-radius: var(--radius-2); background: var(--surface); }
+.study-facts { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)); gap: var(--space-5); margin: 0 0 var(--space-6); padding: var(--card-padding); border-radius: var(--radius-2); background: var(--surface); }
+.study-overview { margin-bottom: var(--space-6); }
+.study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: 600; }
+.study-overview p { margin: 0; color: var(--muted); }
+.study-advisor dd { display: flex; align-items: center; gap: var(--space-3); }
+.study-advisor img { width: 64px; height: 64px; flex-shrink: 0; object-fit: cover; border-radius: 50%; }
 .study-facts dt { margin-bottom: var(--space-2); color: var(--muted); font-size: var(--text-small); font-weight: 600; line-height: 1.5; }
 .study-facts dd { margin: 0; font-size: var(--text-meta); line-height: 1.5; }
 .study-facts dd a { font-weight: 600; }

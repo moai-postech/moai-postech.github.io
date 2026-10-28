@@ -165,6 +165,9 @@ def parse(rows):
             s["papers"] = [l for l in s["papers"] if l["text"] != "(full lecture)"]
         if links(cells[4]):
             s["demos"] = links(cells[4])
+            for demo in s["demos"]:
+                if demo["text"] == "Suno (audio)":
+                    demo["text"] = "Suno"
         if cells[5]["text"]:
             s["keywords"] = cells[5]["text"]
         if cells[6]["text"] and cells[6]["text"] != "-":

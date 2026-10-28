@@ -19,9 +19,9 @@ terms:
           - { text: "RoboCasa", url: "https://robocasa.ai/" }
           - { text: "Ego4D", url: "https://ego4d-data.org/" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2026/01-data-sources-slides.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/fall-2026/01-data-sources-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/01-data-sources-slides-2.pdf" }
-          - { text: "Notebook", url: "https://drive.google.com/file/d/1lMtwnJfvlCx1TwgcuPD7aM9Mu7ZPfP6H/view?usp=sharing" }
+          - { text: "Demo", url: "https://drive.google.com/file/d/1lMtwnJfvlCx1TwgcuPD7aM9Mu7ZPfP6H/view?usp=sharing" }
       - n: "2"
         date: "2026-09-21"
         title: "Manipulation"
@@ -33,7 +33,7 @@ terms:
         demos:
           - { text: "LeRobot", url: "https://huggingface.co/spaces/lerobot/visualize_dataset" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2026/02-manipulation-slides.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/fall-2026/02-manipulation-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/02-manipulation-slides-2.pdf" }
       - n: "3"
         date: "2026-09-29"
@@ -46,9 +46,9 @@ terms:
         demos:
           - { text: "MuJoCo Playground", url: "https://playground.mujoco.org/" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2026/03-locomotion-slides.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/fall-2026/03-locomotion-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/03-locomotion-slides-2.pdf" }
-          - { text: "Notebook", url: "https://colab.research.google.com/drive/1TQpshn8PjXt_tjVFy9vfwG5JkdZDQ99c?usp=sharing" }
+          - { text: "Demo", url: "https://colab.research.google.com/drive/1TQpshn8PjXt_tjVFy9vfwG5JkdZDQ99c?usp=sharing" }
       - n: "4"
         date: "2026-10-06"
         title: "Navigation"
@@ -60,7 +60,7 @@ terms:
         demos:
           - { text: "OmniVLA", url: "https://github.com/NHirose/OmniVLA" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2026/04-navigation-slides.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/fall-2026/04-navigation-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/04-navigation-slides-2.pdf" }
       - n: "5"
         date: "2026-10-12"
@@ -73,7 +73,7 @@ terms:
         demos:
           - { text: "ASAP", url: "https://agile.human2humanoid.com/" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2026/05-humanoid-slides.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/fall-2026/05-humanoid-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/05-humanoid-slides-2.pdf" }
       - n: "6"
         date: "2026-11-03"
@@ -221,8 +221,8 @@ terms:
           - { text: "Lec 13", url: "https://www.dropbox.com/scl/fi/7jswvwe1c8rtherjaboh9/lec13_gen_intro.pdf?rlkey=vqx2mjujz2hc93eny55a761ij&e=1&st=mnagglkh&dl=0" }
           - { text: "Lec 14", url: "https://www.dropbox.com/scl/fi/3c4mwxeweqnb84bmftgt3/lec14_vae_gan.pdf?rlkey=dw2kkoc05wf449bydqic663j8&e=1&st=le610sta&dl=0" }
         materials:
-          - { text: "Notes", url: "teaching/ai-study/summer-2026/06-generative-models-vae-and-gan-notes.pdf" }
-          - { text: "Notes 2", url: "teaching/ai-study/summer-2026/06-generative-models-vae-and-gan-notes-2.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/summer-2026/06-generative-models-vae-and-gan-notes.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/summer-2026/06-generative-models-vae-and-gan-notes-2.pdf" }
       - n: "7"
         date: "2026-08-04"
         title: "Generative Models: Diffusion and Flows"
@@ -247,7 +247,7 @@ terms:
         papers:
           - { text: "Lec 18", url: "https://www.dropbox.com/scl/fi/jfa2ampn4zj98txbn29r9/18_transfer_learning_2025.pdf?rlkey=chv4b0ujjpj8512emteus9kdl&e=1&st=p74qi6jn&dl=0" }
         materials:
-          - { text: "Notes", url: "teaching/ai-study/summer-2026/09-transfer-learning-notes.pdf" }
+          - { text: "Slides", url: "teaching/ai-study/summer-2026/09-transfer-learning-notes.pdf" }
       - n: "10"
         date: "2026-08-27"
         title: "DL Theory"
@@ -291,7 +291,7 @@ terms:
           - { text: "FLAN-T5", url: "https://arxiv.org/abs/2210.11416" }
           - { text: "LIMA", url: "https://arxiv.org/abs/2305.11206" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/spring-2026/03-sft-slides.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/spring-2026/03-sft-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/spring-2026/03-sft-slides-2.pdf" }
       - n: "4"
         date: "2026-03-31"
@@ -312,7 +312,7 @@ terms:
           - { text: "HH", url: "https://arxiv.org/abs/2204.05862" }
           - { text: "Constitutional AI", url: "https://arxiv.org/abs/2212.08073" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/spring-2026/05-rlaif-rubric-slides.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/spring-2026/05-rlaif-rubric-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/spring-2026/05-rlaif-rubric-slides-2.pdf" }
       - n: "6"
         date: "2026-04-28"
@@ -344,10 +344,8 @@ terms:
           - { text: "RAG", url: "https://arxiv.org/abs/2005.11401" }
           - { text: "long-context vs RAG", url: "https://arxiv.org/abs/2407.16833" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/spring-2026/08-rag-slides.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/spring-2026/08-rag-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/spring-2026/08-rag-slides-2.pdf" }
-          - { text: "Figure", url: "teaching/ai-study/spring-2026/08-rag-figure.png" }
-          - { text: "Figure 2", url: "teaching/ai-study/spring-2026/08-rag-figure-2.png" }
       - n: "9"
         date: "2026-05-26"
         title: "Agent"

@@ -42,7 +42,7 @@
           <td class="st-links">{% for l in s.papers %}{% if l.url %}<a href="{{ l.url }}">{{ l.text }}</a>{% else %}<span>{{ l.text }}</span>{% endif %}{% endfor %}</td>
           <td class="st-links">{% for l in s.demos %}<a href="{{ l.url }}">{{ l.text }}</a>{% endfor %}</td>
           <td class="st-who">{{ s.presenters }}</td>
-          <td class="cs-slides">{% for l in s.materials %}<a href="{{ l.url }}">{{ l.text }}</a>{% endfor %}</td>
+          <td class="cs-slides">{% assign material_groups = "Slides,Demo" | split: "," %}{% for group in material_groups %}{% assign items = s.materials | where_exp: "l", "l.text contains group" %}{% if items.size == 1 %}<span class="st-material-group"><a href="{{ items[0].url }}">{{ group }}</a></span>{% elsif items.size > 1 %}<span class="st-material-group">{{ group }} {% for l in items %}<a href="{{ l.url }}" aria-label="{{ s.title | escape }} {{ group }} {{ forloop.index }}">{{ forloop.index }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}{% endfor %}</td>
         </tr>
         {% endfor %}
         </tbody>

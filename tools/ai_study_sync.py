@@ -7,6 +7,7 @@
   - 발표 자료와 칸 안의 Google Slides 링크는 tools/drive_pdf.py 로 PDF 를 받아
     teaching/ai-study/<학기>/<회차>-<주제>-<종류>.pdf 에 두고 사이트 파일을 가리킨다(Drive 대신, 교수 2026-10-26). 이미 받은 것은 건너뛴다.
     Colab·ipynb 노트북은 Drive 링크 그대로 둔다. 받은 사본과 원본 링크의 짝은 tools/drive_sources.json.
+  - Summer 2026 은 학생 발표자료 대신 References 칸의 MIT 원 강의 슬라이드를 Materials 로 쓴다(교수 2026-10-28).
   - _data/ai_study.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
 
   python3 tools/ai_study_sync.py               # 로컬에서 한 번
@@ -160,7 +161,12 @@ def parse(rows):
             s["keywords"] = cells[5]["text"]
         if cells[6]["text"] and cells[6]["text"] != "-":
             s["presenters"] = cells[6]["text"]
-        mats = materials(cells[7:])
+        if term["id"] == "summer-2026":
+            # 이 학기는 별도 발표자료를 만들지 않고 MIT 원 강의 슬라이드를 사용한다.
+            mats = materials([cells[3]])
+            s.pop("papers", None)
+        else:
+            mats = materials(cells[7:])
         if mats:
             s["materials"] = mats
         term["sessions"].append(s)

@@ -144,15 +144,18 @@ a.cs-title:hover { color: var(--accent); }
 .study-table { table-layout: fixed; }
 .study-table .sc-n { width: 3.2em; }
 .study-table .sc-date { width: 4.6em; }
-.study-table .sc-topic { width: 27%; }
+.study-table .sc-topic { width: 23%; }
 .study-table .sc-papers { width: 21%; }
 .study-table .sc-demo { width: 13%; }
 .study-table .sc-who { width: 11%; }
 .study-table td { overflow-wrap: anywhere; }
 .study-table .cs-n { text-align: left; }
-.study-table .cs-slides { width: auto; white-space: normal; }
-.study-table .st-material-group { display: block; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
-.study-table .cs-slides a { display: inline-block; margin-right: 0; }  /* Keep Slides 1, 2 together; Demo starts on the next line. */
+.study-table .cs-slides { width: auto; white-space: nowrap; }
+.study-table .st-material-group { display: inline-block; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
+.study-table .st-material-group + .st-material-group { margin-left: var(--space-2); }
+.study-table tbody > tr:last-child.tone-none,
+.study-table tbody > tr:last-child.tone-none td { box-shadow: none; }  /* The adjacent footer supplies the single bottom rule. */
+.study-table .cs-slides a { display: inline-block; margin-right: 0; }  /* Keep all material links on one line. */
 .st-links a, .st-links span { display: inline-block; margin-right: var(--space-3); font-size: var(--text-meta); }
 .st-links a { color: var(--text); }
 .st-links a:hover { color: var(--accent); }
@@ -167,8 +170,8 @@ a.cs-title:hover { color: var(--accent); }
 .course-note { margin-top: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
 
 @media (max-width: 960px) {
-  .study-table .sc-topic { width: 22%; }
-  .study-table .sc-papers { width: 17%; }
+  .study-table .sc-topic { width: 20%; }
+  .study-table .sc-papers { width: 11%; }
   .course-parts, .course-grading { grid-template-columns: 1fr; gap: var(--space-3); }
   .course-hero { grid-template-columns: 1fr; gap: var(--space-6); }
 }

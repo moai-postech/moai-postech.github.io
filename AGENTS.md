@@ -112,29 +112,11 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 형식은 사이트 전체에서 같아야 깔끔하다(교수 2026-10-27: "페이지만 보고 고치지 말고 사이트 전체에 통용되는 global rule 을 정하고, 그 룰을 따라 개별 페이지를 고친다"). 사람이든 에이전트든 디자인을 고칠 때 아래 순서를 지킨다.
 
 1. **고칠 요소의 역할부터 정한다.** "Teaching 의 Study group 제목"이 아니라 "목록을 묶는 제목"처럼 사이트 전체에서 쓰는 역할 이름으로 본다.
-2. **그 역할의 전역 규칙을 따른다(아래 표).** 규칙이 정한 토큰을 그대로 쓰고, 페이지 전용 크기·간격을 새로 만들지 않는다.
-3. **규칙이 마음에 안 들거나 규칙에 없는 모양이 필요하면 규칙을 고친다.** 이 표와 `theme.css` 의 역할 토큰을 먼저 고치고, 같은 역할을 쓰는 모든 페이지에 한 번에 적용한다. 한 페이지만 예외로 두지 않는다.
-4. **사이트 전체를 검사한다.** 빌드한 뒤 `node tools/check_format.js` 를 돌린다(13개 메뉴 페이지를 1440px·1280px·768px·390px·320px 에서 잰다). 고친 페이지만이 아니라 전체가 통과해야 한다. `main` push 와 PR 마다 GitHub Actions(`format`)가 같은 검사를 돌린다. `node tools/check_typography.js`는 강의와 404를 포함한 24페이지의 모든 보이는 텍스트, 숨은 탭·접힌 목록, 큰 제목 경계를 검사한다. 새 역할 규칙을 만들면 검사에도 더한다. 자동 검사는 역할 일치와 잘림을 확인하는 수단이며, 실제 화면의 시각적 균형은 별도로 판단한다.
+2. **그 역할의 전역 규칙을 따른다(템플릿 계약).** 규칙이 정한 토큰을 그대로 쓰고, 페이지 전용 크기·간격을 새로 만들지 않는다.
+3. **규칙이 마음에 안 들거나 규칙에 없는 모양이 필요하면 규칙을 고친다.** 템플릿 계약과 `theme.css` 의 역할 토큰을 먼저 고치고, 같은 역할을 쓰는 모든 페이지에 한 번에 적용한다. 한 페이지만 예외로 두지 않는다.
+4. **사이트 전체를 검사한다.** 빌드한 뒤 `node tools/check_design.js`, `node tools/check_format.js`를 돌린다. 전자는 템플릿 계약을 7개 화면 폭에서 검사하고, 후자는 묶음 제목 간격을 검사한다. 고친 페이지만이 아니라 전체가 통과해야 한다. `main` push 와 PR 마다 GitHub Actions(`format`)가 같은 검사를 돌린다. `node tools/check_typography.js`는 강의와 404를 포함한 공통 템플릿 페이지의 모든 보이는 텍스트, 숨은 탭·접힌 목록, 큰 제목 경계를 검사한다. 새 역할 규칙을 만들면 검사에도 더한다. 자동 검사는 역할 일치와 잘림을 확인하는 수단이며, 실제 화면의 시각적 균형은 별도로 판단한다.
 
-| 역할 | 예 | 글자 | 간격 |
-| --- | --- | --- | --- |
-| 큰 표시 제목 | Home hero, 강의 페이지 h1 | `--text-display`(34~48px 연속 변화), 굵기 700, 행간 1.1, `--tracking-display`(-.025em) | 화면 폭이 커질 때 크기가 역전되거나 경계에서 급변하지 않는다 |
-| 한 절인 제목 | Home 의 Our focus·News, Contact 의 Join us, Research 의 Perception, Faculty 이름 | `--text-h2` | 절 사이 `--section-gap` |
-| 목록을 묶는 제목 | 연도(Publications, Seminar, Talks), Funding 기관 묶음, 멤버·멘티 묶음, Regular courses·Undergraduate AI Study, Faculty 의 Bio·Appointments | `--text-group`, 굵기 700, `--leading-group`(1.3), 정상 자간 | 위 `--section-gap`(앞 묶음의 마지막 줄부터), 아래 `--space-4` |
-| 목록 한 줄 | 뉴스, 과제, 강의, 발표 | `--text-body`, 무엇은 굵게 | 줄 사이 `--row-gap`·`--item-gap`. 목록의 첫 줄 위와 마지막 줄 아래에는 줄 간격을 두지 않는다(제목·다음 묶음과의 간격은 위 규칙만 따른다) |
-| 절을 닫는 안내 줄 | Research 의 Full publication list, Paper Stella 의 Open in full screen | `--text-body`(데스크톱 17px·모바일 16px), 링크만 보통 굵기(400) 강조색(`.section-next`) | 위 내용에 붙여 위 `--space-5`(24px), 다음 절은 `--section-gap`. embed는 설명 `caption`과 탐색 `next`를 구분하고 next에 이 역할 적용 |
-| 묶음 행동 안내 | Home 의 실적·모집 두 문장 | 본문 크기, 링크 400·강조색. 문장 뒤 인라인 링크. Home 모집만 `Join us! 🚀`, 논문 목록 이동은 `See our publications →`. 새 절 제목 없음 | 옅은 강조색 배경·얇은 테두리·왼쪽 강조선·약한 그림자의 카드(`--callout-*`). 공통 카드 패딩, 문단 사이 12px. 두 문장은 세로로 두고 링크 문구는 중간에서 나누지 않음 |
-| 알림 띠 | 특별 공지(현재 사용 없음) | `--text-body`, 연한 강조색 바탕(`--accent-soft`), 링크 보통 굵기(400) 강조색(`class: section-callout`). 머리말을 굵게 쓰면 강조색 | 위 절에 붙여 위 `--space-5`, 아래 `--section-gap`. 사이트에 하나만 둔다 |
-| 논문 목록 제목 | Publications 목록 | `--text-paper`(본문과 같은 PC17px·모바일16px, 저자·venue와 같은 크기), 굵기 600, `--leading-paper`(1.5), 정상 자간 | 목록의 제목·저자·venue 줄 사이는 `--detail-gap`(4px), 목록의 논문 사이는 `--item-gap`의 위아래 합(24px) |
-| 필터 도구 모음 | Seminar의 All·Lab·Invited·Full schedule | `--text-meta`, 버튼과 이동 링크 모두 굵기 600. 개수만 400 | 버튼·링크에 공통 역할 스타일 적용 |
-| 연구 방향 탭 | Home 의 세 분야 | 기본 20px, 모바일 15px, 360px 이하 13px. 단어 중간에서 자르지 않는다 | 세 칸의 위치는 유지하고 좁은 화면에서 작은 라벨 역할 사용 |
-| 대표 논문 카드 제목 | Home 연구 방향 카드 | `--text-featured-paper`(본문과 같은 17/16px), 굵기 600, 행간 1.4 | 배지와 제목 사이 `--space-3`, 카드 패딩은 공통 카드 역할 |
-| 논문 저자 | Publications 저자 이름 | `--text-author`(본문과 같은 PC17px·모바일16px, 제목·venue와 같은 크기), 굵기 400, 행간 1.5. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
-| 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(본문과 같은 PC17px·모바일16px, 목록 제목·저자와 같은 크기). Home 대표 카드 배지는 `--text-featured-meta`(15px). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. 논문 목록 venue·자료 링크는 400, 목록 배지의 세로 패딩은 0. Home 대표 카드 venue와 발표 형식은 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
-| 페이지 시작 | 하위 탭 뒤 첫 내용, 소개 뒤 첫 절 | | `--page-start`(데스크톱 48px, 모바일 32px) |
-| 카드 안 여백 | Home 논문, Research 주제, Contact 단계 카드 | | `--card-padding`(데스크톱 24px, 모바일 16px) |
-| 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
-| 작은 머리 | Faculty 의 FACULTY POSITIONS | `--text-small` | |
+세부 역할표·예외·수정 절차는 [`_themes/wide/README.md`](_themes/wide/README.md), 기계 판정 기준은 [`design-contract.json`](_themes/wide/design-contract.json)이 정본이다. 템플릿에 역할을 명시하고 `node tools/check_design.js`로 모든 페이지·탭·필터·펼침 상태를 검사한다. 상단 메뉴는 같은 문서 틀 안에서 페이지 이동 뒤에도 항목·순서·위치·굵기를 유지한다. 새 페이지는 빌드 결과에서 자동으로 발견하며, 역할 없는 제목이나 콘텐츠의 임의 style은 실패다.
 
 **문단 안의 굵게는 짧은 핵심어만 쓴다.** 문장을 통째로 굵게 하지 않고, 한 문단에 두세 개를 넘기지 않는다. 그 문단이 말하려는 "누구·무엇·무엇을 하라"만 고른다(예: Research 소개의 *scalable priors*, Contact 의 *undergraduate interns*·*genuine passion for AI*·*Contact us first*). 문장째 굵게 하면 강조가 흩어지고 굵지 않은 핵심 문장이 묻힌다(교수 2026-10-27). 목록 한 줄의 "무엇"을 굵게 하는 규칙(테마 계약)은 그대로다.
 
@@ -155,7 +137,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
    bundle install
    bundle exec jekyll serve
    ```
-   http://localhost:4000 에서 확인한다. 디자인을 고쳤으면 `bundle exec jekyll build` 뒤 `node tools/check_format.js`, `node tools/check_typography.js`, `node tools/check_postech.js` 로 사이트 전체 형식과 POSTECH 필수 요소를 검사한다.
+   http://localhost:4000 에서 확인한다. 디자인을 고쳤으면 `bundle exec jekyll build` 뒤 `node tools/check_design.js`, `node tools/check_format.js`, `node tools/check_typography.js`, `node tools/check_postech.js` 로 사이트 전체 형식과 POSTECH 필수 요소를 검사한다.
 6. **changelog 를 쓴다(아래, 필수).** 작성자 ID 는 push 하는 GitHub 계정이다.
 7. 변경의 위험과 검토 필요성으로 반영 경로를 정한다(교수 2026-10-28).
    - **Minor 수정**(문구·링크·작은 스타일·설정·문서, 항목 추가, 이미 결정된 안의 후속 조정)은 관련 검증 뒤 `main`에 직접 커밋·push한다. 수정마다 PR을 만들지 않고 같은 작업의 관련 변경을 한 커밋으로 묶는다. 파일이나 페이지가 여러 개라는 이유만으로 큰 수정으로 분류하지 않는다.

@@ -7,11 +7,10 @@
 // Playwright 가 있어야 한다(npm i playwright, 또는 이미 설치된 환경). GitHub Actions 의 format 워크플로가 push 마다 돌린다.
 const fs = require('fs');
 const { chromium } = require('playwright');
-const { SITE, serve } = require('./lib/site');
+const { SITE, serve, templatePages } = require('./lib/site');
 
 // 검사할 페이지. 연구실 사이트의 모든 메뉴 페이지와 News 보관 페이지
-const PAGES = ['index', 'research', 'seminar', 'funding', 'publications', 'landscape',
-  'faculty', 'students', 'mentees', 'teaching', 'talks', 'contact', 'news'];
+const PAGES = templatePages().filter(p => !p.startsWith('teaching/'));
 const WIDTHS = [1440, 1280, 768, 390, 320];
 const TOL = 2; // px
 
@@ -48,7 +47,7 @@ function measure(TOL) {
     const fsz = parseFloat(getComputedStyle(h).fontSize);
     const name = h.textContent.trim().slice(0, 30);
     if (!allowed.some(a => Math.abs(a - fsz) < 0.5)) problems.push(`"${name}" 글자 ${fsz}px: 토큰 크기가 아니다`);
-    if (Math.abs(fsz - tok.group) > 0.5) continue;
+    if (!h.matches('.group-heading, .year-head, .schedule-year th')) continue;
     // 묶음 제목: 아래 첫 항목과 --space-4, 앞 묶음의 마지막 항목과 --section-gap
     const hb = content(h);
     const after = leaves.find(l => !h.contains(l) && !l.contains(h) && (h.compareDocumentPosition(l) & Node.DOCUMENT_POSITION_FOLLOWING));
@@ -100,7 +99,7 @@ function measure(TOL) {
   for (const w of WIDTHS) {
     const page = await browser.newPage({ viewport: { width: w, height: 900 } });
     for (const n of PAGES) {
-      await page.goto(`http://localhost:${port}/${n}.html`);
+      await page.goto(`http://localhost:${port}/${n}`);
       const probs = await page.evaluate(measure, TOL);
       for (const p of probs) { console.log(`✗ ${w}px ${n}: ${p}`); failed++; }
     }

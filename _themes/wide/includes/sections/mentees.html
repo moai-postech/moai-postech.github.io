@@ -4,7 +4,7 @@
 {% endcomment %}
 {% for g in site.data.members.mentees %}
     <section class="content-section">
-    <h2>{{ g.title }}</h2>
+    <h2 class="group-heading">{{ g.title }}</h2>
     <div class="section-body">
     <ul class="plain item-list mentee-list">
       {% for p in g.people %}<li id="{{ p.name | slugify }}">

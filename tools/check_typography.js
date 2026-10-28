@@ -1,18 +1,8 @@
 // 글자 역할과 실제 줄바꿈 검사. 토큰 일치만으로 디자인이 좋은지는 판정하지 않는다.
 // 모든 페이지의 텍스트, 숨은 탭, 큰 제목의 반응형 경계를 검사한다.
-const fs = require('fs');
-const path = require('path');
 const { chromium } = require('playwright');
-const { SITE, serve } = require('./lib/site');
-const PAGES = ['index', 'research', 'seminar', 'funding', 'publications', 'landscape',
-  'faculty', 'students', 'mentees', 'teaching', 'talks', 'contact', 'news', '404'].map(n => n + '.html');
-(function walk(dir) {
-  for (const e of fs.readdirSync(path.join(SITE, dir), { withFileTypes: true })) {
-    const rel = path.join(dir, e.name);
-    if (e.isDirectory() && e.name !== 'slides') walk(rel);
-    else if (e.name === 'index.html') PAGES.push(rel);
-  }
-})('teaching');
+const { serve, templatePages } = require('./lib/site');
+const PAGES = templatePages();
 
 function inspect() {
   const problems = [];
@@ -23,7 +13,7 @@ function inspect() {
   const main = document.querySelector('main');
   check([...document.fonts].some(f => f.status === 'loaded' && /Pretendard/.test(f.family)), 'Pretendard 실제 글꼴이 로드되지 않았다');
   // 크기가 같은 묶음 제목도 h2/h3/th의 기본 행간에 기대지 않는다.
-  const groups = '.page-publications h2, .page-funding h2, .page-students h2, .page-mentees h2, .page-teaching h2, .page-faculty h2:not(#professor), .year-head, .schedule-year th';
+  const groups = '.group-heading, .year-head, .schedule-year th';
   for (const e of document.querySelectorAll(groups)) {
     if (!visible(e)) continue;
     check(Math.abs(parseFloat(css(e).lineHeight) / size(e) - 1.3) < .02 && css(e).letterSpacing === 'normal', `묶음 제목 행간·자간: ${e.textContent.trim().slice(0,35)}`);

@@ -7,7 +7,7 @@
 {% endcomment %}
 {% if include.section.study %}{% assign rows = "" | split: "" %}{% else %}{% assign rows = site.data.teaching %}{% endif %}
     <section class="content-section">
-    {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
+    {% if include.section.title %}<h2 class="group-heading">{{ include.section.title }}</h2>{% endif %}
     <div class="section-body">
     {% if include.section.intro %}<p class="list-intro">{% include inline.html text=include.section.intro %}</p>{% endif %}
     <ul class="plain item-list">

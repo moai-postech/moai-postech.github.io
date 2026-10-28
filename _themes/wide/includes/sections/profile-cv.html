@@ -1,7 +1,7 @@
 {% comment %}_data/members.yml 의 professor.cv: 절마다 제목, 묶음마다 소제목, 항목은 한 줄씩(마크다운). { text, side } 항목은 side 를 오른쪽 끝에{% endcomment %}
 {% for block in site.data.members.professor.cv %}
     <section class="content-section">
-    <h2>{{ block.title }}</h2>
+    <h2 class="group-heading">{{ block.title }}</h2>
     <div class="section-body">
     {% for g in block.groups %}{% if g.title %}<h3 class="sub">{{ g.title }}</h3>{% endif %}
     <ul class="plain item-list">

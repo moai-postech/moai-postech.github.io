@@ -23,7 +23,7 @@ sections:
     body: |
       Our work appears at top AI conferences such as NeurIPS, ICML, and ICLR. [See our publications](publications.html)
 
-      We welcome applications from motivated students. [How to apply](contact.html#join)
+      We're looking for motivated students to join our team. [How to apply](contact.html#join)
   # News: 지금은 전부 보인다. 많아지면 limit: 8 처럼 개수를 정하면 그 아래에 "All news →"(news.html) 링크가 생긴다
   - title: "News"
     type: news

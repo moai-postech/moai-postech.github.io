@@ -181,7 +181,7 @@
     },
     {
       "id": "primary-navigation",
-      "selector": ".site-nav a, .course-nav a",
+      "selector": ".site-nav > a, .site-nav > .nav-group > a, .course-nav a",
       "style": {
         "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-emphasis)"
@@ -489,6 +489,14 @@
       "style": {
         "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-emphasis)"
+      }
+    },
+    {
+      "id": "dropdown-navigation",
+      "selector": ".site-nav .nav-menu a",
+      "style": {
+        "fontSize": "var(--text-body)",
+        "fontWeight": "var(--weight-regular)"
       }
     }
   ]

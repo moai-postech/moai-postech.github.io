@@ -70,3 +70,10 @@
 - GitHub changelog·format 검사 모두 통과한 head `a1a6da2`를 반영.
 - TODO의 디자인 배포 승인 대기 항목 제거. 다른 작업의 남은 결정은 유지.
 - 기본 템플릿과 페이지별 조정 근거는 운영 소스의 `_themes/wide/README.md`, `page-design.json`, `page-design.md`에 보존.
+
+## 후속: 드롭다운 굵기
+- 교수는 상단 탭 아래로 펼쳐지는 Faculty·Members 등의 글자가 너무 두껍다고 지적.
+- 상단 1차 메뉴600과 드롭다운400을 별도 역할로 분리. 드롭다운은 크기16px와 기존 hover·배치 유지.
+- primary-navigation 검사 selector를 1차 항목으로 제한하고 dropdown-navigation400 검사·600 회귀 주입 테스트 추가.
+- 기각: 상단 1차 메뉴나 본문 탭까지 함께 변경. 요청은 펼쳐지는 하위 항목의 굵기이므로 해당 역할만 조정.
+- 검증: Jekyll 빌드,55개 기본 역할+6개 페이지 조정·26페이지·7폭·616상태, 형식·타이포그래피·POSTECH 검사 통과. 실제 Faculty·Members·Mentees가16px·400임을 확인.

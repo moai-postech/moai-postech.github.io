@@ -27,6 +27,11 @@ const { loadSyntheticDirectory } = require('./lib/design-fixture');
     const base = `http://localhost:${srv.address().port}/`;
     async function load(file) { await page.goto(base+file); await page.evaluate(()=>document.fonts.ready); await page.mouse.move(0,0); }
     async function failures() { return (await page.evaluate(inspect,contract)).failures; }
+    await load('index.html');
+    await page.locator('.nav-group').first().hover();
+    assert.deepEqual(await failures(),[], '드롭다운은 400 굵기로 통과해야 한다');
+    await page.addStyleTag({content:'.site-nav .nav-menu a {font-weight:600 !important}'});
+    assert((await failures()).some(f=>f.startsWith('dropdown-navigation: fontWeight')), '드롭다운이 상단 메뉴의 600을 상속하면 실패해야 한다');
     await load('students.html');
     assert.deepEqual(await failures(),[], '근거를 기록한 멤버 카드 조정은 기본 metadata 크기와 달라도 통과해야 한다');
     await page.addStyleTag({content:'.page-students .person-degree {font-size:14px !important}'});

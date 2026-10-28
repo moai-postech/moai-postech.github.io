@@ -2,7 +2,7 @@
 {% comment %}
   강의 사이트 레이아웃. 연구실 사이트의 머리글·메뉴 없이 강의 하나가 독립된 사이트처럼 돈다(2026-10-22 교수 요청).
   머리: 과목명(강의 첫 페이지로) + 탭 세 개, Home(개요·운영 정보·파트·평가·자료), Schedule(전체 스케줄 표), Project(팀 프로젝트, 2026-10-27 교수: Term Project 대신 짧게). MIT·Stanford·CMU·Berkeley 강의 사이트의 home/schedule/project 짜임을 따른다(2026-10-26 교수). 탭은 모두 다른 페이지이고 페이지 안 이동 링크는 두지 않는다(2026-10-22 교수: 같은 페이지 이동과 다른 페이지 이동이 섞여 헷갈린다). 바닥: 연구실 사이트로 가는 한 줄, 같은 줄에 POSTECH 대표홈과 개인정보 링크(학교 도메인 필수 요소, _config.yml 의 postech). 모양은 includes/course/ 한 폴더(README.md).
-  스터디는 Home(학기별 일정)과 Members(기수별 명단)를 상단 메뉴로 오간다(교수 2026-10-28).
+  스터디는 Home(소개·참여), Schedule(학기별 일정), Members(기수별 명단)를 상단 메뉴로 오간다(교수 2026-10-28).
   하위 폴더 주소라 <base href="/"> 를 두고 모든 링크를 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% if page.course == "ai-study" %}{% assign c = page %}{% else %}{% assign c = site.data.courses[page.course] %}{% endif %}{% assign root = "teaching/" | append: page.course | append: "/" %}
@@ -31,6 +31,7 @@
     <a class="course-brand" href="{{ root }}">{{ c.title }}<span>{{ c.term }}</span></a>
     {% if page.course == "ai-study" %}<nav class="course-nav" aria-label="Study">
       <a href="{{ root }}"{% if page.view == "study" %} aria-current="page"{% endif %}>Home</a>
+      <a href="{{ root }}schedule/"{% if page.view == "study-schedule" %} aria-current="page"{% endif %}>Schedule</a>
       <a href="{{ root }}members/"{% if page.view == "study-members" %} aria-current="page"{% endif %}>Members</a>
     </nav>{% else %}<nav class="course-nav" aria-label="Course">
       <a href="{{ root }}"{% unless page.view %} aria-current="page"{% endunless %}>Home</a>
@@ -39,7 +40,7 @@
     </nav>{% endif %}
   </header>
   <main id="main-content" tabindex="-1">
-{% if page.view == "project" %}{% include course/project.html %}{% elsif page.view == "study" %}{% include course/study.html %}{% elsif page.view == "study-members" %}{% include course/study-members.html %}{% elsif page.view == "schedule" %}{% include course/schedule.html %}{% else %}{% include course/home.html %}{% endif %}
+{% if page.view == "project" %}{% include course/project.html %}{% elsif page.view == "study" %}{% include course/study.html %}{% elsif page.view == "study-schedule" %}{% include course/study-schedule.html %}{% elsif page.view == "study-members" %}{% include course/study-members.html %}{% elsif page.view == "schedule" %}{% include course/schedule.html %}{% else %}{% include course/home.html %}{% endif %}
   </main>
   <footer class="course-foot"><a href="index.html"><img src="{{ site.logo }}" alt="{{ site.title }} logo">{{ site.title }}</a><a class="course-postech" href="{{ site.postech.url }}">POSTECH</a><a class="course-privacy" href="{{ site.postech.privacy_url }}">{{ site.postech.privacy_label }}</a></footer>
 </div>

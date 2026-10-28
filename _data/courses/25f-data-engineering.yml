@@ -30,6 +30,7 @@ parts:
     span: "Lectures 16 – 19"
     text: "Run models on the data: ML systems, LLM systems, RAG and agents."
 
+schedule_sheet: "https://docs.google.com/spreadsheets/d/1NBJrPN4CkLqL0IGGCTr1ZxOvPbRWSDlFF95h-5-zOY4/edit?usp=sharing"
 schedule:
   - date: "2025-09-02"
     kind: lecture
@@ -232,7 +233,7 @@ grading:
     weight: "25%"
   - item: "Team project"
     weight: "40%"
-grading_note: "Team project in teams of 3 to 5: a proposal at mid-semester and a product on a large-scale database at the end. AI tools are allowed."
+grading_note: "Team project in teams of 3 to 5: a proposal at mid-semester and a product on a large-scale database at the end."
 
 resources:
   - abbr: "DMCT"
@@ -282,6 +283,7 @@ other_terms:
 
 # 팀 프로젝트 페이지. 25F 프로젝트 시트에는 팀원 이름이 없고 발표일 구분 없이 순서만 있다. 3팀 proposal 자료는 없다.
 project:
+  sheet: "https://docs.google.com/spreadsheets/d/1XLgh0ILJ1VUgljXeaelXuAXfN5RmUB6fVRsMW6CKGKk/edit?usp=sharing"
   summary: >-
     Teams go through an end-to-end data engineering pipeline: they collect and prepare data, store it in a database,
     and build a product that addresses a real-world problem on it.

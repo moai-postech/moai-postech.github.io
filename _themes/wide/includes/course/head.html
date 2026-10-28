@@ -6,4 +6,5 @@
     <header class="course-head">
       <h1>{{ include.heading }}</h1>
       <p class="course-meta"><span>{{ c.title }}</span><span>{{ c.code }}</span><span>{{ c.term }}</span><span>POSTECH</span></p>
+      {% if include.sheet %}<p class="course-sheet"><a href="{{ include.sheet }}">{{ include.sheet_label }}</a></p>{% endif %}
     </header>

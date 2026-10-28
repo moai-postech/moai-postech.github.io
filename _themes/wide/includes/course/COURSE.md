@@ -41,7 +41,7 @@
 - 강의: `teaching/<id>/slides/<n>_<slug>.{pdf,html}`. HTML 은 자산을 인라인한 단일 파일이라 그대로 열린다. Schedule 자료 링크는 HTML → PDF → Lab 순서이며, 없는 형식은 생략한다(2026-10-28 교수)
 - 학생 발표: `teaching/<id>/project/<회차>/<회차>_teamNN.pdf`(pptx 는 올리지 않는다)
 - 파일 하나는 GitHub 한도(100 MB) 아래여야 한다. 지금 가장 큰 파일은 수 MB 다
-- 새 파일이 생기면 Drive 와 이 저장소에 각각 복사한다. yml 에 Drive 링크를 넣었으면 `python3 tools/localize_slides.py` 가 받아서 링크를 바꾼다(사이트 전체 원칙, 저장소 `AGENTS.md`). 26F Data Engineering 은 강의 저장소의 `tools/publish-site.py` 가 Drive 배포본을 이 폴더로 복사하고 yml 링크를 점검한다 끝난 학기는 `sheet` 를 지워 시트 링크를 숨긴다.
+- 새 파일이 생기면 Drive 와 이 저장소에 각각 복사한다. yml 에 Drive 링크를 넣었으면 `python3 tools/localize_slides.py` 가 받아서 링크를 바꾼다(사이트 전체 원칙, 저장소 `AGENTS.md`). 26F Data Engineering 은 강의 저장소의 `tools/publish-site.py` 가 Drive 배포본을 이 폴더로 복사하고 yml 링크를 점검한다 시트 링크는 지난 학기에도 유지한다.
 
 ## 초청 강의·학과 세미나
 
@@ -57,3 +57,10 @@
 - TA가 정해지면 `teaching_assistants` 배열에 `name`과 선택 필드 `email`, `url`, `photo`, `affiliation`을 추가한다. 현재 강의에는 TA를 기입하지 않는다.
 - 장소는 `location: { building, rooms }`, 시간은 `meetings: { day, time }`으로 넣는다. 옛 `lectures` 문자열도 폴백으로 읽지만 새 데이터는 두 필드를 쓴다.
 - TA를 추가하면 Instructor 다음, Location & time 이전에 자동으로 표시된다. 이메일은 ` [at] `로 가려 출력한다.
+
+## 출석 안내와 시트 링크
+
+- 출석에 별도 점수가 없는 강의도 총 수업시간의 1/3을 초과해 결석하면 F라는 기준을 명확히 표시한다. 실제 출석 배점은 각 강의의 `grading`을 따른다.
+- Home의 평가 안내에 AI 도구 허용 여부를 덧붙이지 않는다.
+- Schedule 페이지 상단에는 `schedule_sheet`의 Schedule sheet 링크 하나, Project 페이지 상단에는 `project.sheet`의 Project sheet 링크 하나를 둔다. 본문에는 같은 시트 링크를 반복하지 않는다.
+- 시트는 원래 공개했던 해당 학기 링크를 사용하고, 자료의 정본·웹 페이지 관리 방식은 유지한다.

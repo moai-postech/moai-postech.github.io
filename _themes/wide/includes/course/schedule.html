@@ -7,7 +7,7 @@
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
-{% include course/head.html heading="Schedule" %}
+{% include course/head.html heading="Schedule" sheet=c.schedule_sheet sheet_label="Schedule sheet" %}
 
     <section class="content-section course-first" id="schedule">
     <div class="section-body">

@@ -31,6 +31,7 @@ parts:
     span: "Lectures 15 – 22"
     text: "Deep learning and PyTorch, vision and multimodal models, and AI for data science."
 
+schedule_sheet: "https://docs.google.com/spreadsheets/d/1gKBQCv7Fkpwyn7DwXrKBqEHZNYjZsF1qXH5bUrSpANU/edit?usp=sharing"
 schedule:
   - date: "2026-02-24"
     kind: lecture
@@ -230,6 +231,7 @@ exams:
 
 # 팀 프로젝트 페이지. 26S 프로젝트 시트에서 옮겼다(발표 한 번, Kaggle 등 대회 링크).
 project:
+  sheet: "https://docs.google.com/spreadsheets/d/1ZHkM8KO2TC_gbfH7xdV5040B2zwJ0qd35VUnf0VvaCA/edit?usp=sharing"
   summary: >-
     Each team chooses a Kaggle competition, solves it together, and shares the experience in a final presentation.
   team_size: "up to 4 students"

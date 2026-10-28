@@ -6,7 +6,7 @@
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
 {% assign pj = c.project %}
-{% include course/head.html heading="Project" %}
+{% include course/head.html heading="Project" sheet=pj.sheet sheet_label="Project sheet" %}
 
     <section class="content-section course-summary" id="overview">
     <h2>Overview</h2>
@@ -25,7 +25,6 @@
     {% if pj.teams %}<section class="content-section">
     <h2>Teams</h2>
     <div class="section-body">
-    {% if pj.sheet %}<p class="project-sheet">Teams edit their own entry in the <a href="{{ pj.sheet }}">project sheet</a>. This page is updated from it.</p>{% endif %}
     <table class="course-schedule project-teams">
       <thead><tr><th scope="col">#</th><th scope="col">Project</th>{% for rd in pj.rounds %}<th scope="col">{{ rd.name }}</th>{% endfor %}</tr></thead>
       <tbody>

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-28 | [visual-review-process](2026-10-28-visual-review-process.md) | Sangwoo Mo(sangwoomo) | 검수 도구·CI·배포 | 고정 화면·별도 검토 기록·배포 차단 절차 구축 |
 | 2026-10-28 | [design-template-contract](2026-10-28-design-template-contract.md) | Sangwoo Mo(sangwoomo) | 공통 템플릿·전체 페이지 | 템플릿+페이지별 근거·가독성 조정, PR #25 승인 배포 |
 | 2026-10-28 | [publications-type-hierarchy](2026-10-28-publications-type-hierarchy.md) | Sangwoo Mo(sangwoomo) | Publications | venue 600·정보 그룹 16px/링크 12px, 공통 글자 크기 및 모바일 상단 여백 축소 |
 | 2026-10-28 | [course-project-layout](2026-10-28-course-project-layout.md) | Sangwoo Mo(sangwoomo) | 시트 링크·Project | 우측 ↗ 통일, 팀 구성 Timeline, Slides 줄바꿈·Final 미정 |

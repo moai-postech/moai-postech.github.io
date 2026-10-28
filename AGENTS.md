@@ -4,7 +4,7 @@ https://moai-postech.github.io 의 소스다. 사람과 AI 에이전트(Claude C
 
 ## 구조: 콘텐츠와 테마를 나눈다
 
-GitHub Pages 가 push 때마다 Jekyll 로 빌드한다. 콘텐츠는 테마를 모르고, 테마는 콘텐츠를 담지 않는다. 테마를 갈아 끼워도 콘텐츠 파일은 그대로 둔다.
+GitHub Actions가 push 때마다 Jekyll로 빌드하고 검수 성공 뒤 GitHub Pages에 배포한다. 배포 전환 상태와 검수 절차는 `_qa/visual-review/README.md`를 따른다. 콘텐츠는 테마를 모르고, 테마는 콘텐츠를 담지 않는다. 테마를 갈아 끼워도 콘텐츠 파일은 그대로 둔다.
 
 ```
 _config.yml          사이트 이름, 메뉴, 사용할 테마
@@ -258,3 +258,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 - 에이전트도 사람과 같은 절차를 따른다. 특히 고치기 전에 `--who` 로 다른 사람의 최근 수정을 보고, 막히면 우회하지 않고 안건을 올린 뒤 사용자에게 알린다. 사용자가 "그냥 바꿔"라고 해도 검사를 피하려고 작성자 ID 를 바꾸거나 안건을 꾸미지 않는다.
 - `CLAUDE.md`(Claude Code), `GEMINI.md`(Gemini CLI)는 `@AGENTS.md` 한 줄로 이 파일을 불러온다. 규칙을 그 파일들에 복사하지 않는다.
 - 다른 도구가 별도 파일명을 요구하면 같은 방식의 포인터만 추가하고 이 절에 적는다.
+
+## 디자인 검수
+
+디자인을 고치거나 완료·배포를 판단하기 전에 `_qa/visual-review/README.md`와 별도 검토자 지시를 읽는다. 저장소를 처음 열면 `node tools/visual_review.js install-hooks`로 공통 pre-push 훅을 설치한다. 템플릿 수치 검사와 실제 화면 검토를 구분하고, 고정한 수정본의 별도 검토 기록 없이 디자인을 main에 올리지 않는다. 페이지별 예외는 기존 `page-design.json`에 이유를 남긴다. 자동 검사만 통과한 상태를 시각 검토 완료로 보고하지 않는다.

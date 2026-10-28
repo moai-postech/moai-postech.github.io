@@ -4,9 +4,9 @@
 fall-2026:
   overview: "Start with how robots collect data and learn to move, then connect these capabilities to spatial understanding and foundation models."
   learning_path:
-    - { label: "Sessions 1–6", title: "Learn how robots work", text: "From collecting demonstrations to manipulation, locomotion, navigation, and dexterous control." }
-    - { label: "Sessions 7–8", title: "Represent the physical world", text: "Build the 3D representations and reconstruction methods needed to understand a robot’s surroundings." }
-    - { label: "Sessions 9–11", title: "Bring foundation models into robotics", text: "Connect spatial reasoning, vision-language-action models, and world models to robotic action." }
+    - { label: "Topics 1–6", title: "Robot learning", text: "Collect demonstrations and learn manipulation, locomotion, navigation, and dexterous control." }
+    - { label: "Topics 7–8", title: "3D understanding", text: "Represent and reconstruct the 3D world around a robot." }
+    - { label: "Topics 9–11", title: "Foundation models for robotics", text: "Bring spatial reasoning, VLA, and world models together with robotic action." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
   location: { building: "Engineering Building 4", rooms: "Room 302" }
@@ -14,9 +14,9 @@ fall-2026:
 summer-2026:
   overview: "Follow how neural networks learn, how their architectures and representations enable generation, and why they generalize to new tasks."
   learning_path:
-    - { label: "Sessions 1–3", title: "Build and train neural networks", text: "Start with optimization, then study architectures for grids and sequences." }
-    - { label: "Sessions 4–7", title: "Learn representations and generate", text: "Connect reconstruction and similarity-based learning to VAEs, GANs, diffusion, and flows." }
-    - { label: "Sessions 8–10", title: "Explain what transfers", text: "Study generalization, transfer learning, and the theory behind deep learning." }
+    - { label: "Topics 1–3", title: "Training and architectures", text: "Start with optimization, then study architectures for grids and sequences." }
+    - { label: "Topics 4–7", title: "Representation and generation", text: "Connect reconstruction and similarity-based learning to VAEs, GANs, diffusion, and flows." }
+    - { label: "Topics 8–10", title: "Generalization and transfer", text: "Study generalization, transfer learning, and the theory behind deep learning." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Usually Tuesdays", time: "15:30 – 16:30 KST" }
   location: { building: "Engineering Building 4", rooms: "Room 307" }
@@ -24,9 +24,9 @@ summer-2026:
 spring-2026:
   overview: "Move from how LLMs reason to how they are trained and aligned, then extend them with context, retrieval, and tools."
   learning_path:
-    - { label: "Sessions 1–2", title: "Establish the LLM baseline", text: "Review LLMs and chain-of-thought reasoning to frame what the model can do." }
-    - { label: "Sessions 3–6", title: "Shape model behavior", text: "Connect supervised fine-tuning, RLHF, and RLAIF to reasoning models." }
-    - { label: "Sessions 7–9", title: "Extend beyond the model", text: "Use long context, retrieval, and agents to work with external information and tools." }
+    - { label: "Topics 1–2", title: "LLMs and reasoning", text: "Review LLMs and chain-of-thought reasoning to frame what the model can do." }
+    - { label: "Topics 3–6", title: "Training and alignment", text: "Connect supervised fine-tuning, RLHF, and RLAIF to reasoning models." }
+    - { label: "Topics 7–9", title: "Context, retrieval, and agents", text: "Use long context, retrieval, and agents to work with external information and tools." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:30 KST" }
   location: { building: "Engineering Building 4", rooms: "Room 307" }
@@ -34,10 +34,10 @@ spring-2026:
 fall-2025:
   overview: "Trace the path from deep learning and transformers to multimodal understanding, visual generation, and scaled language models."
   learning_path:
-    - { label: "Sessions 1–3", title: "Build the foundations", text: "Start with deep learning and transformers, then apply them to visual perception." }
-    - { label: "Sessions 4–5", title: "Connect vision and language", text: "Study multimodal perception and visual grounding to connect images with meaning." }
-    - { label: "Sessions 6–7", title: "Generate images and video", text: "Move from understanding visual content to generating it." }
-    - { label: "Sessions 8–9", title: "Scale toward multimodal LLMs", text: "Study LLM scaling and bring language and vision together in multimodal LLMs." }
+    - { label: "Topics 1–3", title: "Deep learning and vision", text: "Start with deep learning and transformers, then apply them to visual perception." }
+    - { label: "Topics 4–5", title: "Multimodal understanding", text: "Study multimodal perception and visual grounding to connect images with meaning." }
+    - { label: "Topics 6–7", title: "Visual generation", text: "Move from understanding visual content to generating it." }
+    - { label: "Topics 8–9", title: "Scaling and multimodal LLMs", text: "Study LLM scaling and bring language and vision together in multimodal LLMs." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Wednesdays", time: "22:00 – 23:00 KST" }
   location: { building: "Engineering Building 4", rooms: "Room 307" }

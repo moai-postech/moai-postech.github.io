@@ -143,14 +143,14 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-heading h2 { margin-bottom: 0; }
 .study-sheet { color: var(--accent); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
 .study-term-details { display: grid; gap: var(--space-5); margin-bottom: var(--space-6); }
-.study-term-details .course-facts { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: var(--space-5); padding: var(--space-4) var(--space-5); }
+.study-term-details .course-facts { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: var(--space-5); padding: var(--space-5) 0; background: none; border-radius: 0; border-block: 1px solid var(--line); }
 .study-term-details .course-fact { display: block; padding: 0; }
 .study-term-details .course-fact + .course-fact { box-shadow: none; }
 .study-term-details .course-fact dt { margin-bottom: var(--space-2); }
 .study-learning-path { display: grid; grid-template-columns: repeat(var(--study-steps), minmax(0, 1fr)); list-style: none; padding: 0; margin: var(--space-5) 0 0; gap: var(--space-5); }
-.study-learning-path li { position: relative; border-top: 2px solid var(--line); padding-top: var(--space-3); min-width: 0; }
-.study-learning-path li + li::before { content: "→"; position: absolute; left: calc(-1 * var(--space-5)); top: -1em; color: var(--muted); background: var(--bg); }
-.study-step-label { color: var(--accent); font-size: var(--text-small); font-weight: 600; }
+.study-learning-path li { position: relative; border-top: 1px solid var(--line); padding-top: var(--space-3); min-width: 0; }
+.study-learning-path li + li::before { content: "→"; position: absolute; right: calc(100% + var(--space-2)); top: -.85em; padding-inline: var(--space-1); color: var(--muted); background: var(--bg); }
+.study-step-label { color: var(--muted); font-size: var(--text-small); font-weight: 600; }
 .study-learning-path h4 { margin: var(--space-2) 0; font-size: var(--text-body); font-weight: 600; }
 .study-learning-path p { font-size: var(--text-meta); }
 .study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: 600; }

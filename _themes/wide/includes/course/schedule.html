@@ -16,18 +16,22 @@
       <thead><tr><th scope="col">Date</th><th scope="col">#</th><th scope="col">Topic</th><th scope="col">Materials</th>{% if cols == 5 %}<th scope="col">Reading</th>{% endif %}</tr></thead>
       <tbody>
       {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign p = q %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}
-      <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup"><span class="cp-name">{{ p.name }}</span><span class="cp-title">{{ p.title }}</span>{% if p.span %}<span class="cp-span">{{ p.span }}</span>{% endif %}{% if p.text %}<span class="cp-text">{{ p.text }}</span>{% endif %}</th></tr>
+      <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup"><span class="cp-name">{{ p.name }}</span><span class="cp-title">{{ p.title }}</span></th></tr>
       {% else %}
       {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "logistics" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
         <td class="cs-n">{{ r.n }}</td>
-        <td class="cs-topic">
+        {% assign compact_session = false %}{% if r.kind == "guest" or r.kind == "seminar" %}{% unless r.html or r.pdf or r.lab %}{% assign compact_session = true %}{% endunless %}{% endif %}
+        <td class="cs-topic"{% if compact_session %} colspan="2"{% endif %}>
           {% assign tag = site.data.course_tags[r.kind] %}{% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
           {% if tag %}<span class="{% if is_seminar %}cs-session-type{% else %}cs-tag{% endif %}">{{ tag }}</span>{% endif %}
-          {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% if r.speaker %}<span class="cs-speaker"><span class="cs-speaker-name">{{ r.speaker }}</span>{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% if r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}{% endif %}
+          {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}
+          {% if is_seminar %}<span class="cs-session-details">{% endif %}
+          {% if r.title and r.speaker %}<span class="cs-speaker"><span class="cs-speaker-name">{{ r.speaker }}</span>{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}
           {% if r.time or r.location %}<span class="cs-session-meta">{% if r.time %}<span class="cs-session-time">{{ r.time }}</span> {% endif %}{% if r.location %}<span>{{ r.location }}</span>{% endif %}</span>{% endif %}
+          {% if is_seminar %}</span>{% endif %}
         </td>
-        <td class="cs-slides">{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>
+        {% unless compact_session %}<td class="cs-slides">{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>{% endunless %}
         {% if cols == 5 %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}
       </tr>
       {% endif %}{% endfor %}

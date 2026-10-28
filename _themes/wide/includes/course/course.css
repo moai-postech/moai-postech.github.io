@@ -104,7 +104,9 @@
 .cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
-.cs-session-type { display: block; margin-bottom: var(--space-1); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-regular); }
+.cs-session-type { display: inline-block; margin-right: var(--space-2); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
+.cs-session-details { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--space-4); }
+.cs-session-details .cs-session-meta { margin-top: 0; }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .cs-session-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin-top: var(--space-1); color: var(--muted); font-size: var(--text-meta); }
 .cs-session-time { color: var(--tone); font-weight: var(--weight-emphasis); }

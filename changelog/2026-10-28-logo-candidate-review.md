@@ -50,3 +50,15 @@ POSTECH 요구사항: P1, P2, P3, P5, P7, P8, P9 확인. 학교 워드마크와 
 - GitHub Actions의 로고 커밋 changelog·format 전체 검사 성공. 로고를 포함한 후속 `cb0433b`의 Pages 배포 success 및 Pages API `built` 확인(2026-10-28 15:33 KST).
 - `https://moai.postech.ac.kr/` 공개화면 1440/390/320px에서 새 `logo-moai.svg` 적용 확인. 운영 SVG, favicon SVG, apple-touch PNG 모두 HTTP200과 올바른 MIME 확인. 꼬리말 Tel.: 등 부모 후속 minor 표기도 보존.
 - 대표 검수 캡처는 세션 scratchpad의 `moai-logo-live-1440.png`, `moai-logo-live-320.png`, `moai-logo-live-footer-390.png`. 배포 결과 기록은 문서만 추가하며 로고 소스는 바꾸지 않음.
+
+## 후속 균형 검토와 v2 결정 (2026-10-28)
+- 사용자는 좌상단 심볼이 크다며 작은 헤더용 크기를 판단하도록 요청. Sites 디자인 원칙에 따라 40·36·34·32px를 PC1440·모바일390·320에서 비교.
+- 헤더만32px로 선택. MOAI Lab 글자 옆에서 심볼의 무게를 줄이고 PC 헤더 높이88px는 유지. 모바일 헤더는177px에서171px로 줄어듦. 너비auto로 비율 보존. 꼬리말·강의·favicon 크기는 유지.
+- 사용자는 분홍 v2 안건의 검토·반영을 위임하고 브랜드 색 통일을 요청. v1·v2의 도형·transform 동일, 색만 #A61955와 #C7005D로 다름을 파일 비교로 확인. 현재 C 형태·공식 #A61955를 유지하는 것으로 결정.
+- 공식 UI 표의 Pantone215C·RGB166·25·85를 https://www.postech.ac.kr/eng/about/logo.do 에서 재확인. 운영 CSS·랩 로고·favicon·hero/contact SVG의 크림슨은 모두 #A61955. v2 분홍은 미사용 후보에만 존재.
+- 학교가 제공하는 wordmark PNG는 자체 픽셀이 RGB198·16·101이며 현재 파일은 공식 웹페이지의 원본과 크기·색이 일치. 학교 워드마크는 원본을 보존하며 임의 재색하지 않음.
+- 기각: v2 원본 전체 교체는 이전의 가늘고 긴 형태로 복귀. 현재 C의 색만 v2 분홍으로 바꾸는 안은 브랜드 강조색을 두 개로 나눔. 40px 유지는 명칭보다 심볼이 강하고,36·34px보다32px가 작게 쓰는 요청에 잘 맞음.
+- 관련 안건을 결정됨으로 바꾸고 TODO의 대표 논문 미결 항목도 사용자 결정에 따라 정리.
+
+- 후속 탭 아이콘 검토: 현재 favicon을16·32·64px에서 다시 렌더.16px에서는 실루엣은 남지만 MOAI 글자와 내부 틈이 뭉치므로, 동일 실루엣의 작은 크기 전용 단순화를 제안. 이번에는 의견만 요청받았으므로 운영 favicon은 유지.
+- 헤더32px 수정 뒤 Jekyll·형식13페이지×5폭·타이포그래피24페이지167상태17925텍스트·POSTECH24페이지×2폭 검사 통과.

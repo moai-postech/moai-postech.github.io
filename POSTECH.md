@@ -4,6 +4,8 @@
 
 ## 출처
 
+- POSTECH 공식 UI 색상표: https://www.postech.ac.kr/eng/about/logo.do (2026-10-28 확인). POSTECH Red는 Pantone215C, RGB166·25·85(#A61955).
+
 - 정보기술팀 홈페이지 디자인 권장사항: 2026-09-15 메일, 2026-10-22 메일에서 재확인. 메일 첨부 안내 이미지의 코멘트 ①~⑤가 근거다. 원본 첨부는 공개 저장소에 두지 않는다(교수 보관).
 - POSTECH SITES 가이드(sites.postech.ac.kr/guide): 로고 타입(GUI0301), 색상(GUI0401), 헤더(GUI0501), 푸터(GUI0502).
 - 경위: `changelog/2026-10-23-postech-footer.md`, `changelog/2026-10-26-postech-lockup.md`, `changelog/2026-10-26-custom-domain.md`.

@@ -2,14 +2,14 @@
    Template: includes/course/README.md */
 
 /* Colour template, one set for every course (2026-10-28). Parts take their colour from their position, never per course:
-   sky blue, mint and lavender; logistics (overview, exams, project days, grading) use peach.
+   sky blue, mint and coral; logistics (overview, exams, project days, grading) use butter yellow.
    Distinct pastel fills share a lightness range, with darker matching labels. Guests and seminars stay light grey;
    no-class days have no fill. POSTECH Red stays on navigation and materials.
    --tone is text (4.5:1 or more on its row), --tone-tint bars and borders, --tone-row rows and cards. */
 .tone-p1        { --tone: #315f91; --tone-tint: #a9c9ee; --tone-row: #e0edfc; }
 .tone-p2        { --tone: #356c4b; --tone-tint: #a6d9bf; --tone-row: #ddf2e8; }
-.tone-p3        { --tone: #72508f; --tone-tint: #cbb0e7; --tone-row: #ede3fa; }
-.tone-logistics { --tone: #91543b; --tone-tint: #efbea8; --tone-row: #fce8dd; }
+.tone-p3        { --tone: #9a4746; --tone-tint: #e9aaa4; --tone-row: #fbe1df; }
+.tone-logistics { --tone: #78601f; --tone-tint: #e9cd73; --tone-row: #fff2cc; }
 .tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
 .tone-none      { --tone: var(--muted); --tone-tint: transparent; --tone-row: transparent; }
 

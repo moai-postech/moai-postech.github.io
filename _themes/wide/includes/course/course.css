@@ -6,10 +6,10 @@
    Distinct pastel fills share a lightness range, with darker matching labels. Guests and seminars stay light grey;
    no-class days have no fill. POSTECH Red stays on navigation and materials.
    --tone is text (4.5:1 or more on its row), --tone-tint bars and borders, --tone-row rows and cards. */
-.tone-p1        { --tone: #315f91; --tone-tint: #a9c9ee; --tone-row: #e0edfc; }
-.tone-p2        { --tone: #356c4b; --tone-tint: #a6d9bf; --tone-row: #ddf2e8; }
-.tone-p3        { --tone: #9a4746; --tone-tint: #e9aaa4; --tone-row: #fbe1df; }
-.tone-logistics { --tone: #78601f; --tone-tint: #e9cd73; --tone-row: #fff2cc; }
+.tone-p1        { --tone: #315f91; --tone-tint: #a9c9ee; --tone-row: #e6f1fd; }
+.tone-p2        { --tone: #356c4b; --tone-tint: #a6d9bf; --tone-row: #e4f5ed; }
+.tone-p3        { --tone: #9a4746; --tone-tint: #e9aaa4; --tone-row: #fce7e5; }
+.tone-logistics { --tone: #78601f; --tone-tint: #e9cd73; --tone-row: #fff5d6; }
 .tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
 .tone-none      { --tone: var(--muted); --tone-tint: transparent; --tone-row: transparent; }
 

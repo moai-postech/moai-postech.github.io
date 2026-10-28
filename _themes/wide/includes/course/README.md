@@ -51,7 +51,7 @@
 
 강의 슬라이드(PDF·HTML)와 학생 발표 자료(PDF)는 Google Drive 링크 대신 이 저장소의 `teaching/<id>/` 아래 파일로 올리고 사이트 루트 기준 경로로 링크한다(2026-10-26 교수 결정). 방문자가 Drive 를 거치지 않고 사이트에서 바로 연다. Drive 에는 같은 파일을 백업으로 둔다.
 
-- 강의: `teaching/<id>/slides/<n>_<slug>.{pdf,html}`. HTML 은 자산을 인라인한 단일 파일이라 그대로 열린다
+- 강의: `teaching/<id>/slides/<n>_<slug>.{pdf,html}`. HTML 은 자산을 인라인한 단일 파일이라 그대로 열린다. Schedule 자료 링크는 HTML → PDF → Lab 순서이며, 없는 형식은 생략한다(2026-10-28 교수)
 - 학생 발표: `teaching/<id>/project/<회차>/<회차>_teamNN.pdf`(pptx 는 올리지 않는다)
 - 파일 하나는 GitHub 한도(100 MB) 아래여야 한다. 지금 가장 큰 파일은 수 MB 다
 - 새 파일이 생기면 Drive 와 이 저장소에 각각 복사한다. yml 에 Drive 링크를 넣었으면 `python3 tools/localize_slides.py` 가 받아서 링크를 바꾼다(사이트 전체 원칙, 저장소 `AGENTS.md`). 26F Data Engineering 은 강의 저장소의 `tools/publish-site.py` 가 Drive 배포본을 이 폴더로 복사하고 yml 링크를 점검한다 끝난 학기는 `sheet` 를 지워 시트 링크를 숨긴다.

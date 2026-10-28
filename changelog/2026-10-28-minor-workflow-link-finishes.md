@@ -15,6 +15,7 @@ POSTECH 요구사항: P1~P9 영향 없음.
 - 사무실 전화는 Faculty와 꼬리말 모두 Tel.로 표시. 전화번호 값·주소·학교 필수 요소는 그대로.
 - 교수의 후속 양식 요청으로 Faculty·꼬리말을 `Tel.: +82-54-279-2202`로 통일. `Office:`와 같이 콜론을 표시하며 규칙에도 반영.
 - 교수 요청으로 Talks의 Opportunities in IME 발표 장소를 `POSTECH Graduate Seminar`에서 `POSTECH IME Seminar`로 변경. 제목·자료 링크·다른 발표는 유지.
+- 교수는 모집 문구가 건조하다며 적극적인 모집과 AI·AX에 대한 열정을 드러내도록 요청. Home을 `We're actively recruiting students with a passion for AI and AX.`로 변경. `Join us! 🚀`와 박스·글자 역할 유지. 기존의 추상적인 motivated students보다 관심 분야와 모집 의도를 명확하게 표현.
 - 로고 실제 반영은 사용자 요청으로 별도 subagent의 격리 worktree에 위임. 이 커밋은 원본·초안 보관과 부모의 다른 minor만 포함.
 
 ## 검증

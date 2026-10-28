@@ -1,6 +1,6 @@
 {% comment %}
   강의 Home(teaching/<id>/). 내용은 _data/courses/<page.course>.yml 이고 여기서는 모양만 정한다.
-  짜임은 MIT·Stanford·CMU·Berkeley 강의 사이트에서 가져왔다(2026-10-26 교수): 제목과 소개 옆에 운영 정보(교수, 수업, office hours, 지난 학기),
+  짜임은 MIT·Stanford·CMU·Berkeley 강의 사이트에서 가져왔다(2026-10-26 교수): 제목과 소개 옆에 공통 운영 정보(교수, 선택 TA, 장소·시간, office hours, 지난 학기),
   파트 카드, 평가, 자료. 지난 학기도 같은 모양으로 남는 기록용 페이지라 날짜에 따라 바뀌는 요소(다음 수업 카드)는 두지 않는다(2026-10-26 교수). 전체 스케줄은 Schedule 페이지(schedule.html), 팀은 Project 페이지에 한 번만 둔다.
   교수 사진은 _data/members.yml 의 professor, 이메일은 Faculty 한 곳에만 두므로 이름을 Faculty 로 잇는다.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
@@ -13,15 +13,7 @@
         {% if c.summary %}<p class="course-lead">{{ c.summary }}</p>{% endif %}
         {% if c.links and c.links.size > 0 %}<p class="course-actions">{% for l in c.links %}<a class="course-btn" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>{% endif %}
       </div>
-      <dl class="course-facts">
-        <div class="course-fact course-instructor">
-          <dt>Instructor</dt>
-          <dd>{% if prof.photo and c.instructor.name == prof.name %}<img src="{{ prof.photo }}" alt="" width="48" height="48">{% endif %}<span><a href="{{ c.instructor.url }}">Prof. {{ c.instructor.name }}</a><small>POSTECH IME</small></span></dd>
-        </div>
-        {% if c.lectures %}<div class="course-fact"><dt>Lectures</dt><dd>{{ c.lectures }}</dd></div>{% endif %}
-        {% if c.office_hours %}<div class="course-fact"><dt>Office hours</dt><dd>{{ c.office_hours }}</dd></div>{% endif %}
-        {% if c.other_terms %}<div class="course-fact"><dt>Other terms</dt><dd>{% for x in c.other_terms %}<a href="{{ x.url }}">{{ x.name }}</a>{% endfor %}</dd></div>{% endif %}
-      </dl>
+      {% include course/facts.html instructor=c.instructor teaching_assistants=c.teaching_assistants location=c.location meetings=c.meetings lectures=c.lectures office_hours=c.office_hours other_terms=c.other_terms %}
     </header>
 
     {% if c.parts %}<section class="content-section" id="outline">

@@ -20,13 +20,10 @@
         <h2>{{ t.theme }}<span>{{ t.name }}</span></h2>
         {% if t.sheet %}<a class="study-sheet" href="{{ t.sheet }}">Study sheet</a>{% endif %}
       </div>
-      {% if info.overview %}<div class="study-overview"><h3>Overview</h3><p>{{ info.overview }}</p></div>{% endif %}
-      {% if info %}<dl class="study-facts">
-        {% if info.advisor %}<div class="study-advisor"><dt>Advisor</dt><dd>{% if info.advisor.photo %}<img src="{{ info.advisor.photo }}" alt="{{ info.advisor.name }}" width="64" height="64">{% endif %}<span><a href="{{ info.advisor.url }}">{{ info.advisor.name }}</a><small>{{ info.advisor.affiliation }}</small></span></dd></div>{% endif %}
-        {% if info.meetings %}<div><dt>Meetings</dt><dd>{{ info.meetings.day }}<small>{{ info.meetings.time }}</small></dd></div>{% endif %}
-        {% if info.location %}<div><dt>Location</dt><dd>{{ info.location.building }}<small>{{ info.location.rooms }}</small></dd></div>{% endif %}
-        {% if info.representative %}<div><dt>Student representative</dt><dd>{{ info.representative.name }}<small>{{ info.representative.email }}</small></dd></div>{% endif %}
-      </dl>{% endif %}
+      <div class="course-hero study-term-details">
+        {% if info.overview %}<div class="study-overview"><h3>Overview</h3><p>{{ info.overview }}</p></div>{% endif %}
+        {% if info %}{% include course/facts.html instructor=info.advisor instructor_label="Advisor" representative=info.representative location=info.location meetings=info.meetings %}{% endif %}
+      </div>
       {% if t.note %}<p class="study-note"><strong>{{ t.note.label }}</strong> {% if t.note.links %}{% for l in t.note.links %}<a href="{{ l.url }}">{{ l.text }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% else %}{{ t.note.text }}{% endif %}</p>{% endif %}
       <table class="course-schedule study-table">
         <colgroup><col class="sc-n"><col class="sc-date"><col class="sc-topic"><col class="sc-papers"><col class="sc-demo"><col class="sc-who"><col class="sc-mat"></colgroup>

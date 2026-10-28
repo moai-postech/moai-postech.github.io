@@ -16,6 +16,14 @@
 - `<base href="/">`를 사용하므로 링크는 사이트 루트 기준으로 쓴다. `#앵커`만 단독으로 쓰지 않는다.
 - 공개 자료만 올린다. 이번 학기 비공개 시험이나 학생 성적을 넣지 않는다.
 
+## 공통 운영 정보
+
+- 강의와 스터디 모두 `facts.html`을 사용한다. 순서는 **교수 → 조교·학생대표 → 장소·시간**이다.
+- 강의는 Instructor와 Teaching assistants, 스터디는 Advisor와 Student representative로 표시한다. 사람의 사진·이름·연락처는 `person.html`에서 같은 양식으로 그린다.
+- TA 정보가 없으면 TA 행은 생략한다. 임의의 이름이나 빈 자리 표시를 넣지 않는다. TA를 여러 명 등록할 수 있다.
+- 장소·시간은 `location`(building, rooms), `meetings`(day, time)로 관리한다. Office hours·Other terms는 이 정보 뒤에 추가한다.
+- 스터디는 학기 탭 아래 Overview 옆에, 강의는 소개 옆에 같은 운영 정보 카드를 둔다. 좁은 화면에서는 소개·Overview 다음으로 내린다.
+
 ## 표의 마감선
 
 - 강의와 스터디의 모든 일정 표는 마지막에 1px 마감선 하나를 둔다. 마지막 행의 종류·내용·학기·화면 폭과 무관하게 적용한다.
@@ -27,9 +35,10 @@
 | 파일 | 역할 |
 | --- | --- |
 | `../../layouts/course.html` | 강의 사이트 문서 틀: 머리(과목명, 강의 메뉴), 본문, 바닥. `view: schedule` 면 `schedule.html`, `view: project` 면 `project.html`, 없으면 `home.html` |
-| `home.html` | Home: 제목·소개 옆에 운영 정보 칸(Instructor, Lectures, Office hours, Other terms) → Course outline(파트 카드) → Grading → Resources. Schedule·Project는 상단 탭에서만 탐색 |
+| `home.html` | Home: 제목·소개 옆에 공통 운영 정보 칸(Instructor, 선택 TA, Location & time, Office hours, Other terms) → Course outline(파트 카드) → Grading → Resources. Schedule·Project는 상단 탭에서만 탐색 |
 | `schedule.html` | Schedule: 전체 스케줄 표(파트 머리 줄, 다음 수업 표시) |
 | `study.html` | 학부생 AI 스터디(`teaching/ai-study/`, `view: study`): 소개 → 학기 탭 → 선택 학기의 Overview·운영 정보·일정. 일정은 `_data/ai_study.yml`(시트에서 `tools/ai_study_sync.py`), Overview·시간·장소·지도교수·학생대표는 `_data/ai_study_terms.yml` |
+| `facts.html` / `person.html` | 강의·스터디 공통 운영 정보와 인물 표시 |
 | `head.html` | Schedule 과 Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |
 | `project.html` | 팀 프로젝트: Overview(소개, 팀 크기, 단계, 평가 기준) → Teams(팀원, 발표 회차별 날짜·순서·슬라이드) |
 | `course.css` | 강의 사이트 전용 스타일과 색. `../theme.css` 끝에서 include 한다 |

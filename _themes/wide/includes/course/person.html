@@ -1,0 +1,6 @@
+{% assign person = include.person %}{% assign prof = site.data.members.professor %}{% assign photo = person.photo %}{% assign affiliation = person.affiliation %}
+{% if include.professor and person.name == prof.name %}{% assign photo = photo | default: prof.photo %}{% assign affiliation = affiliation | default: "POSTECH IME" %}{% endif %}
+<div class="course-person">
+  {% if photo %}<img src="{{ photo }}" alt="{{ person.name | escape }}" width="64" height="64">{% endif %}
+  <span class="course-person-details"><strong>{% if person.url %}<a href="{{ person.url }}">{% endif %}{% if include.professor and person.name == prof.name %}Prof. {% endif %}{{ person.name }}{% if person.url %}</a>{% endif %}</strong>{% if affiliation %}<small>{{ affiliation }}</small>{% endif %}{% if person.email %}<small>{{ person.email | replace: "@", " [at] " }}</small>{% endif %}</span>
+</div>

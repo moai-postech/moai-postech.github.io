@@ -203,7 +203,7 @@ schedule:
     title: "Agents"
   - date: "2026-12-03"
     kind: break
-    title: "Project preparation (online, no class)"
+    title: "University Anniversary (no class)"
   - date: "2026-12-08"
     kind: break
     title: "Project preparation (online, no class)"
@@ -268,32 +268,35 @@ project:
   team_size: "Up to 5"
   intro: false
   team_formation:
-    deadline: "2026-10-02"
-    rule: "Friday of Week 4"
+    deadline: "2026-09-27"
+    rule: "Sunday of Week 3"
     text: "Enter your team members in the project sheet."
   steps:
-    - name: "Proposal · 20%"
+    - name: "Proposal"
       when: "Oct 20 & 22"
-      text: "Ideation, data collection and preprocessing, and database management."
-    - name: "Final · 40%"
+      text: "Idea, data collection and preparation, database management."
+    - name: "Final"
       when: "Dec 15 & 17"
-      text: "Build a product for a real-world problem using a large-scale database and data you are allowed to access."
+      text: "Build a product for a real-world problem with a large-scale database using permitted data."
+  evaluation_sources: ["Instructor evaluation", "Peer evaluation"]
+  evaluation_result: "Project score"
+  evaluation_note: "Project scores combine instructor and peer evaluations. Teamwork is assessed individually based on each member's contribution."
   criteria:
-    - name: "Novelty"
-      text: "Originality and creativity of the idea"
-    - name: "Impact"
-      text: "Relevance and potential usefulness of the solution"
-    - name: "Technology"
-      text: "Effective use of the techniques and tools covered in class"
-    - name: "Presentation"
-      text: "Clarity and professionalism of the report and presentation"
+    - name: "Problem"
+      text: "Importance of the problem and clarity of the goal"
+    - name: "Method"
+      text: "Appropriateness and technical quality of the approach"
+    - name: "Results"
+      text: "Quality of the results and evidence supporting the conclusions"
+    - name: "Teamwork"
+      individual: true
+      text: "Individual contribution to technical work, collaboration and shared responsibilities"
   rounds:
     - id: "proposal"
       name: "Proposal"
     - id: "final"
       name: "Final"
       date_placeholder: "TBD"
-      order_placeholder: "TBD"
   teams:
     - n: 1
       title: "AI-based highway icing risk map integrating weather and road conditions"

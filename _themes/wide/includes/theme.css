@@ -52,9 +52,9 @@
   --text-h2: var(--fs-5);   /* a section of its own: Home, Contact, the Research stages, the Faculty name */
   --text-group: var(--fs-4);  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27) */
   --text-display: var(--fs-6);
-  --text-paper: calc(var(--text-body) + 1px);  /* 18px desktop, 17px mobile: below group headings, above metadata */
-  --text-author: calc(var(--text-meta) + 1px);  /* authors are readable content, 16px on desktop and mobile */
-  --text-paper-meta: calc(var(--text-meta) - 1px);  /* venues and resource links support the title and authors, 14px */
+  --text-paper: var(--text-meta);  /* one 15px size for paper titles, authors and venues; weight and color separate roles */
+  --text-author: var(--text-paper);
+  --text-paper-meta: var(--text-paper);
   --photo-height: clamp(220px, 26vw, 380px);
   --page-start: var(--space-7);
   --card-padding: var(--space-5);

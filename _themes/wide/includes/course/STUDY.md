@@ -43,3 +43,5 @@
 - 자료 사본과 동기화 경로는 저장소 `AGENTS.md`의 슬라이드 규칙을 따른다. 탭 전체 학기와 모바일에서 링크 잘림·가로 넘침·마감선 한 줄을 확인한다.
 
 기존 Home의 학기 fragment 링크는 Schedule의 같은 탭으로 이동한다. Teaching의 학기 링크도 Schedule을 가리킨다.
+
+- Schedule의 Study sheet 위치·화살표·반응형 정렬은 [공통 규칙](README.md#외부-시트-링크)을 따른다.

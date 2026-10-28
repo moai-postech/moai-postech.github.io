@@ -64,3 +64,12 @@
 - Home의 평가 안내에 AI 도구 허용 여부를 덧붙이지 않는다.
 - Schedule 페이지 상단에는 `schedule_sheet`의 Schedule sheet 링크 하나, Project 페이지 상단에는 `project.sheet`의 Project sheet 링크 하나를 둔다. 본문에는 같은 시트 링크를 반복하지 않는다.
 - 시트는 원래 공개했던 해당 학기 링크를 사용하고, 자료의 정본·웹 페이지 관리 방식은 유지한다.
+
+## Project 정보와 발표 칸
+
+- 반복적인 Overview 제목·장문 소개 대신 Timeline → Teams → Evaluation 순으로 표시한다. 과제 요구사항은 단계 설명·평가 기준에 보존한다. `project.intro: false`이면 반복 소개를 생략한다.
+- 팀 구성 마감은 첫 수업이 있는 주를 1주차로 센 4주차 금요일이다. 26F는 2026-09-08 시작 기준 2026-10-02이며, 별도 마감 시각은 정하지 않는다.
+- `project.team_formation`에 마감 날짜·기준·시트 입력 안내를 둔다. 인원 제한은 `project.team_size`의 Up to 5처럼 짧게 쓰고 핵심 사실만 굵게 한다.
+- 발표 칸은 날짜·순서를 윗줄, Slides를 아랫줄에 둔다. 아직 배정하지 않은 회차는 `rounds[].date_placeholder`·`order_placeholder`로 Date TBD · #TBD를 표시한다. 실제 값이 있으면 실제 값을 우선한다.
+- 26F Final의 팀별 날짜·순서는 미정이다. 전체 발표 예정일 Dec 15 & 17과 구분한다.
+- 외부 시트 링크는 [공통 규칙](README.md#외부-시트-링크)을 따른다.

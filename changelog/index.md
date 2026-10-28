@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-28 | [course-project-layout](2026-10-28-course-project-layout.md) | Sangwoo Mo(sangwoomo) | 시트 링크·Project | 우측 ↗ 통일, 팀 구성 Timeline, Slides 줄바꿈·Final 미정 |
 | 2026-10-28 | [ai-study-members](2026-10-28-ai-study-members.md) | Sangwoo Mo(sangwoomo) | Undergraduate AI Study Members·member 시트 | 40명 기수별 명단·참여 마커, 이메일 28셀 학교 주소로 통일 |
 | 2026-10-28 | [logo-pink-v2-archive](2026-10-28-logo-pink-v2-archive.md) | Chaewon Park(onehanap) | assets/img/logo-candidates | 분홍 #C7005D 묶음 v2 보관, 운영 교체는 안건으로 |
 | 2026-10-28 | [course-attendance-sheets](2026-10-28-course-attendance-sheets.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 출석 1/3 초과 F, AI 문구 제거, 페이지별 시트 링크 하나 |
@@ -15,7 +16,7 @@
 | 2026-10-28 | [course-material-order](2026-10-28-course-material-order.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 자료 링크를 HTML·PDF·Lab 순서로 통일 |
 | 2026-10-28 | [home-actions-venue](2026-10-28-home-actions-venue.md) | Sangwoo Mo(sangwoomo) | Home·Publications·Faculty·Teaching | floating 안내, 본문 크기 논문 목록, 함께하는 톤, Faculty 연락처 복원 |
 | 2026-10-28 | [typography-audit](2026-10-28-typography-audit.md) | Sangwoo Mo(sangwoomo) | 연구실·강의 전체 글자·간격 | 목록·카드 역할 분리, 행간·자간·반응형 줄바꿈과 전수 검사 |
-| 2026-10-28 | [course-pastel-palette](2026-10-28-course-pastel-palette.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 공통 노랑·파트 하늘·민트·코랄, 넓은 면의 배경을 흰색 20%로 완화 |
+| 2026-10-28 | [course-pastel-palette](2026-10-28-course-pastel-palette.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 네 계열 유지, 배경·테두리·글자의 채도를 함께 낮춘 안 최종 적용 |
 | 2026-10-28 | [ai-study-materials](2026-10-28-ai-study-materials.md) | Sangwoo Mo(sangwoomo) | AI Study | 실제 회차별 학습 흐름, Topics 크림슨 강조·흰 배경 정돈, 운영 정보·사진 |
 | 2026-10-28 | [navigation-hierarchy](2026-10-28-navigation-hierarchy.md) | Sangwoo Mo(sangwoomo) | Home·Research·Publications·By Topic·Teaching | 모집 위치, 점 없는 출처, 저자 16px·보조정보 14px, 공통 탐색 링크 역할 |
 | 2026-10-27 | [course-palette-navigation](2026-10-27-course-palette-navigation.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 중복 버튼 제거, 블루·틸·바이올렛과 중립 회색으로 통일 |

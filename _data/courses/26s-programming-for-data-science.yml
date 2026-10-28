@@ -235,6 +235,10 @@ project:
   summary: >-
     Each team chooses a Kaggle competition, solves it together, and shares the experience in a final presentation.
   team_size: "up to 4 students"
+  team_formation:
+    deadline: "2026-03-15"
+    rule: "Sunday of Week 3"
+    text: "Enter your team members in the project sheet."
   steps:
     - name: "Choose · Solve"
       when: "During the semester"

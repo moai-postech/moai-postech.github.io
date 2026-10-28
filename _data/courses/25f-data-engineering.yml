@@ -288,6 +288,10 @@ project:
     Teams go through an end-to-end data engineering pipeline: they collect and prepare data, store it in a database,
     and build a product that addresses a real-world problem on it.
   team_size: "3 to 5 students"
+  team_formation:
+    deadline: "2025-09-21"
+    rule: "Sunday of Week 3"
+    text: "Enter your team members in the project sheet."
   steps:
     - name: "Proposal"
       when: "Oct 14 & 16"

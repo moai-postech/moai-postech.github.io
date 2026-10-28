@@ -39,3 +39,14 @@ POSTECH 요구사항: 영향 없음. 머리·꼬리의 학교 링크 유지.
 - 최종 저채도 적용 후 전체 검사 재통과. 세 강의 Home·Schedule·Project 27조합에서 가로 넘침 없음, 역할 글자 대비 최소 4.87:1.
 - 동시 반영된 Study Home·Schedule·Members 분리를 보존하고, 시트 공통 컴포넌트는 새 `study-schedule.html`에 적용.
 - 동시 변경 병합 후 최종 재검증: typography 26페이지·177상태, POSTECH 연구실14·강의12페이지, 형식 13페이지×5폭 모두 통과. 시트·Timeline 검사 40조합 재통과.
+
+## 후속 조정: 세 블록 타임라인과 공통 팀 구성 마감
+- 교수 요청으로 Timeline을 왼쪽에서 오른쪽의 세 블록으로 변경. 공통 중립 바탕·카드 여백 사용, 모바일 한 열. 기존 단계 내용은 보존.
+- 모든 수업에 첫 수업 주 기준 3주차 일요일 팀 구성 마감 적용. 25F Data Engineering 2025-09-21, 26S Programming for Data Science 2026-03-15, 26F Data Engineering 2026-09-27. 기존 4주차 금요일 규칙 대체.
+- 모든 Project 팀 표의 발표 열 제목·날짜·순서·Slides 가운데 정렬.
+- 기각한 안: 기존 세로 Timeline은 교수의 가로 세 블록 요청에 맞지 않아 대체. 예전 학기만 팀 구성 마감을 생략하는 안도 모든 수업에 적용하라는 요청에 따라 제외.
+- 원본 복구 경로: Git `e8db7b4`.
+- 추가 교수 요청: Final placeholder는 `Date TBD`만 유지. `#TBD`와 순서 placeholder 렌더링 제거. 확정 순서는 계속 표시.
+- 추가 교수 요청: 공통 Project 순서를 Timeline → Evaluation → Teams로 변경. 기존 Teams 우선 결정은 이번 요청으로 대체.
+- 기각한 안: 순서까지 TBD로 반복 표기하는 안은 불필요한 정보여서 제거. Evaluation을 Teams 뒤에 두는 안은 교수 요청에 따라 대체.
+- 검증: Jekyll 빌드, 디자인 계약 26페이지·616상태, 형식·typography·POSTECH 검사 통과. 세 수업×1280·768·390·320px의 12조합에서 3블록·마감일·가로 넘침 없음·발표 칸 가운데 정렬 확인. 모든 수업의 Timeline→Evaluation→Teams와 26F Final 17칸의 Date TBD 단독 표시 확인. PC·모바일 실제 렌더 확인.

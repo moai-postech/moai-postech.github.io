@@ -129,17 +129,17 @@ h3.sub:first-child { margin-top: 0; }
 
 /* Header */
 .site-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-5); min-height: 88px; padding-block: var(--space-3); border-bottom: 1px solid var(--line); }  /* when the logos and the menu do not fit one line (tablets), the whole menu moves to its own line instead of folding into two */
-.head-id { display: flex; align-items: center; flex-shrink: 0; }  /* POSTECH wordmark (university home), then the lab brand (lab home) */
-.head-postech { display: flex; align-items: center; height: 30px; margin-right: var(--space-4); padding-right: var(--space-4); border-right: 1px solid var(--line); }  /* "POSTECH | lab" with a hairline, the lockup of the POSTECH SITES header guide */
+.head-id { display: flex; align-items: center; flex-shrink: 0; min-width: 0; max-width: 100%; height: 42px; }  /* POSTECH wordmark (university home), then the lab brand (lab home) */
+.head-postech { flex-shrink: 0; display: flex; align-items: center; height: 30px; margin-right: var(--space-4); padding-right: var(--space-4); border-right: 1px solid var(--line); }  /* "POSTECH | lab" with a hairline, the lockup of the POSTECH SITES header guide */
 .head-postech img { display: block; width: auto; height: 14px; }  /* official wordmark file has no padding: 14px is the old 16px image's letter height */
-.brand { margin: 0; flex-shrink: 0; }
-.brand a { display: inline-flex; align-items: center; gap: 10px; color: var(--text); }
+.brand { margin: 0; min-width: 0; }
+.brand a { display: flex; min-height: 42px; min-width: 0; align-items: center; gap: 10px; color: var(--text); }
 .brand a:hover { color: var(--accent); text-decoration: none; }
 .brand-mark { width: auto; height: 32px; flex-shrink: 0; }
-.brand-word { font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: 23px; font-weight: var(--weight-heading); letter-spacing: -.3px; }
-.site-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); }
-.site-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }
-.site-nav a:hover, .site-nav a[aria-current="page"], .course-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
+.brand-word { min-width: 0; font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: 23px; font-weight: var(--weight-heading); letter-spacing: -.3px; }
+.site-nav, .course-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); }
+.site-nav a, .course-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }
+.site-nav a:hover, .course-nav a:hover, .site-nav a[aria-current="page"], .course-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .site-nav a[aria-current="page"], .course-nav a[aria-current="page"] { font-weight: var(--weight-emphasis); }
 .nav-group { position: relative; display: inline-flex; }
 .nav-menu { position: absolute; top: 100%; left: calc(-1 * var(--space-3)); z-index: 10; display: none; min-width: 150px; padding: var(--space-1); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-2); box-shadow: 0 10px 28px rgba(23, 43, 64, .12); }
@@ -440,8 +440,8 @@ a.person-name:hover { color: var(--accent); }
   .head-id { margin-bottom: var(--space-2); }
   .head-postech { margin-right: var(--space-3); padding-right: var(--space-3); }
   .head-postech img { height: 12px; }  /* keeps "POSTECH | MOAI Lab" on one line on 360px phones */
-  .site-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 var(--space-3); }
-  .site-nav > a, .site-nav .nav-group > a { justify-content: center; width: 100%; min-height: 44px; }  /* six links form two even rows, with full touch targets */
+  .site-nav, .course-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 44px; min-height: 88px; align-content: start; gap: 0 var(--space-3); }
+  .site-nav > a, .site-nav .nav-group > a, .course-nav > a { justify-content: center; width: 100%; min-height: 44px; }  /* six links form two even rows, with full touch targets */
   .person-photo { max-width: 120px; }
   .mentee-aff { display: block; margin-left: 0; }  /* phones: name, then affiliation, then papers */
   .mentee-list li { padding: var(--item-gap) 0; }  /* three lines per person, so the wider multi-line gap */
@@ -501,3 +501,15 @@ a.person-name:hover { color: var(--accent); }
 
 {% comment %}Course pages: their own folder so the template stays in one place{% endcomment %}
 {% include course/course.css %}
+
+/* Header layout is shared by the lab, AI Study and courses, including the wrap point. */
+@media (min-width: 681px) and (max-width: 1100px) {
+  .site-head { display: block; }
+  .site-head .head-id { margin-bottom: var(--space-2); }
+}
+@media (max-width: 680px) {
+  .brand-word { font-size: var(--text-lead); line-height: 1.3; }
+}
+@media (max-width: 360px) {
+  .head-postech img { width: 114px; height: auto; }
+}

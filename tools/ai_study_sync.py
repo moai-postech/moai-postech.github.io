@@ -126,7 +126,7 @@ def materials(cells):
 
 def parse(rows):
     terms, term = [], None
-    for r in rows:
+    for sheet_row, r in enumerate(rows):
         cells = r + [{"text": "", "links": []}] * (8 - len(r))  # 행 번호 머리는 th 라 읽지 않는다
         n, date, topic = cells[0]["text"], cells[1]["text"], cells[2]["text"]
         m = re.fullmatch(r"(\d\d) (Spring|Summer|Fall|Winter)", date)
@@ -134,12 +134,18 @@ def parse(rows):
             theme = re.sub(r"^\w+:\s*", "", topic)
             year = "20" + m.group(1)
             term = {"id": f"{m.group(2).lower()}-{year}", "name": f"{m.group(2)} {year}", "theme": label(theme),
+                    "sheet": f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit#gid={GID}&range=A{sheet_row}",
                     "note": None, "sessions": []}
             terms.append(term)
             continue
         if term is None or not topic or n in ("#",):
             continue
         if n == "0":
+            # 학기별 불필요한 안내는 사이트에서 제외한다(교수 2026-10-28).
+            if (term["id"], topic.lower().rstrip("!")) in {
+                ("fall-2026", "review"), ("summer-2026", "reference lecture")
+            }:
+                continue
             note = {"label": sentence(topic.rstrip("!")), "text": cells[3]["text"], "links": links(cells[3])}
             term["note"] = note
             continue
@@ -155,6 +161,8 @@ def parse(rows):
             s["papers"] = links(cells[3])
         elif cells[3]["text"]:
             s["papers"] = [{"text": cells[3]["text"]}]
+        if term["id"] == "fall-2025" and "papers" in s:
+            s["papers"] = [l for l in s["papers"] if l["text"] != "(full lecture)"]
         if links(cells[4]):
             s["demos"] = links(cells[4])
         if cells[5]["text"]:
@@ -164,7 +172,8 @@ def parse(rows):
         if term["id"] == "summer-2026":
             # 이 학기는 별도 발표자료를 만들지 않고 MIT 원 강의 슬라이드를 사용한다.
             mats = materials([cells[3]])
-            s.pop("papers", None)
+            # Papers는 다루는 강의 번호, Materials는 원 강의 PDF 링크다.
+            s["papers"] = [{"text": l["text"]} for l in links(cells[3])]
         else:
             mats = materials(cells[7:])
         if mats:
@@ -210,7 +219,7 @@ def dump(terms):
         "terms:",
     ]
     for t in terms:
-        out += [f"  - id: {q(t['id'])}", f"    name: {q(t['name'])}", f"    theme: {q(t['theme'])}"]
+        out += [f"  - id: {q(t['id'])}", f"    name: {q(t['name'])}", f"    theme: {q(t['theme'])}", f"    sheet: {q(t['sheet'])}"]
         if t["note"]:
             nt = t["note"]
             out += ["    note:", f"      label: {q(nt['label'])}", f"      text: {q(nt['text'])}"]

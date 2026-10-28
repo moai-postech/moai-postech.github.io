@@ -22,13 +22,17 @@
 <meta property="og:image" content="https://moai-postech.github.io/assets/img/og.png">
 <meta property="og:url" content="https://moai-postech.github.io{{ page.url }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+{% if page.course == "ai-study" %}<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap">{% endif %}
 <link rel="stylesheet" href="assets/style.css?v={{ site.time | date: '%s' }}">
 </head>
 <body class="course-site">
 <a class="skip-link" href="{{ page.url }}#main-content">Skip to content</a>
 <div class="wrap">
   <header class="course-top">
-    {% if page.course == "ai-study" %}<a class="course-brand study-lab-brand" href="index.html">{% if site.logo %}<img src="{{ site.logo }}" alt="">{% endif %}POSTECH {{ site.title }}</a>{% else %}<a class="course-brand" href="{{ root }}">{{ c.title }}<span>{{ c.term }}</span></a>{% endif %}
+    <div class="head-id course-id{% if page.course == "ai-study" %} study-id{% endif %}">
+      {% if site.postech %}<a class="head-postech" href="{{ site.postech.url }}"><img src="{{ site.postech.wordmark }}" alt="POSTECH" width="733" height="62"></a>{% endif %}
+      {% if page.course == "ai-study" %}<p class="brand"><a href="index.html">{% if site.logo %}<img class="brand-mark" src="{{ site.logo }}" alt="{{ site.title }} logo">{% endif %}<span class="brand-word">{{ site.title }}</span></a></p>{% else %}<a class="course-brand" href="{{ root }}">{{ c.title }}<span>{{ c.term }}</span></a>{% endif %}
+    </div>
     {% if page.course == "ai-study" %}<nav class="course-nav" aria-label="Study">
       <a href="{{ root }}"{% if page.view == "study" %} aria-current="page"{% endif %}>Home</a>
       <a href="{{ root }}schedule/"{% if page.view == "study-schedule" %} aria-current="page"{% endif %}>Schedule</a>

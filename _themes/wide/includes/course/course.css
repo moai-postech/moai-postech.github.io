@@ -14,7 +14,9 @@
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
 .course-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); flex-wrap: wrap; min-height: 72px; border-bottom: 1px solid var(--line); }
-.course-brand { display: inline-flex; align-items: baseline; gap: var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: var(--weight-heading); letter-spacing: -.3px; }
+.course-id { min-width: 0; max-width: 100%; flex-shrink: 1; }
+.course-id .head-postech { flex-shrink: 0; }
+.course-brand { display: inline-flex; min-width: 0; align-items: baseline; gap: var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: var(--weight-heading); letter-spacing: -.3px; }
 .course-brand span { white-space: nowrap; color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-emphasis); letter-spacing: 0; }
 .study-lab-brand img { width: auto; height: 28px; }
 .course-brand:hover { color: var(--accent); text-decoration: none; }
@@ -126,7 +128,7 @@ a.cs-title:hover { color: var(--accent); }
 
 /* Team project page: criteria as name + one line, then one row per team with a cell per presentation round */
 .project-sub { margin-top: var(--space-6); }
-.project-criteria { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
+.project-criteria { display: grid; grid-template-columns: repeat(var(--criteria-count, 4), minmax(0, 1fr)); gap: var(--space-4); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
 .project-criteria li { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
 .project-criteria strong { font-weight: var(--weight-emphasis); }
 .project-criteria li > span { color: var(--muted); font-size: var(--text-meta); }
@@ -141,6 +143,9 @@ a.cs-title:hover { color: var(--accent); }
 .project-link { display: inline-block; margin-top: 2px; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .project-round { width: 1%; white-space: nowrap; text-align: center; }
 .project-teams thead th:nth-child(n + 3) { text-align: center; }
+@media (min-width: 681px) {
+  .project-teams .project-round, .project-teams thead th:nth-child(n + 3) { min-width: calc(var(--text-meta) * 8); padding-inline: var(--space-4); }
+}
 .project-when { display: block; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 .project-round a { display: block; margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 
@@ -347,3 +352,13 @@ a.cs-title:hover { color: var(--accent); }
 .study-part-filters { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
 .study-part-filters .study-step { width: auto; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-1); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-part-filters .study-step[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+
+@media (max-width: 680px) {
+  .course-id:not(.study-id) { flex-wrap: wrap; gap: var(--space-2); padding-block: var(--space-3); }
+  .course-id:not(.study-id) .head-postech { flex-basis: 100%; border-right: 0; margin-right: 0; padding-right: 0; }
+}
+
+@media (max-width: 360px) {
+  .study-id .head-postech { margin-right: var(--space-2); padding-right: var(--space-2); }
+  .study-id .brand-word { font-size: var(--text-lead); }
+}

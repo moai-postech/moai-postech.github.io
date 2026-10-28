@@ -243,7 +243,7 @@ project:
     - name: "Choose · Solve"
       when: "During the semester"
       text: "Pick a competition you care about and work on it as a team."
-    - name: "Presentation · 60%"
+    - name: "Presentation"
       when: "May 28 & Jun 2"
       text: "Share the problem, your approach, and what you learned."
   evaluation_sources: ["Instructor evaluation", "Peer evaluation"]

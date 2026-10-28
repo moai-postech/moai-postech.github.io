@@ -4,7 +4,9 @@
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
     <header class="course-head">
-      <h1>{{ include.heading }}</h1>
+      <div class="course-heading-row">
+        <h1>{{ include.heading }}</h1>
+        {% if include.sheet %}{% include course/sheet-link.html url=include.sheet label=include.sheet_label %}{% endif %}
+      </div>
       <p class="course-meta"><span>{{ c.title }}</span><span>{{ c.code }}</span><span>{{ c.term }}</span><span>POSTECH</span></p>
-      {% if include.sheet %}<p class="course-sheet"><a href="{{ include.sheet }}">{{ include.sheet_label }}</a></p>{% endif %}
     </header>

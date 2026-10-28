@@ -12,7 +12,7 @@
       {% assign info = site.data.ai_study_terms[t.id] %}
       <div class="study-term-heading">
         <h2>{{ t.theme }}<span>{{ t.name }}</span></h2>
-        {% if t.sheet %}<a class="study-sheet" href="{{ t.sheet }}">Study sheet</a>{% endif %}
+        {% if t.sheet %}{% include course/sheet-link.html url=t.sheet label="Study sheet" class_name="study-sheet" %}{% endif %}
       </div>
       <div class="study-term-details">
         {% if info.overview %}<div class="study-overview"><h3>Overview</h3><p>{{ info.overview }}</p>{% if info.learning_path %}<ol class="study-learning-path" style="--study-steps: {{ info.learning_path.size }}">{% for step in info.learning_path %}<li><span class="study-step-label">{{ step.label }}</span><h4>{{ step.title }}</h4><p>{{ step.text }}</p></li>{% endfor %}</ol>{% endif %}</div>{% endif %}

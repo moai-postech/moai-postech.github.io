@@ -6,10 +6,10 @@
    Distinct pastel fills share a lightness range, with darker matching labels. Guest lectures and seminars use the logistics yellow on the course schedule;
    no-class days use a quiet grey fill. POSTECH Red stays on navigation and materials.
    --tone is text (4.5:1 or more on its row), --tone-tint bars and borders, --tone-row rows and cards. */
-.tone-p1        { --tone: #315f91; --tone-tint: #a9c9ee; --tone-row: #e6f1fd; }
-.tone-p2        { --tone: #356c4b; --tone-tint: #a6d9bf; --tone-row: #e4f5ed; }
-.tone-p3        { --tone: #9a4746; --tone-tint: #e9aaa4; --tone-row: #fce7e5; }
-.tone-logistics { --tone: #78601f; --tone-tint: #e9cd73; --tone-row: #fff5d6; }
+.tone-p1 { --tone:#4c6480; --tone-tint:#cbd7e4; --tone-row:#edf3f9; }
+.tone-p2 { --tone:#4e6c5a; --tone-tint:#cadbd0; --tone-row:#edf5f0; }
+.tone-p3 { --tone:#8a5d57; --tone-tint:#e3cbc6; --tone-row:#f8eeec; }
+.tone-logistics { --tone:#7b683f; --tone-tint:#e2d6b5; --tone-row:#faf5e8; }
 .tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
@@ -62,7 +62,8 @@
 
 /* Schedule and Term Project: the page name as the title, the course on the line below */
 .course-head { padding-top: var(--space-7); }
-.course-head h1 { margin-bottom: var(--space-3); }
+.course-heading-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3) var(--space-5); margin-bottom: var(--space-3); }
+.course-heading-row h1 { margin: 0; }
 .course-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0; color: var(--muted); font-size: var(--text-body); font-weight: 400; }
 .course-first { padding-top: var(--space-6); }
 
@@ -126,13 +127,12 @@ a.cs-title:hover { color: var(--accent); }
 .project-criteria li { display: grid; grid-template-columns: 9em minmax(0, 1fr); gap: var(--space-4); padding: var(--row-gap) 0; }
 .project-criteria strong { font-weight: 600; }
 .project-criteria span { color: var(--muted); }
-.course-sheet { margin: var(--space-3) 0 0; font-size: var(--text-meta); }
-.course-sheet a { color: var(--accent); font-weight: 600; }
+.course-sheet { display: inline-flex; align-items: baseline; gap: var(--space-1); margin-left: auto; color: var(--accent); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
 .project-teams .cs-n { padding-left: var(--space-3); }
 .project-link { display: inline-block; margin-top: 2px; color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
 .project-round { width: 1%; white-space: nowrap; }
-.project-when { margin-right: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
-.project-round a { color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
+.project-when { display: block; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
+.project-round a { display: block; margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
 
 /* Undergraduate AI Study Schedule: a tab per term. The table columns are fixed so switching terms never moves a column */
 .study-intro { padding-top: var(--space-7); }
@@ -145,7 +145,6 @@ a.cs-title:hover { color: var(--accent); }
 .study-terms { padding-top: var(--space-6); }
 .study-term-heading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3) var(--space-5); flex-wrap: wrap; margin-bottom: var(--space-5); }
 .study-term-heading h2 { margin-bottom: 0; }
-.study-sheet { color: var(--accent); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
 .study-term-details { display: grid; gap: var(--space-5); margin-bottom: var(--space-6); }
 .study-term-details .course-facts { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: var(--space-5); padding: var(--space-5) 0; background: none; border-radius: 0; border-block: 1px solid var(--line); }
 .study-term-details .course-fact { display: block; padding: 0; }
@@ -270,3 +269,16 @@ a.cs-title:hover { color: var(--accent); }
 .course-schedule tbody > tr:last-child.tone-none,
 .course-schedule tbody > tr:last-child.tone-none td { box-shadow: none; }
 .course-site main:has(.course-schedule) + .course-foot { border-top: 0; }
+
+/* Project milestones: dates and actions, with no repeated Overview card. */
+.project-timeline { display: grid; gap: var(--space-5); margin-top: var(--space-5); }
+.project-timeline li { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(0, 5fr); gap: var(--space-4); }
+.project-timeline-when { color: var(--text); font-size: var(--text-body); font-weight: 600; font-variant-numeric: tabular-nums; }
+.project-timeline-when small { display: block; color: var(--muted); font-size: var(--text-small); font-weight: 400; }
+.project-timeline-title { font-size: var(--text-body); font-weight: 600; }
+.project-timeline p { margin: var(--space-1) 0 0; font-size: var(--text-meta); color: var(--muted); }
+.project-timeline p strong { color: var(--text); }
+@media (max-width: 680px) {
+  .project-timeline li { grid-template-columns: 1fr; gap: var(--space-1); }
+  .project-timeline-when small { display: inline; margin-left: var(--space-2); }
+}

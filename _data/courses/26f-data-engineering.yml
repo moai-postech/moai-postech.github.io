@@ -265,14 +265,19 @@ project:
   summary: >-
     Teams go through an end-to-end data engineering pipeline: they collect and prepare data, store it in a database,
     and build a product that addresses a real-world problem on it. Any data source is fine if you are allowed to use it.
-  team_size: "up to 5 students"
+  team_size: "Up to 5"
+  intro: false
+  team_formation:
+    deadline: "2026-10-02"
+    rule: "Friday of Week 4"
+    text: "Enter your team members in the project sheet."
   steps:
     - name: "Proposal · 20%"
       when: "Oct 20 & 22"
       text: "Ideation, data collection and preprocessing, and database management."
     - name: "Final · 40%"
       when: "Dec 15 & 17"
-      text: "A product that addresses a real-world problem using a large-scale database, possibly with an LLM."
+      text: "Build a product for a real-world problem using a large-scale database and data you are allowed to access."
   criteria:
     - name: "Novelty"
       text: "Originality and creativity of the idea"
@@ -287,6 +292,8 @@ project:
       name: "Proposal"
     - id: "final"
       name: "Final"
+      date_placeholder: "TBD"
+      order_placeholder: "TBD"
   teams:
     - n: 1
       title: "AI-based highway icing risk map integrating weather and road conditions"

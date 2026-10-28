@@ -1,7 +1,7 @@
 {% comment %}
   Schedule 페이지(teaching/<id>/schedule/). 내용은 _data/courses/<page.course>.yml 의 schedule 이고 여기서는 모양만 정한다.
   머리(작은 제목) 다음 전체 스케줄 표 하나다. 파트 머리 줄에 파트 이름·범위·한 줄 설명. 개요·평가·자료는 Home(home.html)에 있다.
-  색은 course.css 의 템플릿 하나다. 파트는 순서대로 p1·p2·p3(강의마다 고르지 않는다), 시험·프로젝트·행사·평가는 logistics, 초청·세미나는 guest, 휴강은 none.
+  색은 course.css 의 템플릿 하나다. 파트는 순서대로 p1·p2·p3(강의마다 고르지 않는다), 시험·프로젝트·행사·평가·초청·세미나는 logistics, 휴강은 none.
   강의 줄은 바로 위 파트 머리의 색을 잇는다.
   Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다. 줄 종류의 태그 글자는 _data/course_tags.yml.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
@@ -18,10 +18,15 @@
       {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign p = q %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}
       <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup"><span class="cp-name">{{ p.name }}</span><span class="cp-title">{{ p.title }}</span>{% if p.span %}<span class="cp-span">{{ p.span }}</span>{% endif %}{% if p.text %}<span class="cp-text">{{ p.text }}</span>{% endif %}</th></tr>
       {% else %}
-      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "guest" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
+      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "logistics" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
         <td class="cs-n">{{ r.n }}</td>
-        <td class="cs-topic">{% assign tag = site.data.course_tags[r.kind] %}{% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}{% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% if r.speaker %}<span class="cs-speaker">{{ r.speaker }}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% if r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}{% endif %}</td>
+        <td class="cs-topic">
+          {% assign tag = site.data.course_tags[r.kind] %}{% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
+          {% if tag %}<span class="{% if is_seminar %}cs-session-type{% else %}cs-tag{% endif %}">{{ tag }}</span>{% endif %}
+          {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% if r.speaker %}<span class="cs-speaker"><span class="cs-speaker-name">{{ r.speaker }}</span>{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% if r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}{% endif %}
+          {% if r.time or r.location %}<span class="cs-session-meta">{% if r.time %}<span class="cs-session-time">{{ r.time }}</span> {% endif %}{% if r.location %}<span>{{ r.location }}</span>{% endif %}</span>{% endif %}
+        </td>
         <td class="cs-slides">{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>
         {% if cols == 5 %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}
       </tr>

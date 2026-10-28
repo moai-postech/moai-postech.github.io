@@ -195,6 +195,7 @@ schedule:
     kind: guest
     speaker: "Ki-Young Shin"
     affiliation: "CEO, Designovel"
+    time: "09:30 – 11:00 KST"
   - date: "2025-12-02"
     kind: lecture
     n: 19

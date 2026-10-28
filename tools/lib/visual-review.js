@@ -55,6 +55,7 @@ function validateBundle(dir, manifest, currentSource) {
   const failures=[];
   if(manifest.digest!==manifestDigest(manifest)) failures.push('manifest 변경/위조 또는 손상');
   if(manifest.sourceFingerprint!==currentSource) failures.push('검토 후 소스 변경: 수정본을 다시 고정해야 함');
+  if(!manifest.fontResources?.length) failures.push('실제 폰트 바이트 근거 누락');
   if(!manifest.complete || manifest.captureErrors?.length) failures.push('화면 캡처 미완료');
   for(const check of policy.requiredChecks) if(!manifest.checks.some(c=>c.name===check && c.exitCode===0)) failures.push('자동 검사 미통과: '+check);
   if(!manifest.requiredCases?.length) failures.push('독립적으로 수집한 화면 계획 누락');
@@ -85,7 +86,7 @@ function validateReview(review, currentSource, candidate) {
   if(review.schemaVersion!==1) failures.push('검토 기록 schema 불일치');
   if(review.sourceFingerprint!==currentSource) failures.push('검토 기록이 현재 수정본과 다름');
   if(!review.capture || review.capture.sourceFingerprint!==currentSource || review.manifestDigest!==review.capture.digest || review.capture.digest!==manifestDigest(review.capture)) failures.push('검토 기록과 고정 캡처의 연결이 깨짐');
-  if(!review.reviewer?.trim() || review.reviewer===review.implementer || review.implementer!==review.capture?.implementer) failures.push('구현자와 다른 검토자 기록 필요');
+  if(!review.reviewer?.trim() || review.reviewer.trim().toLowerCase()===review.implementer?.trim().toLowerCase() || review.implementer!==review.capture?.implementer) failures.push('구현자와 다른 검토자 기록 필요');
   if(!review.independence?.trim() || !Number.isFinite(Date.parse(review.reviewedAt)) || Date.parse(review.reviewedAt)<Date.parse(review.capture?.createdAt)) failures.push('독립 검토 방식과 검토 시각 기록 필요');
   if(!['pass','pass-with-notes'].includes(review.verdict)) failures.push('시각 검토 미완료');
   const capture=review.capture;
@@ -112,6 +113,8 @@ function validateReview(review, currentSource, candidate) {
   }
   if(candidate) {
     if(!candidate.complete||candidate.captureErrors?.length||policy.requiredChecks.some(n=>!candidate.checks?.some(c=>c.name===n&&c.exitCode===0)))failures.push('CI 후보 캡처/자동 검사 미완료');
+    const fontIdentity=m=>JSON.stringify((m?.fontResources||[]).map(f=>({url:f.url,sha256:f.sha256})).sort((a,b)=>a.url.localeCompare(b.url)));
+    if(!capture?.fontResources?.length||fontIdentity(candidate)!==fontIdentity(capture))failures.push('CI 실제 폰트 바이트가 검토본과 다름');
     if(candidate.sourceFingerprint!==currentSource || candidate.buildFingerprint!==capture?.buildFingerprint) failures.push('CI 재빌드가 검토한 입력/생성 문서와 다름');
     const a=(candidate.units||[]).map(u=>u.id).sort().join('\n'),b=allUnits.map(u=>u.id).sort().join('\n');
     if(a!==b || candidate.cases.map(c=>c.id).sort().join()!==(capture?.cases||[]).map(c=>c.id).sort().join()) failures.push('검토 이후 화면 목록이 달라짐');

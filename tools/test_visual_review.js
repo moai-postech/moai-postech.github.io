@@ -12,7 +12,7 @@ const clone=x=>JSON.parse(JSON.stringify(x));
 try {
   const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jA9sAAAAASUVORK5CYII=','base64');
   fs.mkdirSync(path.join(tmp,'images'));fs.writeFileSync(path.join(tmp,'images/a.png'),png);
-  const m={schemaVersion:1,createdAt:'2026-10-28T00:00:00Z',implementer:'implementation-agent',sourceFingerprint:'fixture',buildFingerprint:'built-fixture',complete:true,captureErrors:[],checks:vr.policy.requiredChecks.map(name=>({name,exitCode:0})),requiredCases:[{id:'case',page:'index.html',width:1440,state:'default',full:true}],cases:[{id:'case',page:'index.html',width:1440,state:'default',fontsLoaded:true,images:[{id:'image',path:'images/a.png',sha256:vr.hash(png),kind:'reading-tile',width:1,height:1}]}],units:[{id:'page:index.html',caseIds:['case'],imageIds:['image'],title:'Fixture'}]};
+  const m={schemaVersion:1,createdAt:'2026-10-28T00:00:00Z',implementer:'implementation-agent',sourceFingerprint:'fixture',buildFingerprint:'built-fixture',fontResources:[{url:'https://example.invalid/font.woff2',sha256:'fixture-font-bytes'}],complete:true,captureErrors:[],checks:vr.policy.requiredChecks.map(name=>({name,exitCode:0})),requiredCases:[{id:'case',page:'index.html',width:1440,state:'default',full:true}],cases:[{id:'case',page:'index.html',width:1440,state:'default',fontsLoaded:true,images:[{id:'image',path:'images/a.png',sha256:vr.hash(png),kind:'reading-tile',width:1,height:1}]}],units:[{id:'page:index.html',caseIds:['case'],imageIds:['image'],title:'Fixture'}]};
   m.digest=vr.manifestDigest(m);fs.writeFileSync(path.join(tmp,'manifest.json'),JSON.stringify(m));
   assert.deepEqual(vr.validateBundle(tmp,m,'fixture'),[]);
   const r=vr.reviewTemplate(m);
@@ -22,6 +22,8 @@ try {
   for(const k of Object.keys(r.rubric))r.rubric[k]={observation:'Fixture only: reviewer observation',evidence:['image']};
   assert.deepEqual(vr.validateLocalReview(tmp,r,'fixture'),[]);
   const self=clone(r);self.reviewer=self.implementer;assert(vr.validateReview(self,'fixture',m).some(e=>e.includes('다른 검토자')));
+  const alias=clone(r);alias.reviewer=' IMPLEMENTATION-AGENT ';assert(vr.validateReview(alias,'fixture',m).some(e=>e.includes('다른 검토자')));
+  const differentFont=clone(m);differentFont.fontResources[0].sha256='changed-font';assert(vr.validateReview(r,'fixture',differentFont).some(e=>e.includes('폰트 바이트')));
   assert(vr.validateReview(r,'changed',m).some(e=>e.includes('현재 수정본')));
   const missing=clone(r);missing.units[0].evidence=[];assert(vr.validateReview(missing,'fixture',m).some(e=>e.includes('실제 크기')));
   const cropped=clone(m);cropped.cases[0].images[0].kind='viewport';cropped.digest=vr.manifestDigest(cropped);assert(vr.validateBundle(tmp,cropped,'fixture').some(e=>e.includes('타일 누락')));

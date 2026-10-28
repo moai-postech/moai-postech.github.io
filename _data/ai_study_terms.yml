@@ -1,22 +1,23 @@
 # 학기별 Overview와 운영 정보. 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
-# 시간·장소 근거는 changelog/2026-10-28-ai-study-materials.md 5차에 있다. 새 학기는 같은 키로 추가한다.
+# 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
+# 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
   overview: "Understand how robots learn to perceive, reason, and act, connecting data collection and control to 3D understanding, VLA, and world models."
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
-  location: { building: "Engineering Building 4", rooms: "Room 307" }
+  location: { building: "Engineering Building 4", rooms: "Room 302" }
   representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
   overview: "Build a working understanding of deep learning, from backpropagation and neural architectures to representation learning, generative models, and generalization."
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Usually Tuesdays", time: "15:30 – 16:30 KST" }
-  location: { building: "Engineering Building 4", rooms: "Rooms 301 / 303 / 307" }
+  location: { building: "Engineering Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
 spring-2026:
   overview: "Understand how LLMs are adapted and used, from instruction tuning and alignment to reasoning, long-context processing, retrieval, and agents."
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:30 KST" }
-  location: { building: "Engineering Building 4", rooms: "Rooms 302 / 307" }
+  location: { building: "Engineering Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
   overview: "Build an overview of foundation models across language, vision, and multimodal learning, then connect their core ideas to image and video generation."

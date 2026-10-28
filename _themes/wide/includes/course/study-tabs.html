@@ -1,0 +1,56 @@
+<script>
+// Term tabs: click or arrow keys switch; the address keeps the term (#fall-2025) so a term can be linked.
+(function () {
+  var box = document.querySelector('[data-study-tabs]');
+  if (!box) return;
+  var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));
+  function show(tab, push) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (push) history.replaceState(null, '', location.pathname + '#' + tab.getAttribute('aria-controls'));  /* the page has <base href="/">, so a bare #hash would point at the site root */
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(t, true); });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      var index = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : d ? (i + d + tabs.length) % tabs.length : -1;
+      if (index >= 0) { e.preventDefault(); var n = tabs[index]; show(n, true); n.focus(); }
+    });
+  });
+  box.querySelectorAll('.study-panel').forEach(function (panel) {
+    var steps = Array.prototype.slice.call(panel.querySelectorAll('.study-step[data-start]'));
+    var rows = Array.prototype.slice.call(panel.querySelectorAll('[data-session]'));
+    steps.forEach(function (step) {
+      step.addEventListener('click', function () {
+        var active = step.getAttribute('aria-pressed') !== 'true';
+        var start = Number(step.dataset.start), end = Number(step.dataset.end);
+        steps.forEach(function (other) {
+          var selected = active && other === step;
+          other.setAttribute('aria-pressed', selected ? 'true' : 'false');
+          other.parentElement.classList.toggle('is-selected', selected);
+        });
+        var first;
+        rows.forEach(function (row) {
+          var n = Number(row.dataset.session);
+          var selected = active && n >= start && n <= end;
+          row.classList.toggle('is-part-selected', selected);
+          if (selected && !first) first = row;
+        });
+        if (first) first.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+      });
+    });
+  });
+  var want = location.hash.slice(1);
+  show(tabs.filter(function (t) { return t.getAttribute('aria-controls') === want; })[0] || tabs[0], false);
+  var part = new URLSearchParams(location.search).get('part');
+  if (part && /^\d+-\d+$/.test(part)) {
+    var range = part.split('-'), panel = document.getElementById(want);
+    var step = panel && panel.querySelector('.study-step[data-start="' + range[0] + '"][data-end="' + range[1] + '"]');
+    if (step) step.click();
+  }
+})();
+</script>

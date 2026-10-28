@@ -4,12 +4,12 @@
 
 ## 구성
 
-상단 Home·Schedule·Members 메뉴를 쓴다. Home은 소개·참여 안내, Schedule은 학기별 탭 → 선택 학기의 Overview·학습 흐름(전체 폭) → 가로 운영 정보 → 일정 표, Members는 기수별 명단이다.
+상단 Home·Schedule·Members 메뉴를 쓴다. Home은 소개·참여 안내 → 학기별 Study overview·학습 흐름 → Member overview 통계, Schedule은 학기별 탭 → 운영 정보 → 일정 표, Members는 비밀번호로 여는 단일 명단 표다.
 
 - How to join은 Home과 같은 floating callout 안에 제목과 안내문을 묶는다. 타과·무은재 학부생을 포함해 모든 POSTECH 학부생을 환영하고, Schedule의 학기 탭에서 이번 학기 학생대표를 찾아 연락하도록 안내한다. Members 명단 링크를 함께 둔다. 문구는 `teaching/ai-study/index.md`의 `join`에서 관리한다.
 
 - 학기별 Overview는 목표 한 문장과 실제 회차 순서에 맞춘 `learning_path`로 구성한다. 각 단계는 표의 Topic 열과 맞춘 `Topics n–m` 회차 범위·짧은 주제 제목·설명을 포함한다. 회차 범위에는 크림슨 강조색을 사용해 단계의 시작을 구분한다. 단계는 흰 배경과 가는 연결선·화살표로 잇고 별도 카드로 감싸지 않는다. Physical AI는 로봇 기초 → 3D 세계 이해 → foundation models와 로봇의 결합 흐름을 드러낸다.
-- 운영 정보는 사진이 있는 Advisor → Student representative → Location & time 순서로 둔다. 지도교수의 사진·이름은 해당 학기 데이터에서 읽는다. 강의와 같은 `facts.html`·`person.html`을 사용하고 조교 자리만 학생대표로 바꾼다. Overview 아래 전체 폭에 흰 배경·얇은 위아래 구분선으로 가로 배치하고, 휴대폰에서는 순서대로 세로로 접는다.
+- 운영 정보는 사진이 있는 Advisor → Student representative → Location & time 순서로 둔다. 지도교수의 사진·이름은 해당 학기 데이터에서 읽는다. 강의와 같은 `facts.html`·`person.html`을 사용하고 조교 자리만 학생대표로 바꾼다. Schedule의 학기 제목 아래 전체 폭에 흰 배경·얇은 위아래 구분선으로 가로 배치하고, 휴대폰에서는 순서대로 세로로 접는다.
 - 학기 제목·시간·장소·지도교수·학생대표·Study sheet는 해당 학기 패널 안에 둔다. 지난 학기 정보와 현재 학기 정보를 섞지 않는다.
 - 장소는 이전 세 학기 공학4동 307호, Fall 2026부터 공학4동 302호다. 앞으로도 특별한 이슈가 없으면 302호를 기본으로 사용한다(교수 2026-10-28). 개별 회차의 임시 장소 변경을 학기 기본 장소에 나열하지 않는다.
 - 학기 탭은 클릭·좌우 화살표·Home·End를 지원한다. 학기별 주소 fragment를 유지하고 탭을 바꿔도 표의 열 위치가 움직이지 않게 한다.
@@ -30,10 +30,10 @@
 
 ## Members
 
-- `teaching/ai-study/members/`는 공개 통계(누적·현재 인원, 기수, 재참여, 기수·학과별 분포)를 먼저 표시한다. 아래 Full list는 비밀번호 입력 후 펼쳐진다.
+- 공개 통계(누적·현재 인원, 기수, 재참여, 기수·학과별 분포)는 Home의 Member overview에만 둔다. Members 탭은 비밀번호 입력 후 명단만 표시한다.
 - 명단 원문을 HTML이나 공개 데이터에 넣지 않는다. AES-256-GCM 암호문만 배포하며 PBKDF2-SHA256으로 입력 비밀번호에서 키를 만든다. 브라우저 Web Crypto로 복호화 후 명단을 생성한다. 비밀번호·키·복호화 명단은 localStorage·쿠키에 저장하지 않는다. 다시 잠그면 DOM을 비우고 새로고침하면 잠금 상태다.
-- 펼친 명단은 가입 기수 내림차순으로 한 사람을 한 번씩 표시한다. 같은 기수 안에서는 시트 순서를 유지한다.
-- 열은 시트의 인적 정보 순서인 이름·학과·학번·POSTECH 이메일이며, 마지막에 전체 참여 기수 마커를 붙인다. 학과·학번은 그 사람의 최신 시트 행을 사용한다.
+- 펼친 명단은 한 개의 표다. 맨 왼쪽 Cohort로 가입 기수 내림차순 정렬하며 기수별 절로 나누지 않는다. 한 사람 한 행이고 같은 기수 안에서는 시트 순서를 유지한다.
+- 열은 Cohort·Name·Department·Entry·POSTECH email·Participation 순이다. Entry는 입학연도를 네 자리로 표시한다. 시트 양식과 홈페이지 표시 양식은 독립적으로 관리한다. 학과·학번은 그 사람의 최신 시트 행을 사용한다.
 - 참여 마커는 각 학기 명단에 실제로 있는지로 판정한다. 가입 기수부터 모든 학기에 참여했다고 가정하지 않는다.
 - 이메일은 확인한 `@postech.ac.kr`만 사용하고 사이트에서는 `[at]`로 가린다. 시트의 모든 재등장 행도 같은 주소로 맞춘다.
 - 갱신은 `python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA 'member!A1:G100' > /tmp/study-members.json` 다음 `python3 tools/ai_study_members_sync.py /tmp/study-members.json`이다. Node.js가 필요하고 비밀번호는 실행 시 입력하거나 `AI_STUDY_MEMBERS_PASSWORD` 환경변수로 전달한다. 원본 JSON과 비밀번호는 공개 저장소에 넣지 않는다. 일정 자동 동기화와는 별도로 실행한다.
@@ -48,3 +48,5 @@
 기존 Home의 학기 fragment 링크는 Schedule의 같은 탭으로 이동한다. Teaching의 학기 링크도 Schedule을 가리킨다.
 
 - Schedule의 Study sheet 위치·화살표·반응형 정렬은 [공통 규칙](README.md#외부-시트-링크)을 따른다.
+
+- 상단 POSTECH MOAI Lab과 로고는 연구실 홈으로 연결한다. 중복을 줄여 스터디 footer는 Lab home·POSTECH·개인정보 링크만 유지한다(P7).

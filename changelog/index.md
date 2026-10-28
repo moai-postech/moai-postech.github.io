@@ -8,7 +8,7 @@
 | 2026-10-28 | [course-guest-seminars](2026-10-28-course-guest-seminars.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 초청·세미나 노랑, 휴강 회색, 회차별 시간·장소 |
 | 2026-10-28 | [teaching-template-rules](2026-10-28-teaching-template-rules.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 템플릿 | 공통·강의·스터디 안내 분리, 표 마감선 한 줄 |
 | 2026-10-28 | [course-material-order](2026-10-28-course-material-order.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 자료 링크를 HTML·PDF·Lab 순서로 통일 |
-| 2026-10-28 | [home-actions-venue](2026-10-28-home-actions-venue.md) | Sangwoo Mo(sangwoomo) | Home·Research·Publications | 중립 행동 안내, Join us·Full publication list, venue 광학적 무게 완화 |
+| 2026-10-28 | [home-actions-venue](2026-10-28-home-actions-venue.md) | Sangwoo Mo(sangwoomo) | Home·Publications·Faculty·Teaching | floating 안내, 본문 크기 논문 목록, 함께하는 톤, Faculty 연락처 복원 |
 | 2026-10-28 | [typography-audit](2026-10-28-typography-audit.md) | Sangwoo Mo(sangwoomo) | 연구실·강의 전체 글자·간격 | 목록·카드 역할 분리, 행간·자간·반응형 줄바꿈과 전수 검사 |
 | 2026-10-28 | [course-pastel-palette](2026-10-28-course-pastel-palette.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 공통 노랑·파트 하늘·민트·코랄, 넓은 면의 배경을 흰색 20%로 완화 |
 | 2026-10-28 | [ai-study-materials](2026-10-28-ai-study-materials.md) | Sangwoo Mo(sangwoomo) | AI Study | 학기별 운영 정보·시트 링크, 자료 한 줄, 여름 원 강의 자료 |

@@ -4,9 +4,11 @@
 
 ## 구성
 
-상단 Home·Schedule·Members 메뉴를 쓴다. Home은 소개·참여 안내 → 학기별 Study overview·학습 흐름 → Member overview 통계, Schedule은 학기별 탭 → 운영 정보 → 일정 표, Members는 비밀번호로 여는 단일 명단 표다.
+상단 Home·Schedule·Members 메뉴를 쓴다. Home은 소개·최신 학기 진입점 → 읽기·발표·실습의 학습 방식 → 학기별 학습 흐름 → 멤버 통계 → 참여 안내, Schedule은 학기별 탭 → 운영 정보 → 일정 표, Members는 비밀번호로 여는 단일 명단 표다.
 
-- How to join은 Home과 같은 floating callout 안에 제목과 안내문을 묶는다. 타과·무은재 학부생을 포함해 모든 POSTECH 학부생을 환영하고, Schedule의 학기 탭에서 이번 학기 학생대표를 찾아 연락하도록 안내한다. Members 명단 링크를 함께 둔다. 문구는 `teaching/ai-study/index.md`의 `join`에서 관리한다.
+- Home의 최신 학기는 `ai_study.yml` 첫 학기에서 읽고 Schedule의 해당 탭으로 연결한다. 소개·학습 방식 문구는 페이지 front matter에서 관리한다. 통계 수치는 공개 집계를 사용하고 기수·학과별 상세는 기본으로 접은 disclosure에 보존한다.
+
+- How to join은 Home 마지막에 연구실 Home과 같은 floating callout 안에 제목과 안내문을 묶는다. 타과·전공 미선택 1학년을 포함해 모든 POSTECH 학부생을 환영하고, Schedule의 학기 탭에서 이번 학기 학생대표를 찾아 연락하도록 안내한다. Members 명단 링크는 멤버 통계 절 아래에 둔다. 문구는 `teaching/ai-study/index.md`의 `join`에서 관리한다.
 
 - 학기별 Overview는 목표 한 문장과 실제 회차 순서에 맞춘 `learning_path`로 구성한다. 각 단계는 표의 Topic 열과 맞춘 `Topics n–m` 회차 범위·짧은 주제 제목·설명을 포함한다. 회차 범위에는 크림슨 강조색을 사용해 단계의 시작을 구분한다. 단계는 흰 배경과 가는 연결선·화살표로 잇고 별도 카드로 감싸지 않는다. Physical AI는 로봇 기초 → 3D 세계 이해 → foundation models와 로봇의 결합 흐름을 드러낸다.
 - 운영 정보는 사진이 있는 Advisor → Student representative → Location & time 순서로 둔다. 지도교수의 사진·이름은 해당 학기 데이터에서 읽는다. 강의와 같은 `facts.html`·`person.html`을 사용하고 조교 자리만 학생대표로 바꾼다. Schedule의 학기 제목 아래 전체 폭에 흰 배경·얇은 위아래 구분선으로 가로 배치하고, 휴대폰에서는 순서대로 세로로 접는다.
@@ -50,3 +52,5 @@
 - Schedule의 Study sheet 위치·화살표·반응형 정렬은 [공통 규칙](README.md#외부-시트-링크)을 따른다.
 
 - 상단 POSTECH MOAI Lab과 로고는 연구실 홈으로 연결한다. 중복을 줄여 스터디 footer는 Lab home·POSTECH·개인정보 링크만 유지한다(P7).
+
+- 전공을 정하지 않은 학생은 안내 문장에서 `first-year students who have not yet declared a major`, 학과 분포·명단에서는 `Undeclared`로 표시한다. 원본의 `Mueunjae` 표기는 화면에서 변환한다.

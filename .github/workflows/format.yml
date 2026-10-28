@@ -24,6 +24,13 @@ jobs:
           node-version: "22"
       - run: npm install --no-save --no-package-lock playwright@1.48.2
       - run: npx playwright install --with-deps chromium
+      - run: node tools/test_design.js
+      - run: node tools/check_design.js --report design-audit.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: design-audit
+          path: design-audit.json
       - run: node tools/check_format.js
       - run: node tools/check_typography.js
       - run: node tools/check_selection.js

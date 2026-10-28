@@ -11,7 +11,7 @@
 {% for group in site.data.publications %}{% for p in group.papers %}{% if p.venue %}{% assign vn = p.venue | split: " " | first %}{% if journals contains vn %}{% assign nj = nj | plus: 1 %}{% elsif workshops contains vn %}{% assign nw = nw | plus: 1 %}{% else %}{% assign nc = nc | plus: 1 %}{% endif %}{% else %}{% assign np = np | plus: 1 %}{% endif %}{% endfor %}{% endfor %}
 {% for group in site.data.publications %}
     <section class="content-section">
-    <h2>{{ group.section }}</h2>
+    <h2 class="group-heading">{{ group.section }}</h2>
     <div class="section-body">
     <ul class="plain pubs">
       {% for p in group.papers %}{% assign num = "" %}{% if p.venue %}{% assign vn = p.venue | split: " " | first %}{% if journals contains vn %}{% assign num = "J" | append: nj %}{% assign nj = nj | minus: 1 %}{% elsif workshops contains vn %}{% assign num = "W" | append: nw %}{% assign nw = nw | minus: 1 %}{% else %}{% assign num = "C" | append: nc %}{% assign nc = nc | minus: 1 %}{% endif %}{% else %}{% assign num = "P" | append: np %}{% assign np = np | minus: 1 %}{% endif %}<li>

@@ -1,3 +1,5 @@
 # 남은 결정
 
 - AI Study 명단의 과거 공개 Git 이력 정리 여부 결정: 현재 배포와 최신 소스는 암호화했지만 보호 전 이력은 남아 있음. 공유 저장소의 이력 재작성은 협업자 clone에 영향을 주므로 별도 승인 후 처리. [근거](changelog/2026-10-28-ai-study-members.md).
+
+- 공통 디자인 템플릿의 main 반영 승인 대기: 자동 승인 검토가 공개 사이트 직접 배포를 거부해 검토용 PR로 준비. [근거](changelog/2026-10-28-design-template-contract.md).

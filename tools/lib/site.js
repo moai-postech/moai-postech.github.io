@@ -33,4 +33,19 @@ function configBlock(name) {
   return out;
 }
 
-module.exports = { ROOT, SITE, serve, configBlock };
+// Discover all pages rendered by the shared lab/course templates, including new pages.
+// Slides, redirect stubs and embedded third-party content have their own document systems.
+function templatePages(site = SITE) {
+  const pages = [];
+  function walk(dir) {
+    for (const e of fs.readdirSync(path.join(site, dir), { withFileTypes: true })) {
+      const rel = path.join(dir, e.name);
+      if (e.isDirectory()) { if (!['assets', 'slides'].includes(e.name)) walk(rel); }
+      else if (e.name.endsWith('.html') && /<link[^>]+href=["'](?:\/)?assets\/style\.css[?"']/.test(fs.readFileSync(path.join(site, rel), 'utf8'))) pages.push(rel);
+    }
+  }
+  if (fs.existsSync(site)) walk('');
+  return pages.sort();
+}
+
+module.exports = { ROOT, SITE, serve, configBlock, templatePages };

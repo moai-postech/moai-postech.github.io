@@ -24,17 +24,19 @@
 | 소개·페이지 메타 | `teaching/ai-study/index.md`, `layout: course`, `view: study` |
 | 학기·회차·논문·실습·자료 | `_data/ai_study.yml`, 원본 시트에서 `tools/ai_study_sync.py`로 동기화. 생성 파일은 손으로 고치지 않는다 |
 | 학기별 운영 정보 | `_data/ai_study_terms.yml`, 일정과 같은 학기 ID 사용 |
-| 멤버 명단 | `_data/ai_study_members.yml`, member 시트의 Apps Script 셀 읽기 결과를 `tools/ai_study_members_sync.py`로 변환 |
+| 멤버 통계·명단 | `_data/ai_study_members.yml`은 공개 집계, `_data/ai_study_members_private.yml`은 암호문. member 시트의 Apps Script 셀 읽기 결과를 `tools/ai_study_members_sync.py`로 변환 |
 
 `ai_study_terms.yml`은 `format`(강의 중심이면 lectures), `reference_course`(title, term, url), `overview`, `learning_path`(label, start, end, title, text), `advisor`(사진 `photo` 포함), `meetings`, `location`, `representative`를 학기별로 둔다. 값이 없으면 해당 칸을 생략한다. 자료 시트 링크는 동기화 데이터의 `sheet`다.
 
 ## Members
 
-- `teaching/ai-study/members/`에서 가입 기수 내림차순으로 한 사람을 한 번씩 표시한다. 같은 기수 안에서는 시트 순서를 유지한다.
+- `teaching/ai-study/members/`는 공개 통계(누적·현재 인원, 기수, 재참여, 기수·학과별 분포)를 먼저 표시한다. 아래 Full list는 비밀번호 입력 후 펼쳐진다.
+- 명단 원문을 HTML이나 공개 데이터에 넣지 않는다. AES-256-GCM 암호문만 배포하며 PBKDF2-SHA256으로 입력 비밀번호에서 키를 만든다. 브라우저 Web Crypto로 복호화 후 명단을 생성한다. 비밀번호·키·복호화 명단은 localStorage·쿠키에 저장하지 않는다. 다시 잠그면 DOM을 비우고 새로고침하면 잠금 상태다.
+- 펼친 명단은 가입 기수 내림차순으로 한 사람을 한 번씩 표시한다. 같은 기수 안에서는 시트 순서를 유지한다.
 - 열은 시트의 인적 정보 순서인 이름·학과·학번·POSTECH 이메일이며, 마지막에 전체 참여 기수 마커를 붙인다. 학과·학번은 그 사람의 최신 시트 행을 사용한다.
 - 참여 마커는 각 학기 명단에 실제로 있는지로 판정한다. 가입 기수부터 모든 학기에 참여했다고 가정하지 않는다.
 - 이메일은 확인한 `@postech.ac.kr`만 사용하고 사이트에서는 `[at]`로 가린다. 시트의 모든 재등장 행도 같은 주소로 맞춘다.
-- 갱신은 `python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA 'member!A1:G100' > /tmp/study-members.json` 다음 `python3 tools/ai_study_members_sync.py /tmp/study-members.json`이다. 원본 JSON은 공개 저장소에 넣지 않는다. 일정 자동 동기화와는 별도로 실행한다.
+- 갱신은 `python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA 'member!A1:G100' > /tmp/study-members.json` 다음 `python3 tools/ai_study_members_sync.py /tmp/study-members.json`이다. Node.js가 필요하고 비밀번호는 실행 시 입력하거나 `AI_STUDY_MEMBERS_PASSWORD` 환경변수로 전달한다. 원본 JSON과 비밀번호는 공개 저장소에 넣지 않는다. 일정 자동 동기화와는 별도로 실행한다.
 
 ## 자료 표시
 

@@ -203,9 +203,41 @@ a.cs-title:hover { color: var(--accent); }
 .st-who { color: var(--muted); font-size: var(--text-meta); }
 .is-optional .cs-title { color: var(--muted); font-weight: 400; }
 
+/* Public aggregate statistics; member details are rendered only after decrypting. */
+.study-member-stats h2, .study-full-list h2 { font-size: var(--text-group); line-height: var(--leading-group); letter-spacing: normal; }
+.study-stat-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); margin: 0; padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
+.study-stat-summary dt { color: var(--muted); font-size: var(--text-meta); }
+.study-stat-summary dd { margin: var(--space-2) 0 0; font-size: var(--text-h2); font-weight: 700; line-height: 1.2; }
+.study-stat-breakdowns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-7); margin-top: var(--space-6); }
+.study-stat-breakdowns h3 { margin: 0 0 var(--space-4); font-size: var(--text-body); font-weight: 600; }
+.study-stat-bars { display: grid; gap: var(--space-3); }
+.study-stat-bars li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-1) var(--space-3); font-size: var(--text-meta); }
+.study-stat-bars small { margin-left: var(--space-2); color: var(--muted); font-size: var(--text-small); }
+.study-stat-bars strong { font-weight: 600; font-variant-numeric: tabular-nums; }
+.study-stat-bar { grid-column: 1 / -1; height: 4px; background: var(--surface); border-radius: var(--radius-1); overflow: hidden; }
+.study-stat-bar > span { display: block; height: 100%; background: var(--accent); border-radius: inherit; }
+.study-stat-note { margin: var(--space-3) 0 0; color: var(--muted); font-size: var(--text-small); }
+.study-full-list-heading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
+.study-member-unlock { padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); }
+.study-member-unlock p { margin: 0 0 var(--space-4); color: var(--muted); }
+.study-unlock-fields { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); }
+.study-unlock-fields label { font-size: var(--text-meta); }
+.study-unlock-fields input { min-width: 0; max-width: 100%; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-1); color: var(--text); background: var(--bg); font: inherit; }
+.study-unlock-fields button, .study-lock-button { padding: var(--space-2) var(--space-4); border: 1px solid var(--accent); border-radius: var(--radius-1); color: var(--accent); background: var(--bg); font: inherit; font-size: var(--text-meta); cursor: pointer; }
+.study-unlock-fields button:disabled { opacity: .6; cursor: wait; }
+.study-unlock-message { margin: var(--space-3) 0 0; color: var(--muted); font-size: var(--text-meta); }
+.study-unlock-message:empty { display: none; }
+.study-full-list .study-member-group { margin-top: var(--section-gap); }
+@media (max-width: 680px) {
+  .study-stat-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .study-stat-breakdowns { grid-template-columns: 1fr; gap: var(--space-6); }
+  .study-unlock-fields label { width: 100%; }
+  .study-unlock-fields input { flex: 1 1 8em; width: 8em; }
+}
+
 /* Study member directory: source-sheet column order, one row per person. */
-.study-member-group h2 { font-size: var(--text-group); line-height: var(--leading-group); letter-spacing: normal; }
-.study-member-group h2 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: 400; }
+.study-member-group h3 { font-size: var(--text-group); line-height: var(--leading-group); letter-spacing: normal; }
+.study-member-group h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: 400; }
 .study-members-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: var(--text-body); }
 .study-members-table .sm-name { width: 12%; }
 .study-members-table .sm-department { width: 14%; }

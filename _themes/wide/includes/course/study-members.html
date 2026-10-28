@@ -1,24 +1,35 @@
+{% assign stats = site.data.ai_study_members %}
 <header class="course-head">
   <p class="course-eyebrow"><span>Study group</span><span>POSTECH</span></p>
   <h1>Members</h1>
-  <p class="course-lead">Members are grouped by their first cohort, newest first. Markers show every cohort they participated in.</p>
+  <p class="course-lead">A community of POSTECH undergraduates learning AI together.</p>
 </header>
-{% for cohort in site.data.ai_study_members.cohorts %}
-<section class="content-section study-member-group" aria-labelledby="cohort-{{ cohort.number }}">
-  <h2 id="cohort-{{ cohort.number }}">{{ cohort.number }}기 <span>{{ cohort.term }}</span></h2>
-  <table class="study-members-table">
-    <caption class="visually-hidden">{{ cohort.number }}기 members</caption>
-    <colgroup><col class="sm-name"><col class="sm-department"><col class="sm-year"><col class="sm-email"><col class="sm-participation"></colgroup>
-    <thead><tr><th scope="col">Name</th><th scope="col">Department</th><th scope="col">Entry year</th><th scope="col">POSTECH email</th><th scope="col">Participation</th></tr></thead>
-    <tbody>{% for member in cohort.members %}
-      <tr>
-        <th scope="row" data-label="Name">{{ member.name }}</th>
-        <td data-label="Department">{{ member.department }}</td>
-        <td data-label="Entry year">{{ member.entry_year }}</td>
-        <td class="study-member-email" data-label="POSTECH email">{{ member.email | replace: '@', ' [at] ' }}</td>
-        <td data-label="Participation"><span class="study-member-markers">{% for n in member.participation %}<span class="study-member-marker">{{ n }}기</span>{% endfor %}</span></td>
-      </tr>{% endfor %}
-    </tbody>
-  </table>
+<section class="content-section study-member-stats" aria-labelledby="member-statistics">
+  <h2 id="member-statistics">Statistics</h2>
+  <dl class="study-stat-summary">
+    <div><dt>Members to date</dt><dd>{{ stats.total }}</dd></div>
+    <div><dt>Current members</dt><dd>{{ stats.current }}</dd></div>
+    <div><dt>Cohorts</dt><dd>{{ stats.cohorts }}</dd></div>
+    <div><dt>Returning members</dt><dd>{{ stats.returning }}</dd></div>
+  </dl>
+  <div class="study-stat-breakdowns">
+    <div><h3>Participation by cohort</h3><ul class="plain study-stat-bars">
+      {% for t in stats.terms %}<li><span>{{ t.number }}기 <small>{{ t.term }}</small></span><strong>{{ t.count }}</strong><span class="study-stat-bar" aria-hidden="true"><span style="width: {{ t.count | times: 100.0 | divided_by: stats.total }}%"></span></span></li>{% endfor %}
+    </ul><p class="study-stat-note">Returning members are counted in each cohort they joined.</p></div>
+    <div><h3>Departments</h3><ul class="plain study-stat-bars">
+      {% for d in stats.departments %}<li><span>{{ d.name }}</span><strong>{{ d.count }}</strong><span class="study-stat-bar" aria-hidden="true"><span style="width: {{ d.count | times: 100.0 | divided_by: stats.total }}%"></span></span></li>{% endfor %}
+    </ul><p class="study-stat-note">Based on each member's most recent department.</p></div>
+  </div>
 </section>
-{% endfor %}
+<section class="content-section study-full-list" aria-labelledby="full-list-title">
+  <div class="study-full-list-heading"><h2 id="full-list-title">Full list</h2><button type="button" class="study-lock-button" id="lock-member-list" hidden>Lock list</button></div>
+  <form class="study-member-unlock" id="member-unlock-form">
+    <p>Enter the study password to view member details.</p>
+    <div class="study-unlock-fields"><label for="member-password">Password</label><input type="password" id="member-password" autocomplete="current-password" required aria-describedby="member-unlock-message"><button type="submit" aria-controls="member-full-list" aria-expanded="false">Unlock list</button></div>
+  </form>
+  <p id="member-unlock-message" class="study-unlock-message" role="status" aria-live="polite"></p>
+  <div id="member-full-list" hidden></div>
+  <noscript><p>Enable JavaScript to unlock the member list.</p></noscript>
+</section>
+<script type="application/json" id="member-encrypted-data">{{ site.data.ai_study_members_private | jsonify }}</script>
+<script src="assets/study-members.js" defer></script>

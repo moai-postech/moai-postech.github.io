@@ -33,7 +33,7 @@ members.html, people.html, join.html  옛 주소를 faculty.html, contact.html �
 POSTECH.md           정보기술팀이 요구한 POSTECH 필수 요소(P1~P9)와, 바꾸자는 요청을 그것에 비춰 보는 검토 절차
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
-tools/               검사 스크립트(check_changelog.py: 기록·안건·서로 되돌리기, check_format.js: 사이트 전체 형식, check_postech.js: POSTECH 필수 요소, maintainers.txt: 결정 권한자), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml), 스터디 동기화(ai_study_sync.py, .github/workflows/ai-study-sync.yml), 슬라이드 사본(drive_pdf.py, localize_slides.py)
+tools/               검사 스크립트(check_changelog.py: 기록·안건·서로 되돌리기, check_format.js: 사이트 전체 형식, check_typography.js: 모든 페이지·숨은 상태의 크기·행간·자간·줄바꿈, check_postech.js: POSTECH 필수 요소, maintainers.txt: 결정 권한자), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml), 스터디 동기화(ai_study_sync.py, .github/workflows/ai-study-sync.yml), 슬라이드 사본(drive_pdf.py, localize_slides.py)
 ```
 
 ### 무엇을 어디서 고치나
@@ -85,7 +85,7 @@ tools/               검사 스크립트(check_changelog.py: 기록·안건·서
 - **슬라이드는 Drive 링크 대신 이 저장소의 파일로 링크한다**(교수 2026-10-26). 원본은 구글시트·Drive 에 그대로 두고, PDF 사본을 받아 올린다(Google Slides·pptx 는 PDF 로 굽고, 그림은 그대로). 받는 도구는 `tools/drive_pdf.py`, 사본과 원본 Drive 링크의 짝은 `tools/drive_sources.json` 이다. 자리: 강의 슬라이드 `teaching/<id>/slides/`, 학생 발표 `teaching/<id>/project/<회차>/`, 학부생 AI 스터디 `teaching/ai-study/<학기>/`(`tools/ai_study_sync.py` 가 시트에서 받는다), 초청 발표 `assets/talks/`. 강의·발표 yml 에 Drive 슬라이드 링크를 새로 넣었으면 `python3 tools/localize_slides.py` 를 돌린다. 예외: 노트북(Colab·ipynb), 시험, 시트는 Drive 링크 그대로다. Publications 의 slides·poster 는 화면에 나오지 않는 보관용 데이터라 옮기지 않는다(2026-10-22 결정). 링크가 비공개라 받을 수 없는 파일은 Drive 링크로 남기고 changelog 에 적는다. Pages 사이트는 1 GB 한도라 큰 파일(수십 MB)을 더할 때 전체 크기를 본다.
 - **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Publications > By Topic, 랩 세미나와 초청 연사는 Research > Seminar(`_data/seminar.yml`), 과제는 Research > Funding, 교수 이메일·전화는 Faculty, 지원 방법은 Contact, 연구실 주소·전화는 꼬리말.
 - **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
-- **컴퓨터 화면에서는 넓게 쓴다.** 전체 폭은 `--container`(1200px), 모바일처럼 좁은 기둥으로 줄이지 않는다(교수 2026-10-21). 긴 문단만 `--measure`(760px)로 묶는다. 좁은 화면에서만 한 칸으로 접는다.
+- **컴퓨터 화면에서는 넓게 쓴다.** 전체 폭은 `--container`(1200px), 모바일처럼 좁은 기둥으로 줄이지 않는다(교수 2026-10-21). `--measure`도 가용 폭 100%를 사용한다. 문단 폭을 760px로 좁히는 안은 기존 결정으로 기각됐다. 좁은 화면에서만 한 칸으로 접는다.
 - **넓은 화면을 전제로 설계하고 12칸 격자에 칸을 배분한다.** 좁은 기둥을 늘려 쓰지 않는다(교수 2026-10-21: "공간은 넓은데 컨텐츠는 좁은 걸 상정해 억지로 늘리면 안 예쁘다"). 나란히 놓는 것은 내용이 대등할 때만(예: 연구 분야 셋) 쓰고, 긴 목록(뉴스 등)은 전체 폭을 쓴다.  절 이름만 왼쪽 칸에 세우는 라벨 칸은 쓰지 않는다.
 - **왼쪽에는 "무엇", 오른쪽 끝에는 "언제·어디·누구"를 둔다.** 눈은 왼쪽을 위에서 아래로 훑으므로, 항목을 고르는 기준(제목, 과제명, 직함, 상 이름)이 왼쪽에 와야 한다. 딸린 정보(학기, 기간, 연도, 장소, 소속, 발표자, venue)는 오른쪽 끝에 맞춘다(교수 2026-10-21). 오른쪽에는 짧은 꼬리표만 둔다. 학회 목록처럼 그 줄의 내용 자체인 것은 오른쪽으로 떼지 않고 왼쪽 문장 안에 둔다(예: Reviewer 의 "Conference: NeurIPS, ICML, ..."). 일의 일부인 학회 이름도 왼쪽에 쉼표로 잇는다(예: "Area Chair, ICLR 2027", 워크숍 이름 뒤 ", ICCV'25"). 기사의 매체 이름은 제목 뒤에 구분점 없이 8px 간격과 15px 보조색으로 둔다(Home 의 Media, 교수 2026-10-28). 예외는 둘이다. (1) 시간순 기록(News, Seminar)은 날짜가 곧 순서이므로 왼쪽 첫 칸에 고정 폭으로 둔다. (2) 같은 범주로 묶어 읽는 칸(과제의 기관)은 왼쪽 첫 칸에 고정 폭으로 두어 그 뒤 제목의 시작을 맞춘다. 정보가 많은 항목(논문)은 여러 줄로 두고 venue·링크를 아래 줄에 둔다. 멘티는 한 줄이다(이름·소속 왼쪽, 함께 낸 논문의 venue 오른쪽). 휴대폰에서는 오른쪽 정보를 다음 줄 왼쪽으로 내린다. 데이터를 쓸 때부터 이 둘을 나눈다(예: 교수 이력은 `{ text, side }`).
 - **연도 범위는 en dash 양옆에 좁은 공백(thin space, U+2009)을 둔다**: `2026 – 2031`, `2025 – present`(교수 2026-10-21). 과제 기간, 교수 이력 등 사이트 전체가 같다. 같은 해라도 `2026 – 2026` 처럼 시작–끝을 쓴다. 논문·발표 제목 안의 대시는 원문 그대로 둔다.
@@ -114,18 +114,21 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 1. **고칠 요소의 역할부터 정한다.** "Teaching 의 Study group 제목"이 아니라 "목록을 묶는 제목"처럼 사이트 전체에서 쓰는 역할 이름으로 본다.
 2. **그 역할의 전역 규칙을 따른다(아래 표).** 규칙이 정한 토큰을 그대로 쓰고, 페이지 전용 크기·간격을 새로 만들지 않는다.
 3. **규칙이 마음에 안 들거나 규칙에 없는 모양이 필요하면 규칙을 고친다.** 이 표와 `theme.css` 의 역할 토큰을 먼저 고치고, 같은 역할을 쓰는 모든 페이지에 한 번에 적용한다. 한 페이지만 예외로 두지 않는다.
-4. **사이트 전체를 검사한다.** 빌드한 뒤 `node tools/check_format.js` 를 돌린다(13개 메뉴 페이지를 1440px·1280px·768px·390px·320px 에서 잰다). 고친 페이지만이 아니라 전체가 통과해야 한다. `main` push 와 PR 마다 GitHub Actions(`format`)가 같은 검사를 돌린다. 새 역할 규칙을 만들면 이 검사에도 더한다.
+4. **사이트 전체를 검사한다.** 빌드한 뒤 `node tools/check_format.js` 를 돌린다(13개 메뉴 페이지를 1440px·1280px·768px·390px·320px 에서 잰다). 고친 페이지만이 아니라 전체가 통과해야 한다. `main` push 와 PR 마다 GitHub Actions(`format`)가 같은 검사를 돌린다. `node tools/check_typography.js`는 강의와 404를 포함한 24페이지의 모든 보이는 텍스트, 숨은 탭·접힌 목록, 큰 제목 경계를 검사한다. 새 역할 규칙을 만들면 검사에도 더한다. 자동 검사는 역할 일치와 잘림을 확인하는 수단이며, 실제 화면의 시각적 균형은 별도로 판단한다.
 
 | 역할 | 예 | 글자 | 간격 |
 | --- | --- | --- | --- |
+| 큰 표시 제목 | Home hero, 강의 페이지 h1 | `--text-display`(34~48px 연속 변화), 굵기 700, 행간 1.1, `--tracking-display`(-.025em) | 화면 폭이 커질 때 크기가 역전되거나 경계에서 급변하지 않는다 |
 | 한 절인 제목 | Home 의 Our focus·News, Contact 의 Join us, Research 의 Perception, Faculty 이름 | `--text-h2` | 절 사이 `--section-gap` |
-| 목록을 묶는 제목 | 연도(Publications, Seminar, Talks), Funding 기관 묶음, 멤버·멘티 묶음, Regular courses·Undergraduate AI Study, Faculty 의 Bio·Appointments | `--text-group`, 굵기 700 | 위 `--section-gap`(앞 묶음의 마지막 줄부터), 아래 `--space-4` |
+| 목록을 묶는 제목 | 연도(Publications, Seminar, Talks), Funding 기관 묶음, 멤버·멘티 묶음, Regular courses·Undergraduate AI Study, Faculty 의 Bio·Appointments | `--text-group`, 굵기 700, `--leading-group`(1.3), 정상 자간 | 위 `--section-gap`(앞 묶음의 마지막 줄부터), 아래 `--space-4` |
 | 목록 한 줄 | 뉴스, 과제, 강의, 발표 | `--text-body`, 무엇은 굵게 | 줄 사이 `--row-gap`·`--item-gap`. 목록의 첫 줄 위와 마지막 줄 아래에는 줄 간격을 두지 않는다(제목·다음 묶음과의 간격은 위 규칙만 따른다) |
 | 절을 닫는 안내 줄 | Home·Research 의 See our publications, Paper Stella 의 Open in full screen | `--text-body`(데스크톱 17px·모바일 16px), 링크만 보통 굵기(400) 강조색(`.section-next`) | 위 내용에 붙여 위 `--space-5`(24px), 다음 절은 `--section-gap`. embed는 설명 `caption`과 탐색 `next`를 구분하고 next에 이 역할 적용 |
 | 알림 띠 | 특별 공지(현재 사용 없음) | `--text-body`, 연한 강조색 바탕(`--accent-soft`), 링크 보통 굵기(400) 강조색(`class: section-callout`). 머리말을 굵게 쓰면 강조색 | 위 절에 붙여 위 `--space-5`, 아래 `--section-gap`. 사이트에 하나만 둔다 |
-| 논문 제목 | Publications 목록, Home 대표 논문 카드 | `--text-paper`(15px, 저자·venue와 같은 크기), 굵기 600 | 목록의 제목·저자·venue 줄 사이는 `--detail-gap`(4px), 목록의 논문 사이는 `--item-gap`의 위아래 합(24px) |
-| 논문 저자 | Publications 저자 이름 | `--text-author`(15px, 제목·venue와 같은 크기), 굵기 400. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
-| 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(15px, 제목·저자와 같은 크기). venue·발표 형식은 굵기 600, 자료 링크는 400. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
+| 논문 목록 제목 | Publications 목록 | `--text-paper`(15px, 저자·venue와 같은 크기), 굵기 600, `--leading-paper`(1.5), 정상 자간 | 목록의 제목·저자·venue 줄 사이는 `--detail-gap`(4px), 목록의 논문 사이는 `--item-gap`의 위아래 합(24px) |
+| 연구 방향 탭 | Home 의 세 분야 | 기본 20px, 모바일 15px, 360px 이하 13px. 단어 중간에서 자르지 않는다 | 세 칸의 위치는 유지하고 좁은 화면에서 작은 라벨 역할 사용 |
+| 대표 논문 카드 제목 | Home 연구 방향 카드 | `--text-featured-paper`(본문과 같은 17/16px), 굵기 600, 행간 1.4 | 배지와 제목 사이 `--space-3`, 카드 패딩은 공통 카드 역할 |
+| 논문 저자 | Publications 저자 이름 | `--text-author`(15px, 제목·venue와 같은 크기), 굵기 400, 행간 1.5. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
+| 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(15px, 목록 제목·저자와 같은 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. venue·발표 형식은 굵기 600, 자료 링크는 400. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
 | 페이지 시작 | 하위 탭 뒤 첫 내용, 소개 뒤 첫 절 | | `--page-start`(데스크톱 48px, 모바일 32px) |
 | 카드 안 여백 | Home 논문, Research 주제, Contact 단계 카드 | | `--card-padding`(데스크톱 24px, 모바일 16px) |
 | 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
@@ -150,7 +153,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
    bundle install
    bundle exec jekyll serve
    ```
-   http://localhost:4000 에서 확인한다. 디자인을 고쳤으면 `bundle exec jekyll build` 뒤 `node tools/check_format.js` 와 `node tools/check_postech.js` 로 사이트 전체 형식과 POSTECH 필수 요소를 검사한다.
+   http://localhost:4000 에서 확인한다. 디자인을 고쳤으면 `bundle exec jekyll build` 뒤 `node tools/check_format.js`, `node tools/check_typography.js`, `node tools/check_postech.js` 로 사이트 전체 형식과 POSTECH 필수 요소를 검사한다.
 6. **changelog 를 쓴다(아래, 필수).** 작성자 ID 는 push 하는 GitHub 계정이다.
 7. 커밋하고 브랜치에 push 한 뒤 PR 을 연다. PR 이 쌓이지 않게 두 가지로 나눈다(교수 2026-10-27).
    - **작은 수정**(문구·링크·항목 추가, 오타, 본인 멤버 정보, 이미 결정된 안 반영): auto-merge 를 squash 로 켠다(`gh pr create --fill && gh pr merge --auto --squash`). 검사가 통과하면 1~2분 안에 `main` 에 커밋 하나로 들어가고 브랜치는 저절로 지워진다. 에이전트는 묻지 않고 이 길로 끝까지 올린다. 한 요청의 작은 수정은 PR 하나로 묶고, 수정마다 PR 을 따로 열지 않는다. auto-merge 를 켤 수 없으면 검사 통과를 확인하고 바로 merge 한다.

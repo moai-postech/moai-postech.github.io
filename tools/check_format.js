@@ -27,7 +27,7 @@ function measure(TOL) {
     const size = parseFloat(getComputedStyle(probe).fontSize);
     probe.remove(); return size;
   };
-  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'), author: font('--text-author'), paperMeta: font('--text-paper-meta'),
+  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'), featuredPaper: font('--text-featured-paper'), author: font('--text-author'), paperMeta: font('--text-paper-meta'),
     sectionGap: parseFloat(getComputedStyle(document.body).getPropertyValue('--section-gap')) || px('--section-gap'),
     below: px('--space-4') };
   const allowed = [tok.h2, tok.group, tok.body, tok.meta, tok.small];
@@ -62,8 +62,8 @@ function measure(TOL) {
   // Paper hierarchy and wrapping are shared by the list and Home focus cards.
   for (const title of main.querySelectorAll('.pubs .title, .paper-chip .paper-title')) {
     if (!visible(title)) continue;
-    if (Math.abs(parseFloat(getComputedStyle(title).fontSize) - tok.paper) > 0.5)
-      problems.push('논문 제목이 --text-paper 크기가 아니다');
+    if (Math.abs(parseFloat(getComputedStyle(title).fontSize) - (title.closest('.paper-chip') ? tok.featuredPaper : tok.paper)) > 0.5)
+      problems.push('논문 제목이 목록·대표 카드의 역할 크기가 아니다');
   }
   for (const author of main.querySelectorAll('.pubs .authors')) {
     if (visible(author) && Math.abs(parseFloat(getComputedStyle(author).fontSize) - tok.author) > 0.5)

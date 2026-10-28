@@ -19,7 +19,7 @@
   --gray-50: #f3f6fa;
   --white: #ffffff;
 
-  --fs-1: 13px;  --fs-2: 15px;  --fs-3: 17px;  --fs-4: 20px;  --fs-5: 28px;  --fs-6: clamp(36px, 3.9vw, 48px);  /* display shrinks with the screen so the two-line headline holds */
+  --fs-1: 13px;  --fs-2: 15px;  --fs-3: 17px;  --fs-4: 20px;  --fs-5: 28px;  --fs-6: clamp(34px, 4vw, 48px);  /* display shrinks with the screen so the two-line headline holds */
   --space-1: 4px;  --space-2: 8px;  --space-3: 12px;  --space-4: 16px;  --space-5: 24px;
   --space-6: 32px; --space-7: 48px; --space-8: 64px;  --space-9: 96px;
   --radius-1: 6px; --radius-2: 12px;
@@ -55,6 +55,10 @@
   --text-paper: var(--text-meta);  /* one 15px size for paper titles, authors and venues; weight and color separate roles */
   --text-author: var(--text-paper);
   --text-paper-meta: var(--text-paper);
+  --text-featured-paper: var(--text-body);  /* featured cards and dense lists have different reading roles */
+  --leading-group: 1.3;
+  --leading-paper: 1.5;
+  --tracking-display: -.025em;
   --photo-height: clamp(220px, 26vw, 380px);
   --page-start: var(--space-7);
   --card-padding: var(--space-5);
@@ -96,7 +100,7 @@ p:last-child { margin-bottom: 0; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* Type */
-h1 { margin: 0; font-size: var(--text-display); font-weight: 700; line-height: 1.1; letter-spacing: -1.6px; }
+h1 { margin: 0; font-size: var(--text-display); font-weight: 700; line-height: 1.1; letter-spacing: var(--tracking-display); }
 h2 { margin: 0 0 var(--space-5); font-size: var(--text-h2); font-weight: 700; line-height: 1.3; letter-spacing: -.6px; }
 h3 { margin: 0 0 var(--space-1); font-size: var(--text-lead); font-weight: 600; line-height: 1.4; letter-spacing: -.3px; }
 h3.sub { margin: var(--space-6) 0 var(--space-2); font-size: var(--text-small); font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
@@ -189,7 +193,7 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .paper-chip { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); color: var(--text); }
 a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .paper-chip .venue { background: var(--bg); }  /* the card is already grey, so its badge is white */
-.paper-chip .paper-title { font-size: var(--text-paper); font-weight: 600; line-height: 1.4; }
+.paper-chip .paper-title { font-size: var(--text-featured-paper); font-weight: 600; line-height: 1.4; }
 .focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 400; }
 .focus-people .label { margin-right: var(--space-1); color: var(--faint); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
 .focus-people a, .focus-people span:not(.label) { color: var(--text); }
@@ -293,8 +297,8 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule { width: 100%; border-collapse: collapse; }
 .schedule.is-locked { table-layout: fixed; }  /* column widths measured once over all talks (scripts.html), so filtering never moves a column */
 .schedule td { padding: var(--space-2) 0; vertical-align: baseline; }
-.schedule-year th { padding: calc(var(--section-gap) - var(--space-2)) 0 calc(var(--space-4) - var(--space-2));  /* minus the rows' own padding, so the year sits at the same gaps as every group heading */ color: var(--text); font-size: var(--text-group); font-weight: 700; text-align: left; }
-.year-head { margin: var(--section-gap) 0 var(--space-4); font-size: var(--text-group); font-weight: 700; letter-spacing: normal; }  /* same year heading as the seminar list */
+.schedule-year th { line-height: var(--leading-group); padding: calc(var(--section-gap) - var(--space-2)) 0 calc(var(--space-4) - var(--space-2));  /* minus the rows' own padding, so the year sits at the same gaps as every group heading */ color: var(--text); font-size: var(--text-group); font-weight: 700; text-align: left; }
+.year-head { line-height: var(--leading-group); margin: var(--section-gap) 0 var(--space-4); font-size: var(--text-group); font-weight: 700; letter-spacing: normal; }  /* same year heading as the seminar list */
 .section-body > .year-head:first-child { margin-top: 0; }
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--faint); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -319,21 +323,21 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .embed-next { margin-top: var(--space-5); }  /* navigation after a visual follows the same body-size closing-link role */
 
 /* Publications: title, authors, then venue and links under them */
-.page-publications h2 { margin-bottom: var(--space-4); font-size: var(--text-group); letter-spacing: normal; }  /* year headings: same size and tracking as the Seminar and Talks years; 16px below keeps a year closer to its first paper than papers are to each other */
-.page-funding h2, .page-students h2, .page-mentees h2, .page-teaching h2, .page-faculty h2:not(#professor) { margin-bottom: var(--space-4); font-size: var(--text-group); letter-spacing: normal; }  /* list groups read at the year-heading size, not as page sections (2026-10-27, "one type scale across the site") */
+.page-publications h2 { line-height: var(--leading-group); margin-bottom: var(--space-4); font-size: var(--text-group); letter-spacing: normal; }  /* year headings: same size and tracking as the Seminar and Talks years; 16px below keeps a year closer to its first paper than papers are to each other */
+.page-funding h2, .page-students h2, .page-mentees h2, .page-teaching h2, .page-faculty h2:not(#professor) { line-height: var(--leading-group); margin-bottom: var(--space-4); font-size: var(--text-group); letter-spacing: normal; }  /* list groups read at the year-heading size, not as page sections (2026-10-27, "one type scale across the site") */
 .page-publications sup { line-height: 0; }  /* the equal-contribution marks no longer push their author line 2.5px taller than the others */
 .pubs li { display: grid; grid-template-columns: 2.25em minmax(0, 1fr); gap: var(--detail-gap) var(--space-3); padding: var(--item-gap) 0; }  /* title, authors and metadata share the detail gap; padding separates papers by twice --item-gap */
 .pubs li > * { grid-column: 2; }
 .pubs li > .pub-num { grid-column: 1; grid-row: 1; align-self: baseline; color: var(--faint); font-size: var(--text-meta); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }  /* shares its baseline with the title; right-aligned so every number sits 12px before its title */
 .pubs li:first-child { padding-top: 0; }
-.pubs .title { display: block; align-self: baseline; font-size: var(--text-paper); font-weight: 600; line-height: 1.4; text-wrap: pretty; }
+.pubs .title { display: block; align-self: baseline; font-size: var(--text-paper); font-weight: 600; line-height: var(--leading-paper); text-wrap: pretty; }
 .pubs .title a { color: var(--text); }
 .pubs .title a:hover { color: var(--accent); }
-.pubs .authors { color: var(--faint); font-size: var(--text-author); line-height: 1.5; }
+.pubs .authors { color: var(--faint); font-size: var(--text-author); line-height: var(--leading-paper); }
 .author { white-space: nowrap; }  /* a name never breaks across lines */
 .pubs .lab { color: var(--text); }
 .pubs .note { margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: 600; line-height: 1.5; }  /* awards: a line of their own, in the accent colour */
-.pub-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-4); }
+.pub-meta { font-size: var(--text-paper-meta); line-height: var(--leading-paper); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-4); }
 .pub-venue, .pub-links { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1); }
 .pub-links { gap: var(--space-3); }
 .venue-honor { color: var(--accent); font-size: var(--text-paper-meta); font-weight: 600; }  /* presentation honours stay beside the venue, including when the links wrap */
@@ -390,9 +394,11 @@ a.person-name:hover { color: var(--accent); }
 
 
 /* Narrower screens: tokens shrink, multi-column parts stack */
+@media (max-width: 1199px) {
+  .hero h1 br { display: none; }  /* avoid an orphaned "of" in the narrower desktop column */
+}
 @media (max-width: 960px) {
-  :root { --gutter: var(--space-6); --page-margin: 32px; --fs-6: 44px; }
-  .hero h1 br { display: none; }
+  :root { --gutter: var(--space-6); --page-margin: 32px; }
   .hero-copy, .hero-art { grid-column: 1 / -1; }
   .hero-art { display: none; }  /* tablets keep the statement and lab photo without a second tall illustration */
   .focus-tabs { align-items: stretch; }
@@ -404,7 +410,7 @@ a.person-name:hover { color: var(--accent); }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 680px) {
-  :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --fs-6: 34px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); --page-start: var(--space-6); --card-padding: var(--space-4); --row-gap: var(--space-2); }
+  :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); --page-start: var(--space-6); --card-padding: var(--space-4); --row-gap: var(--space-2); }
   .site-head { display: block; padding: var(--space-5) 0 var(--space-2); }
   .head-id { margin-bottom: var(--space-2); }
   .head-postech { margin-right: var(--space-3); padding-right: var(--space-3); }
@@ -442,7 +448,7 @@ a.person-name:hover { color: var(--accent); }
   .schedule, .schedule tbody, .schedule tr, .schedule td, .schedule th { display: block; width: auto; }
   .schedule tr[hidden] { display: none; }
   .schedule tr:not(.schedule-year) { padding: var(--space-3) 0; }
-  .schedule-year th { padding: calc(var(--section-gap) - var(--space-3)) 0 calc(var(--space-4) - var(--space-3)); }  /* rows pad by --space-3 here */
+  .schedule-year th { line-height: var(--leading-group); padding: calc(var(--section-gap) - var(--space-3)) 0 calc(var(--space-4) - var(--space-3)); }  /* rows pad by --space-3 here */
   .schedule td { padding: 0 !important; text-align: left; white-space: normal; }
   .schedule tr[data-kind]:not([hidden]) { display: flex; flex-wrap: wrap; align-items: baseline; }
   .schedule td.schedule-date, .schedule td.schedule-title { flex-basis: 100%; }
@@ -450,6 +456,10 @@ a.person-name:hover { color: var(--accent); }
   .schedule td.schedule-speaker { order: 1; }
   .schedule td.schedule-aff { order: 2; margin-left: var(--space-2); }
   main { overflow-wrap: anywhere; }
+}
+@media (max-width: 360px) {
+  .focus-tab { padding-inline: 0; font-size: var(--text-small); }
+  .focus-tab span { overflow-wrap: normal; }
 }
 @media print {
   .hero-art, .site-nav, .subnav { display: none; }

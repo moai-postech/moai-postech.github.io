@@ -19,7 +19,7 @@
   --gray-50: #f3f6fa;
   --white: #ffffff;
 
-  --fs-1: 13px;  --fs-2: 15px;  --fs-3: 17px;  --fs-4: 20px;  --fs-5: 28px;  --fs-6: clamp(34px, 4vw, 48px);  /* display shrinks with the screen so the two-line headline holds */
+  --fs-1: 13px;  --fs-2: 14px;  --fs-3: 16px;  --fs-4: 19px;  --fs-5: 26px;  --fs-6: clamp(32px, 4vw, 46px);  /* display shrinks with the screen so the two-line headline holds */
   --space-1: 4px;  --space-2: 8px;  --space-3: 12px;  --space-4: 16px;  --space-5: 24px;
   --space-6: 32px; --space-7: 48px; --space-8: 64px;  --space-9: 96px;
   --radius-1: 6px; --radius-2: 12px;

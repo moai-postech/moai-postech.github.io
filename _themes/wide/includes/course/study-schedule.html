@@ -16,15 +16,15 @@
         {% if t.sheet %}{% include course/sheet-link.html url=t.sheet label="Study sheet" class_name="study-sheet" %}{% endif %}
       </div>
       <div class="study-term-details">
-        {% if info.overview %}<div class="study-overview"><h3>Overview</h3><p>{{ info.overview }}</p>{% if info.reference_course %}<p class="study-reference">Based on <a href="{{ info.reference_course.url }}">{{ info.reference_course.title }}</a> ({{ info.reference_course.term }}).</p>{% endif %}{% if info.learning_path %}<ol class="study-learning-path" style="--study-steps: {{ info.learning_path.size }}">{% for step in info.learning_path %}<li><span class="study-step-label">{{ step.label }}</span><h4>{{ step.title }}</h4><p>{{ step.text }}</p></li>{% endfor %}</ol>{% endif %}</div>{% endif %}
+        {% if info.overview %}<div class="study-overview"><h3>Overview</h3><p>{{ info.overview }}</p>{% if info.reference_course %}<p class="study-reference">Based on <a href="{{ info.reference_course.url }}">{{ info.reference_course.title }}</a> ({{ info.reference_course.term }}).</p>{% endif %}{% if info.learning_path %}<ol class="study-learning-path" style="--study-steps: {{ info.learning_path.size }}">{% for step in info.learning_path %}<li><button type="button" class="study-step" data-start="{{ step.start }}" data-end="{{ step.end }}" aria-controls="schedule-{{ t.id }}" aria-pressed="false"><span class="study-step-label">{{ step.label }}</span><span class="study-step-title">{{ step.title }}</span><span class="study-step-text">{{ step.text }}</span></button></li>{% endfor %}</ol>{% endif %}</div>{% endif %}
         {% if info %}{% include course/facts.html instructor=info.advisor instructor_label="Advisor" representative=info.representative location=info.location meetings=info.meetings %}{% endif %}
       </div>
       {% if t.note %}<p class="study-note"><strong>{{ t.note.label }}</strong> {% if t.note.links %}{% for l in t.note.links %}<a href="{{ l.url }}">{{ l.text }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% else %}{{ t.note.text }}{% endif %}</p>{% endif %}
-      <table class="course-schedule study-table{% if lecture_format %} study-table-lectures{% endif %}">
+      <table id="schedule-{{ t.id }}" class="course-schedule study-table{% if lecture_format %} study-table-lectures{% endif %}">
         <colgroup><col class="sc-n"><col class="sc-date"><col class="sc-topic">{% if lecture_format %}<col class="sc-lec">{% else %}<col class="sc-papers"><col class="sc-demo">{% endif %}<col class="sc-who"><col class="sc-mat"></colgroup>
         <thead><tr><th scope="col">#</th><th scope="col">Date</th><th scope="col">Topic</th>{% if lecture_format %}<th scope="col">Lec</th>{% else %}<th scope="col">Papers</th><th scope="col">Demo</th>{% endif %}<th scope="col">Presenters</th><th scope="col">Materials</th></tr></thead>
         <tbody>
-        {% for s in t.sessions %}<tr class="{% if s.optional %}is-optional tone-none{% else %}tone-guest{% endif %}">
+        {% for s in t.sessions %}<tr data-session="{{ s.n }}" class="{% if s.optional %}is-optional tone-none{% else %}tone-guest{% endif %}">
           <td class="cs-n">{{ s.n }}</td>
           <td class="cs-date">{% if s.date %}<time datetime="{{ s.date }}">{{ s.date | date: "%m/%d" }}</time>{% endif %}</td>
           <td class="cs-topic">{% if s.optional %}<span class="cs-tag">Optional</span>{% endif %}<span class="cs-title">{{ s.title }}</span>{% if s.keywords %}<span class="cs-speaker">{{ s.keywords }}</span>{% endif %}</td>
@@ -63,6 +63,29 @@
       var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
       var index = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : d ? (i + d + tabs.length) % tabs.length : -1;
       if (index >= 0) { e.preventDefault(); var n = tabs[index]; show(n, true); n.focus(); }
+    });
+  });
+  box.querySelectorAll('.study-panel').forEach(function (panel) {
+    var steps = Array.prototype.slice.call(panel.querySelectorAll('.study-step'));
+    var rows = Array.prototype.slice.call(panel.querySelectorAll('[data-session]'));
+    steps.forEach(function (step) {
+      step.addEventListener('click', function () {
+        var active = step.getAttribute('aria-pressed') !== 'true';
+        var start = Number(step.dataset.start), end = Number(step.dataset.end);
+        steps.forEach(function (other) {
+          var selected = active && other === step;
+          other.setAttribute('aria-pressed', selected ? 'true' : 'false');
+          other.parentElement.classList.toggle('is-selected', selected);
+        });
+        var first;
+        rows.forEach(function (row) {
+          var n = Number(row.dataset.session);
+          var selected = active && n >= start && n <= end;
+          row.classList.toggle('is-part-selected', selected);
+          if (selected && !first) first = row;
+        });
+        if (first) first.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+      });
     });
   });
   var want = location.hash.slice(1);

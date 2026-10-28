@@ -13,6 +13,7 @@
 - 학기 제목·시간·장소·지도교수·학생대표·Study sheet는 해당 학기 패널 안에 둔다. 지난 학기 정보와 현재 학기 정보를 섞지 않는다.
 - 장소는 이전 세 학기 공학4동 307호, Fall 2026부터 공학4동 302호다. 앞으로도 특별한 이슈가 없으면 302호를 기본으로 사용한다(교수 2026-10-28). 개별 회차의 임시 장소 변경을 학기 기본 장소에 나열하지 않는다.
 - 학기 탭은 클릭·좌우 화살표·Home·End를 지원한다. 학기별 주소 fragment를 유지하고 탭을 바꿔도 표의 열 위치가 움직이지 않게 한다.
+- 학습 흐름의 각 파트는 버튼이다. `learning_path`의 숫자 `start`·`end`를 표의 회차 번호와 연결해 선택한 범위만 크림슨 tint로 강조하고 첫 회차로 이동한다. 같은 파트를 다시 누르면 해제한다. Enter·Space와 reduced motion을 지원하며, 선택 상태는 학기별로 유지한다.
 - 논문 중심 학기는 번호·날짜·Topic·Papers·Demo·Presenters·Materials 순이다. 강의 중심 학기는 `format: lectures`로 번호·날짜·Topic·Lec·Presenters·Materials 순으로 표시한다. 좁은 화면에서는 카드로 접는다.
 - 표 마감선은 [공통 규칙](README.md#표의-마감선)을 따른다. 학기마다 예외를 두지 않는다.
 
@@ -25,7 +26,7 @@
 | 학기별 운영 정보 | `_data/ai_study_terms.yml`, 일정과 같은 학기 ID 사용 |
 | 멤버 명단 | `_data/ai_study_members.yml`, member 시트의 Apps Script 셀 읽기 결과를 `tools/ai_study_members_sync.py`로 변환 |
 
-`ai_study_terms.yml`은 `format`(강의 중심이면 lectures), `reference_course`(title, term, url), `overview`, `learning_path`(label, title, text), `advisor`(사진 `photo` 포함), `meetings`, `location`, `representative`를 학기별로 둔다. 값이 없으면 해당 칸을 생략한다. 자료 시트 링크는 동기화 데이터의 `sheet`다.
+`ai_study_terms.yml`은 `format`(강의 중심이면 lectures), `reference_course`(title, term, url), `overview`, `learning_path`(label, start, end, title, text), `advisor`(사진 `photo` 포함), `meetings`, `location`, `representative`를 학기별로 둔다. 값이 없으면 해당 칸을 생략한다. 자료 시트 링크는 동기화 데이터의 `sheet`다.
 
 ## Members
 

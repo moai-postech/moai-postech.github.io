@@ -43,6 +43,43 @@ const check = (ok, message) => { if (!ok) throw new Error(message); };
         check(await tabs.nth(count - 1).getAttribute('aria-selected') === 'true', `${url}: arrow did not wrap`);
         check(Math.abs(await page.evaluate(() => scrollY) - y) < 3, `${url}: tab key scrolled the page`);
       }
+      // Learning-path buttons select only their term's numbered study sessions.
+      await page.goto(new URL('teaching/ai-study/schedule/', base).href);
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      const parts = {
+        'fall-2026': [[1, 6], [7, 8], [9, 11]],
+        'summer-2026': [[1, 3], [4, 7], [8, 10]],
+        'spring-2026': [[1, 2], [3, 6], [7, 9]],
+        'fall-2025': [[1, 3], [4, 5], [6, 7], [8, 9]]
+      };
+      for (const [term, ranges] of Object.entries(parts)) {
+        await page.locator(`[aria-controls="${term}"]`).click();
+        const panel = page.locator(`#${term}`), buttons = panel.locator('.study-step');
+        for (let i = 0; i < ranges.length; i++) {
+          const [start, end] = ranges[i], button = buttons.nth(i);
+          if (i === 0) await button.click();
+          else { await button.focus(); await page.keyboard.press(i % 2 ? 'Enter' : 'Space'); }
+          const actual = await panel.locator('.is-part-selected .cs-n').allTextContents();
+          const expected = Array.from({ length: end - start + 1 }, (_, n) => String(start + n));
+          check(actual.join(',') === expected.join(','), `${width}px ${term}: wrong rows for part ${i}`);
+          check(await panel.locator('.study-step[aria-pressed="true"]').count() === 1, `${term}: multiple selected parts`);
+          check(await button.getAttribute('aria-pressed') === 'true', `${term}: selected button missing state`);
+          const colors = await panel.evaluate(el => {
+            const selected = el.querySelector('.is-part-selected .cs-n');
+            const other = el.querySelector('tr[data-session]:not(.is-part-selected) .cs-n');
+            const target = matchMedia('(max-width: 680px)').matches ? cell => cell.parentElement : cell => cell;
+            return [selected, other].map(cell => getComputedStyle(target(cell)).backgroundColor);
+          });
+          check(colors[0] !== colors[1], `${term}: selected rows not visually highlighted`);
+          await page.waitForFunction(id => {
+            const rect = document.querySelector(`#${id} .is-part-selected`).getBoundingClientRect();
+            return rect.top >= 0 && rect.top < innerHeight;
+          }, term);
+        }
+        await buttons.last().focus(); await page.keyboard.press('Space');
+        check(await panel.locator('.is-part-selected').count() === 0, `${term}: repeat selection did not clear`);
+        check(await buttons.last().getAttribute('aria-pressed') === 'false', `${term}: cleared button still pressed`);
+      }
       await page.close();
     }
     const context = await browser.newContext(); const page = await context.newPage();

@@ -5,8 +5,8 @@
 
 | 날짜 | 안건 | 제안자 | 대상 | 상태 | 결정 changelog |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-28 | [logo-pink-v2](2026-10-28-logo-pink-v2.md) | Chaewon Park(onehanap) | 운영 로고·favicon | 논의 중 | |
-| 2026-10-27 | [design-balance-recheck](2026-10-27-design-balance-recheck.md) | Sangwoo Mo(sangwoomo), Codex 검토 | Home 대표 논문에서 실적·진행 연구 비중 | 논의 중 | [ui-ux-polish](../changelog/2026-10-27-ui-ux-polish.md) |
+| 2026-10-28 | [logo-pink-v2](2026-10-28-logo-pink-v2.md) | Chaewon Park(onehanap) | 운영 로고·favicon | 결정됨 | [logo-candidate-review](../changelog/2026-10-28-logo-candidate-review.md) |
+| 2026-10-27 | [design-balance-recheck](2026-10-27-design-balance-recheck.md) | Sangwoo Mo(sangwoomo), Codex 검토 | Home 대표 논문에서 실적·진행 연구 비중 | 결정됨 | [home-actions-venue](../changelog/2026-10-28-home-actions-venue.md) |
 | 2026-10-27 | [dark-mode](2026-10-27-dark-mode.md) | Claude Code | 테마 색 | 결정됨 | 없음(원본 유지) |
 | 2026-10-27 | [home-lab-photo](2026-10-27-home-lab-photo.md) | Claude Code | Home | 결정됨 | [home-group-photo](../changelog/2026-10-27-home-group-photo.md)(같은 날 안 B → 안 A) |
 | 2026-10-27 | [home-recruiting](2026-10-27-home-recruiting.md) | Claude Code | Home | 결정됨 | [home-recruiting](../changelog/2026-10-27-home-recruiting.md) |

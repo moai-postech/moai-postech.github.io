@@ -71,3 +71,7 @@ POSTECH 요구사항: P1~P9 영향 없음. 학교·연구실 로고, 공식 링�
 
 ## Talks 후보에 대한 교수 결정
 - How to Use Agents는 연구 내용이 아니므로 추가하지 않기로 결정. Talks는 본인이 수행한 연구 발표가 기본이고 VLA tutorial 같은 학회 튜토리얼만 예외로 포함. 정본 기준은 AGENTS.md, 후속 회차는 minor-workflow-link-finishes.
+
+## Home 대표 논문 최종 결정
+- 2026-10-28 교수는 분야 적합성을 우선해 현재 대표 논문 구성과 순서를 유지하도록 결정. 게재 비중을 높이는 교체는 하지 않음.
+- design-balance-recheck 안건과 TODO의 관련 결정 대기를 종료. 실제 _data/focus.yml은 변경하지 않음.

@@ -1,5 +1,5 @@
 # 2026-10-28 학부 AI 스터디 자료 표기 통일
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/ai_study.yml`, `tools/ai_study_sync.py`, `_themes/wide/includes/course/study.html`, `_themes/wide/includes/course/course.css`, `TODO.md` | 도구: Codex
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/ai_study.yml`, `_data/ai_study_terms.yml`, `tools/ai_study_sync.py`, `_themes/wide/includes/course/study.html`, `_themes/wide/includes/course/course.css`, `_themes/wide/includes/course/README.md`, `teaching/ai-study/index.md`, `TODO.md` | 도구: Codex
 
 > **한줄 결론: 자료를 Slides 1, 2와 Demo로 묶고, 단일 Figure 링크를 제외했다. 여름학기는 원 강의 자료 14개를 10회에 연결했다.**
 
@@ -55,6 +55,21 @@
 - Foundation Models 첫 회의 `(full lecture)` 링크는 후속 요청으로 제외. MIT DL primer와 발표자료는 유지.
 - 2차의 Papers 칸 비우기는 이번 요청으로 교체. 동일 PDF 링크를 Papers와 Materials에 중복으로 두지 않음.
 - 검증: 1440·768·390px에서 네 학기의 시트 링크 `gid`·`range`, 여름학기 강의 번호 14개와 PDF 14개, 요청한 문구 제거와 Spring 복습 안내 유지, 가로 넘침 없음을 확인. Jekyll 빌드, 형식·타이포그래피·POSTECH 검사 통과.
+
+## 5차: 학기 중심으로 스터디 페이지 재구성
+- 교수 요청: 전역 운영 정보 카드 대신 탭을 먼저 보여 주고 학기마다 시간·장소·지도교수·학생대표가 바뀌도록 전면 재구성. 학생대표는 네 학기 모두 최지안으로 지정.
+- 소개 바로 아래 학기 탭, 선택 학기의 주제·Study sheet 링크, 학기별 운영 정보, 일정 순서로 변경. 운영 정보는 데스크톱 4열, 태블릿 2열, 휴대폰 1열. 전역 Terms·Organizer 카드와 교수 사진은 제거.
+- `_data/ai_study_terms.yml`에 학기별 운영 정보 저장. 시트 자동 동기화 파일과 분리해 매일 실행 시 덮어쓰이지 않고 새 학기별로 독립 관리. front matter의 전역 meetings·organizer 필드는 제거.
+- 시간은 Outlook Graph `calendarView`의 실제 일정 start/end(UTC)에 9시간을 더해 확인. 캘린더 검색 엔드포인트는 같은 일정을 찾지 못해 날짜 범위 조회로 대조.
+  - Fall 2025: 2025-09-17과 11-19의 `AI 스터디`, 수요일 22:00–23:00, 공학4동 307호.
+  - Spring 2026: 2026-03-17과 05-19의 `학부생 AI 스터디`, 화요일 21:00–22:30. 3월에는 302호, 5월에는 307호라 두 강의실을 표시.
+  - Summer 2026: 2026-06-23·30, 07-14·21·28, 08-04·11의 `학부생 스터디`, 15:30–16:30. 보통 화요일이며 시트의 마지막 두 회차는 08-20·27 목요일이라 `Usually Tuesdays`로 표시.
+  - Summer 장소: 6월 캘린더 301호, 7~8월 캘린더 307호. [08-11 당일 공지](https://moailabworkspace.slack.com/archives/C09DBTVGEAX/p1786429336589049)는 303호, [08-20 당일 답변](https://moailabworkspace.slack.com/archives/C09DBTVGEAX/p1787196050953539)은 301호. 하나로 고정하지 않고 301·303·307호를 표시.
+  - Fall 2026: 2026-10-06 캘린더와 [당일 학생대표 공지](https://moailabworkspace.slack.com/archives/C09DBTVGEAX/p1791283063838919), 화요일 21:00–22:00, 공학4동 307호. 일부 회차의 개별 시간 변경을 학기 전체 기본값으로 확대하지 않음.
+- 학생대표 이름·연락처는 사용자 지정과 원본 member 탭의 최지안·대표·chjohn1105@postech.ac.kr로 확인. 네 학기 모두 `Student representative: Jian Choi`로 표시.
+- 기각: 공통 운영 정보 카드 유지(학기별 차이를 반영하지 못함), 한 장소로 통일(실제 강의실 변경 기록과 다름), 전역 인물 정보가 새 학기에 자동 상속(학기별로 바뀔 수 있다는 요청과 다름).
+- 원본 복구는 Git 이력. 다른 강의 사이트의 머리·운영 정보 디자인은 변경하지 않음.
+- 학기별 운영 정보, 탭 위계, 자료 한 줄과 표 열 위치를 4개 학기 × 10개 화면 폭에서 검증. 데스크톱·휴대폰 렌더 확인. 형식·타이포그래피·POSTECH 필수 요소·24페이지 조작·16건 텍스트 드래그 검사 통과.
 
 ## 남은 것
 - 기존 Generalization 사본의 공유 권한 요청 답변 대기. 사이트의 원 강의 링크 사용에는 영향 없음. `TODO.md`에 기록.

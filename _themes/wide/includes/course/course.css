@@ -129,14 +129,31 @@ a.cs-title:hover { color: var(--accent); }
 .project-round a { color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
 
 /* Undergraduate AI study: one page, a tab per term. The table columns are fixed so switching terms never moves a column */
-.study-terms { padding-top: var(--space-7); }
+.study-intro { padding-top: var(--space-7); }
+.study-intro h1 { margin-bottom: var(--space-4); text-wrap: balance; }
+.study-intro .course-lead { margin-bottom: 0; }
+.study-terms { padding-top: var(--space-6); }
+.study-term-heading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3) var(--space-5); flex-wrap: wrap; margin-bottom: var(--space-5); }
+.study-term-heading h2 { margin-bottom: 0; }
+.study-sheet { color: var(--accent); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
+.study-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); margin: 0 0 var(--space-6); padding: var(--card-padding); border-radius: var(--radius-2); background: var(--surface); }
+.study-facts dt { margin-bottom: var(--space-2); color: var(--muted); font-size: var(--text-small); font-weight: 600; line-height: 1.5; }
+.study-facts dd { margin: 0; font-size: var(--text-meta); line-height: 1.5; }
+.study-facts dd a { font-weight: 600; }
+.study-facts small { display: block; margin-top: var(--detail-gap); color: var(--muted); font-size: var(--text-small); overflow-wrap: anywhere; }
+@media (max-width: 960px) {
+  .study-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .study-facts { grid-template-columns: 1fr; gap: var(--space-4); }
+}
 .study-tablist { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
 .study-tablist button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: var(--space-2) var(--space-5); border: 0; border-radius: var(--radius-2); background: var(--surface); color: var(--muted); font: inherit; font-size: var(--text-meta); line-height: 1.4; text-align: left; cursor: pointer; }
 .study-tablist button strong { font-weight: 600; }
 .study-tablist button span { font-size: var(--text-small); }
 .study-tablist button:hover { color: var(--accent); }
 .study-tablist button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }  /* the same tint as the current subnav tab */
-.study-panel h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-2); }
+.study-panel h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); margin-bottom: 0; }
 .study-panel h2 span { white-space: nowrap; color: var(--muted); font-size: var(--text-lead); font-weight: 600; }
 .study-note { margin-bottom: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
 .study-note strong { margin-right: var(--space-1); color: var(--text); font-weight: 600; }

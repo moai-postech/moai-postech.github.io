@@ -7,8 +7,8 @@
 | --- | --- | --- | --- | --- |
 | 2026-10-28 | [home-actions-venue](2026-10-28-home-actions-venue.md) | Sangwoo Mo(sangwoomo) | Home·Research·Publications | 중립 행동 안내, Join us·Full publication list, venue 광학적 무게 완화 |
 | 2026-10-28 | [typography-audit](2026-10-28-typography-audit.md) | Sangwoo Mo(sangwoomo) | 연구실·강의 전체 글자·간격 | 목록·카드 역할 분리, 행간·자간·반응형 줄바꿈과 전수 검사 |
-| 2026-10-28 | [ai-study-materials](2026-10-28-ai-study-materials.md) | Sangwoo Mo(sangwoomo) | AI Study | Slides·Demo 통일, Figure 제외, 여름학기는 원 강의 자료 |
 | 2026-10-28 | [course-pastel-palette](2026-10-28-course-pastel-palette.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 공통 노랑·파트 하늘·민트·코랄, 넓은 면의 배경을 흰색 20%로 완화 |
+| 2026-10-28 | [ai-study-materials](2026-10-28-ai-study-materials.md) | Sangwoo Mo(sangwoomo) | AI Study | 학기별 운영 정보·시트 링크, 자료 한 줄, 여름 원 강의 자료 |
 | 2026-10-28 | [navigation-hierarchy](2026-10-28-navigation-hierarchy.md) | Sangwoo Mo(sangwoomo) | Home·Research·Publications·By Topic·Teaching | 모집 위치, 점 없는 출처, 저자 16px·보조정보 14px, 공통 탐색 링크 역할 |
 | 2026-10-27 | [course-palette-navigation](2026-10-27-course-palette-navigation.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 중복 버튼 제거, 블루·틸·바이올렛과 중립 회색으로 통일 |
 | 2026-10-27 | [ui-ux-polish](2026-10-27-ui-ux-polish.md) | Sangwoo Mo(sangwoomo) | 전체 글자·Home·태블릿·키보드 | 논문 제목 18px, 출처 간격 8px, Home 안내 분리와 조작 개선 |

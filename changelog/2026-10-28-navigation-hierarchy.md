@@ -40,5 +40,10 @@ POSTECH 요구사항: P1~P9 영향 없음. 공식 로고, 학교 링크·개인�
 - venue를 과거 13px로 복구: 실적을 읽는 가독성을 유지하면서 저자보다 낮은 14px 보조 역할로 정리.
 - 모든 캡션을 본문 크기로 확대: 설명과 행동의 역할이 다름. embed 템플릿에서 구분.
 
+## 병합과 배포
+- 교수의 “검사 통과 후 병합하고 배포” 승인 후 [PR #21](https://github.com/moai-postech/moai-postech.github.io/pull/21)을 squash merge. 병합 커밋 `eca3c6c81e837040f6f19e7a7d210e05f78f1537`. 원격 브랜치 유지.
+- PR과 병합된 main의 changelog·format 검사, Pages build and deployment 모두 성공. Pages API에서 해당 커밋의 `built` 확인.
+- 배포된 실제 사이트의 Home·Research·Publications·By Topic·Teaching을 1440·390px 10조합으로 재검증. Home 순서, Media 구분점 제거와 실제 간격 8px, Research 마지막 단일 링크와 24px 간격, 저자 16px·venue 14px, Open in full screen 17px·모바일 16px와 24px 간격, AI study group 문구 확인. 가로 넘침 없음. 실제 PC·모바일 렌더도 확인.
+
 ## 남은 것
-로컬 검증 완료. PR에서 변경안을 검토하고 병합·배포 결정. 대표 논문 선정에 대한 기존 TODO는 별도 유지.
+이번 여섯 수정의 병합·배포·라이브 검증 완료. 대표 논문 선정에 대한 기존 TODO는 별도 유지.

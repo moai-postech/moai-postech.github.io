@@ -5,3 +5,6 @@ Gemfile.lock
 vendor/
 .DS_Store
 node_modules/
+
+.agent-memory/
+visual-review-bundle/

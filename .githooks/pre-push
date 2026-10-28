@@ -1,0 +1,25 @@
+#!/bin/sh
+# Installed in the common Git directory, so all worktrees use the same guard.
+set -eu
+hook_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+stdin_file=$(mktemp)
+trap 'rm -f "$stdin_file"' EXIT
+cat > "$stdin_file"
+if [ -x "$hook_dir/pre-push.before-visual-review" ]; then
+  "$hook_dir/pre-push.before-visual-review" "$@" < "$stdin_file"
+fi
+root=$(git rev-parse --show-toplevel)
+cd "$root"
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$remote_ref" = refs/heads/main ] || continue
+  case "$local_sha" in 0000000000000000000000000000000000000000) continue ;; esac
+  if [ "$local_sha" != "$(git rev-parse HEAD)" ]; then
+    echo 'main에 올릴 수정본을 checkout한 뒤 검수해야 합니다.' >&2
+    exit 1
+  fi
+  if [ ! -f tools/visual_review.js ]; then
+    echo '검수 도구가 없는 옛 checkout에서 main으로 올릴 수 없습니다. 최신 작업 폴더를 사용하세요.' >&2
+    exit 1
+  fi
+  node tools/visual_review.js gate --base "$remote_sha"
+done < "$stdin_file"

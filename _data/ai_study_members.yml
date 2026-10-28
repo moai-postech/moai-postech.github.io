@@ -1,0 +1,58 @@
+{
+  "total": 39,
+  "current": 23,
+  "cohorts": 4,
+  "returning": 13,
+  "departments": [
+    {
+      "name": "IME",
+      "count": 22
+    },
+    {
+      "name": "CSE",
+      "count": 8
+    },
+    {
+      "name": "Mueunjae",
+      "count": 4
+    },
+    {
+      "name": "CITE",
+      "count": 2
+    },
+    {
+      "name": "EE",
+      "count": 1
+    },
+    {
+      "name": "Physics",
+      "count": 1
+    },
+    {
+      "name": "Mathematics",
+      "count": 1
+    }
+  ],
+  "terms": [
+    {
+      "number": 4,
+      "term": "Fall 2026",
+      "count": 23
+    },
+    {
+      "number": 3,
+      "term": "Summer 2026",
+      "count": 7
+    },
+    {
+      "number": 2,
+      "term": "Spring 2026",
+      "count": 18
+    },
+    {
+      "number": 1,
+      "term": "Fall 2025",
+      "count": 12
+    }
+  ]
+}

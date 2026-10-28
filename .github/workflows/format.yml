@@ -28,4 +28,5 @@ jobs:
       - run: node tools/check_typography.js
       - run: node tools/check_selection.js
       - run: node tools/check_interaction.js
+      - run: node tools/check_study_members.js
       - run: node tools/check_postech.js

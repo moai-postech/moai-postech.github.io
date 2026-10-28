@@ -132,6 +132,8 @@ def parse(rows):
         m = re.fullmatch(r"(\d\d) (Spring|Summer|Fall|Winter)", date)
         if not n and m:
             theme = re.sub(r"^\w+:\s*", "", topic)
+            if theme.lower() == "deep learning basics":
+                theme = "Deep Learning"  # 사이트 학기명에서 Basics 제외(교수 2026-10-28).
             year = "20" + m.group(1)
             term = {"id": f"{m.group(2).lower()}-{year}", "name": f"{m.group(2)} {year}", "theme": label(theme),
                     "sheet": f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit#gid={GID}&range=A{sheet_row}",

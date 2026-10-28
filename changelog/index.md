@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-28 | [teaching-template-rules](2026-10-28-teaching-template-rules.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 템플릿 | 공통·강의·스터디 안내 분리, 표 마감선 한 줄 |
 | 2026-10-28 | [course-material-order](2026-10-28-course-material-order.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 자료 링크를 HTML·PDF·Lab 순서로 통일 |
 | 2026-10-28 | [home-actions-venue](2026-10-28-home-actions-venue.md) | Sangwoo Mo(sangwoomo) | Home·Research·Publications | 중립 행동 안내, Join us·Full publication list, venue 광학적 무게 완화 |
 | 2026-10-28 | [typography-audit](2026-10-28-typography-audit.md) | Sangwoo Mo(sangwoomo) | 연구실·강의 전체 글자·간격 | 목록·카드 역할 분리, 행간·자간·반응형 줄바꿈과 전수 검사 |

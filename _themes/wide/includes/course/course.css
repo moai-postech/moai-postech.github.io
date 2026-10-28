@@ -78,7 +78,7 @@
 .course-part-text { color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
 
 /* Schedule: one row per class day; lectures carry their number, other days only a tag */
-.course-schedule { width: 100%; border-collapse: separate; border-spacing: 0 3px; font-variant-numeric: tabular-nums; }  /* rows read as coloured blocks, as in the sheet */
+.course-schedule { width: 100%; border-collapse: separate; border-spacing: 0 3px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }  /* rows read as coloured blocks, as in the sheet */
 .course-schedule thead th { padding: 0 var(--space-4) var(--space-2) 0; border-bottom: 1px solid var(--text); color: var(--muted); font-size: var(--text-small); font-weight: 600; text-align: left; text-transform: uppercase; letter-spacing: .06em; }
 .course-schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; background: var(--tone-row); vertical-align: baseline; }
 .course-schedule td:not(:last-child) { box-shadow: 1px 0 0 var(--tone-row); }  /* covers the hairline between cells of one filled row */
@@ -170,8 +170,6 @@ a.cs-title:hover { color: var(--accent); }
 .study-table .cs-slides { width: auto; white-space: nowrap; }
 .study-table .st-material-group { display: inline-block; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
 .study-table .st-material-group + .st-material-group { margin-left: var(--space-2); }
-.study-table tbody > tr:last-child.tone-none,
-.study-table tbody > tr:last-child.tone-none td { box-shadow: none; }  /* The adjacent footer supplies the single bottom rule. */
 .study-table .cs-slides a { display: inline-block; margin-right: 0; }  /* Keep all material links on one line. */
 .st-links a, .st-links span { display: inline-block; margin-right: var(--space-3); font-size: var(--text-meta); }
 .st-links a { color: var(--text); }
@@ -223,3 +221,8 @@ a.cs-title:hover { color: var(--accent); }
   .st-links, .st-who { grid-column: 1 / -1; }
   .st-links:empty, .st-who:empty { display: none !important; }
 }
+
+/* One table-owned bottom rule for every course/study table, including mobile and hidden term panels. */
+.course-schedule tbody > tr:last-child.tone-none,
+.course-schedule tbody > tr:last-child.tone-none td { box-shadow: none; }
+.course-site main:has(.course-schedule) + .course-foot { border-top: 0; }

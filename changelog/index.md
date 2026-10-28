@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-28 | [course-material-order](2026-10-28-course-material-order.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 자료 링크를 HTML·PDF·Lab 순서로 통일 |
 | 2026-10-28 | [home-actions-venue](2026-10-28-home-actions-venue.md) | Sangwoo Mo(sangwoomo) | Home·Research·Publications | 중립 행동 안내, Join us·Full publication list, venue 광학적 무게 완화 |
 | 2026-10-28 | [typography-audit](2026-10-28-typography-audit.md) | Sangwoo Mo(sangwoomo) | 연구실·강의 전체 글자·간격 | 목록·카드 역할 분리, 행간·자간·반응형 줄바꿈과 전수 검사 |
 | 2026-10-28 | [course-pastel-palette](2026-10-28-course-pastel-palette.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 공통 노랑·파트 하늘·민트·코랄, 넓은 면의 배경을 흰색 20%로 완화 |

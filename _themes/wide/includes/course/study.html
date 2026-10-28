@@ -20,8 +20,8 @@
         <h2>{{ t.theme }}<span>{{ t.name }}</span></h2>
         {% if t.sheet %}<a class="study-sheet" href="{{ t.sheet }}">Study sheet</a>{% endif %}
       </div>
-      <div class="course-hero study-term-details">
-        {% if info.overview %}<div class="study-overview"><h3>Overview</h3><p>{{ info.overview }}</p></div>{% endif %}
+      <div class="study-term-details">
+        {% if info.overview %}<div class="study-overview"><h3>Overview</h3><p>{{ info.overview }}</p>{% if info.learning_path %}<ol class="study-learning-path" style="--study-steps: {{ info.learning_path.size }}">{% for step in info.learning_path %}<li><span class="study-step-label">{{ step.label }}</span><h4>{{ step.title }}</h4><p>{{ step.text }}</p></li>{% endfor %}</ol>{% endif %}</div>{% endif %}
         {% if info %}{% include course/facts.html instructor=info.advisor instructor_label="Advisor" representative=info.representative location=info.location meetings=info.meetings %}{% endif %}
       </div>
       {% if t.note %}<p class="study-note"><strong>{{ t.note.label }}</strong> {% if t.note.links %}{% for l in t.note.links %}<a href="{{ l.url }}">{{ l.text }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% else %}{{ t.note.text }}{% endif %}</p>{% endif %}

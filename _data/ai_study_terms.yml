@@ -2,26 +2,43 @@
 # 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
-  overview: "Understand how robots learn to perceive, reason, and act, connecting data collection and control to 3D understanding, VLA, and world models."
+  overview: "Start with how robots collect data and learn to move, then connect these capabilities to spatial understanding and foundation models."
+  learning_path:
+    - { label: "Sessions 1–6", title: "Learn how robots work", text: "From collecting demonstrations to manipulation, locomotion, navigation, and dexterous control." }
+    - { label: "Sessions 7–8", title: "Represent the physical world", text: "Build the 3D representations and reconstruction methods needed to understand a robot’s surroundings." }
+    - { label: "Sessions 9–11", title: "Bring foundation models into robotics", text: "Connect spatial reasoning, vision-language-action models, and world models to robotic action." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
   location: { building: "Engineering Building 4", rooms: "Room 302" }
-  representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
+  representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
-  overview: "Build a working understanding of deep learning, from backpropagation and neural architectures to representation learning, generative models, and generalization."
+  overview: "Follow how neural networks learn, how their architectures and representations enable generation, and why they generalize to new tasks."
+  learning_path:
+    - { label: "Sessions 1–3", title: "Build and train neural networks", text: "Start with optimization, then study architectures for grids and sequences." }
+    - { label: "Sessions 4–7", title: "Learn representations and generate", text: "Connect reconstruction and similarity-based learning to VAEs, GANs, diffusion, and flows." }
+    - { label: "Sessions 8–10", title: "Explain what transfers", text: "Study generalization, transfer learning, and the theory behind deep learning." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Usually Tuesdays", time: "15:30 – 16:30 KST" }
   location: { building: "Engineering Building 4", rooms: "Room 307" }
-  representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
+  representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 spring-2026:
-  overview: "Understand how LLMs are adapted and used, from instruction tuning and alignment to reasoning, long-context processing, retrieval, and agents."
+  overview: "Move from how LLMs reason to how they are trained and aligned, then extend them with context, retrieval, and tools."
+  learning_path:
+    - { label: "Sessions 1–2", title: "Establish the LLM baseline", text: "Review LLMs and chain-of-thought reasoning to frame what the model can do." }
+    - { label: "Sessions 3–6", title: "Shape model behavior", text: "Connect supervised fine-tuning, RLHF, and RLAIF to reasoning models." }
+    - { label: "Sessions 7–9", title: "Extend beyond the model", text: "Use long context, retrieval, and agents to work with external information and tools." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:30 KST" }
   location: { building: "Engineering Building 4", rooms: "Room 307" }
-  representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
+  representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
-  overview: "Build an overview of foundation models across language, vision, and multimodal learning, then connect their core ideas to image and video generation."
+  overview: "Trace the path from deep learning and transformers to multimodal understanding, visual generation, and scaled language models."
+  learning_path:
+    - { label: "Sessions 1–3", title: "Build the foundations", text: "Start with deep learning and transformers, then apply them to visual perception." }
+    - { label: "Sessions 4–5", title: "Connect vision and language", text: "Study multimodal perception and visual grounding to connect images with meaning." }
+    - { label: "Sessions 6–7", title: "Generate images and video", text: "Move from understanding visual content to generating it." }
+    - { label: "Sessions 8–9", title: "Scale toward multimodal LLMs", text: "Study LLM scaling and bring language and vision together in multimodal LLMs." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Wednesdays", time: "22:00 – 23:00 KST" }
   location: { building: "Engineering Building 4", rooms: "Room 307" }
-  representative: { name: "Jian Choi", email: "chjohn1105 [at] postech.ac.kr" }
+  representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }

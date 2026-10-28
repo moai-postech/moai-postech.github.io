@@ -11,9 +11,9 @@ summary: >-
   POSTECH undergraduates read and present AI papers together, one topic a week.
   Each term follows one theme, and each session pairs the papers with a hands-on demo.
 join:
-  title: "Join us"
+  title: "How to join"
   body: >-
     Interested in AI? We welcome POSTECH undergraduates from every department, including IME and Mueunjae students.
-    To join, contact this semester's student representative listed in the term tabs below.
+    To join, contact this semester's student representative listed under the current term in the [schedule](teaching/ai-study/schedule/).
     Get to know our [members](teaching/ai-study/members/).
 ---

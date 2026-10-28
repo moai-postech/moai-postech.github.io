@@ -134,12 +134,12 @@ a.cs-title:hover { color: var(--accent); }
 .project-when { margin-right: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 .project-round a { color: var(--accent); font-size: var(--text-meta); font-weight: 600; }
 
-/* Undergraduate AI study: one page, a tab per term. The table columns are fixed so switching terms never moves a column */
+/* Undergraduate AI Study Schedule: a tab per term. The table columns are fixed so switching terms never moves a column */
 .study-intro { padding-top: var(--space-7); }
 .study-intro h1 { margin-bottom: var(--space-4); text-wrap: balance; }
 .study-intro .course-lead { margin-bottom: 0; }
 .study-join { padding-top: var(--space-6); }
-.study-join h2 { font-size: var(--text-group); line-height: var(--leading-group); letter-spacing: normal; }
+.study-join h2 { margin-bottom: var(--space-3); font-size: var(--text-body); line-height: var(--leading-group); letter-spacing: normal; }
 .study-join p { margin: 0; color: var(--muted); }
 .study-join a { color: var(--accent); }
 .study-terms { padding-top: var(--space-6); }

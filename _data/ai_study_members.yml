@@ -208,8 +208,3 @@ cohorts:
         entry_year: "24"
         email: "hyunseong@postech.ac.kr"
         participation: [1]
-      - name: "장승현"
-        department: "IDS"
-        entry_year: "석사 25"
-        email: "shyun1751@postech.ac.kr"
-        participation: [1]

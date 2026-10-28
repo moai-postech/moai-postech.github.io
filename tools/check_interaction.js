@@ -28,7 +28,7 @@ const check = (ok, message) => { if (!ok) throw new Error(message); };
         await page.waitForFunction(() => document.activeElement.id === 'main-content');
         check(new URL(page.url()).pathname.replace(/index\.html$/, '') === new URL(name, base).pathname.replace(/index\.html$/, ''), `${name}: skip link navigated to another page`);
       }
-      for (const [url, selector] of [['/', '.focus-tab'], ['teaching/ai-study/', '[data-study-tabs] [role="tab"]']]) {
+      for (const [url, selector] of [['/', '.focus-tab'], ['teaching/ai-study/schedule/', '[data-study-tabs] [role="tab"]']]) {
         await page.goto(new URL(url, base).href);
         await page.addStyleTag({ content: 'html {scroll-behavior:auto!important}' });
         const tabs = page.locator(selector), count = await tabs.count();

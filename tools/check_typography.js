@@ -32,7 +32,7 @@ function inspect() {
     if (visible(e)) check(Math.abs(parseFloat(css(e).lineHeight) / size(e) - 1.5) < .02, `논문 행간: ${e.className}`);
   }
   for (const e of main.querySelectorAll('.pubs .venue')) {
-    check(css(e).fontWeight === '400' && parseFloat(css(e).paddingTop) === 0 && parseFloat(css(e).paddingBottom) === 0, '논문 venue가 제목보다 과하게 강조된다');
+    check(css(e).fontWeight === '600' && size(e) < size(e.closest('li').querySelector('.title')) && parseFloat(css(e).paddingTop) === 0 && parseFloat(css(e).paddingBottom) === 0, '논문 venue는 600 굵기를 쓰고 제목보다 작아야 한다');
     check(css(e).backgroundColor === 'rgba(0, 0, 0, 0)' && parseFloat(css(e).paddingLeft) === 0 && parseFloat(css(e).paddingRight) === 0, '논문 venue에 배경이나 들여쓰기가 남는다');
     check(Math.abs(e.getBoundingClientRect().left - e.closest('li').querySelector('.title').getBoundingClientRect().left) < 1, '논문 venue와 제목의 시작선이 다르다');
   }

@@ -4,7 +4,11 @@
       <div class="profile-head">
         <h2{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>{{ p.name }}</h2>
         <p class="profile-role">{% include inline.html text=p.position %}</p>
-        <p class="muted small">{{ p.contact }}</p>
+        <div class="muted small profile-contact">
+          <p>{{ p.contact }}</p>
+          <p>Office: {{ site.footer.office }}</p>
+          <p>Phone: {{ site.footer.phone }}</p>
+        </div>
         <p class="small profile-links">{% include inline.html text=p.links %}</p>
       </div>
     </section>

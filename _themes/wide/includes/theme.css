@@ -55,9 +55,10 @@
   --text-h2: var(--fs-5);   /* a section of its own: Home, Contact, the Research stages, the Faculty name */
   --text-group: var(--fs-4);  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27) */
   --text-display: var(--fs-6);
-  --text-paper: var(--text-meta);  /* one 15px size for paper titles, authors and venues; weight and color separate roles */
+  --text-paper: var(--text-body);  /* papers are reading content: one body size for titles, authors and venues */
   --text-author: var(--text-paper);
   --text-paper-meta: var(--text-paper);
+  --text-featured-meta: var(--text-meta);  /* compact badges inside featured cards */
   --text-featured-paper: var(--text-body);  /* featured cards and dense lists have different reading roles */
   --leading-group: 1.3;
   --leading-paper: 1.5;
@@ -196,7 +197,7 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .focus-papers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }  /* cards in one row share that row's height; nothing is stretched beyond its content */
 .paper-chip { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); color: var(--text); }
 a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
-.paper-chip .venue { background: var(--bg); }  /* the card is already grey, so its badge is white */
+.paper-chip .venue { background: var(--bg); font-size: var(--text-featured-meta); }  /* the card is already grey, so its badge is white */
 .paper-chip .paper-title { font-size: var(--text-featured-paper); font-weight: 600; line-height: 1.4; }
 .focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: 400; }
 .focus-people .label { margin-right: var(--space-1); color: var(--faint); font-size: var(--text-small); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
@@ -279,7 +280,8 @@ a.mentee-name:hover { color: var(--accent); }
 .hero-band + .section-photo { padding-top: 0; }  /* the photo sits right under the hero: only the hero's own 32px bottom padding between them (교수 2026-10-27) */
 .section-photo p { margin: 0; }
 .list-intro { margin: 0 0 var(--space-4); color: var(--muted); }  /* one line under a group heading that says what the list is (Teaching: the AI study, 교수 2026-10-27) */
-.list-intro a { color: var(--accent); font-weight: 400; }
+.list-intro a { color: inherit; font-weight: 400; }
+.list-intro a:hover { color: var(--accent); }
 .section-photo img { display: block; width: 100%; height: var(--photo-height); object-fit: cover; object-position: 50% 72%; border-radius: var(--radius-2); }
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
@@ -371,6 +373,8 @@ a.person-name:hover { color: var(--accent); }
 .profile { display: grid; grid-template-columns: 200px minmax(0, 1fr); align-items: center; gap: var(--gutter); }
 .profile-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; }
 .profile h2 { margin-bottom: var(--space-2); }
+.profile-contact { margin-bottom: var(--space-4); }
+.profile-contact p { margin: 0; }
 .profile-role { margin-bottom: var(--space-2); font-size: var(--text-lead); }
 .profile-head p { margin-bottom: var(--space-1); }
 .profile-head .small { font-size: var(--text-meta); }  /* contact and links read at meta size, not footnote size */

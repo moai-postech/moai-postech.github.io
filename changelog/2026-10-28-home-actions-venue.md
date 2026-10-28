@@ -1,7 +1,7 @@
 # 2026-10-28 Home 행동 안내와 논문 venue 무게 조정
-작성자: Sangwoo Mo(sangwoomo) | 대상: Home, Research Overview, Publications, wide 테마, 타이포그래피 검사, AGENTS.md | 도구: Codex, 독립 시각 검토
+작성자: Sangwoo Mo(sangwoomo) | 대상: Home, Research Overview, Publications, Faculty, Teaching, AI Study, wide 테마, 형식 검사, AGENTS.md | 도구: Codex, 독립 시각 검토
 
-> **한줄 결론: Home의 평문 두 줄을 차분한 행동 안내로 묶고, 논문 목록은 15px를 유지하면서 venue 배지의 과한 무게를 낮춘 검토안이다.**
+> **한줄 결론: Home 안내를 floating box로 묶고 논문 목록을 본문 크기로 확대. Join us!·학생들과 함께하는 소개·Faculty 연락처 복원.**
 
 POSTECH 요구사항: P1~P9 영향 없음. 학교·연구실 로고, 공식 링크, 개인정보 고지, 전체 팔레트 유지.
 
@@ -10,7 +10,7 @@ POSTECH 요구사항: P1~P9 영향 없음. 학교·연구실 로고, 공식 링�
 - Research 마지막 링크는 Full publication list처럼 목적지를 분명히 드러내도록 요청했다.
 - Publications의 전체 글자 크기가 적절한지 최종 판단하고, venue만 커 보이는 문제를 다시 확인하도록 요청했다.
 
-## 판단과 반영
+## 초기 판단과 반영 (아래 후속 요청으로 안내 모양을 보완)
 - Home: 문구와 위치를 유지하고 기존 두 안내만 중립 배경 하나에 묶음. 패딩 16px·문단 사이 12px. 링크는 흰 배경·중립 테두리·강조색 보통 굵기의 작은 pill로 구분. 독립 Join us 제목과 화살표는 추가하지 않음.
 - 모집 링크는 Join us, 목적지는 기존 contact.html#join. Publications 링크와 Research 목적지도 기존 주소 유지.
 - Research: 문장 뒤 인라인 링크를 Full publication list로 변경.
@@ -34,7 +34,7 @@ POSTECH 요구사항: P1~P9 영향 없음. 학교·연구실 로고, 공식 링�
 
 ## 복구와 남은 것
 - 원본 복구 경로: Git `321ab0c`와 PR #22. 최신 main의 스터디 자료 변경은 유지.
-- 검토용 PR로 제시. 이번 후속 변경의 병합·배포 결정 전까지 라이브는 유지.
+- 초기안 PR #23은 교수 승인으로 병합. 최종 카드 다듬기는 PR #24에서 이어 반영.
 
 ## 교수 후속 요청: 두 문장을 감싸는 floating box
 - 교수는 버튼 처리가 아니라 두 문장 전체를 별도 박스 안에 담는 것이 핵심이라고 재차 설명했다. PR #23은 아직 병합 전이므로 같은 PR에 수정 반영.
@@ -51,3 +51,14 @@ POSTECH 요구사항: P1~P9 영향 없음. 학교·연구실 로고, 공식 링�
 - 기각: 두 칸 분할은 서로 길이가 다른 문장·링크를 좁혀 읽는 흐름이 갈리고 빈 줄이 불균형해짐. 흰색만 쓴 카드는 앞의 연구 카드와 구분이 약함. 기존 분홍 면은 안내보다 공지 띠에 가까운 무게라 완화. 큰 제목·아이콘·버튼 추가는 짧은 두 문장을 불필요하게 늘림.
 - PR #23은 검사 통과 후 교수 승인으로71eaa7b에 병합. Pages45e531d built에 포함됨. 이번 후속 수정은 같은 안내 영역만 다듬으며 다른 채팅의 스터디·강의 변경을 유지.
 - 최종안 검증: Jekyll 빌드, 타이포그래피24페이지·167상태·텍스트17,830개·제목 경계18조합, 형식13페이지×5폭, POSTECH24페이지×2폭 통과. 안내는1440~320px의10폭에서 두 문단·강조선·링크 단어 묶임·가로 넘침 검증 통과.
+- 교수 후속 요청: 모집 안내에 역동감을 주도록 Join us!로 변경. 설명도 We're recruiting motivated students.로 줄여 직접적인 모집 어조로 변경. 본문 크기·400 굵기는 유지하고 느낌표는 모집 링크 한 곳에만 사용.
+
+## 이어 받은 요청: 읽기 크기, 함께하는 톤, Faculty 연락처
+- Publications가 전반적으로 작다는 교수 요청으로15·16·본문17/16px 세 안을1440·1024·768·390·320px에서 실제 목록과 긴 저자 문자열로 비교.
+- 목록 핵심 정보는 사이트 본문과 같은 PC17px·모바일16px로 확장. 제목600, 저자·venue·자료 링크400을 유지하고 기존 항목 사이24px·내용 사이4px·행간1.5 유지. venue만 작거나 크지 않도록 세 역할의 크기 일치 유지. Home 대표 카드 배지는15px를 별도 역할로 유지해 기존 카드 균형 보존. 검사도 두 역할과 본문 크기 일치를 검증.
+- 기각:15px는 본문 대비 목록 전체가 작고 여백에 묻힘. 고정16px는 개선되지만 PC에서 일반 본문보다 작고 별도 크기가 늘어남. 제목만 확대는 앞선 크기 불균형을 반복.
+- Teaching 소개는 A weekly AI study group with POSTECH undergraduates.로 변경. 링크는 소개의 일반 글자색을 따르고 hover 때 강조색. 스터디 description도 with로 변경. 기존 together 소개·Contact의 grow together는 유지.
+- Faculty는 이메일 아래 Office: Science Building 4, Room 319와 Phone: +82-54-279-2202를 복원. `_config.yml`의 꼬리말 정본을 재사용해 값 중복 없이 동기화. 사용자 명시 요청에 따라 꼬리말 단독 표시 규칙도 갱신. 개인 사이트·CV의 사실을 바꾼 것이 아니라 기존 연락처의 Faculty 표시를 복원한 것.
+- Talks는 Drive와 대조 후 의견만 제시하는 별도 읽기 작업이며 이 수정에서 발표를 추가하지 않음.
+- 변경 후 Jekyll, 타이포그래피24페이지·167상태·텍스트17,840개·제목 경계18조합, 형식13페이지×5폭, POSTECH24페이지×2폭 통과. Home·Faculty·Teaching·Publications는1440·390·320px에서 문구·색·연락처·핵심 정보 크기를 실제 확인.
+- Talks 검토 의견: invited-talks와2025하위 폴더를 대조하고 표지 확인. How to Use Agents(2026-09-21)는 기존 연구 발표와 다른 실용적 주제를 더해 추가 추천. AX Revolution with IME는 IMEN100 강의라 Talks 추가를 권하지 않음. POSTECH job talk는 이미 있는 Scalable Priors for Foundation Models와 같은 제목이라 중복 추가하지 않음. 이번에는 의견만 제시했고 데이터 수정 없음.

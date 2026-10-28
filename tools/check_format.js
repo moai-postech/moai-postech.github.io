@@ -27,7 +27,7 @@ function measure(TOL) {
     const size = parseFloat(getComputedStyle(probe).fontSize);
     probe.remove(); return size;
   };
-  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'), featuredPaper: font('--text-featured-paper'), author: font('--text-author'), paperMeta: font('--text-paper-meta'),
+  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'), featuredPaper: font('--text-featured-paper'), featuredMeta: font('--text-featured-meta'), author: font('--text-author'), paperMeta: font('--text-paper-meta'),
     sectionGap: parseFloat(getComputedStyle(document.body).getPropertyValue('--section-gap')) || px('--section-gap'),
     below: px('--space-4') };
   const allowed = [tok.h2, tok.group, tok.body, tok.meta, tok.small];
@@ -70,10 +70,10 @@ function measure(TOL) {
       problems.push('논문 저자가 --text-author 크기가 아니다');
   }
   for (const meta of main.querySelectorAll('.venue, .pub-link, .venue-honor')) {
-    if (visible(meta) && Math.abs(parseFloat(getComputedStyle(meta).fontSize) - tok.paperMeta) > 0.5)
+    if (visible(meta) && Math.abs(parseFloat(getComputedStyle(meta).fontSize) - (meta.closest('.paper-chip') ? tok.featuredMeta : tok.paperMeta)) > 0.5)
       problems.push('venue·자료 링크가 --text-paper-meta 크기가 아니다');
   }
-  if (!(tok.paper === tok.author && tok.author === tok.paperMeta && tok.paper === tok.meta))
+  if (!(tok.paper === tok.author && tok.author === tok.paperMeta && tok.paper === tok.body))
     problems.push('논문 제목·저자·venue가 공통 목록 글자 크기로 통일되지 않았다');
   for (const link of main.querySelectorAll('.section-next a')) {
     if (visible(link) && (Math.abs(parseFloat(getComputedStyle(link).fontSize) - tok.body) > 0.5 || getComputedStyle(link).fontWeight !== '400'))

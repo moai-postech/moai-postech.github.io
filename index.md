@@ -22,16 +22,16 @@ sections:
   - class: section-next
     body: |
       Our work appears at NeurIPS, ICML, and ICLR. [See our publications](publications.html)
-  # News: 지금은 전부 보인다. 많아지면 limit: 8 처럼 개수를 정하면 그 아래에 "All news →"(news.html) 링크가 생긴다
-  - title: "News"
-    type: news
-    data: news
-  - title: "Media"
-    type: media
   - title: "Join MOAI Lab"
     body: |
       We are looking for motivated students to join our team.
 
       [See how to apply](contact.html#join)
       {: .section-next}
+  # News: 지금은 전부 보인다. 많아지면 limit: 8 처럼 개수를 정하면 그 아래에 "All news →"(news.html) 링크가 생긴다
+  - title: "News"
+    type: news
+    data: news
+  - title: "Media"
+    type: media
 ---

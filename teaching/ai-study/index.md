@@ -22,6 +22,6 @@ format:
 join:
   title: "How to join"
   body: >-
-    We welcome **POSTECH undergraduates from every department**, including IME and Mueunjae students.
+    We welcome **POSTECH undergraduates from every department**, including first-year students who have not yet declared a major.
     To join, contact the student representative for the latest term listed in the schedule.
 ---

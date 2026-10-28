@@ -1,5 +1,5 @@
 # 2026-10-28 AI Study Home 개편
-작성자: Sangwoo Mo(sangwoomo) | 대상: `teaching/ai-study/index.md`, `_themes/wide/includes/course/study.html`, `_themes/wide/includes/course/study-overview.html`, `_themes/wide/includes/course/study-member-stats.html`, `_themes/wide/includes/course/course.css`, `_themes/wide/includes/course/STUDY.md`, `_themes/wide/design-contract.json`, `_themes/wide/page-design.json`, `_themes/wide/page-design.md` | 도구: Codex
+작성자: Sangwoo Mo(sangwoomo) | 대상: `teaching/ai-study/index.md`, `_themes/wide/includes/course/study.html`, `_themes/wide/includes/course/study-overview.html`, `_themes/wide/includes/course/study-member-stats.html`, `_themes/wide/includes/course/course.css`, `_themes/wide/includes/course/STUDY.md`, `_themes/wide/design-contract.json`, `_themes/wide/page-design.json`, `_themes/wide/page-design.md` | 추가 대상: `_themes/wide/includes/header-brand.html`, `_themes/wide/includes/header.html`, `_themes/wide/layouts/course.html`, `_themes/wide/includes/theme.css`, `_themes/wide/README.md`, `_themes/wide/includes/course/README.md`, `tools/check_design.js`, `assets/study-members.js` | 도구: Codex
 
 > **한줄 결론: Home을 소개·최신 학기 → 학습 방식 → 학기별 학습 흐름 → 멤버 통계 → 참여 안내 순으로 개편.**
 
@@ -33,5 +33,17 @@
 ## 원본 복구
 - 작업 전 내용은 Git 이력(origin/main의 1843b9f)에 보존. 기존 로컬 main의 미반영 커밋과 `.bundle/`는 이번 변경에서 제외.
 
+## 2차: 랩·스터디·강의 공통 헤더
+- 사용자 후속 요청: 좌상단을 랩과 스터디에서 완전히 일치시키고, 강의까지 헤더 높이·탭 양식을 통일. 강의는 MOAI Lab 대신 과목명 표시.
+- 원인: 랩은 88px, 스터디·강의는 72px의 별도 헤더를 사용했고 태블릿 메뉴 줄바꿈과 모바일 메뉴 행 수도 달랐음.
+- `header-brand.html`로 학교·브랜드 부분을 한 번만 정의. 강의는 과목명과 강의 Home 링크를 매개변수로 전달. 헤더·탭 CSS도 공통화하고 1100px에서 함께 줄바꿈.
+- 모바일은 같은 3열·2행 메뉴 영역을 사용해 페이지마다 헤더 높이가 달라지지 않게 함. 브랜드 행은42px, 글자·로고 비례를 공통 적용. 긴 과목명은 두 줄로 보존.
+- 공통 디자인 계약과 전체 페이지 검사에 헤더·로고·메뉴의 교차 비교 추가.
+- POSTECH 요구사항: P1·P2·P7·P8 확인. 공식 워드마크·대표홈·랩홈·학교 개인정보 링크와 이미지 비례 유지.
+- 사용자 후속 문구 요청: 가입 안내의 Mueunjae를 first-year students who have not yet declared a major로 변경. 학과 분포·명단은 Undeclared로 표시하며 원본 데이터·암호문은 유지.
+- 기각: 헤더마다 다른 CSS 보정(다시 어긋남), 모바일에서 과목명 말줄임(이름을 끝까지 읽기 어려움), 워드마크를 비례 없이 줄임(학교 요구사항 위반).
+
+- 검증: 랩·스터디·세 강의의 대표7페이지를 11개 화면 폭에서 비교해 헤더 높이·학교 로고 위치·탭 시작점 일치. 디자인 계약26페이지·7폭·623상태·58역할 통과. 형식·POSTECH·조작·텍스트 선택·명단 보호 검사 통과.
+
 ## 남은 것
-- PR 검사와 검토 후 반영.
+- PR 검사 후 반영.

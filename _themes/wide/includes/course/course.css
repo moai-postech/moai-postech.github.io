@@ -13,16 +13,7 @@
 .tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
-.course-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); flex-wrap: wrap; min-height: 72px; border-bottom: 1px solid var(--line); }
-.course-id { min-width: 0; max-width: 100%; flex-shrink: 1; }
-.course-id .head-postech { flex-shrink: 0; }
-.course-brand { display: inline-flex; min-width: 0; align-items: baseline; gap: var(--space-2); color: var(--text); font-size: var(--text-lead); font-weight: var(--weight-heading); letter-spacing: -.3px; }
-.course-brand span { white-space: nowrap; color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-emphasis); letter-spacing: 0; }
 .study-lab-brand img { width: auto; height: 28px; }
-.course-brand:hover { color: var(--accent); text-decoration: none; }
-.course-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-5); }
-.course-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }
-.course-nav a:hover, .course-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .course-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-5) 0 var(--space-7); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--text-meta); }
 .course-foot a { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text); font-weight: var(--weight-emphasis); }
 .course-foot img { width: auto; height: 19px; }
@@ -307,8 +298,6 @@ a.cs-title:hover { color: var(--accent); }
   .course-schedule, .course-schedule tbody, .course-schedule tr { display: block; width: auto; }
   .course-schedule tr:not(.course-part-row) { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px var(--space-3); margin-bottom: 3px; padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }
   .course-schedule tr.tone-none { box-shadow: inset 0 -1px 0 var(--line); border-radius: 0; }
-  .course-top { padding: var(--space-4) 0 var(--space-2); }
-  .course-nav { gap: 0 var(--space-4); }
   .course-part-row th { display: block; }
   .course-schedule td { display: block; width: auto; padding: 0 !important; border: 0; background: none; white-space: normal; }
   .course-schedule tr.tone-none td { box-shadow: none; }
@@ -353,15 +342,6 @@ a.cs-title:hover { color: var(--accent); }
 .study-part-filters .study-step { width: auto; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-1); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-part-filters .study-step[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 
-@media (max-width: 680px) {
-  .course-id:not(.study-id) { flex-wrap: wrap; gap: var(--space-2); padding-block: var(--space-3); }
-  .course-id:not(.study-id) .head-postech { flex-basis: 100%; border-right: 0; margin-right: 0; padding-right: 0; }
-}
-
-@media (max-width: 360px) {
-  .study-id .head-postech { margin-right: var(--space-2); padding-right: var(--space-2); }
-  .study-id .brand-word { font-size: var(--text-lead); }
-}
 /* AI Study Home: orient -> learning process -> term paths -> community -> join.
    Shared typography, card and spacing roles; term logistics remain in Schedule. */
 .study-home-hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gutter); align-items: center; padding-top: var(--space-7); }

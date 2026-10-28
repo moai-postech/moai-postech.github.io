@@ -498,6 +498,37 @@
         "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-regular)"
       }
+    },
+    {
+      "id": "shared-header",
+      "selector": ".site-head",
+      "style": {
+        "minHeight": "88px"
+      }
+    },
+    {
+      "id": "shared-header-identity",
+      "selector": ".head-id",
+      "style": {
+        "height": "42px"
+      }
+    },
+    {
+      "id": "shared-header-navigation",
+      "selector": ".site-nav, .course-nav",
+      "style": {
+        "display": "flex"
+      },
+      "variants": [
+        {
+          "maxWidth": 680,
+          "style": {
+            "display": "grid",
+            "minHeight": "88px",
+            "gridAutoRows": "44px"
+          }
+        }
+      ]
     }
   ]
 }

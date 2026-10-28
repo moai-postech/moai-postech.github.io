@@ -6,13 +6,13 @@
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
 | 2026-10-28 | [design-template-contract](2026-10-28-design-template-contract.md) | Sangwoo Mo(sangwoomo) | 공통 템플릿·전체 페이지 | 역할 계약·자동 전수 검사·상단 메뉴 일관성 |
-| 2026-10-28 | [publications-type-hierarchy](2026-10-28-publications-type-hierarchy.md) | Sangwoo Mo(sangwoomo) | Publications | venue 배지 제거·600 굵기로 구분, 공통 글자 크기와 자료 링크·수상 정보 간격 축소 |
+| 2026-10-28 | [publications-type-hierarchy](2026-10-28-publications-type-hierarchy.md) | Sangwoo Mo(sangwoomo) | Publications | venue 600·정보 그룹 16px/링크 12px, 공통 글자 크기 및 모바일 상단 여백 축소 |
 | 2026-10-28 | [course-project-layout](2026-10-28-course-project-layout.md) | Sangwoo Mo(sangwoomo) | 시트 링크·Project | 우측 ↗ 통일, 팀 구성 Timeline, Slides 줄바꿈·Final 미정 |
 | 2026-10-28 | [seminar-toolbar-weight](2026-10-28-seminar-toolbar-weight.md) | Sangwoo Mo(sangwoomo) | Seminar 필터 도구 모음 | Full schedule과 필터 버튼의 공통 굵기 600 |
 | 2026-10-28 | [ai-study-members](2026-10-28-ai-study-members.md) | Sangwoo Mo(sangwoomo) | Undergraduate AI Study Members·member 시트 | 40명 기수별 명단·참여 마커, 이메일 28셀 학교 주소로 통일 |
 | 2026-10-28 | [logo-pink-v2-archive](2026-10-28-logo-pink-v2-archive.md) | Chaewon Park(onehanap) | assets/img/logo-candidates | 분홍 #C7005D 묶음 v2 보관, 운영 교체는 안건으로 |
 | 2026-10-28 | [course-attendance-sheets](2026-10-28-course-attendance-sheets.md) | Sangwoo Mo(sangwoomo) | 강의 Home·Schedule·Project | 출석 1/3 초과 F, AI 문구 제거, 페이지별 시트 링크 하나 |
-| 2026-10-28 | [logo-candidate-review](2026-10-28-logo-candidate-review.md) | Sangwoo Mo(sangwoomo) | 운영 로고·favicon | C 기반 순수 SVG 적용, 헤더40px·비율 보존·공통 심볼 |
+| 2026-10-28 | [logo-candidate-review](2026-10-28-logo-candidate-review.md) | Sangwoo Mo(sangwoomo) | 운영 로고·favicon | 사용자 요청으로 MOAI 타이포그래피05 원복, 새 형태는 선택 후 반영 |
 | 2026-10-28 | [minor-workflow-link-finishes](2026-10-28-minor-workflow-link-finishes.md) | Sangwoo Mo(sangwoomo) | 반영 경로·이동 링크·Talks | Minor 직접 반영, 모집 로켓·짧은 이동 화살표, 연구 발표 수록 원칙 |
 | 2026-10-28 | [course-guest-seminars](2026-10-28-course-guest-seminars.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 초청·세미나 노랑, 휴강 회색, 회차별 시간·장소 |
 | 2026-10-28 | [teaching-template-rules](2026-10-28-teaching-template-rules.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 템플릿 | 공통·강의·스터디 안내 분리, 표 마감선 한 줄 |

@@ -28,8 +28,8 @@
 | 연구 방향 탭 | Home 의 세 분야 | 기본 `--text-lead`, 모바일 `--text-meta`, 360px 이하 `--text-small`. 단어 중간에서 자르지 않는다 | 세 칸의 위치는 유지하고 좁은 화면에서 작은 라벨 역할 사용 |
 | 대표 논문 카드 제목 | Home 연구 방향 카드 | `--text-featured-paper`(본문 크기), 굵기 600, 행간 1.4 | 배지와 제목 사이 `--space-3`, 카드 패딩은 공통 카드 역할 |
 | 논문 저자 | Publications 저자 이름 | `--text-author`(보조정보 크기), 굵기 400, 행간 1.5. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
-| 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(보조정보 크기). Home 대표 카드 배지는 `--text-featured-meta`(보조정보 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. 논문 목록 venue는 600, 자료 링크는 400, 목록 배지의 세로 패딩은 0. Home 대표 카드 venue와 발표 형식은 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-3`, 세로선 없음 |
-| 페이지 시작 | 하위 탭 뒤 첫 내용, 소개 뒤 첫 절 | | `--page-start`(데스크톱 48px, 모바일 32px) |
+| 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(보조정보 크기). Home 대표 카드 배지는 `--text-featured-meta`(보조정보 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. 논문 목록 venue는 600, 자료 링크는 400, 목록 배지의 세로 패딩은 0. Home 대표 카드 venue와 발표 형식은 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
+| 페이지 시작 | 하위 탭 뒤 첫 내용, 소개 뒤 첫 절 | | `--page-start`(화면 폭에 따른 시작 여백) |
 | 카드 안 여백 | Home 논문, Research 주제, Contact 단계 카드 | | `--card-padding`(데스크톱 24px, 모바일 16px) |
 | 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
 | 작은 머리 | Faculty 의 FACULTY POSITIONS | `--text-small` | |

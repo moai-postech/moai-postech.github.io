@@ -72,6 +72,7 @@
   --tracking-display: -.025em;
   --photo-height: clamp(220px, 26vw, 380px);
   --page-start: var(--space-7);
+  --subnav-start: var(--space-6);
   --card-padding: var(--space-5);
   --detail-gap: var(--space-1);
   --media-surface: #0b1220;
@@ -145,7 +146,7 @@ h3.sub:first-child { margin-top: 0; }
 .nav-group:hover .nav-menu, .nav-group:focus-within .nav-menu { display: block; }
 .site-nav .nav-menu a { display: flex; min-height: 38px; padding: 0 var(--space-3); border: 0; border-radius: var(--radius-1); color: var(--text); }
 .site-nav .nav-menu a:hover { background: var(--surface); color: var(--accent); }
-.subnav { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--space-6); }
+.subnav { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--subnav-start); }
 .subnav a { display: inline-flex; align-items: center; min-height: 40px; padding: var(--space-1) var(--space-4); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: var(--text-control); font-weight: var(--weight-emphasis); }
 .subnav a:hover { color: var(--accent); text-decoration: none; }
 .subnav a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); }  /* a tint, not a solid red block */
@@ -174,7 +175,7 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .site-foot .foot-privacy { color: var(--text); font-weight: var(--weight-heading); }  /* set apart from other notices, as on the POSTECH main footer (class "str") */
 .page-intro { padding-top: var(--page-start); }
 .visually-hidden + .content-section { padding-top: var(--page-start); }
-.page-intro + .content-section { padding-top: var(--page-start); }  /* intro to first block: the same 48px as subnav to first block */
+.page-intro + .content-section { padding-top: var(--page-start); }  /* intros and the first block share the responsive page-start rhythm */
 
 /* Home hero: a full-width band, statement on the left, the orchestration picture on the right */
 .hero-band { margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); background: linear-gradient(180deg, var(--surface), var(--bg)); }
@@ -359,7 +360,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .author { white-space: nowrap; }  /* a name never breaks across lines */
 .pubs .lab { color: var(--text); }
 .pubs .note { margin-top: 0; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); line-height: 1.5; }  /* awards: a line of their own, in the accent colour */
-.pub-meta { font-size: var(--text-paper-meta); line-height: var(--leading-paper); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); }
+.pub-meta { font-size: var(--text-paper-meta); line-height: var(--leading-paper); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-4); }
 .pub-venue, .pub-links { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1); }
 .pub-links { gap: var(--space-3); }
 .venue-honor { color: var(--accent); font-size: var(--text-paper-meta); font-weight: var(--weight-emphasis); }  /* presentation honours stay beside the venue, including when the links wrap */
@@ -434,8 +435,8 @@ a.person-name:hover { color: var(--accent); }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 680px) {
-  :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); --page-start: var(--space-6); --card-padding: var(--space-4); --row-gap: var(--space-2); }
-  .site-head { display: block; padding: var(--space-5) 0 var(--space-2); }
+  :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); --page-start: var(--space-4); --subnav-start: var(--space-4); --card-padding: var(--space-4); --row-gap: var(--space-2); }
+  .site-head { display: block; padding: var(--space-4) 0 var(--space-2); }
   .head-id { margin-bottom: var(--space-2); }
   .head-postech { margin-right: var(--space-3); padding-right: var(--space-3); }
   .head-postech img { height: 12px; }  /* keeps "POSTECH | MOAI Lab" on one line on 360px phones */

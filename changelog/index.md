@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-10-28 | [design-template-contract](2026-10-28-design-template-contract.md) | Sangwoo Mo(sangwoomo) | 공통 템플릿·전체 페이지 | 역할 계약·자동 전수 검사·상단 메뉴 일관성 |
+| 2026-10-28 | [design-template-contract](2026-10-28-design-template-contract.md) | Sangwoo Mo(sangwoomo) | 공통 템플릿·전체 페이지 | 템플릿+페이지별 근거·가독성 조정, PR #25 승인 배포 |
 | 2026-10-28 | [publications-type-hierarchy](2026-10-28-publications-type-hierarchy.md) | Sangwoo Mo(sangwoomo) | Publications | venue 600·정보 그룹 16px/링크 12px, 공통 글자 크기 및 모바일 상단 여백 축소 |
 | 2026-10-28 | [course-project-layout](2026-10-28-course-project-layout.md) | Sangwoo Mo(sangwoomo) | 시트 링크·Project | 우측 ↗ 통일, 팀 구성 Timeline, Slides 줄바꿈·Final 미정 |
 | 2026-10-28 | [seminar-toolbar-weight](2026-10-28-seminar-toolbar-weight.md) | Sangwoo Mo(sangwoomo) | Seminar 필터 도구 모음 | Full schedule과 필터 버튼의 공통 굵기 600 |

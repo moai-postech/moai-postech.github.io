@@ -40,5 +40,12 @@
 - Generalization 접근 제한은 학생 발표자료 사본에 걸린 것으로, 사이트에서는 공개 원 강의 자료로 연결해 해결.
 - 사용자가 최종 문안을 승인한 뒤 박채원 학생에게 [Slack DM](https://moailabworkspace.slack.com/archives/D09E7EBNGKU/p1793153081787159)으로 기존 사본의 공유 권한 확인 요청 완료.
 
+## 3차: Materials 한 줄과 표 아래 한 줄
+- 교수 요청: Materials를 두 줄로 나누지 않고 한 줄로 이어 표시. `Slides 1, 2 Demo`가 줄바꿈 없이 이어지며 두 묶음 사이에는 공통 작은 간격을 적용.
+- 표 아래 이중선은 마지막 Optional 행의 inset 선과 바로 이어지는 footer 위 선이 3px 간격으로 함께 보인 것. 스터디의 마지막 Optional 행 선만 제거하고 footer의 한 줄은 유지.
+- 줄바꿈을 없앤 자료가 표에서 넘치지 않도록 Topic·Papers 열 비율만 필요한 만큼 조절. 원본과 이전 표시는 Git 이력으로 복구 가능.
+- 기존 Slides·Demo 두 줄 배치는 이번 요청으로 폐기.
+- 검증: 4개 학기 × 9개 화면 폭에서 Materials가 같은 줄이고 가로 넘침이 없으며, 탭마다 열 좌표가 같고 마지막 Optional 행에 추가 선이 없음을 확인. 렌더를 눈으로 확인. 형식·타이포그래피·POSTECH 필수 요소 검사 통과.
+
 ## 남은 것
 - 기존 Generalization 사본의 공유 권한 요청 답변 대기. 사이트의 원 강의 링크 사용에는 영향 없음. `TODO.md`에 기록.

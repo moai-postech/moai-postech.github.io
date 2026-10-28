@@ -175,6 +175,9 @@ def parse(rows):
         if term["id"] == "summer-2026":
             # 이 학기는 별도 발표자료를 만들지 않고 MIT 원 강의 슬라이드를 사용한다.
             mats = materials([cells[3]])
+            # 공개가 확인된 Generalization 사본은 해당 회차의 Slides로 사용한다(교수 2026-10-28).
+            if n == "8" and any(c["links"] for c in cells[7:]):
+                mats = materials(cells[7:])
             # Papers는 다루는 강의 번호, Materials는 원 강의 PDF 링크다.
             s["papers"] = [{"text": l["text"]} for l in links(cells[3])]
         else:

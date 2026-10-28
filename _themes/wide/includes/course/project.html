@@ -29,9 +29,12 @@
     {% if pj.criteria %}<section class="content-section">
     <h2>Evaluation</h2>
     <div class="section-body">
-    {% if pj.evaluation_note %}<p>{{ pj.evaluation_note }}</p>{% endif %}
-    <ul class="plain project-criteria">
-      {% for x in pj.criteria %}<li><strong>{{ x.name }}</strong><span>{{ x.text }}</span></li>{% endfor %}
+    {% if pj.evaluation_sources %}<div class="project-evaluation-flow">
+      {% for source in pj.evaluation_sources %}{% unless forloop.first %}<span aria-hidden="true">+</span>{% endunless %}<span class="project-evaluation-source">{{ source }}</span>{% endfor %}
+      <span aria-hidden="true">→</span><span class="project-evaluation-result">{{ pj.evaluation_result }}</span>
+    </div>{% elsif pj.evaluation_note %}<p>{{ pj.evaluation_note }}</p>{% endif %}
+    <ul class="project-criteria">
+      {% for x in pj.criteria %}<li><div class="project-criterion-head"><strong>{{ x.name }}</strong>{% if x.individual %}<span class="project-individual">Individual</span>{% endif %}</div><span>{{ x.text }}</span></li>{% endfor %}
     </ul>
     </div>
     </section>{% endif %}

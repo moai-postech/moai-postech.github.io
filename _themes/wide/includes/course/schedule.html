@@ -22,7 +22,7 @@
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
         <td class="cs-n">{{ r.n }}</td>
         <td class="cs-topic">{% assign tag = site.data.course_tags[r.kind] %}{% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}{% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% if r.speaker %}<span class="cs-speaker">{{ r.speaker }}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% if r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}{% endif %}</td>
-        <td class="cs-slides">{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>
+        <td class="cs-slides">{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>
         {% if cols == 5 %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}
       </tr>
       {% endif %}{% endfor %}

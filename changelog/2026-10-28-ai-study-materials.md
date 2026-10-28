@@ -1,5 +1,5 @@
 # 2026-10-28 학부 AI 스터디 자료 표기 통일
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/ai_study.yml`, `_data/ai_study_terms.yml`, `tools/ai_study_sync.py`, `_themes/wide/includes/course/study.html`, `_themes/wide/includes/course/course.css`, `_themes/wide/includes/course/README.md`, `teaching/ai-study/index.md`, `TODO.md` | 도구: Codex
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/ai_study.yml`, `_data/ai_study_terms.yml`, `tools/ai_study_sync.py`, `_themes/wide/includes/course/study.html`, `_themes/wide/includes/course/course.css`, `_themes/wide/includes/course/README.md`, `_themes/wide/includes/course/STUDY.md`, `teaching/ai-study/index.md`, `TODO.md` | 도구: Codex
 
 > **한줄 결론: 자료를 Slides 1, 2와 Demo로 묶고, 단일 Figure 링크를 제외했다. 여름학기는 원 강의 자료 14개를 10회에 연결했다.**
 
@@ -70,6 +70,15 @@
 - 기각: 공통 운영 정보 카드 유지(학기별 차이를 반영하지 못함), 한 장소로 통일(실제 강의실 변경 기록과 다름), 전역 인물 정보가 새 학기에 자동 상속(학기별로 바뀔 수 있다는 요청과 다름).
 - 원본 복구는 Git 이력. 다른 강의 사이트의 머리·운영 정보 디자인은 변경하지 않음.
 - 학기별 운영 정보, 탭 위계, 자료 한 줄과 표 열 위치를 4개 학기 × 10개 화면 폭에서 검증. 데스크톱·휴대폰 렌더 확인. 형식·타이포그래피·POSTECH 필수 요소·24페이지 조작·16건 텍스트 드래그 검사 통과.
+
+## 6차: Advisor 우선과 학기별 Overview
+- 교수 지적: 사진을 없애 건조해졌고 Advisor를 세 번째로 미뤄 콘텐츠 위계가 흐려짐. 사진이 있는 Advisor를 첫 칸으로 복구하고 Meetings·Location·Student representative 순으로 배치.
+- 사진 경로도 학기별 운영 정보에 저장해 인물이 바뀌면 각 학기에 맞게 교체 가능. 첫 칸은 사진과 이름을 읽을 공간을 확보.
+- 학기별 큰 그림을 주는 Overview를 학기 제목 아래에 추가. Physical AI는 로봇의 인식·추론·행동, 여름학기는 deep learning의 기초, 봄학기는 LLM의 적응·활용, Foundation Models는 언어·시각·멀티모달 모델과 생성으로 학습 범위를 설명.
+- Foundation Models의 `Suno (audio)` 표기는 `Suno`로 변경하고 자동 동기화에서도 유지.
+- 같은 날 추가된 스터디 템플릿 문서에도 Overview·사진·정보 순서를 반영. 다른 작업에서 고친 공통 표 마감선 한 줄은 그대로 유지.
+- 기각: 사진 없는 동등한 네 칸, 시간·장소를 Advisor보다 먼저 배치. 사용자 요청의 인물과 콘텐츠 중요도를 반영하지 못했음.
+- 검증: 4개 학기 × 10개 화면 폭에서 사진 실제 로드, Advisor 첫 순서, 서로 다른 Overview, Suno 표기와 넘침 없음을 확인. 데스크톱 렌더를 눈으로 확인.
 
 ## 남은 것
 - 기존 Generalization 사본의 공유 권한 요청 답변 대기. 사이트의 원 강의 링크 사용에는 영향 없음. `TODO.md`에 기록.

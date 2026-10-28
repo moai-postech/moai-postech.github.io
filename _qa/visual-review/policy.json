@@ -10,6 +10,7 @@
   "tileHeight": 1000,
   "requiredChecks": [
     "test_visual_review",
+    "test_font_evidence",
     "test_design",
     "check_design",
     "check_format",

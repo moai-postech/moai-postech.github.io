@@ -204,7 +204,7 @@ grading:
     weight: "40%"
   - item: "Final project"
     weight: "60%"
-grading_note: "Attendance is not graded, but missing more than one third of the classes results in an F. The project is a Kaggle competition of the team's choice (up to 4 students), judged on problem, method, results, teamwork and presentation."
+grading_note: "Attendance is not graded, but missing more than 1/3 of the classes results in an F. The project is a Kaggle competition of the team's choice (up to 4 students), judged on problem, method, results, teamwork and presentation."
 
 resources_title: "References"  # 참고 강의만 있는 것이 아니라 책·문서도 있어 제목을 바꾼다(기본값 Reference courses)
 resources:

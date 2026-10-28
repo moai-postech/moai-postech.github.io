@@ -18,16 +18,12 @@ sections:
       ![MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026.jpg)
   - title: "Our focus in 2026"
     type: focus
-  # 연구 방향의 설명을 마친 뒤 전체 Publications로 연결
+  # 연구 소개 뒤 실적과 모집을 제목·박스 없이 두 문단으로 안내
   - class: section-next
     body: |
-      Our work appears at NeurIPS, ICML, and ICLR. [See our publications](publications.html)
-  - title: "Join MOAI Lab"
-    body: |
-      We are looking for motivated students to join our team.
+      Our work appears at top AI conferences such as NeurIPS, ICML, and ICLR. [See our publications](publications.html)
 
-      [See how to apply](contact.html#join)
-      {: .section-next}
+      We welcome applications from motivated students. [How to apply](contact.html#join)
   # News: 지금은 전부 보인다. 많아지면 limit: 8 처럼 개수를 정하면 그 아래에 "All news →"(news.html) 링크가 생긴다
   - title: "News"
     type: news

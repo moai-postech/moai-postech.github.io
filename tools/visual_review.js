@@ -62,8 +62,9 @@ async function capture(out,manifest) {
         await page.evaluate(()=>document.fonts.ready);
         await page.mouse.move(0,0);
         const unknown=await page.locator('main button').evaluateAll(es=>es.filter(e=>!e.matches('.focus-tab,.filter-btn,.study-tablist button,.study-step[data-start],.study-unlock-fields button,.study-lock-button')).map(e=>e.outerHTML.slice(0,120)));
-        const planned=await page.evaluate(()=>{
+        const planned=await page.evaluate(({tallHeight})=>{
           const states=[{state:'default',full:true}];
+          if(innerWidth>=768&&document.querySelector('.site-foot')&&document.documentElement.scrollHeight<=tallHeight)states.push({state:'tall-viewport',full:false});
           for(const selector of ['.focus-tab','.filter-btn','.study-tablist button']) [...document.querySelectorAll(selector)].forEach((e,i)=>{
             states.push({state:`${selector}:${i}`,full:selector==='.study-tablist button'});
             if(selector==='.study-tablist button'){const panel=document.getElementById(e.getAttribute('aria-controls'));[...panel.querySelectorAll('.study-step[data-start]')].forEach((_,j)=>states.push({state:`term:${i}:part:${j}`,full:false}));}
@@ -73,13 +74,13 @@ async function capture(out,manifest) {
           for(const selector of ['.subnav a[aria-current]','.course-nav a[aria-current]','.filter-link','.course-sheet','.study-sheet','.section-next a','.study-unlock-fields input'])if([...document.querySelectorAll(selector)].some(e=>e.getClientRects().length))for(const action of ['hover','focus'])states.push({state:`${action}:${selector}`,full:false});
           if(document.querySelector('#member-unlock-form'))for(const state of ['password-error','synthetic-directory-unlocked','directory-relocked'])states.push({state,full:state==='synthetic-directory-unlocked'});
           return states;
-        });
+        },{tallHeight:vr.policy.tallHeight});
         manifest.requiredCases.push(...planned.map(s=>({...s,id:vr.hash(`${file}|${width}|${s.state}`).slice(0,16),page:file,width})));
         if(unknown.length)manifest.captureErrors.push(`${file}: 캡처 상태를 정의하지 않은 버튼 ${unknown.join(';')}`);
         async function snap(state,full=false) {
           await page.evaluate(()=>document.fonts.ready);
           const id=vr.hash(`${file}|${width}|${state}`).slice(0,16);
-          const entry={id,page:file,width,state,images:[],fontsLoaded:await page.evaluate(()=>[...document.fonts].some(f=>f.status==='loaded'&&/Pretendard/.test(f.family)))};
+          const entry={id,page:file,width,height:page.viewportSize().height,state,images:[],fontsLoaded:await page.evaluate(()=>[...document.fonts].some(f=>f.status==='loaded'&&/Pretendard/.test(f.family)))};
           async function image(kind,selector,options) {
             const imageId=id+'-'+vr.hash(kind+'|'+selector+'|'+(options?.tile??'')).slice(0,10),rel='images/'+imageId+'.png';
             await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
@@ -107,6 +108,7 @@ async function capture(out,manifest) {
           await page.evaluate(()=>scrollTo(0,0));await page.mouse.move(0,0);
         }
         await snap('default',true);
+        if(planned.some(s=>s.state==='tall-viewport')){await page.setViewportSize({width,height:vr.policy.tallHeight});await snap('tall-viewport');await page.setViewportSize({width,height:vr.policy.height});}
         for(const selector of ['.focus-tab','.filter-btn','.study-tablist button']) {
           const controls=page.locator(selector);
           for(let i=0;i<await controls.count();i++) {

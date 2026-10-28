@@ -6,8 +6,8 @@
     390,
     320
   ],
-  "height": 1000,
-  "tileHeight": 1000,
+  "height": 900,
+  "tileHeight": 900,
   "requiredChecks": [
     "test_visual_review",
     "test_font_evidence",
@@ -23,7 +23,7 @@
   "rubric": {
     "hierarchy": "무엇이 먼저 눈에 들어와야 하는가? 1차 메뉴·드롭다운·하위 탭을 같은 강조로 잘못 묶지 않았는가?",
     "readability": "실제 크기에서 이름·학력·운영 정보가 읽히는가? 공간이 충분한 정보까지 보조 크기로 줄이지 않았는가?",
-    "density": "글자 양과 배치에 비해 크기·행간·여백이 적절한가? 긴 목록과 사진 카드를 기계적으로 같게 만들지 않았는가?",
+    "density": "글자 양과 배치에 비해 크기·행간·여백이 적절한가? 긴 목록과 사진 카드를 기계적으로 같게 만들지 않았는가? 짧은 페이지에서 Footer 위 빈 공간이 과하지 않은가?",
     "alignment": "시작선·열·카드·줄바꿈과 탭 이동 전후 메뉴 위치가 자연스러운가?",
     "states": "기본·선택·펼침·hover·키보드 focus·잘못된 입력·잠금 해제 상태를 실제로 확인했는가?",
     "regression": "이전 화면과 비교해 나빠진 곳은 없는가? 변경하지 않은 인접 요소와 PC·모바일도 확인했는가?"
@@ -85,5 +85,6 @@
       ]
     }
   ],
-  "initialDeployment": "709284107b70a4e92d68c90ef8bccf8320b70f66"
+  "initialDeployment": "709284107b70a4e92d68c90ef8bccf8320b70f66",
+  "tallHeight": 1080
 }

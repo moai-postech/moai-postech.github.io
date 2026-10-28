@@ -55,9 +55,9 @@
   --text-h2: var(--fs-5);   /* a section of its own: Home, Contact, the Research stages, the Faculty name */
   --text-group: var(--fs-4);  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27) */
   --text-display: var(--fs-6);
-  --text-paper: var(--text-body);  /* papers are reading content: one body size for titles, authors and venues */
-  --text-author: var(--text-paper);
-  --text-paper-meta: var(--text-paper);
+  --text-paper: var(--text-body);  /* paper titles lead; supporting lines use the shared metadata size */
+  --text-author: var(--text-meta);
+  --text-paper-meta: var(--text-meta);
   --text-featured-meta: var(--text-meta);  /* compact badges inside featured cards */
   --text-featured-paper: var(--text-body);  /* featured cards and dense lists have different reading roles */
   --leading-group: 1.3;
@@ -343,12 +343,12 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .pubs .title { display: block; align-self: baseline; font-size: var(--text-paper); font-weight: 600; line-height: var(--leading-paper); text-wrap: pretty; }
 .pubs .title a { color: var(--text); }
 .pubs .title a:hover { color: var(--accent); }
-.pubs .venue { padding-block: 0; font-weight: 400; }  /* a list venue stays readable without competing with its title */
+.pubs .venue { padding: 0; background: none; border-radius: 0; font-size: inherit; font-weight: 400; line-height: inherit; }  /* venue reads as bibliographic text and shares the title/authors start line */
 .pubs .authors { color: var(--faint); font-size: var(--text-author); line-height: var(--leading-paper); }
 .author { white-space: nowrap; }  /* a name never breaks across lines */
 .pubs .lab { color: var(--text); }
 .pubs .note { margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: 600; line-height: 1.5; }  /* awards: a line of their own, in the accent colour */
-.pub-meta { font-size: var(--text-paper-meta); line-height: var(--leading-paper); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-4); }
+.pub-meta { font-size: var(--text-paper-meta); line-height: var(--leading-paper); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-5); }
 .pub-venue, .pub-links { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1); }
 .pub-links { gap: var(--space-3); }
 .venue-honor { color: var(--accent); font-size: var(--text-paper-meta); font-weight: 600; }  /* presentation honours stay beside the venue, including when the links wrap */

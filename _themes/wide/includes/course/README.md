@@ -22,7 +22,7 @@
 - 강의는 Instructor와 Teaching assistants, 스터디는 Advisor와 Student representative로 표시한다. 사람의 사진·이름·연락처는 `person.html`에서 같은 양식으로 그린다.
 - TA 정보가 없으면 TA 행은 생략한다. 임의의 이름이나 빈 자리 표시를 넣지 않는다. TA를 여러 명 등록할 수 있다.
 - 장소·시간은 `location`(building, rooms), `meetings`(day, time)로 관리한다. Office hours·Other terms는 이 정보 뒤에 추가한다.
-- 스터디는 학기 탭 아래 Overview 옆에, 강의는 소개 옆에 같은 운영 정보 카드를 둔다. 좁은 화면에서는 소개·Overview 다음으로 내린다.
+- 스터디는 학기 탭 아래 전체 폭 Overview·학습 흐름 다음에 운영 정보를 가로로 둔다. 강의는 소개 옆에 같은 운영 정보 카드를 둔다. 좁은 화면에서는 인물·장소 정보를 순서대로 세로로 접는다.
 
 ## 표의 마감선
 

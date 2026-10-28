@@ -1,5 +1,5 @@
 # 2026-10-28 학부 AI 스터디 자료 표기 통일
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/ai_study.yml`, `_data/ai_study_terms.yml`, `tools/ai_study_sync.py`, `_themes/wide/includes/course/study.html`, `_themes/wide/includes/course/course.css`, `_themes/wide/includes/course/README.md`, `_themes/wide/includes/course/STUDY.md`, `teaching/ai-study/index.md`, `TODO.md` | 도구: Codex
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/ai_study.yml`, `_data/ai_study_terms.yml`, `tools/ai_study_sync.py`, `_themes/wide/includes/course/study.html`, `_themes/wide/includes/course/course.css`, `_themes/wide/includes/course/README.md`, `_themes/wide/includes/course/STUDY.md`, `_themes/wide/includes/course/COURSE.md`, `_themes/wide/includes/course/facts.html`, `_themes/wide/includes/course/person.html`, `_themes/wide/includes/course/home.html`, `_data/courses/`, `teaching.md`, `tools/check_selection.js`, `teaching/ai-study/index.md`, `TODO.md` | 도구: Codex
 
 > **한줄 결론: 자료를 Slides 1, 2와 Demo로 묶고, 단일 Figure 링크를 제외했다. 여름학기는 원 강의 자료 14개를 10회에 연결했다.**
 
@@ -79,6 +79,18 @@
 - 같은 날 추가된 스터디 템플릿 문서에도 Overview·사진·정보 순서를 반영. 다른 작업에서 고친 공통 표 마감선 한 줄은 그대로 유지.
 - 기각: 사진 없는 동등한 네 칸, 시간·장소를 Advisor보다 먼저 배치. 사용자 요청의 인물과 콘텐츠 중요도를 반영하지 못했음.
 - 검증: 4개 학기 × 10개 화면 폭에서 사진 실제 로드, Advisor 첫 순서, 서로 다른 Overview, Suno 표기와 넘침 없음을 확인. 데스크톱 렌더를 눈으로 확인.
+
+## 7차: 강의·스터디 운영 정보 구조 통일
+- 교수 요청: 교수 → 조교·학생대표 → 장소·시간 순서로 강의와 스터디의 구조를 통일하고 향후 강의 TA 추가를 지원.
+- `course/facts.html`과 `course/person.html`로 운영 정보 및 인물 표시를 공통화. 강의는 Instructor·Teaching assistants, 스터디는 Advisor·Student representative를 사용. 정보가 없으면 해당 역할을 생략.
+- 스터디의 Overview 옆에 강의와 같은 운영 정보 카드를 배치. 학기별 정보·사진·Overview와 상단 학기 탭은 유지.
+- 세 강의의 기존 Lectures 문자열을 같은 값의 `location`·`meetings` 구조로 전환. 교수 이름과 실제 시간·강의실은 유지. TA는 실제 등록하지 않고 `teaching_assistants` 배열을 향후 지원.
+- 공통·강의·스터디 템플릿 문서에 순서와 TA 필드, 연락처 표기를 반영.
+- Teaching의 `A weekly AI study group with POSTECH undergraduates.`에서 AI study group의 링크만 제거. 학기별 주제 링크는 유지.
+- 기각: 스터디만 다른 순서·카드로 유지, TA가 없는 강의에 빈 자리 표시. 사용자 요청의 공통 구조와 맞지 않음.
+- 소개 링크를 제거했으므로 선택 검사는 앵커 대신 실제 문장을 드래그하도록 수정. 소개에 링크가 다시 생기지 않는지도 확인.
+- 원본은 Git 이력으로 복구 가능.
+- 검증: 실제 강의 세 개와 스터디 네 학기, TA 두 명을 넣은 임시 렌더를 9개 화면 폭에서 확인. TA 미등록 시 생략, 두 명 등록 시 교수 다음 표시, 이메일 가림, 사진 로드, 가로 넘침 없음, Teaching 소개 링크 제거를 검증. 임시 데이터·페이지는 검증 뒤 제거. 형식·타이포그래피·POSTECH·조작·텍스트 드래그 검사 통과. 공통 카드의 강의·스터디 렌더도 눈으로 확인.
 
 ## 남은 것
 - 기존 Generalization 사본의 공유 권한 요청 답변 대기. 사이트의 원 강의 링크 사용에는 영향 없음. `TODO.md`에 기록.

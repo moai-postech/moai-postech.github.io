@@ -19,7 +19,7 @@
 
 ## 강의마다 달라도 되는 것
 
-- 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Lectures(`lectures`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 다른 강의나 자료로 잇는 Related 는 두지 않는다(2026-10-27 교수: 강의 사이트끼리 cross reference 하지 않는다).
+- 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Location & time(`location`, `meetings`)·Teaching assistants(`teaching_assistants`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 다른 강의나 자료로 잇는 Related 는 두지 않는다(2026-10-27 교수: 강의 사이트끼리 cross reference 하지 않는다).
 - 파트 이름은 자유다(`Part I`, `Software 3.0`). 자료 절 제목은 `resources_title`(기본 `Reference courses`).
 - 줄 종류 앞 태그 글자는 `_data/course_tags.yml` 한 곳에서 정한다(guest, seminar, exam, project).
 
@@ -49,3 +49,11 @@
 - 초청 종류는 제목 위 작은 글자, 발표 제목은 본문 제목 역할, 연사·소속은 다음 줄로 둔다. 제목이 없으면 연사 이름을 주 정보로 쓴다.
 - 회차별 `time`·`location`을 선택적으로 받는다. 별도 시간은 KST로 쓰고 연사 아래 시간·장소를 표시한다. 한쪽만 확인됐으면 그 값만 표시한다.
 - 시간·장소는 POSTECH Outlook 캘린더와 공식 안내로 확인한다. 회차의 장소가 없다고 정규 강의실을 추정해 넣지 않는다.
+
+## 교수·TA·장소와 시간
+
+- 운영 정보는 [공통 규칙](README.md#공통-운영-정보)의 순서와 컴포넌트를 따른다.
+- `instructor`는 기존 `name`, `url`을 유지한다. 선택 필드는 `photo`, `affiliation`이며 현재 교수와 이름이 같으면 Faculty 데이터의 사진을 사용한다.
+- TA가 정해지면 `teaching_assistants` 배열에 `name`과 선택 필드 `email`, `url`, `photo`, `affiliation`을 추가한다. 현재 강의에는 TA를 기입하지 않는다.
+- 장소는 `location: { building, rooms }`, 시간은 `meetings: { day, time }`으로 넣는다. 옛 `lectures` 문자열도 폴백으로 읽지만 새 데이터는 두 필드를 쓴다.
+- TA를 추가하면 Instructor 다음, Location & time 이전에 자동으로 표시된다. 이메일은 ` [at] `로 가려 출력한다.

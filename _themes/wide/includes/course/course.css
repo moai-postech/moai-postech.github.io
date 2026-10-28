@@ -49,11 +49,14 @@
 .course-fact dd a { font-weight: 600; }
 .course-fact dd a + a { margin-left: var(--space-3); }
 .course-instructor { grid-template-columns: 1fr; gap: var(--space-2); }  /* the photo row needs the full width of the panel */
-.course-instructor dd { display: flex; align-items: center; gap: var(--space-3); }
-.course-instructor img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
-.course-organizer small { display: block; color: var(--muted); font-size: var(--text-small); }  /* the study organizer's address sits under the name, the one place it appears (교수 2026-10-27) */
-.course-instructor dd span { display: flex; flex-direction: column; line-height: 1.4; }
-.course-instructor small { color: var(--muted); font-size: var(--text-small); }
+.course-person { display: flex; align-items: center; gap: var(--space-3); }
+.course-person + .course-person { margin-top: var(--space-3); }
+.course-person img { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; object-fit: cover; }
+.course-person-details { display: flex; flex-direction: column; min-width: 0; line-height: 1.5; }
+.course-person small { color: var(--muted); font-size: var(--text-small); overflow-wrap: anywhere; }
+.course-support dd { min-width: 0; }
+.course-meeting p { margin: 0; }
+.course-meeting p + p { margin-top: var(--detail-gap); }
 
 .course-outline { margin-top: 0; }
 
@@ -139,22 +142,9 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-heading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3) var(--space-5); flex-wrap: wrap; margin-bottom: var(--space-5); }
 .study-term-heading h2 { margin-bottom: 0; }
 .study-sheet { color: var(--accent); font-size: var(--text-meta); font-weight: 600; white-space: nowrap; }
-.study-facts { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)); gap: var(--space-5); margin: 0 0 var(--space-6); padding: var(--card-padding); border-radius: var(--radius-2); background: var(--surface); }
-.study-overview { margin-bottom: var(--space-6); }
+.study-term-details { padding-top: 0; margin-bottom: var(--space-6); }
 .study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: 600; }
 .study-overview p { margin: 0; color: var(--muted); }
-.study-advisor dd { display: flex; align-items: center; gap: var(--space-3); }
-.study-advisor img { width: 64px; height: 64px; flex-shrink: 0; object-fit: cover; border-radius: 50%; }
-.study-facts dt { margin-bottom: var(--space-2); color: var(--muted); font-size: var(--text-small); font-weight: 600; line-height: 1.5; }
-.study-facts dd { margin: 0; font-size: var(--text-meta); line-height: 1.5; }
-.study-facts dd a { font-weight: 600; }
-.study-facts small { display: block; margin-top: var(--detail-gap); color: var(--muted); font-size: var(--text-small); overflow-wrap: anywhere; }
-@media (max-width: 960px) {
-  .study-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 480px) {
-  .study-facts { grid-template-columns: 1fr; gap: var(--space-4); }
-}
 .study-tablist { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
 .study-tablist button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: var(--space-2) var(--space-5); border: 0; border-radius: var(--radius-2); background: var(--surface); color: var(--muted); font: inherit; font-size: var(--text-meta); line-height: 1.4; text-align: left; cursor: pointer; }
 .study-tablist button strong { font-weight: 600; }

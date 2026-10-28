@@ -7,7 +7,7 @@
 소개 → 학기 탭 → 선택 학기의 Overview → 운영 정보 → 일정 표. 강의의 Home·Schedule·Project 메뉴는 쓰지 않는다.
 
 - 학기별 Overview는 주제의 큰 그림과 학습 목표를 한 문단으로 설명한다.
-- 운영 정보는 사진이 있는 Advisor → Meetings → Location → Student representative 순서로 둔다. 지도교수의 사진·이름은 해당 학기 데이터에서 읽는다.
+- 운영 정보는 사진이 있는 Advisor → Student representative → Location & time 순서로 둔다. 지도교수의 사진·이름은 해당 학기 데이터에서 읽는다. 강의와 같은 `facts.html`·`person.html`을 사용하고 조교 자리만 학생대표로 바꾼다.
 - 학기 제목·시간·장소·지도교수·학생대표·Study sheet는 해당 학기 패널 안에 둔다. 지난 학기 정보와 현재 학기 정보를 섞지 않는다.
 - 학기 탭은 클릭·좌우 화살표·Home·End를 지원한다. 학기별 주소 fragment를 유지하고 탭을 바꿔도 표의 열 위치가 움직이지 않게 한다.
 - 표 열은 번호·날짜·Topic·Papers·Demo·Presenters·Materials 순이다. 좁은 화면에서는 카드로 접는다.

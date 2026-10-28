@@ -50,3 +50,10 @@ POSTECH 요구사항: 영향 없음. 머리·꼬리의 학교 링크 유지.
 - 추가 교수 요청: 공통 Project 순서를 Timeline → Evaluation → Teams로 변경. 기존 Teams 우선 결정은 이번 요청으로 대체.
 - 기각한 안: 순서까지 TBD로 반복 표기하는 안은 불필요한 정보여서 제거. Evaluation을 Teams 뒤에 두는 안은 교수 요청에 따라 대체.
 - 검증: Jekyll 빌드, 디자인 계약 26페이지·616상태, 형식·typography·POSTECH 검사 통과. 세 수업×1280·768·390·320px의 12조합에서 3블록·마감일·가로 넘침 없음·발표 칸 가운데 정렬 확인. 모든 수업의 Timeline→Evaluation→Teams와 26F Final 17칸의 Date TBD 단독 표시 확인. PC·모바일 실제 렌더 확인.
+
+## 후속 보완: 평가 방식과 개인 기여
+- 교수 요청으로 모든 수업 Evaluation에 교수 평가와 동료 평가 합산, Teamwork의 개인별 평가를 명시.
+- 기존 평가 기준을 보존하고 Data Engineering 두 학기에 Teamwork 기준 추가. Programming for Data Science의 기존 Teamwork 설명도 기술 기여·협업·역할 수행으로 구체화.
+- 기각한 안: 교수·동료 평가의 비율과 계산식 임의 지정. 교수는 합산 방식만 정했으므로 비중은 추가하지 않음.
+- 원본 복구 경로: Git `df2310b`.
+- 검증: Jekyll 빌드와 전체 형식·typography·POSTECH 검사 통과. 세 수업×4폭에서 가로 넘침 없음, PC·모바일 평가 문장·기준 실제 렌더 확인.

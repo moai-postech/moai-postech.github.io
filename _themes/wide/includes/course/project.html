@@ -29,6 +29,7 @@
     {% if pj.criteria %}<section class="content-section">
     <h2>Evaluation</h2>
     <div class="section-body">
+    {% if pj.evaluation_note %}<p>{{ pj.evaluation_note }}</p>{% endif %}
     <ul class="plain project-criteria">
       {% for x in pj.criteria %}<li><strong>{{ x.name }}</strong><span>{{ x.text }}</span></li>{% endfor %}
     </ul>

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-29 | [course-guest-layout](2026-10-29-course-guest-layout.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule | 연사 위·제목 아래, 시간·장소 두 줄 정렬과 모바일 배치 |
 | 2026-10-29 | [teaching-study-home-link](2026-10-29-teaching-study-home-link.md) | Sangwoo Mo(sangwoomo) | Teaching | 소개 문장의 AI study group을 색상 변경 없이 스터디 홈으로 연결 |
 | 2026-10-28 | [ai-study-home](2026-10-28-ai-study-home.md) | Sangwoo Mo(sangwoomo) | AI Study Home | 학습·참여 흐름 개편, 랩·스터디·강의 헤더 통일, first-year·Undeclared 표기 |
 | 2026-10-28 | [news-lab-start-links](2026-10-28-news-lab-start-links.md) | Sangwoo Mo(sangwoomo) | News | MOAI Lab self-link와 POSTECH 링크를 본문색으로 추가 |

@@ -32,7 +32,7 @@ parts:
     span: "Lectures 16 – 19"
     text: "Run models and agents on the data: ML systems, LLM systems, RAG and agents."
 
-# 한 줄 = 한 수업일. kind: lecture(번호 n), guest, seminar(학과 세미나), exam, project, break(휴강·온라인 수업일. off 는 YAML 이 false 로 읽어 쓰지 않는다), event.
+# 한 줄 = 한 수업일. kind: lecture(번호 n), review(파트 밖 복습, 번호 미표시), guest, seminar(학과 세미나), exam, project, break(휴강·온라인 수업일. off 는 YAML 이 false 로 읽어 쓰지 않는다), event.
 # part 만 있는 줄은 파트 머리다. title 이 없으면 speaker 가 제목 자리에 온다. pdf·html·lab 은 공개 링크가 생기면 채운다(없으면 칸이 빈다).
 # time·location은 회차별 별도 시간(KST)·장소다. 확인된 값만 적고 없으면 생략한다.
 # reading 의 약칭은 아래 resources 의 abbr 이다.
@@ -135,7 +135,7 @@ schedule:
       - text: "IDS Lec 23"
         url: "https://cs186berkeley.net/fa24/"
   - date: "2026-10-15"
-    kind: lecture
+    kind: review
     n: 11
     title: "Review Session"
     pdf: "teaching/26f-data-engineering/slides/11_review.pdf"
@@ -153,7 +153,7 @@ schedule:
     kind: exam
     title: "Midterm Exam"
   - date: "2026-11-03"
-    kind: lecture
+    kind: review
     n: 12
     title: "Midterm Review"
   - date: "2026-11-05"
@@ -203,7 +203,7 @@ schedule:
     title: "Agents"
   - date: "2026-12-03"
     kind: break
-    title: "University Anniversary (no class)"
+    title: "No class (University Anniversary)"
   - date: "2026-12-08"
     kind: break
     title: "Project preparation (online, no class)"
@@ -219,6 +219,9 @@ schedule:
   - date: "2026-12-22"
     kind: break
     title: "Peer Evaluation (online, no class)"
+  - date: "2026-12-24"
+    kind: break
+    title: "No class (Christmas Eve)"
 
 grading:
   - item: "Midterm exam"

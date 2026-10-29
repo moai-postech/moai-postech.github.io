@@ -97,11 +97,20 @@
 .cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
-.cs-session-details { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 var(--space-4); }
-.cs-session-details .cs-session-meta { margin-top: 0; }
+.cs-session { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: var(--space-2) var(--space-5); }
+.cs-session-main { min-width: 0; }
+.cs-session-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--space-2); }
+.cs-session-heading .cs-tag { margin-right: 0; }
+.cs-session-heading .cs-speaker { display: inline; }
+.cs-session-title { display: block; margin-top: var(--space-1); font-size: var(--text-body); font-weight: var(--weight-regular); }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .cs-session-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin-top: var(--space-1); color: var(--muted); font-size: var(--text-meta); }
+.cs-session > .cs-session-meta { flex-direction: column; align-items: flex-end; gap: var(--space-1); margin-top: 0; max-width: 21em; text-align: right; }
 .cs-session-time { color: var(--tone); font-weight: var(--weight-emphasis); }
+@media (max-width: 960px) {
+  .cs-session { grid-template-columns: minmax(0, 1fr); }
+  .cs-session > .cs-session-meta { align-items: flex-start; max-width: none; text-align: left; }
+}
 .cs-slides { width: 1%; white-space: nowrap; }
 .cs-slides a { margin-right: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }  /* the links a student comes for, so they keep the accent at rest */
 .cs-slides a:last-child { margin-right: 0; }

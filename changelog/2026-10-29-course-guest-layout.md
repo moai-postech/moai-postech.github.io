@@ -42,3 +42,9 @@ POSTECH 요구사항: 영향 없음.
 - POSTECH 공식 2026 학사일정에서 9월 7일 개강, 12월 21–24일 기말고사, 12월 28일 동기방학 시작 확인. Christmas Eve 휴강은 교수 요청에 따른 강좌 운영이다.
 - 근거: https://www.postech.ac.kr/kor/college-life/academic_schedule.do?mode=list&selectedYear=2026&siteId=kor
 - 9월 8일–12월 24일 화·목 32개 날짜를 대조해 나머지 누락 없음 확인. Jekyll 빌드와 출력의 12월 24일 표기 확인.
+
+## 후속: 복습은 파트 밖 공통 일정
+- 교수는 Review Session·Midterm Review가 Part II 소속이 아니라 배치 편의상 그 사이에 있었을 뿐이라고 설명하고, 공통색과 번호 생략을 요청.
+- 이번 학기 두 행과 26S Review Session을 `kind: review`로 분류. 기존 공통 노랑과 제목·자료 링크를 사용하고 `#`는 숨김.
+- 자료 번호와 연결된 원본 `n` 및 다른 강의 번호·파일 경로는 유지. 강의 양식에 공통 원칙 기록.
+- Jekyll 빌드와 PC·모바일 출력에서 복습 세 행의 노랑·빈 번호·자료 링크를 확인.

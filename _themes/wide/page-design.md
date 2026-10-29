@@ -13,6 +13,7 @@
 | 운영 정보 | 교수·TA·시간·장소 14→16px, 인물 보조 설명 13→14px | 강의·스터디 운영 정보는 방문자가 직접 찾아야 할 핵심 정보. 사진과 패널의 여백을 이용해 본문 크기로 표시. |
 | 초청 연사 이름 | 14px → 본문 크기 16px | 발표자를 식별하는 주 정보. 팀 구성원 전체 목록·참고문헌과 구분하고 600 강조는 유지. |
 | 랩·스터디·강의 헤더 | header-brand.html 정본과 site-head·공통 탐색 스타일 사용. PC 88px, 태블릿 115px, 모바일 163px 높이. 모바일 메뉴는 같은 3열·2행 슬롯 사용. | 페이지를 오갈 때 좌상단 학교·연구실 로고 높이와 탭 위치가 달라지지 않게 함. 강의는 같은 위치에 과목명으로 대체. 320px에서도 공식 워드마크 비례와 긴 과목명 유지. |
+| 강의 초청 일정 | 첫 줄 스티커·연사·소속, 다음 줄 강연 제목. 오른쪽 시간·장소 두 줄, 960px 이하에서는 아래로 이동. | 연사 식별을 먼저 하고 제목을 이어 읽도록 위계를 정리. 두 줄의 좌우 묶음을 위에서 맞춰 기존 제목 아래에 정보가 흩어지는 불균형을 해소. 기존 팔레트·글꼴·글자 크기 토큰 유지. |
 
 ## 페이지별 조정
 
@@ -44,13 +45,13 @@
 | `news.html` | 연구실 · 소식 목록 | 기본 유지 | 소식 본문16px, 반복되는 연·월14px. 날짜를 키우면 본문보다 눈에 띄어 기존 위계 유지. |
 | `404.html` | 연구실 · 짧은 안내 | 기본 유지 | 문장 하나와 홈 이동 링크16px. 넓은 빈 공간은 오류 안내 페이지의 의도된 구성. |
 | `teaching/25f-data-engineering/index.html` | 강의 · Home | 공통 컴포넌트 조정 | 소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지. |
-| `teaching/25f-data-engineering/schedule/index.html` | 강의 · Schedule | 공통 컴포넌트 조정 | 행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 자료 동작15px와 초청 연사 이름16px로 식별 강화. 초청 일정도 Project와 같은 스티커를 사용하고 연사와 시간·장소를 묶어 배치. |
+| `teaching/25f-data-engineering/schedule/index.html` | 강의 · Schedule | 공통 컴포넌트 조정 | 행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 초청 일정은 연사600·소속400을 윗줄, 제목400을 아랫줄로 배치. 시간·장소는 오른쪽 두 줄, 960px 이하에서는 아래 왼쪽으로 이동. |
 | `teaching/25f-data-engineering/project/index.html` | 강의 · Project | 기본 유지 | Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용. Timeline은 세 블록 가로 배치, 발표 열은 가운데 정렬.  평가 방식은 합산 흐름, 기준은 카드로 구조화. |
 | `teaching/26f-data-engineering/index.html` | 강의 · Home | 공통 컴포넌트 조정 | 소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지. |
-| `teaching/26f-data-engineering/schedule/index.html` | 강의 · Schedule | 공통 컴포넌트 조정 | 행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 자료 동작15px와 초청 연사 이름16px로 식별 강화. 초청 일정도 Project와 같은 스티커를 사용하고 연사와 시간·장소를 묶어 배치. |
+| `teaching/26f-data-engineering/schedule/index.html` | 강의 · Schedule | 공통 컴포넌트 조정 | 행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 초청 일정은 연사600·소속400을 윗줄, 제목400을 아랫줄로 배치. 시간·장소는 오른쪽 두 줄, 960px 이하에서는 아래 왼쪽으로 이동. |
 | `teaching/26f-data-engineering/project/index.html` | 강의 · Project | 기본 유지 | Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용. Timeline은 세 블록 가로 배치, 발표 열은 가운데 정렬.  평가 방식은 합산 흐름, 기준은 카드로 구조화. |
 | `teaching/26s-programming-for-data-science/index.html` | 강의 · Home | 공통 컴포넌트 조정 | 소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지. |
-| `teaching/26s-programming-for-data-science/schedule/index.html` | 강의 · Schedule | 공통 컴포넌트 조정 | 행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 자료 동작15px와 초청 연사 이름16px로 식별 강화. 초청 일정도 Project와 같은 스티커를 사용하고 연사와 시간·장소를 묶어 배치. |
+| `teaching/26s-programming-for-data-science/schedule/index.html` | 강의 · Schedule | 공통 컴포넌트 조정 | 행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 초청 일정은 연사600·소속400을 윗줄, 제목400을 아랫줄로 배치. 시간·장소는 오른쪽 두 줄, 960px 이하에서는 아래 왼쪽으로 이동. |
 | `teaching/26s-programming-for-data-science/project/index.html` | 강의 · Project | 기본 유지 | Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용. Timeline은 세 블록 가로 배치, 발표 열은 가운데 정렬.  평가 방식은 합산 흐름, 기준은 카드로 구조화. |
 | `teaching/ai-study/index.html` | 스터디 · Home | 공통 컴포넌트 조정 | 소개와 최신 학기 진입점을 7:5로 배치하고 960px 이하에서 한 열로 전환. 학습 방식 3단계 → 학기별 학습 흐름 → 공개 통계 → 참여 안내 순서. 상세 통계는 disclosure로 보존. 제목·카드·본문은 공통 역할 크기와 간격을 유지. |
 | `teaching/ai-study/schedule/index.html` | 스터디 · Schedule | 공통 컴포넌트 조정 | 긴 표는16/14/13px 위계 유지. 운영 정보16px·학기 선택16/14px·파트 선택14px로 조작 영역은 읽기 쉽게 조정. |

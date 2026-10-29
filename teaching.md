@@ -11,5 +11,5 @@ sections:
   - title: "Undergraduate AI Study"
     type: teaching
     study: true
-    intro: "A weekly AI study group with POSTECH undergraduates."
+    intro: "A weekly [AI study group](teaching/ai-study/) with POSTECH undergraduates."
 ---

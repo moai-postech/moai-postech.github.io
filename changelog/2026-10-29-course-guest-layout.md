@@ -35,3 +35,10 @@ POSTECH 요구사항: 영향 없음.
 ## 후속: 휴강 표기 통일
 - 교수 요청에 따라 12월 3일 표기를 `No class (University Anniversary)`로 변경. 다른 휴강 항목처럼 상태를 앞에, 사유를 괄호 안에 둔다.
 - 강의 데이터와 Jekyll 빌드 결과에서 표기 확인.
+
+## 후속: 학기 내 모든 정규 수업일 명시
+- 교수는 12월 24일도 학기 중이므로 `No class (Christmas Eve)`를 표시하고, 학기 중 수업하지 않는 모든 정규 수업일에 설명을 남기도록 요청.
+- 26F Data Engineering의 12월 24일을 휴강 행으로 추가. 학기 종료까지 화·목 수업일을 누락 없이 표시하는 원칙을 강의 양식에 기록.
+- POSTECH 공식 2026 학사일정에서 9월 7일 개강, 12월 21–24일 기말고사, 12월 28일 동기방학 시작 확인. Christmas Eve 휴강은 교수 요청에 따른 강좌 운영이다.
+- 근거: https://www.postech.ac.kr/kor/college-life/academic_schedule.do?mode=list&selectedYear=2026&siteId=kor
+- 9월 8일–12월 24일 화·목 32개 날짜를 대조해 나머지 누락 없음 확인. Jekyll 빌드와 출력의 12월 24일 표기 확인.

@@ -101,7 +101,7 @@ schedule:
     title: "Interpretable ML"
     pdf: "teaching/26s-programming-for-data-science/slides/13_interpretable-ml.pdf"
   - date: "2026-04-09"
-    kind: lecture
+    kind: review
     n: 14
     title: "Review Session"
     pdf: "teaching/26s-programming-for-data-science/slides/14_review-session.pdf"

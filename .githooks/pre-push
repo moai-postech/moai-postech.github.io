@@ -13,6 +13,22 @@ cd "$root"
 while read -r local_ref local_sha remote_ref remote_sha; do
   [ "$remote_ref" = refs/heads/main ] || continue
   case "$local_sha" in 0000000000000000000000000000000000000000) continue ;; esac
+  # A shared hook must not activate an unmerged protocol in older worktrees.
+  # Check both sides so removing an already adopted verifier cannot skip the gate.
+  local_review=0
+  remote_review=0
+  for review_file in tools/visual_review.js _qa/visual-review/policy.json; do
+    if git cat-file -e "$local_sha:$review_file" 2>/dev/null; then local_review=1; fi
+    if git cat-file -e "$remote_sha:$review_file" 2>/dev/null; then remote_review=1; fi
+  done
+  if [ "$local_review" = 0 ] && [ "$remote_review" = 0 ]; then
+    echo '시각 검수 프로세스 도입 전 버전: 기존 push 훅을 유지합니다.' >&2
+    continue
+  fi
+  if [ "$local_review" = 0 ]; then
+    echo '이미 도입한 시각 검수 도구를 제거한 버전은 main에 올릴 수 없습니다.' >&2
+    exit 1
+  fi
   if [ "$local_sha" != "$(git rev-parse HEAD)" ]; then
     echo 'main에 올릴 수정본을 checkout한 뒤 검수해야 합니다.' >&2
     exit 1

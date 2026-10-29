@@ -10,7 +10,7 @@
 
 ## 수정본 고정
 
-빌드와 검사는 CI와 같은 UTC 환경에서 실행해 로컬 시간대 때문에 날짜가 달라지지 않게 한다. 저장소 루트에서 Ruby 3.3, Bundler와 Playwright 1.48.2 Chromium을 준비한다. 저장소를 처음 열 때 `node tools/visual_review.js install-hooks`를 실행한다. 기존 훅은 보존하며, 공통 Git 디렉터리에 설치해 같은 저장소의 worktree에도 적용한다. 다른 `core.hooksPath`가 있으면 덮어쓰지 않고 기존 훅에 `.githooks/pre-push`를 연결한다.
+빌드와 검사는 CI와 같은 UTC 환경에서 실행해 로컬 시간대 때문에 날짜가 달라지지 않게 한다. 저장소 루트에서 Ruby 3.3, Bundler와 Playwright 1.48.2 Chromium을 준비한다. 저장소를 처음 열 때 `node tools/visual_review.js install-hooks`를 실행한다. 기존 훅은 보존하며, 공통 Git 디렉터리에 설치해 같은 저장소의 worktree에도 적용한다. 공통 훅의 새 검수 조건은 push하는 커밋 또는 원격 main에 검수 도구·정책이 들어 있을 때 적용한다. 양쪽 모두 도입 전 버전이면 기존 훅만 실행한다. 도입 후 도구 삭제·누락이나 검토 실패는 계속 차단한다. 이렇게 해야 검수 PR을 보류한 상태에서 다른 worktree까지 먼저 막지 않는다. 다른 `core.hooksPath`가 있으면 덮어쓰지 않고 기존 훅에 `.githooks/pre-push`를 연결한다.
 
 ```sh
 node tools/visual_review.js prepare --out .agent-memory/visual-review/candidate-001 --implementer implementation-session-id

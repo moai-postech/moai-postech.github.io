@@ -4,7 +4,7 @@ const { serve } = require('./lib/site');
 const CASES = [
   ['index', '.content-section.section-next p'], ['index', '.content-section.section-next a'],
   ['index', '.focus-tab span'], ['index', '.sec-media .media-source'],
-  ['teaching', '.list-intro'], ['research', '.section-next a'],
+  ['teaching', '.list-intro'], ['teaching', '.list-intro a'], ['research', '.section-next a'],
   ['contact', '.step-body a'], ['teaching/ai-study/index', '.course-lead'],
 ];
 (async () => {
@@ -18,8 +18,14 @@ const CASES = [
         await page.goto(`http://localhost:${server.address().port}/${name}.html`);
         await page.addStyleTag({ content: 'html { scroll-behavior: auto !important; }' });
         await page.evaluate(() => document.fonts.ready);
-        if (name === 'teaching' && await page.locator('.list-intro a').count())
-          throw new Error('Teaching 소개 문장에 불필요한 링크가 남아 있다');
+        if (name === 'teaching') {
+          const links = page.locator('.list-intro a');
+          if (await links.count() !== 1 || await links.innerText() !== 'AI study group' ||
+              await links.getAttribute('href') !== 'teaching/ai-study/')
+            throw new Error('Teaching 소개의 AI study group은 스터디 Home으로 연결해야 한다');
+          if (!await links.evaluate(el => getComputedStyle(el).color === getComputedStyle(el.parentElement).color))
+            throw new Error('Teaching 스터디 Home 링크는 소개 문장의 글자색을 유지해야 한다');
+        }
         const target = page.locator(selector).first();
         await target.evaluate(el => el.scrollIntoView({ block: 'center', behavior: 'instant' }));
         const rect = await target.evaluate(el => {
@@ -48,6 +54,9 @@ const CASES = [
       await page.goto(`http://localhost:${server.address().port}/index.html`);
       await page.locator('.content-section.section-next a').first().click();
       await page.waitForURL('**/publications.html');
+      await page.goto(`http://localhost:${server.address().port}/teaching.html`);
+      await page.locator('.list-intro a').click();
+      await page.waitForURL('**/teaching/ai-study/');
       await page.close();
     }
     console.log(`텍스트 드래그 검사 통과: ${count}건, 일반 링크 클릭 정상`);

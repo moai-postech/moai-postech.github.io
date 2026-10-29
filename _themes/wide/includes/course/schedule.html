@@ -24,12 +24,20 @@
         {% assign compact_session = false %}{% if r.kind == "guest" or r.kind == "seminar" %}{% unless r.html or r.pdf or r.lab %}{% assign compact_session = true %}{% endunless %}{% endif %}
         <td class="cs-topic"{% if compact_session %} colspan="2"{% endif %}>
           {% assign tag = site.data.course_tags[r.kind] %}{% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
+          {% if is_seminar %}
+          <div class="cs-session">
+            <div class="cs-session-main">
+              <div class="cs-session-heading">{% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}<span class="cs-speaker"><span class="cs-speaker-name">{{ r.speaker | default: r.title }}</span>{% if r.affiliation %}<span class="cs-speaker-affiliation">, {{ r.affiliation }}</span>{% endif %}</span></div>
+              {% if r.speaker and r.title %}<span class="cs-session-title">{{ r.title }}</span>{% endif %}
+            </div>
+            {% if r.time or r.location %}<div class="cs-session-meta">{% if r.time %}<span class="cs-session-time">{{ r.time }}</span>{% endif %}{% if r.location %}<span class="cs-session-location">{{ r.location }}</span>{% endif %}</div>{% endif %}
+          </div>
+          {% else %}
           {% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}
           {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}
-          {% if is_seminar %}<span class="cs-session-details">{% endif %}
           {% if r.title and r.speaker %}<span class="cs-speaker"><span class="cs-speaker-name">{{ r.speaker }}</span>{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}
           {% if r.time or r.location %}<span class="cs-session-meta">{% if r.time %}<span class="cs-session-time">{{ r.time }}</span> {% endif %}{% if r.location %}<span>{{ r.location }}</span>{% endif %}</span>{% endif %}
-          {% if is_seminar %}</span>{% endif %}
+          {% endif %}
         </td>
         {% unless compact_session %}<td class="cs-slides">{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>{% endunless %}
         {% if cols == 5 %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}

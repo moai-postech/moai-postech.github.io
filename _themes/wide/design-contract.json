@@ -529,6 +529,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "session-talk-title",
+      "selector": ".cs-session-title",
+      "style": {
+        "fontSize": "var(--text-body)",
+        "fontWeight": "var(--weight-regular)"
+      }
     }
   ]
 }

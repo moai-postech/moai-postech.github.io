@@ -18,7 +18,7 @@
       {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign p = q %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}
       <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup"><span class="cp-name">{{ p.name }}</span><span class="cp-title">{{ p.title }}</span></th></tr>
       {% else %}
-      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "logistics" %}{% when "project", "exam" %}{% assign rt = "key" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
+      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "logistics" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
         <td class="cs-n">{{ r.n }}</td>
         {% assign compact_session = false %}{% if r.kind == "guest" or r.kind == "seminar" %}{% unless r.html or r.pdf or r.lab %}{% assign compact_session = true %}{% endunless %}{% endif %}

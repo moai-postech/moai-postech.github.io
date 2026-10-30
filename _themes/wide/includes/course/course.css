@@ -10,7 +10,6 @@
 .tone-p2 { --tone:#4e6c5a; --tone-tint:#cadbd0; --tone-row:#edf5f0; }
 .tone-p3 { --tone:#5c5a8c; --tone-tint:#d3d2e7; --tone-row:#f1f0f8; }  /* indigo, kept clear of the red accent that marks project and exam */
 .tone-logistics { --tone:#7b683f; --tone-tint:#e2d6b5; --tone-row:#faf5e8; }
-.tone-key       { --tone: var(--accent); --tone-tint: color-mix(in srgb, var(--accent) 30%, var(--bg)); --tone-row: var(--accent-soft); }  /* project and exam: the days students must not miss */
 .tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
@@ -118,6 +117,7 @@ a.cs-speaker-name:hover, a.cs-speaker-link:hover { color: var(--accent); }
 
 a.cs-title { color: var(--text); }  /* project days lead to the project page */
 a.cs-title:hover { color: var(--accent); }
+.is-project .cs-title, .is-exam .cs-title { color: var(--accent); }  /* the days students must not miss: the title, not the row colour, carries the accent */
 
 /* Team project page: criteria as name + one line, then one row per team with a cell per presentation round */
 .project-sub { margin-top: var(--space-6); }

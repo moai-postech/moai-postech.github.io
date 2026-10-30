@@ -170,3 +170,7 @@ POSTECH 요구사항: 영향 없음
 - 빠진 내용: "상세 구현·DevOps 불요, 데모 선택", "허락된 데이터만"(Final). 앞의 것은 `COURSE.md` 에 남아 있고, 뒤의 것은 Timeline 위 소개 문단(`summary`)에 같은 말이 있다. 단, 26F 는 소개 문단을 숨기므로(`intro: false`) 화면에는 나오지 않는다.
 
 기각한 안: bullet 유지(2026-10-28 회차). 교수가 25F 처럼 깔끔한 쪽을 골랐다.
+
+## 추가 반영 24(같은 날, 교수 요청)
+- 사유 없는 휴강을 `No Class (Business Trip)` 으로(26S 4/30).
+- `No Class (Midterm Exam Period)`, `No Class (Final Exam Period)` 를 `No Class (Exam Period)` 로 줄였다(26S 세 줄). 괄호 안이 세 단어면 길다는 교수 의견.

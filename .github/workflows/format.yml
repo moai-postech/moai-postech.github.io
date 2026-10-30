@@ -1,4 +1,5 @@
-# 평소 push 와 PR 의 빠른 검사와 배포(AGENTS.md "검사와 배포"). 전수 검사는 요청할 때만 audit.yml 로 돌린다.
+# 평소 push 는 빌드 뒤 바로 배포한다(AGENTS.md "검사와 배포"). 빠른 검사는 배포와 나란히 돌고 배포를 기다리게 하지 않는다.
+# 전수 검사는 요청할 때만 audit.yml 로 돌린다.
 name: format
 on:
   push:
@@ -11,13 +12,13 @@ permissions:
 concurrency:
   group: format-${{ github.ref }}
   cancel-in-progress: true
+env:
+  LANG: C.UTF-8
+  LC_ALL: C.UTF-8
 jobs:
-  format:  # 기존 필수 검사 이름 유지
+  format:  # 빌드. 기존 검사 이름 유지
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    env:
-      LANG: C.UTF-8
-      LC_ALL: C.UTF-8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
@@ -25,15 +26,6 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
       - run: bundle exec jekyll build
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - run: npm install --no-save --no-package-lock playwright@1.48.2
-      - run: npx playwright install --with-deps chromium
-      - run: node tools/test_design.js
-      - run: node tools/check_postech.js
-      - run: node tools/check_selection.js
-      - run: node tools/check_study_members.js
       - uses: actions/upload-pages-artifact@v4
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
@@ -53,3 +45,22 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+  checks:  # 배포와 나란히 돈다. 실패하면 알림이 오고, 다음 수정에서 고친다
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - run: bundle exec jekyll build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-save --no-package-lock playwright@1.48.2
+      - run: npx playwright install --with-deps chromium
+      - run: node tools/test_design.js
+      - run: node tools/check_postech.js
+      - run: node tools/check_selection.js
+      - run: node tools/check_study_members.js

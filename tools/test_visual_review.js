@@ -44,43 +44,24 @@ try {
   fs.writeFileSync(path.join(repo,'_themes/wide/new.css'),'a{font-weight:600}');assert(vr.impact('HEAD',repo).requiresVisual,'untracked design file must not bypass');assert.notEqual(vr.sourceFingerprint(repo),original);
   assert.throws(()=>vr.impact('0000000000000000000000000000000000000000',repo));
   const built=path.join(tmp,'build');fs.mkdirSync(built);fs.mkdirSync(path.join(built,'assets'));fs.writeFileSync(path.join(built,'assets/style.css'),'a{font-weight:400}');fs.writeFileSync(path.join(built,'index.html'),'<link href="assets/style.css?v=1">Last updated Oct 27, 2026');const h=vr.normalizedBuild(built);fs.writeFileSync(path.join(built,'index.html'),'<link href="assets/style.css?v=2">Last updated Oct 28, 2026');assert.equal(vr.normalizedBuild(built),h);fs.writeFileSync(path.join(built,'assets/style.css'),'a{font-weight:600}');assert.notEqual(vr.normalizedBuild(built),h);
-  // Adoption follows the pushed commits, not whichever worktree installed the shared hook.
+  // 평소 push 는 막지 않고, 설치 전에 있던 훅만 그대로 돈다(전수 검사는 audit 워크플로).
   const hookSource=path.join(ROOT,'.githooks/pre-push');
   const hookRepo=path.join(tmp,'hook-repo');fs.mkdirSync(hookRepo);
   const hg=a=>execFileSync('git',a,{cwd:hookRepo,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
-  hg(['init']);fs.writeFileSync(path.join(hookRepo,'README.md'),'legacy checkout');hg(['add','.']);
-  hg(['-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-m','legacy']);
-  const legacy=hg(['rev-parse','HEAD']);
-  const hookRun=(local,remote,ref='main')=>spawnSync('sh',[hookSource],{cwd:hookRepo,encoding:'utf8',input:`refs/heads/candidate ${local} refs/heads/${ref} ${remote}\n`});
-  assert.equal(hookRun(legacy,legacy).status,0,'unmerged review tooling must not block a legacy checkout');
-  const remote=path.join(tmp,'remote.git');execFileSync('git',['init','--bare',remote],{stdio:'ignore'});
+  hg(['init']);fs.writeFileSync(path.join(hookRepo,'README.md'),'checkout');hg(['add','.']);
+  hg(['-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-m','fixture']);
+  const head=hg(['rev-parse','HEAD']);
   const installed=path.join(hookRepo,'.git/hooks/pre-push');fs.copyFileSync(hookSource,installed);fs.chmodSync(installed,0o755);
-  hg(['push',remote,'HEAD:main']); // Exercise a real push without any verifier in the old checkout.
+  const hookRun=()=>spawnSync('sh',[installed],{cwd:hookRepo,encoding:'utf8',input:`refs/heads/main ${head} refs/heads/main ${head}\n`});
+  assert.equal(hookRun().status,0,'main push must not wait for a visual review');
   const priorHook=installed+'.before-visual-review';fs.writeFileSync(priorHook,'#!/bin/sh\nexit 29;\n');fs.chmodSync(priorHook,0o755);
-  const preserved=spawnSync('sh',[installed],{cwd:hookRepo,encoding:'utf8',input:`refs/heads/main ${legacy} refs/heads/main ${legacy}\n`});
-  assert.equal(preserved.status,29,'existing push checks must still block legacy commits');fs.unlinkSync(priorHook);
-  fs.mkdirSync(path.join(hookRepo,'tools'));fs.writeFileSync(path.join(hookRepo,'tools/visual_review.js'),'process.exit(37);');
-  hg(['add','.']);hg(['-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-m','adopt verifier']);
-  const adopted=hg(['rev-parse','HEAD']);
-  assert.equal(hookRun(adopted,legacy).status,37,'introducing review tooling must invoke its gate');
-  assert.equal(hookRun(adopted,legacy,'candidate').status,0,'non-main pushes remain reviewable');
-  const rejected=spawnSync('git',['push',remote,'HEAD:main'],{cwd:hookRepo,encoding:'utf8'});
-  assert.notEqual(rejected.status,0,'an adopted verifier failure must block a real push');
-  assert.equal(execFileSync('git',['--git-dir',remote,'rev-parse','main'],{encoding:'utf8'}).trim(),legacy,'blocked pushes must leave the remote unchanged');
-  fs.unlinkSync(path.join(hookRepo,'tools/visual_review.js'));
-  assert(hookRun(adopted,legacy).stderr.includes('검수 도구가 없는'),'missing runtime after adoption must fail closed');
-  hg(['checkout','--detach',legacy]);
-  assert(hookRun(legacy,adopted).stderr.includes('제거한 버전'),'removing adopted tooling must not bypass review');
-
-  // Exercise the real CLI + hook against a temporary untracked design change, then restore exactly.
+  assert.equal(hookRun().status,29,'existing push checks must still run');fs.unlinkSync(priorHook);
+  // 옛 공통 훅이 부르는 gate 도 디자인 변경을 막지 않는다.
   const probe=path.join(ROOT,`_themes/wide/review-gate-probe-${process.pid}.css`);assert(!fs.existsSync(probe));
-  const head=vr.git(['rev-parse','HEAD']);
   try {fs.writeFileSync(probe,'/* verifier fixture, never committed */');
-    const result=spawnSync(process.execPath,['tools/visual_review.js','gate','--base','HEAD'],{cwd:ROOT,encoding:'utf8',env:{...process.env,GITHUB_ACTIONS:''}});assert.notEqual(result.status,0);assert(result.stderr.includes('시각 검토 기록이 없다'));
-    const hook=spawnSync('sh',['.githooks/pre-push'],{cwd:ROOT,encoding:'utf8',env:{...process.env,GITHUB_ACTIONS:''},input:`refs/heads/main ${head} refs/heads/main ${head}\n`});assert.notEqual(hook.status,0);assert(hook.stderr.includes('시각 검토 기록이 없다'));
-    const branch=spawnSync('sh',['.githooks/pre-push'],{cwd:ROOT,encoding:'utf8',input:`refs/heads/candidate ${head} refs/heads/candidate ${head}\n`});assert.equal(branch.status,0);
+    const result=spawnSync(process.execPath,['tools/visual_review.js','gate','--base','HEAD'],{cwd:ROOT,encoding:'utf8',env:{...process.env,GITHUB_ACTIONS:''}});assert.equal(result.status,0);assert(result.stdout.includes('audit'));
   } finally {fs.unlinkSync(probe);}
-  console.log('시각 검수 프로세스 회귀검증 통과: 미검토·자기 승인·누락 상태·누락 타일·소스 변경·이미지 변조·재빌드 불일치·미해결 문제·실제 main pre-push 차단');
+  console.log('시각 검수 프로세스 회귀검증 통과: 미검토·자기 승인·누락 상태·누락 타일·소스 변경·이미지 변조·재빌드 불일치·미해결 문제·평소 push 비차단');
 } finally {fs.rmSync(tmp,{recursive:true,force:true});}
 
 // The last failed main push cannot hide an unreviewed design change.

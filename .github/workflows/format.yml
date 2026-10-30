@@ -1,4 +1,4 @@
-# 자동 검사, 고정 화면, 별도 시각 검토 기록이 모두 배포 앞에 놓인다.
+# 평소 push 와 PR 의 빠른 검사와 배포(AGENTS.md "검사와 배포"). 전수 검사는 요청할 때만 audit.yml 로 돌린다.
 name: format
 on:
   push:
@@ -8,54 +8,32 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  deployments: read
 concurrency:
-  group: site-review-${{ github.ref }}
+  group: format-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   format:  # 기존 필수 검사 이름 유지
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 15
     env:
       LANG: C.UTF-8
       LC_ALL: C.UTF-8
-      BASE_SHA: ${{ github.event.pull_request.base.sha }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
           bundler-cache: true
+      - run: bundle exec jekyll build
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
       - run: npm install --no-save --no-package-lock playwright@1.48.2
       - run: npx playwright install --with-deps chromium
-      - name: Compare main with the last successful deployment
-        if: github.event_name != 'pull_request'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: echo "BASE_SHA=$(node tools/deployment_base.js)" >> "$GITHUB_ENV"
-      - name: Check change history
-        run: python3 tools/check_changelog.py "$BASE_SHA" "$GITHUB_SHA"
-      - name: Build, test and freeze review evidence
-        run: node tools/visual_review.js prepare --out visual-review-bundle --implementer "$GITHUB_ACTOR" --base "$BASE_SHA"
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: design-audit
-          path: visual-review-bundle/logs/design-audit.json
-          retention-days: 7
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: visual-review-${{ github.sha }}
-          path: visual-review-bundle/
-          retention-days: 7
-      - name: Require independent review for design changes
-        run: node tools/visual_review.js gate --base "$BASE_SHA" --candidate visual-review-bundle
+      - run: node tools/test_design.js
+      - run: node tools/check_postech.js
+      - run: node tools/check_selection.js
+      - run: node tools/check_study_members.js
       - uses: actions/upload-pages-artifact@v4
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
@@ -72,6 +50,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/configure-pages@v5
-      - name: Deploy verified build
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

@@ -146,3 +146,6 @@ POSTECH 요구사항: 영향 없음
 
 ## 남은 것(추가)
 - 25F 3팀 Proposal 자료: 원본을 찾으면 `teaching/25f-data-engineering/project/proposal/proposal_team03.pdf` 로 넣는다.
+
+## 추가 반영 19(같은 날, 교수 지적)
+- 휴대폰 폭에서 다음 수업 카드 안에 크림슨 테두리가 하나 더 그려지던 것을 고쳤다. 카드 테두리는 줄(`tr`)이 맡고 칸 테두리를 지우는데, 넓은 화면용 `td:first-child`·`td:last-child` 규칙이 더 구체적이라 첫 칸(날짜)에 테두리가 남았다. 휴대폰 규칙에 두 선택자를 더했다.

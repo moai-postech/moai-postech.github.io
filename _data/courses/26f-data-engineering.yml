@@ -189,8 +189,8 @@ schedule:
     n: 14
     title: "ML Systems"
     reading:
-      - text: "SML Lec 1-2, 8-10"
-        url: "https://id2223kth.github.io/schedule_2023/"
+      - text: "MLSD Lec 1"
+        url: "https://stanford-cs329s.github.io/syllabus.html"
   - date: "2026-11-18"
     kind: guest
     title: "AI 시대의 경영 패러다임: 디맨드 드리븐 전략"
@@ -203,16 +203,10 @@ schedule:
     kind: lecture
     n: 15
     title: "LLM Systems"
-    reading:
-      - text: "DLA LangChain"
-        url: "https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/"
   - date: "2026-11-24"
     kind: lecture
     n: 16
     title: "RAG"
-    reading:
-      - text: "DLA Chat with Your Data"
-        url: "https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/"
   - date: "2026-11-26"
     kind: event
     title: "IDS Capstone Workshop"
@@ -220,9 +214,6 @@ schedule:
     kind: lecture
     n: 17
     title: "Agents"
-    reading:
-      - text: "DLA Tools and Agents"
-        url: "https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/"
   - date: "2026-12-03"
     kind: break
     title: "No Class (University Anniversary)"
@@ -272,22 +263,10 @@ resources:
     title: "Principles of Data-Intensive Systems"
     source: "Stanford CS245"
     url: "https://web.stanford.edu/class/cs245/"
-  - abbr: "BDS"
-    title: "Introduction to Big Data Systems"
-    source: "Wisconsin CS544"
-    url: "https://ms.sites.cs.wisc.edu/cs544/s24/schedule.html"
-  - abbr: "SML"
-    title: "Scalable Machine Learning and Deep Learning"
-    source: "KTH ID2223"
-    url: "https://id2223kth.github.io/schedule_2023/"
   - abbr: "MLSD"
     title: "Machine Learning Systems Design"
     source: "Stanford CS329S"
     url: "https://stanford-cs329s.github.io/"
-  - abbr: "DLA"
-    title: "DeepLearning.AI Short Courses"
-    source: "DeepLearning.AI"
-    url: "https://learn.deeplearning.ai"
 
 # 지난 시험(문제와 풀이).
 exams:

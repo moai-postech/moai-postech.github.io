@@ -247,13 +247,6 @@ resources:
     source: "Stanford CS329S"
     url: "https://stanford-cs329s.github.io/"
 
-exams:
-  - label: "Midterm 2025"
-    url: "teaching/25f-data-engineering/exams/midterm/midterm.pdf"
-    solution: "teaching/25f-data-engineering/exams/midterm/midterm-solution.pdf"
-  - label: "Final 2025"
-    url: "teaching/25f-data-engineering/exams/final/final.pdf"
-    solution: "teaching/25f-data-engineering/exams/final/final-solution.pdf"
 
 
 # 팀 프로젝트 페이지. 25F 프로젝트 시트에는 팀원 이름이 없고 순서만 있다. 발표는 이틀에 다섯 팀씩이라 순서 1~5는 첫날, 6~10은 둘째 날 1~5번으로 적는다(교수 2026-10-30). 3팀 proposal 원본은 학생 Drive 링크로만 받았는데 학생이 지워 없다.

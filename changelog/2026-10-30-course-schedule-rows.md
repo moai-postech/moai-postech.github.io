@@ -191,3 +191,10 @@ POSTECH 요구사항: 영향 없음
 - 26S Teams 의 회차 열 이름 `Presentation` → `Final`. Proposal 은 없지만 Data Engineering 과 같은 이름을 쓴다.
 
 기각한 안: 팀마다 `Competition` 글자 링크 유지(같은 말이 11번 반복).
+
+## 추가 반영 28(같은 날, 교수 요청)
+- Project 페이지 맨 아래에 `Highlights` 절을 새로 두었다(`project.html`, `course.css`). 프로젝트로 받은 상 같은 성과를 사진과 함께 카드로 보이고, 여러 개를 넣을 수 있다(`project.highlights`). 휴대폰에서는 사진 아래로 글이 내려간다.
+- 25F: 2팀(김유진, 남도은, 민선아, 봉재우, 심민준)이 프로젝트를 바탕으로 2025-11-12 제4회 유통데이터 활용 경진대회(Retail Data Festa) 생성형 AI 솔루션 부문 대상(장관상)을 받았다. 사진은 학과 뉴스(2025-12-11, 25F 프로젝트 시트 note 열에 걸려 있던 기사)의 카드 이미지에서 사진 부분만 잘라 `teaching/25f-data-engineering/project/highlights/2025-retail-data-festa.jpg` 로 두었다. 제목은 학과 뉴스로 잇는다.
+- 26S Timeline Competition 단계 설명에 `(e.g., Kaggle)` 을 넣었다.
+
+기각한 안: 수여 부처 이름을 영문으로 적기. 2025년 부처 개편 뒤의 공식 영문명을 확인하지 못해 `Minister's Award` 로 썼다.

@@ -11,7 +11,7 @@ instructor:
 location: { building: "Science Building 4", rooms: "Room 302" }
 meetings: { day: "Tuesdays & Thursdays", time: "15:30 – 16:45 KST" }
 summary: >-
-  This course teaches programming for data science in the era of AI. We start by writing code with AI,
+  This course teaches programming for AI transformation (AX). We start by writing code with AI,
   then learn Python and classical machine learning, and end with deep learning and vision, language and multimodal models.
   In a team project, students take on a Kaggle competition and share what they learned.
 parts:

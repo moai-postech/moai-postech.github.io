@@ -219,3 +219,9 @@ POSTECH 요구사항: 영향 없음
   - 25F Data Engineering 은 앞선 다른 강의가 없어 두지 않는다.
 
 기각한 안: 강의끼리 잇지 않기(2026-10-27 교수 결정). 교수가 이번에 바꿨다. 두 강의가 서로의 최신 학기를 가리키기: 지난 학기 페이지가 새 학기를 가리키게 되어 "과거만 링크" 원칙에 어긋난다.
+
+## 추가 반영 32(같은 날, 교수 요청)
+- 지난 학기 Project 페이지(25F, 26S)에서 시트를 고치라는 현재형 안내를 기록형으로 바꿨다. Teams 첫 줄은 `Team entries are archived in the project sheet.`, Team Building 은 `Teams registered their members in the project sheet.` 다. 지난 학기 판정은 마지막 스케줄 날짜와 빌드 날짜 비교라 yml 에 따로 표시하지 않는다(`project.html`).
+- AX프 Home 소개 첫 문장을 새 과목명에 맞춰 `This course teaches programming for AI transformation (AX).` 로 바꿨다.
+- 자료가 없어진 칸은 비우지 않고 `PDF` 링크가 자기 페이지로 돌아오게 하는 것을 원칙으로 `COURSE.md` 에 적었다(교수). 25F 3팀 Proposal 은 이미 이렇게 되어 있어 그대로 둔다. 25F·26S 의 다른 팀 발표·강의 칸에는 빈 자료가 없음을 확인했다.
+- 기각한 안: 25F 3팀 칸을 회색 `N/A` 로 표시(교수가 링크 유지를 원칙으로 정함).

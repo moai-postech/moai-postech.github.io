@@ -8,7 +8,7 @@
    --tone is text (4.5:1 or more on its row), --tone-tint bars and borders, --tone-row rows and cards. */
 .tone-p1 { --tone:#4c6480; --tone-tint:#cbd7e4; --tone-row:#edf3f9; }
 .tone-p2 { --tone:#4e6c5a; --tone-tint:#cadbd0; --tone-row:#edf5f0; }
-.tone-p3 { --tone:#8a5d57; --tone-tint:#e3cbc6; --tone-row:#f8eeec; }
+.tone-p3 { --tone:#5c5a8c; --tone-tint:#d3d2e7; --tone-row:#f1f0f8; }  /* indigo, kept clear of the red accent that marks project and exam */
 .tone-logistics { --tone:#7b683f; --tone-tint:#e2d6b5; --tone-row:#faf5e8; }
 .tone-key       { --tone: var(--accent); --tone-tint: color-mix(in srgb, var(--accent) 30%, var(--bg)); --tone-row: var(--accent-soft); }  /* project and exam: the days students must not miss */
 .tone-key .cs-tag { background: var(--accent); color: var(--bg); }

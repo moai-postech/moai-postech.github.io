@@ -72,3 +72,12 @@ POSTECH 요구사항: 영향 없음
 - Reading 은 한 강의만 가리킨다. ML Systems 는 `SML Lec 1-2, 8-10` 대신 `MLSD Lec 1`(Stanford CS329S, Understanding machine learning production). LLM Systems, RAG, Agents 는 DLA 를 빼면서 Reading 이 비었다.
 
 기각한 안: 25F Reading 을 그대로 옮기기(추가 반영 7). 칸이 길고 명문대 강의가 아닌 자료가 섞였다.
+
+## 추가 반영 9(같은 날, 교수 요청)
+- Reading 범위: ML Systems 를 `MLSD Lec 1-2` 로. 한 강의만 쓰면 빈약해 보인다는 교수 의견(범위는 `a-b` 하나로).
+- guest·seminar 행에 자료가 없으면 Topic 칸이 Materials·Reading 칸까지 차지한다. 장소·시간이 표 맨 오른쪽 끝에 붙는다.
+- Project 페이지(`project.html`, `course.css`):
+  - Timeline 세 단계를 각각 회색 카드로 감쌌다. 카드 사이 화살표, 휴대폰에서는 아래 화살표.
+  - Evaluation 기준 넷을 각각 흰 블록으로 만들고, 회색 묶음이 3(Team) / 1(Individual)로 감싼다.
+  - Teams 행: 회차 칸을 `날짜 · 순서  PDF` 한 줄로 합치고 칸을 세로 가운데로 맞췄다. 왼쪽 두 줄(제목, 팀원)과 오른쪽 높이가 맞는다. 링크 이름 `Slides` → `PDF`.
+  - 시트 안내(`Teams edit their own entry in the project sheet ↗`)를 강조색 연한 띠로 바꾸고 `project sheet` 링크를 강조색 굵게 했다.

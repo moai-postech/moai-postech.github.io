@@ -22,7 +22,7 @@
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
         <td class="cs-n">{% if r.n %}{{ r.n }}{% else %}{% include course/kind-icon.html kind=r.kind %}{% endif %}</td>
         {% assign compact_session = false %}{% if r.kind == "guest" or r.kind == "seminar" %}{% unless r.pdf or r.lab %}{% assign compact_session = true %}{% endunless %}{% endif %}
-        <td class="cs-topic"{% if compact_session %} colspan="2"{% endif %}>
+        {% assign topic_span = cols | minus: 2 %}<td class="cs-topic"{% if compact_session %} colspan="{{ topic_span }}"{% endif %}>
           {% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
           {% if is_seminar %}<span class="cs-session"><span class="cs-session-main">{% endif %}
           {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% elsif r.html %}<a class="cs-title" href="{{ r.html }}">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}{% if r.url %}<a class="cs-title cs-speaker-link" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}{% endif %}
@@ -33,7 +33,7 @@
           {% if is_seminar %}</span>{% endif %}
         </td>
         {% unless compact_session %}<td class="cs-slides">{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>{% endunless %}
-        {% if cols == 5 %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}
+        {% if cols == 5 and compact_session == false %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}
       </tr>
       {% endif %}{% endfor %}
       </tbody>

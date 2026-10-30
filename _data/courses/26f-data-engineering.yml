@@ -290,6 +290,11 @@ other_terms:
   - name: "Fall 2025"
     url: "teaching/25f-data-engineering/"
 
+# 다른 과목 강의(가장 최근 학기 하나). 이 학기보다 앞선 페이지만 가리킨다(교수 2026-10-30).
+related:
+  - name: "Programming for AX (Spring 2026)"
+    url: "teaching/26s-programming-for-data-science/"
+
 # 팀 프로젝트 페이지(teaching/<id>/project/). 학생은 sheet 에 입력하고, 교수가 teams 로 옮긴다(시트 → 이 파일).
 # 팀원은 시트 순서(첫 사람이 팀장). 발표 회차(rounds)마다 date(발표일), order(그날 순서), slides(발표 자료, teaching/<id>/project/<회차>/<회차>_teamNN.pdf).
 project:

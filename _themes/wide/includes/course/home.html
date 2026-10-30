@@ -13,7 +13,7 @@
         {% if c.summary %}<p class="course-lead">{{ c.summary }}</p>{% endif %}
         {% if c.links and c.links.size > 0 %}<p class="course-actions">{% for l in c.links %}<a class="course-btn" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>{% endif %}
       </div>
-      {% include course/facts.html instructor=c.instructor teaching_assistants=c.teaching_assistants location=c.location meetings=c.meetings lectures=c.lectures office_hours=c.office_hours other_terms=c.other_terms %}
+      {% include course/facts.html instructor=c.instructor teaching_assistants=c.teaching_assistants location=c.location meetings=c.meetings lectures=c.lectures office_hours=c.office_hours other_terms=c.other_terms related=c.related %}
     </header>
 
     {% if c.parts %}<section class="content-section" id="outline">

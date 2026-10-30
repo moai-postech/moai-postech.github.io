@@ -211,3 +211,11 @@ POSTECH 요구사항: 영향 없음
 - 세 강의 9개 페이지의 링크 190개를 모두 열어 봤다. 깨진 링크는 없다(LinkedIn 3개는 봇 차단 응답 999 라 사람이 열면 열린다).
 - 고친 것: 25F Home 의 Past Exams 에 그 학기 시험(Midterm 2025, Final 2025)이 있어 뺐다(그 학기 시험은 넣지 않는다는 규칙, 추가 반영 26). 26F 의 Past Exams 는 같은 파일을 그대로 가리킨다. 26S 평가 항목 `Final Project` → `Team Project`(25F 와 같은 이름).
 - 26S 1팀 카드: 점수(0.72022) 대신 `Rank 1 on Kaggle` 로 썼다(교수 지적: 점수보다 순위가 중요). 대회가 끝난 뒤 낸 제출이라 본문 끝에 `(late submission)` 은 남겼다.
+
+## 추가 반영 31(같은 날, 교수 요청)
+- 강의 Home 운영 정보에 `Related Courses` 를 더했다(`facts.html`, `home.html`, yml `related`). 다른 과목의 가장 최근 강의 하나를 가리키고, Other Terms 처럼 그 학기보다 앞선 페이지만 링크한다.
+  - 26F Data Engineering → Programming for AX (Spring 2026)
+  - 26S Programming for AX → Data Engineering (Fall 2025)
+  - 25F Data Engineering 은 앞선 다른 강의가 없어 두지 않는다.
+
+기각한 안: 강의끼리 잇지 않기(2026-10-27 교수 결정). 교수가 이번에 바꿨다. 두 강의가 서로의 최신 학기를 가리키기: 지난 학기 페이지가 새 학기를 가리키게 되어 "과거만 링크" 원칙에 어긋난다.

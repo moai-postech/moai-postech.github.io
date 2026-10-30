@@ -5,4 +5,5 @@
   {% if include.location or include.meetings or include.lectures %}<div class="course-fact course-meeting"><dt>Location &amp; Time</dt><dd>{% if include.location %}<p>{{ include.location.building }}{% if include.location.rooms %}, {{ include.location.rooms }}{% endif %}</p>{% endif %}{% if include.meetings %}<p>{{ include.meetings.day }} {{ include.meetings.time }}</p>{% elsif include.lectures %}<p>{{ include.lectures }}</p>{% endif %}</dd></div>{% endif %}
   {% if include.office_hours %}<div class="course-fact"><dt>Office Hours</dt><dd>{{ include.office_hours }}</dd></div>{% endif %}
   {% if include.other_terms %}<div class="course-fact"><dt>Other Terms</dt><dd>{% for term in include.other_terms %}<a href="{{ term.url }}">{{ term.name }}</a>{% endfor %}</dd></div>{% endif %}
+  {% if include.related %}<div class="course-fact"><dt>Related Courses</dt><dd>{% for r in include.related %}<a href="{{ r.url }}">{{ r.name }}</a>{% endfor %}</dd></div>{% endif %}
 </dl>

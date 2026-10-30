@@ -185,3 +185,9 @@ POSTECH 요구사항: 영향 없음
 - 26F Home 의 Past Exams 에서 `Midterm 2026` 을 뺐다. 그 학기 시험은 지난 시험이 아니다. 시험지·해설 파일(`teaching/26f-data-engineering/exams/midterm/`)과 Schedule 10/29 시험 줄의 해설 PDF 링크는 그대로다. `COURSE.md` 규칙을 "그 학기 시험은 어느 강의든 Past Exams 에 넣지 않는다"로 고쳤다.
 
 기각한 안: 그 학기 시험지를 Past Exams 에 두기(강의 저장소 `changelog/2026-10-30-midterm-publish.md`). 교수가 뒤집었다.
+
+## 추가 반영 27(같은 날, 교수 요청)
+- 26S Teams: 팀마다 반복되던 `Competition` 링크 글자를 빼고, 팀 제목이 대회 페이지로 이어지게 했다(템플릿 `project.html`, 팀에 `url` 이 있으면 제목이 링크). 쓰지 않게 된 `.project-link` 스타일을 지웠다.
+- 26S Teams 의 회차 열 이름 `Presentation` → `Final`. Proposal 은 없지만 Data Engineering 과 같은 이름을 쓴다.
+
+기각한 안: 팀마다 `Competition` 글자 링크 유지(같은 말이 11번 반복).

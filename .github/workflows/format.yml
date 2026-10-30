@@ -45,7 +45,7 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-  checks:  # 배포와 나란히 돈다. 실패하면 알림이 오고, 다음 수정에서 고친다
+  checks:  # 배포와 나란히 돈다. 실패하면 TODO.md 에 남기고 알린다(AGENTS.md "검사와 배포")
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -60,7 +60,17 @@ jobs:
           node-version: "22"
       - run: npm install --no-save --no-package-lock playwright@1.48.2
       - run: npx playwright install --with-deps chromium
-      - run: node tools/test_design.js
-      - run: node tools/check_postech.js
-      - run: node tools/check_selection.js
-      - run: node tools/check_study_members.js
+      - name: Quick checks  # 하나가 실패해도 넷 다 돌리고, 실패한 것을 요약에 모은다
+        run: |
+          fail=0
+          for t in test_design check_postech check_selection check_study_members; do
+            if node "tools/$t.js" > "$t.log" 2>&1; then
+              echo "$t: 통과"
+            else
+              fail=1
+              echo "::error title=$t 실패::$(tail -n 3 "$t.log" | tr '\n' ' ')"
+              echo "- \`$t\` 실패: $(tail -n 1 "$t.log")" >> "$GITHUB_STEP_SUMMARY"
+              tail -n 30 "$t.log"
+            fi
+          done
+          exit $fail

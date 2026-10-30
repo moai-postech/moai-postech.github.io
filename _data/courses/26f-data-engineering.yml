@@ -224,7 +224,7 @@ schedule:
     html: "teaching/26f-data-engineering/slides/17_agents.html"
   - date: "2026-12-03"
     kind: break
-    title: "No Class (University Anniversary)"
+    title: "No Class (POSTECH Anniversary)"
   - date: "2026-12-08"
     kind: break
     title: "No Class (Project Preparation)"

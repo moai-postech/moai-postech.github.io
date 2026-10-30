@@ -179,3 +179,4 @@ POSTECH 요구사항: 영향 없음
 - 26S 학과 세미나 연사 링크: 윤송이(Principal Venture Partners), 전영환(LG U+) LinkedIn(교수 제공). 이제 세 강의의 초청·세미나 연사 여섯 명 모두 링크가 있다.
 - 과목명 변경: `Programming for Data Science` → `Programming for AX`(교수 2026-10-30, 과목명이 바뀜). 26S 강의 yml 제목, Teaching 목록, 강의 페이지 세 개의 제목·설명. 주소(`teaching/26s-programming-for-data-science/`)는 이미 공유된 링크가 깨지지 않게 그대로 두었다. 슬라이드 안의 옛 과목명은 교수 지시대로 그대로 둔다.
 - 25F 신기영 연사 링크를 Forbes 기사에서 LinkedIn(`kr.linkedin.com/in/shinky`, 교수 제공)으로 바꿨다. 연사 링크는 다시 개인 사이트나 LinkedIn 만 쓴다(`COURSE.md`).
+- 개교기념일 휴강 제목을 `No Class (POSTECH Anniversary)` 로(교수 요청, `University Anniversary` 대체).

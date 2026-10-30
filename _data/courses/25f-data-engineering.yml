@@ -258,7 +258,7 @@ exams:
 
 # 팀 프로젝트 페이지. 25F 프로젝트 시트에는 팀원 이름이 없고 순서만 있다. 발표는 이틀에 다섯 팀씩이라 순서 1~5는 첫날, 6~10은 둘째 날 1~5번으로 적는다(교수 2026-10-30). 3팀 proposal 자료는 없다.
 project:
-  sheet: "https://docs.google.com/spreadsheets/d/1XLgh0ILJ1VUgljXeaelXuAXfN5RmUB6fVRsMW6CKGKk/edit?usp=sharing"
+  sheet: "https://docs.google.com/spreadsheets/d/1gmuydevB-gPB-J4-J9bu9S-PU67xQ3G-t10wlh9438o/edit?usp=sharing"
   summary: >-
     Teams go through an end-to-end data engineering pipeline: they collect and prepare data, store it in a database,
     and build a product that addresses a real-world problem on it.
@@ -271,11 +271,11 @@ project:
   steps:
     - name: "Proposal"
       when: "Oct 14 & 16"
-      presentation: "15 min including Q&A"
+      presentation: "15 min (incl. Q&A)"
       text: "Ideation, data collection and preprocessing, and database management."
     - name: "Final Presentation"
       when: "Dec 9 & 11"
-      presentation: "15 min including Q&A"
+      presentation: "15 min (incl. Q&A)"
       text: "A product that addresses a real-world problem using a large-scale database, possibly with an LLM."
   evaluation:
     team_label: "Team Evaluation"

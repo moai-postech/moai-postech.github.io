@@ -136,3 +136,13 @@ POSTECH 요구사항: 영향 없음
   - 25F·26S 도 Timeline 위 소개 문단을 뺐다(`intro: false`, 26F 와 같게). 같은 내용이 Home 의 강의 소개와 단계 설명에 있다.
 
 기각한 안: 25F 발표 시간 `15 min including Q&A`(Q&A 포함 여부를 확인하지 못해 `15 min` 만).
+
+## 추가 반영 18(같은 날, 교수 요청)
+- 라벨 대소문자를 단어마다 대문자로 통일했다. 템플릿: `Location & Time`, `Office Hours`, `Other Terms`, `Teaching Assistants`, `Student Representative`, `Course Outline`, `Reference Courses`, `Past Exams`, `Team Size`. 데이터: `Team Evaluation`, 평가 항목(`Midterm Exam`, `Project Proposal`, `Final Exam`, `Team Project`, `Final Project` 등). `Team Building`, `Final Presentation` 과 같은 꼴이다. 운영 정보 컴포넌트를 함께 쓰는 학부생 스터디 페이지에도 적용된다. 규칙은 `COURSE.md`.
+- 팀 인원: 25F `3–5 students` → `Up to 5 students`, 26F `Up to 5` → `Up to 5 students`. 26S 는 실제 상한이 4명이라 `Up to 4 students`.
+- 25F 3팀 Proposal PDF: 프로젝트 시트의 slide 칸이 비어 있고 Drive 보관 폴더와 강의 폴더 어디에도 파일이 없다. 채우지 못했다.
+
+기각한 안: 첫 단어만 대문자(문장형) 라벨로 통일. 사이트의 다른 라벨(절 제목, 연구 분야 이름)이 단어마다 대문자라 그쪽에 맞췄다. 팀 인원 `3–5 students`(추가 반영 16), 강의마다 다른 꼴이 된다.
+
+## 남은 것(추가)
+- 25F 3팀 Proposal 자료: 원본을 찾으면 `teaching/25f-data-engineering/project/proposal/proposal_team03.pdf` 로 넣는다.

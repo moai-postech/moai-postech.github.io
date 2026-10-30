@@ -218,11 +218,11 @@ schedule:
 grading:
   - item: "Attendance"
     weight: "10%"
-  - item: "Midterm exam"
+  - item: "Midterm Exam"
     weight: "25%"
-  - item: "Final exam"
+  - item: "Final Exam"
     weight: "25%"
-  - item: "Team project"
+  - item: "Team Project"
     weight: "40%"
 
 resources:
@@ -262,7 +262,7 @@ project:
   summary: >-
     Teams go through an end-to-end data engineering pipeline: they collect and prepare data, store it in a database,
     and build a product that addresses a real-world problem on it.
-  team_size: "3–5 students"
+  team_size: "Up to 5 students"
   intro: false
   team_formation:
     deadline: "2025-09-21"
@@ -278,7 +278,7 @@ project:
       presentation: "15 min"
       text: "A product that addresses a real-world problem using a large-scale database, possibly with an LLM."
   evaluation:
-    team_label: "Team evaluation"
+    team_label: "Team Evaluation"
     team_reviewers: "Instructor + other teams"
     individual_label: "Individual"
     individual_reviewers: "Teammates"

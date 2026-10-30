@@ -3,7 +3,7 @@
 layout: course
 course: "26s-programming-for-data-science"
 view: schedule
-title: "Schedule · Programming for Data Science (Spring 2026)"
-head_title: "Schedule, Programming for Data Science Spring 2026 · MOAI Lab"
-description: "Lecture schedule of Programming for Data Science at POSTECH, Spring 2026: topics, slides, and readings."
+title: "Schedule · Programming for AX (Spring 2026)"
+head_title: "Schedule, Programming for AX Spring 2026 · MOAI Lab"
+description: "Lecture schedule of Programming for AX at POSTECH, Spring 2026: topics, slides, and readings."
 ---

@@ -83,4 +83,4 @@
 - Evaluation은 가로 한 줄의 기준을 평가 주체별로 묶는다. Problem·Method·Results는 교수와 다른 팀, Teamwork는 팀 내 동료가 평가한다. `project.evaluation`은 묶음 라벨, `criteria[].individual`은 개인 평가 기준을 정한다. 별도 점수 합산 도식이나 배점을 반복하지 않는다. 모바일은 한 열이다.
 - 26F Data Engineering 평가 기준은 Problem·Method·Results·Teamwork 네 가지다(2026-10-28 교수 변경). 지난 학기의 기준은 별도로 유지한다.
 - Timeline은 날짜·번호·연결선·화살표로 흐름을 보여 준다. 팀 구성은 등록할 일을 먼저, 인원 제한을 다음에 표시한다.
-- 26F Proposal은 문제·방법·데이터 선택 근거, 수집·전처리·DB 접근, 기초 분석까지 기대한다. 상세 구현·DevOps는 요구하지 않고 데모는 선택이다(2026-10-14 교수 메일). Proposal·Final 모두 Q&A 포함 10분이다(2026-10-28 교수 확인). `steps[].deliverables`, `scope_note`, `presentation`으로 표시한다.
+- 26F Proposal은 문제·방법·데이터 선택 근거, 수집·전처리·DB 접근, 기초 분석까지 기대한다. 상세 구현·DevOps는 요구하지 않고 데모는 선택이다(2026-10-14 교수 메일). Proposal·Final 모두 Q&A 포함 10분이다(2026-10-28 교수 확인). Timeline 에는 단계마다 한 줄 설명(`steps[].text`)과 발표 시간(`presentation`)만 둔다. 할 일 목록(`deliverables`)과 범위 메모(`scope_note`)는 쓰지 않는다(교수 2026-10-30: 25F 처럼 깔끔하게).

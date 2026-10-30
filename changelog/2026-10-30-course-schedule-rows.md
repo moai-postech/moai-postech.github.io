@@ -162,3 +162,11 @@ POSTECH 요구사항: 영향 없음
 ## 추가 반영 22(같은 날, 교수 결정)
 - 25F 3팀 Proposal 칸은 비우지 않고 `PDF` 를 두되 Project 페이지 자신으로 잇는다. 원본은 학생이 지워 없다(추가 반영 21).
 - 앞으로 학생 발표 자료는 링크가 아니라 파일로 받는다. 규칙은 강의 폴더 `lecture/AGENTS.md`(사이트 밖, 교수 로컬)에 적었다.
+
+## 추가 반영 23(같은 날, 교수 요청)
+- 26F Project Timeline 의 할 일 bullet(`deliverables`)과 범위 메모(`scope_note`)를 빼고 25F 처럼 단계마다 한 줄(`text`)과 발표 시간만 둔다.
+  - Proposal: `Problem, method and data, with data collection, database design and a basic analysis.`
+  - Final Presentation: `A working product for a real-world problem on a large-scale database: pipeline, implementation and results.`
+- 빠진 내용: "상세 구현·DevOps 불요, 데모 선택", "허락된 데이터만"(Final). 앞의 것은 `COURSE.md` 에 남아 있고, 뒤의 것은 Timeline 위 소개 문단(`summary`)에 같은 말이 있다. 단, 26F 는 소개 문단을 숨기므로(`intro: false`) 화면에는 나오지 않는다.
+
+기각한 안: bullet 유지(2026-10-28 회차). 교수가 25F 처럼 깔끔한 쪽을 골랐다.

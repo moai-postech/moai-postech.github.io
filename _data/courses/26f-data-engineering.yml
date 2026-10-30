@@ -76,7 +76,7 @@ schedule:
     url: "https://mainthread.notion.site/"
     affiliation: "Financial Security Institute"
     time: "10:30 – 11:30 KST"
-    location: "Sci. Build. 4, Room 302"
+    location: "Sci. Bldg. 4, Room 302"
   - date: "2026-09-22"
     kind: lecture
     n: 5
@@ -200,7 +200,7 @@ schedule:
     url: "https://www.linkedin.com/in/hyunkyu-lee-9538551b/"
     affiliation: "Google Korea"
     time: "17:00 – 18:00 KST"
-    location: "Sci. Build. 4, Room 302"
+    location: "Sci. Bldg. 4, Room 302"
   - date: "2026-11-19"
     kind: lecture
     n: 15

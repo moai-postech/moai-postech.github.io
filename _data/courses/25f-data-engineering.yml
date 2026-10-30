@@ -190,9 +190,10 @@ schedule:
   - date: "2025-11-27"
     kind: guest
     speaker: "Ki-Young Shin"
+    url: "https://www.forbeskorea.co.kr/news/articleView.html?idxno=333091"
     affiliation: "CEO, Designovel"
     time: "09:30 – 10:45 KST"
-    location: "Sci. Build. 4, Room 302"
+    location: "Sci. Bldg. 4, Room 302"
   - date: "2025-12-02"
     kind: lecture
     n: 19

@@ -5,7 +5,6 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-10-30 | [course-midterm-2026](2026-10-30-course-midterm-2026.md) | Sangwoo Mo(sangwoomo) | 26F 강의 Home·Schedule | 중간고사 시험지·해설 PDF와 링크 |
 | 2026-10-30 | [course-schedule-rows](2026-10-30-course-schedule-rows.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄 | Review 번호 삭제, project·exam 강조색, guest 장소·시간 오른쪽 두 줄과 연사 링크, Event 딱지, Project 제목 중복 제거 |
 | 2026-10-30 | [people-names-wonsik](2026-10-30-people-names-wonsik.md) | Sangwoo Mo(moai-postech) | People, Faculty | Lab Members·Other Mentees, 오원식 추가, BS 방문학생 줄 |
 | 2026-10-30 | [fast-deploy](2026-10-30-fast-deploy.md) | Sangwoo Mo(moai-postech) | CI·배포·검수 규칙 | 평소 push 는 빌드 뒤 바로 배포, 전수 검사는 요청 시 |

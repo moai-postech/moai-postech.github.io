@@ -150,6 +150,14 @@ a.cs-title:hover { color: var(--accent); }
 }
 .project-when { color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 .project-teams td { vertical-align: middle; }  /* title and members on the left, one line per round on the right */
+.project-highlights { display: grid; gap: var(--item-gap); margin: 0; padding: 0; list-style: none; }  /* one card per award: photo left, what and who right */
+.project-highlights > li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: var(--space-5); align-items: center; padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
+.project-highlights img { display: block; width: 100%; height: auto; border-radius: var(--radius-1); }
+.project-highlight-title { display: block; font-size: var(--text-lead); font-weight: var(--weight-heading); }
+.project-highlight-title a { color: inherit; }
+.project-highlight-when { display: block; margin-top: var(--space-1); color: var(--muted); font-size: var(--text-meta); }
+.project-highlights p { margin: var(--space-3) 0 0; }
+@media (max-width: 680px) { .project-highlights > li { grid-template-columns: 1fr; } }
 .project-round a { margin-left: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 
 /* Undergraduate AI Study Schedule: a tab per term. The table columns are fixed so switching terms never moves a column */

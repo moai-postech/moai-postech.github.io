@@ -219,16 +219,17 @@ project:
   sheet: "https://docs.google.com/spreadsheets/d/1ZHkM8KO2TC_gbfH7xdV5040B2zwJ0qd35VUnf0VvaCA/edit?usp=sharing"
   summary: >-
     Each team chooses a Kaggle competition, solves it together, and shares the experience in a final presentation.
-  team_size: "up to 4 students"
+  team_size: "Up to 4 students"
+  intro: false
   team_formation:
     deadline: "2026-03-15"
     rule: "Sunday of Week 3"
     text: "Enter your team members in the project sheet."
   steps:
-    - name: "Choose · Solve"
+    - name: "Competition"
       when: "During the semester"
       text: "Pick a competition you care about and work on it as a team."
-    - name: "Presentation"
+    - name: "Final Presentation"
       when: "May 28 & Jun 2"
       text: "Share the problem, your approach, and what you learned."
   evaluation:
@@ -238,9 +239,9 @@ project:
     individual_reviewers: "Teammates"
   criteria:
     - name: "Problem"
-      text: "Why is this problem significant?"
+      text: "Significance of the problem"
     - name: "Method"
-      text: "Is the solution original or trivial?"
+      text: "Originality of the solution"
     - name: "Results"
       text: "Final performance and leaderboard ranking"
     - name: "Teamwork"
@@ -268,7 +269,7 @@ project:
       url_label: "Competition"
       final:
         date: "2026-06-02"
-        order: 11
+        order: 5
         slides: "teaching/26s-programming-for-data-science/project/final/final_team02.pdf"
     - n: 3
       title: "TAHMO Incoming Solar Radiation Prediction Challenge"
@@ -304,7 +305,7 @@ project:
       url_label: "Competition"
       final:
         date: "2026-06-02"
-        order: 8
+        order: 2
         slides: "teaching/26s-programming-for-data-science/project/final/final_team06.pdf"
     - n: 7
       title: "Problematic Internet Use"
@@ -313,7 +314,7 @@ project:
       url_label: "Competition"
       final:
         date: "2026-06-02"
-        order: 9
+        order: 3
         slides: "teaching/26s-programming-for-data-science/project/final/final_team07.pdf"
     - n: 8
       title: "ASHRAE - Great Energy Predictor III"
@@ -322,7 +323,7 @@ project:
       url_label: "Competition"
       final:
         date: "2026-06-02"
-        order: 10
+        order: 4
         slides: "teaching/26s-programming-for-data-science/project/final/final_team08.pdf"
     - n: 9
       title: "Prediction for player movement when the ball is in the air"
@@ -340,7 +341,7 @@ project:
       url_label: "Competition"
       final:
         date: "2026-06-02"
-        order: 7
+        order: 1
         slides: "teaching/26s-programming-for-data-science/project/final/final_team10.pdf"
     - n: 11
       title: "Mercari Price Suggestion Challenge"

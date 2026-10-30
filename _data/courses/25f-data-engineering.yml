@@ -256,13 +256,14 @@ exams:
     solution: "teaching/25f-data-engineering/exams/final/final-solution.pdf"
 
 
-# 팀 프로젝트 페이지. 25F 프로젝트 시트에는 팀원 이름이 없고 발표일 구분 없이 순서만 있다. 3팀 proposal 자료는 없다.
+# 팀 프로젝트 페이지. 25F 프로젝트 시트에는 팀원 이름이 없고 순서만 있다. 발표는 이틀에 다섯 팀씩이라 순서 1~5는 첫날, 6~10은 둘째 날 1~5번으로 적는다(교수 2026-10-30). 3팀 proposal 자료는 없다.
 project:
   sheet: "https://docs.google.com/spreadsheets/d/1XLgh0ILJ1VUgljXeaelXuAXfN5RmUB6fVRsMW6CKGKk/edit?usp=sharing"
   summary: >-
     Teams go through an end-to-end data engineering pipeline: they collect and prepare data, store it in a database,
     and build a product that addresses a real-world problem on it.
   team_size: "3–5 students"
+  intro: false
   team_formation:
     deadline: "2025-09-21"
     rule: "Sunday of Week 3"
@@ -270,9 +271,11 @@ project:
   steps:
     - name: "Proposal"
       when: "Oct 14 & 16"
+      presentation: "15 min"
       text: "Ideation, data collection and preprocessing, and database management."
     - name: "Final Presentation"
       when: "Dec 9 & 11"
+      presentation: "15 min"
       text: "A product that addresses a real-world problem using a large-scale database, possibly with an LLM."
   evaluation:
     team_label: "Team evaluation"
@@ -300,79 +303,99 @@ project:
     - n: 1
       title: "개인 맞춤 논문 요약 메일링"
       proposal:
+        date: "2025-10-14"
         order: 1
         slides: "teaching/25f-data-engineering/project/proposal/proposal_team01.pdf"
       final:
-        order: 8
+        date: "2025-12-11"
+        order: 3
         slides: "teaching/25f-data-engineering/project/final/final_team01.pdf"
     - n: 2
       title: "소비자를 위한 리콜 상품 알리미"
       proposal:
-        order: 8
+        date: "2025-10-16"
+        order: 3
         slides: "teaching/25f-data-engineering/project/proposal/proposal_team02.pdf"
       final:
+        date: "2025-12-09"
         order: 3
         slides: "teaching/25f-data-engineering/project/final/final_team02.pdf"
     - n: 3
       title: "Finflow Engineering (금융 파이프라인 구축 프로젝트)"
       proposal:
+        date: "2025-10-14"
         order: 5
       final:
+        date: "2025-12-09"
         order: 4
         slides: "teaching/25f-data-engineering/project/final/final_team03.pdf"
     - n: 4
       title: "온톨로지 기반의 맞춤형 아트 큐레이션 시스템"
       proposal:
+        date: "2025-10-14"
         order: 2
         slides: "teaching/25f-data-engineering/project/proposal/proposal_team04.pdf"
       final:
-        order: 9
+        date: "2025-12-11"
+        order: 4
         slides: "teaching/25f-data-engineering/project/final/final_team04.pdf"
     - n: 5
       title: "대중교통 정류소 도착 예정 시간 계산 시스템"
       proposal:
-        order: 6
+        date: "2025-10-16"
+        order: 1
         slides: "teaching/25f-data-engineering/project/proposal/proposal_team05.pdf"
       final:
-        order: 10
+        date: "2025-12-11"
+        order: 5
         slides: "teaching/25f-data-engineering/project/final/final_team05.pdf"
     - n: 6
       title: "뉴스데이터활용 포트폴리오 최적화"
       proposal:
+        date: "2025-10-14"
         order: 3
         slides: "teaching/25f-data-engineering/project/proposal/proposal_team06.pdf"
       final:
+        date: "2025-12-09"
         order: 5
         slides: "teaching/25f-data-engineering/project/final/final_team06.pdf"
     - n: 7
       title: "실시간 PC 시스템 이상탐지 모델 및 파이프라인 구축"
       proposal:
-        order: 7
+        date: "2025-10-16"
+        order: 2
         slides: "teaching/25f-data-engineering/project/proposal/proposal_team07.pdf"
       final:
+        date: "2025-12-09"
         order: 2
         slides: "teaching/25f-data-engineering/project/final/final_team07.pdf"
     - n: 8
       title: "주식 포트폴리오 최적화"
       proposal:
+        date: "2025-10-14"
         order: 4
         slides: "teaching/25f-data-engineering/project/proposal/proposal_team08.pdf"
       final:
-        order: 7
+        date: "2025-12-11"
+        order: 2
         slides: "teaching/25f-data-engineering/project/final/final_team08.pdf"
     - n: 9
       title: "뉴스 데이터 기반 맞춤형 기업 추천 서비스"
       proposal:
-        order: 9
+        date: "2025-10-16"
+        order: 4
         slides: "teaching/25f-data-engineering/project/proposal/proposal_team09.pdf"
       final:
-        order: 6
+        date: "2025-12-11"
+        order: 1
         slides: "teaching/25f-data-engineering/project/final/final_team09.pdf"
     - n: 10
       title: "로봇 팔 모터 이상징후 감지 시스템"
       proposal:
-        order: 10
+        date: "2025-10-16"
+        order: 5
         slides: "teaching/25f-data-engineering/project/proposal/proposal_team10.pdf"
       final:
+        date: "2025-12-09"
         order: 1
         slides: "teaching/25f-data-engineering/project/final/final_team10.pdf"

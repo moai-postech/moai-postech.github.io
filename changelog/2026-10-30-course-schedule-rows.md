@@ -125,3 +125,14 @@ POSTECH 요구사항: 영향 없음
 - Project Timeline 라벨: `Team formation` → `Team Building`(템플릿, 모든 강의), 마지막 단계 `Final` → `Final Presentation`(25F·26F). Proposal 은 그대로. Teams 표의 회차 열(Proposal, Final)은 바꾸지 않았다.
 
 기각한 안: `3~5`(위 이유), 휴강 제목에 `Online` 유지(교수가 뺌).
+
+## 추가 반영 17(같은 날, 교수 요청과 표현 점검)
+- 발표 순서 `#` 는 날짜마다 1번부터 센다. 25F 는 이틀에 다섯 팀씩이라 시트 순서 1~5를 첫날, 6~10을 둘째 날 1~5번으로 적고 날짜를 붙였다(Proposal 10/14·16, Final 12/9·11). 26S 둘째 날(06/02) 7~11번도 1~5번으로.
+- 발표 시간: 25F Proposal·Final 에 `15 min`(교수 기억). 26F 는 `10 min including Q&A` 그대로. 26S 는 확인된 값이 없어 비워 둔다.
+- 표현 점검(세 강의 Project):
+  - 26S 평가 기준을 질문형에서 명사구로(`Significance of the problem`, `Originality of the solution`). 다른 기준·강의와 같은 꼴.
+  - 26S Timeline 단계 `Choose · Solve` → `Competition`, `Presentation` → `Final Presentation`(26F·25F 와 같은 이름). 팀 인원 `up to` → `Up to`.
+  - 26F Proposal 할 일의 `data collection/preparation` 빗금을 풀어 `Show how you collect and prepare the data, your database design and a basic analysis.`
+  - 25F·26S 도 Timeline 위 소개 문단을 뺐다(`intro: false`, 26F 와 같게). 같은 내용이 Home 의 강의 소개와 단계 설명에 있다.
+
+기각한 안: 25F 발표 시간 `15 min including Q&A`(Q&A 포함 여부를 확인하지 못해 `15 min` 만).

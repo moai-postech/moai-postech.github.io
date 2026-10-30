@@ -311,7 +311,7 @@ project:
       when: "Oct 20 & 22"
       deliverables:
         - "Define the problem and method, and explain why your data fits."
-        - "Show data collection/preparation, your database approach and basic analysis."
+        - "Show how you collect and prepare the data, your database design and a basic analysis."
       scope_note: "Detailed implementation and DevOps are not required. A demo is optional."
       presentation: "10 min including Q&A"
     - name: "Final Presentation"

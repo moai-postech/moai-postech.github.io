@@ -183,22 +183,8 @@ function verify() {
   console.log('고정 수정본의 자동 검사·시각 검토 기록·실제 증거 파일 확인 통과. 미관의 자동 판정은 아님.');
 }
 function gate() {
-  const changed=vr.impact(arg('--base')),current=vr.sourceFingerprint();
-  if(!changed.requiresVisual){console.log(JSON.stringify({visualReview:'not-claimed',reason:changed.processChange?'검수 프로세스 변경, UI 변경 없음':'디자인 코드 변경 없음',changes:changed.files}));return;}
-  const file=arg('--review',path.join(ROOT,'_qa/visual-review/reviews',current+'.json'));
-  if(!fs.existsSync(file))throw Error('디자인 변경의 별도 시각 검토 기록이 없다. 수정본을 고정해 검토하고 '+path.relative(ROOT,file)+'에 기록한다.');
-  const review=JSON.parse(fs.readFileSync(file,'utf8'));
-  const candidateDir=arg('--candidate');let candidate;
-  if(candidateDir)candidate=JSON.parse(fs.readFileSync(path.join(candidateDir,'manifest.json'),'utf8'));
-  const errors=vr.validateReview(review,current,candidate);
-  if(candidateDir)errors.push(...vr.validateBundle(candidateDir,candidate,current));
-  if(process.env.GITHUB_ACTIONS!=='true') {
-    const local=arg('--bundle')||review.localEvidence;const bundle=local?path.resolve(ROOT,local):null;
-    if(!bundle)errors.push('로컬 pre-push에는 검토한 실제 캡처 폴더가 필요');
-    else {try{const manifest=JSON.parse(fs.readFileSync(path.join(bundle,'manifest.json'),'utf8'));if(manifest.digest!==review.manifestDigest)errors.push('검토 기록과 로컬 이미지 묶음 불일치');errors.push(...vr.validateBundle(bundle,manifest,current));}catch(e){errors.push(e.message);}}
-  }
-  if(errors.length)throw Error([...new Set(errors)].join('\n'));
-  console.log(JSON.stringify({visualReview:'record-validated',sourceFingerprint:current,reviewer:review.reviewer,limits:review.limits||[],evidence:process.env.GITHUB_ACTIONS==='true'?'별도 검토 기록 + CI 재빌드. 로컬 원본 이미지를 CI가 열람했다고 주장하지 않음':'실제 로컬 고정 이미지의 해시도 확인'}));
+  // 옛 공통 pre-push 훅이 아직 이 명령을 부른다. 평소 push 는 막지 않는다(AGENTS.md "검사와 배포").
+  console.log(JSON.stringify({visualReview:'not-claimed',reason:'평소 push 는 빠른 검사만 한다. 전수 검사는 요청할 때만 audit 워크플로로 돌린다.'}));
 }
 function record() {
   const bundle=path.resolve(arg('--bundle','')),file=arg('--review');if(!arg('--bundle')||!file)throw Error('record --bundle <폴더> --review <검토자가 작성한 JSON> 필요');

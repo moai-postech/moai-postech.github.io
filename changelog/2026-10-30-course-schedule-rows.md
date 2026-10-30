@@ -174,3 +174,7 @@ POSTECH 요구사항: 영향 없음
 ## 추가 반영 24(같은 날, 교수 요청)
 - 사유 없는 휴강을 `No Class (Business Trip)` 으로(26S 4/30).
 - `No Class (Midterm Exam Period)`, `No Class (Final Exam Period)` 를 `No Class (Exam Period)` 로 줄였다(26S 세 줄). 괄호 안이 세 단어면 길다는 교수 의견.
+
+## 추가 반영 25(같은 날, 교수 요청)
+- 26S 학과 세미나 연사 링크: 윤송이(Principal Venture Partners), 전영환(LG U+) LinkedIn(교수 제공). 이제 세 강의의 초청·세미나 연사 여섯 명 모두 링크가 있다.
+- 과목명 변경: `Programming for Data Science` → `Programming for AX`(교수 2026-10-30, 과목명이 바뀜). 26S 강의 yml 제목, Teaching 목록, 강의 페이지 세 개의 제목·설명. 주소(`teaching/26s-programming-for-data-science/`)는 이미 공유된 링크가 깨지지 않게 그대로 두었다. 슬라이드 안의 옛 과목명은 교수 지시대로 그대로 둔다.

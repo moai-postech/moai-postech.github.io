@@ -23,12 +23,12 @@ parts:
   - id: "sw1"
     name: "Software 1.0"
     title: "Python and Machine Learning"
-    span: "Lectures 7 – 14"
+    span: "Lectures 7 – 13"
     text: "Python, NumPy and pandas, then regression, classification, clustering, dimensionality reduction and interpretable ML."
   - id: "sw2"
     name: "Software 2.0"
     title: "Deep Learning"
-    span: "Lectures 15 – 22"
+    span: "Lectures 14 – 21"
     text: "Deep learning and PyTorch, vision and multimodal models, and AI for data science."
 
 schedule:
@@ -100,8 +100,7 @@ schedule:
     title: "Interpretable ML"
     pdf: "teaching/26s-programming-for-data-science/slides/13_interpretable-ml.pdf"
   - date: "2026-04-09"
-    kind: lecture
-    n: 14
+    kind: review
     title: "Review Session"
     pdf: "teaching/26s-programming-for-data-science/slides/14_review-session.pdf"
   - date: "2026-04-14"
@@ -113,7 +112,7 @@ schedule:
   - part: "sw2"
   - date: "2026-04-21"
     kind: lecture
-    n: 15
+    n: 14
     title: "Deep Learning"
     pdf: "teaching/26s-programming-for-data-science/slides/15_deep-learning.pdf"
   - date: "2026-04-23"
@@ -124,12 +123,13 @@ schedule:
     location: "CHANGeUP GROUND, Event Hall"
   - date: "2026-04-28"
     kind: lecture
-    n: 16
+    n: 15
     title: "PyTorch"
     pdf: "teaching/26s-programming-for-data-science/slides/16_pytorch.pdf"
   - date: "2026-04-29"
     kind: seminar
     speaker: "Sangwoo Mo"
+    url: "faculty.html"
     affiliation: "POSTECH"
     pdf: "assets/talks/2026-opportunities-in-ime-as-an-ai-researcher-and-vice.pdf"
     time: "17:00 – 18:00 KST"
@@ -142,37 +142,37 @@ schedule:
     title: "No Class (Children's Day)"
   - date: "2026-05-07"
     kind: lecture
-    n: 17
+    n: 16
     title: "Vision Models I"
     pdf: "teaching/26s-programming-for-data-science/slides/17_vision-models-i.pdf"
     lab: "https://drive.google.com/file/d/1KcBIA1aSPpQqzKV4VPDtmM3zgMuom47j/view"
   - date: "2026-05-12"
     kind: lecture
-    n: 18
+    n: 17
     title: "Vision Models II"
     pdf: "teaching/26s-programming-for-data-science/slides/18_vision-models-ii.pdf"
     lab: "https://drive.google.com/file/d/1fbB681cUsaE0UtDBPuMERHV2w4eAsJEd/view"
   - date: "2026-05-14"
     kind: lecture
-    n: 19
+    n: 18
     title: "Multimodal Models I"
     pdf: "teaching/26s-programming-for-data-science/slides/19_multimodal-models-i.pdf"
     lab: "https://drive.google.com/file/d/1l327tMo_waxl8qWBmnECYSc1RPbW1xdB/view"
   - date: "2026-05-19"
     kind: lecture
-    n: 20
+    n: 19
     title: "Multimodal Models II"
     pdf: "teaching/26s-programming-for-data-science/slides/20_multimodal-models-ii.pdf"
     lab: "https://drive.google.com/file/d/1d17GIHsvscldz-ARvHEBmw3dcGbv5gKK/view"
   - date: "2026-05-21"
     kind: lecture
-    n: 21
+    n: 20
     title: "Multimodal Models III"
     pdf: "teaching/26s-programming-for-data-science/slides/21_multimodal-models-iii.pdf"
     lab: "https://drive.google.com/file/d/1qqKSF0hweXh873Z4jpVyHOtvFFkO7O0g/view"
   - date: "2026-05-26"
     kind: lecture
-    n: 22
+    n: 21
     title: "AI for Data Science"
     pdf: "teaching/26s-programming-for-data-science/slides/22_ai-for-data-science.pdf"
     lab: "https://drive.google.com/file/d/10otAdN7s1X07d5zrAe58_5jPN4kesU-Z/view"
@@ -203,25 +203,16 @@ grading:
     weight: "40%"
   - item: "Final project"
     weight: "60%"
-grading_note: "Attendance is not graded, but missing more than 1/3 of the classes results in an F. The project is a Kaggle competition of the team's choice (up to 4 students), judged on problem, method, results, teamwork and presentation."
+grading_note: "Attendance is not graded, but missing more than 1/3 of the classes results in an F."
 
-resources_title: "References"  # 참고 강의만 있는 것이 아니라 책·문서도 있어 제목을 바꾼다(기본값 Reference courses)
+resources_title: "References"  # 참고 강의와 책이 함께 있어 제목을 바꾼다(기본값 Reference courses)
 resources:
   - title: "The Modern Software Developer"
     source: "Stanford CS146S"
     url: "https://themodernsoftware.dev/"
   - title: "Intermediate Python"
-    source: "Book"
+    source: "Python Tips"
     url: "https://book.pythontips.com/en/latest/"
-  - title: "scikit-learn"
-    source: "Documentation"
-    url: "https://scikit-learn.org/"
-  - title: "PyTorch"
-    source: "Documentation"
-    url: "https://pytorch.org/"
-  - title: "Hugging Face"
-    source: "Documentation"
-    url: "https://huggingface.co/"
 
 exams:
   - label: "Midterm 2026"

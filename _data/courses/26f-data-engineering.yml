@@ -243,7 +243,7 @@ grading:
     weight: "20%"
   - item: "Project final"
     weight: "40%"
-grading_note: "Attendance is not graded, but missing more than 1/3 of total class hours results in an F."
+grading_note: "Attendance is not graded, but missing more than 1/3 of the classes results in an F."
 
 # 참고 강의. reading 의 약칭(abbr)이 여기를 가리킨다.
 resources:

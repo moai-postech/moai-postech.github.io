@@ -175,24 +175,18 @@ schedule:
     title: "ML Systems"
     pdf: "teaching/25f-data-engineering/slides/16_ml-systems.pdf"
     reading:
-      - text: "SML Lec 1-2, 8-10"
-        url: "https://id2223kth.github.io/schedule_2023/"
+      - text: "MLSD Lec 1-2"
+        url: "https://stanford-cs329s.github.io/syllabus.html"
   - date: "2025-11-20"
     kind: lecture
     n: 17
     title: "LLM Systems I: Basics"
     pdf: "teaching/25f-data-engineering/slides/17_llm-systems-i-basics.pdf"
-    reading:
-      - text: "DLA LangChain"
-        url: "https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/"
   - date: "2025-11-25"
     kind: lecture
     n: 18
     title: "LLM Systems II: RAG"
     pdf: "teaching/25f-data-engineering/slides/18_llm-systems-ii-rag.pdf"
-    reading:
-      - text: "DLA Chat with Your Data"
-        url: "https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/"
   - date: "2025-11-27"
     kind: guest
     speaker: "Ki-Young Shin"
@@ -204,9 +198,6 @@ schedule:
     n: 19
     title: "LLM Systems III: Agents"
     pdf: "teaching/25f-data-engineering/slides/19_llm-systems-iii-agents.pdf"
-    reading:
-      - text: "DLA Tools and Agents"
-        url: "https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/"
   - date: "2025-12-04"
     kind: break
     title: "No Class"
@@ -232,7 +223,6 @@ grading:
     weight: "25%"
   - item: "Team project"
     weight: "40%"
-grading_note: "Team project in teams of 3 to 5: a proposal at mid-semester and a product on a large-scale database at the end."
 
 resources:
   - abbr: "DMCT"
@@ -251,22 +241,10 @@ resources:
     title: "Principles of Data-Intensive Systems"
     source: "Stanford CS245"
     url: "https://web.stanford.edu/class/cs245/"
-  - abbr: "BDS"
-    title: "Introduction to Big Data Systems"
-    source: "Wisconsin CS544"
-    url: "https://ms.sites.cs.wisc.edu/cs544/s24/schedule.html"
-  - abbr: "SML"
-    title: "Scalable Machine Learning and Deep Learning"
-    source: "KTH ID2223"
-    url: "https://id2223kth.github.io/schedule_2023/"
   - abbr: "MLSD"
     title: "Machine Learning Systems Design"
     source: "Stanford CS329S"
     url: "https://stanford-cs329s.github.io/"
-  - abbr: "DLA"
-    title: "DeepLearning.AI Short Courses"
-    source: "DeepLearning.AI"
-    url: "https://learn.deeplearning.ai"
 
 exams:
   - label: "Midterm 2025"

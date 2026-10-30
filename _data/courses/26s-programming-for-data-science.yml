@@ -203,7 +203,7 @@ schedule:
 grading:
   - item: "Midterm Exam"
     weight: "40%"
-  - item: "Final Project"
+  - item: "Team Project"
     weight: "60%"
 grading_note: "Attendance is not graded, but missing more than 1/3 of the classes results in an F."
 

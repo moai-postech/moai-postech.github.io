@@ -108,7 +108,7 @@ schedule:
     title: "Midterm Exam"
   - date: "2026-04-16"
     kind: break
-    title: "No Class (Midterm Exam Period)"
+    title: "No Class (Exam Period)"
   - part: "sw2"
   - date: "2026-04-21"
     kind: lecture
@@ -136,7 +136,7 @@ schedule:
     location: "Sci. Bldg. 4, Room 302"
   - date: "2026-04-30"
     kind: break
-    title: "No Class"
+    title: "No Class (Business Trip)"
   - date: "2026-05-05"
     kind: break
     title: "No Class (Children's Day)"
@@ -193,10 +193,10 @@ schedule:
     title: "No Class (KIIE Conference)"
   - date: "2026-06-09"
     kind: break
-    title: "No Class (Final Exam Period)"
+    title: "No Class (Exam Period)"
   - date: "2026-06-11"
     kind: break
-    title: "No Class (Final Exam Period)"
+    title: "No Class (Exam Period)"
 
 grading:
   - item: "Midterm Exam"

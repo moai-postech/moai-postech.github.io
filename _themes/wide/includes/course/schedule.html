@@ -3,7 +3,7 @@
   머리(작은 제목) 다음 전체 스케줄 표 하나다. 파트 머리 줄에 파트 이름·범위·한 줄 설명. 개요·평가·자료는 Home(home.html)에 있다.
   색은 course.css 의 템플릿 하나다. 파트는 순서대로 p1·p2·p3(강의마다 고르지 않는다), 시험·프로젝트·행사·평가·초청·세미나는 logistics, 휴강은 none.
   강의 줄은 바로 위 파트 머리의 색을 잇는다.
-  Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다. 줄 종류의 태그 글자는 _data/course_tags.yml.
+  Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
@@ -23,9 +23,8 @@
         <td class="cs-n">{{ r.n }}</td>
         {% assign compact_session = false %}{% if r.kind == "guest" or r.kind == "seminar" %}{% unless r.html or r.pdf or r.lab %}{% assign compact_session = true %}{% endunless %}{% endif %}
         <td class="cs-topic"{% if compact_session %} colspan="2"{% endif %}>
-          {% assign tag = site.data.course_tags[r.kind] %}{% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
+          {% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
           {% if is_seminar %}<span class="cs-session"><span class="cs-session-main">{% endif %}
-          {% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}
           {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}{% if r.url %}<a class="cs-title cs-speaker-link" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}{% endif %}
           {% if r.title and r.speaker %}<span class="cs-speaker">{% if r.url %}<a class="cs-speaker-name" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-speaker-name">{{ r.speaker }}</span>{% endif %}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}

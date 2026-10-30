@@ -37,3 +37,10 @@ POSTECH 요구사항: 영향 없음
 - Part III 색을 장밋빛 갈색(`#8a5d57`, 행 `#f8eeec`)에서 남보라(`#5c5a8c`, 행 `#f1f0f8`)로 바꿨다. project·exam 의 강조색 행(`--accent-soft`)과 분홍 계열이 겹쳐 구분이 약했다. 모든 강의의 Part III 행과 강의 Home 의 Part 카드에 함께 적용된다.
 
 기각한 안: 주황·황토 계열(공통 노랑과 겹침), 청록(Part I 파랑·Part II 초록과 겹침).
+
+## 추가 반영 3(같은 날, 교수 요청)
+- 강의 스케줄의 딱지를 전부 뗐다(Guest lecture, IME Seminar, Exam, Project, Event). `_data/course_tags.yml` 을 지우고 템플릿의 딱지 줄을 뺐다. 종류는 행 색과 제목으로 드러낸다.
+- 그래서 Project 제목을 다시 `Project Proposal I`, `Project Final I`, `Project Presentation I` 로 되돌렸다(25F·26F·26S).
+- 스터디 페이지의 `Optional` 표시는 강의 스케줄이 아니라 그대로 둔다.
+
+기각한 안: 딱지를 두고 제목을 줄이기(이 회차 앞부분). 교수가 딱지가 더 어수선하다고 판단했다.

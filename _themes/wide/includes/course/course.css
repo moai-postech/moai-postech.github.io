@@ -11,7 +11,6 @@
 .tone-p3 { --tone:#5c5a8c; --tone-tint:#d3d2e7; --tone-row:#f1f0f8; }  /* indigo, kept clear of the red accent that marks project and exam */
 .tone-logistics { --tone:#7b683f; --tone-tint:#e2d6b5; --tone-row:#faf5e8; }
 .tone-key       { --tone: var(--accent); --tone-tint: color-mix(in srgb, var(--accent) 30%, var(--bg)); --tone-row: var(--accent-soft); }  /* project and exam: the days students must not miss */
-.tone-key .cs-tag { background: var(--accent); color: var(--bg); }
 .tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
@@ -77,7 +76,7 @@
 
 .course-part-text { color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
 
-/* Schedule: one row per class day; lectures carry their number, other days only a tag */
+/* Schedule: one row per class day; lectures carry their number, other days only their colour and title */
 .course-schedule { width: 100%; border-collapse: separate; border-spacing: 0 3px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }  /* rows read as coloured blocks, as in the sheet */
 .course-schedule thead th { padding: 0 var(--space-4) var(--space-2) 0; border-bottom: 1px solid var(--text); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-align: left; text-transform: uppercase; letter-spacing: .06em; }
 .course-schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; background: var(--tone-row); vertical-align: baseline; }
@@ -96,7 +95,7 @@
 .cs-n { width: 1%; color: var(--tone); font-weight: var(--weight-heading); text-align: right; }
 .cs-topic { line-height: 1.5; }
 .cs-title { font-weight: var(--weight-emphasis); }
-.cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }
+.cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }  /* study schedule only (Optional); course schedule rows carry no tag */
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
 .cs-session { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 0 var(--space-5); }

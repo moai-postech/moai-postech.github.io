@@ -124,7 +124,8 @@ a.cs-title:hover { color: var(--accent); }
 /* Team project page: criteria as name + one line, then one row per team with a cell per presentation round */
 .project-sub { margin-top: var(--space-6); }
 .project-evaluation-groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
-.project-evaluation-group { padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
+.project-evaluation-group { display: flex; flex-direction: column; padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
+.project-evaluation-group .project-criteria { flex: 1; }  /* the criterion blocks of both groups end on one line */
 .project-evaluation-team { grid-column: span 3; }
 .project-evaluation-individual { grid-column: span 1; }
 .project-evaluation-heading { display: flex; flex-direction: column; gap: var(--space-1); margin-bottom: var(--space-5); }

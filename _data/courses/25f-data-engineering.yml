@@ -271,11 +271,11 @@ project:
   steps:
     - name: "Proposal"
       when: "Oct 14 & 16"
-      presentation: "15 min"
+      presentation: "15 min including Q&A"
       text: "Ideation, data collection and preprocessing, and database management."
     - name: "Final Presentation"
       when: "Dec 9 & 11"
-      presentation: "15 min"
+      presentation: "15 min including Q&A"
       text: "A product that addresses a real-world problem using a large-scale database, possibly with an LLM."
   evaluation:
     team_label: "Team Evaluation"

@@ -7,7 +7,7 @@ instructor:
   name: "Sangwoo Mo"
   url: "faculty.html"
 # Home 의 운영 정보. 요일·시각은 교수 캘린더, 강의실은 실제로 쓴 302호(교수 2026-10-26, 캘린더의 배정 강의실과 다르다)
-location: { building: "Engineering Building 4", rooms: "Room 302" }
+location: { building: "Science Building 4", rooms: "Room 302" }
 meetings: { day: "Tuesdays & Thursdays", time: "9:30 – 10:45 KST" }
 office_hours: "Tuesdays 11:00 – 12:00, Room 319"
 summary: >-
@@ -76,7 +76,7 @@ schedule:
     url: "https://mainthread.notion.site/"
     affiliation: "Financial Security Institute"
     time: "10:30 – 11:30 KST"
-    location: "Engineering Building 4, Room 302"
+    location: "Sci. Build. 4, Room 302"
   - date: "2026-09-22"
     kind: lecture
     n: 5
@@ -198,7 +198,7 @@ schedule:
     url: "https://www.linkedin.com/in/hyunkyu-lee-9538551b/"
     affiliation: "Google Korea"
     time: "17:00 – 18:00 KST"
-    location: "Engineering Building 4, Room 302"
+    location: "Sci. Build. 4, Room 302"
   - date: "2026-11-19"
     kind: lecture
     n: 15

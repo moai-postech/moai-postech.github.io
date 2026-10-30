@@ -8,7 +8,7 @@ instructor:
   name: "Sangwoo Mo"
   url: "faculty.html"
 # Home 의 운영 정보. 요일·시각은 교수 캘린더, 강의실은 실제로 쓴 302호(교수 2026-10-26, 캘린더의 배정 강의실과 다르다)
-location: { building: "Engineering Building 4", rooms: "Room 302" }
+location: { building: "Science Building 4", rooms: "Room 302" }
 meetings: { day: "Tuesdays & Thursdays", time: "15:30 – 16:45 KST" }
 summary: >-
   This course teaches programming for data science in the era of AI. We start by writing code with AI,
@@ -133,7 +133,7 @@ schedule:
     affiliation: "POSTECH"
     pdf: "assets/talks/2026-opportunities-in-ime-as-an-ai-researcher-and-vice.pdf"
     time: "17:00 – 18:00 KST"
-    location: "Engineering Building 4, Room 302"
+    location: "Sci. Build. 4, Room 302"
   - date: "2026-04-30"
     kind: break
     title: "No Class"
@@ -184,7 +184,7 @@ schedule:
     speaker: "Yeong-Hwan Jeon"
     affiliation: "LG U+"
     time: "10:30 – 11:30 KST"
-    location: "Engineering Building 4, Room 202"
+    location: "Sci. Build. 4, Room 202"
   - date: "2026-06-02"
     kind: project
     title: "Project Presentation II"
@@ -211,7 +211,7 @@ resources:
     source: "Stanford CS146S"
     url: "https://themodernsoftware.dev/"
   - title: "Intermediate Python"
-    source: "Python Tips"
+    source: "Textbook"
     url: "https://book.pythontips.com/en/latest/"
 
 exams:

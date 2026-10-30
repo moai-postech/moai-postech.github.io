@@ -9,7 +9,7 @@ fall-2026:
     - { label: "Topics 9–11", start: 9, end: 11, title: "Foundation models for robotics", text: "Bring spatial reasoning, VLA, and world models together with robotic action." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
-  location: { building: "Engineering Building 4", rooms: "Room 302" }
+  location: { building: "Science Building 4", rooms: "Room 302" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
   format: lectures
@@ -21,7 +21,7 @@ summer-2026:
     - { label: "Topics 8–10", start: 8, end: 10, title: "Generalization and transfer", text: "Study generalization, transfer learning, and the theory behind deep learning." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Usually Tuesdays", time: "15:30 – 16:30 KST" }
-  location: { building: "Engineering Building 4", rooms: "Room 307" }
+  location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 spring-2026:
   overview: "Move from how LLMs reason to how they are trained and aligned, then extend them with context, retrieval, and tools."
@@ -31,7 +31,7 @@ spring-2026:
     - { label: "Topics 7–9", start: 7, end: 9, title: "Context, retrieval, and agents", text: "Use long context, retrieval, and agents to work with external information and tools." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:30 KST" }
-  location: { building: "Engineering Building 4", rooms: "Room 307" }
+  location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
   overview: "Trace the path from deep learning and transformers to multimodal understanding, visual generation, and scaled language models."
@@ -42,5 +42,5 @@ fall-2025:
     - { label: "Topics 8–9", start: 8, end: 9, title: "Scaling and multimodal LLMs", text: "Study LLM scaling and bring language and vision together in multimodal LLMs." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Wednesdays", time: "22:00 – 23:00 KST" }
-  location: { building: "Engineering Building 4", rooms: "Room 307" }
+  location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }

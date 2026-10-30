@@ -57,7 +57,7 @@
       <tbody>
       {% for t in pj.teams %}<tr class="tone-guest">
         <td class="cs-n">{{ t.n }}</td>
-        <td class="cs-topic"><span class="cs-title">{{ t.title }}</span>{% if t.members %}<span class="cs-speaker">{{ t.members | join: ", " }}</span>{% endif %}{% if t.url %}<a class="project-link" href="{{ t.url }}">{{ t.url_label | default: "Link" }}</a>{% endif %}</td>
+        <td class="cs-topic">{% if t.url %}<a class="cs-title" href="{{ t.url }}">{{ t.title }}</a>{% else %}<span class="cs-title">{{ t.title }}</span>{% endif %}{% if t.members %}<span class="cs-speaker">{{ t.members | join: ", " }}</span>{% endif %}</td>
         {% for rd in pj.rounds %}{% assign x = t[rd.id] %}<td class="project-round" data-round="{{ rd.name }}">
           {% if x.date or x.order or rd.date_placeholder %}<span class="project-when">{% if x.date %}{{ x.date | date: "%m/%d" }}{% elsif rd.date_placeholder %}Date {{ rd.date_placeholder }}{% endif %}{% if x.order %}{% if x.date or rd.date_placeholder %} · {% endif %}#{{ x.order }}{% endif %}</span>{% endif %}
           {% if x.slides %}<a href="{{ x.slides }}">PDF</a>{% endif %}

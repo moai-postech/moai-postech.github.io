@@ -253,13 +253,12 @@ project:
       text: "Quality of delivery and storytelling"
   rounds:
     - id: "final"
-      name: "Presentation"
+      name: "Final"
   teams:
     - n: 1
       title: "VSB Power Line Fault Detection"
       members: ["김명건", "문세희", "이민수", "추인곤"]
       url: "https://www.kaggle.com/competitions/vsb-power-line-fault-detection/overview"
-      url_label: "Competition"
       final:
         date: "2026-05-28"
         order: 6
@@ -268,7 +267,6 @@ project:
       title: "BirdCLEF+2026"
       members: ["김동근", "장해원", "이승훈", "최우혁"]
       url: "https://www.kaggle.com/competitions/birdclef-2026/overview"
-      url_label: "Competition"
       final:
         date: "2026-06-02"
         order: 5
@@ -277,7 +275,6 @@ project:
       title: "TAHMO Incoming Solar Radiation Prediction Challenge"
       members: ["이정우", "송지은", "백동선", "심민준"]
       url: "https://zindi.africa/competitions/tahmo-incoming-solar-radiation-prediction-challenge"
-      url_label: "Competition"
       final:
         date: "2026-05-28"
         order: 1
@@ -286,7 +283,6 @@ project:
       title: "CMI - Detect Behavior with Sensor Data"
       members: ["박시언", "홍규화", "박찬우"]
       url: "https://www.kaggle.com/competitions/cmi-detect-behavior-with-sensor-data/data"
-      url_label: "Competition"
       final:
         date: "2026-05-28"
         order: 5
@@ -295,7 +291,6 @@ project:
       title: "Optiver Realized Volatility Prediction"
       members: ["김세헌", "홍현종", "엄희규", "최병화"]
       url: "https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/overview"
-      url_label: "Competition"
       final:
         date: "2026-05-28"
         order: 2
@@ -304,7 +299,6 @@ project:
       title: "LLM Prompt Recovery"
       members: ["조성범", "이창희", "전효택"]
       url: "https://www.kaggle.com/competitions/llm-prompt-recovery/overview"
-      url_label: "Competition"
       final:
         date: "2026-06-02"
         order: 2
@@ -313,7 +307,6 @@ project:
       title: "Problematic Internet Use"
       members: ["CLATIN Thibaut", "Olabode Jens-David", "EISENGARTEN Laurits"]
       url: "https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use/overview"
-      url_label: "Competition"
       final:
         date: "2026-06-02"
         order: 3
@@ -322,7 +315,6 @@ project:
       title: "ASHRAE - Great Energy Predictor III"
       members: ["Zhou Kongdan", "김재호", "강은수", "도경근"]
       url: "https://www.kaggle.com/c/ashrae-energy-prediction"
-      url_label: "Competition"
       final:
         date: "2026-06-02"
         order: 4
@@ -331,7 +323,6 @@ project:
       title: "Prediction for player movement when the ball is in the air"
       members: ["김정운", "이승아", "최승준", "신재윤"]
       url: "https://www.kaggle.com/competitions/nfl-big-data-bowl-2026-prediction/overview"
-      url_label: "Competition"
       final:
         date: "2026-05-28"
         order: 4
@@ -340,7 +331,6 @@ project:
       title: "Nucleus Detection"
       members: ["조해인", "정세윤", "김민직", "성민식"]
       url: "https://www.kaggle.com/competitions/data-science-bowl-2018/overview"
-      url_label: "Competition"
       final:
         date: "2026-06-02"
         order: 1
@@ -349,7 +339,6 @@ project:
       title: "Mercari Price Suggestion Challenge"
       members: ["조은국", "김현우", "나진우"]
       url: "https://www.kaggle.com/competitions/mercari-price-suggestion-challenge/overview"
-      url_label: "Competition"
       final:
         date: "2026-05-28"
         order: 3

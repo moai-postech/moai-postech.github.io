@@ -143,7 +143,6 @@ a.cs-title:hover { color: var(--accent); }
 .project-teams .cs-n { padding-left: var(--space-3); }
 .project-sheet-note { margin: 0 0 var(--space-5); padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); font-size: var(--text-body); }  /* students act here, so it reads as a notice */
 .project-sheet-note a { color: var(--accent); font-weight: var(--weight-heading); }
-.project-link { display: inline-block; margin-top: 2px; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .project-round { width: 1%; white-space: nowrap; text-align: center; }
 .project-teams thead th:nth-child(n + 3) { text-align: center; }
 @media (min-width: 681px) {

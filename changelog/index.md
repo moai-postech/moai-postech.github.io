@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-30 | [footer-follows-content](2026-10-30-footer-follows-content.md) | Sangwoo Mo(moai-postech) | 전역 꼬리말 | 짧은 페이지(Teaching·Talks·Contact)에서 꼬리말을 화면 맨 아래 고정하지 않고 본문 바로 뒤로 |
 | 2026-10-30 | [course-schedule-sheetless](2026-10-30-course-schedule-sheetless.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule·Project | 스케줄 시트 링크 삭제, 프로젝트 시트는 Teams 절, 제목이 HTML·Materials 는 PDF, 시험 줄은 해설판, 범위 짧게, guest 이름 삭제, 26F 12/24 |
 | 2026-10-30 | [course-feedback-restored](2026-10-30-course-feedback-restored.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 템플릿 | 아카이브된 최종 Timeline·평가·자료 라벨과 freshmen 누락 복원 |
 | 2026-10-30 | [course-renumber-lec11](2026-10-30-course-renumber-lec11.md) | Sangwoo Mo(moai-postech) | 26F 강의 Schedule·슬라이드 | 리뷰 두 회차 번호 없음, Big Data 11~13강·Part III 14~17강, 슬라이드 파일 이름과 안의 번호 |

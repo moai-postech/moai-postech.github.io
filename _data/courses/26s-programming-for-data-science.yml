@@ -31,7 +31,6 @@ parts:
     span: "Lectures 15 – 22"
     text: "Deep learning and PyTorch, vision and multimodal models, and AI for data science."
 
-schedule_sheet: "https://docs.google.com/spreadsheets/d/1gKBQCv7Fkpwyn7DwXrKBqEHZNYjZsF1qXH5bUrSpANU/edit?usp=sharing"
 schedule:
   - date: "2026-02-24"
     kind: lecture

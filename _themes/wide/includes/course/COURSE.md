@@ -19,7 +19,7 @@
 
 ## 강의마다 달라도 되는 것
 
-- 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Location & time(`location`, `meetings`)·Teaching assistants(`teaching_assistants`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), 시험 해설 링크(`solution`), office hours, 링크 버튼, Past exams(`exams`). 다른 강의나 자료로 잇는 Related 는 두지 않는다(2026-10-27 교수: 강의 사이트끼리 cross reference 하지 않는다).
+- 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Location & time(`location`, `meetings`)·Teaching assistants(`teaching_assistants`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 다른 강의나 자료로 잇는 Related 는 두지 않는다(2026-10-27 교수: 강의 사이트끼리 cross reference 하지 않는다).
 - 파트 이름은 자유다(`Part I`, `Software 3.0`). 자료 절 제목은 `resources_title`(기본 `Reference courses`).
 - 강의 스케줄 줄에는 종류 딱지를 붙이지 않는다. 종류는 색과 제목(`Project Proposal I`, `Midterm Exam`)으로 드러낸다(교수 2026-10-30).
 
@@ -38,14 +38,14 @@
 
 강의 슬라이드(PDF·HTML)와 학생 발표 자료(PDF)는 Google Drive 링크 대신 이 저장소의 `teaching/<id>/` 아래 파일로 올리고 사이트 루트 기준 경로로 링크한다(2026-10-26 교수 결정). 방문자가 Drive 를 거치지 않고 사이트에서 바로 연다. Drive 에는 같은 파일을 백업으로 둔다.
 
-- 강의: `teaching/<id>/slides/<n>_<slug>.{pdf,html}`. HTML 은 자산을 인라인한 단일 파일이라 그대로 열린다. Schedule 자료 링크는 HTML → PDF → Lab 순서이며, 없는 형식은 생략한다(2026-10-28 교수)
+- 강의: `teaching/<id>/slides/<n>_<slug>.{pdf,html}`. HTML 은 자산을 인라인한 단일 파일이라 그대로 열린다. HTML 은 줄 제목의 링크로 걸고, Materials 칸에는 PDF → Lab 만 둔다. 그래서 PDF 가 모든 줄에서 같은 자리에 선다(2026-10-30 교수, 2026-10-28 의 HTML·PDF·Lab 나란히 두기 대체). 시험 줄은 해설이 든 판 하나만 PDF 로 걸고, 해설 없는 시험지는 Home 의 Past exams 에만 둔다(2026-10-30 교수)
 - 학생 발표: `teaching/<id>/project/<회차>/<회차>_teamNN.pdf`(pptx 는 올리지 않는다)
 - 파일 하나는 GitHub 한도(100 MB) 아래여야 한다. 지금 가장 큰 파일은 수 MB 다
 - 새 파일이 생기면 Drive 와 이 저장소에 각각 복사한다. yml 에 Drive 링크를 넣었으면 `python3 tools/localize_slides.py` 가 받아서 링크를 바꾼다(사이트 전체 원칙, 저장소 `AGENTS.md`). 26F Data Engineering 은 강의 저장소의 `tools/publish-site.py` 가 Drive 배포본을 이 폴더로 복사하고 yml 링크를 점검한다 시트 링크는 지난 학기에도 유지한다.
 
 ## 초청 강의·학과 세미나
 
-- `guest`와 `seminar`는 공통 노랑으로 표시한다. `project`·`exam`도 공통 노랑이다. 번호 없는 줄의 # 칸에는 종류 아이콘(`kind-icon.html`)을 두고, project·exam 아이콘만 강조색이다. guest·seminar 는 연사 줄 앞에 작은 대문자 종류 이름(`.cs-kind`)을 둔다. `break`는 회색이다. 행 바탕색은 Part 셋과 공통 노랑, 회색만 쓴다. 장소·시간은 오른쪽 끝에 두 줄(장소, 시간)로 둔다.
+- `guest`와 `seminar`는 공통 노랑으로 표시한다. `project`·`exam`도 공통 노랑이다. 번호 없는 줄의 # 칸에는 종류 아이콘(`kind-icon.html`)을 두고, project·exam 아이콘만 강조색이다. guest·seminar 는 마이크 아이콘이 종류를 알리므로 연사 줄 앞에 종류 이름(Guest lecture 등)을 쓰지 않는다(2026-10-30 교수). `break`는 회색이다. 행 바탕색은 Part 셋과 공통 노랑, 회색만 쓴다. 장소·시간은 오른쪽 끝에 두 줄(장소, 시간)로 둔다.
 - 복습 회차(Review Session, Midterm Review)는 `kind: review`로 쓴다. 강 번호를 매기지 않고 공통 노랑으로 표시한다(교수 2026-10-30).
 - 초청 행은 제목 아래에 연사·소속을 두고, 장소·시간은 오른쪽 끝에 두 줄로 둔다. 자료 링크가 없으면 빈 Materials 칸까지 활용한다. 제목이 없으면 연사 이름을 주 정보로 쓴다.
 - 회차별 `time`·`location`을 선택적으로 받는다. 별도 시간은 KST로 쓰고 연사와 같은 줄에 시간·장소를 표시한다. 한쪽만 확인됐으면 그 값만 표시한다.
@@ -63,7 +63,7 @@
 
 - 출석에 별도 점수가 없는 강의도 총 수업시간의 1/3을 초과해 결석하면 F라는 기준을 명확히 표시한다. 실제 출석 배점은 각 강의의 `grading`을 따른다.
 - Home의 평가 안내에 AI 도구 허용 여부를 덧붙이지 않는다.
-- Schedule 페이지 상단에는 `schedule_sheet`의 Schedule sheet 링크 하나, Project 페이지 상단에는 `project.sheet`의 Project sheet 링크 하나를 둔다. 본문에는 같은 시트 링크를 반복하지 않는다.
+- 스케줄 시트는 쓰지 않는다. 스케줄은 교수가 관리하므로 이 yml 이 정본이고, 학생 자료는 사이트와 PLMS 에만 올린다(2026-10-30 교수). 옛 스케줄 시트는 Drive 에 백업으로 남긴다. 학생이 직접 고치는 `project.sheet` 만 남기고, 링크는 Project 페이지 머리가 아니라 Teams 절 첫 줄에 둔다.
 - 시트는 원래 공개했던 해당 학기 링크를 사용하고, 자료의 정본·웹 페이지 관리 방식은 유지한다.
 
 ## Project 정보와 발표 칸

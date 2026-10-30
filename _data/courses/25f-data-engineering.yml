@@ -30,7 +30,6 @@ parts:
     span: "Lectures 16 – 19"
     text: "Run models on the data: ML systems, LLM systems, RAG and agents."
 
-schedule_sheet: "https://docs.google.com/spreadsheets/d/1NBJrPN4CkLqL0IGGCTr1ZxOvPbRWSDlFF95h-5-zOY4/edit?usp=sharing"
 schedule:
   - date: "2025-09-02"
     kind: lecture
@@ -85,7 +84,7 @@ schedule:
     title: "SQL I: Basics"
     pdf: "teaching/25f-data-engineering/slides/7_sql-i-basics.pdf"
     reading:
-      - text: "DMS Lec 1 – 2"
+      - text: "DMS Lec 1-2"
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2025-09-30"
     kind: lecture
@@ -93,7 +92,7 @@ schedule:
     title: "SQL II: Joins & Multisets"
     pdf: "teaching/25f-data-engineering/slides/8_sql-ii-joins-multisets.pdf"
     reading:
-      - text: "DMS Lec 2 – 3"
+      - text: "DMS Lec 2-3"
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2025-10-02"
     kind: lecture
@@ -101,7 +100,7 @@ schedule:
     title: "SQL III: Subqueries & Aggregations"
     pdf: "teaching/25f-data-engineering/slides/9_sql-iii-subqueries-aggregations.pdf"
     reading:
-      - text: "DMS Lec 3 – 4"
+      - text: "DMS Lec 3-4"
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2025-10-07"
     kind: break
@@ -176,7 +175,7 @@ schedule:
     title: "ML Systems"
     pdf: "teaching/25f-data-engineering/slides/16_ml-systems.pdf"
     reading:
-      - text: "SML Lec 1 – 2, 8 – 10"
+      - text: "SML Lec 1-2, 8-10"
         url: "https://id2223kth.github.io/schedule_2023/"
   - date: "2025-11-20"
     kind: lecture

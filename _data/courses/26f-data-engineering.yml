@@ -154,6 +154,7 @@ schedule:
     kind: exam
     title: "Midterm Exam"
     pdf: "teaching/26f-data-engineering/exams/midterm/midterm.pdf"
+    solution: "teaching/26f-data-engineering/exams/midterm/midterm-solution.pdf"
   - date: "2026-11-03"
     kind: review
     title: "Midterm Review"

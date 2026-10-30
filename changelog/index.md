@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-30 | [media-omnimodal](2026-10-30-media-omnimodal.md) | Sangwoo Mo(sangwoomo) | Home Media | 서울대·포스텍·노타 옴니모달 에이전트 공동연구 기사(한국대학신문) 추가 |
 | 2026-10-30 | [files-as-assets](2026-10-30-files-as-assets.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 파일 | 시험지·실습 노트북·스터디 Demo 를 저장소 사본으로, 26S Past exams 삭제, 예외는 project sheet |
 | 2026-10-30 | [lecture-deploy-all](2026-10-30-lecture-deploy-all.md) | Sangwoo Mo(sangwoomo) | 26F 강의 슬라이드 | 1~17강·Review Session 현재 판 배포, 14~17강 링크 |
 | 2026-10-30 | [footer-follows-content](2026-10-30-footer-follows-content.md) | Sangwoo Mo(moai-postech) | 전역 꼬리말 | 짧은 페이지(Teaching·Talks·Contact)에서 꼬리말을 화면 맨 아래 고정하지 않고 본문 바로 뒤로 |

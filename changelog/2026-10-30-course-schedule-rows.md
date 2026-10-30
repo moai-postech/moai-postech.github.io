@@ -81,3 +81,4 @@ POSTECH 요구사항: 영향 없음
   - Evaluation 기준 넷을 각각 흰 블록으로 만들고, 회색 묶음이 3(Team) / 1(Individual)로 감싼다.
   - Teams 행: 회차 칸을 `날짜 · 순서  PDF` 한 줄로 합치고 칸을 세로 가운데로 맞췄다. 왼쪽 두 줄(제목, 팀원)과 오른쪽 높이가 맞는다. 링크 이름 `Slides` → `PDF`.
   - 시트 안내(`Teams edit their own entry in the project sheet ↗`)를 강조색 연한 띠로 바꾸고 `project sheet` 링크를 강조색 굵게 했다.
+  - Evaluation 의 두 묶음 안 흰 블록 높이를 맞췄다(묶음을 세로 flex 로, 기준 목록이 남은 높이를 채운다).

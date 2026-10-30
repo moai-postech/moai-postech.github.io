@@ -313,14 +313,14 @@ project:
         - "Define the problem and method, and explain why your data fits."
         - "Show how you collect and prepare the data, your database design and a basic analysis."
       scope_note: "Detailed implementation and DevOps are not required. A demo is optional."
-      presentation: "10 min including Q&A"
+      presentation: "10 min (incl. Q&A)"
     - name: "Final Presentation"
       when: "Dec 15 & 17"
       deliverables:
         - "Build a working product for a real-world problem using a large-scale database."
         - "Show the data pipeline, implementation and results."
       scope_note: "Use data you are allowed to access."
-      presentation: "10 min including Q&A"
+      presentation: "10 min (incl. Q&A)"
   evaluation:
     team_label: "Team Evaluation"
     team_reviewers: "Instructor + other teams"

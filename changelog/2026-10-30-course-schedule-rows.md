@@ -66,3 +66,9 @@ POSTECH 요구사항: 영향 없음
 ## 추가 반영 7(같은 날, 교수 요청)
 - 휴강 줄 제목을 `No Class (사유)` 한 형식으로 통일했다(25F·26S·26F). 예: `University Anniversary (no class)` → `No Class (University Anniversary)`, `Peer Evaluation (online, no class)` → `No Class (Peer Evaluation, Online)`, `Study day (no class)` → `No Class (Study Day)`. 사유가 없으면 `No Class`.
 - 26F 11~17강 Reading 을 25F 의 같은 주제 강의에서 옮겼다: Batch Processing ← MapReduce·Spark(IDS Lec 24), Data Warehousing ← BigQuery & Airflow(DIS Lec 16), Stream Processing(DIS Lec 17), ML Systems(SML Lec 1 – 2, 8 – 10), LLM Systems·RAG·Agents(DLA 세 과정). 26F Reference courses 를 25F 와 같은 여덟 개(DIS, BDS, SML, MLSD, DLA 추가)로 맞췄다.
+
+## 추가 반영 8(같은 날, 교수 결정)
+- 26F 참고 강의는 명문대의 기본 강의만 둔다. Reference courses 에서 DLA(DeepLearning.AI 단기 과정), SML(KTH ID2223), BDS(Wisconsin CS544, 어느 Reading 에도 안 쓰임)를 뺐다. 남은 것: UIUC CS412, Wisconsin CS564, Berkeley CS186, Stanford CS245, Stanford CS329S.
+- Reading 은 한 강의만 가리킨다. ML Systems 는 `SML Lec 1-2, 8-10` 대신 `MLSD Lec 1`(Stanford CS329S, Understanding machine learning production). LLM Systems, RAG, Agents 는 DLA 를 빼면서 Reading 이 비었다.
+
+기각한 안: 25F Reading 을 그대로 옮기기(추가 반영 7). 칸이 길고 명문대 강의가 아닌 자료가 섞였다.

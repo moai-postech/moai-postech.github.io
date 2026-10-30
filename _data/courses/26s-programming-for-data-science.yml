@@ -254,6 +254,14 @@ project:
   rounds:
     - id: "final"
       name: "Final"
+  # Highlights: 프로젝트로 낸 성과. 여러 개를 넣을 수 있다. 개인 이름 대신 팀 번호로 쓴다(교수 2026-10-30).
+  highlights:
+    - title: "Top Private Score with an Autonomous Research Agent"
+      when: "May 2026 · VSB Power Line Fault Detection (Kaggle)"
+      photo: "teaching/26s-programming-for-data-science/project/highlights/2026-kaggle-research-agent.jpg"
+      photo_alt: "Team 1's autonomous Kaggle research agent: knowledge inputs, a plan-train-evaluate-decide cycle, and a feedback loop"
+      url: "https://www.facebook.com/share/p/1AGByYC1yY/"
+      text: "Team 1 built an AI agent that plans, trains and evaluates models on its own and learns from each trial. In 48 hours it reached a private score of 0.72022, above the top of the final leaderboard of 1,446 teams (late submission)."
   teams:
     - n: 1
       title: "VSB Power Line Fault Detection"

@@ -299,14 +299,14 @@ project:
       name: "Proposal"
     - id: "final"
       name: "Final"
-  # Highlights: 프로젝트로 받은 상 같은 성과. 여러 개를 넣을 수 있다(교수 2026-10-30). 사진은 project/highlights/ 에 둔다.
+  # Highlights: 프로젝트로 받은 상 같은 성과. 여러 개를 넣을 수 있다. 사진·원 기사 링크·영문 설명, 개인 이름 대신 팀 번호(교수 2026-10-30). 사진은 project/highlights/ 에 둔다.
   highlights:
     - title: "Grand Prize, 4th Retail Data Festa"
       when: "Nov 2025 · Minister's Award"
       photo: "teaching/25f-data-engineering/project/highlights/2025-retail-data-festa.jpg"
-      photo_alt: "Team 2 receiving the Grand Prize at the 4th Retail Data Festa"
-      url: "https://ime.postech.ac.kr/ime/news/intro.do?mode=view&articleNo=43501"
-      text: "Team 2 (김유진, 남도은, 민선아, 봉재우, 심민준) took their project, a personalized recall alert service, to the competition as a one-stop food safety solution built with generative AI, and won first place in the Generative AI Solution track out of 225 teams."
+      photo_alt: "Team 2 on stage with the Grand Prize at the 4th Retail Data Festa"
+      url: "https://www.news1.kr/industry/electronics/5974547"
+      text: "Team 2 turned their project, a personalized recall alert service, into a one-stop food safety solution built with generative AI. It won first place in the Generative AI Solution track out of 225 teams."
   teams:
     - n: 1
       title: "개인 맞춤 논문 요약 메일링"

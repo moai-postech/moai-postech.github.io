@@ -6,7 +6,6 @@
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
 {% assign pj = c.project %}
-{% assign last_day = c.schedule | map: "date" | compact | last %}{% assign today = site.time | date: "%Y-%m-%d" %}
 {% include course/head.html heading="Project" %}
 
     <section class="content-section course-summary" id="timeline">
@@ -17,7 +16,7 @@
     {% if pj.steps or pj.team_formation %}<ol class="project-timeline">
       {% if pj.team_formation %}<li>
         <div class="project-milestone"><span class="project-timeline-when">{{ pj.team_formation.deadline | date: "%b %-d" }}</span></div>
-        <div><strong class="project-timeline-title">Team Building</strong>{% if last_day < today %}<p>Teams registered their members in the project sheet.</p>{% else %}<p>{{ pj.team_formation.text }}</p>{% endif %}<p class="project-stage-note">Team Size: <strong>{{ pj.team_size | remove: " students" }}</strong> students.</p></div>
+        <div><strong class="project-timeline-title">Team Building</strong><p>{{ pj.team_formation.text }}</p><p class="project-stage-note">Team Size: <strong>{{ pj.team_size | remove: " students" }}</strong> students.</p></div>
       </li>{% endif %}
       {% for s in pj.steps %}<li>
         <div class="project-milestone"><span class="project-timeline-when">{{ s.when }}</span></div>
@@ -52,8 +51,7 @@
     {% if pj.teams or pj.sheet %}<section class="content-section">
     <h2>Teams</h2>
     <div class="section-body">
-    {% comment %}지난 학기는 마지막 스케줄 날짜가 빌드 날짜보다 앞선 강의다. 시트를 고치라는 현재형 안내 대신 기록으로 남은 시트를 가리킨다.{% endcomment %}
-    {% if pj.sheet %}<p class="project-sheet-note">{% if last_day < today %}Team entries are archived in the <a href="{{ pj.sheet }}">project sheet <span aria-hidden="true">↗</span></a>.{% else %}Teams edit their own entry in the <a href="{{ pj.sheet }}">project sheet <span aria-hidden="true">↗</span></a>.{% endif %}</p>{% endif %}
+    {% if pj.sheet %}<p class="project-sheet-note">Teams edit their own entry in the <a href="{{ pj.sheet }}">project sheet <span aria-hidden="true">↗</span></a>.</p>{% endif %}
     {% if pj.teams %}<table class="course-schedule project-teams">
       <thead><tr><th scope="col">#</th><th scope="col">Project</th>{% for rd in pj.rounds %}<th scope="col">{{ rd.name }}</th>{% endfor %}</tr></thead>
       <tbody>

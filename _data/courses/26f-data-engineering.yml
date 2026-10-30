@@ -24,12 +24,12 @@ parts:
   - id: "part-2"
     name: "Part II"
     title: "Storage"
-    span: "Lectures 6 – 15"
+    span: "Lectures 6 – 13"
     text: "Store and query it with SQL and NoSQL, then process it at scale in batches, warehouses and streams."
   - id: "part-3"
     name: "Part III"
     title: "Monitoring and Updates"
-    span: "Lectures 16 – 19"
+    span: "Lectures 14 – 17"
     text: "Run models and agents on the data: ML systems, LLM systems, RAG and agents."
 
 # 한 줄 = 한 수업일. kind: lecture(번호 n), review(복습 회차, 번호 없음), guest, seminar(학과 세미나), exam, project, break(휴강·온라인 수업일. off 는 YAML 이 false 로 읽어 쓰지 않는다), event.
@@ -139,8 +139,8 @@ schedule:
   - date: "2026-10-15"
     kind: review
     title: "Review Session"
-    pdf: "teaching/26f-data-engineering/slides/11_review.pdf"
-    html: "teaching/26f-data-engineering/slides/11_review.html"
+    pdf: "teaching/26f-data-engineering/slides/review-session.pdf"
+    html: "teaching/26f-data-engineering/slides/review-session.html"
   - date: "2026-10-20"
     kind: project
     title: "Project Proposal I"
@@ -159,26 +159,26 @@ schedule:
     title: "Midterm Review"
   - date: "2026-11-05"
     kind: lecture
-    n: 13
+    n: 11
     title: "Big Data I: Batch Processing"
-    pdf: "teaching/26f-data-engineering/slides/13_big-data-I.pdf"
-    html: "teaching/26f-data-engineering/slides/13_big-data-I.html"
+    pdf: "teaching/26f-data-engineering/slides/11_big-data-I.pdf"
+    html: "teaching/26f-data-engineering/slides/11_big-data-I.html"
   - date: "2026-11-10"
     kind: lecture
-    n: 14
+    n: 12
     title: "Big Data II: Data Warehousing"
-    pdf: "teaching/26f-data-engineering/slides/14_big-data-II.pdf"
-    html: "teaching/26f-data-engineering/slides/14_big-data-II.html"
+    pdf: "teaching/26f-data-engineering/slides/12_big-data-II.pdf"
+    html: "teaching/26f-data-engineering/slides/12_big-data-II.html"
   - date: "2026-11-12"
     kind: lecture
-    n: 15
+    n: 13
     title: "Big Data III: Stream Processing"
-    pdf: "teaching/26f-data-engineering/slides/15_big-data-III.pdf"
-    html: "teaching/26f-data-engineering/slides/15_big-data-III.html"
+    pdf: "teaching/26f-data-engineering/slides/13_big-data-III.pdf"
+    html: "teaching/26f-data-engineering/slides/13_big-data-III.html"
   - part: "part-3"
   - date: "2026-11-17"
     kind: lecture
-    n: 16
+    n: 14
     title: "ML Systems"
   - date: "2026-11-18"
     kind: guest
@@ -190,18 +190,18 @@ schedule:
     location: "Engineering Building 4, Room 302"
   - date: "2026-11-19"
     kind: lecture
-    n: 17
+    n: 15
     title: "LLM Systems"
   - date: "2026-11-24"
     kind: lecture
-    n: 18
+    n: 16
     title: "RAG"
   - date: "2026-11-26"
     kind: event
     title: "IDS Capstone Workshop"
   - date: "2026-12-01"
     kind: lecture
-    n: 19
+    n: 17
     title: "Agents"
   - date: "2026-12-03"
     kind: break

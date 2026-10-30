@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-30 | [course-renumber-lec11](2026-10-30-course-renumber-lec11.md) | Sangwoo Mo(moai-postech) | 26F 강의 Schedule·슬라이드 | 리뷰 두 회차 번호 없음, Big Data 11~13강·Part III 14~17강, 슬라이드 파일 이름과 안의 번호 |
 | 2026-10-30 | [course-midterm-2026](2026-10-30-course-midterm-2026.md) | Sangwoo Mo(sangwoomo) | 26F 강의 Home·Schedule | 중간고사 시험지·해설 PDF와 링크 |
 | 2026-10-30 | [course-schedule-rows](2026-10-30-course-schedule-rows.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄 | Review 번호 삭제, project·exam 강조색, guest 장소·시간 오른쪽 두 줄과 연사 링크, Part III 남보라, 스케줄 딱지 전부 제거 |
 | 2026-10-30 | [people-names-wonsik](2026-10-30-people-names-wonsik.md) | Sangwoo Mo(moai-postech) | People, Faculty | Lab Members·Other Mentees, 오원식 추가, BS 방문학생 줄 |

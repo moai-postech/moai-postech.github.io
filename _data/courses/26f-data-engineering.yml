@@ -172,7 +172,7 @@ schedule:
     pdf: "teaching/26f-data-engineering/slides/12_big-data-II.pdf"
     html: "teaching/26f-data-engineering/slides/12_big-data-II.html"
     reading:
-      - text: "DIS Lec 16"
+      - text: "PDIS Lec 16"
         url: "https://web.stanford.edu/class/cs245/"
   - date: "2026-11-12"
     kind: lecture
@@ -181,7 +181,7 @@ schedule:
     pdf: "teaching/26f-data-engineering/slides/13_big-data-III.pdf"
     html: "teaching/26f-data-engineering/slides/13_big-data-III.html"
     reading:
-      - text: "DIS Lec 17"
+      - text: "PDIS Lec 17"
         url: "https://web.stanford.edu/class/cs245/"
   - part: "part-3"
   - date: "2026-11-17"
@@ -259,7 +259,7 @@ resources:
     title: "Introduction to Database Systems"
     source: "Berkeley CS186"
     url: "https://cs186berkeley.net/fa24/"
-  - abbr: "DIS"
+  - abbr: "PDIS"
     title: "Principles of Data-Intensive Systems"
     source: "Stanford CS245"
     url: "https://web.stanford.edu/class/cs245/"

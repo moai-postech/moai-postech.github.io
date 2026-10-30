@@ -118,3 +118,10 @@ POSTECH 요구사항: 영향 없음
 - 25F 신기영 연사 링크: 교수가 준 Forbes Korea 인터뷰 기사. 남은 것에 적었던 25F 연사 url 은 이걸로 해소, 26S 학과 세미나 연사 두 명(윤송이, 전영환)은 아직 비어 있다.
 
 기각한 안: `Sci. Build.`(추가 반영 12). 흔한 약자가 아니다.
+
+## 추가 반영 16(같은 날, 교수 요청)
+- 휴강 제목에서 `Online` 을 모두 뺐다: `No Class (Peer Evaluation)`, `No Class (Project Preparation)`(26F). 25F 12/04 도 `No Class (Project Preparation)`.
+- 25F 팀 인원 `3 to 5 students` → `3–5 students`. 교수는 `3~5` 를 제안했는데, 영어 문장에서 물결표는 "약"으로 읽혀 범위 표기인 en dash 를 썼다.
+- Project Timeline 라벨: `Team formation` → `Team Building`(템플릿, 모든 강의), 마지막 단계 `Final` → `Final Presentation`(25F·26F). Proposal 은 그대로. Teams 표의 회차 열(Proposal, Final)은 바꾸지 않았다.
+
+기각한 안: `3~5`(위 이유), 휴강 제목에 `Online` 유지(교수가 뺌).

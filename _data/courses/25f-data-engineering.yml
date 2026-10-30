@@ -201,7 +201,7 @@ schedule:
     pdf: "teaching/25f-data-engineering/slides/19_llm-systems-iii-agents.pdf"
   - date: "2025-12-04"
     kind: break
-    title: "No Class"
+    title: "No Class (Project Preparation)"
   - date: "2025-12-09"
     kind: project
     title: "Project Final I"
@@ -262,7 +262,7 @@ project:
   summary: >-
     Teams go through an end-to-end data engineering pipeline: they collect and prepare data, store it in a database,
     and build a product that addresses a real-world problem on it.
-  team_size: "3 to 5 students"
+  team_size: "3–5 students"
   team_formation:
     deadline: "2025-09-21"
     rule: "Sunday of Week 3"
@@ -271,7 +271,7 @@ project:
     - name: "Proposal"
       when: "Oct 14 & 16"
       text: "Ideation, data collection and preprocessing, and database management."
-    - name: "Final"
+    - name: "Final Presentation"
       when: "Dec 9 & 11"
       text: "A product that addresses a real-world problem using a large-scale database, possibly with an LLM."
   evaluation:

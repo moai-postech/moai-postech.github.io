@@ -96,6 +96,10 @@
 .cs-title { font-weight: var(--weight-emphasis); }
 .cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }  /* study schedule only (Optional); course schedule rows carry no tag */
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
+.cs-icon { display: inline-block; width: 1.1em; height: 1.1em; vertical-align: -0.2em; color: var(--tone); }  /* a day with no lecture number shows what kind of day it is (kind-icon.html) */
+.is-project .cs-icon, .is-exam .cs-icon { color: var(--accent); }  /* the days students must not miss: only the icon carries the accent */
+.is-break .cs-icon { color: var(--muted); }
+.cs-kind { margin-right: var(--space-2); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }  /* names a guest or seminar row without a sticker */
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
 .cs-session { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 0 var(--space-5); }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
@@ -117,7 +121,6 @@ a.cs-speaker-name:hover, a.cs-speaker-link:hover { color: var(--accent); }
 
 a.cs-title { color: var(--text); }  /* project days lead to the project page */
 a.cs-title:hover { color: var(--accent); }
-.is-project .cs-title, .is-exam .cs-title { color: var(--accent); }  /* the days students must not miss: the title, not the row colour, carries the accent */
 
 /* Team project page: criteria as name + one line, then one row per team with a cell per presentation round */
 .project-sub { margin-top: var(--space-6); }

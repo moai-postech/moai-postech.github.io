@@ -8,6 +8,7 @@
 | 2026-10-29 | [selection-check-teaching-link](2026-10-29-selection-check-teaching-link.md) | Sangwoo Mo(sangwoomo) | 검수 도구 | Teaching 링크 금지 규칙 삭제, 링크 드래그 선택 검사 추가 |
 | 2026-10-29 | [push-hook-repair](2026-10-29-push-hook-repair.md) | Sangwoo Mo(sangwoomo) | 공통 pre-push·검수 프로세스 | 보류 중인 검수 훅의 main 선차단 복구, 도입 후 검수는 유지 |
 | 2026-10-29 | [teaching-study-home-link](2026-10-29-teaching-study-home-link.md) | Sangwoo Mo(sangwoomo) | Teaching | 소개 문장의 AI study group을 색상 변경 없이 스터디 홈으로 연결 |
+| 2026-10-28 | [visual-review-process](2026-10-28-visual-review-process.md) | Sangwoo Mo(sangwoomo) | 검수 도구·CI·배포 | 고정 화면·별도 검토 기록·배포 차단 절차 구축 |
 | 2026-10-28 | [ai-study-home](2026-10-28-ai-study-home.md) | Sangwoo Mo(sangwoomo) | AI Study Home | 학습·참여 흐름 개편, 랩·스터디·강의 헤더 통일, first-year·Undeclared 표기 |
 | 2026-10-28 | [news-lab-start-links](2026-10-28-news-lab-start-links.md) | Sangwoo Mo(sangwoomo) | News | MOAI Lab self-link와 POSTECH 링크를 본문색으로 추가 |
 | 2026-10-28 | [faculty-bio-flow](2026-10-28-faculty-bio-flow.md) | Sangwoo Mo(sangwoomo) | Faculty Bio·갱신 규칙 | 한 문단 Bio 문장 연결과 연구실 사이트 우선 갱신, CV 분량 유지 |

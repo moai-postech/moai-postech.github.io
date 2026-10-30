@@ -14,6 +14,8 @@
 - 기존 훅 호출·main 외 브랜치 처리·현재 checkout 일치 검사는 유지. 기존 공통 훅은 세션 scratchpad의 `moai-push-hook-repair-20261029/pre-push.original`에 백업 후 검증한 버전으로 교체.
 - 구현과 회귀 테스트는 기존 PR #27에 함께 보존. PR 병합·Pages 설정 변경·소유자 로그인 보류는 이번 복구와 별개로 유지.
 
+- PR #27에 쌓인 최신 main과의 changelog index 충돌도 양쪽 기록을 보존해 정리. 기존 보류 메모는 백업·임시 보관 후 그대로 복원.
+
 ## 검증
 - 임시 bare 원격에서 검수 도입 전 커밋의 실제 main push 성공.
 - 도입한 gate가 실패하면 실제 push 실패 및 원격 ref 미변경 확인.

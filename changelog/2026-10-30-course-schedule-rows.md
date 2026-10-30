@@ -96,3 +96,10 @@ POSTECH 요구사항: 영향 없음
 - 26S References: Stanford CS146S 와 Intermediate Python 만 남겼다(scikit-learn, PyTorch, Hugging Face 문서 삭제). Intermediate Python 의 출처 칸은 `Book` 대신 판(Python Tips).
 
 기각한 안: 25F 에도 출석 문장 넣기(그 학기는 출석 배점이 있어 사실과 다르다).
+
+## 추가 반영 12(같은 날, 교수 요청)
+- 공학4동 영문 표기를 `Engineering Building 4` 에서 `Science Building 4` 로 바꿨다(25F·26S·26F 강의 Home, 학부생 AI 스터디 학기 정보). 스케줄의 회차별 장소는 칸이 좁아 `Sci. Build. 4, Room 302` 로 줄였다. 꼬리말·Faculty 의 `Science Building 4, Room 319` 와 같은 이름이다. 규칙은 `AGENTS.md` 콘텐츠 표기 규칙에 적었다.
+- 초청·세미나 행은 연사 이름에만 링크를 건다(개인 사이트나 LinkedIn). 장소 지도 링크는 걸지 않는다. 지금 사이트에는 지도 링크가 없고, 규칙을 `COURSE.md` 에 적어 앞으로 생기지 않게 했다.
+- 26S References 의 Intermediate Python 출처 칸을 `Textbook` 으로 바꿨다(교수 요청, 앞서 넣은 `Python Tips` 대체).
+
+기각한 안: 스케줄 장소도 `Science Building 4` 로 쓰기(오른쪽 칸에서 길다는 교수 의견). Intermediate Python 출처 `Python Tips`(교수가 Textbook 으로 정함).

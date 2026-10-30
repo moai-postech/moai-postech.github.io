@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Mentees
+title: Other Mentees
 description: "Students mentored by Prof. Sangwoo Mo outside MOAI Lab, and the papers that came out of it."
 intro: |
   Students from other labs we have mentored, with the papers we published together.

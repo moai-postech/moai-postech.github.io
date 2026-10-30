@@ -1,6 +1,6 @@
-# People 메뉴의 세 페이지. professor 는 Faculty, groups 는 Students(연구실 학생), mentees 는 Mentees 페이지다(순서대로 나온다).
+# People 메뉴의 세 페이지. professor 는 Faculty, groups 는 Lab Members(연구실 멤버), mentees 는 Other Mentees 페이지다(순서대로 나온다).
 # bio 는 마크다운 문단(빈 줄로 문단을 나눈다). photo 는 정사각형 사진 경로.
-# 묶음(groups)은 위에서부터 그대로 나온다. 박사후연구원이 오면 맨 위에 - title: "Postdocs" 묶음을 더한다(페이지 이름이 Members 인 이유).
+# 묶음(groups)은 위에서부터 그대로 나온다. 박사후연구원이 오면 맨 위에 - title: "Postdocs" 묶음을 더한다(페이지 이름이 Students 가 아니라 Lab Members 인 이유).
 # 학생 항목: name(필수), photo(정사각형 400px, assets/img/people/이름.jpg, 없으면 회색 실루엣), url(개인 페이지, 없으면 생략),
 # topic(연구 주제), degree(이전 학위와 학교. 여럿이면 ["MS, POSTECH", "BS, POSTECH"] 처럼 최근 학위부터, 한 줄에 하나),
 # 멘티 항목은 affiliation(학위 @ 학교, w/ 지도교수: 이름 오른쪽)과 work(함께 한 논문: 아래 줄)를 쓴다. 둘 다 마크다운 링크 가능.
@@ -32,7 +32,7 @@ professor:
       groups:
         - items:
             - { text: "**KAIST**, MS/PhD in Electrical Engineering (advisor: Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html))", detail: "PhD thesis: [Learning Visual Representations from Uncurated Data](https://koasas.kaist.ac.kr/handle/10203/320934)", side: "2023" }
-            - { text: "**POSTECH**, BS in Mathematics & Industrial Engineering (minor), summa cum laude", side: "2016" }
+            - { text: "**POSTECH**, BS in Mathematics & Industrial Engineering (minor), summa cum laude", detail: "Visiting student at UC Berkeley and Peking University", side: "2016" }
     - title: "Services"
       groups:
         - title: "Senior committee (AC, Editor)"
@@ -97,6 +97,10 @@ groups:
         focus: "Physical AI"
         url: "https://gyeomh.github.io/"
         degree: "BS, U of Seoul"
+        topic: "Physical Agents"
+      - name: "Wonsik Oh"
+        focus: "Physical AI"
+        degree: "BS, Catholic Univ."
         topic: "Physical Agents"
       - name: "Sanghyung Lee"
         photo: assets/img/people/sanghyung-lee.jpg

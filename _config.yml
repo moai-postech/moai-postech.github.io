@@ -28,9 +28,9 @@ nav:
     children:
       - title: Faculty
         url: faculty.html
-      - title: Members
+      - title: Lab Members
         url: students.html
-      - title: Mentees
+      - title: Other Mentees
         url: mentees.html
   - title: Research
     children:

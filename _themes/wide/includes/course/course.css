@@ -97,10 +97,11 @@
 .cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
-.cs-session-details { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 var(--space-4); }
-.cs-session-details .cs-session-meta { margin-top: 0; }
+.cs-session-details { display: block; }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
-.cs-session-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin-top: var(--space-1); color: var(--muted); font-size: var(--text-meta); }
+a.cs-speaker-name:hover, a.cs-speaker-link:hover { color: var(--accent); }
+.cs-session-meta { display: block; color: var(--muted); font-size: var(--text-meta); }
+.cs-session-meta > span { display: block; }  /* location, then time, one per line like the course Home */
 .cs-session-time { color: var(--tone); font-weight: var(--weight-emphasis); }
 .cs-slides { width: 1%; white-space: nowrap; }
 .cs-slides a { margin-right: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }  /* the links a student comes for, so they keep the accent at rest */

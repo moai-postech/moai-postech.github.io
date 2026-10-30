@@ -25,10 +25,11 @@
         <td class="cs-topic"{% if compact_session %} colspan="2"{% endif %}>
           {% assign tag = site.data.course_tags[r.kind] %}{% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
           {% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}
-          {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}
+          {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}{% if r.url %}<a class="cs-title cs-speaker-link" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}{% endif %}
           {% if is_seminar %}<span class="cs-session-details">{% endif %}
-          {% if r.title and r.speaker %}<span class="cs-speaker"><span class="cs-speaker-name">{{ r.speaker }}</span>{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}
-          {% if r.time or r.location %}<span class="cs-session-meta">{% if r.time %}<span class="cs-session-time">{{ r.time }}</span> {% endif %}{% if r.location %}<span>{{ r.location }}</span>{% endif %}</span>{% endif %}
+          {% if r.title and r.speaker %}<span class="cs-speaker">{% if r.url %}<a class="cs-speaker-name" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-speaker-name">{{ r.speaker }}</span>{% endif %}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}
+          {% comment %}장소 → 시간 순서와 줄 나눔은 강의 Home 의 Location & time 과 같다.{% endcomment %}
+          {% if r.time or r.location %}<span class="cs-session-meta">{% if r.location %}<span>{{ r.location }}</span>{% endif %}{% if r.time %}<span class="cs-session-time">{{ r.time }}</span>{% endif %}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}
         </td>
         {% unless compact_session %}<td class="cs-slides">{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>{% endunless %}

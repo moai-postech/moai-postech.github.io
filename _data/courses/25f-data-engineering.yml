@@ -111,10 +111,10 @@ schedule:
     title: "No class (Chuseok)"
   - date: "2025-10-14"
     kind: project
-    title: "Project Proposal I"
+    title: "Proposal I"
   - date: "2025-10-16"
     kind: project
-    title: "Project Proposal II"
+    title: "Proposal II"
   - date: "2025-10-21"
     kind: break
     title: "Study day (no class)"
@@ -213,10 +213,10 @@ schedule:
     title: "No class"
   - date: "2025-12-09"
     kind: project
-    title: "Project Final I"
+    title: "Final I"
   - date: "2025-12-11"
     kind: project
-    title: "Project Final II"
+    title: "Final II"
   - date: "2025-12-16"
     kind: break
     title: "Study day (no class)"

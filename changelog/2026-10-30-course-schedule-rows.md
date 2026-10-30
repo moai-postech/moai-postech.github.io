@@ -1,0 +1,25 @@
+# 2026-10-30 강의 스케줄 행 정리(Review 딱지, guest 정보 줄, 딱지 중복)
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/course_tags.yml`, `_data/courses/*.yml`, `_themes/wide/includes/course/schedule.html`, `course.css`, `COURSE.md` | 도구: Claude Code
+
+> **한줄 결론: 복습 회차를 번호 없는 `review` 종류로 바꾸고, guest 행의 장소·시간을 줄마다 나누고 연사 링크를 달았다.**
+
+POSTECH 요구사항: 영향 없음
+
+## 요청
+교수(2026-10-30): Review Session, Midterm Review는 강 번호를 빼고 Review 딱지와 공통 색으로 표시한다. Guest lecture 행은 연사 줄 오른쪽에 시간·장소가 붙어 어수선하니 줄을 나누고, 순서는 다른 곳과 맞춘다. 연사에게 링크를 단다. 다른 행 종류도 검토한다.
+
+## 반영 내역
+- `kind: review` 신설. `course_tags.yml` 에 `review: "Review"`. 26F Data Engineering 의 10/15 Review Session, 11/3 Midterm Review 를 `review` 로 바꾸고 `n` 을 뺐다. 색은 템플릿의 기타 종류 갈래(공통 노랑, `tone-logistics`)를 그대로 받는다. 13~19강 번호는 그대로다(강의 저장소 `changelog/2026-10-30-review-unnumbered.md`).
+- guest·seminar 행: 1줄 딱지와 제목, 2줄 연사와 소속, 3줄 장소, 4줄 시간. 장소 → 시간 순서와 줄 나눔은 강의 Home 의 `Location & time` 과 같다. 연사 줄 오른쪽 끝으로 밀던 배치(`justify-content: space-between`)를 없앴다.
+- 연사 링크: 행에 `url` 이 있으면 연사 이름에 건다. 박대영 책임은 본인 메일 서명의 홈페이지(`mainthread.notion.site`)를, 이현규 연사는 교수가 준 LinkedIn 주소를 넣었다.
+- 검토 결과 두 가지를 같이 고쳤다. (1) `event` 줄(IDS Capstone Workshop)만 딱지가 없어 `event: "Event"` 를 더했다. (2) Project 딱지 뒤 제목이 `Project Proposal I` 처럼 같은 말을 되풀이해 25F·26F·26S 의 제목을 `Proposal I`, `Final I`, `Presentation I` 로 줄였다.
+- `COURSE.md` 에 review 규칙 한 줄.
+
+## 기각한 안과 이유
+- 장소와 시간을 한 줄에 두기: 교수가 두 줄로 나누라고 했다.
+- 시간 → 장소 순서: 강의 Home 이 장소를 먼저 쓴다.
+- 이현규 연사에게 웹 검색으로 찾은 LinkedIn 을 링크: 동일인인지 확인되지 않아 쓰지 않고 교수에게 주소를 받았다.
+
+## 남은 것
+- 25F 신기영(Designovel), 26S 학과 세미나 연사들의 `url` 은 비어 있다.
+- 이 맥에 사이트용 Ruby 3.3 gem 이 없어 로컬 빌드를 못 했다. 라이브 반영으로 확인했다.

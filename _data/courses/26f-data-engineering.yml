@@ -282,11 +282,11 @@ exams:
     url: "teaching/26f-data-engineering/exams/midterm/midterm.pdf"
     solution: "teaching/26f-data-engineering/exams/midterm/midterm-solution.pdf"
   - label: "Midterm 2025"
-    url: "https://drive.google.com/file/d/1a2qbRuKvPN9faYfjSP9830Y8ah-_FyQr/view"
-    solution: "https://drive.google.com/file/d/1BDVyaq0OkSLflng6dCEZ1u2kmdq04jud/view"
+    url: "teaching/25f-data-engineering/exams/midterm/midterm.pdf"
+    solution: "teaching/25f-data-engineering/exams/midterm/midterm-solution.pdf"
   - label: "Final 2025"
-    url: "https://drive.google.com/file/d/1Q7Cgt1bSiMMlYRt253GPsvcipzCcRKjU/view"
-    solution: "https://drive.google.com/file/d/1fDomPBXTwPdJ5NrhMgNdOnmgRtKdHoyM/view"
+    url: "teaching/25f-data-engineering/exams/final/final.pdf"
+    solution: "teaching/25f-data-engineering/exams/final/final-solution.pdf"
 
 # 같은 과목의 다른 학기(teaching/<id>/).
 other_terms:

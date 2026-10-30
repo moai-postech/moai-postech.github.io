@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-30 | [files-as-assets](2026-10-30-files-as-assets.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 파일 | 시험지·실습 노트북·스터디 Demo 를 저장소 사본으로, 26S Past exams 삭제, 예외는 project sheet |
 | 2026-10-30 | [lecture-deploy-all](2026-10-30-lecture-deploy-all.md) | Sangwoo Mo(sangwoomo) | 26F 강의 슬라이드 | 1~17강·Review Session 현재 판 배포, 14~17강 링크 |
 | 2026-10-30 | [footer-follows-content](2026-10-30-footer-follows-content.md) | Sangwoo Mo(moai-postech) | 전역 꼬리말 | 짧은 페이지(Teaching·Talks·Contact)에서 꼬리말을 화면 맨 아래 고정하지 않고 본문 바로 뒤로 |
 | 2026-10-30 | [course-schedule-sheetless](2026-10-30-course-schedule-sheetless.md) | Sangwoo Mo(sangwoomo) | 강의 Schedule·Project | 스케줄 시트 링크 삭제, 프로젝트 시트는 Teams 절, 제목이 HTML·Materials 는 PDF, 시험 줄은 해설판, 범위 짧게, guest 이름 삭제, 26F 12/24 |

@@ -6,7 +6,7 @@
   - References, Demo 칸의 링크는 그대로, Slide 칸부터 오른쪽 칸들의 링크는 발표 자료로 옮긴다. 화면에는 Slides 와 Demo 두 묶음으로 표시하고, 단일 그림은 제외한다.
   - 발표 자료와 칸 안의 Google Slides 링크는 tools/drive_pdf.py 로 PDF 를 받아
     teaching/ai-study/<학기>/<회차>-<주제>-<종류>.pdf 에 두고 사이트 파일을 가리킨다(Drive 대신, 교수 2026-10-26). 이미 받은 것은 건너뛴다.
-    Colab·ipynb 노트북은 Drive 링크 그대로 둔다. 받은 사본과 원본 링크의 짝은 tools/drive_sources.json.
+    Drive 의 ipynb 노트북도 같은 자리에 .ipynb 로 받는다(교수 2026-10-30: 사이트의 파일은 전부 저장소 사본, 예외는 학생이 고치는 project sheet). Colab 주소는 파일이 아니라 그대로 둔다. 받은 사본과 원본 링크의 짝은 tools/drive_sources.json.
   - Summer 2026 은 References의 MIT 원 강의를 Lec으로, 학생의 추가 발표자료·필기만 Materials로 쓴다(교수 2026-10-28).
   - _data/ai_study.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
 
@@ -205,7 +205,7 @@ def localize_all(terms):
             for field in ("papers", "materials"):
                 for l in s.get(field, []):
                     u = l.get("url", "")
-                    if not drive_pdf.is_drive(u) or l["text"].startswith("Demo"):
+                    if not drive_pdf.is_drive(u):
                         continue
                     tail = slug(l["storage_label"]) if field == "materials" else "ref-" + slug(l["text"])
                     try:

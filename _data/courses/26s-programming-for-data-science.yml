@@ -145,37 +145,37 @@ schedule:
     n: 16
     title: "Vision Models I"
     pdf: "teaching/26s-programming-for-data-science/slides/17_vision-models-i.pdf"
-    lab: "https://drive.google.com/file/d/1KcBIA1aSPpQqzKV4VPDtmM3zgMuom47j/view"
+    lab: "teaching/26s-programming-for-data-science/labs/17_vision-I.ipynb"
   - date: "2026-05-12"
     kind: lecture
     n: 17
     title: "Vision Models II"
     pdf: "teaching/26s-programming-for-data-science/slides/18_vision-models-ii.pdf"
-    lab: "https://drive.google.com/file/d/1fbB681cUsaE0UtDBPuMERHV2w4eAsJEd/view"
+    lab: "teaching/26s-programming-for-data-science/labs/18_vision-II.ipynb"
   - date: "2026-05-14"
     kind: lecture
     n: 18
     title: "Multimodal Models I"
     pdf: "teaching/26s-programming-for-data-science/slides/19_multimodal-models-i.pdf"
-    lab: "https://drive.google.com/file/d/1l327tMo_waxl8qWBmnECYSc1RPbW1xdB/view"
+    lab: "teaching/26s-programming-for-data-science/labs/19_multimodal-I.ipynb"
   - date: "2026-05-19"
     kind: lecture
     n: 19
     title: "Multimodal Models II"
     pdf: "teaching/26s-programming-for-data-science/slides/20_multimodal-models-ii.pdf"
-    lab: "https://drive.google.com/file/d/1d17GIHsvscldz-ARvHEBmw3dcGbv5gKK/view"
+    lab: "teaching/26s-programming-for-data-science/labs/20_multimodal-II.ipynb"
   - date: "2026-05-21"
     kind: lecture
     n: 20
     title: "Multimodal Models III"
     pdf: "teaching/26s-programming-for-data-science/slides/21_multimodal-models-iii.pdf"
-    lab: "https://drive.google.com/file/d/1qqKSF0hweXh873Z4jpVyHOtvFFkO7O0g/view"
+    lab: "teaching/26s-programming-for-data-science/labs/21_multimodal-III.ipynb"
   - date: "2026-05-26"
     kind: lecture
     n: 21
     title: "AI for Data Science"
     pdf: "teaching/26s-programming-for-data-science/slides/22_ai-for-data-science.pdf"
-    lab: "https://drive.google.com/file/d/10otAdN7s1X07d5zrAe58_5jPN4kesU-Z/view"
+    lab: "teaching/26s-programming-for-data-science/labs/22_ai-for-ds.ipynb"
   - date: "2026-05-28"
     kind: project
     title: "Project Presentation I"
@@ -213,11 +213,6 @@ resources:
   - title: "Intermediate Python"
     source: "Textbook"
     url: "https://book.pythontips.com/en/latest/"
-
-exams:
-  - label: "Midterm 2026"
-    url: "https://drive.google.com/file/d/1r-G8C2LCbNeq09HjeJbYMnGQ8T1YCuym/view"
-    solution: "https://drive.google.com/file/d/1HK4dYgCEEvxaX98pBtXUuNmK_HA3zDJG/view"
 
 # 팀 프로젝트 페이지. 26S 프로젝트 시트에서 옮겼다(발표 한 번, Kaggle 등 대회 링크).
 project:

@@ -19,7 +19,7 @@ terms:
         materials:
           - { text: "Slides 1", url: "teaching/ai-study/fall-2026/01-data-sources-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/01-data-sources-slides-2.pdf" }
-          - { text: "Demo", url: "https://drive.google.com/file/d/1lMtwnJfvlCx1TwgcuPD7aM9Mu7ZPfP6H/view?usp=sharing" }
+          - { text: "Demo", url: "teaching/ai-study/fall-2026/01-data-sources-notebook.ipynb" }
       - n: "2"
         date: "2026-09-21"
         title: "Manipulation"

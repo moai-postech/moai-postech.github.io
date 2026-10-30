@@ -216,6 +216,11 @@ resources:
     source: "Textbook"
     url: "https://book.pythontips.com/en/latest/"
 
+# 다른 과목 강의(가장 최근 학기 하나). 이 학기보다 앞선 페이지만 가리킨다(교수 2026-10-30).
+related:
+  - name: "Data Engineering (Fall 2025)"
+    url: "teaching/25f-data-engineering/"
+
 # 팀 프로젝트 페이지. 26S 프로젝트 시트에서 옮겼다(발표 한 번, Kaggle 등 대회 링크).
 project:
   sheet: "https://docs.google.com/spreadsheets/d/1ZHkM8KO2TC_gbfH7xdV5040B2zwJ0qd35VUnf0VvaCA/edit?usp=sharing"

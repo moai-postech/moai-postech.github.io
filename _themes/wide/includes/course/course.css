@@ -317,7 +317,7 @@ a.cs-title:hover { color: var(--accent); }
   .course-schedule td { display: block; width: auto; padding: 0 !important; border: 0; background: none; white-space: normal; }
   .course-schedule tr.tone-none td { box-shadow: none; }
   .is-next { box-shadow: inset 0 0 0 2px var(--accent) !important; }
-  .is-next td { box-shadow: none !important; }
+  .is-next td, .is-next td:first-child, .is-next td:last-child { box-shadow: none !important; }  /* on a phone the card carries the one frame; the first and last cell rules above would draw a second one inside it */
   .cs-date { grid-column: 1 / -1; }
   .cs-n { text-align: left; }
   .cs-n:empty { display: none !important; }

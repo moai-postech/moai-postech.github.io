@@ -158,7 +158,7 @@ schedule:
     title: "Big Data III: BigQuery & Airflow"
     pdf: "teaching/25f-data-engineering/slides/14_big-data-iii-bigquery-airflow.pdf"
     reading:
-      - text: "DIS Lec 16"
+      - text: "PDIS Lec 16"
         url: "https://web.stanford.edu/class/cs245/"
   - date: "2025-11-13"
     kind: lecture
@@ -166,7 +166,7 @@ schedule:
     title: "Big Data IV: Streaming"
     pdf: "teaching/25f-data-engineering/slides/15_big-data-iv-streaming.pdf"
     reading:
-      - text: "DIS Lec 17"
+      - text: "PDIS Lec 17"
         url: "https://web.stanford.edu/class/cs245/"
   - part: "part-3"
   - date: "2025-11-18"
@@ -247,7 +247,7 @@ resources:
     title: "Introduction to Database Systems"
     source: "Berkeley CS186"
     url: "https://cs186berkeley.net/fa24/"
-  - abbr: "DIS"
+  - abbr: "PDIS"
     title: "Principles of Data-Intensive Systems"
     source: "Stanford CS245"
     url: "https://web.stanford.edu/class/cs245/"

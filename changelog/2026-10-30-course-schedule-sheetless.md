@@ -13,11 +13,13 @@ POSTECH 요구사항: 영향 없음
 - `DMS Lec 2 – 3` 같은 범위는 `2-3` 으로 짧게 쓴다.
 - guest 줄은 마이크 아이콘이 있으니 `Guest lecture` 이름을 뺀다.
 - 26F 12/24 는 `No Class (Christmas Eve)`.
+- 읽기 자료 약어 `DIS`(Principles of Data-Intensive Systems)는 `PDIS` 로 바꾼다.
 
 ## 반영 내역
 - `schedule.html`: 머리의 Schedule sheet 링크 삭제. 제목이 있고 `html` 이 있으면 제목이 HTML 링크다. Materials 칸은 `PDF` → `Lab`(이름 `HTML`·`Slides` 없음). guest·seminar 줄의 `.cs-kind` 이름 삭제(`course.css` 의 규칙도 삭제).
 - `project.html`: 머리의 Project sheet 링크를 빼고 Teams 절 첫 줄 문장 안에 시트 링크. 팀 표가 아직 없어도 시트가 있으면 Teams 절이 나온다.
 - yml 세 과목에서 `schedule_sheet` 삭제. 25F·26F 읽기 범위 `1 – 2` → `1-2`. 26F 10/29 시험 줄 `pdf` 를 `midterm-solution.pdf` 로(같은 날 넣은 `solution` 키와 Solution 링크는 되돌림). 26F 12/24 No Class 줄 추가.
+- (추가) 25F·26F 읽기 자료 약어 `DIS` → `PDIS`(Reading 칸과 References 의 abbr).
 - `COURSE.md`: 위 결정 반영(2026-10-28 의 HTML·PDF·Lab 나란히 두기 대체).
 
 ## 기각한 안과 이유

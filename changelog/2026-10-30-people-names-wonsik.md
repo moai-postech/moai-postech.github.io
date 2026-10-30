@@ -12,12 +12,16 @@ POSTECH 요구사항: 영향 없음
 
 ## 반영 내역
 - 메뉴와 페이지 제목: `Members` → `Lab Members`, `Mentees` → `Other Mentees`. 주소(`students.html`, `mentees.html`)는 링크가 깨지지 않게 그대로 둔다. `members.yml` 주석과 `AGENTS.md` 파일 지도의 이름도 맞췄다.
-- `members.yml` Master students: Wonsik Oh, focus Physical AI, topic Physical Agents, degree "BS, Catholic Univ."(가톨릭대 인공지능학과 졸업 예정, Slack 자기소개 2026-10-29). 사진과 개인 페이지는 아직 없어 회색 실루엣이다. 같은 focus 인 Gyeom Hwangbo 다음에 두었다.
+- `members.yml` Master students: Wonsik Oh(뒤에 `Won-Sik Oh` 로 고침), focus Physical AI, topic Physical Agents, degree "BS, Catholic Univ."(가톨릭대 인공지능학과 졸업 예정, Slack 자기소개 2026-10-29). 사진과 개인 페이지는 아직 없어 회색 실루엣이다. 처음에는 같은 focus 인 Gyeom Hwangbo 다음에 두었다(아래 추가 수정에서 맨 뒤로).
 - Faculty Education 의 POSTECH BS 항목에 `detail`(이름 아래 작은 회색 줄)로 방문학생 줄을 넣었다.
 
 ## 기각한 안과 이유
 - `Members` → `Students`: 2026-10-22 [members-degree-bio](2026-10-22-members-degree-bio.md) 에서 박사후연구원 때문에 Members 로 바꿨고, 지금 Postdocs 묶음이 있다.
 - PI · Lab Members · External Mentees, Faculty · Members · Collaborators: 교수가 Lab Members · Other Mentees 를 골랐다.
 
+## 추가 수정 (같은 날)
+- 교수: Master students 는 입학순이라 오원식이 맨 뒤여야 한다. Chaewon Park 다음으로 옮기고, `members.yml` 주석에 "묶음 안의 사람은 입학순" 규칙을 적었다.
+- 개인 사이트 `https://dnjstlr555.github.io/`(GitHub `dnjstlr555` 프로필의 블로그 칸)를 링크했다. 이름은 그 사이트 제목의 본인 표기 `Won-Sik Oh` 로 바꿨다.
+
 ## 남은 것
-- 오원식 사진, 개인 페이지 링크, 입학 과정(AX대학원) 확정 뒤 묶음 확인.
+- 오원식 사진, 입학 과정(AX대학원) 확정 뒤 묶음 확인.

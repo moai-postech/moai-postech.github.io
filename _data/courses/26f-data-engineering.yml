@@ -188,6 +188,8 @@ schedule:
     kind: lecture
     n: 14
     title: "ML Systems"
+    pdf: "teaching/26f-data-engineering/slides/14_ml-systems.pdf"
+    html: "teaching/26f-data-engineering/slides/14_ml-systems.html"
     reading:
       - text: "MLSD Lec 1-2"
         url: "https://stanford-cs329s.github.io/syllabus.html"
@@ -203,10 +205,14 @@ schedule:
     kind: lecture
     n: 15
     title: "LLM Systems"
+    pdf: "teaching/26f-data-engineering/slides/15_llm-systems.pdf"
+    html: "teaching/26f-data-engineering/slides/15_llm-systems.html"
   - date: "2026-11-24"
     kind: lecture
     n: 16
     title: "RAG"
+    pdf: "teaching/26f-data-engineering/slides/16_rag.pdf"
+    html: "teaching/26f-data-engineering/slides/16_rag.html"
   - date: "2026-11-26"
     kind: event
     title: "IDS Capstone Workshop"
@@ -214,6 +220,8 @@ schedule:
     kind: lecture
     n: 17
     title: "Agents"
+    pdf: "teaching/26f-data-engineering/slides/17_agents.pdf"
+    html: "teaching/26f-data-engineering/slides/17_agents.html"
   - date: "2026-12-03"
     kind: break
     title: "No Class (University Anniversary)"

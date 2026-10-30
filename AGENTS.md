@@ -238,7 +238,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 ## 콘텐츠 표기 규칙
 
-- **건물 이름**: 공학4동(제4공학관)은 영문으로 `Science Building 4` 라고 쓴다(`Engineering Building 4` 아님). 강의 Home·꼬리말·Faculty 처럼 칸이 넉넉한 곳은 `Science Building 4, Room 302`, 강의 스케줄의 회차별 장소처럼 좁은 칸은 `Sci. Build. 4, Room 302` 로 줄인다(교수 2026-10-30).
+- **건물 이름**: 공학4동(제4공학관)은 영문으로 `Science Building 4` 라고 쓴다(`Engineering Building 4` 아님). 강의 Home·꼬리말·Faculty 처럼 칸이 넉넉한 곳은 `Science Building 4, Room 302`, 강의 스케줄의 회차별 장소처럼 좁은 칸은 `Sci. Bldg. 4, Room 302` 로 줄인다(교수 2026-10-30).
 
 - News와 Media 날짜는 `YYYY/MM`으로 쓴다. Media의 발행월은 기사 원문에서 확인한다. 사무실 전화의 표시 이름은 Faculty와 꼬리말 모두 `Tel.:`로 통일한다(교수 2026-10-28).
 

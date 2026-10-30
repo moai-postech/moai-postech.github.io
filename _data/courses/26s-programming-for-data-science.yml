@@ -133,7 +133,7 @@ schedule:
     affiliation: "POSTECH"
     pdf: "assets/talks/2026-opportunities-in-ime-as-an-ai-researcher-and-vice.pdf"
     time: "17:00 – 18:00 KST"
-    location: "Sci. Build. 4, Room 302"
+    location: "Sci. Bldg. 4, Room 302"
   - date: "2026-04-30"
     kind: break
     title: "No Class"
@@ -184,7 +184,7 @@ schedule:
     speaker: "Yeong-Hwan Jeon"
     affiliation: "LG U+"
     time: "10:30 – 11:30 KST"
-    location: "Sci. Build. 4, Room 202"
+    location: "Sci. Bldg. 4, Room 202"
   - date: "2026-06-02"
     kind: project
     title: "Project Presentation II"

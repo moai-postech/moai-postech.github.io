@@ -10,6 +10,8 @@
 .tone-p2 { --tone:#4e6c5a; --tone-tint:#cadbd0; --tone-row:#edf5f0; }
 .tone-p3 { --tone:#8a5d57; --tone-tint:#e3cbc6; --tone-row:#f8eeec; }
 .tone-logistics { --tone:#7b683f; --tone-tint:#e2d6b5; --tone-row:#faf5e8; }
+.tone-key       { --tone: var(--accent); --tone-tint: color-mix(in srgb, var(--accent) 30%, var(--bg)); --tone-row: var(--accent-soft); }  /* project and exam: the days students must not miss */
+.tone-key .cs-tag { background: var(--accent); color: var(--bg); }
 .tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
@@ -97,11 +99,11 @@
 .cs-tag { display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--bg); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }
 .cs-speaker { display: block; color: var(--muted); font-size: var(--text-meta); }
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
-.cs-session-details { display: block; }
+.cs-session { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 0 var(--space-5); }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 a.cs-speaker-name:hover, a.cs-speaker-link:hover { color: var(--accent); }
-.cs-session-meta { display: block; color: var(--muted); font-size: var(--text-meta); }
-.cs-session-meta > span { display: block; }  /* location, then time, one per line like the course Home */
+.cs-session-meta { display: block; color: var(--muted); font-size: var(--text-meta); text-align: right; }
+.cs-session-meta > span { display: block; }  /* location, then time, one per line like the course Home, at the right end */
 .cs-session-time { color: var(--tone); font-weight: var(--weight-emphasis); }
 .cs-slides { width: 1%; white-space: nowrap; }
 .cs-slides a { margin-right: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }  /* the links a student comes for, so they keep the accent at rest */
@@ -310,6 +312,8 @@ a.cs-title:hover { color: var(--accent); }
   .cs-n:empty + .cs-topic { grid-column: 1 / -1; }
   .cs-slides, .cs-reading { grid-column: 1 / -1; }
   .cs-slides:empty, .cs-reading:empty { display: none !important; }
+  .cs-session { display: block; }
+  .cs-session-meta { margin-top: var(--space-1); text-align: left; }  /* on a phone, place and time follow the speaker */
   .project-round { grid-column: 1 / -1; }
   .project-round:empty { display: none !important; }
   .project-round::before { content: attr(data-round) "\00a0\00a0"; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }

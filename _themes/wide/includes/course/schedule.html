@@ -18,17 +18,18 @@
       {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign p = q %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}
       <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup"><span class="cp-name">{{ p.name }}</span><span class="cp-title">{{ p.title }}</span></th></tr>
       {% else %}
-      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "logistics" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
+      {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "logistics" %}{% when "project", "exam" %}{% assign rt = "key" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
         <td class="cs-n">{{ r.n }}</td>
         {% assign compact_session = false %}{% if r.kind == "guest" or r.kind == "seminar" %}{% unless r.html or r.pdf or r.lab %}{% assign compact_session = true %}{% endunless %}{% endif %}
         <td class="cs-topic"{% if compact_session %} colspan="2"{% endif %}>
           {% assign tag = site.data.course_tags[r.kind] %}{% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
+          {% if is_seminar %}<span class="cs-session"><span class="cs-session-main">{% endif %}
           {% if tag %}<span class="cs-tag">{{ tag }}</span>{% endif %}
           {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}{% if r.url %}<a class="cs-title cs-speaker-link" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}{% endif %}
-          {% if is_seminar %}<span class="cs-session-details">{% endif %}
           {% if r.title and r.speaker %}<span class="cs-speaker">{% if r.url %}<a class="cs-speaker-name" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-speaker-name">{{ r.speaker }}</span>{% endif %}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}
-          {% comment %}장소 → 시간 순서와 줄 나눔은 강의 Home 의 Location & time 과 같다.{% endcomment %}
+          {% if is_seminar %}</span>{% endif %}
+          {% comment %}장소 → 시간 순서와 줄 나눔은 강의 Home 의 Location & time 과 같다. 오른쪽 끝에 두어 행이 두 줄을 넘지 않게 한다.{% endcomment %}
           {% if r.time or r.location %}<span class="cs-session-meta">{% if r.location %}<span>{{ r.location }}</span>{% endif %}{% if r.time %}<span class="cs-session-time">{{ r.time }}</span>{% endif %}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}
         </td>

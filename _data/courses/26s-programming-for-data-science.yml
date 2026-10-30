@@ -260,7 +260,6 @@ project:
       when: "May 2026 · VSB Power Line Fault Detection (Kaggle)"
       photo: "teaching/26s-programming-for-data-science/project/highlights/2026-kaggle-research-agent.jpg"
       photo_alt: "Team 1's autonomous Kaggle research agent: knowledge inputs, a plan-train-evaluate-decide cycle, and a feedback loop"
-      url: "https://www.facebook.com/share/p/1AGByYC1yY/"
       text: "Team 1 built an AI agent that plans, trains and evaluates models on its own and learns from each trial. In 48 hours it reached a private score of 0.72022, above the top of the final leaderboard of 1,446 teams (late submission)."
   teams:
     - n: 1

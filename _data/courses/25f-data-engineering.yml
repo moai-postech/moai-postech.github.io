@@ -256,7 +256,7 @@ exams:
     solution: "teaching/25f-data-engineering/exams/final/final-solution.pdf"
 
 
-# 팀 프로젝트 페이지. 25F 프로젝트 시트에는 팀원 이름이 없고 순서만 있다. 발표는 이틀에 다섯 팀씩이라 순서 1~5는 첫날, 6~10은 둘째 날 1~5번으로 적는다(교수 2026-10-30). 3팀 proposal 자료는 없다.
+# 팀 프로젝트 페이지. 25F 프로젝트 시트에는 팀원 이름이 없고 순서만 있다. 발표는 이틀에 다섯 팀씩이라 순서 1~5는 첫날, 6~10은 둘째 날 1~5번으로 적는다(교수 2026-10-30). 3팀 proposal 원본은 학생 Drive 링크로만 받았는데 학생이 지워 없다.
 project:
   sheet: "https://docs.google.com/spreadsheets/d/1gmuydevB-gPB-J4-J9bu9S-PU67xQ3G-t10wlh9438o/edit?usp=sharing"
   summary: >-
@@ -325,6 +325,7 @@ project:
       proposal:
         date: "2025-10-14"
         order: 5
+        slides: "teaching/25f-data-engineering/project/"  # 원본 PDF 를 학생이 지워 없다(2026-10-30 확인). 칸을 비우지 않고 이 페이지로 잇는다(교수 결정)
       final:
         date: "2025-12-09"
         order: 4

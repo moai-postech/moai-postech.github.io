@@ -158,3 +158,7 @@ POSTECH 요구사항: 영향 없음
 - 발표 시간 표기를 `15 min (incl. Q&A)`(25F), `10 min (incl. Q&A)`(26F)로 줄였다.
 - 25F Project 페이지의 시트 링크가 10/22에 비공개로 돌린 옛 시트(`1XLgh0…`, 이름·점수 포함 버전 기록 때문에 Restricted)를 가리키고 있어, 같은 날 만든 공개용 사본(`1gmuydev…`)으로 바꿨다(강의 저장소 `archive/25F_IMEN891K_DataEngineering/changelog/2026-10-22-drive-public-cleanup.md`).
 - 25F 3팀 Proposal 경위: 26F Project 시트의 `team (backup)` 탭에 원래 링크(Drive 파일 `1leG24…`)가 남아 있다. 그 파일은 교수 계정으로도 "존재하지 않는 파일"이고 휴지통에도 없다. 10/22 25F 정리 기록에 이미 "열 수 없는 파일이라 칩이 안 만들어져 `-` 로 둠"이라고 적혀 있어, 그 정리 전부터 열리지 않았다. 교수 소유 Drive 파일이었다면 휴지통이나 25F proposal 폴더에 남았을 것이라, 학생이 자기 Drive 에 올려 링크만 준 파일을 나중에 지운 것으로 본다. 10/22 휴지통에 들어간 폴더 세 개(`regular X`, `project`, `_private`)는 내용을 옮긴 뒤 빈 폴더라 되살릴 것이 없다.
+
+## 추가 반영 22(같은 날, 교수 결정)
+- 25F 3팀 Proposal 칸은 비우지 않고 `PDF` 를 두되 Project 페이지 자신으로 잇는다. 원본은 학생이 지워 없다(추가 반영 21).
+- 앞으로 학생 발표 자료는 링크가 아니라 파일로 받는다. 규칙은 강의 폴더 `lecture/AGENTS.md`(사이트 밖, 교수 로컬)에 적었다.

@@ -15,12 +15,16 @@
     {% if pj.team_size and pj.team_formation == nil %}<p class="course-note">Team size: <strong>{{ pj.team_size }}</strong></p>{% endif %}
     {% if pj.steps or pj.team_formation %}<ol class="project-timeline">
       {% if pj.team_formation %}<li>
-        <span class="project-timeline-when">{{ pj.team_formation.deadline | date: "%b %-d" }}</span>
-        <div><strong class="project-timeline-title">Team formation</strong><p><strong>{{ pj.team_size | remove: " students" }}</strong> students per team. {{ pj.team_formation.text }}</p></div>
+        <div class="project-milestone"><span class="project-timeline-when">{{ pj.team_formation.deadline | date: "%b %-d" }}</span></div>
+        <div><strong class="project-timeline-title">Team formation</strong><p>{{ pj.team_formation.text }}</p><p class="project-stage-note">Team size: <strong>{{ pj.team_size | remove: " students" }}</strong> students.</p></div>
       </li>{% endif %}
       {% for s in pj.steps %}<li>
-        <span class="project-timeline-when">{{ s.when }}</span>
-        <div><strong class="project-timeline-title">{{ s.name }}</strong><p>{{ s.text }}</p></div>
+        <div class="project-milestone"><span class="project-timeline-when">{{ s.when }}</span></div>
+        <div><strong class="project-timeline-title">{{ s.name }}</strong>
+          {% if s.presentation %}<p class="project-presentation">{{ s.presentation }}</p>{% endif %}
+          {% if s.deliverables %}<ul class="project-deliverables">{% for item in s.deliverables %}<li>{{ item }}</li>{% endfor %}</ul>{% elsif s.text %}<p>{{ s.text }}</p>{% endif %}
+          {% if s.scope_note %}<p class="project-stage-note">{{ s.scope_note }}</p>{% endif %}
+        </div>
       </li>{% endfor %}
     </ol>{% endif %}
     </div>
@@ -29,13 +33,18 @@
     {% if pj.criteria %}<section class="content-section">
     <h2>Evaluation</h2>
     <div class="section-body">
-    {% if pj.evaluation_sources %}<div class="project-evaluation-flow">
-      {% for source in pj.evaluation_sources %}{% unless forloop.first %}<span aria-hidden="true">+</span>{% endunless %}<span class="project-evaluation-source">{{ source }}</span>{% endfor %}
-      <span aria-hidden="true">→</span><span class="project-evaluation-result">{{ pj.evaluation_result }}</span>
-    </div>{% elsif pj.evaluation_note %}<p>{{ pj.evaluation_note }}</p>{% endif %}
-    <ul class="project-criteria" style="--criteria-count: {{ pj.criteria.size }}">
-      {% for x in pj.criteria %}<li><div class="project-criterion-head"><strong>{{ x.name }}</strong>{% if x.individual %}<span class="project-individual">Individual</span>{% endif %}</div><span>{{ x.text }}</span></li>{% endfor %}
-    </ul>
+    {% assign team_criteria = pj.criteria | where_exp: "criterion", "criterion.individual != true" %}
+    {% assign individual_criteria = pj.criteria | where: "individual", true %}
+    <div class="project-evaluation-groups">
+      <div class="project-evaluation-group project-evaluation-team">
+        <div class="project-evaluation-heading"><strong>{{ pj.evaluation.team_label }}</strong><span>{{ pj.evaluation.team_reviewers }}</span></div>
+        <ul class="project-criteria" style="--criteria-count: {{ team_criteria.size }}">{% for x in team_criteria %}<li><strong>{{ x.name }}</strong><span>{{ x.text }}</span></li>{% endfor %}</ul>
+      </div>
+      {% if individual_criteria.size > 0 %}<div class="project-evaluation-group project-evaluation-individual">
+        <div class="project-evaluation-heading"><strong>{{ pj.evaluation.individual_label }}</strong><span>{{ pj.evaluation.individual_reviewers }}</span></div>
+        <ul class="project-criteria" style="--criteria-count: {{ individual_criteria.size }}">{% for x in individual_criteria %}<li><strong>{{ x.name }}</strong><span>{{ x.text }}</span></li>{% endfor %}</ul>
+      </div>{% endif %}
+    </div>
     </div>
     </section>{% endif %}
 

@@ -46,7 +46,14 @@
 | `facts.html` / `person.html` | 강의·스터디 공통 운영 정보와 인물 표시 |
 | `study-members.html` | 스터디 Members: 비밀번호 확인 뒤 하나의 명단 표. Cohort 내림차순, 인적 정보·참여 마커 표시. 공개 통계는 Home. 상단 Home·Schedule·Members 메뉴로 소개·일정·명단 전환 |
 | `head.html` | Schedule 과 Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |
-| `project.html` | 팀 프로젝트: Timeline(팀 구성·발표 일정) → Teams(날짜·순서 아래 Slides) → Evaluation |
+| `project.html` | 팀 프로젝트: Timeline(연결된 단계·기대 산출물·발표 시간) → Evaluation(평가 주체별 묶음) → Teams(날짜·순서 아래 Slides) |
 | `course.css` | 강의 사이트 전용 스타일과 색. `../theme.css` 끝에서 include 한다 |
 
 색은 `course.css` 맨 위의 템플릿 하나를 모든 강의가 같이 쓴다. 파트 순서대로 `tone-p1`(하늘), `tone-p2`(민트), `tone-p3`(코랄)을 사용한다. 공통 운영 일정은 `tone-logistics`(버터 옐로), 휴강·온라인 자율활동은 중립 회색이다. 팀 표·스터디 일반 행은 중립 배경을 유지하고, POSTECH Red는 선택 상태와 자료 링크에 쓴다. 실제 색 값은 CSS의 `--tone`·`--tone-tint`·`--tone-row` 한 곳에만 두며 이 문서나 강의 데이터에 복제하지 않는다. 강의 줄은 바로 위 파트 머리의 색을 잇는다.
+
+## 발표자료 라벨
+
+- 강의·스터디·프로젝트의 발표자료 링크는 Slides로 통일한다.
+- HTML·PDF 두 버전이 모두 있으면 Slides를 반복하지 않고 HTML, PDF만 표시한다. 순서는 HTML → PDF → Lab, 없는 링크는 생략한다.
+- 시험지는 PDF, 해설은 Solution으로 표시한다.
+- 스터디에서 발표자료가 여러 개면 기존 Slides 1, 2 묶음을 유지한다. Notes·Demo·Lab은 다른 자료이므로 이름을 유지한다.

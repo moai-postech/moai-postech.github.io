@@ -33,7 +33,7 @@
           {% if r.time or r.location %}<span class="cs-session-meta">{% if r.location %}<span>{{ r.location }}</span>{% endif %}{% if r.time %}<span class="cs-session-time">{{ r.time }}</span>{% endif %}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}
         </td>
-        {% unless compact_session %}<td class="cs-slides">{% if r.html %}<a href="{{ r.html }}">HTML</a>{% endif %}{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}{% if r.solution %}<a href="{{ r.solution }}">Solution</a>{% endif %}</td>{% endunless %}
+        {% unless compact_session %}<td class="cs-slides">{% if r.html %}<a href="{{ r.html }}">{% if r.pdf %}HTML{% else %}Slides{% endif %}</a>{% endif %}{% if r.pdf %}<a href="{{ r.pdf }}">{% if r.html or r.kind == "exam" %}PDF{% else %}Slides{% endif %}</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}{% if r.solution %}<a href="{{ r.solution }}">Solution</a>{% endif %}</td>{% endunless %}
         {% if cols == 5 %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}
       </tr>
       {% endif %}{% endfor %}

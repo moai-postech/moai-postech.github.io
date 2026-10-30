@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-30 | [course-feedback-restored](2026-10-30-course-feedback-restored.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 템플릿 | 아카이브된 최종 Timeline·평가·자료 라벨과 freshmen 누락 복원 |
 | 2026-10-30 | [course-renumber-lec11](2026-10-30-course-renumber-lec11.md) | Sangwoo Mo(moai-postech) | 26F 강의 Schedule·슬라이드 | 리뷰 두 회차 번호 없음, Big Data 11~13강·Part III 14~17강, 슬라이드 파일 이름과 안의 번호 |
 | 2026-10-30 | [course-midterm-2026](2026-10-30-course-midterm-2026.md) | Sangwoo Mo(sangwoomo) | 26F 강의 Home·Schedule | 중간고사 시험지·해설 PDF와 링크, Schedule 행 Solution 링크 |
 | 2026-10-30 | [course-schedule-rows](2026-10-30-course-schedule-rows.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄 | Review 번호 삭제, 번호 없는 줄 종류 아이콘(project·exam 강조색), guest 종류 이름, guest 장소·시간 오른쪽 두 줄과 연사 링크, 스케줄 딱지 전부 제거, 행 바탕 네 색 |

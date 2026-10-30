@@ -299,9 +299,11 @@ project:
     - name: "Final"
       when: "Dec 9 & 11"
       text: "A product that addresses a real-world problem using a large-scale database, possibly with an LLM."
-  evaluation_sources: ["Instructor evaluation", "Peer evaluation"]
-  evaluation_result: "Project score"
-  evaluation_note: "Project scores combine instructor and peer evaluations. Teamwork is assessed individually based on each member's contribution."
+  evaluation:
+    team_label: "Team evaluation"
+    team_reviewers: "Instructor + other teams"
+    individual_label: "Individual"
+    individual_reviewers: "Teammates"
   criteria:
     - name: "Novelty"
       text: "Originality and creativity of the idea"
@@ -311,7 +313,7 @@ project:
       text: "Effective use of the techniques and tools covered in class"
     - name: "Teamwork"
       individual: true
-      text: "Individual contribution to technical work, collaboration and shared responsibilities"
+      text: "Contribution to technical work, collaboration and shared responsibilities"
     - name: "Presentation"
       text: "Clarity and professionalism of the report and presentation"
   rounds:

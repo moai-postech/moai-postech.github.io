@@ -77,5 +77,7 @@
 - 26F Final의 팀별 날짜·순서는 미정이다. 전체 발표 예정일 Dec 15 & 17과 구분한다.
 - 외부 시트 링크는 [공통 규칙](README.md#외부-시트-링크)을 따른다.
 
-- Evaluation은 `evaluation_sources`와 `evaluation_result`로 교수 평가 + 동료 평가 → 프로젝트 점수의 흐름을 보여 주고, 평가 기준은 가로 한 줄 카드로 구조화한다(이번 학기 1×4). 2×2 배치는 사용하지 않고 모바일에서 한 열로 접는다. `individual: true`인 Teamwork 카드에는 Individual 라벨을 붙인다. `evaluation_note`는 구조화한 필드가 없는 경우의 설명이다. Teamwork 기준은 기술 기여·협업·역할 수행이다. 별도로 정하지 않은 교수·동료 평가 비중이나 계산식은 만들지 않는다.
+- Evaluation은 가로 한 줄의 기준을 평가 주체별로 묶는다. Problem·Method·Results는 교수와 다른 팀, Teamwork는 팀 내 동료가 평가한다. `project.evaluation`은 묶음 라벨, `criteria[].individual`은 개인 평가 기준을 정한다. 별도 점수 합산 도식이나 배점을 반복하지 않는다. 모바일은 한 열이다.
 - 26F Data Engineering 평가 기준은 Problem·Method·Results·Teamwork 네 가지다(2026-10-28 교수 변경). 지난 학기의 기준은 별도로 유지한다.
+- Timeline은 날짜·번호·연결선·화살표로 흐름을 보여 준다. 팀 구성은 등록할 일을 먼저, 인원 제한을 다음에 표시한다.
+- 26F Proposal은 문제·방법·데이터 선택 근거, 수집·전처리·DB 접근, 기초 분석까지 기대한다. 상세 구현·DevOps는 요구하지 않고 데모는 선택이다(2026-10-14 교수 메일). Proposal·Final 모두 Q&A 포함 10분이다(2026-10-28 교수 확인). `steps[].deliverables`, `scope_note`, `presentation`으로 표시한다.

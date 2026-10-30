@@ -124,16 +124,21 @@ a.cs-title:hover { color: var(--accent); }
 
 /* Team project page: criteria as name + one line, then one row per team with a cell per presentation round */
 .project-sub { margin-top: var(--space-6); }
-.project-criteria { display: grid; grid-template-columns: repeat(var(--criteria-count, 4), minmax(0, 1fr)); gap: var(--space-4); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
-.project-criteria li { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
+.project-evaluation-groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.project-evaluation-group { padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
+.project-evaluation-team { grid-column: span 3; }
+.project-evaluation-individual { grid-column: span 1; }
+.project-evaluation-heading { display: flex; flex-direction: column; gap: var(--space-1); margin-bottom: var(--space-5); }
+.project-evaluation-heading strong { font-weight: var(--weight-emphasis); }
+.project-evaluation-heading span { color: var(--muted); font-size: var(--text-meta); }
+.project-criteria { display: grid; grid-template-columns: repeat(var(--criteria-count, 3), minmax(0, 1fr)); gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
+.project-criteria li { display: flex; flex-direction: column; gap: var(--space-2); }
 .project-criteria strong { font-weight: var(--weight-emphasis); }
 .project-criteria li > span { color: var(--muted); font-size: var(--text-meta); }
-.project-criterion-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
-.project-individual { padding: 0 var(--space-2); border-radius: var(--radius-1); color: var(--accent); background: var(--accent-soft); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
-.project-evaluation-flow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
-.project-evaluation-source, .project-evaluation-result { padding: var(--space-3) var(--space-4); border-radius: var(--radius-1); background: var(--surface); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
-.project-evaluation-result { background: var(--accent-soft); color: var(--accent); }
-@media (max-width: 680px) { .project-criteria { grid-template-columns: 1fr; } }
+@media (max-width: 680px) {
+  .project-evaluation-groups, .project-criteria { grid-template-columns: 1fr; }
+  .project-evaluation-team, .project-evaluation-individual { grid-column: auto; }
+}
 .course-sheet { display: inline-flex; align-items: baseline; gap: var(--space-1); margin-left: auto; color: var(--accent); white-space: nowrap; }
 .project-teams .cs-n { padding-left: var(--space-3); }
 .project-link { display: inline-block; margin-top: 2px; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
@@ -216,6 +221,7 @@ a.cs-title:hover { color: var(--accent); }
 
 /* Public aggregate statistics; member details are rendered only after decrypting. */
 .study-stat-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); margin: 0; padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
+.study-stat-summary > div { display: flex; flex-direction: column; justify-content: space-between; }
 .study-stat-summary dt { color: var(--muted); font-size: var(--text-meta); }
 .study-stat-summary dd { margin: var(--space-2) 0 0; font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; }
 .study-stat-breakdowns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-7); margin-top: var(--space-6); }
@@ -258,12 +264,13 @@ a.cs-title:hover { color: var(--accent); }
 .study-members-table .sm-participation { width: 24%; }
 .study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); }
 .study-members-table thead th { padding-top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
-.study-members-table tbody th { font-weight: var(--weight-emphasis); white-space: nowrap; }
+.study-members-table tbody th { font-weight: var(--weight-emphasis); overflow-wrap: anywhere; }
+.study-members-table td { overflow-wrap: anywhere; }
 .study-members-table th:last-child, .study-members-table td:last-child { padding-right: 0; }
 .study-member-email { color: var(--muted); overflow-wrap: anywhere; }
 .study-member-markers { display: flex; flex-wrap: wrap; gap: var(--space-1); }
 .study-member-marker { padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--surface); color: var(--muted); font-size: var(--text-small); white-space: nowrap; }
-@media (max-width: 680px) {
+@media (max-width: 960px) {
   .study-members-table, .study-members-table tbody { display: block; }
   .study-members-table thead { display: none; }
   .study-members-table colgroup { display: none; }
@@ -325,23 +332,42 @@ a.cs-title:hover { color: var(--accent); }
   .st-links:empty, .st-who:empty { display: none !important; }
 }
 
+/* Study schedules have more columns than course schedules; stack them at tablet width. */
+@media (min-width: 681px) and (max-width: 960px) {
+  .study-table thead, .study-table colgroup { display: none; }
+  .study-table, .study-table tbody, .study-table tr { display: block; width: auto; }
+  .study-table tr { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-2) var(--space-3); margin-bottom: var(--space-1); padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }
+  .study-table td { display: block; width: auto; padding: 0; border: 0; background: none; white-space: normal; }
+  .study-table .cs-date, .study-table .st-links, .study-table .st-who, .study-table .cs-slides { grid-column: 1 / -1; }
+  .study-table .st-links:empty, .study-table .st-who:empty, .study-table .cs-slides:empty { display: none; }
+}
+
 /* One table-owned bottom rule for every course/study table, including mobile and hidden term panels. */
 .course-schedule tbody > tr:last-child.tone-none,
 .course-schedule tbody > tr:last-child.tone-none td { box-shadow: none; }
 .course-site main:has(.course-schedule) + .course-foot { border-top: 0; }
 
-/* Project milestones: dates and actions, with no repeated Overview card. */
-.project-timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
-.project-timeline li { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
+/* Connected milestones: dates, expected work and presentation format. */
+.project-timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); margin: var(--space-5) 0 0; padding: 0; list-style: none; counter-reset: milestone; }
+.project-timeline > li { position: relative; display: flex; flex-direction: column; gap: var(--space-3); }
+.project-timeline > li:not(:last-child)::after { content: "→"; position: absolute; right: calc(-1 * var(--space-5)); top: 0; color: var(--muted); }
+.project-milestone { display: flex; align-items: center; gap: var(--space-2); }
+.project-milestone::before { counter-increment: milestone; content: counter(milestone); display: grid; place-items: center; flex-shrink: 0; width: 1.5em; height: 1.5em; border: 1px solid var(--line); border-radius: 50%; font-size: var(--text-small); font-weight: var(--weight-emphasis); color: var(--muted); }
+.project-milestone::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.project-timeline > li:last-child .project-milestone::after { content: none; }
 .project-timeline-when { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); font-variant-numeric: tabular-nums; }
-.project-timeline-when small { display: block; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-regular); }
 .project-timeline-title { font-size: var(--text-body); font-weight: var(--weight-emphasis); }
-.project-timeline p { margin: var(--space-1) 0 0; font-size: var(--text-meta); color: var(--muted); }
+.project-timeline p { margin: var(--space-2) 0 0; font-size: var(--text-meta); color: var(--muted); }
 .project-timeline p strong { color: var(--text); }
+.project-timeline .project-stage-note { margin-top: var(--space-3); font-size: var(--text-small); }
+.project-timeline .project-presentation { margin-top: var(--space-3); color: var(--text); font-weight: var(--weight-emphasis); }
+.project-deliverables { margin: var(--space-2) 0 0; padding-left: var(--space-4); color: var(--muted); font-size: var(--text-meta); }
+.project-deliverables li + li { margin-top: var(--space-2); }
 @media (max-width: 680px) {
-  .project-timeline { grid-template-columns: 1fr; }
-  .project-timeline li { gap: var(--space-1); }
-  .project-timeline-when small { display: inline; margin-left: var(--space-2); }
+  .project-timeline { grid-template-columns: 1fr; gap: var(--space-6); }
+  .project-timeline > li { padding-left: var(--space-5); border-left: 1px solid var(--line); }
+  .project-timeline > li:not(:last-child)::after { content: "↓"; left: calc(var(--space-5) * -0.25); right: auto; top: auto; bottom: calc(-1 * var(--space-5)); background: var(--bg); }
+  .project-milestone::after { content: none; }
 }
 
 /* Compact part selection keeps the schedule actionable after moving the overview home. */

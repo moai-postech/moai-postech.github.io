@@ -77,7 +77,7 @@ schedule:
         url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
   - date: "2025-09-23"
     kind: break
-    title: "No class"
+    title: "No Class"
   - part: "part-2"
   - date: "2025-09-25"
     kind: lecture
@@ -105,10 +105,10 @@ schedule:
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2025-10-07"
     kind: break
-    title: "No class (Chuseok)"
+    title: "No Class (Chuseok)"
   - date: "2025-10-09"
     kind: break
-    title: "No class (Chuseok)"
+    title: "No Class (Chuseok)"
   - date: "2025-10-14"
     kind: project
     title: "Project Proposal I"
@@ -117,7 +117,7 @@ schedule:
     title: "Project Proposal II"
   - date: "2025-10-21"
     kind: break
-    title: "Study day (no class)"
+    title: "No Class (Study Day)"
   - date: "2025-10-23"
     kind: exam
     title: "Midterm Exam"
@@ -210,7 +210,7 @@ schedule:
         url: "https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/"
   - date: "2025-12-04"
     kind: break
-    title: "No class"
+    title: "No Class"
   - date: "2025-12-09"
     kind: project
     title: "Project Final I"
@@ -219,7 +219,7 @@ schedule:
     title: "Project Final II"
   - date: "2025-12-16"
     kind: break
-    title: "Study day (no class)"
+    title: "No Class (Study Day)"
   - date: "2025-12-18"
     kind: exam
     title: "Final Exam"

@@ -21,7 +21,7 @@
 
 - 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Location & time(`location`, `meetings`)·Teaching assistants(`teaching_assistants`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 다른 강의나 자료로 잇는 Related 는 두지 않는다(2026-10-27 교수: 강의 사이트끼리 cross reference 하지 않는다).
 - 파트 이름은 자유다(`Part I`, `Software 3.0`). 자료 절 제목은 `resources_title`(기본 `Reference courses`).
-- 줄 종류 앞 태그 글자는 `_data/course_tags.yml` 한 곳에서 정한다(guest, seminar, exam, project).
+- 강의 스케줄 줄에는 종류 딱지를 붙이지 않는다. 종류는 색과 제목(`Project Proposal I`, `Midterm Exam`)으로 드러낸다(교수 2026-10-30).
 
 ## 지켜야 할 것
 
@@ -46,8 +46,8 @@
 ## 초청 강의·학과 세미나
 
 - `guest`와 `seminar`는 공통 노랑으로 표시한다. `project`·`exam`은 강조색, `break`는 회색이다. 장소·시간은 오른쪽 끝에 두 줄(장소, 시간)로 둔다.
-- 복습 회차(Review Session, Midterm Review)는 `kind: review`로 쓴다. 강 번호를 매기지 않고, 스티커 없이 공통 노랑으로 표시한다. `project`·`exam` 은 강조색(`tone-key`)으로 묶는다(교수 2026-10-30).
-- 초청 종류는 Project와 같은 공통 스티커(`.cs-tag`, 굵기 600)로 제목 앞에 두고, 연사·소속·시간·장소는 다음 줄에서 가로로 배치한다. 자료 링크가 없으면 빈 Materials 칸까지 활용한다. 제목이 없으면 연사 이름을 주 정보로 쓴다.
+- 복습 회차(Review Session, Midterm Review)는 `kind: review`로 쓴다. 강 번호를 매기지 않고 공통 노랑으로 표시한다. `project`·`exam` 은 강조색(`tone-key`)으로 묶는다(교수 2026-10-30).
+- 초청 행은 제목 아래에 연사·소속을 두고, 장소·시간은 오른쪽 끝에 두 줄로 둔다. 자료 링크가 없으면 빈 Materials 칸까지 활용한다. 제목이 없으면 연사 이름을 주 정보로 쓴다.
 - 회차별 `time`·`location`을 선택적으로 받는다. 별도 시간은 KST로 쓰고 연사와 같은 줄에 시간·장소를 표시한다. 한쪽만 확인됐으면 그 값만 표시한다.
 - 시간·장소는 POSTECH Outlook 캘린더와 공식 안내로 확인한다. 회차의 장소가 없다고 정규 강의실을 추정해 넣지 않는다.
 

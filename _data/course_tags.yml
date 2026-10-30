@@ -1,6 +1,0 @@
-# 강의 페이지 스케줄에서 줄 종류(kind) 앞에 붙는 태그 글자. 여기 없는 종류(lecture, review, break)는 태그 없이 나온다. 제목은 태그와 같은 말을 되풀이하지 않는다(Project 줄은 "Proposal I").
-guest: "Guest lecture"
-seminar: "IME Seminar"
-exam: "Exam"
-project: "Project"
-event: "Event"

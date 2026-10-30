@@ -22,6 +22,8 @@ POSTECH 요구사항: 영향 없음
 ## 추가 수정 (같은 날)
 - 교수: Master students 는 입학순이라 오원식이 맨 뒤여야 한다. Chaewon Park 다음으로 옮기고, `members.yml` 주석에 "묶음 안의 사람은 입학순" 규칙을 적었다.
 - 개인 사이트 `https://dnjstlr555.github.io/`(GitHub `dnjstlr555` 프로필의 블로그 칸)를 링크했다. 이름은 그 사이트 제목의 본인 표기 `Won-Sik Oh` 로 바꿨다.
+- 교수: 오원식은 Google Scholar 프로필로 사진과 링크를 바꾼다. 링크를 `https://scholar.google.com/citations?user=kJv4LEAAAAAJ` 로 바꾸고, Scholar 프로필 사진(96×114px)을 정사각형으로 잘라 400px 로 키워 `assets/img/people/won-sik-oh.jpg` 로 넣었다. 원본이 작아 다른 사진보다 조금 흐리다.
+- 기각: 본인 사이트의 `profile.jpg`(1536×2048) 는 해상도는 높지만 증명사진이 아닌 일상 사진이고 위치 정보가 들어 있어 쓰지 않았다.
 
 ## 남은 것
-- 오원식 사진, 입학 과정(AX대학원) 확정 뒤 묶음 확인.
+- 더 큰 증명사진을 받으면 교체. 입학 과정(AX대학원) 확정 뒤 묶음 확인.

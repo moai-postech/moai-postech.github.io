@@ -111,8 +111,9 @@ groups:
         degree: "BS, POSTECH"
         topic: "Time-Series Analysis"
       - name: "Won-Sik Oh"
+        photo: assets/img/people/won-sik-oh.jpg
         focus: "Physical AI"
-        url: "https://dnjstlr555.github.io/"
+        url: "https://scholar.google.com/citations?user=kJv4LEAAAAAJ"
         degree: "BS, Catholic Univ."
         topic: "Physical Agents"
   - title: "Alumni"

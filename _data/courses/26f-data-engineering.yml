@@ -37,7 +37,6 @@ parts:
 # part 만 있는 줄은 파트 머리다. title 이 없으면 speaker 가 제목 자리에 온다. pdf·html·lab 은 공개 링크가 생기면 채운다(없으면 칸이 빈다).
 # time·location은 회차별 별도 시간(KST)·장소다. 확인된 값만 적고 없으면 생략한다.
 # reading 의 약칭은 아래 resources 의 abbr 이다.
-schedule_sheet: "https://docs.google.com/spreadsheets/d/1oPqM5g4XYwU_PZ0DFld4QVmYYWPAdWa8m3Cyl2n_rwY/edit?usp=sharing"
 schedule:
   - date: "2026-09-08"
     kind: lecture
@@ -98,7 +97,7 @@ schedule:
     pdf: "teaching/26f-data-engineering/slides/6_sql-I.pdf"
     html: "teaching/26f-data-engineering/slides/6_sql-I.html"
     reading:
-      - text: "DMS Lec 1 – 2"
+      - text: "DMS Lec 1-2"
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2026-10-01"
     kind: lecture
@@ -107,7 +106,7 @@ schedule:
     pdf: "teaching/26f-data-engineering/slides/7_sql-II.pdf"
     html: "teaching/26f-data-engineering/slides/7_sql-II.html"
     reading:
-      - text: "DMS Lec 2 – 3"
+      - text: "DMS Lec 2-3"
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2026-10-06"
     kind: lecture
@@ -116,7 +115,7 @@ schedule:
     pdf: "teaching/26f-data-engineering/slides/8_sql-III.pdf"
     html: "teaching/26f-data-engineering/slides/8_sql-III.html"
     reading:
-      - text: "DMS Lec 3 – 4"
+      - text: "DMS Lec 3-4"
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2026-10-08"
     kind: lecture
@@ -153,8 +152,7 @@ schedule:
   - date: "2026-10-29"
     kind: exam
     title: "Midterm Exam"
-    pdf: "teaching/26f-data-engineering/exams/midterm/midterm.pdf"
-    solution: "teaching/26f-data-engineering/exams/midterm/midterm-solution.pdf"
+    pdf: "teaching/26f-data-engineering/exams/midterm/midterm-solution.pdf"
   - date: "2026-11-03"
     kind: review
     title: "Midterm Review"
@@ -191,7 +189,7 @@ schedule:
     n: 14
     title: "ML Systems"
     reading:
-      - text: "SML Lec 1 – 2, 8 – 10"
+      - text: "SML Lec 1-2, 8-10"
         url: "https://id2223kth.github.io/schedule_2023/"
   - date: "2026-11-18"
     kind: guest
@@ -243,6 +241,9 @@ schedule:
   - date: "2026-12-22"
     kind: break
     title: "No Class (Peer Evaluation, Online)"
+  - date: "2026-12-24"
+    kind: break
+    title: "No Class (Christmas Eve)"
 
 grading:
   - item: "Midterm exam"

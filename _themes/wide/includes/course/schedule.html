@@ -7,7 +7,7 @@
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
-{% include course/head.html heading="Schedule" sheet=c.schedule_sheet sheet_label="Schedule sheet" %}
+{% include course/head.html heading="Schedule" %}
 
     <section class="content-section course-first" id="schedule">
     <div class="section-body">
@@ -21,19 +21,18 @@
       {% case r.kind %}{% when "lecture" %}{% assign rt = tone %}{% when "guest", "seminar" %}{% assign rt = "logistics" %}{% when "break" %}{% assign rt = "none" %}{% else %}{% assign rt = "logistics" %}{% endcase %}<tr class="is-{{ r.kind }} tone-{{ rt }}" data-date="{{ r.date }}">
         <td class="cs-date"><time datetime="{{ r.date }}">{{ r.date | date: "%m/%d" }}</time><small>{{ r.date | date: "%a" }}</small></td>
         <td class="cs-n">{% if r.n %}{{ r.n }}{% else %}{% include course/kind-icon.html kind=r.kind %}{% endif %}</td>
-        {% assign compact_session = false %}{% if r.kind == "guest" or r.kind == "seminar" %}{% unless r.html or r.pdf or r.lab or r.solution %}{% assign compact_session = true %}{% endunless %}{% endif %}
+        {% assign compact_session = false %}{% if r.kind == "guest" or r.kind == "seminar" %}{% unless r.pdf or r.lab %}{% assign compact_session = true %}{% endunless %}{% endif %}
         <td class="cs-topic"{% if compact_session %} colspan="2"{% endif %}>
           {% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
           {% if is_seminar %}<span class="cs-session"><span class="cs-session-main">{% endif %}
-          {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}{% if r.url %}<a class="cs-title cs-speaker-link" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}{% endif %}
-          {% if r.kind == "guest" %}{% assign kind_label = "Guest lecture" %}{% else %}{% assign kind_label = "IME Seminar" %}{% endif %}
-          {% if r.title and r.speaker %}<span class="cs-speaker">{% if is_seminar %}<span class="cs-kind">{{ kind_label }}</span>{% endif %}{% if r.url %}<a class="cs-speaker-name" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-speaker-name">{{ r.speaker }}</span>{% endif %}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{% if is_seminar %}<span class="cs-kind">{{ kind_label }}</span>{% endif %}{{ r.affiliation }}</span>{% endif %}
+          {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% elsif r.html %}<a class="cs-title" href="{{ r.html }}">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}{% if r.url %}<a class="cs-title cs-speaker-link" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}{% endif %}
+          {% if r.title and r.speaker %}<span class="cs-speaker">{% if r.url %}<a class="cs-speaker-name" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-speaker-name">{{ r.speaker }}</span>{% endif %}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}
           {% comment %}장소 → 시간 순서와 줄 나눔은 강의 Home 의 Location & time 과 같다. 오른쪽 끝에 두어 행이 두 줄을 넘지 않게 한다.{% endcomment %}
           {% if r.time or r.location %}<span class="cs-session-meta">{% if r.location %}<span>{{ r.location }}</span>{% endif %}{% if r.time %}<span class="cs-session-time">{{ r.time }}</span>{% endif %}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}
         </td>
-        {% unless compact_session %}<td class="cs-slides">{% if r.html %}<a href="{{ r.html }}">{% if r.pdf %}HTML{% else %}Slides{% endif %}</a>{% endif %}{% if r.pdf %}<a href="{{ r.pdf }}">{% if r.html or r.kind == "exam" %}PDF{% else %}Slides{% endif %}</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}{% if r.solution %}<a href="{{ r.solution }}">Solution</a>{% endif %}</td>{% endunless %}
+        {% unless compact_session %}<td class="cs-slides">{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>{% endunless %}
         {% if cols == 5 %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}
       </tr>
       {% endif %}{% endfor %}

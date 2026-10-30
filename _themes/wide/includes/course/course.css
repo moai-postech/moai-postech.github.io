@@ -99,7 +99,6 @@
 .cs-icon { display: inline-block; width: 1.1em; height: 1.1em; vertical-align: -0.2em; color: var(--tone); }  /* a day with no lecture number shows what kind of day it is (kind-icon.html) */
 .is-project .cs-icon, .is-exam .cs-icon { color: var(--accent); }  /* the days students must not miss: only the icon carries the accent */
 .is-break .cs-icon { color: var(--muted); }
-.cs-kind { margin-right: var(--space-2); color: var(--tone); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }  /* names a guest or seminar row without a sticker */
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
 .cs-session { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 0 var(--space-5); }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }

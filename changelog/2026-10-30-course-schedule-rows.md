@@ -106,3 +106,9 @@ POSTECH 요구사항: 영향 없음
 
 ## 추가 반영 13(같은 날, 교수 요청)
 - 연사 소속·장소를 누르면 링크처럼 뜨던 것을 막았다. 사이트 HTML 에는 링크가 없고, 휴대폰·Safari 가 주소·날짜·이메일로 보이는 글자를 자동으로 지도·캘린더 링크로 바꾼 것이다. `layouts/default.html`, `layouts/course.html` 에 `<meta name="format-detection" content="address=no, date=no, email=no">` 를 넣었다. 전화번호 자동 링크는 꼬리말 전화에 쓸모가 있어 그대로 둔다.
+
+## 추가 반영 14(같은 날, 교수 요청)
+- Other terms 는 나중 학기에서 지난 학기로만 잇는다. 25F 의 `Fall 2026` 링크를 뺐다(26F 의 `Fall 2025` 는 그대로). 규칙은 `COURSE.md`.
+- 25F 9/23 휴강 제목을 `No Class (Business Trip)` 로.
+
+기각한 안: 두 학기가 서로 가리키기(이전 상태). 지난 학기 페이지가 새 학기를 알릴 필요가 없다는 교수 판단.

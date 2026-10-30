@@ -84,3 +84,9 @@
 - 26F Data Engineering 평가 기준은 Problem·Method·Results·Teamwork 네 가지다(2026-10-28 교수 변경). 지난 학기의 기준은 별도로 유지한다.
 - Timeline은 날짜·번호·연결선·화살표로 흐름을 보여 준다. 팀 구성은 등록할 일을 먼저, 인원 제한을 다음에 표시한다.
 - 26F Proposal은 문제·방법·데이터 선택 근거, 수집·전처리·DB 접근, 기초 분석까지 기대한다. 상세 구현·DevOps는 요구하지 않고 데모는 선택이다(2026-10-14 교수 메일). Proposal·Final 모두 Q&A 포함 10분이다(2026-10-28 교수 확인). Timeline 에는 단계마다 한 줄 설명(`steps[].text`)과 발표 시간(`presentation`)만 둔다. 할 일 목록(`deliverables`)과 범위 메모(`scope_note`)는 쓰지 않는다(교수 2026-10-30: 25F 처럼 깔끔하게).
+
+## Highlights
+
+- Project 페이지 맨 아래 `Highlights` 는 프로젝트로 낸 성과(수상, 리더보드 등)를 카드로 보인다(교수 2026-10-30). 카드마다 사진, 원 기사 링크(학과 홈페이지 소식이 아니라 원 기사), 영문 설명을 둔다. 기사가 한글이어도 나머지는 영어로 쓴다.
+- 개인을 강조하지 않는다. 팀원 이름 대신 `Team 2 won ...` 처럼 팀 번호로 쓴다.
+- 데이터는 `project.highlights[]` 의 `title`, `when`, `photo`, `photo_alt`, `url`, `text`. 사진은 `teaching/<id>/project/highlights/` 에 둔다.

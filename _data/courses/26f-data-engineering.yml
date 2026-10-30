@@ -189,7 +189,7 @@ schedule:
     n: 14
     title: "ML Systems"
     reading:
-      - text: "MLSD Lec 1"
+      - text: "MLSD Lec 1-2"
         url: "https://stanford-cs329s.github.io/syllabus.html"
   - date: "2026-11-18"
     kind: guest

@@ -131,7 +131,7 @@ a.cs-title:hover { color: var(--accent); }
 .project-evaluation-heading strong { font-weight: var(--weight-emphasis); }
 .project-evaluation-heading span { color: var(--muted); font-size: var(--text-meta); }
 .project-criteria { display: grid; grid-template-columns: repeat(var(--criteria-count, 3), minmax(0, 1fr)); gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
-.project-criteria li { display: flex; flex-direction: column; gap: var(--space-2); }
+.project-criteria li { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4); background: var(--bg); border-radius: var(--radius-1); }  /* four criterion blocks, grouped 3 / 1 by the grey cards around them */
 .project-criteria strong { font-weight: var(--weight-emphasis); }
 .project-criteria li > span { color: var(--muted); font-size: var(--text-meta); }
 @media (max-width: 680px) {
@@ -140,14 +140,17 @@ a.cs-title:hover { color: var(--accent); }
 }
 .course-sheet { display: inline-flex; align-items: baseline; gap: var(--space-1); margin-left: auto; color: var(--accent); white-space: nowrap; }
 .project-teams .cs-n { padding-left: var(--space-3); }
+.project-sheet-note { margin: 0 0 var(--space-5); padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); font-size: var(--text-body); }  /* students act here, so it reads as a notice */
+.project-sheet-note a { color: var(--accent); font-weight: var(--weight-heading); }
 .project-link { display: inline-block; margin-top: 2px; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .project-round { width: 1%; white-space: nowrap; text-align: center; }
 .project-teams thead th:nth-child(n + 3) { text-align: center; }
 @media (min-width: 681px) {
   .project-teams .project-round, .project-teams thead th:nth-child(n + 3) { min-width: calc(var(--text-meta) * 8); padding-inline: var(--space-4); }
 }
-.project-when { display: block; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
-.project-round a { display: block; margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
+.project-when { color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
+.project-teams td { vertical-align: middle; }  /* title and members on the left, one line per round on the right */
+.project-round a { margin-left: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 
 /* Undergraduate AI Study Schedule: a tab per term. The table columns are fixed so switching terms never moves a column */
 .study-intro { padding-top: var(--space-7); }
@@ -348,12 +351,10 @@ a.cs-title:hover { color: var(--accent); }
 
 /* Connected milestones: dates, expected work and presentation format. */
 .project-timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); margin: var(--space-5) 0 0; padding: 0; list-style: none; counter-reset: milestone; }
-.project-timeline > li { position: relative; display: flex; flex-direction: column; gap: var(--space-3); }
-.project-timeline > li:not(:last-child)::after { content: "→"; position: absolute; right: calc(-1 * var(--space-5)); top: 0; color: var(--muted); }
+.project-timeline > li { position: relative; display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }  /* three blocks: team formation, proposal, final */
+.project-timeline > li:not(:last-child)::after { content: "→"; position: absolute; right: calc(-1 * var(--space-5)); top: 50%; transform: translate(25%, -50%); color: var(--muted); }
 .project-milestone { display: flex; align-items: center; gap: var(--space-2); }
 .project-milestone::before { counter-increment: milestone; content: counter(milestone); display: grid; place-items: center; flex-shrink: 0; width: 1.5em; height: 1.5em; border: 1px solid var(--line); border-radius: 50%; font-size: var(--text-small); font-weight: var(--weight-emphasis); color: var(--muted); }
-.project-milestone::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-.project-timeline > li:last-child .project-milestone::after { content: none; }
 .project-timeline-when { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); font-variant-numeric: tabular-nums; }
 .project-timeline-title { font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .project-timeline p { margin: var(--space-2) 0 0; font-size: var(--text-meta); color: var(--muted); }
@@ -364,9 +365,7 @@ a.cs-title:hover { color: var(--accent); }
 .project-deliverables li + li { margin-top: var(--space-2); }
 @media (max-width: 680px) {
   .project-timeline { grid-template-columns: 1fr; gap: var(--space-6); }
-  .project-timeline > li { padding-left: var(--space-5); border-left: 1px solid var(--line); }
-  .project-timeline > li:not(:last-child)::after { content: "↓"; left: calc(var(--space-5) * -0.25); right: auto; top: auto; bottom: calc(-1 * var(--space-5)); background: var(--bg); }
-  .project-milestone::after { content: none; }
+  .project-timeline > li:not(:last-child)::after { content: "↓"; left: 50%; right: auto; top: auto; bottom: calc(-1 * var(--space-6)); transform: translate(-50%, 0); }
 }
 
 /* Compact part selection keeps the schedule actionable after moving the overview home. */

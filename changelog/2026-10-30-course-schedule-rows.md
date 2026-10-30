@@ -103,3 +103,6 @@ POSTECH 요구사항: 영향 없음
 - 26S References 의 Intermediate Python 출처 칸을 `Textbook` 으로 바꿨다(교수 요청, 앞서 넣은 `Python Tips` 대체).
 
 기각한 안: 스케줄 장소도 `Science Building 4` 로 쓰기(오른쪽 칸에서 길다는 교수 의견). Intermediate Python 출처 `Python Tips`(교수가 Textbook 으로 정함).
+
+## 추가 반영 13(같은 날, 교수 요청)
+- 연사 소속·장소를 누르면 링크처럼 뜨던 것을 막았다. 사이트 HTML 에는 링크가 없고, 휴대폰·Safari 가 주소·날짜·이메일로 보이는 글자를 자동으로 지도·캘린더 링크로 바꾼 것이다. `layouts/default.html`, `layouts/course.html` 에 `<meta name="format-detection" content="address=no, date=no, email=no">` 를 넣었다. 전화번호 자동 링크는 꼬리말 전화에 쓸모가 있어 그대로 둔다.

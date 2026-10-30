@@ -89,7 +89,7 @@ schedule:
         url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
   - date: "2026-09-24"
     kind: break
-    title: "No class (Chuseok)"
+    title: "No Class (Chuseok)"
   - part: "part-2"
   - date: "2026-09-29"
     kind: lecture
@@ -149,7 +149,7 @@ schedule:
     title: "Project Proposal II"
   - date: "2026-10-27"
     kind: break
-    title: "Peer Evaluation (online, no class)"
+    title: "No Class (Peer Evaluation, Online)"
   - date: "2026-10-29"
     kind: exam
     title: "Midterm Exam"
@@ -164,23 +164,35 @@ schedule:
     title: "Big Data I: Batch Processing"
     pdf: "teaching/26f-data-engineering/slides/11_big-data-I.pdf"
     html: "teaching/26f-data-engineering/slides/11_big-data-I.html"
+    reading:
+      - text: "IDS Lec 24"
+        url: "https://cs186berkeley.net/fa24/"
   - date: "2026-11-10"
     kind: lecture
     n: 12
     title: "Big Data II: Data Warehousing"
     pdf: "teaching/26f-data-engineering/slides/12_big-data-II.pdf"
     html: "teaching/26f-data-engineering/slides/12_big-data-II.html"
+    reading:
+      - text: "DIS Lec 16"
+        url: "https://web.stanford.edu/class/cs245/"
   - date: "2026-11-12"
     kind: lecture
     n: 13
     title: "Big Data III: Stream Processing"
     pdf: "teaching/26f-data-engineering/slides/13_big-data-III.pdf"
     html: "teaching/26f-data-engineering/slides/13_big-data-III.html"
+    reading:
+      - text: "DIS Lec 17"
+        url: "https://web.stanford.edu/class/cs245/"
   - part: "part-3"
   - date: "2026-11-17"
     kind: lecture
     n: 14
     title: "ML Systems"
+    reading:
+      - text: "SML Lec 1 – 2, 8 – 10"
+        url: "https://id2223kth.github.io/schedule_2023/"
   - date: "2026-11-18"
     kind: guest
     title: "AI 시대의 경영 패러다임: 디맨드 드리븐 전략"
@@ -193,10 +205,16 @@ schedule:
     kind: lecture
     n: 15
     title: "LLM Systems"
+    reading:
+      - text: "DLA LangChain"
+        url: "https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/"
   - date: "2026-11-24"
     kind: lecture
     n: 16
     title: "RAG"
+    reading:
+      - text: "DLA Chat with Your Data"
+        url: "https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/"
   - date: "2026-11-26"
     kind: event
     title: "IDS Capstone Workshop"
@@ -204,15 +222,18 @@ schedule:
     kind: lecture
     n: 17
     title: "Agents"
+    reading:
+      - text: "DLA Tools and Agents"
+        url: "https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/"
   - date: "2026-12-03"
     kind: break
-    title: "University Anniversary (no class)"
+    title: "No Class (University Anniversary)"
   - date: "2026-12-08"
     kind: break
-    title: "Project preparation (online, no class)"
+    title: "No Class (Project Preparation, Online)"
   - date: "2026-12-10"
     kind: break
-    title: "Project preparation (online, no class)"
+    title: "No Class (Project Preparation, Online)"
   - date: "2026-12-15"
     kind: project
     title: "Project Final I"
@@ -221,7 +242,7 @@ schedule:
     title: "Project Final II"
   - date: "2026-12-22"
     kind: break
-    title: "Peer Evaluation (online, no class)"
+    title: "No Class (Peer Evaluation, Online)"
 
 grading:
   - item: "Midterm exam"
@@ -246,6 +267,26 @@ resources:
     title: "Introduction to Database Systems"
     source: "Berkeley CS186"
     url: "https://cs186berkeley.net/fa24/"
+  - abbr: "DIS"
+    title: "Principles of Data-Intensive Systems"
+    source: "Stanford CS245"
+    url: "https://web.stanford.edu/class/cs245/"
+  - abbr: "BDS"
+    title: "Introduction to Big Data Systems"
+    source: "Wisconsin CS544"
+    url: "https://ms.sites.cs.wisc.edu/cs544/s24/schedule.html"
+  - abbr: "SML"
+    title: "Scalable Machine Learning and Deep Learning"
+    source: "KTH ID2223"
+    url: "https://id2223kth.github.io/schedule_2023/"
+  - abbr: "MLSD"
+    title: "Machine Learning Systems Design"
+    source: "Stanford CS329S"
+    url: "https://stanford-cs329s.github.io/"
+  - abbr: "DLA"
+    title: "DeepLearning.AI Short Courses"
+    source: "DeepLearning.AI"
+    url: "https://learn.deeplearning.ai"
 
 # 지난 시험(문제와 풀이).
 exams:

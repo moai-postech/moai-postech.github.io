@@ -62,3 +62,7 @@ POSTECH 요구사항: 영향 없음
 - guest·seminar 는 연사 줄 앞에 작은 대문자 종류 이름(`GUEST LECTURE`, `IME SEMINAR`)을 둔다. 딱지 없이 더 드러나게 하려는 것.
 
 기각한 안: project·exam 제목 강조색(추가 반영 4), guest 딱지 되살리기(추가 반영 3에서 뗀 이유와 같다).
+
+## 추가 반영 7(같은 날, 교수 요청)
+- 휴강 줄 제목을 `No Class (사유)` 한 형식으로 통일했다(25F·26S·26F). 예: `University Anniversary (no class)` → `No Class (University Anniversary)`, `Peer Evaluation (online, no class)` → `No Class (Peer Evaluation, Online)`, `Study day (no class)` → `No Class (Study Day)`. 사유가 없으면 `No Class`.
+- 26F 11~17강 Reading 을 25F 의 같은 주제 강의에서 옮겼다: Batch Processing ← MapReduce·Spark(IDS Lec 24), Data Warehousing ← BigQuery & Airflow(DIS Lec 16), Stream Processing(DIS Lec 17), ML Systems(SML Lec 1 – 2, 8 – 10), LLM Systems·RAG·Agents(DLA 세 과정). 26F Reference courses 를 25F 와 같은 여덟 개(DIS, BDS, SML, MLSD, DLA 추가)로 맞췄다.

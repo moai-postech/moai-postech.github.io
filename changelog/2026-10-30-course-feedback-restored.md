@@ -44,4 +44,6 @@ POSTECH 요구사항: 영향 없음. 기존 공통 헤더와 P7 바닥 링크 �
 - 원본: Git 4f26c88, 최신 main f10ff10으로 rebase. 기존 최종 후보: a51d798. 별도 checkout에서 작업하여 기존 작업 파일 보존.
 - iCloud가 만든 Git index 충돌 사본 발견. 현재 index 630개 경로와 충돌 사본 496개 경로 비교. 사본 전용 경로는 이미 제거된 태그와 강 번호 변경 전 자료이며 현재 파일로 되돌리지 않음. 사본 전체는 세션 scratchpad의 moai-git-index-conflict-20261030.backup에 보관, 현재 index 유지.
 - 시험지는 발표자료가 아니므로 PDF 표기 유지. Solution과 자료 라벨을 같은 줄에서 합쳐 충돌 해결.
-- 배포 검증 진행 중.
+- 복원 커밋 8d8122c main push 완료. [format 실행 40996747923](https://github.com/moai-postech/moai-postech.github.io/actions/runs/40996747923)의 빌드·배포·빠른 검사 모두 성공. changelog 검사도 성공.
+- 공개 26F Project에서 연결 Timeline·평가 주체·발표 시간·DevOps 범위, 스터디 Home에서 freshmen, 26F Schedule에서 HTML·PDF·Solution, 25F Schedule에서 단독 Slides 표기 확인.
+- 남은 작업 없음. 기존 프로젝트 checkout에는 다른 작업의 미커밋 변경이 있어 fast-forward하지 않고 보존. 복원 커밋은 운영 main에 반영됨.

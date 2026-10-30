@@ -6,7 +6,7 @@
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
 | 2026-10-30 | [people-names-wonsik](2026-10-30-people-names-wonsik.md) | Sangwoo Mo(moai-postech) | People, Faculty | Lab Members·Other Mentees, 오원식 추가, BS 방문학생 줄 |
-| 2026-10-30 | [fast-deploy](2026-10-30-fast-deploy.md) | Sangwoo Mo(moai-postech) | CI·배포·검수 규칙 | 평소 push 는 빠른 검사 뒤 배포, 전수 검사는 요청 시 |
+| 2026-10-30 | [fast-deploy](2026-10-30-fast-deploy.md) | Sangwoo Mo(moai-postech) | CI·배포·검수 규칙 | 평소 push 는 빌드 뒤 바로 배포, 전수 검사는 요청 시 |
 | 2026-10-29 | [selection-check-teaching-link](2026-10-29-selection-check-teaching-link.md) | Sangwoo Mo(sangwoomo) | 검수 도구 | Teaching 링크 금지 규칙 삭제, 링크 드래그 선택 검사 추가 |
 | 2026-10-29 | [push-hook-repair](2026-10-29-push-hook-repair.md) | Sangwoo Mo(sangwoomo) | 공통 pre-push·검수 프로세스 | 보류 중인 검수 훅의 main 선차단 복구, 도입 후 검수는 유지 |
 | 2026-10-29 | [teaching-study-home-link](2026-10-29-teaching-study-home-link.md) | Sangwoo Mo(sangwoomo) | Teaching | 소개 문장의 AI study group을 색상 변경 없이 스터디 홈으로 연결 |

@@ -114,7 +114,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 1. **고칠 요소의 역할부터 정한다.** "Teaching 의 Study group 제목"이 아니라 "목록을 묶는 제목"처럼 사이트 전체에서 쓰는 역할 이름으로 본다.
 2. **템플릿을 기본으로 실제 페이지를 검토한다.** 글자 양·배치·정보의 중요도를 보고 기본 유지 또는 필요한 조정을 판단한다. 기계적으로 같은 크기에 맞추지 않는다.
 3. **공통 변경과 페이지 조정을 구분해 근거를 남긴다.** 모두에게 필요한 변경은 기본 템플릿을 고친다. 특정 페이지에만 필요하면 `page-design.json`에 대상·조정값·이유를 기록한다. 검사는 기본 템플릿과 등록된 조정을 함께 기준으로 삼는다.
-4. **전체 검사는 요청할 때만 한다.** 평소에는 빌드가 되는지와 고친 화면만 확인하고 바로 올린다. push 하면 `format` 이 빠른 검사 뒤 배포한다. 교수가 전수 검사를 요청하면 GitHub Actions 의 `audit` 를 돌리거나 로컬에서 `node tools/check_design.js`(템플릿 계약, 7개 화면 폭), `check_format.js`(묶음 제목 간격), `check_typography.js`(모든 텍스트·숨은 상태의 크기·행간·줄바꿈)를 돌린다. 새 역할 규칙을 만들면 검사에도 더한다. 자동 검사는 역할 일치와 잘림을 확인하는 수단이며, 실제 화면의 시각적 균형은 별도로 판단한다(아래 "검사와 배포").
+4. **전체 검사는 요청할 때만 한다.** 평소에는 빌드가 되는지와 고친 화면만 확인하고 바로 올린다. push 하면 `format` 이 빌드 뒤 바로 배포한다. 교수가 전수 검사를 요청하면 GitHub Actions 의 `audit` 를 돌리거나 로컬에서 `node tools/check_design.js`(템플릿 계약, 7개 화면 폭), `check_format.js`(묶음 제목 간격), `check_typography.js`(모든 텍스트·숨은 상태의 크기·행간·줄바꿈)를 돌린다. 새 역할 규칙을 만들면 검사에도 더한다. 자동 검사는 역할 일치와 잘림을 확인하는 수단이며, 실제 화면의 시각적 균형은 별도로 판단한다(아래 "검사와 배포").
 
 세부 역할표·예외·수정 절차는 [`_themes/wide/README.md`](_themes/wide/README.md), 기본값은 [`design-contract.json`](_themes/wide/design-contract.json), 페이지별 검토와 조정 근거는 [`page-design.md`](_themes/wide/page-design.md)와 그 원본 JSON이 정본이다. 템플릿에 역할을 명시하고 `node tools/check_design.js`로 모든 페이지·탭·필터·펼침 상태를 검사한다. 상단 메뉴는 같은 문서 틀 안에서 페이지 이동 뒤에도 항목·순서·위치·굵기를 유지한다. 새 페이지는 빌드 결과에서 자동으로 발견하며, 역할 없는 제목이나 콘텐츠의 임의 style은 실패다.
 
@@ -137,7 +137,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
    bundle install
    bundle exec jekyll serve
    ```
-   http://localhost:4000 에서 확인한다. POSTECH 필수 요소는 `node tools/check_postech.js` 로 확인한다(push 의 `format` 도 돌린다).
+   http://localhost:4000 에서 확인한다. POSTECH 필수 요소는 `node tools/check_postech.js` 로 확인한다(push 마다 `checks` 도 돌린다).
 6. **changelog 를 쓴다(아래, 필수).** 작성자 ID 는 push 하는 GitHub 계정이다.
 7. 변경의 위험과 검토 필요성으로 반영 경로를 정한다(교수 2026-10-28).
    - **Minor 수정**(문구·링크·작은 스타일·설정·문서, 항목 추가, 이미 결정된 안의 후속 조정)은 관련 검증 뒤 `main`에 직접 커밋·push한다. 수정마다 PR을 만들지 않고 같은 작업의 관련 변경을 한 커밋으로 묶는다. 파일이나 페이지가 여러 개라는 이유만으로 큰 수정으로 분류하지 않는다.
@@ -263,7 +263,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 평소에는 빠르게 빌드하고 올린다. 전체 형식은 교수가 요청할 때만 한꺼번에 본다(교수 2026-10-30).
 
-- **평소 push 와 PR**: `format` 이 빌드와 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`)만 거친 뒤 바로 배포한다. 2분 안팎이다. pre-push 훅과 시각 검토 기록은 push 를 막지 않는다.
+- **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌리고, 배포를 기다리게 하지 않는다. 실패하면 알림을 보고 다음 수정에서 고친다. pre-push 훅과 시각 검토 기록은 push 를 막지 않는다.
 - **전수 검사**: 교수가 요청할 때만 Actions 에서 `audit` 워크플로를 수동으로 돌린다. `check_design`, `check_format`, `check_typography`, `check_interaction` 을 포함한 모든 검사를 돌리고 모든 페이지·상태 화면을 고정 캡처하고, 배포를 막지 않는다. 실패하면 artifact 의 로그와 갤러리를 보고 고친다.
 - **별도 시각 검토**: 화면을 별도 검토자에게 보이는 절차는 `_qa/visual-review/README.md` 에 있고, 필요할 때만 쓴다.
 - 자동 검사 통과를 시각 검토 완료로 보고하지 않는다. 페이지별 예외는 `page-design.json` 에 이유를 남긴다.

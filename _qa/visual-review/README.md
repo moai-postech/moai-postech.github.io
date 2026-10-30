@@ -1,6 +1,6 @@
 # 디자인 검수 절차
 
-> 2026-10-30 부터 이 절차는 push 를 막지 않는다. 평소 push 는 `format` 의 빠른 검사만 거쳐 배포되고, 이 문서의 전체 검사와 고정 캡처는 교수가 요청할 때만 `audit` 워크플로를 수동으로 돌려 만든다. 별도 검토가 필요하면 아래 절차를 쓴다(`AGENTS.md` "검사와 배포").
+> 2026-10-30 부터 이 절차는 push 를 막지 않는다. 평소 push 는 빌드 뒤 바로 배포되고 빠른 검사는 나란히 돌며, 이 문서의 전체 검사와 고정 캡처는 교수가 요청할 때만 `audit` 워크플로를 수동으로 돌려 만든다. 별도 검토가 필요하면 아래 절차를 쓴다(`AGENTS.md` "검사와 배포").
 
 공통 템플릿을 기본으로 삼되, 정보량과 배치에 필요한 조정은 `../../_themes/wide/page-design.json`에 이유와 적용 범위를 남긴다. CSS 수치 통과와 실제 화면의 품질을 따로 검토한다. 자동 검사가 통과해도 시각 검토 결과는 기본값 `pending`이다.
 
@@ -47,7 +47,7 @@ node tools/visual_review.js record --bundle .agent-memory/visual-review/candidat
 
 ## CI와 배포
 
-`format`은 main push·PR마다 빌드와 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`)를 돌리고, main이면 `deploy`가 `_site`를 GitHub Pages(`build_type: workflow`)에 올린다. 시각 검토 기록은 요구하지 않는다.
+`format`은 main push·PR마다 빌드하고, main이면 `deploy`가 바로 `_site`를 GitHub Pages(`build_type: workflow`)에 올린다. 같은 워크플로의 `checks`가 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`)를 배포와 나란히 돌린다. 시각 검토 기록은 요구하지 않는다.
 
 `audit`은 요청할 때만 수동으로 실행하며 `prepare`로 전체 자동 검사와 고정 캡처를 만들고 갤러리·로그를 artifact로 14일 보관한다. 배포를 막지 않는다. 공통 pre-push 훅은 설치 전 훅만 실행하고, 옛 훅이 부르는 `gate`는 막지 않고 통과한다.
 

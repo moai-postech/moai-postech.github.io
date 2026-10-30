@@ -1,39 +1,77 @@
-# 사이트 전체 형식 검사(AGENTS.md "형식은 전역 규칙으로")와 POSTECH 필수 요소 검사(POSTECH.md). 사이트를 빌드해 모든 페이지를 잰다.
+# 자동 검사, 고정 화면, 별도 시각 검토 기록이 모두 배포 앞에 놓인다.
 name: format
 on:
   push:
     branches: [main]
     paths-ignore: ["changelog/**", "discussions/**"]
-  pull_request:  # PR 에서는 늘 돈다. 브랜치 보호가 이 검사를 필수로 요구하므로 건너뛰면 merge 가 막힌다
+  pull_request:
   workflow_dispatch:
+permissions:
+  contents: read
+  deployments: read
+concurrency:
+  group: site-review-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  format:  # 브랜치 보호의 필수 검사 이름(tools/setup_main_ruleset.sh)
+  format:  # 기존 필수 검사 이름 유지
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     env:
       LANG: C.UTF-8
       LC_ALL: C.UTF-8
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
           bundler-cache: true
-      - run: bundle exec jekyll build
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
       - run: npm install --no-save --no-package-lock playwright@1.48.2
       - run: npx playwright install --with-deps chromium
-      - run: node tools/test_design.js
-      - run: node tools/check_design.js --report design-audit.json
+      - name: Compare main with the last successful deployment
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: echo "BASE_SHA=$(node tools/deployment_base.js)" >> "$GITHUB_ENV"
+      - name: Check change history
+        run: python3 tools/check_changelog.py "$BASE_SHA" "$GITHUB_SHA"
+      - name: Build, test and freeze review evidence
+        run: node tools/visual_review.js prepare --out visual-review-bundle --implementer "$GITHUB_ACTOR" --base "$BASE_SHA"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: design-audit
-          path: design-audit.json
-      - run: node tools/check_format.js
-      - run: node tools/check_typography.js
-      - run: node tools/check_selection.js
-      - run: node tools/check_interaction.js
-      - run: node tools/check_study_members.js
-      - run: node tools/check_postech.js
+          path: visual-review-bundle/logs/design-audit.json
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: visual-review-${{ github.sha }}
+          path: visual-review-bundle/
+          retention-days: 7
+      - name: Require independent review for design changes
+        run: node tools/visual_review.js gate --base "$BASE_SHA" --candidate visual-review-bundle
+      - uses: actions/upload-pages-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: _site
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: format
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy verified build
+        id: deployment
+        uses: actions/deploy-pages@v4

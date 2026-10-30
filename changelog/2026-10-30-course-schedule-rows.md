@@ -87,3 +87,12 @@ POSTECH 요구사항: 영향 없음
 - 다음 수업 줄(`is-next`)의 날짜 글자를 강조색으로 칠하지 않는다. 강조색은 줄 테두리만 맡고 날짜는 본문색 굵게 둔다. 테두리와 날짜가 모두 크림슨이면 과하다는 교수 의견.
 
 기각한 안: 날짜 강조색 유지(2026-10-28 회차). 위 이유.
+
+## 추가 반영 11(같은 날, 교수 요청)
+- 이전 강의를 26F 와 같은 기준으로 맞췄다.
+  - 26S: Review Session 을 `kind: review`(번호 없음)로 바꾸고 뒤 강의를 14~21강으로 당겼다. Software 1.0 은 7 – 13, Software 2.0 은 14 – 21. 슬라이드 파일 이름의 옛 번호(`15_deep-learning.pdf` 등)는 그대로 둔다. 교수 학과 세미나 줄에 Faculty 링크.
+  - 25F: 참고 강의를 명문대 기본 강의만 남겼다(BDS·SML·DLA 삭제). ML Systems Reading 은 `MLSD Lec 1-2`, LLM Systems 세 강의의 DLA Reading 은 뺐다.
+- 평가 안내는 한 문장만 둔다: `Attendance is not graded, but missing more than 1/3 of the classes results in an F.`(26F, 26S). 26S 의 프로젝트 설명 문장과 25F 의 팀 프로젝트 문장은 사족이라 뺐다. 25F 는 출석이 10% 배점이라 이 문장을 넣지 않는다.
+- 26S References: Stanford CS146S 와 Intermediate Python 만 남겼다(scikit-learn, PyTorch, Hugging Face 문서 삭제). Intermediate Python 의 출처 칸은 `Book` 대신 판(Python Tips).
+
+기각한 안: 25F 에도 출석 문장 넣기(그 학기는 출석 배점이 있어 사실과 다르다).

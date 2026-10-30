@@ -76,7 +76,7 @@ schedule:
         url: "https://hanj.cs.illinois.edu/cs412/bk3/03.pdf"
   - date: "2025-09-23"
     kind: break
-    title: "No Class"
+    title: "No Class (Business Trip)"
   - part: "part-2"
   - date: "2025-09-25"
     kind: lecture
@@ -254,9 +254,6 @@ exams:
     url: "teaching/25f-data-engineering/exams/final/final.pdf"
     solution: "teaching/25f-data-engineering/exams/final/final-solution.pdf"
 
-other_terms:
-  - name: "Fall 2026"
-    url: "teaching/26f-data-engineering/"
 
 # 팀 프로젝트 페이지. 25F 프로젝트 시트에는 팀원 이름이 없고 발표일 구분 없이 순서만 있다. 3팀 proposal 자료는 없다.
 project:

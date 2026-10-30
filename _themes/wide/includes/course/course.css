@@ -115,7 +115,7 @@ a.cs-speaker-name:hover, a.cs-speaker-link:hover { color: var(--accent); }
 .is-next td { box-shadow: inset 0 2px 0 var(--accent), inset 0 -2px 0 var(--accent) !important; }  /* the next class: a red frame around its own colour */
 .is-next td:first-child { box-shadow: inset 2px 2px 0 var(--accent), inset 0 -2px 0 var(--accent) !important; }
 .is-next td:last-child { box-shadow: inset -2px 2px 0 var(--accent), inset 0 -2px 0 var(--accent) !important; }
-.is-next .cs-date { color: var(--accent); font-weight: var(--weight-heading); }
+.is-next .cs-date { font-weight: var(--weight-heading); }  /* frame only carries the accent; the date stays text colour */
 .course-schedule td:first-child { padding-left: var(--space-3); }
 
 a.cs-title { color: var(--text); }  /* project days lead to the project page */

@@ -48,11 +48,17 @@ def kind(data):
         return "jpg"
     if data[:2] == b"PK":
         return "office"
+    if data.lstrip()[:1] == b"{":
+        try:
+            if "cells" in json.loads(data):
+                return "ipynb"
+        except ValueError:
+            pass
     return None
 
 
 def fetch(url):
-    """(bytes, 확장자) 를 돌려준다. 확장자는 pdf, png, jpg 중 하나. 받지 못하면 RuntimeError."""
+    """(bytes, 확장자) 를 돌려준다. 확장자는 pdf, png, jpg, ipynb 중 하나. 받지 못하면 RuntimeError."""
     fid = drive_id(url)
     if not fid:
         raise RuntimeError(f"Drive 파일 ID 를 찾지 못함: {url}")
@@ -67,7 +73,7 @@ def fetch(url):
         except Exception:
             continue
         k = kind(data)
-        if k in ("pdf", "png", "jpg"):
+        if k in ("pdf", "png", "jpg", "ipynb"):
             return data, k
         if k == "office":
             office = data

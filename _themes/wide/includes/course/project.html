@@ -12,11 +12,11 @@
     <h2>Timeline</h2>
     <div class="section-body">
     {% unless pj.intro == false %}{% if pj.intro %}<p>{{ pj.intro }}</p>{% elsif pj.summary %}<p>{{ pj.summary }}</p>{% endif %}{% endunless %}
-    {% if pj.team_size and pj.team_formation == nil %}<p class="course-note">Team size: <strong>{{ pj.team_size }}</strong></p>{% endif %}
+    {% if pj.team_size and pj.team_formation == nil %}<p class="course-note">Team Size: <strong>{{ pj.team_size }}</strong></p>{% endif %}
     {% if pj.steps or pj.team_formation %}<ol class="project-timeline">
       {% if pj.team_formation %}<li>
         <div class="project-milestone"><span class="project-timeline-when">{{ pj.team_formation.deadline | date: "%b %-d" }}</span></div>
-        <div><strong class="project-timeline-title">Team Building</strong><p>{{ pj.team_formation.text }}</p><p class="project-stage-note">Team size: <strong>{{ pj.team_size | remove: " students" }}</strong> students.</p></div>
+        <div><strong class="project-timeline-title">Team Building</strong><p>{{ pj.team_formation.text }}</p><p class="project-stage-note">Team Size: <strong>{{ pj.team_size | remove: " students" }}</strong> students.</p></div>
       </li>{% endif %}
       {% for s in pj.steps %}<li>
         <div class="project-milestone"><span class="project-timeline-when">{{ s.when }}</span></div>

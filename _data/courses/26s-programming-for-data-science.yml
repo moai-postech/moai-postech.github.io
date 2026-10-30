@@ -199,13 +199,13 @@ schedule:
     title: "No Class (Final Exam Period)"
 
 grading:
-  - item: "Midterm exam"
+  - item: "Midterm Exam"
     weight: "40%"
-  - item: "Final project"
+  - item: "Final Project"
     weight: "60%"
 grading_note: "Attendance is not graded, but missing more than 1/3 of the classes results in an F."
 
-resources_title: "References"  # 참고 강의와 책이 함께 있어 제목을 바꾼다(기본값 Reference courses)
+resources_title: "References"  # 참고 강의와 책이 함께 있어 제목을 바꾼다(기본값 Reference Courses)
 resources:
   - title: "The Modern Software Developer"
     source: "Stanford CS146S"
@@ -233,7 +233,7 @@ project:
       when: "May 28 & Jun 2"
       text: "Share the problem, your approach, and what you learned."
   evaluation:
-    team_label: "Team evaluation"
+    team_label: "Team Evaluation"
     team_reviewers: "Instructor + other teams"
     individual_label: "Individual"
     individual_reviewers: "Teammates"

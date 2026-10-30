@@ -25,6 +25,8 @@
 
 ## 지켜야 할 것
 
+- 라벨(절 제목, 운영 정보 이름, 평가 항목, Timeline 단계, 평가 묶음)은 단어마다 대문자로 쓴다(`Location & Time`, `Past Exams`, `Team Evaluation`, `Final Presentation`). 저장소 `AGENTS.md` 의 하이픈 단어 규칙과 같은 원칙이다. 문장과 설명 글은 첫 글자만 대문자다(교수 2026-10-30).
+- 팀 인원은 강의마다 `Up to N students` 한 꼴로 쓴다(교수 2026-10-30).
 - YAML 값 `off`, `no`, `yes`, `on` 은 true/false 로 읽힌다. 스케줄의 휴강 종류는 `break` 다.
 - 지난 시험과 풀이는 이미 공개한 것만 넣는다. 지난 학기 시험이 없는 강의(26S Programming for Data Science)는 그 학기 자기 시험을 Past exams 로 넣지 않는다(교수 2026-10-30). 시험 파일도 이 저장소 사본으로 링크한다.
 - 슬라이드 폴더 전체 링크는 넣지 않는다. 슬라이드는 스케줄의 강의마다 링크한다(2026-10-22 사용자).

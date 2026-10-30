@@ -17,7 +17,7 @@
     </header>
 
     {% if c.parts %}<section class="content-section" id="outline">
-    <h2>Course outline</h2>
+    <h2>Course Outline</h2>
     <div class="section-body">
     <ol class="plain course-parts course-outline">
       {% for p in c.parts %}<li class="tone-p{{ forloop.index }}">
@@ -42,14 +42,14 @@
     {% if c.resources or c.exams %}<section class="content-section" id="resources">
     <h2>Resources</h2>
     <div class="section-body">
-    {% if c.resources %}<h3 class="sub">{{ c.resources_title | default: "Reference courses" }}</h3>
+    {% if c.resources %}<h3 class="sub">{{ c.resources_title | default: "Reference Courses" }}</h3>
     <ul class="plain item-list">
       {% for x in c.resources %}<li>
         <span class="item-main"><strong><a href="{{ x.url }}">{% if x.abbr %}[{{ x.abbr }}] {% endif %}{{ x.title }}</a></strong></span>
         <span class="item-side">{{ x.source }}</span>
       </li>{% endfor %}
     </ul>{% endif %}
-    {% if c.exams %}<h3 class="sub">Past exams</h3>
+    {% if c.exams %}<h3 class="sub">Past Exams</h3>
     <ul class="plain item-list">
       {% for x in c.exams %}<li>
         <span class="item-main"><strong><a href="{{ x.url }}">{{ x.label }}</a></strong></span>

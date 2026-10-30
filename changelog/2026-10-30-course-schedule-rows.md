@@ -180,3 +180,8 @@ POSTECH 요구사항: 영향 없음
 - 과목명 변경: `Programming for Data Science` → `Programming for AX`(교수 2026-10-30, 과목명이 바뀜). 26S 강의 yml 제목, Teaching 목록, 강의 페이지 세 개의 제목·설명. 주소(`teaching/26s-programming-for-data-science/`)는 이미 공유된 링크가 깨지지 않게 그대로 두었다. 슬라이드 안의 옛 과목명은 교수 지시대로 그대로 둔다.
 - 25F 신기영 연사 링크를 Forbes 기사에서 LinkedIn(`kr.linkedin.com/in/shinky`, 교수 제공)으로 바꿨다. 연사 링크는 다시 개인 사이트나 LinkedIn 만 쓴다(`COURSE.md`).
 - 개교기념일 휴강 제목을 `No Class (POSTECH Anniversary)` 로(교수 요청, `University Anniversary` 대체).
+
+## 추가 반영 26(같은 날, 교수 지적)
+- 26F Home 의 Past Exams 에서 `Midterm 2026` 을 뺐다. 그 학기 시험은 지난 시험이 아니다. 시험지·해설 파일(`teaching/26f-data-engineering/exams/midterm/`)과 Schedule 10/29 시험 줄의 해설 PDF 링크는 그대로다. `COURSE.md` 규칙을 "그 학기 시험은 어느 강의든 Past Exams 에 넣지 않는다"로 고쳤다.
+
+기각한 안: 그 학기 시험지를 Past Exams 에 두기(강의 저장소 `changelog/2026-10-30-midterm-publish.md`). 교수가 뒤집었다.

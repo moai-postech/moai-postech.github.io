@@ -278,9 +278,6 @@ resources:
 
 # 지난 시험(문제와 풀이).
 exams:
-  - label: "Midterm 2026"
-    url: "teaching/26f-data-engineering/exams/midterm/midterm.pdf"
-    solution: "teaching/26f-data-engineering/exams/midterm/midterm-solution.pdf"
   - label: "Midterm 2025"
     url: "teaching/25f-data-engineering/exams/midterm/midterm.pdf"
     solution: "teaching/25f-data-engineering/exams/midterm/midterm-solution.pdf"

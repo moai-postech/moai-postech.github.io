@@ -28,7 +28,7 @@
 - 라벨(절 제목, 운영 정보 이름, 평가 항목, Timeline 단계, 평가 묶음)은 단어마다 대문자로 쓴다(`Location & Time`, `Past Exams`, `Team Evaluation`, `Final Presentation`). 저장소 `AGENTS.md` 의 하이픈 단어 규칙과 같은 원칙이다. 문장과 설명 글은 첫 글자만 대문자다(교수 2026-10-30).
 - 팀 인원은 강의마다 `Up to N students` 한 꼴로 쓴다(교수 2026-10-30).
 - YAML 값 `off`, `no`, `yes`, `on` 은 true/false 로 읽힌다. 스케줄의 휴강 종류는 `break` 다.
-- 지난 시험과 풀이는 이미 공개한 것만 넣는다. 지난 학기 시험이 없는 강의(26S Programming for Data Science)는 그 학기 자기 시험을 Past exams 로 넣지 않는다(교수 2026-10-30). 시험 파일도 이 저장소 사본으로 링크한다.
+- 지난 시험과 풀이는 이미 공개한 것만 넣는다. 그 학기 자기 시험은 어느 강의든 Past Exams 에 넣지 않는다(교수 2026-10-30). 시험 파일도 이 저장소 사본으로 링크한다.
 - 슬라이드 폴더 전체 링크는 넣지 않는다. 슬라이드는 스케줄의 강의마다 링크한다(2026-10-22 사용자).
 - 성적은 넣지 않는다. 팀원 이름과 학생 발표 슬라이드는 프로젝트 페이지에 넣는다(2026-10-22 교수 결정).
 
@@ -40,7 +40,7 @@
 
 강의 슬라이드(PDF·HTML)와 학생 발표 자료(PDF)는 Google Drive 링크 대신 이 저장소의 `teaching/<id>/` 아래 파일로 올리고 사이트 루트 기준 경로로 링크한다(2026-10-26 교수 결정). 방문자가 Drive 를 거치지 않고 사이트에서 바로 연다. Drive 에는 같은 파일을 백업으로 둔다.
 
-- 강의: `teaching/<id>/slides/<n>_<slug>.{pdf,html}`. HTML 은 자산을 인라인한 단일 파일이라 그대로 열린다. HTML 은 줄 제목의 링크로 걸고, Materials 칸에는 PDF → Lab 만 둔다. 그래서 PDF 가 모든 줄에서 같은 자리에 선다(2026-10-30 교수, 2026-10-28 의 HTML·PDF·Lab 나란히 두기 대체). 시험 줄은 해설이 든 판 하나만 PDF 로 걸고, 해설 없는 시험지는 Home 의 Past exams 에만 둔다(2026-10-30 교수)
+- 강의: `teaching/<id>/slides/<n>_<slug>.{pdf,html}`. HTML 은 자산을 인라인한 단일 파일이라 그대로 열린다. HTML 은 줄 제목의 링크로 걸고, Materials 칸에는 PDF → Lab 만 둔다. 그래서 PDF 가 모든 줄에서 같은 자리에 선다(2026-10-30 교수, 2026-10-28 의 HTML·PDF·Lab 나란히 두기 대체). 시험 줄은 해설이 든 판 하나만 PDF 로 건다. Home 의 Past Exams 에는 지난 학기 시험만 넣고 그 학기 시험은 넣지 않는다(2026-10-30 교수)
 - 학생 발표: `teaching/<id>/project/<회차>/<회차>_teamNN.pdf`(pptx 는 올리지 않는다)
 - 파일 하나는 GitHub 한도(100 MB) 아래여야 한다. 지금 가장 큰 파일은 수 MB 다
 - 새 파일이 생기면 Drive 와 이 저장소에 각각 복사한다. yml 에 Drive 링크를 넣었으면 `python3 tools/localize_slides.py` 가 받아서 링크를 바꾼다(사이트 전체 원칙, 저장소 `AGENTS.md`). 26F Data Engineering 은 강의 저장소의 `tools/publish-site.py` 가 Drive 배포본을 이 폴더로 복사하고 yml 링크를 점검한다 시트 링크는 지난 학기에도 유지한다.

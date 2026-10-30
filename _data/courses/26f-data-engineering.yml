@@ -280,13 +280,23 @@ project:
   steps:
     - name: "Proposal"
       when: "Oct 20 & 22"
-      text: "Idea, data collection and preparation, database management."
+      deliverables:
+        - "Define the problem and method, and explain why your data fits."
+        - "Show data collection/preparation, your database approach and basic analysis."
+      scope_note: "Detailed implementation and DevOps are not required. A demo is optional."
+      presentation: "10 min including Q&A"
     - name: "Final"
       when: "Dec 15 & 17"
-      text: "Build a product for a real-world problem with a large-scale database using permitted data."
-  evaluation_sources: ["Instructor evaluation", "Peer evaluation"]
-  evaluation_result: "Project score"
-  evaluation_note: "Project scores combine instructor and peer evaluations. Teamwork is assessed individually based on each member's contribution."
+      deliverables:
+        - "Build a working product for a real-world problem using a large-scale database."
+        - "Show the data pipeline, implementation and results."
+      scope_note: "Use data you are allowed to access."
+      presentation: "10 min including Q&A"
+  evaluation:
+    team_label: "Team evaluation"
+    team_reviewers: "Instructor + other teams"
+    individual_label: "Individual"
+    individual_reviewers: "Teammates"
   criteria:
     - name: "Problem"
       text: "Importance of the problem and clarity of the goal"
@@ -296,7 +306,7 @@ project:
       text: "Quality of the results and evidence supporting the conclusions"
     - name: "Teamwork"
       individual: true
-      text: "Individual contribution to technical work, collaboration and shared responsibilities"
+      text: "Contribution to technical work, collaboration and shared responsibilities"
   rounds:
     - id: "proposal"
       name: "Proposal"

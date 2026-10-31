@@ -10,7 +10,7 @@
   <summary>Participation and departments</summary>
   <div class="study-stat-breakdowns">
     <div><h3>Members by cohort</h3><ul class="plain study-stat-bars">
-      {% for t in stats.terms %}<li><span>{{ t.number }}기 <small>{{ t.term }}</small></span><strong>{{ t.count }}</strong></li>{% endfor %}
+      {% for t in stats.terms %}{% assign new_percent = 0 %}{% assign existing_percent = 0 %}{% if t.count > 0 %}{% assign new_percent = t.new | times: 100.0 | divided_by: t.count | round %}{% assign existing_percent = 100 | minus: new_percent %}{% endif %}<li><span>{{ t.number }}기 <small>{{ t.term }}</small></span><strong>{{ t.count }}</strong><span class="study-cohort-mix"><span>New {{ t.new }} ({{ new_percent }}%)</span><span>Existing {{ t.existing }} ({{ existing_percent }}%)</span></span></li>{% endfor %}
     </ul></div>
     <div><h3>Departments</h3><ul class="plain study-stat-bars">
       {% for d in stats.departments %}<li><span>{{ d.name | replace: "Mueunjae", "Freshmen" }}</span><strong>{{ d.count }}</strong><span class="study-stat-bar" aria-hidden="true"><span style="width: {{ d.count | times: 100.0 | divided_by: stats.total }}%"></span></span></li>{% endfor %}

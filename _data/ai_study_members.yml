@@ -37,22 +37,30 @@
     {
       "number": 4,
       "term": "Fall 2026",
-      "count": 23
+      "count": 23,
+      "new": 14,
+      "existing": 9
     },
     {
       "number": 3,
       "term": "Summer 2026",
-      "count": 7
+      "count": 7,
+      "new": 3,
+      "existing": 4
     },
     {
       "number": 2,
       "term": "Spring 2026",
-      "count": 18
+      "count": 18,
+      "new": 10,
+      "existing": 8
     },
     {
       "number": 1,
       "term": "Fall 2025",
-      "count": 12
+      "count": 12,
+      "new": 12,
+      "existing": 0
     }
   ]
 }

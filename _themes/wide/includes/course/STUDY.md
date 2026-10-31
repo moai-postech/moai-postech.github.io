@@ -6,7 +6,7 @@
 
 상단 Home·Schedule·Members 메뉴를 쓴다. Home은 소개·최신 시간표 링크 → 학기별 주제 목록 → 멤버 통계 → 참여 안내, Schedule은 학기별 탭 → 운영 정보 → 학습 흐름 → 일정 표, Members는 비밀번호로 여는 cohort별 묶음과 전체 명단이다.
 
-- Home의 최신 학기는 `ai_study.yml` 첫 학기에서 읽고 Schedule의 해당 탭으로 연결한다. 최신 시간표는 별도 카드 없이 한 줄 링크로 둔다. 소개에 읽기·설명·코드 실습을 담고 별도 How we study 절은 두지 않는다. 소개 문구는 페이지 front matter에서 관리한다. Returning members는 표시하지 않고 기수별 참여 인원은 비율 막대 없이 숫자로만 표시한다. 학과별 분포 막대는 유지한다. 통계 수치는 공개 집계를 사용하고 기수·학과별 상세는 기본으로 접은 disclosure에 보존한다.
+- Home의 최신 학기는 `ai_study.yml` 첫 학기에서 읽고 Schedule의 해당 탭으로 연결한다. 최신 시간표는 별도 카드 없이 한 줄 링크로 둔다. 소개에 읽기·설명·코드 실습을 담고 별도 How we study 절은 두지 않는다. 소개 문구는 페이지 front matter에서 관리한다. Returning members는 표시하지 않고 기수별 총 참여 인원을 강조하고 신규·기존 인원과 해당 기수 안에서의 비율을 함께 표시한다. 신규는 첫 참여 기수가 같은 멤버, 기존은 이전 기수에 참여한 멤버다. 전체 누적 인원 대비 비율 막대는 쓰지 않는다. 학과별 분포 막대는 유지한다. 통계 수치는 공개 집계를 사용하고 기수·학과별 상세는 기본으로 접은 disclosure에 보존한다.
 
 - How to join은 Home 마지막에 연구실 Home과 같은 floating callout 안에 제목과 안내문을 묶는다. 타과·전공 미선택 1학년을 포함해 모든 POSTECH 학부생을 환영하고, Schedule의 최신 학기로 연결하는 학생대표 연락 링크를 둔다. 본문에는 연락 절차를 반복하지 않는다. Members 명단 링크는 멤버 통계 절 아래에 둔다. 문구는 `teaching/ai-study/index.md`의 `join`에서 관리한다.
 
@@ -34,7 +34,9 @@
 
 ## Members
 
-- 공개 통계(누적·현재 인원, 기수, 기수별 인원·학과별 분포)는 Home의 Member overview에 둔다. Members 탭은 비밀번호 입력 후 위쪽 Cohorts에 가입 기수별 학기·인원·이름을, 아래쪽 Full List에 전체 상세 명단을 표시한다.
+공개 집계만 갱신할 때는 시트 읽기 JSON을 `python3 tools/ai_study_members_sync.py --stats-only -`의 표준입력으로 넘긴다. 비밀번호와 암호문 갱신 없이 신규·기존 구성까지 계산한다.
+
+- 공개 통계(누적·현재 인원, 기수, 기수별 총원·신규/기존 구성·학과별 분포)는 Home의 Member overview에 둔다. Members 탭은 비밀번호 입력 후 위쪽 Cohorts에 가입 기수별 학기·인원·이름을, 아래쪽 Full List에 전체 상세 명단을 표시한다.
 - Members 제목 오른쪽의 Members sheet 링크는 `teaching/ai-study/members/index.md`의 `members_sheet`에서 읽는다. 공통 `sheet-link.html` 양식을 사용한다.
 - 명단 원문을 HTML이나 공개 데이터에 넣지 않는다. AES-256-GCM 암호문만 배포하며 PBKDF2-SHA256으로 입력 비밀번호에서 키를 만든다. 브라우저 Web Crypto로 복호화 후 명단을 생성한다. 비밀번호·복호화 명단은 저장하지 않고, 내보낼 수 없는 CryptoKey만 IndexedDB에 보관해 새로고침·재방문·브라우저 재시작 후 자동으로 연다. Lock을 누르면 키와 명단 DOM을 지운다. 브라우저 데이터를 지우거나 비밀번호가 바뀌면 다시 입력한다.
 - 같은 비밀번호로 명단만 갱신할 때는 salt와 PBKDF2 반복 수를 유지하고 IV는 새로 만들어 저장된 열람 권한이 이어지게 한다. 비밀번호가 바뀌면 새 salt로 키를 교체한다.

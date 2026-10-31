@@ -41,6 +41,8 @@ const assert = (ok, message) => { if (!ok) throw new Error(message); };
       assert(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'locked overflow');
       await loadSyntheticDirectory(page, `http://localhost:${server.address().port}/`);
       assert(await page.locator('.study-members-table').count() === 1, 'synthetic directory is not one table');
+      assert((await page.locator('#member-full-list h2').allTextContents()).join() === 'Cohorts,Full List', 'cohort overview must precede full list');
+      assert(await page.locator('.study-cohort-group .study-cohort-names li').count() === 1, 'cohort overview names missing');
       assert((await page.locator('thead th').allTextContents()).join() === 'Cohort,Entry,Department,Name,Contact,Participation', 'synthetic directory columns');
       assert((await page.locator('tbody tr').first().locator('th, td').allTextContents()).join() === '4기,2026,Example department,Example Student,example [at] postech.ac.kr,3기4기', 'member fields not under matching headings');
       assert(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'synthetic directory overflow');

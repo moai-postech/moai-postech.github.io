@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """별도 study-members 파일의 Apps Script 셀 읽기 결과(JSON)를 Members 데이터로 변환한다.
 
-시트 읽기: python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw 'members!A1:G100' > /tmp/study-members.json
+시트 읽기: python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw 'members!A1:Z100' > /tmp/study-members.json
 변환: python3 tools/ai_study_members_sync.py /tmp/study-members.json
 Node.js 필요. 비밀번호는 대화형 입력 또는 AI_STUDY_MEMBERS_PASSWORD 환경변수로 받는다.
 공개 통계와 AES-GCM 암호문만 저장한다. 원문·비밀번호는 저장소에 쓰지 않는다.
@@ -20,6 +20,8 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def convert(rows):
+    if rows and rows[0][:6] == ['기수', '학번', '학과', '이름', '연락처', '역할']:
+        return convert_full_list(rows)
     people, terms, current = {}, {}, None
     for row in rows:
         row = [str(value).strip() for value in row]
@@ -48,6 +50,49 @@ def convert(rows):
         if person['cohort'] != min(person['participation']):
             raise ValueError(f"{person['name']}: 첫 참여와 가입 기수 불일치")
     return [dict(number=n, term=terms[n], members=[p for p in people.values() if p['cohort'] == n])
+            for n in sorted(terms, reverse=True)]
+
+
+def convert_full_list(rows):
+    terms, columns, people, identities, emails = {}, {}, [], set(), set()
+    for column, label in enumerate(rows[0][6:], start=6):
+        if not str(label).strip():
+            continue
+        match = re.fullmatch(r'(\d+)기 \(((?:Spring|Summer|Fall|Winter) 20\d\d)\)', str(label).strip())
+        if not match or int(match[1]) in terms:
+            raise ValueError('참여 열은 1기 (Fall 2025) 형식으로 중복 없이 작성')
+        number = int(match[1])
+        terms[number], columns[number] = match[2], column
+    if not terms:
+        raise ValueError('참여 기수 열 없음')
+    for row in rows[1:]:
+        if not any(str(value).strip() for value in row[:6]) and all(str(value).strip().lower() in ('', 'false') for value in row[6:]):
+            continue
+        fields = [str(value).strip() for value in row[:6]]
+        if len(fields) < 5 or not all(fields[:5]):
+            raise ValueError('기수·학번·학과·이름·연락처는 필수')
+        cohort, entry_year, department, name, email = fields[:5]
+        if not cohort.isdigit() or not re.fullmatch(r'[^\s@]+@postech\.ac\.kr', email):
+            raise ValueError(f'{name}: 기수 또는 POSTECH 이메일 확인 필요')
+        identity = (name, entry_year)
+        if identity in identities or email.lower() in emails:
+            raise ValueError(f'{name}: full list 중복 멤버')
+        participation = []
+        for number, column in columns.items():
+            value = str(row[column]).strip().lower() if column < len(row) else ''
+            if value not in ('true', 'false', ''):
+                raise ValueError(f'{name}: 참여 기수는 체크박스로 작성')
+            if value == 'true':
+                participation.append(number)
+        participation.sort()
+        if not participation or int(cohort) != participation[0]:
+            raise ValueError(f'{name}: 가입 기수와 첫 참여 기수 불일치')
+        identities.add(identity); emails.add(email.lower())
+        people.append(dict(name=name, department=department, entry_year=entry_year,
+                           email=email, cohort=int(cohort), participation=participation))
+    if not people:
+        raise ValueError('빈 명단')
+    return [dict(number=n, term=terms[n], members=[p for p in people if p['cohort'] == n])
             for n in sorted(terms, reverse=True)]
 
 

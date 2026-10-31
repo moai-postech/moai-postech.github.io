@@ -37,6 +37,21 @@
     return node;
   };
   function render(cohorts) {
+    const ordered = [...cohorts].sort((a, b) => b.number - a.number);
+    const overview = element('section', undefined, 'study-cohort-overview');
+    overview.append(element('h2', 'Cohorts'));
+    const groups = element('div', undefined, 'study-cohort-grid');
+    for (const cohort of ordered) {
+      const group = element('section', undefined, 'study-cohort-group');
+      group.append(element('h3', cohort.number + '기', 'group-heading'));
+      group.append(element('p', [cohort.term, cohort.members.length + (cohort.members.length === 1 ? ' member' : ' members')].filter(Boolean).join(' · '), 'course-note study-cohort-meta'));
+      const names = element('ul', undefined, 'plain study-cohort-names');
+      for (const member of cohort.members) names.append(element('li', member.name));
+      group.append(names); groups.append(group);
+    }
+    overview.append(groups);
+    const full = element('section', undefined, 'study-directory-full');
+    full.append(element('h2', 'Full List'));
     const table = element('table', undefined, 'study-members-table');
     table.append(element('caption', 'Study members by joining cohort, newest first', 'visually-hidden'));
     const cols = element('colgroup');
@@ -47,7 +62,7 @@
     for (const label of labels) { const th = element('th', label); th.scope = 'col'; header.append(th); }
     head.append(header); table.append(head);
     const body = element('tbody');
-    for (const cohort of [...cohorts].sort((a, b) => b.number - a.number)) {
+    for (const cohort of ordered) {
       for (const member of cohort.members) {
         const row = element('tr');
         const year = /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : member.entry_year;
@@ -64,7 +79,7 @@
         cell.append(markers); row.append(cell); body.append(row);
       }
     }
-    table.append(body); list.replaceChildren(table);
+    table.append(body); full.append(table); list.replaceChildren(overview, full);
   }
   async function unlock(key, focus) {
     const plaintext = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: decode(data.iv) }, key, decode(data.ciphertext));

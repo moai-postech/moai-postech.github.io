@@ -28,7 +28,7 @@
 | 학기별 운영 정보 | `_data/ai_study_terms.yml`, 일정과 같은 학기 ID 사용 |
 | 멤버 통계·명단 | `_data/ai_study_members.yml`은 공개 집계, `_data/ai_study_members_private.yml`은 암호문. 별도 `study-members` 파일의 `members` 탭을 Apps Script로 읽어 `tools/ai_study_members_sync.py`로 변환 |
 
-일정과 멤버는 같은 Drive 폴더의 별도 파일로 관리한다. [ai-study](https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit)는 `schedule`·`references` 탭, [study-members](https://docs.google.com/spreadsheets/d/1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw/edit)는 `members` 탭을 둔다. `study-members`는 링크가 있는 모든 사용자가 편집할 수 있다.
+일정과 멤버는 같은 Drive 폴더의 별도 파일로 관리한다. [study-schedule](https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit)는 `schedule`·`references` 탭, [study-members](https://docs.google.com/spreadsheets/d/1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw/edit)는 `members` 탭을 둔다. `study-members`는 링크가 있는 모든 사용자가 편집할 수 있다.
 
 `ai_study_terms.yml`은 `format`(강의 중심이면 lectures), `reference_course`(title, term, url), `overview`, `learning_path`(label, start, end, title, text), `advisor`(사진 `photo` 포함), `meetings`, `location`, `representative`를 학기별로 둔다. 값이 없으면 해당 칸을 생략한다. 자료 시트 링크는 동기화 데이터의 `sheet`다.
 

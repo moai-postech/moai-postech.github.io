@@ -16,7 +16,16 @@ const COURSE = [];
 const check = (ok, message) => { if (!ok) throw new Error(message); };
 const studyOnly = process.argv.includes('--study-only');
 async function checkStudyOverview(page, base) {
-  for (const url of ['teaching/ai-study/', 'teaching/ai-study/schedule/']) {
+  await page.goto(new URL('teaching/ai-study/', base).href);
+  check(await page.locator('.study-format,.study-latest,.study-learning-path').count() === 0, 'Home still repeats study methods or detailed flow');
+  const links = page.locator('.study-term-directory a');
+  check(await links.count() >= 4, 'Home term directory missing');
+  for (const href of await links.evaluateAll(items => items.map(a => a.getAttribute('href'))))
+    check(/^teaching\/ai-study\/schedule\/#[a-z0-9-]+$/.test(href), 'Home term link lost its Schedule destination');
+  check(await page.locator('.study-latest-link a').count() === 1, 'Home latest schedule entry missing');
+  check(await page.locator('.study-member-stats,.study-home-join').count() === 2, 'Home lost member statistics or joining guidance');
+  check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'Home overflows');
+  for (const url of ['teaching/ai-study/schedule/']) {
     await page.goto(new URL(url, base).href);
     const tabs = page.locator('.study-tablist [role="tab"]');
     await tabs.first().focus(); await page.keyboard.press('End');
@@ -57,7 +66,7 @@ async function checkStudyOverview(page, base) {
         await page.waitForFunction(() => document.activeElement.id === 'main-content');
         check(new URL(page.url()).pathname.replace(/index\.html$/, '') === new URL(name, base).pathname.replace(/index\.html$/, ''), `${name}: skip link navigated to another page`);
       }
-      for (const [url, selector] of [['/', '.focus-tab'], ['teaching/ai-study/', '[data-study-tabs] [role="tab"]'], ['teaching/ai-study/schedule/', '[data-study-tabs] [role="tab"]']]) {
+      for (const [url, selector] of [['/', '.focus-tab'], ['teaching/ai-study/schedule/', '[data-study-tabs] [role="tab"]']]) {
         await page.goto(new URL(url, base).href);
         await page.addStyleTag({ content: 'html {scroll-behavior:auto!important}' });
         const tabs = page.locator(selector), count = await tabs.count();
@@ -75,7 +84,7 @@ async function checkStudyOverview(page, base) {
       await checkStudyOverview(page, base);
       await page.close();
     }
-    if (studyOnly) { console.log("Study overview checks passed: 4 widths, 4 terms, Home/Schedule flow, term keyboard navigation, no row highlighting"); return; }
+    if (studyOnly) { console.log("Study overview checks passed: 4 widths, 4 terms, compact Home and term links, Schedule flow, term keyboard navigation, no row highlighting"); return; }
     const context = await browser.newContext(); const page = await context.newPage();
     await page.goto(base);
     const link = page.locator('.content-section.section-next a').first();

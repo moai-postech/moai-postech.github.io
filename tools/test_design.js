@@ -44,7 +44,7 @@ const { loadSyntheticDirectory } = require('./lib/design-fixture');
     assert.deepEqual(await failures(),[], '강의 정상 템플릿이 통과해야 한다');
     await page.addStyleTag({content:'.course-nav a[aria-current] {font-weight:400 !important}'});
     assert((await failures()).some(f=>f.startsWith('current-navigation: fontWeight')), '현재 메뉴의 굵기 회귀를 검출해야 한다');
-    await load('teaching/ai-study/index.html');
+    await load('teaching/ai-study/schedule/index.html');
     await page.addStyleTag({content:'.study-term-heading > a {font-weight:400 !important}'});
     assert((await failures()).some(f=>f.startsWith('toolbar-action: fontWeight')), '클래스명이 달라도 헤더의 동작 링크 회귀를 검출해야 한다');
     await load('publications.html');
@@ -61,6 +61,7 @@ const { loadSyntheticDirectory } = require('./lib/design-fixture');
     assert.deepEqual(await failures(),[], '가상 데이터로 실제 명단 UI를 잠금 해제한 상태도 계약을 따라야 한다');
     assert.equal(await page.locator('tbody tr').count(),1);
     await page.getByRole('button',{name:'Lock',exact:true}).click();
+    await page.waitForFunction(() => document.querySelectorAll('tbody tr').length === 0);
     assert.equal(await page.locator('tbody tr').count(),0);
     await page.close();
   } finally { if(browser) await browser.close(); await new Promise(resolve=>srv.close(resolve)); }

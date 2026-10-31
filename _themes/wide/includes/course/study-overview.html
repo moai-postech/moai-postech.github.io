@@ -1,14 +1,7 @@
 {% assign d = site.data.ai_study %}
-<section class="content-section study-home-overview" aria-labelledby="study-overview-title" data-study-tabs>
+<section class="content-section study-home-overview" aria-labelledby="study-overview-title">
   <h2 id="study-overview-title">What we study</h2>
-  <p class="study-section-intro">One theme each term, explored topic by topic. Choose a term to see the learning path and open its materials.</p>
-  <div class="study-tablist" role="tablist" aria-label="Study overview terms">
-    {% for t in d.terms %}<button type="button" role="tab" id="tab-overview-{{ t.id }}" aria-controls="overview-{{ t.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}><strong>{{ t.name }}</strong><span>{{ t.theme }}</span></button>{% endfor %}
-  </div>
-  {% for t in d.terms %}{% assign info = site.data.ai_study_terms[t.id] %}
-  <div class="study-panel" role="tabpanel" id="overview-{{ t.id }}" aria-labelledby="tab-overview-{{ t.id }}"{% unless forloop.first %} hidden{% endunless %}>
-    <div class="study-term-heading"><h3 class="group-heading">{{ t.theme }}<span>{{ t.name }}</span></h3><a class="study-sheet" href="teaching/ai-study/schedule/#{{ t.id }}">Schedule</a></div>
-    {% include course/study-learning-path.html info=info %}
-  </div>{% endfor %}
+  <ul class="plain study-term-directory">
+    {% for t in d.terms %}<li><a href="teaching/ai-study/schedule/#{{ t.id }}"><strong>{{ t.theme }}</strong><span class="course-note">{{ t.name }}</span></a></li>{% endfor %}
+  </ul>
 </section>
-{% include course/study-tabs.html %}

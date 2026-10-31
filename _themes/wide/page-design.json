@@ -214,14 +214,14 @@
       "page": "teaching/ai-study/index.html",
       "template": "스터디 · Home",
       "decision": "공통 컴포넌트 조정",
-      "reason": "소개와 최신 학기 진입점을 7:5로 배치하고 960px 이하에서 한 열로 전환. 학습 방식 3단계 → 학기별 학습 흐름 → 공개 통계 → 참여 안내 순서. 상세 통계는 disclosure로 보존. 제목·카드·본문은 공통 역할 크기와 간격을 유지.",
+      "reason": "소개와 한 줄 최신 시간표 링크 → 학기별 주제 목록 → 공개 통계 → 참여 안내 순서. 학습 방식은 소개에 담고 상세 학습 흐름은 Schedule에서 표시해 중복을 줄임. 주제 목록은 모바일에서 한 열, 상세 통계는 disclosure로 보존. 공통 글자·간격 토큰 유지.",
       "adjustments": []
     },
     {
       "page": "teaching/ai-study/schedule/index.html",
       "template": "스터디 · Schedule",
       "decision": "공통 컴포넌트 조정",
-      "reason": "긴 표는16/14/13px 위계 유지. 운영 정보16px·학기 선택16/14px·파트 선택14px로 조작 영역은 읽기 쉽게 조정.",
+      "reason": "긴 표는16/14/13px 위계 유지. 운영 정보16px·학기 선택16/14px로 읽기 쉽게 조정. 정적 학습 흐름은 운영 정보와 일정 사이에 표시.",
       "adjustments": []
     },
     {

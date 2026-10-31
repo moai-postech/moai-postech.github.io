@@ -1,5 +1,5 @@
 {% comment %}
-  Home: 소개·최신 학기 → 학습 방식 → 학기별 흐름 → 통계 → 참여 안내. 운영 정보·일정은 Schedule에서 표시. 시트·자료는 ai_study.yml,
+  Home: 소개·최신 시간표 링크 → 학기별 주제 → 통계 → 참여 안내. 학습 흐름·운영 정보·일정은 Schedule에서 표시. 시트·자료는 ai_study.yml,
   시간·장소·지도교수·학생대표는 ai_study_terms.yml에서 읽는다(교수 2026-10-28).
   학기별 운영 정보가 전역 머리말에 섞이지 않게 하고, 탭을 바꿔도 표의 열 위치는 유지한다.
 {% endcomment %}
@@ -17,26 +17,10 @@
       <p class="course-eyebrow"><span>Study group</span><span>POSTECH</span></p>
       <h1>{{ page.title }}</h1>
       <p class="course-lead">{{ page.summary }}</p>
-      <p class="study-home-advisor">With <a href="{{ site.data.ai_study_terms[latest.id].advisor.url }}">{{ site.data.ai_study_terms[latest.id].advisor.name }}</a> · MOAI Lab</p>
+      <p class="study-home-advisor">With <a href="{{ site.data.ai_study_terms[latest.id].advisor.url }}">{{ site.data.ai_study_terms[latest.id].advisor.name }}</a></p>
+      <p class="section-next study-latest-link"><a href="teaching/ai-study/schedule/#{{ latest.id }}">Latest schedule: {{ latest.theme }} ({{ latest.name }}) →</a></p>
     </header>
-    <aside class="study-latest topic-card" aria-label="Latest study term">
-      <p class="study-latest-label">Latest term <span>{{ latest.name }}</span></p>
-      <h2 class="group-heading">{{ latest.theme }}</h2>
-      <p>{{ site.data.ai_study_terms[latest.id].overview }}</p>
-      <div class="section-next"><a href="teaching/ai-study/schedule/#{{ latest.id }}">View schedule →</a></div>
-    </aside>
     </div>
-
-    <section class="content-section study-format" aria-labelledby="study-format-title">
-      <h2 id="study-format-title">{{ page.format.title }}</h2>
-      <ol class="study-format-steps plain">
-        {% for step in page.format.steps %}<li>
-          <span class="study-format-number" aria-hidden="true">0{{ forloop.index }}</span>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.text }}</p>
-        </li>{% endfor %}
-      </ol>
-    </section>
 
 {% include course/study-overview.html %}
 {% include course/study-member-stats.html %}
@@ -45,6 +29,6 @@
       <div class="section-body">
       <h2 id="study-join">{{ page.join.title }}</h2>
       {{ page.join.body | markdownify }}
-      <p class="study-join-next"><a href="teaching/ai-study/schedule/#{{ latest.id }}">Find the student representative →</a></p>
+      <p class="study-join-next"><a href="teaching/ai-study/schedule/#{{ latest.id }}">Contact the student representative →</a></p>
       </div>
     </section>{% endif %}

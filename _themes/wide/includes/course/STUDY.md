@@ -55,6 +55,6 @@
 
 - Schedule의 Study sheet 위치·화살표·반응형 정렬은 [공통 규칙](README.md#외부-시트-링크)을 따른다.
 
-- 상단 POSTECH MOAI Lab과 로고는 연구실 홈으로 연결한다. 중복을 줄여 스터디 footer는 Lab home·POSTECH·개인정보 링크만 유지한다(P7).
+- 상단 POSTECH MOAI Lab과 로고는 연구실 홈으로 연결한다. 스터디 footer는 강의 페이지와 같은 연구실 로고·MOAI Lab 홈 링크, POSTECH, 개인정보 링크 양식을 사용한다(P7).
 
 - 전공을 정하지 않은 학생은 안내 문장에서 `freshmen`, 학과 분포·명단에서는 `Undeclared`로 표시한다. 원본의 `Mueunjae` 표기는 화면에서 변환한다.

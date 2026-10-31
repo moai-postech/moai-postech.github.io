@@ -35,6 +35,7 @@
 ## Members
 
 - 공개 통계(누적·현재 인원, 기수, 재참여, 기수·학과별 분포)는 Home의 Member overview에만 둔다. Members 탭은 비밀번호 입력 후 명단만 표시한다.
+- Members 제목 오른쪽의 Members sheet 링크는 `teaching/ai-study/members/index.md`의 `members_sheet`에서 읽는다. 공통 `sheet-link.html` 양식을 사용한다.
 - 명단 원문을 HTML이나 공개 데이터에 넣지 않는다. AES-256-GCM 암호문만 배포하며 PBKDF2-SHA256으로 입력 비밀번호에서 키를 만든다. 브라우저 Web Crypto로 복호화 후 명단을 생성한다. 비밀번호·키·복호화 명단은 localStorage·쿠키에 저장하지 않는다. 다시 잠그면 DOM을 비우고 새로고침하면 잠금 상태다.
 - 펼친 명단은 한 개의 표다. 맨 왼쪽 Cohort로 가입 기수 내림차순 정렬하며 기수별 절로 나누지 않는다. 한 사람 한 행이고 같은 기수 안에서는 시트 순서를 유지한다.
 - 열은 Cohort·Entry·Department·Name·Contact·Participation(기수·학번·학과·이름·연락처·참여회차) 순이다. Entry는 입학연도를 네 자리로 표시한다. 시트 양식과 홈페이지 표시 양식은 독립적으로 관리한다. 학과·학번은 그 사람의 최신 시트 행을 사용한다.

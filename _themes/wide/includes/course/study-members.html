@@ -1,5 +1,8 @@
 <header class="course-head">
-  <h1>Members</h1>
+  <div class="course-heading-row">
+    <h1>Members</h1>
+    {% if page.members_sheet %}{% include course/sheet-link.html url=page.members_sheet label="Members sheet" %}{% endif %}
+  </div>
   <p class="course-meta">{{ page.title }}</p>
 </header>
 <section class="content-section study-full-list" aria-label="Member directory">

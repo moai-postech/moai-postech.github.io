@@ -51,7 +51,7 @@
       for (const member of cohort.members) {
         const row = element('tr');
         const year = /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : member.entry_year;
-        const values = [cohort.number + '기', year, member.department === 'Mueunjae' ? 'Undeclared' : member.department, member.name, member.email.replace('@', ' [at] ')];
+        const values = [cohort.number + '기', year, member.department === 'Mueunjae' ? 'Freshmen' : member.department, member.name, member.email.replace('@', ' [at] ')];
         values.forEach((value, index) => {
           const cell = element(index === 3 ? 'th' : 'td', value, index === 4 ? 'study-member-email' : undefined);
           if (index === 3) cell.scope = 'row';

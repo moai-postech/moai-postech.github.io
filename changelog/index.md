@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-31 | [study-member-columns](2026-10-31-study-member-columns.md) | Sangwoo Mo(sangwoomo) | AI Study Members | 단일 표의 열을 기수·학번·학과·이름·연락처·참여회차 순서로 정리 |
 | 2026-10-31 | [study-members-file](2026-10-31-study-members-file.md) | Sangwoo Mo(sangwoomo) | AI Study 원본 시트·갱신 경로 | member 탭을 별도 study-members 파일로 분리, 링크 편집 허용 |
 | 2026-10-31 | [highlights-no-dates](2026-10-31-highlights-no-dates.md) | Sangwoo Mo(sangwoomo) | 강의 Project Highlights | 월·연도만 삭제하고 대회명·상 이름 유지 |
 | 2026-10-31 | [ax-final-duration](2026-10-31-ax-final-duration.md) | Sangwoo Mo(sangwoomo) | Programming for AX Project | Final Presentation에 Q&A 포함 15분 표기 |

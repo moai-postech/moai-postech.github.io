@@ -239,6 +239,7 @@ project:
     - name: "Final Presentation"
       when: "May 28 & Jun 2"
       text: "Share the problem, your approach, and what you learned."
+      presentation: "15 min (incl. Q&A)"
   evaluation:
     team_label: "Team Evaluation"
     team_reviewers: "Instructor + other teams"

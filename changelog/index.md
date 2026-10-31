@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-31 | [study-schedule-name](2026-10-31-study-schedule-name.md) | Sangwoo Mo(sangwoomo) | 스터디 일정 파일·STUDY 문서 | ai-study 구글시트를 study-schedule로 이름 변경 |
 | 2026-10-31 | [study-remember-access](2026-10-31-study-remember-access.md) | Sangwoo Mo(sangwoomo) | AI Study Members | 비밀번호 입력 후 같은 브라우저에서 열람 권한 유지, Lock으로 해제 |
 | 2026-10-31 | [study-members-sheet-link](2026-10-31-study-members-sheet-link.md) | Sangwoo Mo(sangwoomo) | AI Study Members | 제목 오른쪽에 study-members 구글시트 링크 추가 |
 | 2026-10-31 | [study-member-columns](2026-10-31-study-member-columns.md) | Sangwoo Mo(sangwoomo) | AI Study Members | 단일 표의 열을 기수·학번·학과·이름·연락처·참여회차 순서로 정리 |

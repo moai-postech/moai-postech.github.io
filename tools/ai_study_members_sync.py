@@ -80,6 +80,7 @@ const fs = require('fs'), crypto = require('crypto');
 const {password, cohorts, previous} = JSON.parse(fs.readFileSync(0, 'utf8'));
 const plain = Buffer.from(JSON.stringify(cohorts));
 const derive = (salt, rounds) => crypto.pbkdf2Sync(password, salt, rounds, 32, 'sha256');
+let salt = crypto.randomBytes(16), iterations = 210000;
 if (previous) {
   try {
     const bytes = Buffer.from(previous.ciphertext, 'base64');
@@ -87,9 +88,11 @@ if (previous) {
     d.setAuthTag(bytes.subarray(-16));
     const old = Buffer.concat([d.update(bytes.subarray(0, -16)), d.final()]);
     if (old.equals(plain)) { process.stdout.write(JSON.stringify(previous)); process.exit(0); }
+    // Keep remembered browser keys valid when the roster changes with the same password.
+    salt = Buffer.from(previous.salt, 'base64'); iterations = previous.iterations;
   } catch (_) { /* a changed password creates a fresh encrypted payload */ }
 }
-const salt = crypto.randomBytes(16), iv = crypto.randomBytes(12), iterations = 210000;
+const iv = crypto.randomBytes(12);
 const cipher = crypto.createCipheriv('aes-256-gcm', derive(salt, iterations), iv);
 const ciphertext = Buffer.concat([cipher.update(plain), cipher.final(), cipher.getAuthTag()]);
 process.stdout.write(JSON.stringify({version:1, iterations, salt:salt.toString('base64'), iv:iv.toString('base64'), ciphertext:ciphertext.toString('base64')}));

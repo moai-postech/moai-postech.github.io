@@ -2,6 +2,7 @@
 const { chromium } = require('playwright');
 const { serve } = require('./lib/site');
 const { loadSyntheticDirectory } = require('./lib/design-fixture');
+const { checkRememberedAccess } = require('./lib/study-access-check');
 const assert = (ok, message) => { if (!ok) throw new Error(message); };
 (async () => {
   const server = await serve();
@@ -32,6 +33,7 @@ const assert = (ok, message) => { if (!ok) throw new Error(message); };
         assert((await page.locator('thead th').allTextContents()).join() === 'Cohort,Entry,Department,Name,Contact,Participation', 'directory columns');
         assert(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'unlocked overflow');
         await page.getByRole('button', { name: 'Lock', exact: true }).click();
+        await page.locator('#member-unlock-form').waitFor({state:'visible'});
         assert(await page.locator('tbody tr').count() === 0, 'relocking retained private rows');
         await page.reload();
         assert(await page.locator('tbody tr').count() === 0, 'reload retained private rows');
@@ -43,9 +45,11 @@ const assert = (ok, message) => { if (!ok) throw new Error(message); };
       assert((await page.locator('tbody tr').first().locator('th, td').allTextContents()).join() === '4기,2026,Example department,Example Student,example [at] postech.ac.kr,3기4기', 'member fields not under matching headings');
       assert(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'synthetic directory overflow');
       await page.getByRole('button', { name: 'Lock', exact: true }).click();
+      await page.locator('#member-unlock-form').waitFor({state:'visible'});
       assert(await page.locator('tbody tr').count() === 0, 'synthetic relocking retained rows');
       await page.close();
     }
-    console.log('Study Members privacy checks passed: 4 widths' + (process.env.AI_STUDY_MEMBERS_PASSWORD ? ', unlock/relock/reload' : ', locked output and wrong password'));
+    await checkRememberedAccess(`http://localhost:${server.address().port}/`);
+    console.log('Study Members checks passed: 4 widths, remembered access across reload/navigation/restart, Lock, password change, roster update, non-exportable key');
   } finally { await browser.close(); server.close(); }
 })().catch(error => { console.error(error.message); process.exitCode = 1; });

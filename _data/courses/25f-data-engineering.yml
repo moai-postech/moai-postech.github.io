@@ -295,7 +295,7 @@ project:
   # Highlights: 프로젝트로 받은 상 같은 성과. 여러 개를 넣을 수 있다. 사진·원 기사 링크·영문 설명, 개인 이름 대신 팀 번호(교수 2026-10-30). 사진은 project/highlights/ 에 둔다.
   highlights:
     - title: "Grand Prize, 4th Retail Data Festa"
-      when: "Nov 2025 · Minister's Award"
+      when: "Minister's Award"
       photo: "teaching/25f-data-engineering/project/highlights/2025-retail-data-festa.jpg"
       photo_alt: "Team 2 on stage with the Grand Prize at the 4th Retail Data Festa"
       url: "https://www.news1.kr/industry/electronics/5974547"

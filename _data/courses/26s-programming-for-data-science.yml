@@ -263,7 +263,7 @@ project:
   # Highlights: 프로젝트로 낸 성과. 여러 개를 넣을 수 있다. 개인 이름 대신 팀 번호로 쓴다(교수 2026-10-30).
   highlights:
     - title: "Rank 1 on Kaggle with an Autonomous Research Agent"
-      when: "May 2026 · VSB Power Line Fault Detection (Kaggle)"
+      when: "VSB Power Line Fault Detection (Kaggle)"
       photo: "teaching/26s-programming-for-data-science/project/highlights/2026-kaggle-research-agent.jpg"
       photo_alt: "Team 1's autonomous Kaggle research agent: knowledge inputs, a plan-train-evaluate-decide cycle, and a feedback loop"
       text: "Team 1 built an AI agent that plans, trains and evaluates models on its own and learns from each trial. In 48 hours it reached rank 1 among 1,446 teams on the Kaggle leaderboard (late submission)."

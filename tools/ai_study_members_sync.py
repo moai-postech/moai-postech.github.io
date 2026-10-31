@@ -15,6 +15,7 @@ import subprocess
 import json
 from pathlib import Path
 import re
+import sys
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -96,27 +97,38 @@ def convert_full_list(rows):
             for n in sorted(terms, reverse=True)]
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('input', type=Path)
-    args = parser.parse_args()
-    source = json.loads(args.input.read_text())
-    if source.get('ok') is not True:
-        raise ValueError('시트 읽기 실패')
-    cohorts = convert(source['values'])
-    password = os.environ.get('AI_STUDY_MEMBERS_PASSWORD') or getpass.getpass('Members 비밀번호: ')
-    if not password:
-        raise ValueError('빈 비밀번호는 허용하지 않음')
+def public_stats(cohorts):
     people = [p for c in cohorts for p in c['members']]
     latest = max(c['number'] for c in cohorts)
     departments = {'산경': 'IME', '컴공': 'CSE', '무은재': 'Mueunjae', '전전': 'EE',
                    '물리': 'Physics', '수학': 'Mathematics', 'IT융합': 'CITE', 'IT융공': 'CITE'}
     counts = Counter(departments.get(p['department'], p['department']) for p in people)
-    stats = dict(total=len(people), current=sum(latest in p['participation'] for p in people),
+    return dict(total=len(people), current=sum(latest in p['participation'] for p in people),
                  cohorts=len(cohorts), returning=sum(len(p['participation']) > 1 for p in people),
                  departments=[dict(name=n, count=c) for n, c in counts.most_common()],
                  terms=[dict(number=c['number'], term=c['term'],
-                             count=sum(c['number'] in p['participation'] for p in people)) for c in cohorts])
+                             count=sum(c['number'] in p['participation'] for p in people),
+                             new=sum(p['cohort'] == c['number'] for p in people),
+                             existing=sum(c['number'] in p['participation'] and p['cohort'] < c['number'] for p in people)) for c in cohorts])
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('input', help='시트 읽기 JSON 경로, 표준입력은 -')
+    parser.add_argument('--stats-only', action='store_true', help='암호문은 유지하고 공개 집계만 갱신')
+    args = parser.parse_args()
+    source = json.loads(sys.stdin.read() if args.input == '-' else Path(args.input).read_text())
+    if source.get('ok') is not True:
+        raise ValueError('시트 읽기 실패')
+    cohorts = convert(source['values'])
+    stats = public_stats(cohorts)
+    if args.stats_only:
+        (ROOT / '_data' / 'ai_study_members.yml').write_text(json.dumps(stats, ensure_ascii=False, indent=2) + '\n')
+        print(json.dumps(stats['terms'], ensure_ascii=False))
+        return
+    password = os.environ.get('AI_STUDY_MEMBERS_PASSWORD') or getpass.getpass('Members 비밀번호: ')
+    if not password:
+        raise ValueError('빈 비밀번호는 허용하지 않음')
     private_path = ROOT / '_data' / 'ai_study_members_private.yml'
     previous = json.loads(private_path.read_text()) if private_path.exists() else None
     # Node's standard crypto module keeps Python free of extra dependencies.

@@ -1,6 +1,6 @@
 """Check one-row-per-person conversion and invalid roster edits using invented data."""
 import unittest
-from ai_study_members_sync import convert
+from ai_study_members_sync import convert, public_stats
 
 
 class MembersConversion(unittest.TestCase):
@@ -22,6 +22,16 @@ class MembersConversion(unittest.TestCase):
         person = self.person[:6] + ['TRUE', 'TRUE']
         self.assertEqual(convert([self.header, self.person]),
                          convert([self.header, person, ['', '', '', '', '', '', 'FALSE', 'FALSE']]))
+
+    def test_term_mix_counts_participants_and_new_joiners(self):
+        header = self.header + ['3기 (Summer 2026)']
+        continuing = self.person + [True]
+        new = [2, '25', '컴공', 'New Student', 'new@postech.ac.kr', '', False, True, False]
+        returning_after_break = [1, '23', '산경', 'Returning Student', 'back@postech.ac.kr', '', True, False, True]
+        terms = public_stats(convert([header, continuing, new, returning_after_break]))['terms']
+        self.assertEqual([(t['number'], t['count'], t['new'], t['existing']) for t in terms],
+                         [(3, 2, 0, 2), (2, 2, 1, 1), (1, 2, 2, 0)])
+        self.assertTrue(all(t['count'] == t['new'] + t['existing'] for t in terms))
 
     def test_duplicate_email_is_rejected(self):
         other = self.person.copy(); other[3] = 'Another Student'

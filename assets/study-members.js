@@ -58,7 +58,7 @@
     for (const name of ['cohort', 'year', 'department', 'name', 'email', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
     table.append(cols);
     const head = element('thead'), header = element('tr');
-    const labels = ['Cohort', 'Entry', 'Department', 'Name', 'Contact', 'Participation'];
+    const labels = ['Cohort', 'Entry', 'Department', 'Name', 'POSTECH Email ID', 'Participation'];
     for (const label of labels) { const th = element('th', label); th.scope = 'col'; header.append(th); }
     head.append(header); table.append(head);
     const body = element('tbody');
@@ -67,7 +67,7 @@
         const row = element('tr');
         const year = /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : member.entry_year;
         const department = ['Mueunjae', '무은재', 'Undeclared'].includes(member.department) ? 'Freshmen' : member.department;
-        const values = [cohort.number + '기', year, department, member.name, member.email.replace('@', ' [at] ')];
+        const values = [cohort.number + '기', year, department, member.name, member.email.split('@')[0]];
         values.forEach((value, index) => {
           const cell = element(index === 3 ? 'th' : 'td', value, index === 4 ? 'study-member-email' : undefined);
           if (index === 3) cell.scope = 'row';

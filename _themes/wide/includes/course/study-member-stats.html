@@ -5,14 +5,13 @@
     <div><dt>Members to date</dt><dd>{{ stats.total }}</dd></div>
     <div><dt>Current members</dt><dd>{{ stats.current }}</dd></div>
     <div><dt>Cohorts</dt><dd>{{ stats.cohorts }}</dd></div>
-    <div><dt>Returning members</dt><dd>{{ stats.returning }}</dd></div>
   </dl>
   <details class="study-community-details">
   <summary>Participation and departments</summary>
   <div class="study-stat-breakdowns">
-    <div><h3>Participation by cohort</h3><ul class="plain study-stat-bars">
-      {% for t in stats.terms %}<li><span>{{ t.number }}기 <small>{{ t.term }}</small></span><strong>{{ t.count }}</strong><span class="study-stat-bar" aria-hidden="true"><span style="width: {{ t.count | times: 100.0 | divided_by: stats.total }}%"></span></span></li>{% endfor %}
-    </ul><p class="study-stat-note">Returning members are counted in each cohort they joined.</p></div>
+    <div><h3>Members by cohort</h3><ul class="plain study-stat-bars">
+      {% for t in stats.terms %}<li><span>{{ t.number }}기 <small>{{ t.term }}</small></span><strong>{{ t.count }}</strong></li>{% endfor %}
+    </ul></div>
     <div><h3>Departments</h3><ul class="plain study-stat-bars">
       {% for d in stats.departments %}<li><span>{{ d.name | replace: "Mueunjae", "Freshmen" }}</span><strong>{{ d.count }}</strong><span class="study-stat-bar" aria-hidden="true"><span style="width: {{ d.count | times: 100.0 | divided_by: stats.total }}%"></span></span></li>{% endfor %}
     </ul><p class="study-stat-note">Based on each member's most recent department.</p></div>

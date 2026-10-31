@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-31 | [study-member-counts](2026-10-31-study-member-counts.md) | Sangwoo Mo(sangwoomo) | 스터디 Home 통계 | 기수별 비율 막대·Returning members 제거, 인원 중심으로 정리 |
 | 2026-10-31 | [study-home-cleanup](2026-10-31-study-home-cleanup.md) | Sangwoo Mo(sangwoomo) | 스터디 Home | 학습 방식·상세 흐름 중복 제거, 최신 시간표는 한 줄 링크로 유지 |
 | 2026-10-31 | [study-overview-flow](2026-10-31-study-overview-flow.md) | Sangwoo Mo(sangwoomo) | 스터디 Schedule·Overview | 큰 개념의 연결을 설명하는 정적 흐름으로 개편, 시간표 강조 기능 삭제 |
 | 2026-10-31 | [study-email-id](2026-10-31-study-email-id.md) | Sangwoo Mo(sangwoomo) | Members 메일 표시 | 도메인을 빼고 POSTECH Email ID만 표시 |

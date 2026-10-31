@@ -71,6 +71,15 @@ async function checkRememberedAccess(base) {
     await page.getByRole('button', { name: 'Unlock', exact: true }).click();
     await unlocked(page);
     await page.getByRole('button', { name: 'Lock', exact: true }).click(); await locked(page);
+    page = await context.newPage();
+    await page.addInitScript(() => {
+      IDBObjectStore.prototype.put = () => { throw new DOMException('Fixture storage error', 'DataCloneError'); };
+    });
+    await page.goto(url); await locked(page);
+    await page.locator('#member-password').fill('changed-fixture-password');
+    await page.getByRole('button', { name: 'Unlock', exact: true }).click(); await unlocked(page);
+    await page.getByRole('status').filter({ hasText: 'could not remember access' }).waitFor();
+    await page.getByRole('button', { name: 'Lock', exact: true }).click(); await locked(page);
     await page.reload(); await locked(page);
     await context.close(); context = null;
     page = await start(); await page.goto(url); await locked(page);

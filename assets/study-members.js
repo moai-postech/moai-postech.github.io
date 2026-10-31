@@ -19,12 +19,14 @@
       open.onblocked = () => reject(new Error('Storage unavailable'));
       open.onsuccess = () => {
         const db = open.result;
-        const tx = db.transaction('access', mode);
-        const store = tx.objectStore('access');
-        const request = mode === 'readonly' ? store.get('directory') :
-          value ? store.put(value, 'directory') : store.delete('directory');
-        tx.oncomplete = () => { db.close(); resolve(request.result); };
-        tx.onabort = tx.onerror = () => { db.close(); reject(tx.error); };
+        try {
+          const tx = db.transaction('access', mode);
+          const store = tx.objectStore('access');
+          const request = mode === 'readonly' ? store.get('directory') :
+            value ? store.put(value, 'directory') : store.delete('directory');
+          tx.oncomplete = () => { db.close(); resolve(request.result); };
+          tx.onabort = tx.onerror = () => { db.close(); reject(tx.error); };
+        } catch (error) { db.close(); reject(error); }
       };
     });
   }

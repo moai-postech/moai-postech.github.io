@@ -10,6 +10,7 @@ POSTECH 요구사항: 영향 없음
 
 ## 반영 내역
 - Home 학과 분포와 Members 명단에서 원본 Mueunjae 값을 Freshmen으로 표시한다.
+- 명단은 원본의 무은재·Mueunjae·Undeclared 표기를 모두 Freshmen으로 표시한다.
 - STUDY의 표기 규칙을 맞췄다. 원본 데이터는 유지하고 화면 표기만 변경했다.
 - 원본 복구: Git 직전 커밋.
 

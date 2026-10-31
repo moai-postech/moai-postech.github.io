@@ -39,10 +39,10 @@
 - 명단 원문을 HTML이나 공개 데이터에 넣지 않는다. AES-256-GCM 암호문만 배포하며 PBKDF2-SHA256으로 입력 비밀번호에서 키를 만든다. 브라우저 Web Crypto로 복호화 후 명단을 생성한다. 비밀번호·복호화 명단은 저장하지 않고, 내보낼 수 없는 CryptoKey만 IndexedDB에 보관해 새로고침·재방문·브라우저 재시작 후 자동으로 연다. Lock을 누르면 키와 명단 DOM을 지운다. 브라우저 데이터를 지우거나 비밀번호가 바뀌면 다시 입력한다.
 - 같은 비밀번호로 명단만 갱신할 때는 salt와 PBKDF2 반복 수를 유지하고 IV는 새로 만들어 저장된 열람 권한이 이어지게 한다. 비밀번호가 바뀌면 새 salt로 키를 교체한다.
 - Full List는 기수별로 나누지 않는 단일 표다. 맨 왼쪽 Cohort로 가입 기수 내림차순 정렬한다. 한 사람 한 행이고 같은 기수 안에서는 시트 순서를 유지한다. 위쪽 Cohorts도 같은 가입 기수를 기준으로 묶는다.
-- 열은 Cohort·Entry·Department·Name·Contact·Participation(기수·학번·학과·이름·연락처·참여회차) 순이다. Entry는 입학연도를 네 자리로 표시한다. 시트 양식과 홈페이지 표시 양식은 독립적으로 관리한다. 학과·학번은 그 사람의 최신 시트 행을 사용한다.
+- 열은 Cohort·Entry·Department·Name·POSTECH Email ID·Participation(기수·학번·학과·이름·포스텍 메일 아이디·참여회차) 순이다. Entry는 입학연도를 네 자리로 표시한다. 시트 양식과 홈페이지 표시 양식은 독립적으로 관리한다. 학과·학번은 그 사람의 최신 시트 행을 사용한다.
 - study-members의 members 탭은 기수·학번·학과·이름·연락처·역할 다음에 `1기 (Fall 2025)` 형식의 참여 체크박스를 둔다. 한 사람 한 행이며 참여한 기수만 체크한다. 새 기수는 같은 형식의 열을 추가한다. 기수는 처음 참여한 가입 기수다. 예전 학기별 명단은 숨긴 `_backup-2026-10-31` 탭에 보존했다.
 - 참여 마커는 원본의 참여 체크박스로 판정한다. 가입 기수부터 모든 학기에 참여했다고 가정하지 않는다. 역할 열은 기수별 역할 기록을 보존한다.
-- 이메일은 확인한 `@postech.ac.kr`만 사용하고 사이트에서는 `[at]`로 가린다. 시트의 모든 재등장 행도 같은 주소로 맞춘다.
+- 원본 시트에는 확인한 `@postech.ac.kr` 전체 주소를 보관하고 사이트에서는 `@` 앞의 아이디만 표시한다.
 - 갱신은 `python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw 'members!A1:Z100' > /tmp/study-members.json` 다음 `python3 tools/ai_study_members_sync.py /tmp/study-members.json`이다. Node.js가 필요하고 비밀번호는 실행 시 입력하거나 `AI_STUDY_MEMBERS_PASSWORD` 환경변수로 전달한다. 원본 JSON과 비밀번호는 공개 저장소에 넣지 않는다. 일정 자동 동기화와는 별도로 실행한다.
 
 ## 자료 표시

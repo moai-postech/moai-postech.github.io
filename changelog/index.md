@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-31 | [highlights-no-dates](2026-10-31-highlights-no-dates.md) | Sangwoo Mo(sangwoomo) | 강의 Project Highlights | 월·연도만 삭제하고 대회명·상 이름 유지 |
 | 2026-10-31 | [ax-final-duration](2026-10-31-ax-final-duration.md) | Sangwoo Mo(sangwoomo) | Programming for AX Project | Final Presentation에 Q&A 포함 15분 표기 |
 | 2026-10-30 | [media-omnimodal](2026-10-30-media-omnimodal.md) | Sangwoo Mo(sangwoomo) | Home Media | 서울대·포스텍·노타 옴니모달 에이전트 공동연구 기사(한국대학신문) 추가 |
 | 2026-10-30 | [files-as-assets](2026-10-30-files-as-assets.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 파일 | 시험지·실습 노트북·스터디 Demo 를 저장소 사본으로, 26S Past exams 삭제, 예외는 project sheet |

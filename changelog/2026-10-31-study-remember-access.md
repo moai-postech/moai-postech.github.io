@@ -19,6 +19,7 @@ POSTECH 요구사항: 영향 없음
 - 읽은 규칙: 상위·저장소 AGENTS.md, 전역 secrets·workflow·memory-location, STUDY·기존 Members 검사와 가상 명단 검수 경로.
 - 네 화면 폭에서 표·잠금 검사 통과. 별도 임시 브라우저 프로필에서 잘못된 비밀번호, 새로고침, 페이지 이동, 새 탭, 브라우저 재시작, 명단 갱신, 비밀번호 변경, Lock 후 재시작까지 검증했다.
 - 저장 항목이 iterations·salt·비추출 CryptoKey뿐이며 localStorage·sessionStorage가 비어 있음을 확인했다.
+- IndexedDB 미지원과 CryptoKey 저장 오류를 가상으로 발생시켜, 현재 방문 열람과 Lock이 멈추지 않는지 확인했다.
 - 동기화 도구의 실제 암호화 코드에 가상 데이터를 넣어 동일 명단 유지·명단 변경 시 salt 유지/새 IV·비밀번호 변경 시 salt 교체를 확인했다.
 - JavaScript 문법·diff·changelog 검사와 Actions 빌드·빠른 검사·배포를 확인한다.
 

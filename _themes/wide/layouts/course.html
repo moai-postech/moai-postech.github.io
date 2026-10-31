@@ -44,7 +44,7 @@
   <main id="main-content" tabindex="-1">
 {% if page.view == "project" %}{% include course/project.html %}{% elsif page.view == "study" %}{% include course/study.html %}{% elsif page.view == "study-schedule" %}{% include course/study-schedule.html %}{% elsif page.view == "study-members" %}{% include course/study-members.html %}{% elsif page.view == "schedule" %}{% include course/schedule.html %}{% else %}{% include course/home.html %}{% endif %}
   </main>
-  <footer class="course-foot">{% if page.course == "ai-study" %}<a href="index.html" aria-label="MOAI Lab home">Lab home</a>{% else %}<a href="index.html"><img src="{{ site.logo }}" alt="{{ site.title }} logo">{{ site.title }}</a>{% endif %}<a class="course-postech" href="{{ site.postech.url }}">POSTECH</a><a class="course-privacy" href="{{ site.postech.privacy_url }}">{{ site.postech.privacy_label }}</a></footer>
+  <footer class="course-foot"><a href="index.html"><img src="{{ site.logo }}" alt="{{ site.title }} logo">{{ site.title }}</a><a class="course-postech" href="{{ site.postech.url }}">POSTECH</a><a class="course-privacy" href="{{ site.postech.privacy_url }}">{{ site.postech.privacy_label }}</a></footer>
 </div>
 {% include text-selection.html %}
 </body>

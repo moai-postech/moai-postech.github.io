@@ -18,10 +18,10 @@
     const table = element('table', undefined, 'study-members-table');
     table.append(element('caption', 'Study members by joining cohort, newest first', 'visually-hidden'));
     const cols = element('colgroup');
-    for (const name of ['cohort', 'name', 'department', 'year', 'email', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
+    for (const name of ['cohort', 'year', 'department', 'name', 'email', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
     table.append(cols);
     const head = element('thead'), header = element('tr');
-    const labels = ['Cohort', 'Name', 'Department', 'Entry', 'POSTECH email', 'Participation'];
+    const labels = ['Cohort', 'Entry', 'Department', 'Name', 'Contact', 'Participation'];
     for (const label of labels) { const th = element('th', label); th.scope = 'col'; header.append(th); }
     head.append(header); table.append(head);
     const body = element('tbody');
@@ -29,10 +29,10 @@
       for (const member of cohort.members) {
         const row = element('tr');
         const year = /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : member.entry_year;
-        const values = [cohort.number + '기', member.name, member.department === 'Mueunjae' ? 'Undeclared' : member.department, year, member.email.replace('@', ' [at] ')];
+        const values = [cohort.number + '기', year, member.department === 'Mueunjae' ? 'Undeclared' : member.department, member.name, member.email.replace('@', ' [at] ')];
         values.forEach((value, index) => {
-          const cell = element(index === 1 ? 'th' : 'td', value, index === 4 ? 'study-member-email' : undefined);
-          if (index === 1) cell.scope = 'row';
+          const cell = element(index === 3 ? 'th' : 'td', value, index === 4 ? 'study-member-email' : undefined);
+          if (index === 3) cell.scope = 'row';
           cell.dataset.label = labels[index]; row.append(cell);
         });
         const cell = element('td'); cell.dataset.label = labels[5];

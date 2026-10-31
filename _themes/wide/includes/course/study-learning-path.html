@@ -1,0 +1,11 @@
+<div class="study-overview">
+  <p>{{ include.info.overview }}</p>
+  {% if include.info.reference_course %}<p class="study-reference">Based on <a href="{{ include.info.reference_course.url }}">{{ include.info.reference_course.title }}</a> ({{ include.info.reference_course.term }}).</p>{% endif %}
+  {% if include.info.learning_path %}<ol class="study-learning-path" style="--study-steps: {{ include.info.learning_path.size }}">
+    {% for step in include.info.learning_path %}<li><div class="study-step">
+      <span class="study-step-label">0{{ forloop.index }}</span>
+      <span class="study-step-title">{{ step.title }}</span>
+      <span class="study-step-text">{{ step.text }}</span>
+    </div></li>{% endfor %}
+  </ol>{% endif %}
+</div>

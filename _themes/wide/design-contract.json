@@ -423,27 +423,10 @@
       }
     },
     {
-      "id": "selected-study-part",
-      "selector": ".study-step[aria-pressed=\"true\"]",
-      "style": {
-        "color": "var(--accent)",
-        "backgroundColor": "var(--accent-soft)"
-      },
-      "optional": true
-    },
-    {
       "id": "toolbar-link",
       "selector": ".filter-bar > a, .course-heading-row > a, .study-term-heading > a",
       "style": {
         "color": "var(--accent)"
-      }
-    },
-    {
-      "id": "part-filter",
-      "selector": ".study-part-filters .study-step",
-      "style": {
-        "fontSize": "var(--text-meta)",
-        "fontWeight": "var(--weight-emphasis)"
       }
     },
     {

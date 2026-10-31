@@ -2,11 +2,11 @@
 # 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
-  overview: "Start with how robots collect data and learn to move, then connect these capabilities to spatial understanding and foundation models."
+  overview: "Physical AI connects observations and goals to actions in the real world. We build the picture from learned robot skills, through 3D scene understanding, to models that connect perception, reasoning, and action."
   learning_path:
-    - { label: "Topics 1–6", start: 1, end: 6, title: "Robot learning", text: "Collect demonstrations and learn manipulation, locomotion, navigation, and dexterous control." }
-    - { label: "Topics 7–8", start: 7, end: 8, title: "3D understanding", text: "Represent and reconstruct the 3D world around a robot." }
-    - { label: "Topics 9–11", start: 9, end: 11, title: "Foundation models for robotics", text: "Bring spatial reasoning, VLA, and world models together with robotic action." }
+    - { title: "Learn to Act", text: "Demonstrations and interaction teach robots useful behaviors, from moving through a space to manipulating objects." }
+    - { title: "Understand the Scene", text: "3D representations turn images into a spatial picture of the world, grounding those behaviors in the surrounding scene." }
+    - { title: "Connect Goals to Actions", text: "Spatial reasoning, VLA, and world models connect goals and perception to actions and their predicted consequences." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 302" }
@@ -14,32 +14,32 @@ fall-2026:
 summer-2026:
   format: lectures
   reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
-  overview: "Follow how neural networks learn, how their architectures and representations enable generation, and why they generalize to new tasks."
+  overview: "Deep learning connects a model's design, its training signal, and the behavior it learns. We move from building the learner to representing and generating data, then ask how learning carries over to new examples and tasks."
   learning_path:
-    - { label: "Topics 1–3", start: 1, end: 3, title: "Training and architectures", text: "Start with optimization, then study architectures for grids and sequences." }
-    - { label: "Topics 4–7", start: 4, end: 7, title: "Representation and generation", text: "Connect reconstruction and similarity-based learning to VAEs, GANs, diffusion, and flows." }
-    - { label: "Topics 8–10", start: 8, end: 10, title: "Generalization and transfer", text: "Study generalization, transfer learning, and the theory behind deep learning." }
+    - { title: "Build the Learner", text: "Connect optimization with architectures for images and sequences: how the network is built and how its parameters learn." }
+    - { title: "Model the Data", text: "Study how learning objectives produce useful representations, then use learned distributions to generate new data." }
+    - { title: "Transfer and Generalize", text: "Ask why these models work on unseen data and how their representations can be reused for new tasks." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Usually Tuesdays", time: "15:30 – 16:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 spring-2026:
-  overview: "Move from how LLMs reason to how they are trained and aligned, then extend them with context, retrieval, and tools."
+  overview: "We study how a language model becomes a useful problem-solving system. The flow connects reasoning with training and feedback, then adds external knowledge and tools around the model."
   learning_path:
-    - { label: "Topics 1–2", start: 1, end: 2, title: "LLMs and reasoning", text: "Review LLMs and chain-of-thought reasoning to frame what the model can do." }
-    - { label: "Topics 3–6", start: 3, end: 6, title: "Training and alignment", text: "Connect supervised fine-tuning, RLHF, and RLAIF to reasoning models." }
-    - { label: "Topics 7–9", start: 7, end: 9, title: "Context, retrieval, and agents", text: "Use long context, retrieval, and agents to work with external information and tools." }
+    - { title: "Understand the Model", text: "Start with how an LLM produces answers and how reasoning changes its approach to solving a problem." }
+    - { title: "Shape Its Behavior", text: "Fine-tuning and feedback connect a pretrained model to instruction following, alignment, and more capable reasoning." }
+    - { title: "Build Beyond the Model", text: "Context, retrieval, and tools let the model work with external information and take steps toward a larger goal." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
-  overview: "Trace the path from deep learning and transformers to multimodal understanding, visual generation, and scaled language models."
+  overview: "Foundation models reuse learned representations across tasks and modalities. We follow how neural networks grow from visual perception into systems that connect language and images, generate visual content, and benefit from scale."
   learning_path:
-    - { label: "Topics 1–3", start: 1, end: 3, title: "Deep learning and vision", text: "Start with deep learning and transformers, then apply them to visual perception." }
-    - { label: "Topics 4–5", start: 4, end: 5, title: "Multimodal understanding", text: "Study multimodal perception and visual grounding to connect images with meaning." }
-    - { label: "Topics 6–7", start: 6, end: 7, title: "Visual generation", text: "Move from understanding visual content to generating it." }
-    - { label: "Topics 8–9", start: 8, end: 9, title: "Scaling and multimodal LLMs", text: "Study LLM scaling and bring language and vision together in multimodal LLMs." }
+    - { title: "Learn Representations", text: "Neural networks and transformers turn raw data into representations that support visual perception." }
+    - { title: "Connect Modalities", text: "Link vision and language so a model can interpret images and ground meaning in what it sees." }
+    - { title: "Generate Visual Content", text: "Move from recognizing visual patterns to modeling how images and videos can be created." }
+    - { title: "Scale the Model", text: "Study how scaling and multimodal LLMs extend language models with broader knowledge and visual understanding." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Wednesdays", time: "22:00 – 23:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }

@@ -8,7 +8,7 @@
   {% for t in d.terms %}{% assign info = site.data.ai_study_terms[t.id] %}
   <div class="study-panel" role="tabpanel" id="overview-{{ t.id }}" aria-labelledby="tab-overview-{{ t.id }}"{% unless forloop.first %} hidden{% endunless %}>
     <div class="study-term-heading"><h3 class="group-heading">{{ t.theme }}<span>{{ t.name }}</span></h3><a class="study-sheet" href="teaching/ai-study/schedule/#{{ t.id }}">Schedule</a></div>
-    <div class="study-overview"><p>{{ info.overview }}</p>{% if info.reference_course %}<p class="study-reference">Based on <a href="{{ info.reference_course.url }}">{{ info.reference_course.title }}</a> ({{ info.reference_course.term }}).</p>{% endif %}{% if info.learning_path %}<ol class="study-learning-path" style="--study-steps: {{ info.learning_path.size }}">{% for step in info.learning_path %}<li><a class="study-step" href="teaching/ai-study/schedule/?part={{ step.start }}-{{ step.end }}#{{ t.id }}"><span class="study-step-label">{{ step.label }}</span><span class="study-step-title">{{ step.title }}</span><span class="study-step-text">{{ step.text }}</span></a></li>{% endfor %}</ol>{% endif %}</div>
+    {% include course/study-learning-path.html info=info %}
   </div>{% endfor %}
 </section>
 {% include course/study-tabs.html %}

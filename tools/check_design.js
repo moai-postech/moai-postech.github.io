@@ -185,10 +185,7 @@ async function run() {
           const controls = page.locator(selector);
           for (let i=0; i<await controls.count(); i++) {
             await controls.nth(i).click(); await page.mouse.move(0,0); await check(`${selector}[${i}]`);
-            if (selector === '.study-tablist button') {
-              const parts = page.locator('.study-panel:not([hidden]) .study-step[data-start]');
-              for (let j=0; j<await parts.count(); j++) { await parts.nth(j).click(); await page.mouse.move(0,0); await check(`${selector}[${i}] part[${j}]`); }
-            }
+
           }
         }
         if (await page.locator('details').count()) {

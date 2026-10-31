@@ -180,16 +180,10 @@ a.cs-title:hover { color: var(--accent); }
 .study-learning-path li { position: relative; border-top: 1px solid var(--line); padding-top: var(--space-3); min-width: 0; }
 .study-learning-path li + li::before { content: "→"; position: absolute; right: calc(100% + var(--space-2)); top: -.85em; padding-inline: var(--space-1); color: var(--muted); background: var(--bg); }
 .study-step-label { color: var(--accent); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
-.study-step { display: block; width: 100%; border: 0; padding: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.study-step { display: block; color: inherit; }
 .study-step-title { display: block; margin: var(--space-2) 0; }
 .study-step-text { display: block; color: var(--muted); font-size: var(--text-meta); }
-.study-step:hover .study-step-title, .study-step[aria-pressed="true"] .study-step-title { color: var(--accent); }
-.study-step:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: var(--radius-1); }
-.study-learning-path li.is-selected { border-top-color: var(--accent); }
-.study-table tr[data-session] { scroll-margin-top: var(--space-5); }
-.study-table tr.is-part-selected { --tone-row: var(--accent-soft); }
-.study-table tr.is-part-selected .cs-n { color: var(--accent); font-weight: var(--weight-heading); }
-.study-table tr.is-part-selected .cs-title { color: var(--text); font-weight: var(--weight-emphasis); }
+.study-schedule-overview { margin-bottom: var(--space-7); }
 .study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .study-overview p { margin: 0; color: var(--muted); }
 .study-overview .study-reference { margin-top: var(--space-2); font-size: var(--text-meta); }
@@ -312,7 +306,7 @@ a.cs-title:hover { color: var(--accent); }
 }
 @media (max-width: 680px) {
   .study-learning-path { grid-template-columns: 1fr; gap: var(--space-4); }
-  .study-learning-path li + li::before { content: none; }
+  .study-learning-path li + li::before { content: "↓"; left: 0; right: auto; }
   .study-term-details .course-facts { grid-template-columns: 1fr; gap: var(--space-4); }
   .study-term-details .course-fact + .course-fact { border-top: 1px solid var(--line); padding-top: var(--space-4); }
   .course-lead { font-size: var(--text-body); }
@@ -380,11 +374,6 @@ a.cs-title:hover { color: var(--accent); }
   .project-timeline { grid-template-columns: 1fr; gap: var(--space-6); }
   .project-timeline > li:not(:last-child)::after { content: "↓"; left: 50%; right: auto; top: auto; bottom: calc(-1 * var(--space-6)); transform: translate(-50%, 0); }
 }
-
-/* Compact part selection keeps the schedule actionable after moving the overview home. */
-.study-part-filters { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
-.study-part-filters .study-step { width: auto; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-1); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
-.study-part-filters .study-step[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 
 /* AI Study Home: orient -> learning process -> term paths -> community -> join.
    Shared typography, card and spacing roles; term logistics remain in Schedule. */

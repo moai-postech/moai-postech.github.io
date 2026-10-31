@@ -18,7 +18,7 @@
       <div class="study-term-details">
         {% if info %}{% include course/facts.html instructor=info.advisor instructor_label="Advisor" representative=info.representative location=info.location meetings=info.meetings %}{% endif %}
       </div>
-      {% if info.learning_path %}<div class="study-part-filters" aria-label="Study parts">{% for step in info.learning_path %}<button type="button" class="study-step" data-start="{{ step.start }}" data-end="{{ step.end }}" aria-controls="schedule-{{ t.id }}" aria-pressed="false" aria-label="{{ step.title | escape }}">{{ step.label }}</button>{% endfor %}</div>{% endif %}
+      {% if info.learning_path %}<section class="study-schedule-overview" aria-label="Learning overview">{% include course/study-learning-path.html info=info %}</section>{% endif %}
       {% if t.note %}<p class="study-note"><strong>{{ t.note.label }}</strong> {% if t.note.links %}{% for l in t.note.links %}<a href="{{ l.url }}">{{ l.text }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% else %}{{ t.note.text }}{% endif %}</p>{% endif %}
       <table id="schedule-{{ t.id }}" class="course-schedule study-table{% if lecture_format %} study-table-lectures{% endif %}">
         <colgroup><col class="sc-n"><col class="sc-date"><col class="sc-topic">{% if lecture_format %}<col class="sc-lec">{% else %}<col class="sc-papers"><col class="sc-demo">{% endif %}<col class="sc-who"><col class="sc-mat"></colgroup>

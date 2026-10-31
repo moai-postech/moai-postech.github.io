@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-31 | [study-overview-flow](2026-10-31-study-overview-flow.md) | Sangwoo Mo(sangwoomo) | 스터디 Schedule·Overview | 큰 개념의 연결을 설명하는 정적 흐름으로 개편, 시간표 강조 기능 삭제 |
 | 2026-10-31 | [study-email-id](2026-10-31-study-email-id.md) | Sangwoo Mo(sangwoomo) | Members 메일 표시 | 도메인을 빼고 POSTECH Email ID만 표시 |
 | 2026-10-31 | [study-cohorts-full-list](2026-10-31-study-cohorts-full-list.md) | Sangwoo Mo(sangwoomo) | Members 페이지·원본 시트 | 위 cohort별 명단·아래 전체 표, 시트는 1인 1행과 참여 체크박스로 정리 |
 | 2026-10-31 | [study-freshmen-label](2026-10-31-study-freshmen-label.md) | Sangwoo Mo(sangwoomo) | 스터디 통계·명단 | Undeclared 표기를 Freshmen으로 변경 |

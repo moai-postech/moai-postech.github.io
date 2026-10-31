@@ -14,12 +14,41 @@ const COURSE = [];
   }
 })('teaching');
 const check = (ok, message) => { if (!ok) throw new Error(message); };
+const studyOnly = process.argv.includes('--study-only');
+async function checkStudyOverview(page, base) {
+  for (const url of ['teaching/ai-study/', 'teaching/ai-study/schedule/']) {
+    await page.goto(new URL(url, base).href);
+    const tabs = page.locator('.study-tablist [role="tab"]');
+    await tabs.first().focus(); await page.keyboard.press('End');
+    check(await tabs.last().getAttribute('aria-selected') === 'true', `${url}: End tab selection failed`);
+    await page.keyboard.press('Home');
+    check(await tabs.first().getAttribute('aria-selected') === 'true', `${url}: Home tab selection failed`);
+    for (let i = 0; i < await tabs.count(); i++) {
+      await tabs.nth(i).click();
+      const id = await tabs.nth(i).getAttribute('aria-controls'), panel = page.locator('#' + id);
+      check(await panel.locator('.study-learning-path li').count() >= 3, `${id}: learning flow missing`);
+      check(await panel.locator('a.study-step,button.study-step,.study-step[data-start]').count() === 0, `${id}: overview still acts as a filter`);
+      check((await panel.locator('.study-step-label').allTextContents()).every(s => /^\d{2}$/.test(s.trim())), `${id}: topic ranges remain`);
+      check(await panel.locator('a[href*="part="]').count() === 0, `${id}: part-selection link remains`);
+      const table = panel.locator('.course-schedule tbody');
+      const before = await table.count() ? await table.innerHTML() : null;
+      await panel.locator('.study-step').first().click();
+      if (before !== null) check(before === await table.innerHTML(), `${id}: overview changed the timetable`);
+      check(await panel.locator('.is-part-selected').count() === 0, `${id}: timetable highlight remains`);
+      check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), `${id}: overview overflows`);
+    }
+  }
+  await page.goto(new URL('teaching/ai-study/schedule/?part=7-8#fall-2026', base).href);
+  check(await page.locator('#tab-fall-2026').getAttribute('aria-selected') === 'true', 'old part link lost term selection');
+  check(await page.locator('.is-part-selected').count() === 0, 'old part link still highlights rows');
+}
 (async () => {
   const server = await serve(); const base = `http://localhost:${server.address().port}/`;
   const browser = await chromium.launch();
   try {
-    for (const width of [1280, 390]) {
+    for (const width of (studyOnly ? [1440, 768, 390, 320] : [1280, 390])) {
       const page = await browser.newPage({ viewport: { width, height: 900 } });
+      if (studyOnly) { await checkStudyOverview(page, base); await page.close(); continue; }
       for (const name of [...LAB, ...COURSE]) {
         await page.goto(new URL(name, base).href);
         await page.keyboard.press('Tab');
@@ -43,45 +72,10 @@ const check = (ok, message) => { if (!ok) throw new Error(message); };
         check(await tabs.nth(count - 1).getAttribute('aria-selected') === 'true', `${url}: arrow did not wrap`);
         check(Math.abs(await page.evaluate(() => scrollY) - y) < 3, `${url}: tab key scrolled the page`);
       }
-      // Learning-path buttons select only their term's numbered study sessions.
-      await page.goto(new URL('teaching/ai-study/schedule/', base).href);
-      await page.emulateMedia({ reducedMotion: 'reduce' });
-      const parts = {
-        'fall-2026': [[1, 6], [7, 8], [9, 11]],
-        'summer-2026': [[1, 3], [4, 7], [8, 10]],
-        'spring-2026': [[1, 2], [3, 6], [7, 9]],
-        'fall-2025': [[1, 3], [4, 5], [6, 7], [8, 9]]
-      };
-      for (const [term, ranges] of Object.entries(parts)) {
-        await page.locator(`[aria-controls="${term}"]`).click();
-        const panel = page.locator(`#${term}`), buttons = panel.locator('.study-step');
-        for (let i = 0; i < ranges.length; i++) {
-          const [start, end] = ranges[i], button = buttons.nth(i);
-          if (i === 0) await button.click();
-          else { await button.focus(); await page.keyboard.press(i % 2 ? 'Enter' : 'Space'); }
-          const actual = await panel.locator('.is-part-selected .cs-n').allTextContents();
-          const expected = Array.from({ length: end - start + 1 }, (_, n) => String(start + n));
-          check(actual.join(',') === expected.join(','), `${width}px ${term}: wrong rows for part ${i}`);
-          check(await panel.locator('.study-step[aria-pressed="true"]').count() === 1, `${term}: multiple selected parts`);
-          check(await button.getAttribute('aria-pressed') === 'true', `${term}: selected button missing state`);
-          const colors = await panel.evaluate(el => {
-            const selected = el.querySelector('.is-part-selected .cs-n');
-            const other = el.querySelector('tr[data-session]:not(.is-part-selected) .cs-n');
-            const target = matchMedia('(max-width: 680px)').matches ? cell => cell.parentElement : cell => cell;
-            return [selected, other].map(cell => getComputedStyle(target(cell)).backgroundColor);
-          });
-          check(colors[0] !== colors[1], `${term}: selected rows not visually highlighted`);
-          await page.waitForFunction(id => {
-            const rect = document.querySelector(`#${id} .is-part-selected`).getBoundingClientRect();
-            return rect.top >= 0 && rect.top < innerHeight;
-          }, term);
-        }
-        await buttons.last().focus(); await page.keyboard.press('Space');
-        check(await panel.locator('.is-part-selected').count() === 0, `${term}: repeat selection did not clear`);
-        check(await buttons.last().getAttribute('aria-pressed') === 'false', `${term}: cleared button still pressed`);
-      }
+      await checkStudyOverview(page, base);
       await page.close();
     }
+    if (studyOnly) { console.log("Study overview checks passed: 4 widths, 4 terms, Home/Schedule flow, term keyboard navigation, no row highlighting"); return; }
     const context = await browser.newContext(); const page = await context.newPage();
     await page.goto(base);
     const link = page.locator('.content-section.section-next a').first();

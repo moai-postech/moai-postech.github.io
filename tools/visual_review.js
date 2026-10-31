@@ -61,13 +61,12 @@ async function capture(out,manifest) {
         await page.goto(base+file,{waitUntil:'domcontentloaded',timeout:45000});
         await page.evaluate(()=>document.fonts.ready);
         await page.mouse.move(0,0);
-        const unknown=await page.locator('main button').evaluateAll(es=>es.filter(e=>!e.matches('.focus-tab,.filter-btn,.study-tablist button,.study-step[data-start],.study-unlock-fields button,.study-lock-button')).map(e=>e.outerHTML.slice(0,120)));
+        const unknown=await page.locator('main button').evaluateAll(es=>es.filter(e=>!e.matches('.focus-tab,.filter-btn,.study-tablist button,.study-unlock-fields button,.study-lock-button')).map(e=>e.outerHTML.slice(0,120)));
         const planned=await page.evaluate(({tallHeight})=>{
           const states=[{state:'default',full:true}];
           if(innerWidth>=768&&document.querySelector('.site-foot')&&document.documentElement.scrollHeight<=tallHeight)states.push({state:'tall-viewport',full:false});
           for(const selector of ['.focus-tab','.filter-btn','.study-tablist button']) [...document.querySelectorAll(selector)].forEach((e,i)=>{
             states.push({state:`${selector}:${i}`,full:selector==='.study-tablist button'});
-            if(selector==='.study-tablist button'){const panel=document.getElementById(e.getAttribute('aria-controls'));[...panel.querySelectorAll('.study-step[data-start]')].forEach((_,j)=>states.push({state:`term:${i}:part:${j}`,full:false}));}
           });
           if(document.querySelector('details'))states.push({state:'details-open',full:true});
           if(innerWidth>680)[...document.querySelectorAll('.nav-group')].forEach((_,i)=>states.push({state:`dropdown:${i}`,full:false},{state:`dropdown-focus:${i}`,full:false}));
@@ -113,7 +112,6 @@ async function capture(out,manifest) {
           const controls=page.locator(selector);
           for(let i=0;i<await controls.count();i++) {
             await controls.nth(i).click();await page.mouse.move(0,0);await snap(`${selector}:${i}`,selector==='.study-tablist button');
-            if(selector==='.study-tablist button') {const parts=page.locator('.study-panel:not([hidden]) .study-step[data-start]');for(let j=0;j<await parts.count();j++){await parts.nth(j).click();await page.mouse.move(0,0);await snap(`term:${i}:part:${j}`);}}
           }
         }
         if(await page.locator('details').count()){await page.locator('details').evaluateAll(es=>es.forEach(e=>e.open=true));await snap('details-open',true);}

@@ -4,18 +4,18 @@
 
 ## 구성
 
-상단 Home·Schedule·Members 메뉴를 쓴다. Home은 소개·최신 학기 진입점 → 읽기·발표·실습의 학습 방식 → 학기별 학습 흐름 → 멤버 통계 → 참여 안내, Schedule은 학기별 탭 → 운영 정보 → 일정 표, Members는 비밀번호로 여는 단일 명단 표다.
+상단 Home·Schedule·Members 메뉴를 쓴다. Home은 소개·최신 학기 진입점 → 읽기·발표·실습의 학습 방식 → 학기별 학습 흐름 → 멤버 통계 → 참여 안내, Schedule은 학기별 탭 → 운영 정보 → 학습 흐름 → 일정 표, Members는 비밀번호로 여는 cohort별 묶음과 전체 명단이다.
 
 - Home의 최신 학기는 `ai_study.yml` 첫 학기에서 읽고 Schedule의 해당 탭으로 연결한다. 소개·학습 방식 문구는 페이지 front matter에서 관리한다. 통계 수치는 공개 집계를 사용하고 기수·학과별 상세는 기본으로 접은 disclosure에 보존한다.
 
 - How to join은 Home 마지막에 연구실 Home과 같은 floating callout 안에 제목과 안내문을 묶는다. 타과·전공 미선택 1학년을 포함해 모든 POSTECH 학부생을 환영하고, Schedule의 학기 탭에서 이번 학기 학생대표를 찾아 연락하도록 안내한다. Members 명단 링크는 멤버 통계 절 아래에 둔다. 문구는 `teaching/ai-study/index.md`의 `join`에서 관리한다.
 
-- 학기별 Overview는 목표 한 문장과 실제 회차 순서에 맞춘 `learning_path`로 구성한다. 각 단계는 표의 Topic 열과 맞춘 `Topics n–m` 회차 범위·짧은 주제 제목·설명을 포함한다. 회차 범위에는 크림슨 강조색을 사용해 단계의 시작을 구분한다. 단계는 흰 배경과 가는 연결선·화살표로 잇고 별도 카드로 감싸지 않는다. Physical AI는 로봇 기초 → 3D 세계 이해 → foundation models와 로봇의 결합 흐름을 드러낸다.
+- 학기별 Overview는 먼저 주제의 큰 틀과 학습 목표를 설명하고, `learning_path`의 3~4단계로 무엇을 배우며 다음 단계에 어떻게 연결하는지 보여 준다. 회차 범위와 세부 기술 나열 대신 능력·개념의 연결을 중심으로 쓴다. Physical AI는 행동 학습 → 3D 공간 이해 → 목표·인지·행동의 연결로 설명한다.
+- Home과 Schedule은 `study-learning-path.html`을 공유한다. 단계는 01부터 순서대로 표시하고 흰 배경·연결선·화살표로 잇는다. 시간표를 선택하거나 강조하는 기능 없이 읽는 안내로 둔다.
 - 운영 정보는 사진이 있는 Advisor → Student representative → Location & time 순서로 둔다. 지도교수의 사진·이름은 해당 학기 데이터에서 읽는다. 강의와 같은 `facts.html`·`person.html`을 사용하고 조교 자리만 학생대표로 바꾼다. Schedule의 학기 제목 아래 전체 폭에 흰 배경·얇은 위아래 구분선으로 가로 배치하고, 휴대폰에서는 순서대로 세로로 접는다.
 - 학기 제목·시간·장소·지도교수·학생대표·Study sheet는 해당 학기 패널 안에 둔다. 지난 학기 정보와 현재 학기 정보를 섞지 않는다.
 - 장소는 이전 세 학기 공학4동 307호, Fall 2026부터 공학4동 302호다. 앞으로도 특별한 이슈가 없으면 302호를 기본으로 사용한다(교수 2026-10-28). 개별 회차의 임시 장소 변경을 학기 기본 장소에 나열하지 않는다.
 - 학기 탭은 클릭·좌우 화살표·Home·End를 지원한다. 학기별 주소 fragment를 유지하고 탭을 바꿔도 표의 열 위치가 움직이지 않게 한다.
-- 학습 흐름의 각 파트는 버튼이다. `learning_path`의 숫자 `start`·`end`를 표의 회차 번호와 연결해 선택한 범위만 크림슨 tint로 강조하고 첫 회차로 이동한다. 같은 파트를 다시 누르면 해제한다. Enter·Space와 reduced motion을 지원하며, 선택 상태는 학기별로 유지한다.
 - 논문 중심 학기는 번호·날짜·Topic·Papers·Demo·Presenters·Materials 순이다. 강의 중심 학기는 `format: lectures`로 번호·날짜·Topic·Lec·Presenters·Materials 순으로 표시한다. 좁은 화면에서는 카드로 접는다.
 - 표 마감선은 [공통 규칙](README.md#표의-마감선)을 따른다. 학기마다 예외를 두지 않는다.
 
@@ -30,7 +30,7 @@
 
 일정과 멤버는 같은 Drive 폴더의 별도 파일로 관리한다. [study-schedule](https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit)는 `schedule`·`references` 탭, [study-members](https://docs.google.com/spreadsheets/d/1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw/edit)는 `members` 탭을 둔다. `study-members`는 링크가 있는 모든 사용자가 편집할 수 있다.
 
-`ai_study_terms.yml`은 `format`(강의 중심이면 lectures), `reference_course`(title, term, url), `overview`, `learning_path`(label, start, end, title, text), `advisor`(사진 `photo` 포함), `meetings`, `location`, `representative`를 학기별로 둔다. 값이 없으면 해당 칸을 생략한다. 자료 시트 링크는 동기화 데이터의 `sheet`다.
+`ai_study_terms.yml`은 `format`(강의 중심이면 lectures), `reference_course`(title, term, url), `overview`, `learning_path`(title, text), `advisor`(사진 `photo` 포함), `meetings`, `location`, `representative`를 학기별로 둔다. 값이 없으면 해당 칸을 생략한다. 자료 시트 링크는 동기화 데이터의 `sheet`다.
 
 ## Members
 

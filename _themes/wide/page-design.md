@@ -52,7 +52,7 @@
 | `teaching/26s-programming-for-data-science/index.html` | 강의 · Home | 공통 컴포넌트 조정 | 소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지. |
 | `teaching/26s-programming-for-data-science/schedule/index.html` | 강의 · Schedule | 공통 컴포넌트 조정 | 행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 자료 동작15px와 초청 연사 이름16px로 식별 강화. 초청 일정도 Project와 같은 스티커를 사용하고 연사와 시간·장소를 묶어 배치. |
 | `teaching/26s-programming-for-data-science/project/index.html` | 강의 · Project | 기본 유지 | Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용. Timeline은 세 블록 가로 배치, 발표 열은 가운데 정렬.  평가 방식은 합산 흐름, 기준은 카드로 구조화. |
-| `teaching/ai-study/index.html` | 스터디 · Home | 공통 컴포넌트 조정 | 소개와 한 줄 최신 시간표 링크 → 학기별 주제 목록 → 공개 통계 → 참여 안내 순서. 학습 방식은 소개에 담고 상세 학습 흐름은 Schedule에서 표시해 중복을 줄임. 주제 목록은 모바일에서 한 열, 상세 통계는 disclosure로 보존. 공통 글자·간격 토큰 유지. |
+| `teaching/ai-study/index.html` | 스터디 · Home | 공통 컴포넌트 조정 | 소개와 한 줄 최신 시간표 링크 → 학기별 주제 목록 → 공개 통계 → 참여 안내 순서. 학습 방식은 소개에 담고 상세 학습 흐름은 Schedule에서 표시해 중복을 줄임. 주제 목록은 모바일에서 한 열, 기수별 참여 구성과 학과별 분포는 접기 없이 바로 표시. 공통 글자·간격 토큰 유지. |
 | `teaching/ai-study/schedule/index.html` | 스터디 · Schedule | 공통 컴포넌트 조정 | 긴 표는16/14/13px 위계 유지. 운영 정보16px·학기 선택16/14px로 읽기 쉽게 조정. 정적 학습 흐름은 운영 정보와 일정 사이에 표시. |
 | `teaching/ai-study/members/index.html` | 스터디 · 잠긴 명단 | 기본 유지 | 잠금 폼16px과 동작15px 적용. 명단은 데이터 열이 많아 본문16px·표 머리13px, 모바일 카드 표시 유지. 가상 데이터로 해제 상태 검토. |
 

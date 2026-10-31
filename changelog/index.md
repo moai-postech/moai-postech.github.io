@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-10-31 | [study-stats-visible](2026-10-31-study-stats-visible.md) | Sangwoo Mo(sangwoomo) | 스터디 Home 통계 | 더보기·접기 제거, 참여 구성과 학과 분포 항상 표시 |
 | 2026-10-31 | [study-cohort-mix](2026-10-31-study-cohort-mix.md) | Sangwoo Mo(sangwoomo) | 스터디 Home 참여 구성 | 기수별 총원과 신규·기존 인원 및 비중 표시 |
 | 2026-10-31 | [study-member-counts](2026-10-31-study-member-counts.md) | Sangwoo Mo(sangwoomo) | 스터디 Home 통계 | 기수별 비율 막대·Returning members 제거, 인원 중심으로 정리 |
 | 2026-10-31 | [study-home-cleanup](2026-10-31-study-home-cleanup.md) | Sangwoo Mo(sangwoomo) | 스터디 Home | 학습 방식·상세 흐름 중복 제거, 최신 시간표는 한 줄 링크로 유지 |

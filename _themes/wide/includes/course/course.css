@@ -386,9 +386,6 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-directory strong { font-weight: var(--weight-emphasis); }
 .study-term-directory .course-note { margin: 0; }
 .study-home-community > h2 { font-size: var(--text-h2); }
-.study-community-details { margin-top: var(--space-5); }
-.study-community-details summary { width: fit-content; cursor: pointer; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
-.study-community-details[open] summary { margin-bottom: var(--space-5); }
 .study-home-join { padding-top: var(--section-gap); }
 .study-home-join .study-join-next { margin-top: var(--space-4); }
 .study-home-join .study-join-next a { color: var(--accent); }

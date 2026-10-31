@@ -42,7 +42,7 @@
 | `../../layouts/course.html` | 강의 사이트 문서 틀: 머리(과목명, 강의 메뉴), 본문, 바닥. `view: schedule` 면 `schedule.html`, `view: project` 면 `project.html`, 없으면 `home.html` |
 | `home.html` | Home: 제목·소개 옆에 공통 운영 정보 칸(Instructor, 선택 TA, Location & time, Office hours, Other terms) → Course outline(파트 카드) → Grading → Resources. Schedule·Project는 상단 탭에서만 탐색 |
 | `schedule.html` | Schedule: 전체 스케줄 표(파트 머리 줄, 다음 수업 표시) |
-| `study.html` | 학부생 AI 스터디(`teaching/ai-study/`, `view: study`): Home 소개·참여 안내·학기별 학습 개요·멤버 통계. `study-schedule.html`에서 학기 탭·운영 정보·일정. 일정은 `_data/ai_study.yml`(시트에서 `tools/ai_study_sync.py`), Overview·시간·장소·지도교수·학생대표는 `_data/ai_study_terms.yml` |
+| `study.html` | 학부생 AI 스터디(`teaching/ai-study/`, `view: study`): Home 소개·최신 시간표 링크·학기별 주제·멤버 통계·참여 안내. `study-schedule.html`에서 학기 탭·운영 정보·학습 흐름·일정. 일정은 `_data/ai_study.yml`(시트에서 `tools/ai_study_sync.py`), Overview·시간·장소·지도교수·학생대표는 `_data/ai_study_terms.yml` |
 | `facts.html` / `person.html` | 강의·스터디 공통 운영 정보와 인물 표시 |
 | `study-members.html` | 스터디 Members: 비밀번호 확인 뒤 하나의 명단 표. Cohort 내림차순, 인적 정보·참여 마커 표시. 공개 통계는 Home. 상단 Home·Schedule·Members 메뉴로 소개·일정·명단 전환 |
 | `head.html` | Schedule 과 Project 의 작은 머리(페이지 이름, 과목명·학수번호·학기) |

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Apps Script member 셀 읽기 결과(JSON)를 Members 데이터로 변환한다.
+"""별도 study-members 파일의 Apps Script 셀 읽기 결과(JSON)를 Members 데이터로 변환한다.
 
-시트 읽기: python3 ~/Documents/Agents/tools/gsheet/gsheet.py read SHEET_ID 'member!A1:G100' > /tmp/study-members.json
+시트 읽기: python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw 'members!A1:G100' > /tmp/study-members.json
 변환: python3 tools/ai_study_members_sync.py /tmp/study-members.json
 Node.js 필요. 비밀번호는 대화형 입력 또는 AI_STUDY_MEMBERS_PASSWORD 환경변수로 받는다.
 공개 통계와 AES-GCM 암호문만 저장한다. 원문·비밀번호는 저장소에 쓰지 않는다.

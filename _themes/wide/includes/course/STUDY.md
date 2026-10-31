@@ -26,7 +26,9 @@
 | 소개·페이지 메타 | `teaching/ai-study/index.md`, `layout: course`, `view: study` |
 | 학기·회차·논문·실습·자료 | `_data/ai_study.yml`, 원본 시트에서 `tools/ai_study_sync.py`로 동기화. 생성 파일은 손으로 고치지 않는다 |
 | 학기별 운영 정보 | `_data/ai_study_terms.yml`, 일정과 같은 학기 ID 사용 |
-| 멤버 통계·명단 | `_data/ai_study_members.yml`은 공개 집계, `_data/ai_study_members_private.yml`은 암호문. member 시트의 Apps Script 셀 읽기 결과를 `tools/ai_study_members_sync.py`로 변환 |
+| 멤버 통계·명단 | `_data/ai_study_members.yml`은 공개 집계, `_data/ai_study_members_private.yml`은 암호문. 별도 `study-members` 파일의 `members` 탭을 Apps Script로 읽어 `tools/ai_study_members_sync.py`로 변환 |
+
+일정과 멤버는 같은 Drive 폴더의 별도 파일로 관리한다. [ai-study](https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit)는 `schedule`·`references` 탭, [study-members](https://docs.google.com/spreadsheets/d/1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw/edit)는 `members` 탭을 둔다. `study-members`는 링크가 있는 모든 사용자가 편집할 수 있다.
 
 `ai_study_terms.yml`은 `format`(강의 중심이면 lectures), `reference_course`(title, term, url), `overview`, `learning_path`(label, start, end, title, text), `advisor`(사진 `photo` 포함), `meetings`, `location`, `representative`를 학기별로 둔다. 값이 없으면 해당 칸을 생략한다. 자료 시트 링크는 동기화 데이터의 `sheet`다.
 
@@ -38,7 +40,7 @@
 - 열은 Cohort·Name·Department·Entry·POSTECH email·Participation 순이다. Entry는 입학연도를 네 자리로 표시한다. 시트 양식과 홈페이지 표시 양식은 독립적으로 관리한다. 학과·학번은 그 사람의 최신 시트 행을 사용한다.
 - 참여 마커는 각 학기 명단에 실제로 있는지로 판정한다. 가입 기수부터 모든 학기에 참여했다고 가정하지 않는다.
 - 이메일은 확인한 `@postech.ac.kr`만 사용하고 사이트에서는 `[at]`로 가린다. 시트의 모든 재등장 행도 같은 주소로 맞춘다.
-- 갱신은 `python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA 'member!A1:G100' > /tmp/study-members.json` 다음 `python3 tools/ai_study_members_sync.py /tmp/study-members.json`이다. Node.js가 필요하고 비밀번호는 실행 시 입력하거나 `AI_STUDY_MEMBERS_PASSWORD` 환경변수로 전달한다. 원본 JSON과 비밀번호는 공개 저장소에 넣지 않는다. 일정 자동 동기화와는 별도로 실행한다.
+- 갱신은 `python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw 'members!A1:G100' > /tmp/study-members.json` 다음 `python3 tools/ai_study_members_sync.py /tmp/study-members.json`이다. Node.js가 필요하고 비밀번호는 실행 시 입력하거나 `AI_STUDY_MEMBERS_PASSWORD` 환경변수로 전달한다. 원본 JSON과 비밀번호는 공개 저장소에 넣지 않는다. 일정 자동 동기화와는 별도로 실행한다.
 
 ## 자료 표시
 

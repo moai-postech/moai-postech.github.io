@@ -3,7 +3,7 @@
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
   tldr: "How robots learn to act in the real world, understand 3D scenes, and connect goals to actions."
-  icon: "assets/img/icons/study-physical-ai.svg"
+  icon: "assets/img/icons/physical.svg"
   learning_path:
     - { start: 1, end: 6, title: "Learn to Act", text: "Demonstrations and interaction teach robots useful behaviors, from moving through a space to manipulating objects." }
     - { start: 7, end: 8, title: "Understand the Scene", text: "3D representations turn images into a spatial picture of the world, grounding those behaviors in the surrounding scene." }

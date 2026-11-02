@@ -36,13 +36,13 @@
 
 공개 집계만 갱신할 때는 시트 읽기 JSON을 `python3 tools/ai_study_members_sync.py --stats-only -`의 표준입력으로 넘긴다. 비밀번호와 암호문 갱신 없이 신규·기존 구성까지 계산한다.
 
-- 공개 통계(누적·현재 인원, 기수, 기수별 총원·신규/기존 구성·학과별 분포)는 Home에 둔다. Members는 비밀번호 입력 후 `Full list | 1기 | 2기 | …` 탭을 보인다(교수 2026-11-02, 예전 Cohorts 이름 묶음은 뺐다).
+- 공개 통계(누적·현재 인원, 기수, 기수별 총원·신규/기존 구성·학과별 분포)는 Home에 둔다. Members는 비밀번호 입력 후 `Full list | 1기 (Fall 2025) | 2기 (Spring 2026) | …` 한 줄 라벨 탭을 보인다(인원 수는 쓰지 않는다)(교수 2026-11-02, 예전 Cohorts 이름 묶음은 뺐다).
 - Members 제목 오른쪽의 Members sheet 링크는 `teaching/ai-study/members/index.md`의 `members_sheet`에서 읽는다. 공통 `sheet-link.html` 양식을 사용한다.
 - 명단 원문을 HTML이나 공개 데이터에 넣지 않는다. AES-256-GCM 암호문만 배포하며 PBKDF2-SHA256으로 입력 비밀번호에서 키를 만든다. 브라우저 Web Crypto로 복호화 후 명단을 생성한다. 비밀번호·복호화 명단은 저장하지 않고, 내보낼 수 없는 CryptoKey만 IndexedDB에 보관해 새로고침·재방문·브라우저 재시작 후 자동으로 연다. Lock 버튼은 두지 않는다. 한 번 열면 브라우저 데이터를 지우거나 비밀번호가 바뀔 때까지 열려 있다(교수 2026-11-02). 비밀번호는 공개 저장소에 적지 않는다(교수 개인 기록 `academic-profile/.agent-memory/ai-study-members.md`).
 - 같은 비밀번호로 명단만 갱신할 때는 salt와 PBKDF2 반복 수를 유지하고 IV는 새로 만들어 저장된 열람 권한이 이어지게 한다. 비밀번호가 바뀌면 새 salt로 키를 교체한다.
 - 행 순서는 시트와 Members 표가 같다: 가입 기수 → 학번 → 학과(산경 먼저, 나머지 가나다) → 이름 가나다. `tools/ai_study_members_sync.py`의 `member_order`가 정렬하고, 시트도 같은 순서로 정렬해 둔다(교수 2026-11-02).
 - Full list는 한 사람 한 행의 단일 표다. 열은 Cohort·Entry·Department·Name·POSTECH Email·Participation(가입 기수·입학연도 네 자리·학과 한글 약칭·이름·메일 아이디·참여 기수)이다. 메일 열은 아이디만이라 좁게 두고 Participation을 왼쪽으로 당긴다.
-- 기수 탭은 그 학기에 참여한 사람만 보이고 Participation 열은 비운다(열 자리는 남겨 탭을 바꿔도 열 위치가 그대로다). 그 학기 학생대표(`_data/ai_study_terms.yml`의 `representative.email` 아이디로 찾음)를 첫 줄로 올리고 연한 강조색 행과 Representative 표시를 준다.
+- 기수 탭은 그 학기에 참여한 사람만 보이고 Participation 열은 비운다(열 자리는 남겨 탭을 바꿔도 열 위치가 그대로다). 그 학기 학생대표(`_data/ai_study_terms.yml`의 `representative.email` 아이디로 찾음)를 첫 줄로 올리고 연한 강조색 행만 준다(표시 딱지는 길어서 뺐다, 교수 2026-11-02).
 - study-members의 members 탭은 기수·학번·학과·이름·연락처(POSTECH 메일 아이디) 다음에 `1기 (Fall 2025)` 형식의 참여 체크박스를 둔다. 한 사람 한 행이며 참여한 기수만 체크한다. 새 기수는 같은 형식의 열을 추가한다. 기수는 처음 참여한 가입 기수다. 예전 학기별 명단은 숨긴 `_backup-2026-10-31` 탭에 보존했다.
 - 참여 마커는 원본의 참여 체크박스로 판정한다. 가입 기수부터 모든 학기에 참여했다고 가정하지 않는다. 역할 열은 기수별 역할 기록을 보존한다.
 - 원본 시트에는 확인한 `@postech.ac.kr` 전체 주소를 보관하고 사이트에서는 `@` 앞의 아이디만 표시한다.

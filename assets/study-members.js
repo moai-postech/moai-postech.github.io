@@ -63,7 +63,7 @@
         const cell = element(index === 3 ? 'th' : 'td', value, index === 4 ? 'study-member-email' : undefined);
         if (index === 3) {
           cell.scope = 'row';
-          if (row.className) cell.append(element('span', 'Representative', 'study-member-role'));
+          if (row.className) cell.append(element('span', ' (student representative)', 'visually-hidden'));  // the row colour alone marks it on screen (교수 2026-11-02)
         }
         cell.dataset.label = LABELS[index]; row.append(cell);
       });
@@ -83,19 +83,20 @@
     const ordered = [...cohorts].sort((a, b) => a.number - b.number);
     const people = ordered.flatMap(c => c.members.map(m => Object.assign({ cohort: c.number }, m)));
     // Tabs: Full list, then one tab per term with the members who took part that term (교수 2026-11-02).
-    const tabs = [{ id: 'members-all', title: 'Full list', note: people.length + ' members', panel: table(people, 'All study members', false) }];
+    const tabs = [{ id: 'members-all', title: 'Full list', panel: table(people, 'All study members', false) }];
     for (const c of ordered) {
       const term = people.filter(p => p.participation.includes(c.number));
       const rep = representatives[c.term];
       term.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // representative first, the rest keep the sheet order
-      tabs.push({ id: 'members-' + c.number, title: c.number + '기', note: [c.term, term.length + ' members'].filter(Boolean).join(' · '),
+      // One-line tab labels such as 1기 (Fall 2025), without member counts (교수 2026-11-02).
+      tabs.push({ id: 'members-' + c.number, title: c.number + '기' + (c.term ? ' (' + c.term + ')' : ''),
         panel: table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep) });
     }
     const box = element('section', undefined, 'study-member-tabs');
     const tablist = element('div', undefined, 'study-tablist'); tablist.setAttribute('role', 'tablist'); tablist.setAttribute('aria-label', 'Member lists');
     const buttons = tabs.map(tab => {
       const button = element('button'); button.type = 'button'; button.id = 'tab-' + tab.id; button.setAttribute('role', 'tab'); button.setAttribute('aria-controls', tab.id);
-      button.append(element('strong', tab.title), element('span', tab.note));
+      button.append(element('strong', tab.title));
       tablist.append(button);
       return button;
     });
@@ -115,8 +116,9 @@
         if (n >= 0) { e.preventDefault(); show(n, true); buttons[n].focus(); }
       });
     });
-    const want = tabs.findIndex(tab => tab.id === location.hash.slice(1));
-    show(want < 0 ? 0 : want, false);
+    const fromHash = () => { const want = tabs.findIndex(tab => tab.id === location.hash.slice(1)); show(want < 0 ? 0 : want, false); };
+    fromHash();
+    window.onhashchange = fromHash;  // a link to #members-4 on the same page switches the tab too
     box.append(tablist, ...panels);
     list.replaceChildren(box);
   }

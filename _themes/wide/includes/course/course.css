@@ -251,14 +251,13 @@ a.cs-title:hover { color: var(--accent); }
 /* Study member directory: source-sheet column order, one row per person. */
 .study-member-group h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-regular); }
 .study-members-table tr.is-representative > * { background: var(--callout-surface); }  /* the term's student representative leads its tab (교수 2026-11-02) */
-.study-member-role { display: inline-block; white-space: nowrap; margin-left: var(--space-2); padding: 0 var(--space-2); border-radius: 999px; background: var(--accent); color: var(--white); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }
 .study-members-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: var(--text-body); }
 .study-members-table .sm-cohort { width: 7%; }
-.study-members-table .sm-name { width: 19%; }  /* room for the Representative badge on one line */
+.study-members-table .sm-name { width: 13%; }
 .study-members-table .sm-department { width: 10%; }
 .study-members-table .sm-year { width: 9%; }
 .study-members-table .sm-email { width: 18%; }  /* POSTECH IDs are short, so Participation sits closer (교수 2026-11-02) */
-.study-members-table .sm-participation { width: 37%; }
+.study-members-table .sm-participation { width: 43%; }
 .study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); }
 .study-members-table thead th { padding-top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
 .study-members-table tbody th { font-weight: var(--weight-emphasis); overflow-wrap: anywhere; }

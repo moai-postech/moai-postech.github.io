@@ -12,7 +12,6 @@
 .tone-logistics { --tone:#7b683f; --tone-tint:#e2d6b5; --tone-row:#faf5e8; }
 .tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
-.tone-sand      { --tone:#6d655b; --tone-tint:#ddd5ca; --tone-row:#f5f2ed; }  /* warm grey: the same weight as tone-none, only the temperature differs (Seminar invited talks) */
 
 .study-lab-brand img { width: auto; height: 28px; }
 .course-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-5) 0 var(--space-7); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--text-meta); }

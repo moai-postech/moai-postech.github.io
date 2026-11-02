@@ -57,6 +57,7 @@
   --text-h2: var(--fs-5);   /* a section of its own: Home, Contact, the Research stages, the Faculty name */
   --text-group: var(--fs-4);  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27) */
   --text-display: var(--fs-6);
+  --text-brand: 23px;  /* the header wordmark and the course code beside it */
   --text-paper: var(--text-body);  /* paper titles lead; supporting lines use the shared metadata size */
   --text-author: var(--text-meta);
   --text-paper-meta: var(--text-meta);
@@ -136,8 +137,9 @@ h3.sub:first-child { margin-top: 0; }
 .brand a { display: flex; min-height: 42px; min-width: 0; align-items: center; gap: 10px; color: var(--text); }
 .brand a:hover { color: var(--accent); text-decoration: none; }
 .brand-mark { width: auto; height: 32px; flex-shrink: 0; }
-.brand-code { flex-shrink: 0; color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: 23px; font-weight: var(--weight-heading); letter-spacing: -.3px; white-space: nowrap; }  /* course home code, quieter than the title */
-.brand-word { min-width: 0; font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: 23px; font-weight: var(--weight-heading); letter-spacing: -.3px; }
+/* course home code, quieter than the title */
+.brand-code { flex-shrink: 0; color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; white-space: nowrap; }
+.brand-word { min-width: 0; font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; }
 .site-nav, .course-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); }
 .site-nav a, .course-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }
 .site-nav a:hover, .course-nav a:hover, .site-nav a[aria-current="page"], .course-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }

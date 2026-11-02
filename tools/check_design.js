@@ -22,7 +22,7 @@ function checkSources() {
     const source = fs.readFileSync(path.join(ROOT, file), 'utf8');
     for (const m of source.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
       const size = m[2].match(/font-size:\s*([^;]+)/);
-      if (size && !/^(var\(|inherit$)/.test(size[1].trim()) && !(m[1].trim()==='.brand-word' && size[1].trim()==='23px')) failures.push(`${file}: ${m[1].trim()} 글자 크기는 역할 토큰 사용`);
+      if (size && !/^(var\(|inherit$)/.test(size[1].trim())) failures.push(`${file}: ${m[1].trim()} 글자 크기는 역할 토큰 사용`);
     }
     if (/font-weight:\s*(400|600|700)\b/.test(source)) failures.push(`${file}: 굵기 역할 토큰 대신 숫자 사용`);
 

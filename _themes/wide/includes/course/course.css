@@ -101,7 +101,7 @@
 .course-part-row .cp-span { margin-left: var(--space-3); color: var(--muted); font-weight: var(--weight-regular); }
 .course-part-row .cp-text { display: block; margin-top: 2px; color: var(--muted); font-weight: var(--weight-regular); }
 .cs-date { width: 1%; white-space: nowrap; color: var(--muted); font-size: var(--text-meta); }
-.cs-date small { margin-left: var(--space-2); color: var(--muted); font-size: var(--text-small); }
+.cs-date small { display: inline-block; min-width: 2.1em; margin-left: var(--space-2); color: var(--muted); font-size: var(--text-small); text-align: left; }  /* every weekday as wide as Wed, so centred dates line up */
 .cs-n { width: 1%; color: var(--tone); font-weight: var(--weight-heading); }
 .cs-topic { line-height: 1.5; }
 .cs-title { font-weight: var(--weight-emphasis); }

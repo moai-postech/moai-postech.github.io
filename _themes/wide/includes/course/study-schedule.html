@@ -22,7 +22,7 @@
       {% if t.note %}<p class="study-note"><strong>{{ t.note.label }}</strong> {% if t.note.links %}{% for l in t.note.links %}<a href="{{ l.url }}">{{ l.text }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% else %}{{ t.note.text }}{% endif %}</p>{% endif %}
       <table id="schedule-{{ t.id }}" class="course-schedule study-table{% if lecture_format %} study-table-lectures{% endif %}">
         <colgroup><col class="sc-n"><col class="sc-date"><col class="sc-topic">{% if lecture_format %}<col class="sc-lec">{% else %}<col class="sc-papers"><col class="sc-demo">{% endif %}<col class="sc-who"><col class="sc-mat"></colgroup>
-        <thead><tr><th scope="col">#</th><th scope="col">Date</th><th scope="col">Topic</th>{% if lecture_format %}<th scope="col">Lec</th>{% else %}<th scope="col">Papers</th><th scope="col">Demo</th>{% endif %}<th scope="col">Presenters</th><th scope="col">Materials</th></tr></thead>
+        <thead><tr><th scope="col" class="cs-n">#</th><th scope="col" class="cs-date">Date</th><th scope="col">Topic</th>{% if lecture_format %}<th scope="col" class="st-lectures">Lec</th>{% else %}<th scope="col">Papers</th><th scope="col">Demo</th>{% endif %}<th scope="col">Presenters</th><th scope="col" class="cs-slides">Materials</th></tr></thead>
         <tbody>
         {% for s in t.sessions %}<tr data-session="{{ s.n }}" class="{% if s.optional %}is-optional tone-none{% else %}tone-guest{% endif %}">
           <td class="cs-n">{{ s.n }}</td>

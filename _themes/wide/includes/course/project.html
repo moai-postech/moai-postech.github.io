@@ -54,7 +54,7 @@
     <div class="section-body">
     {% if pj.sheet %}<p class="project-sheet-note">Teams edit their own entry in the <a href="{{ pj.sheet }}">project sheet <span aria-hidden="true">↗</span></a>.</p>{% endif %}
     {% if pj.teams %}<table class="course-schedule project-teams">
-      <thead><tr><th scope="col">#</th><th scope="col">Project</th>{% for rd in pj.rounds %}<th scope="col">{{ rd.name }}</th>{% endfor %}</tr></thead>
+      <thead><tr><th scope="col" class="cs-n">#</th><th scope="col">Project</th>{% for rd in pj.rounds %}<th scope="col" class="project-round">{{ rd.name }}</th>{% endfor %}</tr></thead>
       <tbody>
       {% for t in pj.teams %}<tr class="tone-guest">
         <td class="cs-n">{{ t.n }}</td>

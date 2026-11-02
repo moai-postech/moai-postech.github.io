@@ -29,6 +29,20 @@
 - Schedule·Project·Study sheet는 제목 줄의 우측 끝에 둔다. 외부 화면을 펼쳐 보는 의미로 `↗`를 붙인다.
 - `sheet-link.html`과 `.course-sheet` 한 양식을 공유한다. 좁은 화면에서 다음 줄로 내려가도 오른쪽 정렬을 유지한다. 같은 시트 링크는 페이지 안에서 반복하지 않는다.
 
+## 표 정렬
+
+강의 Schedule·Project Teams, 스터디 Schedule·Members 의 모든 표가 같은 규칙을 따른다. 열의 정렬은 내용의 모양으로 정하고, 같은 이름의 열은 어느 표에서나 같은 쪽에 선다(교수 2026-11-02).
+
+| 정렬 | 열 | 이유 |
+| --- | --- | --- |
+| 가운데 | `#`, Date, Cohort, Entry, 자료 링크 열(Materials, Lec), 발표 칸(Proposal, Final) | 길이와 꼴이 같은 짧은 값이라 머리글 아래 한 줄로 모인다 |
+| 왼쪽 | Topic, Project, Papers, Demo, Presenters, Reading, Department, Name, Email, Participation | 길이가 들쭉날쭉한 글과 목록은 시작점이 맞아야 읽힌다 |
+
+- 머리글은 그 열과 같은 쪽에 선다. 템플릿에서는 `th` 에 칸과 같은 클래스(`cs-n`, `cs-date`, `cs-slides`, `st-lectures`, `project-round`)를 붙인다.
+- 정렬은 `course.css` 의 `Column alignment` 규칙 한 곳에서만 정한다. 열마다 `text-align` 을 따로 쓰지 않는다. 새 열을 만들면 위 표에서 맞는 줄을 골라 그 규칙의 선택자에 더한다.
+- 칸 안의 보조 블록은 예외다. 초청 행의 장소·시간(`cs-session-meta`)은 행 오른쪽 끝에 둔다.
+- 휴대폰 카드(강의 680px 이하, 스터디 일정 960px 이하, Members 960px 이하)에서는 모두 왼쪽이다.
+
 ## 표의 마감선
 
 - 강의와 스터디의 모든 일정 표는 마지막에 1px 마감선 하나를 둔다. 마지막 행의 종류·내용·학기·화면 폭과 무관하게 적용한다.

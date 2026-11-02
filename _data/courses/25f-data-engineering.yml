@@ -201,8 +201,8 @@ schedule:
     title: "LLM Systems III: Agents"
     pdf: "teaching/25f-data-engineering/slides/19_llm-systems-iii-agents.pdf"
   - date: "2025-12-04"
-    kind: break
-    title: "No Class (Project Preparation)"
+    kind: outside
+    title: "Project Preparation (Out of Class)"
   - date: "2025-12-09"
     kind: project
     title: "Project Final I"

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [out-of-class-rows](2026-11-02-out-of-class-rows.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄, 26F 스케줄 시트 | 프로젝트 준비·동료 평가를 `outside` 로: 공통 노랑, `할 일 (Out of Class)` |
 | 2026-11-02 | [seminar-group-sessions](2026-11-02-seminar-group-sessions.md) | Sangwoo Mo(sangwoomo) | Seminar 목록, 세미나 동기화 | Monthly Sync·Internal Review·학회 공유를 Everyone 으로 싣고 흐리게 표시, 휴회는 계속 뺌 |
 | 2026-11-02 | [ai-study-header-polish](2026-11-02-ai-study-header-polish.md) | Sangwoo Mo(sangwoomo) | AI Study 머리글·세 페이지 | POSTECH \| MOAI Lab \| AI Study 머리글, 중복 부제 제거, 꼬리말 여백, 모바일 명단·메뉴, Home 카드 정리 |
 | 2026-11-02 | [other-courses-label](2026-11-02-other-courses-label.md) | Sangwoo Mo(sangwoomo) | 강의 Home 운영 정보 | Related Courses 라벨을 Other Courses 로(Other Terms 와 짝) |

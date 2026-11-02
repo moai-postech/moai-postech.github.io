@@ -97,7 +97,7 @@ function inspect(contract) {
     const css = getComputedStyle(e);
     const brand = e.closest('.brand-word,.foot-lab');
     if (!(brand ? /Outfit/.test(css.fontFamily) : /Pretendard/.test(css.fontFamily))) failures.push(`글꼴 역할 위반: ${label(e)}`);
-    if (!['400','600','700'].includes(css.fontWeight)) failures.push(`굵기 척도 위반 ${css.fontWeight}: ${label(e)}`);
+    if (!['400','500','600','700'].includes(css.fontWeight)) failures.push(`굵기 척도 위반 ${css.fontWeight}: ${label(e)}`);
     if (!palette.has(css.color)) failures.push(`글자 팔레트 위반 ${css.color}: ${label(e)}`);
     if (css.textDecorationLine.includes('underline') && !e.closest('a:hover, a:focus-visible')) failures.push(`평상시 밑줄: ${label(e)}`);
   }

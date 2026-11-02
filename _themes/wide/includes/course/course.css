@@ -22,6 +22,7 @@
 .course-foot .course-postech::before { content: "\00b7"; margin-right: var(--space-2); color: var(--muted); }
 .course-foot .course-privacy { margin-left: auto; font-weight: var(--weight-heading); }
 .course-site main > :last-child { padding-bottom: var(--space-8); }
+.course-site main { text-wrap: pretty; }  /* course and study pages: no single word left alone on a last line (교수 2026-11-02) */
 
 /* Home: title, lead and optional resource links on the left (7 of 12 columns), logistics on the right (5 columns),
    the shape of the MIT, Stanford, CMU and Berkeley course pages (2026-10-26) */
@@ -78,6 +79,7 @@
 /* Schedule: one row per class day; lectures carry their number, other days only their colour and title */
 .course-schedule { width: 100%; border-collapse: separate; border-spacing: 0 3px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }  /* rows read as coloured blocks, as in the sheet */
 .course-schedule thead th { padding: 0 var(--space-4) var(--space-2) 0; border-bottom: 1px solid var(--text); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-align: left; text-transform: uppercase; letter-spacing: .06em; }
+.course-schedule thead th.cs-slides { text-align: center; }
 .course-schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; background: var(--tone-row); vertical-align: baseline; }
 .course-schedule td:not(:last-child) { box-shadow: 1px 0 0 var(--tone-row); }  /* covers the hairline between cells of one filled row */
 .course-schedule td:first-child { border-radius: var(--radius-1) 0 0 var(--radius-1); }
@@ -106,9 +108,10 @@ a.cs-speaker-name:hover, a.cs-speaker-link:hover { color: var(--accent); }
 .cs-session-meta { display: block; color: var(--muted); font-size: var(--text-meta); text-align: right; }
 .cs-session-meta > span { display: block; }  /* location, then time, one per line like the course Home, at the right end */
 .cs-session-time { color: var(--tone); font-weight: var(--weight-emphasis); }
-.cs-slides { width: 1%; white-space: nowrap; }
+.cs-slides { width: 1%; white-space: nowrap; text-align: center; }  /* short same-shape links sit centred under their heading; free text stays left, numbers right (교수 2026-11-02) */
 .cs-slides a { margin-right: var(--space-3); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }  /* the links a student comes for, so they keep the accent at rest */
 .cs-slides a:last-child { margin-right: 0; }
+.cs-slot { visibility: hidden; font-size: var(--text-meta); font-weight: var(--weight-emphasis); }  /* empty Lab place, so PDF lines up in rows without a lab */
 .cs-reading { width: 1%; white-space: nowrap; color: var(--muted); font-size: var(--text-meta); }
 .cs-reading a { color: var(--muted); }
 .cs-reading a:hover { color: var(--accent); }
@@ -134,7 +137,7 @@ a.cs-title:hover { color: var(--accent); }
 .project-criteria { display: grid; grid-template-columns: repeat(var(--criteria-count, 3), minmax(0, 1fr)); gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
 .project-criteria li { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4); background: var(--bg); border-radius: var(--radius-1); }  /* four criterion blocks, grouped 3 / 1 by the grey cards around them */
 .project-criteria strong { font-weight: var(--weight-emphasis); }
-.project-criteria li > span { color: var(--muted); font-size: var(--text-meta); text-wrap: pretty; }
+.project-criteria li > span { color: var(--muted); font-size: var(--text-meta); }
 @media (max-width: 680px) {
   .project-evaluation-groups, .project-criteria { grid-template-columns: 1fr; }
   .project-evaluation-team, .project-evaluation-individual { grid-column: auto; }
@@ -156,7 +159,7 @@ a.cs-title:hover { color: var(--accent); }
 .project-highlight-title { display: block; font-size: var(--text-lead); font-weight: var(--weight-heading); }
 .project-highlight-title a { color: inherit; }
 .project-highlight-when { display: block; margin-top: var(--space-1); color: var(--muted); font-size: var(--text-meta); }
-.project-highlights p { margin: var(--space-3) 0 0; text-wrap: pretty; }  /* no single word left on the last line */
+.project-highlights p { margin: var(--space-3) 0 0; }
 @media (max-width: 680px) { .project-highlights > li { grid-template-columns: 1fr; } }
 .project-round a { display: block; margin-top: var(--space-1); color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }  /* PDF under the date and order */
 
@@ -211,8 +214,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-table-lectures .sc-lec { width: 17%; }
 .study-table-lectures .sc-who { width: 13%; }
 .study-table-lectures .sc-mat { width: 16%; }
-.study-table .cs-n { text-align: left; }
-.study-table .cs-slides { width: auto; white-space: nowrap; }
+.study-table .cs-slides { width: auto; white-space: nowrap; text-align: left; }  /* several link groups of different length */
 .study-table .st-material-group { display: inline-block; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-table .st-material-group + .st-material-group { margin-left: var(--space-2); }
 .study-table .cs-slides a { display: inline-block; margin-right: 0; }  /* Keep all material links on one line. */
@@ -328,7 +330,8 @@ a.cs-title:hover { color: var(--accent); }
   .cs-n { text-align: left; }
   .cs-n:empty { display: none !important; }
   .cs-n:empty + .cs-topic { grid-column: 1 / -1; }
-  .cs-slides, .cs-reading { grid-column: 1 / -1; }
+  .cs-slides, .cs-reading { grid-column: 1 / -1; text-align: left; }
+  .cs-slot { display: none; }
   .cs-slides:empty, .cs-reading:empty { display: none !important; }
   .cs-session { display: block; }
   .cs-session-meta { margin-top: var(--space-1); text-align: left; }  /* on a phone, place and time follow the speaker */
@@ -365,7 +368,7 @@ a.cs-title:hover { color: var(--accent); }
 .project-milestone::before { counter-increment: milestone; content: counter(milestone); display: grid; place-items: center; flex-shrink: 0; width: 1.5em; height: 1.5em; border: 1px solid var(--line); border-radius: 50%; font-size: var(--text-small); font-weight: var(--weight-emphasis); color: var(--muted); }
 .project-timeline-when { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); font-variant-numeric: tabular-nums; }
 .project-timeline-title { font-size: var(--text-body); font-weight: var(--weight-emphasis); }
-.project-timeline p { margin: var(--space-2) 0 0; font-size: var(--text-meta); color: var(--muted); text-wrap: pretty; }
+.project-timeline p { margin: var(--space-2) 0 0; font-size: var(--text-meta); color: var(--muted); }
 .project-timeline p strong { color: var(--text); }
 .project-timeline .project-stage-note { margin-top: var(--space-3); font-size: var(--text-small); }
 .project-timeline .project-presentation { margin-top: var(--space-3); color: var(--text); font-weight: var(--weight-emphasis); }

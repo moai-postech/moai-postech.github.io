@@ -4,6 +4,7 @@
   색은 course.css 의 템플릿 하나다. 파트는 순서대로 p1·p2·p3(강의마다 고르지 않는다), 시험·프로젝트·행사·평가·초청·세미나는 logistics, 휴강은 none.
   강의 줄은 바로 위 파트 머리의 색을 잇는다.
   Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다.
+  Materials 는 가운데 정렬이다. Lab 이 있는 줄이 하나라도 있으면 PDF 만 있는 줄에 보이지 않는 Lab 자리를 두어 PDF 위치를 맞춘다.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
@@ -11,9 +12,9 @@
 
     <section class="content-section course-first" id="schedule">
     <div class="section-body">
-    {% assign readings = c.schedule | map: "reading" | compact %}{% if readings.size > 0 %}{% assign cols = 5 %}{% else %}{% assign cols = 4 %}{% endif %}
+    {% assign readings = c.schedule | map: "reading" | compact %}{% if readings.size > 0 %}{% assign cols = 5 %}{% else %}{% assign cols = 4 %}{% endif %}{% assign labs = c.schedule | map: "lab" | compact %}
     <table class="course-schedule">
-      <thead><tr><th scope="col">Date</th><th scope="col">#</th><th scope="col">Topic</th><th scope="col">Materials</th>{% if cols == 5 %}<th scope="col">Reading</th>{% endif %}</tr></thead>
+      <thead><tr><th scope="col">Date</th><th scope="col">#</th><th scope="col">Topic</th><th scope="col" class="cs-slides">Materials</th>{% if cols == 5 %}<th scope="col">Reading</th>{% endif %}</tr></thead>
       <tbody>
       {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign p = q %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}
       <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup"><span class="cp-name">{{ p.name }}</span><span class="cp-title">{{ p.title }}</span></th></tr>
@@ -32,7 +33,7 @@
           {% if r.time or r.location %}<span class="cs-session-meta">{% if r.location %}<span>{{ r.location }}</span>{% endif %}{% if r.time %}<span class="cs-session-time">{{ r.time }}</span>{% endif %}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}
         </td>
-        {% unless compact_session %}<td class="cs-slides">{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% endif %}</td>{% endunless %}
+        {% unless compact_session %}<td class="cs-slides">{% if r.pdf %}<a href="{{ r.pdf }}">PDF</a>{% endif %}{% if r.lab %}<a href="{{ r.lab }}">Lab</a>{% elsif r.pdf and labs.size > 0 %}<span class="cs-slot" aria-hidden="true">Lab</span>{% endif %}</td>{% endunless %}
         {% if cols == 5 and compact_session == false %}<td class="cs-reading">{% for x in r.reading %}{% if x.url %}<a href="{{ x.url }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}{% endfor %}</td>{% endif %}
       </tr>
       {% endif %}{% endfor %}

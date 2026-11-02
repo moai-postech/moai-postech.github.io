@@ -5599,7 +5599,7 @@ h1.t .sub{color:var(--ink-2)}
 #deck-page-input{font:24px var(--mono);width:120px;min-height:44px;padding:8px;border:1px solid var(--line);border-radius:4px;color:var(--ink);background:var(--paper)}
 #deck-page-dialog footer{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
 #deck-page-dialog button[type=submit]{color:var(--paper);background:var(--accent);border-color:var(--accent)}
-@media (pointer:coarse){#deck-touch-nav{display:flex}#hud,#help{display:none!important}}
+@media screen and (pointer:coarse){#deck-touch-nav{display:flex}#stageWrap{bottom:64px}#hud,#help{display:none!important}}
 @media print{#deck-touch-nav,#deck-page-dialog{display:none!important}}
 /* DECK-THEME:END */
 </style>
@@ -5820,6 +5820,16 @@ buildOverview();render();
     '<span id="deck-page-range"></span></div><footer><button type="button" data-cancel>Cancel</button>' +
     '<button type="submit">Go</button></footer></form>';
   document.body.append(nav, dialog);
+  // Reserve space for the toolbar even when the phone is held horizontally.
+  const coarse = window.matchMedia('(pointer:coarse)');
+  function fitTouch() {
+    if (!coarse.matches) return;
+    const scale = Math.min(window.innerWidth / 1280, Math.max(1, window.innerHeight - 64) / 720) * .98;
+    stage.style.transform = 'scale(' + scale + ')';
+  }
+  window.addEventListener('resize', fitTouch);
+  coarse.addEventListener('change', () => { fit(); fitTouch(); });
+  fitTouch();
   const input = dialog.querySelector('input');
   input.max = String(pages.length);
   dialog.querySelector('#deck-page-range').textContent = '/ ' + pages.length;

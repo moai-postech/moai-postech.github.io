@@ -40,3 +40,9 @@ POSTECH 요구사항: 영향 없음
 - 남은 `No Class` 는 공휴일(Chuseok, Children's Day, POSTECH Anniversary, Christmas Eve), 출장, 학회, 시험 기간이라 `break` 로 두었다. `COURSE.md` 에 이 기준을 적었다.
 - 정리: 이 저장소는 이전 세션의 rebase 뒤 HEAD 가 브랜치 밖에 남아 있었다. 그 위의 커밋은 모두 origin/main 에 같은 내용으로 있어, 옛 로컬 main 을 `backup/main-before-2026-11-02` 로 남기고 main 을 origin/main 에 맞춘 뒤 이번 커밋만 얹었다.
 - 확인: 로컬 빌드의 25F Schedule 에서 10/21·12/04·12/16 이 `is-outside tone-logistics` 이다.
+
+## 추가: Out of Class 제목을 No Class 와 같은 글자로, Materials 열 여백
+- 교수: Out of Class 제목도 볼드를 빼고 No Class 와 같은 폰트로. 행 색만 노랑이다.
+- `course.css` 의 `.is-outside .cs-title` 에 보통 굵기를 더했다. `design-contract.json` 의 `list-title`(제목 굵기 검사)에서 `.is-outside .cs-title` 을 뺐다. 확인: 26F 에서 Peer Evaluation 과 No Class (Chuseok) 제목이 같은 색(rgb 89,101,116), 같은 굵기(400)다.
+- 교수: Programming for AX(26S) Schedule 의 Materials 가 오른쪽 끝에 붙어 있다. Reading 열이 없어 Materials 가 마지막 열인 강의에서만 생긴다.
+- `course.css` 에 `.course-schedule :is(th, td).cs-slides:last-child { padding-right: var(--space-7); }` 를 더했다. Materials 가 마지막 열일 때만 오른쪽 여백 48px 를 두어 머리글과 PDF·Lab 을 함께 왼쪽으로 옮긴다. Data Engineering 처럼 Reading 이 있는 강의는 바뀌지 않는다. 좁은 화면 카드 배치는 padding 을 0 으로 두므로 영향이 없다.

@@ -40,6 +40,7 @@
 
 - 머리글은 그 열과 같은 쪽에 선다. 템플릿에서는 `th` 에 칸과 같은 클래스(`cs-n`, `cs-date`, `cs-slides`, `st-lectures`, `project-round`)를 붙인다.
 - 정렬은 `course.css` 의 `Column alignment` 규칙 한 곳에서만 정한다. 열마다 `text-align` 을 따로 쓰지 않는다. 새 열을 만들면 위 표에서 맞는 줄을 골라 그 규칙의 선택자에 더한다.
+- 가운데 열 안에서 같은 종류의 자료는 모든 행에서 같은 자리에서 시작한다. 강의 Materials 는 Lab 이 없는 행에도 Lab 자리를 비워 두고(`cs-slot`), 스터디 Materials 는 그 학기에 쓰인 묶음(Slides, Notes, Demo)마다 가장 긴 표기(`Slides 1, 2`) 폭의 고정 자리를 둔다. 휴대폰 카드에서는 빈 자리를 접는다.
 - 칸 안의 보조 블록은 예외다. 초청 행의 장소·시간(`cs-session-meta`)은 행 오른쪽 끝에 둔다.
 - 휴대폰 카드(강의 680px 이하, 스터디 일정 960px 이하, Members 960px 이하)에서는 모두 왼쪽이다.
 

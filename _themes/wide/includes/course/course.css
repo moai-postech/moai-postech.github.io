@@ -220,8 +220,9 @@ a.cs-title:hover { color: var(--accent); }
 .study-table-lectures .sc-who { width: 13%; }
 .study-table-lectures .sc-mat { width: 16%; }
 .study-table .cs-slides { width: auto; white-space: nowrap; }  /* the column takes its width from the colgroup, not the 1% of course tables */
-.study-table .st-material-group { display: inline-block; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
+.study-table .st-material-group { display: inline-grid; justify-items: start; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-table .st-material-group + .st-material-group { margin-left: var(--space-2); }
+.study-table .st-material-group > * { grid-area: 1 / 1; }  /* the hidden widest entry sizes the slot, so a group starts at the same place in every row */
 .study-table .cs-slides a { display: inline-block; margin-right: 0; }  /* Keep all material links on one line. */
 .st-links a, .st-links span { display: inline-block; margin-right: var(--space-3); font-size: var(--text-meta); }
 .st-links a { color: var(--text); }
@@ -334,6 +335,8 @@ a.cs-title:hover { color: var(--accent); }
   .study-table colgroup { display: none; }
   .st-links, .st-who { grid-column: 1 / -1; }
   .st-links:empty, .st-who:empty { display: none !important; }
+  .study-table .st-material-group:has(> span:first-child:empty) { display: none; }
+  .study-table .st-material-group, .study-table .st-material-group + .st-material-group { margin: 0 var(--space-2) 0 0; }
 }
 
 /* Study schedules have more columns than course schedules; stack them at tablet width. */
@@ -345,6 +348,8 @@ a.cs-title:hover { color: var(--accent); }
   .study-table .cs-date, .study-table .st-links, .study-table .st-who, .study-table .cs-slides { grid-column: 1 / -1; }
   .study-table .st-links:empty, .study-table .st-who:empty, .study-table .cs-slides:empty { display: none; }
   .study-table :is(th, td):is(.cs-n, .cs-date, .cs-slides, .st-lectures) { text-align: left; }
+  .study-table .cs-slot, .study-table .st-material-group:has(> span:first-child:empty) { display: none; }  /* cards read left, so empty slots would only indent */
+  .study-table .st-material-group, .study-table .st-material-group + .st-material-group { margin: 0 var(--space-2) 0 0; }
 }
 
 /* One table-owned bottom rule for every course/study table, including mobile and hidden term panels. */

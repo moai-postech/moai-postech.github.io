@@ -5,28 +5,10 @@ const { chromium } = require('playwright');
 const { ROOT, SITE, serve, templatePages } = require('./lib/site');
 const { contract, renderReview } = require('./lib/design-spec');
 const { loadSyntheticDirectory } = require('./lib/design-fixture');
+const { checkStyleSources } = require('./lib/style-sources');
 
-// Changing page content must not create a second styling surface.
 function checkSources() {
-  const failures = [];
-  const { execFileSync } = require('child_process');
-  const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '*.md', '*.html', '*.yml'], { cwd: ROOT, encoding: 'utf8' }).trim().split('\n');
-  for (const file of files) {
-    if (/^(_themes\/|tools\/|changelog\/|discussions\/|assets\/)/.test(file) || /\/slides\//.test(file)) continue;
-    const source = fs.readFileSync(path.join(ROOT, file), 'utf8');
-    if (/^---\r?\n[\s\S]*?\blayout:\s*(page|course)\b/.test(source) || file.startsWith('_data/')) {
-      if (/<style\b|\bstyle\s*=\s*["']/i.test(source)) failures.push(`${file}: 콘텐츠에 style을 넣지 말고 공통 템플릿 역할을 사용`);
-    }
-  }
-  for (const file of ['_themes/wide/includes/theme.css', '_themes/wide/includes/course/course.css']) {
-    const source = fs.readFileSync(path.join(ROOT, file), 'utf8');
-    for (const m of source.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
-      const size = m[2].match(/font-size:\s*([^;]+)/);
-      if (size && !/^(var\(|inherit$)/.test(size[1].trim())) failures.push(`${file}: ${m[1].trim()} 글자 크기는 역할 토큰 사용`);
-    }
-    if (/font-weight:\s*(400|600|700)\b/.test(source)) failures.push(`${file}: 굵기 역할 토큰 대신 숫자 사용`);
-
-  }
+  const failures = checkStyleSources();
   const allPages = templatePages();
   const documented = contract.pageDesign.reviews.map(r=>r.page);
   for (const page of allPages) if (!documented.includes(page)) failures.push(`${page}: 페이지별 검토와 기본 유지/조정 근거가 없음`);

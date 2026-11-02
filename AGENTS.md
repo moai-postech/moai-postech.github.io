@@ -267,8 +267,9 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 평소에는 빠르게 빌드하고 올린다. 전체 형식은 교수가 요청할 때만 한꺼번에 본다(교수 2026-10-30).
 
-- **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌리고, 배포를 기다리게 하지 않는다. 실패한 검사는 실행 요약에 모인다. pre-push 훅과 시각 검토 기록은 push 를 막지 않는다.
-- **검사 결과 처리**: push 한 사람이나 에이전트는 배포를 기다리지 않고, 같은 실행의 `checks` 결과를 확인한다(`gh run view`). 실패하면 루트 `TODO.md` 에 한 줄(실패한 검사, 실행 링크, 짐작 가는 원인)을 남기고, 에이전트는 사용자에게 채팅으로도 알린다. 고친 뒤에는 그 줄을 지우고 changelog 에 적는다.
+- **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌리고, 배포를 기다리게 하지 않는다. 실패한 검사는 실행 요약과 주석에 모이고, 실행 자체는 실패로 표시하지 않는다(교수에게 GitHub 실패 메일이 가지 않게, 2026-11-02). 시각 검토 기록은 push 를 막지 않는다.
+- **push 전 검사**: push 하기 전에 `sh tools/prepush.sh` 를 돌린다. clone 한 뒤 `git config core.hooksPath .githooks` 를 켜면 pre-push 훅이 자동으로 돌린다. changelog 검사(push 하는 계정 서명 포함)와 빌드 없는 스타일 소스 검사를 하고, 빌드와 playwright 가 있으면 `checks` 의 빠른 검사도 돌린다. 실패하면 고치기 전에는 push 하지 않는다. `--no-verify` 로 건너뛰지 않는다.
+- **검사 결과 처리**: push 한 사람이나 에이전트는 배포를 기다리지 않고, 같은 실행의 `checks` 결과를 확인한다(`gh run view <id>` 의 주석과 요약에서 `실패`). 실행이 성공으로 끝나도 주석에 실패가 있으면 실패로 다룬다. 실패하면 루트 `TODO.md` 에 한 줄(실패한 검사, 실행 링크, 짐작 가는 원인)을 남기고, 에이전트는 사용자에게 채팅으로도 알린다. 고친 뒤에는 그 줄을 지우고 changelog 에 적는다.
 - **전수 검사**: 교수가 요청할 때만 Actions 에서 `audit` 워크플로를 수동으로 돌린다. `check_design`, `check_format`, `check_typography`, `check_interaction` 을 포함한 모든 검사를 돌리고 모든 페이지·상태 화면을 고정 캡처하고, 배포를 막지 않는다. 실패하면 artifact 의 로그와 갤러리를 보고 고친다.
 - **별도 시각 검토**: 화면을 별도 검토자에게 보이는 절차는 `_qa/visual-review/README.md` 에 있고, 필요할 때만 쓴다.
 - 자동 검사 통과를 시각 검토 완료로 보고하지 않는다. 페이지별 예외는 `page-design.json` 에 이유를 남긴다.

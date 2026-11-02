@@ -32,7 +32,7 @@ professor:
       groups:
         - items:
             - { text: "**KAIST**, MS/PhD in Electrical Engineering (advisor: Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html))", detail: "PhD thesis: [Learning Visual Representations from Uncurated Data](https://koasas.kaist.ac.kr/handle/10203/320934)", side: "2023" }
-            - { text: "**POSTECH**, BS in Mathematics & Industrial Engineering (minor), summa cum laude", detail: "Study abroad: [UC Berkeley](https://www.berkeley.edu), [Peking University](https://english.pku.edu.cn)", side: "2016" }
+            - { text: "**POSTECH**, BS in Mathematics & Industrial Engineering (minor), summa cum laude", detail: "Exchange student: [UC Berkeley](https://www.berkeley.edu), [Peking University](https://english.pku.edu.cn)", side: "2016" }
     - title: "Services"
       groups:
         - title: "Senior committee (AC, Editor)"

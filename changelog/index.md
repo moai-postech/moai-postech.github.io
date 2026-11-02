@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-02 | [study-abroad-links](2026-11-02-study-abroad-links.md) | Sangwoo Mo(sangwoomo) | People 교수 이력 | 학부 보조 줄을 `Study abroad: UC Berkeley, Peking University` 로, 두 학교 링크 |
+| 2026-11-02 | [study-abroad-links](2026-11-02-study-abroad-links.md) | Sangwoo Mo(sangwoomo) | People 교수 이력 | 학부 보조 줄을 `Exchange student: UC Berkeley, Peking University` 로, 두 학교 링크 |
 | 2026-11-02 | [seminar-group-role](2026-11-02-seminar-group-role.md) | Sangwoo Mo(sangwoomo) | 디자인 계약, TODO | 랩 전체 세션 이름 칸에 400 역할을 따로 두어 test_design 실패 해결 |
 | 2026-11-02 | [out-of-class-rows](2026-11-02-out-of-class-rows.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄, 26F 스케줄 시트 | 프로젝트 준비·동료 평가를 `outside` 로: 공통 노랑, `할 일 (Out of Class)` |
 | 2026-11-02 | [seminar-group-sessions](2026-11-02-seminar-group-sessions.md) | Sangwoo Mo(sangwoomo) | Seminar 목록, 세미나 동기화 | Monthly Sync·Internal Review·학회 공유를 Everyone 으로 싣고 흐리게 표시, 휴회는 계속 뺌 |

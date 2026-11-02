@@ -13,11 +13,11 @@ talks:
     group: true
     routine: true
     speaker: "Lab members"
-    title: "Monthly Sync"
+    title: "Research Sync"
   - date: "2026-12-16"
     routine: true
     speaker: "Lab members"
-    title: "NeurIPS 2026 Sharing Session"
+    title: "NeurIPS Sharing Session"
   - date: "2026-12-02"
     speaker: "Eunchan Jo"
     title: "Proving and Improving the Platonic Representation Hypothesis with JEPAs"
@@ -31,7 +31,7 @@ talks:
   - date: "2026-11-12"
     routine: true
     speaker: "Lab members"
-    title: "EMNLP 2026 Sharing Session"
+    title: "EMNLP Sharing Session"
   - date: "2026-11-04"
     invited: true
     speaker: "Donghoon Ahn"
@@ -86,7 +86,7 @@ talks:
     group: true
     routine: true
     speaker: "Lab members"
-    title: "Monthly Sync"
+    title: "Research Sync"
   - date: "2026-08-05"
     invited: true
     speaker: "Jaehyeon Son"
@@ -114,7 +114,7 @@ talks:
     group: true
     routine: true
     speaker: "Lab members"
-    title: "Monthly Sync"
+    title: "Research Sync"
   - date: "2026-06-24"
     speaker: "Chaewon Park"
     title: "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models"
@@ -139,7 +139,7 @@ talks:
     group: true
     routine: true
     speaker: "Lab members"
-    title: "Monthly Sync"
+    title: "Research Sync"
   - date: "2026-04-23"
     speaker: "Myeongsoo Kim"
     title: "DS-STAR: Data Science Agent via Iterative Planning and Verification"

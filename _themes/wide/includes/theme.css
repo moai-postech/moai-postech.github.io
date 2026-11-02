@@ -64,7 +64,7 @@
   --text-featured-meta: var(--text-meta);  /* compact badges inside featured cards */
   --text-featured-paper: var(--text-body);  /* featured cards and dense lists have different reading roles */
   --weight-regular: 400;
-  --weight-medium: 500;  /* one step between body and emphasis: Seminar talk titles, which read as the line's subject next to a bold speaker (교수 2026-11-02) */
+  --weight-medium: 500;  /* one step between body and emphasis: Seminar talk titles and speaker names (교수 2026-11-02) */
   --weight-emphasis: 600;
   --weight-heading: 700;
   --leading-body: 1.6;
@@ -335,11 +335,11 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--tone, var(--faint)); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .filter-swatch { display: inline-block; width: .7em; height: .7em; margin-right: var(--space-2); border-radius: 3px; background: var(--tone-tint); }  /* the row colour of that kind, as a legend */
-.schedule-title { font-weight: var(--weight-medium); line-height: 1.5; }  /* every title one medium weight; the speaker is the same size, a step bolder (교수 2026-11-02) */
+.schedule-title { font-weight: var(--weight-medium); line-height: 1.5; }  /* every title one medium weight; the speaker matches it in size and weight (교수 2026-11-02) */
 .is-upcoming .schedule-date { color: var(--accent); font-weight: var(--weight-emphasis); }  /* talks still to come: the date alone turns accent */
 .schedule-title a { color: var(--text); }
 .schedule-title a:hover { color: var(--accent); }
-.schedule-speaker { width: 1%; padding-left: var(--space-4) !important; font-size: var(--text-body); font-weight: var(--weight-emphasis); white-space: nowrap; }  /* names left-aligned in the last column, so they line up at the right end */
+.schedule-speaker { width: 1%; padding-left: var(--space-4) !important; font-size: var(--text-body); font-weight: var(--weight-medium); white-space: nowrap; }  /* names left-aligned in the last column, so they line up at the right end; same medium weight as the title (교수 2026-11-02) */
 .schedule-speaker a { color: var(--text); }
 .schedule-speaker a:hover { color: var(--accent); }
 .schedule tr.is-routine :is(.schedule-title, .schedule-speaker), .schedule tr.is-routine :is(.schedule-title, .schedule-speaker) a { color: var(--muted); font-weight: var(--weight-regular); }  /* not a topic talk (Monthly Sync, reviews, sharing sessions): title and name step back (교수 2026-11-02) */

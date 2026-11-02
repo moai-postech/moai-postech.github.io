@@ -161,7 +161,7 @@
       "selector": ".schedule tr:not(.is-routine) .schedule-speaker",
       "style": {
         "fontSize": "var(--text-body)",
-        "fontWeight": "var(--weight-emphasis)"
+        "fontWeight": "var(--weight-medium)"
       }
     },
     {

@@ -331,6 +331,7 @@ a.cs-title:hover { color: var(--accent); }
   .project-round::before { content: attr(data-round) "\00a0\00a0"; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }
 
   .study-table colgroup { display: none; }
+  .study-table .cs-date { order: -1; }  /* cards open like the course cards: date, then number and title on one line */
   .st-links, .st-who { grid-column: 1 / -1; }
   .st-links:empty, .st-who:empty { display: none !important; }
   .study-table .st-material-group:has(> span:first-child:empty) { display: none; }
@@ -344,6 +345,7 @@ a.cs-title:hover { color: var(--accent); }
   .study-table tr { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-2) var(--space-3); margin-bottom: var(--space-1); padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }
   .study-table td { display: block; width: auto; padding: 0; border: 0; background: none; white-space: normal; }
   .study-table .cs-date, .study-table .st-links, .study-table .st-who, .study-table .cs-slides { grid-column: 1 / -1; }
+  .study-table .cs-date { order: -1; }
   .study-table .st-links:empty, .study-table .st-who:empty, .study-table .cs-slides:empty { display: none; }
   .study-table :is(th, td):is(.cs-n, .cs-date, .cs-slides, .st-lectures) { text-align: left; }
   .study-table .cs-slot, .study-table .st-material-group:has(> span:first-child:empty) { display: none; }  /* cards read left, so empty slots would only indent */

@@ -1,7 +1,7 @@
-# 2026-11-02 Seminar 굵기: 제목 500, 연사 600·14px
+# 2026-11-02 Seminar 굵기: 제목 500, 연사 600(같은 크기)
 작성자: Sangwoo Mo(sangwoomo) | 대상: `AGENTS.md`, `tools/check_design.js`, `_themes/wide/README.md`, `_themes/wide/design-contract.json`, `_themes/wide/page-design.json`, `_themes/wide/page-design.md`, `_themes/wide/includes/theme.css` | 도구: Claude Code(design-critique)
 
-> **한줄 결론: 세미나 발표 제목은 모두 500(본문 크기), 연사 이름은 600 에 한 단계 작은 14px 로 바꿨다. 이를 위해 굵기 척도에 500 을 Seminar 제목 전용으로 더했다.**
+> **한줄 결론: 세미나 발표 제목은 모두 500, 연사 이름은 600 이고 둘 다 본문 크기(16px)다. 이를 위해 굵기 척도에 500 을 Seminar 제목 전용으로 더했다.**
 
 POSTECH 요구사항: 영향 없음
 
@@ -32,10 +32,17 @@ POSTECH 요구사항: 영향 없음
 - `check_design.js`: 굵기 척도 검사에 500 을 더했다. `README.md`·`AGENTS.md`: 500 은 Seminar 발표 제목에만 쓴다고 적었다. AGENTS.md 의 Seminar 굵기 문장도 새 규칙으로 고쳤다.
 - 확인: 로컬 빌드에서 `checkSources` 0건, `measure`·`inspect` 로 seminar.html 1440·1280·768·390·320px, index.html 1440·390px 위반 0건. 제목 500/16px, 연사 600/14px 를 모든 폭에서 확인. 데스크톱 화면을 눈으로 봤다.
 
+## 후속: 연사 크기를 제목과 같게
+- 교수: 발표자 폰트를 작게 한 것은 별로다. 제목과 크기가 일치하는 게 나았다.
+- `theme.css`·`design-contract.json`: `.schedule-speaker`·`seminar-name` 크기를 `--text-body`(16px)로. 소속·날짜는 14px 그대로다.
+- `page-design.json`·`page-design.md`·`AGENTS.md`: 연사는 제목과 같은 크기에 600 이라고 고쳤다.
+- 확인: 로컬 빌드에서 `checkSources` 0건, `measure`·`inspect` 로 seminar.html 5개 폭 위반 0건, 제목 500/16px·연사 600/16px.
+
 ## 기각한 안과 이유
 - 위 검토의 나머지 네 조합(이유는 검토 절).
 - 링크된 제목만 600, 나머지 400: 제목 굵기를 통일하는 게 낫다(교수).
 - 제목·연사 모두 600, 또는 제목 600·연사 600(14px): 제목이 무겁다(교수).
+- 연사 600·14px: 연사가 작아 보여 별로다(교수). 제목과 같은 크기가 낫다.
 - 500 을 새로 들이지 않고 600 으로 두기: 400 과 600 사이가 필요하다는 요청이라 척도 안에서 풀 수 없다. 500 은 Seminar 제목에만 쓰고 다른 곳은 그대로 400·600·700 이다.
 
 ## 남은 것

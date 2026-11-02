@@ -40,3 +40,4 @@ POSTECH 요구사항: 영향 없음
   - 강의 일정 Materials 열 제목과 칸을 가운데로. Lab 이 있는 강의(26S)는 PDF 만 있는 줄에 보이지 않는 Lab 자리를 두어 모든 PDF 가 한 세로줄에 선다. 휴대폰에서는 왼쪽 그대로, 빈 자리는 숨긴다.
   - 스터디 일정의 `#` 을 왼쪽에서 오른쪽으로 바꿔 강의 일정과 맞췄다. 스터디 Materials 는 링크 묶음 길이가 달라 왼쪽에 둔다.
   - 그대로 둔 것: Date(왼쪽, 같은 꼴), Topic·Reading(왼쪽), 팀 표의 발표 칸(이미 가운데).
+- 전수 검사(GitHub Actions `audit`)의 `check_design` 이 이번 수정 전부터 있던 위반 14건을 잡았다. Highlights 제목(`strong.project-highlight-title`)이 700 이었는데 계약은 문장 안 강조 600 이다. Timeline 카드 제목과 같은 600 으로 맞췄다. 나머지 검사(format, typography, selection, interaction, study members, POSTECH)는 통과.

@@ -4,7 +4,7 @@ const path = require('path');
 const { chromium } = require('playwright');
 const { ROOT, SITE, serve, templatePages } = require('./lib/site');
 const { contract, renderReview } = require('./lib/design-spec');
-const { loadSyntheticDirectory } = require('./lib/design-fixture');
+const { loadSyntheticDirectory, forgetAccess } = require('./lib/design-fixture');
 const { checkStyleSources } = require('./lib/style-sources');
 
 function checkSources() {
@@ -200,7 +200,7 @@ async function run() {
           await page.mouse.move(0,0); await check('password-error');
           await loadSyntheticDirectory(page,`http://localhost:${srv.address().port}/`);
           await check('synthetic-directory-unlocked');
-          await page.getByRole('button',{name:'Lock',exact:true}).click();
+          await forgetAccess(page,`http://localhost:${srv.address().port}/teaching/ai-study/members/`);
           await page.mouse.move(0,0); await check('directory-relocked');
         }
         report.pages.push(entry);

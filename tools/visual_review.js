@@ -45,7 +45,7 @@ async function capture(out,manifest) {
   const {chromium}=require('playwright');
   const server=await serveDirectory(path.join(out,'site'));
   // The synthetic directory helper reads the same freshly built HTML. No private password is used.
-  const {loadSyntheticDirectory}=require('./lib/design-fixture');
+  const {loadSyntheticDirectory, forgetAccess}=require('./lib/design-fixture');
   const base=`http://127.0.0.1:${server.address().port}/`;
   const browser=await chromium.launch();
   const fonts=new Map();
@@ -124,7 +124,7 @@ async function capture(out,manifest) {
         if(file==='teaching/ai-study/members/index.html') {
           await page.locator('#member-password').fill('incorrect-visual-check');await page.getByRole('button',{name:'Unlock',exact:true}).click();await page.locator('#member-unlock-message').filter({hasText:'Incorrect password'}).waitFor();await snap('password-error');
           await loadSyntheticDirectory(page,base,path.join(out,'site'));await snap('synthetic-directory-unlocked',true);
-          await page.getByRole('button',{name:'Lock',exact:true}).click();await snap('directory-relocked');
+          await forgetAccess(page,base+'teaching/ai-study/members/');await snap('directory-relocked');
         }
         console.log(`캡처: ${width}px ${file}`);
       }

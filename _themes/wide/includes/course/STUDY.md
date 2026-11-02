@@ -4,7 +4,7 @@
 
 ## 구성
 
-상단 Home·Schedule·Members 메뉴를 쓴다. Home은 히어로(소개·Read→Explain→Code 그림·최신 학기 버튼) → 학기 타임라인 → 멤버 통계 → 참여 안내, Schedule은 학기별 탭 → 운영 정보 → 학습 흐름 → 일정 표, Members는 비밀번호로 여는 cohort별 묶음과 전체 명단이다.
+상단 Home·Schedule·Members 메뉴를 쓴다. Home은 히어로(소개·Read→Explain→Code 그림·최신 학기 버튼) → 학기 타임라인 → 멤버 통계 → 참여 안내, Schedule은 학기별 탭 → 운영 정보 → 학습 흐름 → 일정 표, Members는 비밀번호로 여는 Full list·기수별 탭이다.
 
 - Home의 최신 학기는 `ai_study.yml` 첫 학기에서 읽고 히어로의 주 버튼으로 Schedule의 해당 탭에 연결한다. 히어로 오른쪽 그림(`assets/img/study-hero.svg`)은 매주 읽기·설명·코드 실습의 순환을 보인다(교수 2026-11-02: Home 이 글뿐이라 그림 위주로). 소개에 읽기·설명·코드 실습을 담고 별도 How we study 절은 두지 않는다. 소개 문구는 페이지 front matter에서 관리한다. Returning members는 표시하지 않고 기수별 총 참여 인원을 강조하고 신규·기존 인원과 해당 기수 안에서의 비율을 함께 표시한다. 신규는 첫 참여 기수가 같은 멤버, 기존은 이전 기수에 참여한 멤버다. 전체 누적 인원 대비 비율 막대는 쓰지 않는다. 학과별 분포 막대는 유지한다. 통계 수치는 공개 집계를 사용하고 기수별 참여 구성과 학과별 분포는 접기·더보기 없이 항상 표시한다.
 
@@ -36,13 +36,14 @@
 
 공개 집계만 갱신할 때는 시트 읽기 JSON을 `python3 tools/ai_study_members_sync.py --stats-only -`의 표준입력으로 넘긴다. 비밀번호와 암호문 갱신 없이 신규·기존 구성까지 계산한다.
 
-- 공개 통계(누적·현재 인원, 기수, 기수별 총원·신규/기존 구성·학과별 분포)는 Home의 Member overview에 둔다. Members 탭은 비밀번호 입력 후 위쪽 Cohorts에 가입 기수별 학기·인원·이름을, 아래쪽 Full List에 전체 상세 명단을 표시한다.
+- 공개 통계(누적·현재 인원, 기수, 기수별 총원·신규/기존 구성·학과별 분포)는 Home에 둔다. Members는 비밀번호 입력 후 `Full list | 1기 | 2기 | …` 탭을 보인다(교수 2026-11-02, 예전 Cohorts 이름 묶음은 뺐다).
 - Members 제목 오른쪽의 Members sheet 링크는 `teaching/ai-study/members/index.md`의 `members_sheet`에서 읽는다. 공통 `sheet-link.html` 양식을 사용한다.
-- 명단 원문을 HTML이나 공개 데이터에 넣지 않는다. AES-256-GCM 암호문만 배포하며 PBKDF2-SHA256으로 입력 비밀번호에서 키를 만든다. 브라우저 Web Crypto로 복호화 후 명단을 생성한다. 비밀번호·복호화 명단은 저장하지 않고, 내보낼 수 없는 CryptoKey만 IndexedDB에 보관해 새로고침·재방문·브라우저 재시작 후 자동으로 연다. Lock을 누르면 키와 명단 DOM을 지운다. 브라우저 데이터를 지우거나 비밀번호가 바뀌면 다시 입력한다.
+- 명단 원문을 HTML이나 공개 데이터에 넣지 않는다. AES-256-GCM 암호문만 배포하며 PBKDF2-SHA256으로 입력 비밀번호에서 키를 만든다. 브라우저 Web Crypto로 복호화 후 명단을 생성한다. 비밀번호·복호화 명단은 저장하지 않고, 내보낼 수 없는 CryptoKey만 IndexedDB에 보관해 새로고침·재방문·브라우저 재시작 후 자동으로 연다. Lock 버튼은 두지 않는다. 한 번 열면 브라우저 데이터를 지우거나 비밀번호가 바뀔 때까지 열려 있다(교수 2026-11-02). 비밀번호는 공개 저장소에 적지 않는다(교수 개인 기록 `academic-profile/.agent-memory/ai-study-members.md`).
 - 같은 비밀번호로 명단만 갱신할 때는 salt와 PBKDF2 반복 수를 유지하고 IV는 새로 만들어 저장된 열람 권한이 이어지게 한다. 비밀번호가 바뀌면 새 salt로 키를 교체한다.
-- Full List는 기수별로 나누지 않는 단일 표다. 행 순서는 시트와 같다: 가입 기수 오름차순(1기가 맨 위), 같은 기수 안에서는 시트 순서(교수 2026-11-02: 시트와 사이트의 row 순서 일치). 시트도 1기부터 정렬해 둔다. 위쪽 Cohorts도 같은 가입 기수를 기준으로 묶는다.
-- 열은 Cohort·Entry·Department·Name·POSTECH Email ID·Participation(기수·학번·학과·이름·포스텍 메일 아이디·참여회차) 순이다. Entry는 입학연도를 네 자리로 표시한다. 시트 양식과 홈페이지 표시 양식은 독립적으로 관리한다. 학과·학번은 그 사람의 최신 시트 행을 사용한다.
-- study-members의 members 탭은 기수·학번·학과·이름·연락처 다음에 `1기 (Fall 2025)` 형식의 참여 체크박스를 둔다. 한 사람 한 행이며 참여한 기수만 체크한다. 새 기수는 같은 형식의 열을 추가한다. 기수는 처음 참여한 가입 기수다. 예전 학기별 명단은 숨긴 `_backup-2026-10-31` 탭에 보존했다.
+- 행 순서는 시트와 Members 표가 같다: 가입 기수 → 학번 → 학과(산경 먼저, 나머지 가나다) → 이름 가나다. `tools/ai_study_members_sync.py`의 `member_order`가 정렬하고, 시트도 같은 순서로 정렬해 둔다(교수 2026-11-02).
+- Full list는 한 사람 한 행의 단일 표다. 열은 Cohort·Entry·Department·Name·POSTECH Email·Participation(가입 기수·입학연도 네 자리·학과 한글 약칭·이름·메일 아이디·참여 기수)이다. 메일 열은 아이디만이라 좁게 두고 Participation을 왼쪽으로 당긴다.
+- 기수 탭은 그 학기에 참여한 사람만 보이고 Participation 열은 비운다(열 자리는 남겨 탭을 바꿔도 열 위치가 그대로다). 그 학기 학생대표(`_data/ai_study_terms.yml`의 `representative.email` 아이디로 찾음)를 첫 줄로 올리고 연한 강조색 행과 Representative 표시를 준다.
+- study-members의 members 탭은 기수·학번·학과·이름·연락처(POSTECH 메일 아이디) 다음에 `1기 (Fall 2025)` 형식의 참여 체크박스를 둔다. 한 사람 한 행이며 참여한 기수만 체크한다. 새 기수는 같은 형식의 열을 추가한다. 기수는 처음 참여한 가입 기수다. 예전 학기별 명단은 숨긴 `_backup-2026-10-31` 탭에 보존했다.
 - 참여 마커는 원본의 참여 체크박스로 판정한다. 가입 기수부터 모든 학기에 참여했다고 가정하지 않는다. 역할 열은 기수별 역할 기록을 보존한다.
 - 원본 시트에는 확인한 `@postech.ac.kr` 전체 주소를 보관하고 사이트에서는 `@` 앞의 아이디만 표시한다.
 - 갱신은 `python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw 'members!A1:Z100' > /tmp/study-members.json` 다음 `python3 tools/ai_study_members_sync.py /tmp/study-members.json`이다. Node.js가 필요하고 비밀번호는 실행 시 입력하거나 `AI_STUDY_MEMBERS_PASSWORD` 환경변수로 전달한다. 원본 JSON과 비밀번호는 공개 저장소에 넣지 않는다. 일정 자동 동기화와는 별도로 실행한다.
@@ -60,4 +61,4 @@
 
 - 상단 POSTECH MOAI Lab과 로고는 연구실 홈으로 연결한다. 스터디 footer는 강의 페이지와 같은 연구실 로고·MOAI Lab 홈 링크, POSTECH, 개인정보 링크 양식을 사용한다(P7).
 
-- 시트의 학과는 한글 약칭(산경, 컴공, 무은재, 전전, 물리, 수학, IT융합)으로 쓴다. IT융공은 IT융합으로 통일한다. 연락처는 POSTECH 메일 아이디만 쓰고 역할 열은 두지 않는다. 화면의 학과는 Home 분포와 Members 명단 모두 `산경(IME)`, `무은재(Freshmen)`처럼 한글(영문)이다. 변환표는 `tools/ai_study_members_sync.py`와 `assets/study-members.js`의 `DEPARTMENTS` 두 곳에 같게 둔다(교수 2026-11-02).
+- 시트의 학과는 한글 약칭(산경, 컴공, 무은재, 전전, 물리, 수학, IT융합)으로 쓴다. IT융공은 IT융합으로 통일한다. 연락처는 POSTECH 메일 아이디만 쓰고 역할 열은 두지 않는다. Home 학과 분포는 `산경(IME)`, `무은재(Freshmen)`처럼 한글(영문)이고(변환표는 `tools/ai_study_members_sync.py`의 `DEPARTMENTS`), Members 명단은 한글 약칭만 쓴다(교수 2026-11-02).

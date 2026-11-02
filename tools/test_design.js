@@ -7,7 +7,7 @@ const { chromium } = require('playwright');
 const { serve, templatePages } = require('./lib/site');
 const { inspect, checkSources } = require('./check_design');
 const { contract } = require('./lib/design-spec');
-const { loadSyntheticDirectory } = require('./lib/design-fixture');
+const { loadSyntheticDirectory, forgetAccess } = require('./lib/design-fixture');
 
 (async () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'moai-discovery-'));
@@ -60,10 +60,10 @@ const { loadSyntheticDirectory } = require('./lib/design-fixture');
     await loadSyntheticDirectory(page,base);
     assert.deepEqual(await failures(),[], '가상 데이터로 실제 명단 UI를 잠금 해제한 상태도 계약을 따라야 한다');
     assert.equal(await page.locator('tbody tr').count(),1);
-    await page.getByRole('button',{name:'Lock',exact:true}).click();
+    await forgetAccess(page,base+'teaching/ai-study/members/');
     await page.waitForFunction(() => document.querySelectorAll('tbody tr').length === 0);
     assert.equal(await page.locator('tbody tr').count(),0);
     await page.close();
   } finally { if(browser) await browser.close(); await new Promise(resolve=>srv.close(resolve)); }
-  console.log('디자인 검사 회귀검증 통과: 새 페이지 자동 발견, Full schedule, 현재 메뉴, 묶음 행간, 미지정 제목, disclosure, 명단 잠금 해제·재잠금');
+  console.log('디자인 검사 회귀검증 통과: 새 페이지 자동 발견, Full schedule, 현재 메뉴, 묶음 행간, 미지정 제목, disclosure, 명단 잠금 해제·접근 기록 삭제');
 })().catch(e=>{console.error(e);process.exitCode=1;});

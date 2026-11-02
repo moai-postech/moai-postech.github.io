@@ -30,4 +30,9 @@ async function loadSyntheticDirectory(page, base, site = SITE) {
     await page.mouse.move(0,0);
   } finally { await page.unroute(routeUrl); }
 }
-module.exports={loadSyntheticDirectory,syntheticDirectoryHTML};
+// The page has no Lock button; tests forget remembered access the way a visitor clears browser data.
+async function forgetAccess(page, url) {
+  await page.evaluate(()=>new Promise(resolve=>{const q=indexedDB.deleteDatabase('moai-study-members');q.onsuccess=q.onerror=q.onblocked=()=>resolve();}));
+  await page.goto(url || page.url());
+}
+module.exports={loadSyntheticDirectory,syntheticDirectoryHTML,forgetAccess};

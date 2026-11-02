@@ -19,10 +19,16 @@ import sys
 
 ROOT = Path(__file__).resolve().parent.parent
 # 시트의 학과는 한글 약칭으로 쓴다. 화면 표기는 '산경(IME)' 처럼 한글(영문)이다(교수 2026-11-02).
-# 같은 표를 assets/study-members.js 의 DEPARTMENTS 에도 둔다.
+# Members 명단은 한글 약칭만 보인다(assets/study-members.js).
 DEPARTMENTS = {'산경': 'IME', '컴공': 'CSE', '무은재': 'Freshmen', '전전': 'EE',
                '물리': 'Physics', '수학': 'Mathematics', 'IT융합': 'CITE'}
 DEPARTMENT_ALIASES = {'IT융공': 'IT융합', 'Mueunjae': '무은재'}
+
+
+def member_order(person):
+    year = person['entry_year']
+    department = DEPARTMENT_ALIASES.get(person['department'], person['department'])
+    return (person['cohort'], int(year) if str(year).isdigit() else 99, department != '산경', department, person['name'])
 
 
 def department_label(name):
@@ -108,7 +114,8 @@ def convert_full_list(rows):
                            email=email, cohort=int(cohort), participation=participation))
     if not people:
         raise ValueError('빈 명단')
-    # 시트와 Members 표의 행 순서를 맞춘다: 1기부터 오름차순, 같은 기수 안에서는 시트 순서(교수 2026-11-02).
+    # 시트와 Members 표는 같은 순서다: 기수 → 학번 → 학과(산경 먼저, 나머지 가나다) → 이름 가나다(교수 2026-11-02).
+    people.sort(key=member_order)
     return [dict(number=n, term=terms[n], members=[p for p in people if p['cohort'] == n])
             for n in sorted(terms)]
 

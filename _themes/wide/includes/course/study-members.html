@@ -6,9 +6,8 @@
   <p class="course-meta">{{ page.title }}</p>
 </header>
 <section class="content-section study-full-list" aria-label="Member directory">
-  <div class="study-full-list-heading"><button type="button" class="study-lock-button" id="lock-member-list" hidden>Lock</button></div>
   <form class="study-member-unlock" id="member-unlock-form">
-    <p>Enter the study password once. This browser will remember access until you choose Lock.</p>
+    <p>Enter the study password once. This browser will remember access until you clear its data.</p>
     <div class="study-unlock-fields"><label for="member-password">Password</label><input type="password" id="member-password" autocomplete="current-password" required aria-describedby="member-unlock-message"><button type="submit" aria-controls="member-full-list" aria-expanded="false">Unlock</button></div>
   </form>
   <p id="member-unlock-message" class="study-unlock-message" role="status" aria-live="polite"></p>
@@ -16,4 +15,5 @@
   <noscript><p>Enable JavaScript to unlock the member list.</p></noscript>
 </section>
 <script type="application/json" id="member-encrypted-data">{{ site.data.ai_study_members_private | jsonify }}</script>
+<script type="application/json" id="member-representatives">{ {% for t in site.data.ai_study.terms %}{% assign r = site.data.ai_study_terms[t.id].representative %}{% if r.email %}{% unless forloop.first %}, {% endunless %}{{ t.name | jsonify }}: {{ r.email | split: " " | first | jsonify }}{% endif %}{% endfor %} }</script>
 <script src="assets/study-members.js" defer></script>

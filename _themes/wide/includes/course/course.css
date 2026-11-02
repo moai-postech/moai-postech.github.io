@@ -232,17 +232,15 @@ a.cs-title:hover { color: var(--accent); }
 .is-optional .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
 
 /* Public aggregate statistics; member details are rendered only after decrypting. */
-.study-full-list-heading { display: flex; align-items: baseline; justify-content: flex-end; gap: var(--space-3); }
 .study-member-unlock { padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); }
 .study-member-unlock p { margin: 0 0 var(--space-4); color: var(--muted); }
 .study-unlock-fields { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); }
 .study-unlock-fields label { font-size: var(--text-meta); }
 .study-unlock-fields input { min-width: 0; max-width: 100%; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-1); color: var(--text); background: var(--bg); font: inherit; }
-.study-unlock-fields button, .study-lock-button { padding: var(--space-2) var(--space-4); border: 1px solid var(--accent); border-radius: var(--radius-1); color: var(--accent); background: var(--bg); font: inherit; font-size: var(--text-control); font-weight: var(--weight-emphasis); cursor: pointer; }
+.study-unlock-fields button { padding: var(--space-2) var(--space-4); border: 1px solid var(--accent); border-radius: var(--radius-1); color: var(--accent); background: var(--bg); font: inherit; font-size: var(--text-control); font-weight: var(--weight-emphasis); cursor: pointer; }
 .study-unlock-fields button:disabled { opacity: .6; cursor: wait; }
 .study-unlock-message { margin: var(--space-3) 0 0; color: var(--muted); font-size: var(--text-meta); }
 .study-unlock-message:empty { display: none; }
-.study-full-list-heading:not(:empty) { margin-bottom: var(--space-3); }
 .study-home-overview .study-term-heading h3 { margin: 0; }
 .study-home-overview .study-term-heading h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-regular); }
 @media (max-width: 680px) {
@@ -251,21 +249,16 @@ a.cs-title:hover { color: var(--accent); }
 }
 
 /* Study member directory: source-sheet column order, one row per person. */
-.study-cohort-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6) var(--space-7); }
-.study-cohort-group .group-heading { margin: 0 0 var(--space-2); }
-.study-cohort-meta { margin: 0 0 var(--space-3); }
-.study-cohort-names { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); }
-.study-cohort-names li { font-weight: var(--weight-emphasis); }
-.study-directory-full { margin-top: var(--section-gap); }
-@media (max-width: 680px) { .study-cohort-grid { grid-template-columns: 1fr; } }
 .study-member-group h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-regular); }
+.study-members-table tr.is-representative > * { background: var(--callout-surface); }  /* the term's student representative leads its tab (교수 2026-11-02) */
+.study-member-role { display: inline-block; white-space: nowrap; margin-left: var(--space-2); padding: 0 var(--space-2); border-radius: 999px; background: var(--accent); color: var(--white); font-size: var(--text-small); font-weight: var(--weight-emphasis); vertical-align: 1px; }
 .study-members-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: var(--text-body); }
 .study-members-table .sm-cohort { width: 7%; }
-.study-members-table .sm-name { width: 12%; }
-.study-members-table .sm-department { width: 12%; }
-.study-members-table .sm-year { width: 10%; }
-.study-members-table .sm-email { width: 35%; }
-.study-members-table .sm-participation { width: 24%; }
+.study-members-table .sm-name { width: 19%; }  /* room for the Representative badge on one line */
+.study-members-table .sm-department { width: 10%; }
+.study-members-table .sm-year { width: 9%; }
+.study-members-table .sm-email { width: 18%; }  /* POSTECH IDs are short, so Participation sits closer (교수 2026-11-02) */
+.study-members-table .sm-participation { width: 37%; }
 .study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); }
 .study-members-table thead th { padding-top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
 .study-members-table tbody th { font-weight: var(--weight-emphasis); overflow-wrap: anywhere; }
@@ -282,6 +275,9 @@ a.cs-title:hover { color: var(--accent); }
   .study-members-table th, .study-members-table td { display: block; padding: 0; border: 0; }
   .study-members-table tbody th::before, .study-members-table td::before { display: block; content: attr(data-label); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-regular); }
   .study-members-table td:nth-last-child(-n + 2) { grid-column: 1 / -1; }
+  .study-members-table td:empty { display: none; }
+  .study-members-table tr.is-representative { padding-inline: var(--space-3); background: var(--callout-surface); }
+  .study-members-table tr.is-representative > * { background: none; }
   .study-members-table :is(th, td):is(:nth-child(1), :nth-child(2)) { text-align: left; }
 }
 

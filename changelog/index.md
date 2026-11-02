@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-03 | [criterion-ranks](2026-11-03-criterion-ranks.md) | Sangwoo Mo(sangwoomo) | Midterm Review HTML·PDF | 팀별 Problem·Method·Presentation 점수와 순위 세 줄 |
 | 2026-11-02 | [ai-study-even-text](2026-11-02-ai-study-even-text.md) | Sangwoo Mo(sangwoomo) | AI Study Home·Schedule | 학기 tldr 길이 맞춤, 일정표 모든 행 두 줄 고정 |
 | 2026-11-02 | [link-arrows](2026-11-02-link-arrows.md) | Sangwoo Mo(sangwoomo) | Seminar·Home News·AI Study, 규칙·검사 | 이동 링크 화살표 전수조사, Full schedule ↗ 복구 |
 | 2026-11-02 | [de-midterm-review-html](2026-11-02-de-midterm-review-html.md) | Sangwoo Mo(sangwoomo) | Data Engineering Schedule·slides | Midterm Review HTML판 게시 |

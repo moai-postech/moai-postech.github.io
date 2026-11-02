@@ -84,7 +84,20 @@
     const ordered = [...cohorts].sort((a, b) => a.number - b.number);
     const people = ordered.flatMap(c => c.members.map(m => Object.assign({ cohort: c.number }, m)));
     // Tabs: Full list, then one tab per term with the members who took part that term (교수 2026-11-02).
-    const tabs = [{ id: 'members-all', title: 'Full list', panel: table(people, 'All study members', false) }];
+    // #dept=산경 (from the Home department map) narrows Full list to one department, with a way back (교수 2026-11-02).
+    const deptMatch = /^#dept=(.+)$/.exec(location.hash);
+    const dept = deptMatch ? departmentLabel(decodeURIComponent(deptMatch[1])) : null;
+    const shown = dept ? people.filter(p => departmentLabel(p.department) === dept) : people;
+    const fullPanel = element('div');
+    if (dept) {
+      const note = element('p', undefined, 'study-member-filter');
+      note.append(element('span', dept + ' · ' + shown.length + (shown.length === 1 ? ' member' : ' members')));
+      const all = element('a', 'Show everyone'); all.href = location.pathname;
+      all.addEventListener('click', e => { e.preventDefault(); history.replaceState(null, '', location.pathname); render(cohorts); });
+      note.append(all); fullPanel.append(note);
+    }
+    fullPanel.append(table(shown, dept ? dept + ' members' : 'All study members', false));
+    const tabs = [{ id: 'members-all', title: 'Full list', panel: fullPanel }];
     for (const c of ordered) {
       const term = people.filter(p => p.participation.includes(c.number));
       const rep = representatives[c.term];
@@ -120,7 +133,7 @@
     });
     const fromHash = () => { const want = tabs.findIndex(tab => tab.id === location.hash.slice(1)); show(want < 0 ? 0 : want, false); };
     fromHash();
-    window.onhashchange = fromHash;  // a link to #members-4 on the same page switches the tab too
+    window.onhashchange = () => (/^#dept=/.test(location.hash) || dept ? render(cohorts) : fromHash());  // #members-4 switches the tab; #dept= re-filters
     box.append(tablist, ...panels);
     list.replaceChildren(box);
   }

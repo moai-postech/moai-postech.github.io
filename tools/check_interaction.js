@@ -41,9 +41,13 @@ async function checkStudyOverview(page, base) {
       check(await panel.locator('a[href*="part="]').count() === 0, `${id}: part-selection link remains`);
       const table = panel.locator('.course-schedule tbody');
       const before = await table.count() ? await table.innerHTML() : null;
+      // Hovering a stage tints its sessions (교수 2026-11-02); a click still selects nothing, and leaving restores the table.
+      await panel.locator('.study-step').first().hover();
+      if (before !== null) check(await panel.locator('tr.is-step-linked').count() > 0, `${id}: hovering a stage did not show its sessions`);
       await panel.locator('.study-step').first().click();
+      await page.mouse.move(0, 0);
       if (before !== null) check(before === await table.innerHTML(), `${id}: overview changed the timetable`);
-      check(await panel.locator('.is-part-selected').count() === 0, `${id}: timetable highlight remains`);
+      check(await panel.locator('.is-part-selected, tr.is-step-linked').count() === 0, `${id}: timetable highlight remains`);
       check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), `${id}: overview overflows`);
     }
   }

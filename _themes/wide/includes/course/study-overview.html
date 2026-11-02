@@ -8,7 +8,7 @@
   <h2 id="study-overview-title">What we study</h2>
   <ol class="plain study-term-cards study-term-directory">
     {% for t in d.terms reversed %}{% assign info = site.data.ai_study_terms[t.id] %}{% assign regular = t.sessions | where_exp: "s", "s.optional != true" %}
-    <li class="study-term-card{% if forloop.last %} is-current{% endif %}">
+    <li class="study-term-card{% if forloop.last %} is-current{% endif %}" data-term="{{ forloop.index }}">
       <span class="study-term-step" aria-hidden="true"><span class="study-term-dot"></span><span class="study-term-when">{{ forloop.index }}기 · {{ t.name }}</span>{% if forloop.last %}<span class="study-term-now">Now</span>{% endif %}</span>
       <a href="teaching/ai-study/schedule/#{{ t.id }}">
       {% if info.icon %}<img src="{{ info.icon }}" alt="" width="56" height="56">{% endif %}

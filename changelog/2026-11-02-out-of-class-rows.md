@@ -33,3 +33,10 @@ POSTECH 요구사항: 영향 없음
 - `course.css` 에 `.is-outside .cs-title { color: var(--muted); }` 를 더했다. 굵기는 유지해 휴강(회색, 보통 굵기)과 구분한다. 아이콘은 이미 기본 톤이라 고치지 않았다.
 - `COURSE.md` 의 색 규칙 줄에 같은 내용을 적었다.
 - 확인: 로컬 빌드의 26F Schedule 10/27 행이 노란 바탕에 회색(`--muted`) 굵은 제목이다.
+
+## 추가: Study Day 도 Out of Class 로
+- 교수: `No Class (Study Day)` 도 `Study Day (Out of Class)` 로, 같은 양식으로. `No Class` 는 최소한으로 쓴다.
+- 25F 10/21·12/16 두 행을 `kind: outside` 로 바꿨다. 시험 직전에 공부하라고 비워 둔 날이라 학생이 할 일이 있는 수업일로 본다.
+- 남은 `No Class` 는 공휴일(Chuseok, Children's Day, POSTECH Anniversary, Christmas Eve), 출장, 학회, 시험 기간이라 `break` 로 두었다. `COURSE.md` 에 이 기준을 적었다.
+- 정리: 이 저장소는 이전 세션의 rebase 뒤 HEAD 가 브랜치 밖에 남아 있었다. 그 위의 커밋은 모두 origin/main 에 같은 내용으로 있어, 옛 로컬 main 을 `backup/main-before-2026-11-02` 로 남기고 main 을 origin/main 에 맞춘 뒤 이번 커밋만 얹었다.
+- 확인: 로컬 빌드의 25F Schedule 에서 10/21·12/04·12/16 이 `is-outside tone-logistics` 이다.

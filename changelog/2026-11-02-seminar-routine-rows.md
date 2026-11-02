@@ -27,3 +27,4 @@
 - `seminar_sync.py`: `ROUTINE_TITLE` 에 `Review Session` 을 더했다(2026-03-12 Paper Review Session, 연사 Eunchan Jo, Suchan Lee). `ROUTINE_SPEAKER = "Lab members"`. 사이트 데이터를 쓰는 `write_yaml` 에서만 연사를 바꾸고, 슬라이드 PDF 정보(Author)에는 시트 담당자가 남는다.
 - `_data/seminar.yml`: routine 13회차의 speaker 를 `Lab members` 로. 실제 시트를 같은 `parse_talks` 로 읽어 routine 여부와 speaker 값이 모든 회차에서 일치함을 확인했다.
 - 템플릿 주석에 같은 내용을 적었다. Lab members 는 People 에 없는 이름이라 링크가 붙지 않는다.
+- 바로잡음: 위 추가분 push 때 rebase 자동 stash 가 `changelog/index.md` 에서 충돌해 충돌 표시(`<<<<<<<`)가 그대로 올라갔다(38ce49c). 다음 커밋(be401e2)에서 표시를 지우고 audit-on-request·seminar-routine-rows 두 행을 모두 살렸다.

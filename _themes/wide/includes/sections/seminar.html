@@ -19,7 +19,7 @@
       <button type="button" class="filter-btn" data-show="all" aria-pressed="true">All <span>{{ talks.size }}</span></button>
       <button type="button" class="filter-btn" data-show="lab" aria-pressed="false"><i class="filter-swatch tone-p1" aria-hidden="true"></i>Lab <span>{{ talks.size | minus: invited.size }}</span></button>
       <button type="button" class="filter-btn" data-show="invited" aria-pressed="false"><i class="filter-swatch tone-logistics" aria-hidden="true"></i>Invited <span>{{ invited.size }}</span></button>
-      {% if site.data.seminar.sheet %}<a class="filter-link" href="{{ site.data.seminar.sheet }}">Full schedule</a>{% endif %}
+      {% if site.data.seminar.sheet %}<a class="filter-link" href="{{ site.data.seminar.sheet }}">Full schedule <span aria-hidden="true">↗</span></a>{% endif %}
     </div>
     <table class="schedule">
       <colgroup><col class="col-date"><col class="col-title"><col class="col-aff"><col class="col-speaker"></colgroup>

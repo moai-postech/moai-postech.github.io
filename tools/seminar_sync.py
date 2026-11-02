@@ -52,6 +52,7 @@ HEADER = """\
 # name_en 을 채운 행만 사이트에 나온다. affiliation_en 이 있으면 초청 발표다(외부 연사 슬라이드는 공개하지 않는다, 교수 원칙).
 # 제목 링크: slides(랩 발표, assets/seminar/ 의 PDF)가 있으면 그것, 없으면 paper(연사의 해당 논문, 여러 개면 연사가 1저자인 대표 하나). 교수 2026-10-26.
 # 연사 이름 링크: url(초청 연사와 인턴의 홈페이지), 없으면 랩 멤버는 People 의 그 사람 자리(템플릿이 자동).
+# group: 다 같이 하는 회차(Monthly Sync, Internal Review, 학회 공유). 시트 name_en 이 Everyone 이면 붙고, 목록에서 흐리게 보인다. 교수 2026-11-02.
 """
 
 
@@ -130,6 +131,9 @@ def nickname(title):
     return slug(" ".join(words[:3]))
 
 
+GROUP_SPEAKER = "Everyone"  # 다 같이 하는 회차의 name_en (교수 2026-11-02)
+
+
 def parse_talks(head, rows):
     col = {h: i for i, h in enumerate(head)}
     get = lambda r, k: r[col[k]].strip() if k in col and col[k] < len(r) else ""
@@ -153,6 +157,7 @@ def parse_talks(head, rows):
             "slide_name": "" if invited or slide_cell.startswith("http") else slide_cell,
             "paper": get(r, "paper"),
             "nickname": slug(get(r, "nickname")) or nickname(get(r, "topic")),
+            "group": get(r, "name_en") == GROUP_SPEAKER,
         }
         talks.append(t)
     talks.sort(key=lambda t: t["date"], reverse=True)  # 같은 날은 시트 순서 그대로
@@ -232,6 +237,8 @@ def write_yaml(talks):
         out.append(f"  - date: {q(t['date'])}")
         if t["invited"]:
             out.append("    invited: true")
+        if t.get("group"):
+            out.append("    group: true")
         out.append(f"    speaker: {q(t['speaker'])}")
         for k in ("affiliation", "url"):
             if t[k]:

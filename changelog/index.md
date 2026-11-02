@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [seminar-group-sessions](2026-11-02-seminar-group-sessions.md) | Sangwoo Mo(sangwoomo) | Seminar 목록, 세미나 동기화 | Monthly Sync·Internal Review·학회 공유를 Everyone 으로 싣고 흐리게 표시, 휴회는 계속 뺌 |
 | 2026-11-02 | [ai-study-header-polish](2026-11-02-ai-study-header-polish.md) | Sangwoo Mo(sangwoomo) | AI Study 머리글·세 페이지 | POSTECH \| MOAI Lab \| AI Study 머리글, 중복 부제 제거, 꼬리말 여백, 모바일 명단·메뉴, Home 카드 정리 |
 | 2026-11-02 | [other-courses-label](2026-11-02-other-courses-label.md) | Sangwoo Mo(sangwoomo) | 강의 Home 운영 정보 | Related Courses 라벨을 Other Courses 로(Other Terms 와 짝) |
 | 2026-11-02 | [schedule-owner](2026-11-02-schedule-owner.md) | Sangwoo Mo(sangwoomo) | 동기화 워크플로 | seminar-sync·ai-study-sync 실패 알림이 sangwoomo 설정(메일 끔)을 따르게 cron 재작성 |

@@ -39,7 +39,8 @@ document.querySelectorAll('[data-filter]').forEach(function (box) {
     cols.forEach(function (c) { c.style.width = ''; });
     if (getComputedStyle(table).display !== 'table') return;  /* phones stack the cells; nothing to fix */
     hidden.forEach(function (r) { r.hidden = false; });
-    var row = rows.filter(function (r) { return r.hasAttribute('data-kind'); })[0];
+    var talks = rows.filter(function (r) { return r.hasAttribute('data-kind'); });
+    var row = talks.filter(function (r) { return r.children.length === cols.length; })[0] || talks[0];  /* a row with every cell: rows without an affiliation span the title over it */
     var widths = Array.prototype.map.call(row.children, function (td) { return td.getBoundingClientRect().width; });
     hidden.forEach(function (r) { r.hidden = true; });
     cols.forEach(function (c, i) { if (i !== 1) c.style.width = widths[i] + 'px'; });  /* the title column takes the rest */

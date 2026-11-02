@@ -6,6 +6,7 @@
   제목에만 링크를 건다: 슬라이드(slides)가 있으면 그 파일, 없으면 연사의 해당 논문(paper). 랩 발표는 슬라이드, 초청 발표는 논문이 된다. 제목 뒤에 slides·paper 같은 표시는 달지 않는다(교수 2026-10-26).
   색은 강의 색 템플릿(course.css 의 tone-*) 네 가지 중 둘을 쓴다: 랩 발표는 하늘색(tone-p1), 초청 발표는 버터 노랑(tone-logistics). 다수인 랩 행이 사이트의 푸른 회색 톤과 어울리고, 버터는 채도가 낮아 강조로 읽히지 않는다. 둘 중 하나를 강조하지 않고 같은 무게로 다르게 칠한다(교수 2026-11-02).
   구분은 랩 내부와 초청 두 가지뿐이다. 다 같이 하는 회차(Monthly Sync, Internal Review, 학회 공유)도 랩 발표와 같은 양식이고, 슬라이드가 없어 제목에 링크가 없을 뿐이다(교수 2026-11-02). 필터 버튼 앞 색 점이 범례다.
+  소속이 없는 줄(랩 발표)은 제목 칸이 소속 칸까지 쓴다(colspan). 긴 제목이 빈 소속 칸 때문에 두 줄로 넘어가지 않게 한다(교수 2026-11-02).
   다가오는 발표는 목록 맨 위(최신순)에 오고, 방문자 브라우저에서 날짜가 강조된다(scripts.html 의 is-upcoming). 교수 2026-10-23: Up next 카드는 빼고 이 상단 하이라이트만 둔다.
 {% endcomment %}
 {% assign talks = site.data.seminar.talks %}
@@ -25,8 +26,8 @@
       {% assign year = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y != year %}{% assign year = y %}<tr class="schedule-year"><th colspan="4" scope="rowgroup">{{ y }}</th></tr>{% endif %}
       <tr data-kind="{% if t.invited %}invited{% else %}lab{% endif %}" class="{% if t.invited %}tone-logistics{% else %}tone-p1{% endif %}" data-date="{{ t.date }}">
         <td class="schedule-date">{{ t.date | date: "%m/%d" }}</td>
-        {% assign doc = t.slides | default: t.paper %}<td class="schedule-title">{% if doc %}<a href="{{ doc }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</td>
-        <td class="schedule-aff">{{ t.affiliation }}</td>
+        {% assign doc = t.slides | default: t.paper %}<td class="schedule-title"{% unless t.affiliation %} colspan="2"{% endunless %}>{% if doc %}<a href="{{ doc }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</td>
+        {% if t.affiliation %}<td class="schedule-aff">{{ t.affiliation }}</td>{% endif %}
         {% assign href = t.url %}{% unless href or t.invited %}{% for g in site.data.members.groups %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "students.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% for g in site.data.members.mentees %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "mentees.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% endunless %}
         <td class="schedule-speaker">{% if href %}<a href="{{ href }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}</td>
       </tr>

@@ -193,7 +193,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-learning-path li { display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
 .study-step-mark { position: relative; display: flex; align-items: center; gap: var(--space-2); min-height: 24px; }
 .study-step-mark::before { content: ""; position: absolute; left: 6px; right: calc(-1 * var(--space-5)); top: 50%; height: 2px; background: var(--accent-soft); }
-.study-learning-path li:last-child .study-step-mark::before { display: none; }
+.study-learning-path li:last-child .study-step-mark::before { right: 0; }  /* last line runs to the card's right edge */
 .study-step-dot { position: relative; flex: none; width: 14px; height: 14px; border: 3px solid var(--accent); border-radius: 50%; background: var(--bg); }
 .study-step-label { position: relative; padding-right: var(--space-2); background: var(--bg); color: var(--accent); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
 .study-step { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: inherit; }
@@ -418,7 +418,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-card { display: flex; flex-direction: column; gap: var(--space-3); }
 .study-term-step { position: relative; display: flex; align-items: center; gap: var(--space-2); min-height: 24px; color: var(--muted); font-size: var(--text-meta); }
 .study-term-step::before { content: ""; position: absolute; left: 6px; right: calc(-1 * var(--space-5)); top: 50%; height: 2px; background: var(--line); }
-.study-term-card:last-child .study-term-step::before { display: none; }
+.study-term-card:last-child .study-term-step::before { right: 0; background: var(--accent); }  /* Now line runs to the right edge */
 .study-term-card:nth-last-child(2) .study-term-step::before { background: linear-gradient(90deg, var(--line), var(--accent)); }
 .study-term-dot { position: relative; flex: none; width: 14px; height: 14px; border: 3px solid var(--line); border-radius: 50%; background: var(--bg); }
 .study-term-when { position: relative; padding-right: var(--space-2); background: var(--bg); }
@@ -494,6 +494,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-home-join .study-join-next a { color: var(--accent); }
 @media (max-width: 1024px) {
   .study-term-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .study-term-card:nth-child(2n) .study-term-step::before { right: 0; }  /* a row's last line stops at its card edge */
 }
 @media (max-width: 680px) {
   .study-term-cards { grid-template-columns: 1fr; gap: var(--space-4); }

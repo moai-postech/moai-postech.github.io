@@ -27,3 +27,9 @@ POSTECH 요구사항: 영향 없음
 ## 남은 것
 - 26F 스케줄 시트 29행(12/3)은 `Project preparation (online)` 이지만 사이트는 `No Class (POSTECH Anniversary)` 다. 사이트가 정본이라 이번에는 시트를 고치지 않았다.
 - push 뒤 checks 에서 `test_design` 의 세미나 검사가 실패했다. 이 변경과 무관(세미나 동기화 9a6c210 와 c580d87 의 조합으로 짐작)이라 루트 `TODO.md` 에 기록만 했다.
+
+## 추가: Out of Class 제목을 회색으로
+- 교수: 행 색은 그대로 두고 제목만 회색 계열로.
+- `course.css` 에 `.is-outside .cs-title { color: var(--muted); }` 를 더했다. 굵기는 유지해 휴강(회색, 보통 굵기)과 구분한다. 아이콘은 이미 기본 톤이라 고치지 않았다.
+- `COURSE.md` 의 색 규칙 줄에 같은 내용을 적었다.
+- 확인: 로컬 빌드의 26F Schedule 10/27 행이 노란 바탕에 회색(`--muted`) 굵은 제목이다.

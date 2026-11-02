@@ -109,6 +109,7 @@
 .is-project .cs-icon, .is-exam .cs-icon { color: var(--accent); }  /* the days students must not miss: only the icon carries the accent */
 .is-break .cs-icon { color: var(--muted); }
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
+.is-outside .cs-title { color: var(--muted); }  /* still a class day: the yellow row and the weight stay, only the title steps back */
 .cs-session { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 0 var(--space-5); }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 a.cs-speaker-name:hover { color: var(--accent); }

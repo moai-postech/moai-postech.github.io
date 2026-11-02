@@ -89,15 +89,16 @@
       const term = people.filter(p => p.participation.includes(c.number));
       const rep = representatives[c.term];
       term.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // representative first, the rest keep the sheet order
-      // One-line tab labels such as 1기 (Fall 2025), without member counts (교수 2026-11-02).
-      tabs.push({ id: 'members-' + c.number, title: c.number + '기' + (c.term ? ' (' + c.term + ')' : ''),
+      // One-line tab labels: 1기 large, (Fall 2025) small and light, no member counts (교수 2026-11-02).
+      tabs.push({ id: 'members-' + c.number, title: c.number + '기', note: c.term ? '(' + c.term + ')' : '',
         panel: table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep) });
     }
     const box = element('section', undefined, 'study-member-tabs');
-    const tablist = element('div', undefined, 'study-tablist'); tablist.setAttribute('role', 'tablist'); tablist.setAttribute('aria-label', 'Member lists');
+    const tablist = element('div', undefined, 'study-tablist study-member-tablist'); tablist.setAttribute('role', 'tablist'); tablist.setAttribute('aria-label', 'Member lists');
     const buttons = tabs.map(tab => {
       const button = element('button'); button.type = 'button'; button.id = 'tab-' + tab.id; button.setAttribute('role', 'tab'); button.setAttribute('aria-controls', tab.id);
       button.append(element('strong', tab.title));
+      if (tab.note) button.append(element('span', tab.note));  // smaller and lighter on the same line
       tablist.append(button);
       return button;
     });

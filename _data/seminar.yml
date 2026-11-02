@@ -10,6 +10,9 @@ talks:
   - date: "2026-11-18"
     speaker: "Suchan Lee"
     title: "Diffusion Will Be Everywhere"
+  - date: "2026-11-12"
+    speaker: "Gyeom Hwangbo"
+    title: "EMNLP 2026 Sharing Session"
   - date: "2026-11-04"
     invited: true
     speaker: "Donghoon Ahn"

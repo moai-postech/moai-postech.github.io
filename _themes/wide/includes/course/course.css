@@ -406,7 +406,6 @@ a.cs-title:hover { color: var(--accent); }
 .study-home-advisor { margin: var(--space-4) 0 0; color: var(--muted); font-size: var(--text-meta); }
 .study-home-advisor a { color: var(--text); }
 .study-home-hero .hero-copy { grid-column: 1 / -1; }  /* one column, no picture */
-.study-accent { color: var(--accent); }
 .study-home-hero .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0 0; }
 .study-home-hero .button { display: inline-flex; align-items: center; padding: var(--space-2) var(--space-5); border: 1px solid var(--accent); border-radius: var(--radius-1); color: var(--accent); background: var(--bg); font-size: var(--text-control); font-weight: var(--weight-emphasis); text-decoration: none; transition: background-color .15s; }
 .study-home-hero .button.primary { background: var(--accent); color: var(--white); }

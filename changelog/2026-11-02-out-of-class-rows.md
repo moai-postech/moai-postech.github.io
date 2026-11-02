@@ -1,5 +1,5 @@
 # 2026-11-02 강의 스케줄: 프로젝트 준비·동료 평가를 수업일(Out of Class)로
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/courses/25f-data-engineering.yml`, `_data/courses/26f-data-engineering.yml`, `_themes/wide/includes/course/kind-icon.html`, `_themes/wide/includes/course/COURSE.md`, `_themes/wide/includes/course/README.md` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: `TODO.md`, `_data/courses/25f-data-engineering.yml`, `_data/courses/26f-data-engineering.yml`, `_themes/wide/includes/course/kind-icon.html`, `_themes/wide/includes/course/COURSE.md`, `_themes/wide/includes/course/README.md` | 도구: Claude Code
 
 > **한줄 결론: `No Class (Project Preparation)`·`No Class (Peer Evaluation)` 다섯 행을 새 종류 `outside` 로 바꿔 공통 노랑과 노트북 아이콘으로 표시하고, 제목을 `Project Preparation (Out of Class)`, `Peer Evaluation (Out of Class)` 로 바꿨다.**
 
@@ -26,3 +26,4 @@ POSTECH 요구사항: 영향 없음
 
 ## 남은 것
 - 26F 스케줄 시트 29행(12/3)은 `Project preparation (online)` 이지만 사이트는 `No Class (POSTECH Anniversary)` 다. 사이트가 정본이라 이번에는 시트를 고치지 않았다.
+- push 뒤 checks 에서 `test_design` 의 세미나 검사가 실패했다. 이 변경과 무관(세미나 동기화 9a6c210 와 c580d87 의 조합으로 짐작)이라 루트 `TODO.md` 에 기록만 했다.

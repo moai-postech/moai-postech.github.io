@@ -53,3 +53,4 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말·강의 바닥은 그�
 - 후속(교수): Members 탭 라벨을 `1기` 크게(16px·600), `(Fall 2025)` 는 같은 줄에 작고 연하게(14px·400, 70% 투명도) 나눴다.
 - 후속(교수): What we study 의 Physical AI 아이콘을 연구실 Home 첫 화면 Physical AI 카드와 같은 `assets/img/icons/physical.svg` 로 바꾸고, 쓰지 않게 된 `study-physical-ai.svg` 는 지웠다. LLM 아이콘(`study-llm.svg`)은 점 3개 대신 말풍선 안 글 줄 셋과 강조색 커서로 다시 그려 자연어 생성 느낌을 냈다. 로컬 빌드 뒤 1280px 화면에서 카드 네 장의 아이콘을 확인했다.
 - 후속(교수): What we study 타임라인 선이 4기 글자와 Now 뒤로 쭉 이어지는 것이 별로라, 선을 기수·학기 글자 양옆에서 끊고(`.study-term-when` 양쪽 여백) 최신 학기 점에서 멈추게 했다(마지막 카드의 선 없음). Schedule 학습 흐름의 선은 그대로 끝까지 잇는다. `STUDY.md` 의 같은 결정을 고쳤다. 1280px 로컬 빌드에서 확인.
+- 후속(교수): Who we learn with 의 Participants by term 과 Departments 를 5:7 에서 반반(`repeat(2, minmax(0, 1fr))`)으로 바꿨다. 1280px 로컬 빌드에서 두 칸 너비가 같은 것을 확인했다. 면적 그래프가 좁아져 가장 작은 칸(전전 1)은 이름과 숫자가 두 줄로 놓인다.

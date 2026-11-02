@@ -7,6 +7,9 @@
 
 sheet: "https://docs.google.com/spreadsheets/d/1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U/edit"
 talks:
+  - date: "2026-12-16"
+    speaker: "Myeongsoo Kim"
+    title: "NeurIPS 2026 Sharing Session"
   - date: "2026-11-18"
     speaker: "Suchan Lee"
     title: "Diffusion Will Be Everywhere"

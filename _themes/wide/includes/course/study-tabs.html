@@ -22,6 +22,6 @@
     });
   });
   var want = location.hash.slice(1);
-  show(tabs.filter(function (t) { return t.getAttribute('aria-controls') === want; })[0] || tabs[0], false);
+  show(tabs.filter(function (t) { return t.getAttribute('aria-controls') === want; })[0] || tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0], false);  /* no hash: the tab the page marked as current */
 })();
 </script>

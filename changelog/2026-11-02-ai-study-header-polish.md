@@ -51,3 +51,4 @@ POSTECH 요구사항: P1, P2 확인(POSTECH 워드마크가 첫 요소·대표�
 - Codex 시각 검토(Business, 기본 모델, 화면 캡처 4장과 아이콘 SVG 를 넘김): Foundation Models·Physical AI 아이콘, 사진, 히어로는 유지. LLM 아이콘 속 화살표와 Deep Learning 아이콘의 곡선 화살표는 뜻이 불분명하다는 지적을 받아 Codex 가 고쳤다(말풍선+렌치, 2·3·2 층 신경망). 
 - 기각한 Codex 제안: 학과 면적 그래프를 가로 막대로 바꾸는 안(교수가 면적 표현을 골랐다), `Now` 를 `Current term` 으로 바꾸는 안(지금 표시로 충분), 휴대폰 Members 대표 행을 회색으로 바꾸는 안(교수가 색 행을 정했다).
 - 후속(전수 검사 `audit`): 휴대폰 강의·스터디 메뉴의 최소 높이를 푼 변경이 `check_design` 의 공통 머리글 규칙(연구실·강의·스터디 머리글 높이·로고·탭 위치가 모든 폭에서 같아야 함, `shared-header-navigation` 최소 88px)을 어겨 되돌렸다. 기각한 안: 강의·스터디 메뉴만 한 줄 높이로 두는 안은 페이지를 오갈 때 머리글 높이가 달라져 공통 규칙과 부딪힌다. 같은 실행의 `check_format` 실패(seminar.html 연도 제목 간격)는 같은 날 Seminar 색 띠 작업 쪽 문제로 이 회차와 무관하다.
+- 후속(교수): Schedule 학기 탭을 1기(Fall 2025)부터 오름차순으로 맞췄다(Home 타임라인·Members 탭과 같은 방향). 주소에 학기가 없으면 이번 학기 탭이 열리고(`study-tabs.html` 이 aria-selected 로 표시된 탭을 기본으로), `#spring-2026` 같은 링크는 그 학기를 연다.

@@ -15,12 +15,12 @@
    description: "<학수번호> <과목명> at POSTECH, <학기>: schedule, slides, and resources."
    ---
    ```
-3. `_data/teaching.yml` 의 그 학기 `url` 을 `teaching/<id>/` 로 바꾼다. 같은 과목의 다른 학기 페이지에 `other_terms` 가 있으면 거기 주소도 바꾼다.
+3. `_data/teaching.yml` 의 해당 과목 `terms` 맨 앞에 최신 학기와 `teaching/<id>/` 주소를 추가한다. 과목의 `url` 은 학기 없는 고정 주소(`teaching/data-engineering/`, `teaching/programming-for-ax/`)로 유지한다. 새 과목은 고정 주소에 `layout: course-redirect` 페이지를 만들면 `terms` 의 첫 학기로 자동 연결된다. Other Courses 도 이 목록에서 자동으로 생긴다.
 
 ## 강의마다 달라도 되는 것
 
 - 머리글은 POSTECH 워드마크 옆에 원 학수번호(`code` 의 첫 번호, IMEN)와 강의명을 둔다(`IMEN891K Data Engineering`). 크로스리스팅 전체는 본문 머리의 `code` 한 줄에만 둔다. 480px 이하에서는 자리가 없어 머리글의 학수번호를 숨긴다(교수 2026-11-02).
-- 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Location & time(`location`, `meetings`)·Teaching assistants(`teaching_assistants`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 운영 정보의 Other Courses(`related`)는 다른 과목의 가장 최근 강의 하나를 가리킨다. 이름은 Other Terms 와 짝을 맞추고, 주제가 가깝다는 뜻으로 읽히지 않게 Related 대신 Other 를 쓴다(교수 2026-11-02). Other Terms 와 같이 그 학기보다 앞선 페이지만 링크한다(교수 2026-10-30, 2026-10-27 의 '강의끼리 잇지 않는다'를 대체). 예: 26F Data Engineering → Programming for AX(Spring 2026), Programming for AX(Spring 2026) → Data Engineering(Fall 2025), 25F 는 앞선 다른 강의가 없어 두지 않는다. Other terms 는 나중 학기가 지난 학기만 가리킨다. 지난 학기 페이지에서 새 학기로 잇지 않는다(교수 2026-10-30).
+- 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Location & time(`location`, `meetings`)·Teaching assistants(`teaching_assistants`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 운영 정보의 Other Courses 는 `_data/teaching.yml` 에서 현재 과목을 제외한 모든 과목의 고정 주소를 가져오며, 학기 없이 과목명만 표시한다. 모든 학기에 표시하고 25F Data Engineering 도 포함한다(교수 2026-11-03, 앞선 학기만 링크하던 규칙을 대체). Other Terms(`other_terms`)는 나중 학기가 지난 학기만 가리킨다(교수 2026-10-30).
 - 파트 이름은 자유다(`Part I`, `Software 3.0`). 자료 절 제목은 `resources_title`(기본 `Reference courses`).
 - 강의 스케줄 줄에는 종류 딱지를 붙이지 않는다. 종류는 색과 제목(`Project Proposal I`, `Midterm Exam`)으로 드러낸다(교수 2026-10-30).
 

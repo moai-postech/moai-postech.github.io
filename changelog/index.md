@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [table-alignment](2026-11-02-table-alignment.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 표 | 짧은 값은 가운데, 들쭉날쭉한 글은 왼쪽, 머리글은 열을 따름. 규칙은 course README 표 정렬 |
 | 2026-11-02 | [ai-study-home-visual](2026-11-02-ai-study-home-visual.md) | Sangwoo Mo(sangwoomo) | AI Study Home·Members, 멤버 시트 | 히어로 도식·시간순 학기 블록·기수 막대·학과 면적 그래프, 시트·표 1기부터 같은 순서와 한글(영문) 학과 |
 | 2026-11-02 | [brand-size-token](2026-11-02-brand-size-token.md) | Sangwoo Mo(sangwoomo) | 머리글 CSS, 디자인 검사 | 머리글 23px 를 --text-brand 토큰으로 바꿔 checks 실패 해결 |
 | 2026-11-02 | [course-header-code](2026-11-02-course-header-code.md) | Sangwoo Mo(sangwoomo) | 강의 사이트 머리글 | 강의명 왼쪽에 원 학수번호(IMEN), 480px 이하는 숨김 |

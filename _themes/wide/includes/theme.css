@@ -325,16 +325,15 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule { width: 100%; border-collapse: separate; border-spacing: 0 var(--space-1); }  /* rows are filled bands, a small gap apart (2026-11-02) */
 .schedule.is-locked { table-layout: fixed; }  /* column widths measured once over all talks (scripts.html), so filtering never moves a column */
 .schedule td { padding: var(--space-3) 0; vertical-align: baseline; }
-.schedule tr[data-kind] > td { background: var(--tone-row); box-shadow: 1px 0 0 var(--tone-row); }  /* the shadow covers the hairline between cells of one filled row, as on course schedules */  /* one neutral band for every talk, from the course colour template; invited talks carry a short coral mark */
+.schedule tr[data-kind] > td { background: var(--tone-row); box-shadow: 1px 0 0 var(--tone-row); }  /* the shadow covers the hairline between cells of one filled row, as on course schedules */  /* row colour by kind from the course colour template: lab cool grey, invited warm grey, the same weight */
 .schedule tr[data-kind] > td:first-child { padding-left: var(--space-4); border-radius: var(--radius-1) 0 0 var(--radius-1); }
 .schedule tr[data-kind] > td:last-child { padding-right: var(--space-4) !important; border-radius: 0 var(--radius-1) var(--radius-1) 0; }
 .schedule-year th { line-height: var(--leading-group); padding: calc(var(--section-gap) - var(--space-1)) 0 calc(var(--space-4) - var(--space-1));  /* minus the gap between rows, so the year sits at the same gaps as every group heading */ color: var(--text); font-size: var(--text-group); font-weight: var(--weight-heading); text-align: left; }
 .year-head { line-height: var(--leading-group); margin: var(--section-gap) 0 var(--space-4); font-size: var(--text-group); font-weight: var(--weight-heading); letter-spacing: normal; }  /* same year heading as the seminar list */
 .section-body > .year-head:first-child { margin-top: 0; }
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
-.schedule-date { position: relative; width: 1%; padding-right: var(--space-5) !important; color: var(--tone, var(--faint)); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.kind-mark { position: absolute; left: var(--space-1); top: var(--space-3); bottom: var(--space-3); width: 3px; border-radius: 2px; background: var(--tone); }  /* invited talk: a short coral bar inside the row's left edge, the only colour in the list */
-.filter-btn .kind-mark { position: static; display: inline-block; height: .9em; margin-right: var(--space-2); vertical-align: -.1em; }  /* the same bar as the legend */
+.schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--tone, var(--faint)); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.filter-swatch { display: inline-block; width: .7em; height: .7em; margin-right: var(--space-2); border-radius: 3px; background: var(--tone-tint); }  /* the row colour of that kind, as a legend */
 .schedule-title { font-weight: var(--weight-regular); line-height: 1.5; }  /* title regular, speaker bold: the speaker is what the seminar list highlights */
 .is-upcoming .schedule-date { color: var(--accent); font-weight: var(--weight-emphasis); }  /* talks still to come: the date alone turns accent */
 .schedule-title a { color: var(--text); }
@@ -488,8 +487,6 @@ a.person-name:hover { color: var(--accent); }
   .schedule td { padding: 0 !important; text-align: left; white-space: normal; }
   .schedule tr[data-kind]:not([hidden]) { display: flex; flex-wrap: wrap; align-items: baseline; }
   .schedule td.schedule-date, .schedule td.schedule-title { flex-basis: 100%; }
-  .schedule tr[data-kind] { position: relative; }
-  .schedule td.schedule-date { position: static; }  /* the bar spans the whole card */
   .schedule td.schedule-speaker, .schedule td.schedule-aff { margin-top: 2px; }  /* name first, affiliation after it on one line, though the affiliation comes first in the row (td. beats .schedule td above) */
   .schedule td.schedule-speaker { order: 1; }
   .schedule td.schedule-aff { order: 2; margin-left: var(--space-2); }

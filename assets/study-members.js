@@ -36,8 +36,12 @@
     if (className) node.className = className;
     return node;
   };
+  // Same table as DEPARTMENTS in tools/ai_study_members_sync.py: Korean short name with the English one.
+  const DEPARTMENTS = { '산경': 'IME', '컴공': 'CSE', '무은재': 'Freshmen', '전전': 'EE', '물리': 'Physics', '수학': 'Mathematics', 'IT융합': 'CITE' };
+  const ALIASES = { 'IT융공': 'IT융합', 'Mueunjae': '무은재', 'Undeclared': '무은재' };
+  const departmentLabel = name => { const ko = ALIASES[name] || name; return DEPARTMENTS[ko] ? ko + '(' + DEPARTMENTS[ko] + ')' : ko; };
   function render(cohorts) {
-    const ordered = [...cohorts].sort((a, b) => b.number - a.number);
+    const ordered = [...cohorts].sort((a, b) => a.number - b.number);  // the sheet's row order: 1기 first (2026-11-02)
     const overview = element('section', undefined, 'study-cohort-overview');
     overview.append(element('h2', 'Cohorts'));
     const groups = element('div', undefined, 'study-cohort-grid');
@@ -53,7 +57,7 @@
     const full = element('section', undefined, 'study-directory-full');
     full.append(element('h2', 'Full List'));
     const table = element('table', undefined, 'study-members-table');
-    table.append(element('caption', 'Study members by joining cohort, newest first', 'visually-hidden'));
+    table.append(element('caption', 'Study members by joining cohort, first cohort first', 'visually-hidden'));
     const cols = element('colgroup');
     for (const name of ['cohort', 'year', 'department', 'name', 'email', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
     table.append(cols);
@@ -66,7 +70,7 @@
       for (const member of cohort.members) {
         const row = element('tr');
         const year = /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : member.entry_year;
-        const department = ['Mueunjae', '무은재', 'Undeclared'].includes(member.department) ? 'Freshmen' : member.department;
+        const department = departmentLabel(member.department);
         const values = [cohort.number + '기', year, department, member.name, member.email.split('@')[0]];
         values.forEach((value, index) => {
           const cell = element(index === 3 ? 'th' : 'td', value, index === 4 ? 'study-member-email' : undefined);

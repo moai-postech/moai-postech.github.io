@@ -1,18 +1,85 @@
+{% comment %}
+  Home 공개 통계: 제목 줄 오른쪽에 명단 링크, 요약 숫자 셋, 기수별 막대(신규·기존을 쌓음, 시간순 왼쪽→오른쪽), 학과별 면적(treemap).
+  교수 2026-11-02: 정보가 눈에 안 들어온다, 기수도 시각화, 학과는 면적으로, Meet the members 링크가 혼자 떨어져 있다.
+{% endcomment %}
 {% assign stats = site.data.ai_study_members %}
+{% assign max_count = 0 %}{% for t in stats.terms %}{% if t.count > max_count %}{% assign max_count = t.count %}{% endif %}{% endfor %}
 <section class="content-section study-member-stats study-home-community" aria-labelledby="member-statistics">
-  <h2 id="member-statistics">Who we learn with</h2>
+  <div class="study-stat-head"><h2 id="member-statistics">Who we learn with</h2><a class="study-stat-members" href="teaching/ai-study/members/">Meet the members →</a></div>
   <dl class="study-stat-summary">
     <div><dt>Members to date</dt><dd>{{ stats.total }}</dd></div>
     <div><dt>Current members</dt><dd>{{ stats.current }}</dd></div>
     <div><dt>Cohorts</dt><dd>{{ stats.cohorts }}</dd></div>
   </dl>
   <div class="study-stat-breakdowns">
-    <div><h3>Members by cohort</h3><ul class="plain study-stat-bars">
-      {% for t in stats.terms %}{% assign new_percent = 0 %}{% assign existing_percent = 0 %}{% if t.count > 0 %}{% assign new_percent = t.new | times: 100.0 | divided_by: t.count | round %}{% assign existing_percent = 100 | minus: new_percent %}{% endif %}<li><span>{{ t.number }}기 <small>{{ t.term }}</small></span><strong>{{ t.count }}</strong><span class="study-cohort-mix"><span>New {{ t.new }} ({{ new_percent }}%)</span><span>Existing {{ t.existing }} ({{ existing_percent }}%)</span></span></li>{% endfor %}
-    </ul></div>
-    <div><h3>Departments</h3><ul class="plain study-stat-bars">
-      {% for d in stats.departments %}<li><span>{{ d.name | replace: "Mueunjae", "Freshmen" }}</span><strong>{{ d.count }}</strong><span class="study-stat-bar" aria-hidden="true"><span style="width: {{ d.count | times: 100.0 | divided_by: stats.total }}%"></span></span></li>{% endfor %}
-    </ul></div>
+    <figure class="study-stat-panel">
+      <figcaption><h3>Members by cohort</h3><span class="study-stat-legend"><span class="is-new">New</span><span class="is-existing">Returning</span></span></figcaption>
+      <ol class="plain study-cohort-chart">
+        {% for t in stats.terms reversed %}{% assign h = t.count | times: 100.0 | divided_by: max_count %}{% assign new_h = t.new | times: 100.0 | divided_by: t.count %}<li>
+          <span class="study-cohort-track"><span class="study-cohort-bar" style="height: {{ h }}%" title="{{ t.number }}기 · {{ t.term }}: {{ t.new }} new, {{ t.existing }} returning">
+            <strong>{{ t.count }}</strong>
+            <span class="is-existing" style="flex-grow: {{ t.existing }}"></span><span class="is-new" style="flex-grow: {{ t.new }}"></span>
+          </span></span>
+          <span class="study-cohort-label"><b>{{ t.number }}기</b>{{ t.term }}</span>
+          <span class="visually-hidden">{{ t.count }} members: {{ t.new }} new, {{ t.existing }} returning</span>
+        </li>{% endfor %}
+      </ol>
+    </figure>
+    <figure class="study-stat-panel">
+      <figcaption><h3>Departments</h3></figcaption>
+      <ul class="plain study-dept-map" data-total="{{ stats.total }}">
+        {% for d in stats.departments %}{% assign ko = d.name | split: "(" | first %}{% assign en = d.name | remove_first: ko | remove: "(" | remove: ")" %}<li data-count="{{ d.count }}" title="{{ d.name }}: {{ d.count }}"><span>{{ ko }}{% if en != "" %}<small>({{ en }})</small>{% endif %}</span><strong>{{ d.count }}</strong></li>{% endfor %}
+      </ul>
+    </figure>
   </div>
-  <p class="section-next"><a href="teaching/ai-study/members/">Meet the members →</a></p>
 </section>
+<script>
+// Departments as a squarified treemap: each tile's area is its share of members.
+(function () {
+  var box = document.querySelector('.study-dept-map');
+  if (!box) return;
+  var tiles = [].slice.call(box.children), total = +box.dataset.total;
+  var items = tiles.map(function (el, i) { return { el: el, v: +el.dataset.count, rank: i }; });
+  function worst(row, side, scale) {
+    var s = 0, mx = 0, mn = Infinity;
+    row.forEach(function (r) { var a = r.v * scale; s += a; mx = Math.max(mx, a); mn = Math.min(mn, a); });
+    return Math.max(side * side * mx / (s * s), (s * s) / (side * side * mn));
+  }
+  function layout(list, x, y, w, h) {
+    var sum = list.reduce(function (a, r) { return a + r.v; }, 0), scale = (w * h) / sum, row = [], rest = list.slice();
+    while (rest.length) {
+      var side = Math.min(w, h), next = row.concat(rest[0]);
+      if (!row.length || worst(next, side, scale) <= worst(row, side, scale)) { row = next; rest.shift(); continue; }
+      break;
+    }
+    var rowSum = row.reduce(function (a, r) { return a + r.v; }, 0) * scale, off = 0;
+    row.forEach(function (r) {
+      var a = r.v * scale;
+      if (w >= h) { var rw = rowSum / h; r.box = [x, y + off, rw, a / rw]; off += a / rw; }
+      else { var rh = rowSum / w; r.box = [x + off, y, a / rh, rh]; off += a / rh; }
+    });
+    if (rest.length) {
+      if (w >= h) layout(rest, x + rowSum / h, y, w - rowSum / h, h);
+      else layout(rest, x, y + rowSum / w, w, h - rowSum / w);
+    }
+  }
+  function draw() {
+    var w = box.clientWidth, h = box.clientHeight;
+    if (!w || !h) return;
+    layout(items, 0, 0, w, h);
+    items.forEach(function (r) {
+      var s = r.el.style;
+      s.left = r.box[0] / w * 100 + '%'; s.top = r.box[1] / h * 100 + '%';
+      s.width = r.box[2] / w * 100 + '%'; s.height = r.box[3] / h * 100 + '%';
+      var share = Math.round(100 * Math.pow(r.v / items[0].v, .45));
+      s.setProperty('--share', Math.max(share, 18) + '%');
+      r.el.classList.toggle('is-dark', share >= 55);
+      r.el.classList.toggle('is-small', r.box[2] < 110 || r.box[3] < 76);
+    });
+    box.classList.add('is-drawn');
+  }
+  draw();
+  addEventListener('resize', draw);
+  addEventListener('load', draw);  // fonts and late layout can change the box size after the first pass
+})();
+</script>

@@ -29,7 +29,7 @@ const assert = (ok, message) => { if (!ok) throw new Error(message); };
         assert(await page.locator('tbody tr').count() === total, 'decrypted total differs from statistics');
         assert(await page.locator('table').count() === 1, 'directory is not one table');
         const cohorts = await page.locator('tbody tr td:first-child').allTextContents();
-        assert(cohorts.every((n, i) => !i || parseInt(cohorts[i - 1]) >= parseInt(n)), 'cohorts not descending');
+        assert(cohorts.every((n, i) => !i || parseInt(cohorts[i - 1]) <= parseInt(n)), 'cohorts not ascending like the sheet');
         assert((await page.locator('thead th').allTextContents()).join() === 'Cohort,Entry,Department,Name,POSTECH Email ID,Participation', 'directory columns');
         assert(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'unlocked overflow');
         await page.getByRole('button', { name: 'Lock', exact: true }).click();

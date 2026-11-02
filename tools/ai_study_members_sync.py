@@ -18,10 +18,20 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parent.parent
+# 시트의 학과는 한글 약칭으로 쓴다. 화면 표기는 '산경(IME)' 처럼 한글(영문)이다(교수 2026-11-02).
+# 같은 표를 assets/study-members.js 의 DEPARTMENTS 에도 둔다.
+DEPARTMENTS = {'산경': 'IME', '컴공': 'CSE', '무은재': 'Freshmen', '전전': 'EE',
+               '물리': 'Physics', '수학': 'Mathematics', 'IT융합': 'CITE'}
+DEPARTMENT_ALIASES = {'IT융공': 'IT융합', 'Mueunjae': '무은재'}
+
+
+def department_label(name):
+    name = DEPARTMENT_ALIASES.get(name, name)
+    return f"{name}({DEPARTMENTS[name]})" if name in DEPARTMENTS else name
 
 
 def convert(rows):
-    if rows and rows[0][:6] == ['기수', '학번', '학과', '이름', '연락처', '역할']:
+    if rows and [str(v).strip() for v in rows[0][:5]] == ['기수', '학번', '학과', '이름', '연락처']:
         return convert_full_list(rows)
     people, terms, current = {}, {}, None
     for row in rows:
@@ -51,12 +61,14 @@ def convert(rows):
         if person['cohort'] != min(person['participation']):
             raise ValueError(f"{person['name']}: 첫 참여와 가입 기수 불일치")
     return [dict(number=n, term=terms[n], members=[p for p in people.values() if p['cohort'] == n])
-            for n in sorted(terms, reverse=True)]
+            for n in sorted(terms)]
 
 
 def convert_full_list(rows):
     terms, columns, people, identities, emails = {}, {}, [], set(), set()
-    for column, label in enumerate(rows[0][6:], start=6):
+    # 역할 열은 2026-11-02에 시트에서 뺐다. 예전 시트(역할 열 있음)도 읽는다.
+    first = 6 if str(rows[0][5]).strip() == '역할' else 5
+    for column, label in enumerate(rows[0][first:], start=first):
         if not str(label).strip():
             continue
         match = re.fullmatch(r'(\d+)기 \(((?:Spring|Summer|Fall|Winter) 20\d\d)\)', str(label).strip())
@@ -67,12 +79,15 @@ def convert_full_list(rows):
     if not terms:
         raise ValueError('참여 기수 열 없음')
     for row in rows[1:]:
-        if not any(str(value).strip() for value in row[:6]) and all(str(value).strip().lower() in ('', 'false') for value in row[6:]):
+        if not any(str(value).strip() for value in row[:first]) and all(str(value).strip().lower() in ('', 'false') for value in row[first:]):
             continue
-        fields = [str(value).strip() for value in row[:6]]
+        fields = [str(value).strip() for value in row[:first]]
         if len(fields) < 5 or not all(fields[:5]):
             raise ValueError('기수·학번·학과·이름·연락처는 필수')
         cohort, entry_year, department, name, email = fields[:5]
+        department = DEPARTMENT_ALIASES.get(department, department)
+        if '@' not in email:  # 연락처는 POSTECH 메일 아이디만 적는다(2026-11-02)
+            email += '@postech.ac.kr'
         if not cohort.isdigit() or not re.fullmatch(r'[^\s@]+@postech\.ac\.kr', email):
             raise ValueError(f'{name}: 기수 또는 POSTECH 이메일 확인 필요')
         identity = (name, entry_year)
@@ -93,23 +108,23 @@ def convert_full_list(rows):
                            email=email, cohort=int(cohort), participation=participation))
     if not people:
         raise ValueError('빈 명단')
+    # 시트와 Members 표의 행 순서를 맞춘다: 1기부터 오름차순, 같은 기수 안에서는 시트 순서(교수 2026-11-02).
     return [dict(number=n, term=terms[n], members=[p for p in people if p['cohort'] == n])
-            for n in sorted(terms, reverse=True)]
+            for n in sorted(terms)]
 
 
 def public_stats(cohorts):
     people = [p for c in cohorts for p in c['members']]
     latest = max(c['number'] for c in cohorts)
-    departments = {'산경': 'IME', '컴공': 'CSE', '무은재': 'Mueunjae', '전전': 'EE',
-                   '물리': 'Physics', '수학': 'Mathematics', 'IT융합': 'CITE', 'IT융공': 'CITE'}
-    counts = Counter(departments.get(p['department'], p['department']) for p in people)
+    counts = Counter(department_label(p['department']) for p in people)
     return dict(total=len(people), current=sum(latest in p['participation'] for p in people),
                  cohorts=len(cohorts), returning=sum(len(p['participation']) > 1 for p in people),
                  departments=[dict(name=n, count=c) for n, c in counts.most_common()],
                  terms=[dict(number=c['number'], term=c['term'],
                              count=sum(c['number'] in p['participation'] for p in people),
                              new=sum(p['cohort'] == c['number'] for p in people),
-                             existing=sum(c['number'] in p['participation'] and p['cohort'] < c['number'] for p in people)) for c in cohorts])
+                             existing=sum(c['number'] in p['participation'] and p['cohort'] < c['number'] for p in people))
+                        for c in sorted(cohorts, key=lambda c: -c['number'])])
 
 
 def main():

@@ -10,8 +10,10 @@ description: "A weekly AI study group with POSTECH undergraduates and Prof. Sang
 summary: >-
   Learn AI by reading papers, explaining ideas, and trying them in code.
   A weekly study group for POSTECH undergraduates, with one theme each term.
+image: "assets/img/study-hero.svg"
+image_alt: "Each week we read papers, explain the ideas to each other, and try them in code."
 join:
   title: "How to join"
   body: >-
-    We welcome **POSTECH undergraduates from every department**, including freshmen.
+    Our study is open to **any POSTECH undergraduate**, not only IME students.
 ---

@@ -46,3 +46,11 @@ POSTECH 요구사항: 영향 없음
 - `course.css` 의 `.is-outside .cs-title` 에 보통 굵기를 더했다. `design-contract.json` 의 `list-title`(제목 굵기 검사)에서 `.is-outside .cs-title` 을 뺐다. 확인: 26F 에서 Peer Evaluation 과 No Class (Chuseok) 제목이 같은 색(rgb 89,101,116), 같은 굵기(400)다.
 - 교수: Programming for AX(26S) Schedule 의 Materials 가 오른쪽 끝에 붙어 있다. Reading 열이 없어 Materials 가 마지막 열인 강의에서만 생긴다.
 - `course.css` 에 `.course-schedule :is(th, td).cs-slides:last-child { padding-right: var(--space-7); }` 를 더했다. Materials 가 마지막 열일 때만 오른쪽 여백 48px 를 두어 머리글과 PDF·Lab 을 함께 왼쪽으로 옮긴다. Data Engineering 처럼 Reading 이 있는 강의는 바뀌지 않는다. 좁은 화면 카드 배치는 padding 을 0 으로 두므로 영향이 없다.
+
+## 추가: 게스트 강의 행 양식 통일
+- 교수: 26S `Opportunities in IME as an AI Researcher (and Vice Versa)` 에 PDF 를 달지 않는다. 모든 게스트 강의 양식을 같게.
+- 26S yml 에서 그 행의 `pdf` 를 지웠다. PDF 파일은 Talks 목록(`_data/talks.yml`)에서 계속 쓰므로 그대로 두었다.
+- `schedule.html`: guest·seminar 행은 PDF·Lab 이 있어도 늘 Materials 칸 없이 한 칸으로 그린다. 전에는 PDF 가 있으면 다른 양식(Materials 칸이 따로 생김)이 됐다.
+- 교수: 장소·시간을 오른쪽 끝에 두는 게 최선인지, 알아서 판단해 모든 강의에 맞추기. 판단: 장소·시간의 오른쪽 끝을 표의 마지막 열과 같은 안쪽 선에 맞춘다. Reading 이 있는 강의(Data Engineering)는 Reading 이 오른쪽까지 차 있어 지금 위치가 맞다. Reading 이 없는 강의(Programming for AX)는 Materials 를 48px 안쪽으로 옮겼으므로 장소·시간도 48px 안쪽으로 맞췄다(`course.css`, `:has(thead th.cs-slides:last-child)`). 확인: 26S 에서 장소·시간 오른쪽 끝 913px, Lab 오른쪽 끝 905px.
+- 기각: 모든 강의에 같은 고정 여백(예: 24px). Data Engineering 에서는 Reading 열보다 안쪽으로 들어가 열과 어긋난다.
+- `COURSE.md` 에 두 규칙을 적었다.

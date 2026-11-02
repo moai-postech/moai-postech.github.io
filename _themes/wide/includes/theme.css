@@ -454,7 +454,6 @@ a.person-name:hover { color: var(--accent); }
   .head-postech img { height: 12px; }  /* keeps "POSTECH | MOAI Lab" on one line on 360px phones */
   .site-nav, .course-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 44px; min-height: 88px; align-content: start; gap: 0 var(--space-3); }
   .site-nav > a, .site-nav .nav-group > a, .course-nav > a { justify-content: center; width: 100%; min-height: 44px; }  /* six links form two even rows, with full touch targets */
-  .course-nav { min-height: 0; }  /* course and study menus have three links, one row: no empty second row under them */
   .person-photo { max-width: 120px; }
   .mentee-aff { display: block; margin-left: 0; }  /* phones: name, then affiliation, then papers */
   .mentee-list li { padding: var(--item-gap) 0; }  /* three lines per person, so the wider multi-line gap */

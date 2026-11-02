@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [de-midterm-review](2026-11-02-de-midterm-review.md) | Sangwoo Mo(sangwoomo) | Data Engineering Schedule·slides | Midterm Review PDF 게시, 1~17강·Review Session 슬라이드 최신판(남색, 표지 쪽 번호) |
 | 2026-11-02 | [final-design-review](2026-11-02-final-design-review.md) | Sangwoo Mo(sangwoomo) | AI Study·Seminar | 최종 검수, Home 학기 카드 요약문 시작 높이 맞춤 |
 | 2026-11-02 | [audit-on-request](2026-11-02-audit-on-request.md) | Sangwoo Mo(sangwoomo) | AGENTS.md 검사 규칙 | audit 는 요청한 한 번만, 평소엔 빌드와 고친 화면 한 번, push 뒤 checks 만 |
 | 2026-11-02 | [seminar-routine-rows](2026-11-02-seminar-routine-rows.md) | Sangwoo Mo(sangwoomo) | Seminar | Monthly Sync·Review·Sharing Session 회차는 연사 Lab members, 제목·이름 회색 보통 굵기 |

@@ -157,6 +157,7 @@ schedule:
     kind: review
     title: "Midterm Review"
     pdf: "teaching/26f-data-engineering/slides/midterm-review.pdf"
+    html: "teaching/26f-data-engineering/slides/midterm-review.html"
   - date: "2026-11-05"
     kind: lecture
     n: 11

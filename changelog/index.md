@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [de-midterm-review-html](2026-11-02-de-midterm-review-html.md) | Sangwoo Mo(sangwoomo) | Data Engineering Schedule·slides | Midterm Review HTML판 게시 |
 | 2026-11-02 | [seminar-speaker-weight](2026-11-02-seminar-speaker-weight.md) | Sangwoo Mo(sangwoomo) | Seminar | 연사 이름을 제목과 같은 500 으로 |
 | 2026-11-02 | [research-sync](2026-11-02-research-sync.md) | Sangwoo Mo(sangwoomo) | Seminar 시트·동기화 | Monthly Sync → Research Sync, Sharing Session 제목에서 연도 빼기 |
 | 2026-11-02 | [de-midterm-review](2026-11-02-de-midterm-review.md) | Sangwoo Mo(sangwoomo) | Data Engineering Schedule·slides | Midterm Review PDF 게시, 1~17강·Review Session 슬라이드 최신판(남색, 표지 쪽 번호) |

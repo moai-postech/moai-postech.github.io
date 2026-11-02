@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [other-courses-label](2026-11-02-other-courses-label.md) | Sangwoo Mo(sangwoomo) | 강의 Home 운영 정보 | Related Courses 라벨을 Other Courses 로(Other Terms 와 짝) |
 | 2026-11-02 | [schedule-owner](2026-11-02-schedule-owner.md) | Sangwoo Mo(sangwoomo) | 동기화 워크플로 | seminar-sync·ai-study-sync 실패 알림이 sangwoomo 설정(메일 끔)을 따르게 cron 재작성 |
 | 2026-11-02 | [no-failure-mail](2026-11-02-no-failure-mail.md) | Sangwoo Mo(sangwoomo) | changelog·audit 검사, AGENTS.md | 교수 계정 push 는 검사 문제를 경고로만 남겨 실패 메일 없음, push 전 검사 제거 |
 | 2026-11-02 | [prepush-gate](2026-11-02-prepush-gate.md) | Sangwoo Mo(sangwoomo) | push 전 검사, format checks | CI 검사를 push 전에 돌려 막고, push 뒤 checks 는 실패 메일 없이 주석으로 |

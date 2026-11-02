@@ -13,7 +13,7 @@
 | 2026-11-02 | [seminar-group-role](2026-11-02-seminar-group-role.md) | Sangwoo Mo(sangwoomo) | 디자인 계약, TODO | 랩 전체 세션 이름 칸에 400 역할을 따로 두어 test_design 실패 해결 |
 | 2026-11-02 | [out-of-class-rows](2026-11-02-out-of-class-rows.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄, 26F 스케줄 시트 | 프로젝트 준비·동료 평가를 `outside` 로: 공통 노랑, `할 일 (Out of Class)` |
 | 2026-11-02 | [seminar-group-sessions](2026-11-02-seminar-group-sessions.md) | Sangwoo Mo(sangwoomo) | Seminar 목록, 세미나 동기화 | Monthly Sync·Internal Review·학회 공유를 Everyone 으로 싣고 흐리게 표시, 휴회는 계속 뺌 |
-| 2026-11-02 | [ai-study-header-polish](2026-11-02-ai-study-header-polish.md) | Sangwoo Mo(sangwoomo) | AI Study 머리글·세 페이지 | POSTECH \| MOAI Lab \| AI Study 머리글, 중복 부제 제거, 꼬리말 여백, 모바일 명단·메뉴, Home 이번 학기 카드·주제 아이콘·미니멀 정리 |
+| 2026-11-02 | [ai-study-header-polish](2026-11-02-ai-study-header-polish.md) | Sangwoo Mo(sangwoomo) | AI Study 머리글·세 페이지 | POSTECH \| MOAI Lab AI Study 머리글(두 번째 세로선 뺌), 히어로 AI 강조 삭제·설명 한 줄, 중복 부제 제거, 꼬리말 여백, 모바일 명단·메뉴, Home 이번 학기 카드·주제 아이콘·미니멀 정리 |
 | 2026-11-02 | [other-courses-label](2026-11-02-other-courses-label.md) | Sangwoo Mo(sangwoomo) | 강의 Home 운영 정보 | Related Courses 라벨을 Other Courses 로(Other Terms 와 짝) |
 | 2026-11-02 | [schedule-owner](2026-11-02-schedule-owner.md) | Sangwoo Mo(sangwoomo) | 동기화 워크플로 | seminar-sync·ai-study-sync 실패 알림이 sangwoomo 설정(메일 끔)을 따르게 cron 재작성 |
 | 2026-11-02 | [no-failure-mail](2026-11-02-no-failure-mail.md) | Sangwoo Mo(sangwoomo) | changelog·audit 검사, AGENTS.md | 교수 계정 push 는 검사 문제를 경고로만 남겨 실패 메일 없음, push 전 검사 제거 |

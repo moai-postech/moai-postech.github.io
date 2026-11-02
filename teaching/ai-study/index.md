@@ -7,9 +7,7 @@ title: "Undergraduate AI Study"
 term: "POSTECH"
 head_title: "Undergraduate AI Study · MOAI Lab"
 description: "A weekly AI study group with POSTECH undergraduates and Prof. Sangwoo Mo: each term's topics, papers, demos, and slides."
-summary: >-
-  Learn AI by reading papers, explaining ideas, and trying them in code.
-  A weekly study group for POSTECH undergraduates, with one theme each term.
+summary: "A weekly study group for POSTECH undergraduates: read papers, explain ideas, and try them in code."
 join:
   title: "How to join"
   body: >-

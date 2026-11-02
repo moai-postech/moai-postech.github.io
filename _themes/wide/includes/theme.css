@@ -139,7 +139,7 @@ h3.sub:first-child { margin-top: 0; }
 .brand-mark { width: auto; height: 32px; flex-shrink: 0; }
 /* course home code, quieter than the title */
 .brand-code { flex-shrink: 0; color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; white-space: nowrap; }
-.brand-sub { flex-shrink: 0; display: flex; align-items: center; min-height: 30px; margin-left: var(--space-4); padding-left: var(--space-4); border-left: 1px solid var(--line); color: var(--text); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; white-space: nowrap; }  /* third part of the lockup, same hairline as after POSTECH */
+.brand-sub { flex-shrink: 0; display: flex; align-items: center; min-height: 30px; margin-left: var(--space-2); color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-regular); letter-spacing: -.3px; white-space: nowrap; }  /* lab programme after the lab name: no second hairline (that one marks POSTECH | lab), lighter weight and grey instead (교수 2026-11-02) */
 .brand-sub:hover { color: var(--accent); text-decoration: none; }
 .brand-word { min-width: 0; font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; }
 .site-nav, .course-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); }
@@ -521,10 +521,9 @@ a.person-name:hover { color: var(--accent); }
   .brand-word, .brand-code, .brand-sub { font-size: var(--text-lead); line-height: 1.3; }
 }
 @media (max-width: 480px) {
-  .brand-word, .brand-sub { font-size: var(--text-body); white-space: nowrap; }  /* POSTECH | MOAI Lab | AI Study stays on one line on phones */
-  .head-postech, .brand-sub { margin-inline: 0; }
+  .brand-word, .brand-sub { font-size: var(--text-body); white-space: nowrap; }  /* POSTECH | MOAI Lab AI Study stays on one line on phones */
+  .head-postech { margin-inline: 0; }
   .head-postech { margin-right: var(--space-3); padding-right: var(--space-3); }
-  .brand-sub { margin-left: var(--space-3); padding-left: var(--space-3); }
   .brand-mark { height: 26px; }
   .brand-code { display: none; }  /* no room beside the POSTECH wordmark; the page head below still shows the codes */
 }

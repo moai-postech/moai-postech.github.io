@@ -333,7 +333,7 @@ terms:
       - n: "8"
         date: "2026-05-19"
         title: "RAG"
-        keywords: "retrieval-augmeted generation"
+        keywords: "retrieval-augmented generation"
         presenters: "최지안, 진동환"
         papers:
           - { text: "RAG", url: "https://arxiv.org/abs/2005.11401" }
@@ -344,7 +344,7 @@ terms:
       - n: "9"
         date: "2026-05-26"
         title: "Agent"
-        keywords: "tool-augmeted LLM, autonomous agent"
+        keywords: "tool-augmented LLM, autonomous agent"
         presenters: "이현수, 박선영"
         papers:
           - { text: "ReAct", url: "https://arxiv.org/abs/2210.03629" }

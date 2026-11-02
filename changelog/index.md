@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [ai-study-sync](2026-11-02-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |
 | 2026-11-02 | [seminar-title-span](2026-11-02-seminar-title-span.md) | Sangwoo Mo(sangwoomo) | Seminar | 소속 없는 줄은 제목이 빈 소속 칸까지 써서 긴 제목이 한 줄에 |
 | 2026-11-02 | [study-tldr-stages](2026-11-02-study-tldr-stages.md) | Sangwoo Mo(sangwoomo) | AI Study 학기 데이터, 검사 | tldr 를 학습 단계 순서·동사에 맞춤, DL 단계 범위에서 선택 회차 제외, `check_study_terms` 추가 |
 | 2026-11-02 | [study-path-trim](2026-11-02-study-path-trim.md) | Sangwoo Mo(sangwoomo) | AI Study Schedule | overview 문단 제거(tldr·카드와 중복), 단계 라벨에 `Sessions 1–6` 회차 범위 |

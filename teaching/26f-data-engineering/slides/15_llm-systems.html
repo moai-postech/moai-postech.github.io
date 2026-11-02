@@ -5589,6 +5589,23 @@ h1.t .sub{color:var(--ink-2)}
 .review-deck .review-rebuilt .capt{font-size:20px}
 .review-deck .slide>.body>*{zoom:1!important}
 /* REVIEW-CLEAN:END */
+/* Navigation lives outside the slide canvas, so it never changes PDF layout. */
+#stageWrap{touch-action:manipulation}
+.pagenum{cursor:pointer;pointer-events:auto}
+#deck-touch-nav{display:none;position:fixed;z-index:250;bottom:max(8px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);gap:6px;align-items:center}
+#deck-touch-nav[hidden]{display:none!important}
+#deck-touch-nav button,#deck-page-dialog button{font:600 16px var(--sans);min-height:44px;min-width:44px;padding:8px 14px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink)}
+#deck-touch-nav button:disabled{opacity:.4}
+#deck-touch-nav [data-jump]{min-width:104px;font-family:var(--mono)}
+#deck-page-dialog{position:fixed;inset:0;margin:auto;padding:24px;max-width:calc(100vw - 32px);border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);font:18px var(--sans);z-index:300}
+#deck-page-dialog::backdrop{background:rgba(15,23,42,.45)}
+#deck-page-dialog label{display:block;font-weight:600;margin-bottom:16px}
+#deck-page-dialog form>div{display:flex;align-items:center;gap:12px}
+#deck-page-input{font:24px var(--mono);width:120px;min-height:44px;padding:8px;border:1px solid var(--line);border-radius:4px;color:var(--ink);background:var(--paper)}
+#deck-page-dialog footer{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+#deck-page-dialog button[type=submit]{color:var(--paper);background:var(--accent);border-color:var(--accent)}
+@media (pointer:coarse){#deck-touch-nav{display:flex}#hud,#help{display:none!important}}
+@media print{#deck-touch-nav,#deck-page-dialog{display:none!important}}
 /* DECK-THEME:END */
 </style>
 </head>
@@ -5971,5 +5988,99 @@ buildOverview();render();
    Do not scale body content to fill a slide. Use the same size for the same role;
    explicit exceptions require a content or readability reason, not available space.
    The theme intentionally installs no automatic body-sizing behaviour. */
+
+/* Shared navigation for every deck, including hand-written lectures. */
+(() => {
+  if (typeof slides === 'undefined' || typeof goTo !== 'function') return;
+  const pages = slides.map((s, i) => s.classList.contains('cont') ? -1 : i).filter(i => i >= 0);
+  const pageNumber = () => pages.filter(i => i <= cur).length;
+  const nav = document.createElement('nav');
+  nav.id = 'deck-touch-nav';
+  nav.setAttribute('aria-label', 'Slide navigation');
+  nav.innerHTML = '<button type="button" data-step="prev" aria-label="Previous slide">←</button>' +
+    '<button type="button" data-jump aria-label="Go to page"></button>' +
+    '<button type="button" data-step="next" aria-label="Next slide">→</button>';
+  const dialog = document.createElement('dialog');
+  dialog.id = 'deck-page-dialog';
+  dialog.setAttribute('aria-labelledby', 'deck-page-label');
+  dialog.innerHTML = '<form><label id="deck-page-label" for="deck-page-input">Go to page</label>' +
+    '<div><input id="deck-page-input" type="number" inputmode="numeric" min="1" step="1" required aria-describedby="deck-page-range">' +
+    '<span id="deck-page-range"></span></div><footer><button type="button" data-cancel>Cancel</button>' +
+    '<button type="submit">Go</button></footer></form>';
+  document.body.append(nav, dialog);
+  const input = dialog.querySelector('input');
+  input.max = String(pages.length);
+  dialog.querySelector('#deck-page-range').textContent = '/ ' + pages.length;
+  function sync() {
+    nav.querySelector('[data-jump]').textContent = pageNumber() + ' / ' + pages.length;
+    nav.querySelector('[data-step="prev"]').disabled = cur === 0 && (typeof frag === 'undefined' || frag === 0);
+    nav.querySelector('[data-step="next"]').disabled = cur === slides.length - 1 &&
+      (typeof fragsOf !== 'function' || frag >= fragsOf(cur).length);
+    nav.hidden = ['ov', 'notes'].some(id => document.getElementById(id)?.classList.contains('on'));
+  }
+  function openJump() {
+    if (dialog.open) return;
+    input.value = String(pageNumber());
+    dialog.showModal();
+    input.focus();
+    input.select();
+  }
+  nav.addEventListener('click', e => {
+    if (e.target.closest('[data-jump]')) openJump();
+    else if (e.target.closest('[data-step="prev"]')) prev();
+    else if (e.target.closest('[data-step="next"]')) next();
+  });
+  dialog.addEventListener('keydown', e => e.stopPropagation());
+  dialog.querySelector('[data-cancel]').addEventListener('click', () => dialog.close());
+  dialog.querySelector('form').addEventListener('submit', e => {
+    e.preventDefault();
+    if (!input.reportValidity()) return;
+    goTo(pages[Number(input.value) - 1]);
+    dialog.close();
+  });
+  dialog.addEventListener('click', e => {
+    if (e.target === dialog) {
+      const r = dialog.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close();
+    }
+  });
+  // Page numbers are recreated by the engine, so use delegation.
+  document.addEventListener('click', e => {
+    if (e.target.closest('.pagenum')) { e.preventDefault(); openJump(); }
+  });
+  // Treat only a short, stationary, single-finger gesture as a tap.
+  let gesture = null, tap = null;
+  const blocked = target => target.closest('a,button,input,textarea,select,label,video,audio,canvas,' +
+    '[contenteditable], [role="button"], [data-interactive], #hud, #help, #ov, #notes,' +
+    '#deck-touch-nav, #deck-page-dialog, .pagenum, pre, .sqlpad, .mqlpad');
+  document.addEventListener('pointerdown', e => {
+    tap = null;
+    if (e.pointerType !== 'touch' || !e.isPrimary || blocked(e.target)) { gesture = null; return; }
+    gesture = {id:e.pointerId, x:e.clientX, y:e.clientY, at:performance.now()};
+  }, {passive:true});
+  document.addEventListener('pointercancel', () => { gesture = tap = null; }, {passive:true});
+  document.addEventListener('pointerup', e => {
+    const g = gesture;
+    gesture = null;
+    if (g && g.id === e.pointerId && performance.now() - g.at < 500 &&
+        Math.hypot(e.clientX - g.x, e.clientY - g.y) < 12) tap = performance.now();
+  }, {passive:true});
+  document.addEventListener('click', e => {
+    const validTap = tap !== null && performance.now() - tap < 600;
+    tap = null;
+    if (!validTap || blocked(e.target) || dialog.open ||
+        ['ov','notes'].some(id => document.getElementById(id)?.classList.contains('on')) ||
+        !window.getSelection().isCollapsed) return;
+    if (!e.target.closest('#stageWrap')) return;
+    next();
+  });
+  const observer = new MutationObserver(sync);
+  observer.observe(stage, {attributes:true, subtree:true, attributeFilter:['class']});
+  ['ov','notes'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el, {attributes:true, attributeFilter:['class']});
+  });
+  sync();
+})();
 /* DECK-THEME-JS:END */</script>
 </body></html>

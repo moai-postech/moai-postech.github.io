@@ -32,7 +32,7 @@ parts:
     span: "Lectures 14 – 17"
     text: "Run models and agents on the data: ML systems, LLM systems, RAG and agents."
 
-# 한 줄 = 한 수업일. kind: lecture(번호 n), review(복습 회차, 번호 없음), guest, seminar(학과 세미나), exam, project, break(휴강·온라인 수업일. off 는 YAML 이 false 로 읽어 쓰지 않는다), event.
+# 한 줄 = 한 수업일. kind: lecture(번호 n), review(복습 회차, 번호 없음), guest, seminar(학과 세미나), exam, project, outside(수업의 일부지만 모이지 않는 날: 프로젝트 준비, 동료 평가. 제목은 `할 일 (Out of Class)`), break(휴강. off 는 YAML 이 false 로 읽어 쓰지 않는다), event.
 # guest·seminar 의 url 은 연사 홈페이지다(연사 이름에 걸린다). 연사나 교수가 준 주소만 쓴다.
 # part 만 있는 줄은 파트 머리다. title 이 없으면 speaker 가 제목 자리에 온다. pdf·html·lab 은 공개 링크가 생기면 채운다(없으면 칸이 빈다).
 # time·location은 회차별 별도 시간(KST)·장소다. 확인된 값만 적고 없으면 생략한다.
@@ -147,8 +147,8 @@ schedule:
     kind: project
     title: "Project Proposal II"
   - date: "2026-10-27"
-    kind: break
-    title: "No Class (Peer Evaluation)"
+    kind: outside
+    title: "Peer Evaluation (Out of Class)"
   - date: "2026-10-29"
     kind: exam
     title: "Midterm Exam"
@@ -226,11 +226,11 @@ schedule:
     kind: break
     title: "No Class (POSTECH Anniversary)"
   - date: "2026-12-08"
-    kind: break
-    title: "No Class (Project Preparation)"
+    kind: outside
+    title: "Project Preparation (Out of Class)"
   - date: "2026-12-10"
-    kind: break
-    title: "No Class (Project Preparation)"
+    kind: outside
+    title: "Project Preparation (Out of Class)"
   - date: "2026-12-15"
     kind: project
     title: "Project Final I"
@@ -238,8 +238,8 @@ schedule:
     kind: project
     title: "Project Final II"
   - date: "2026-12-22"
-    kind: break
-    title: "No Class (Peer Evaluation)"
+    kind: outside
+    title: "Peer Evaluation (Out of Class)"
   - date: "2026-12-24"
     kind: break
     title: "No Class (Christmas Eve)"

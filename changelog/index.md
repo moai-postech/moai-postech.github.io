@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-02 | [seminar-one-band](2026-11-02-seminar-one-band.md) | Sangwoo Mo(sangwoomo) | Seminar | 모든 줄 같은 회색 띠, 초청은 소속·필터로, 다 같이 하는 회차는 회색 글자만 |
+| 2026-11-02 | [seminar-one-band](2026-11-02-seminar-one-band.md) | Sangwoo Mo(sangwoomo) | Seminar | 회색 띠 하나, 초청은 왼쪽 코랄 막대, 다 같이 하는 회차는 옅은 띠와 회색 글자 |
 | 2026-11-02 | [seminar-calm-tones](2026-11-02-seminar-calm-tones.md) | Sangwoo Mo(sangwoomo) | Seminar | 랩 발표 중립 회색, 다 같이 하는 회차 테두리만, 색은 초청 발표 코랄 하나. 형식 검사는 띠 가장자리 기준 |
 | 2026-11-02 | [seminar-row-tones](2026-11-02-seminar-row-tones.md) | Sangwoo Mo(sangwoomo) | Seminar 목록 | 랩 하늘색·초청 코랄·전체 회차 회색 색 띠(강의 색 템플릿), 필터에 색 점 범례 |
 | 2026-11-02 | [study-abroad-links](2026-11-02-study-abroad-links.md) | Sangwoo Mo(sangwoomo) | People 교수 이력 | 학부 보조 줄을 `Visiting student: UC Berkeley, Peking University` 로, 두 학교 링크 |

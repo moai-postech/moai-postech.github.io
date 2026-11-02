@@ -117,6 +117,7 @@ schedule:
     pdf: "teaching/26s-programming-for-data-science/slides/15_deep-learning.pdf"
   - date: "2026-04-23"
     kind: seminar
+    title: "경계를 넘는 혁신: 과학자에서 글로벌 경영자로의 성장 여정"
     speaker: "Songyee Yoon"
     url: "https://www.linkedin.com/in/songyee-yoon-principal-venture-partners"
     affiliation: "Principal Venture Partners"
@@ -183,6 +184,7 @@ schedule:
     title: "Project Presentation I"
   - date: "2026-05-29"
     kind: seminar
+    title: "Agentic AI 시대의 Personalization AI"
     speaker: "Yeong-Hwan Jeon"
     url: "https://kr.linkedin.com/in/yeong-hwan-jeon-a7306020"
     affiliation: "LG U+"

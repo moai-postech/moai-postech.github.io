@@ -1,5 +1,5 @@
 # 2026-11-02 강의 스케줄: 프로젝트 준비·동료 평가를 수업일(Out of Class)로
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/courses/25f-data-engineering.yml`, `_data/courses/26f-data-engineering.yml`, `_data/courses/26s-programming-for-data-science.yml`, `_themes/wide/includes/course/kind-icon.html`, `_themes/wide/includes/course/COURSE.md`, `_themes/wide/includes/course/README.md` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/courses/25f-data-engineering.yml`, `_data/courses/26f-data-engineering.yml`, `_themes/wide/includes/course/kind-icon.html`, `_themes/wide/includes/course/COURSE.md`, `_themes/wide/includes/course/README.md` | 도구: Claude Code
 
 > **한줄 결론: `No Class (Project Preparation)`·`No Class (Peer Evaluation)` 다섯 행을 새 종류 `outside` 로 바꿔 공통 노랑과 노트북 아이콘으로 표시하고, 제목을 `Project Preparation (Out of Class)`, `Peer Evaluation (Out of Class)` 로 바꿨다.**
 
@@ -9,7 +9,7 @@ POSTECH 요구사항: 영향 없음
 교수: 프로젝트 준비와 동료 평가 날도 수업의 일부이니 `No Class` 를 앞세우지 말고 노란색으로 강조해 휴강과 구분하기. 할 일을 앞에, 괄호에 같은 말을 붙이기. 시트와 사이트 모두 반영.
 
 ## 반영 내역
-- yml: 25F 12/04, 26F 10/27·12/08·12/10·12/22 의 `kind: break` 를 `kind: outside` 로, 제목을 위 표기로 바꿨다. 세 강의 yml 머리 주석에 `outside` 를 더했다(26S 는 해당 행 없음).
+- yml: 25F 12/04, 26F 10/27·12/08·12/10·12/22 의 `kind: break` 를 `kind: outside` 로, 제목을 위 표기로 바꿨다. 25F·26F yml 머리 주석에 `outside` 를 더했다. 26S 는 해당 행이 없어 고치지 않았다.
 - `schedule.html` 은 고치지 않았다. lecture·guest·seminar·break 밖의 종류는 이미 공통 노랑(`tone-logistics`)이다.
 - `kind-icon.html`: `outside` 아이콘(노트북, 라벨 `Out of class`). 색은 기본 톤이다(강조색은 project·exam 만).
 - `COURSE.md`·`README.md`: `outside` 의 뜻, 제목 형식, 색 규칙을 적었다.

@@ -201,6 +201,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-tablist button strong { font-weight: var(--weight-emphasis); }
 .study-tablist button span { font-size: var(--text-meta); }
 .study-tablist button:hover { color: var(--accent); }
+.study-member-tablist button { flex-direction: row; align-items: baseline; gap: var(--space-1); }
+.study-member-tablist button span { opacity: .7; }
 .study-tablist button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }  /* the same tint as the current subnav tab */
 .study-panel h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); margin-bottom: 0; }
 .study-panel h2 span { white-space: nowrap; color: var(--muted); font-size: var(--text-lead); font-weight: var(--weight-emphasis); }

@@ -36,7 +36,7 @@
 
 공개 집계만 갱신할 때는 시트 읽기 JSON을 `python3 tools/ai_study_members_sync.py --stats-only -`의 표준입력으로 넘긴다. 비밀번호와 암호문 갱신 없이 신규·기존 구성까지 계산한다.
 
-- 공개 통계(누적·현재 인원, 기수, 기수별 총원·신규/기존 구성·학과별 분포)는 Home에 둔다. Members는 비밀번호 입력 후 `Full list | 1기 (Fall 2025) | 2기 (Spring 2026) | …` 한 줄 라벨 탭을 보인다(인원 수는 쓰지 않는다)(교수 2026-11-02, 예전 Cohorts 이름 묶음은 뺐다).
+- 공개 통계(누적·현재 인원, 기수, 기수별 총원·신규/기존 구성·학과별 분포)는 Home에 둔다. Members는 비밀번호 입력 후 `Full list | 1기 (Fall 2025) | 2기 (Spring 2026) | …` 한 줄 라벨 탭을 보인다. 기수는 크게, 학기 괄호는 같은 줄에 작고 연하게 쓰고 인원 수는 쓰지 않는다(교수 2026-11-02, 예전 Cohorts 이름 묶음은 뺐다).
 - Members 제목 오른쪽의 Members sheet 링크는 `teaching/ai-study/members/index.md`의 `members_sheet`에서 읽는다. 공통 `sheet-link.html` 양식을 사용한다.
 - 명단 원문을 HTML이나 공개 데이터에 넣지 않는다. AES-256-GCM 암호문만 배포하며 PBKDF2-SHA256으로 입력 비밀번호에서 키를 만든다. 브라우저 Web Crypto로 복호화 후 명단을 생성한다. 비밀번호·복호화 명단은 저장하지 않고, 내보낼 수 없는 CryptoKey만 IndexedDB에 보관해 새로고침·재방문·브라우저 재시작 후 자동으로 연다. Lock 버튼은 두지 않는다. 한 번 열면 브라우저 데이터를 지우거나 비밀번호가 바뀔 때까지 열려 있다(교수 2026-11-02). 비밀번호는 공개 저장소에 적지 않는다(교수 개인 기록 `academic-profile/.agent-memory/ai-study-members.md`).
 - 같은 비밀번호로 명단만 갱신할 때는 salt와 PBKDF2 반복 수를 유지하고 IV는 새로 만들어 저장된 열람 권한이 이어지게 한다. 비밀번호가 바뀌면 새 salt로 키를 교체한다.

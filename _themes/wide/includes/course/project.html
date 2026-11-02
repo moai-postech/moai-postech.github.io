@@ -37,11 +37,11 @@
     {% assign individual_criteria = pj.criteria | where: "individual", true %}
     <div class="project-evaluation-groups">
       <div class="project-evaluation-group project-evaluation-team">
-        <div class="project-evaluation-heading"><strong>{{ pj.evaluation.team_label }}</strong><span>{{ pj.evaluation.team_reviewers }}</span></div>
+        <div class="project-evaluation-heading"><strong>{{ pj.evaluation.team_label }}</strong> <span>({{ pj.evaluation.team_reviewers }})</span></div>
         <ul class="project-criteria" style="--criteria-count: {{ team_criteria.size }}">{% for x in team_criteria %}<li><strong>{{ x.name }}</strong><span>{{ x.text }}</span></li>{% endfor %}</ul>
       </div>
       {% if individual_criteria.size > 0 %}<div class="project-evaluation-group project-evaluation-individual">
-        <div class="project-evaluation-heading"><strong>{{ pj.evaluation.individual_label }}</strong><span>{{ pj.evaluation.individual_reviewers }}</span></div>
+        <div class="project-evaluation-heading"><strong>{{ pj.evaluation.individual_label }}</strong> <span>({{ pj.evaluation.individual_reviewers }})</span></div>
         <ul class="project-criteria" style="--criteria-count: {{ individual_criteria.size }}">{% for x in individual_criteria %}<li><strong>{{ x.name }}</strong><span>{{ x.text }}</span></li>{% endfor %}</ul>
       </div>{% endif %}
     </div>
@@ -60,7 +60,7 @@
         <td class="cs-topic">{% if t.url %}<a class="cs-title" href="{{ t.url }}">{{ t.title }}</a>{% else %}<span class="cs-title">{{ t.title }}</span>{% endif %}{% if t.members %}<span class="cs-speaker">{{ t.members | join: ", " }}</span>{% endif %}</td>
         {% for rd in pj.rounds %}{% assign x = t[rd.id] %}<td class="project-round" data-round="{{ rd.name }}">
           {% if x.date or x.order or rd.date_placeholder %}<span class="project-when">{% if x.date %}{{ x.date | date: "%m/%d" }}{% elsif rd.date_placeholder %}Date {{ rd.date_placeholder }}{% endif %}{% if x.order %}{% if x.date or rd.date_placeholder %} · {% endif %}#{{ x.order }}{% endif %}</span>{% endif %}
-          {% if x.slides %}<a href="{{ x.slides }}">PDF</a>{% endif %}
+          {% if x.slides %}<a class="project-pdf" href="{{ x.slides }}">PDF</a>{% endif %}
         </td>{% endfor %}
       </tr>
       {% endfor %}

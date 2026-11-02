@@ -16,4 +16,4 @@
 </section>
 <script type="application/json" id="member-encrypted-data">{{ site.data.ai_study_members_private | jsonify }}</script>
 <script type="application/json" id="member-representatives">{ {% for t in site.data.ai_study.terms %}{% assign r = site.data.ai_study_terms[t.id].representative %}{% if r.email %}{% unless forloop.first %}, {% endunless %}{{ t.name | jsonify }}: {{ r.email | split: " " | first | jsonify }}{% endif %}{% endfor %} }</script>
-<script src="assets/study-members.js" defer></script>
+<script src="assets/study-members.js?v={{ site.time | date: "%s" }}" defer></script>{% comment %} build time in the URL so a deploy is not hidden by the 10-minute browser cache {% endcomment %}

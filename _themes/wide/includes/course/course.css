@@ -84,7 +84,7 @@
    text of uneven length (titles, people, papers, reading, departments, lists of markers) stays left;
    a heading takes its column's alignment; stacked cards on narrow screens read left. */
 .course-schedule :is(th, td):is(.cs-n, .cs-date, .cs-slides, .st-lectures, .project-round),
-.study-members-table :is(th, td):is(:nth-child(1), :nth-child(2)) { text-align: center; }
+.study-members-table :is(th, td):is(:nth-child(1), :nth-child(2), :nth-child(3)) { text-align: center; }
 .course-schedule thead th:first-child { padding-left: var(--space-3); }  /* same inset as the first cell, so a centred heading sits over its values */
 .course-schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; background: var(--tone-row); vertical-align: baseline; }
 .course-schedule td:not(:last-child) { box-shadow: 1px 0 0 var(--tone-row); }  /* covers the hairline between cells of one filled row */
@@ -251,16 +251,19 @@ a.cs-title:hover { color: var(--accent); }
 /* Study member directory: source-sheet column order, one row per person. */
 .study-member-group h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-regular); }
 .study-members-table tr.is-representative > * { background: var(--callout-surface); }  /* the term's student representative leads its tab (교수 2026-11-02) */
+.study-member-role { font-weight: var(--weight-regular); color: var(--muted); white-space: nowrap; }
 .study-members-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: var(--text-body); }
+.study-members-table .sm-n { width: 5%; }
 .study-members-table .sm-cohort { width: 7%; }
-.study-members-table .sm-name { width: 13%; }
+.study-members-table .sm-name { width: 17%; }  /* fits 이름 (대표학생) on one line */
 .study-members-table .sm-department { width: 10%; }
 .study-members-table .sm-year { width: 9%; }
 .study-members-table .sm-email { width: 18%; }  /* POSTECH IDs are short, so Participation sits closer (교수 2026-11-02) */
-.study-members-table .sm-participation { width: 43%; }
+.study-members-table .sm-participation { width: 34%; }
 .study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); }
 .study-members-table thead th { padding-top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
 .study-members-table tbody th { font-weight: var(--weight-emphasis); overflow-wrap: anywhere; }
+.study-members-table .study-member-n { color: var(--muted); font-variant-numeric: tabular-nums; }
 .study-members-table td { overflow-wrap: anywhere; }
 .study-members-table th:last-child, .study-members-table td:last-child { padding-right: 0; }
 .study-member-email { color: var(--muted); overflow-wrap: anywhere; }
@@ -277,7 +280,7 @@ a.cs-title:hover { color: var(--accent); }
   .study-members-table td:empty { display: none; }
   .study-members-table tr.is-representative { padding-inline: var(--space-3); background: var(--callout-surface); }
   .study-members-table tr.is-representative > * { background: none; }
-  .study-members-table :is(th, td):is(:nth-child(1), :nth-child(2)) { text-align: left; }
+  .study-members-table :is(th, td):is(:nth-child(1), :nth-child(2), :nth-child(3)) { text-align: left; }
 }
 
 /* Grading: item and weight on one line */

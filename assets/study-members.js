@@ -39,42 +39,43 @@
   const departmentLabel = name => ALIASES[name] || name;
   // Each term's student representative, by POSTECH ID (public on the Schedule page).
   const representatives = JSON.parse(document.getElementById('member-representatives').textContent || '{}');
-  const LABELS = ['Cohort', 'Entry', 'Department', 'Name', 'POSTECH Email', 'Participation'];
+  // '#' numbers the rows so each table shows how many people it lists (교수 2026-11-02).
+  const LABELS = ['#', 'Cohort', 'Entry', 'Department', 'Name', 'POSTECH Email', 'Participation'];
   function table(people, caption, termTab, rep) {
     const t = element('table', undefined, 'study-members-table');
     t.append(element('caption', caption, 'visually-hidden'));
     // Term tables keep the Participation column slot empty so every column stays where it is in Full list.
     const cols = element('colgroup');
-    for (const name of ['cohort', 'year', 'department', 'name', 'email', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
+    for (const name of ['n', 'cohort', 'year', 'department', 'name', 'email', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
     const head = element('thead'), header = element('tr');
     LABELS.forEach((label, i) => {
-      const th = element('th', termTab && i === 5 ? '' : label); th.scope = 'col';
-      if (termTab && i === 5) th.setAttribute('aria-hidden', 'true');
+      const th = element('th', termTab && i === 6 ? '' : label); th.scope = 'col';
+      if (termTab && i === 6) th.setAttribute('aria-hidden', 'true');
       header.append(th);
     });
     head.append(header); t.append(cols, head);
     const body = element('tbody');
-    for (const member of people) {
+    people.forEach((member, n) => {
       const id = member.email.split('@')[0];
       const row = element('tr', undefined, rep && id === rep ? 'is-representative' : undefined);
       const year = /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : member.entry_year;
-      const values = [member.cohort + '기', year, departmentLabel(member.department), member.name, id];
+      const values = [String(n + 1), member.cohort + '기', year, departmentLabel(member.department), member.name, id];
       values.forEach((value, index) => {
-        const cell = element(index === 3 ? 'th' : 'td', value, index === 4 ? 'study-member-email' : undefined);
-        if (index === 3) {
+        const cell = element(index === 4 ? 'th' : 'td', value, index === 5 ? 'study-member-email' : index === 0 ? 'study-member-n' : undefined);
+        if (index === 4) {
           cell.scope = 'row';
-          if (row.className) cell.append(element('span', ' (student representative)', 'visually-hidden'));  // the row colour alone marks it on screen (교수 2026-11-02)
+          if (row.className) cell.append(element('span', ' (대표학생)', 'study-member-role'));  // shown as 최지안 (대표학생) with the row colour (교수 2026-11-02)
         }
         cell.dataset.label = LABELS[index]; row.append(cell);
       });
-      const cell = element('td'); cell.dataset.label = LABELS[5];
+      const cell = element('td'); cell.dataset.label = LABELS[6];
       if (!termTab) {
         const markers = element('span', undefined, 'study-member-markers');
         for (const n of member.participation) markers.append(element('span', n + '기', 'study-member-marker'));
         cell.append(markers);
       }
       row.append(cell); body.append(row);
-    }
+    });
     t.append(body);
     return t;
   }

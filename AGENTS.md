@@ -114,7 +114,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 1. **고칠 요소의 역할부터 정한다.** "Teaching 의 Study group 제목"이 아니라 "목록을 묶는 제목"처럼 사이트 전체에서 쓰는 역할 이름으로 본다.
 2. **템플릿을 기본으로 실제 페이지를 검토한다.** 글자 양·배치·정보의 중요도를 보고 기본 유지 또는 필요한 조정을 판단한다. 기계적으로 같은 크기에 맞추지 않는다.
 3. **공통 변경과 페이지 조정을 구분해 근거를 남긴다.** 모두에게 필요한 변경은 기본 템플릿을 고친다. 특정 페이지에만 필요하면 `page-design.json`에 대상·조정값·이유를 기록한다. 검사는 기본 템플릿과 등록된 조정을 함께 기준으로 삼는다.
-4. **전체 검사는 요청할 때만 한다.** 평소에는 빌드가 되는지와 고친 화면만 확인하고 바로 올린다. push 하면 `format` 이 빌드 뒤 바로 배포한다. 교수가 전수 검사를 요청하면 GitHub Actions 의 `audit` 를 돌리거나 로컬에서 `node tools/check_design.js`(템플릿 계약, 7개 화면 폭), `check_format.js`(묶음 제목 간격), `check_typography.js`(모든 텍스트·숨은 상태의 크기·행간·줄바꿈)를 돌린다. 새 역할 규칙을 만들면 검사에도 더한다. 자동 검사는 역할 일치와 잘림을 확인하는 수단이며, 실제 화면의 시각적 균형은 별도로 판단한다(아래 "검사와 배포").
+4. **전체 검사는 요청할 때만 한다.** 평소에는 빌드가 되는지와 고친 화면만 한 번 보고 바로 올린다. 여러 화면 폭에서 검사 함수를 돌리거나 조합을 하나하나 재는 꼼꼼한 확인은 평소에 하지 않는다. push 뒤에는 같은 실행의 `checks` 결과만 본다(교수 2026-11-02). push 하면 `format` 이 빌드 뒤 바로 배포한다. 교수가 전수 검사를 요청하면 GitHub Actions 의 `audit` 를 돌리거나 로컬에서 `node tools/check_design.js`(템플릿 계약, 7개 화면 폭), `check_format.js`(묶음 제목 간격), `check_typography.js`(모든 텍스트·숨은 상태의 크기·행간·줄바꿈)를 돌린다. 새 역할 규칙을 만들면 검사에도 더한다. 자동 검사는 역할 일치와 잘림을 확인하는 수단이며, 실제 화면의 시각적 균형은 별도로 판단한다(아래 "검사와 배포").
 
 세부 역할표·예외·수정 절차는 [`_themes/wide/README.md`](_themes/wide/README.md), 기본값은 [`design-contract.json`](_themes/wide/design-contract.json), 페이지별 검토와 조정 근거는 [`page-design.md`](_themes/wide/page-design.md)와 그 원본 JSON이 정본이다. 템플릿에 역할을 명시하고 `node tools/check_design.js`로 모든 페이지·탭·필터·펼침 상태를 검사한다. 상단 메뉴는 같은 문서 틀 안에서 페이지 이동 뒤에도 항목·순서·위치·굵기를 유지한다. 새 페이지는 빌드 결과에서 자동으로 발견하며, 역할 없는 제목이나 콘텐츠의 임의 style은 실패다.
 
@@ -270,6 +270,6 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 - **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`, `check_study_terms`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌린다. 시각 검토 기록은 push 를 막지 않는다.
 - **교수 계정 push 는 실패로 표시하지 않는다**(2026-11-02). 에이전트는 교수 계정으로 push 하므로, 실행이 실패하면 교수에게 GitHub 실패 메일이 간다. 그래서 `checks` 와 교수 계정의 `changelog` 검사는 문제를 실행 주석(warning)과 요약에만 남기고 성공으로 끝난다. 다른 사람의 push 와 PR 은 `changelog` 가 그대로 실패한다.
 - **push 한 뒤 한 번 본다**: push 한 사람이나 에이전트는 `gh run watch` 로 이번 `format`·`changelog` 실행을 보고, 주석에 경고가 있으면 고쳐서 다시 push 한다. 이 세션에서 못 고치면 루트 `TODO.md` 에 한 줄(검사, 실행 링크, 원인)을 남기고 사용자에게 알린다. push 전에 따로 돌릴 것은 없다(`python3 tools/check_changelog.py` 는 원하면 미리 돌려 볼 수 있다).
-- **전수 검사**: 교수가 요청할 때만 Actions 에서 `audit` 워크플로를 수동으로 돌린다. `check_design`, `check_format`, `check_typography`, `check_interaction` 을 포함한 모든 검사를 돌리고 모든 페이지·상태 화면을 고정 캡처하고, 배포를 막지 않는다. 실패해도 실행은 성공으로 끝나고 주석에 경고가 남는다. 그때는 artifact 의 로그와 갤러리를 보고 고친다.
+- **전수 검사**: 교수가 요청할 때만 Actions 에서 `audit` 워크플로를 수동으로 돌린다. 요청은 그 한 번이다. 결과를 보고 고친 뒤에도, 다른 수정을 이어서 한 뒤에도 사람이든 에이전트든 스스로 다시 돌리지 않는다(교수 2026-11-02: 매번 돌리는 것은 비효율). `check_design`, `check_format`, `check_typography`, `check_interaction` 을 포함한 모든 검사를 돌리고 모든 페이지·상태 화면을 고정 캡처하고, 배포를 막지 않는다. 실패해도 실행은 성공으로 끝나고 주석에 경고가 남는다. 그때는 artifact 의 로그와 갤러리를 보고 고친다.
 - **별도 시각 검토**: 화면을 별도 검토자에게 보이는 절차는 `_qa/visual-review/README.md` 에 있고, 필요할 때만 쓴다.
 - 자동 검사 통과를 시각 검토 완료로 보고하지 않는다. 페이지별 예외는 `page-design.json` 에 이유를 남긴다.

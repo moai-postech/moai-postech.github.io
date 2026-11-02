@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [audit-on-request](2026-11-02-audit-on-request.md) | Sangwoo Mo(sangwoomo) | AGENTS.md 검사 규칙 | audit 는 요청한 한 번만, 평소엔 빌드와 고친 화면 한 번, push 뒤 checks 만 |
 | 2026-11-02 | [seminar-routine-rows](2026-11-02-seminar-routine-rows.md) | Sangwoo Mo(sangwoomo) | Seminar | Monthly Sync·Internal Review·Sharing Session 회차는 제목·이름 회색 보통 굵기 |
 | 2026-11-02 | [ai-study-sync](2026-11-02-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |
 | 2026-11-02 | [seminar-title-span](2026-11-02-seminar-title-span.md) | Sangwoo Mo(sangwoomo) | Seminar | 소속 없는 줄은 제목이 빈 소속 칸까지 써서 긴 제목이 한 줄에 |

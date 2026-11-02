@@ -340,6 +340,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule-aff { width: 1%; padding-left: var(--space-6) !important; color: var(--muted); font-size: var(--text-meta); text-align: right; white-space: nowrap; }  /* right-aligned so it sits next to the name */
 .schedule .is-group td, .schedule .is-group a { color: var(--muted); }  /* sessions the whole lab runs together (Monthly Sync, Internal Review, conference sharing): shown, but lighter than talks (2026-11-02) */
 .schedule .is-group .schedule-speaker { font-weight: var(--weight-regular); }
+.schedule .is-group.is-upcoming .schedule-date { color: var(--accent); }  /* an upcoming whole-lab session still gets the accent date */
 .schedule [hidden] { display: none; }
 
 .sec-media a { color: var(--text); }  /* a whole headline in red was the heaviest red on Home; titles read as titles, hover shows the link */

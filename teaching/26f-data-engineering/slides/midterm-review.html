@@ -597,7 +597,8 @@ div.mk{position:absolute;right:76px;top:30px;font:700 12px var(--mono);letter-sp
 .mpr-opts .co b.l{font-size:22px;flex:none;width:26px}
 .mpr-opts .co .pct{margin-left:auto;font-family:var(--mono);font-size:17px;flex:none}
 .mpr-q .qside .fig{margin:0}
-.slide.title.mpr-close{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 80px}
+/* no display here: .slide.on shows the current slide; setting display would keep this slide on screen over every other */
+.slide.title.mpr-close{flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 80px}
 .slide.title.mpr-close h1{font-size:60px;line-height:1.22;margin:0}
 /* MPR-LAYOUT:END */
 /* PREFIX-CSS:BEGIN */

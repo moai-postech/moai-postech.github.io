@@ -1,5 +1,5 @@
 {% comment %}
-  Home: 소개·그림·최신 학기 버튼 → 학기별 주제 → 통계 → 참여 안내. 학습 흐름·운영 정보·일정은 Schedule에서 표시. 시트·자료는 ai_study.yml,
+  Home: 소개 + 이번 학기 카드(주제·다음 세션·시간·장소) → 학기별 주제 → 통계 → 참여 안내. 학습 흐름·운영 정보·일정은 Schedule에서 표시. 시트·자료는 ai_study.yml,
   시간·장소·지도교수·학생대표는 ai_study_terms.yml에서 읽는다(교수 2026-10-28).
   학기별 운영 정보가 전역 머리말에 섞이지 않게 하고, 탭을 바꿔도 표의 열 위치는 유지한다.
 {% endcomment %}
@@ -11,17 +11,39 @@
   if (terms.indexOf(location.hash.slice(1)) !== -1) location.replace('teaching/ai-study/schedule/' + location.hash);
 })();
 </script>
-    {% assign latest = d.terms | first %}
+    {% assign latest = d.terms | first %}{% assign now = site.data.ai_study_terms[latest.id] %}
+    {% assign regular = latest.sessions | where_exp: "s", "s.optional != true" %}{% assign dated = regular | where_exp: "s", "s.date" %}
     <section class="hero-band study-home-band"><div class="hero study-home-hero">
     <header class="hero-copy study-intro">
-      <p class="course-eyebrow"><span>Study group</span><span>POSTECH</span></p>
       <h1>{{ page.title }}</h1>
       <p class="course-lead">{{ page.summary }}</p>
-      <p class="study-home-advisor">With <a href="{{ site.data.ai_study_terms[latest.id].advisor.url }}">{{ site.data.ai_study_terms[latest.id].advisor.name }}</a></p>
-      <p class="hero-actions"><a class="button primary" href="teaching/ai-study/schedule/#{{ latest.id }}">{{ latest.name }}: {{ latest.theme }} →</a><a class="button" href="teaching/ai-study/#study-join">How to join</a></p>
+      <p class="study-home-advisor">With <a href="{{ now.advisor.url }}">{{ now.advisor.name }}</a></p>
     </header>
-    {% if page.image %}<img class="hero-art study-home-art" src="{{ page.image }}" alt="{{ page.image_alt }}">{% endif %}
+    {% comment %} This term at a glance: theme, the next session (picked in the browser from the dated sessions), when and where (교수 2026-11-02: the orbit picture said nothing). {% endcomment %}
+    <a class="study-now" href="teaching/ai-study/schedule/#{{ latest.id }}">
+      <span class="study-now-label">Now studying · {{ d.terms.size }}기 {{ latest.name }}</span>
+      <span class="study-now-theme">{% if now.icon %}<img src="{{ now.icon }}" alt="" width="56" height="56">{% endif %}<span>{{ latest.theme }}</span></span>
+      <span class="study-now-next" data-sessions='[{% for s in dated %}{"date":{{ s.date | jsonify }},"title":{{ s.title | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]' hidden></span>
+      <span class="study-now-when">{{ now.meetings.day }}, {{ now.meetings.time }}<br>{{ now.location.building }}, {{ now.location.rooms }}</span>
+      <span class="study-now-link">See the schedule →</span>
+    </a>
     </div></section>
+<script>
+// Next upcoming session of the current term, by the visitor's date (KST dates in the sheet).
+(function () {
+  var el = document.querySelector('.study-now-next');
+  if (!el) return;
+  var today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+  var next = JSON.parse(el.dataset.sessions).filter(function (s) { return s.date >= today; })[0];
+  if (!next) return;
+  var d = new Date(next.date + 'T00:00:00');
+  var label = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  el.textContent = '';
+  var when = document.createElement('span'); when.className = 'study-now-date'; when.textContent = next.date === today ? 'Today' : 'Next · ' + label;
+  var what = document.createElement('span'); what.textContent = next.title;
+  el.append(when, what); el.hidden = false;
+})();
+</script>
 
 {% include course/study-overview.html %}
 {% include course/study-member-stats.html %}

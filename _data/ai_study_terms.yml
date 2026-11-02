@@ -1,8 +1,8 @@
-# 학기별 Overview와 운영 정보. icon 은 Home 학기 카드의 그림. 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
+# 학기별 Overview와 운영 정보. icon 은 Home 학기 카드의 그림(학기 주제별 study-*.svg, Codex 제작 2026-11-02). 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
 # 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
-  icon: "assets/img/icons/physical.svg"
+  icon: "assets/img/icons/study-physical-ai.svg"
   overview: "Physical AI connects observations and goals to actions in the real world. We build the picture from learned robot skills, through 3D scene understanding, to models that connect perception, reasoning, and action."
   learning_path:
     - { title: "Learn to Act", text: "Demonstrations and interaction teach robots useful behaviors, from moving through a space to manipulating objects." }
@@ -13,7 +13,7 @@ fall-2026:
   location: { building: "Science Building 4", rooms: "Room 302" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
-  icon: "assets/img/icons/deep-learning.svg"
+  icon: "assets/img/icons/study-deep-learning.svg"
   format: lectures
   reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
   overview: "Deep learning connects a model's design, its training signal, and the behavior it learns. We move from building the learner to representing and generating data, then ask how learning carries over to new examples and tasks."
@@ -26,7 +26,7 @@ summer-2026:
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 spring-2026:
-  icon: "assets/img/icons/language.png"
+  icon: "assets/img/icons/study-llm.svg"
   overview: "We study how a language model becomes a useful problem-solving system. The flow connects reasoning with training and feedback, then adds external knowledge and tools around the model."
   learning_path:
     - { title: "Understand the Model", text: "Start with how an LLM produces answers and how reasoning changes its approach to solving a problem." }
@@ -37,7 +37,7 @@ spring-2026:
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
-  icon: "assets/img/icons/vision.png"
+  icon: "assets/img/icons/study-foundation-models.svg"
   overview: "Foundation models reuse learned representations across tasks and modalities. We follow how neural networks grow from visual perception into systems that connect language and images, generate visual content, and benefit from scale."
   learning_path:
     - { title: "Learn Representations", text: "Neural networks and transformers turn raw data into representations that support visual perception." }

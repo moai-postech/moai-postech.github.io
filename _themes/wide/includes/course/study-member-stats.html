@@ -6,10 +6,9 @@
 {% assign max_count = 0 %}{% for t in stats.terms %}{% if t.count > max_count %}{% assign max_count = t.count %}{% endif %}{% endfor %}
 <section class="content-section study-member-stats study-home-community" aria-labelledby="member-statistics">
   <div class="study-stat-head"><h2 id="member-statistics">Who we learn with</h2><a class="study-stat-members" href="teaching/ai-study/members/">Meet the members →</a></div>
+  {% comment %} One total; this term's count and the number of cohorts already read from the bars (교수 2026-11-02: Home 을 미니멀하게). {% endcomment %}
   <dl class="study-stat-summary">
-    <div><dt>Members to date</dt><dd>{{ stats.total }}</dd></div>
-    <div><dt>Current members</dt><dd>{{ stats.current }}</dd></div>
-    <div><dt>Cohorts</dt><dd>{{ stats.cohorts }}</dd></div>
+    <div><dd>{{ stats.total }}</dd><dt>members since {{ stats.terms.last.term }}</dt></div>
   </dl>
   <div class="study-stat-breakdowns">
     <figure class="study-stat-panel">
@@ -75,6 +74,7 @@
       s.setProperty('--share', Math.max(share, 18) + '%');
       r.el.classList.toggle('is-dark', share >= 55);
       r.el.classList.toggle('is-small', r.box[2] < 110 || r.box[3] < 76);
+      r.el.classList.toggle('is-tiny', r.box[2] < 44);
     });
     box.classList.add('is-drawn');
   }

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [seminar-calm-tones](2026-11-02-seminar-calm-tones.md) | Sangwoo Mo(sangwoomo) | Seminar | 랩 발표 중립 회색, 다 같이 하는 회차 바탕 없음, 색은 초청 발표 코랄 하나만 |
 | 2026-11-02 | [seminar-row-tones](2026-11-02-seminar-row-tones.md) | Sangwoo Mo(sangwoomo) | Seminar 목록 | 랩 하늘색·초청 코랄·전체 회차 회색 색 띠(강의 색 템플릿), 필터에 색 점 범례 |
 | 2026-11-02 | [study-abroad-links](2026-11-02-study-abroad-links.md) | Sangwoo Mo(sangwoomo) | People 교수 이력 | 학부 보조 줄을 `Visiting student: UC Berkeley, Peking University` 로, 두 학교 링크 |
 | 2026-11-02 | [seminar-group-role](2026-11-02-seminar-group-role.md) | Sangwoo Mo(sangwoomo) | 디자인 계약, TODO | 랩 전체 세션 이름 칸에 400 역할을 따로 두어 test_design 실패 해결 |

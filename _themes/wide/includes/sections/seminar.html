@@ -4,8 +4,8 @@
   한 줄: 날짜, 제목(남는 폭 전부), 소속(회색, 오른쪽 정렬), 맨 오른쪽에 발표자 이름(굵게, 왼쪽 정렬 열). 이름이 한 세로선에 맞는다(교수 2026-10-26).
   초청 연사 이름은 연사 홈페이지(url)로, 랩 발표자 이름은 _data/members.yml 에 있으면 Students 나 Mentees 의 그 사람 자리(#이름)로 건다.
   제목에만 링크를 건다: 슬라이드(slides)가 있으면 그 파일, 없으면 연사의 해당 논문(paper). 랩 발표는 슬라이드, 초청 발표는 논문이 된다. 제목 뒤에 slides·paper 같은 표시는 달지 않는다(교수 2026-10-26).
-  줄마다 강의 일정과 같은 색 체계(course.css 의 tone-*)로 바탕을 칠해 종류를 가른다: 랩 발표는 하늘색(tone-p1), 초청 발표는 코랄(tone-p3),
-  다 같이 하는 회차(group: Monthly Sync, Internal Review, 학회 공유)는 옅은 회색(tone-guest)에 글자도 회색, 이름은 보통 굵기. 필터 버튼 옆 색 점이 범례다(교수 2026-11-02).
+  줄마다 강의 일정과 같은 색 체계(course.css 의 tone-*)로 바탕을 칠해 종류를 가른다: 랩 발표는 중립 회색(tone-none), 초청 발표만 코랄(tone-p3)로 칠해 색조는 하나만 쓴다(교수 2026-11-02: 파랑-빨강 대비가 강함),
+  다 같이 하는 회차(group: Monthly Sync, Internal Review, 학회 공유)는 바탕 없이(tone-clear) 글자만 회색, 이름은 보통 굵기. 필터 버튼 옆 색 점이 범례다(교수 2026-11-02).
   다가오는 발표는 목록 맨 위(최신순)에 오고, 방문자 브라우저에서 날짜가 강조된다(scripts.html 의 is-upcoming). 교수 2026-10-23: Up next 카드는 빼고 이 상단 하이라이트만 둔다.
 {% endcomment %}
 {% assign talks = site.data.seminar.talks %}
@@ -15,7 +15,7 @@
     <div class="section-body" data-filter>
     <div class="filter-bar" role="group" aria-label="Show talks">
       <button type="button" class="filter-btn" data-show="all" aria-pressed="true">All <span>{{ talks.size }}</span></button>
-      <button type="button" class="filter-btn" data-show="lab" aria-pressed="false"><i class="filter-swatch tone-p1" aria-hidden="true"></i>Lab <span>{{ talks.size | minus: invited.size }}</span></button>
+      <button type="button" class="filter-btn" data-show="lab" aria-pressed="false"><i class="filter-swatch tone-none" aria-hidden="true"></i>Lab <span>{{ talks.size | minus: invited.size }}</span></button>
       <button type="button" class="filter-btn" data-show="invited" aria-pressed="false"><i class="filter-swatch tone-p3" aria-hidden="true"></i>Invited <span>{{ invited.size }}</span></button>
       {% if site.data.seminar.sheet %}<a class="filter-link" href="{{ site.data.seminar.sheet }}">Full schedule</a>{% endif %}
     </div>
@@ -23,7 +23,7 @@
       <colgroup><col class="col-date"><col class="col-title"><col class="col-aff"><col class="col-speaker"></colgroup>
       <tbody>
       {% assign year = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y != year %}{% assign year = y %}<tr class="schedule-year"><th colspan="4" scope="rowgroup">{{ y }}</th></tr>{% endif %}
-      <tr data-kind="{% if t.invited %}invited{% else %}lab{% endif %}" class="{% if t.invited %}tone-p3{% elsif t.group %}is-group tone-guest{% else %}tone-p1{% endif %}" data-date="{{ t.date }}">
+      <tr data-kind="{% if t.invited %}invited{% else %}lab{% endif %}" class="{% if t.invited %}tone-p3{% elsif t.group %}is-group tone-clear{% else %}tone-none{% endif %}" data-date="{{ t.date }}">
         <td class="schedule-date">{{ t.date | date: "%m/%d" }}</td>
         {% assign doc = t.slides | default: t.paper %}<td class="schedule-title">{% if doc %}<a href="{{ doc }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</td>
         <td class="schedule-aff">{{ t.affiliation }}</td>

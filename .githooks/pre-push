@@ -1,10 +1,8 @@
 #!/bin/sh
-# push 전에 CI 와 같은 검사를 돌리고 실패하면 push 를 멈춘다(tools/prepush.sh, AGENTS.md "검사와 배포").
-# 켜기: git config core.hooksPath .githooks
+# 평소 push 는 막지 않는다. 전수 검사는 audit 워크플로가 맡는다(AGENTS.md "검사와 배포").
+# 설치 전에 있던 훅이 있으면 그것만 그대로 실행한다.
 set -eu
 hook_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-sh "$hook_dir/../tools/prepush.sh"
-# 설치 전에 있던 훅이 있으면 이어서 실행한다.
 if [ -x "$hook_dir/pre-push.before-visual-review" ]; then
   exec "$hook_dir/pre-push.before-visual-review" "$@"
 fi

@@ -199,7 +199,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 연구실 구성원 모두가 이 저장소를 고친다. 취향이 다른 두 사람이 서로의 수정을 번갈아 되돌리면(A→B, B→A) 사이트가 흔들리고 기록만 쌓인다. 그래서 다른 사람이 최근에 고친 것은 바로 바꾸지 않고 안건으로 정한다. 사람의 판단에만 맡기지 않고 검사가 막는다.
 
-- **누가 고쳤는지는 changelog 의 작성자로 본다.** 커밋 작성자(에이전트면 "Claude")가 아니라, 그 커밋이 쓴 changelog 회차의 `작성자: 이름(GitHub ID)` 가 그 줄의 주인이다. 작성자 ID 는 push 하는 GitHub 계정과 같아야 한다(Actions 가 확인한다).
+- **누가 고쳤는지는 changelog 의 작성자로 본다.** 커밋 작성자(에이전트면 "Claude")가 아니라, 그 커밋이 쓴 changelog 회차의 `작성자: 이름(GitHub ID)` 가 그 줄의 주인이다. 작성자 ID 는 push 하는 GitHub 계정과 같아야 한다(Actions 가 확인한다. 교수 계정 push 는 경고만 남긴다).
 - **고치기 전에 본다.** `python3 tools/check_changelog.py --who 파일` 이 그 파일을 최근 30일 안에 고친 회차, 작성자, 걸린 안건을 보여 준다.
 - **검사가 막는 것.** push 가 다른 사람이 최근 30일 안에 고친 줄을 지우거나 바꾸면 `tools/check_changelog.py` 가 실패한다(줄 단위로 `git blame` 을 따라가 그 줄을 마지막으로 고친 회차의 작성자를 본다). 자기 줄을 다시 고치는 것, 새 줄을 더하는 것, 동기화 봇이 쓰는 파일(`_data/seminar.yml`, `_data/ai_study.yml`, `assets/seminar/`, `teaching/ai-study/`)은 막지 않는다.
 - **막혔을 때.** 고집하지 말고 `discussions/` 에 안건을 올린다(상대의 회차를 링크하고, 상대의 안을 "현재 상태 유지" 안으로 넣는다). 교수나 랩 미팅이 결정하면, 대상에 그 파일이 들어간 결정된 안건을 changelog 회차에 링크해서 push 하면 통과한다.
@@ -209,7 +209,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 ## Changelog 규칙 (필수)
 
-**저장소의 파일을 바꾼 커밋에는 반드시 `changelog/` 기록이 같이 들어간다.** 누가 고쳤든, 사람이든 에이전트든 같다. 기록이 없는 push 는 `tools/check_changelog.py` 검사(GitHub Actions)에서 실패한다. 예외는 `CNAME` 하나다. Pages 의 커스텀 도메인 설정이 따로 커밋하므로, 설정을 바꾼 사람이 뒤이어 changelog 를 올린다.
+**저장소의 파일을 바꾼 커밋에는 반드시 `changelog/` 기록이 같이 들어간다.** 누가 고쳤든, 사람이든 에이전트든 같다. 기록이 없는 push 는 `tools/check_changelog.py` 검사(GitHub Actions)에서 실패한다. 교수 계정(`tools/maintainers.txt`)의 push 는 실패 대신 경고로 남는다. 예외는 `CNAME` 하나다. Pages 의 커스텀 도메인 설정이 따로 커밋하므로, 설정을 바꾼 사람이 뒤이어 changelog 를 올린다.
 
 - 회차 파일: `changelog/{YYYY-MM-DD}-{slug}.md`. slug 는 영어 소문자와 하이픈(`2026-10-21-news-wacv`).
 - 같은 날 같은 작업을 이어서 하면 새 파일을 만들지 않고 그 파일에 덧붙인다.
@@ -267,9 +267,9 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 평소에는 빠르게 빌드하고 올린다. 전체 형식은 교수가 요청할 때만 한꺼번에 본다(교수 2026-10-30).
 
-- **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌리고, 배포를 기다리게 하지 않는다. 실패한 검사는 실행 요약과 주석에 모이고, 실행 자체는 실패로 표시하지 않는다(교수에게 GitHub 실패 메일이 가지 않게, 2026-11-02). 시각 검토 기록은 push 를 막지 않는다.
-- **push 전 검사**: push 하기 전에 `sh tools/prepush.sh` 를 돌린다. clone 한 뒤 `git config core.hooksPath .githooks` 를 켜면 pre-push 훅이 자동으로 돌린다. changelog 검사(push 하는 계정 서명 포함)와 빌드 없는 스타일 소스 검사를 하고, 빌드와 playwright 가 있으면 `checks` 의 빠른 검사도 돌린다. 실패하면 고치기 전에는 push 하지 않는다. `--no-verify` 로 건너뛰지 않는다.
-- **검사 결과 처리**: push 한 사람이나 에이전트는 배포를 기다리지 않고, 같은 실행의 `checks` 결과를 확인한다(`gh run view <id>` 의 주석과 요약에서 `실패`). 실행이 성공으로 끝나도 주석에 실패가 있으면 실패로 다룬다. 실패하면 루트 `TODO.md` 에 한 줄(실패한 검사, 실행 링크, 짐작 가는 원인)을 남기고, 에이전트는 사용자에게 채팅으로도 알린다. 고친 뒤에는 그 줄을 지우고 changelog 에 적는다.
-- **전수 검사**: 교수가 요청할 때만 Actions 에서 `audit` 워크플로를 수동으로 돌린다. `check_design`, `check_format`, `check_typography`, `check_interaction` 을 포함한 모든 검사를 돌리고 모든 페이지·상태 화면을 고정 캡처하고, 배포를 막지 않는다. 실패하면 artifact 의 로그와 갤러리를 보고 고친다.
+- **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌린다. 시각 검토 기록은 push 를 막지 않는다.
+- **교수 계정 push 는 실패로 표시하지 않는다**(2026-11-02). 에이전트는 교수 계정으로 push 하므로, 실행이 실패하면 교수에게 GitHub 실패 메일이 간다. 그래서 `checks` 와 교수 계정의 `changelog` 검사는 문제를 실행 주석(warning)과 요약에만 남기고 성공으로 끝난다. 다른 사람의 push 와 PR 은 `changelog` 가 그대로 실패한다.
+- **push 한 뒤 한 번 본다**: push 한 사람이나 에이전트는 `gh run watch` 로 이번 `format`·`changelog` 실행을 보고, 주석에 경고가 있으면 고쳐서 다시 push 한다. 이 세션에서 못 고치면 루트 `TODO.md` 에 한 줄(검사, 실행 링크, 원인)을 남기고 사용자에게 알린다. push 전에 따로 돌릴 것은 없다(`python3 tools/check_changelog.py` 는 원하면 미리 돌려 볼 수 있다).
+- **전수 검사**: 교수가 요청할 때만 Actions 에서 `audit` 워크플로를 수동으로 돌린다. `check_design`, `check_format`, `check_typography`, `check_interaction` 을 포함한 모든 검사를 돌리고 모든 페이지·상태 화면을 고정 캡처하고, 배포를 막지 않는다. 실패해도 실행은 성공으로 끝나고 주석에 경고가 남는다. 그때는 artifact 의 로그와 갤러리를 보고 고친다.
 - **별도 시각 검토**: 화면을 별도 검토자에게 보이는 절차는 `_qa/visual-review/README.md` 에 있고, 필요할 때만 쓴다.
 - 자동 검사 통과를 시각 검토 완료로 보고하지 않는다. 페이지별 예외는 `page-design.json` 에 이유를 남긴다.

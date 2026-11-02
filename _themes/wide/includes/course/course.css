@@ -94,6 +94,7 @@
 .course-schedule tr.tone-none td { box-shadow: inset 0 -1px 0 var(--line); border-radius: 0; }
 .course-schedule td:last-child { padding-right: var(--space-3); }  /* text keeps off the edge of a filled row */
 .course-schedule th:last-child { padding-right: 0; }
+.course-schedule :is(th, td).cs-slides:last-child { padding-right: var(--space-7); }  /* with no Reading column, Materials keeps off the right edge */
 .course-part-row th { padding: var(--space-6) 0 var(--space-2); box-shadow: inset 0 -2px 0 var(--tone-tint); color: var(--tone); font-size: var(--text-meta); font-weight: var(--weight-heading); text-align: left; }
 .course-part-row .cp-title { margin-left: var(--space-2); color: var(--text); font-weight: var(--weight-emphasis); }
 .course-part-row .cp-span { margin-left: var(--space-3); color: var(--muted); font-weight: var(--weight-regular); }
@@ -109,7 +110,7 @@
 .is-project .cs-icon, .is-exam .cs-icon { color: var(--accent); }  /* the days students must not miss: only the icon carries the accent */
 .is-break .cs-icon { color: var(--muted); }
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
-.is-outside .cs-title { color: var(--muted); }  /* still a class day: the yellow row and the weight stay, only the title steps back */
+.is-outside .cs-title { color: var(--muted); font-weight: var(--weight-regular); }  /* still a class day: the yellow row and the icon say so, the title steps back like a break */
 .cs-session { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 0 var(--space-5); }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 a.cs-speaker-name:hover { color: var(--accent); }

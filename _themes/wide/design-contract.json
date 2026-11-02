@@ -134,7 +134,7 @@
     },
     {
       "id": "list-title",
-      "selector": ".item-main strong, .funding strong, .mentee-name, .cs-title:not(.is-break .cs-title):not(.is-optional .cs-title)",
+      "selector": ".item-main strong, .funding strong, .mentee-name, .cs-title:not(.is-break .cs-title):not(.is-outside .cs-title):not(.is-optional .cs-title)",
       "style": {
         "fontWeight": "var(--weight-emphasis)"
       }

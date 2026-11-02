@@ -95,6 +95,7 @@
 .course-schedule td:last-child { padding-right: var(--space-3); }  /* text keeps off the edge of a filled row */
 .course-schedule th:last-child { padding-right: 0; }
 .course-schedule :is(th, td).cs-slides:last-child { padding-right: var(--space-7); }  /* with no Reading column, Materials keeps off the right edge */
+.course-schedule:has(thead th.cs-slides:last-child) td.cs-topic[colspan] { padding-right: var(--space-7); }  /* a guest's place and time end on the same line as Materials */
 .course-part-row th { padding: var(--space-6) 0 var(--space-2); box-shadow: inset 0 -2px 0 var(--tone-tint); color: var(--tone); font-size: var(--text-meta); font-weight: var(--weight-heading); text-align: left; }
 .course-part-row .cp-title { margin-left: var(--space-2); color: var(--text); font-weight: var(--weight-emphasis); }
 .course-part-row .cp-span { margin-left: var(--space-3); color: var(--muted); font-weight: var(--weight-regular); }
@@ -483,6 +484,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-dept-map li.is-small { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; gap: 0 var(--space-1); padding: var(--space-1); font-size: var(--text-small); text-align: center; }
 .study-dept-map li.is-small span { max-width: 100%; white-space: nowrap; text-overflow: ellipsis; }
 .study-dept-map li.is-small .study-chart-value { font-size: var(--text-meta); }
+.study-dept-map li.is-tiny { flex-direction: column; flex-wrap: nowrap; gap: var(--space-1); }  /* name over count, centred, in a thin tile */
 .study-dept-map:not(.is-drawn) { height: auto; }
 .study-dept-map li { transition: opacity .15s; }
 .study-dept-map:hover li:not(:hover) { opacity: .55; }
@@ -505,7 +507,7 @@ a.cs-title:hover { color: var(--accent); }
   .study-term-card > a > :not(img) { grid-column: 2; }
   .study-term-tldr { padding-top: var(--space-2); }
   .study-cohort-label { white-space: nowrap; }
-  .study-dept-map li.is-tiny > span:first-child { display: none; }  /* a sliver keeps only its number; the name stays in its tooltip */
+  .study-dept-map li.is-sliver > span:first-child { display: none; }  /* a sliver keeps only its number; the name stays in its tooltip */
   .study-term-step::before { display: none; }
   .study-stat-breakdowns { grid-template-columns: 1fr; gap: var(--space-6); }
   .study-cohort-chart { height: 240px; gap: var(--space-3); }

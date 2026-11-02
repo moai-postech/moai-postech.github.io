@@ -334,11 +334,12 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--tone, var(--faint)); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .filter-swatch { display: inline-block; width: .7em; height: .7em; margin-right: var(--space-2); border-radius: 3px; background: var(--tone-tint); }  /* the row colour of that kind, as a legend */
-.schedule-title { font-weight: var(--weight-regular); line-height: 1.5; }  /* title regular, speaker bold: the speaker is what the seminar list highlights */
+.schedule-title { font-weight: var(--weight-regular); line-height: 1.5; }
+.schedule-title a { font-weight: var(--weight-emphasis); }  /* a talk with slides or a paper is bold; sessions without material (Monthly Sync, Internal Review, sharing) stay regular (교수 2026-11-02) */
 .is-upcoming .schedule-date { color: var(--accent); font-weight: var(--weight-emphasis); }  /* talks still to come: the date alone turns accent */
 .schedule-title a { color: var(--text); }
 .schedule-title a:hover { color: var(--accent); }
-.schedule-speaker { width: 1%; padding-left: var(--space-4) !important; font-size: var(--text-meta); font-weight: var(--weight-emphasis); white-space: nowrap; }  /* names left-aligned in the last column, so they line up at the right end */
+.schedule-speaker { width: 1%; padding-left: var(--space-4) !important; font-size: var(--text-meta); font-weight: var(--weight-regular); white-space: nowrap; }  /* names left-aligned in the last column, so they line up at the right end */
 .schedule-speaker a { color: var(--text); }
 .schedule-speaker a:hover { color: var(--accent); }
 .schedule-aff { width: 1%; padding-left: var(--space-6) !important; color: var(--muted); font-size: var(--text-meta); text-align: right; white-space: nowrap; }  /* right-aligned so it sits next to the name */

@@ -161,6 +161,13 @@
       "selector": ".schedule-speaker",
       "style": {
         "fontSize": "var(--text-meta)",
+        "fontWeight": "var(--weight-regular)"
+      }
+    },
+    {
+      "id": "seminar-title-link",
+      "selector": ".schedule-title a",
+      "style": {
         "fontWeight": "var(--weight-emphasis)"
       }
     },

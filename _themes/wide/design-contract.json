@@ -149,7 +149,7 @@
     },
     {
       "id": "seminar-title",
-      "selector": ".schedule-title",
+      "selector": ".schedule tr:not(.is-routine) .schedule-title",
       "style": {
         "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-medium)",
@@ -158,10 +158,19 @@
     },
     {
       "id": "seminar-name",
-      "selector": ".schedule-speaker",
+      "selector": ".schedule tr:not(.is-routine) .schedule-speaker",
       "style": {
         "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-emphasis)"
+      }
+    },
+    {
+      "id": "seminar-routine",
+      "selector": ".schedule tr.is-routine .schedule-title, .schedule tr.is-routine .schedule-speaker, .schedule tr.is-routine .schedule-title a, .schedule tr.is-routine .schedule-speaker a",
+      "style": {
+        "fontSize": "var(--text-body)",
+        "fontWeight": "var(--weight-regular)",
+        "color": "var(--muted)"
       }
     },
     {
@@ -265,7 +274,7 @@
     },
     {
       "id": "quiet-title-link",
-      "selector": ".pubs .title a, .schedule-title a, .schedule-speaker a, .sec-media a, .item-main strong a, .st-links a:not(.st-lectures a)",
+      "selector": ".pubs .title a, .schedule tr:not(.is-routine) :is(.schedule-title, .schedule-speaker) a, .sec-media a, .item-main strong a, .st-links a:not(.st-lectures a)",
       "style": {
         "color": "var(--text)"
       }

@@ -52,8 +52,8 @@ HEADER = """\
 # name_en 을 채운 행만 사이트에 나온다. affiliation_en 이 있으면 초청 발표다(외부 연사 슬라이드는 공개하지 않는다, 교수 원칙).
 # 제목 링크: slides(랩 발표, assets/seminar/ 의 PDF)가 있으면 그것, 없으면 paper(연사의 해당 논문, 여러 개면 연사가 1저자인 대표 하나). 교수 2026-10-26.
 # 연사 이름 링크: url(초청 연사와 인턴의 홈페이지), 없으면 랩 멤버는 People 의 그 사람 자리(템플릿이 자동).
-# group: 다 같이 하는 회차(Monthly Sync, Internal Review, 학회 공유). 시트 name_en 이 Everyone 이면 붙는다.
-# routine: 특정 주제 발표가 아닌 회차. group 이거나 제목에 Monthly Sync·Internal Review·Review Session·Sharing Session 이 있으면 붙는다. 연사는 시트 담당자 대신 Lab members 로 쓰고, 그 행의 제목과 연사를 회색 보통 굵기로 둔다(교수 2026-11-02).
+# group: 다 같이 하는 회차(Research Sync, Internal Review, 학회 공유). 시트 name_en 이 Everyone 이면 붙는다.
+# routine: 특정 주제 발표가 아닌 회차. group 이거나 제목에 Research Sync·Internal Review·Review Session·Sharing Session 이 있으면 붙는다. 연사는 시트 담당자 대신 Lab members 로 쓰고, 그 행의 제목과 연사를 회색 보통 굵기로 둔다(교수 2026-11-02).
 """
 
 
@@ -135,7 +135,7 @@ def nickname(title):
 GROUP_SPEAKER = "Everyone"  # 다 같이 하는 회차의 name_en (교수 2026-11-02)
 # routine: 특정 주제 발표가 아닌 회차(정기 회의, 내부·논문 리뷰, 학회·도구 공유). Everyone 회차이거나 제목이 이 패턴이면 붙고, 목록에서 제목을 보통 굵기·회색으로 둔다.
 # 사이트의 연사 칸은 시트 담당자 대신 ROUTINE_SPEAKER 로 통일한다. 시트에는 담당자를 그대로 둔다(교수 2026-11-02).
-ROUTINE_TITLE = re.compile(r"\b(Monthly Sync|Internal Review|Review Session|Sharing Session)\b", re.I)
+ROUTINE_TITLE = re.compile(r"\b(Research Sync|Internal Review|Review Session|Sharing Session)\b", re.I)
 ROUTINE_SPEAKER = "Lab members"
 
 

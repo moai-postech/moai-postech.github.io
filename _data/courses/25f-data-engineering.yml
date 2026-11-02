@@ -189,6 +189,7 @@ schedule:
     pdf: "teaching/25f-data-engineering/slides/18_llm-systems-ii-rag.pdf"
   - date: "2025-11-27"
     kind: guest
+    title: "데이터, AI, 고객: 데이터가 가치있어 지는 방법과 우리의 할일"
     speaker: "Ki-Young Shin"
     url: "https://kr.linkedin.com/in/shinky"
     affiliation: "CEO, Designovel"

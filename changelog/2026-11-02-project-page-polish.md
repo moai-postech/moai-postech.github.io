@@ -41,3 +41,10 @@ POSTECH 요구사항: 영향 없음
   - 스터디 일정의 `#` 을 왼쪽에서 오른쪽으로 바꿔 강의 일정과 맞췄다. 스터디 Materials 는 링크 묶음 길이가 달라 왼쪽에 둔다.
   - 그대로 둔 것: Date(왼쪽, 같은 꼴), Topic·Reading(왼쪽), 팀 표의 발표 칸(이미 가운데).
 - 전수 검사(GitHub Actions `audit`)의 `check_design` 이 이번 수정 전부터 있던 위반 14건을 잡았다. Highlights 제목(`strong.project-highlight-title`)이 700 이었는데 계약은 문장 안 강조 600 이다. Timeline 카드 제목과 같은 600 으로 맞췄다. 나머지 검사(format, typography, selection, interaction, study members, POSTECH)는 통과.
+
+## 후속: 초청 세미나 제목
+- 교수: 초청 세미나 제목은 검색하면 나오지 않나. 캘린더에는 없었지만 MS365 메일에서 찾았다.
+  - 26S 04/23 윤송이: `경계를 넘는 혁신: 과학자에서 글로벌 경영자로의 성장 여정`(교내회보 [ICF] 제43회 안내 메일 제목).
+  - 26S 05/29 전영환: `Agentic AI 시대의 Personalization AI`(학과 14차 정기세미나 안내 메일의 포스터 PDF).
+  - 25F 11/27 신기영: `데이터, AI, 고객: 데이터가 가치있어 지는 방법과 우리의 할일`(연사가 보낸 강연자료 PDF 표지. 표지의 제목·부제를 콜론으로 이었고 띄어쓰기는 원문대로).
+- 이로써 세 강의 일정의 초청·세미나 행은 모두 제목이 있다.

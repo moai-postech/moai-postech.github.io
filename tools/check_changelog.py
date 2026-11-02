@@ -268,11 +268,15 @@ def main():
     for n in notes:
         print("알림: " + n)
     if errors:
-        print("검사 실패. AGENTS.md 의 'Changelog 규칙'과 '논의가 필요한 수정'을 보고 고치세요.")
+        # CI 에서 교수 계정이 push 했으면 실패 대신 경고만 남긴다. 실패하면 교수에게 GitHub 실패 메일이 가고,
+        # 교수 push 는 어차피 막지 않는다(AGENTS.md "검사와 배포", 2026-11-02). 다른 사람과 로컬 검사는 그대로 실패한다.
+        actor = os.environ.get("GITHUB_ACTOR", "")
+        warn_only = bool(base and head) and actor in maintainers()
+        print(("경고(교수 push 라 실패로 표시하지 않음)." if warn_only else "검사 실패.") + " AGENTS.md 의 'Changelog 규칙'과 '논의가 필요한 수정'을 보고 고치세요.")
         print("바뀐 파일: " + ", ".join(files))
         for e in errors:
-            print(" - " + e)
-        return 1
+            print((f"::warning title=changelog::{e}" if warn_only and os.environ.get("GITHUB_ACTIONS") else " - " + e))
+        return 0 if warn_only else 1
     print("changelog 검사 통과: " + ", ".join(entries or ["안건만 변경"]))
     return 0
 

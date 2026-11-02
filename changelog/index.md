@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [no-failure-mail](2026-11-02-no-failure-mail.md) | Sangwoo Mo(sangwoomo) | changelog·audit 검사, AGENTS.md | 교수 계정 push 는 검사 문제를 경고로만 남겨 실패 메일 없음, push 전 검사 제거 |
 | 2026-11-02 | [prepush-gate](2026-11-02-prepush-gate.md) | Sangwoo Mo(sangwoomo) | push 전 검사, format checks | CI 검사를 push 전에 돌려 막고, push 뒤 checks 는 실패 메일 없이 주석으로 |
 | 2026-11-02 | [table-alignment](2026-11-02-table-alignment.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 표 | 짧은 값은 가운데, 들쭉날쭉한 글은 왼쪽, 머리글은 열을 따름. 규칙은 course README 표 정렬 |
 | 2026-11-02 | [ai-study-home-visual](2026-11-02-ai-study-home-visual.md) | Sangwoo Mo(sangwoomo) | AI Study Home·Members, 멤버 시트 | 히어로 도식·시간순 학기 블록·기수 막대·학과 면적 그래프, 시트·표 1기부터 같은 순서와 한글(영문) 학과 |

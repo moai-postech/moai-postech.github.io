@@ -160,7 +160,7 @@
       "id": "seminar-name",
       "selector": ".schedule-speaker",
       "style": {
-        "fontSize": "var(--text-meta)",
+        "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-emphasis)"
       }
     },

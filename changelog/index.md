@@ -6,7 +6,7 @@
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
 | 2026-11-02 | [study-path-trim](2026-11-02-study-path-trim.md) | Sangwoo Mo(sangwoomo) | AI Study Schedule | overview 문단 제거(tldr·카드와 중복), 단계 라벨에 `Sessions 1–6` 회차 범위 |
-| 2026-11-02 | [seminar-title-weight](2026-11-02-seminar-title-weight.md) | Sangwoo Mo(sangwoomo) | Seminar 굵기, AGENTS.md | 세미나 제목 500(새 토큰 `--weight-medium`), 연사 600·14px |
+| 2026-11-02 | [seminar-title-weight](2026-11-02-seminar-title-weight.md) | Sangwoo Mo(sangwoomo) | Seminar 굵기, AGENTS.md | 세미나 제목 500(새 토큰 `--weight-medium`), 연사 600, 둘 다 16px |
 | 2026-11-02 | [study-topic-icons](2026-11-02-study-topic-icons.md) | Sangwoo Mo(sangwoomo) | AI Study 주제 아이콘 둘 | 공통 기반과 reasoning에서 action으로 이어지는 흐름으로 재작성 |
 | 2026-11-02 | [study-line-end](2026-11-02-study-line-end.md) | Sangwoo Mo(sangwoomo) | AI Study Schedule·Home | 단계·학기 연결선을 마지막 카드 끝까지, 2열에서 줄 끝 선 넘침 수정 |
 | 2026-11-02 | [seminar-one-band](2026-11-02-seminar-one-band.md) | Sangwoo Mo(sangwoomo) | Seminar | 랩 내부·초청 두 가지만: 강의 색 중 하늘색(랩)과 버터(초청) |

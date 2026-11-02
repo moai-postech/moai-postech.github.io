@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [project-page-polish](2026-11-02-project-page-polish.md) | Sangwoo Mo(sangwoomo) | 강의 Project 페이지 | Final 문구 두 줄, 평가 머리 한 줄, PDF 날짜 아래, 하이라이트 16:9·AX 점수 그래프 |
 | 2026-10-31 | [study-stats-visible](2026-10-31-study-stats-visible.md) | Sangwoo Mo(sangwoomo) | 스터디 Home 통계 | 더보기·접기 제거, 참여 구성과 학과 분포 항상 표시 |
 | 2026-10-31 | [study-cohort-mix](2026-10-31-study-cohort-mix.md) | Sangwoo Mo(sangwoomo) | 스터디 Home 참여 구성 | 기수별 총원과 신규·기존 인원 및 비중 표시 |
 | 2026-10-31 | [study-member-counts](2026-10-31-study-member-counts.md) | Sangwoo Mo(sangwoomo) | 스터디 Home 통계 | 기수별 비율 막대·Returning members 제거, 인원 중심으로 정리 |

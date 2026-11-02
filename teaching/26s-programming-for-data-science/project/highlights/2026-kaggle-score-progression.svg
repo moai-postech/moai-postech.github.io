@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 425" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="800" height="425" fill="#fff"/>
+<text x="70" y="30" font-size="17" fill="#596574">Private leaderboard score</text>
+<line x1="78" x2="780" y1="269.6" y2="269.6" stroke="#d8e0e8" stroke-width="1.5"/>
+<text x="68" y="275.6" font-size="17" fill="#596574" text-anchor="end">0.66</text>
+<line x1="78" x2="780" y1="209.1" y2="209.1" stroke="#d8e0e8" stroke-width="1.5"/>
+<text x="68" y="215.1" font-size="17" fill="#596574" text-anchor="end">0.68</text>
+<line x1="78" x2="780" y1="148.7" y2="148.7" stroke="#d8e0e8" stroke-width="1.5"/>
+<text x="68" y="154.7" font-size="17" fill="#596574" text-anchor="end">0.70</text>
+<line x1="78" x2="780" y1="88.2" y2="88.2" stroke="#d8e0e8" stroke-width="1.5"/>
+<text x="68" y="94.2" font-size="17" fill="#596574" text-anchor="end">0.72</text>
+<line x1="78" x2="780" y1="330" y2="330" stroke="#596574" stroke-width="1.5"/>
+<polyline fill="none" stroke="#a61955" stroke-width="4" stroke-linejoin="round" points="136.5,288.6 253.5,220.0 370.5,110.0 487.5,92.2 604.5,92.2 721.5,87.6"/>
+<circle cx="136.5" cy="288.6" r="7" fill="#a61955" stroke="#fff" stroke-width="2.5"/>
+<text x="150.5" y="314.6" font-size="19" font-weight="700" fill="#172b40" text-anchor="start">0.6537</text>
+<text x="136.5" y="360" font-size="17" fill="#596574" text-anchor="middle">Phase 1</text>
+<text x="136.5" y="386" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">BiLSTM</text>
+<circle cx="253.5" cy="220.0" r="7" fill="#a61955" stroke="#fff" stroke-width="2.5"/>
+<text x="267.5" y="246.0" font-size="19" font-weight="700" fill="#172b40" text-anchor="start">0.6764</text>
+<text x="253.5" y="360" font-size="17" fill="#596574" text-anchor="middle">Phase 2</text>
+<text x="253.5" y="386" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">Transformer</text>
+<text x="253.5" y="409" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">variants</text>
+<circle cx="370.5" cy="110.0" r="7" fill="#a61955" stroke="#fff" stroke-width="2.5"/>
+<text x="370.5" y="92.0" font-size="19" font-weight="700" fill="#172b40" text-anchor="middle">0.7128</text>
+<text x="370.5" y="360" font-size="17" fill="#596574" text-anchor="middle">Phase 3</text>
+<text x="370.5" y="386" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">TimesNet</text>
+<circle cx="487.5" cy="92.2" r="7" fill="#a61955" stroke="#fff" stroke-width="2.5"/>
+<text x="487.5" y="74.2" font-size="19" font-weight="700" fill="#172b40" text-anchor="middle">0.7187</text>
+<text x="487.5" y="360" font-size="17" fill="#596574" text-anchor="middle">Phase 4</text>
+<text x="487.5" y="386" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">Pulse-</text>
+<text x="487.5" y="409" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">Transformer</text>
+<circle cx="604.5" cy="92.2" r="7" fill="#a61955" stroke="#fff" stroke-width="2.5"/>
+<text x="604.5" y="74.2" font-size="19" font-weight="700" fill="#172b40" text-anchor="middle">0.7187</text>
+<text x="604.5" y="360" font-size="17" fill="#596574" text-anchor="middle">Phase 5</text>
+<text x="604.5" y="386" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">Joint</text>
+<text x="604.5" y="409" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">fusion</text>
+<circle cx="721.5" cy="87.6" r="10" fill="#a61955" stroke="#fff" stroke-width="2.5"/>
+<text x="721.5" y="69.6" font-size="19" font-weight="700" fill="#a61955" text-anchor="middle">0.7202</text>
+<text x="721.5" y="360" font-size="17" fill="#596574" text-anchor="middle">Phase 6</text>
+<text x="721.5" y="386" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">Post-process</text>
+<text x="721.5" y="409" font-size="18" font-weight="600" fill="#172b40" text-anchor="middle">rule</text>
+<text x="721.5" y="43.6" font-size="19" font-weight="700" fill="#a61955" text-anchor="middle">Rank 1</text>
+</svg>

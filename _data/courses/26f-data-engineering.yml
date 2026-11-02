@@ -315,7 +315,7 @@ project:
       presentation: "10 min (incl. Q&A)"
     - name: "Final Presentation"
       when: "Dec 15 & 17"
-      text: "A working product for a real-world problem on a large-scale database: pipeline, implementation and results."
+      text: "A working product for a real-world problem on a large-scale database, from pipeline to results."
       presentation: "10 min (incl. Q&A)"
   evaluation:
     team_label: "Team Evaluation"

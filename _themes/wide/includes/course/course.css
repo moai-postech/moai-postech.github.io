@@ -195,6 +195,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-learning-path li:last-child .study-step-mark::before { right: 0; }  /* last line runs to the card's right edge */
 .study-step-dot { position: relative; flex: none; width: 14px; height: 14px; border: 3px solid var(--accent); border-radius: 50%; background: var(--bg); }
 .study-step-label { position: relative; padding-right: var(--space-2); background: var(--bg); color: var(--accent); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
+.study-step-range { color: var(--muted); font-weight: var(--weight-regular); }  /* range reads as a quiet note beside the stage number */
 .study-step { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: inherit; }
 .study-step-title { display: block; }
 .study-step-text { display: block; color: var(--muted); font-size: var(--text-meta); }

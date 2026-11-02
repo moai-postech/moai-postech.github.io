@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [study-line-end](2026-11-02-study-line-end.md) | Sangwoo Mo(sangwoomo) | AI Study Schedule·Home | 단계·학기 연결선을 마지막 카드 끝까지, 2열에서 줄 끝 선 넘침 수정 |
 | 2026-11-02 | [seminar-one-band](2026-11-02-seminar-one-band.md) | Sangwoo Mo(sangwoomo) | Seminar | 랩 내부·초청 두 가지만: 랩은 차가운 회색, 초청은 따뜻한 회색 띠 |
 | 2026-11-02 | [seminar-calm-tones](2026-11-02-seminar-calm-tones.md) | Sangwoo Mo(sangwoomo) | Seminar | 랩 발표 중립 회색, 다 같이 하는 회차 테두리만, 색은 초청 발표 코랄 하나. 형식 검사는 띠 가장자리 기준 |
 | 2026-11-02 | [seminar-row-tones](2026-11-02-seminar-row-tones.md) | Sangwoo Mo(sangwoomo) | Seminar 목록 | 랩 하늘색·초청 코랄·전체 회차 회색 색 띠(강의 색 템플릿), 필터에 색 점 범례 |

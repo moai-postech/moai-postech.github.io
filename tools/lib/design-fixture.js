@@ -26,7 +26,7 @@ async function loadSyntheticDirectory(page, base, site = SITE) {
       await page.locator('#member-password').fill(PASSWORD);
       await page.getByRole('button',{name:'Unlock',exact:true}).click();
     }
-    await page.locator('#member-full-list table').waitFor();
+    await page.locator('#members-all table').waitFor();
     await page.mouse.move(0,0);
   } finally { await page.unroute(routeUrl); }
 }

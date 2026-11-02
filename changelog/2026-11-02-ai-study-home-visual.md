@@ -46,3 +46,4 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말·강의 바닥은 그�
 - 검사(`check_study_members.js`, `check_design.js`, `test_design.js`, `visual_review.js`, `lib/study-access-check.js`): Lock 대신 브라우저 저장소를 지우는 `forgetAccess` 로 잠금 상태를 만들고, 탭·열 위치·Lock 부재를 확인하도록 바꿨다.
 - `STUDY.md` 의 Members 절을 새 구성으로 고쳤다.
 - 기각한 안: 기수 탭에서 Participation 열을 아예 빼는 안은 열 폭이 다시 나뉘어 탭 전환 때 열이 움직여(전역 규칙) 빈 자리로 남겼다. 기수 탭을 가입 기수 기준으로 나누는 안은 Home 의 기수별 인원(참여자 수)과 숫자가 달라 참여자 기준으로 했다.
+- 후속: 배포 뒤 `checks` 에서 `test_design`·`check_study_members` 가 가상 명단 로더의 `#member-full-list table` 선택자(탭이 생겨 표가 둘)로 실패했다. 로더는 `#members-all table`, test_design 의 행 수는 `#members-all tbody tr` 로 고쳤다. 이 맥에서는 Chromium 이 실행되지 않아 CI 로 확인했다.

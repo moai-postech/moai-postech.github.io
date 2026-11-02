@@ -124,7 +124,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 **키보드 탐색도 공통 동작을 따른다.** 첫 Tab은 Skip to content로 본문에 바로 이동한다. 페이지 안 탭은 좌우 화살표와 Home·End를 지원하고 해당 키로 페이지를 스크롤하지 않는다. 링크의 Ctrl·Cmd·Shift 클릭은 브라우저 기본 동작을 유지한다.
 
-**본문 링크의 장식은 역할에 맞춰 제한한다.** 일반 본문·논문 제목·메뉴 링크는 주변 글자색 규칙을 따르고 이모지·화살표를 붙이지 않는다. 절을 닫는 짧은 이동 링크에만 내부 이동 `→`, 전체 화면 등 외부 화면 이동 `↗`를 쓴다. Home 모집 링크 한 곳은 `Join us! 🚀`로 표시한다(교수 2026-10-28). 여기에 추가 bold를 겹치지 않는다. 문장 안의 짧은 명사나 설명 뒤의 짧은 행동 문구(예: See our publications, See how to apply)를 링크한다. 굵기는 제목과 핵심 정보에 쓰고, 버튼·선택 상태·성과 표시는 그 역할의 굵기를 유지한다. 모든 텍스트는 드래그로 선택 가능하며, 선택색은 배경과 구분되는 강조색 바탕·흰 글자다. `node tools/check_selection.js`로 실제 드래그와 일반 클릭을 함께 검사한다.
+**본문 링크의 장식은 역할에 맞춰 제한한다.** 일반 본문·논문 제목·메뉴 링크는 주변 글자색 규칙을 따르고 이모지·화살표를 붙이지 않는다. 홀로 서는 짧은 이동 링크에는 반드시 화살표를 붙인다. 이 사이트 안의 페이지·위치로 가면 `→`, 시트·전체 화면 같은 다른 화면으로 가면 `↗` 다(교수 2026-11-02: Full schedule 에서 `↗` 가 빠진 것을 지적). 해당하는 링크: 절을 닫는 안내 줄(`.section-next`: See our publications, Full publication list, All news, Open in full screen), 도구 줄·제목 줄 끝의 링크(Seminar `Full schedule`, `Study sheet`, `Members sheet`, `Meet the members`), 버튼(`How to join`, `… schedule`), 따로 선 안내 한 줄(`Contact the student representative`), 시트로 보내는 `project sheet`. `node tools/check_link_arrows.js` 가 빌드 결과에서 확인한다. 화살표를 붙이지 않는 링크와 이유: (1) 문장 안의 명사 링크(Teaching 의 AI study group, Publications 소개의 Google Scholar, Contact 단계 안 링크, 스터디 참고 강의, 404·옛 주소 안내)는 문장의 일부라 화살표가 읽기를 끊는다. (2) 메뉴·하위 탭·강의 메뉴·꼬리말은 위치 자체가 이동을 알려 준다. (3) 표·목록·카드의 데이터 링크(논문 제목과 arXiv·code·project, 연구 칩, 사람 이름, 세미나 제목·연사, 슬라이드 PDF·읽을거리, 학기 카드, 통계 막대)는 수십 개가 반복돼 화살표가 잡음이 된다. (4) Faculty 프로필 링크 줄(Google Scholar, GitHub, CV, X)은 이름만으로 바깥 프로필임이 분명하고, 네 개에 모두 `↗` 를 달면 줄이 무거워진다. (5) Home 모집 링크 한 곳은 화살표 대신 `Join us! 🚀` 로 표시한다(교수 2026-10-28). 여기에 추가 bold를 겹치지 않는다. 문장 안의 짧은 명사나 설명 뒤의 짧은 행동 문구(예: See our publications, See how to apply)를 링크한다. 굵기는 제목과 핵심 정보에 쓰고, 버튼·선택 상태·성과 표시는 그 역할의 굵기를 유지한다. 모든 텍스트는 드래그로 선택 가능하며, 선택색은 배경과 구분되는 강조색 바탕·흰 글자다. `node tools/check_selection.js`로 실제 드래그와 일반 클릭을 함께 검사한다.
 
 ## 고치는 절차
 
@@ -267,7 +267,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 평소에는 빠르게 빌드하고 올린다. 전체 형식은 교수가 요청할 때만 한꺼번에 본다(교수 2026-10-30).
 
-- **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`, `check_study_terms`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌린다. 시각 검토 기록은 push 를 막지 않는다.
+- **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`, `check_study_terms`, `check_link_arrows`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌린다. 시각 검토 기록은 push 를 막지 않는다.
 - **교수 계정 push 는 실패로 표시하지 않는다**(2026-11-02). 에이전트는 교수 계정으로 push 하므로, 실행이 실패하면 교수에게 GitHub 실패 메일이 간다. 그래서 `checks` 와 교수 계정의 `changelog` 검사는 문제를 실행 주석(warning)과 요약에만 남기고 성공으로 끝난다. 다른 사람의 push 와 PR 은 `changelog` 가 그대로 실패한다.
 - **push 한 뒤 한 번 본다**: push 한 사람이나 에이전트는 `gh run watch` 로 이번 `format`·`changelog` 실행을 보고, 주석에 경고가 있으면 고쳐서 다시 push 한다. 이 세션에서 못 고치면 루트 `TODO.md` 에 한 줄(검사, 실행 링크, 원인)을 남기고 사용자에게 알린다. push 전에 따로 돌릴 것은 없다(`python3 tools/check_changelog.py` 는 원하면 미리 돌려 볼 수 있다).
 - **전수 검사**: 교수가 요청할 때만 Actions 에서 `audit` 워크플로를 수동으로 돌린다. 요청은 그 한 번이다. 결과를 보고 고친 뒤에도, 다른 수정을 이어서 한 뒤에도 사람이든 에이전트든 스스로 다시 돌리지 않는다(교수 2026-11-02: 매번 돌리는 것은 비효율). `check_design`, `check_format`, `check_typography`, `check_interaction` 을 포함한 모든 검사를 돌리고 모든 페이지·상태 화면을 고정 캡처하고, 배포를 막지 않는다. 실패해도 실행은 성공으로 끝나고 주석에 경고가 남는다. 그때는 artifact 의 로그와 갤러리를 보고 고친다.

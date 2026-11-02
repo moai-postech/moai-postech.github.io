@@ -39,3 +39,14 @@ POSTECH 요구사항: P1, P2 확인(POSTECH 워드마크가 첫 요소·대표�
 - `tools/check_interaction.js`: Home 최신 학기 연결을 `a.study-now` 로 확인.
 
 기각한 안: 순환 도식을 다시 그리는 안은 "읽고, 설명하고, 코드로" 가 소개 문장과 같은 말이라 정보가 늘지 않는다. 이번 학기 카드가 방문자가 바로 쓰는 정보(다음 세션, 시간, 장소)를 준다. 요약 숫자 셋을 그대로 두는 안은 막대와 겹쳐 뺐다.
+
+## 추가: 히어로 재정리, 학기 요약, 학습 흐름, Codex 시각 검토
+요청(교수): Now studying 카드는 굳이 싶다, 원래보다 색이 줄어 심심하다, 상단 How to join 버튼이 아래 상자와 겹치나. What we study 키워드 나열 대신 학기 큰 주제를 한두 줄로(이 요약은 Schedule 학기 탭에서도 쓰도록). Participants·Departments 사이 가로 간격. 현재 학기 카드도 마우스에 반응. Schedule 의 학기 흐름을 Home 타임라인과 비슷하게. 시각 요소를 Codex 로 검토.
+
+- 히어로: 이번 학기 카드를 빼고 한 단으로. 제목의 `AI` 를 강조색으로, 버튼 둘(How to join 채운 강조색, `Fall 2026 schedule →` 테두리). 상단 버튼은 지원자의 입구이고 아래 상자는 연락 방법이라 역할이 달라 둘 다 둔다(연구실 Home 의 Join us! 와 Contact 와 같은 짜임).
+- 학기 요약: `_data/ai_study_terms.yml` 에 학기마다 `tldr` 한 문장. Home 카드의 세션 주제 나열을 이것으로 바꾸고, Schedule 학기 제목 아래에도 같은 문장을 lead 로 둔다.
+- Participants by term·Departments 사이 48 → 64px. 막대 제목 `Members by cohort` → `Participants by term`(한 사람이 여러 학기에 들어가 합이 총원 39 보다 크다는 Codex 지적).
+- 현재 학기 카드: 강조 테두리 규칙이 hover 를 덮어 반응이 없었다. hover 때 강조색 테두리와 2px 들어 올림을 모든 카드에 같게.
+- Schedule 학습 흐름: Home 타임라인처럼 번호 점과 연결선 위에 테두리 카드(점·선은 강조색 계열).
+- Codex 시각 검토(Business, 기본 모델, 화면 캡처 4장과 아이콘 SVG 를 넘김): Foundation Models·Physical AI 아이콘, 사진, 히어로는 유지. LLM 아이콘 속 화살표와 Deep Learning 아이콘의 곡선 화살표는 뜻이 불분명하다는 지적을 받아 Codex 가 고쳤다(말풍선+렌치, 2·3·2 층 신경망). 
+- 기각한 Codex 제안: 학과 면적 그래프를 가로 막대로 바꾸는 안(교수가 면적 표현을 골랐다), `Now` 를 `Current term` 으로 바꾸는 안(지금 표시로 충분), 휴대폰 Members 대표 행을 회색으로 바꾸는 안(교수가 색 행을 정했다).

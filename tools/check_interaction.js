@@ -22,7 +22,7 @@ async function checkStudyOverview(page, base) {
   check(await links.count() >= 4, 'Home term directory missing');
   for (const href of await links.evaluateAll(items => items.map(a => a.getAttribute('href'))))
     check(/^teaching\/ai-study\/schedule\/#[a-z0-9-]+$/.test(href), 'Home term link lost its Schedule destination');
-  check(await page.locator('a.study-now').count() === 1, 'Home latest schedule entry missing');
+  check(await page.locator('.study-home-hero .hero-actions a[href*="schedule"]').count() === 1, 'Home latest schedule entry missing');
   check(await page.locator('.study-member-stats,.study-home-join').count() === 2, 'Home lost member statistics or joining guidance');
   check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'Home overflows');
   for (const url of ['teaching/ai-study/schedule/']) {

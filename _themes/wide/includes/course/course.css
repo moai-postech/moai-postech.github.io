@@ -179,18 +179,24 @@ a.cs-title:hover { color: var(--accent); }
 .study-join a { color: var(--accent); }
 .study-terms, .study-full-list { padding-top: var(--space-6); }  /* title to tabs: the same 32px on Schedule and Members */
 .study-term-heading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3) var(--space-5); flex-wrap: wrap; margin-bottom: var(--space-5); }
+.study-term-heading:has(+ .study-term-tldr-lead) { margin-bottom: var(--space-2); }
+.study-term-tldr-lead { margin: 0 0 var(--space-5); color: var(--muted); font-size: var(--text-lead); line-height: 1.5; }  /* the same one-sentence summary as the Home card */
 .study-term-heading h2 { margin-bottom: 0; }
 .study-term-details { display: grid; gap: var(--space-5); margin-bottom: var(--space-6); }
 .study-term-details .course-facts { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: var(--space-5); padding: var(--space-5) 0; background: none; border-radius: 0; border-block: 1px solid var(--line); }
 .study-term-details .course-fact { display: block; padding: 0; }
 .study-term-details .course-fact + .course-fact { box-shadow: none; }
 .study-term-details .course-fact dt { margin-bottom: var(--space-2); }
+/* Learning path: the Home timeline's look. A numbered dot on a line, then a bordered card. */
 .study-learning-path { display: grid; grid-template-columns: repeat(var(--study-steps), minmax(0, 1fr)); list-style: none; padding: 0; margin: var(--space-5) 0 0; gap: var(--space-5); }
-.study-learning-path li { position: relative; border-top: 1px solid var(--line); padding-top: var(--space-3); min-width: 0; }
-.study-learning-path li + li::before { content: "→"; position: absolute; right: calc(100% + var(--space-2)); top: -.85em; padding-inline: var(--space-1); color: var(--muted); background: var(--bg); }
-.study-step-label { color: var(--accent); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
-.study-step { display: block; color: inherit; }
-.study-step-title { display: block; margin: var(--space-2) 0; }
+.study-learning-path li { display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
+.study-step-mark { position: relative; display: flex; align-items: center; gap: var(--space-2); min-height: 24px; }
+.study-step-mark::before { content: ""; position: absolute; left: 6px; right: calc(-1 * var(--space-5)); top: 50%; height: 2px; background: var(--accent-soft); }
+.study-learning-path li:last-child .study-step-mark::before { display: none; }
+.study-step-dot { position: relative; flex: none; width: 14px; height: 14px; border: 3px solid var(--accent); border-radius: 50%; background: var(--bg); }
+.study-step-label { position: relative; padding-right: var(--space-2); background: var(--bg); color: var(--accent); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
+.study-step { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: inherit; }
+.study-step-title { display: block; }
 .study-step-text { display: block; color: var(--muted); font-size: var(--text-meta); }
 .study-schedule-overview { margin-bottom: var(--space-7); }
 .study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
@@ -305,7 +311,7 @@ a.cs-title:hover { color: var(--accent); }
 }
 @media (max-width: 680px) {
   .study-learning-path { grid-template-columns: 1fr; gap: var(--space-4); }
-  .study-learning-path li + li::before { content: "↓"; left: 0; right: auto; }
+  .study-step-mark::before { display: none; }
   .study-term-details .course-facts { grid-template-columns: 1fr; gap: var(--space-4); }
   .study-term-details .course-fact + .course-fact { border-top: 1px solid var(--line); padding-top: var(--space-4); }
   .course-lead { font-size: var(--text-body); }
@@ -391,19 +397,15 @@ a.cs-title:hover { color: var(--accent); }
 .study-home-band { margin-bottom: 0; }
 .study-home-hero { padding: var(--space-7) 0 var(--space-6); }
 .study-home-hero .study-intro { padding-top: 0; }
-.study-home-hero .hero-copy { grid-column: span 7; }
 .study-home-advisor { margin: var(--space-4) 0 0; color: var(--muted); font-size: var(--text-meta); }
 .study-home-advisor a { color: var(--text); }
-.study-now { grid-column: span 5; display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-padding); border: 1px solid var(--callout-line); border-radius: var(--radius-2); background: var(--bg); box-shadow: var(--callout-shadow); color: var(--text); text-decoration: none; transition: border-color .15s; }
-.study-now:hover { border-color: var(--accent); color: var(--text); text-decoration: none; }
-.study-now-label { color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
-.study-now-theme { display: flex; align-items: center; gap: var(--space-4); font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; letter-spacing: -.02em; }
-.study-now-theme img { flex: none; width: 56px; height: 56px; }
-.study-now-next { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-1); background: var(--callout-surface); font-weight: var(--weight-emphasis); }
-.study-now-next[hidden] { display: none; }
-.study-now-date { color: var(--accent); font-size: var(--text-meta); }
-.study-now-when { color: var(--muted); font-size: var(--text-meta); line-height: var(--leading-card); }
-.study-now-link { color: var(--accent); font-size: var(--text-body); }
+.study-home-hero .hero-copy { grid-column: 1 / -1; }  /* one column, no picture */
+.study-accent { color: var(--accent); }
+.study-home-hero .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0 0; }
+.study-home-hero .button { display: inline-flex; align-items: center; padding: var(--space-2) var(--space-5); border: 1px solid var(--accent); border-radius: var(--radius-1); color: var(--accent); background: var(--bg); font-size: var(--text-control); font-weight: var(--weight-emphasis); text-decoration: none; transition: background-color .15s; }
+.study-home-hero .button.primary { background: var(--accent); color: var(--white); }
+.study-home-hero .button:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; }
+.study-home-hero .button.primary:hover { background: color-mix(in srgb, var(--accent) 86%, var(--text)); color: var(--white); }
 /* Term timeline: oldest cohort on the left, the current term on the right. */
 .study-term-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); }
 .study-term-card { display: flex; flex-direction: column; gap: var(--space-3); }
@@ -415,15 +417,16 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-when { position: relative; padding-right: var(--space-2); background: var(--bg); }
 .study-term-card.is-current .study-term-dot { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
 .study-term-card.is-current .study-term-when { color: var(--accent); font-weight: var(--weight-emphasis); }
-.study-term-card > a { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: var(--text); text-decoration: none; transition: border-color .15s, box-shadow .15s; }
+.study-term-card > a { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: var(--text); text-decoration: none; transition: border-color .15s, box-shadow .15s, transform .15s; }
 .study-term-card > a:hover { border-color: var(--accent); box-shadow: var(--callout-shadow); text-decoration: none; color: var(--text); }
 .study-term-card.is-current > a { border-color: var(--callout-line); background: var(--callout-surface); }
+.study-term-card.is-current > a:hover { border-color: var(--accent); }  /* the current term reacts like the others */
+.study-term-card > a:hover { transform: translateY(-2px); }
 .study-term-card > a img { width: 56px; height: 56px; margin-bottom: var(--space-2); border-radius: var(--radius-1); }
 .study-term-now { position: relative; padding: 2px var(--space-2); border-radius: 999px; background: var(--accent); color: var(--white); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
 .study-term-card .study-term-title { margin: 0; font-size: var(--text-body); font-weight: var(--weight-emphasis); line-height: 1.4; letter-spacing: normal; }  /* the shared card-heading role */
 .study-term-count { color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
-.study-term-topics { margin-top: auto; padding-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); line-height: var(--leading-card); }  /* first three session topics as one quiet line, the rest as a count */
-.study-term-topics .more { color: var(--accent); white-space: nowrap; }
+.study-term-tldr { margin-top: auto; padding-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); line-height: var(--leading-card); }  /* the term in one sentence (tldr), shared with the Schedule tab */
 
 /* Member statistics: one panel row of summary numbers, then cohort bars and a department treemap side by side. */
 .study-stat-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-5); }
@@ -433,7 +436,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-stat-summary > div { display: flex; align-items: baseline; gap: var(--space-2); }  /* 39 members since Fall 2025 */
 .study-stat-summary dt { color: var(--muted); font-size: var(--text-meta); }
 .study-stat-summary dd { margin: 0; font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; }
-.study-stat-breakdowns { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-7); margin-top: var(--space-5); }
+.study-stat-breakdowns { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-8); margin-top: var(--space-5); }
 .study-stat-panel { margin: 0; }
 .study-stat-panel figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
 .study-stat-panel h3 { margin: 0; }
@@ -468,8 +471,6 @@ a.cs-title:hover { color: var(--accent); }
 .study-home-join .study-join-next a { color: var(--accent); }
 @media (max-width: 1024px) {
   .study-term-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .study-home-hero .hero-copy, .study-now { grid-column: 1 / -1; }
-  .study-now { margin-top: var(--space-6); }
 }
 @media (max-width: 680px) {
   .study-term-cards { grid-template-columns: 1fr; gap: var(--space-4); }
@@ -477,7 +478,7 @@ a.cs-title:hover { color: var(--accent); }
   .study-term-card > a { display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: var(--space-4); row-gap: var(--space-1); align-items: start; }
   .study-term-card > a img { grid-row: 1 / span 3; width: 48px; height: 48px; margin: 0; }
   .study-term-card > a > :not(img) { grid-column: 2; }
-  .study-term-topics { padding-top: var(--space-2); }
+  .study-term-tldr { padding-top: var(--space-2); }
   .study-cohort-label { white-space: nowrap; }
   .study-dept-map li.is-tiny > span:first-child { display: none; }  /* a sliver keeps only its number; the name stays in its tooltip */
   .study-term-step::before { display: none; }

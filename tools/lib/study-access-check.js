@@ -23,7 +23,7 @@ async function checkRememberedAccess(base) {
     assert(await page.locator('tbody tr').count() === 0, 'locked page retained rows');
   };
   const unlocked = async page => {
-    await page.locator('.study-members-table').waitFor();
+    await page.locator('#members-all .study-members-table').waitFor();
     await page.locator('#member-full-list[data-access]').waitFor({ state: 'attached' });
   };
   try {

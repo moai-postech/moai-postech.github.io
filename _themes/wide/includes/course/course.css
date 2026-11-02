@@ -59,6 +59,7 @@
 .course-head { padding-top: var(--space-7); }
 .course-heading-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3) var(--space-5); margin-bottom: var(--space-3); }
 .course-heading-row h1 { margin: 0; }
+.course-heading-row:last-child { margin-bottom: 0; }  /* no meta line under the title (AI Study): the first section's own gap follows */
 .course-meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); margin: 0; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-regular); }
 .course-first { padding-top: var(--space-6); }
 
@@ -176,7 +177,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-join h2 { margin-bottom: var(--space-3); font-size: var(--text-body); line-height: var(--leading-group); letter-spacing: normal; }
 .study-join p { margin: 0; color: var(--muted); }
 .study-join a { color: var(--accent); }
-.study-terms { padding-top: var(--space-6); }
+.study-terms, .study-full-list { padding-top: var(--space-6); }  /* title to tabs: the same 32px on Schedule and Members */
 .study-term-heading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3) var(--space-5); flex-wrap: wrap; margin-bottom: var(--space-5); }
 .study-term-heading h2 { margin-bottom: 0; }
 .study-term-details { display: grid; gap: var(--space-5); margin-bottom: var(--space-6); }
@@ -262,8 +263,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-members-table .sm-year { width: 9%; }
 .study-members-table .sm-email { width: 18%; }  /* POSTECH IDs are short, so Participation sits closer (교수 2026-11-02) */
 .study-members-table .sm-participation { width: 34%; }
-.study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); }
-.study-members-table thead th { padding-top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
+.study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.study-members-table thead th { padding-top: 0; padding-bottom: var(--space-2); border-bottom-color: var(--text); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }  /* same table head as the course and study schedules */
 .study-members-table tbody th { font-weight: var(--weight-emphasis); overflow-wrap: anywhere; }
 .study-members-table .study-member-n { color: var(--muted); font-variant-numeric: tabular-nums; }
 .study-members-table td { overflow-wrap: anywhere; }
@@ -391,14 +392,18 @@ a.cs-title:hover { color: var(--accent); }
 .study-home-hero { padding: var(--space-7) 0 var(--space-6); }
 .study-home-hero .study-intro { padding-top: 0; }
 .study-home-hero .hero-copy { grid-column: span 7; }
-.study-home-art { grid-column: span 5; max-width: 460px; justify-self: end; }
 .study-home-advisor { margin: var(--space-4) 0 0; color: var(--muted); font-size: var(--text-meta); }
 .study-home-advisor a { color: var(--text); }
-.study-home-hero .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0 0; }
-.study-home-hero .button { display: inline-flex; align-items: center; padding: var(--space-2) var(--space-4); border: 1px solid var(--accent); border-radius: var(--radius-1); color: var(--accent); background: var(--bg); font-size: var(--text-control); font-weight: var(--weight-emphasis); text-decoration: none; }
-.study-home-hero .button.primary { background: var(--accent); color: var(--white); }
-.study-home-hero .button:hover { text-decoration: none; background: var(--accent-soft); color: var(--accent); }
-.study-home-hero .button.primary:hover { background: color-mix(in srgb, var(--accent) 88%, var(--text)); color: var(--white); }
+.study-now { grid-column: span 5; display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-padding); border: 1px solid var(--callout-line); border-radius: var(--radius-2); background: var(--bg); box-shadow: var(--callout-shadow); color: var(--text); text-decoration: none; transition: border-color .15s; }
+.study-now:hover { border-color: var(--accent); color: var(--text); text-decoration: none; }
+.study-now-label { color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
+.study-now-theme { display: flex; align-items: center; gap: var(--space-4); font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; letter-spacing: -.02em; }
+.study-now-theme img { flex: none; width: 56px; height: 56px; }
+.study-now-next { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-1); background: var(--callout-surface); font-weight: var(--weight-emphasis); }
+.study-now-next[hidden] { display: none; }
+.study-now-date { color: var(--accent); font-size: var(--text-meta); }
+.study-now-when { color: var(--muted); font-size: var(--text-meta); line-height: var(--leading-card); }
+.study-now-link { color: var(--accent); font-size: var(--text-body); }
 /* Term timeline: oldest cohort on the left, the current term on the right. */
 .study-term-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); }
 .study-term-card { display: flex; flex-direction: column; gap: var(--space-3); }
@@ -424,11 +429,11 @@ a.cs-title:hover { color: var(--accent); }
 .study-stat-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-5); }
 .study-stat-head h2 { margin: 0; }
 .study-stat-members { color: var(--accent); font-size: var(--text-control); }
-.study-stat-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); margin: 0; padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
-.study-stat-summary > div { display: flex; flex-direction: column; justify-content: space-between; }
+.study-stat-summary { margin: 0; }
+.study-stat-summary > div { display: flex; align-items: baseline; gap: var(--space-2); }  /* 39 members since Fall 2025 */
 .study-stat-summary dt { color: var(--muted); font-size: var(--text-meta); }
-.study-stat-summary dd { margin: var(--space-2) 0 0; font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; }
-.study-stat-breakdowns { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-7); margin-top: var(--space-6); }
+.study-stat-summary dd { margin: 0; font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; }
+.study-stat-breakdowns { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-7); margin-top: var(--space-5); }
 .study-stat-panel { margin: 0; }
 .study-stat-panel figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
 .study-stat-panel h3 { margin: 0; }
@@ -463,10 +468,18 @@ a.cs-title:hover { color: var(--accent); }
 .study-home-join .study-join-next a { color: var(--accent); }
 @media (max-width: 1024px) {
   .study-term-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .study-home-hero .hero-copy { grid-column: 1 / -1; }
+  .study-home-hero .hero-copy, .study-now { grid-column: 1 / -1; }
+  .study-now { margin-top: var(--space-6); }
 }
 @media (max-width: 680px) {
   .study-term-cards { grid-template-columns: 1fr; gap: var(--space-4); }
+  /* phones: icon beside the text so four terms do not make a long scroll */
+  .study-term-card > a { display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: var(--space-4); row-gap: var(--space-1); align-items: start; }
+  .study-term-card > a img { grid-row: 1 / span 3; width: 48px; height: 48px; margin: 0; }
+  .study-term-card > a > :not(img) { grid-column: 2; }
+  .study-term-topics { padding-top: var(--space-2); }
+  .study-cohort-label { white-space: nowrap; }
+  .study-dept-map li.is-tiny > span:first-child { display: none; }  /* a sliver keeps only its number; the name stays in its tooltip */
   .study-term-step::before { display: none; }
   .study-stat-breakdowns { grid-template-columns: 1fr; gap: var(--space-6); }
   .study-cohort-chart { height: 240px; gap: var(--space-3); }

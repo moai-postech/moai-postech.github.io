@@ -22,3 +22,20 @@ POSTECH 요구사항: P1, P2 확인(POSTECH 워드마크가 첫 요소·대표�
 
 ## 남은 것
 - Schedule 학기 탭은 최신 학기가 왼쪽(내림차순)이고 Home 타임라인·Members 탭은 1기부터(오름차순)다. 맞출지 교수에게 확인.
+
+## 추가: 마감 점검과 Home 미니멀 정리
+요청(교수): Members 아래 세로 간격 등 AI Study 의 완성도가 다른 페이지보다 떨어진다. 여백·자간·글꼴을 꼼꼼히 보고 고칠 것. Home 은 불필요한 것을 빼고 미니멀하게. What we study 의 그림을 주제에 맞게 새로(Codex 로), lecture/session 표기 통일, 논문 수 빼기, 오른쪽 위 순환 도식은 영양가가 없으니 다시 고민. How to join 문구는 교수 말을 그대로 옮기지 말 것.
+
+점검 방법: 1280px 에서 강의 사이트(Data Engineering)·연구실 사이트와 머리글 아래·제목 아래·탭 아래·본문 끝→꼬리말 간격, h1·h2·h3 크기·굵기·자간·행간, 표 머리 양식을 숫자로 비교했다. 글꼴 크기·굵기·자간은 이미 같았고, 다른 것은 아래만 고쳤다.
+
+- Members 제목 → 탭 64px 을 Schedule 과 같은 32px 로(부제를 뺀 뒤 남은 12px 여백도 없앰).
+- Members 표 머리를 강의·스터디 일정표 머리와 같게(대문자, 자간 .06em, 아래 진한 선, 숫자 tabular).
+- Home 히어로: 순환 도식(`assets/img/study-hero.svg`, 삭제)과 버튼 둘, 머리글과 겹치는 `Study group · POSTECH` 줄을 빼고 이번 학기 카드를 넣었다(Now studying · 4기 Fall 2026, 주제·아이콘, 오늘 이후 첫 정규 세션 날짜와 주제, 요일·시간·장소, See the schedule →). 다음 세션은 브라우저가 날짜로 고르고, 학기가 끝나면 그 줄을 숨긴다.
+- 학기 아이콘: Codex(Business, 기본 모델)가 사이트 아이콘 양식(선 #3F4C5A, 보조 #BAC4CF, 면 #ECEFF3, 강조 #A61955 한 점)으로 학기 주제별 SVG 넷을 그렸다(`assets/img/icons/study-*.svg`). 직접 112·56px 로 띄워 기존 아이콘과 선 굵기·크기를 비교한 뒤 적용했다. 예전 Research 아이콘 재사용과 직접 그린 `deep-learning.svg` 는 뺐다.
+- 학기 카드: `N sessions` 하나로 통일(강의 형식 학기도), 논문 수 삭제, 세션 수와 주제는 정규 세션만(보충 회차 제외).
+- 멤버 통계: 세 칸 요약(누적·현재·기수)을 총원 한 줄로 줄였다. 현재 인원과 기수 수는 막대가 이미 보인다.
+- How to join: "Open to POSTECH undergraduates of **any major**. Curiosity about AI is all you need; we learn the rest together."
+- 휴대폰: 학기 카드는 아이콘을 왼쪽에 둔 가로 카드, 막대 라벨 한 줄, 아주 좁은 학과 칸은 숫자만(이름은 툴팁).
+- `tools/check_interaction.js`: Home 최신 학기 연결을 `a.study-now` 로 확인.
+
+기각한 안: 순환 도식을 다시 그리는 안은 "읽고, 설명하고, 코드로" 가 소개 문장과 같은 말이라 정보가 늘지 않는다. 이번 학기 카드가 방문자가 바로 쓰는 정보(다음 세션, 시간, 장소)를 준다. 요약 숫자 셋을 그대로 두는 안은 막대와 겹쳐 뺐다.

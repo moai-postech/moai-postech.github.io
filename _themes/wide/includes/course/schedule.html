@@ -26,8 +26,9 @@
         {% assign topic_span = cols | minus: 2 %}<td class="cs-topic"{% if compact_session %} colspan="{{ topic_span }}"{% endif %}>
           {% if r.kind == "guest" or r.kind == "seminar" %}{% assign is_seminar = true %}{% else %}{% assign is_seminar = false %}{% endif %}
           {% if is_seminar %}<span class="cs-session"><span class="cs-session-main">{% endif %}
-          {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% elsif r.html %}<a class="cs-title" href="{{ r.html }}">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% else %}{% if r.url %}<a class="cs-title cs-speaker-link" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-title">{{ r.speaker }}</span>{% endif %}{% endif %}
-          {% if r.title and r.speaker %}<span class="cs-speaker">{% if r.url %}<a class="cs-speaker-name" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-speaker-name">{{ r.speaker }}</span>{% endif %}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% elsif r.title == nil and r.affiliation %}<span class="cs-speaker">{{ r.affiliation }}</span>{% endif %}
+          {% comment %}초청·세미나 행은 늘 1줄 발표 제목, 2줄 연사·소속이다. 제목이 없으면 연사 이름을 제목 자리에 올리지 않고 비워 두며, checks 의 check_guest_titles 가 실패해 알린다(교수 2026-11-02).{% endcomment %}
+          {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% elsif r.html %}<a class="cs-title" href="{{ r.html }}">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% endif %}
+          {% if r.speaker %}<span class="cs-speaker">{% if r.url %}<a class="cs-speaker-name" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-speaker-name">{{ r.speaker }}</span>{% endif %}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}
           {% comment %}장소 → 시간 순서와 줄 나눔은 강의 Home 의 Location & time 과 같다. 오른쪽 끝에 두어 행이 두 줄을 넘지 않게 한다.{% endcomment %}
           {% if r.time or r.location %}<span class="cs-session-meta">{% if r.location %}<span>{{ r.location }}</span>{% endif %}{% if r.time %}<span class="cs-session-time">{{ r.time }}</span>{% endif %}</span>{% endif %}

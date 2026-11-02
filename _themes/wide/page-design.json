@@ -315,7 +315,8 @@
         "seminar.html"
       ],
       "roles": [
-        "seminar-name"
+        "seminar-name",
+        "seminar-group-name"
       ],
       "selector": ".schedule-speaker",
       "style": {

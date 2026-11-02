@@ -4,7 +4,7 @@
 name: ai-study-sync
 on:
   schedule:
-    - cron: "30 21 * * *"
+    - cron: "30 21 * * 0-6"  # cron 은 sangwoomo 가 마지막으로 고친다. 예약 실행의 실패 알림이 그 계정 설정(메일 끔)을 따른다(2026-11-02)
   workflow_dispatch:
 permissions:
   contents: write

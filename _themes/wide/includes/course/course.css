@@ -402,7 +402,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-card.is-current > a { border-color: var(--callout-line); background: var(--callout-surface); }
 .study-term-card > a img { width: 56px; height: 56px; margin-bottom: var(--space-2); border-radius: var(--radius-1); }
 .study-term-now { position: relative; padding: 2px var(--space-2); border-radius: 999px; background: var(--accent); color: var(--white); font-size: var(--text-small); font-weight: var(--weight-emphasis); }
-.study-term-card strong { font-size: var(--text-group); font-weight: var(--weight-heading); line-height: var(--leading-group); }
+.study-term-card .study-term-title { margin: 0; font-size: var(--text-body); font-weight: var(--weight-emphasis); line-height: 1.4; letter-spacing: normal; }  /* the shared card-heading role */
 .study-term-count { color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-term-topics { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; gap: var(--space-1); margin-top: auto; padding-top: var(--space-3); }
 .study-term-topics span { white-space: nowrap; line-height: var(--leading-card); padding: 2px var(--space-2); border-radius: var(--radius-1); background: var(--surface); color: var(--muted); font-size: var(--text-small); }
@@ -430,20 +430,20 @@ a.cs-title:hover { color: var(--accent); }
 .study-cohort-track { display: flex; flex-direction: column; justify-content: flex-end; padding-top: var(--space-5); }
 .study-cohort-bar { position: relative; display: flex; flex-direction: column; min-height: 24px; border-radius: var(--radius-1) var(--radius-1) 0 0; overflow: visible; }
 .study-cohort-bar > span:first-of-type { border-radius: var(--radius-1) var(--radius-1) 0 0; }
-.study-cohort-bar strong { position: absolute; bottom: 100%; left: 0; right: 0; padding-bottom: var(--space-1); text-align: center; font-size: var(--text-body); font-weight: var(--weight-heading); font-variant-numeric: tabular-nums; }
+.study-cohort-bar .study-chart-value { position: absolute; bottom: 100%; left: 0; right: 0; padding-bottom: var(--space-1); text-align: center; font-size: var(--text-body); font-weight: var(--weight-heading); font-variant-numeric: tabular-nums; }
 .study-cohort-label { display: flex; flex-direction: column; align-items: center; padding-top: var(--space-2); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--text-small); }
 .study-cohort-label b { color: var(--text); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-cohort-chart li:last-child .study-cohort-label b { color: var(--accent); }
 .study-dept-map { position: relative; height: 320px; }
 .study-dept-map li { position: absolute; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-2) var(--space-3); border: 2px solid var(--bg); border-radius: var(--radius-1); background: color-mix(in srgb, var(--accent) var(--share, 30%), var(--bg)); color: var(--text); font-size: var(--text-meta); overflow: hidden; }
-.study-dept-map li strong { font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1; }
+.study-dept-map li .study-chart-value { font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; }
 .study-dept-map li.is-dark { color: var(--white); }
 .study-dept-map li span { overflow: hidden; font-weight: var(--weight-emphasis); }
 .study-dept-map li small { margin-left: 2px; font-size: var(--text-small); font-weight: var(--weight-regular); opacity: .85; }
 .study-dept-map li.is-small small { display: none; }
 .study-dept-map li.is-small { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; gap: 0 var(--space-1); padding: var(--space-1); font-size: var(--text-small); text-align: center; }
 .study-dept-map li.is-small span { max-width: 100%; white-space: nowrap; text-overflow: ellipsis; }
-.study-dept-map li.is-small strong { font-size: var(--text-meta); }
+.study-dept-map li.is-small .study-chart-value { font-size: var(--text-meta); }
 .study-dept-map:not(.is-drawn) { height: auto; }
 .study-dept-map:not(.is-drawn) li { position: static; }
 .study-home-community > h2 { font-size: var(--text-h2); }

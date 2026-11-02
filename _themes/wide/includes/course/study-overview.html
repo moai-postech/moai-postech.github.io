@@ -12,7 +12,7 @@
       <span class="study-term-step" aria-hidden="true"><span class="study-term-dot"></span><span class="study-term-when">{{ forloop.index }}기 · {{ t.name }}</span>{% if forloop.last %}<span class="study-term-now">Now</span>{% endif %}</span>
       <a href="teaching/ai-study/schedule/#{{ t.id }}">
       {% if info.icon %}<img src="{{ info.icon }}" alt="" width="56" height="56">{% endif %}
-      <span class="visually-hidden">{{ forloop.index }}기, {{ t.name }}: </span><strong>{{ t.theme }}</strong>
+      <span class="visually-hidden">{{ forloop.index }}기, {{ t.name }}: </span><h3 class="study-term-title">{{ t.theme }}</h3>
       <span class="study-term-count">{{ t.sessions.size }} {{ unit }}{% if papers > 0 %} · {{ papers }} papers{% endif %}</span>
       {% assign topics = "" %}{% for s in t.sessions %}{% assign topic = s.title | split: ":" | first | strip %}{% assign topics = topics | append: topic | append: "|" %}{% endfor %}{% assign topics = topics | split: "|" | uniq %}
       <span class="study-term-topics">{% for topic in topics limit: 4 %}<span>{{ topic }}</span>{% endfor %}{% if topics.size > 4 %}<span class="more">+{{ topics.size | minus: 4 }}</span>{% endif %}</span>

@@ -19,6 +19,7 @@
 
 ## 강의마다 달라도 되는 것
 
+- 머리글은 POSTECH 워드마크 옆에 원 학수번호(`code` 의 첫 번호, IMEN)와 강의명을 둔다(`IMEN891K Data Engineering`). 크로스리스팅 전체는 본문 머리의 `code` 한 줄에만 둔다. 480px 이하에서는 자리가 없어 머리글의 학수번호를 숨긴다(교수 2026-11-02).
 - 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Location & time(`location`, `meetings`)·Teaching assistants(`teaching_assistants`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 운영 정보의 Related Courses(`related`)는 다른 과목의 가장 최근 강의 하나를 가리킨다. Other Terms 와 같이 그 학기보다 앞선 페이지만 링크한다(교수 2026-10-30, 2026-10-27 의 '강의끼리 잇지 않는다'를 대체). 예: 26F Data Engineering → Programming for AX(Spring 2026), Programming for AX(Spring 2026) → Data Engineering(Fall 2025), 25F 는 앞선 다른 강의가 없어 두지 않는다. Other terms 는 나중 학기가 지난 학기만 가리킨다. 지난 학기 페이지에서 새 학기로 잇지 않는다(교수 2026-10-30).
 - 파트 이름은 자유다(`Part I`, `Software 3.0`). 자료 절 제목은 `resources_title`(기본 `Reference courses`).
 - 강의 스케줄 줄에는 종류 딱지를 붙이지 않는다. 종류는 색과 제목(`Project Proposal I`, `Midterm Exam`)으로 드러낸다(교수 2026-10-30).

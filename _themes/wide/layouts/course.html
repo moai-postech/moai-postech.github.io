@@ -30,7 +30,7 @@
 <a class="skip-link" href="{{ page.url }}#main-content">Skip to content</a>
 <div class="wrap">
   <header class="site-head course-top">
-    {% if page.course == "ai-study" %}{% include header-brand.html %}{% else %}{% include header-brand.html title=c.title url=root %}{% endif %}
+    {% if page.course == "ai-study" %}{% include header-brand.html %}{% else %}{% assign main_code = c.code | split: " / " | first %}{% include header-brand.html title=c.title code=main_code url=root %}{% endif %}
     {% if page.course == "ai-study" %}<nav class="course-nav" aria-label="Study">
       <a href="{{ root }}"{% if page.view == "study" %} aria-current="page"{% endif %}>Home</a>
       <a href="{{ root }}schedule/"{% if page.view == "study-schedule" %} aria-current="page"{% endif %}>Schedule</a>

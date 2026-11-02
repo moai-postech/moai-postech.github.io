@@ -229,10 +229,14 @@ a.cs-title:hover { color: var(--accent); }
 .study-table { table-layout: fixed; }
 .study-table .sc-n { width: 3.2em; }
 .study-table .sc-date { width: 4.6em; }
-.study-table .sc-topic { width: 23%; }
-.study-table .sc-papers { width: 21%; }
-.study-table .sc-demo { width: 13%; }
-.study-table .sc-who { width: 11%; }
+/* Title and keywords already make every row two lines, so Topic is wide enough for the keywords on one line
+   and the other cells fit those two lines: Papers may wrap once, Demo, Presenters and Materials stay on one (교수 2026-11-02). */
+.study-table .sc-topic { width: 34%; }
+.study-table .sc-papers { width: 18%; }
+.study-table .sc-demo { width: 15%; }
+.study-table .sc-who { width: 10%; }
+.study-table .st-links { font-size: var(--text-meta); line-height: 1.5; }  /* two lines of papers are as tall as title + keywords */
+.study-table .st-material-group { vertical-align: top; }
 .study-table td { overflow-wrap: anywhere; }
 .study-table-lectures .sc-topic { width: 39%; }
 .study-table-lectures .sc-lec { width: 17%; }

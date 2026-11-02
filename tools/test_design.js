@@ -59,7 +59,7 @@ const { loadSyntheticDirectory, forgetAccess } = require('./lib/design-fixture')
     assert(fixture.counts.disclosure===1 && !fixture.failures.some(f=>f.startsWith('disclosure:')), '선택적 disclosure 템플릿도 검증해야 한다');
     await loadSyntheticDirectory(page,base);
     assert.deepEqual(await failures(),[], '가상 데이터로 실제 명단 UI를 잠금 해제한 상태도 계약을 따라야 한다');
-    assert.equal(await page.locator('tbody tr').count(),1);
+    assert.equal(await page.locator('#members-all tbody tr').count(),1);
     await forgetAccess(page,base+'teaching/ai-study/members/');
     await page.waitForFunction(() => document.querySelectorAll('tbody tr').length === 0);
     assert.equal(await page.locator('tbody tr').count(),0);

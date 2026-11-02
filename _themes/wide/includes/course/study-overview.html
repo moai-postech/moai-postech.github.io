@@ -1,7 +1,22 @@
+{% comment %}
+  Home 학기 타임라인: 1기부터 최신 기수까지 왼쪽→오른쪽 시간순 블록. 블록마다 아이콘, 기수·학기, 주제, 회차 수, 회차 주제 몇 개.
+  최신 학기는 오른쪽 끝에 Now 로 강조. 상세 학습 흐름은 Schedule에서 보여 준다.
+  교수 2026-11-02: Home 이 글 목록뿐이다 → 그림 카드, 블록이 시간순으로 나아가는 느낌.
+{% endcomment %}
 {% assign d = site.data.ai_study %}
 <section class="content-section study-home-overview" aria-labelledby="study-overview-title">
   <h2 id="study-overview-title">What we study</h2>
-  <ul class="plain study-term-directory">
-    {% for t in d.terms %}<li><a href="teaching/ai-study/schedule/#{{ t.id }}"><strong>{{ t.theme }}</strong><span class="course-note">{{ t.name }}</span></a></li>{% endfor %}
-  </ul>
+  <ol class="plain study-term-cards study-term-directory">
+    {% for t in d.terms reversed %}{% assign info = site.data.ai_study_terms[t.id] %}{% assign unit = "sessions" %}{% if info.format == "lectures" %}{% assign unit = "lectures" %}{% endif %}{% assign papers = 0 %}{% for s in t.sessions %}{% if s.papers %}{% assign papers = papers | plus: s.papers.size %}{% endif %}{% endfor %}
+    <li class="study-term-card{% if forloop.last %} is-current{% endif %}">
+      <span class="study-term-step" aria-hidden="true"><span class="study-term-dot"></span><span class="study-term-when">{{ forloop.index }}기 · {{ t.name }}</span>{% if forloop.last %}<span class="study-term-now">Now</span>{% endif %}</span>
+      <a href="teaching/ai-study/schedule/#{{ t.id }}">
+      {% if info.icon %}<img src="{{ info.icon }}" alt="" width="56" height="56">{% endif %}
+      <span class="visually-hidden">{{ forloop.index }}기, {{ t.name }}: </span><strong>{{ t.theme }}</strong>
+      <span class="study-term-count">{{ t.sessions.size }} {{ unit }}{% if papers > 0 %} · {{ papers }} papers{% endif %}</span>
+      {% assign topics = "" %}{% for s in t.sessions %}{% assign topic = s.title | split: ":" | first | strip %}{% assign topics = topics | append: topic | append: "|" %}{% endfor %}{% assign topics = topics | split: "|" | uniq %}
+      <span class="study-term-topics">{% for topic in topics limit: 4 %}<span>{{ topic }}</span>{% endfor %}{% if topics.size > 4 %}<span class="more">+{{ topics.size | minus: 4 }}</span>{% endif %}</span>
+      </a>
+    </li>{% endfor %}
+  </ol>
 </section>

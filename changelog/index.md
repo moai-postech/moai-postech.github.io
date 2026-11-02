@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [ai-study-home-visual](2026-11-02-ai-study-home-visual.md) | Sangwoo Mo(sangwoomo) | AI Study Home·Members, 멤버 시트 | 히어로 도식·시간순 학기 블록·기수 막대·학과 면적 그래프, 시트·표 1기부터 같은 순서와 한글(영문) 학과 |
 | 2026-11-02 | [brand-size-token](2026-11-02-brand-size-token.md) | Sangwoo Mo(sangwoomo) | 머리글 CSS, 디자인 검사 | 머리글 23px 를 --text-brand 토큰으로 바꿔 checks 실패 해결 |
 | 2026-11-02 | [course-header-code](2026-11-02-course-header-code.md) | Sangwoo Mo(sangwoomo) | 강의 사이트 머리글 | 강의명 왼쪽에 원 학수번호(IMEN), 480px 이하는 숨김 |
 | 2026-11-02 | [guest-title-rule](2026-11-02-guest-title-rule.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄 초청 행, 검사 | 1줄 제목·2줄 연사 고정, 제목 없으면 check_guest_titles 실패로 알림 |

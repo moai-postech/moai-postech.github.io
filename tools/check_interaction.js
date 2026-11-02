@@ -18,11 +18,11 @@ const studyOnly = process.argv.includes('--study-only');
 async function checkStudyOverview(page, base) {
   await page.goto(new URL('teaching/ai-study/', base).href);
   check(await page.locator('.study-format,.study-latest,.study-learning-path').count() === 0, 'Home still repeats study methods or detailed flow');
-  const links = page.locator('.study-term-directory a');
+  const links = page.locator('.study-term-directory .study-term-card > a');
   check(await links.count() >= 4, 'Home term directory missing');
   for (const href of await links.evaluateAll(items => items.map(a => a.getAttribute('href'))))
     check(/^teaching\/ai-study\/schedule\/#[a-z0-9-]+$/.test(href), 'Home term link lost its Schedule destination');
-  check(await page.locator('.study-latest-link a').count() === 1, 'Home latest schedule entry missing');
+  check(await page.locator('.study-home-hero .hero-actions a.primary').count() === 1, 'Home latest schedule entry missing');
   check(await page.locator('.study-member-stats,.study-home-join').count() === 2, 'Home lost member statistics or joining guidance');
   check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'Home overflows');
   for (const url of ['teaching/ai-study/schedule/']) {

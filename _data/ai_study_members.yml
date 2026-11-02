@@ -5,31 +5,31 @@
   "returning": 13,
   "departments": [
     {
-      "name": "IME",
+      "name": "산경(IME)",
       "count": 22
     },
     {
-      "name": "CSE",
+      "name": "컴공(CSE)",
       "count": 8
     },
     {
-      "name": "Mueunjae",
+      "name": "무은재(Freshmen)",
       "count": 4
     },
     {
-      "name": "CITE",
+      "name": "IT융합(CITE)",
       "count": 2
     },
     {
-      "name": "EE",
+      "name": "물리(Physics)",
       "count": 1
     },
     {
-      "name": "Physics",
+      "name": "수학(Mathematics)",
       "count": 1
     },
     {
-      "name": "Mathematics",
+      "name": "전전(EE)",
       "count": 1
     }
   ],

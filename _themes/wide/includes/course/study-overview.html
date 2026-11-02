@@ -1,5 +1,5 @@
 {% comment %}
-  Home 학기 타임라인: 1기부터 최신 기수까지 왼쪽→오른쪽 시간순 블록. 블록마다 아이콘, 기수·학기, 주제, 회차 수, 회차 주제 셋과 남은 수.
+  Home 학기 타임라인: 1기부터 최신 기수까지 왼쪽→오른쪽 시간순 블록. 블록마다 아이콘, 기수·학기, 주제, 세션 수, 학기 주제 한 문장(tldr, Schedule 과 같은 문장).
   최신 학기는 오른쪽 끝에 Now 로 강조. 상세 학습 흐름은 Schedule에서 보여 준다.
   교수 2026-11-02: Home 이 글 목록뿐이다 → 그림 카드, 블록이 시간순으로 나아가는 느낌.
 {% endcomment %}
@@ -14,8 +14,7 @@
       {% if info.icon %}<img src="{{ info.icon }}" alt="" width="56" height="56">{% endif %}
       <span class="visually-hidden">{{ forloop.index }}기, {{ t.name }}: </span><h3 class="study-term-title">{{ t.theme }}</h3>
       <span class="study-term-count">{{ regular.size }} sessions</span>
-      {% assign topics = "" %}{% for s in regular %}{% assign topic = s.title | split: ":" | first | strip %}{% assign topics = topics | append: topic | append: "|" %}{% endfor %}{% assign topics = topics | split: "|" | uniq %}
-      <span class="study-term-topics">{% for topic in topics limit: 3 %}{{ topic }}{% unless forloop.last %} · {% endunless %}{% endfor %}{% if topics.size > 3 %} <span class="more">+{{ topics.size | minus: 3 }} more</span>{% endif %}</span>
+      {% if info.tldr %}<span class="study-term-tldr">{{ info.tldr }}</span>{% endif %}
       </a>
     </li>{% endfor %}
   </ol>

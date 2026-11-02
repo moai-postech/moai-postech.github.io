@@ -14,6 +14,7 @@
         <h2>{{ t.theme }}<span>{{ t.name }}</span></h2>
         {% if t.sheet %}{% include course/sheet-link.html url=t.sheet label="Study sheet" class_name="study-sheet" %}{% endif %}
       </div>
+      {% if info.tldr %}<p class="study-term-tldr-lead">{{ info.tldr }}</p>{% endif %}
       <div class="study-term-details">
         {% if info %}{% include course/facts.html instructor=info.advisor instructor_label="Advisor" representative=info.representative location=info.location meetings=info.meetings %}{% endif %}
       </div>

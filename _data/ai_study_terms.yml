@@ -1,7 +1,8 @@
-# 학기별 Overview와 운영 정보. icon 은 Home 학기 카드의 그림(학기 주제별 study-*.svg, Codex 제작 2026-11-02). 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
+# 학기별 Overview와 운영 정보. tldr 은 학기 주제를 한 문장으로 줄인 요약으로 Home 학기 카드와 Schedule 학기 탭이 함께 쓴다. icon 은 Home 학기 카드의 그림(학기 주제별 study-*.svg, Codex 제작 2026-11-02). 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
 # 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
+  tldr: "How robots learn to act in the real world, understand 3D scenes, and connect goals to actions."
   icon: "assets/img/icons/study-physical-ai.svg"
   overview: "Physical AI connects observations and goals to actions in the real world. We build the picture from learned robot skills, through 3D scene understanding, to models that connect perception, reasoning, and action."
   learning_path:
@@ -13,6 +14,7 @@ fall-2026:
   location: { building: "Science Building 4", rooms: "Room 302" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
+  tldr: "How neural networks are built and trained, what they learn, and why they generalize."
   icon: "assets/img/icons/study-deep-learning.svg"
   format: lectures
   reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
@@ -26,6 +28,7 @@ summer-2026:
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 spring-2026:
+  tldr: "How language models reason, learn from feedback, and use tools to act as agents."
   icon: "assets/img/icons/study-llm.svg"
   overview: "We study how a language model becomes a useful problem-solving system. The flow connects reasoning with training and feedback, then adds external knowledge and tools around the model."
   learning_path:
@@ -37,6 +40,7 @@ spring-2026:
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
+  tldr: "How one pretrained model learns to see, read, and generate images and video."
   icon: "assets/img/icons/study-foundation-models.svg"
   overview: "Foundation models reuse learned representations across tasks and modalities. We follow how neural networks grow from visual perception into systems that connect language and images, generate visual content, and benefit from scale."
   learning_path:

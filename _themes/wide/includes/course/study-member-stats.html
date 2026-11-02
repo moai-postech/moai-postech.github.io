@@ -12,7 +12,7 @@
   </dl>
   <div class="study-stat-breakdowns">
     <figure class="study-stat-panel">
-      <figcaption><h3>Members by cohort</h3><span class="study-stat-legend"><span class="is-new">New</span><span class="is-existing">Returning</span></span></figcaption>
+      <figcaption><h3>Participants by term</h3><span class="study-stat-legend"><span class="is-new">New</span><span class="is-existing">Returning</span></span></figcaption>
       <ol class="plain study-cohort-chart">
         {% for t in stats.terms reversed %}{% assign h = t.count | times: 100.0 | divided_by: max_count %}{% assign new_h = t.new | times: 100.0 | divided_by: t.count %}<li>
           <span class="study-cohort-track"><span class="study-cohort-bar" style="height: {{ h }}%" title="{{ t.number }}기 · {{ t.term }}: {{ t.new }} new, {{ t.existing }} returning">

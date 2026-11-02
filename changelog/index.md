@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [study-tldr-stages](2026-11-02-study-tldr-stages.md) | Sangwoo Mo(sangwoomo) | AI Study 학기 데이터, 검사 | tldr 를 학습 단계 순서·동사에 맞춤, DL 단계 범위에서 선택 회차 제외, `check_study_terms` 추가 |
 | 2026-11-02 | [study-path-trim](2026-11-02-study-path-trim.md) | Sangwoo Mo(sangwoomo) | AI Study Schedule | overview 문단 제거(tldr·카드와 중복), 단계 라벨에 `Sessions 1–6` 회차 범위 |
 | 2026-11-02 | [seminar-title-weight](2026-11-02-seminar-title-weight.md) | Sangwoo Mo(sangwoomo) | Seminar 굵기, AGENTS.md | 세미나 제목 500(새 토큰 `--weight-medium`), 연사 600, 둘 다 16px |
 | 2026-11-02 | [study-topic-icons](2026-11-02-study-topic-icons.md) | Sangwoo Mo(sangwoomo) | AI Study 주제 아이콘 둘 | 공통 기반과 reasoning에서 action으로 이어지는 흐름으로 재작성 |

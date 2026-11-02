@@ -267,7 +267,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 평소에는 빠르게 빌드하고 올린다. 전체 형식은 교수가 요청할 때만 한꺼번에 본다(교수 2026-10-30).
 
-- **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌린다. 시각 검토 기록은 push 를 막지 않는다.
+- **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`, `check_study_terms`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌린다. 시각 검토 기록은 push 를 막지 않는다.
 - **교수 계정 push 는 실패로 표시하지 않는다**(2026-11-02). 에이전트는 교수 계정으로 push 하므로, 실행이 실패하면 교수에게 GitHub 실패 메일이 간다. 그래서 `checks` 와 교수 계정의 `changelog` 검사는 문제를 실행 주석(warning)과 요약에만 남기고 성공으로 끝난다. 다른 사람의 push 와 PR 은 `changelog` 가 그대로 실패한다.
 - **push 한 뒤 한 번 본다**: push 한 사람이나 에이전트는 `gh run watch` 로 이번 `format`·`changelog` 실행을 보고, 주석에 경고가 있으면 고쳐서 다시 push 한다. 이 세션에서 못 고치면 루트 `TODO.md` 에 한 줄(검사, 실행 링크, 원인)을 남기고 사용자에게 알린다. push 전에 따로 돌릴 것은 없다(`python3 tools/check_changelog.py` 는 원하면 미리 돌려 볼 수 있다).
 - **전수 검사**: 교수가 요청할 때만 Actions 에서 `audit` 워크플로를 수동으로 돌린다. `check_design`, `check_format`, `check_typography`, `check_interaction` 을 포함한 모든 검사를 돌리고 모든 페이지·상태 화면을 고정 캡처하고, 배포를 막지 않는다. 실패해도 실행은 성공으로 끝나고 주석에 경고가 남는다. 그때는 artifact 의 로그와 갤러리를 보고 고친다.

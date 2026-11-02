@@ -1,7 +1,7 @@
 # 2026-11-02 Seminar: 모든 줄을 같은 회색 띠로
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/sections/seminar.html`, `_themes/wide/includes/theme.css`, `_themes/wide/includes/course/course.css` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: `AGENTS.md`, `tools/seminar_sync.py`, `_themes/wide/design-contract.json`, `_themes/wide/page-design.json`, `_themes/wide/includes/sections/seminar.html`, `_themes/wide/includes/theme.css`, `_themes/wide/includes/course/course.css` | 도구: Claude Code
 
-> **한줄 결론: 줄 바탕은 중립 회색 하나로 두고, 초청 발표는 왼쪽 안쪽의 짧은 코랄 막대로, 다 같이 하는 회차는 한 단계 옅은 띠와 회색 글자로 가른다.**
+> **한줄 결론: 세미나 목록을 랩 내부와 초청 두 가지로만 가른다. 줄 바탕은 중립 회색 하나, 초청 발표는 왼쪽 안쪽의 짧은 코랄 막대로 표시한다.**
 
 POSTECH 요구사항: 영향 없음
 
@@ -22,11 +22,20 @@ POSTECH 요구사항: 영향 없음
 - `theme.css`: `.kind-mark`(줄 안쪽 왼쪽 4px, 위아래 12px 여백, 폭 3px). 휴대폰은 카드 높이 전체에 선다. 범례용 막대 규칙.
 - 확인: 로컬 빌드에서 `measure`·`inspect` 로 seminar.html 1440·1280·768·390·320px 위반 0건. 데스크톱과 375px 화면을 눈으로 봤다.
 
+## 후속: 랩 내부·외부 두 가지로
+- 교수: Sharing Session 은 Everyone 이 아니지만 같은 양식이면 좋겠다. Everyone 과 아닌 것을 나눌 필요가 있나. 랩 내부와 외부 두 가지로 나누는 게 깔끔하다. 논문 발표가 아니면 슬라이드를 공유하지 않을 뿐이다.
+- `seminar.html`: 모든 줄 `tone-none`, `is-group` 클래스를 더 붙이지 않는다.
+- `theme.css`: 다 같이 하는 회차의 회색 글자·보통 굵기·날짜 강조 규칙을 지웠다.
+- `design-contract.json`·`page-design.json`: [seminar-group-role](2026-11-02-seminar-group-role.md)에서 나눈 `seminar-group-name` 역할을 지우고 `seminar-name` 을 `.schedule-speaker` 전체로 되돌렸다. 모든 이름이 다시 600 이다.
+- `seminar_sync.py`·`AGENTS.md`: `group` 데이터는 그대로 두되, 화면에서 흐리게 보인다는 설명을 같은 양식으로 고쳤다.
+- 확인: 로컬 빌드에서 `measure`·`inspect` 로 seminar.html 1440·1280·768·390·320px 위반 0건, `.is-group` 0개. 데스크톱 화면을 눈으로 봤다.
+
 ## 기각한 안과 이유
 - 초청 발표만 코랄([seminar-calm-tones](2026-11-02-seminar-calm-tones.md)): 외부 발표를 색으로 대조할 필요가 없다(교수). 소속 칸과 필터로 충분하다.
 - 초청 발표만 민트: 같은 이유. 하늘색·민트는 강의 일정의 Part 색이라 뜻도 겹친다.
 - 다 같이 하는 회차를 바탕 없이 얇은 테두리로: 흰 바탕에 회색 테두리가 어색하다(교수).
-- 세 종류 모두 같은 회색 띠: 구분이 너무 안 간다(교수).
+- 세 종류 모두 같은 회색 띠(초청 표시 없이): 구분이 너무 안 간다(교수).
+- 다 같이 하는 회차를 옅은 띠·회색 글자로 따로 표시: 랩 내부 회차를 둘로 나눌 이유가 없다. 슬라이드 유무만 다르다(교수).
 - 초청 발표를 하늘색·민트 등 다른 띠 색으로: 칠한 면적이 커서 대비가 시끄럽고, 하늘색·민트는 서로 비슷해 구분도 약하다(교수 동의).
 
 ## 남은 것

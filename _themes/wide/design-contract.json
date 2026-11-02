@@ -158,18 +158,10 @@
     },
     {
       "id": "seminar-name",
-      "selector": "tr:not(.is-group) > .schedule-speaker",
+      "selector": ".schedule-speaker",
       "style": {
         "fontSize": "var(--text-meta)",
         "fontWeight": "var(--weight-emphasis)"
-      }
-    },
-    {
-      "id": "seminar-group-name",
-      "selector": "tr.is-group > .schedule-speaker",
-      "style": {
-        "fontSize": "var(--text-meta)",
-        "fontWeight": "var(--weight-regular)"
       }
     },
     {

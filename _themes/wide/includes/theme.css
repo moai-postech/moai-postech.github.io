@@ -344,6 +344,9 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule-aff { width: 1%; padding-left: var(--space-6) !important; color: var(--muted); font-size: var(--text-meta); text-align: right; white-space: nowrap; }  /* right-aligned so it sits next to the name */
 .schedule .is-group td, .schedule .is-group a { color: var(--muted); }  /* sessions the whole lab runs together (Monthly Sync, Internal Review, conference sharing): shown, but lighter than talks (2026-11-02) */
 .schedule .is-group .schedule-speaker { font-weight: var(--weight-regular); }
+.schedule tr.is-group > td { box-shadow: inset 0 1px 0 var(--line), inset 0 -1px 0 var(--line); }  /* unfilled whole-lab rows keep the band's edge as a hairline, so every row reads as one band */
+.schedule tr.is-group > td:first-child { box-shadow: inset 1px 1px 0 var(--line), inset 0 -1px 0 var(--line); }
+.schedule tr.is-group > td:last-child { box-shadow: inset -1px 1px 0 var(--line), inset 0 -1px 0 var(--line); }
 .schedule .is-group.is-upcoming .schedule-date { color: var(--accent); }  /* an upcoming whole-lab session still gets the accent date */
 .schedule [hidden] { display: none; }
 
@@ -485,9 +488,11 @@ a.person-name:hover { color: var(--accent); }
   .schedule, .schedule tbody, .schedule tr, .schedule td, .schedule th { display: block; width: auto; }
   .schedule tr[hidden] { display: none; }
   .schedule tr:not(.schedule-year) { margin-bottom: var(--space-1); padding: var(--space-3); border-radius: var(--radius-1); background: var(--tone-row); }
-  .schedule-year th { line-height: var(--leading-group); padding: var(--section-gap) 0 var(--space-4); }  /* rows are filled cards here, so the year keeps the plain group gaps */
+  .schedule-year th { line-height: var(--leading-group); padding: calc(var(--section-gap) - var(--space-1)) 0 var(--space-4); }  /* cards here: the card above already leaves its --space-1 margin, so the year keeps the plain group gaps from card edge to card edge */
   .schedule tr[data-kind] > td, .schedule tr[data-kind] > td:first-child, .schedule tr[data-kind] > td:last-child { padding: 0 !important; background: none; box-shadow: none; border-radius: 0; }  /* the card carries fill and padding */
   .schedule td { padding: 0 !important; text-align: left; white-space: normal; }
+  .schedule tr.is-group > td { box-shadow: none !important; }
+  .schedule tr.is-group { box-shadow: inset 0 0 0 1px var(--line); }  /* the card edge as a hairline, as on wide screens */
   .schedule tr[data-kind]:not([hidden]) { display: flex; flex-wrap: wrap; align-items: baseline; }
   .schedule td.schedule-date, .schedule td.schedule-title { flex-basis: 100%; }
   .schedule td.schedule-speaker, .schedule td.schedule-aff { margin-top: 2px; }  /* name first, affiliation after it on one line, though the affiliation comes first in the row (td. beats .schedule td above) */

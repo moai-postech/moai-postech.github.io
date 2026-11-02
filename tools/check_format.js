@@ -42,6 +42,9 @@ function measure({ TOL, adjustments }) {
   // 잎 요소: 보이는 자식 요소가 없고 글자가 있거나 그림인 것. 한 항목(li, tr, 카드)의 잎들은 함께 본다
   const leaves = [...main.querySelectorAll('*')].filter(e => visible(e) && (e.tagName === 'IMG' || e.textContent.trim()) && ![...e.children].some(visible));
   const ITEM = 'li, tr, .person, figure';
+  // 색 띠·테두리로 그린 표 줄(세미나, 강의 일정)은 띠 가장자리가 항목의 경계다. 띠 안쪽 여백은 묶음 간격에 넣지 않는다
+  const BAND = '.schedule tr[data-kind], .course-schedule tbody tr:not(.course-part-row)';
+  const edge = (leaf, side) => { const band = leaf.closest(BAND); return band ? band.getBoundingClientRect()[side] : null; };
   // 글줄 하나의 상자: 인라인 요소는 글자 높이만 잡히므로 가장 가까운 블록(표 칸 포함)까지 올라간다
   const block = el => { while (el !== main && getComputedStyle(el).display.startsWith('inline')) el = el.parentElement; return el; };
   const group = leaf => { const it = leaf.closest('.people-grid') || leaf.closest(ITEM); return (it ? leaves.filter(l => it.contains(l)) : [leaf]).map(block); };
@@ -55,11 +58,11 @@ function measure({ TOL, adjustments }) {
     // 묶음 제목: 아래 첫 항목과 --space-4, 앞 묶음의 마지막 항목과 --section-gap
     const hb = content(h);
     const after = leaves.find(l => !h.contains(l) && !l.contains(h) && (h.compareDocumentPosition(l) & Node.DOCUMENT_POSITION_FOLLOWING));
-    if (after) { const below = Math.min(...group(after).map(l => content(l).top)) - hb.bottom;
+    if (after) { const below = (edge(after,'top') ?? Math.min(...group(after).map(l => content(l).top))) - hb.bottom;
       if (Math.abs(below - tok.below) > TOL) problems.push(`"${name}" 아래 간격 ${Math.round(below)}px (규칙 ${tok.below}px)`); }
     const before = [...leaves].reverse().find(l => !h.contains(l) && !l.contains(h) && (h.compareDocumentPosition(l) & Node.DOCUMENT_POSITION_PRECEDING));
     // 앞이 목록 항목일 때만 잰다. 소개 문단이나 하위 탭 바로 아래 첫 묶음은 페이지 머리 간격을 따른다
-    if (before && before.closest(ITEM)) { const above = hb.top - Math.max(...group(before).map(l => content(l).bottom));
+    if (before && before.closest(ITEM)) { const above = hb.top - (edge(before,'bottom') ?? Math.max(...group(before).map(l => content(l).bottom)));
       if (Math.abs(above - tok.sectionGap) > TOL) problems.push(`"${name}" 위 간격 ${Math.round(above)}px (규칙 ${tok.sectionGap}px)`); }
   }
   // Text sizes/weights, including page adaptations, are checked by check_design.js.

@@ -101,7 +101,7 @@ tools/               검사 스크립트(check_changelog.py: 기록·안건·서
 Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` 의 `sheet`)와 랩 세미나 Drive 폴더다(교수 2026-10-26). 학생이 시트와 Drive 만 고치면 GitHub Actions(`seminar-sync`)가 매일 06:00 KST 에 사이트를 고치고, 바뀐 것이 있으면 `format` 을 불러 배포까지 한다. 저장소의 `_data/seminar.yml`, `assets/seminar/` 를 손으로 고치면 다음 동기화에 덮어쓰인다.
 
 1. 슬라이드를 Drive 폴더의 그해 폴더에 올린다. PDF 를 권장한다(pptx 도 받지만 LibreOffice 로 바꿔 글꼴이 달라질 수 있다). 파일 이름은 `yymmdd_짧은제목.pdf`.
-2. 시트의 그 날짜 행에 `topic`(발표 제목), `slide`(올린 파일 이름), `name_en`(영문 이름, `_data/members.yml` 과 같은 표기)을 채운다. **`name_en` 을 채운 행만 사이트에 나온다.** 시험, 휴식, 공개 전 연구(코드명)는 비워 둔다.
+2. 시트의 그 날짜 행에 `topic`(발표 제목), `slide`(올린 파일 이름), `name_en`(영문 이름, `_data/members.yml` 과 같은 표기)을 채운다. **`name_en` 을 채운 행만 사이트에 나온다.** 시험, 휴식, 공개 전 연구(코드명)는 비워 둔다. 다 같이 하는 회차(Monthly Sync, Internal Review, 학회 공유)는 `name`·`name_en` 에 `everyone`·`Everyone` 을 넣는다. 사이트에 나오되 줄이 회색으로 흐리게 보인다(교수 2026-11-02).
 3. 초청 발표는 `affiliation_en`(영문 소속), `slide` 칸에 연사 홈페이지, `paper` 에 연사의 해당 논문(arXiv 초록 주소, 여러 개면 연사가 1저자인 대표 하나)을 채운다. 외부 연사 슬라이드는 올리지 않는다. 인턴처럼 People 에 없는 랩 발표자는 `homepage` 에 본인 홈페이지를 넣는다.
 4. 바로 보고 싶으면 GitHub 의 Actions > seminar-sync > Run workflow 를 누른다. 손으로 돌리면 바뀐 것이 없어도 배포까지 하고, 5분 안팎 뒤 반영된다. 슬라이드를 못 찾으면 실행 기록에 경고가 남는다.
 

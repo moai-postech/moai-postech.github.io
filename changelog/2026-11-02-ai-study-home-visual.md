@@ -47,3 +47,4 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말·강의 바닥은 그�
 - `STUDY.md` 의 Members 절을 새 구성으로 고쳤다.
 - 기각한 안: 기수 탭에서 Participation 열을 아예 빼는 안은 열 폭이 다시 나뉘어 탭 전환 때 열이 움직여(전역 규칙) 빈 자리로 남겼다. 기수 탭을 가입 기수 기준으로 나누는 안은 Home 의 기수별 인원(참여자 수)과 숫자가 달라 참여자 기준으로 했다.
 - 후속: 배포 뒤 `checks` 에서 `test_design`·`check_study_members` 가 가상 명단 로더의 `#member-full-list table` 선택자(탭이 생겨 표가 둘)로 실패했다. 로더는 `#members-all table`, test_design 의 행 수는 `#members-all tbody tr`, 기억된 접근 검사(`lib/study-access-check.js`)는 `#members-all .study-members-table` 로 고쳤다. 이 맥에서는 Chromium 이 실행되지 않아 CI 로 확인했다.
+- 후속(전수 검사 `audit`): Home 의 학기 카드 제목과 그래프 숫자를 `<strong>` 700 으로 써서 `check_design`(문단 강조 역할은 600)과 `check_typography`(학과 칸 숫자 행간 1.0)에 걸렸다. 카드 제목은 사이트의 카드 제목 역할(`card-heading`, 16px·600, `design-contract.json` 선택자에 `.study-term-title` 추가)로, 숫자는 `.study-chart-value`(행간 1.2)로 바꿨다. 기각한 안: 카드 제목을 묶음 제목(`group-heading`, 19px)으로 두는 안은 묶음 제목의 위아래 간격 규칙(위 64px)이 카드 안에서 맞지 않아 버렸다. 같은 실행의 `check_study_members` 실패는 앞 후속에서 고친 선택자 문제다.

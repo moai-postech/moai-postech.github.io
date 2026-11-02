@@ -17,7 +17,7 @@
       <ol class="plain study-cohort-chart">
         {% for t in stats.terms reversed %}{% assign h = t.count | times: 100.0 | divided_by: max_count %}{% assign new_h = t.new | times: 100.0 | divided_by: t.count %}<li>
           <span class="study-cohort-track"><span class="study-cohort-bar" style="height: {{ h }}%" title="{{ t.number }}기 · {{ t.term }}: {{ t.new }} new, {{ t.existing }} returning">
-            <strong>{{ t.count }}</strong>
+            <span class="study-chart-value">{{ t.count }}</span>
             <span class="is-existing" style="flex-grow: {{ t.existing }}"></span><span class="is-new" style="flex-grow: {{ t.new }}"></span>
           </span></span>
           <span class="study-cohort-label"><b>{{ t.number }}기</b>{{ t.term }}</span>
@@ -28,7 +28,7 @@
     <figure class="study-stat-panel">
       <figcaption><h3>Departments</h3></figcaption>
       <ul class="plain study-dept-map" data-total="{{ stats.total }}">
-        {% for d in stats.departments %}{% assign ko = d.name | split: "(" | first %}{% assign en = d.name | remove_first: ko | remove: "(" | remove: ")" %}<li data-count="{{ d.count }}" title="{{ d.name }}: {{ d.count }}"><span>{{ ko }}{% if en != "" %}<small>({{ en }})</small>{% endif %}</span><strong>{{ d.count }}</strong></li>{% endfor %}
+        {% for d in stats.departments %}{% assign ko = d.name | split: "(" | first %}{% assign en = d.name | remove_first: ko | remove: "(" | remove: ")" %}<li data-count="{{ d.count }}" title="{{ d.name }}: {{ d.count }}"><span>{{ ko }}{% if en != "" %}<small>({{ en }})</small>{% endif %}</span><span class="study-chart-value">{{ d.count }}</span></li>{% endfor %}
       </ul>
     </figure>
   </div>

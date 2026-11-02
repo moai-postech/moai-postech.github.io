@@ -10,7 +10,7 @@ POSTECH 요구사항: 영향 없음
 
 ## 반영 내역
 - cron `0 21 * * *`, `30 21 * * *` → `0 21 * * 0-6`, `30 21 * * 0-6`. 같은 일정이다.
-- 진짜 실패는 봇 맥 vault-sync 가 mac-health 에 올리고 클라우드 meeting-notes 가 Slack DM 한다(`~/Documents/Agents/changelog/2026-11-02-github-failure-mail.md`).
+- 실패는 메일 없이 GitHub 웹 알림에만 남는다(`~/Documents/Agents/changelog/2026-11-02-github-failure-mail.md`).
 
 ## 기각한 안과 이유
 - moai-postech 알림 설정 변경: 그 계정 로그인이 필요하고, 다음에 누가 cron 을 고치면 다시 갈라진다.

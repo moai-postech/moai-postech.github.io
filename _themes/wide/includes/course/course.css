@@ -445,7 +445,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-stat-summary > div { display: flex; align-items: baseline; gap: var(--space-2); }  /* 39 members since Fall 2025 */
 .study-stat-summary dt { color: var(--muted); font-size: var(--text-meta); }
 .study-stat-summary dd { margin: 0; font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; }
-.study-stat-breakdowns { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-8); margin-top: var(--space-5); }
+.study-stat-breakdowns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8); margin-top: var(--space-5); }
 .study-stat-panel { margin: 0; }
 .study-stat-panel figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
 .study-stat-panel h3 { margin: 0; }

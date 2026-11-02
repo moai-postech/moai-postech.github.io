@@ -20,3 +20,10 @@
 ## 확인
 - 로컬 빌드 1280px 화면, 내장 브라우저에서 계약 규칙(주제 발표 500/600, routine 400·회색) 계산 통과. `check_study_terms`, `check_guest_titles` 통과. `test_design` 은 로컬 샌드박스에서 Chromium 이 뜨지 않아 push 뒤 CI 결과로 확인한다.
 - 읽은 규칙: 저장소 `AGENTS.md`, 템플릿 주석, `seminar_sync.py` 머리.
+
+## 추가: 연사를 Lab members 로 통일, Paper Review Session 포함
+요청(교수): Paper Review Session 처럼 연사가 둘인 것은 Lab members 로. Sharing Session, Review Session, Monthly Sync 도 전부 Lab members 로 통일. 시트에는 지금처럼 담당자를 써도 되고 사이트에서만 그렇게.
+
+- `seminar_sync.py`: `ROUTINE_TITLE` 에 `Review Session` 을 더했다(2026-03-12 Paper Review Session, 연사 Eunchan Jo, Suchan Lee). `ROUTINE_SPEAKER = "Lab members"`. 사이트 데이터를 쓰는 `write_yaml` 에서만 연사를 바꾸고, 슬라이드 PDF 정보(Author)에는 시트 담당자가 남는다.
+- `_data/seminar.yml`: routine 13회차의 speaker 를 `Lab members` 로. 실제 시트를 같은 `parse_talks` 로 읽어 routine 여부와 speaker 값이 모든 회차에서 일치함을 확인했다.
+- 템플릿 주석에 같은 내용을 적었다. Lab members 는 People 에 없는 이름이라 링크가 붙지 않는다.

@@ -4,15 +4,18 @@
 # name_en 을 채운 행만 사이트에 나온다. affiliation_en 이 있으면 초청 발표다(외부 연사 슬라이드는 공개하지 않는다, 교수 원칙).
 # 제목 링크: slides(랩 발표, assets/seminar/ 의 PDF)가 있으면 그것, 없으면 paper(연사의 해당 논문, 여러 개면 연사가 1저자인 대표 하나). 교수 2026-10-26.
 # 연사 이름 링크: url(초청 연사와 인턴의 홈페이지), 없으면 랩 멤버는 People 의 그 사람 자리(템플릿이 자동).
-# group: 다 같이 하는 회차(Monthly Sync, Internal Review, 학회 공유). 시트 name_en 이 Everyone 이면 붙고, 목록에서 흐리게 보인다. 교수 2026-11-02.
+# group: 다 같이 하는 회차(Monthly Sync, Internal Review, 학회 공유). 시트 name_en 이 Everyone 이면 붙는다.
+# routine: 특정 주제 발표가 아닌 회차. group 이거나 제목에 Monthly Sync·Internal Review·Sharing Session 이 있으면 붙고, 그 행의 제목과 연사 이름을 회색 보통 굵기로 둔다(Sharing Session 발표자 이름도 Everyone 과 같게, 교수 2026-11-02).
 
 sheet: "https://docs.google.com/spreadsheets/d/1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U/edit"
 talks:
   - date: "2026-12-23"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "Monthly Sync"
   - date: "2026-12-16"
+    routine: true
     speaker: "Myeongsoo Kim"
     title: "NeurIPS 2026 Sharing Session"
   - date: "2026-12-02"
@@ -26,6 +29,7 @@ talks:
     speaker: "Suchan Lee"
     title: "Diffusion Will Be Everywhere"
   - date: "2026-11-12"
+    routine: true
     speaker: "Gyeom Hwangbo"
     title: "EMNLP 2026 Sharing Session"
   - date: "2026-11-04"
@@ -44,6 +48,7 @@ talks:
     paper: "https://arxiv.org/abs/2602.02977"
   - date: "2026-10-21"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "AI Workflow Sharing Session"
   - date: "2026-10-15"
@@ -59,22 +64,27 @@ talks:
     slides: "assets/seminar/2026-10-07-reasoning-intuition-jev.pdf"
   - date: "2026-09-23"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "Internal Review"
   - date: "2026-09-16"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "Internal Review"
   - date: "2026-09-09"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "Internal Review"
   - date: "2026-09-02"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "ALIN Workshop Sharing Session"
   - date: "2026-08-12"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "Monthly Sync"
   - date: "2026-08-05"
@@ -97,10 +107,12 @@ talks:
     slides: "assets/seminar/2026-07-22-memeye.pdf"
   - date: "2026-07-15"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "ICML Sharing Session"
   - date: "2026-07-01"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "Monthly Sync"
   - date: "2026-06-24"
@@ -125,6 +137,7 @@ talks:
     slides: "assets/seminar/2026-05-14-tabpfn-2-5.pdf"
   - date: "2026-04-29"
     group: true
+    routine: true
     speaker: "Everyone"
     title: "Monthly Sync"
   - date: "2026-04-23"

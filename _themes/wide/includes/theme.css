@@ -342,6 +342,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule-speaker { width: 1%; padding-left: var(--space-4) !important; font-size: var(--text-body); font-weight: var(--weight-emphasis); white-space: nowrap; }  /* names left-aligned in the last column, so they line up at the right end */
 .schedule-speaker a { color: var(--text); }
 .schedule-speaker a:hover { color: var(--accent); }
+.schedule tr.is-routine :is(.schedule-title, .schedule-speaker), .schedule tr.is-routine :is(.schedule-title, .schedule-speaker) a { color: var(--muted); font-weight: var(--weight-regular); }  /* not a topic talk (Monthly Sync, reviews, sharing sessions): title and name step back (교수 2026-11-02) */
 .schedule-aff { width: 1%; padding-left: var(--space-6) !important; color: var(--muted); font-size: var(--text-meta); text-align: right; white-space: nowrap; }  /* right-aligned so it sits next to the name */
 .schedule [hidden] { display: none; }
 

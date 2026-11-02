@@ -43,4 +43,25 @@
     </section>
 
 {% include course/study-tabs.html %}
+<script>
+// Light interactions on the term panels (교수 2026-11-02): the next dated session gets the course schedules' "next class" frame,
+// and hovering a learning stage tints the session rows it covers. Nothing is selected or filtered; moving away restores the table.
+(function () {
+  var today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+  document.querySelectorAll('.study-panel').forEach(function (panel) {
+    var rows = Array.prototype.slice.call(panel.querySelectorAll('tr[data-session]'));
+    for (var i = 0; i < rows.length; i++) {
+      var t = rows[i].querySelector('time');
+      if (t && t.getAttribute('datetime') >= today) { rows[i].classList.add('is-next'); break; }
+    }
+    panel.querySelectorAll('.study-learning-path li[data-sessions]').forEach(function (step) {
+      var r = step.getAttribute('data-sessions').split('-').map(Number);
+      var mine = rows.filter(function (row) { var n = Number(row.getAttribute('data-session')); return n >= r[0] && n <= r[1]; });
+      var on = function () { step.classList.add('is-linked'); mine.forEach(function (row) { row.classList.add('is-step-linked'); }); };
+      var off = function () { step.classList.remove('is-linked'); mine.forEach(function (row) { row.classList.remove('is-step-linked'); }); };
+      step.addEventListener('mouseenter', on); step.addEventListener('mouseleave', off);
+    });
+  });
+})();
+</script>
 

@@ -47,7 +47,7 @@ node tools/visual_review.js record --bundle .agent-memory/visual-review/candidat
 
 ## CI와 배포
 
-`format`은 main push·PR마다 빌드하고, main이면 `deploy`가 바로 `_site`를 GitHub Pages(`build_type: workflow`)에 올린다. 같은 워크플로의 `checks`가 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`)를 배포와 나란히 돌린다. 시각 검토 기록은 요구하지 않는다.
+`format`은 main push·PR마다 빌드하고, main이면 `deploy`가 바로 `_site`를 GitHub Pages(`build_type: workflow`)에 올린다. 같은 워크플로의 `checks`가 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`)를 배포와 나란히 돌린다. 시각 검토 기록은 요구하지 않는다.
 
 `audit`은 요청할 때만 수동으로 실행하며 `prepare`로 전체 자동 검사와 고정 캡처를 만들고 갤러리·로그를 artifact로 14일 보관한다. 배포를 막지 않는다. 공통 pre-push 훅은 설치 전 훅만 실행하고, 옛 훅이 부르는 `gate`는 막지 않고 통과한다.
 

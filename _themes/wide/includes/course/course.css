@@ -104,7 +104,7 @@
 .is-break .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
 .cs-session { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 0 var(--space-5); }
 .cs-speaker-name { color: var(--text); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
-a.cs-speaker-name:hover, a.cs-speaker-link:hover { color: var(--accent); }
+a.cs-speaker-name:hover { color: var(--accent); }
 .cs-session-meta { display: block; color: var(--muted); font-size: var(--text-meta); text-align: right; }
 .cs-session-meta > span { display: block; }  /* location, then time, one per line like the course Home, at the right end */
 .cs-session-time { color: var(--tone); font-weight: var(--weight-emphasis); }

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-02 | [guest-title-rule](2026-11-02-guest-title-rule.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄 초청 행, 검사 | 1줄 제목·2줄 연사 고정, 제목 없으면 check_guest_titles 실패로 알림 |
 | 2026-11-02 | [sync-deploy](2026-11-02-sync-deploy.md) | Sangwoo Mo(sangwoomo) | 동기화 워크플로 | seminar-sync·ai-study-sync 가 push 뒤 format 을 불러 배포까지 |
 | 2026-11-02 | [seminar-sync](2026-11-02-seminar-sync.md) | GitHub Actions(seminar-sync) | Seminar | 랩 세미나 시트에서 자동 동기화 |
 | 2026-11-02 | [project-page-polish](2026-11-02-project-page-polish.md) | Sangwoo Mo(sangwoomo) | 강의 Project 페이지 | Final 문구 두 줄, 평가 머리 한 줄, PDF 날짜 아래, 하이라이트 16:9·AX 점수 그래프 |

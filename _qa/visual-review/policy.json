@@ -18,6 +18,7 @@
     "check_selection",
     "check_interaction",
     "check_study_members",
+    "check_guest_titles",
     "check_postech"
   ],
   "rubric": {

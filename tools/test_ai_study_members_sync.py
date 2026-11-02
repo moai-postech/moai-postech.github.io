@@ -9,6 +9,16 @@ class MembersConversion(unittest.TestCase):
                        '1기 (Fall 2025)', '2기 (Spring 2026)']
         self.person = [1, '24', '무은재', 'Example Student', 'example', True, True]
 
+    def test_members_sort_by_cohort_year_department_then_name(self):
+        rows = [self.header,
+                [1, '24', '컴공', '나', 'b', True, False],
+                [1, '24', '물리', '다', 'c', True, False],
+                [1, '24', '산경', '라', 'd', True, False],
+                [1, '23', '컴공', '마', 'e', True, False],
+                [1, '24', '산경', '가', 'a', True, False]]
+        names = [m['name'] for m in convert(rows)[0]['members']]
+        self.assertEqual(names, ['마', '가', '라', '다', '나'])
+
     def test_old_sheet_with_role_column_reads_the_same(self):
         old = [self.header[:5] + ['역할'] + self.header[5:],
                self.person[:4] + ['example@postech.ac.kr', '2기 대표'] + self.person[5:]]

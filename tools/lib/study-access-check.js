@@ -3,7 +3,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { chromium } = require('playwright');
-const { syntheticDirectoryHTML } = require('./design-fixture');
+const { syntheticDirectoryHTML, forgetAccess } = require('./design-fixture');
 const assert = (ok, message) => { if (!ok) throw new Error(message); };
 
 async function checkRememberedAccess(base) {
@@ -24,7 +24,7 @@ async function checkRememberedAccess(base) {
   };
   const unlocked = async page => {
     await page.locator('.study-members-table').waitFor();
-    await page.waitForFunction(() => !document.querySelector('#lock-member-list').disabled);
+    await page.locator('#member-full-list[data-access]').waitFor({ state: 'attached' });
   };
   try {
     let page = await start();
@@ -70,7 +70,7 @@ async function checkRememberedAccess(base) {
     await page.locator('#member-password').fill('changed-fixture-password');
     await page.getByRole('button', { name: 'Unlock', exact: true }).click();
     await unlocked(page);
-    await page.getByRole('button', { name: 'Lock', exact: true }).click(); await locked(page);
+    await forgetAccess(page, url); await locked(page);
     page = await context.newPage();
     await page.addInitScript(() => {
       IDBObjectStore.prototype.put = () => { throw new DOMException('Fixture storage error', 'DataCloneError'); };
@@ -79,7 +79,6 @@ async function checkRememberedAccess(base) {
     await page.locator('#member-password').fill('changed-fixture-password');
     await page.getByRole('button', { name: 'Unlock', exact: true }).click(); await unlocked(page);
     await page.getByRole('status').filter({ hasText: 'could not remember access' }).waitFor();
-    await page.getByRole('button', { name: 'Lock', exact: true }).click(); await locked(page);
     await page.reload(); await locked(page);
     await context.close(); context = null;
     page = await start(); await page.goto(url); await locked(page);
@@ -89,7 +88,7 @@ async function checkRememberedAccess(base) {
     await page.getByRole('button', { name: 'Unlock', exact: true }).click();
     await unlocked(page);
     await page.getByRole('status').filter({ hasText: 'could not remember access' }).waitFor();
-    await page.getByRole('button', { name: 'Lock', exact: true }).click(); await locked(page);
+    await page.reload(); await locked(page);
   } finally {
     if (context) await context.close();
     fs.rmSync(profile, { recursive: true, force: true });

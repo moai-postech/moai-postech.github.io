@@ -37,3 +37,12 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말·강의 바닥은 그�
 - 교수가 비밀번호를 알려 줘 새 시트(역할 열 없음, 연락처 아이디, IT융합, 1기부터)로 전체 동기화를 돌렸다. 같은 비밀번호라 salt·반복 수는 그대로, IV 와 암호문만 바뀌어 방문자 브라우저의 열람 권한이 이어진다.
 - 로컬에서 풀어 39명, 1기부터 시트 순서, 학과 `산경(IME)` 형식, 메일 아이디 표시를 확인했다.
 - 비밀번호는 공개 저장소에 적지 않고 Git 밖 개인 기록(`academic-profile/.agent-memory/ai-study-members.md`)에 남겼다. 기각한 안: 저장소 md 에 적는 안은 공개 저장소라 누구나 명단을 풀 수 있어 버렸다.
+
+## 추가: Members 탭·정렬·표기
+요청(교수): Full list 정렬을 기수 → 학번 → 학과(산경 먼저, 나머지 가나다) → 이름 가나다로. Full list 학과는 한글만. `POSTECH Email ID` → `POSTECH Email`. 메일이 짧으니 Participation 을 왼쪽으로. Lock 버튼은 빼기(한 번 열면 캐시를 지울 때까지 유지). Cohorts·Full List 묶음 대신 `Full list | 1기 | 2기 | …` 탭, 기수 탭은 그 학기 참여자만, Participation 없이, 학생대표를 색 있는 첫 줄로.
+- `tools/ai_study_members_sync.py`: `member_order` 로 위 순서 정렬(테스트 추가, 10개 통과). 시트도 같은 순서로 다시 정렬하고 암호문을 다시 만들었다(시트와 암호문 행 순서 일치 확인).
+- `assets/study-members.js`: Cohorts 이름 묶음을 빼고 탭(좌우 화살표·Home·End, 주소에 `#members-4` 처럼 남음). 기수 탭은 Participation 열 자리를 비워 두어 탭을 바꿔도 열 위치가 같다(1280px 에서 좌표 일치 확인). 대표는 `_data/ai_study_terms.yml` 의 `representative.email` 아이디로 찾아 첫 줄, 연한 강조색 행, Representative 표시. Lock 버튼과 그 동작 삭제.
+- 열 폭: Email 35% → 18%, Name 12% → 19%(대표 표시 한 줄), Participation 37%.
+- 검사(`check_study_members.js`, `check_design.js`, `test_design.js`, `visual_review.js`, `lib/study-access-check.js`): Lock 대신 브라우저 저장소를 지우는 `forgetAccess` 로 잠금 상태를 만들고, 탭·열 위치·Lock 부재를 확인하도록 바꿨다.
+- `STUDY.md` 의 Members 절을 새 구성으로 고쳤다.
+- 기각한 안: 기수 탭에서 Participation 열을 아예 빼는 안은 열 폭이 다시 나뉘어 탭 전환 때 열이 움직여(전역 규칙) 빈 자리로 남겼다. 기수 탭을 가입 기수 기준으로 나누는 안은 Home 의 기수별 인원(참여자 수)과 숫자가 달라 참여자 기준으로 했다.

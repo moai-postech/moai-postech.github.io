@@ -4,11 +4,9 @@
   const form = document.getElementById('member-unlock-form');
   const input = document.getElementById('member-password');
   const list = document.getElementById('member-full-list');
-  const lock = document.getElementById('lock-member-list');
   const message = document.getElementById('member-unlock-message');
   const submit = form.querySelector('button');
   const data = JSON.parse(document.getElementById('member-encrypted-data').textContent);
-  let accessRemembered = false;
   const decode = value => Uint8Array.from(atob(value), c => c.charCodeAt(0));
   // IndexedDB can retain a non-exportable CryptoKey without storing the password or member details.
   function savedAccess(mode, value) {
@@ -36,61 +34,98 @@
     if (className) node.className = className;
     return node;
   };
-  // Same table as DEPARTMENTS in tools/ai_study_members_sync.py: Korean short name with the English one.
-  const DEPARTMENTS = { '산경': 'IME', '컴공': 'CSE', '무은재': 'Freshmen', '전전': 'EE', '물리': 'Physics', '수학': 'Mathematics', 'IT융합': 'CITE' };
+  // The Full List shows the sheet's Korean department name only (2026-11-02); old spellings are unified.
   const ALIASES = { 'IT융공': 'IT융합', 'Mueunjae': '무은재', 'Undeclared': '무은재' };
-  const departmentLabel = name => { const ko = ALIASES[name] || name; return DEPARTMENTS[ko] ? ko + '(' + DEPARTMENTS[ko] + ')' : ko; };
-  function render(cohorts) {
-    const ordered = [...cohorts].sort((a, b) => a.number - b.number);  // the sheet's row order: 1기 first (2026-11-02)
-    const overview = element('section', undefined, 'study-cohort-overview');
-    overview.append(element('h2', 'Cohorts'));
-    const groups = element('div', undefined, 'study-cohort-grid');
-    for (const cohort of ordered) {
-      const group = element('section', undefined, 'study-cohort-group');
-      group.append(element('h3', cohort.number + '기', 'group-heading'));
-      group.append(element('p', [cohort.term, cohort.members.length + (cohort.members.length === 1 ? ' member' : ' members')].filter(Boolean).join(' · '), 'course-note study-cohort-meta'));
-      const names = element('ul', undefined, 'plain study-cohort-names');
-      for (const member of cohort.members) names.append(element('li', member.name));
-      group.append(names); groups.append(group);
-    }
-    overview.append(groups);
-    const full = element('section', undefined, 'study-directory-full');
-    full.append(element('h2', 'Full List'));
-    const table = element('table', undefined, 'study-members-table');
-    table.append(element('caption', 'Study members by joining cohort, first cohort first', 'visually-hidden'));
+  const departmentLabel = name => ALIASES[name] || name;
+  // Each term's student representative, by POSTECH ID (public on the Schedule page).
+  const representatives = JSON.parse(document.getElementById('member-representatives').textContent || '{}');
+  const LABELS = ['Cohort', 'Entry', 'Department', 'Name', 'POSTECH Email', 'Participation'];
+  function table(people, caption, termTab, rep) {
+    const t = element('table', undefined, 'study-members-table');
+    t.append(element('caption', caption, 'visually-hidden'));
+    // Term tables keep the Participation column slot empty so every column stays where it is in Full list.
     const cols = element('colgroup');
     for (const name of ['cohort', 'year', 'department', 'name', 'email', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
-    table.append(cols);
     const head = element('thead'), header = element('tr');
-    const labels = ['Cohort', 'Entry', 'Department', 'Name', 'POSTECH Email ID', 'Participation'];
-    for (const label of labels) { const th = element('th', label); th.scope = 'col'; header.append(th); }
-    head.append(header); table.append(head);
+    LABELS.forEach((label, i) => {
+      const th = element('th', termTab && i === 5 ? '' : label); th.scope = 'col';
+      if (termTab && i === 5) th.setAttribute('aria-hidden', 'true');
+      header.append(th);
+    });
+    head.append(header); t.append(cols, head);
     const body = element('tbody');
-    for (const cohort of ordered) {
-      for (const member of cohort.members) {
-        const row = element('tr');
-        const year = /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : member.entry_year;
-        const department = departmentLabel(member.department);
-        const values = [cohort.number + '기', year, department, member.name, member.email.split('@')[0]];
-        values.forEach((value, index) => {
-          const cell = element(index === 3 ? 'th' : 'td', value, index === 4 ? 'study-member-email' : undefined);
-          if (index === 3) cell.scope = 'row';
-          cell.dataset.label = labels[index]; row.append(cell);
-        });
-        const cell = element('td'); cell.dataset.label = labels[5];
+    for (const member of people) {
+      const id = member.email.split('@')[0];
+      const row = element('tr', undefined, rep && id === rep ? 'is-representative' : undefined);
+      const year = /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : member.entry_year;
+      const values = [member.cohort + '기', year, departmentLabel(member.department), member.name, id];
+      values.forEach((value, index) => {
+        const cell = element(index === 3 ? 'th' : 'td', value, index === 4 ? 'study-member-email' : undefined);
+        if (index === 3) {
+          cell.scope = 'row';
+          if (row.className) cell.append(element('span', 'Representative', 'study-member-role'));
+        }
+        cell.dataset.label = LABELS[index]; row.append(cell);
+      });
+      const cell = element('td'); cell.dataset.label = LABELS[5];
+      if (!termTab) {
         const markers = element('span', undefined, 'study-member-markers');
         for (const n of member.participation) markers.append(element('span', n + '기', 'study-member-marker'));
-        cell.append(markers); row.append(cell); body.append(row);
+        cell.append(markers);
       }
+      row.append(cell); body.append(row);
     }
-    table.append(body); full.append(table); list.replaceChildren(overview, full);
+    t.append(body);
+    return t;
+  }
+  function render(cohorts) {
+    // The roster arrives in the sheet's row order (cohort, entry year, department, name).
+    const ordered = [...cohorts].sort((a, b) => a.number - b.number);
+    const people = ordered.flatMap(c => c.members.map(m => Object.assign({ cohort: c.number }, m)));
+    // Tabs: Full list, then one tab per term with the members who took part that term (교수 2026-11-02).
+    const tabs = [{ id: 'members-all', title: 'Full list', note: people.length + ' members', panel: table(people, 'All study members', false) }];
+    for (const c of ordered) {
+      const term = people.filter(p => p.participation.includes(c.number));
+      const rep = representatives[c.term];
+      term.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // representative first, the rest keep the sheet order
+      tabs.push({ id: 'members-' + c.number, title: c.number + '기', note: [c.term, term.length + ' members'].filter(Boolean).join(' · '),
+        panel: table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep) });
+    }
+    const box = element('section', undefined, 'study-member-tabs');
+    const tablist = element('div', undefined, 'study-tablist'); tablist.setAttribute('role', 'tablist'); tablist.setAttribute('aria-label', 'Member lists');
+    const buttons = tabs.map(tab => {
+      const button = element('button'); button.type = 'button'; button.id = 'tab-' + tab.id; button.setAttribute('role', 'tab'); button.setAttribute('aria-controls', tab.id);
+      button.append(element('strong', tab.title), element('span', tab.note));
+      tablist.append(button);
+      return button;
+    });
+    const panels = tabs.map(tab => {
+      const panel = element('div', undefined, 'study-panel'); panel.id = tab.id; panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', 'tab-' + tab.id);
+      panel.append(tab.panel); return panel;
+    });
+    const show = (i, push) => {
+      buttons.forEach((b, j) => { b.setAttribute('aria-selected', String(i === j)); b.tabIndex = i === j ? 0 : -1; panels[j].hidden = i !== j; });
+      if (push) history.replaceState(null, '', location.pathname + '#' + tabs[i].id);  // <base href="/"> would send a bare #hash to the site root
+    };
+    buttons.forEach((b, i) => {
+      b.addEventListener('click', () => show(i, true));
+      b.addEventListener('keydown', e => {
+        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        const n = e.key === 'Home' ? 0 : e.key === 'End' ? buttons.length - 1 : d ? (i + d + buttons.length) % buttons.length : -1;
+        if (n >= 0) { e.preventDefault(); show(n, true); buttons[n].focus(); }
+      });
+    });
+    const want = tabs.findIndex(tab => tab.id === location.hash.slice(1));
+    show(want < 0 ? 0 : want, false);
+    box.append(tablist, ...panels);
+    list.replaceChildren(box);
   }
   async function unlock(key, focus) {
     const plaintext = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: decode(data.iv) }, key, decode(data.ciphertext));
     render(JSON.parse(new TextDecoder().decode(plaintext)));
-    input.value = ''; form.hidden = true; list.hidden = false; lock.hidden = false;
+    input.value = ''; form.hidden = true; list.hidden = false;
     submit.setAttribute('aria-expanded', 'true'); message.textContent = '';
-    if (focus) lock.focus();
+    if (focus) list.querySelector('[role="tab"][aria-selected="true"]').focus();
   }
   submit.disabled = true;
   (async () => {
@@ -99,7 +134,7 @@
       if (remembered) {
         if (remembered.salt !== data.salt || remembered.iterations !== data.iterations) throw new Error('Access changed');
         await unlock(remembered.key, false);
-        accessRemembered = true;
+        list.dataset.access = 'remembered';
       }
     } catch (_) {
       await savedAccess('readwrite').catch(() => {});
@@ -113,25 +148,17 @@
       const keyMaterial = await crypto.subtle.importKey('raw', new TextEncoder().encode(input.value), 'PBKDF2', false, ['deriveKey']);
       const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: decode(data.salt), iterations: data.iterations, hash: 'SHA-256' }, keyMaterial, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
       await unlock(key, true);
-      lock.disabled = true;
+      // No Lock button: access stays until the visitor clears browser data (2026-11-02).
       try {
         await savedAccess('readwrite', { key, salt: data.salt, iterations: data.iterations });
-        accessRemembered = true;
+        list.dataset.access = 'remembered';
       } catch (_) {
         message.textContent = 'Unlocked for this visit. Your browser could not remember access.';
-      } finally { lock.disabled = false; }
+        list.dataset.access = 'session';
+      }
     } catch (error) {
       message.textContent = error.message === 'unavailable' ? 'Use a browser with HTTPS support to unlock the list.' : 'Incorrect password. Please try again.';
       input.value = ''; input.focus();
     } finally { submit.disabled = false; }
-  });
-  lock.addEventListener('click', async () => {
-    lock.disabled = true;
-    try { if (accessRemembered) await savedAccess('readwrite'); }
-    catch (_) { message.textContent = 'Could not forget access. Please try again.'; lock.disabled = false; return; }
-    list.hidden = true; list.replaceChildren(); lock.hidden = true; form.hidden = false;
-    accessRemembered = false;
-    lock.disabled = false;
-    submit.setAttribute('aria-expanded', 'false'); message.textContent = ''; input.focus();
   });
 })();

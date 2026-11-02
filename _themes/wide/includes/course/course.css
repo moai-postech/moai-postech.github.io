@@ -415,12 +415,12 @@ a.cs-title:hover { color: var(--accent); }
 /* Term timeline: oldest cohort on the left, the current term on the right. */
 .study-term-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); }
 .study-term-card { display: flex; flex-direction: column; gap: var(--space-3); }
-.study-term-step { position: relative; display: flex; align-items: center; gap: var(--space-2); min-height: 24px; color: var(--muted); font-size: var(--text-meta); }
+.study-term-step { position: relative; display: flex; align-items: center; gap: 0; min-height: 24px; color: var(--muted); font-size: var(--text-meta); }
 .study-term-step::before { content: ""; position: absolute; left: 6px; right: calc(-1 * var(--space-5)); top: 50%; height: 2px; background: var(--line); }
-.study-term-card:last-child .study-term-step::before { right: 0; background: var(--accent); }  /* Now line runs to the right edge */
+.study-term-card:last-child .study-term-step::before { display: none; }  /* the line ends at the latest term's dot; nothing trails past its label */
 .study-term-card:nth-last-child(2) .study-term-step::before { background: linear-gradient(90deg, var(--line), var(--accent)); }
 .study-term-dot { position: relative; flex: none; width: 14px; height: 14px; border: 3px solid var(--line); border-radius: 50%; background: var(--bg); }
-.study-term-when { position: relative; padding-right: var(--space-2); background: var(--bg); }
+.study-term-when { position: relative; padding: 0 var(--space-2); background: var(--bg); }  /* the line breaks on both sides of the label */
 .study-term-card.is-current .study-term-dot { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
 .study-term-card.is-current .study-term-when { color: var(--accent); font-weight: var(--weight-emphasis); }
 .study-term-card > a { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: var(--text); text-decoration: none; transition: border-color .15s, box-shadow .15s, transform .15s; }

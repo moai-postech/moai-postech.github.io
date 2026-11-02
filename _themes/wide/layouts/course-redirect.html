@@ -1,0 +1,17 @@
+{% assign course_url = page.url | remove_first: "/" %}
+{% assign course = site.data.teaching | where: "url", course_url | first %}
+{% assign latest = course.terms | first %}
+{% assign target = latest.url | prepend: "/" | relative_url %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ course.title | escape }} · MOAI Lab</title>
+<link rel="canonical" href="{{ target | absolute_url }}">
+<meta http-equiv="refresh" content="0; url={{ target }}">
+<script>window.location.replace({{ target | jsonify }} + window.location.search + window.location.hash);</script>
+</head>
+<body>
+<p>Continue to <a href="{{ target }}">{{ course.title | escape }} ({{ latest.name | escape }})</a>.</p>
+</body>
+</html>

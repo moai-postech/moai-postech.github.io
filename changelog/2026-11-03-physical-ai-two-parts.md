@@ -94,3 +94,11 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - Fall 2025 3번째 설명은 **unify** 한 단어만 굵게.
 - 기각: Demo 가 없는 학기에서 Demo 열을 빼는 안. 네 학기 모두 Demo 가 하나 이상 있다(Spring 2026 은 OpenClaw 하나).
 - 작업 사고: 공유 작업 폴더에서 다른 세션이 동시에 커밋하고 있어, 임시 worktree 를 만들다 실패한 명령의 뒷부분이 공유 폴더에서 돌아 이 기록 몇 줄만 든 커밋이 생겼다. push 는 거절됐고, 커밋을 `reset --soft` 로 풀고 그 줄을 지웠다. 이후 작업은 scratchpad 의 별도 clone 에서 했다.
+
+## 10차: Robot Embodiment 는 사람의 기능을 따라 하는 과제로
+교수: "robot embodiment에서는 body라는 얘기보다 인간이 팔이 있고 다리가 있는 것처럼 인간의 기능을 따라하기 위해 로봇 task가 나왔다는 맥락이 더 강조되면 좋을 것 같아..".
+
+- 1파트 설명: "How robot tasks follow **human abilities**: arms that manipulate, legs that walk, finding the way through a space, and humanoids with dexterous hands, all learned from data." 굵게는 human abilities 하나.
+- tldr 1구절도 body 대신 "robots learn to do what humans do with arms and legs" 로 바꿨다. 2구절(foundation models …)은 그대로다.
+- `STUDY.md` 의 Physical AI 설명을 같은 맥락으로 고쳤다.
+- 기각: 단계 이름도 바꾸는 안(Human-like Robot Tasks 등). 요청은 설명의 맥락이고, Robot Embodiment 는 교수가 받아들인 이름이다.

@@ -168,7 +168,7 @@ talks:
   - date: "2026-03-19"
     invited: true
     speaker: "Heejeong Nam"
-    affiliation: "Brown"
+    affiliation: "Brown univ."
     url: "https://hazel-heejeong-nam.github.io/"
     title: "Causal-JEPA: Learning World Models through Object-Level Latent Interventions"
     paper: "https://arxiv.org/abs/2602.11389"

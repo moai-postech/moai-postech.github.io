@@ -6,7 +6,7 @@
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
 | 2026-11-03 | [hero-spacing](2026-11-03-hero-spacing.md) | Sangwoo Mo(moai-postech) | theme.css | Home 히어로 그림 위 여백 64 → 32px, 아래 32px 와 같게 |
-| 2026-11-03 | [affiliation-names](2026-11-03-affiliation-names.md) | Sangwoo Mo(sangwoomo) | seminar.yml, members.yml, 세미나 시트 | 학교 약칭을 `U Michigan`, `Brown` 으로 통일 |
+| 2026-11-03 | [affiliation-names](2026-11-03-affiliation-names.md) | Sangwoo Mo(sangwoomo) | seminar.yml, members.yml, 세미나 시트 | Seminar 소속 `UMich` 를 `U Michigan` 으로(Brown·Mentees 는 그대로) |
 | 2026-11-03 | [courses-intro](2026-11-03-courses-intro.md) | Sangwoo Mo(moai-postech) | courses.md | Regular courses 에도 한 줄 소개(정규학기 POSTECH 강의), 두 절 구조를 맞춤 |
 | 2026-11-03 | [physical-ai-two-parts](2026-11-03-physical-ai-two-parts.md) | Sangwoo Mo(moai-postech) | ai_study_terms.yml, STUDY.md | Physical AI 학습 흐름을 1–6 embodiment, 7–11 foundation model 두 파트로 |
 | 2026-11-03 | [ai-study-member-photos](2026-11-03-ai-study-member-photos.md) | Sangwoo Mo(moai-postech) | study-members.js, course.css, ai_study_members_sync.py, STUDY.md | Members 이름 hover 로 인물검색 사진(명단 암호문 안에만) |

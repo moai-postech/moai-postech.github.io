@@ -32,6 +32,12 @@ DEPARTMENTS = {'산경': 'IME', '컴공': 'CSE', '무은재': 'Freshmen', '전�
 DEPARTMENT_ALIASES = {'IT융공': 'IT융합', 'Mueunjae': '무은재'}
 
 
+def cohort_number(text):
+    """'2.5' 같은 기수를 숫자로. 정규 학기는 정수, 여름 학기는 2.5기처럼 소수다(교수 2026-11-03)."""
+    value = float(text)
+    return int(value) if value.is_integer() else value
+
+
 def member_order(person):
     year = person['entry_year']
     department = DEPARTMENT_ALIASES.get(person['department'], person['department'])
@@ -49,9 +55,9 @@ def convert(rows):
     people, terms, current = {}, {}, None
     for row in rows:
         row = [str(value).strip() for value in row]
-        match = re.fullmatch(r"(20\d\d) (Spring|Summer|Fall|Winter) \((\d+)기\)", row[0]) if row else None
+        match = re.fullmatch(r"(20\d\d) (Spring|Summer|Fall|Winter) \((\d+(?:\.\d+)?)기\)", row[0]) if row else None
         if match:
-            current = int(match[3])
+            current = cohort_number(match[3])
             terms[current] = f"{match[2]} {match[1]}"
         elif len(row) >= 7 and row[0].isdigit():
             if current is None:
@@ -61,8 +67,8 @@ def convert(rows):
                 raise ValueError(f"{name}: POSTECH 이메일 확인 필요")
             key = (name, entry_year)
             person = people.setdefault(key, dict(name=name, department=department,
-                entry_year=entry_year, email=email, cohort=int(cohort), participation=[]))
-            if person['email'] != email or person['cohort'] != int(cohort):
+                entry_year=entry_year, email=email, cohort=cohort_number(cohort), participation=[]))
+            if person['email'] != email or person['cohort'] != cohort_number(cohort):
                 raise ValueError(f"{name}: 기수 또는 이메일 불일치")
             if current in person['participation']:
                 raise ValueError(f"{name}: 같은 학기 중복")
@@ -84,10 +90,10 @@ def convert_full_list(rows):
     for column, label in enumerate(rows[0][first:], start=first):
         if not str(label).strip():
             continue
-        match = re.fullmatch(r'(\d+)기 \(((?:Spring|Summer|Fall|Winter) 20\d\d)\)', str(label).strip())
-        if not match or int(match[1]) in terms:
+        match = re.fullmatch(r'(\d+(?:\.\d+)?)기 \(((?:Spring|Summer|Fall|Winter) 20\d\d)\)', str(label).strip())
+        if not match or cohort_number(match[1]) in terms:
             raise ValueError('참여 열은 1기 (Fall 2025) 형식으로 중복 없이 작성')
-        number = int(match[1])
+        number = cohort_number(match[1])
         terms[number], columns[number] = match[2], column
     if not terms:
         raise ValueError('참여 기수 열 없음')
@@ -101,7 +107,7 @@ def convert_full_list(rows):
         department = DEPARTMENT_ALIASES.get(department, department)
         if '@' not in email:  # 연락처는 POSTECH 메일 아이디만 적는다(2026-11-02)
             email += '@postech.ac.kr'
-        if not cohort.isdigit() or not re.fullmatch(r'[^\s@]+@postech\.ac\.kr', email):
+        if not re.fullmatch(r'\d+(?:\.\d+)?', cohort) or not re.fullmatch(r'[^\s@]+@postech\.ac\.kr', email):
             raise ValueError(f'{name}: 기수 또는 POSTECH 이메일 확인 필요')
         identity = (name, entry_year)
         if identity in identities or email.lower() in emails:
@@ -114,11 +120,11 @@ def convert_full_list(rows):
             if value == 'true':
                 participation.append(number)
         participation.sort()
-        if not participation or int(cohort) != participation[0]:
+        if not participation or cohort_number(cohort) != participation[0]:
             raise ValueError(f'{name}: 가입 기수와 첫 참여 기수 불일치')
         identities.add(identity); emails.add(email.lower())
         people.append(dict(name=name, department=department, entry_year=entry_year,
-                           email=email, cohort=int(cohort), participation=participation))
+                           email=email, cohort=cohort_number(cohort), participation=participation))
     if not people:
         raise ValueError('빈 명단')
     # 시트와 Members 표는 같은 순서다: 기수 → 학번 → 학과(산경 먼저, 나머지 가나다) → 이름 가나다(교수 2026-11-02).

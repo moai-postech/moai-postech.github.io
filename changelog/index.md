@@ -12,7 +12,7 @@
 | 2026-11-03 | [affiliation-names](2026-11-03-affiliation-names.md) | Sangwoo Mo(sangwoomo) | seminar.yml, members.yml, 세미나 시트 | Seminar 소속 `UMich` 를 `U Michigan` 으로(Brown·Mentees 는 그대로) |
 | 2026-11-03 | [courses-intro](2026-11-03-courses-intro.md) | Sangwoo Mo(moai-postech) | courses.md | Regular courses 에도 한 줄 소개(정규학기 POSTECH 강의), 두 절 구조를 맞춤 |
 | 2026-11-03 | [physical-ai-two-parts](2026-11-03-physical-ai-two-parts.md) | Sangwoo Mo(moai-postech) | ai_study_terms.yml, STUDY.md | Physical AI 학습 흐름을 1–6 embodiment, 7–11 foundation model 두 파트로 |
-| 2026-11-03 | [ai-study-member-photos](2026-11-03-ai-study-member-photos.md) | Sangwoo Mo(moai-postech) | study-members.js, course.css, ai_study_members_sync.py, STUDY.md | Members 이름 hover 로 인물검색 사진(명단 암호문 안에만) |
+| 2026-11-03 | [ai-study-member-photos](2026-11-03-ai-study-member-photos.md) | Sangwoo Mo(moai-postech) | study-members.js, course.css, ai_study_members_sync.py, STUDY.md | Members 사진·LinkedIn·POSTECH ID 열·열 간격, 여름 학기를 2.5기로(시트·Home·Members) |
 | 2026-11-03 | [ai-study-member-links](2026-11-03-ai-study-member-links.md) | Sangwoo Mo(moai-postech) | study-members.js, course.css, STUDY.md | Members 표의 기수·학번·학과·참여 칩을 그 탭이나 걸러 본 Full list 로 가는 링크로, 모든 목록에 같은 요약 줄 |
 | 2026-11-03 | [seminar-year-tabs](2026-11-03-seminar-year-tabs.md) | Sangwoo Mo(moai-postech) | seminar.html, scripts.html, seminar_sync.py | Seminar 연도별 탭(최신 해부터, 최신 해 기본), 슬라이드 없는 랩 발표는 링크 없이 |
 | 2026-11-03 | [ai-study-home-trim](2026-11-03-ai-study-home-trim.md) | Sangwoo Mo(moai-postech) | AI Study Home, course.css, STUDY.md | hover 반응을 링크마다 하나로. Who we learn with 절은 줄였다가 기수 막대와 함께 되살림. Schedule 탭은 최신 학기부터 |

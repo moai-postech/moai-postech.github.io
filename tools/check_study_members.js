@@ -50,6 +50,12 @@ const assert = (ok, message) => { if (!ok) throw new Error(message); };
       if (width > 680) assert(JSON.stringify(await page.locator('#members-4 thead th').evaluateAll(c => c.map(e => Math.round(e.getBoundingClientRect().x)))) === JSON.stringify(fullX), 'columns moved between tabs');
       await page.getByRole('tab', { name: /Full list/ }).click();
       assert(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'synthetic directory overflow');
+      // Entry, department and participation are links into the matching list (교수 2026-11-03).
+      await page.locator('#members-all .study-member-link', { hasText: '2026' }).first().click();
+      await page.locator('.study-member-filter', { hasText: '2026 entry' }).waitFor();
+      await page.locator('#members-all .study-member-marker', { hasText: '4기' }).first().click();
+      await page.waitForFunction(() => document.querySelector('#tab-members-4')?.getAttribute('aria-selected') === 'true');
+      assert(await page.locator('.study-member-filter').count() === 0, 'a term link kept the entry filter');
       await forgetAccess(page, `http://localhost:${server.address().port}/teaching/ai-study/members/`);
       await page.locator('#member-unlock-form').waitFor({state:'visible'});
       assert(await page.locator('tbody tr').count() === 0, 'forgotten synthetic access retained rows');

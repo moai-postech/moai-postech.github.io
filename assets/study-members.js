@@ -37,6 +37,16 @@
   // The Full List shows the sheet's Korean department name only (2026-11-02); old spellings are unified.
   const ALIASES = { 'IT융공': 'IT융합', 'Mueunjae': '무은재', 'Undeclared': '무은재' };
   const departmentLabel = name => ALIASES[name] || name;
+  const entryYear = member => /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : String(member.entry_year);
+  // Cohort, entry year, department and participation open the matching list, by the same #hash links as the Home department map (교수 2026-11-03).
+  const listLink = (text, hash, className) => {
+    const a = element('a', text, className); a.href = location.pathname + hash;  // <base href="/"> would send a bare #hash to the site root
+    return a;
+  };
+  const FILTERS = {
+    dept: { label: v => v, of: p => departmentLabel(p.department), value: v => departmentLabel(v) },
+    entry: { label: v => v + ' entry', of: entryYear, value: v => v },
+  };
   // Each term's student representative, by POSTECH ID (public on the Schedule page).
   const representatives = JSON.parse(document.getElementById('member-representatives').textContent || '{}');
   // '#' numbers the rows so each table shows how many people it lists (교수 2026-11-02).
@@ -58,10 +68,13 @@
     people.forEach((member, n) => {
       const id = member.email.split('@')[0];
       const row = element('tr', undefined, rep && id === rep ? 'is-representative' : undefined);
-      const year = /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : member.entry_year;
-      const values = [String(n + 1), member.cohort + '기', year, departmentLabel(member.department), member.name, id];
+      const year = entryYear(member);
+      const dept = departmentLabel(member.department);
+      const values = [String(n + 1), member.cohort + '기', year, dept, member.name, id];
+      const links = { 1: '#members-' + member.cohort, 2: '#entry=' + year, 3: '#dept=' + encodeURIComponent(dept) };
       values.forEach((value, index) => {
-        const cell = element(index === 4 ? 'th' : 'td', value, index === 5 ? 'study-member-email' : index === 0 ? 'study-member-n' : undefined);
+        const cell = element(index === 4 ? 'th' : 'td', links[index] ? undefined : value, index === 5 ? 'study-member-email' : index === 0 ? 'study-member-n' : undefined);
+        if (links[index]) cell.append(listLink(value, links[index], 'study-member-link'));
         if (index === 4) {
           cell.scope = 'row';
           if (row.className) cell.append(element('span', ' (대표학생)', 'study-member-role'));  // shown as 최지안 (대표학생) with the row colour (교수 2026-11-02)
@@ -71,7 +84,7 @@
       const cell = element('td'); cell.dataset.label = LABELS[6];
       if (!termTab) {
         const markers = element('span', undefined, 'study-member-markers');
-        for (const n of member.participation) markers.append(element('span', n + '기', 'study-member-marker'));
+        for (const n of member.participation) markers.append(listLink(n + '기', '#members-' + n, 'study-member-marker'));
         cell.append(markers);
       }
       row.append(cell); body.append(row);
@@ -84,10 +97,11 @@
     const ordered = [...cohorts].sort((a, b) => a.number - b.number);
     const people = ordered.flatMap(c => c.members.map(m => Object.assign({ cohort: c.number }, m)));
     // Tabs: Full list, then one tab per term with the members who took part that term (교수 2026-11-02).
-    // #dept=산경 (from the Home department map) narrows Full list to one department, with a way back (교수 2026-11-02).
-    const deptMatch = /^#dept=(.+)$/.exec(location.hash);
-    const dept = deptMatch ? departmentLabel(decodeURIComponent(deptMatch[1])) : null;
-    const shown = dept ? people.filter(p => departmentLabel(p.department) === dept) : people;
+    // #dept=산경 (Home department map, table) or #entry=2020 (table) narrows Full list, with a way back (교수 2026-11-02, 11-03).
+    const match = /^#(dept|entry)=(.+)$/.exec(location.hash);
+    const filter = match && FILTERS[match[1]], want = match && filter.value(decodeURIComponent(match[2]));
+    const dept = match ? filter.label(want) : null;
+    const shown = match ? people.filter(p => filter.of(p) === want) : people;
     const fullPanel = element('div');
     if (dept) {
       const note = element('p', undefined, 'study-member-filter');
@@ -133,7 +147,7 @@
     });
     const fromHash = () => { const want = tabs.findIndex(tab => tab.id === location.hash.slice(1)); show(want < 0 ? 0 : want, false); };
     fromHash();
-    window.onhashchange = () => (/^#dept=/.test(location.hash) || dept ? render(cohorts) : fromHash());  // #members-4 switches the tab; #dept= re-filters
+    window.onhashchange = () => (/^#(dept|entry)=/.test(location.hash) || dept ? render(cohorts) : fromHash());  // #members-4 switches the tab; #dept= and #entry= re-filter
     box.append(tablist, ...panels);
     list.replaceChildren(box);
   }

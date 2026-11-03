@@ -60,7 +60,7 @@
 
 - Schedule의 Study sheet 위치·화살표·반응형 정렬은 [공통 규칙](README.md#외부-시트-링크)을 따른다.
 
-- 상단 `[로고] MOAI Lab | AI Study` 전체가 스터디 Home 링크 하나다. 좌상단은 지금 있는 사이트의 홈이라는 원칙을 강의와 같이 따르고, 연구실 홈은 바닥 줄에서 간다(교수 2026-11-03). 스터디 footer는 강의 페이지와 같은 연구실 로고·MOAI Lab 홈 링크, POSTECH, 개인정보 링크 양식을 사용한다(P7).
+- 상단 `[로고] MOAI Lab | AI Study` 는 "연구실 > 스터디" 경로다. 로고와 MOAI Lab 은 연구실 홈, AI Study 는 스터디 Home 으로 간다. MOAI Lab 을 맨 왼쪽에 두는 것은 랩이 하는 하위 항목임을 드러내려는 의도다(교수 2026-11-03). 스터디 footer는 강의 페이지와 같은 연구실 로고·MOAI Lab 홈 링크, POSTECH, 개인정보 링크 양식을 사용한다(P7).
 
 - 시트의 학과는 한글 약칭(산경, 컴공, 무은재, 전전, 물리, 수학, IT융합)으로 쓴다. IT융공은 IT융합으로 통일한다. 연락처는 POSTECH 메일 아이디만 쓰고 역할 열은 두지 않는다. Home 학과 분포는 `산경(IME)`, `무은재(Freshmen)`처럼 한글(영문)이고(변환표는 `tools/ai_study_members_sync.py`의 `DEPARTMENTS`), Members 명단은 한글 약칭만 쓴다(교수 2026-11-02).
 

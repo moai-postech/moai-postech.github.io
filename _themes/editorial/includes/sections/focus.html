@@ -17,7 +17,7 @@
     <div class="focus-panels">
     {% for f in site.data.focus %}{% assign fid = f.name | slugify %}<div class="focus-panel" role="tabpanel" id="panel-{{ sid }}-{{ fid }}" aria-labelledby="tab-{{ sid }}-{{ fid }}">
       {% if f.papers %}<div class="focus-papers">
-        {% for p in f.papers %}<a class="paper-chip" href="{{ p.url | default: 'publications.html' }}">
+        {% for p in f.papers %}<a class="paper-chip" href="{{ p.url | default: 'list.html' }}">
           <span class="venue">{{ p.short }} · {{ p.venue }}</span>
           <span class="paper-title">{{ p.title }}</span>
         </a>

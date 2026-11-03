@@ -32,9 +32,9 @@ const { loadSyntheticDirectory, forgetAccess } = require('./lib/design-fixture')
     assert.deepEqual(await failures(),[], '드롭다운은 400 굵기로 통과해야 한다');
     await page.addStyleTag({content:'.site-nav .nav-menu a {font-weight:600 !important}'});
     assert((await failures()).some(f=>f.startsWith('dropdown-navigation: fontWeight')), '드롭다운이 상단 메뉴의 600을 상속하면 실패해야 한다');
-    await load('students.html');
+    await load('lab-members.html');
     assert.deepEqual(await failures(),[], '근거를 기록한 멤버 카드 조정은 기본 metadata 크기와 달라도 통과해야 한다');
-    await page.addStyleTag({content:'.page-students .person-degree {font-size:14px !important}'});
+    await page.addStyleTag({content:'.page-lab-members .person-degree {font-size:14px !important}'});
     assert((await failures()).some(f=>f.includes('student-card-reading') && f.includes('fontSize')), '조정한 학력 글자를 다시 작게 만들면 실패해야 한다');
     await load('seminar.html');
     assert.deepEqual(await failures(),[], '세미나 정상 템플릿이 통과해야 한다');
@@ -47,7 +47,7 @@ const { loadSyntheticDirectory, forgetAccess } = require('./lib/design-fixture')
     await load('teaching/ai-study/schedule/index.html');
     await page.addStyleTag({content:'.study-term-heading > a {font-weight:400 !important}'});
     assert((await failures()).some(f=>f.startsWith('toolbar-action: fontWeight')), '클래스명이 달라도 헤더의 동작 링크 회귀를 검출해야 한다');
-    await load('publications.html');
+    await load('list.html');
     await page.addStyleTag({content:'.group-heading {line-height:1.2 !important}'});
     assert((await failures()).some(f=>f.startsWith('group-heading: lineHeight')), '같은 제목 역할의 행간 차이를 검출해야 한다');
     await load('index.html');

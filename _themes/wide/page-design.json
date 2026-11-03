@@ -45,7 +45,7 @@
       "adjustments": []
     },
     {
-      "page": "research.html",
+      "page": "overview.html",
       "template": "연구실 · 연구 카드",
       "decision": "페이지 조정",
       "reason": "한 열의 넓은 설명 카드는 읽는 본문으로 취급. 짧은 논문 칩은 보조 크기로 분리.",
@@ -61,14 +61,14 @@
       "adjustments": []
     },
     {
-      "page": "publications.html",
+      "page": "list.html",
       "template": "연구실 · 긴 논문 목록",
       "decision": "기본 유지",
       "reason": "긴 목록에서 제목16px·저자14px·venue14px의 위계가 필요. 최근 요청한 venue600·자료 링크400 유지.",
       "adjustments": []
     },
     {
-      "page": "landscape.html",
+      "page": "map.html",
       "template": "연구실 · 외부 지도",
       "decision": "기본 유지",
       "reason": "지도는 독립된 삽입 화면. 주변 탐색과 전체 화면 링크는 사이트 템플릿, 지도 내부는 원 화면 유지.",
@@ -91,7 +91,7 @@
       "adjustments": []
     },
     {
-      "page": "students.html",
+      "page": "lab-members.html",
       "template": "연구실 · 인물 카드",
       "decision": "페이지 조정",
       "reason": "사진 카드에 여백이 충분하며 학력·소속은 핵심 정보. 이름과 상세의 크기 차이는 유지.",
@@ -100,7 +100,7 @@
       ]
     },
     {
-      "page": "mentees.html",
+      "page": "other-mentees.html",
       "template": "연구실 · 멘티 목록",
       "decision": "페이지 조정",
       "reason": "학위·소속은 관계를 설명하는 본문, 성과와 연도는 보조정보로 구분.",
@@ -109,7 +109,7 @@
       ]
     },
     {
-      "page": "teaching.html",
+      "page": "courses.html",
       "template": "연구실 · 강의 목록",
       "decision": "페이지 조정",
       "reason": "학기 선택은 실제 탐색 동작. 학수번호와 달리 15px로 표시.",
@@ -234,7 +234,7 @@
     {
       "id": "student-card-reading",
       "pages": [
-        "students.html"
+        "lab-members.html"
       ],
       "roles": [
         "metadata",
@@ -265,7 +265,7 @@
     {
       "id": "mentee-affiliation-reading",
       "pages": [
-        "mentees.html"
+        "other-mentees.html"
       ],
       "roles": [
         "metadata"
@@ -280,7 +280,7 @@
     {
       "id": "research-card-reading",
       "pages": [
-        "research.html"
+        "overview.html"
       ],
       "roles": [
         "card-description"
@@ -295,7 +295,7 @@
     {
       "id": "teaching-term-navigation",
       "pages": [
-        "teaching.html"
+        "courses.html"
       ],
       "roles": [
         "metadata"

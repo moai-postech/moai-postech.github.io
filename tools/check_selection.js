@@ -5,7 +5,7 @@ const CASES = [
   ['index', '.content-section.section-next p'], ['index', '.content-section.section-next a'],
   ['index', '.mini-text p'], ['index', '.mini-text a'],
   ['index', '.focus-tab span'], ['index', '.sec-media .media-source'],
-  ['teaching', '.list-intro'], ['teaching', '.list-intro a'], ['research', '.section-next a'],
+  ['courses', '.list-intro'], ['courses', '.list-intro a'], ['overview', '.section-next a'],
   ['contact', '.step-body a'], ['teaching/ai-study/index', '.course-lead'],
 ];
 (async () => {
@@ -46,7 +46,7 @@ const CASES = [
       // A regular click still follows the link after a previous selection.
       await page.goto(`http://localhost:${server.address().port}/index.html`);
       await page.locator('.mini-text a').first().click();  // the publications link on the Paper Stella band
-      await page.waitForURL('**/publications.html');
+      await page.waitForURL('**/list.html');
       await page.close();
     }
     console.log(`텍스트 드래그 검사 통과: ${count}건, 일반 링크 클릭 정상`);

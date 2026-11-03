@@ -29,13 +29,13 @@ nav:
       - title: Faculty
         url: faculty.html
       - title: Lab Members
-        url: students.html
+        url: lab-members.html
       - title: Other Mentees
-        url: mentees.html
+        url: other-mentees.html
   - title: Research
     children:
       - title: Overview
-        url: research.html
+        url: overview.html
       - title: Seminar
         url: seminar.html
       - title: Funding
@@ -43,13 +43,13 @@ nav:
   - title: Publications
     children:
       - title: List
-        url: publications.html
+        url: list.html
       - title: Map
-        url: landscape.html
+        url: map.html
   - title: Teaching
     children:
       - title: Courses
-        url: teaching.html
+        url: courses.html
       - title: Talks
         url: talks.html
   - title: Contact

@@ -12,8 +12,8 @@ const { ROOT, SITE, serve, configBlock } = require('./lib/site');
 
 const POSTECH = configBlock('postech');
 const FOOTER = configBlock('footer');
-const LAB = ['index', 'research', 'seminar', 'funding', 'publications', 'landscape',
-  'faculty', 'students', 'mentees', 'teaching', 'talks', 'contact', 'news', '404'].map(n => n + '.html');
+const LAB = ['index', 'overview', 'seminar', 'funding', 'list', 'map',
+  'faculty', 'lab-members', 'other-mentees', 'courses', 'talks', 'contact', 'news', '404'].map(n => n + '.html');
 // 강의 사이트와 스터디 페이지(layouts/course.html): teaching/<id>/index.html 과 그 아래 페이지
 const COURSE = [];
 (function walk(dir) {

@@ -20,7 +20,7 @@ _data/               콘텐츠 데이터(YAML)
   ai_study.yml       학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트에서 만든다(GitHub Actions `ai-study-sync` 가 매일 06:30 KST, Actions 탭 Run workflow 로 바로). 손으로 고치지 않는다
   seminar.yml        Research > Seminar 의 발표 목록. tools/seminar_sync.py 가 랩 세미나 구글시트에서 만든다. 손으로 고치지 않는다(아래 "세미나 발표 올리기")
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
-index.md 외 *.md     페이지 하나에 파일 하나(research·seminar·funding, publications·landscape, faculty·students·mentees, teaching, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. front matter 에 소개글, 절 순서
+index.md 외 *.md     페이지 하나에 파일 하나(overview·seminar·funding, list·map, faculty·lab-members·other-mentees, courses·talks, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. 파일 이름(곧 주소)은 메뉴 탭 이름을 소문자·하이픈으로 쓴 것이다(Lab Members → `lab-members.html`, 교수 2026-11-03). front matter 에 소개글, 절 순서
 _themes/wide/        테마(현재 사용 중: 넓은 화면 전제, 12칸 격자, 전역 토큰)
 _themes/editorial/   예전 테마(한 기둥 편집형)
 _themes/classic/     예전 테마(카드·좌우 배치). 둘 다 참고용이다. 그 뒤에 생긴 절 종류(seminar, profile-cv, contact-block, talks, media 등)가 없어 그대로는 동작하지 않는다
@@ -30,6 +30,7 @@ assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 �
 assets/seminar/      랩 발표 슬라이드 PDF(16:9 로 맞춘 사본, 날짜-제목별칭.pdf). seminar_sync.py 가 만들고 지운다
 assets/img/          그림, 아이콘(icons/), 사진(people/, 랩 단체사진 lab/), 로고 아이콘(logo-mark.svg, `_config.yml` 의 logo). 콘텐츠가 경로로 가리킨다
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
+students.html, mentees.html, research.html, publications.html, landscape.html, teaching.html  2026-11-03 탭 이름에 맞춰 바꾼 주소로 넘기는 리다이렉트(# 뒤 위치도 넘긴다)
 POSTECH.md           정보기술팀이 요구한 POSTECH 필수 요소(P1~P9)와, 바꾸자는 요청을 그것에 비춰 보는 검토 절차
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)

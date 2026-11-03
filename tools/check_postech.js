@@ -36,19 +36,13 @@ function inspect({ kind, P, F }) {
   const need = (ok, id, msg) => { if (!ok) out.push(`${id} ${msg}`); };
   const links = sel => [...document.querySelectorAll(sel)];
   if (kind === 'lab') {
-    // P1: 머리글 왼쪽 묶음(.head-lockup)의 워드마크가 페이지의 첫 링크(Skip to content 제외)이고 좌상단, 연구실 로고 위에 있다.
+    // P1: 머리글의 연구실 이름 뒤에 POSTECH 글자(대표홈 링크)가 있다. 좌상단 로고 형태는 교수 결정으로 바꿨다(2026-11-03).
     const head = document.querySelector('header');
-    const pageLinks = links('a').filter(a => !a.classList.contains('skip-link') && visible(a));
-    const hp = pageLinks.find(a => sameUrl(a, P.url) && a.querySelector('img'));
-    const hpImg = hp && hp.querySelector('img');
-    need(hp && visible(hpImg), 'P1', '좌상단에 POSTECH 워드마크(대표홈 링크)가 없다');
-    need(!hpImg || hpImg.alt.trim(), 'P1', 'POSTECH 워드마크에 alt 가 없다');
-    need(!hpImg || ratioOk(hpImg), 'P8', '머리글 POSTECH 워드마크 비율이 원본과 다르다');
-    need(hp && pageLinks.indexOf(hp) === 0, 'P1', 'POSTECH 워드마크가 페이지의 첫 요소(좌상단)가 아니다');
-    const headLinks = head ? [...head.querySelectorAll('a')].filter(a => a !== hp) : [];
-    const brand = headLinks[0];
-    need(!hpImg || (brand && hpImg.getBoundingClientRect().bottom <= brand.getBoundingClientRect().top + 1), 'P1', 'POSTECH 워드마크가 연구실 로고 위에 있지 않다');
-    need(brand && isHome(brand) && brand.textContent.includes('MOAI'), 'P2', 'POSTECH 워드마크 다음 요소가 연구실 로고·이름(홈 링크)이 아니다');
+    const headLinks = head ? [...head.querySelectorAll('a')].filter(visible) : [];
+    const hp = headLinks.find(a => sameUrl(a, P.url));
+    need(hp && hp.textContent.trim() === 'POSTECH', 'P1', '머리글에 POSTECH 글자(대표홈 링크)가 없다');
+    // P2: 머리글의 첫 링크는 연구실 로고·이름(홈 링크)이다.
+    need(headLinks.length && isHome(headLinks[0]) && headLinks[0].textContent.includes('MOAI'), 'P2', '머리글의 첫 요소가 연구실 로고·이름(홈 링크)이 아니다');
     const foot = document.querySelector('footer');
     const fl = foot ? [...foot.querySelectorAll('a')] : [];
     const fp = fl.find(a => sameUrl(a, P.url) && a.querySelector('img'));

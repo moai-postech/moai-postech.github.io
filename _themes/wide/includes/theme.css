@@ -131,9 +131,6 @@ h3.sub:first-child { margin-top: 0; }
 
 /* Header */
 .site-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-5); min-height: 88px; padding-block: var(--space-3); border-bottom: 1px solid var(--line); }  /* when the logos and the menu do not fit one line (tablets), the whole menu moves to its own line instead of folding into two */
-.head-lockup { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; flex-shrink: 0; min-width: 0; max-width: 100%; }  /* POSTECH wordmark first at the top left (P1), stacked over the lab brand (lab home) in one header row, so the tabs keep their height (교수 2026-11-03) */
-.head-postech { flex-shrink: 0; display: flex; }
-.head-postech img { display: block; width: auto; height: 10px; }  /* 118px wide, just above the GUI0301 minimum (30mm, about 113px). Height only: GUI0301 forbids changing the proportions */
 .head-id { display: flex; align-items: center; flex-shrink: 0; min-width: 0; max-width: 100%; height: 42px; }  /* the lab brand (lab home), or the course title */
 .brand { margin: 0; min-width: 0; }
 .brand a { display: flex; min-height: 42px; min-width: 0; align-items: center; gap: 10px; color: var(--text); }
@@ -143,6 +140,8 @@ h3.sub:first-child { margin-top: 0; }
 .brand-code { flex-shrink: 0; color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; white-space: nowrap; }
 .brand-sub { flex-shrink: 0; display: flex; align-items: center; min-height: 30px; margin-left: var(--space-2); color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-regular); letter-spacing: -.3px; white-space: nowrap; }  /* lab programme after the lab name: no second hairline (that one marks POSTECH | lab), lighter weight and grey instead (교수 2026-11-02) */
 .brand-sub:hover { color: var(--accent); text-decoration: none; }
+.brand-school { flex-shrink: 0; display: flex; align-items: center; height: 22px; margin-left: var(--space-3); padding-left: var(--space-3); border-left: 1px solid var(--line); color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-regular); letter-spacing: -.3px; white-space: nowrap; }  /* "MOAI Lab | POSTECH": the school as a grey word after the lab name, linked to the POSTECH home; the wordmark stays in the footer (교수 2026-11-03) */
+.brand-school:hover { color: var(--accent); text-decoration: none; }
 .brand-word { min-width: 0; font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; }
 .site-nav, .course-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); }
 .site-nav a, .course-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }
@@ -513,18 +512,15 @@ a.person-name:hover { color: var(--accent); }
 {% include course/course.css %}
 
 /* Header layout is shared by the lab, AI Study and courses, including the wrap point. */
-@media (min-width: 861px) {
-  .site-nav, .course-nav { margin-top: var(--space-4); }  /* one row: the wordmark and its 6px gap sit above the lab name, so the tabs drop by half of that to line up with the lab name, not the middle of the stack */
-}
-@media (min-width: 681px) and (max-width: 860px) {  /* with POSTECH in the bar above, the lab name and the six tabs share one line from 861px (교수 2026-11-03) */
+@media (min-width: 681px) and (max-width: 900px) {  /* "MOAI Lab | POSTECH" and the six tabs share one line from 901px (교수 2026-11-03) */
   .site-head { display: block; }
   .site-head .head-id { margin-bottom: var(--space-2); }
 }
 @media (max-width: 680px) {
-  .brand-word, .brand-code, .brand-sub { font-size: var(--text-lead); line-height: 1.3; }
+  .brand-word, .brand-code, .brand-sub, .brand-school { font-size: var(--text-lead); line-height: 1.3; }
 }
 @media (max-width: 480px) {
-  .brand-word, .brand-sub { font-size: var(--text-body); white-space: nowrap; }  /* MOAI Lab AI Study stays on one line on phones */
+  .brand-word, .brand-sub, .brand-school { font-size: var(--text-body); white-space: nowrap; }  /* MOAI Lab AI Study stays on one line on phones */
   .brand-mark { height: 26px; }
   .brand-code { display: none; }  /* no room beside a long course title; the page head below still shows the codes */
 }

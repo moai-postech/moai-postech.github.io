@@ -62,6 +62,18 @@ POSTECH 요구사항: P1, P2, P4, P7 확인 (P1 은 좌상단 첫 요소·대표
 - `POSTECH.md` P1·P2와 결정 설명, `AGENTS.md`, `README.md`, `course/README.md`, `page-design.json`·`.md` 를 고쳤다.
 - 확인: 라이브 페이지의 DOM 을 같은 구조로 바꾸고 CSS 를 입혀 1280px·390px 로 봤다.
 
+## 6차 (같은 날): 머리글을 "MOAI Lab | POSTECH" 글자로
+
+교수: POSTECH 인 것을 드러내는 건 좋지만 굳이 로고를 쓰지 않아도 된다. "MOAI Lab | POSTECH"(또는 @)은 어떤가. ①의 "좌상단 로고에 대표홈 링크" 형태에서 벗어나는 것은 괜찮다.
+
+- 근거 확인: 2026-09-15 정보기술팀 메일 첨부 `모상우교수님 안내.jpg` 의 ①은 "대표홈페이지 링크 적용"이고, 옛 Google Site 좌상단의 원형 로고를 가리켰다. 로고를 새로 두라는 문구는 없고 그 자리의 로고에 링크를 걸라는 뜻이다.
+- 다른 POSTECH 연구실 조사: POSTECH 로고를 단 곳(공식 CMS 템플릿인 DI Lab, IML, Data Systems Lab)은 모두 "POSTECH 로고 | 연구실" 가로 짜임에 로고가 학교 홈 링크다. SSLab, AIM, CV, CG, ACP 는 머리글에 POSTECH 이 없다.
+- `header-brand.html`: 워드마크와 세로 묶음(`.head-lockup`)을 빼고, 브랜드 뒤에 `.brand-school`(가는 세로선, 브랜드와 같은 Outfit 글꼴·크기, 회색, 보통 굵기, 대표홈 영어판 링크)을 더했다. 강의·스터디도 브랜드 뒤에 같이 붙는다.
+- `theme.css`: 탭 위 `--space-4` 보정을 뺐다. "MOAI Lab | POSTECH" 이 262px 이라 탭과 한 줄에 들어가는 폭이 861px 에서 901px 로 올라가서, 브랜드 아래로 탭을 내리는 구간을 681~900px 로 넓혔다. 휴대폰 글자 크기 규칙에 `.brand-school` 을 더했다.
+- `check_postech.js`: P1 은 머리글에 `POSTECH` 글자(대표홈 링크)가 있는지, P2 는 머리글 첫 링크가 연구실 홈인지 본다. `check_design.js` 의 공통 헤더 위치 비교는 워드마크 대신 `POSTECH` 글자를 잰다.
+- `POSTECH.md` P1·P2·P8과 결정 설명, `AGENTS.md`, `README.md`, `course/README.md`, `page-design.json`·`.md` 를 고쳤다. 꼬리말 POSTECH 로고(P3)는 그대로다.
+- 확인: 라이브 페이지 DOM 을 같은 구조로 바꾸고 CSS 를 입혀 연구실 1280px·360px, 강의 861px·360px 로 봤다(가로 넘침 없음).
+
 ## 기각한 안과 이유
 
 - 개인정보 링크를 왼쪽 글자와 똑같이(회색, 보통 굵기): 다른 고지와 구분되지 않는다.
@@ -76,6 +88,8 @@ POSTECH 요구사항: P1, P2, P4, P7 확인 (P1 은 좌상단 첫 요소·대표
 - 상하조합 로고로 가로 줄이기: 위 검토대로 작은 글자가 읽히지 않는다.
 - MOAI Lab 만 줄이기(5차): 워드마크 줄이 그대로 남아 탭 높이는 거의 그대로이고, 연구실 이름만 약해진다.
 - 탭을 묶음 전체의 가운데에 맞추기: 탭 글자가 POSTECH 과 MOAI Lab 사이에 떠 보인다.
+- "MOAI Lab @ POSTECH"(6차): `@` 는 연구실 이름의 일부처럼 한 덩어리로 읽힌다. `|` 가 연구실과 학교의 두 층을 나눈다.
+- 머리글 워드마크의 링크만 빼기(6차): ①이 요구한 것이 바로 그 링크라서, 글자로 바꾸면서 링크는 남겼다.
 
 ## 남은 것
 

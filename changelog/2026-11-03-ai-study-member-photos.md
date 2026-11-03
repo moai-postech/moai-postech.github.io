@@ -51,3 +51,6 @@ POSTECH 요구사항: 영향 없음
 
 ## 안내 문구 다듬기
 교수 요청으로 더 자연스럽게: "Photos come from POVIS and LinkedIn to help everyone put names to faces. If you'd like a different photo, just let Prof. Sangwoo Mo know." 길어져도 된다는 교수 판단에 따라 한 줄 제약은 풀었다.
+
+## LinkedIn 학교 필터 재검색
+LinkedIn 검색에 POSTECH 학교 필터를 걸어 소개 문구에 학교가 없는 프로필까지 다시 찾았다. 학교·학과·입학 연도가 맞는 2명을 더해 29명. 그중 1명은 LinkedIn 사진이 같은 사람으로 확인돼 POVIS 사진 대신 썼다.

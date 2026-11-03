@@ -1,7 +1,7 @@
 # 2026-11-03 AI Study Home 인터랙션 정리와 멤버 통계 축소
 작성자: Sangwoo Mo(moai-postech) | 대상: `_themes/wide/includes/course/study-member-stats.html`, `study.html`, `course.css`, `theme.css`, `design-contract.json`, `STUDY.md`, `tools/check_interaction.js` | 도구: Claude Code
 
-> **한줄 결론: Home 의 hover 반응을 링크마다 하나로 줄이고, Who we learn with 절을 없애 총원·학과 수 한 줄과 학과 면적 그래프만 How to join 안에 넣었다.**
+> **한줄 결론: Home 의 hover 반응을 링크마다 하나로 줄였다. Who we learn with 절은 한때 How to join 안 한 줄과 학과 그래프로 줄였다가, 교수 판단으로 기수 막대와 함께 되살렸다.**
 
 POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 
@@ -24,3 +24,11 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 ## 확인
 - 읽은 규칙: 상위 `AGENTS.md` 들, 저장소 `AGENTS.md`, `STUDY.md`, 2026-11-02 `ai-study-home-visual`, 2026-11-03 `study-home-review`.
 - 이 맥(Intel)에는 Ruby 3.3 이 없어 로컬 빌드를 못 했다. push 뒤 Actions `checks` 와 라이브 화면으로 확인한다.
+
+## 추가: Who we learn with 절 되살림
+교수: "이 절 있는게 낫지 않았어? 기수별 인원수 그래프 괜찮지 않나?" 검토 뒤 "절 되살려".
+- 판단: 기수 막대는 운영 지표만이 아니다. 학기마다 이어지고 돌아오는 사람이 있다는 것을 지원자에게 보인다. 산만함의 원인은 절이 아니라 hover 반응이었다.
+- `study-member-stats.html`, `study.html`, `course.css`, `design-contract.json`, `theme.css` 의 절 구성(제목, 총원 한 줄, 기수 막대, 학과 면적 그래프 320px)을 직전 커밋으로 되돌렸다. `theme.css` 는 다른 세션이 그 뒤에 고쳐 선택자 한 곳만 다시 넣었다.
+- hover 는 다시 넣지 않았다. 카드·막대 짝 강조 스크립트, 흐리기, 막대 아래 학기 이름이 신규·기존 수로 바뀌던 것(`study-cohort-detail`)을 뺐다. 신규·기존 수는 막대 툴팁에 있다. 막대와 학과 칸의 hover·포커스는 테두리 하나다.
+- How to join 은 안내문과 연락 링크만 있는 원래 상자로 돌아갔다.
+- `check_interaction.js` 는 절 안에 막대와 학과 그래프가 있는지, 카드 hover 가 다른 요소를 강조하지 않는지 본다. `STUDY.md` 도 같이 고쳤다.

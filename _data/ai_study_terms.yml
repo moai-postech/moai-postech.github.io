@@ -5,8 +5,8 @@ fall-2026:
   tldr: "How robots act through their own bodies in the physical world, and foundation models help them perceive and plan."
   icon: "assets/img/icons/physical.svg"
   learning_path:
-    - { start: 1, end: 6, title: "Robot Embodiment", text: "How robots act through their bodies: **data** to learn from, **manipulation**, **locomotion**, and **navigation**, then **humanoids** and **dexterous hands**." }
-    - { start: 7, end: 11, title: "Foundation Models for Robotics", text: "How AI helps robots act: **3D representation** and **reconstruction**, **spatial reasoning**, **VLA**, and **world models** bring perception, reasoning, and planning." }
+    - { start: 1, end: 6, title: "Robot Embodiment", text: "How robots act through their **bodies**: data to learn from, manipulation, locomotion, and navigation, then humanoids and dexterous hands." }
+    - { start: 7, end: 11, title: "Foundation Models for Robotics", text: "How **foundation models** help robots act: 3D representation and reconstruction, spatial reasoning, VLA, and world models bring perception, reasoning, and planning." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 302" }

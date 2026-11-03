@@ -75,3 +75,9 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - 딥러닝 표현을 일반적으로 고쳤다: Neural Network Basics(1–3) / Representation and Generation(4–7) / Generalization and Theory(8–10), 설명과 tldr 도 용어 나열을 줄였다.
 - LLM(Spring 2026): `See also Princeton COS 597R Deep Dive into Large Language Models (Fall 2024)` 링크. 그대로 따른 강의가 아니라 `Based on` 대신 `See also` 로, `reference_course.lead` 로 문구를 고른다(기본 `Based on`).
 - 기각: Princeton COS 597G(2022·2023). 2024 의 597R 이 post-training·reasoning 까지 다뤄 이 학기 주제와 더 가깝다.
+
+## 8차: Foundation Models 를 세 꼭지로
+교수: "FM 강의는 Perception, Generation, Multimodal LLMs 이렇게 세 꼭지로 나눌거야. 멀티모달 LLM에서는 perception과 generation을 unify한다는 강의의 플로우를 문장 설명에서 녹여주고".
+
+- Fall 2025: Perception(1–5) / Generation(6–7) / Multimodal LLMs(8–9). 네 단계(Representation Learning, Vision-Language Models, Visual Generation, Scaling and Multimodal LLMs)를 대신한다.
+- 3번째 설명은 앞의 두 꼭지를 받아 "multimodal LLMs that unify perception and generation" 으로 맺고, 그 구절을 굵게 했다. tldr 도 같은 흐름(perception → generation → 둘을 한 모델로)이다.

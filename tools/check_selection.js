@@ -3,6 +3,7 @@ const { chromium } = require('playwright');
 const { serve } = require('./lib/site');
 const CASES = [
   ['index', '.content-section.section-next p'], ['index', '.content-section.section-next a'],
+  ['index', '.mini-text p'], ['index', '.mini-text a'],
   ['index', '.focus-tab span'], ['index', '.sec-media .media-source'],
   ['teaching', '.list-intro'], ['teaching', '.list-intro a'], ['research', '.section-next a'],
   ['contact', '.step-body a'], ['teaching/ai-study/index', '.course-lead'],
@@ -44,7 +45,7 @@ const CASES = [
       }
       // A regular click still follows the link after a previous selection.
       await page.goto(`http://localhost:${server.address().port}/index.html`);
-      await page.locator('.content-section.section-next a').first().click();
+      await page.locator('.mini-text a').first().click();  // the publications link on the Paper Stella band
       await page.waitForURL('**/publications.html');
       await page.close();
     }

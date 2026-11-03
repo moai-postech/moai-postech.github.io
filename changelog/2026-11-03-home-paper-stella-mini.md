@@ -44,3 +44,4 @@ POSTECH 요구사항: 영향 없음
 - `checks` 의 `check_selection`: 띠 문장에 `pointer-events: none` 을 줘서 문장을 드래그하면 뒤의 링크가 눌려 페이지가 넘어갔다. 지웠다. 글 상자만 링크 위에 있고 나머지 띠는 그대로 링크다.
 - `test_design`: 띠의 "See our publications →" 가 `.section-next a`(절을 닫는 안내 줄, 본문 크기·강조색)로 잡혔다. 띠는 새 역할이라 `section-next` 대신 `section-band`(위 절에 24px 로 붙는 간격만)로 바꾸고, `design-contract.json` 에 `media-band-text`(`.mini-text p`, lead·흰색)와 `media-band-link`(`.mini-text a`, lead·`--accent-soft`) 역할을 더했다.
 - 같은 실행의 메뉴 굵기·색 항목은 다른 회차(머리글)의 것이라 여기서 건드리지 않았다.
+- 같은 실행(cf66025)에 남은 띠 관련 실패 넷을 고쳤다. (1) `check_selection` 이 Home 첫 `.section-next a` 를 눌러 Publications 로 가길 기다렸는데 그 자리가 Join us 가 됐다. 띠의 `.mini-text a` 로 바꾸고 띠 문장·링크 드래그 검사를 더했다. (2) `check_design` 글자 팔레트: 띠 캡션은 팔레트 흰색(`--bg`)에 투명도 .7 로 바꿨다. 띠 링크의 `--accent-soft` 는 팔레트 강조색 tint 라 `.has-mini` 안에서만 허용했다. (3) 절 위 간격: `.section-band` 를 `.section-next` 와 같은 24px 역할에 등록했다.

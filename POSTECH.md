@@ -16,7 +16,7 @@
 
 | ID | 요구사항 | 근거 | 지금 구현 | 자동 검사 |
 | --- | --- | --- | --- | --- |
-| P1 | 좌상단 첫 요소로 POSTECH 워드마크를 두고 POSTECH 대표 홈페이지 영어판(`/eng/`)으로 링크한다. 로고에 alt 를 단다. 워드마크는 머리글 위의 얇은 학교 띠(global bar)에 둔다. | 안내 ①, GUI0501 | `includes/global-bar.html` 의 `.head-postech` | 예 |
+| P1 | 좌상단 첫 요소로 POSTECH 워드마크를 두고 POSTECH 대표 홈페이지 영어판(`/eng/`)으로 링크한다. 로고에 alt 를 단다. 워드마크는 머리글 위의 학교 줄(global bar, 흰 바탕)에 둔다. | 안내 ①, GUI0501 | `includes/global-bar.html` 의 `.head-postech` | 예 |
 | P2 | 연구실 로고와 이름을 두고 사이트 홈으로 링크한다. 학교 띠 바로 아래 머리글의 첫 요소다. | 안내 ② | `includes/header-brand.html` 의 `.brand` | 예(홈 링크) |
 | P3 | 모든 페이지 꼬리말에 POSTECH 로고를 두고 대표 홈페이지 영어판으로 링크한다. | 안내 ④, GUI0502 | `includes/footer.html` 의 `.foot-postech` | 예 |
 | P4 | 꼬리말에 개인정보 처리방침 링크를 둔다. 이름은 영어판 본부 꼬리말의 공식 명칭 `Personal Information Policy`, 주소는 영어판, 다른 고지와 구분되게 본문색과 굵게(600 이상) 한다. 2026-11-03 교수 결정으로 700에서 600으로 낮췄다. | 안내 ③, GUI0502(필수) | `includes/footer.html` 의 `.foot-privacy` | 예 |

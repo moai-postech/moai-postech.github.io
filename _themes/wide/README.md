@@ -30,6 +30,7 @@
 | 논문 저자 | Publications 저자 이름 | `--text-author`(보조정보 크기), 굵기 400, 행간 1.5. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
 | 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(보조정보 크기). Home 대표 카드 배지는 `--text-featured-meta`(보조정보 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. 논문 목록 venue는 600, 자료 링크는 400, 목록 배지의 세로 패딩은 0. Home 대표 카드 venue와 발표 형식은 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
 | 페이지 시작 | 하위 탭 뒤 첫 내용, 소개 뒤 첫 절 | | `--page-start`(화면 폭에 따른 시작 여백) |
+| 그림을 설명하는 소개 | 소개 바로 뒤가 삽입 화면(`embed`)이면 소개가 그림의 설명이다(Paper Stella) | | `--space-5`(24px), 휴대폰은 `--page-start` 를 넘지 않음 |
 | 카드 안 여백 | Home 논문, Research 주제, Contact 단계 카드 | | `--card-padding`(데스크톱 24px, 모바일 16px) |
 | 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
 | 작은 머리 | Faculty 의 FACULTY POSITIONS | `--text-small` | |

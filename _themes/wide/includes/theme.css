@@ -194,6 +194,7 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .page-intro { padding-top: var(--page-start); }
 .visually-hidden + .content-section { padding-top: var(--page-start); }
 .page-intro + .content-section { padding-top: var(--page-start); }  /* intros and the first block share the responsive page-start rhythm */
+.page-intro + .embed-section { padding-top: min(var(--space-5), var(--page-start)); }  /* an intro that describes the picture right below stays with it, like a caption (Paper Stella) */
 
 /* Home hero: a full-width band, statement on the left, the orchestration picture on the right */
 .hero-band { margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); background: linear-gradient(180deg, var(--surface), var(--bg)); }

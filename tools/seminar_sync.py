@@ -50,7 +50,8 @@ HEADER = """\
 # 시트: {sheet}
 # 시트 칸: date, name, topic, slide(랩 발표는 Drive 슬라이드 파일 이름, 초청은 연사 홈페이지), note, name_en, affiliation_en, homepage, paper, nickname(슬라이드 파일 이름에 쓸 제목 별칭, 비면 자동).
 # name_en 을 채운 행만 사이트에 나온다. affiliation_en 이 있으면 초청 발표다(외부 연사 슬라이드는 공개하지 않는다, 교수 원칙).
-# 제목 링크: slides(랩 발표, assets/seminar/ 의 PDF)가 있으면 그것, 없으면 paper(연사의 해당 논문, 여러 개면 연사가 1저자인 대표 하나). 교수 2026-10-26.
+# 제목 링크: slides(랩 발표, assets/seminar/ 의 PDF)가 있으면 그것, 초청 발표는 paper(연사의 해당 논문, 여러 개면 연사가 1저자인 대표 하나). 교수 2026-10-26.
+# 랩 발표는 슬라이드가 없으면 링크를 걸지 않고 paper 도 쓰지 않는다(원 논문으로 보내지 않는다, 교수 2026-11-03).
 # 연사 이름 링크: url(초청 연사와 인턴의 홈페이지), 없으면 랩 멤버는 People 의 그 사람 자리(템플릿이 자동).
 # group: 다 같이 하는 회차(Research Sync, Internal Review, 학회 공유). 시트 name_en 이 Everyone 이면 붙는다.
 # routine: 특정 주제 발표가 아닌 회차. group 이거나 제목에 Research Sync·Internal Review·Review Session·Sharing Session 이 있으면 붙는다. 연사는 시트 담당자 대신 Lab members 로 쓰고, 그 행의 제목과 연사를 회색 보통 굵기로 둔다(교수 2026-11-02).
@@ -160,7 +161,7 @@ def parse_talks(head, rows):
             "url": get(r, "homepage") or (slide_cell if invited and slide_cell.startswith("http") else ""),
             "title": get(r, "topic"),
             "slide_name": "" if invited or slide_cell.startswith("http") else slide_cell,
-            "paper": get(r, "paper"),
+            "paper": get(r, "paper") if invited else "",  # 랩 발표는 슬라이드만 건다
             "nickname": slug(get(r, "nickname")) or nickname(get(r, "topic")),
             "group": get(r, "name_en") == GROUP_SPEAKER,
             "routine": get(r, "name_en") == GROUP_SPEAKER or bool(ROUTINE_TITLE.search(get(r, "topic"))),

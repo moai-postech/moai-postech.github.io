@@ -92,3 +92,9 @@ Schedule 확정 뒤 같은 기준(일관성, 위계)으로 Home·Project 탭과 
 - Project Timeline 의 Team Building 카드만 설명이 먼저, 팀 인원이 맨 아래였다. 다른 카드(Proposal, Final Presentation)처럼 굵은 핵심 정보 `Up to 5 students` 를 제목 바로 아래, 설명을 그 아래로 바꿨다.
 
 그대로 둔 것: 운영 정보 이름표 `LOCATION & TIME` 의 두 줄 접힘(이름표 열 7.5em 은 모든 칸이 공유하는 폭이라 넓히면 카드 전체 배치가 바뀐다).
+
+## 9차: 강의 사이트 전 페이지 점검 (같은 날)
+세 강의 × 세 탭(Home, Schedule, Project) × 네 폭(1440, 1024, 768, 375px)을 자동 점검했다(가로 스크롤, 칸을 넘치는 글자, 화면 밖 요소, 깨진 그림). Home·Schedule 은 모두 문제없었다.
+
+- Project Evaluation 이 681~960px 에서 Team(3칸)과 Individual(1칸)을 한 줄 4칸에 두어 기준 칸이 약 103px 로 좁아졌다. `Technology`, `Presentation`, `professionalism`, `responsibilities` 가 칸 밖으로 나갔다. 이 폭에서는 두 묶음을 위아래로 쌓아 기준 칸이 130~200px 이 되게 했다. 700~1024px 에서 넘침 0 건.
+- Timeline 카드의 칸 넘침 신호는 카드 사이 화살표(→, 절대 위치)라 결함이 아니다.

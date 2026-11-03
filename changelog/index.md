@@ -8,7 +8,7 @@
 | 2026-11-03 | [study-home-review](2026-11-03-study-home-review.md) | Sangwoo Mo(moai-postech) | AI Study Home, course.css, STUDY.md | 디자인 검토 후 막대 이름표를 막대 안에, 휴대폰 세로 타임라인·버튼 폭, Now 줄 1px 맞춤 |
 | 2026-11-03 | [home-paper-stella-mini](2026-11-03-home-paper-stella-mini.md) | Sangwoo Mo(moai-postech) | index.md, section.html, theme.css | Home 실적 문장을 Paper Stella 미니가 깔린 어두운 띠로, Join us 는 따로 |
 | 2026-11-03 | [header-brands](2026-11-03-header-brands.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 머리글 | 스터디 `MOAI Lab \| AI Study`(AI Study 진하게, MOAI Lab 은 연구실 홈), 강의 제목 위 줄 POSTECH 삭제, 강의 학수번호는 로고 자리 강조색, 강의 `학수번호 과목명 \| POSTECH`(hover 함께), 회색 글자 Outfit 400, 좌우 간격 두 단계(em) |
-| 2026-11-03 | [schedule-grid](2026-11-03-schedule-grid.md) | Sangwoo Mo(moai-postech) | 강의 Schedule 표 | 세 강의 같은 격자, 오른쪽 묶음 고정. Home 시간 줄바꿈, Team Building 카드 순서 |
+| 2026-11-03 | [schedule-grid](2026-11-03-schedule-grid.md) | Sangwoo Mo(moai-postech) | 강의 Schedule 표 | 세 강의 같은 격자, 오른쪽 묶음 고정. Home 시간 줄바꿈, Team Building 카드 순서, 태블릿 Evaluation 넘침 |
 | 2026-11-03 | [group-photo-tone](2026-11-03-group-photo-tone.md) | Sangwoo Mo(moai-postech) | Home 단체사진, theme.css | 사람 중심 크롭과 사이트 톤에 맞춘 부드러운 보정 |
 | 2026-11-03 | [course-code-part](2026-11-03-course-code-part.md) | Sangwoo Mo(sangwoomo) | Midterm Review HTML·PDF | 3부 By Course Code 추가, 52장 |
 | 2026-11-03 | [global-bar](2026-11-03-global-bar.md) | Sangwoo Mo(sangwoomo) | 머리글, 꼬리말, POSTECH.md | 머리글을 "MOAI Lab \| POSTECH" 글자로, 꼬리말은 의무 항목만 남겨 한 덩어리로 |

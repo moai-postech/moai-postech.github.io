@@ -70,3 +70,6 @@ POVIS·PODIUM·LinkedIn·Teams 어디에도 사진이 없는 멤버는 같은 �
 
 ## 디자인 점검
 디자인 점검(design-critique)으로 데스크톱·휴대폰 화면을 봤다. POSTECH ID 열이 넓어 LinkedIn 칩과 간격이 벌어져 열 너비를 다시 나눴다(이름 15%, ID 14%, LinkedIn 9%, 참여 31%). 이름이 사진을 여는 요소임을 알리도록 hover 때 이름만 강조색으로 바꾼다(밑줄·그림자 없이 한 가지 반응).
+
+## LinkedIn 마지막 확인
+이름 검색 외에 학과 키워드(Industrial Management Engineering, IME, 무은재)와 POSTECH 학교 필터로 학생 프로필 약 180명을 훑어 남은 멤버 이름과 대조했다. 맞는 프로필이 없어 LinkedIn 은 29명에서 확정한다. 이 열은 프로필이 있는 사람만 링크하는 열이다.

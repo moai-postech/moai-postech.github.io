@@ -137,13 +137,12 @@ h3.sub:first-child { margin-top: 0; }
 .brand { margin: 0; min-width: 0; }
 .brand a { display: flex; min-height: 42px; min-width: 0; align-items: center; gap: 10px; color: var(--text); }
 .brand a:hover { color: var(--accent); text-decoration: none; }
+.brand a:hover .brand-code { color: var(--accent); }  /* the course code and title are one link, so they turn red together */
 .brand-mark { width: auto; height: 32px; flex-shrink: 0; }
-.brand-sub { flex-shrink: 0; display: flex; align-items: center; min-height: 30px; margin-left: var(--brand-pair); color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; white-space: nowrap; }  /* lab programme after the lab name: grey and bold like the course code before a title, no hairline (that one marks the school) (교수 2026-11-03) */
-.brand-sub:hover { color: var(--accent); text-decoration: none; }
-.brand-school { flex-shrink: 0; display: flex; align-items: center; height: 22px; margin-left: var(--brand-divide); padding-left: var(--brand-divide); border-left: 1px solid var(--line); color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-regular); letter-spacing: -.3px; white-space: nowrap; }  /* "MOAI Lab | POSTECH": the school as a grey word after the lab name, linked to the POSTECH home; the wordmark stays in the footer (교수 2026-11-03) */
+.brand-sub, .brand-school { flex-shrink: 0; display: flex; align-items: center; height: 22px; margin-left: var(--brand-divide); padding-left: var(--brand-divide); border-left: 1px solid var(--line); color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-regular); letter-spacing: -.3px; white-space: nowrap; }  /* the grey part after the name, behind a hairline: "MOAI Lab | POSTECH", "IMEN891K Data Engineering | POSTECH", and on the study "MOAI Lab | AI Study" (link to the study home). Same weight, colour and spacing on all three; the POSTECH wordmark stays in the footer (교수 2026-11-03) */
 /* course home code before the title, in the slot of the lab logo: "IMEN891K Data Engineering | POSTECH" */
 .brand-code { flex-shrink: 0; color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; white-space: nowrap; margin-right: calc(var(--brand-pair) - 10px); }  /* the brand link gap is 10px (for the logo); the code to title gap follows --brand-pair */
-.brand-school:hover { color: var(--accent); text-decoration: none; }
+.brand-sub:hover, .brand-school:hover { color: var(--accent); text-decoration: none; }
 .brand-word { min-width: 0; font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; }
 .site-nav, .course-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); }
 .site-nav a, .course-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }
@@ -550,7 +549,7 @@ a.person-name:hover { color: var(--accent); }
   .brand-word, .brand-code, .brand-sub, .brand-school { font-size: var(--text-lead); line-height: 1.3; }
 }
 @media (max-width: 480px) {
-  .brand-word, .brand-sub, .brand-school { font-size: var(--text-body); white-space: nowrap; }  /* MOAI Lab AI Study stays on one line on phones */
+  .brand-word, .brand-sub, .brand-school { font-size: var(--text-body); white-space: nowrap; }  /* MOAI Lab | AI Study stays on one line on phones */
   .brand-mark { height: 26px; }
   .brand-code { display: none; }  /* no room beside a long course title: "Data Engineering | POSTECH"; the page head below still shows the codes */
 }

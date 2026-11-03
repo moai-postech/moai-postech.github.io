@@ -1,7 +1,7 @@
 # 2026-11-03 강의·스터디 머리글을 연구실 머리글 문법에 맞춤
 작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/header-brand.html`, `_themes/wide/includes/theme.css`, `tools/check_design.js`, `POSTECH.md`, `AGENTS.md`, `_themes/wide/README.md`, `_themes/wide/includes/course/README.md` | 도구: Claude Code
 
-> **한줄 결론: 스터디 머리글을 `MOAI Lab AI Study` 로 바꿨다. 강의 머리글은 `Data Engineering | POSTECH IMEN891K` 로 바꿨다가 교수 지적으로 원래 `IMEN891K Data Engineering | POSTECH` 으로 되돌렸고, 연구실 `MOAI Lab | POSTECH` 은 그대로다.**
+> **한줄 결론: 스터디 머리글을 `MOAI Lab | AI Study` 로 바꿨다. 강의 머리글은 `Data Engineering | POSTECH IMEN891K` 로 바꿨다가 교수 지적으로 원래 `IMEN891K Data Engineering | POSTECH` 으로 되돌렸고, 연구실 `MOAI Lab | POSTECH` 은 그대로다.**
 
 POSTECH 요구사항: P1 확인(연구실 머리글의 POSTECH 대표홈 링크는 그대로. 강의 머리글도 POSTECH 글자 링크 유지. 스터디 머리글은 학교 칸을 뺐고, 바닥 한 줄 P7 의 대표홈 링크가 남는다. `check_postech.js` 의 P1 은 원래 연구실 페이지만 본다)
 
@@ -57,6 +57,16 @@ POSTECH 요구사항: P1 확인(연구실 머리글의 POSTECH 대표홈 링크�
 - 기각한 안: 모든 간격을 8px 토큰(`--space-2`)으로. 이름 안 간격과 세로선 간격이 같아져 단계가 없어진다. 세로선 간격을 휴대폰에서도 12px 로 두기: 16px 글자 옆에서 이름보다 세로선이 더 눈에 띈다.
 
 - 후속: 5차 push 의 `theme.css` 에서 `.brand-code` 줄 끝 주석을 닫지 않아(`*/` 누락) 그 뒤 규칙(로고 글자 `.brand-word`, 메뉴 등)이 다음 주석 끝까지 무시됐다. `checks` 의 `test_design` 이 메뉴 굵기·글꼴 역할 위반으로 잡아 바로 닫았다. 배포 사이 몇 분 동안 라이브 머리글 일부가 기본 글꼴로 보였다.
+
+## 6차 (같은 날): 스터디 `MOAI Lab | AI Study`, 강의 링크 hover
+교수: AI Study 를 굵게 하니 못생겼다, 다시 검토. `MOAI Lab | AI Study` 로 세로선을 두면 어떤가. 강의 머리글 링크는 학수번호까지 통째로 눌리는 게 낫지 않나.
+
+- 후보 다섯(회색 보통·중간·굵게 세로선 없음, 세로선 + 회색 보통·중간)을 라이브 스터디 페이지에 나란히 놓고 연구실 `MOAI Lab | POSTECH` 과 비교했다. 세로선 + 회색 보통이 연구실 머리글과 굵기·색·간격까지 같아 세 머리말이 "진한 이름 | 회색 가는 글자" 한 문법이 된다. 회색 굵게(4차)는 무거운 회색이라 탁하고, 세로선 없는 보통 굵기는 MOAI Lab 에 붙은 꼬리표처럼 약했다.
+- `theme.css`: `.brand-sub` 를 `.brand-school` 과 한 규칙으로 합쳤다(세로선, `--brand-divide` 양옆, 높이 22px, 보통 굵기, 회색). 링크는 그대로 스터디 Home.
+- 강의 링크: 학수번호와 과목명은 원래 한 링크였다(사이 간격 포함). 마우스를 올리면 과목명만 강조색이 되고 학수번호는 회색으로 남아 링크가 아닌 것처럼 보였다. `.brand a:hover .brand-code` 로 둘이 함께 바뀐다.
+- 문서: `AGENTS.md`, `POSTECH.md` P1, `_themes/wide/README.md`, `course/README.md`, `header-brand.html` 주석.
+- 확인: 라이브 스터디에 같은 CSS 를 입혀 1280px·360px(머리말 오른쪽 끝 188px), 강의 1280px 에서 학수번호 위 hover 로 둘 다 강조색인 것을 봤다.
+- 기각한 안: 4차의 회색 굵게(위 이유). 회색 중간 굵기(600)는 세로선이 있든 없든 연구실 POSTECH(400)과 굵기가 달라 문법이 하나 더 생긴다. 11-02 에 세로선을 뺀 이유는 `POSTECH | MOAI Lab | AI Study` 로 선이 둘이었기 때문이고, 지금은 선이 하나라 해당하지 않는다.
 
 ## 남은 것
 없음.

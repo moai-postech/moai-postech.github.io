@@ -141,10 +141,11 @@ a.cs-speaker-name:hover { color: var(--accent); }
   .lecture-schedule td.cs-topic[colspan] { padding-right: var(--cs-end); }
   .lecture-schedule .cs-session { align-items: baseline; }  /* place sits on the title's baseline and time on the speaker's (교수 2026-11-03: "게스트렉처 세로 간격") */
   .lecture-schedule :is(.cs-speaker, .cs-session-meta > span) { line-height: 24px; }  /* both sides step by the title's 24px line, so the second lines line up too */
+  .lecture-schedule td.cs-topic[colspan] { padding-bottom: calc(var(--space-3) + 1px); }  /* one-line rows keep 20px under the baseline (their PDF and Reading cells add 2px); a guest row matches it */
   .lecture-schedule .cs-session-meta { margin-left: auto; }  /* if a long title wraps place and time, they stay at the right */
 }
 @media (min-width: 1000px) {
-  .lecture-schedule { --cs-materials: 120px; --cs-reading: 200px; --cs-end: 64px; }  /* at 1280px: PDF to Reading about 120px, 64px before the row's end */
+  .lecture-schedule { --cs-materials: 112px; --cs-reading: 168px; --cs-end: 64px; }  /* PDF to Reading about 74px, close to the 64px end margin (교수 2026-11-03: "Materials 너무 왼쪽") */
 }
 
 a.cs-title { color: var(--text); }  /* project days lead to the project page */

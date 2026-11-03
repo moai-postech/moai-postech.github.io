@@ -162,6 +162,10 @@ a.cs-title:hover { color: var(--accent); }
 .project-criteria li { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4); background: var(--bg); border-radius: var(--radius-1); }  /* four criterion blocks, grouped 3 / 1 by the grey cards around them */
 .project-criteria strong { font-weight: var(--weight-emphasis); }
 .project-criteria li > span { color: var(--muted); font-size: var(--text-meta); }
+@media (min-width: 681px) and (max-width: 960px) {  /* tablet: the team and individual cards stack, so four criteria keep room for words like "professionalism" (2026-11-03 디자인 검토) */
+  .project-evaluation-groups { grid-template-columns: 1fr; }
+  .project-evaluation-team, .project-evaluation-individual { grid-column: auto; }
+}
 @media (max-width: 680px) {
   .project-evaluation-groups, .project-criteria { grid-template-columns: 1fr; }
   .project-evaluation-team, .project-evaluation-individual { grid-column: auto; }

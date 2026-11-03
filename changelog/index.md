@@ -6,7 +6,7 @@
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
 | 2026-11-03 | [home-paper-stella-mini](2026-11-03-home-paper-stella-mini.md) | Sangwoo Mo(moai-postech) | index.md, section.html, theme.css | Home 실적 안내 옆에 Paper Stella 미니 미리보기, 누르면 By Topic |
-| 2026-11-03 | [header-brands](2026-11-03-header-brands.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 머리글 | 스터디 `MOAI Lab AI Study`, 강의는 `학수번호 과목명 \| POSTECH` 유지(1차 안 되돌림) |
+| 2026-11-03 | [header-brands](2026-11-03-header-brands.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 머리글 | 스터디 `MOAI Lab AI Study`, 강의는 `학수번호 과목명 \| POSTECH` 유지, 회색 글자 Outfit 400 실제 적용 |
 | 2026-11-03 | [schedule-grid](2026-11-03-schedule-grid.md) | Sangwoo Mo(moai-postech) | 강의 Schedule 표 | 세 강의 같은 격자, 오른쪽 구역(Materials·Reading·초청 장소)은 열 선에서 왼쪽 정렬 |
 | 2026-11-03 | [group-photo-tone](2026-11-03-group-photo-tone.md) | Sangwoo Mo(moai-postech) | Home 단체사진, theme.css | 사람 중심 크롭과 사이트 톤에 맞춘 부드러운 보정 |
 | 2026-11-03 | [course-code-part](2026-11-03-course-code-part.md) | Sangwoo Mo(sangwoomo) | Midterm Review HTML·PDF | 3부 By Course Code 추가, 52장 |

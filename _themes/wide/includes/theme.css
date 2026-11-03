@@ -330,7 +330,7 @@ a.mentee-name:hover { color: var(--accent); }
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
 .topic-card h3 { margin: 0; }
-.topic-card h3, .step-body h3, .study-overview h3, .study-learning-path h4, .course-parts strong, .study-step-title { font-size: var(--text-body); font-weight: var(--weight-emphasis); line-height: var(--leading-card); letter-spacing: normal; }
+.topic-card h3, .step-body h3, .study-overview h3, .study-learning-path h4, .course-parts strong, .study-step-title, .study-stat-breakdowns h3 { font-size: var(--text-body); font-weight: var(--weight-emphasis); line-height: var(--leading-card); letter-spacing: normal; }
 .topic-card p { margin: 0 0 var(--space-2); color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
 .paper-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }  /* chips follow the lead paper; a shorter card keeps its spare room at the bottom */
 .chip { display: inline-flex; align-items: baseline; gap: var(--space-1); padding: 2px var(--space-2); background: var(--bg); border-radius: var(--radius-1); color: var(--text); font-size: var(--text-meta); font-weight: var(--weight-emphasis); white-space: nowrap; }

@@ -20,7 +20,7 @@
 /* POSTECH (university home) and the privacy link are required on every page of the school domain (IT team 2026-09-15) */
 .course-foot .course-postech { color: var(--muted); font-weight: var(--weight-regular); }
 .course-foot .course-postech::before { content: "\00b7"; margin-right: var(--space-2); color: var(--muted); }
-.course-foot .course-privacy { margin-left: auto; font-weight: var(--weight-emphasis); }
+.course-foot .course-privacy { margin-left: auto; }
 .course-site main > :last-child { padding-bottom: var(--space-8); }
 .course-site main { text-wrap: pretty; }  /* course and study pages: no single word left alone on a last line (교수 2026-11-02) */
 

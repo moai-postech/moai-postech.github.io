@@ -45,3 +45,14 @@ POSTECH 요구사항: 영향 없음
 - `test_design`: 띠의 "See our publications →" 가 `.section-next a`(절을 닫는 안내 줄, 본문 크기·강조색)로 잡혔다. 띠는 새 역할이라 `section-next` 대신 `section-band`(위 절에 24px 로 붙는 간격만)로 바꾸고, `design-contract.json` 에 `media-band-text`(`.mini-text p`, lead·흰색)와 `media-band-link`(`.mini-text a`, lead·`--accent-soft`) 역할을 더했다.
 - 같은 실행의 메뉴 굵기·색 항목은 다른 회차(머리글)의 것이라 여기서 건드리지 않았다.
 - 같은 실행(cf66025)에 남은 띠 관련 실패 넷을 고쳤다. (1) `check_selection` 이 Home 첫 `.section-next a` 를 눌러 Publications 로 가길 기다렸는데 그 자리가 Join us 가 됐다. 띠의 `.mini-text a` 로 바꾸고 띠 문장·링크 드래그 검사를 더했다. (2) `check_design` 글자 팔레트: 띠 캡션은 팔레트 흰색(`--bg`)에 투명도 .7 로 바꿨다. 띠 링크의 `--accent-soft` 는 팔레트 강조색 tint 라 `.has-mini` 안에서만 허용했다. (3) 절 위 간격: `.section-band` 를 `.section-next` 와 같은 24px 역할에 등록했다.
+
+## 4차(같은 날): 링크 하나만 보이게, 지도에 맥락
+교수: See our publications 와 Explore by topic 이 둘 다 보여 지저분하다. 지도가 한쪽에 붙어 있고, 은하수만 있어 우리 논문이라는 맥락이 없다. 디자인 스킬로 다시.
+- 비교(1024px 시안): 안 A 두 링크 모두 표시(현재), 안 B 캡션은 hover·focus 때만, 안 C 문장 링크를 빼고 띠 전체를 By Topic 링크로. 안 B 를 골랐다. 평소에는 문장 안 링크 하나만 보이고, 지도를 가리키면 "Explore by topic →" 이 나타나 어디로 가는지 알린다.
+- `theme.css`: `.mini-caption` 평소 투명도 0, hover·focus 때 1.
+- 지도 쪽(Paper Stella 미니): 넓은 띠에 맞춰 더 확대, 우리 논문 별 키움, 게재 논문 이름표를 하나씩 돌아가며, 오른쪽 위 범례 "★★ Our papers · Papers we read", 로딩 중 원래 화면이 비치지 않게. 그 저장소 `changelog/2026-11-03-mini-mode.md` 3차.
+
+### 기각한 안과 이유(4차)
+- 안 C(문장 링크 빼기): Publications 목록으로 가는 가장 직접적인 길이 사라지고, 지도를 누르면 목록이 아니라 지도 화면으로 간다.
+- 캡션을 범례로 바꿔 상시 표시: 띠 오른쪽 아래와 위에 글자가 둘 생겨 다시 복잡해진다. 범례는 지도 안(위), 캡션은 hover 때만.
+- 우리 논문 이름표 전부 표시: 40여 개가 겹쳐 처음 지적한 산만함으로 돌아간다.

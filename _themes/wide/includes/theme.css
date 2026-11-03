@@ -463,7 +463,7 @@ a.person-name:hover { color: var(--accent); }
   .focus-panels { padding: var(--space-4); }
   .focus-tabs { align-items: stretch; }  /* a two-line label keeps the three icons on one line */
   .focus-tab img { width: 36px; height: 36px; }
-  .section-photo img { height: 220px; }
+  .section-photo img { height: auto; aspect-ratio: 1780 / 933; }  /* phones show the whole pre-cropped photo so no one at the ends is cut (2026-11-03) */
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
   .profile { gap: var(--space-5); }
   .contact-step { grid-template-columns: 32px minmax(0, 1fr); align-items: center; }

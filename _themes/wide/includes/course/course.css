@@ -318,7 +318,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-members-table .sm-department { width: 10%; }
 .study-members-table .sm-year { width: 9%; }
 .study-members-table .sm-email { width: 18%; }  /* POSTECH IDs are short, so Participation sits closer (교수 2026-11-02) */
-.study-members-table .sm-participation { width: 34%; }
+.study-members-table .sm-linkedin { width: 8%; }
+.study-members-table .sm-participation { width: 26%; }
 .study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
 .study-members-table thead th { padding-top: 0; padding-bottom: var(--space-2); border-bottom-color: var(--text); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }  /* same table head as the course and study schedules */
 .study-members-table tbody th { font-weight: var(--weight-emphasis); overflow-wrap: anywhere; }
@@ -335,9 +336,13 @@ a.cs-title:hover { color: var(--accent); }
 /* Hovering or focusing a name shows that student's POVIS photo above it (교수 2026-11-03). The photo comes from the encrypted roster only. */
 .study-member-name { position: relative; }
 .study-member-photo-note { margin: 0 0 var(--space-4); color: var(--muted); font-size: var(--text-meta); }
-.study-member-name.has-photo { cursor: default; text-decoration: underline dotted var(--line); text-underline-offset: 4px; }
+/* No underline under names: nearly everyone has a photo and the note above the tabs says so (2026-11-03) */
 .study-member-photo { position: absolute; z-index: 5; bottom: calc(100% + var(--space-2)); left: 0; width: 96px; max-width: none; height: 128px; object-fit: cover; border-radius: var(--radius-2); border: 1px solid var(--line); background: var(--surface); visibility: hidden; pointer-events: none; }
 .study-member-name:is(:hover, :focus) .study-member-photo { visibility: visible; }
+.study-member-name:focus:not(:focus-visible) { outline: none; }  /* a tap shows the photo without a focus ring */
+/* LinkedIn: a small 'in' chip in the marker style, accent on hover (교수 2026-11-03) */
+.study-member-in { display: inline-block; padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--surface); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-heading); text-decoration: none; }
+.study-member-in:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; }
 @media (max-width: 960px) {
   .study-members-table, .study-members-table tbody { display: block; }
   .study-members-table thead { display: none; }
@@ -347,7 +352,7 @@ a.cs-title:hover { color: var(--accent); }
   .study-members-table th, .study-members-table td { display: block; padding: 0; border: 0; text-align: left; }
   .study-members-table .study-member-n { order: 0; min-width: 2em; font-size: var(--text-meta); }
   .study-members-table tbody th { order: 1; flex: 1 1 calc(100% - 3em); }
-  .study-members-table td:is(:nth-child(2), :nth-child(3), :nth-child(4), :nth-child(6)) { order: 2; color: var(--muted); font-size: var(--text-meta); }
+  .study-members-table td:is(:nth-child(2), :nth-child(3), :nth-child(4), :nth-child(6), :nth-child(7)) { order: 2; color: var(--muted); font-size: var(--text-meta); }
   .study-members-table td:nth-child(2) { margin-left: calc(2em + var(--space-2)); }
   .study-members-table td:is(:nth-child(2), :nth-child(3), :nth-child(4))::after { content: "\00b7"; margin-left: var(--space-2); }
   .study-members-table td:last-child { order: 3; flex-basis: 100%; padding-left: calc(2em + var(--space-2)); }

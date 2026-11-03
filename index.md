@@ -24,7 +24,7 @@ sections:
       url: "https://moai-lab.duckdns.org/paper-stella-public/?mini=1"
       href: landscape.html
       label: "Explore our papers in Paper Stella"
-      caption: "Explore Paper Stella →"
+      caption: "Explore Paper Stella"
     body: |
       Our work appears at top AI conferences such as NeurIPS, ICML, and ICLR. [See our publications →](publications.html)
   # 모집은 실적과 떼어 따로 둔 floating callout(교수 2026-11-03)

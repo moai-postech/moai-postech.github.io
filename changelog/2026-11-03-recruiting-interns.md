@@ -1,5 +1,5 @@
 # 2026-11-03 Home 모집 문구에 interns 추가
-작성자: Sangwoo Mo(sangwoomo) | 대상: Home | 도구: Claude Code
+작성자: Sangwoo Mo(moai-postech) | 대상: Home | 도구: Claude Code
 
 > **한줄 결론: Home 모집 문구를 `students and interns` 로 바꿔 Contact 의 학부 인턴 중심 모집과 맞춤.**
 

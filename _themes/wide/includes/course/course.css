@@ -462,59 +462,27 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-when { position: relative; padding: 0 var(--space-2); background: var(--bg); }  /* the line breaks on both sides of the label */
 .study-term-card.is-current .study-term-dot { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
 .study-term-card.is-current .study-term-when { color: var(--accent); font-weight: var(--weight-emphasis); }
-.study-term-card > a { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: var(--text); text-decoration: none; transition: border-color .15s, box-shadow .15s, transform .15s; }
-.study-term-card > a:hover { border-color: var(--accent); box-shadow: var(--callout-shadow); text-decoration: none; color: var(--text); }
+.study-term-card > a { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: var(--text); text-decoration: none; transition: border-color .15s; }
+.study-term-card > a:hover { border-color: var(--accent); text-decoration: none; color: var(--text); }  /* the one hover on Home: the border turns accent (교수 2026-11-03) */
 .study-term-card.is-current > a { border-color: var(--callout-line); background: var(--callout-surface); }
-.study-term-card.is-current > a:hover { border-color: var(--accent); }  /* the current term reacts like the others */
-.study-term-card.is-linked > a { border-color: var(--accent); box-shadow: var(--callout-shadow); }  /* its bar is hovered below */
-.study-term-card > a:hover { transform: translateY(-2px); }
 .study-term-card > a img { width: 56px; height: 56px; margin-bottom: var(--space-2); border-radius: var(--radius-1); }
 .study-term-now { position: relative; padding: 2px var(--space-2); border-radius: 999px; line-height: 18px; background: var(--accent); color: var(--white); font-size: var(--text-small); font-weight: var(--weight-emphasis); }  /* 22px tall: fits the 24px step row so the current card starts on the same line as the others */
 .study-term-card .study-term-title { margin: 0; font-size: var(--text-body); font-weight: var(--weight-emphasis); line-height: 1.4; letter-spacing: normal; }  /* the shared card-heading role */
 .study-term-count { color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-term-tldr { padding-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); line-height: var(--leading-card); }  /* the term in one sentence (tldr), shared with the Schedule tab; starts right under the count so the four cards' sentences begin on one line */
 
-/* Member statistics: one panel row of summary numbers, then cohort bars and a department treemap side by side. */
-.study-stat-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-5); }
-.study-stat-head h2 { margin: 0; }
+/* Member statistics inside How to join: one line (total, departments) with the member link, then the department treemap. */
+.study-stat-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2) var(--space-4); }
 .study-stat-members { color: var(--accent); font-size: var(--text-control); }
 .study-stat-summary { margin: 0; }
-.study-stat-summary > div { display: flex; align-items: baseline; gap: var(--space-2); }  /* 39 members since Fall 2025 */
+.study-stat-summary > div { display: flex; align-items: baseline; gap: var(--space-2); }  /* 39 members from 7 departments since Fall 2025 */
 .study-stat-summary dt { color: var(--muted); font-size: var(--text-meta); }
 .study-stat-summary dd { margin: 0; font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; }
-.study-stat-breakdowns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8); margin-top: var(--space-5); }
-.study-stat-panel { margin: 0; }
-.study-stat-panel figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
-.study-stat-panel h3 { margin: 0; }
-.study-cohort-bar .is-new { background: var(--accent); }
-.study-cohort-bar .is-existing { background: color-mix(in srgb, var(--accent) 35%, var(--bg)); }
 /* the latest bar names its two parts in place of a corner legend (labels sit on the shape) */
-.study-cohort-bar > span:not(.study-chart-value) { display: flex; align-items: center; justify-content: center; min-height: 0; overflow: hidden; }
-.study-bar-key { padding: 0 var(--space-1); font-size: var(--text-small); white-space: nowrap; }
-.study-cohort-bar .is-new .study-bar-key { color: var(--white); }
-.study-cohort-bar .is-existing .study-bar-key { color: var(--text); }
-.study-cohort-chart { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); align-items: end; height: 320px; }  /* same height as the department map beside it */
-.study-cohort-chart li { height: 100%; transition: opacity .15s; }
-.study-cohort-link { display: grid; grid-template-rows: minmax(0, 1fr) auto; height: 100%; color: inherit; text-decoration: none; }
-.study-cohort-link:hover { color: inherit; text-decoration: none; }
 /* hover or a linked term card: the bar stays, the others step back, and its label shows the new/returning split */
-.study-cohort-chart:hover li:not(:hover), .study-cohort-chart.is-focusing li:not(.is-linked) { opacity: .4; }
-.study-cohort-detail { display: none; color: var(--text); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.study-cohort-detail i { display: inline-block; width: 8px; height: 8px; margin: 0 var(--space-1) 0 var(--space-2); border-radius: 2px; }  /* the legend's swatches: new, then returning */
-.study-cohort-detail i:first-child { margin-left: 0; }
-.study-cohort-detail .is-new { background: var(--accent); }
-.study-cohort-detail .is-existing { background: color-mix(in srgb, var(--accent) 35%, var(--bg)); }
-.study-cohort-chart li:is(:hover, .is-linked) .study-cohort-term { display: none; }
-.study-cohort-chart li:is(:hover, .is-linked) .study-cohort-detail { display: block; }
-.study-cohort-track { display: flex; flex-direction: column; justify-content: flex-end; padding-top: var(--space-5); }
-.study-cohort-bar { position: relative; display: flex; flex-direction: column; min-height: 24px; border-radius: var(--radius-1) var(--radius-1) 0 0; overflow: visible; }
-.study-cohort-bar > span:first-of-type { border-radius: var(--radius-1) var(--radius-1) 0 0; }
-.study-cohort-bar .study-chart-value { position: absolute; bottom: 100%; left: 0; right: 0; padding-bottom: var(--space-1); text-align: center; font-size: var(--text-body); font-weight: var(--weight-heading); font-variant-numeric: tabular-nums; }
-.study-cohort-label { display: flex; flex-direction: column; align-items: center; padding-top: var(--space-2); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--text-small); }
-.study-cohort-label b { color: var(--text); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
-.study-cohort-chart li:last-child .study-cohort-label b { color: var(--accent); }
-.study-dept-map { position: relative; height: 320px; }
-.study-dept-map li { position: absolute; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-2) var(--space-3); border: 2px solid var(--bg); border-radius: var(--radius-1); background: color-mix(in srgb, var(--accent) var(--share, 30%), var(--bg)); color: var(--text); font-size: var(--text-meta); overflow: hidden; }
+.study-member-stats { margin: var(--space-5) 0 0; }
+.study-dept-map { position: relative; height: 180px; margin-top: var(--space-3); }
+.study-dept-map li { position: absolute; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-2) var(--space-3); border: 2px solid var(--callout-surface); border-radius: var(--radius-1); background: color-mix(in srgb, var(--accent) var(--share, 30%), var(--bg)); color: var(--text); font-size: var(--text-meta); overflow: hidden; }
 .study-dept-map li .study-chart-value { font-size: var(--text-h2); font-weight: var(--weight-heading); line-height: 1.2; }
 .study-dept-map li.is-dark { color: var(--white); }
 .study-dept-map li span { overflow: hidden; font-weight: var(--weight-emphasis); }
@@ -525,12 +493,9 @@ a.cs-title:hover { color: var(--accent); }
 .study-dept-map li.is-small .study-chart-value { font-size: var(--text-meta); }
 .study-dept-map li.is-tiny { flex-direction: column; flex-wrap: nowrap; gap: var(--space-1); }  /* name over count, centred, in a thin tile */
 .study-dept-map:not(.is-drawn) { height: auto; }
-.study-dept-map li { transition: opacity .15s; }
-.study-dept-map:hover li:not(:hover) { opacity: .55; }
 .study-dept-link { position: absolute; inset: 0; border-radius: inherit; }  /* the whole tile opens Members filtered to that department */
-.study-dept-link:focus-visible { outline: 2px solid var(--text); outline-offset: -4px; }
+.study-dept-link:is(:hover, :focus-visible) { outline: 2px solid var(--text); outline-offset: -4px; }
 .study-dept-map:not(.is-drawn) li { position: static; }
-.study-home-community > h2 { font-size: var(--text-h2); }
 .study-home-join { padding-top: var(--section-gap); }
 .study-home-join .study-join-next { margin-top: var(--space-4); }
 .study-home-join .study-join-next a { color: var(--accent); }
@@ -545,7 +510,6 @@ a.cs-title:hover { color: var(--accent); }
   .study-term-card > a img { grid-row: 1 / span 3; width: 48px; height: 48px; margin: 0; }
   .study-term-card > a > :not(img) { grid-column: 2; }
   .study-term-tldr { padding-top: var(--space-2); }
-  .study-cohort-label { white-space: nowrap; }
   .study-dept-map li.is-sliver > span:first-child { display: none; }  /* a sliver keeps only its number; the name stays in its tooltip */
   /* phones: the timeline runs down the left; cards sit right of the line, under their term label */
   .study-term-card { position: relative; }
@@ -554,9 +518,6 @@ a.cs-title:hover { color: var(--accent); }
   .study-term-step::before { left: 6px; right: auto; top: 12px; bottom: calc(-1 * var(--space-4) - 12px); width: 2px; height: auto; }  /* dot to the next term's dot */
   .study-term-card:nth-last-child(2) .study-term-step::before { background: linear-gradient(180deg, var(--line), var(--accent)); }
   .study-home-hero .hero-actions .button { width: 100%; justify-content: center; }  /* stacked buttons share one width */
-  .study-stat-breakdowns { grid-template-columns: 1fr; gap: var(--space-6); }
-  .study-cohort-chart { height: 240px; gap: var(--space-3); }
   .study-dept-map { height: 240px; }
 }
 
-.study-home-community > .section-next { margin-top: var(--space-5); }

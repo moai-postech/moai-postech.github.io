@@ -23,7 +23,11 @@ async function checkStudyOverview(page, base) {
   for (const href of await links.evaluateAll(items => items.map(a => a.getAttribute('href'))))
     check(/^teaching\/ai-study\/schedule\/#[a-z0-9-]+$/.test(href), 'Home term link lost its Schedule destination');
   check(await page.locator('.study-home-hero .hero-actions a[href*="schedule"]').count() === 1, 'Home latest schedule entry missing');
-  check(await page.locator('.study-member-stats,.study-home-join').count() === 2, 'Home lost member statistics or joining guidance');
+  // Member statistics live inside How to join as one line and the department map; no cohort bars and no paired hover (교수 2026-11-03).
+  check(await page.locator('.study-home-join .study-member-stats .study-dept-map li').count() > 0, 'Home lost the department map inside How to join');
+  check(await page.locator('.study-cohort-chart').count() === 0, 'Home brought back the cohort bars');
+  await links.first().hover();
+  check(await page.locator('.is-linked').count() === 0, 'Home term cards highlight something else on hover');
   check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'Home overflows');
   for (const url of ['teaching/ai-study/schedule/']) {
     await page.goto(new URL(url, base).href);

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-03 | [ai-study-home-trim](2026-11-03-ai-study-home-trim.md) | Sangwoo Mo(moai-postech) | AI Study Home, course.css, STUDY.md | hover 반응을 링크마다 하나로, Who we learn with 절 대신 How to join 안에 총원 한 줄과 학과 면적 그래프 |
 | 2026-11-03 | [tab-names](2026-11-03-tab-names.md) | Sangwoo Mo(moai-postech) | _config.yml, landscape.md | Publications 목록 탭 `Paper List` → `Full List`, Paper Stella 페이지 머리 한 줄 설명, 나머지 탭 이름 유지 |
 | 2026-11-03 | [audit-interaction-check](2026-11-03-audit-interaction-check.md) | Sangwoo Mo(moai-postech) | tools/check_interaction.js | 전수 검사 실패 원인 두 줄(단계 라벨 정규식, 새 탭 검사 링크)을 현재 디자인에 맞춤 |
 | 2026-11-03 | [study-home-review](2026-11-03-study-home-review.md) | Sangwoo Mo(moai-postech) | AI Study Home, course.css, STUDY.md | 디자인 검토 후 막대 이름표를 막대 안에, 휴대폰 세로 타임라인·버튼 폭, Now 줄 1px 맞춤 |

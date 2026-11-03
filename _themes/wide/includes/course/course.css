@@ -139,6 +139,8 @@ a.cs-speaker-name:hover { color: var(--accent); }
   .lecture-schedule .cs-mat { display: inline-block; width: calc(var(--cs-materials) - 2 * var(--space-3)); text-align: center; }
   .lecture-schedule :is(th, td).cs-reading { width: var(--cs-reading); padding-left: var(--space-3); padding-right: var(--cs-end); }
   .lecture-schedule td.cs-topic[colspan] { padding-right: var(--cs-end); }
+  .lecture-schedule .cs-session { align-items: baseline; }  /* place sits on the title's baseline and time on the speaker's (교수 2026-11-03: "게스트렉처 세로 간격") */
+  .lecture-schedule :is(.cs-speaker, .cs-session-meta > span) { line-height: 24px; }  /* both sides step by the title's 24px line, so the second lines line up too */
   .lecture-schedule .cs-session-meta { margin-left: auto; }  /* if a long title wraps place and time, they stay at the right */
 }
 @media (min-width: 1000px) {

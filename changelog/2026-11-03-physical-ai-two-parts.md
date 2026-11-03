@@ -81,3 +81,16 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 
 - Fall 2025: Perception(1–5) / Generation(6–7) / Multimodal LLMs(8–9). 네 단계(Representation Learning, Vision-Language Models, Visual Generation, Scaling and Multimodal LLMs)를 대신한다.
 - 3번째 설명은 앞의 두 꼭지를 받아 "multimodal LLMs that unify perception and generation" 으로 맺고, 그 구절을 굵게 했다. tldr 도 같은 흐름(perception → generation → 둘을 한 모델로)이다.
+
+## 9차: 스케줄 표 네 개의 열 간격, 누른 카드 모양, unify
+교수: "그룹 클릭해도 면까지 크림슨 되는건 그냥 빼자. 마우스 올렸을때랑 클릭했을때 달라지는거 별로야", "slides, lab이 좀 더 열 간격이 넓은게 좋을 것 같은데... 스케줄 시트 쭉 돌면서 열 간격 좀 개선하라니까?", "일단 디자인부터 완성해놔 컨텐츠는 나중에 더 고칠건데.. 스케줄 표 4개 다 이쁘게 해두면 돼", "unify perception and generation 여기서는 unify만 강조해도 충분할듯..".
+
+- 누른 카드: `is-pinned` 모양(연한 강조색 면, 채운 점, 강조색 굵은 글자)을 모두 뺐다. 누른 카드는 hover 와 같은 강조색 테두리로 남고 회차 행 강조도 남는다. 4차 결정을 교수가 되돌렸다.
+- 열 폭(`course.css`, 표 1200px 에서 네 학기를 하나씩 보고 정함):
+  - 논문 학기(Fall 2026, Spring 2026, Fall 2025): Topic 34→32%, Papers 15→16%, Demo 13→15%, Presenters 11→10%, 자료 8.5→10.5em. Topic 오른쪽 빈 공간을 Papers·Demo 로 옮겼고, 키워드는 모두 한 줄, Demo 도 한 줄이다.
+  - 강의 학기(Summer 2026): Topic 39→44%, Lec 17→15%, Presenters 13→15%, 자료 16%→10.5em. Lec 칸이 `Lec 13 Lec 14` 보다 훨씬 넓어 비어 있었다.
+  - Slides 와 Lab 사이 8px → 24px(`--space-5`). 두 열로 읽힌다.
+  - 단계 카드 설명에 `text-wrap: pretty`. 마지막 줄에 단어 하나만 남지 않는다.
+- Fall 2025 3번째 설명은 **unify** 한 단어만 굵게.
+- 기각: Demo 가 없는 학기에서 Demo 열을 빼는 안. 네 학기 모두 Demo 가 하나 이상 있다(Spring 2026 은 OpenClaw 하나).
+- 작업 사고: 공유 작업 폴더에서 다른 세션이 동시에 커밋하고 있어, 임시 worktree 를 만들다 실패한 명령의 뒷부분이 공유 폴더에서 돌아 이 기록 몇 줄만 든 커밋이 생겼다. push 는 거절됐고, 커밋을 `reset --soft` 로 풀고 그 줄을 지웠다. 이후 작업은 scratchpad 의 별도 clone 에서 했다.

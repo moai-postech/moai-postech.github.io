@@ -1,4 +1,4 @@
-{% comment %}꼬리말. 내용은 _config.yml 의 footer 에 있다(POSTECH 도메인 필수 요소라 지우지 않는다){% endcomment %}
+{% comment %}꼬리말. 왼쪽은 연구실과 주소, 오른쪽은 POSTECH 로고(대표홈, 안내 ④)와 개인정보 링크(안내 ③), 저작권. 내용은 _config.yml 의 footer 와 postech 에 있다(교수 2026-11-03: 정보기술팀 의무 항목만 지키고 단순하게){% endcomment %}
 {% assign f = site.footer %}{% assign u = site.postech %}
   <footer class="site-foot">
     <div class="foot-main">
@@ -8,13 +8,13 @@
         {{ f.address }}</p>
         <p class="muted">{{ f.office }} &middot; <span class="foot-tel">Tel.: {{ f.phone }}</span></p>
       </div>
-      <a class="foot-postech" href="{{ u.url }}">
-        <img src="{{ u.wordmark }}" alt="POSTECH" width="733" height="62">
-      </a>
-    </div>
-    <div class="foot-base">
-      {% comment %}Last updated 는 Pages 빌드 시각(UTC)을 KST 로 옮긴 날짜다. push 와 주간 세미나 동기화가 빌드를 일으킨다{% endcomment %}
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} &middot; Last updated {{ site.time | date: "%s" | plus: 32400 | date: "%b %-d, %Y" }}</p>
-      <p><a class="foot-privacy" href="{{ u.privacy_url }}">{{ u.privacy_label }}</a></p>
+      <div class="foot-side">
+        <a class="foot-postech" href="{{ u.url }}"><img src="{{ u.wordmark }}" alt="POSTECH" width="733" height="62"></a>
+        <div class="foot-legal">
+          <p><a class="foot-privacy" href="{{ u.privacy_url }}">{{ u.privacy_label }}</a></p>
+          {% comment %}Last updated 는 Pages 빌드 시각(UTC)을 KST 로 옮긴 날짜다. push 와 주간 세미나 동기화가 빌드를 일으킨다{% endcomment %}
+          <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} &middot; Last updated {{ site.time | date: "%s" | plus: 32400 | date: "%b %-d, %Y" }}</p>
+        </div>
+      </div>
     </div>
   </footer>

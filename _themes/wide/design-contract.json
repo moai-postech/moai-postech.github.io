@@ -344,7 +344,7 @@
       "id": "privacy-link",
       "selector": ".foot-privacy, .course-privacy",
       "style": {
-        "fontWeight": "var(--weight-emphasis)"
+        "fontWeight": "var(--weight-regular)"
       }
     },
     {

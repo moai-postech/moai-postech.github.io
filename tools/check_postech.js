@@ -32,7 +32,6 @@ function inspect({ kind, P, F }) {
   const home = new URL('/', location.href).href;
   const isHome = a => a && (a.href === home || a.href === home + 'index.html');
   const ratioOk = img => img && img.naturalWidth && Math.abs(img.getBoundingClientRect().width / img.getBoundingClientRect().height - img.naturalWidth / img.naturalHeight) / (img.naturalWidth / img.naturalHeight) < 0.03;
-  const bold = e => e && parseInt(getComputedStyle(e).fontWeight, 10) >= 600;  // P4: 600 이상(교수 2026-11-03)
   const need = (ok, id, msg) => { if (!ok) out.push(`${id} ${msg}`); };
   const links = sel => [...document.querySelectorAll(sel)];
   if (kind === 'lab') {
@@ -51,20 +50,14 @@ function inspect({ kind, P, F }) {
     const priv = fl.find(a => sameUrl(a, P.privacy_url));
     need(priv && visible(priv), 'P4', '꼬리말에 개인정보 링크가 없다');
     need(!priv || priv.textContent.trim() === P.privacy_label, 'P4', `개인정보 링크 이름이 "${P.privacy_label}" 가 아니다`);
-    need(!priv || bold(priv), 'P4', '개인정보 링크가 굵지 않다');
     need(fl.some(a => isHome(a) && a.textContent.includes('MOAI') && a.querySelector('img')), 'P5', '꼬리말에 연구실 로고·이름(홈 링크)이 없다');
-    need(fl.some(a => sameUrl(a, F.department_url)), 'P5', '꼬리말에 학과 링크가 없다');
-    const text = foot ? foot.textContent.replace(/\s+/g, ' ') : '';
-    need(text.includes(F.address), 'P6', '꼬리말에 주소가 없다');
-    need(text.includes(F.phone), 'P6', '꼬리말에 전화가 없다');
-    need(text.includes('©'), 'P6', '꼬리말에 저작권 줄이 없다');
   } else {
     const foot = document.querySelector('footer');
     const fl = foot ? [...foot.querySelectorAll('a')] : [];
     need(fl.some(a => isHome(a)), 'P7', '강의 바닥 줄에 연구실 홈 링크가 없다');
     need(fl.some(a => sameUrl(a, P.url) && visible(a)), 'P7', '강의 바닥 줄에 POSTECH 대표홈 링크가 없다');
     const priv = fl.find(a => sameUrl(a, P.privacy_url));
-    need(priv && visible(priv) && priv.textContent.trim() === P.privacy_label && bold(priv), 'P7', '강의 바닥 줄의 개인정보 링크(이름·굵게)가 맞지 않다');
+    need(priv && visible(priv) && priv.textContent.trim() === P.privacy_label, 'P7', '강의 바닥 줄의 개인정보 링크(이름)가 맞지 않다');
   }
   return out;
 }

@@ -53,3 +53,15 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - 학생 실습 노트북을 `Demo` 에서 `Lab` 으로 바꿔 보였다. Fall 2026 에는 외부 데모 도구를 담은 `Demo` 열이 따로 있어 같은 이름이 두 뜻으로 쓰였다. 시트 동기화 데이터(`ai_study.yml`)의 `Demo` 는 그대로 두고 템플릿에서 이름만 바꾼다.
 - `STUDY.md` 의 자료 열 규칙을 고쳤다.
 - 기각: Lab 생략. Fall 2026 1회·3회에 학생이 만든 노트북이 있어 빼면 그 자료가 표에서 사라진다. 노트북을 Demo 열(외부 도구)로 옮기는 안은 학생 자료와 외부 도구가 섞인다.
+
+## 6차: Notes 를 Slides 로, 다른 학기도 같은 원칙으로
+교수: "Notes는 Slides로 바꿔", "그리고 스터디 다른 학기들도 구조 그룹 전부 같은 철학으로 고쳐줘".
+
+- `study-schedule.html`: 시트의 필기(`Notes`)를 Slides 묶음에 넣는다. 자료 열은 많아야 `Slides`·`Lab` 두 종류다. Summer 2026 도 `Slides` 하나만 나온다.
+- `ai_study_terms.yml`: 나머지 세 학기의 단계 이름을 테마가 드러나는 명사구로, 설명을 `How …: 회차 주제` 한 문장과 굵은 핵심어 하나로 고쳤다. 범위(start·end)는 그대로다.
+  - Summer 2026: Training and Architectures(1–3) / Representation and Generative Models(4–7) / Generalization and Transfer(8–9).
+  - Spring 2026: Reasoning with LLMs(1–2) / Post-Training(3–6) / Context and Agents(7–9).
+  - Fall 2025: Representation Learning(1–3) / Vision-Language Models(4–5) / Visual Generation(6–7) / Scaling and Multimodal LLMs(8–9).
+  - tldr 도 단계 이름의 첫 단어로 구절을 맞춰 다시 썼다(검사 규칙을 손으로 대조, push 뒤 `check_study_terms`).
+- `STUDY.md`: 단계는 2~4개의 큰 덩어리, 이름은 테마 명사구, 본문은 `How …: 주제` 한 문장에 굵게 하나. 옛 "회차 나열 대신 능력의 연결" 문구와 Physical AI 세 단계 설명을 바꿨다.
+- 기각: 다른 학기도 Physical AI 처럼 두 덩어리로 줄이는 안. 세 학기는 교수가 의도한 덩어리 수를 들은 적이 없고, 지금 범위가 회차 주제의 갈림과 맞아 범위는 두고 이름과 문장만 바꿨다.

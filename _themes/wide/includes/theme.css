@@ -140,10 +140,11 @@ h3.sub:first-child { margin-top: 0; }
 .brand a:hover .brand-code { color: var(--accent); }  /* the course code and title are one link, so they turn red together */
 .brand-mark { width: auto; height: 32px; flex-shrink: 0; }
 .brand-sub, .brand-school { flex-shrink: 0; display: flex; align-items: center; height: 22px; margin-left: var(--brand-divide); padding-left: var(--brand-divide); border-left: 1px solid var(--line); color: var(--muted); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-regular); letter-spacing: -.3px; white-space: nowrap; }  /* the part after the name, behind a hairline: "MOAI Lab | POSTECH", "IMEN891K Data Engineering | POSTECH", "MOAI Lab | AI Study" (교수 2026-11-03). The wordmark stays in the footer */
-.brand-sub { color: var(--text); font-weight: var(--weight-heading); }  /* AI Study is the site's own name, so dark and bold like MOAI Lab; only the school (POSTECH) is grey and thin (교수 2026-11-03) */
+.brand-sub { margin-left: calc(var(--brand-divide) - 10px); color: var(--text); font-weight: var(--weight-heading); }  /* inside the brand link (whose gap is 10px); AI Study is the site's own name, so dark and bold like MOAI Lab; only the school (POSTECH) is grey and thin (교수 2026-11-03) */
+.brand a:hover .brand-sub { color: var(--accent); }  /* the whole study brand is one link, so it turns red together */
 /* course home code before the title, in the slot of the lab logo: "IMEN891K Data Engineering | POSTECH" */
 .brand-code { flex-shrink: 0; color: var(--accent); font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; white-space: nowrap; margin-right: calc(var(--brand-pair) - 10px); }  /* in the lab logo's place and colour (교수 2026-11-03); the brand link gap is 10px (for the logo); the code to title gap follows --brand-pair */
-.brand-sub:hover, .brand-school:hover { color: var(--accent); text-decoration: none; }
+.brand-school:hover { color: var(--accent); text-decoration: none; }
 .brand-word { min-width: 0; font-family: "Outfit", "Pretendard Variable", sans-serif; font-size: var(--text-brand); font-weight: var(--weight-heading); letter-spacing: -.3px; }
 .site-nav, .course-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); }
 .site-nav a, .course-nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); border-bottom: 2px solid transparent; }

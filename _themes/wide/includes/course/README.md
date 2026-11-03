@@ -35,13 +35,13 @@
 
 | 정렬 | 열 | 이유 |
 | --- | --- | --- |
-| 가운데 | `#`, Date, Cohort, Entry, 자료 링크 열(스터디 Materials, Lec), 발표 칸(Proposal, Final) | 길이와 꼴이 같은 짧은 값이라 머리글 아래 한 줄로 모인다 |
-| 왼쪽 | Topic, Project, Papers, Demo, Presenters, 스터디 Reading, Department, Name, Email, Participation, 강의 Schedule 의 Materials | 길이가 들쭉날쭉한 글과 목록은 시작점이 맞아야 읽힌다. 강의 Materials 는 제목 가까이 같은 열 선에서 시작한다 |
+| 가운데 | `#`, Date, Cohort, Entry, 자료 링크 열(Materials, Lec), 발표 칸(Proposal, Final) | 길이와 꼴이 같은 짧은 값이라 머리글 아래 한 줄로 모인다 |
+| 왼쪽 | Topic, Project, Papers, Demo, Presenters, 스터디 Reading, Department, Name, Email, Participation | 길이가 들쭉날쭉한 글과 목록은 시작점이 맞아야 읽힌다 |
 | 오른쪽 | 강의 Schedule 의 Reading | 마지막 열이라 행 오른쪽 끝에 맞춰 초청 행 장소·시간과 같은 오른쪽 선을 만든다(교수 2026-11-03) |
 
 - 머리글은 그 열과 같은 쪽에 선다. 템플릿에서는 `th` 에 칸과 같은 클래스(`cs-n`, `cs-date`, `cs-slides`, `st-lectures`, `project-round`)를 붙인다.
 - 정렬은 `course.css` 의 `Column alignment` 규칙 한 곳에서만 정한다. 열마다 `text-align` 을 따로 쓰지 않는다. 새 열을 만들면 위 표에서 맞는 줄을 골라 그 규칙의 선택자에 더한다.
-- 가운데 열 안에서 같은 종류의 자료는 모든 행에서 같은 자리에서 시작한다. 강의 Materials 는 Lab 이 없는 행에도 Lab 자리를 비워 두고(`cs-slot`), 스터디 Materials 는 그 학기에 쓰인 묶음(Slides, Notes, Demo)마다 가장 긴 표기(`Slides 1, 2`) 폭의 고정 자리를 둔다. 휴대폰 카드에서는 빈 자리를 접는다.
+- 가운데 열 안에서 같은 종류의 자료는 모든 행에서 같은 자리에서 시작한다. 강의 Schedule 의 Materials 는 마지막 열이 되어 넓어져도 104px 고정 자리(`cs-mat`) 안에서 가운데 정렬한다. 강의 Materials 는 Lab 이 없는 행에도 Lab 자리를 비워 두고(`cs-slot`), 스터디 Materials 는 그 학기에 쓰인 묶음(Slides, Notes, Demo)마다 가장 긴 표기(`Slides 1, 2`) 폭의 고정 자리를 둔다. 휴대폰 카드에서는 빈 자리를 접는다.
 - 칸 안의 보조 블록은 예외다. 강의 Schedule 초청 행의 장소·시간(`cs-session-meta`)은 행 오른쪽 끝(안쪽 12px)에 오른쪽 정렬로 둔다. 세 강의 모두 같은 선이다(교수 2026-11-03, PDF 선에 왼쪽 정렬하던 안과 비교해 고름).
 - 휴대폰 카드(강의 680px 이하, 스터디 일정 960px 이하, Members 960px 이하)에서는 모두 왼쪽이다.
 

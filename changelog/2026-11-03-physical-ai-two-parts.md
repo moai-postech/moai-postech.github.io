@@ -139,3 +139,16 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - 설명은 다른 학기와 같은 `How …: 주제` 꼴로 되돌렸다. 1: "How an LLM learns: **pretraining** and step-by-step prompting, then post-training with SFT, RLHF, and AI feedback." 2: "How an LLM grows into an **agent**: reasoning that thinks longer, memory through long context and retrieval, then an action loop with tools."
 - tldr: "How LLMs are made through training in two stages, and from there they grow into agents that reason and act."
 - 기각: 14차의 질문형(How LLMs Are Trained / How LLMs Become Agents). 제목과 설명이 모두 How 로 시작해 겹치고, 이 학기만 다른 꼴이 된다. `check_study_terms.js` 의 질문형 처리는 해가 없어 남겼다.
+
+## 16차: 스케줄 문장 전체 점검
+교수: "From 없이 LLMs to Agents로 두면 별로인가? 일단 스케줄에 들어간 모든 표현들 문장들 다시 꼼꼼하게 점검하면서 검토하고 다듬어줘. 이 과정에서 설명에 들어간 표현이랑 거기 볼드 된 것들 업데이트 할 수도 있어".
+
+- `From LLMs to Agents` 는 그대로 둔다. From 이 빠지면 제목이 아니라 줄임말처럼 읽히고 확장의 방향이 사라진다.
+- 네 학기 tldr 와 단계 설명을 다시 읽고 고친 것(`ai_study_terms.yml`):
+  - Robot Embodiment: 나열이 명사구와 동사구로 섞여 있었다. "arms that grasp, legs that walk, a sense of where to go, and humanoid bodies with dexterous hands" 로 맞추고 follow 를 mirror 로.
+  - Representation and Generation: 굵게를 tldr 와 같은 말인 **model data** 로.
+  - Generalization and Theory: "beyond training" 을 "beyond the training data" 로, 가리키는 대상이 흐린 "the theory behind them" 을 "the theory of why deep networks work" 로.
+  - Training LLMs: tldr 의 모호한 "training in two stages" 를 "pretraining and post-training" 으로. 설명은 "is trained", step-by-step prompting 을 회차 이름인 chain-of-thought prompting 으로. 굵게는 1–5회의 대부분(SFT, RLHF, RLAIF)을 차지하는 **post-training** 으로 옮겼다.
+  - From LLMs to Agents: 어색한 "reasoning that thinks longer" 를 "longer reasoning at test time" 으로, "memory through" 를 "memory from" 으로.
+  - 그대로 둔 것: Physical AI 2파트(교수가 직접 고친 끝맺음), Architectures and Training, Fall 2025 세 꼭지와 tldr, 각 학기 참고 강의 줄.
+- 고치지 않은 것(시트 원문, 동기화가 덮어씀): 회차 제목·키워드 표기(예: `review transformer & LLM`, `LLM, scaling law`)와 Spring 2026 안내 줄 `Review check lec 2, 8 from the last semester`. 콘텐츠는 교수가 나중에 시트에서 고친다고 했다.

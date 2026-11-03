@@ -185,10 +185,9 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .foot-legal p:last-child { margin-bottom: 0; }
 .site-foot .foot-privacy { color: var(--text); }  /* the one required notice (안내 ③, a text link): body colour among the grey lines, no bold (교수 2026-11-03) */
 @media (max-width: 900px) {  /* tablets and phones: "MOAI Lab" and the POSTECH wordmark share the first row as on wide screens, then the address and the legal lines run full width (교수 2026-11-03) */
-  .foot-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-4); row-gap: 0; align-items: center; }
+  .foot-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-4); row-gap: 0; align-items: start; }  /* top-aligned: the wordmark keeps its 10px top margin and sits on the lab name line, as on wide screens */
   .foot-addr, .foot-side { display: contents; }
   .foot-postech { grid-column: 2; grid-row: 1; }
-  .foot-postech img { margin-top: 0; }
   .foot-addr > p:not(.foot-lab) { grid-column: 1 / -1; }
   .foot-legal { grid-column: 1 / -1; margin-top: var(--space-4); text-align: left; }
 }

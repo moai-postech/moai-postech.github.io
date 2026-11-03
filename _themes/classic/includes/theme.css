@@ -178,7 +178,7 @@ h3.sub:first-child { margin-top: 0; }
 .funding time { color: var(--muted); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
 
 /* Publications: years as headings, each paper with its own metadata line. */
-.page-list .lede { font-size: var(--fs-md); }
+.page-list-view .lede { font-size: var(--fs-md); }
 .pubs li { padding: 20px 0; border-bottom: 1px solid var(--line-soft); }
 .pubs li:first-child { padding-top: 0; }
 .pubs li:last-child { padding-bottom: 0; border-bottom: 0; }

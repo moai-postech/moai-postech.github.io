@@ -46,7 +46,7 @@ const CASES = [
       // A regular click still follows the link after a previous selection.
       await page.goto(`http://localhost:${server.address().port}/index.html`);
       await page.locator('.mini-text a').first().click();  // the publications link on the Paper Stella band
-      await page.waitForURL('**/list.html');
+      await page.waitForURL('**/list-view.html');
       await page.close();
     }
     console.log(`텍스트 드래그 검사 통과: ${count}건, 일반 링크 클릭 정상`);

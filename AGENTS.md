@@ -20,7 +20,7 @@ _data/               콘텐츠 데이터(YAML)
   ai_study.yml       학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트에서 만든다(GitHub Actions `ai-study-sync` 가 매일 06:30 KST, Actions 탭 Run workflow 로 바로). 손으로 고치지 않는다
   seminar.yml        Research > Seminar 의 발표 목록. tools/seminar_sync.py 가 랩 세미나 구글시트에서 만든다. 손으로 고치지 않는다(아래 "세미나 발표 올리기")
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
-index.md 외 *.md     페이지 하나에 파일 하나(overview·seminar·funding, list·map, faculty·lab-members·other-mentees, courses·talks, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. 파일 이름(곧 주소)은 메뉴 탭 이름을 소문자·하이픈으로 쓴 것이다(Lab Members → `lab-members.html`, 교수 2026-11-03). front matter 에 소개글, 절 순서
+index.md 외 *.md     페이지 하나에 파일 하나(overview·seminar·funding, list-view·map-view, faculty·lab-members·other-mentees, courses·talks, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. 파일 이름(곧 주소)은 메뉴 탭 이름을 소문자·하이픈으로 쓴 것이다(Lab Members → `lab-members.html`, 교수 2026-11-03). front matter 에 소개글, 절 순서
 _themes/wide/        테마(현재 사용 중: 넓은 화면 전제, 12칸 격자, 전역 토큰)
 _themes/editorial/   예전 테마(한 기둥 편집형)
 _themes/classic/     예전 테마(카드·좌우 배치). 둘 다 참고용이다. 그 뒤에 생긴 절 종류(seminar, profile-cv, contact-block, talks, media 등)가 없어 그대로는 동작하지 않는다
@@ -30,7 +30,7 @@ assets/style.css     테마의 theme.css 를 내보내는 진입점(고치지 �
 assets/seminar/      랩 발표 슬라이드 PDF(16:9 로 맞춘 사본, 날짜-제목별칭.pdf). seminar_sync.py 가 만들고 지운다
 assets/img/          그림, 아이콘(icons/), 사진(people/, 랩 단체사진 lab/), 로고 아이콘(logo-mark.svg, `_config.yml` 의 logo). 콘텐츠가 경로로 가리킨다
 members.html, people.html, join.html  옛 주소를 faculty.html, contact.html 로 넘기는 리다이렉트
-students.html, mentees.html, research.html, publications.html, landscape.html, teaching.html  2026-11-03 탭 이름에 맞춰 바꾼 주소로 넘기는 리다이렉트(# 뒤 위치도 넘긴다)
+students.html, mentees.html, research.html, publications.html, landscape.html, teaching.html, list.html, map.html  2026-11-03 탭 이름에 맞춰 바꾼 주소로 넘기는 리다이렉트(# 뒤 위치도 넘긴다)
 POSTECH.md           정보기술팀이 요구한 POSTECH 필수 요소(P1~P9)와, 바꾸자는 요청을 그것에 비춰 보는 검토 절차
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
@@ -86,7 +86,7 @@ tools/               검사 스크립트(check_changelog.py: 기록·안건·서
 
 - **사이트 안에서 끝나게(self-contained) 만든다.** 교수 개인 사이트(Google Sites)로 링크하지 않는다. 필요한 내용(발표 목록 등)은 이 사이트 안으로 들여온다. 논문, 코드, 발표 자료, 강의 시트, 다른 사람의 페이지, 외부 프로필(Google Scholar, GitHub) 같은 원자료 링크는 괜찮다.
 - **슬라이드는 Drive 링크 대신 이 저장소의 파일로 링크한다**(교수 2026-10-26). 원본은 구글시트·Drive 에 그대로 두고, PDF 사본을 받아 올린다(Google Slides·pptx 는 PDF 로 굽고, 그림은 그대로). 받는 도구는 `tools/drive_pdf.py`, 사본과 원본 Drive 링크의 짝은 `tools/drive_sources.json` 이다. 자리: 강의 슬라이드 `teaching/<id>/slides/`, 학생 발표 `teaching/<id>/project/<회차>/`, 학부생 AI 스터디 `teaching/ai-study/<학기>/`(`tools/ai_study_sync.py` 가 시트에서 받는다), 초청 발표 `assets/talks/`. 강의·발표 yml 에 Drive 슬라이드 링크를 새로 넣었으면 `python3 tools/localize_slides.py` 를 돌린다. 노트북(ipynb)과 시험지·해설도 같은 방식으로 받아 올린다(강의 실습 `teaching/<id>/labs/`, 시험 `teaching/<id>/exams/<시험>/`). 예외는 학생이 직접 고치는 project sheet 하나다(교수 2026-10-30: "모든 파일은 다 asset 으로"). Colab 주소는 파일이 아니라 실행 화면이라 그대로 둔다. Publications 의 slides·poster 는 화면에 나오지 않는 보관용 데이터라 옮기지 않는다(2026-10-22 결정). 링크가 비공개라 받을 수 없는 파일은 Drive 링크로 남기고 changelog 에 적는다. Pages 사이트는 1 GB 한도라 큰 파일(수십 MB)을 더할 때 전체 크기를 본다.
-- **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Publications > Map(목록은 Publications > List. 탭 이름은 보는 방식만 말하고, 페이지 제목과 Home 띠가 Paper Stella 라는 이름을 쓴다. Home 에는 실적 문장 뒤에 깐 미니 미리보기 띠만, 누르면 Map 탭), 랩 세미나와 초청 연사는 Research > Seminar(`_data/seminar.yml`), 과제는 Research > Funding, 교수 이메일·호실·전화는 Faculty, 지원 방법은 Contact, 연구실 주소는 꼬리말.
+- **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Publications > Map View(목록은 Publications > List View. 탭 이름은 보는 방식만 말하고, 페이지 제목과 Home 띠가 Paper Stella 라는 이름을 쓴다. Home 에는 실적 문장 뒤에 깐 미니 미리보기 띠만, 누르면 Map 탭), 랩 세미나와 초청 연사는 Research > Seminar(`_data/seminar.yml`), 과제는 Research > Funding, 교수 이메일·호실·전화는 Faculty, 지원 방법은 Contact, 연구실 주소는 꼬리말.
 - **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
 - **컴퓨터 화면에서는 넓게 쓴다.** 전체 폭은 `--container`(1200px), 모바일처럼 좁은 기둥으로 줄이지 않는다(교수 2026-10-21). `--measure`도 가용 폭 100%를 사용한다. 문단 폭을 760px로 좁히는 안은 기존 결정으로 기각됐다. 좁은 화면에서만 한 칸으로 접는다.
 - **넓은 화면을 전제로 설계하고 12칸 격자에 칸을 배분한다.** 좁은 기둥을 늘려 쓰지 않는다(교수 2026-10-21: "공간은 넓은데 컨텐츠는 좁은 걸 상정해 억지로 늘리면 안 예쁘다"). 나란히 놓는 것은 내용이 대등할 때만(예: 연구 분야 셋) 쓰고, 긴 목록(뉴스 등)은 전체 폭을 쓴다.  절 이름만 왼쪽 칸에 세우는 라벨 칸은 쓰지 않는다.

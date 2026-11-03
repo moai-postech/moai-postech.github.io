@@ -42,10 +42,10 @@ nav:
         url: funding.html
   - title: Publications
     children:
-      - title: List
-        url: list.html
-      - title: Map
-        url: map.html
+      - title: List View
+        url: list-view.html
+      - title: Map View
+        url: map-view.html
   - title: Teaching
     children:
       - title: Courses

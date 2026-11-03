@@ -23,5 +23,12 @@ POSTECH 요구사항: 꼬리말 위치와 경계선만 바뀌었다. 꼬리말 �
 - Home Paper Stella 띠 그림 위치, Research Overview 마지막 문장(마지막 단계 아래 24px): 같은 날 다른 회차의 결정이라 두었다.
 - 스터디 Home 학과 treemap 의 좁은 칸 `IT융…` 말줄임: 칸 폭(약 40px)에 글자가 들어갈 자리가 없다. 줄바꿈하면 `IT융 / 합` 으로 갈라져 더 어색하다.
 
+## 이어서: 360px 휴대폰
+- 360px(갤럭시 다수) 전 페이지를 캡처하고 가로 넘침·탭 줄바꿈을 검사했다.
+- People 하위 탭과 Seminar 필터가 360px 에서 두 줄이 되던 것: 380px 이하에서 탭 안쪽 여백 8px, 필터 간격 8px 로 한 줄.
+- 한국어 과제명·세미나 제목이 단어 가운데서 끊겼다("계층형 기 / 억·추론", "최적 / 화", "경영 / 자로의"). `body` 에 `word-break: keep-all`. Home Media 에만 있던 같은 규칙은 지웠다.
+- Faculty 이력 등 연구실 페이지의 마지막 줄 외톨이 단어("Jong-Chyi / Su)"): 강의·스터디에만 있던 `text-wrap: pretty` 를 모든 페이지 `main` 으로 옮겼다.
+- 확인: 360·375·1440px 전 페이지 가로 넘침 없음, 하위 탭·필터·메뉴 한 줄.
+
 ## 남은 것
-- 360px 폭 휴대폰에서는 People 탭과 Seminar 필터가 여전히 두 줄이 된다.
+- Publications > Map View 의 Paper Stella 삽입 화면은 360px 에서 아래 범례와 `Last updated`, 도움말이 겹친다. 삽입된 앱(paper-stella 저장소) 안의 화면이라 이 저장소에서 고칠 수 없다.

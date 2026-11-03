@@ -31,11 +31,10 @@ sections:
   - class: section-next section-actions
     body: |
       We're actively recruiting students with a passion for AI and AX. [Join us! 🚀](contact.html#join)
-  # News: 최근 8개만 보이고 그 아래 "All news →"(news.html)로 잇는다(교수 2026-11-03, 휴대폰에서 13개는 너무 길다)
+  # News: Home 에서 전부(MOAI Lab started 까지) 보인다. limit 를 두지 않는다(교수 2026-11-03, 교수가 말할 때까지 유지)
   - title: "News"
     type: news
     data: news
-    limit: 8
   - title: "Media"
     type: media
 ---

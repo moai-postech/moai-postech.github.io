@@ -307,7 +307,7 @@ a.mentee-name:hover { color: var(--accent); }
 .mini-preview iframe { position: absolute; top: 0; left: 30%; width: 70%; height: 100%; border: 0; pointer-events: none; }
 .mini-preview::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--media-surface) 30%, transparent 60%); }  /* keeps the text side calm */
 .mini-preview:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: -2px; border-radius: var(--radius-2); }
-.mini-caption { position: absolute; right: var(--space-4); bottom: var(--space-3); z-index: 2; color: var(--bg); opacity: .7; font-size: var(--text-small); }  /* palette white, quieted */
+.mini-caption { position: absolute; right: var(--space-4); bottom: var(--space-3); z-index: 2; color: var(--bg); opacity: 0; font-size: var(--text-small); transition: opacity .2s; }  /* shown on hover or focus only, so the band shows one link at rest (교수 2026-11-03) */
 .mini-preview:hover .mini-caption, .mini-preview:focus-visible .mini-caption { opacity: 1; }
 .content-section.section-band { padding-top: var(--space-5); }  /* attaches to the section above, like a closing line */
 .mini-text { position: relative; z-index: 2; max-width: 44%; }  /* only the text box sits above the link, so the rest of the band reaches it */

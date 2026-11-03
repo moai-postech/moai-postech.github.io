@@ -102,3 +102,13 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - tldr 1구절도 body 대신 "robots learn to do what humans do with arms and legs" 로 바꿨다. 2구절(foundation models …)은 그대로다.
 - `STUDY.md` 의 Physical AI 설명을 같은 맥락으로 고쳤다.
 - 기각: 단계 이름도 바꾸는 안(Human-like Robot Tasks 등). 요청은 설명의 맥락이고, Robot Embodiment 는 교수가 받아들인 이름이다.
+
+## 11차: DL 1번째 묶음 이름, LLM 을 두 묶음으로
+교수: "DL 그룹 1은 예전처럼 Architectures and Training으로", "LLM은 1-5까지 그룹 1로 묶고, 여기서는 pretrain post-train (SFT, RLHF) 이런 테크닉적인 얘기를 하고 6-9를 확장 느낌으로 하고싶은데 LLM에 reason을 달고 memory를 달고 action loop를 달고 그런 느낌으로 두 그룹 디자인".
+
+- Summer 2026 1–3: `Architectures and Training`(7차의 Neural Network Basics 를 대신함). 설명 굵게는 built, tldr 1구절은 "neural network architectures are built and trained".
+- Spring 2026 두 묶음:
+  - `Pretraining and Post-Training`(1–5): pretraining 과 단계적 prompting, 그다음 SFT·RLHF·AI feedback 으로 post-training. 굵게 trained.
+  - `Extending LLMs`(6–9): 학습된 LLM 에 reasoning(오래 생각하는 reasoning model), memory(long context·retrieval), action loop(tools)를 차례로 붙여 agent 가 된다. 굵게 agent.
+  - tldr: "How LLMs are made through pretraining and post-training, and extending them turns a model into an agent that can reason and act."
+- 기각: 2번째 묶음 이름을 `Reasoning, Memory, and Action` 으로 하는 안. 세 가지를 나열하면 "확장"이라는 흐름이 이름에서 사라지고, 셋은 설명에서 차례로 보인다.

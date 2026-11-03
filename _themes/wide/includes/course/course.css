@@ -14,7 +14,6 @@
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
 .study-lab-brand img { width: auto; height: 28px; }
-.course-site main { text-wrap: pretty; }  /* course and study pages: no single word left alone on a last line (교수 2026-11-02) */
 
 /* Home: title, lead and optional resource links on the left (7 of 12 columns), logistics on the right (5 columns),
    the shape of the MIT, Stanford, CMU and Berkeley course pages (2026-10-26) */

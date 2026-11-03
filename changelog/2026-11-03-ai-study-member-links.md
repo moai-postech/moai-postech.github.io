@@ -21,3 +21,11 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 ## 확인
 - 읽은 규칙: 상위 `AGENTS.md` 들, 저장소 `AGENTS.md`, `STUDY.md`.
 - 이 맥(Intel)에는 로컬 빌드 환경이 없어 push 뒤 Actions `checks` 와 라이브 화면으로 확인한다.
+
+## 추가: 모든 목록에 같은 요약 줄
+교수: 걸러 본 목록의 `2020 entry · 1 member  Show everyone` 양식을 기수별로도 쓰면 좋겠다. 탭은 기수별로만 두고, 그 외에는 다른 묶음과 양식이 같게.
+- 기수 탭 표 위에 `1기 (Fall 2025) · 12 members  Show everyone` 을 둔다. Show everyone 은 Full list 로 간다.
+- Full list 에도 링크 없이 `Everyone · 39 members` 를 둔다. 탭을 바꿔도 표가 같은 높이에서 시작한다.
+- 기각한 안: Full list 에는 줄을 두지 않는 안. 기수 탭으로 넘어갈 때 표가 한 줄만큼 내려가 열과 행이 흔들린다.
+- `check_study_members.js` 가 기수 탭의 요약 줄을 본다. `STUDY.md` 를 같이 고쳤다.
+

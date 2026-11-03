@@ -73,10 +73,18 @@
       const values = [String(n + 1), member.cohort + '기', year, dept, member.name, id];
       const links = { 1: '#members-' + member.cohort, 2: '#entry=' + year, 3: '#dept=' + encodeURIComponent(dept) };
       values.forEach((value, index) => {
-        const cell = element(index === 4 ? 'th' : 'td', links[index] ? undefined : value, index === 5 ? 'study-member-email' : index === 0 ? 'study-member-n' : undefined);
+        const cell = element(index === 4 ? 'th' : 'td', links[index] || index === 4 ? undefined : value, index === 5 ? 'study-member-email' : index === 0 ? 'study-member-n' : undefined);
         if (links[index]) cell.append(listLink(value, links[index], 'study-member-link'));
         if (index === 4) {
           cell.scope = 'row';
+          // The POVIS photo travels inside the same ciphertext, so it shows on hover or focus once the list is open (교수 2026-11-03).
+          const name = element('span', value, member.photo ? 'study-member-name has-photo' : 'study-member-name');
+          if (member.photo) {
+            name.tabIndex = 0;
+            const img = element('img', undefined, 'study-member-photo'); img.src = member.photo; img.alt = ''; img.loading = 'lazy';
+            name.append(img);
+          }
+          cell.append(name);
           if (row.className) cell.append(element('span', ' (대표학생)', 'study-member-role'));  // shown as 최지안 (대표학생) with the row colour (교수 2026-11-02)
         }
         cell.dataset.label = LABELS[index]; row.append(cell);
@@ -102,14 +110,20 @@
     const filter = match && FILTERS[match[1]], want = match && filter.value(decodeURIComponent(match[2]));
     const dept = match ? filter.label(want) : null;
     const shown = match ? people.filter(p => filter.of(p) === want) : people;
-    const fullPanel = element('div');
-    if (dept) {
+    // Every list opens with the same line, `<group> · N members  Show everyone`: a filter, a term tab, or everyone (교수 2026-11-03).
+    // Full list keeps the line too (no link) so the table starts at the same height in every tab.
+    const summary = (label, count, reset) => {
       const note = element('p', undefined, 'study-member-filter');
-      note.append(element('span', dept + ' · ' + shown.length + (shown.length === 1 ? ' member' : ' members')));
-      const all = element('a', 'Show everyone'); all.href = location.pathname;
-      all.addEventListener('click', e => { e.preventDefault(); history.replaceState(null, '', location.pathname); render(cohorts); });
-      note.append(all); fullPanel.append(note);
-    }
+      note.append(element('span', label + ' · ' + count + (count === 1 ? ' member' : ' members')));
+      if (reset) {
+        const all = element('a', 'Show everyone'); all.href = location.pathname;
+        all.addEventListener('click', e => { e.preventDefault(); history.replaceState(null, '', location.pathname); render(cohorts); });
+        note.append(all);
+      }
+      return note;
+    };
+    const fullPanel = element('div');
+    fullPanel.append(summary(dept || 'Everyone', shown.length, !!dept));
     fullPanel.append(table(shown, dept ? dept + ' members' : 'All study members', false));
     const tabs = [{ id: 'members-all', title: 'Full list', panel: fullPanel }];
     for (const c of ordered) {
@@ -117,8 +131,10 @@
       const rep = representatives[c.term];
       term.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // representative first, the rest keep the sheet order
       // One-line tab labels: 1기 large, (Fall 2025) small and light, no member counts (교수 2026-11-02).
-      tabs.push({ id: 'members-' + c.number, title: c.number + '기', note: c.term ? '(' + c.term + ')' : '',
-        panel: table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep) });
+      const panel = element('div');
+      panel.append(summary(c.number + '기' + (c.term ? ' (' + c.term + ')' : ''), term.length, true),
+        table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep));
+      tabs.push({ id: 'members-' + c.number, title: c.number + '기', note: c.term ? '(' + c.term + ')' : '', panel });
     }
     const box = element('section', undefined, 'study-member-tabs');
     const tablist = element('div', undefined, 'study-tablist study-member-tablist'); tablist.setAttribute('role', 'tablist'); tablist.setAttribute('aria-label', 'Member lists');

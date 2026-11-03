@@ -286,7 +286,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-table th .st-material-head .cs-slot { text-transform: none; letter-spacing: normal; }
 .study-table td .st-slot-head { font-size: var(--text-small); text-transform: uppercase; letter-spacing: .06em; }  /* the hidden heading word in each row, so a slot is never narrower than its heading */
 .study-table .cs-slides a { display: inline-block; margin-right: 0; }  /* Keep all material links on one line. */
-.st-links a, .st-links span { display: inline-block; margin-right: var(--space-3); font-size: var(--text-meta); }
+.st-links a, .st-links span { display: inline-block; vertical-align: top; margin-right: var(--space-3); font-size: var(--text-meta); }  /* top, not baseline: a name that folds onto two lines in a narrow column (1024px) would otherwise put the row's baseline on its last line and push the rest of the row down */
 .st-links a { color: var(--text); }
 .st-links a:hover { color: var(--accent); }
 .st-lectures a { color: var(--accent); }
@@ -396,6 +396,8 @@ a.cs-title:hover { color: var(--accent); }
   .course-brand { flex-wrap: wrap; }
   .course-meta span + span::before, .course-eyebrow span + span::before { content: none; }
   .study-tablist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .study-term-heading { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+  .study-term-heading .course-sheet { margin-left: 0; }  /* the term name, then Study sheet under it on every term; a long name used to push the link alone to the right end of its own line */
   .study-tablist button { min-width: 0; padding-inline: var(--space-3); }
   .course-fact { grid-template-columns: 1fr; gap: 0; }
   .course-schedule thead { display: none; }
@@ -433,6 +435,9 @@ a.cs-title:hover { color: var(--accent); }
 
 /* Study schedules have more columns than course schedules; stack them at tablet width. */
 @media (min-width: 681px) and (max-width: 960px) {
+  .study-table tr > td:first-child { padding-left: 0; }  /* the number starts at the card edge like the date above it */
+  .study-term-details .course-facts { grid-template-columns: 1fr 1fr; }  /* three narrow columns broke "Prof. Sangwoo / Mo"; two people side by side, then place and time across */
+  .study-term-details .course-facts > .course-meeting { grid-column: 1 / -1; }
   .study-table thead, .study-table colgroup { display: none; }
   .study-table, .study-table tbody, .study-table tr { display: block; width: auto; }
   .study-table tr { display: grid; grid-template-columns: minmax(1.4em, auto) minmax(0, 1fr); gap: var(--space-2) var(--space-3); margin-bottom: var(--space-1); padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }

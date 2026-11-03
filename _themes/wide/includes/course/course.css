@@ -86,6 +86,7 @@
    a heading takes its column's alignment; stacked cards on narrow screens read left. */
 .course-schedule :is(th, td):is(.cs-n, .cs-date, .cs-slides, .st-lectures, .project-round),
 .study-members-table :is(th, td):is(:nth-child(1), :nth-child(2), :nth-child(3)) { text-align: center; }
+.lecture-schedule :is(th, td).cs-slides { text-align: left; }  /* course schedules: Materials starts the right-hand block, so PDF, Lab and a guest's place and time share one left edge (교수 2026-11-03) */
 .course-schedule thead th:first-child { padding-left: var(--space-3); }  /* same inset as the first cell, so a centred heading sits over its values */
 .course-schedule td { padding: var(--space-3) var(--space-4) var(--space-3) 0; background: var(--tone-row); vertical-align: baseline; }
 .course-schedule td:not(:last-child) { box-shadow: 1px 0 0 var(--tone-row); }  /* covers the hairline between cells of one filled row */
@@ -129,15 +130,18 @@ a.cs-speaker-name:hover { color: var(--accent); }
 .is-next .cs-date { font-weight: var(--weight-heading); }  /* frame only carries the accent; the date stays text colour */
 .course-schedule td:first-child { padding-left: var(--space-3); }
 
-/* One column grid for every course schedule (교수 2026-11-03: "세 강의 양식이 모두 동일"): Date, #, Materials and Reading keep fixed widths,
-   so the same column sits at the same place in every course, and Topic takes the rest. The last cell of every row, Reading or
-   Materials or a guest's place and time, ends on the row's own 12px inset, the same inset as the date on the left. */
+/* One column grid for every course schedule (교수 2026-11-03: "세 강의 양식이 모두 동일", "디자인적으로 더 나은 방향으로 규칙").
+   Date and # are fixed and centred; Topic takes the rest; the right-hand block is always Materials + Reading wide, so it starts
+   on the same line in every course. Inside it everything reads from the left: PDF and Lab, the Reading codes, and a guest's
+   place and time all start on a column line. A course with no Reading gives Materials the whole block. */
 @media (min-width: 681px) {
-  .lecture-schedule { table-layout: fixed; }
+  .lecture-schedule { --cs-materials: 112px; --cs-reading: 128px; table-layout: fixed; }
   .lecture-schedule th.cs-date { width: 108px; }
   .lecture-schedule th.cs-n { width: 40px; }
-  .lecture-schedule :is(th, td).cs-slides { width: 112px; padding-inline: var(--space-3); }  /* even padding, so the centred heading sits over PDF */
-  .lecture-schedule :is(th, td).cs-reading { width: 128px; padding-left: var(--space-4); }
+  .lecture-schedule :is(th, td).cs-slides { width: var(--cs-materials); padding-inline: var(--space-3); }
+  .lecture-schedule th.cs-slides:last-child { width: calc(var(--cs-materials) + var(--cs-reading)); }
+  .lecture-schedule :is(th, td).cs-reading { width: var(--cs-reading); padding-left: var(--space-3); }
+  .lecture-schedule .cs-session-meta { flex: 0 0 calc(var(--cs-materials) + var(--cs-reading) - 2 * var(--space-3)); margin-left: auto; text-align: left; }  /* the block's width, so place and time start where PDF does; stays in the block if a long title wraps it */
 }
 
 a.cs-title { color: var(--text); }  /* project days lead to the project page */

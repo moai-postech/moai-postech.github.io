@@ -47,7 +47,7 @@ const { loadSyntheticDirectory, forgetAccess } = require('./lib/design-fixture')
     await load('teaching/ai-study/schedule/index.html');
     await page.addStyleTag({content:'.study-term-heading > a {font-weight:400 !important}'});
     assert((await failures()).some(f=>f.startsWith('toolbar-action: fontWeight')), '클래스명이 달라도 헤더의 동작 링크 회귀를 검출해야 한다');
-    await load('list.html');
+    await load('list-view.html');
     await page.addStyleTag({content:'.group-heading {line-height:1.2 !important}'});
     assert((await failures()).some(f=>f.startsWith('group-heading: lineHeight')), '같은 제목 역할의 행간 차이를 검출해야 한다');
     await load('index.html');

@@ -61,14 +61,14 @@
       "adjustments": []
     },
     {
-      "page": "list.html",
+      "page": "list-view.html",
       "template": "연구실 · 긴 논문 목록",
       "decision": "기본 유지",
       "reason": "긴 목록에서 제목16px·저자14px·venue14px의 위계가 필요. 최근 요청한 venue600·자료 링크400 유지.",
       "adjustments": []
     },
     {
-      "page": "map.html",
+      "page": "map-view.html",
       "template": "연구실 · 외부 지도",
       "decision": "기본 유지",
       "reason": "지도는 독립된 삽입 화면. 주변 탐색과 전체 화면 링크는 사이트 템플릿, 지도 내부는 원 화면 유지.",

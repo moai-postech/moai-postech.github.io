@@ -28,7 +28,7 @@
 ## 지켜야 할 것
 
 - 라벨(절 제목, 운영 정보 이름, 평가 항목, Timeline 단계, 평가 묶음)은 단어마다 대문자로 쓴다(`Location & Time`, `Past Exams`, `Team Evaluation`, `Final Presentation`). 저장소 `AGENTS.md` 의 하이픈 단어 규칙과 같은 원칙이다. 문장과 설명 글은 첫 글자만 대문자다(교수 2026-10-30).
-- 팀 인원은 강의마다 `Up to N students` 한 꼴로 쓴다(교수 2026-10-30).
+- 팀 인원은 강의마다 `Up to N students` 한 꼴로 쓴다(교수 2026-10-30). Timeline 의 Team Building 카드는 다른 단계 카드처럼 굵은 핵심 정보(팀 인원)를 제목 바로 아래, 설명을 그 아래에 둔다(2026-11-03 디자인 검토).
 - YAML 값 `off`, `no`, `yes`, `on` 은 true/false 로 읽힌다. 스케줄의 휴강 종류는 `break` 다. 수업의 일부지만 모이지 않는 날(프로젝트 준비, 동료 평가)은 `break` 가 아니라 `outside` 로 쓰고, 제목은 할 일을 앞에 두어 `Project Preparation (Out of Class)`, `Peer Evaluation (Out of Class)`, `Study Day (Out of Class)` 로 쓴다. `No Class` 로 쓰지 않는다(교수 2026-11-02: 이것도 수업의 일부라는 것을 노란색으로 강조). `No Class (...)` 와 `break` 는 공휴일, 출장, 학회, 시험 기간처럼 학생이 할 일이 없는 날에만 최소한으로 쓴다.
 - 지난 시험과 풀이는 이미 공개한 것만 넣는다. 그 학기 자기 시험은 어느 강의든 Past Exams 에 넣지 않는다(교수 2026-10-30). 시험 파일도 이 저장소 사본으로 링크한다.
 - 슬라이드 폴더 전체 링크는 넣지 않는다. 슬라이드는 스케줄의 강의마다 링크한다(2026-10-22 사용자).

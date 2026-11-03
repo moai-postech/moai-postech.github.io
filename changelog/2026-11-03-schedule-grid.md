@@ -84,3 +84,11 @@ POSTECH 요구사항: 영향 없음
 - Topic 480 고정 규칙은 지웠다.
 
 비교한 안: Topic 640(PDF→Reading 약 180px, 여전히 넓음), Topic 700(채택한 배치와 같은 간격, 고정 폭 대신 오른쪽 묶음 고정으로 화면 폭에 따라 Topic 만 늘고 줄게 함).
+
+## 8차: Home·Project 디자인 검토 (같은 날)
+Schedule 확정 뒤 같은 기준(일관성, 위계)으로 Home·Project 탭과 머리글을 검토했다. 머리글, Course Outline, Grading, Resources 는 어긋난 곳이 없었다. 두 곳을 고쳤다.
+
+- Home 운영 정보의 시간 `9:30 – 10:45 KST` 가 범위 한가운데서 꺾였다. 시간을 한 덩어리(`course-time`, 줄바꿈 없음)로 묶어 요일 다음에서만 줄이 바뀌게 했다.
+- Project Timeline 의 Team Building 카드만 설명이 먼저, 팀 인원이 맨 아래였다. 다른 카드(Proposal, Final Presentation)처럼 굵은 핵심 정보 `Up to 5 students` 를 제목 바로 아래, 설명을 그 아래로 바꿨다.
+
+그대로 둔 것: 운영 정보 이름표 `LOCATION & TIME` 의 두 줄 접힘(이름표 열 7.5em 은 모든 칸이 공유하는 폭이라 넓히면 카드 전체 배치가 바뀐다).

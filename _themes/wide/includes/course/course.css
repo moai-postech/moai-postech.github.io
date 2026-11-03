@@ -45,6 +45,7 @@
 .course-support dd { min-width: 0; }
 .course-meeting p { margin: 0; }
 .course-meeting p + p { margin-top: var(--detail-gap); }
+.course-time { white-space: nowrap; }  /* a time range breaks after the days, never inside "9:30 – 10:45 KST" (교수 2026-11-03 디자인 검토) */
 
 .course-outline { margin-top: 0; }
 

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-03 | [course-link-rule](2026-11-03-course-link-rule.md) | Sangwoo Mo(sangwoomo) | AGENTS.md | 모든 정규 강의 과목명은 학기 없는 고정 주소로 연결 |
 | 2026-11-03 | [mobile-navigation](2026-11-03-mobile-navigation.md) | Sangwoo Mo(sangwoomo) | 강의 HTML·PDF 38개 | 모바일 탭·쪽 입력, 같은 HTML에서 PDF 재생성 |
 | 2026-11-03 | [course-permalinks](2026-11-03-course-permalinks.md) | Sangwoo Mo(sangwoomo) | 강의 고정 주소·Other Courses | 최신 학기로 자동 연결, 모든 학기에 과목명 링크 |
 | 2026-11-03 | [criterion-ranks](2026-11-03-criterion-ranks.md) | Sangwoo Mo(sangwoomo) | Midterm Review HTML·PDF | 팀별 Problem·Method·Presentation 점수와 순위 세 줄 |

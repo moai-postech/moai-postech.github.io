@@ -310,7 +310,6 @@ a.mentee-name:hover { color: var(--accent); }
 .mini-preview:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: -2px; border-radius: var(--radius-2); }
 .mini-caption { position: absolute; right: var(--space-4); bottom: var(--space-3); z-index: 2; color: var(--bg); opacity: 0; font-size: var(--text-small); transition: opacity .2s; }  /* shown on hover or focus only, so the band shows one link at rest (교수 2026-11-03) */
 .mini-preview:hover .mini-caption, .mini-preview:focus-visible .mini-caption { opacity: 1; }
-.content-section.section-band { padding-top: var(--space-5); }  /* attaches to the section above, like a closing line */
 .mini-text { position: relative; z-index: 2; max-width: 44%; }  /* only the text box sits above the link, so the rest of the band reaches it */
 .mini-text p { margin: 0; color: var(--white); font-size: var(--text-lead); line-height: var(--leading-paper); }
 .mini-text a { color: var(--accent-soft); white-space: nowrap; }  /* the accent red is too dark on the band */

@@ -109,7 +109,7 @@ function inspect(contract) {
     if (!visible(e) || e.matches('.contact-join,.course-first,.course-summary,.study-join,.study-terms,.study-full-list,.section-photo') || e.closest('.stage-track')) continue;
     const previous = e.previousElementSibling;
     const first = previous && (previous.matches('h1.visually-hidden,.page-intro'));
-    const target = e.matches('.section-next,.section-callout,.section-band') ? expected('paddingTop','var(--space-5)',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
+    const target = e.matches('.section-next,.section-callout') ? expected('paddingTop','var(--space-5)',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
     // Hero starts the first section with its own combined band rhythm.
     if (previous && previous.matches('.hero-band,.course-summary')) continue;
     if (!same(getComputedStyle(e).paddingTop,target)) failures.push(`절 위 간격 역할 위반: ${label(e)}`);

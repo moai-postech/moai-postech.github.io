@@ -34,7 +34,7 @@
         <td class="schedule-date">{{ t.date | date: "%m/%d" }}</td>
         {% if t.invited %}{% assign doc = t.slides | default: t.paper %}{% else %}{% assign doc = t.slides %}{% endif %}<td class="schedule-title"{% unless t.affiliation %} colspan="2"{% endunless %}>{% if doc %}<a href="{{ doc }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</td>
         {% if t.affiliation %}<td class="schedule-aff">{{ t.affiliation }}</td>{% endif %}
-        {% assign href = t.url %}{% unless href or t.invited %}{% for g in site.data.members.groups %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "students.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% for g in site.data.members.mentees %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "mentees.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% endunless %}
+        {% assign href = t.url %}{% unless href or t.invited %}{% for g in site.data.members.groups %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "lab-members.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% for g in site.data.members.mentees %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "other-mentees.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% endunless %}
         <td class="schedule-speaker">{% if href %}<a href="{{ href }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}</td>
       </tr>
       {% endfor %}

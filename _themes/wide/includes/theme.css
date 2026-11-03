@@ -385,7 +385,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 
 /* Publications: title, authors, then venue and links under them */
 .group-heading { margin-bottom: var(--space-4); font-size: var(--text-group); font-weight: var(--weight-heading); line-height: var(--leading-group); letter-spacing: normal; }
-.page-publications sup { line-height: 0; }  /* the equal-contribution marks no longer push their author line 2.5px taller than the others */
+.page-list sup { line-height: 0; }  /* the equal-contribution marks no longer push their author line 2.5px taller than the others */
 .pubs li { display: grid; grid-template-columns: 2.25em minmax(0, 1fr); gap: var(--detail-gap) var(--space-3); padding: var(--item-gap) 0; }  /* title, authors and metadata share the detail gap; padding separates papers by twice --item-gap */
 .pubs li > * { grid-column: 2; }
 .pubs li > .pub-num { grid-column: 1; grid-row: 1; align-self: baseline; color: var(--faint); font-size: var(--text-meta); font-weight: var(--weight-emphasis); font-variant-numeric: tabular-nums; text-align: right; }  /* shares its baseline with the title; right-aligned so every number sits 12px before its title */
@@ -532,12 +532,12 @@ a.person-name:hover { color: var(--accent); }
 }
 
 /* Documented page adaptations. IDs, before/after and rationale: page-design.json. */
-.page-students .person-aff, .page-students .person-degree, .page-students .person-topic,
-.page-students .person-work, .page-students .person .role { font-size: var(--text-body); }
+.page-lab-members .person-aff, .page-lab-members .person-degree, .page-lab-members .person-topic,
+.page-lab-members .person-work, .page-lab-members .person .role { font-size: var(--text-body); }
 .page-faculty .profile-head .small { font-size: var(--text-body); }
-.page-mentees .mentee-aff { font-size: var(--text-body); }
-.page-research .topic-card p { font-size: var(--text-body); }
-.page-teaching .item-side { font-size: var(--text-control); }
+.page-other-mentees .mentee-aff { font-size: var(--text-body); }
+.page-overview .topic-card p { font-size: var(--text-body); }
+.page-courses .item-side { font-size: var(--text-control); }
 
 {% comment %}Course pages: their own folder so the template stays in one place{% endcomment %}
 {% include course/course.css %}

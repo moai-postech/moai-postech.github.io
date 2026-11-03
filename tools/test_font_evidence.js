@@ -10,7 +10,7 @@ const {serveDirectory,installFontEvidence}=require('./visual_review');
     for(let i=0;i<2;i++) {
       const context=await browser.newContext();await installFontEvidence(context,manifest,cache);
       const page=await context.newPage();
-      for(const file of ['faculty.html','students.html','teaching/ai-study/index.html']) {
+      for(const file of ['faculty.html','lab-members.html','teaching/ai-study/index.html']) {
         await page.goto(`http://127.0.0.1:${server.address().port}/${file}`);
         assert(await page.evaluate(async()=>{await document.fonts.ready;return [...document.fonts].some(f=>/Pretendard/.test(f.family)&&f.status==='loaded')}));
       }

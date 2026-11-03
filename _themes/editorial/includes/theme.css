@@ -158,7 +158,7 @@ h3.sub:first-child { margin-top: 0; }
 .embed-caption { align-self: stretch; margin-top: 12px; color: var(--muted); font-size: var(--fs-sm); }
 
 /* Publications: years as headings, each paper as title, authors, then venue and links. */
-.page-publications .lede { font-size: var(--fs-md); }
+.page-list .lede { font-size: var(--fs-md); }
 .pubs li { padding: 16px 0; }
 .pubs li:first-child { padding-top: 0; }
 .pubs li:last-child { padding-bottom: 0; border-bottom: 0; }
@@ -191,7 +191,7 @@ a.person-name:hover { color: var(--accent); }
 
 /* Contact: the joining note stands out once. */
 .page-contact #join + .section-body { padding: 22px 24px; background: var(--surface); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; }
-.page-students .content-section:first-of-type, .page-mentees .content-section:first-of-type, .page-contact .content-section:first-of-type { border-top: 0; }
+.page-lab-members .content-section:first-of-type, .page-other-mentees .content-section:first-of-type, .page-contact .content-section:first-of-type { border-top: 0; }
 
 .site-foot { margin-top: 32px; padding: 0 0 40px; color: var(--muted); font-size: var(--fs-xs); }
 .site-foot p { margin: 0; }

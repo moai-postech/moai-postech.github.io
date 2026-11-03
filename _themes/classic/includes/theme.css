@@ -178,7 +178,7 @@ h3.sub:first-child { margin-top: 0; }
 .funding time { color: var(--muted); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
 
 /* Publications: years as headings, each paper with its own metadata line. */
-.page-publications .lede { font-size: var(--fs-md); }
+.page-list .lede { font-size: var(--fs-md); }
 .pubs li { padding: 20px 0; border-bottom: 1px solid var(--line-soft); }
 .pubs li:first-child { padding-top: 0; }
 .pubs li:last-child { padding-bottom: 0; border-bottom: 0; }
@@ -215,7 +215,7 @@ a.person-name:hover { color: var(--accent); }
 .profile-head p { margin-bottom: 6px; }
 .profile-bio { max-width: 820px; }
 .page-contact #join + .section-body { max-width: 820px; padding: 28px 30px; background: var(--surface); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; font-size: var(--fs-lg); }
-.subnav + h1 + .content-section, .subnav + h1 + .embed-section, .page-students .content-section:first-of-type, .page-mentees .content-section:first-of-type, .page-contact .content-section:first-of-type { border-top: 0; }
+.subnav + h1 + .content-section, .subnav + h1 + .embed-section, .page-lab-members .content-section:first-of-type, .page-other-mentees .content-section:first-of-type, .page-contact .content-section:first-of-type { border-top: 0; }
 
 .site-foot { margin-top: 24px; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: var(--fs-xs); letter-spacing: .02em; }
 .site-foot p { margin: 0; }

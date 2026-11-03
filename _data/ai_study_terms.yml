@@ -1,4 +1,4 @@
-# 학기별 학습 흐름과 운영 정보. learning_path 의 start·end 는 그 단계에 속한 회차 번호로 Schedule 에서 단계에 마우스를 올리면 그 행을 강조한다. tldr 은 학기 주제를 한 문장으로 줄인 요약으로 Home 학기 카드와 Schedule 학기 탭이 함께 쓴다. tldr 은 learning_path 단계마다 구절 하나를 단계 순서대로 두고, 각 구절은 그 단계 제목의 첫 단어를 쓴다(제목은 동사구나 테마가 드러나는 명사구, text 는 마크다운이라 **굵게** 가능). 단계 범위는 1회부터 마지막 정규 회차까지 빈틈·겹침 없이 잇고 선택 회차(A1 등)는 넣지 않는다. 검사: node tools/check_study_terms.js(교수 2026-11-02). icon 은 Home 학기 카드의 그림(학기 주제별 study-*.svg, Codex 제작 2026-11-02). 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
+# 학기별 학습 흐름과 운영 정보. learning_path 의 start·end 는 그 단계에 속한 회차 번호로 Schedule 에서 단계에 마우스를 올리면 그 행을 강조한다. tldr 은 학기 주제를 한 문장으로 줄인 요약으로 Home 학기 카드와 Schedule 학기 탭이 함께 쓴다. tldr 은 learning_path 단계마다 구절 하나를 단계 순서대로 두고, 각 구절은 그 단계 제목의 첫 단어를 쓴다(제목은 동사구나 테마가 드러나는 명사구, text 는 마크다운이라 **굵게** 가능). 단계 범위는 1회부터 마지막 번호 회차까지 빈틈·겹침 없이 잇는다. Optional 딱지가 붙은 번호 회차(Summer 2026 10회)도 넣고, A1 같은 선택 주제는 넣지 않는다(교수 2026-11-03). 검사: node tools/check_study_terms.js(교수 2026-11-02). icon 은 Home 학기 카드의 그림(학기 주제별 study-*.svg, Codex 제작 2026-11-02). 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
 # 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
@@ -12,14 +12,14 @@ fall-2026:
   location: { building: "Science Building 4", rooms: "Room 302" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
-  tldr: "How neural networks are built through training and architectures, representations and generative models capture data, and generalization lets them transfer to new tasks."
+  tldr: "How neural networks are trained and built, representation and generation let them model data, and generalization explains why they work on new data."
   icon: "assets/img/icons/study-deep-learning.svg"
   format: lectures
   reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
   learning_path:
-    - { start: 1, end: 3, title: "Training and Architectures", text: "How a network is **built** to learn: backpropagation and computational graphs, then CNNs, neural fields, RNNs, and Transformers." }
-    - { start: 4, end: 7, title: "Representation and Generative Models", text: "How a network **models the data**: reconstruction- and similarity-based representation learning, then VAEs, GANs, diffusion, and flows." }
-    - { start: 8, end: 9, title: "Generalization and Transfer", text: "How models work **beyond the training data**: distribution shift, then fine-tuning, few-shot learning, and meta-learning." }
+    - { start: 1, end: 3, title: "Neural Network Basics", text: "How deep networks are **trained** and built: backpropagation and the main architectures for images and sequences." }
+    - { start: 4, end: 7, title: "Representation and Generation", text: "How networks **learn from data**: building useful representations, then generating new samples." }
+    - { start: 8, end: 10, title: "Generalization and Theory", text: "How models **generalize** beyond training: distribution shift, transfer to new tasks, and the theory behind them." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Usually Tuesdays", time: "15:30 – 16:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }
@@ -27,6 +27,7 @@ summer-2026:
 spring-2026:
   tldr: "How LLMs handle reasoning step by step, post-training aligns them with feedback, and context and tools turn them into agents."
   icon: "assets/img/icons/study-llm.svg"
+  reference_course: { lead: "See also", title: "Princeton COS 597R Deep Dive into Large Language Models", term: "Fall 2024", url: "https://princeton-cos597r.github.io/" }  # 참고 강의일 뿐 그대로 따르지 않아 "See also"(교수 2026-11-03). Summer 2026 처럼 그대로 따른 강의는 lead 없이 "Based on"
   learning_path:
     - { start: 1, end: 2, title: "Reasoning with LLMs", text: "How an LLM produces answers: a review of Transformers and LLMs, then **chain-of-thought** reasoning." }
     - { start: 3, end: 6, title: "Post-Training", text: "How a pretrained model learns from **feedback**: SFT, RLHF, rubric-based RLAIF, and reasoning models with test-time scaling." }

@@ -270,9 +270,10 @@ a.cs-title:hover { color: var(--accent); }
 /* Title and keywords already make every row two lines, so Topic is wide enough for the keywords on one line
    and the other cells fit those two lines: Papers may wrap once, Demo, Presenters and Materials stay on one (교수 2026-11-02). */
 .study-table .sc-topic { width: 34%; }
-.study-table .sc-papers { width: 18%; }
-.study-table .sc-demo { width: 15%; }
-.study-table .sc-who { width: 10%; }
+.study-table .sc-papers { width: 15%; }
+.study-table .sc-demo { width: 13%; }
+.study-table .sc-who { width: 11%; }  /* two Korean names fit on one line */
+.study-table .sc-mat { width: 8.5em; }  /* Slides and Lab get their own room instead of the leftover, which squeezed Lab against the table edge (교수 2026-11-03) */
 .study-table .st-links { font-size: var(--text-meta); line-height: 1.5; }  /* two lines of papers are as tall as title + keywords */
 .study-table .st-material-group { vertical-align: top; }
 .study-table td { overflow-wrap: anywhere; }
@@ -280,8 +281,9 @@ a.cs-title:hover { color: var(--accent); }
 .study-table-lectures .sc-lec { width: 17%; }
 .study-table-lectures .sc-who { width: 13%; }
 .study-table-lectures .sc-mat { width: 16%; }
-.study-table .cs-slides { width: auto; white-space: nowrap; }  /* the column takes its width from the colgroup, not the 1% of course tables */
-.study-table .st-material-group { display: inline-grid; justify-items: start; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
+.study-table .cs-slides { width: auto; white-space: nowrap; }
+.study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: var(--space-3); text-align: center; }  /* centred with the same inset on both sides, so the last column does not touch the edge */  /* the column takes its width from the colgroup, not the 1% of course tables */
+.study-table .st-material-group { display: inline-grid; justify-items: center; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-table .st-material-group + .st-material-group { margin-left: var(--space-2); }
 .study-table .st-material-group > * { grid-area: 1 / 1; }  /* the hidden widest entry sizes the slot, so a group starts at the same place in every row */
 .study-table th .st-material-head { color: inherit; font: inherit; }  /* heading labels (Slides, Lab) take the th style; the hidden entry under each sizes the slot to match the rows */

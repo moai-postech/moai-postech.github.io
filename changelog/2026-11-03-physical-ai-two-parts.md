@@ -66,3 +66,12 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - `STUDY.md`: 단계는 2~4개의 큰 덩어리, 이름은 테마 명사구, 본문은 `How …: 주제` 한 문장에 굵게 하나. 옛 "회차 나열 대신 능력의 연결" 문구와 Physical AI 세 단계 설명을 바꿨다.
 - 기각: 다른 학기도 Physical AI 처럼 두 덩어리로 줄이는 안. 세 학기는 교수가 의도한 덩어리 수를 들은 적이 없고, 지금 범위가 회차 주제의 갈림과 맞아 범위는 두고 이름과 문장만 바꿨다.
 - 빌드 실패 고침: 자료가 없는 회차에서 `concat` 이 빈 값을 받아 Jekyll 빌드가 멈췄다(실행 41634227246). 자료가 있는 회차에서만 Notes 를 합친다.
+
+## 7차: 자료 열 간격, 딥러닝 10회, LLM 참고 강의
+교수: "slides, lab은 가운데 정렬로 하고.. 너무 오른쪽에 붙어있는거 같은데 열 간격 위치 좀 신경써서 고쳐줘", "딥러닝은 10강으로 바꾸자. 그리고 8-10을 묶으면 지금 구조로 나눈거 난 좋은거 같아. 다만 표현은 한번 검토해줘.. 그룹별 제목이랑 세부내용이랑 표현만 좀 더 일반적인 느낌으로..", "optional 딱지는 둬도 그룹은 묶을수 잇자나", "LLM에서는 princeton LLM 강의를 참고하라고 링크 걸어줘. 딥러닝에서 MIT 강의 링크 건 것처럼. 물론 LLM은 그 강의를 그대로 쓰지는 않았지만..".
+
+- 자료 열(`course.css`): 남는 폭을 받던 자료 열이 좁은 창에서 85px 까지 줄어 Lab 이 표 끝에 붙었다. 자료 열에 `8.5em` 을 따로 주고 Papers 18→15%, Demo 15→13%, Presenters 10→11% 로 옮겼다. Topic 34% 는 그대로다(키워드 한 줄, 2026-11-02 결정). 자료 칸은 양옆 같은 여백에 가운데 정렬, 각 자리 안에서도 가운데 정렬이다. 1440px 창(표 1200px)에서 재 보니 키워드와 Demo 는 모두 한 줄이고 Slides·Lab 묶음 양옆 여백은 같았다.
+- 딥러닝(`ai_study_terms.yml`): 10회 DL Theory 는 Optional 딱지를 그대로 두고 3번째 묶음에 넣었다(8–10). Home 은 `10 sessions`. 번호 회차는 Optional 이어도 세고 묶으며, A1 같은 선택 주제는 빼도록 `study-overview.html` 과 `check_study_terms.js` 를 고쳤다.
+- 딥러닝 표현을 일반적으로 고쳤다: Neural Network Basics(1–3) / Representation and Generation(4–7) / Generalization and Theory(8–10), 설명과 tldr 도 용어 나열을 줄였다.
+- LLM(Spring 2026): `See also Princeton COS 597R Deep Dive into Large Language Models (Fall 2024)` 링크. 그대로 따른 강의가 아니라 `Based on` 대신 `See also` 로, `reference_course.lead` 로 문구를 고른다(기본 `Based on`).
+- 기각: Princeton COS 597G(2022·2023). 2024 의 597R 이 post-training·reasoning 까지 다뤄 이 학기 주제와 더 가깝다.

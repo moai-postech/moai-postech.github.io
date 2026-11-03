@@ -2,8 +2,9 @@
 // - the Home card and the Schedule panel show the same tldr;
 // - the tldr has one clause per learning stage, in stage order, and each clause uses the stage title's first word
 //   (e.g. "robots act ..., and foundation models help ..." for Robot Embodiment / Foundation Models for Robotics);
-// - stage ranges run from session 1 to the last regular session with no gap or overlap, and never include optional sessions;
-// - the Home "N sessions" count equals the regular sessions in the table.
+// - stage ranges run from session 1 to the last numbered session with no gap or overlap (a numbered session tagged Optional is included,
+//   lettered topics such as A1 never are);
+// - the Home "N sessions" count equals the numbered sessions in the table.
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
@@ -34,8 +35,9 @@ for (const m of schedule.matchAll(/<div class="study-panel" role="tabpanel" id="
   const steps = [...panel.matchAll(/<li data-sessions="(\d+)-(\d+)">[\s\S]*?class="study-step-title">([\s\S]*?)<\/span>/g)]
     .map((s) => ({ start: Number(s[1]), end: Number(s[2]), title: text(s[3]) }));
   const rows = [...panel.matchAll(/<tr data-session="([^"]+)" class="([^"]*)"/g)];
-  const regular = rows.filter((r) => !/\bis-optional\b/.test(r[2])).map((r) => Number(r[1]));
-  const optional = rows.filter((r) => /\bis-optional\b/.test(r[2])).map((r) => r[1]);
+  // Numbered sessions count and belong to a stage even when tagged Optional; lettered topics (A1 …) never do (교수 2026-11-03).
+  const regular = rows.filter((r) => /^\d+$/.test(r[1])).map((r) => Number(r[1]));
+  const optional = rows.filter((r) => !/^\d+$/.test(r[1])).map((r) => r[1]);
 
   const card = cards[id];
   if (!card) errors.push(`${id}: Home 학기 카드가 없음`);

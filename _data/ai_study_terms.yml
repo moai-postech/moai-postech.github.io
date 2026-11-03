@@ -37,13 +37,12 @@ spring-2026:
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
-  tldr: "How models learn representation from raw data, vision-language models connect images and words, visual generation creates images and videos, and scaling turns LLMs multimodal."
+  tldr: "How models build perception of images and text, generation lets them create images and videos, and multimodal LLMs unify both in one model."
   icon: "assets/img/icons/study-foundation-models.svg"
   learning_path:
-    - { start: 1, end: 3, title: "Representation Learning", text: "How networks turn raw data into **representations**: a deep learning primer, Transformers, and self-supervised visual perception." }
-    - { start: 4, end: 5, title: "Vision-Language Models", text: "How a model links **images and words**: CLIP and BERT encoders, then open-world detection and segmentation." }
-    - { start: 6, end: 7, title: "Visual Generation", text: "How models **generate** visual content: text-to-image diffusion and flows, then text-to-video and world models." }
-    - { start: 8, end: 9, title: "Scaling and Multimodal LLMs", text: "How **scale** changes language models: scaling laws and in-context learning, then multimodal LLMs that see and generate." }
+    - { start: 1, end: 5, title: "Perception", text: "How models **understand** what they see and read: neural networks and Transformers, then visual perception, image-text encoders, and grounding." }
+    - { start: 6, end: 7, title: "Generation", text: "How models **create** new content: generating images, then videos, from a text prompt." }
+    - { start: 8, end: 9, title: "Multimodal LLMs", text: "How one model brings the two together: scaled-up LLMs, then multimodal LLMs that **unify perception and generation**." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Wednesdays", time: "22:00 – 23:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }

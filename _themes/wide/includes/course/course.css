@@ -129,14 +129,17 @@ a.cs-speaker-name:hover { color: var(--accent); }
    맨 끝에서 어느 정도 마진", "오른쪽에서 2번째 열은 적당한 간격", "Topic 은 너무 길지도 작지도 않게").
    Date and # are fixed and centred; Topic takes the rest. The right-hand group is fixed: Materials (PDF, Lab and the heading
    centred in a slot at its start), then Reading ending --cs-end before the row's end. A guest's place and time end on that same
-   right line. A course with no Reading gives Materials the whole group, so PDF sits at the same place in every course. */
+   right line. A course with no Reading ends Materials, right-aligned, on that right line. */
 @media (min-width: 681px) {
   .lecture-schedule { --cs-materials: 104px; --cs-reading: 136px; --cs-end: var(--space-3); table-layout: fixed; }
   .lecture-schedule th.cs-date { width: 108px; }
   .lecture-schedule th.cs-n { width: 40px; }
   .lecture-schedule :is(th, td).cs-slides { width: var(--cs-materials); padding-inline: var(--space-3); }
-  .lecture-schedule th.cs-slides:last-child { width: calc(var(--cs-materials) + var(--cs-reading)); }
   .lecture-schedule .cs-mat { display: inline-block; width: calc(var(--cs-materials) - 2 * var(--space-3)); text-align: center; }
+  /* The rightmost column always ends on the end line, right-aligned: Reading when a course has it, otherwise Materials,
+     so PDF, Lab and the heading share that line with a guest's place and time (교수 2026-11-03: "Reading 이 없는 경우도 이쁘게"). */
+  .lecture-schedule :is(th, td).cs-slides:last-child { width: calc(var(--cs-materials) + var(--cs-end)); padding-right: var(--cs-end); text-align: right; }
+  .lecture-schedule .cs-slides:last-child .cs-mat { width: auto; }
   .lecture-schedule :is(th, td).cs-reading { width: var(--cs-reading); padding-left: var(--space-3); padding-right: var(--cs-end); }
   .lecture-schedule td.cs-topic[colspan] { padding-right: var(--cs-end); }
   .lecture-schedule .cs-session { align-items: baseline; }  /* place sits on the title's baseline and time on the speaker's (교수 2026-11-03: "게스트렉처 세로 간격") */

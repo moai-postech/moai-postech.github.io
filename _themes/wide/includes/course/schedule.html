@@ -5,7 +5,7 @@
   강의 줄은 바로 위 파트 머리의 색을 잇는다.
   Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다.
   열 폭은 강의와 무관하게 하나다(course.css 의 .lecture-schedule). Date·#·PDF·Lab·Reading 은 고정 폭, Topic 이 나머지를 채운다.
-  Topic 이 나머지 폭을 쓴다. PDF 와 Lab 은 각자 48px 열(.cs-mat 안의 칸)에 머리글과 함께 가운데 정렬하고, Lab 열은 lab 이 있는 강의에만 생긴다. 맨 오른쪽 열은 끝 여백 선에서 끝나고, 초청 행의 장소·시간은 그 열의 마지막 글자 끝(Reading 끝, 또는 가운데 정렬된 Lab 글자 끝)에 맞춘다.
+  Topic 이 나머지 폭을 쓴다. Slides(PDF 링크)와 Lab 은 각자 56px 열(.cs-mat 안의 칸)에 머리글과 함께 가운데 정렬하고, Lab 열은 lab 이 있는 강의에만 생긴다. 맨 오른쪽 열은 끝 여백 선에서 끝나고, 초청 행의 장소·시간은 그 열의 마지막 글자 끝(Reading 끝, 또는 가운데 정렬된 Lab 글자 끝)에 맞춘다.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
@@ -15,7 +15,7 @@
     <div class="section-body">
     {% assign readings = c.schedule | map: "reading" | compact %}{% if readings.size > 0 %}{% assign cols = 5 %}{% else %}{% assign cols = 4 %}{% endif %}{% assign labs = c.schedule | map: "lab" | compact %}
     <table class="course-schedule lecture-schedule{% if labs.size > 0 %} has-lab{% endif %}{% if cols == 5 %} has-reading{% endif %}">
-      <thead><tr><th scope="col" class="cs-date">Date</th><th scope="col" class="cs-n">#</th><th scope="col" class="cs-topic">Topic</th><th scope="col" class="cs-slides"><span class="cs-mat"><span>PDF</span>{% if labs.size > 0 %}<span>Lab</span>{% endif %}</span></th>{% if cols == 5 %}<th scope="col" class="cs-reading">Reading</th>{% endif %}</tr></thead>
+      <thead><tr><th scope="col" class="cs-date">Date</th><th scope="col" class="cs-n">#</th><th scope="col" class="cs-topic">Topic</th><th scope="col" class="cs-slides"><span class="cs-mat"><span>Slides</span>{% if labs.size > 0 %}<span>Lab</span>{% endif %}</span></th>{% if cols == 5 %}<th scope="col" class="cs-reading">Reading</th>{% endif %}</tr></thead>
       <tbody>
       {% assign tone = "logistics" %}{% for r in c.schedule %}{% if r.part %}{% for q in c.parts %}{% if q.id == r.part %}{% assign p = q %}{% assign tone = "p" | append: forloop.index %}{% endif %}{% endfor %}
       <tr class="course-part-row tone-{{ tone }}"><th colspan="{{ cols }}" scope="rowgroup"><span class="cp-name">{{ p.name }}</span><span class="cp-title">{{ p.title }}</span></th></tr>

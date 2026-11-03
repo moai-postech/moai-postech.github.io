@@ -88,6 +88,8 @@ function inspect(contract) {
       if (value) { probe.style.color = value; palette.add(getComputedStyle(probe).color); }
     }
   }
+  probe.style.color = getComputedStyle(document.body).getPropertyValue('--accent-soft').trim();
+  const onBand = getComputedStyle(probe).color;
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   let node, textNodes = 0;
   while ((node = walker.nextNode())) {
@@ -98,7 +100,8 @@ function inspect(contract) {
     const brand = e.closest('.brand-word,.foot-lab');
     if (!(brand ? /Outfit/.test(css.fontFamily) : /Pretendard/.test(css.fontFamily))) failures.push(`글꼴 역할 위반: ${label(e)}`);
     if (!['400','500','600','700'].includes(css.fontWeight)) failures.push(`굵기 척도 위반 ${css.fontWeight}: ${label(e)}`);
-    if (!palette.has(css.color)) failures.push(`글자 팔레트 위반 ${css.color}: ${label(e)}`);
+    // On the dark media band the accent is too dark, so its links use the accent tint (Home Paper Stella band).
+    if (!palette.has(css.color) && !(e.closest('.has-mini') && css.color === onBand)) failures.push(`글자 팔레트 위반 ${css.color}: ${label(e)}`);
     if (css.textDecorationLine.includes('underline') && !e.closest('a:hover, a:focus-visible')) failures.push(`평상시 밑줄: ${label(e)}`);
   }
   // Shared gutters and top spacing: inspect roles, never decide a role from measured font size.
@@ -106,7 +109,7 @@ function inspect(contract) {
     if (!visible(e) || e.matches('.contact-join,.course-first,.course-summary,.study-join,.study-terms,.study-full-list,.section-photo') || e.closest('.stage-track')) continue;
     const previous = e.previousElementSibling;
     const first = previous && (previous.matches('h1.visually-hidden,.page-intro'));
-    const target = e.matches('.section-next,.section-callout') ? expected('paddingTop','var(--space-5)',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
+    const target = e.matches('.section-next,.section-callout,.section-band') ? expected('paddingTop','var(--space-5)',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
     // Hero starts the first section with its own combined band rhythm.
     if (previous && previous.matches('.hero-band,.course-summary')) continue;
     if (!same(getComputedStyle(e).paddingTop,target)) failures.push(`절 위 간격 역할 위반: ${label(e)}`);

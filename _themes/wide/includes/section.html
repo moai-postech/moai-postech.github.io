@@ -2,7 +2,8 @@
   페이지 front matter 의 sections 한 칸을 그린다.
   type 이 없으면 title + body(마크다운) 절이고, type 이 있으면 sections/<type>.html 이 그린다.
   class 가 있으면 절에 붙인다(예: section-callout, 바로 위 절에 붙는 알림 띠).
-  mini 가 있으면 본문 오른쪽에 다른 사이트의 작은 미리보기(iframe)를 두고, 누르면 mini.href 로 간다.
+  mini 가 있으면 절 전체를 어두운 띠로 만들고 본문 뒤에 다른 사이트의 살아 있는 미리보기(iframe)를 깐다.
+  띠의 빈 곳과 오른쪽 아래 mini.caption 은 mini.href 로 가는 한 링크이고, 본문 안 링크는 따로 눌린다.
   미리보기는 입력을 받지 않는 장식이라 화면 낭독기에서는 링크 이름(mini.label)만 읽는다(Home: Paper Stella, 교수 2026-11-03).
 {% endcomment %}
 {% assign s = include.section %}
@@ -13,7 +14,7 @@
     {% if s.mini %}<div class="mini-text">
     {{ s.body | markdownify }}
     </div>
-    <a class="mini-preview" href="{{ s.mini.href }}" aria-label="{{ s.mini.label }}"><iframe src="{{ s.mini.url }}" title="{{ s.mini.label }}" aria-hidden="true" tabindex="-1" loading="lazy" referrerpolicy="no-referrer"></iframe></a>
+    <a class="mini-preview" href="{{ s.mini.href }}" aria-label="{{ s.mini.label }}"><iframe src="{{ s.mini.url }}" title="{{ s.mini.label }}" aria-hidden="true" tabindex="-1" loading="lazy" referrerpolicy="no-referrer"></iframe>{% if s.mini.caption %}<span class="mini-caption">{{ s.mini.caption }}</span>{% endif %}</a>
     {% else %}{{ s.body | markdownify }}{% endif %}
     </div>
     </section>

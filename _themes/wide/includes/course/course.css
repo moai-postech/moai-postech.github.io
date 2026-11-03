@@ -124,23 +124,24 @@ a.cs-speaker-name:hover { color: var(--accent); }
 .is-next .cs-date { font-weight: var(--weight-heading); }  /* frame only carries the accent; the date stays text colour */
 .course-schedule td:first-child { padding-left: var(--space-3); }
 
-/* One column grid for every course schedule (교수 2026-11-03: "세 강의 양식이 모두 동일", "디자인적으로 더 나은 방향으로 규칙",
-   "제목과 PDF 사이 간격은 줄여도"). Date and # are fixed and centred. On a wide screen Topic is as wide as the longest title
-   and a guest's speaker line, so PDF stays close to its title, and the last column takes what is left. Materials centres in a fixed
-   slot at its column line; Reading and a guest's place and time end on the row's right inset, one right edge in every course. */
+/* One column grid for every course schedule (교수 2026-11-03: "세 강의 양식이 모두 동일", "줄 간격", "맨 오른쪽 열은 오른쪽 정렬하더라도
+   맨 끝에서 어느 정도 마진", "오른쪽에서 2번째 열은 적당한 간격", "Topic 은 너무 길지도 작지도 않게").
+   Date and # are fixed and centred; Topic takes the rest. The right-hand group is fixed: Materials (PDF, Lab and the heading
+   centred in a slot at its start), then Reading ending --cs-end before the row's end. A guest's place and time end on that same
+   right line. A course with no Reading gives Materials the whole group, so PDF sits at the same place in every course. */
 @media (min-width: 681px) {
-  .lecture-schedule { --cs-materials: 104px; --cs-reading: 136px; table-layout: fixed; }
+  .lecture-schedule { --cs-materials: 104px; --cs-reading: 136px; --cs-end: var(--space-3); table-layout: fixed; }
   .lecture-schedule th.cs-date { width: 108px; }
   .lecture-schedule th.cs-n { width: 40px; }
   .lecture-schedule :is(th, td).cs-slides { width: var(--cs-materials); padding-inline: var(--space-3); }
   .lecture-schedule th.cs-slides:last-child { width: calc(var(--cs-materials) + var(--cs-reading)); }
   .lecture-schedule .cs-mat { display: inline-block; width: calc(var(--cs-materials) - 2 * var(--space-3)); text-align: center; }
-  .lecture-schedule :is(th, td).cs-reading { width: var(--cs-reading); padding-inline: var(--space-3); }  /* the heading ends on the same right inset as the codes */
-  .lecture-schedule .cs-session-meta { margin-left: auto; }  /* place and time end on the row's right inset; if a long title wraps them they stay at the right */
+  .lecture-schedule :is(th, td).cs-reading { width: var(--cs-reading); padding-left: var(--space-3); padding-right: var(--cs-end); }
+  .lecture-schedule td.cs-topic[colspan] { padding-right: var(--cs-end); }
+  .lecture-schedule .cs-session-meta { margin-left: auto; }  /* if a long title wraps place and time, they stay at the right */
 }
 @media (min-width: 1000px) {
-  .lecture-schedule th.cs-topic { width: 480px; }  /* longest title 340px, longest guest line 427px */
-  .lecture-schedule thead th:is(.cs-slides, .cs-reading):last-child { width: auto; }
+  .lecture-schedule { --cs-materials: 120px; --cs-reading: 200px; --cs-end: 64px; }  /* at 1280px: PDF to Reading about 120px, 64px before the row's end */
 }
 
 a.cs-title { color: var(--text); }  /* project days lead to the project page */

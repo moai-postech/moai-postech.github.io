@@ -5,7 +5,8 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-03 | [ai-study-member-links](2026-11-03-ai-study-member-links.md) | Sangwoo Mo(moai-postech) | study-members.js, course.css, STUDY.md | Members 표의 기수·학번·학과·참여 칩을 그 탭이나 걸러 본 Full list 로 가는 링크로 |
+| 2026-11-03 | [ai-study-member-photos](2026-11-03-ai-study-member-photos.md) | Sangwoo Mo(moai-postech) | study-members.js, course.css, ai_study_members_sync.py, STUDY.md | Members 이름 hover 로 인물검색 사진(명단 암호문 안에만) |
+| 2026-11-03 | [ai-study-member-links](2026-11-03-ai-study-member-links.md) | Sangwoo Mo(moai-postech) | study-members.js, course.css, STUDY.md | Members 표의 기수·학번·학과·참여 칩을 그 탭이나 걸러 본 Full list 로 가는 링크로, 모든 목록에 같은 요약 줄 |
 | 2026-11-03 | [seminar-year-tabs](2026-11-03-seminar-year-tabs.md) | Sangwoo Mo(moai-postech) | seminar.html, scripts.html, seminar_sync.py | Seminar 연도별 탭(최신 해부터, 최신 해 기본), 슬라이드 없는 랩 발표는 링크 없이 |
 | 2026-11-03 | [ai-study-home-trim](2026-11-03-ai-study-home-trim.md) | Sangwoo Mo(moai-postech) | AI Study Home, course.css, STUDY.md | hover 반응을 링크마다 하나로. Who we learn with 절은 줄였다가 기수 막대와 함께 되살림. Schedule 탭은 최신 학기부터 |
 | 2026-11-03 | [tab-names](2026-11-03-tab-names.md) | Sangwoo Mo(moai-postech) | _config.yml, 페이지 파일 이름, theme.css | Publications 하위 탭을 `List` / `Map` 으로(중간에 `Full List` / `Paper Stella`), 페이지 주소를 탭 이름에 맞춤(옛 주소는 리다이렉트), Paper Stella 머리 한 줄 설명 |

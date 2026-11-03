@@ -47,6 +47,7 @@
 - study-members의 members 탭은 기수·학번·학과·이름·연락처(POSTECH 메일 아이디) 다음에 `1기 (Fall 2025)` 형식의 참여 체크박스를 둔다. 한 사람 한 행이며 참여한 기수만 체크한다. 새 기수는 같은 형식의 열을 추가한다. 기수는 처음 참여한 가입 기수다. 예전 학기별 명단은 숨긴 `_backup-2026-10-31` 탭에 보존했다.
 - 참여 마커는 원본의 참여 체크박스로 판정한다. 가입 기수부터 모든 학기에 참여했다고 가정하지 않는다. 역할 열은 기수별 역할 기록을 보존한다.
 - 원본 시트에는 확인한 `@postech.ac.kr` 전체 주소를 보관하고 사이트에서는 `@` 앞의 아이디만 표시한다.
+- 이름에 마우스를 올리거나 누르면 그 학생 사진이 이름 위에 뜬다(교수 2026-11-03). 사진은 PODIUM 통합검색 사람찾기에서 이름으로 찾아 메일 아이디가 같은 사람만 받고, 공개 저장소 밖 `academic-profile/_private/ai-study-photos/{메일아이디}.jpg` 에 둔다. 동기화가 줄여서 명단 암호문 안에만 넣으므로 비밀번호는 Members 진입 때 한 번뿐이다. 새 멤버를 추가하면 사진도 같은 폴더에 넣고 동기화한다.
 - 갱신은 `python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw 'members!A1:Z100' > /tmp/study-members.json` 다음 `python3 tools/ai_study_members_sync.py /tmp/study-members.json`이다. Node.js가 필요하고 비밀번호는 실행 시 입력하거나 `AI_STUDY_MEMBERS_PASSWORD` 환경변수로 전달한다. 원본 JSON과 비밀번호는 공개 저장소에 넣지 않는다. 일정 자동 동기화와는 별도로 실행한다.
 
 ## 자료 표시
@@ -67,4 +68,4 @@
 ## 가벼운 상호작용 (교수 2026-11-02)
 
 - Home 은 처음 온 학부생이 훑어보는 페이지라 hover 반응은 링크마다 하나만 둔다. 학기 카드는 테두리가 강조색으로 바뀌고, 기수 막대와 학과 칸은 테두리가 생긴다. 신규·기존 수는 막대의 툴팁에만 있다. 들어 올림, 그림자, 다른 요소 흐리기, 짝 강조, 글자 바꿔 보이기는 쓰지 않는다(교수 2026-11-03: 인터랙티브가 쓸데없이 정신없다).
-- 막대는 Members 의 그 기수 탭(`#members-N`), 학과 칸은 그 학과로 걸러 본 Full list(`#dept=산경`)로 간다. Members 는 걸러 본 상태를 표 위 한 줄(학과 · 인원, Show everyone)로 알린다. Members 표 안의 기수·참여 칩은 그 기수 탭(`#members-N`), 학번은 그 학번으로 걸러 본 Full list(`#entry=2020`), 학과는 `#dept=` 로 간다. Home 학과 칸과 같은 주소 규칙이고, 평소에는 표 글자처럼 보이다가 마우스를 올리면 강조색이 된다(교수 2026-11-03).
+- 막대는 Members 의 그 기수 탭(`#members-N`), 학과 칸은 그 학과로 걸러 본 Full list(`#dept=산경`)로 간다. Members 의 모든 목록은 표 위에 같은 꼴의 한 줄을 둔다. 걸러 본 목록과 기수 탭은 `산경 · 22 members`, `1기 (Fall 2025) · 12 members` 와 `Show everyone`, Full list 는 링크 없이 `Everyone · 39 members` 다. 탭은 기수별로만 두고 학번·학과는 탭 없이 Full list 를 거른다(교수 2026-11-03). Members 표 안의 기수·참여 칩은 그 기수 탭(`#members-N`), 학번은 그 학번으로 걸러 본 Full list(`#entry=2020`), 학과는 `#dept=` 로 간다. Home 학과 칸과 같은 주소 규칙이고, 평소에는 표 글자처럼 보이다가 마우스를 올리면 강조색이 된다(교수 2026-11-03).

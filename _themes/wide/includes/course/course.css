@@ -233,6 +233,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-step { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: inherit; }
 .study-step-title { display: block; }
 .study-step-text { display: block; color: var(--muted); font-size: var(--text-meta); }
+.study-step-text strong { color: var(--text); font-weight: var(--weight-emphasis); }  /* stage topics in bold (교수 2026-11-03) */
 .study-learning-path li.is-linked .study-step { border-color: var(--accent); box-shadow: var(--callout-shadow); }  /* hovering a stage tints its sessions in the table */
 .study-step { transition: border-color .15s, box-shadow .15s; }
 .study-table tr.is-step-linked td { background: var(--accent-soft); }

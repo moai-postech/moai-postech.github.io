@@ -4,7 +4,7 @@
     {% comment %} Same look as the Home term timeline: a numbered dot on a line above each card, with the stage's session range so the table link shows without hovering (교수 2026-11-02). The term's one-line tldr above the facts already states the theme, so no overview paragraph here. {% endcomment %}
     {% for step in include.info.learning_path %}<li{% if step.start %} data-sessions="{{ step.start }}-{{ step.end }}"{% endif %}><span class="study-step-mark"><span class="study-step-dot" aria-hidden="true"></span><span class="study-step-label">0{{ forloop.index }}{% if step.start %}<span class="study-step-range"> · {% if step.start == step.end %}Session {{ step.start }}{% else %}Sessions {{ step.start }}–{{ step.end }}{% endif %}</span>{% endif %}</span></span><div class="study-step">
       <span class="study-step-title">{{ step.title }}</span>
-      <span class="study-step-text">{{ step.text }}</span>
+      <span class="study-step-text">{{ step.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>
     </div></li>{% endfor %}
   </ol>{% endif %}
 </div>

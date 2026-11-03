@@ -1,7 +1,7 @@
 // AI Study terms must tell one story on Home and Schedule (교수 2026-11-02):
 // - the Home card and the Schedule panel show the same tldr;
-// - the tldr has one clause per learning stage, in stage order, and each clause uses the stage title's first verb
-//   (e.g. "learn to act, understand 3D scenes, and connect goals" for Learn to Act / Understand the Scene / Connect Goals to Actions);
+// - the tldr has one clause per learning stage, in stage order, and each clause uses the stage title's first word
+//   (e.g. "robots act ..., and foundation models help ..." for Robot Embodiment / Foundation Models for Robotics);
 // - stage ranges run from session 1 to the last regular session with no gap or overlap, and never include optional sessions;
 // - the Home "N sessions" count equals the regular sessions in the table.
 const fs = require('fs');

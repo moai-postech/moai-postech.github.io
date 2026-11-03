@@ -184,6 +184,14 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .foot-legal p { margin: 0 0 var(--space-1); }
 .foot-legal p:last-child { margin-bottom: 0; }
 .site-foot .foot-privacy { color: var(--text); }  /* the one required notice (안내 ③, a text link): body colour among the grey lines, no bold (교수 2026-11-03) */
+@media (max-width: 900px) {  /* tablets and phones: "MOAI Lab" and the POSTECH wordmark share the first row as on wide screens, then the address and the legal lines run full width (교수 2026-11-03) */
+  .foot-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-4); row-gap: 0; align-items: center; }
+  .foot-addr, .foot-side { display: contents; }
+  .foot-postech { grid-column: 2; grid-row: 1; }
+  .foot-postech img { margin-top: 0; }
+  .foot-addr > p:not(.foot-lab) { grid-column: 1 / -1; }
+  .foot-legal { grid-column: 1 / -1; margin-top: var(--space-4); text-align: left; }
+}
 .page-intro { padding-top: var(--page-start); }
 .visually-hidden + .content-section { padding-top: var(--page-start); }
 .page-intro + .content-section { padding-top: var(--page-start); }  /* intros and the first block share the responsive page-start rhythm */
@@ -472,7 +480,6 @@ a.person-name:hover { color: var(--accent); }
   :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); --page-start: var(--space-4); --subnav-start: var(--space-4); --card-padding: var(--space-4); --row-gap: var(--space-2); }
   .site-head { display: block; padding: var(--space-4) 0 var(--space-2); }
   .head-id { margin-bottom: var(--space-2); }
-  .foot-side { align-items: flex-start; width: 100%; text-align: left; }  /* phones: the school and legal lines follow the address, left-aligned */
   .site-nav, .course-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 44px; min-height: 88px; align-content: start; gap: 0 var(--space-3); }
   .site-nav > a, .site-nav .nav-group > a, .course-nav > a { justify-content: center; width: 100%; min-height: 44px; }  /* six links form two even rows, with full touch targets */
   .person-photo { max-width: 120px; }

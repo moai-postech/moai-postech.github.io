@@ -39,3 +39,8 @@ POSTECH 요구사항: 영향 없음
 - 두 카드를 좌우로(실적 | Join us): 미니 때문에 높이가 달라 짝이 맞지 않고, 2026-10-28 에 두 칸 분할을 읽는 흐름이 갈린다고 기각했다.
 - 띠 전체를 하나의 링크로: 문장 안 "See our publications" 링크가 링크 안 링크가 된다.
 - 링크를 강조색 그대로: 어두운 바탕에서 대비가 낮다.
+
+## 3차(같은 날): 검사 반영
+- `checks` 의 `check_selection`: 띠 문장에 `pointer-events: none` 을 줘서 문장을 드래그하면 뒤의 링크가 눌려 페이지가 넘어갔다. 지웠다. 글 상자만 링크 위에 있고 나머지 띠는 그대로 링크다.
+- `test_design`: 띠의 "See our publications →" 가 `.section-next a`(절을 닫는 안내 줄, 본문 크기·강조색)로 잡혔다. 띠는 새 역할이라 `section-next` 대신 `section-band`(위 절에 24px 로 붙는 간격만)로 바꾸고, `design-contract.json` 에 `media-band-text`(`.mini-text p`, lead·흰색)와 `media-band-link`(`.mini-text a`, lead·`--accent-soft`) 역할을 더했다.
+- 같은 실행의 메뉴 굵기·색 항목은 다른 회차(머리글)의 것이라 여기서 건드리지 않았다.

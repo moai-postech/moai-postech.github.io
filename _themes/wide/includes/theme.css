@@ -302,9 +302,10 @@ a.mentee-name:hover { color: var(--accent); }
 .mini-preview:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: -2px; border-radius: var(--radius-2); }
 .mini-caption { position: absolute; right: var(--space-4); bottom: var(--space-3); z-index: 2; color: var(--media-placeholder); font-size: var(--text-small); }
 .mini-preview:hover .mini-caption { color: var(--white); }
-.mini-text { position: relative; z-index: 2; max-width: 44%; pointer-events: none; }  /* clicks on the empty band reach the preview link */
+.content-section.section-band { padding-top: var(--space-5); }  /* attaches to the section above, like a closing line */
+.mini-text { position: relative; z-index: 2; max-width: 44%; }  /* only the text box sits above the link, so the rest of the band reaches it */
 .mini-text p { margin: 0; color: var(--white); font-size: var(--text-lead); line-height: var(--leading-paper); }
-.mini-text a { pointer-events: auto; color: var(--accent-soft); white-space: nowrap; }  /* the accent red is too dark on the band */
+.mini-text a { color: var(--accent-soft); white-space: nowrap; }  /* the accent red is too dark on the band */
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }

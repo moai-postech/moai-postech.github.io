@@ -1,7 +1,7 @@
 # 2026-11-03 강의·스터디 머리글을 연구실 머리글 문법에 맞춤
 작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/header-brand.html`, `_themes/wide/includes/theme.css`, `tools/check_design.js`, `POSTECH.md`, `AGENTS.md`, `_themes/wide/README.md`, `_themes/wide/includes/course/README.md` | 도구: Claude Code
 
-> **한줄 결론: 강의 머리글을 `Data Engineering | POSTECH IMEN891K` 로, 스터디 머리글을 `MOAI Lab AI Study` 로 바꾸고, 연구실 `MOAI Lab | POSTECH` 은 그대로 뒀다.**
+> **한줄 결론: 스터디 머리글을 `MOAI Lab AI Study` 로 바꿨다. 강의 머리글은 `Data Engineering | POSTECH IMEN891K` 로 바꿨다가 교수 지적으로 원래 `IMEN891K Data Engineering | POSTECH` 으로 되돌렸고, 연구실 `MOAI Lab | POSTECH` 은 그대로다.**
 
 POSTECH 요구사항: P1 확인(연구실 머리글의 POSTECH 대표홈 링크는 그대로. 강의 머리글도 POSTECH 글자 링크 유지. 스터디 머리글은 학교 칸을 뺐고, 바닥 한 줄 P7 의 대표홈 링크가 남는다. `check_postech.js` 의 P1 은 원래 연구실 페이지만 본다)
 
@@ -22,6 +22,14 @@ POSTECH 요구사항: P1 확인(연구실 머리글의 POSTECH 대표홈 링크�
 - `POSTECH IMEN891K | Data Engineering`(학교를 앞에): 연구실·스터디는 이름이 앞이라 순서가 뒤집힌다.
 - 강의 머리글에 연구실 로고를 붙이기: 로고는 연구실 홈 링크라는 약속인데 강의 머리글의 첫 링크는 강의 Home 이다. 연구실 링크는 바닥 줄에 있다.
 - 스터디 이름을 요청 문구대로 `MOAI Lab Study` 로: 공식 이름이 Undergraduate AI Study 이고 Home 제목과 같아야 해 `AI Study` 를 유지했다. 교수가 확인했다(같은 날: AI Study 유지).
+
+## 2차 (같은 날): 강의 학수번호를 과목명 앞으로 되돌림
+교수: `Data Engineering | POSTECH IMEN891K` 는 아니다. 학수번호는 과목명보다 왼쪽에 가야 한다.
+
+- `header-brand.html`·`theme.css`: 학수번호를 다시 과목명 앞 회색 굵은 글자(`.brand-code`)로, 그 뒤 `| POSTECH`. 1차 이전과 같은 모양이다. 학수번호는 연구실 머리글의 로고 자리에 서는 셈이라 세 머리글이 "앞 표지 + 이름 | 학교"로 맞는다. 휴대폰은 학수번호를 숨긴다(그대로).
+- `AGENTS.md`, `POSTECH.md`, `_themes/wide/README.md`, `course/README.md` 의 강의 머리글 설명을 되돌렸다. 스터디 변경과 `check_design.js` 는 그대로.
+- 기각한 안: `Data Engineering | POSTECH IMEN891K`(1차). 학교 칸 뒤 학수번호는 과목명보다 뒤에 읽혀 교수가 받지 않았다. `POSTECH IMEN891K | Data Engineering` 도 학교가 앞에 와서 연구실·스터디와 순서가 뒤집혀 쓰지 않았다.
+- 확인: 1차 이전 라이브 화면과 같은 마크업·CSS 로 돌아간 것을 diff 로 확인했다.
 
 ## 남은 것
 없음.

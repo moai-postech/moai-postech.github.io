@@ -526,7 +526,7 @@
     },
     {
       "id": "shared-header-navigation",
-      "selector": ".site-nav, .course-nav",
+      "selector": ".site-nav",
       "style": {
         "display": "flex"
       },
@@ -536,6 +536,23 @@
           "style": {
             "display": "grid",
             "minHeight": "88px",
+            "gridAutoRows": "44px"
+          }
+        }
+      ]
+    },
+    {
+      "id": "course-header-navigation",
+      "selector": ".course-nav",
+      "style": {
+        "display": "flex"
+      },
+      "variants": [
+        {
+          "maxWidth": 680,
+          "style": {
+            "display": "grid",
+            "minHeight": "44px",
             "gridAutoRows": "44px"
           }
         }

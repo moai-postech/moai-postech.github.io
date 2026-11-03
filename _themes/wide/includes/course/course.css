@@ -14,7 +14,6 @@
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
 .study-lab-brand img { width: auto; height: 28px; }
-.course-site main > :last-child { padding-bottom: var(--space-8); }
 .course-site main { text-wrap: pretty; }  /* course and study pages: no single word left alone on a last line (교수 2026-11-02) */
 
 /* Home: title, lead and optional resource links on the left (7 of 12 columns), logistics on the right (5 columns),
@@ -402,7 +401,7 @@ a.cs-title:hover { color: var(--accent); }
   .course-fact { grid-template-columns: 1fr; gap: 0; }
   .course-schedule thead { display: none; }
   .course-schedule, .course-schedule tbody, .course-schedule tr { display: block; width: auto; }
-  .course-schedule tr:not(.course-part-row) { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px var(--space-3); margin-bottom: 3px; padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }
+  .course-schedule tr:not(.course-part-row) { display: grid; grid-template-columns: minmax(1.4em, auto) minmax(0, 1fr); gap: 2px var(--space-3); margin-bottom: 3px; padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }
   .course-schedule tr.tone-none { box-shadow: inset 0 -1px 0 var(--line); border-radius: 0; }
   .course-part-row th { display: block; }
   .course-schedule td { display: block; width: auto; padding: 0 !important; border: 0; background: none; white-space: normal; }
@@ -411,7 +410,7 @@ a.cs-title:hover { color: var(--accent); }
   .is-next td, .is-next td:first-child, .is-next td:last-child { box-shadow: none !important; }  /* on a phone the card carries the one frame; the first and last cell rules above would draw a second one inside it */
   .cs-date { grid-column: 1 / -1; }
   .course-schedule :is(th, td):is(.cs-n, .cs-date, .cs-slides, .st-lectures, .project-round) { text-align: left; }
-  .cs-n:empty { display: none !important; }
+  .cs-n:empty { display: none !important; }  /* the number column is at least two digits wide (1.4em), so titles line up from 9 to 10 */
   .cs-n:empty + .cs-topic { grid-column: 1 / -1; }
   .cs-slides, .cs-reading { grid-column: 1 / -1; }
   .cs-slot { display: none; }
@@ -430,13 +429,14 @@ a.cs-title:hover { color: var(--accent); }
   .st-links:empty, .st-who:empty { display: none !important; }
   .study-table .st-material-group:has(> span:first-child:empty) { display: none; }
   .study-table .st-material-group, .study-table .st-material-group + .st-material-group { margin: 0 var(--space-2) 0 0; }
+  .study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: 0; text-align: left; }  /* cards read left: PDF and Lab start at the card edge like the papers, not centred in the card */
 }
 
 /* Study schedules have more columns than course schedules; stack them at tablet width. */
 @media (min-width: 681px) and (max-width: 960px) {
   .study-table thead, .study-table colgroup { display: none; }
   .study-table, .study-table tbody, .study-table tr { display: block; width: auto; }
-  .study-table tr { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-2) var(--space-3); margin-bottom: var(--space-1); padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }
+  .study-table tr { display: grid; grid-template-columns: minmax(1.4em, auto) minmax(0, 1fr); gap: var(--space-2) var(--space-3); margin-bottom: var(--space-1); padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }
   .study-table td { display: block; width: auto; padding: 0; border: 0; background: none; white-space: normal; }
   .study-table .cs-date, .study-table .st-links, .study-table .st-who, .study-table .cs-slides { grid-column: 1 / -1; }
   .study-table .cs-date { order: -1; }
@@ -444,15 +444,13 @@ a.cs-title:hover { color: var(--accent); }
   .study-table :is(th, td):is(.cs-n, .cs-date, .cs-slides, .st-lectures) { text-align: left; }
   .study-table .cs-slot, .study-table .st-material-group:has(> span:first-child:empty) { display: none; }  /* cards read left, so empty slots would only indent */
   .study-table .st-material-group, .study-table .st-material-group + .st-material-group { margin: 0 var(--space-2) 0 0; }
+  .study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: 0; text-align: left; }  /* cards read left: PDF and Lab start at the card edge like the papers, not centred in the card */
 }
 
 /* One table-owned bottom rule for every course/study table, including mobile and hidden term panels. */
 .course-schedule tbody > tr:last-child.tone-none,
 .course-schedule tbody > tr:last-child.tone-none td { box-shadow: none; }
-.course-site main:has(.course-schedule) + .site-foot { border-top: 0; }
-/* AI Study pages end with a section gap before the footer, so the last row or card never touches it (교수 2026-11-02). */
-.course-site main:has(.study-full-list, .study-terms) { padding-bottom: var(--section-gap); }  /* Home already ends with the join callout's own section gap */
-.course-site main:has(.study-full-list, .study-terms) + .site-foot { border-top: 1px solid var(--line); }
+/* Every course and study page ends with main's usual room before the footer and keeps the footer rule, so the last row or card never touches it (교수 2026-11-02, AI Study; courses the same since 2026-11-04). */
 
 /* Connected milestones: dates, expected work and presentation format. */
 .project-timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); margin: var(--space-5) 0 0; padding: 0; list-style: none; counter-reset: milestone; }

@@ -173,6 +173,7 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .foot-main { display: flex; align-items: stretch; justify-content: space-between; gap: var(--space-5) var(--space-7); flex-wrap: wrap; }  /* one block, no inner rule: who and where on the left, school and legal on the right (교수 2026-11-03) */
 .foot-addr p { margin: 0 0 var(--space-1); }
 .foot-addr p:last-child { margin-bottom: 0; }  /* so the legal lines on the right end on the last address line */
+.foot-line { display: block; text-wrap: balance; }  /* each address line wraps into even halves on phones, so "POSTECH" or "Korea" never sits alone (교수 2026-11-03) */
 .foot-lab a { display: inline-flex; align-items: center; gap: 10px; font-family: "Outfit", "Pretendard Variable", sans-serif; font-weight: var(--weight-heading); font-size: var(--text-lead); letter-spacing: -.3px; color: var(--text); }
 .foot-lab a:hover { text-decoration: none; }
 .foot-lab img { width: auto; height: 30px; flex-shrink: 0; }

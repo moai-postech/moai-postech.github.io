@@ -313,7 +313,7 @@ a.mentee-name:hover { color: var(--accent); }
 .mini-preview:hover .mini-caption, .mini-preview:focus-visible .mini-caption { opacity: 1; }
 .content-section.section-band { padding-top: var(--space-5); }  /* attaches to Our focus above, like a closing line (교수 2026-11-03: 붙어 있는 편이 낫다) */
 .mini-text { position: relative; z-index: 2; max-width: 44%; }
-.mini-text br.wide-only { display: inline; }  /* a line break that only wide screens keep (Home band: before "such as") */  /* only the text box sits above the link, so the rest of the band reaches it */
+.mini-text br.wide-only { display: inline; }  /* a line break that only wide screens keep (Home band: after "such as") */  /* only the text box sits above the link, so the rest of the band reaches it */
 .mini-text p { margin: 0; color: var(--white); font-size: var(--text-lead); line-height: var(--leading-paper); }
 .mini-text a { color: var(--accent-soft); white-space: nowrap; }  /* the accent red is too dark on the band */
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */

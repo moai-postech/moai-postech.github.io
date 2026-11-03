@@ -107,3 +107,6 @@ POSTECH 요구사항: 영향 없음
 ### 기각한 안과 이유(9차)
 - 글 상자 폭(`max-width`)만 줄여 줄바꿈 위치를 맞추기: 글꼴 너비에 따라 "such" 가 윗줄에 남을 수 있다. 의미 단위에서 끊는 줄바꿈이 확실하다.
 - 지도를 그대로 30% 에서 시작: 글과 가까워 왼쪽으로 쏠려 보였다.
+
+## 10차(같은 날): 줄바꿈은 such as 뒤
+교수: such as 까지는 윗줄에 두고. 9차의 줄바꿈을 "such as" 뒤로 옮겼다: "Our work appears at top AI conferences such as / NeurIPS, ICML, and ICLR. See our publications →". 학회 이름 셋과 링크가 아랫줄에 한 덩어리로 놓인다.

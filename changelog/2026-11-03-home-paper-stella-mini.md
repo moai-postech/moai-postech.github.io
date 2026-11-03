@@ -56,3 +56,16 @@ POSTECH 요구사항: 영향 없음
 - 안 C(문장 링크 빼기): Publications 목록으로 가는 가장 직접적인 길이 사라지고, 지도를 누르면 목록이 아니라 지도 화면으로 간다.
 - 캡션을 범례로 바꿔 상시 표시: 띠 오른쪽 아래와 위에 글자가 둘 생겨 다시 복잡해진다. 범례는 지도 안(위), 캡션은 hover 때만.
 - 우리 논문 이름표 전부 표시: 40여 개가 겹쳐 처음 지적한 산만함으로 돌아간다.
+
+## 5차(같은 날): 이름을 Paper Stella 로, 지도는 잘리지 않게
+교수: Explore by topic 대신 Paper Stella 를 직접 말하자. Publications 하위 탭도 By Topic 대신 Paper Stella, By Year 는 다른 말로. 별자리가 잘리지 않게, 범례는 별 Our papers 만, 우리 논문 이름표는 2~3개를 `닉네임 (venue)` 로. 띠를 너무 두껍게 하는 건 좋은지 모르겠다.
+- `_config.yml`: Publications 하위 탭 `By Year` → `All Papers`, `By Topic` → `Paper Stella`. `landscape.md` 제목도 `Paper Stella`.
+- `index.md`: 띠 캡션 "Explore Paper Stella →", 링크 이름 "Explore our papers in Paper Stella".
+- 띠 높이는 216px 그대로 둔다. 248px 로 키워 봤으나 교수가 두꺼운 띠를 원하지 않았다. 미니가 회전 내내 구름 전체를 담도록 맞추므로 216px 에서도 잘리지 않는다(Paper Stella `changelog/2026-11-03-mini-mode.md` 4차).
+- `AGENTS.md`: 지금 자리 목록의 탭 이름.
+- POSTECH 요구사항: `_config.yml` 은 메뉴 하위 탭 이름만 바꿨다. P1~P9 영향 없음.
+
+### 기각한 안과 이유(5차)
+- 하위 탭 `List`, `Full List`: `All Papers` 가 Paper Stella 와 나란히 놓였을 때 "전체 논문 목록"이라는 뜻이 가장 바로 읽힌다. 2026-10-21 의 `List / Visualization` 은 교수가 마음에 들지 않아 했다.
+- 2026-10-21 의 "Paper Stella 를 탭 이름으로 쓰지 않는다(처음 보는 사람은 모른다)"는 교수 결정으로 바꿨다. Home 띠에서 이름과 모습을 먼저 보여 주므로 탭에서 알아볼 수 있다.
+- 띠 248px: 위.

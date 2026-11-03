@@ -18,13 +18,13 @@ sections:
       ![MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026.jpg)
   - title: "Our focus in 2026"
     type: focus
-  # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Publications > By Topic(교수 2026-11-03)
+  # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Publications > Paper Stella(교수 2026-11-03)
   - class: section-band
     mini:
       url: "https://moai-lab.duckdns.org/paper-stella-public/?mini=1"
       href: landscape.html
-      label: "Explore our papers by topic in Paper Stella"
-      caption: "Explore by topic →"
+      label: "Explore our papers in Paper Stella"
+      caption: "Explore Paper Stella →"
     body: |
       Our work appears at top AI conferences such as NeurIPS, ICML, and ICLR. [See our publications →](publications.html)
   # 모집은 실적과 떼어 따로 둔 floating callout(교수 2026-11-03)

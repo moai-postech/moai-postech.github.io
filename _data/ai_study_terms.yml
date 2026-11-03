@@ -12,12 +12,12 @@ fall-2026:
   location: { building: "Science Building 4", rooms: "Room 302" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
-  tldr: "How neural networks are trained and built, representation and generation let them model data, and generalization explains why they work on new data."
+  tldr: "How neural network architectures are built and trained, representation and generation let them model data, and generalization explains why they work on new data."
   icon: "assets/img/icons/study-deep-learning.svg"
   format: lectures
   reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
   learning_path:
-    - { start: 1, end: 3, title: "Neural Network Basics", text: "How deep networks are **trained** and built: backpropagation and the main architectures for images and sequences." }
+    - { start: 1, end: 3, title: "Architectures and Training", text: "How deep networks are **built** and trained: backpropagation, then the main architectures for images and sequences." }
     - { start: 4, end: 7, title: "Representation and Generation", text: "How networks **learn from data**: building useful representations, then generating new samples." }
     - { start: 8, end: 10, title: "Generalization and Theory", text: "How models **generalize** beyond training: distribution shift, transfer to new tasks, and the theory behind them." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
@@ -25,13 +25,12 @@ summer-2026:
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 spring-2026:
-  tldr: "How LLMs handle reasoning step by step, post-training aligns them with feedback, and context and tools turn them into agents."
+  tldr: "How LLMs are made through pretraining and post-training, and extending them turns a model into an agent that can reason and act."
   icon: "assets/img/icons/study-llm.svg"
   reference_course: { lead: "See also", title: "Princeton COS 597R Deep Dive into Large Language Models", term: "Fall 2024", url: "https://princeton-cos597r.github.io/" }  # 참고 강의일 뿐 그대로 따르지 않아 "See also"(교수 2026-11-03). Summer 2026 처럼 그대로 따른 강의는 lead 없이 "Based on"
   learning_path:
-    - { start: 1, end: 2, title: "Reasoning with LLMs", text: "How an LLM produces answers: a review of Transformers and LLMs, then **chain-of-thought** reasoning." }
-    - { start: 3, end: 6, title: "Post-Training", text: "How a pretrained model learns from **feedback**: SFT, RLHF, rubric-based RLAIF, and reasoning models with test-time scaling." }
-    - { start: 7, end: 9, title: "Context and Agents", text: "How an LLM works with the outside world: long context, retrieval, and tools that make it an **agent**." }
+    - { start: 1, end: 5, title: "Pretraining and Post-Training", text: "How an LLM is **trained**: pretraining a Transformer and prompting it step by step, then post-training with SFT, RLHF, and AI feedback." }
+    - { start: 6, end: 9, title: "Extending LLMs", text: "How a trained LLM grows into an **agent**: reasoning models that think longer, long context and retrieval as memory, then tools in an action loop." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }

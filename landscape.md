@@ -3,6 +3,9 @@ layout: page
 title: Paper Stella
 head_title: "Paper Stella · MOAI Lab"
 description: "Paper Stella: MOAI Lab papers highlighted in the landscape of the papers we read."
+intro: |
+  A map of the papers we read, grouped by topic, with our own papers highlighted.
+  {: .lede}
 sections:
   # Paper Stella(전체 논문 지형 위에 우리 논문을 하이라이트)를 그대로 넣는다
   - type: embed

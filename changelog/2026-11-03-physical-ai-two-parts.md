@@ -112,3 +112,9 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
   - `Extending LLMs`(6–9): 학습된 LLM 에 reasoning(오래 생각하는 reasoning model), memory(long context·retrieval), action loop(tools)를 차례로 붙여 agent 가 된다. 굵게 agent.
   - tldr: "How LLMs are made through pretraining and post-training, and extending them turns a model into an agent that can reason and act."
 - 기각: 2번째 묶음 이름을 `Reasoning, Memory, and Action` 으로 하는 안. 세 가지를 나열하면 "확장"이라는 흐름이 이름에서 사라지고, 셋은 설명에서 차례로 보인다.
+
+## 12차: 새 슬라이드 받기(시트 동기화)
+교수: "시트에 slide 새로 올라온거 있으면 다운받고 홈페이지에 업데이트 해줘".
+
+- `ai-study-sync` 를 손으로 돌렸더니 6회 Dexterous manipulation 의 Slides 1, 2 가 새로 있었지만 받지 못했다. 시트 링크가 `docs.google.com/presentation/u/0/d/<ID>/edit` 꼴이라 `tools/drive_pdf.py` 의 파일 ID 정규식이 `/u/0/` 를 건너뛰지 못했다. 정규식에 `(?:u/\d+/)?` 를 더했다.
+- 같은 실행은 push 직전 rebase 에서 `changelog/index.md` 충돌로 실패했다(실행 41639899562, 그사이 다른 push 가 index 를 고침). 고친 뒤 다시 돌린다.

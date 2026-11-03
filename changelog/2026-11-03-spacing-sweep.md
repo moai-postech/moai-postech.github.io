@@ -30,5 +30,7 @@ POSTECH 요구사항: 꼬리말 위치와 경계선만 바뀌었다. 꼬리말 �
 - Faculty 이력 등 연구실 페이지의 마지막 줄 외톨이 단어("Jong-Chyi / Su)"): 강의·스터디에만 있던 `text-wrap: pretty` 를 모든 페이지 `main` 으로 옮겼다.
 - 확인: 360·375·1440px 전 페이지 가로 넘침 없음, 하위 탭·필터·메뉴 한 줄.
 
+- Publications > Map View 의 Paper Stella 삽입 화면이 360px 에서 범례와 `도움말`이 겹치고 `Last updated` 가 아래쪽 별 이름을 덮었다. 삽입된 앱 쪽(paper-stella `styles/app.css`, 그 저장소 changelog `2026-11-03-phone-bottom-line`)에서 고쳐 공개·비공개판을 배포했다. 이 저장소 파일은 바뀌지 않았다.
+
 ## 남은 것
-- Publications > Map View 의 Paper Stella 삽입 화면은 360px 에서 아래 범례와 `Last updated`, 도움말이 겹친다. 삽입된 앱(paper-stella 저장소) 안의 화면이라 이 저장소에서 고칠 수 없다.
+없음.

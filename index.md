@@ -35,7 +35,7 @@ sections:
   # 모집은 실적과 떼어 따로 둔 floating callout(교수 2026-11-03)
   - class: section-next section-actions
     body: |
-      We're actively recruiting students with a passion for AI and AX. [Join us! 🚀](contact.html#join)
+      We're actively recruiting students and interns with a passion for AI and AX. [Join us! 🚀](contact.html#join)
   # News: Home 에서 전부(MOAI Lab started 까지) 보인다. limit 를 두지 않는다(교수 2026-11-03, 교수가 말할 때까지 유지)
   - title: "News"
     type: news

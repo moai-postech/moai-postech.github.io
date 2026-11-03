@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-03 | [audit-interaction-check](2026-11-03-audit-interaction-check.md) | Sangwoo Mo(moai-postech) | tools/check_interaction.js | 전수 검사 실패 원인 두 줄(단계 라벨 정규식, 새 탭 검사 링크)을 현재 디자인에 맞춤 |
 | 2026-11-03 | [study-home-review](2026-11-03-study-home-review.md) | Sangwoo Mo(moai-postech) | AI Study Home, course.css, STUDY.md | 디자인 검토 후 막대 이름표를 막대 안에, 휴대폰 세로 타임라인·버튼 폭, Now 줄 1px 맞춤 |
 | 2026-11-03 | [home-paper-stella-mini](2026-11-03-home-paper-stella-mini.md) | Sangwoo Mo(moai-postech) | index.md, section.html, theme.css | Home 실적 문장을 Paper Stella 미니가 깔린 어두운 띠로, Join us 는 따로 |
 | 2026-11-03 | [header-brands](2026-11-03-header-brands.md) | Sangwoo Mo(sangwoomo) | 강의·스터디 머리글 | 스터디 `MOAI Lab \| AI Study`(AI Study 진하게, MOAI Lab 은 연구실 홈), 강의 제목 위 줄 POSTECH 삭제, 강의 학수번호는 로고 자리 강조색, 강의 `학수번호 과목명 \| POSTECH`(hover 함께), 회색 글자 Outfit 400, 좌우 간격 두 단계(em) |

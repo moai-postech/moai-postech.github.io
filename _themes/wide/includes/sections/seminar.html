@@ -1,6 +1,6 @@
 {% comment %}
   _data/seminar.yml 의 발표 목록. 초청 발표와 랩 내부 발표를 한 목록에 날짜순(최신이 위)으로 두고,
-  맨 위 연도 탭(오래된 해부터, 최신 해가 열린 채로)으로 그해 발표만 보이고, 그 아래 All / Lab / Invited 버튼으로 다시 거른다(교수 2026-11-03).
+  맨 위 연도 탭(목록처럼 최신 해부터, 맨 앞 최신 해가 열린 채로)으로 그해 발표만 보이고, 그 아래 All / Lab / Invited 버튼으로 다시 거른다(교수 2026-11-03).
   자바스크립트가 없으면 연도 머리 줄과 함께 전부 보인다. 탭이 동작하면 연도 머리 줄은 숨긴다(탭이 연도를 알려 준다).
   한 줄: 날짜, 제목(남는 폭 전부), 소속(회색, 오른쪽 정렬), 맨 오른쪽에 발표자 이름(굵게, 왼쪽 정렬 열). 이름이 한 세로선에 맞는다(교수 2026-10-26).
   초청 연사 이름은 연사 홈페이지(url)로, 랩 발표자 이름은 _data/members.yml 에 있으면 Students 나 Mentees 의 그 사람 자리(#이름)로 건다.
@@ -12,13 +12,13 @@
   다가오는 발표는 목록 맨 위(최신순)에 오고, 방문자 브라우저에서 날짜가 강조된다(scripts.html 의 is-upcoming). 교수 2026-10-23: Up next 카드는 빼고 이 상단 하이라이트만 둔다.
 {% endcomment %}
 {% assign talks = site.data.seminar.talks %}
-{% assign years = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% unless years contains y %}{% assign years = years | append: y | append: "," %}{% endunless %}{% endfor %}{% assign years = years | split: "," | sort %}{% assign latest = years | last %}
+{% assign years = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% unless years contains y %}{% assign years = years | append: y | append: "," %}{% endunless %}{% endfor %}{% assign years = years | split: "," | sort | reverse %}{% assign latest = years | first %}
 {% assign shown = "" | split: "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y == latest %}{% assign shown = shown | push: t %}{% endif %}{% endfor %}{% assign invited = shown | where: "invited", true %}
     <section class="content-section">
     {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
     <div class="section-body" data-filter>
     <div class="study-tablist study-member-tablist" role="tablist" aria-label="Years">
-      {% for y in years %}{% assign n = 0 %}{% for t in talks %}{% assign ty = t.date | slice: 0, 4 %}{% if ty == y %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}<button type="button" role="tab" data-year="{{ y }}" aria-selected="{% if forloop.last %}true{% else %}false{% endif %}"{% unless forloop.last %} tabindex="-1"{% endunless %}><strong>{{ y }}</strong><span>{{ n }}</span></button>{% endfor %}
+      {% for y in years %}{% assign n = 0 %}{% for t in talks %}{% assign ty = t.date | slice: 0, 4 %}{% if ty == y %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}<button type="button" role="tab" data-year="{{ y }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}><strong>{{ y }}</strong><span>{{ n }}</span></button>{% endfor %}
     </div>
     <div class="filter-bar" role="group" aria-label="Show talks">
       <button type="button" class="filter-btn" data-show="all" aria-pressed="true">All <span>{{ shown.size }}</span></button>

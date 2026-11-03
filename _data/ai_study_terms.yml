@@ -1,12 +1,12 @@
-# 학기별 학습 흐름과 운영 정보. learning_path 의 start·end 는 그 단계에 속한 회차 번호로 Schedule 에서 단계에 마우스를 올리면 그 행을 강조한다. tldr 은 학기 주제를 한 문장으로 줄인 요약으로 Home 학기 카드와 Schedule 학기 탭이 함께 쓴다. tldr 은 learning_path 단계마다 구절 하나를 단계 순서대로 두고, 각 구절의 동사는 그 단계 제목의 첫 동사와 같게 쓴다. 단계 범위는 1회부터 마지막 정규 회차까지 빈틈·겹침 없이 잇고 선택 회차(A1 등)는 넣지 않는다. 검사: node tools/check_study_terms.js(교수 2026-11-02). icon 은 Home 학기 카드의 그림(학기 주제별 study-*.svg, Codex 제작 2026-11-02). 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
+# 학기별 학습 흐름과 운영 정보. learning_path 의 start·end 는 그 단계에 속한 회차 번호로 Schedule 에서 단계에 마우스를 올리면 그 행을 강조한다. tldr 은 학기 주제를 한 문장으로 줄인 요약으로 Home 학기 카드와 Schedule 학기 탭이 함께 쓴다. tldr 은 learning_path 단계마다 구절 하나를 단계 순서대로 두고, 각 구절은 그 단계 제목의 첫 단어를 쓴다(제목은 동사구나 테마가 드러나는 명사구, text 는 마크다운이라 **굵게** 가능). 단계 범위는 1회부터 마지막 정규 회차까지 빈틈·겹침 없이 잇고 선택 회차(A1 등)는 넣지 않는다. 검사: node tools/check_study_terms.js(교수 2026-11-02). icon 은 Home 학기 카드의 그림(학기 주제별 study-*.svg, Codex 제작 2026-11-02). 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
 # 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
-  tldr: "How robots learn embodied skills in the physical world, and draw on foundation models to perceive and plan."
+  tldr: "How robots act through their own bodies in the physical world, and foundation models help them perceive and plan."
   icon: "assets/img/icons/physical.svg"
   learning_path:
-    - { start: 1, end: 6, title: "Learn Embodied Skills", text: "Start from the robot's body: data, manipulation, locomotion, navigation, humanoids, and dexterous hands show how robots learn to act in the physical world." }
-    - { start: 7, end: 11, title: "Draw on Foundation Models", text: "Then bring in AI: 3D understanding, spatial reasoning, VLA, and world models show how foundation models help robots perceive scenes, reason, and plan actions." }
+    - { start: 1, end: 6, title: "Robot Embodiment", text: "How robots act through their bodies: **data** to learn from, **manipulation**, **locomotion**, and **navigation**, then **humanoids** and **dexterous hands**." }
+    - { start: 7, end: 11, title: "Foundation Models for Robotics", text: "How AI helps robots act: **3D representation** and **reconstruction**, **spatial reasoning**, **VLA**, and **world models** bring perception, reasoning, and planning." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 302" }

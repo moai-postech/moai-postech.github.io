@@ -19,3 +19,13 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 ## 확인
 - 읽은 규칙: 상위 `AGENTS.md` 들, 저장소 `AGENTS.md`, `STUDY.md`, `tools/check_study_terms.js`.
 - 이 맥(Intel)에서는 로컬 Jekyll 빌드가 안 돼 YAML 파싱과 tldr 구절·범위 규칙을 손으로 대조했고, push 뒤 Actions `checks`(check_study_terms 포함)로 확인한다.
+
+## 2차: 단계 이름을 테마형으로, 설명에 굵게
+교수: "learn embodied skills 이런 캐주얼한 이름보다 좀 더 테마가 잘 드러나는 방식으로 써줘.. 그리고 설명에서도 필요하면 bold도 적절히 써도 돼".
+
+- 단계 이름: `Robot Embodiment`(1–6), `Foundation Models for Robotics`(7–11).
+- 설명은 그 단계 회차 주제를 굵게 쓴다(data, manipulation, locomotion, navigation, humanoids, dexterous hands / 3D representation, reconstruction, spatial reasoning, VLA, world models).
+- `study-learning-path.html` 이 `text` 를 마크다운으로 그리고, `course.css` 에서 설명 속 굵은 글자는 본문색·600 으로 둔다(회색 설명 안에서 주제가 보이게).
+- tldr: "How robots act through their own bodies in the physical world, and foundation models help them perceive and plan."
+- 규칙: tldr 구절은 단계 제목의 첫 "동사"가 아니라 첫 "단어"를 쓴다로 넓혔다(`STUDY.md`, `ai_study_terms.yml` 머리 주석, `check_study_terms.js` 주석). 검사 코드는 원래 첫 단어로 비교하므로 바꾸지 않았다. 다른 학기의 동사형 이름은 그대로 둔다.
+- 기각: `Embodiment` / `AI for Robotics` 처럼 더 짧은 안. 2파트가 무엇을 다루는지는 "foundation model"이 핵심이라 그 말을 이름에 남겼다.

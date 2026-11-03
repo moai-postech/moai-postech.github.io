@@ -42,23 +42,17 @@ function inspect({ kind, P, F }) {
     need(hp && hp.textContent.trim() === 'POSTECH', 'P1', '머리글에 POSTECH 글자(대표홈 링크)가 없다');
     // P2: 머리글의 첫 링크는 연구실 로고·이름(홈 링크)이다.
     need(headLinks.length && isHome(headLinks[0]) && headLinks[0].textContent.includes('MOAI'), 'P2', '머리글의 첫 요소가 연구실 로고·이름(홈 링크)이 아니다');
-    const foot = document.querySelector('footer');
-    const fl = foot ? [...foot.querySelectorAll('a')] : [];
-    const fp = fl.find(a => sameUrl(a, P.url) && a.querySelector('img'));
-    need(fp && visible(fp.querySelector('img')), 'P3', '꼬리말에 POSTECH 로고(대표홈 링크)가 없다');
-    need(!fp || ratioOk(fp.querySelector('img')), 'P8', '꼬리말 POSTECH 로고 비율이 원본과 다르다');
-    const priv = fl.find(a => sameUrl(a, P.privacy_url));
-    need(priv && visible(priv), 'P4', '꼬리말에 개인정보 링크가 없다');
-    need(!priv || priv.textContent.trim() === P.privacy_label, 'P4', `개인정보 링크 이름이 "${P.privacy_label}" 가 아니다`);
-    need(fl.some(a => isHome(a) && a.textContent.includes('MOAI') && a.querySelector('img')), 'P5', '꼬리말에 연구실 로고·이름(홈 링크)이 없다');
-  } else {
-    const foot = document.querySelector('footer');
-    const fl = foot ? [...foot.querySelectorAll('a')] : [];
-    need(fl.some(a => isHome(a)), 'P7', '강의 바닥 줄에 연구실 홈 링크가 없다');
-    need(fl.some(a => sameUrl(a, P.url) && visible(a)), 'P7', '강의 바닥 줄에 POSTECH 대표홈 링크가 없다');
-    const priv = fl.find(a => sameUrl(a, P.privacy_url));
-    need(priv && visible(priv) && priv.textContent.trim() === P.privacy_label, 'P7', '강의 바닥 줄의 개인정보 링크(이름)가 맞지 않다');
   }
+  // 꼬리말(P3~P5, P8)은 연구실·강의·스터디가 같은 includes/footer.html 을 쓴다(교수 2026-11-03, 옛 P7 강의 바닥 줄을 합침).
+  const foot = document.querySelector('footer');
+  const fl = foot ? [...foot.querySelectorAll('a')] : [];
+  const fp = fl.find(a => sameUrl(a, P.url) && a.querySelector('img'));
+  need(fp && visible(fp.querySelector('img')), 'P3', '꼬리말에 POSTECH 로고(대표홈 링크)가 없다');
+  need(!fp || ratioOk(fp.querySelector('img')), 'P8', '꼬리말 POSTECH 로고 비율이 원본과 다르다');
+  const priv = fl.find(a => sameUrl(a, P.privacy_url));
+  need(priv && visible(priv), 'P4', '꼬리말에 개인정보 링크가 없다');
+  need(!priv || priv.textContent.trim() === P.privacy_label, 'P4', `개인정보 링크 이름이 "${P.privacy_label}" 가 아니다`);
+  need(fl.some(a => isHome(a) && a.textContent.includes('MOAI') && a.querySelector('img')), 'P5', '꼬리말에 연구실 로고·이름(홈 링크)이 없다');
   return out;
 }
 

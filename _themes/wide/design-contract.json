@@ -342,7 +342,7 @@
     },
     {
       "id": "privacy-link",
-      "selector": ".foot-privacy, .course-privacy",
+      "selector": ".foot-privacy",
       "style": {
         "fontWeight": "var(--weight-regular)"
       }

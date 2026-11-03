@@ -14,13 +14,6 @@
 .tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
 .study-lab-brand img { width: auto; height: 28px; }
-.course-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-5) 0 var(--space-7); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--text-meta); }
-.course-foot a { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text); font-weight: var(--weight-emphasis); }
-.course-foot img { width: auto; height: 19px; }
-/* POSTECH (university home) and the privacy link are required on every page of the school domain (IT team 2026-09-15) */
-.course-foot .course-postech { color: var(--muted); font-weight: var(--weight-regular); }
-.course-foot .course-postech::before { content: "\00b7"; margin-right: var(--space-2); color: var(--muted); }
-.course-foot .course-privacy { margin-left: auto; font-weight: var(--weight-regular); }  /* a text link (안내 ③), no bold (교수 2026-11-03) */
 .course-site main > :last-child { padding-bottom: var(--space-8); }
 .course-site main { text-wrap: pretty; }  /* course and study pages: no single word left alone on a last line (교수 2026-11-02) */
 
@@ -395,10 +388,10 @@ a.cs-title:hover { color: var(--accent); }
 /* One table-owned bottom rule for every course/study table, including mobile and hidden term panels. */
 .course-schedule tbody > tr:last-child.tone-none,
 .course-schedule tbody > tr:last-child.tone-none td { box-shadow: none; }
-.course-site main:has(.course-schedule) + .course-foot { border-top: 0; }
+.course-site main:has(.course-schedule) + .site-foot { border-top: 0; }
 /* AI Study pages end with a section gap before the footer, so the last row or card never touches it (교수 2026-11-02). */
 .course-site main:has(.study-full-list, .study-terms) { padding-bottom: var(--section-gap); }  /* Home already ends with the join callout's own section gap */
-.course-site main:has(.study-full-list, .study-terms) + .course-foot { border-top: 1px solid var(--line); }
+.course-site main:has(.study-full-list, .study-terms) + .site-foot { border-top: 1px solid var(--line); }
 
 /* Connected milestones: dates, expected work and presentation format. */
 .project-timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); margin: var(--space-5) 0 0; padding: 0; list-style: none; counter-reset: milestone; }

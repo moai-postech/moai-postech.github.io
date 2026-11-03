@@ -10,7 +10,8 @@ const COURSE = [];
   for (const e of fs.readdirSync(path.join(SITE, dir), { withFileTypes: true })) {
     const rel = path.join(dir, e.name);
     if (e.isDirectory() && e.name !== 'slides') walk(rel);
-    else if (e.name === 'index.html') COURSE.push(rel);
+    // Redirect pages (layout course-redirect: teaching/data-engineering/, programming-for-ax/) only forward to the current term.
+    else if (e.name === 'index.html' && !/http-equiv="refresh"/.test(fs.readFileSync(path.join(SITE, rel), 'utf8'))) COURSE.push(rel);
   }
 })('teaching');
 const check = (ok, message) => { if (!ok) throw new Error(message); };
@@ -38,18 +39,21 @@ async function checkStudyOverview(page, base) {
     for (let i = 0; i < await tabs.count(); i++) {
       await tabs.nth(i).click();
       const id = await tabs.nth(i).getAttribute('aria-controls'), panel = page.locator('#' + id);
-      check(await panel.locator('.study-learning-path li').count() >= 3, `${id}: learning flow missing`);
+      check(await panel.locator('.study-learning-path li').count() >= 2, `${id}: learning flow missing`);  // two or three parts per term (Physical AI and LLMs have two, 2026-11-03)
       check(await panel.locator('a.study-step,button.study-step,.study-step[data-start]').count() === 0, `${id}: overview still acts as a filter`);
       // Labels are the stage number plus its session range, `01 · Sessions 1–6` (2026-11-02 study-path-trim); the old `Topics n–m` form must not come back.
       check((await panel.locator('.study-step-label').allTextContents()).every(s => /^\d{2}( · Sessions? \d+(–\d+)?)?$/.test(s.trim())), `${id}: stage label is not "01 · Sessions n–m"`);
       check(await panel.locator('a[href*="part="]').count() === 0, `${id}: part-selection link remains`);
       const table = panel.locator('.course-schedule tbody');
       const before = await table.count() ? await table.innerHTML() : null;
-      // Hovering a stage tints its sessions (교수 2026-11-02); a click still selects nothing, and leaving restores the table.
-      await panel.locator('.study-step').first().hover();
+      // Hovering a stage tints its sessions (교수 2026-11-02). A click pins that tint until the stage is clicked again
+      // (2026-11-03, the pinned card looks like hover); the second click and leaving restore the table.
+      const step = panel.locator('.study-step').first();
+      await step.hover();
       if (before !== null) check(await panel.locator('tr.is-step-linked').count() > 0, `${id}: hovering a stage did not show its sessions`);
-      await panel.locator('.study-step').first().click();
-      await page.mouse.move(0, 0);
+      await step.click(); await page.mouse.move(0, 0);
+      if (before !== null) check(await panel.locator('tr.is-step-linked').count() > 0 && await step.evaluate(e => e.closest('[aria-pressed]')?.getAttribute('aria-pressed')) === 'true', `${id}: a clicked stage did not stay pinned`);
+      await step.click(); await page.mouse.move(0, 0);
       if (before !== null) check(before === await table.innerHTML(), `${id}: overview changed the timetable`);
       check(await panel.locator('.is-part-selected, tr.is-step-linked').count() === 0, `${id}: timetable highlight remains`);
       check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), `${id}: overview overflows`);

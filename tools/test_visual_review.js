@@ -48,6 +48,11 @@ try {
   const hookSource=path.join(ROOT,'.githooks/pre-push');
   const hookRepo=path.join(tmp,'hook-repo');fs.mkdirSync(hookRepo);
   const hg=a=>execFileSync('git',a,{cwd:hookRepo,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+  // The hook builds the pushed commit with the site's Ruby (tools/site_env.sh); the fixture gets stand-ins that succeed,
+  // so this test checks only what it is about: no visual-review wait, and an earlier hook still runs.
+  const stub=path.join(tmp,'hook-stub');fs.mkdirSync(path.join(stub,'bin'),{recursive:true});
+  for (const tool of ['ruby','bundle']) { fs.writeFileSync(path.join(stub,'bin',tool),'#!/bin/sh\nexit 0\n'); fs.chmodSync(path.join(stub,'bin',tool),0o755); }
+  fs.mkdirSync(path.join(hookRepo,'tools'));fs.writeFileSync(path.join(hookRepo,'tools/site_env.sh'),`MOAI_RUBY_DIR="${stub}"\nMOAI_CACHE="${path.join(tmp,'hook-cache')}"\nPATH="${stub}/bin:$PATH"\nGITHUB_ACTOR=fixture\nexport PATH GITHUB_ACTOR\n`);
   hg(['init']);fs.writeFileSync(path.join(hookRepo,'README.md'),'checkout');hg(['add','.']);
   hg(['-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-m','fixture']);
   const head=hg(['rev-parse','HEAD']);

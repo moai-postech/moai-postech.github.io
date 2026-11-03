@@ -109,7 +109,8 @@ function inspect(contract) {
     if (!visible(e) || e.matches('.contact-join,.course-first,.course-summary,.study-join,.study-terms,.study-full-list,.section-photo') || e.closest('.stage-track')) continue;
     const previous = e.previousElementSibling;
     const first = previous && (previous.matches('h1.visually-hidden,.page-intro'));
-    const target = e.matches('.section-next,.section-callout,.section-band') ? expected('paddingTop','var(--space-5)',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
+    // An intro that describes the embed right below it stays with it like a caption (theme.css .page-intro + .embed-section).
+    const target = e.matches('.section-next,.section-callout,.section-band') ? expected('paddingTop','var(--space-5)',e) : first && e.matches('.embed-section') ? expected('paddingTop','min(var(--space-5), var(--page-start))',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
     // Hero starts the first section with its own combined band rhythm.
     if (previous && previous.matches('.hero-band,.course-summary')) continue;
     if (!same(getComputedStyle(e).paddingTop,target)) failures.push(`절 위 간격 역할 위반: ${label(e)}`);
@@ -161,9 +162,14 @@ async function run() {
           const nav = document.querySelector('.site-nav, .course-nav').getBoundingClientRect();
           return { height: h.height, logoX: logo.x, logoY: logo.y, logoHeight: logo.height, navY: nav.y, navHeight: nav.height };
         });
-        const headerBase = headers.get(width);
+        // Logo and menu start at the same place everywhere. Height follows the menu's rows: on phones the lab's six links
+        // take two rows and a course's or the study's three take one, so height is compared within each kind.
+        const kind = file.startsWith('teaching/') ? 'course' : 'lab';
+        const headerBase = headers.get(width), kindBase = headers.get(`${width}:${kind}`);
         if (!headerBase) headers.set(width, { file, header });
-        else if (Object.keys(header).some(k => Math.abs(header[k] - headerBase.header[k]) > 1)) failures.push(`${file} ${width}px: 공통 헤더 높이·로고·탭 위치가 ${headerBase.file}와 다름`);
+        if (!kindBase) headers.set(`${width}:${kind}`, { file, header });
+        if (headerBase && ['logoX','logoY','logoHeight','navY'].some(k => Math.abs(header[k] - headerBase.header[k]) > 1)) failures.push(`${file} ${width}px: 공통 헤더 로고·탭 위치가 ${headerBase.file}와 다름`);
+        else if (kindBase && ['height','navHeight'].some(k => Math.abs(header[k] - kindBase.header[k]) > 1)) failures.push(`${file} ${width}px: 헤더 높이가 같은 종류의 ${kindBase.file}와 다름`);
         entry.header = header;
 
 

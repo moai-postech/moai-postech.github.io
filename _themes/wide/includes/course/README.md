@@ -36,7 +36,8 @@
 | 정렬 | 열 | 이유 |
 | --- | --- | --- |
 | 가운데 | `#`, Date, Cohort, Entry, 자료 링크 열(스터디 Materials, Lec), 발표 칸(Proposal, Final) | 길이와 꼴이 같은 짧은 값이라 머리글 아래 한 줄로 모인다 |
-| 왼쪽 | Topic, Project, Papers, Demo, Presenters, Reading, Department, Name, Email, Participation, 강의 Schedule 의 Materials | 길이가 들쭉날쭉한 글과 목록은 시작점이 맞아야 읽힌다. 강의 Materials 는 오른쪽 구역의 첫 열이라 PDF 가 모든 강의에서 같은 자리에 선다 |
+| 왼쪽 | Topic, Project, Papers, Demo, Presenters, 스터디 Reading, Department, Name, Email, Participation, 강의 Schedule 의 Materials | 길이가 들쭉날쭉한 글과 목록은 시작점이 맞아야 읽힌다. 강의 Materials 는 제목 가까이 같은 열 선에서 시작한다 |
+| 오른쪽 | 강의 Schedule 의 Reading | 마지막 열이라 행 오른쪽 끝에 맞춰 초청 행 장소·시간과 같은 오른쪽 선을 만든다(교수 2026-11-03) |
 
 - 머리글은 그 열과 같은 쪽에 선다. 템플릿에서는 `th` 에 칸과 같은 클래스(`cs-n`, `cs-date`, `cs-slides`, `st-lectures`, `project-round`)를 붙인다.
 - 정렬은 `course.css` 의 `Column alignment` 규칙 한 곳에서만 정한다. 열마다 `text-align` 을 따로 쓰지 않는다. 새 열을 만들면 위 표에서 맞는 줄을 골라 그 규칙의 선택자에 더한다.

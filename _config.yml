@@ -42,9 +42,9 @@ nav:
         url: funding.html
   - title: Publications
     children:
-      - title: By Year
+      - title: All Papers
         url: publications.html
-      - title: By Topic
+      - title: Paper Stella
         url: landscape.html
   - title: Teaching
     children:

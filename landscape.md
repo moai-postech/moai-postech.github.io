@@ -1,6 +1,6 @@
 ---
 layout: page
-title: By Topic
+title: Paper Stella
 head_title: "Paper Stella · MOAI Lab"
 description: "Paper Stella: MOAI Lab papers highlighted in the landscape of the papers we read."
 sections:

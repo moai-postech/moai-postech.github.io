@@ -174,9 +174,9 @@
     window.onhashchange = () => (/^#(dept|entry)=/.test(location.hash) || dept ? render(cohorts) : fromHash());  // #members-4 switches the tab; #dept= and #entry= re-filter
     box.append(tablist, ...panels);
     // One line above the tabs says where the photos come from and how to change one (교수 2026-11-03).
-    const note = element('p', 'Photos are from POVIS and LinkedIn, to put names to faces. To change yours, contact ', 'study-member-photo-note');
+    const note = element('p', 'Photos come from POVIS and LinkedIn to help everyone put names to faces. If you\u2019d like a different photo, just let ', 'study-member-photo-note');
     const prof = element('a', 'Prof. Sangwoo Mo'); prof.href = 'faculty.html';
-    note.append(prof, '.');
+    note.append(prof, ' know.');
     list.replaceChildren(note, box);
   }
   async function unlock(key, focus) {

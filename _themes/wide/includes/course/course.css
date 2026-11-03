@@ -126,12 +126,12 @@ a.cs-speaker-name:hover { color: var(--accent); }
 .course-schedule td:first-child { padding-left: var(--space-3); }
 
 /* One column grid for every course schedule (교수 2026-11-03: "세 강의 양식이 모두 동일", "맨 오른쪽 열은 오른쪽 정렬하더라도 맨 끝에서
-   어느 정도 마진", "Topic 은 너무 길지도 작지도 않게", "PDF랑 Lab을 다른 열로, 가운데 정렬").
-   Date and # are fixed and centred; Topic takes the rest. PDF and Lab are two 48px columns, each centred under its heading
+   어느 정도 마진", "Topic 은 너무 길지도 작지도 않게", "PDF랑 Lab을 다른 열로, 가운데 정렬", "Slide Lab").
+   Date and # are fixed and centred; Topic takes the rest. Slides (the PDF link) and Lab are two 56px columns, each centred under its heading
    (Lab only when the course has labs). Reading, when present, is the last column and ends --cs-end before the row's end.
    The rightmost column ends on that end line, and a guest's place and time end where its last text ends. */
 @media (min-width: 681px) {
-  .lecture-schedule { --cs-slot: 48px; --cs-slots: 1; --cs-reading: 136px; --cs-end: var(--space-3); table-layout: fixed; }
+  .lecture-schedule { --cs-slot: 56px; --cs-slots: 1; --cs-reading: 136px; --cs-end: var(--space-3); table-layout: fixed; }
   .lecture-schedule.has-lab { --cs-slots: 2; }
   .lecture-schedule th.cs-date { width: 108px; }
   .lecture-schedule th.cs-n { width: 40px; }

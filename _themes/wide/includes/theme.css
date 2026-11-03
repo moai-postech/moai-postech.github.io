@@ -170,12 +170,13 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 .site-foot a:hover { color: var(--accent); text-decoration: underline; }
 .foot-main { display: flex; align-items: stretch; justify-content: space-between; gap: var(--space-5) var(--space-7); flex-wrap: wrap; }  /* one block, no inner rule: who and where on the left, school and legal on the right (교수 2026-11-03) */
 .foot-addr p { margin: 0 0 var(--space-1); }
+.foot-addr p:last-child { margin-bottom: 0; }  /* so the legal lines on the right end on the last address line */
 .foot-lab a { display: inline-flex; align-items: center; gap: 10px; font-family: "Outfit", "Pretendard Variable", sans-serif; font-weight: var(--weight-heading); font-size: var(--text-lead); letter-spacing: -.3px; color: var(--text); }
 .foot-lab a:hover { text-decoration: none; }
 .foot-lab img { width: auto; height: 30px; flex-shrink: 0; }
 .foot-side { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: var(--space-4); text-align: right; }  /* the wordmark on the lab name line, the legal lines on the last address line */
 .foot-postech { flex-shrink: 0; }
-.foot-postech img { display: block; width: auto; height: 14px; margin-top: var(--space-2); }
+.foot-postech img { display: block; width: auto; height: 10px; margin-top: 10px; }  /* 118px wide, about the width of "MOAI Lab" beside it and just above the GUI0301 minimum; centred on the 30px lab name line (교수 2026-11-03: 14px read larger than the lab name) */
 .foot-legal { font-size: var(--text-small); }
 .foot-legal p { margin: 0 0 var(--space-1); }
 .foot-legal p:last-child { margin-bottom: 0; }

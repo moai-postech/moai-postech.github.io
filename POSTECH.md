@@ -16,7 +16,7 @@
 
 | ID | 요구사항 | 근거 | 지금 구현 | 자동 검사 |
 | --- | --- | --- | --- | --- |
-| P1 | 머리글에 POSTECH 대표 홈페이지 영어판(`/eng/`) 링크를 둔다. 안내 ①은 "좌상단 로고에 대표홈 링크"였으나, 2026-11-03 교수 결정으로 연구실 이름 뒤 회색 `POSTECH` 글자("MOAI Lab \| POSTECH")에 링크를 건다. 로고 형태는 꼬리말(P3)에 남는다. 강의 머리글은 "IMEN891K Data Engineering \| POSTECH" 이고, 스터디 머리글은 학교 칸 없이 "MOAI Lab AI Study" 다(2026-11-03 교수 결정). 검사는 처음부터 연구실 페이지에만 P1 을 걸었고, 강의·스터디는 바닥 한 줄(P7)의 대표홈 링크로 지킨다. | 안내 ① | `includes/header-brand.html` 의 `.brand-school` | 예 |
+| P1 | 머리글에 POSTECH 대표 홈페이지 영어판(`/eng/`) 링크를 둔다. 안내 ①은 "좌상단 로고에 대표홈 링크"였으나, 2026-11-03 교수 결정으로 연구실 이름 뒤 회색 `POSTECH` 글자("MOAI Lab \| POSTECH")에 링크를 건다. 로고 형태는 꼬리말(P3)에 남는다. 강의 머리글은 "IMEN891K Data Engineering \| POSTECH" 이고, 스터디 머리글은 학교 자리에 AI Study 를 둔 "MOAI Lab \| AI Study" 다(2026-11-03 교수 결정). 검사는 처음부터 연구실 페이지에만 P1 을 걸었고, 강의·스터디는 바닥 한 줄(P7)의 대표홈 링크로 지킨다. | 안내 ① | `includes/header-brand.html` 의 `.brand-school` | 예 |
 | P2 | 연구실 로고와 이름을 두고 사이트 홈으로 링크한다. 좌상단, 머리글의 첫 링크다. | 안내 ② | `includes/header-brand.html` 의 `.brand` | 예(홈 링크) |
 | P3 | 모든 페이지 꼬리말에 POSTECH 로고를 두고 대표 홈페이지 영어판으로 링크한다. | 안내 ④, GUI0502 | `includes/footer.html` 의 `.foot-postech` | 예 |
 | P4 | 꼬리말에 개인정보 처리방침 텍스트 링크를 둔다. 이름은 영어판 본부 꼬리말의 공식 명칭 `Personal Information Policy`, 주소는 영어판. 안내 ③은 텍스트 링크만 요구하므로 굵게 하지 않고, 회색 고지 사이에서 본문색으로만 구분한다(2026-11-03 교수 결정). | 안내 ③ | `includes/footer.html` 의 `.foot-privacy` | 예 |

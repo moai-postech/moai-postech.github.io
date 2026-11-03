@@ -1,6 +1,6 @@
 {% comment %}Shared identity, one grammar: the name in dark bold, then a hairline and the school in grey, linked to the POSTECH home. The school shows as a word, not the wordmark, so the logo at the top left is the lab logo that goes home (교수 2026-11-03, POSTECH.md P1).
 - Lab: MOAI Lab | POSTECH.
-- AI Study: MOAI Lab AI Study, no school part. include.sub adds the programme after the lab name in grey bold, linked to the study home (교수 2026-11-02, bold 2026-11-03); the lab name already says whose study it is, and a third part made the header long (교수 2026-11-03).
+- AI Study: MOAI Lab | AI Study, no school part. include.sub puts the programme where the school goes on the other headers (same hairline and grey), linked to the study home; the lab name already says whose study it is (교수 2026-11-03).
 - Course: IMEN891K Data Engineering | POSTECH. The home code (the first of the cross-listed codes) stands before the title in grey, where the lab logo stands before the lab name (교수 2026-11-02, kept 2026-11-03). The full cross-listing stays in the page head.{% endcomment %}
 <div class="head-id">
   <p class="brand"><a href="{{ include.url | default: 'index.html' }}"{% if include.title %} title="{{ include.title | escape }}"{% endif %}>{% unless include.title %}{% if site.logo %}<img class="brand-mark" src="{{ site.logo }}" alt="{{ site.title }} logo">{% endif %}{% endunless %}{% if include.code %}<span class="brand-code">{{ include.code }}</span>{% endif %}<span class="brand-word">{{ include.title | default: site.title }}</span></a></p>

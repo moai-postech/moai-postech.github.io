@@ -166,7 +166,6 @@ main > :last-child { padding-bottom: var(--space-8); }  /* breathing room before
 /* Site footer: POSTECH-affiliated lab footer — POSTECH 대표홈 링크, 연구실 홈 링크,
    개인정보취급처리방침, 주소(정보기술팀 남단비 2026-09-15 디자인 권장사항) */
 .site-foot { border-top: 1px solid var(--line); padding: var(--space-6) 0 var(--space-7); font-size: var(--text-meta); color: var(--muted); }  /* follows the content directly; short pages are not padded to the screen height */
-.foot-tel { white-space: nowrap; }  /* a phone number never breaks across lines */
 .site-foot a { color: inherit; }
 .site-foot a:hover { color: var(--accent); text-decoration: underline; }
 .foot-main { display: flex; align-items: stretch; justify-content: space-between; gap: var(--space-5) var(--space-7); flex-wrap: wrap; }  /* one block, no inner rule: who and where on the left, school and legal on the right (교수 2026-11-03) */

@@ -21,7 +21,7 @@
 | P3 | 모든 페이지 꼬리말에 POSTECH 로고를 두고 대표 홈페이지 영어판으로 링크한다. | 안내 ④, GUI0502 | `includes/footer.html` 의 `.foot-postech` | 예 |
 | P4 | 꼬리말에 개인정보 처리방침 텍스트 링크를 둔다. 이름은 영어판 본부 꼬리말의 공식 명칭 `Personal Information Policy`, 주소는 영어판. 안내 ③은 텍스트 링크만 요구하므로 굵게 하지 않고, 회색 고지 사이에서 본문색으로만 구분한다(2026-11-03 교수 결정). | 안내 ③ | `includes/footer.html` 의 `.foot-privacy` | 예 |
 | P5 | 꼬리말에 연구실 로고와 이름을 두고 연구실 홈으로 링크한다. 학과 링크는 의무가 아니지만 주소 줄에 둔다. | 안내 ⑤ | `includes/footer.html` 의 `.foot-lab` | 예 |
-| P6 | (의무 아님) 주소, 전화, 저작권은 정보기술팀 안내 ①~⑤에 없고 예시 그림과 GUI0502 에만 있다. 연구실 주소·전화를 두는 곳이 꼬리말이라 두되, POSTECH 검사 대상에서 뺐다(2026-11-03). | GUI0502(권장) | `includes/footer.html` | 아니오 |
+| P6 | (의무 아님) 주소, 전화, 저작권은 정보기술팀 안내 ①~⑤에 없고 예시 그림과 GUI0502 에만 있다. 연구실 주소를 두는 곳이 꼬리말이라 주소와 저작권은 두고, 호실·전화는 Faculty 와 겹쳐 뺐다. POSTECH 검사 대상이 아니다(2026-11-03). | GUI0502(권장) | `includes/footer.html` | 아니오 |
 | P7 | 강의 사이트와 스터디 페이지의 바닥 한 줄에 연구실 홈, POSTECH(대표홈 영어판), 개인정보 링크(같은 이름, 굵게)를 둔다. | 안내 ③④를 강의 사이트에 적용 | `layouts/course.html` 의 `.course-foot` | 예 |
 | P8 | POSTECH 로고는 공식 파일(`assets/img/postech-wordmark-hd.png`)을 쓰고 비례, 기울기, 서체, 색을 바꾸지 않는다. 복잡한 무늬나 비슷한 색 위에 두지 않는다. | GUI0301 | 꼬리말 워드마크, 흰 바탕 | 예(비례) |
 | P9 | 강조색은 POSTECH Red(RGB 166 25 85, `#a61955`)다. 도메인은 `CNAME` 의 `moai.postech.ac.kr` 이고 HTTPS 로만 연다. | GUI0401, 도메인 연결 | `theme.css` 의 `--red-700`, `CNAME`, Pages 설정 | 예(CNAME) |

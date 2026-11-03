@@ -62,7 +62,7 @@ tools/               검사 스크립트(check_changelog.py: 기록·안건·서
 - `includes/header.html`(메뉴와 하위 메뉴), `includes/subnav.html`(하위 메뉴 페이지의 전환 탭), `includes/scripts.html`(연구 방향 버튼 같은 탭 동작).
 - **POSTECH 필수 요소**(정보기술팀이 moai.postech.ac.kr 연결 조건으로 요구, 2026-09-15 권장사항). 테마를 바꾸거나 디자인을 고쳐도 빼지 않는다. 요구사항 원문(P1~P9), 출처, 바꾸자는 요청이 들어왔을 때의 검토 절차는 `POSTECH.md` 가 정본이고, `node tools/check_postech.js` 가 모든 페이지에서 검사한다. 아래는 지금 구현의 요약이다. 값은 `_config.yml` 의 `postech`(대표홈·로고·개인정보 링크)와 `footer`(학과·주소·전화)에 둔다. POSTECH 링크는 영어판(`/eng/`)이고, 개인정보 링크 이름은 영어판 본부 꼬리말의 공식 명칭 `Personal Information Policy` 이며 본문색으로 구분한다(굵게 하지 않음).
   - `includes/header-brand.html`: 머리글 왼쪽. 좌상단 연구실 로고와 이름(홈 링크) 뒤에 가는 세로선과 회색 `POSTECH` 글자(대표홈 링크)를 둔다("MOAI Lab | POSTECH"). 강의는 과목명이 같은 자리에 서고 학교 칸에 학수번호를 붙인다("Data Engineering | POSTECH IMEN891K", 휴대폰은 학수번호를 숨긴다). 스터디는 학교 칸 없이 "MOAI Lab AI Study" 다(교수 2026-11-03). 방문자가 좌상단 로고를 홈으로 기대해서 머리글에서는 POSTECH 로고를 빼고 글자로 소속을 보인다(교수 2026-11-03). 꼬리말의 POSTECH 로고도 같은 워드마크를 쓴다(2026-10-26). 한 줄에 다 들어가지 않는 폭에서는 메뉴 전체를 아랫줄로 내린다(`.site-head` 의 `flex-wrap`).
-  - `includes/footer.html`: 전 페이지 꼬리말. 선 하나 아래 한 덩어리로, 왼쪽에 연구실 로고와 이름(홈 링크)·학과·주소·전화, 오른쪽에 POSTECH 로고(대표홈 링크)와 그 아래 개인정보 링크(본문색, 보통 굵기)·저작권. 정보기술팀 의무는 ③④⑤뿐이라 그 밖의 것은 연구실이 정한다(교수 2026-11-03). 연구실 주소·호실·전화는 꼬리말 한 곳에만 둔다(2026-10-27 교수, Contact 의 Visit us 를 뺐다).
+  - `includes/footer.html`: 전 페이지 꼬리말. 선 하나 아래 한 덩어리로, 왼쪽에 연구실 로고와 이름(홈 링크)·학과·주소, 오른쪽에 POSTECH 로고(대표홈 링크)와 그 아래 개인정보 링크(본문색, 보통 굵기)·저작권. 정보기술팀 의무는 ③④⑤뿐이라 그 밖의 것은 연구실이 정한다(교수 2026-11-03). 연구실 주소는 꼬리말 한 곳에만 둔다(2026-10-27 교수, Contact 의 Visit us 를 뺐다). 호실과 전화는 Faculty 에만 둔다(교수 2026-11-03, 값은 `_config.yml` 의 `footer.office`·`footer.phone`).
   - 강의 사이트 바닥 한 줄(`layouts/course.html`): 연구실 홈, POSTECH(대표홈), 개인정보 링크.
   - 꼬리말은 본문 바로 뒤에 온다. 짧은 페이지도 화면 높이까지 늘려 꼬리말을 맨 아래에 붙이지 않는다(교수 2026-10-30: Teaching·Contact 아래 흰 여백이 다른 탭보다 길다. 2026-10-23 의 화면 맨 아래 고정을 되돌림).
 - `includes/theme.css`: 사이트 전체 CSS. `assets/style.css` 가 이것을 그대로 내보낸다. 글꼴은 Pretendard 하나(로고 글자만 Outfit), 굵기는 400·600·700 과 Seminar 발표 제목에만 쓰는 500(`--weight-medium`, 교수 2026-11-02).
@@ -85,7 +85,7 @@ tools/               검사 스크립트(check_changelog.py: 기록·안건·서
 
 - **사이트 안에서 끝나게(self-contained) 만든다.** 교수 개인 사이트(Google Sites)로 링크하지 않는다. 필요한 내용(발표 목록 등)은 이 사이트 안으로 들여온다. 논문, 코드, 발표 자료, 강의 시트, 다른 사람의 페이지, 외부 프로필(Google Scholar, GitHub) 같은 원자료 링크는 괜찮다.
 - **슬라이드는 Drive 링크 대신 이 저장소의 파일로 링크한다**(교수 2026-10-26). 원본은 구글시트·Drive 에 그대로 두고, PDF 사본을 받아 올린다(Google Slides·pptx 는 PDF 로 굽고, 그림은 그대로). 받는 도구는 `tools/drive_pdf.py`, 사본과 원본 Drive 링크의 짝은 `tools/drive_sources.json` 이다. 자리: 강의 슬라이드 `teaching/<id>/slides/`, 학생 발표 `teaching/<id>/project/<회차>/`, 학부생 AI 스터디 `teaching/ai-study/<학기>/`(`tools/ai_study_sync.py` 가 시트에서 받는다), 초청 발표 `assets/talks/`. 강의·발표 yml 에 Drive 슬라이드 링크를 새로 넣었으면 `python3 tools/localize_slides.py` 를 돌린다. 노트북(ipynb)과 시험지·해설도 같은 방식으로 받아 올린다(강의 실습 `teaching/<id>/labs/`, 시험 `teaching/<id>/exams/<시험>/`). 예외는 학생이 직접 고치는 project sheet 하나다(교수 2026-10-30: "모든 파일은 다 asset 으로"). Colab 주소는 파일이 아니라 실행 화면이라 그대로 둔다. Publications 의 slides·poster 는 화면에 나오지 않는 보관용 데이터라 옮기지 않는다(2026-10-22 결정). 링크가 비공개라 받을 수 없는 파일은 Drive 링크로 남기고 changelog 에 적는다. Pages 사이트는 1 GB 한도라 큰 파일(수십 MB)을 더할 때 전체 크기를 본다.
-- **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Publications > By Topic, 랩 세미나와 초청 연사는 Research > Seminar(`_data/seminar.yml`), 과제는 Research > Funding, 교수 이메일·전화는 Faculty, 지원 방법은 Contact, 연구실 주소·전화는 꼬리말.
+- **같은 내용은 한 곳에만 둔다.** 다른 페이지에서 필요하면 내용을 복사하지 말고 그 자리로 링크한다. 지금 자리: 연구 방향 버튼은 Home, 분야별 연구는 Research > Overview, Paper Stella 지도는 Publications > By Topic, 랩 세미나와 초청 연사는 Research > Seminar(`_data/seminar.yml`), 과제는 Research > Funding, 교수 이메일·호실·전화는 Faculty, 지원 방법은 Contact, 연구실 주소는 꼬리말.
 - **정돈된 분류를 위에, 탐색용 그림은 그 아래에 둔다.** 처음 온 사람이 먼저 분류를 보고, 더 보고 싶은 사람이 지도 같은 interactive 요소로 내려간다.
 - **컴퓨터 화면에서는 넓게 쓴다.** 전체 폭은 `--container`(1200px), 모바일처럼 좁은 기둥으로 줄이지 않는다(교수 2026-10-21). `--measure`도 가용 폭 100%를 사용한다. 문단 폭을 760px로 좁히는 안은 기존 결정으로 기각됐다. 좁은 화면에서만 한 칸으로 접는다.
 - **넓은 화면을 전제로 설계하고 12칸 격자에 칸을 배분한다.** 좁은 기둥을 늘려 쓰지 않는다(교수 2026-10-21: "공간은 넓은데 컨텐츠는 좁은 걸 상정해 억지로 늘리면 안 예쁘다"). 나란히 놓는 것은 내용이 대등할 때만(예: 연구 분야 셋) 쓰고, 긴 목록(뉴스 등)은 전체 폭을 쓴다.  절 이름만 왼쪽 칸에 세우는 라벨 칸은 쓰지 않는다.
@@ -240,9 +240,9 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 ## 콘텐츠 표기 규칙
 
-- **건물 이름**: 공학4동(제4공학관)은 영문으로 `Science Building 4` 라고 쓴다(`Engineering Building 4` 아님). 강의 Home·꼬리말·Faculty 처럼 칸이 넉넉한 곳은 `Science Building 4, Room 302`, 강의 스케줄의 회차별 장소처럼 좁은 칸은 `Sci. Bldg. 4, Room 302` 로 줄인다(교수 2026-10-30).
+- **건물 이름**: 공학4동(제4공학관)은 영문으로 `Science Building 4` 라고 쓴다(`Engineering Building 4` 아님). 강의 Home·Faculty 처럼 칸이 넉넉한 곳은 `Science Building 4, Room 302`, 강의 스케줄의 회차별 장소처럼 좁은 칸은 `Sci. Bldg. 4, Room 302` 로 줄인다(교수 2026-10-30).
 
-- News와 Media 날짜는 `YYYY/MM`으로 쓴다. Media의 발행월은 기사 원문에서 확인한다. 사무실 전화의 표시 이름은 Faculty와 꼬리말 모두 `Tel.:`로 통일한다(교수 2026-10-28).
+- News와 Media 날짜는 `YYYY/MM`으로 쓴다. Media의 발행월은 기사 원문에서 확인한다. 사무실 전화의 표시 이름은 `Tel.:`다(교수 2026-10-28). 전화는 Faculty 에만 둔다(교수 2026-11-03).
 
 - **강의 스케줄의 초청 강연·세미나 행**: 1줄은 발표 제목, 2줄은 연사와 소속으로 모든 강의가 같은 양식이다. 제목은 학과 안내 메일·포스터, 교내회보, 연사가 보낸 강연자료처럼 원본에서 원문 그대로 가져온다. 원본을 찾지 못하면 제목을 지어 넣거나 연사 이름으로 대신하지 않고 비워 둔 채 교수에게 알린다. 제목이 빈 행이 있으면 `checks` 의 `check_guest_titles` 가 실패한다(교수 2026-11-02).
 

@@ -21,7 +21,7 @@ POSTECH 요구사항: P1 확인(연구실 머리글의 POSTECH 대표홈 링크�
 - 기존 짜임 유지(`IMEN891K Data Engineering | POSTECH`): 회색이 과목명 양쪽에 있어 위계가 흐리고 연구실 머리글과 짜임이 다르다.
 - `POSTECH IMEN891K | Data Engineering`(학교를 앞에): 연구실·스터디는 이름이 앞이라 순서가 뒤집힌다.
 - 강의 머리글에 연구실 로고를 붙이기: 로고는 연구실 홈 링크라는 약속인데 강의 머리글의 첫 링크는 강의 Home 이다. 연구실 링크는 바닥 줄에 있다.
-- 스터디 이름을 요청 문구대로 `MOAI Lab Study` 로: 공식 이름이 Undergraduate AI Study 이고 Home 제목과 같아야 해 `AI Study` 를 유지했다. 교수가 원하면 `sub` 한 곳만 바꾸면 된다.
+- 스터디 이름을 요청 문구대로 `MOAI Lab Study` 로: 공식 이름이 Undergraduate AI Study 이고 Home 제목과 같아야 해 `AI Study` 를 유지했다. 교수가 확인했다(같은 날: AI Study 유지).
 
 ## 남은 것
 없음.

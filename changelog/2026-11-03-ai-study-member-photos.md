@@ -48,3 +48,6 @@ POSTECH 요구사항: 영향 없음
 
 ### 기각한 안
 - 얼굴이 가려진 LinkedIn 사진도 최신이라는 이유로 쓰기: 이름과 얼굴을 익히려는 목적에 맞지 않는다.
+
+## 안내 문구 다듬기
+교수 요청으로 더 자연스럽게: "Photos come from POVIS and LinkedIn to help everyone put names to faces. If you'd like a different photo, just let Prof. Sangwoo Mo know." 길어져도 된다는 교수 판단에 따라 한 줄 제약은 풀었다.

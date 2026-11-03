@@ -23,6 +23,8 @@ import tempfile
 ROOT = Path(__file__).resolve().parent.parent
 # 학생 사진은 공개 저장소에 두지 않는다. 명단과 같은 암호문 안에만 들어간다(교수 2026-11-03).
 PHOTOS = ROOT.parent / '_private' / 'ai-study-photos'
+# LinkedIn 프로필 주소 끝(메일 아이디 → in/ 뒤 문자열). 명단과 같은 암호문 안에만 들어간다(교수 2026-11-03).
+LINKEDIN = ROOT.parent / '_private' / 'ai-study-linkedin.json'
 # 시트의 학과는 한글 약칭으로 쓴다. 화면 표기는 '산경(IME)' 처럼 한글(영문)이다(교수 2026-11-02).
 # Members 명단은 한글 약칭만 보인다(assets/study-members.js).
 DEPARTMENTS = {'산경': 'IME', '컴공': 'CSE', '무은재': 'Freshmen', '전전': 'EE',
@@ -172,6 +174,10 @@ def main():
         print(json.dumps(stats['terms'], ensure_ascii=False))
         return
     photos = attach_photos(cohorts, args.photos) if args.photos.is_dir() else 0
+    links = json.loads(LINKEDIN.read_text()) if LINKEDIN.exists() else {}
+    for person in (p for c in cohorts for p in c['members']):
+        if links.get(person['email'].split('@')[0]):
+            person['linkedin'] = links[person['email'].split('@')[0]]
     password = os.environ.get('AI_STUDY_MEMBERS_PASSWORD') or getpass.getpass('Members 비밀번호: ')
     if not password:
         raise ValueError('빈 비밀번호는 허용하지 않음')
@@ -206,7 +212,7 @@ process.stdout.write(JSON.stringify({version:1, iterations, salt:salt.toString('
     encrypted = json.loads(result.stdout)
     private_path.write_text(json.dumps(encrypted, ensure_ascii=False, indent=2) + '\n')
     (ROOT / '_data' / 'ai_study_members.yml').write_text(json.dumps(stats, ensure_ascii=False, indent=2) + '\n')
-    print(f"Members: {sum(len(c['members']) for c in cohorts)}명, {len(cohorts)}개 기수, 사진 {photos}장")
+    print(f"Members: {sum(len(c['members']) for c in cohorts)}명, {len(cohorts)}개 기수, 사진 {photos}장, LinkedIn {len(links)}개")
 
 
 if __name__ == '__main__':

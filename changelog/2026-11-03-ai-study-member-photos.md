@@ -28,3 +28,14 @@ POSTECH 요구사항: 영향 없음
 
 ## 안내 문구 줄임
 교수 요청으로 탭 위 안내를 한 줄로 줄였다: "Photos from POSTECH and public profiles, to put names to faces. To change yours, contact Prof. Sangwoo Mo."
+
+## POSTECH ID 열, LinkedIn 열, 밑줄 제거
+- 교수 요청: 메일 아이디만 보이는 열 이름을 `POSTECH Email` → `POSTECH ID` 로. 그 오른쪽에 LinkedIn 열을 두고 프로필이 있는 사람만 작은 `in` 칩으로 링크(26명).
+- LinkedIn 은 영문 이름(PODIUM 사람찾기)과 한글 이름으로 찾고, 학교·학과·입학 연도가 명단과 맞는 프로필만 넣었다. 맞는지 확인되지 않은 후보는 넣지 않았다. 목록은 저장소 밖 `academic-profile/_private/ai-study-linkedin.json`, 동기화가 암호문 안에 넣는다.
+- 안내 문구: "Photos are from POSTECH or LinkedIn, to put names to faces. To change yours, contact Prof. Sangwoo Mo." (출처를 정확히 쓰고 한 줄 유지)
+- 이름 밑 점선 밑줄을 뺐다. 거의 모든 이름에 사진이 있어 39줄 전부 밑줄이 깔리고, 표 위 안내가 사진이 있음을 알린다(교수가 판단을 맡김).
+- `tools/check_study_members.js` 의 열 이름 기대값을 새 열에 맞췄다.
+
+### 기각한 안
+- LinkedIn 을 시트의 새 열로 관리: 시트 형식과 동기화 파서를 바꿔야 하고, 링크가 있는 모든 사람이 편집하는 시트라 사진과 같은 저장소 밖 파일로 둔다.
+- `LinkedIn` 글자 링크: 열 이름과 같은 말이 26번 반복돼 칩 `in` 으로 줄였다.

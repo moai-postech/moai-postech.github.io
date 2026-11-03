@@ -50,17 +50,18 @@
   // Each term's student representative, by POSTECH ID (public on the Schedule page).
   const representatives = JSON.parse(document.getElementById('member-representatives').textContent || '{}');
   // '#' numbers the rows so each table shows how many people it lists (교수 2026-11-02).
-  const LABELS = ['#', 'Cohort', 'Entry', 'Department', 'Name', 'POSTECH Email', 'Participation'];
+  // The column holds the POSTECH ID only, so it is named that way; LinkedIn links sit right of it (교수 2026-11-03).
+  const LABELS = ['#', 'Cohort', 'Entry', 'Department', 'Name', 'POSTECH ID', 'LinkedIn', 'Participation'];
   function table(people, caption, termTab, rep) {
     const t = element('table', undefined, 'study-members-table');
     t.append(element('caption', caption, 'visually-hidden'));
     // Term tables keep the Participation column slot empty so every column stays where it is in Full list.
     const cols = element('colgroup');
-    for (const name of ['n', 'cohort', 'year', 'department', 'name', 'email', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
+    for (const name of ['n', 'cohort', 'year', 'department', 'name', 'email', 'linkedin', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
     const head = element('thead'), header = element('tr');
     LABELS.forEach((label, i) => {
-      const th = element('th', termTab && i === 6 ? '' : label); th.scope = 'col';
-      if (termTab && i === 6) th.setAttribute('aria-hidden', 'true');
+      const th = element('th', termTab && i === 7 ? '' : label); th.scope = 'col';
+      if (termTab && i === 7) th.setAttribute('aria-hidden', 'true');
       header.append(th);
     });
     head.append(header); t.append(cols, head);
@@ -89,7 +90,14 @@
         }
         cell.dataset.label = LABELS[index]; row.append(cell);
       });
-      const cell = element('td'); cell.dataset.label = LABELS[6];
+      const linkedin = element('td', undefined, 'study-member-linkedin'); linkedin.dataset.label = LABELS[6];
+      if (member.linkedin) {
+        const a = element('a', 'in', 'study-member-in'); a.href = 'https://www.linkedin.com/in/' + member.linkedin + '/';
+        a.target = '_blank'; a.rel = 'noopener'; a.setAttribute('aria-label', member.name + ' on LinkedIn');
+        linkedin.append(a);
+      }
+      row.append(linkedin);
+      const cell = element('td'); cell.dataset.label = LABELS[7];
       if (!termTab) {
         const markers = element('span', undefined, 'study-member-markers');
         for (const n of member.participation) markers.append(listLink(n + '기', '#members-' + n, 'study-member-marker'));
@@ -166,7 +174,7 @@
     window.onhashchange = () => (/^#(dept|entry)=/.test(location.hash) || dept ? render(cohorts) : fromHash());  // #members-4 switches the tab; #dept= and #entry= re-filter
     box.append(tablist, ...panels);
     // One line above the tabs says where the photos come from and how to change one (교수 2026-11-03).
-    const note = element('p', 'Photos from POSTECH and public profiles, to put names to faces. To change yours, contact ', 'study-member-photo-note');
+    const note = element('p', 'Photos are from POSTECH or LinkedIn, to put names to faces. To change yours, contact ', 'study-member-photo-note');
     const prof = element('a', 'Prof. Sangwoo Mo'); prof.href = 'faculty.html';
     note.append(prof, '.');
     list.replaceChildren(note, box);

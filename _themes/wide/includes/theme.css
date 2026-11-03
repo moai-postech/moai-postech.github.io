@@ -290,6 +290,12 @@ a.mentee-name:hover { color: var(--accent); }
 /* Both next steps belong to one floating callout; the links remain part of each sentence. */
 .section-actions .section-body { padding: var(--card-padding); background: var(--callout-surface); border: 1px solid var(--callout-line); border-inline-start: 3px solid var(--accent); border-radius: var(--radius-2); box-shadow: var(--callout-shadow); }
 .section-actions .section-body > p:not(:last-child) { margin-bottom: var(--space-3); }
+/* A small live preview beside a section's text (Home: Paper Stella in its ?mini=1 mode). The frame takes no input; the whole preview is one link. */
+.section-body.has-mini { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: var(--gutter); align-items: center; }
+.mini-text > p:not(:last-child) { margin-bottom: var(--space-3); }
+.mini-preview { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--radius-2); background: var(--media-surface); transition: box-shadow .2s; }
+.mini-preview iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; pointer-events: none; }
+.mini-preview:hover, .mini-preview:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }
@@ -447,6 +453,7 @@ a.person-name:hover { color: var(--accent); }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 680px) {
+  .section-body.has-mini { grid-template-columns: minmax(0, 1fr); }
   :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); --page-start: var(--space-4); --subnav-start: var(--space-4); --card-padding: var(--space-4); --row-gap: var(--space-2); }
   .site-head { display: block; padding: var(--space-4) 0 var(--space-2); }
   .head-id { margin-bottom: var(--space-2); }

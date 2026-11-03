@@ -19,7 +19,12 @@ sections:
   - title: "Our focus in 2026"
     type: focus
   # 연구 소개 뒤 실적·모집 두 문장을 하나의 floating callout에 묶는다
+  # 오른쪽 작은 그림은 Paper Stella 미니 모드(?mini=1, 별만 천천히 돈다). 누르면 Publications > By Topic(교수 2026-11-03)
   - class: section-next section-actions
+    mini:
+      url: "https://moai-lab.duckdns.org/paper-stella-public/?mini=1"
+      href: landscape.html
+      label: "Explore our papers by topic in Paper Stella"
     body: |
       Our work appears at top AI conferences such as NeurIPS, ICML, and ICLR. [See our publications →](publications.html)
 

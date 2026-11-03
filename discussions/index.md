@@ -5,6 +5,7 @@
 
 | 날짜 | 안건 | 제안자 | 대상 | 상태 | 결정 changelog |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-03 | [home-paper-stella-mini](2026-11-03-home-paper-stella-mini.md) | Sangwoo Mo(moai-postech) | Home 실적 안내 옆 Paper Stella 미니 | 결정됨 | [home-paper-stella-mini](../changelog/2026-11-03-home-paper-stella-mini.md) |
 | 2026-10-28 | [logo-moai-recognition](2026-10-28-logo-moai-recognition.md) | Sangwoo Mo(sangwoomo), Codex 비교 | 로고 형태 | 결정됨 | [logo-candidate-review](../changelog/2026-10-28-logo-candidate-review.md) |
 | 2026-10-28 | [logo-pink-v2](2026-10-28-logo-pink-v2.md) | Chaewon Park(onehanap) | 운영 로고·favicon | 결정됨 | [logo-candidate-review](../changelog/2026-10-28-logo-candidate-review.md) |
 | 2026-10-27 | [design-balance-recheck](2026-10-27-design-balance-recheck.md) | Sangwoo Mo(sangwoomo), Codex 검토 | Home 대표 논문에서 실적·진행 연구 비중 | 결정됨 | [home-actions-venue](../changelog/2026-10-28-home-actions-venue.md) |

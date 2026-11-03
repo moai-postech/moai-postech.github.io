@@ -18,7 +18,7 @@ sections:
       ![MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026.jpg)
   - title: "Our focus in 2026"
     type: focus
-  # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Publications > Paper Stella(교수 2026-11-03)
+  # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Publications > Map(Paper Stella 페이지, 교수 2026-11-03)
   - class: section-band
     mini:
       url: "https://moai-lab.duckdns.org/paper-stella-public/?mini=1&align=0.64&clear=0.42"

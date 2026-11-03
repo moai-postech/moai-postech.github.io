@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- |
 | 2026-11-03 | [seminar-year-tabs](2026-11-03-seminar-year-tabs.md) | Sangwoo Mo(moai-postech) | seminar.html, scripts.html, seminar_sync.py | Seminar 연도별 탭(최신 해부터, 최신 해 기본), 슬라이드 없는 랩 발표는 링크 없이 |
 | 2026-11-03 | [ai-study-home-trim](2026-11-03-ai-study-home-trim.md) | Sangwoo Mo(moai-postech) | AI Study Home, course.css, STUDY.md | hover 반응을 링크마다 하나로. Who we learn with 절은 줄였다가 기수 막대와 함께 되살림 |
-| 2026-11-03 | [tab-names](2026-11-03-tab-names.md) | Sangwoo Mo(moai-postech) | _config.yml, landscape.md, theme.css | Publications 목록 탭 `Paper List` → `Full List`, Paper Stella 페이지 머리 한 줄 설명(지도와 24px), 나머지 탭 이름 유지 |
+| 2026-11-03 | [tab-names](2026-11-03-tab-names.md) | Sangwoo Mo(moai-postech) | _config.yml, landscape.md, theme.css | Publications 하위 탭을 `List` / `Map` 으로(중간에 `Full List` / `Paper Stella`), Paper Stella 페이지 머리 한 줄 설명(지도와 24px), 나머지 탭 이름 유지 |
 | 2026-11-03 | [audit-interaction-check](2026-11-03-audit-interaction-check.md) | Sangwoo Mo(moai-postech) | tools/check_interaction.js | 전수 검사 실패 원인 두 줄(단계 라벨 정규식, 새 탭 검사 링크)을 현재 디자인에 맞춤 |
 | 2026-11-03 | [study-home-review](2026-11-03-study-home-review.md) | Sangwoo Mo(moai-postech) | AI Study Home, course.css, STUDY.md | 디자인 검토 후 막대 이름표를 막대 안에, 휴대폰 세로 타임라인·버튼 폭, Now 줄 1px 맞춤 |
 | 2026-11-03 | [home-paper-stella-mini](2026-11-03-home-paper-stella-mini.md) | Sangwoo Mo(moai-postech) | index.md, section.html, theme.css | Home 실적 문장을 Paper Stella 미니가 깔린 어두운 띠로, Join us 는 따로 |

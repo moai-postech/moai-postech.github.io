@@ -110,3 +110,8 @@ Schedule 확정 뒤 같은 기준(일관성, 위계)으로 Home·Project 탭과 
 - Materials 120 + Reading 200 은 PDF 와 Reading 사이를 약 110px 벌려 PDF 가 왼쪽에 떨어져 보였다. Materials 112 + Reading 168 로 바꿔 PDF 를 36px 오른쪽으로 옮겼다. PDF 에서 Reading 까지 74px, Reading 끝 여백 64px 로 오른쪽 묶음 간격이 비슷해졌다. 가장 긴 읽을거리(90px)도 Reading 칸(안쪽 92px)에 들어간다.
 - 행 간격 실측(1280px, 세 강의 모든 행): 한 줄 행은 종류와 무관하게 50px, 글자 기준선 30px, 행 사이 3px, 파트 머리 62px(기준선 48). 제목, 번호, 날짜, PDF, Reading 기준선이 모두 30 에 선다. 종류 아이콘도 글자 가운데 높이(16~34)에 있다.
 - 남은 1px: 초청 행은 마지막 줄 기준선 아래가 19px 로 다른 행(20px)보다 1px 작았다. 한 줄 행은 PDF·Reading 칸이 2px 를 더하기 때문이다. 초청 행 아래 여백을 1px 늘려 74px, 위 30·아래 20 으로 맞췄다.
+
+## 12차: Reading 없는 강의의 Materials (같은 날)
+교수: "데엔은 괜찮은데 AX처럼 Reading이 없는 경우는 좀 애매한데. 토픽 오른쪽에 열이 material만 있을수도 있고 material reading 이렇게 있을수도 있는데 둘 다 이쁘게 만들어줘."
+
+AX 는 Materials 가 오른쪽 묶음 280px 의 앞쪽에 서서 PDF·Lab 뒤로 약 200px 가 비고, 초청 장소·시간만 끝 선에 떨어져 있었다. 규칙을 "맨 오른쪽 열은 끝 여백 선에 오른쪽 정렬"로 바꿨다. Data Engineering 은 Reading 이, AX 는 Materials 가 그 열이다. AX 에서 MATERIALS 머리글, Lab, 초청 장소·시간이 모두 끝 여백 64px 선(1280px 화면에서 표 기준 1105)에서 끝나고, PDF 는 Lab 이 없는 줄에서도 보이지 않는 Lab 자리 덕에 같은 자리에 선다. Data Engineering 은 바뀌지 않는다.

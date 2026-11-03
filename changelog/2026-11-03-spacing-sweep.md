@@ -39,5 +39,12 @@ POSTECH 요구사항: 꼬리말 위치와 경계선만 바뀌었다. 꼬리말 �
 - 휴대폰 스터디 일정: 학기 이름이 길면(Deep Learning, Large Language Models) `Study sheet ↗` 가 혼자 다음 줄 오른쪽 끝에 떨어졌다. 휴대폰에서는 모든 학기에서 이름 아래 왼쪽에 둔다.
 - 그대로 둔 것: Home 초점 탭이 카드 둘일 때 세 번째 칸이 빈다. 탭을 바꿀 때 카드 크기가 바뀌지 않게 세 칸 폭을 유지한다.
 
+## 이어서: 전수 검사(audit)
+교수의 전수 점검 요청이라 `audit` 를 한 번 돌렸다(실행 41649407867). 실패 셋과 원인, 조치(커밋 7cfbdff, 이 기록은 그 뒤 커밋으로 붙였다):
+- `check_design` 56건. (1) 강의·스터디 머리글 높이가 연구실과 다르다 36건: 이 회차의 휴대폰 강의 메뉴 한 줄 변경과 부딪힌 검사. 로고·탭 위치는 계속 모든 사이트를 비교하고, 높이만 연구실끼리·강의와 스터디끼리 비교한다. (2) Map View 소개 뒤 지도 위 간격 20건: 2026-11-03 tab-names 의 `.page-intro + .embed-section`(24px) 규칙을 검사가 몰랐다. 검사가 같은 규칙을 기대한다.
+- `check_interaction`: 전환 페이지(`teaching/data-engineering/`)를 일반 강의 페이지로 검사해 실패. 전환 페이지는 뺀다. 이어서 드러난 낡은 기대 둘: 학습 흐름 3단계 이상(Fall 2026·Spring 2026 은 두 단계) → 2단계 이상, 단계 클릭이 표를 바꾸지 않음 → 클릭하면 고정되고 다시 누르면 풀림(95ec9c0 의 고정 기능).
+- `test_visual_review`: 2026-11-03 prepush-build 의 새 push 전 훅이 `tools/site_env.sh` 를 불러와 연습용 저장소에서 멈췄다. 연습용 저장소에 빌드 도구 대역을 넣어 검사 본래 목적(시각 검토로 push 를 막지 않음, 기존 훅 실행)만 본다.
+- 로컬 재실행: check_design 26페이지·511상태·7폭 위반 0건, check_interaction·test_visual_review·check_format·check_typography·check_postech·check_selection·test_design·test_font_evidence 통과. check_study_members 는 audit 에서 통과.
+
 ## 남은 것
 없음.

@@ -153,9 +153,10 @@ async function run() {
         // Lab, study and courses share the header geometry; only the brand text differs.
         const header = await page.evaluate(() => {
           const h = document.querySelector('.site-head').getBoundingClientRect();
-          const logo = document.querySelector('.brand-school').getBoundingClientRect();
+          // The brand starts at the same place on every site; its width follows the name (lab, study, course title).
+          const logo = document.querySelector('.brand').getBoundingClientRect();
           const nav = document.querySelector('.site-nav, .course-nav').getBoundingClientRect();
-          return { height: h.height, logoX: logo.x, logoY: logo.y, logoWidth: logo.width, logoHeight: logo.height, navY: nav.y, navHeight: nav.height };
+          return { height: h.height, logoX: logo.x, logoY: logo.y, logoHeight: logo.height, navY: nav.y, navHeight: nav.height };
         });
         const headerBase = headers.get(width);
         if (!headerBase) headers.set(width, { file, header });

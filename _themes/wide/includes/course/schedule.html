@@ -5,7 +5,7 @@
   강의 줄은 바로 위 파트 머리의 색을 잇는다.
   Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다.
   열 폭은 강의와 무관하게 하나다(course.css 의 .lecture-schedule). Date·#·Materials·Reading 은 고정 폭, Topic 이 나머지를 채운다.
-  넓은 화면에서 Topic 은 480px 로 고정해 PDF 가 제목 가까이 서고, 남는 폭은 마지막 열이 받는다. Materials 는 104px 자리 안에서 가운데 정렬(.cs-mat), Reading 과 초청 행의 장소·시간은 행 오른쪽 끝에 맞춘다.
+  Topic 이 나머지 폭을 쓰고, 오른쪽 묶음(Materials, Reading)은 고정 폭이다. Materials 는 고정 자리 안에서 가운데 정렬(.cs-mat), Reading 과 초청 행의 장소·시간은 행 끝에서 여백(--cs-end)을 둔 같은 오른쪽 선에 맞춘다.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}

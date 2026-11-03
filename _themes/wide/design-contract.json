@@ -247,6 +247,25 @@
       }
     },
     {
+      "id": "media-band-text",
+      "selector": ".mini-text p",
+      "style": {
+        "fontSize": "var(--text-lead)",
+        "fontWeight": "var(--weight-regular)",
+        "color": "var(--white)"
+      }
+    },
+    {
+      "id": "media-band-link",
+      "selector": ".mini-text a",
+      "style": {
+        "fontSize": "var(--text-lead)",
+        "fontWeight": "var(--weight-regular)",
+        "color": "var(--accent-soft)",
+        "whiteSpace": "nowrap"
+      }
+    },
+    {
       "id": "resource-action",
       "selector": ".cs-slides a, .project-round a, .project-link, .study-reference a, .study-note a",
       "style": {

@@ -19,7 +19,7 @@ sections:
   - title: "Our focus in 2026"
     type: focus
   # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Publications > By Topic(교수 2026-11-03)
-  - class: section-next
+  - class: section-band
     mini:
       url: "https://moai-lab.duckdns.org/paper-stella-public/?mini=1"
       href: landscape.html

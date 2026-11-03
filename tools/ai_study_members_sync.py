@@ -3,11 +3,13 @@
 
 시트 읽기: python3 ~/Documents/Agents/tools/gsheet/gsheet.py read 1qHd6g8AOqEGfsj5ourBnb6bUGeQMP5haWIxsCi_WAKw 'members!A1:Z100' > /tmp/study-members.json
 변환: python3 tools/ai_study_members_sync.py /tmp/study-members.json
-Node.js 필요. 비밀번호는 대화형 입력 또는 AI_STUDY_MEMBERS_PASSWORD 환경변수로 받는다.
+Node.js 필요. 사진은 저장소 밖 academic-profile/_private/ai-study-photos/{메일아이디}.jpg 를 줄여 암호문에 함께 넣는다.
+비밀번호는 대화형 입력 또는 AI_STUDY_MEMBERS_PASSWORD 환경변수로 받는다.
 공개 통계와 AES-GCM 암호문만 저장한다. 원문·비밀번호는 저장소에 쓰지 않는다.
 명단 수정은 시트에서 먼저 한다. 이메일은 확인된 POSTECH 주소만 허용한다.
 """
 import argparse
+import base64
 from collections import Counter
 import getpass
 import os
@@ -16,8 +18,11 @@ import json
 from pathlib import Path
 import re
 import sys
+import tempfile
 
 ROOT = Path(__file__).resolve().parent.parent
+# 학생 사진은 공개 저장소에 두지 않는다. 명단과 같은 암호문 안에만 들어간다(교수 2026-11-03).
+PHOTOS = ROOT.parent / '_private' / 'ai-study-photos'
 # 시트의 학과는 한글 약칭으로 쓴다. 화면 표기는 '산경(IME)' 처럼 한글(영문)이다(교수 2026-11-02).
 # Members 명단은 한글 약칭만 보인다(assets/study-members.js).
 DEPARTMENTS = {'산경': 'IME', '컴공': 'CSE', '무은재': 'Freshmen', '전전': 'EE',
@@ -134,10 +139,28 @@ def public_stats(cohorts):
                         for c in sorted(cohorts, key=lambda c: -c['number'])])
 
 
+def attach_photos(cohorts, folder):
+    """{아이디}.jpg|jpeg|png 를 긴 변 256px JPEG data URL 로 줄여 각 멤버의 photo 에 넣는다(macOS sips)."""
+    found = 0
+    for person in (p for c in cohorts for p in c['members']):
+        uid = person['email'].split('@')[0]
+        source = next((folder / f'{uid}.{ext}' for ext in ('jpg', 'jpeg', 'png') if (folder / f'{uid}.{ext}').exists()), None)
+        if not source:
+            continue
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / 'photo.jpg'
+            subprocess.run(['sips', '-Z', '256', '-s', 'format', 'jpeg', '-s', 'formatOptions', '75', str(source), '--out', str(out)],
+                           capture_output=True, check=True)
+            person['photo'] = 'data:image/jpeg;base64,' + base64.b64encode(out.read_bytes()).decode()
+        found += 1
+    return found
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('input', help='시트 읽기 JSON 경로, 표준입력은 -')
     parser.add_argument('--stats-only', action='store_true', help='암호문은 유지하고 공개 집계만 갱신')
+    parser.add_argument('--photos', type=Path, default=PHOTOS, help='{메일아이디}.jpg 사진 폴더(저장소 밖)')
     args = parser.parse_args()
     source = json.loads(sys.stdin.read() if args.input == '-' else Path(args.input).read_text())
     if source.get('ok') is not True:
@@ -148,6 +171,7 @@ def main():
         (ROOT / '_data' / 'ai_study_members.yml').write_text(json.dumps(stats, ensure_ascii=False, indent=2) + '\n')
         print(json.dumps(stats['terms'], ensure_ascii=False))
         return
+    photos = attach_photos(cohorts, args.photos) if args.photos.is_dir() else 0
     password = os.environ.get('AI_STUDY_MEMBERS_PASSWORD') or getpass.getpass('Members 비밀번호: ')
     if not password:
         raise ValueError('빈 비밀번호는 허용하지 않음')
@@ -182,7 +206,7 @@ process.stdout.write(JSON.stringify({version:1, iterations, salt:salt.toString('
     encrypted = json.loads(result.stdout)
     private_path.write_text(json.dumps(encrypted, ensure_ascii=False, indent=2) + '\n')
     (ROOT / '_data' / 'ai_study_members.yml').write_text(json.dumps(stats, ensure_ascii=False, indent=2) + '\n')
-    print(f"Members: {sum(len(c['members']) for c in cohorts)}명, {len(cohorts)}개 기수")
+    print(f"Members: {sum(len(c['members']) for c in cohorts)}명, {len(cohorts)}개 기수, 사진 {photos}장")
 
 
 if __name__ == '__main__':

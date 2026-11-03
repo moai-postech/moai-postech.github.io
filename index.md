@@ -18,16 +18,18 @@ sections:
       ![MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026.jpg)
   - title: "Our focus in 2026"
     type: focus
-  # 연구 소개 뒤 실적·모집 두 문장을 하나의 floating callout에 묶는다
-  # 오른쪽 작은 그림은 Paper Stella 미니 모드(?mini=1, 별만 천천히 돈다). 누르면 Publications > By Topic(교수 2026-11-03)
-  - class: section-next section-actions
+  # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Publications > By Topic(교수 2026-11-03)
+  - class: section-next
     mini:
       url: "https://moai-lab.duckdns.org/paper-stella-public/?mini=1"
       href: landscape.html
       label: "Explore our papers by topic in Paper Stella"
+      caption: "Explore by topic →"
     body: |
       Our work appears at top AI conferences such as NeurIPS, ICML, and ICLR. [See our publications →](publications.html)
-
+  # 모집은 실적과 떼어 따로 둔 floating callout(교수 2026-11-03)
+  - class: section-next section-actions
+    body: |
       We're actively recruiting students with a passion for AI and AX. [Join us! 🚀](contact.html#join)
   # News: 지금은 전부 보인다. 많아지면 limit: 8 처럼 개수를 정하면 그 아래에 "All news →"(news.html) 링크가 생긴다
   - title: "News"

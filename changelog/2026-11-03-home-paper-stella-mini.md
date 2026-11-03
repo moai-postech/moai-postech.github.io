@@ -23,3 +23,19 @@ POSTECH 요구사항: 영향 없음
 
 ## 남은 것
 없음
+
+## 2차(같은 날): 실적과 미니를 한 띠로, Join us 는 따로
+교수: See our publications 와 Paper Stella 미니를 묶어 하나로 두고 Join us 는 따로 두자. 디자인 스킬로 최선의 상태로.
+
+- 비교(1280·820·375px 시안, design-critique 기준 첫인상·위계·일관성): 안 B 실적 회색 카드(글 + 오른쪽 미니) 아래 분홍 Join us 띠, 안 C 미니를 배경으로 깐 어두운 띠 위에 실적 문장. 안 C 를 골랐다.
+- `section.html`: `mini` 가 있으면 절 전체가 어두운 띠(`--media-surface`)이고, 미리보기가 그 뒤에 깔린다. 띠의 빈 곳과 오른쪽 아래 `mini.caption`("Explore by topic →")이 By Topic 으로 가는 한 링크, 문장 안 "See our publications →" 는 따로 눌린다.
+- `theme.css`: 띠 높이 216px, 미리보기는 오른쪽 70%, 왼쪽은 바탕색 그라데이션으로 글 쪽을 가라앉힌다. 문장은 흰 글자 `--text-lead`, 링크는 연한 강조색(`--accent-soft`, 강조색은 어두운 바탕에서 대비가 낮다). 글 시작선은 아래 Join us 띠와 같은 `--card-padding`. 680px 이하에서는 문장 아래 16:10 미리보기.
+- `index.md`: 실적 띠와 Join us(`section-actions`, 기존 floating callout 모양)를 두 절로 나눴다. 사이 간격 24px(`section-next`).
+- `AGENTS.md`: 지금 자리 목록과 평소 강조색 링크 목록.
+- Paper Stella: 움직임 줄이기 설정(`prefers-reduced-motion`)이면 미니가 돌지 않는다(그 저장소 `changelog/2026-11-03-mini-mode.md`).
+
+### 기각한 안과 이유(2차)
+- 안 B 회색 카드: 한 줄 문장이 넓은 카드 가운데에 떠서 빈 곳이 크고, 미니가 작은 첨부처럼 보였다.
+- 두 카드를 좌우로(실적 | Join us): 미니 때문에 높이가 달라 짝이 맞지 않고, 2026-10-28 에 두 칸 분할을 읽는 흐름이 갈린다고 기각했다.
+- 띠 전체를 하나의 링크로: 문장 안 "See our publications" 링크가 링크 안 링크가 된다.
+- 링크를 강조색 그대로: 어두운 바탕에서 대비가 낮다.

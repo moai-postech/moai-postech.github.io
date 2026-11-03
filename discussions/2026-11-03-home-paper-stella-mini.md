@@ -16,3 +16,4 @@ Home 에는 글 링크(See our publications)만 둔다.
 
 ## 결정
 2026-11-03, 교수(Sangwoo Mo). 안 A(시안을 보고 "이대로 진행"). 반영: [home-paper-stella-mini](../changelog/2026-11-03-home-paper-stella-mini.md).
+2026-11-03 후속, 교수(Sangwoo Mo): 실적 문장과 미니를 한 어두운 띠로 묶고 Join us 를 따로 두는 것으로 바꿨다. 반영: 같은 changelog 의 2차.

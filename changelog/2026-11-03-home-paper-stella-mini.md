@@ -81,3 +81,12 @@ POSTECH 요구사항: 영향 없음
 ### 기각한 안과 이유(6차)
 - `List` 한 단어: 짝인 `Paper Stella` 와 꼴이 달라 탭 둘이 어긋나 보인다.
 - News 6개: 휴대폰에서는 더 짧지만 2026/08 이전 학회 소식이 빠진다. 8개면 지난 1년이 대부분 보인다.
+
+## 7차(같은 날): 간격과 News 되돌림, 그라데이션
+교수: Our focus 와 띠가 붙어 있던 게 더 예쁘다. Home 은 아직 길지 않으니 News 를 MOAI Lab started 까지 전부 보이고, 교수가 말할 때까지 그대로. All news 모양은 News 가 아주 길어지면 그때.
+- 띠: `.content-section.section-band { padding-top: var(--space-5); }` 를 되살려 Our focus 아래 24px 에 다시 붙였다. `tools/check_design.js` 의 24px 역할 목록에도 `.section-band` 를 되돌렸다.
+- News: `index.md` 에서 `limit: 8` 을 뺐다. `AGENTS.md` 에 "Home 의 News 는 첫 소식까지 전부 보인다, 교수가 말할 때까지" 규칙을 적었다.
+- 띠 그라데이션을 30%→60% 에서 30%→50% 로 줄였다. 지도 왼쪽에 뜨는 이름표가 어둡게 묻히지 않는다(Paper Stella 미니 6차, 이름표가 좌우로 번갈아 뜬다).
+
+### 기각한 안과 이유(7차)
+- 6차의 절 간격(64px)과 News 8개: 교수가 되돌렸다.

@@ -306,10 +306,11 @@ a.mentee-name:hover { color: var(--accent); }
 .section-body.has-mini { position: relative; display: flex; align-items: center; min-height: 216px; padding: var(--space-6) var(--card-padding); overflow: hidden; border-radius: var(--radius-2); background: var(--media-surface); }
 .mini-preview { position: absolute; inset: 0; display: block; }
 .mini-preview iframe { position: absolute; top: 0; left: 30%; width: 70%; height: 100%; border: 0; pointer-events: none; }
-.mini-preview::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--media-surface) 30%, transparent 60%); }  /* keeps the text side calm */
+.mini-preview::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--media-surface) 30%, transparent 50%); }  /* keeps the text side calm; ends early so names on the left of the map stay bright */
 .mini-preview:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: -2px; border-radius: var(--radius-2); }
 .mini-caption { position: absolute; right: var(--space-4); bottom: var(--space-3); z-index: 2; color: var(--bg); opacity: 0; font-size: var(--text-small); transition: opacity .2s; }  /* shown on hover or focus only, so the band shows one link at rest (교수 2026-11-03) */
 .mini-preview:hover .mini-caption, .mini-preview:focus-visible .mini-caption { opacity: 1; }
+.content-section.section-band { padding-top: var(--space-5); }  /* attaches to Our focus above, like a closing line (교수 2026-11-03: 붙어 있는 편이 낫다) */
 .mini-text { position: relative; z-index: 2; max-width: 44%; }  /* only the text box sits above the link, so the rest of the band reaches it */
 .mini-text p { margin: 0; color: var(--white); font-size: var(--text-lead); line-height: var(--leading-paper); }
 .mini-text a { color: var(--accent-soft); white-space: nowrap; }  /* the accent red is too dark on the band */

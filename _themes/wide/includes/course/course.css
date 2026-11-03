@@ -79,7 +79,8 @@
    text of uneven length (titles, people, papers, reading, departments, lists of markers) stays left;
    a heading takes its column's alignment; stacked cards on narrow screens read left. */
 .course-schedule :is(th, td):is(.cs-n, .cs-date, .cs-slides, .st-lectures, .project-round),
-.study-members-table :is(th, td):is(:nth-child(1), :nth-child(2), :nth-child(3)) { text-align: center; }
+/* Short fixed-width values (#, cohort, entry, department, LinkedIn chip) sit centred; names, IDs and participation chips read from the left (교수 2026-11-03) */
+.study-members-table :is(th, td):is(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(7)) { text-align: center; }
 .lecture-schedule :is(th, td).cs-slides { text-align: left; }  /* course schedules: the cell is exactly its PDF and Lab columns (.cs-mat), each centred under its own heading (교수 2026-11-03) */
 @media (min-width: 681px) { .lecture-schedule :is(th, td).cs-reading { text-align: right; } }  /* course schedules: Reading is the last column and ends on the same right edge as a guest's place and time (교수 2026-11-03) */
 .course-schedule thead th:first-child { padding-left: var(--space-3); }  /* same inset as the first cell, so a centred heading sits over its values */
@@ -318,12 +319,12 @@ a.cs-title:hover { color: var(--accent); }
 .study-members-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: var(--text-body); }
 .study-members-table .sm-n { width: 5%; }
 .study-members-table .sm-cohort { width: 7%; }
-.study-members-table .sm-name { width: 17%; }  /* fits 이름 (대표학생) on one line */
+.study-members-table .sm-name { width: 15%; }  /* fits 이름 (대표학생) on one line */
 .study-members-table .sm-department { width: 10%; }
 .study-members-table .sm-year { width: 9%; }
-.study-members-table .sm-email { width: 18%; }  /* POSTECH IDs are short, so Participation sits closer (교수 2026-11-02) */
-.study-members-table .sm-linkedin { width: 8%; }
-.study-members-table .sm-participation { width: 26%; }
+.study-members-table .sm-email { width: 14%; }  /* POSTECH IDs are short, so Participation sits closer (교수 2026-11-02) */
+.study-members-table .sm-linkedin { width: 9%; }
+.study-members-table .sm-participation { width: 31%; }
 .study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
 .study-members-table thead th { padding-top: 0; padding-bottom: var(--space-2); border-bottom-color: var(--text); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }  /* same table head as the course and study schedules */
 .study-members-table tbody th { font-weight: var(--weight-emphasis); overflow-wrap: anywhere; }
@@ -343,8 +344,12 @@ a.cs-title:hover { color: var(--accent); }
 /* No underline under names: nearly everyone has a photo and the note above the tabs says so (2026-11-03) */
 .study-member-photo { position: absolute; z-index: 5; bottom: calc(100% + var(--space-2)); left: 0; width: 96px; max-width: none; height: 128px; object-fit: cover; border-radius: var(--radius-2); border: 1px solid var(--line); background: var(--surface); visibility: hidden; pointer-events: none; }
 .study-member-name:is(:hover, :focus) .study-member-photo { visibility: visible; }
-.study-member-photo.is-initial { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: var(--text-h2); font-weight: var(--weight-heading); }
-.study-member-photo.is-initial::before { content: attr(data-initial); }
+.study-member-name:hover { color: var(--accent); }  /* the one hover cue: the name that opens a photo turns accent (2026-11-03 디자인 점검) */
+/* No photo anywhere: one shared default profile figure, drawn with tokens so it follows the theme (교수 2026-11-03) */
+.study-member-photo.is-default { display: block; overflow: hidden; }
+.study-member-photo.is-default::before { content: ""; position: absolute; inset: 0; background: var(--muted); opacity: .45;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 128'%3E%3Ccircle cx='48' cy='50' r='20'/%3E%3Cpath d='M10 128c0-30 17-46 38-46s38 16 38 46z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 128'%3E%3Ccircle cx='48' cy='50' r='20'/%3E%3Cpath d='M10 128c0-30 17-46 38-46s38 16 38 46z'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
 .study-member-name:focus:not(:focus-visible) { outline: none; }  /* a tap shows the photo without a focus ring */
 /* LinkedIn: a small 'in' chip in the marker style, accent on hover (교수 2026-11-03) */
 .study-member-in { display: inline-block; padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--surface); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-heading); text-decoration: none; }

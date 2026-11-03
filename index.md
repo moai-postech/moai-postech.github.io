@@ -21,7 +21,7 @@ sections:
   # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Publications > Map(Paper Stella 페이지, 교수 2026-11-03)
   - class: section-band
     mini:
-      url: "https://moai-lab.duckdns.org/paper-stella-public/?mini=1&align=0.66&clear=0.42&valign=0.46&zoom=1.2"
+      url: "https://moai-lab.duckdns.org/paper-stella-public/?mini=1&align=0.64&clear=0.42&valign=0.46&zoom=1.2&labels=4"
       href: map-view.html
       label: "Explore our papers in Paper Stella"
       caption: "Explore Paper Stella"

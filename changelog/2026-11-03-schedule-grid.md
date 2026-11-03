@@ -1,5 +1,5 @@
 # 2026-11-03 세 강의 Schedule 표 열 맞춤
-작성자: Sangwoo Mo(moai-postech) | 대상: _themes/wide/includes/course/schedule.html, _themes/wide/includes/course/course.css, _themes/wide/includes/course/COURSE.md | 도구: Claude Code
+작성자: Sangwoo Mo(moai-postech) | 대상: _themes/wide/includes/course/schedule.html, _themes/wide/includes/course/course.css, _themes/wide/includes/course/COURSE.md, _themes/wide/includes/course/README.md | 도구: Claude Code
 
 > **한줄 결론: 세 강의 Schedule 표가 같은 열 폭을 쓰고, 초청 행 장소·시간의 오른쪽 끝을 모든 강의에서 행 안쪽 12px 선에 맞춤.**
 
@@ -23,3 +23,18 @@ POSTECH 요구사항: 영향 없음
 
 ## 남은 것
 없음.
+
+## 2차: 오른쪽 구역 규칙 (같은 날)
+요청: "디자인적으로 더 나은 방향으로 규칙을 잡고 전체적으로 통일감있게 다듬어줘."
+
+1차 뒤에도 두 가지가 남았다. 26S 는 Reading 이 없어 Materials 가 다른 자리(1088)에 섰고, Data Engineering 은 왼쪽 정렬 Reading 의 끝이 들쭉날쭉한데 초청 행 장소·시간만 행 오른쪽 끝(1188)에 붙어 오른쪽 선이 셋으로 갈렸다.
+
+- 표를 세 구역으로 정했다. 왼쪽 Date·#(고정, 가운데), 가운데 Topic, 오른쪽 구역(Materials 112 + Reading 128 = 240px, 모든 강의에서 같은 폭과 자리).
+- 오른쪽 구역 안은 모두 열 선에서 왼쪽 정렬로 시작한다. MATERIALS 머리글, PDF·Lab, 초청 행 장소·시간이 한 선(1440px 화면에서 표 기준 972), READING 머리글과 읽을거리가 다음 선(1084)이다. 세 강의가 같다.
+- Reading 이 없는 강의(26S)는 Materials 가 오른쪽 구역 전체를 써서 PDF 가 Data Engineering 과 같은 자리에 선다.
+- 표 정렬 규칙(README)에서 강의 Schedule 의 Materials 를 가운데에서 왼쪽으로 옮겼다. 스터디 Materials 는 고정 자리 묶음이라 가운데를 유지한다.
+- 좁은 태블릿에서 긴 제목이 장소·시간을 다음 줄로 밀어도 장소·시간은 오른쪽 구역에 남는다(`margin-left: auto`). 휴대폰 카드는 그대로다.
+
+기각한 안: Reading 오른쪽 정렬(길이가 다른 글은 왼쪽 정렬 규칙과 어긋남). 26S 에 빈 Reading 열 두기(머리글만 있고 빈 열이라 어색함, Materials 를 넓히는 쪽이 같은 효과).
+
+검증: 라이브 세 페이지에 같은 CSS 를 주입해 쟀다. 세 강의 모두 MATERIALS·PDF·장소 972, Data Engineering READING·읽을거리 1084. push 뒤 라이브에서 다시 확인.

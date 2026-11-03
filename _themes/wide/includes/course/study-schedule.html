@@ -45,7 +45,8 @@
 {% include course/study-tabs.html %}
 <script>
 // Light interactions on the term panels (교수 2026-11-02): the next dated session gets the course schedules' "next class" frame,
-// and hovering a learning stage tints the session rows it covers. Nothing is selected or filtered; moving away restores the table.
+// and hovering a learning stage tints the session rows it covers. Clicking a stage pins that tint after the mouse leaves;
+// clicking it again (or another stage) releases it (교수 2026-11-03). Nothing is filtered; the table keeps every row.
 (function () {
   var today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
   document.querySelectorAll('.study-panel').forEach(function (panel) {
@@ -54,12 +55,26 @@
       var t = rows[i].querySelector('time');
       if (t && t.getAttribute('datetime') >= today) { rows[i].classList.add('is-next'); break; }
     }
-    panel.querySelectorAll('.study-learning-path li[data-sessions]').forEach(function (step) {
+    var steps = Array.prototype.slice.call(panel.querySelectorAll('.study-learning-path li[data-sessions]'));
+    var pinned = null;
+    var paint = function (step, flag) {
       var r = step.getAttribute('data-sessions').split('-').map(Number);
-      var mine = rows.filter(function (row) { var n = Number(row.getAttribute('data-session')); return n >= r[0] && n <= r[1]; });
-      var on = function () { step.classList.add('is-linked'); mine.forEach(function (row) { row.classList.add('is-step-linked'); }); };
-      var off = function () { step.classList.remove('is-linked'); mine.forEach(function (row) { row.classList.remove('is-step-linked'); }); };
-      step.addEventListener('mouseenter', on); step.addEventListener('mouseleave', off);
+      step.classList.toggle('is-linked', flag);
+      rows.forEach(function (row) { var n = Number(row.getAttribute('data-session')); if (n >= r[0] && n <= r[1]) row.classList.toggle('is-step-linked', flag); });
+    };
+    var show = function (step) { steps.forEach(function (s) { paint(s, false); }); if (pinned) paint(pinned, true); if (step) paint(step, true); };
+    steps.forEach(function (step) {
+      step.setAttribute('role', 'button'); step.setAttribute('tabindex', '0'); step.setAttribute('aria-pressed', 'false');
+      var toggle = function () {
+        if (pinned) pinned.setAttribute('aria-pressed', 'false');
+        pinned = pinned === step ? null : step;
+        if (pinned) { pinned.setAttribute('aria-pressed', 'true'); show(null); } else { show(step); }
+        steps.forEach(function (s) { s.classList.toggle('is-pinned', s === pinned); });
+      };
+      step.addEventListener('mouseenter', function () { show(step); });
+      step.addEventListener('mouseleave', function () { show(null); });
+      step.addEventListener('click', toggle);
+      step.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
     });
   });
 })();

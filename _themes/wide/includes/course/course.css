@@ -235,6 +235,10 @@ a.cs-title:hover { color: var(--accent); }
 .study-step-text { display: block; color: var(--muted); font-size: var(--text-meta); }
 .study-step-text strong { color: var(--text); font-weight: var(--weight-emphasis); }  /* stage topics in bold (교수 2026-11-03) */
 .study-learning-path li.is-linked .study-step { border-color: var(--accent); box-shadow: var(--callout-shadow); }  /* hovering a stage tints its sessions in the table */
+.study-learning-path li[data-sessions] { cursor: pointer; }  /* a click pins the stage's sessions in the table (교수 2026-11-03) */
+.study-learning-path li.is-pinned .study-step-dot { background: var(--accent); border-color: var(--accent); }
+.study-learning-path li[data-sessions]:focus-visible { outline: none; }
+.study-learning-path li[data-sessions]:focus-visible .study-step { outline: 2px solid var(--accent); outline-offset: 2px; }
 .study-step { transition: border-color .15s, box-shadow .15s; }
 .study-table tr.is-step-linked td { background: var(--accent-soft); }
 .study-table tr.is-step-linked td:not(:last-child) { box-shadow: 1px 0 0 var(--accent-soft); }

@@ -83,6 +83,15 @@ POSTECH 요구사항: P1 확인(연구실 머리글의 POSTECH 대표홈 링크�
 - `theme.css` `.brand-code` 색 `--muted` → `--accent`. `header-brand.html` 주석, `AGENTS.md`, `_themes/wide/README.md`, `course/README.md` 의 "회색 학수번호" 설명을 고쳤다.
 - 확인: 라이브 강의 페이지에 같은 CSS 를 입혀 연구실·스터디 머리글과 1280px 에서 나란히 봤다. 휴대폰은 학수번호를 숨겨 영향이 없다.
 - 기각한 안: 진한 본문색(`IMEN891K Data Engineering` 이 긴 이름 하나로 붙는다), 회색 보통 굵기(3차에서 기각, 과목명에서 떨어진 꼬리표처럼 보인다), 지금의 회색 굵게(위 이유).
+## 8차 (같은 날): 최종 검수(design-critique)에서 나온 두 가지
+교수: 디자인 스킬로 목적에 맞는지 비판적으로 최종 검수. 검수 결과 두 가지를 고치라고 함.
+
+- 검수 방법: 라이브 연구실·강의(26F DE, 26S AX, 25F DE)·스터디를 1280·768·360px 로 보고, 머리말 링크 대상, 회색 대비(흰 바탕 5.9:1, AA 통과), 링크 높이를 쟀다.
+- 문제 1, 스터디 좌상단: 로고와 MOAI Lab 이 연구실 홈으로 가서 스터디를 떠났고, 스터디 Home 링크(`AI Study`)는 누르는 높이가 22px 였다. 오늘 머리글을 바꾼 출발점("좌상단은 홈")과 강의 머리말(좌상단 = 강의 Home)에 어긋난다. `header-brand.html`: `sub` 가 있으면 `AI Study` 를 브랜드 링크 안의 `span.brand-sub` 로 넣고 링크 주소를 `url`(스터디 Home)로. `course.html` 은 `url=root` 를 넘긴다. `theme.css`: 링크 안 10px 간격을 빼서 세로선 양옆 간격(`--brand-divide`)을 그대로 두고, 마우스를 올리면 묶음 전체가 강조색. 링크 높이 42px. 연구실 홈은 바닥 줄(P7)에 있다.
+- 문제 2, 강의 제목 위 줄: `IMEN891K / IDSC501 / AXGS-501 · Fall 2026 · POSTECH` 이 강조색이라 머리말에서 일부러 약하게 둔 POSTECH 이 몇 줄 아래에서 더 세게 반복됐다. `course/home.html` 의 `course-eyebrow` 와 Schedule·Project 작은 머리(`course/head.html` 의 `course-meta`)에서 `POSTECH` 을 뺐다. 크로스리스팅 전체와 학기는 머리말에 없는 정보라 남겼다.
+- 문서: `AGENTS.md`(좌상단 = 지금 사이트의 홈), `_themes/wide/README.md`, `course/README.md`, `course/STUDY.md`.
+- 확인: 라이브 스터디에 같은 마크업·CSS 를 입혀 1280px(세로선 양옆 12·13px, 링크 높이 42px, hover 함께 강조색)·360px(8·9px, 오른쪽 끝 191px) 로 봤다.
+- 기각한 안: 로고·MOAI Lab 만 스터디 Home 으로 바꾸고 AI Study 는 따로 둔 두 링크(같은 곳으로 가는 링크 둘). 제목 위 줄에서 학수번호도 빼기(크로스리스팅 전체는 머리말에 없다).
 
 ## 남은 것
 없음.

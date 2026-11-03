@@ -25,7 +25,7 @@ UA = {"User-Agent": "Mozilla/5.0"}
 
 
 def drive_id(url):
-    m = re.search(r"/(?:file|presentation|document)/d/([\w-]+)", url) or re.search(r"[?&]id=([\w-]+)", url)
+    m = re.search(r"/(?:file|presentation|document)/(?:u/\d+/)?d/([\w-]+)", url) or re.search(r"[?&]id=([\w-]+)", url)
     return m.group(1) if m else None
 
 

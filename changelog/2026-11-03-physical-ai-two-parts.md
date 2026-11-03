@@ -122,3 +122,12 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 
 ## 13차: Physical AI 2파트 설명 끝맺음
 교수: "world models bring perception, reasoning, and planning. 이거 약간 투머치 같은데 world models bring perception and planning. 이렇게 마무리 하면 안돼?". 그대로 바꿨다. reasoning 은 앞의 spatial reasoning 에 이미 있다.
+
+## 14차: LLM 묶음 이름을 질문형으로
+교수: "LLM쪽은 그룹은 좋은데 제목이 별로야 How LLMs are trained? 차라리 이런 제목이 나을 것 같은데... extending도 별로고.. 여튼 표현을 개선해봐".
+
+- Spring 2026: `How LLMs Are Trained`(1–5) / `How LLMs Become Agents`(6–9). 11차의 Pretraining and Post-Training / Extending LLMs 를 대신한다.
+- 제목이 How 로 시작해 설명은 How 없이 내용부터 쓴다. 1: pretraining 과 단계적 prompting, 그다음 SFT·RLHF·AI **feedback** 으로 post-training. 2: 학습된 모델에 **reasoning**, long context·retrieval 의 memory, tools 의 action loop 를 더한다.
+- tldr: "How LLMs are trained with pretraining and post-training, and agents form when they gain reasoning plus memory and tools."
+- `check_study_terms.js`: How 로 시작하는 질문형 제목은 마지막 단어(Trained, Agents)로 tldr 구절을 맞춘다. `STUDY.md` 에도 적었다.
+- 기각: `LLM Training` / `LLM Agents` 같은 명사형. 교수가 질문형을 골랐고, 두 묶음이 "어떻게 학습되나 → 어떻게 agent 가 되나" 로 이어지는 흐름이 질문형에서 더 잘 보인다.

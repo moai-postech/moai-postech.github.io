@@ -131,3 +131,11 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - tldr: "How LLMs are trained with pretraining and post-training, and agents form when they gain reasoning plus memory and tools."
 - `check_study_terms.js`: How 로 시작하는 질문형 제목은 마지막 단어(Trained, Agents)로 tldr 구절을 맞춘다. `STUDY.md` 에도 적었다.
 - 기각: `LLM Training` / `LLM Agents` 같은 명사형. 교수가 질문형을 골랐고, 두 묶음이 "어떻게 학습되나 → 어떻게 agent 가 되나" 로 이어지는 흐름이 질문형에서 더 잘 보인다.
+
+## 15차: LLM 묶음 이름 최종안
+교수: "저거보다 더 좋은게 있으면 바꿔도 돼.. 그룹은 내가 나눴지만 표현은 너가 더 고민해서 최상으로 바꺼".
+
+- Spring 2026: `Training LLMs`(1–5) / `From LLMs to Agents`(6–9). 다른 세 학기와 같은 명사형이고, 2파트 이름이 "학습된 모델 → agent" 로 넘어가는 확장을 그대로 보인다.
+- 설명은 다른 학기와 같은 `How …: 주제` 꼴로 되돌렸다. 1: "How an LLM learns: **pretraining** and step-by-step prompting, then post-training with SFT, RLHF, and AI feedback." 2: "How an LLM grows into an **agent**: reasoning that thinks longer, memory through long context and retrieval, then an action loop with tools."
+- tldr: "How LLMs are made through training in two stages, and from there they grow into agents that reason and act."
+- 기각: 14차의 질문형(How LLMs Are Trained / How LLMs Become Agents). 제목과 설명이 모두 How 로 시작해 겹치고, 이 학기만 다른 꼴이 된다. `check_study_terms.js` 의 질문형 처리는 해가 없어 남겼다.

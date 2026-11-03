@@ -69,3 +69,15 @@ POSTECH 요구사항: 영향 없음
 - 하위 탭 `List`, `Full List`: `All Papers` 가 Paper Stella 와 나란히 놓였을 때 "전체 논문 목록"이라는 뜻이 가장 바로 읽힌다. 2026-10-21 의 `List / Visualization` 은 교수가 마음에 들지 않아 했다.
 - 2026-10-21 의 "Paper Stella 를 탭 이름으로 쓰지 않는다(처음 보는 사람은 모른다)"는 교수 결정으로 바꿨다. Home 띠에서 이름과 모습을 먼저 보여 주므로 탭에서 알아볼 수 있다.
 - 띠 248px: 위.
+
+## 6차(같은 날): Home 점검 1~3 반영, 탭 이름 Paper List
+교수: Home 점검 제안 1~3 반영. All Papers 보다 List 느낌이 낫다.
+- 1(로딩 중 검은 상자): Paper Stella 미니가 데이터를 받는 동안 정지 화면을 먼저 보이고 실제 지도가 맞춰지면 사라지게 했다(Paper Stella `changelog/2026-11-03-mini-mode.md` 5차). 사이트는 바꾸지 않았다.
+- 2(상자 셋이 한 덩어리): 띠의 `.section-band` 24px 규칙을 지워 Our focus 와 띠 사이를 절 간격(64px, 휴대폰 48px)으로 벌렸다. Join us 는 `section-next` 로 띠 아래 24px 에 붙어 "실적과 모집" 한 쌍으로 읽힌다. `tools/check_design.js` 의 24px 역할 목록에서도 `.section-band` 를 뺐다.
+- 3(News 가 너무 김): `index.md` News 에 `limit: 8`. 그 아래 테마의 "All news →"(news.html)가 생긴다.
+- `_config.yml`: Publications 하위 탭 `All Papers` → `Paper List`. `Paper List / Paper Stella` 로 짝이 맞고 목록이라는 뜻이 바로 읽힌다. `AGENTS.md` 지금 자리 목록도 같이.
+- POSTECH 요구사항: 메뉴 하위 탭 이름만 바꿨다. P1~P9 영향 없음.
+
+### 기각한 안과 이유(6차)
+- `List` 한 단어: 짝인 `Paper Stella` 와 꼴이 달라 탭 둘이 어긋나 보인다.
+- News 6개: 휴대폰에서는 더 짧지만 2026/08 이전 학회 소식이 빠진다. 8개면 지난 1년이 대부분 보인다.

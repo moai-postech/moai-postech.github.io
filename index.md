@@ -31,10 +31,11 @@ sections:
   - class: section-next section-actions
     body: |
       We're actively recruiting students with a passion for AI and AX. [Join us! 🚀](contact.html#join)
-  # News: 지금은 전부 보인다. 많아지면 limit: 8 처럼 개수를 정하면 그 아래에 "All news →"(news.html) 링크가 생긴다
+  # News: 최근 8개만 보이고 그 아래 "All news →"(news.html)로 잇는다(교수 2026-11-03, 휴대폰에서 13개는 너무 길다)
   - title: "News"
     type: news
     data: news
+    limit: 8
   - title: "Media"
     type: media
 ---

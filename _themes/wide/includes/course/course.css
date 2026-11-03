@@ -30,7 +30,7 @@
 .course-btn.is-primary { background: var(--accent); box-shadow: none; color: var(--bg); }
 .course-btn.is-primary:hover { color: var(--bg); filter: brightness(.9); }
 .course-facts { margin: 0; padding: var(--space-3) var(--space-5); background: var(--surface); border-radius: var(--radius-2); }
-.course-fact { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: var(--space-4); padding: var(--space-3) 0; }
+.course-fact { display: grid; grid-template-columns: 8em minmax(0, 1fr); gap: var(--space-4); padding: var(--space-3) 0; }  /* 8em fits the longest label, LOCATION & TIME, on one line (2026-11-03 디자인 검토) */
 .course-fact + .course-fact { box-shadow: inset 0 1px 0 var(--line); }
 .course-fact dt { color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; line-height: 1.9; }
 .course-fact dd { margin: 0; font-size: var(--text-body); }
@@ -147,6 +147,13 @@ a.cs-speaker-name:hover { color: var(--accent); }
   .lecture-schedule td.cs-topic[colspan] { padding-bottom: calc(var(--space-3) + 1px); }  /* one-line rows keep 20px under the baseline (their PDF and Reading cells add 2px); a guest row matches it */
   .lecture-schedule .cs-session-meta { margin-left: auto; }  /* if a long title wraps place and time, they stay at the right */
 }
+/* The project Teams table ends its last column on the same end line as the schedule, and its heading carries the same right
+   padding as its cells so the centred FINAL sits over its values (2026-11-03 디자인 검토). */
+@media (min-width: 681px) {
+  .project-teams { --cs-end: var(--space-3); }
+  .project-teams :is(th, td):last-child { padding-right: var(--cs-end); }
+}
+@media (min-width: 1000px) { .project-teams { --cs-end: 64px; } }
 @media (min-width: 1000px) {
   .lecture-schedule { --cs-reading: 168px; --cs-end: 64px; }  /* PDF text to Reading text about 54px, 64px end margin */
 }

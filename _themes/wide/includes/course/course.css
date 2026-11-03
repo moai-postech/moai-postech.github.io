@@ -237,6 +237,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-learning-path li.is-linked .study-step { border-color: var(--accent); box-shadow: var(--callout-shadow); }  /* hovering a stage tints its sessions in the table */
 .study-learning-path li[data-sessions] { cursor: pointer; }  /* a click pins the stage's sessions in the table (교수 2026-11-03) */
 .study-learning-path li.is-pinned .study-step-dot { background: var(--accent); border-color: var(--accent); }
+.study-learning-path li.is-pinned .study-step { background: var(--accent-soft); border-color: var(--accent); box-shadow: none; }  /* pinned card takes the same tint as its session rows; hover stays border-only (교수 2026-11-03) */
+.study-learning-path li.is-pinned .study-step-text strong { color: var(--accent); }
 .study-learning-path li[data-sessions]:focus-visible { outline: none; }
 .study-learning-path li[data-sessions]:focus-visible .study-step { outline: 2px solid var(--accent); outline-offset: 2px; }
 .study-step { transition: border-color .15s, box-shadow .15s; }

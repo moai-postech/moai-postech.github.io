@@ -323,7 +323,7 @@ a.mentee-name:hover { color: var(--accent); }
 /* a photo band (Home: the lab group photo under the hero, 2026-10-27). The band height is the photo's own size; the photo is pre-cropped to the people and softened to sit with the page tones (2026-11-03) */
 .hero-band + .section-photo { padding-top: 0; }  /* the photo sits right under the hero: only the hero's own 32px bottom padding between them (교수 2026-10-27) */
 .section-photo p { margin: 0; }
-.list-intro { margin: 0 0 var(--space-4); color: var(--muted); }  /* one line under a group heading that says what the list is (Teaching: the AI study, 교수 2026-10-27) */
+.list-intro { margin: 0 0 var(--space-4); color: var(--muted); }  /* one line under a group heading that says what the list is (Teaching: regular courses and the AI study, 교수 2026-10-27·2026-11-03) */
 .list-intro a { color: inherit; font-weight: var(--weight-regular); }
 .list-intro a:hover { color: var(--accent); }
 .section-photo img { display: block; width: 100%; height: var(--photo-height); object-fit: cover; object-position: 50% 25%; border-radius: var(--radius-2); }

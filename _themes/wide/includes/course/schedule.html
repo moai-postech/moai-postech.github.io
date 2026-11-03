@@ -5,7 +5,7 @@
   강의 줄은 바로 위 파트 머리의 색을 잇는다.
   Schedule 의 Reading 칸은 reading 이 있는 줄이 하나라도 있을 때만 생긴다.
   열 폭은 강의와 무관하게 하나다(course.css 의 .lecture-schedule). Date·#·Materials·Reading 은 고정 폭, Topic 이 나머지를 채운다.
-  Materials 는 오른쪽 구역의 첫 열이라 왼쪽 정렬이다. 초청 행의 장소·시간도 같은 선에서 시작한다.
+  Materials 는 오른쪽 구역의 첫 열이라 왼쪽 정렬이다. 초청 행의 장소·시간은 행 오른쪽 끝에 둔다.
   이 페이지는 <base href="/"> 아래에서 그려지므로 링크는 사이트 루트 기준으로 쓴다.
 {% endcomment %}
 {% assign c = site.data.courses[page.course] %}
@@ -31,7 +31,7 @@
           {% if r.title %}{% if r.kind == "project" and c.project %}<a class="cs-title" href="teaching/{{ page.course }}/project/">{{ r.title }}</a>{% elsif r.html %}<a class="cs-title" href="{{ r.html }}">{{ r.title }}</a>{% else %}<span class="cs-title">{{ r.title }}</span>{% endif %}{% endif %}
           {% if r.speaker %}<span class="cs-speaker">{% if r.url %}<a class="cs-speaker-name" href="{{ r.url }}">{{ r.speaker }}</a>{% else %}<span class="cs-speaker-name">{{ r.speaker }}</span>{% endif %}{% if r.affiliation %}, {{ r.affiliation }}{% endif %}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}
-          {% comment %}장소 → 시간 순서와 줄 나눔은 강의 Home 의 Location & time 과 같다. 오른쪽 구역(Materials 자리)에 두어 행이 두 줄을 넘지 않게 한다.{% endcomment %}
+          {% comment %}장소 → 시간 순서와 줄 나눔은 강의 Home 의 Location & time 과 같다. 오른쪽 끝에 두어 행이 두 줄을 넘지 않게 한다.{% endcomment %}
           {% if r.time or r.location %}<span class="cs-session-meta">{% if r.location %}<span>{{ r.location }}</span>{% endif %}{% if r.time %}<span class="cs-session-time">{{ r.time }}</span>{% endif %}</span>{% endif %}
           {% if is_seminar %}</span>{% endif %}
         </td>

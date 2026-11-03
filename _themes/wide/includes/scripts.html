@@ -89,3 +89,20 @@ document.querySelectorAll('[data-filter]').forEach(function (box) {
   });
 });
 </script>
+<script>
+// Home Paper Stella band: the band keeps the clicks for its own link, so it tells the embedded map where
+// the pointer is. The map uses this to open a short TL;DR beside the name under the pointer.
+document.querySelectorAll('.has-mini').forEach(function (band) {
+  var frame = band.querySelector('.mini-preview iframe');
+  if (!frame) return;
+  function send(e) {
+    if (!frame.contentWindow) return;
+    var r = frame.getBoundingClientRect();
+    frame.contentWindow.postMessage(e
+      ? { type: 'stella-mini-pointer', x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height }
+      : { type: 'stella-mini-pointer', x: null, y: null }, '*');
+  }
+  band.addEventListener('pointermove', send);
+  band.addEventListener('pointerleave', function () { send(null); });
+});
+</script>

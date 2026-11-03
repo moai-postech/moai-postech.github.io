@@ -152,3 +152,9 @@ POSTECH 요구사항: 영향 없음
 
 ## 18차(같은 날): 별자리 조금 크게
 교수: 미니가 조금 작다, 살짝 확대하고 아래 공간을 써도 될 것 같다. `zoom=1.2`, 세로 `valign` 0.42 → 0.46(Paper Stella changelog 18차). 본체가 커지며 아래 공간을 쓰고, 913×216 에서 잘리지 않는다. Paper Stella 의 `zoom` 지원이 배포된 뒤에 올린다(먼저 올리면 확대 없이 세로 위치만 내려간다).
+
+## 19차(같은 날): 이름표 TL;DR 을 위한 커서 위치 전달
+교수: 떠 있는 이름에 커서를 올리면 남는 공간에 TL;DR 이 뜨게.
+- `scripts.html`: 띠(`.has-mini`)가 커서 위치를 미니 iframe 에 `postMessage` 로 보낸다(`stella-mini-pointer`, 틀 기준 비율, 띠를 벗어나면 null). 띠의 클릭은 그대로 Paper Stella(Map View) 링크다. TL;DR 패널은 Paper Stella 미니가 그린다(그 저장소 changelog 19차).
+- 휴대폰에는 커서가 없어 그대로다.
+- 남은 것: TL;DR 이 한국어다. 영어 사이트에 섞이는 것을 교수가 보고 정한다.

@@ -9,6 +9,6 @@ Source of https://moai-postech.github.io (POSTECH MOAI Lab).
 Rules for editing (for people and AI agents alike) are in [AGENTS.md](AGENTS.md).
 
 ```bash
-bundle install
-bundle exec jekyll serve   # http://localhost:4000
+sh tools/setup.sh          # once per Mac: Ruby + gems outside iCloud, enables the pre-push check
+tools/jekyll.sh serve      # http://localhost:4000
 ```

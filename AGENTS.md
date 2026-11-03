@@ -136,10 +136,9 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 2. **논의가 필요한 수정인지 먼저 판정한다(아래 "논의가 필요한 수정").** 해당하면 고치지 않고 `discussions/` 에 안건을 올린 뒤 멈춘다. 고칠 파일마다 `python3 tools/check_changelog.py --who 파일` 로 최근 30일 안에 누가 왜 고쳤는지 본다(아래 "공동 작업: 서로 되돌리기 막기").
 3. **POSTECH 요구사항에 걸리는지 본다(`POSTECH.md` 의 검토 절차).** 머리글·꼬리말·강의 바닥·로고·`_config.yml` 을 바꾸는 요청이면 걸리는 항목을 찾고, 어기는 안은 받지 않는다.
 4. 고친다.
-5. 로컬에서 본다(Ruby 3 이상 필요).
+5. 로컬에서 본다. 그 맥에서 처음이면 `sh tools/setup.sh` 를 먼저 돌린다(Ruby 와 gem 을 iCloud 밖에 설치하고 push 전 검사 훅을 켠다. 여러 번 돌려도 된다).
    ```bash
-   bundle install
-   bundle exec jekyll serve
+   tools/jekyll.sh serve
    ```
    http://localhost:4000 에서 확인한다. POSTECH 필수 요소는 `node tools/check_postech.js` 로 확인한다(push 마다 `checks` 도 돌린다).
 6. **changelog 를 쓴다(아래, 필수).** 작성자 ID 는 push 하는 GitHub 계정이다.
@@ -273,7 +272,8 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 - **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`, `check_study_terms`, `check_link_arrows`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌린다. 시각 검토 기록은 push 를 막지 않는다.
 - **교수 계정 push 는 실패로 표시하지 않는다**(2026-11-02). 에이전트는 교수 계정으로 push 하므로, 실행이 실패하면 교수에게 GitHub 실패 메일이 간다. 그래서 `checks` 와 교수 계정의 `changelog` 검사는 문제를 실행 주석(warning)과 요약에만 남기고 성공으로 끝난다. 교수 계정 push 의 Jekyll 빌드가 깨져도 `format` 은 배포만 건너뛰고(이전 사이트 유지) 경고를 남긴 채 성공으로 끝난다(2026-11-03). 다른 사람의 push 와 PR 은 `changelog` 와 빌드가 그대로 실패한다. 세미나·스터디 동기화는 다른 push 와 겹쳐 충돌하면 최신 main 에서 다시 동기화해 최대 3번 시도하고, 그래도 안 되거나 동기화 자체가 고장 나면 그대로 실패 메일로 알린다.
-- **push 한 뒤 한 번 본다**: push 한 사람이나 에이전트는 `gh run watch` 로 이번 `format`·`changelog` 실행을 보고, 주석에 경고가 있으면 고쳐서 다시 push 한다. 이 세션에서 못 고치면 루트 `TODO.md` 에 한 줄(검사, 실행 링크, 원인)을 남기고 사용자에게 알린다. push 전에 따로 돌릴 것은 없다(`python3 tools/check_changelog.py` 는 원하면 미리 돌려 볼 수 있다).
+- **push 전 검사로 실패를 미리 막는다**(2026-11-03). `tools/setup.sh` 가 켜는 `.githooks/pre-push` 훅이 push 할 커밋마다 `check_changelog.py`(작성자 ID 는 `gh` 로그인 계정과 맞춰 봄)와 `jekyll build` 를 돌리고, 하나라도 실패하면 push 를 멈춘다. 작업 폴더가 아니라 커밋을 빌드하므로 다른 사람의 커밋 안 한 수정은 섞이지 않는다. 걸리면 고쳐서 다시 push 하고, `--no-verify` 로 건너뛰지 않는다. 그 맥에 빌드 환경이 없으면 훅이 `tools/setup.sh` 를 먼저 돌린다(처음 한 번 1분 남짓, 그 뒤 push 마다 10초 안팎). 실패 메일을 경고로 바꾸는 CI 설정은 메일을 막을 뿐이고, 깨진 커밋이 올라가지 않게 하는 것은 이 훅이다.
+- **push 한 뒤 한 번 본다**: push 한 사람이나 에이전트는 `gh run watch` 로 이번 `format`·`changelog` 실행을 보고, 주석에 경고가 있으면 고쳐서 다시 push 한다. 이 세션에서 못 고치면 루트 `TODO.md` 에 한 줄(검사, 실행 링크, 원인)을 남기고 사용자에게 알린다. 이 단계는 안전망이다.
 - **전수 검사**: 교수가 요청할 때만 Actions 에서 `audit` 워크플로를 수동으로 돌린다. 요청은 그 한 번이다. 결과를 보고 고친 뒤에도, 다른 수정을 이어서 한 뒤에도 사람이든 에이전트든 스스로 다시 돌리지 않는다(교수 2026-11-02: 매번 돌리는 것은 비효율). `check_design`, `check_format`, `check_typography`, `check_interaction` 을 포함한 모든 검사를 돌리고 모든 페이지·상태 화면을 고정 캡처하고, 배포를 막지 않는다. 실패해도 실행은 성공으로 끝나고 주석에 경고가 남는다. 그때는 artifact 의 로그와 갤러리를 보고 고친다.
 - **별도 시각 검토**: 화면을 별도 검토자에게 보이는 절차는 `_qa/visual-review/README.md` 에 있고, 필요할 때만 쓴다.
 - 자동 검사 통과를 시각 검토 완료로 보고하지 않는다. 페이지별 예외는 `page-design.json` 에 이유를 남긴다.

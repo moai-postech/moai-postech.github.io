@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-03 | [prepush-build](2026-11-03-prepush-build.md) | Sangwoo Mo(sangwoomo) | pre-push 훅, tools/setup.sh, AGENTS.md | push 전에 빌드·changelog 검사로 실패를 미리 막고, 빌드 환경은 맥마다 자동 설치 |
 | 2026-11-03 | [ai-study-sync](2026-11-03-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |
 | 2026-11-03 | [build-failure-mail](2026-11-03-build-failure-mail.md) | Sangwoo Mo(sangwoomo) | format.yml, 동기화 워크플로, AGENTS.md | 교수 push 의 빌드 실패는 배포만 건너뛰고 경고로, 동기화는 push 충돌 시 재시도 |
 | 2026-11-03 | [hero-spacing](2026-11-03-hero-spacing.md) | Sangwoo Mo(moai-postech) | theme.css | Home 히어로 그림 위 여백 64 → 32px, 아래 32px 와 같게 |

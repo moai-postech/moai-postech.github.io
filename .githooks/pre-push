@@ -1,8 +1,61 @@
 #!/bin/sh
-# 평소 push 는 막지 않는다. 전수 검사는 audit 워크플로가 맡는다(AGENTS.md "검사와 배포").
-# 설치 전에 있던 훅이 있으면 그것만 그대로 실행한다.
+# push 전에 CI 가 실패로 잡을 것을 먼저 잡는다(AGENTS.md "검사와 배포", 2026-11-03).
+# 1) push 할 커밋마다 changelog 검사(tools/check_changelog.py)
+# 2) push 할 커밋을 Jekyll 로 빌드. 작업 폴더가 아니라 커밋을 빌드하므로 다른 사람의 커밋 안 한 수정은 섞이지 않는다
+# 실패하면 push 를 멈춘다. 고친 뒤 다시 push 한다. --no-verify 로 건너뛰지 않는다.
 set -eu
+root=$(git rev-parse --show-toplevel)
+cd "$root"
+refs=$(cat)  # git 이 넘기는 "local_ref local_sha remote_ref remote_sha" 줄들. 아래 명령이 stdin 을 먹지 않게 먼저 읽어 둔다
 hook_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 if [ -x "$hook_dir/pre-push.before-visual-review" ]; then
-  exec "$hook_dir/pre-push.before-visual-review" "$@"
+  printf '%s\n' "$refs" | "$hook_dir/pre-push.before-visual-review" "$@"
+fi
+
+. tools/site_env.sh
+if [ ! -x "$MOAI_RUBY_DIR/bin/ruby" ] || ! bundle check >/dev/null 2>&1; then
+  echo "[pre-push] 이 맥에 빌드 환경이 없어 tools/setup.sh 를 먼저 돌린다"
+  sh tools/setup.sh </dev/null
+fi
+
+# changelog 작성자 ID 를 CI 처럼 push 할 계정과 맞춰 본다. gh 로 계정을 알 수 없으면 이 항목만 건너뛴다
+if [ -z "${GITHUB_ACTOR:-}" ] && command -v gh >/dev/null 2>&1; then
+  GITHUB_ACTOR=$(gh api user -q .login 2>/dev/null || true)
+  export GITHUB_ACTOR
+fi
+
+zero=0000000000000000000000000000000000000000
+wt="$MOAI_CACHE/prepush-worktree"
+fail=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "$zero" ] && continue  # 브랜치 삭제
+  if [ "$remote_sha" = "$zero" ]; then
+    base=$(git merge-base "$local_sha" origin/main 2>/dev/null || true)
+  else
+    base=$remote_sha
+  fi
+  if [ -n "$base" ] && [ "$base" != "$local_sha" ]; then
+    python3 tools/check_changelog.py "$base" "$local_sha" </dev/null || fail=1
+  fi
+
+  # 빌드용 worktree 는 iCloud 밖에 하나 두고 커밋만 바꿔 쓴다(바뀐 파일만 다시 쓰므로 빠르다)
+  if [ ! -e "$wt/.git" ]; then
+    git worktree prune
+    git worktree add -q --detach "$wt" "$local_sha" </dev/null
+  else
+    git -C "$wt" checkout -q --detach -f "$local_sha"
+  fi
+  echo "[pre-push] ${local_sha%"${local_sha#???????}"} 빌드 중"
+  if ! (cd "$wt" && bundle exec jekyll build -q -d "$MOAI_CACHE/prepush-site" >"$MOAI_CACHE/prepush-build.log" 2>&1); then
+    grep -E "Error|Exception" "$MOAI_CACHE/prepush-build.log" | head -5
+    echo "[pre-push] 빌드 실패. 전체 로그: $MOAI_CACHE/prepush-build.log"
+    fail=1
+  fi
+done <<REFS
+$refs
+REFS
+
+if [ "$fail" -ne 0 ]; then
+  echo "[pre-push] 검사에 걸려 push 를 멈췄다. 고친 뒤 다시 push 한다."
+  exit 1
 fi

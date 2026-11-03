@@ -42,7 +42,7 @@ talks:
   - date: "2026-10-21"
     invited: true
     speaker: "Byeongju Woo"
-    affiliation: "UMich"
+    affiliation: "U Michigan"
     url: "https://byeongju.me/"
     title: "Aligning Forest and Trees in Images & Long Captions for Visually Grounded Understanding"
     paper: "https://arxiv.org/abs/2602.02977"
@@ -97,7 +97,7 @@ talks:
   - date: "2026-07-28"
     invited: true
     speaker: "Naihao Deng"
-    affiliation: "UMich"
+    affiliation: "U Michigan"
     url: "https://dnaihao.github.io/"
     title: "Aligned in Name Only: Probing, Breaking, and Building Safety and Fairness in LLMs"
     paper: "https://arxiv.org/abs/2609.14860"
@@ -168,7 +168,7 @@ talks:
   - date: "2026-03-19"
     invited: true
     speaker: "Heejeong Nam"
-    affiliation: "Brown univ."
+    affiliation: "Brown"
     url: "https://hazel-heejeong-nam.github.io/"
     title: "Causal-JEPA: Learning World Models through Object-Level Latent Interventions"
     paper: "https://arxiv.org/abs/2602.11389"

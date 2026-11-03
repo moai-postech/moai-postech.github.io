@@ -139,15 +139,15 @@ mentees:
     people:
       - name: "Byeongju Woo"
         url: "https://byeongju.me/"
-        affiliation: "PhD @ UMich, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
+        affiliation: "PhD @ U Michigan, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
         papers: "[NeurIPS'26](https://arxiv.org/abs/2602.02977)"
       - name: "Seung-Hyun Lee"
         url: "https://lsh3163.github.io/seunghyunlee/"
-        affiliation: "PhD @ UMich, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
+        affiliation: "PhD @ U Michigan, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
         papers: "[TMLR'26](https://www.arxiv.org/abs/2601.22529)"
       - name: "Zilin Wang"
         url: "https://wayne2wang.github.io/"
-        affiliation: "PhD @ UMich, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
+        affiliation: "PhD @ U Michigan, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
         papers: "[CVPR'25](https://arxiv.org/abs/2512.16202)"
   - title: "During PhD"
     people:

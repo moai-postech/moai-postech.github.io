@@ -29,7 +29,6 @@
 <body class="course-site">
 <a class="skip-link" href="{{ page.url }}#main-content">Skip to content</a>
 <div class="wrap">
-  {% include global-bar.html %}
   <header class="site-head course-top">
     {% if page.course == "ai-study" %}{% include header-brand.html sub="AI Study" sub_url=root %}{% else %}{% assign main_code = c.code | split: " / " | first %}{% include header-brand.html title=c.title code=main_code url=root %}{% endif %}
     {% if page.course == "ai-study" %}<nav class="course-nav" aria-label="Study">

@@ -94,8 +94,6 @@
 .course-schedule tr.tone-none td { box-shadow: inset 0 -1px 0 var(--line); border-radius: 0; }
 .course-schedule td:last-child { padding-right: var(--space-3); }  /* text keeps off the edge of a filled row */
 .course-schedule th:last-child { padding-right: 0; }
-.course-schedule :is(th, td).cs-slides:last-child { padding-right: var(--space-7); }  /* with no Reading column, Materials keeps off the right edge */
-.course-schedule:has(thead th.cs-slides:last-child) td.cs-topic[colspan] { padding-right: var(--space-7); }  /* a guest's place and time end on the same line as Materials */
 .course-part-row th { padding: var(--space-6) 0 var(--space-2); box-shadow: inset 0 -2px 0 var(--tone-tint); color: var(--tone); font-size: var(--text-meta); font-weight: var(--weight-heading); text-align: left; }
 .course-part-row .cp-title { margin-left: var(--space-2); color: var(--text); font-weight: var(--weight-emphasis); }
 .course-part-row .cp-span { margin-left: var(--space-3); color: var(--muted); font-weight: var(--weight-regular); }
@@ -130,6 +128,17 @@ a.cs-speaker-name:hover { color: var(--accent); }
 .is-next td:last-child { box-shadow: inset -2px 2px 0 var(--accent), inset 0 -2px 0 var(--accent) !important; }
 .is-next .cs-date { font-weight: var(--weight-heading); }  /* frame only carries the accent; the date stays text colour */
 .course-schedule td:first-child { padding-left: var(--space-3); }
+
+/* One column grid for every course schedule (교수 2026-11-03: "세 강의 양식이 모두 동일"): Date, #, Materials and Reading keep fixed widths,
+   so the same column sits at the same place in every course, and Topic takes the rest. The last cell of every row, Reading or
+   Materials or a guest's place and time, ends on the row's own 12px inset, the same inset as the date on the left. */
+@media (min-width: 681px) {
+  .lecture-schedule { table-layout: fixed; }
+  .lecture-schedule th.cs-date { width: 108px; }
+  .lecture-schedule th.cs-n { width: 40px; }
+  .lecture-schedule :is(th, td).cs-slides { width: 112px; padding-inline: var(--space-3); }  /* even padding, so the centred heading sits over PDF */
+  .lecture-schedule :is(th, td).cs-reading { width: 128px; padding-left: var(--space-4); }
+}
 
 a.cs-title { color: var(--text); }  /* project days lead to the project page */
 a.cs-title:hover { color: var(--accent); }

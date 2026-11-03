@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-03 | [schedule-grid](2026-11-03-schedule-grid.md) | Sangwoo Mo(moai-postech) | 강의 Schedule 표 | 세 강의 열 폭 고정, 초청 행 장소·시간 오른쪽 끝을 같은 선에 |
 | 2026-11-03 | [group-photo-tone](2026-11-03-group-photo-tone.md) | Sangwoo Mo(moai-postech) | Home 단체사진, theme.css | 사람 중심 크롭과 사이트 톤에 맞춘 부드러운 보정 |
 | 2026-11-03 | [course-code-part](2026-11-03-course-code-part.md) | Sangwoo Mo(sangwoomo) | Midterm Review HTML·PDF | 3부 By Course Code 추가, 52장 |
 | 2026-11-03 | [global-bar](2026-11-03-global-bar.md) | Sangwoo Mo(sangwoomo) | 머리글, 꼬리말, POSTECH.md | 머리글을 "MOAI Lab \| POSTECH" 글자로, 꼬리말은 의무 항목만 남겨 한 덩어리로 |

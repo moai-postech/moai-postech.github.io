@@ -22,6 +22,7 @@
 - 머리글은 POSTECH 워드마크 옆에 원 학수번호(`code` 의 첫 번호, IMEN)와 강의명을 둔다(`IMEN891K Data Engineering`). 크로스리스팅 전체는 본문 머리의 `code` 한 줄에만 둔다. 480px 이하에서는 자리가 없어 머리글의 학수번호를 숨긴다(교수 2026-11-02).
 - 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Location & time(`location`, `meetings`)·Teaching assistants(`teaching_assistants`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 운영 정보의 Other Courses 는 `_data/teaching.yml` 에서 현재 과목을 제외한 모든 과목의 고정 주소를 가져오며, 학기 없이 과목명만 표시한다. 모든 학기에 표시하고 25F Data Engineering 도 포함한다(교수 2026-11-03, 앞선 학기만 링크하던 규칙을 대체). Other Terms(`other_terms`)는 나중 학기가 지난 학기만 가리킨다(교수 2026-10-30).
 - 파트 이름은 자유다(`Part I`, `Software 3.0`). 자료 절 제목은 `resources_title`(기본 `Reference courses`).
+- 스케줄 표의 열 폭은 강의마다 바꾸지 않는다. Date 108px, # 40px, Materials 112px(가운데 정렬), Reading 128px(왼쪽 정렬)로 고정하고 Topic 이 나머지를 채운다. Reading 이 없는 강의는 그 폭만큼 Topic 이 넓어진다(교수 2026-11-03: "세 강의 양식이 모두 동일").
 - 강의 스케줄 줄에는 종류 딱지를 붙이지 않는다. 종류는 색과 제목(`Project Proposal I`, `Midterm Exam`)으로 드러낸다(교수 2026-10-30).
 
 ## 지켜야 할 것
@@ -48,7 +49,7 @@
 
 ## 초청 강의·학과 세미나
 
-- `guest`와 `seminar`는 공통 노랑으로 표시한다. `project`·`exam`도 공통 노랑이다. 번호 없는 줄의 # 칸에는 종류 아이콘(`kind-icon.html`)을 두고, project·exam 아이콘만 강조색이다. guest·seminar 는 마이크 아이콘이 종류를 알리므로 연사 줄 앞에 종류 이름(Guest lecture 등)을 쓰지 않는다(2026-10-30 교수). guest·seminar 행은 모두 같은 양식(제목, 연사·소속, 오른쪽 장소·시간)이고 PDF·Lab 을 달지 않는다. 템플릿도 이 행에서는 Materials 칸을 그리지 않는다(교수 2026-11-02). `outside`(수업 밖에서 하는 수업일)도 행은 공통 노랑이고 아이콘은 기본 톤이며, 제목은 휴강처럼 회색 보통 굵기다(교수 2026-11-02). `break`는 회색이다. 행 바탕색은 Part 셋과 공통 노랑, 회색만 쓴다. 장소·시간은 오른쪽에 두 줄(장소, 시간)로 두고, 오른쪽 끝을 표의 마지막 열과 같은 안쪽 선에 맞춘다(Reading 이 없어 Materials 가 마지막 열이면 Materials 와 같이 48px 안쪽).
+- `guest`와 `seminar`는 공통 노랑으로 표시한다. `project`·`exam`도 공통 노랑이다. 번호 없는 줄의 # 칸에는 종류 아이콘(`kind-icon.html`)을 두고, project·exam 아이콘만 강조색이다. guest·seminar 는 마이크 아이콘이 종류를 알리므로 연사 줄 앞에 종류 이름(Guest lecture 등)을 쓰지 않는다(2026-10-30 교수). guest·seminar 행은 모두 같은 양식(제목, 연사·소속, 오른쪽 장소·시간)이고 PDF·Lab 을 달지 않는다. 템플릿도 이 행에서는 Materials 칸을 그리지 않는다(교수 2026-11-02). `outside`(수업 밖에서 하는 수업일)도 행은 공통 노랑이고 아이콘은 기본 톤이며, 제목은 휴강처럼 회색 보통 굵기다(교수 2026-11-02). `break`는 회색이다. 행 바탕색은 Part 셋과 공통 노랑, 회색만 쓴다. 장소·시간은 오른쪽에 두 줄(장소, 시간)로 두고, 오른쪽 끝을 행의 안쪽 선(12px)에 맞춘다. Reading 이 있든 없든 세 강의가 같은 선이다(교수 2026-11-03, Materials 가 마지막 열일 때 48px 안쪽에 두던 것을 대체).
 - 복습 회차(Review Session, Midterm Review)는 `kind: review`로 쓴다. 강 번호를 매기지 않고 공통 노랑으로 표시한다(교수 2026-10-30).
 - 초청 행은 제목 아래에 연사·소속을 두고, 장소·시간은 오른쪽 끝에 두 줄로 둔다. 자료 링크가 없으면 빈 Materials 칸까지 활용한다. 제목이 없으면 연사 이름을 주 정보로 쓴다.
 - 초청·세미나 행의 링크는 연사 이름 하나뿐이다(개인 사이트나 LinkedIn). 장소에 지도 링크를 걸지 않고, 소속·제목에도 링크를 달지 않는다(교수 2026-10-30). 공학4동은 `Sci. Bldg. 4` 로 줄여 쓴다(AGENTS.md 콘텐츠 표기 규칙).

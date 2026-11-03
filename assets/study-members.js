@@ -165,7 +165,11 @@
     fromHash();
     window.onhashchange = () => (/^#(dept|entry)=/.test(location.hash) || dept ? render(cohorts) : fromHash());  // #members-4 switches the tab; #dept= and #entry= re-filter
     box.append(tablist, ...panels);
-    list.replaceChildren(box);
+    // One line above the tabs says where the photos come from and how to change one (교수 2026-11-03).
+    const note = element('p', 'Photos come from the POSTECH directory or members\u2019 public profiles, so we can put names to faces. For a different photo, contact ', 'study-member-photo-note');
+    const prof = element('a', 'Prof. Sangwoo Mo'); prof.href = 'faculty.html';
+    note.append(prof, '.');
+    list.replaceChildren(note, box);
   }
   async function unlock(key, focus) {
     const plaintext = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: decode(data.iv) }, key, decode(data.ciphertext));

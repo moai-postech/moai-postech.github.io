@@ -86,6 +86,13 @@ POSTECH 요구사항: P1, P2, P4, P7 확인 (P1 은 좌상단 첫 요소·대표
 - 확인: 라이브 페이지 DOM 을 같은 구조로 바꾸고 CSS 를 입혀 1280px·390px 로 봤다.
 - push 뒤 `test_design` 이 강의 바닥 줄 개인정보 링크가 600 이라고 경고했다. 바닥 줄 링크 전체(`.course-foot a`)의 600 을 물려받고 있어서 `.course-privacy` 에 보통 굵기를 지정했다.
 
+## 8차 (같은 날): 꼬리말에서 호실·전화 줄 빼기
+
+교수: `Science Building 4, Room 319 · Tel.: +82-54-279-2202` 는 의무가 아니고 Faculty 에 나와 있으니 지우자.
+
+- `footer.html` 에서 호실·전화 줄을, `theme.css` 에서 `.foot-tel` 을 뺐다. Faculty(`sections/professor.html`)는 같은 `_config.yml` 값(`footer.office`, `footer.phone`)을 그대로 쓴다.
+- `AGENTS.md`(꼬리말 요약, 같은 내용은 한 곳에, 건물 이름·전화 표기), `POSTECH.md` P6 을 고쳤다. 10-27 의 "연구실 주소·호실·전화는 꼬리말 한 곳에만"은 주소만 꼬리말, 호실·전화는 Faculty 로 바뀌었다.
+
 ## 기각한 안과 이유
 
 - 개인정보 링크를 왼쪽 글자와 똑같이(회색, 보통 굵기): 다른 고지와 구분되지 않는다.

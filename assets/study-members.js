@@ -79,11 +79,14 @@
         if (index === 4) {
           cell.scope = 'row';
           // The POVIS photo travels inside the same ciphertext, so it shows on hover or focus once the list is open (교수 2026-11-03).
-          const name = element('span', value, member.photo ? 'study-member-name has-photo' : 'study-member-name');
+          // Without a photo anywhere, the same card shows the name's first letter so every name behaves alike (2026-11-03).
+          const name = element('span', value, 'study-member-name has-photo'); name.tabIndex = 0;
           if (member.photo) {
-            name.tabIndex = 0;
             const img = element('img', undefined, 'study-member-photo'); img.src = member.photo; img.alt = ''; img.loading = 'lazy';
             name.append(img);
+          } else {
+            const card = element('span', undefined, 'study-member-photo is-initial'); card.dataset.initial = value.slice(0, 1);  // drawn by CSS so the name text stays clean
+            name.append(card);
           }
           cell.append(name);
           if (row.className) cell.append(element('span', ' (대표학생)', 'study-member-role'));  // shown as 최지안 (대표학생) with the row colour (교수 2026-11-02)

@@ -343,6 +343,8 @@ a.cs-title:hover { color: var(--accent); }
 /* No underline under names: nearly everyone has a photo and the note above the tabs says so (2026-11-03) */
 .study-member-photo { position: absolute; z-index: 5; bottom: calc(100% + var(--space-2)); left: 0; width: 96px; max-width: none; height: 128px; object-fit: cover; border-radius: var(--radius-2); border: 1px solid var(--line); background: var(--surface); visibility: hidden; pointer-events: none; }
 .study-member-name:is(:hover, :focus) .study-member-photo { visibility: visible; }
+.study-member-photo.is-initial { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: var(--text-h2); font-weight: var(--weight-heading); }
+.study-member-photo.is-initial::before { content: attr(data-initial); }
 .study-member-name:focus:not(:focus-visible) { outline: none; }  /* a tap shows the photo without a focus ring */
 /* LinkedIn: a small 'in' chip in the marker style, accent on hover (교수 2026-11-03) */
 .study-member-in { display: inline-block; padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--surface); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-heading); text-decoration: none; }

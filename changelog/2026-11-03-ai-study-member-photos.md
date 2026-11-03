@@ -25,3 +25,6 @@ POSTECH 요구사항: 영향 없음
 
 ## 커밋 경위
 같은 시각 다른 세션이 같은 저장소를 커밋해 JS·STUDY.md·색인 변경은 162cccd 에 함께 들어갔다. 암호문·CSS·동기화 스크립트는 뒤 커밋으로 올렸다.
+
+## 안내 문구 줄임
+교수 요청으로 탭 위 안내를 한 줄로 줄였다: "Photos from POSTECH and public profiles, to put names to faces. To change yours, contact Prof. Sangwoo Mo."

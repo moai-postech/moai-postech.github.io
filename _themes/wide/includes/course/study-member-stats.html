@@ -1,38 +1,20 @@
 {% comment %}
-  Home 공개 통계: 제목 줄 오른쪽에 명단 링크, 요약 숫자 셋, 기수별 막대(신규·기존을 쌓음, 시간순 왼쪽→오른쪽), 학과별 면적(treemap).
-  교수 2026-11-02: 정보가 눈에 안 들어온다, 기수도 시각화, 학과는 면적으로, Meet the members 링크가 혼자 떨어져 있다.
-  막대와 학과 칸은 Members 로 가는 링크다(기수 탭, 학과로 걸러 보기). 학기 카드와 막대는 마우스를 올리면 서로 강조한다.
+  How to join 안의 공개 통계: 총원과 학과 수 한 줄, 그 옆 명단 링크, 학과별 면적(treemap). "any major" 문장의 근거다.
+  교수 2026-11-03: 기수별 막대와 신규·기존 구성은 지원자가 판단할 거리가 없는 운영 지표라 뺐다. 학기 카드와 짝 강조 같은 hover 반응도 뺐다.
+  학과 칸은 Members 로 가는 링크다(학과로 걸러 보기).
 {% endcomment %}
 {% assign stats = site.data.ai_study_members %}
-{% assign max_count = 0 %}{% for t in stats.terms %}{% if t.count > max_count %}{% assign max_count = t.count %}{% endif %}{% endfor %}
-<section class="content-section study-member-stats study-home-community" aria-labelledby="member-statistics">
-  <div class="study-stat-head"><h2 id="member-statistics">Who we learn with</h2><a class="study-stat-members" href="teaching/ai-study/members/">Meet the members →</a></div>
-  {% comment %} One total; this term's count and the number of cohorts already read from the bars (교수 2026-11-02: Home 을 미니멀하게). {% endcomment %}
-  <dl class="study-stat-summary">
-    <div><dd>{{ stats.total }}</dd><dt>members since {{ stats.terms.last.term }}</dt></div>
-  </dl>
-  <div class="study-stat-breakdowns">
-    <figure class="study-stat-panel">
-      <figcaption><h3>Participants by term</h3></figcaption>
-      <ol class="plain study-cohort-chart">
-        {% for t in stats.terms reversed %}{% assign h = t.count | times: 100.0 | divided_by: max_count %}<li data-term="{{ t.number }}"><a class="study-cohort-link" href="teaching/ai-study/members/#members-{{ t.number }}">
-          <span class="study-cohort-track"><span class="study-cohort-bar" style="height: {{ h }}%" title="{{ t.number }}기 · {{ t.term }}: {{ t.new }} new, {{ t.existing }} returning">
-            <span class="study-chart-value">{{ t.count }}</span>
-            <span class="is-existing" style="flex-grow: {{ t.existing }}">{% if forloop.last and t.existing > 0 %}<span class="study-bar-key" aria-hidden="true">Returning</span>{% endif %}</span><span class="is-new" style="flex-grow: {{ t.new }}">{% if forloop.last and t.new > 0 %}<span class="study-bar-key" aria-hidden="true">New</span>{% endif %}</span>
-          </span></span>
-          <span class="study-cohort-label"><b>{{ t.number }}기</b><span class="study-cohort-term">{{ t.term }}</span><span class="study-cohort-detail" aria-hidden="true"><i class="is-new"></i>{{ t.new }}<i class="is-existing"></i>{{ t.existing }}</span></span>
-          <span class="visually-hidden">{{ t.count }} members: {{ t.new }} new, {{ t.existing }} returning. Open the {{ t.number }}기 member list.</span>
-        </a></li>{% endfor %}
-      </ol>
-    </figure>
-    <figure class="study-stat-panel">
-      <figcaption><h3>Departments</h3></figcaption>
-      <ul class="plain study-dept-map" data-total="{{ stats.total }}">
-        {% for d in stats.departments %}{% assign ko = d.name | split: "(" | first %}{% assign en = d.name | remove_first: ko | remove: "(" | remove: ")" %}<li data-count="{{ d.count }}" title="{{ d.name }}: {{ d.count }}"><span>{{ ko }}{% if en != "" %}<small>({{ en }})</small>{% endif %}</span><span class="study-chart-value">{{ d.count }}</span><a class="study-dept-link" href="teaching/ai-study/members/#dept={{ ko | url_encode }}" aria-label="{{ d.name }}: {{ d.count }} members. Show them in the member list."></a></li>{% endfor %}
-      </ul>
-    </figure>
-  </div>
-</section>
+<figure class="study-member-stats" aria-labelledby="member-statistics">
+  <figcaption class="study-stat-head">
+    <dl class="study-stat-summary" id="member-statistics">
+      <div><dd>{{ stats.total }}</dd><dt>members from {{ stats.departments.size }} departments since {{ stats.terms.last.term }}</dt></div>
+    </dl>
+    <a class="study-stat-members" href="teaching/ai-study/members/">Meet the members →</a>
+  </figcaption>
+  <ul class="plain study-dept-map" data-total="{{ stats.total }}">
+    {% for d in stats.departments %}{% assign ko = d.name | split: "(" | first %}{% assign en = d.name | remove_first: ko | remove: "(" | remove: ")" %}<li data-count="{{ d.count }}" title="{{ d.name }}: {{ d.count }}"><span>{{ ko }}{% if en != "" %}<small>({{ en }})</small>{% endif %}</span><span class="study-chart-value">{{ d.count }}</span><a class="study-dept-link" href="teaching/ai-study/members/#dept={{ ko | url_encode }}" aria-label="{{ d.name }}: {{ d.count }} members. Show them in the member list."></a></li>{% endfor %}
+  </ul>
+</figure>
 <script>
 // Departments as a squarified treemap: each tile's area is its share of members.
 (function () {
@@ -88,22 +70,6 @@
   }
   draw();
   addEventListener('resize', draw);
-  addEventListener('load', draw);
-})();
-// A term card and its bar point at each other: hovering either one picks out the pair (교수 2026-11-02).
-(function () {
-  var chart = document.querySelector('.study-cohort-chart');
-  if (!chart) return;
-  var pairs = document.querySelectorAll('[data-term]');
-  function mark(n) {
-    chart.classList.toggle('is-focusing', n !== null);
-    pairs.forEach(function (el) { el.classList.toggle('is-linked', el.getAttribute('data-term') === n); });
-  }
-  pairs.forEach(function (el) {
-    el.addEventListener('mouseenter', function () { mark(el.getAttribute('data-term')); });
-    el.addEventListener('mouseleave', function () { mark(null); });
-    el.addEventListener('focusin', function () { mark(el.getAttribute('data-term')); });
-    el.addEventListener('focusout', function () { mark(null); });
-  });  // fonts and late layout can change the box size after the first pass
+  addEventListener('load', draw);  // fonts and late layout can change the box size after the first pass
 })();
 </script>

@@ -135,7 +135,7 @@ a.cs-speaker-name:hover { color: var(--accent); }
    on the same line in every course. Inside it everything reads from the left: PDF and Lab, the Reading codes, and a guest's
    place and time all start on a column line. A course with no Reading gives Materials the whole block. */
 @media (min-width: 681px) {
-  .lecture-schedule { --cs-materials: 112px; --cs-reading: 128px; table-layout: fixed; }
+  .lecture-schedule { --cs-materials: 104px; --cs-reading: 136px; table-layout: fixed; }
   .lecture-schedule th.cs-date { width: 108px; }
   .lecture-schedule th.cs-n { width: 40px; }
   .lecture-schedule :is(th, td).cs-slides { width: var(--cs-materials); padding-inline: var(--space-3); }

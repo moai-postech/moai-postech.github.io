@@ -119,3 +119,6 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - `ai-study-sync` 를 손으로 돌렸더니 6회 Dexterous manipulation 의 Slides 1, 2 가 새로 있었지만 받지 못했다. 시트 링크가 `docs.google.com/presentation/u/0/d/<ID>/edit` 꼴이라 `tools/drive_pdf.py` 의 파일 ID 정규식이 `/u/0/` 를 건너뛰지 못했다. 정규식에 `(?:u/\d+/)?` 를 더했다.
 - 같은 실행은 push 직전 rebase 에서 `changelog/index.md` 충돌로 실패했다(실행 41639899562, 그사이 다른 push 가 index 를 고침). 고친 뒤 다시 돌린다.
 - 재실행 결과: 6회 Slides 2 를 `teaching/ai-study/fall-2026/06-dexterous-manipulation-slides-2.pdf` 로 받아 올렸다. Slides 1(`1TXiGdqg7T_n9mTA6sQiwyEelYPRQKHYe`)은 공개 링크가 아니라 받지 못했고 교수 Drive 계정에서도 열리지 않는다. 그래서 표에는 Drive 링크로 남아 있다. 발표자가 "링크가 있는 모든 사용자"로 공유하면 다음 동기화(매일 06:30 KST)나 수동 실행에서 PDF 로 바뀐다.
+
+## 13차: Physical AI 2파트 설명 끝맺음
+교수: "world models bring perception, reasoning, and planning. 이거 약간 투머치 같은데 world models bring perception and planning. 이렇게 마무리 하면 안돼?". 그대로 바꿨다. reasoning 은 앞의 spatial reasoning 에 이미 있다.

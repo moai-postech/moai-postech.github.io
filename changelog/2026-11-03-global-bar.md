@@ -112,6 +112,8 @@ POSTECH 요구사항: P1, P2, P4, P7 확인 (P1 은 좌상단 첫 요소·대표
 - `check_postech.js`: 꼬리말 검사(P3~P5, P8)를 연구실·강의 모두에 돌리고, 강의 전용 P7 검사를 그 안으로 합쳤다. `check_design.js` 는 강의도 `.site-foot` 하나를 찾는다. `design-contract.json` 의 개인정보 링크 선택자에서 `.course-privacy` 를 뺐다.
 - `POSTECH.md` P7, `AGENTS.md` 꼬리말 요약을 고쳤다.
 - 확인: 라이브 강의 페이지의 바닥 줄을 연구실 꼬리말로 바꿔 1280px 로 봤다.
+- push 뒤 라이브 확인: 강의·스터디 페이지 모두 공통 꼬리말이고, 1280px·390px 에서 가로 넘침이 없다. 휴대폰에서 주소 두 줄이 접히며 "POSTECH", "Korea" 가 한 단어씩 홀로 남아서, 주소 줄마다 `.foot-line`(블록, `text-wrap: balance`)으로 감싸 고르게 나눴다. 컴퓨터에서는 한 줄씩이라 달라지지 않는다.
+- 같은 실행의 `test_design`·`check_selection` 경고는 Home 의 메뉴 굵기, Paper Stella 띠 링크 색, 그 띠를 드래그하는 검사에서 났다. 다른 세션이 같은 때 올린 Home·머리글 변경(`f101190`, `c78030a`)의 것이고 꼬리말과 무관하다. `check_postech` 는 통과했다.
 
 ## 기각한 안과 이유
 

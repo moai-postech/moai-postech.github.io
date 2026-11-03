@@ -66,7 +66,9 @@ for (const m of schedule.matchAll(/<div class="study-panel" role="tabpanel" id="
     continue;
   }
   steps.forEach((s, i) => {
-    const verb = stem(s.title.split(' ')[0]);
+    // A question-style title ("How LLMs Become Agents") keys on its last word; any other title on its first (교수 2026-11-03).
+    const words0 = s.title.split(' ');
+    const verb = stem(words0[0] === 'How' ? words0[words0.length - 1] : words0[0]);
     const words = clauses[i].split(' ');
     const ok = i === 0 ? words.some((w) => stem(w) === verb) : stem(words[0]) === verb;
     if (!ok) errors.push(`${id}: tldr ${i + 1}번째 구절 '${clauses[i]}' 이 단계 '${s.title}' 의 동사로 ${i === 0 ? '쓰이지' : '시작하지'} 않음`);

@@ -373,6 +373,7 @@ a.cs-title:hover { color: var(--accent); }
   .cs-n:empty + .cs-topic { grid-column: 1 / -1; }
   .cs-slides, .cs-reading { grid-column: 1 / -1; }
   .cs-slot { display: none; }
+  .cs-mat > span:not(:empty) + span:not(:empty) { margin-left: var(--space-3); }  /* phones: PDF and Lab sit side by side with the usual gap (each link is now in its own column span) */
   .cs-slides:empty, .cs-reading:empty { display: none !important; }
   .cs-session { display: block; }
   .cs-session-meta { margin-top: var(--space-1); text-align: left; }  /* on a phone, place and time follow the speaker */

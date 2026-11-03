@@ -71,7 +71,7 @@ function inspect(contract) {
   const main = document.querySelector('main'), wrap = document.querySelector('.wrap');
   if (!main || !wrap) failures.push('공통 문서 틀 누락');
   const course = document.body.classList.contains('course-site');
-  if (document.querySelectorAll(course ? '.course-top' : '.site-head').length !== 1 || document.querySelectorAll(course ? '.course-foot' : '.site-foot').length !== 1) failures.push('공통 머리글·꼬리말 누락/중복');
+  if (document.querySelectorAll(course ? '.course-top' : '.site-head').length !== 1 || document.querySelectorAll('.site-foot').length !== 1) failures.push('공통 머리글·꼬리말 누락/중복');
   const gap = property => parseFloat(getComputedStyle(document.documentElement).getPropertyValue(property));
   if (wrap) {
     const box = wrap.getBoundingClientRect();

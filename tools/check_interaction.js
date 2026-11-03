@@ -37,7 +37,8 @@ async function checkStudyOverview(page, base) {
       const id = await tabs.nth(i).getAttribute('aria-controls'), panel = page.locator('#' + id);
       check(await panel.locator('.study-learning-path li').count() >= 3, `${id}: learning flow missing`);
       check(await panel.locator('a.study-step,button.study-step,.study-step[data-start]').count() === 0, `${id}: overview still acts as a filter`);
-      check((await panel.locator('.study-step-label').allTextContents()).every(s => /^\d{2}$/.test(s.trim())), `${id}: topic ranges remain`);
+      // Labels are the stage number plus its session range, `01 · Sessions 1–6` (2026-11-02 study-path-trim); the old `Topics n–m` form must not come back.
+      check((await panel.locator('.study-step-label').allTextContents()).every(s => /^\d{2}( · Sessions? \d+(–\d+)?)?$/.test(s.trim())), `${id}: stage label is not "01 · Sessions n–m"`);
       check(await panel.locator('a[href*="part="]').count() === 0, `${id}: part-selection link remains`);
       const table = panel.locator('.course-schedule tbody');
       const before = await table.count() ? await table.innerHTML() : null;
@@ -91,7 +92,7 @@ async function checkStudyOverview(page, base) {
     if (studyOnly) { console.log("Study overview checks passed: 4 widths, 4 terms, compact Home and term links, Schedule flow, term keyboard navigation, no row highlighting"); return; }
     const context = await browser.newContext(); const page = await context.newPage();
     await page.goto(base);
-    const link = page.locator('.content-section.section-next a').first();
+    const link = page.locator('.mini-text a').first();  // the publications line now sits in the Paper Stella band; the first .section-next is Join us (2026-11-03 home-paper-stella-mini)
     await link.evaluate(el => { const range = document.createRange(); range.selectNodeContents(el); getSelection().removeAllRanges(); getSelection().addRange(range); });
     const popupReady = context.waitForEvent('page', { timeout: 5000 });
     await link.click({ modifiers: [process.platform === 'darwin' ? 'Meta' : 'Control'] });

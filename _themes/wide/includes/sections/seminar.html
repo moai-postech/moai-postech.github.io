@@ -18,7 +18,7 @@
     {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
     <div class="section-body" data-filter>
     <div class="study-tablist study-member-tablist" role="tablist" aria-label="Years">
-      {% for y in years %}{% assign n = 0 %}{% for t in talks %}{% assign ty = t.date | slice: 0, 4 %}{% if ty == y %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}<button type="button" role="tab" data-year="{{ y }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}><strong>{{ y }}</strong><span>{{ n }}</span></button>{% endfor %}
+      {% for y in years %}<button type="button" role="tab" data-year="{{ y }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}><strong>{{ y }}</strong></button>{% endfor %}
     </div>
     <div class="filter-bar" role="group" aria-label="Show talks">
       <button type="button" class="filter-btn" data-show="all" aria-pressed="true">All <span>{{ shown.size }}</span></button>

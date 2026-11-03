@@ -32,6 +32,7 @@ POSTECH 요구사항: P1, P2, P4, P7 확인 (P1 은 좌상단 첫 요소·대표
 - 정보기술팀 안내 ③은 텍스트 링크만 요구했다. 굵게는 본부 꼬리말(`class="str"`)을 따른 2026-10-23 결정이다. 개인정보 처리방침은 다른 고지와 구분되게 두는 것이 관행(개인정보 보호법 쪽 작성 지침)이고 10-26 회신에도 "굵게 구분"이라 썼으므로, 구분은 남기고 굵기만 낮췄다.
 - `theme.css` 의 `.foot-privacy`, `course.css` 의 `.course-privacy`: `--weight-heading`(700) → `--weight-emphasis`(600). 본문색은 그대로라 회색 고지들 사이에서 구분된다.
 - `POSTECH.md` P4 를 "본문색과 굵게(600 이상)"로, `check_postech.js` 의 굵기 기준을 600 으로.
+- 첫 push 뒤 `checks` 의 `test_design` 이 `design-contract.json` 의 `privacy-link`(700)와 어긋난다고 경고해서 계약도 `--weight-emphasis` 로 고쳤다.
 
 ## 기각한 안과 이유
 

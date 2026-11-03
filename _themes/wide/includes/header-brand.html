@@ -1,8 +1,6 @@
-{% comment %}Shared identity: the POSTECH wordmark (POSTECH home, POSTECH.md P1) stacked over the lab brand, or over the course title in the same slot. The wordmark is the first link at the top left; the lab logo below it goes to the lab home, as visitors expect. One header row holds both, so the tabs stay at the height they had before the wordmark moved up (교수 2026-11-03). include.sub adds a second part after the lab name (AI Study: MOAI Lab AI Study, its link goes to the study home, 교수 2026-11-02). A course shows its home code (the first of the cross-listed codes, IMEN) before the title; the full cross-listing stays in the page head (교수 2026-11-02).{% endcomment %}
-<div class="head-lockup">
-  {% if site.postech %}<a class="head-postech" href="{{ site.postech.url }}"><img src="{{ site.postech.wordmark }}" alt="POSTECH" width="733" height="62"></a>{% endif %}
-  <div class="head-id">
-    <p class="brand"><a href="{{ include.url | default: 'index.html' }}"{% if include.title %} title="{{ include.title | escape }}"{% endif %}>{% unless include.title %}{% if site.logo %}<img class="brand-mark" src="{{ site.logo }}" alt="{{ site.title }} logo">{% endif %}{% endunless %}{% if include.code %}<span class="brand-code">{{ include.code }}</span>{% endif %}<span class="brand-word">{{ include.title | default: site.title }}</span></a></p>
-    {% if include.sub %}<a class="brand-sub" href="{{ include.sub_url }}">{{ include.sub }}</a>{% endif %}
-  </div>
+{% comment %}Shared identity: the lab brand (lab home), or the course title in the same slot, then "| POSTECH" in grey, linked to the POSTECH home. The school shows as a word, not the wordmark, so the logo at the top left is the lab logo that goes home (교수 2026-11-03, POSTECH.md P1). include.sub adds a second part after the lab name (AI Study: MOAI Lab AI Study, its link goes to the study home, 교수 2026-11-02). A course shows its home code (the first of the cross-listed codes, IMEN) before the title; the full cross-listing stays in the page head (교수 2026-11-02).{% endcomment %}
+<div class="head-id">
+  <p class="brand"><a href="{{ include.url | default: 'index.html' }}"{% if include.title %} title="{{ include.title | escape }}"{% endif %}>{% unless include.title %}{% if site.logo %}<img class="brand-mark" src="{{ site.logo }}" alt="{{ site.title }} logo">{% endif %}{% endunless %}{% if include.code %}<span class="brand-code">{{ include.code }}</span>{% endif %}<span class="brand-word">{{ include.title | default: site.title }}</span></a></p>
+  {% if include.sub %}<a class="brand-sub" href="{{ include.sub_url }}">{{ include.sub }}</a>{% endif %}
+  {% if site.postech %}<a class="brand-school" href="{{ site.postech.url }}">POSTECH</a>{% endif %}
 </div>

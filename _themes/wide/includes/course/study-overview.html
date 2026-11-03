@@ -8,11 +8,11 @@
   <h2 id="study-overview-title">What we study</h2>
   <ol class="plain study-term-cards study-term-directory">
     {% for t in d.terms reversed %}{% assign info = site.data.ai_study_terms[t.id] %}{% comment %}Numbered sessions count, even one tagged Optional (Summer 2026 session 10); lettered topics (A1 …) do not (교수 2026-11-03).{% endcomment %}{% assign regular = "" | split: "" %}{% for s in t.sessions %}{% assign num = s.n | plus: 0 %}{% if num > 0 %}{% assign regular = regular | push: s %}{% endif %}{% endfor %}
-    <li class="study-term-card{% if forloop.last %} is-current{% endif %}" data-term="{{ forloop.index }}">
-      <span class="study-term-step" aria-hidden="true"><span class="study-term-dot"></span><span class="study-term-when">{{ forloop.index }}기 · {{ t.name }}</span>{% if forloop.last %}<span class="study-term-now">Now</span>{% endif %}</span>
+    <li class="study-term-card{% if forloop.last %} is-current{% endif %}" data-term="{{ info.cohort | default: forloop.index }}">
+      <span class="study-term-step" aria-hidden="true"><span class="study-term-dot"></span><span class="study-term-when">{{ info.cohort | default: forloop.index }}기 · {{ t.name }}</span>{% if forloop.last %}<span class="study-term-now">Now</span>{% endif %}</span>
       <a href="teaching/ai-study/schedule/#{{ t.id }}">
       {% if info.icon %}<img src="{{ info.icon }}" alt="" width="56" height="56">{% endif %}
-      <span class="visually-hidden">{{ forloop.index }}기, {{ t.name }}: </span><h3 class="study-term-title">{{ t.theme }}</h3>
+      <span class="visually-hidden">{{ info.cohort | default: forloop.index }}기, {{ t.name }}: </span><h3 class="study-term-title">{{ t.theme }}</h3>
       <span class="study-term-count">{{ regular.size }} sessions</span>
       {% if info.tldr %}<span class="study-term-tldr">{{ info.tldr }}</span>{% endif %}
       </a>

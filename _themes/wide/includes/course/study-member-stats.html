@@ -15,7 +15,7 @@
     <figure class="study-stat-panel">
       <figcaption><h3>Participants by term</h3></figcaption>
       <ol class="plain study-cohort-chart">
-        {% for t in stats.terms reversed %}{% assign h = t.count | times: 100.0 | divided_by: max_count %}<li data-term="{{ t.number }}"><a class="study-cohort-link" href="teaching/ai-study/members/#members-{{ t.number }}">
+        {% for t in stats.terms reversed %}{% assign h = t.count | times: 100.0 | divided_by: max_count %}<li data-term="{{ t.number }}"><a class="study-cohort-link" href="teaching/ai-study/members/#members-{{ t.number | replace: '.', '-' }}">
           <span class="study-cohort-track"><span class="study-cohort-bar" style="height: {{ h }}%" title="{{ t.number }}기 · {{ t.term }}: {{ t.new }} new, {{ t.existing }} returning">
             <span class="study-chart-value">{{ t.count }}</span>
             <span class="is-existing" style="flex-grow: {{ t.existing }}">{% if forloop.last and t.existing > 0 %}<span class="study-bar-key" aria-hidden="true">Returning</span>{% endif %}</span><span class="is-new" style="flex-grow: {{ t.new }}">{% if forloop.last and t.new > 0 %}<span class="study-bar-key" aria-hidden="true">New</span>{% endif %}</span>

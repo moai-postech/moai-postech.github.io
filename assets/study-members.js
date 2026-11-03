@@ -37,6 +37,8 @@
   // The Full List shows the sheet's Korean department name only (2026-11-02); old spellings are unified.
   const ALIASES = { 'IT융공': 'IT융합', 'Mueunjae': '무은재', 'Undeclared': '무은재' };
   const departmentLabel = name => ALIASES[name] || name;
+  // Tab ids and #hash links for a cohort: 2.5기 becomes members-2-5 (교수 2026-11-03: Summer 2026 is 2.5기).
+  const tabId = n => 'members-' + String(n).replace('.', '-');
   const entryYear = member => /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : String(member.entry_year);
   // Cohort, entry year, department and participation open the matching list, by the same #hash links as the Home department map (교수 2026-11-03).
   const listLink = (text, hash, className) => {
@@ -72,7 +74,7 @@
       const year = entryYear(member);
       const dept = departmentLabel(member.department);
       const values = [String(n + 1), member.cohort + '기', year, dept, member.name, id];
-      const links = { 1: '#members-' + member.cohort, 2: '#entry=' + year, 3: '#dept=' + encodeURIComponent(dept) };
+      const links = { 1: '#' + tabId(member.cohort), 2: '#entry=' + year, 3: '#dept=' + encodeURIComponent(dept) };
       values.forEach((value, index) => {
         const cell = element(index === 4 ? 'th' : 'td', links[index] || index === 4 ? undefined : value, index === 5 ? 'study-member-email' : index === 0 ? 'study-member-n' : undefined);
         if (links[index]) cell.append(listLink(value, links[index], 'study-member-link'));
@@ -103,7 +105,7 @@
       const cell = element('td'); cell.dataset.label = LABELS[7];
       if (!termTab) {
         const markers = element('span', undefined, 'study-member-markers');
-        for (const n of member.participation) markers.append(listLink(n + '기', '#members-' + n, 'study-member-marker'));
+        for (const n of member.participation) markers.append(listLink(n + '기', '#' + tabId(n), 'study-member-marker'));
         cell.append(markers);
       }
       row.append(cell); body.append(row);
@@ -145,7 +147,7 @@
       const panel = element('div');
       panel.append(summary(c.number + '기' + (c.term ? ' (' + c.term + ')' : ''), term.length, true),
         table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep));
-      tabs.push({ id: 'members-' + c.number, title: c.number + '기', note: c.term ? '(' + c.term + ')' : '', panel });
+      tabs.push({ id: tabId(c.number), title: c.number + '기', note: c.term ? '(' + c.term + ')' : '', panel });
     }
     const box = element('section', undefined, 'study-member-tabs');
     const tablist = element('div', undefined, 'study-tablist study-member-tablist'); tablist.setAttribute('role', 'tablist'); tablist.setAttribute('aria-label', 'Member lists');

@@ -2,6 +2,7 @@
 # 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
+  cohort: "3"
   tldr: "How robots learn to do what humans do with arms and legs, and foundation models help them perceive and plan."
   icon: "assets/img/icons/physical.svg"
   learning_path:
@@ -12,6 +13,7 @@ fall-2026:
   location: { building: "Science Building 4", rooms: "Room 302" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
+  cohort: "2.5"  # 여름 학기는 정규 학기 사이의 추가 기수라 2.5기(교수 2026-11-03)
   tldr: "How neural network architectures are built and trained, representation and generation let them model data, and generalization explains why they work on new data."
   icon: "assets/img/icons/study-deep-learning.svg"
   format: lectures
@@ -25,6 +27,7 @@ summer-2026:
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 spring-2026:
+  cohort: "2"
   tldr: "How LLMs are trained through pretraining and post-training, and from there they grow into agents that reason and act."
   icon: "assets/img/icons/study-llm.svg"
   reference_course: { lead: "See also", title: "Princeton COS 597R Deep Dive into Large Language Models", term: "Fall 2024", url: "https://princeton-cos597r.github.io/" }  # 참고 강의일 뿐 그대로 따르지 않아 "See also"(교수 2026-11-03). Summer 2026 처럼 그대로 따른 강의는 lead 없이 "Based on"
@@ -36,6 +39,7 @@ spring-2026:
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
+  cohort: "1"
   tldr: "How models build perception of images and text, generation lets them create images and videos, and multimodal LLMs unify both in one model."
   icon: "assets/img/icons/study-foundation-models.svg"
   learning_path:

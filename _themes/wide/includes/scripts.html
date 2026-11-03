@@ -104,5 +104,11 @@ document.querySelectorAll('.has-mini').forEach(function (band) {
   }
   band.addEventListener('pointermove', send);
   band.addEventListener('pointerleave', function () { send(null); });
+  // The band shows its own still poster until the map inside says it is drawing.
+  window.addEventListener('message', function (e) {
+    if (e.source === frame.contentWindow && e.data && e.data.type === 'stella-mini-ready') {
+      frame.closest('.mini-preview').classList.add('is-ready');
+    }
+  });
 });
 </script>

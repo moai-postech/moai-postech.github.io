@@ -22,6 +22,11 @@ sections:
   - class: section-band
     mini:
       url: "https://moai-lab.duckdns.org/paper-stella-public/?mini=1&align=0.64&clear=0.42&valign=0.46&zoom=1.2&labels=4"
+      # 미리보기가 준비될 때까지(또는 서버가 내려가 있을 때) 보이는 정지 그림. 위치는 url 의 align·valign, 높이는 72% × zoom
+      poster: assets/img/paper-stella-poster.webp
+      poster_x: 64
+      poster_y: 46
+      poster_height: 86.4
       href: map-view.html
       label: "Explore our papers in Paper Stella"
       caption: "Explore Paper Stella"

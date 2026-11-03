@@ -5,6 +5,7 @@
   mini 가 있으면 절 전체를 어두운 띠로 만들고 본문 뒤에 다른 사이트의 살아 있는 미리보기(iframe)를 깐다.
   띠의 빈 곳과 오른쪽 아래 mini.caption 은 mini.href 로 가는 한 링크이고, 본문 안 링크는 따로 눌린다.
   미리보기는 입력을 받지 않는 장식이라 화면 낭독기에서는 링크 이름(mini.label)만 읽는다(Home: Paper Stella, 교수 2026-11-03).
+  mini.poster 가 있으면 그 정지 그림을 (poster_x, poster_y)% 에 높이 poster_height% 로 깔고, iframe 은 미리보기가 준비 신호(stella-mini-ready)를 보낼 때 나타난다. 미리보기 서버가 내려가도 정지 그림이 남는다.
 {% endcomment %}
 {% assign s = include.section %}
 {% if s.type %}{% include sections/{{ s.type }}.html section=s %}{% else %}
@@ -14,7 +15,7 @@
     {% if s.mini %}<div class="mini-text">
     {{ s.body | markdownify }}
     </div>
-    <a class="mini-preview" href="{{ s.mini.href }}" aria-label="{{ s.mini.label }}"><iframe src="{{ s.mini.url }}" title="{{ s.mini.label }}" aria-hidden="true" tabindex="-1" loading="lazy" referrerpolicy="no-referrer"></iframe>{% if s.mini.caption %}<span class="mini-caption">{{ s.mini.caption }}</span>{% endif %}</a>
+    <a class="mini-preview{% if s.mini.poster %} has-poster{% endif %}" href="{{ s.mini.href }}" aria-label="{{ s.mini.label }}"{% if s.mini.poster %} style="--mini-poster: url('{{ s.mini.poster | relative_url }}'); --mini-x: {{ s.mini.poster_x }}%; --mini-y: {{ s.mini.poster_y }}%; --mini-h: {{ s.mini.poster_height }}%"{% endif %}><iframe src="{{ s.mini.url }}" title="{{ s.mini.label }}" aria-hidden="true" tabindex="-1" loading="lazy" referrerpolicy="no-referrer"></iframe>{% if s.mini.caption %}<span class="mini-caption">{{ s.mini.caption }}</span>{% endif %}</a>
     {% else %}{{ s.body | markdownify }}{% endif %}
     </div>
     </section>

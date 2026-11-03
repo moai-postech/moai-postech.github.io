@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-03 | [physical-ai-two-parts](2026-11-03-physical-ai-two-parts.md) | Sangwoo Mo(moai-postech) | ai_study_terms.yml, STUDY.md | Physical AI 학습 흐름을 1–6 embodiment, 7–11 foundation model 두 파트로 |
 | 2026-11-03 | [ai-study-member-photos](2026-11-03-ai-study-member-photos.md) | Sangwoo Mo(moai-postech) | study-members.js, course.css, ai_study_members_sync.py, STUDY.md | Members 이름 hover 로 인물검색 사진(명단 암호문 안에만) |
 | 2026-11-03 | [ai-study-member-links](2026-11-03-ai-study-member-links.md) | Sangwoo Mo(moai-postech) | study-members.js, course.css, STUDY.md | Members 표의 기수·학번·학과·참여 칩을 그 탭이나 걸러 본 Full list 로 가는 링크로, 모든 목록에 같은 요약 줄 |
 | 2026-11-03 | [seminar-year-tabs](2026-11-03-seminar-year-tabs.md) | Sangwoo Mo(moai-postech) | seminar.html, scripts.html, seminar_sync.py | Seminar 연도별 탭(최신 해부터, 최신 해 기본), 슬라이드 없는 랩 발표는 링크 없이 |

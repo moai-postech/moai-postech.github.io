@@ -2,12 +2,11 @@
 # 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
 fall-2026:
-  tldr: "How robots learn to act in the real world, understand 3D scenes, and connect goals to actions."
+  tldr: "How robots learn embodied skills in the physical world, and draw on foundation models to perceive and plan."
   icon: "assets/img/icons/physical.svg"
   learning_path:
-    - { start: 1, end: 6, title: "Learn to Act", text: "Demonstrations and interaction teach robots useful behaviors, from moving through a space to manipulating objects." }
-    - { start: 7, end: 8, title: "Understand the Scene", text: "3D representations turn images into a spatial picture of the world, grounding those behaviors in the surrounding scene." }
-    - { start: 9, end: 11, title: "Connect Goals to Actions", text: "Spatial reasoning, VLA, and world models connect goals and perception to actions and their predicted consequences." }
+    - { start: 1, end: 6, title: "Learn Embodied Skills", text: "Start from the robot's body: data, manipulation, locomotion, navigation, humanoids, and dexterous hands show how robots learn to act in the physical world." }
+    - { start: 7, end: 11, title: "Draw on Foundation Models", text: "Then bring in AI: 3D understanding, spatial reasoning, VLA, and world models show how foundation models help robots perceive scenes, reason, and plan actions." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 302" }

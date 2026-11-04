@@ -326,7 +326,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-members-table .sm-email { width: 12.3%; }
 .study-members-table .sm-linkedin { width: 8.8%; }
 .study-members-table .sm-participation { width: 35.2%; }
-@media (min-width: 961px) and (max-width: 1119px) {  /* narrower table: POSTECH ID needs more share so the longest ID stays on one line */
+@media (min-width: 961px) and (max-width: 1179px) {  /* narrower table: POSTECH ID needs more share so the longest ID stays on one line */
   .study-members-table .sm-n { width: 5%; }
   .study-members-table .sm-cohort { width: 8.5%; }
   .study-members-table .sm-year { width: 8.5%; }

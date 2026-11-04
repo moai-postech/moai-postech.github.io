@@ -194,3 +194,9 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - 네 학기 단계 설명에서 기법 나열을 일반 개념으로 바꿨다. LLM: CoT, SFT, RLHF, AI feedback, test time, retrieval 제거. Physical AI 2부: 3D reconstruction, spatial reasoning, VLA 를 3D 공간 이해, vision and language 를 action 으로 바꾸는 것으로. FM 1부: image-text encoders, grounding 을 이미지와 텍스트 잇기로.
 - Summer 2026 굵게를 세 꼭지로 줄였다: 목적에 맞춘 architecture 설계, encode/decode, training data 밖(일반화). theory 는 굵게 하지 않고 "why deep networks generalize at all" 로 가볍게만 둔다. 제목 단어(Generalization)를 굵게 하지 않으려고 `beyond the training data` 를 골랐다.
 - 검사: push 뒤 format run 의 checks.
+
+## 22회차 (2026-11-04): Schedule 탭 순서를 Home 과 통일
+
+- Schedule 학기 탭을 옛 학기가 왼쪽(Fall 2025 → Fall 2026)에 오게 바꿨다. Home 타임라인과 Members 탭이 이미 이 순서라 두 페이지의 순서가 달라 헷갈린다는 사용자 지적. 주소에 학기가 없으면 여전히 이번 학기(맨 오른쪽)가 열린다.
+- 11-03 의 newest first 결정을 대체했다. STUDY.md 갱신.
+- 검사: push 뒤 format run 의 checks, 라이브 탭 순서와 기본 선택 확인.

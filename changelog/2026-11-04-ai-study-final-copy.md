@@ -12,3 +12,8 @@ Schedule·Home 의 tldr, 단계 제목, 단계 설명, 참고 강의 줄, 참여
 - 참고 강의 줄(Based on, See also)과 참여 안내는 바꿀 것이 없었다.
 
 검사: 라이브 페이지에 새 tldr 를 넣어 폭 측정, push 뒤 format run 의 checks(check_study_terms 포함).
+
+## 2회차: LLM 1단계 설명
+
+- 사용자 안대로 prompting 을 "사전학습한 모델을 잘 활용하는 법"으로 풀었다: `How an LLM is trained and used: **pretraining**, prompting that puts it to good use, then **post-training** that aligns it with what people want.` prompting 은 훈련이 아니라서 머리를 `trained and used` 로 넓혔다. 굵게는 pretraining → post-training 흐름 그대로.
+- 기각: `pretraining and how to use it well by prompting` (사용자 초안의 직역). 다른 단계와 같은 명사구 나열 꼴에 맞지 않는다.

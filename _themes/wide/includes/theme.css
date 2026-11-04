@@ -227,8 +227,7 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .focus-explorer:has(.focus-tab:last-child[aria-selected="true"]) .focus-panels { border-radius: var(--radius-2) 0 var(--radius-2) var(--radius-2); }
 .focus-explorer:has(.focus-tab:nth-child(2)[aria-selected="true"]) .focus-panels { border-radius: var(--radius-2); }
 .focus-panels > .focus-panel[hidden] { display: none; }  /* each panel is as tall as its own content (교수 2026-10-22: no stretching to the tallest) */
-.focus-papers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }  /* cards in one row share that row's height; nothing is stretched beyond its content */
-@media (min-width: 961px) { .focus-papers:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }  /* a direction with two papers fills the panel in halves instead of leaving the third column empty (Physical AI, Manufacturing AI) */
+.focus-papers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }  /* cards in one row share that row's height; nothing is stretched beyond its content. Always three columns: a direction with two papers leaves the third empty so card width stays the same across tabs (교수 2026-11-04) */
 .paper-chip { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); color: var(--text); }
 a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .paper-chip .venue { background: var(--bg); font-size: var(--text-featured-meta); }  /* the card is already grey, so its badge is white */

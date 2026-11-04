@@ -187,3 +187,10 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 
 - Spring 2026 1~5단계 설명의 `chain-of-thought prompting` 을 사용자 요청대로 `prompting like CoT` 로 바꿨다. 기법 하나가 아니라 prompting 전반을 다룬다는 뜻이 더 잘 드러난다.
 - 검사: push 뒤 format run 의 checks(check_study_terms 포함). 로컬은 Jekyll 빌드가 안 돼 CI 로 본다.
+
+## 21회차 (2026-11-04): 큰 그림 위주로 문구 정리
+
+- 20회차의 `prompting like CoT` 는 사용자 뜻과 달랐다. 특정 기법이 아니라 prompting 이라는 일반 개념을 앞세우라는 뜻이었고, 디테일보다 큰 그림을 쓰는 것이 스터디 문구 전체의 규칙이라고 했다. STUDY.md 에 규칙으로 넣었다.
+- 네 학기 단계 설명에서 기법 나열을 일반 개념으로 바꿨다. LLM: CoT, SFT, RLHF, AI feedback, test time, retrieval 제거. Physical AI 2부: 3D reconstruction, spatial reasoning, VLA 를 3D 공간 이해, vision and language 를 action 으로 바꾸는 것으로. FM 1부: image-text encoders, grounding 을 이미지와 텍스트 잇기로.
+- Summer 2026 굵게를 세 꼭지로 줄였다: 목적에 맞춘 architecture 설계, encode/decode, training data 밖(일반화). theory 는 굵게 하지 않고 "why deep networks generalize at all" 로 가볍게만 둔다. 제목 단어(Generalization)를 굵게 하지 않으려고 `beyond the training data` 를 골랐다.
+- 검사: push 뒤 format run 의 checks.

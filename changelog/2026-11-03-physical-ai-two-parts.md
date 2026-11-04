@@ -164,3 +164,14 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
   - 키워드: `UAT, generalization bound` → `universal approximation, generalization bounds`, `review transformer & LLM` → `Transformer and LLM basics`, `long-context, …` → `context extension, …`, `NN, loss function, SGD` → `neural networks, loss functions, SGD`, `diffusion/flow` → `diffusion, flow matching`, `LLM, scaling law, in-context learning` → `scaling laws, emergent abilities, in-context learning`, `multimodal perception & generation` → `unified perception and generation`.
   - Spring 2026 안내: `check lec 2, 8 from the last semester` → `Sessions 2 and 8 of Fall 2025 (Transformer, LLMs and scaling laws)`.
   - 그대로 둔 것: 논문·데모 이름(References·Demo 열, 원 논문 표기), 약어 제목(CoT, SFT, RLHF, VLA), Summer 2026 의 MIT 강의식 제목(Architectures: Grid 등), 사이트에 나오지 않는 Fall 2026·Summer 2026 안내 줄.
+- 동기화 결과: 시트 동기화(a35ed93)가 새 표기를 받아 왔다. 제목이 바뀐 두 회차는 슬라이드를 새 이름(`01-training-neural-networks-slides.pdf`, `08-llms-and-scaling-laws-slides.pdf`)으로 다시 받았고, 옛 파일 두 개(`01-how-to-train-a-nn-slides.pdf`, `08-llm-scaling-law-slides.pdf`)와 `drive_sources.json` 의 두 줄을 지웠다. 7회 `long context` 는 파일 이름이 같아 그대로다.
+
+## 18차(2026-11-04): 굵게를 흐름이 보이게
+교수: "여기서 그룹1이랑 그룹2는 볼드가 적절하게 된지 모르겠어. 한 눈에 와닿을지 모르겠어서..."(딥러닝 카드), "이것도 볼드가 이상해. Post-train만 강조하는게 아니라 pretrain post-train으로 넘어가는 흐름을 강조해야지. 그룹2는 agent보다는 차라리 reason, memory를 강조하는게 낫지 않을까? 볼드를 2개 해도 되니까... 잘 좀 해봐...".
+
+- 굵게를 단계당 한두 곳으로, 그 덩어리 안의 흐름이 보이는 말에 둔다.
+  - Summer 2026: **backpropagation** first, then **CNNs, RNNs, and Transformers** / **learning representations** by reconstruction and similarity, then **generating new samples** / **distribution shift** and **transfer** to new tasks, then the theory …
+  - Spring 2026: **pretraining** and chain-of-thought prompting first, then **post-training** … / **reasoning** that runs longer at test time, **memory** from long context and retrieval, then an action loop with tools.
+  - 그대로 둔 것: Physical AI(human abilities, foundation models), Fall 2025(understand, create, unify). 한 단어로 그 꼭지가 바로 읽힌다.
+- `STUDY.md` 의 굵게 규칙을 "핵심어 하나" 에서 "흐름이 보이는 한두 곳, 제목을 되풀이하거나 덩어리 전체를 가리키는 말은 빼기" 로 고쳤다.
+- 기각: agent 를 굵게 두는 안(2파트 제목이 이미 Agents 라 겹친다), action loop 까지 세 곳을 굵게 하는 안(교수가 두 개까지로 정함).

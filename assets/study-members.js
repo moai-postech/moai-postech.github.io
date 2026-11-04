@@ -78,6 +78,8 @@
       values.forEach((value, index) => {
         const cell = element(index === 4 ? 'th' : 'td', links[index] || index === 4 ? undefined : value, index === 5 ? 'study-member-email' : index === 0 ? 'study-member-n' : undefined);
         if (links[index]) cell.append(listLink(value, links[index], 'study-member-link'));
+        // The term's representative shows a small 대표 chip in the # column, so the Name column only needs to fit names (교수 2026-11-04: Name and POSTECH ID were too far apart).
+        if (index === 0 && row.className) { cell.textContent = ''; cell.append(element('span', '대표', 'study-member-role')); }
         if (index === 4) {
           cell.scope = 'row';
           // The POVIS photo travels inside the same ciphertext, so it shows on hover or focus once the list is open (교수 2026-11-03).
@@ -91,7 +93,6 @@
             name.append(card);
           }
           cell.append(name);
-          if (row.className) cell.append(element('span', ' (대표학생)', 'study-member-role'));  // shown as 최지안 (대표학생) with the row colour (교수 2026-11-02)
         }
         cell.dataset.label = LABELS[index]; row.append(cell);
       });

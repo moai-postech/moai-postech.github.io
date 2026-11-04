@@ -182,3 +182,8 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - Summer 2026 시간 줄: `Usually Tuesdays` → `Tuesdays`(`ai_study_terms.yml`). 9회(08/20)는 목요일이지만 교수 결정대로 대표 요일만 쓴다.
 - 스터디 Home 의 How to join: "Open to POSTECH undergraduates of **any major**, not just IME. …"(`teaching/ai-study/index.md`). 굵게는 any major 그대로다.
 - 기각: "beyond IME" 를 그대로 쓰는 안. beyond 는 IME 를 넘어서는 수준처럼 읽힐 수 있고, "not just IME" 가 "산경만이 아니다"를 더 바로 말한다.
+
+## 20회차 (2026-11-04): LLM 1단계 문구
+
+- Spring 2026 1~5단계 설명의 `chain-of-thought prompting` 을 사용자 요청대로 `prompting like CoT` 로 바꿨다. 기법 하나가 아니라 prompting 전반을 다룬다는 뜻이 더 잘 드러난다.
+- 검사: push 뒤 format run 의 checks(check_study_terms 포함). 로컬은 Jekyll 빌드가 안 돼 CI 로 본다.

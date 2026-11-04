@@ -39,3 +39,10 @@ Schedule·Home 의 tldr, 단계 제목, 단계 설명, 참고 강의 줄, 참여
 - Fall 2025 See also: Stanford CS231n(Spring 2025, 2025 페이지), MIT 6.S978 Deep Generative Models(Kaiming He, Fall 2024). 사용자 선택.
 - 기각한 후보와 이유는 대화에서 정리했다: MIT 6.4210(manipulation 하나), UPenn Physical Intelligence(RL·sim-to-real 중심), Berkeley CS 280(기하·3D 비중).
 - 네 링크 모두 200 응답 확인. 검사: push 뒤 format run, 라이브 문장 확인.
+
+## 6회차: AI Study 전 탭 최종 검수
+
+- 본 것: Home(히어로, 학기 타임라인, 멤버 통계, 참여 안내), Schedule 네 학기, Members(전체와 기수 탭), 1440px 와 375px. 가로 넘침 없음(375/375), 단계 설명 2~3줄, tldr 한 줄, 참고 강의 줄 카드 아래.
+- 고친 것: Schedule 에서 주소의 학기(#fall-2025)만 바뀌면 탭이 안 바뀌었다. 페이지를 새로 열 때만 주소를 읽었기 때문이다. `hashchange` 를 받아 같은 페이지 안 링크와 뒤로·앞으로 가기에서도 학기가 바뀌게 했다(`study-tabs.html`).
+- 그대로 둔 것: 휴대폰 일정 카드(날짜 위, 번호와 제목, 그 아래 논문·발표자·자료)는 2026-11-03 여백 점검에서 정한 꼴이다. Papers 와 Demo 가 휴대폰에서 라벨 없이 이어지는 점은 사용자에게 제안으로만 남겼다.
+- 검사: push 뒤 format run, 라이브에서 hash 를 바꿔 탭 전환 확인.

@@ -5403,6 +5403,22 @@ h1.t .sub{color:var(--ink-2)}
 #deck-page-dialog button[type=submit]{color:var(--paper);background:var(--accent);border-color:var(--accent)}
 @media screen and (pointer:coarse){#deck-touch-nav{display:flex}#stageWrap{bottom:64px}#hud,#help{display:none!important}}
 @media print{#deck-touch-nav,#deck-page-dialog{display:none!important}}
+/* Lecture 11 partition exercises. Shared design layer, scoped to this component. */
+.lec11-demo{width:100%;display:flex;flex-direction:column;gap:18px;min-height:0}
+.lec11-controls{display:flex;align-items:center;justify-content:center;gap:20px;font:600 19px var(--sans);flex-wrap:wrap}
+.lec11-controls label{display:flex;align-items:center;gap:10px}
+.lec11-controls input[type=range]{width:180px;accent-color:var(--blue)}
+.lec11-controls input[type=checkbox]{width:19px;height:19px;accent-color:var(--blue)}
+.lec11-controls output{font-family:var(--mono);min-width:36px}
+.lec11-controls button{font:650 19px var(--sans);padding:8px 18px;border:1.5px solid var(--blue);border-radius:3px;background:var(--blue-soft);color:var(--blue-deep);cursor:pointer}
+.lec11-controls button:disabled{opacity:.4;cursor:default}
+.lec11-demo .lec11-view{width:100%;min-height:0}
+.lec11-readout{font:500 20px/1.4 var(--sans);color:var(--ink-2);margin:0;text-align:center}
+
+/* Clickable outlines keep the authored geometry and palette. */
+[data-deck-target]{cursor:pointer;touch-action:manipulation}
+[data-deck-target]:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media print{[data-deck-target]:focus-visible{outline:none}}
 /* DECK-THEME:END */
 </style>
 </head>
@@ -7342,6 +7358,83 @@ render();
    The theme intentionally installs no automatic body-sizing behaviour. */
 
 /* Shared navigation for every deck, including hand-written lectures. */
+/* Outline cards and section maps use exact, local destinations. No page-number guesses. */
+(() => {
+  if (typeof slides === 'undefined' || typeof goTo !== 'function') return;
+  const normalize = text => String(text || '').normalize('NFKC').replace(/\s+/g,' ').trim().toLowerCase();
+  const titleOf = slide => String(slide.dataset.title || '').replace(/^\d+\s*[·.]\s*/, '').replace(/^§\s*/, '').trim();
+  const targets = new Map();
+  slides.forEach((slide, index) => {
+    if (slide.classList.contains('cont')) return;
+    const key = normalize(titleOf(slide));
+    if (!targets.has(key)) targets.set(key, []);
+    targets.get(key).push({index, slide});
+  });
+  const destination = label => {
+    const matches = targets.get(normalize(label)) || [];
+    const dividers = matches.filter(m => m.slide.classList.contains('mapdiv'));
+    const choices = dividers.length ? dividers : matches;
+    return choices.length === 1 ? choices[0].index : null;
+  };
+  function bind(element, label, aliases) {
+    const name = aliases.get(normalize(label)) || label;
+    const index = destination(name);
+    if (index === null) return false;
+    element.dataset.deckTarget = String(index);
+    element.dataset.deckLabel = label;
+    element.setAttribute('role', 'link');
+    element.setAttribute('tabindex', '0');
+    element.setAttribute('aria-label', 'Go to ' + titleOf(slides[index]));
+    element.setAttribute('title', 'Go to ' + titleOf(slides[index]));
+    return true;
+  }
+  slides.forEach(slide => {
+    const title = slide.dataset.title || '';
+    if (!(slide.matches('.omap,.mapdiv') || /^Outline:/.test(title) || slide.hasAttribute('data-deck-jumps'))) return;
+    let mapping = {};
+    try { mapping = JSON.parse(slide.dataset.deckJumps || '{}'); } catch (_) { return; }
+    const aliases = new Map(Object.entries(mapping).map(([a,b]) => [normalize(a),b]));
+    slide.querySelectorAll('.clarity-outline-row, .outline-list > .o').forEach(row => {
+      const label = row.querySelector('h3,.nm');
+      if (label) bind(row, label.textContent, aliases);
+    });
+    // Named SVG cards cover lectures 3-5. Other decks use anonymous groups.
+    const groups = [...slide.querySelectorAll('svg g')].reverse();
+    groups.forEach(group => {
+      if (group.querySelector('[data-deck-target]')) return;
+      const named = group.querySelector('.oc-nm,.tr-bt');
+      if (named) { bind(group, named.textContent, aliases); return; }
+      const texts = [...group.querySelectorAll('text')].map(t => t.textContent.trim()).filter(Boolean);
+      if (/^\d+$/.test(texts[0] || '')) texts.shift();
+      // Wrapped card titles span several SVG text elements. Only a complete
+      // prefix of these elements can name a destination, never a substring.
+      let label = '';
+      for (const text of texts) {
+        label += (label ? ' ' : '') + text;
+        if (bind(group, label, aliases)) break;
+      }
+    });
+  });
+  const jump = (event, keyboard) => {
+    const element = event.target.closest('[data-deck-target]');
+    if (!element) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const target = Number(element.dataset.deckTarget);
+    if (!Number.isInteger(target) || target < 0 || target >= slides.length) return;
+    goTo(target);
+    if (keyboard) {
+      const heading = slides[target].querySelector('h1');
+      if (heading) { heading.setAttribute('tabindex','-1'); heading.focus({preventScroll:true}); }
+    }
+  };
+  // Capture is essential: Space/Enter and mobile click must not also advance.
+  document.addEventListener('click', event => jump(event, false), true);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') jump(event, true);
+  }, true);
+})();
+
 (() => {
   if (typeof slides === 'undefined' || typeof goTo !== 'function') return;
   const pages = slides.map((s, i) => s.classList.contains('cont') ? -1 : i).filter(i => i >= 0);
@@ -7413,7 +7506,7 @@ render();
   // Treat only a short, stationary, single-finger gesture as a tap.
   let gesture = null, tap = null;
   const blocked = target => target.closest('a,button,input,textarea,select,label,video,audio,canvas,' +
-    '[contenteditable], [role="button"], [data-interactive], #hud, #help, #ov, #notes,' +
+    '[contenteditable], [role="button"], [data-deck-target], [data-interactive], #hud, #help, #ov, #notes,' +
     '#deck-touch-nav, #deck-page-dialog, .pagenum, pre, .sqlpad, .mqlpad');
   document.addEventListener('pointerdown', e => {
     tap = null;

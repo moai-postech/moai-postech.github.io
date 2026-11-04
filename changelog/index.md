@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-04 | [courses-plms-link](2026-11-04-courses-plms-link.md) | Sangwoo Mo(moai-postech) | courses.md | Regular courses 소개 줄에 `PLMS` 한 단어 링크(for enrolled students) |
+| 2026-11-04 | [courses-plms-link](2026-11-04-courses-plms-link.md) | Sangwoo Mo(moai-postech) | courses.md | Regular courses 소개 문장은 그대로, `Courses taught at POSTECH` 에 PLMS 링크 |
 | 2026-11-04 | [ai-study-sync](2026-11-04-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |
 | 2026-11-03 | [spacing-sweep](2026-11-03-spacing-sweep.md) | Sangwoo Mo(sangwoomo) | theme.css, course.css, design-contract.json | 전 페이지 여백 점검: 꼬리말 앞 64px 통일, 휴대폰 강의 머리글 빈 띠, 탭·필터 줄바꿈(360px 포함), 일정 카드 정렬, 한국어 단어 단위 줄바꿈, audit 검사를 오늘 결정에 맞춤 |
 | 2026-11-03 | [prepush-build](2026-11-03-prepush-build.md) | Sangwoo Mo(sangwoomo) | pre-push 훅, tools/setup.sh, AGENTS.md | push 전에 빌드·changelog 검사로 실패를 미리 막고, 빌드 환경은 맥마다 자동 설치 |

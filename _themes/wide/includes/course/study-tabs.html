@@ -21,7 +21,9 @@
       if (index >= 0) { e.preventDefault(); var n = tabs[index]; show(n, true); n.focus(); }
     });
   });
-  var want = location.hash.slice(1);
-  show(tabs.filter(function (t) { return t.getAttribute('aria-controls') === want; })[0] || tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0], false);  /* no hash: the tab the page marked as current */
+  var first = tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0];  /* the tab the page marked as current */
+  function fromHash() { var want = location.hash.slice(1); show(tabs.filter(function (t) { return t.getAttribute('aria-controls') === want; })[0] || first, false); }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);  /* a link to #fall-2025 on this page, or Back/Forward, switches the term too, not only a fresh load (2026-11-04 검수) */
 })();
 </script>

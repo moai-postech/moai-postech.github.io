@@ -19,9 +19,9 @@ summer-2026:
   format: lectures
   reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
   learning_path:
-    - { start: 1, end: 3, title: "Architectures and Training", text: "How deep networks are **built** and trained: backpropagation, then the main architectures for images and sequences." }
-    - { start: 4, end: 7, title: "Representation and Generation", text: "How networks **model data**: learning useful representations, then generating new samples." }
-    - { start: 8, end: 10, title: "Generalization and Theory", text: "How models **generalize** beyond the training data: distribution shift, transfer to new tasks, and the theory of why deep networks work." }
+    - { start: 1, end: 3, title: "Architectures and Training", text: "How deep networks are built and trained: **backpropagation** first, then **CNNs, RNNs, and Transformers** for images and sequences." }
+    - { start: 4, end: 7, title: "Representation and Generation", text: "How networks model data: **learning representations** by reconstruction and similarity, then **generating new samples**." }
+    - { start: 8, end: 10, title: "Generalization and Theory", text: "How models generalize beyond the training data: **distribution shift** and **transfer** to new tasks, then the theory of why deep networks work." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Usually Tuesdays", time: "15:30 – 16:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }
@@ -32,8 +32,8 @@ spring-2026:
   icon: "assets/img/icons/study-llm.svg"
   reference_course: { lead: "See also", title: "Princeton COS 597R Deep Dive into Large Language Models", term: "Fall 2024", url: "https://princeton-cos597r.github.io/" }  # 참고 강의일 뿐 그대로 따르지 않아 "See also"(교수 2026-11-03). Summer 2026 처럼 그대로 따른 강의는 lead 없이 "Based on"
   learning_path:
-    - { start: 1, end: 5, title: "Training LLMs", text: "How an LLM is trained: pretraining and chain-of-thought prompting, then **post-training** with SFT, RLHF, and AI feedback." }
-    - { start: 6, end: 9, title: "From LLMs to Agents", text: "How an LLM grows into an **agent**: longer reasoning at test time, memory from long context and retrieval, then an action loop with tools." }
+    - { start: 1, end: 5, title: "Training LLMs", text: "How an LLM is trained: **pretraining** and chain-of-thought prompting first, then **post-training** with SFT, RLHF, and AI feedback." }
+    - { start: 6, end: 9, title: "From LLMs to Agents", text: "How an LLM grows into an agent: **reasoning** that runs longer at test time, **memory** from long context and retrieval, then an action loop with tools." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }

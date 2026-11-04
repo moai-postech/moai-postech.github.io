@@ -315,23 +315,34 @@ a.cs-title:hover { color: var(--accent); }
 .study-members-table tr.is-representative > * { background: var(--callout-surface); }  /* the term's student representative leads its tab (교수 2026-11-02) */
 .study-member-role { padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--accent-soft); color: var(--accent); font-size: var(--text-small); font-weight: var(--weight-emphasis); white-space: nowrap; }
 .study-members-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: var(--text-body); }
-/* Column widths = longest content (heading or value, 1200px container) + one equal gutter, so every gap between columns reads the same;
-   Participation takes what is left. 2026-11-03 교수: POSTECH ID was too wide while the others were tight. */
-.study-members-table .sm-n { width: 4.5%; }
-.study-members-table .sm-cohort { width: 7.5%; }
-.study-members-table .sm-year { width: 7%; }
-.study-members-table .sm-department { width: 10.5%; }
-.study-members-table .sm-name { width: 7%; }  /* names only; the representative's 대표 chip sits in the # column */
-.study-members-table .sm-email { width: 12%; }
-.study-members-table .sm-linkedin { width: 7.5%; }
-.study-members-table .sm-participation { width: 44%; }
+/* Column widths = longest content (heading or value) + one even gutter of about 48px at the 1200px container, so every gap between
+   columns reads the same and the table breathes instead of crowding left; Participation takes what is left.
+   2026-11-04 교수: Name and POSTECH ID were too far apart, then everything looked squeezed. */
+.study-members-table .sm-n { width: 5.8%; }
+.study-members-table .sm-cohort { width: 8.8%; }
+.study-members-table .sm-year { width: 8.3%; }
+.study-members-table .sm-department { width: 11.8%; }
+.study-members-table .sm-name { width: 9%; }  /* names only; the representative's 대표 chip sits in the # column */
+.study-members-table .sm-email { width: 12.3%; }
+.study-members-table .sm-linkedin { width: 8.8%; }
+.study-members-table .sm-participation { width: 35.2%; }
+@media (min-width: 961px) and (max-width: 1119px) {  /* narrower table: POSTECH ID needs more share so the longest ID stays on one line */
+  .study-members-table .sm-n { width: 5%; }
+  .study-members-table .sm-cohort { width: 8.5%; }
+  .study-members-table .sm-year { width: 8.5%; }
+  .study-members-table .sm-department { width: 11.5%; }
+  .study-members-table .sm-name { width: 9%; }
+  .study-members-table .sm-email { width: 14.8%; }
+  .study-members-table .sm-linkedin { width: 8.5%; }
+  .study-members-table .sm-participation { width: 34.2%; }
+}
 .study-members-table th, .study-members-table td { padding: var(--space-3) var(--space-2); text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
 .study-members-table thead th { padding-top: 0; padding-bottom: var(--space-2); border-bottom-color: var(--text); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }  /* same table head as the course and study schedules */
 .study-members-table tbody th { font-weight: var(--weight-emphasis); overflow-wrap: anywhere; }
 .study-members-table .study-member-n { color: var(--muted); font-variant-numeric: tabular-nums; }
 .study-members-table td { overflow-wrap: anywhere; }
 .study-members-table th:first-child, .study-members-table td:first-child { padding-left: 0; }  /* the table starts on the page edge */
-.study-members-table :is(th, td):is(:nth-child(5), :nth-child(8)) { padding-left: var(--space-4); }  /* left-aligned columns after a centred one need a little more room to match the other gaps */
+.study-members-table :is(th, td):is(:nth-child(5), :nth-child(8)) { padding-left: var(--space-5); }  /* left-aligned columns after a centred one need a little more room to match the other gaps */
 .study-members-table th:last-child, .study-members-table td:last-child { padding-right: 0; }  /* equal inline padding keeps centred values truly centred */
 .study-member-email { color: var(--muted); overflow-wrap: anywhere; }
 .study-member-markers { display: flex; flex-wrap: wrap; gap: var(--space-1); }

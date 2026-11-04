@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-04 | [course-code-mobile](2026-11-04-course-code-mobile.md) | Sangwoo Mo(sangwoomo) | 강의 머리글 | 휴대폰에서도 학수번호 표시, 360px 미만은 한 단계 작게 |
+| 2026-11-04 | [course-code-mobile](2026-11-04-course-code-mobile.md) | Sangwoo Mo(sangwoomo) | 강의 머리글, push 전 훅 | 휴대폰에서도 학수번호 표시, 360px 미만은 한 단계 작게. Ruby 3.4 로컬 빌드 수리 |
 | 2026-11-04 | [focus-three-columns](2026-11-04-focus-three-columns.md) | Sangwoo Mo(sangwoomo) | Home Our focus | 논문 2편인 방향도 세 칸 유지, 세 번째 칸 비움 |
 | 2026-11-04 | [de-outline-navigation](2026-11-04-de-outline-navigation.md) | Sangwoo Mo(moai-postech) | 1~10강 HTML | 목차·지도 클릭/탭·키보드 이동, 사이트만 갱신 |
 | 2026-11-04 | [ai-study-final-copy](2026-11-04-ai-study-final-copy.md) | Sangwoo Mo(moai-postech) | AI Study tldr | 문구 최종 검수: DL tldr 에 설계와 일반화, LLM tldr 에 memory |

@@ -9,3 +9,4 @@ export BUNDLE_PATH="$MOAI_CACHE/bundle"
 export BUNDLE_APP_CONFIG="$MOAI_CACHE/bundle-config"
 export PATH="$GEM_HOME/bin:$MOAI_RUBY_DIR/bin:$PATH"
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8  # CI 와 같게. 없으면 SCSS 의 UTF-8 글자에서 빌드가 멈춘다
+export RUBYLIB="$(pwd)/tools/lib${RUBYLIB:+:$RUBYLIB}" RUBYOPT="-rruby_compat${RUBYOPT:+ $RUBYOPT}"  # liquid 4.0.3 이 Ruby 3.2 에서 없어진 tainted? 를 부른다(tools/lib/ruby_compat.rb). 경로에 공백이 있어 RUBYOPT 가 아니라 RUBYLIB 로 넘긴다. 이 파일은 저장소 루트에서 불러온다

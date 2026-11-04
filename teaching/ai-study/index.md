@@ -11,5 +11,5 @@ summary: "A weekly study group for POSTECH undergraduates: read papers, explain 
 join:
   title: "How to join"
   body: >-
-    Open to POSTECH undergraduates of **any major**. Curiosity about AI is all you need; we learn the rest together.
+    Open to POSTECH undergraduates of **any major**, not just IME. Curiosity about AI is all you need; we learn the rest together.
 ---

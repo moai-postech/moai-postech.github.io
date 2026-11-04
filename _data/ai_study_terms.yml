@@ -23,7 +23,7 @@ summer-2026:
     - { start: 4, end: 7, title: "Representation and Generation", text: "How networks model data: **learning representations** by reconstruction and similarity, then **generating new samples**." }
     - { start: 8, end: 10, title: "Generalization and Theory", text: "How models generalize beyond the training data: **distribution shift** and **transfer** to new tasks, then the theory of why deep networks work." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
-  meetings: { day: "Usually Tuesdays", time: "15:30 – 16:30 KST" }
+  meetings: { day: "Tuesdays", time: "15:30 – 16:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 spring-2026:

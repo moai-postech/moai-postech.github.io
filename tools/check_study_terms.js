@@ -27,6 +27,20 @@ for (const m of home.matchAll(/<li class="study-term-card[\s\S]*?<\/li>/g)) {
 }
 
 const stem = (w) => w.toLowerCase().replace(/[^a-z]/g, '').slice(0, 4);
+// A stage clause may contain its own comma-separated list. Split only where
+// the next declared stage starts, keeping the existing stage-order validation.
+function stageClauses(tldr, steps) {
+  const clauses = [tldr.replace(/^How /, '').replace(/\.$/, '')];
+  for (const step of steps.slice(1)) {
+    const words = step.title.split(' ');
+    const anchor = stem(words[0] === 'How' ? words[words.length - 1] : words[0]);
+    const remainder = clauses.pop();
+    const boundary = new RegExp(',\\s+(?:and\\s+)?(?=' + anchor + '[a-z]*\\b)', 'i').exec(remainder);
+    if (!boundary) return [];
+    clauses.push(remainder.slice(0, boundary.index), remainder.slice(boundary.index + boundary[0].length));
+  }
+  return clauses;
+}
 let terms = 0;
 for (const m of schedule.matchAll(/<div class="study-panel" role="tabpanel" id="([\w-]+)"[\s\S]*?<\/table>/g)) {
   const [panel, id] = m;
@@ -59,7 +73,7 @@ for (const m of schedule.matchAll(/<div class="study-panel" role="tabpanel" id="
   if (next - 1 !== last) errors.push(`${id}: 마지막 단계가 ${next - 1}회에서 끝남(마지막 정규 회차는 ${last}회, 선택 회차 ${optional.join(', ') || '없음'}는 넣지 않음)`);
 
   // tldr clauses follow the stages: "How <subject> <verb1> ..., <verb2> ..., and <verbN> ...".
-  const clauses = tldr.replace(/^How /, '').replace(/\.$/, '').split(/, (?:and )?/);
+  const clauses = stageClauses(tldr, steps);
   if (!/^How .+\.$/.test(tldr)) errors.push(`${id}: tldr 는 'How ...' 로 시작하고 마침표로 끝나야 함`);
   if (clauses.length !== steps.length) {
     errors.push(`${id}: tldr 구절 ${clauses.length}개, 학습 단계 ${steps.length}개\n      tldr:   ${tldr}\n      stages: ${steps.map((s) => s.title).join(' / ')}`);

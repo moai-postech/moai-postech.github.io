@@ -1,5 +1,5 @@
 # 2026-11-04 강의 목차에서 섹션으로 이동
-작성자: Sangwoo Mo(moai-postech) | 대상: teaching/26f-data-engineering/slides/1~10강 HTML | 도구: Codex
+작성자: Sangwoo Mo(moai-postech) | 대상: teaching/26f-data-engineering/slides/1~10강 HTML, tools/check_study_terms.js, TODO.md | 도구: Codex
 
 > **한줄 결론: 1~10강 HTML의 목차·섹션 지도에 클릭·탭·키보드 이동을 추가하고 사이트에만 반영했다.**
 
@@ -35,3 +35,12 @@ POSTECH 요구사항: 영향 없음
 ## 남은 것
 
 배포 결과는 강의 폴더 DEPLOYED.md와 changelog에 기록. 사이트에 올리지 않은 11강 이후의 목차 탐색 기능은 로컬 완성본에 포함돼 있다.
+
+
+## CI에서 발견한 별도 검사 오류 보완
+
+- 사이트 배포는 성공했으나 check_study_terms가 앞선 AI Study 문구의 `reason, remember, and act`를 학습 단계 세 개로 잘못 분리했다. 실제 단계는 Training LLMs / From LLMs to Agents 두 개다.
+- 문구와 학습 단계는 그대로 두고, 검사기가 다음에 선언된 단계의 시작 단어 앞 쉼표에서만 구절을 나누도록 수정. Home/Schedule 일치, 단계 순서·시작 단어, 회차 범위·개수 검사는 유지.
+- 기각: 사용자 확정 문구에서 쉼표를 없애거나 검사를 warning으로 낮추기. 문구의 의미를 바꾸거나 실제 원인을 남기므로 채택하지 않음.
+- GitHub Actions의 Node.js 20 deprecation 및 runner 이미지 전환 알림은 강의 기능과 별개인 인프라 이관 사항으로 TODO에 기록.
+- 검사 보완은 현재 4개 학기의 실제 빌드 결과와 구절 내부 쉼표·정상 단계 나열·누락된 단계의 회귀 사례 3개로 확인. 사이트 콘텐츠는 수정하지 않음.

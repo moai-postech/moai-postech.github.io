@@ -173,13 +173,13 @@ terms:
     sessions:
       - n: "1"
         date: "2026-06-23"
-        title: "How to train a NN"
+        title: "Training neural networks"
         keywords: "backpropagation, computational graph"
         presenters: "최지안"
         lectures:
           - { text: "Lec 2", url: "https://www.dropbox.com/scl/fi/kv1ddh7ss8oxohtvzlsjh/2_backprop_2025.pdf?rlkey=wck8o09edebcay7mp6gohygj5&e=1&st=17v992ys&dl=0" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/summer-2026/01-how-to-train-a-nn-slides.pdf" }
+          - { text: "Slides", url: "teaching/ai-study/summer-2026/01-training-neural-networks-slides.pdf" }
       - n: "2"
         date: "2026-06-30"
         title: "Architectures: Grid"
@@ -248,7 +248,7 @@ terms:
       - n: "10"
         date: "2026-08-27"
         title: "DL Theory"
-        keywords: "UAT, generalization bound"
+        keywords: "universal approximation, generalization bounds"
         presenters: "박채원"
         optional: true
         lectures:
@@ -260,12 +260,12 @@ terms:
     sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A36"
     note:
       label: "Review"
-      text: "check lec 2, 8 from the last semester"
+      text: "Sessions 2 and 8 of Fall 2025 (Transformer, LLMs and scaling laws)"
     sessions:
       - n: "1"
         date: "2026-03-10"
         title: "LLM review"
-        keywords: "review transformer & LLM"
+        keywords: "Transformer and LLM basics"
         papers:
           - { text: "why decoder-only?", url: "teaching/ai-study/spring-2026/01-llm-review-ref-why-decoder-only.pdf" }
       - n: "2"
@@ -325,8 +325,8 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/spring-2026/06-reasoning-models-slides.pdf" }
       - n: "7"
         date: "2026-05-12"
-        title: "Long-context"
-        keywords: "long-context, efficient attention, attention sink"
+        title: "Long context"
+        keywords: "context extension, efficient attention, attention sink"
         presenters: "장세림, 정민호"
         papers:
           - { text: "lost in the middle", url: "https://arxiv.org/abs/2307.03172" }
@@ -364,7 +364,7 @@ terms:
       - n: "1"
         date: "2025-09-17"
         title: "Deep learning primer"
-        keywords: "NN, loss function, SGD"
+        keywords: "neural networks, loss functions, SGD"
         presenters: "박채원, 이현수"
         papers:
           - { text: "MIT DL primer", url: "https://www.youtube.com/watch?v=alfdI7S6wCY" }
@@ -422,7 +422,7 @@ terms:
       - n: "6"
         date: "2025-11-12"
         title: "Image generation"
-        keywords: "text-to-image generation, diffusion/flow"
+        keywords: "text-to-image generation, diffusion, flow matching"
         presenters: "박주연, 김유진"
         papers:
           - { text: "SD3", url: "https://arxiv.org/abs/2403.03206" }
@@ -447,8 +447,8 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/07-video-generation-slides.pdf" }
       - n: "8"
         date: "2025-11-26"
-        title: "LLM, scaling law"
-        keywords: "LLM, scaling law, in-context learning"
+        title: "LLMs and scaling laws"
+        keywords: "scaling laws, emergent abilities, in-context learning"
         presenters: "이민주, 이수겸"
         papers:
           - { text: "GPT-3", url: "https://arxiv.org/abs/2005.14165" }
@@ -457,11 +457,11 @@ terms:
         demos:
           - { text: "Qwen3", url: "https://huggingface.co/spaces/Qwen/Qwen3-Demo" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2025/08-llm-scaling-law-slides.pdf" }
+          - { text: "Slides", url: "teaching/ai-study/fall-2025/08-llms-and-scaling-laws-slides.pdf" }
       - n: "9"
         date: "2025-12-03"
         title: "Multimodal LLM"
-        keywords: "multimodal perception & generation"
+        keywords: "unified perception and generation"
         presenters: "최지안, 최주연"
         papers:
           - { text: "Cambrian-1", url: "https://arxiv.org/abs/2406.16860" }

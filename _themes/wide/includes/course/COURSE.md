@@ -19,7 +19,7 @@
 
 ## 강의마다 달라도 되는 것
 
-- 머리글은 POSTECH 워드마크 옆에 원 학수번호(`code` 의 첫 번호, IMEN)와 강의명을 둔다(`IMEN891K Data Engineering`). 크로스리스팅 전체는 본문 머리의 `code` 한 줄에만 둔다. 480px 이하에서는 자리가 없어 머리글의 학수번호를 숨긴다(교수 2026-11-02).
+- 머리글은 POSTECH 워드마크 옆에 원 학수번호(`code` 의 첫 번호, IMEN)와 강의명을 둔다(`IMEN891K Data Engineering`). 크로스리스팅 전체는 본문 머리의 `code` 한 줄에만 둔다. 휴대폰에서도 머리글에 학수번호를 강의명과 같은 크기로 둔다. 360px 미만에서는 한 줄에 맞도록 학수번호·강의명·POSTECH 을 한 단계(`--text-control`) 줄인다(교수 2026-11-04, 2026-11-02 의 480px 이하 숨김을 대체).
 - 칸과 절은 데이터가 있을 때만 나온다: 운영 정보의 Location & time(`location`, `meetings`)·Teaching assistants(`teaching_assistants`)·Office hours(`office_hours`)·Other terms(`other_terms`), Reading 칸(`reading`), Lab 링크(`lab`), office hours, 링크 버튼, Past exams(`exams`). 운영 정보의 Other Courses 는 `_data/teaching.yml` 에서 현재 과목을 제외한 모든 과목의 고정 주소를 가져오며, 학기 없이 과목명만 표시한다. 모든 학기에 표시하고 25F Data Engineering 도 포함한다(교수 2026-11-03, 앞선 학기만 링크하던 규칙을 대체). Other Terms(`other_terms`)는 나중 학기가 지난 학기만 가리킨다(교수 2026-10-30).
 - 파트 이름은 자유다(`Part I`, `Software 3.0`). 자료 절 제목은 `resources_title`(기본 `Reference courses`).
 - 스케줄 표는 강의마다 같은 격자를 쓴다(교수 2026-11-03: "세 강의 양식이 모두 동일", "맨 오른쪽 열은 끝에서 어느 정도 마진", "Topic 은 너무 길지도 작지도 않게", "PDF랑 Lab을 다른 열로, 가운데 정렬"). Date 108px, # 40px, Slides 56px(링크 글자는 `PDF`), Lab 56px 는 머리글과 함께 가운데 정렬하고 Topic 이 나머지 폭을 쓴다. Lab 열은 lab 이 있는 강의에만 생긴다. Reading 은 있으면 맨 오른쪽 열이고 오른쪽 정렬한다(넓은 화면 168px, 좁은 화면 136px). 맨 오른쪽 열은 행 끝에서 여백(1000px 이상 64px, 그 아래 12px)을 둔 선에서 끝나고, 초청 행 장소·시간은 그 열의 마지막 글자 끝(Reading 끝, 또는 가운데 정렬된 Lab 글자 끝)에 맞춘다. 표 최대 폭은 사이트 폭 그대로다.

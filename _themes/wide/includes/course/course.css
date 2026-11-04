@@ -395,6 +395,8 @@ a.cs-title:hover { color: var(--accent); }
 @media (max-width: 960px) {
   .study-table .sc-topic { width: 20%; }
   .study-table .sc-papers { width: 11%; }
+  .study-table .st-links[data-label] { position: relative; padding-left: 5.2em !important; }  /* cards drop the table heading, so Papers and Demo name themselves; the label sits in its own gutter, so wrapped links start under the first one (교수 2026-11-04) */
+  .study-table .st-links[data-label]::before { content: attr(data-label); position: absolute; left: 0; top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; line-height: calc(1.5 * var(--text-meta)); }
   .course-parts, .course-grading { grid-template-columns: 1fr; gap: var(--space-3); }
   .course-hero { grid-template-columns: 1fr; gap: var(--space-6); }
 }

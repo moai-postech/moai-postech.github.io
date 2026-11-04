@@ -17,3 +17,10 @@ Schedule·Home 의 tldr, 단계 제목, 단계 설명, 참고 강의 줄, 참여
 
 - 사용자 안대로 prompting 을 "사전학습한 모델을 잘 활용하는 법"으로 풀었다: `How an LLM is trained and used: **pretraining**, prompting that puts it to good use, then **post-training** that aligns it with what people want.` prompting 은 훈련이 아니라서 머리를 `trained and used` 로 넓혔다. 굵게는 pretraining → post-training 흐름 그대로.
 - 기각: `pretraining and how to use it well by prompting` (사용자 초안의 직역). 다른 단계와 같은 명사구 나열 꼴에 맞지 않는다.
+
+## 3회차: Summer 2026 Lectures 열
+
+- 머리글 `Lec` → `Lectures`(사용자가 Lecture 를 거쳐 Lectures 로 정함). 칸 여러 개를 담는 열이라 복수형.
+- 칸 양식 `Lec 5 Lec 6` → `Lec 5, 6`. 라벨은 첫 링크에만 두고 나머지는 번호만, 쉼표로 잇는다. Slides 칸의 `PDF 1, 2` 와 같은 꼴. 시트 값은 그대로 두고 템플릿에서 바꿨다(동기화가 덮어쓰지 않게).
+- 가운데 정렬 → 왼쪽 정렬. Papers 열처럼 길이가 다른 목록이라 왼쪽이 맞다. course.css 의 가운데 정렬 목록에서 `.st-lectures` 를 뺐다.
+- STUDY.md 표 구성 항목에 반영. 검사: push 뒤 format run, 라이브 표 확인.

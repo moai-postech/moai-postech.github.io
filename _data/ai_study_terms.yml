@@ -14,7 +14,7 @@ fall-2026:
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 summer-2026:
   cohort: "2.5"  # 여름 학기는 정규 학기 사이의 추가 기수라 2.5기(교수 2026-11-03)
-  tldr: "How neural network architectures are built and trained, representation and generation let them model data, and generalization explains why they work on new data."
+  tldr: "How architectures are trained, representation and generation model data, and generalization explains why they work on new data."
   icon: "assets/img/icons/study-deep-learning.svg"
   format: lectures
   reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
@@ -40,7 +40,7 @@ spring-2026:
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
   cohort: "1"
-  tldr: "How models build perception of images and text, generation lets them create images and videos, and multimodal LLMs unify both in one model."
+  tldr: "How models build perception of images and text, generation lets them create images and videos, and multimodal LLMs unify both."
   icon: "assets/img/icons/study-foundation-models.svg"
   learning_path:
     - { start: 1, end: 5, title: "Perception", text: "How models **understand** what they see and read: neural networks and Transformers, then visual perception, image-text encoders, and grounding." }

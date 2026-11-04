@@ -152,3 +152,15 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
   - From LLMs to Agents: 어색한 "reasoning that thinks longer" 를 "longer reasoning at test time" 으로, "memory through" 를 "memory from" 으로.
   - 그대로 둔 것: Physical AI 2파트(교수가 직접 고친 끝맺음), Architectures and Training, Fall 2025 세 꼭지와 tldr, 각 학기 참고 강의 줄.
 - 고치지 않은 것(시트 원문, 동기화가 덮어씀): 회차 제목·키워드 표기(예: `review transformer & LLM`, `LLM, scaling law`)와 Spring 2026 안내 줄 `Review check lec 2, 8 from the last semester`. 콘텐츠는 교수가 나중에 시트에서 고친다고 했다.
+
+## 17차(2026-11-04): 요약 한 줄, 시트 표기 정리
+교수: "혹시 딥러닝이랑 FM 강의설명 컴퓨터에서 볼떄 한줄로 떨어지게 바꾸는건 별로?", "시트도 너가 고쳐줘".
+
+- tldr 한 줄: 본문 폭 1200px 에서 한 줄은 135자 안팎이다. Fall 2026(108자), Spring 2026(117자)은 한 줄이었고, Summer 2026(161자), Fall 2025(139자)는 두 줄이었다. 두 문장을 127자, 126자로 줄였다(라이브 페이지에서 잰 폭 1101px, 1102px). 탭을 바꿔도 요약 줄 높이가 같아 아래 정보 줄과 단계 카드가 밀리지 않는다. `STUDY.md` 에 125자 안팎 규칙을 더했다.
+  - Summer 2026: "How architectures are trained, representation and generation model data, and generalization explains why they work on new data."
+  - Fall 2025: "How models build perception of images and text, generation lets them create images and videos, and multimodal LLMs unify both."
+- 스터디 시트 `schedule` 탭: 사이트에 보이는 회차 제목·키워드·안내 줄 가운데 표기가 고르지 않은 11칸만 값으로 고쳤다(`gsheet.py values`, 서식은 그대로). 고치기 전 값은 세션 scratchpad 에 JSON 으로 남겼다.
+  - 제목: `How to train a NN` → `Training neural networks`, `long-context` → `long context`, `LLM, scaling law` → `LLMs and scaling laws`.
+  - 키워드: `UAT, generalization bound` → `universal approximation, generalization bounds`, `review transformer & LLM` → `Transformer and LLM basics`, `long-context, …` → `context extension, …`, `NN, loss function, SGD` → `neural networks, loss functions, SGD`, `diffusion/flow` → `diffusion, flow matching`, `LLM, scaling law, in-context learning` → `scaling laws, emergent abilities, in-context learning`, `multimodal perception & generation` → `unified perception and generation`.
+  - Spring 2026 안내: `check lec 2, 8 from the last semester` → `Sessions 2 and 8 of Fall 2025 (Transformer, LLMs and scaling laws)`.
+  - 그대로 둔 것: 논문·데모 이름(References·Demo 열, 원 논문 표기), 약어 제목(CoT, SFT, RLHF, VLA), Summer 2026 의 MIT 강의식 제목(Architectures: Grid 등), 사이트에 나오지 않는 Fall 2026·Summer 2026 안내 줄.

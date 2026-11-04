@@ -76,7 +76,7 @@
    short values of one shape (number, date, cohort, entry year, link columns, presentation slots) centre;
    text of uneven length (titles, people, papers, reading, departments, lists of markers) stays left;
    a heading takes its column's alignment; stacked cards on narrow screens read left. */
-.course-schedule :is(th, td):is(.cs-n, .cs-date, .cs-slides, .st-lectures, .project-round),
+.course-schedule :is(th, td):is(.cs-n, .cs-date, .cs-slides, .project-round),
 /* Short fixed-width values (#, cohort, entry, department, LinkedIn chip) sit centred; names, IDs and participation chips read from the left (교수 2026-11-03) */
 .study-members-table :is(th, td):is(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(7)) { text-align: center; }
 .lecture-schedule :is(th, td).cs-slides { text-align: left; }  /* course schedules: the cell is exactly its PDF and Lab columns (.cs-mat), each centred under its own heading (교수 2026-11-03) */
@@ -289,7 +289,7 @@ a.cs-title:hover { color: var(--accent); }
 .st-links a, .st-links span { display: inline-block; vertical-align: top; margin-right: var(--space-3); font-size: var(--text-meta); }  /* top, not baseline: a name that folds onto two lines in a narrow column (1024px) would otherwise put the row's baseline on its last line and push the rest of the row down */
 .st-links a { color: var(--text); }
 .st-links a:hover { color: var(--accent); }
-.st-lectures a { color: var(--accent); }
+.st-lectures a { color: var(--accent); margin-right: 0; }  /* "Lec 5, 6" reads as one list, left-aligned like the Papers column (교수 2026-11-04) */
 .st-who { color: var(--muted); font-size: var(--text-meta); }
 .is-optional .cs-title { color: var(--muted); font-weight: var(--weight-regular); }
 

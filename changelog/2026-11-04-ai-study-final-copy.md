@@ -60,3 +60,9 @@ Schedule·Home 의 tldr, 단계 제목, 단계 설명, 참고 강의 줄, 참여
 - 교수: "슬라이드 1 담당학생한테만 보내". Slides 2 원본(`MoAI 윤서현.pptx`)의 Drive 소유자가 윤서현 학생이라, Slides 1 은 이지윤 학생 것으로 보고 이지윤(jylee796@postech.ac.kr)에게만 보냈다. 주소는 study-members 시트에서 찾았다.
 - Outlook 웹(이 맥 Chrome)에서 2026-11-04 16:51 KST 발송, 보낸편지함 확인. 제목 `AI 스터디 6회차 발표자료 공유 설정 부탁`, "링크가 있는 모든 사용자"(뷰어)로 바꿔 달라는 내용.
 - 남은 것: 공유가 열리면 매일 06:30 KST `ai-study-sync` 가 PDF 로 바꾼다. 답장이 오면 바로 수동 실행하고 `TODO.md` 항목을 지운다.
+
+## 9회차: 6회 Slides 1 PDF 반영
+
+- 이지윤 학생이 2026-11-04 16:57 KST 메일로 공유를 '링크가 있는 모든 사용자'로 바꿨다고 답장했다.
+- `ai-study-sync` 를 수동 실행(run 41799686606)해 Slides 1 이 `teaching/ai-study/fall-2026/06-dexterous-manipulation-slides.pdf` 로 바뀌었다(봇 커밋 2b1d880). 배포 뒤 라이브 주소 200, 2.3 MB 확인.
+- `TODO.md` 항목을 지웠다. 감사 답장은 교수 문안 승인 뒤 보낸다.

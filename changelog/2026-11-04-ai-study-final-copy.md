@@ -24,3 +24,10 @@ Schedule·Home 의 tldr, 단계 제목, 단계 설명, 참고 강의 줄, 참여
 - 칸 양식 `Lec 5 Lec 6` → `Lec 5, 6`. 라벨은 첫 링크에만 두고 나머지는 번호만, 쉼표로 잇는다. Slides 칸의 `PDF 1, 2` 와 같은 꼴. 시트 값은 그대로 두고 템플릿에서 바꿨다(동기화가 덮어쓰지 않게).
 - 가운데 정렬 → 왼쪽 정렬. Papers 열처럼 길이가 다른 목록이라 왼쪽이 맞다. course.css 의 가운데 정렬 목록에서 `.st-lectures` 를 뺐다.
 - STUDY.md 표 구성 항목에 반영. 검사: push 뒤 format run, 라이브 표 확인.
+
+## 4회차: LLM 1단계 세 꼭지, DL 1단계 inductive bias
+
+- Spring 2026 1단계 굵게를 세 꼭지로: pretraining, prompting, post-training(사용자 제안). STUDY.md 굵게 규칙을 "보통 한두 개, 흐름이 세 단계면 세 개"로 넓혔다. tldr 은 그대로 둔다. `pretraining, prompting, and post-training` 을 넣으면 check_study_terms 가 쉼표로 구절을 나눠 단계 수와 어긋난다.
+- Summer 2026 1단계: `**architectures** designed for their data, from CNNs to Transformers` → `architectures with the right **inductive bias** for each data type`. 사용자가 inductive bias 와 modeling principle 을 물었고, 데이터 구조에 맞춘 architecture 설계라는 뜻을 정확히 가리키는 inductive bias 를 골랐다. modeling principle 은 범위가 넓어 2단계(encode/decode)와도 겹친다.
+- 기각: `architectures whose inductive biases fit the data, from CNNs to Transformers`(334px 카드에서 4줄).
+- 검사: 라이브 페이지에 넣어 줄 수 측정(LLM 2줄, DL 3줄), push 뒤 format run.

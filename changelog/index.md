@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-05 | [de-lecture-eleven](2026-11-05-de-lecture-eleven.md) | Sangwoo Mo(sangwoomo) | 11강 HTML·PDF | MapReduce·Spark 두 파트54장 최종판 |
+| 2026-11-05 | [de-lecture-eleven](2026-11-05-de-lecture-eleven.md) | Sangwoo Mo(sangwoomo) | 11강 HTML·PDF | MapReduce·Spark 두 파트60장·도구 개발 배경 복원 |
 | 2026-11-05 | [schedule-tap-target](2026-11-05-schedule-tap-target.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄 | 휴대폰 PDF·Lab 링크 터치 영역을 48px 높이로, 보이는 모양은 그대로 |
 | 2026-11-04 | [course-code-mobile](2026-11-04-course-code-mobile.md) | Sangwoo Mo(sangwoomo) | 강의 머리글, push 전 훅 | 휴대폰에서도 학수번호 표시, 360px 미만은 한 단계 작게. Ruby 3.4 로컬 빌드 수리 |
 | 2026-11-04 | [focus-three-columns](2026-11-04-focus-three-columns.md) | Sangwoo Mo(sangwoomo) | Home Our focus | 논문 2편인 방향도 세 칸 유지, 세 번째 칸 비움 |

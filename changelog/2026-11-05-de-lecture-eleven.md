@@ -1,7 +1,7 @@
 # 2026-11-05 데이터 엔지니어링11강 최종판
 작성자: Sangwoo Mo(sangwoomo) | 대상: `teaching/26f-data-engineering/slides/11_big-data-I.html`, `teaching/26f-data-engineering/slides/11_big-data-I.pdf` | 도구: Codex
 
-> **한줄 결론: 11강을 MapReduce·Spark 두 파트의54장판으로 교체한다.**
+> **한줄 결론: 11강을 MapReduce·Spark 두 파트의60장판으로 교체한다.**
 
 POSTECH 요구사항: 영향 없음. 사이트의 머리글·꼬리말·강의 바닥·로고·설정은 유지.
 
@@ -24,3 +24,7 @@ POSTECH 요구사항: 영향 없음. 사이트의 머리글·꼬리말·강의 �
 ## 남은 것
 
 배포CI와 라이브 파일 해시를 강의 작업 폴더의 배포 기록에서 확인한다. 이전 두 파일은 이 커밋의 부모 이력에 보존한다.
+
+## 후속: 개발 배경 복원
+
+사용자가 작년의 도구 개발 배경을 더하고 사이트·Drive·PLMS에 같은 판을 배포하도록 요청했다. Google의 데이터 처리와2004년 MapReduce 논문, Hadoop의 Nutch 기원과 인형 이름, Berkeley의 Spark와 반복 분석의 필요를6장 보강했다. 기존 기술 설명과 실습을 유지한60장판이며 전체 PDF 시각 검수와7단계 검사 통과.54장만 남기는 안은 사용자의 내용 보존 요청으로 폐기했다.

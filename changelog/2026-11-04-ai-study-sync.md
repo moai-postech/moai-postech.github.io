@@ -7,6 +7,7 @@
 교수 2026-10-27: 스터디 시트를 seminar-sync 처럼 매일 자동 동기화.
 ## 반영 내역
 - 10:37 KST: 일정 갱신(Fall 2026 15회, Summer 2026 10회, Spring 2026 9회, Fall 2025 9회); 새 자료 `teaching/ai-study/fall-2025/08-llms-and-scaling-laws-slides.pdf`, `teaching/ai-study/summer-2026/01-training-neural-networks-slides.pdf`
+- 17:28 KST: 일정 갱신(Fall 2026 15회, Summer 2026 10회, Spring 2026 9회, Fall 2025 9회); 새 자료 `teaching/ai-study/fall-2026/06-dexterous-manipulation-slides.pdf`
 ## 기각한 안과 이유
 없음
 ## 남은 것

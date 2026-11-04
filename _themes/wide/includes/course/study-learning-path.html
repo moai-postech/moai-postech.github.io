@@ -6,5 +6,5 @@
       <span class="study-step-text">{{ step.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>
     </div></li>{% endfor %}
   </ol>{% endif %}
-  {% comment %} The source course sits under the stage cards, after the term's own structure (교수 2026-11-04). {% endcomment %}{% if include.info.reference_course %}<p class="study-reference">{{ include.info.reference_course.lead | default: "Based on" }} <a href="{{ include.info.reference_course.url }}">{{ include.info.reference_course.title }}</a> ({{ include.info.reference_course.term }}).</p>{% endif %}
+  {% comment %} One or more source courses, joined as "A (term) and B (term)" (교수 2026-11-04). They sit under the stage cards, after the term's own structure (교수 2026-11-04). {% endcomment %}{% assign ref = include.info.reference %}{% if ref.courses %}<p class="study-reference">{{ ref.lead | default: "Based on" }} {% for c in ref.courses %}{% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}<a href="{{ c.url }}">{{ c.title }}</a> ({{ c.term }}){% endfor %}.</p>{% endif %}
 </div>

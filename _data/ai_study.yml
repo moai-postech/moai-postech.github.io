@@ -84,7 +84,7 @@ terms:
         demos:
           - { text: "T-Rex", url: "https://tactile-reactive-dexterous.github.io/" }
         materials:
-          - { text: "Slides 1", url: "https://docs.google.com/presentation/u/0/d/1TXiGdqg7T_n9mTA6sQiwyEelYPRQKHYe/edit" }
+          - { text: "Slides 1", url: "teaching/ai-study/fall-2026/06-dexterous-manipulation-slides.pdf" }
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/06-dexterous-manipulation-slides-2.pdf" }
       - n: "7"
         date: "2026-11-10"

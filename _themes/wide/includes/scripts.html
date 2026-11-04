@@ -95,6 +95,15 @@ document.querySelectorAll('[data-filter]').forEach(function (box) {
 document.querySelectorAll('.has-mini').forEach(function (band) {
   var frame = band.querySelector('.mini-preview iframe');
   if (!frame) return;
+  // With a poster the map loads only once this page has finished loading and is idle, so the two do not
+  // compete for the processor and the map's first turns run smoothly; the poster covers the wait.
+  if (frame.dataset.src) {
+    var start = function () {
+      var go = function () { frame.src = frame.dataset.src; };
+      if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 1500 }); else setTimeout(go, 200);
+    };
+    if (document.readyState === 'complete') start(); else window.addEventListener('load', start);
+  }
   function send(e) {
     if (!frame.contentWindow) return;
     var r = frame.getBoundingClientRect();

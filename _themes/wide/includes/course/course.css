@@ -245,7 +245,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-schedule-overview { margin-bottom: var(--space-7); }
 .study-overview h3 { margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: var(--weight-emphasis); }
 .study-overview p { margin: 0; color: var(--muted); }
-.study-overview .study-reference { margin-top: var(--space-2); font-size: var(--text-meta); }
+.study-overview .study-reference { margin-top: var(--space-4); font-size: var(--text-meta); }
 .study-reference a { color: var(--accent); font-weight: var(--weight-emphasis); }
 .study-tablist { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
 .study-tablist button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: var(--space-2) var(--space-5); border: 0; border-radius: var(--radius-2); background: var(--surface); color: var(--muted); font: inherit; font-size: var(--text-body); line-height: 1.4; text-align: left; cursor: pointer; }

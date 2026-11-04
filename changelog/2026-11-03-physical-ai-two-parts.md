@@ -175,3 +175,10 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
   - 그대로 둔 것: Physical AI(human abilities, foundation models), Fall 2025(understand, create, unify). 한 단어로 그 꼭지가 바로 읽힌다.
 - `STUDY.md` 의 굵게 규칙을 "핵심어 하나" 에서 "흐름이 보이는 한두 곳, 제목을 되풀이하거나 덩어리 전체를 가리키는 말은 빼기" 로 고쳤다.
 - 기각: agent 를 굵게 두는 안(2파트 제목이 이미 Agents 라 겹친다), action loop 까지 세 곳을 굵게 하는 안(교수가 두 개까지로 정함).
+
+## 19차(2026-11-04): 시간 줄과 참여 안내
+교수: "time에서 Usually 이거는 빼자", "Open to POSTECH undergraduates of any major. Curiosity about AI is all you need; we learn the rest together. 여기서 any major beyond IME 라는 느낌을 하나 넣어주면 어떄".
+
+- Summer 2026 시간 줄: `Usually Tuesdays` → `Tuesdays`(`ai_study_terms.yml`). 9회(08/20)는 목요일이지만 교수 결정대로 대표 요일만 쓴다.
+- 스터디 Home 의 How to join: "Open to POSTECH undergraduates of **any major**, not just IME. …"(`teaching/ai-study/index.md`). 굵게는 any major 그대로다.
+- 기각: "beyond IME" 를 그대로 쓰는 안. beyond 는 IME 를 넘어서는 수준처럼 읽힐 수 있고, "not just IME" 가 "산경만이 아니다"를 더 바로 말한다.

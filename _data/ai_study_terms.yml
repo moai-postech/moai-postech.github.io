@@ -19,9 +19,9 @@ summer-2026:
   format: lectures
   reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
   learning_path:
-    - { start: 1, end: 3, title: "Architectures and Training", text: "How deep networks are built and trained: backpropagation first, then **architectures designed for their purpose**, from CNNs for images to Transformers for sequences." }
-    - { start: 4, end: 7, title: "Representation and Generation", text: "How networks model data: they **encode** it into representations and **decode** representations into new samples." }
-    - { start: 8, end: 10, title: "Generalization and Theory", text: "How models work **beyond the training data**: on shifted distributions and new tasks, and why deep networks generalize at all." }
+    - { start: 1, end: 3, title: "Architectures and Training", text: "How deep networks are built and trained: backpropagation first, then **architectures** designed for their data, from CNNs to Transformers." }
+    - { start: 4, end: 7, title: "Representation and Generation", text: "How networks model data: they **encode** it into representations and **decode** them into new samples." }
+    - { start: 8, end: 10, title: "Generalization and Theory", text: "How models **generalize** beyond the training data: to shifted distributions and new tasks, and why this works at all." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "15:30 – 16:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }

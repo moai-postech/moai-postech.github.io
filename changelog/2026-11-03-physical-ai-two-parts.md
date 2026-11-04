@@ -200,3 +200,10 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말은 그대로)
 - Schedule 학기 탭을 옛 학기가 왼쪽(Fall 2025 → Fall 2026)에 오게 바꿨다. Home 타임라인과 Members 탭이 이미 이 순서라 두 페이지의 순서가 달라 헷갈린다는 사용자 지적. 주소에 학기가 없으면 여전히 이번 학기(맨 오른쪽)가 열린다.
 - 11-03 의 newest first 결정을 대체했다. STUDY.md 갱신.
 - 검사: push 뒤 format run 의 checks, 라이브 탭 순서와 기본 선택 확인.
+
+## 23회차 (2026-11-04): 참고 강의 줄 위치, 딥러닝 굵게, 설명 3줄
+
+- Based on, See also 줄을 단계 카드 위에서 아래로 옮겼다(사용자 요청). 카드와 띄우려고 margin-top 을 space-2 에서 space-4 로.
+- Summer 2026 굵게를 키워드만 남겼다: architectures, encode / decode, generalize. 22회차의 구절 굵게(architectures designed for their purpose, beyond the training data)도 많다는 지적. 제목 단어를 굵게 하지 않는다던 규칙은 키워드 우선으로 풀었다.
+- 단계 설명을 컴퓨터 화면에서 3줄 안으로 했다. 실측(1440px, 카드 334px)으로 4줄은 DL 1단계 하나였고 새 문구는 3줄이다.
+- 검사: 라이브 페이지에 새 문구를 넣어 줄 수 측정, push 뒤 format run 의 checks.

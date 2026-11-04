@@ -55,7 +55,7 @@
 
 - 마지막 자료 열은 강의 스케줄처럼 `Materials` 한 머리 대신 그 학기에 있는 자료 종류마다 소제목을 둔다: `Slides`(시트의 필기 `Notes` 도 여기에 든다), `Lab`(학생 실습 노트북, 시트 동기화 데이터의 `Demo`). 없는 종류의 소제목은 두지 않는다. 칸에는 `PDF`, 여러 개면 `PDF 1, 2`, 실습은 `Lab` 을 쓴다. 각 종류는 모든 행에서 같은 자리에서 시작한다(교수 2026-11-03: Materials 로 묶기보다 강의와 같은 Slides·Lab 구조).
 - Papers·Demo 열은 읽을 논문과 외부 데모 도구, 자료 열(Slides·Lab)은 발표자료와 학생 실습 노트북이다. 같은 링크를 중복 나열하지 않는다.
-- Summer 2026은 MIT 6.7960 Deep Learning, Fall 2025를 참고했다고 Overview에 명시하고 해당 연도 원 강의 페이지를 연결한다. Spring 2026은 Princeton COS 597R(Fall 2024)을 `See also` 로 연결한다. 그 강의를 그대로 따르지 않아 `Based on` 이 아니다(`reference_course.lead`, 교수 2026-11-03). Lec에는 시트 References의 원 강의 슬라이드를, 자료 열에는 학생이 별도 업로드한 발표자료·필기만 표시한다. 학생 추가 자료가 없는 회차는 비워 둔다. 필기와 발표자료는 모두 Slides 로 보인다(교수 2026-11-03). 8회 Generalization 공개 사본도 학생 추가 자료로 보존한다.
+- Summer 2026은 MIT 6.7960 Deep Learning, Fall 2025를 참고했다고 Overview에 명시하고 해당 연도 원 강의 페이지를 연결한다. Spring 2026은 Princeton COS 597R(Fall 2024)을 `See also` 로 연결한다. 그 강의를 그대로 따르지 않아 `Based on` 이 아니다(`reference.lead`, 교수 2026-11-03). Fall 2026은 Berkeley CS 294-277 Robots That Learn(Malik)과 CS 294-43(Darrell), Fall 2025는 Stanford CS231n과 MIT 6.S978 Deep Generative Models를 `See also` 로 연결한다(교수 2026-11-04). 참고 강의는 `reference.courses` 목록이고 여럿이면 한 줄에 `A (term) and B (term)` 으로 잇는다. Lectures에는 시트 References의 원 강의 슬라이드를, 자료 열에는 학생이 별도 업로드한 발표자료·필기만 표시한다. 학생 추가 자료가 없는 회차는 비워 둔다. 필기와 발표자료는 모두 Slides 로 보인다(교수 2026-11-03). 8회 Generalization 공개 사본도 학생 추가 자료로 보존한다.
 - 자료 사본과 동기화 경로는 저장소 `AGENTS.md`의 슬라이드 규칙을 따른다. 탭 전체 학기와 모바일에서 링크 잘림·가로 넘침·마감선 한 줄을 확인한다.
 
 기존 Home의 학기 fragment 링크는 Schedule의 같은 탭으로 이동한다. Teaching의 학기 링크도 Schedule을 가리킨다.

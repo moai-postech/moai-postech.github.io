@@ -31,3 +31,11 @@ Schedule·Home 의 tldr, 단계 제목, 단계 설명, 참고 강의 줄, 참여
 - Summer 2026 1단계: `**architectures** designed for their data, from CNNs to Transformers` → `architectures with the right **inductive bias** for each data type`. 사용자가 inductive bias 와 modeling principle 을 물었고, 데이터 구조에 맞춘 architecture 설계라는 뜻을 정확히 가리키는 inductive bias 를 골랐다. modeling principle 은 범위가 넓어 2단계(encode/decode)와도 겹친다.
 - 기각: `architectures whose inductive biases fit the data, from CNNs to Transformers`(334px 카드에서 4줄).
 - 검사: 라이브 페이지에 넣어 줄 수 측정(LLM 2줄, DL 3줄), push 뒤 format run.
+
+## 5회차: 참고 강의 여러 개
+
+- 데이터 키를 `reference_course`(하나) → `reference: { lead, courses: [...] }`(목록)로 바꿨다. 여럿이면 `See also A (term) and B (term).` 한 줄로 잇는다. Summer 2026(Based on MIT 6.7960), Spring 2026(See also Princeton COS 597R)은 새 꼴로 옮겼고 보이는 문장은 같다.
+- Fall 2026 See also: Berkeley CS 294-277 Robots That Learn(Malik, Spring 2026), CS 294-43 Large Scale Vision, Language, and Action Models(Darrell, Fall 2025). 사용자 선택.
+- Fall 2025 See also: Stanford CS231n(Spring 2025, 2025 페이지), MIT 6.S978 Deep Generative Models(Kaiming He, Fall 2024). 사용자 선택.
+- 기각한 후보와 이유는 대화에서 정리했다: MIT 6.4210(manipulation 하나), UPenn Physical Intelligence(RL·sim-to-real 중심), Berkeley CS 280(기하·3D 비중).
+- 네 링크 모두 200 응답 확인. 검사: push 뒤 format run, 라이브 문장 확인.

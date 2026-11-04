@@ -7,7 +7,7 @@ fall-2026:
   icon: "assets/img/icons/physical.svg"
   learning_path:
     - { start: 1, end: 6, title: "Robot Embodiment", text: "How robot tasks mirror **human abilities**: arms that grasp, legs that walk, a sense of where to go, and humanoid bodies with dexterous hands, all learned from data." }
-    - { start: 7, end: 11, title: "Foundation Models for Robotics", text: "How **foundation models** help robots act: 3D representation and reconstruction, spatial reasoning, VLA, and world models bring perception and planning." }
+    - { start: 7, end: 11, title: "Foundation Models for Robotics", text: "How **foundation models** help robots act: an understanding of 3D space, vision and language turned into action, and world models that bring perception and planning." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 302" }
@@ -19,9 +19,9 @@ summer-2026:
   format: lectures
   reference_course: { title: "MIT 6.7960 Deep Learning", term: "Fall 2025", url: "https://deeplearning6-7960.github.io/2025/index.html" }
   learning_path:
-    - { start: 1, end: 3, title: "Architectures and Training", text: "How deep networks are built and trained: **backpropagation** first, then **CNNs, RNNs, and Transformers** for images and sequences." }
-    - { start: 4, end: 7, title: "Representation and Generation", text: "How networks model data: **learning representations** by reconstruction and similarity, then **generating new samples**." }
-    - { start: 8, end: 10, title: "Generalization and Theory", text: "How models generalize beyond the training data: **distribution shift** and **transfer** to new tasks, then the theory of why deep networks work." }
+    - { start: 1, end: 3, title: "Architectures and Training", text: "How deep networks are built and trained: backpropagation first, then **architectures designed for their purpose**, from CNNs for images to Transformers for sequences." }
+    - { start: 4, end: 7, title: "Representation and Generation", text: "How networks model data: they **encode** it into representations and **decode** representations into new samples." }
+    - { start: 8, end: 10, title: "Generalization and Theory", text: "How models work **beyond the training data**: on shifted distributions and new tasks, and why deep networks generalize at all." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "15:30 – 16:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }
@@ -32,8 +32,8 @@ spring-2026:
   icon: "assets/img/icons/study-llm.svg"
   reference_course: { lead: "See also", title: "Princeton COS 597R Deep Dive into Large Language Models", term: "Fall 2024", url: "https://princeton-cos597r.github.io/" }  # 참고 강의일 뿐 그대로 따르지 않아 "See also"(교수 2026-11-03). Summer 2026 처럼 그대로 따른 강의는 lead 없이 "Based on"
   learning_path:
-    - { start: 1, end: 5, title: "Training LLMs", text: "How an LLM is trained: **pretraining** and prompting like CoT first, then **post-training** with SFT, RLHF, and AI feedback." }
-    - { start: 6, end: 9, title: "From LLMs to Agents", text: "How an LLM grows into an agent: **reasoning** that runs longer at test time, **memory** from long context and retrieval, then an action loop with tools." }
+    - { start: 1, end: 5, title: "Training LLMs", text: "How an LLM is trained: **pretraining** and prompting first, then **post-training** that aligns it with what people want." }
+    - { start: 6, end: 9, title: "From LLMs to Agents", text: "How an LLM grows into an agent: **reasoning** over many steps, **memory** beyond a single context, then acting in a loop with tools." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:30 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }
@@ -43,7 +43,7 @@ fall-2025:
   tldr: "How models build perception of images and text, generation lets them create images and videos, and multimodal LLMs unify both."
   icon: "assets/img/icons/study-foundation-models.svg"
   learning_path:
-    - { start: 1, end: 5, title: "Perception", text: "How models **understand** what they see and read: neural networks and Transformers, then visual perception, image-text encoders, and grounding." }
+    - { start: 1, end: 5, title: "Perception", text: "How models **understand** what they see and read: the basics of networks and Transformers, then seeing images and linking them with text." }
     - { start: 6, end: 7, title: "Generation", text: "How models **create** new content: generating images, then videos, from a text prompt." }
     - { start: 8, end: 9, title: "Multimodal LLMs", text: "How one model brings the two together: scaled-up LLMs, then multimodal LLMs that **unify** perception and generation." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }

@@ -13,7 +13,7 @@
   python3 tools/seminar_sync.py --changelog           # GitHub Actions: 바뀐 것이 있으면 changelog 도 쓴다
   python3 tools/seminar_sync.py --pdf-cache DIR       # DIR/<Drive 파일 ID>.pdf 가 있으면 변환 대신 그것을 쓴다(PowerPoint 로 구운 PDF)
 
-필요한 것: Python 3.9+, pypdf. pptx 슬라이드가 있으면 LibreOffice(soffice).
+필요한 것: Python 3.9+, pypdf. pptx 슬라이드가 있으면 MS Office(맥), 없으면 LibreOffice(soffice). tools/office_pdf.py
 """
 import argparse
 import csv
@@ -189,13 +189,10 @@ def download(fid, dest):
 def to_pdf(src, workdir):
     if src.read_bytes()[:4] == b"%PDF":
         return src
-    soffice = shutil.which("soffice") or shutil.which("libreoffice")
-    if not soffice:
-        raise RuntimeError(f"{src.name}: PDF 가 아니고 LibreOffice 가 없어 바꿀 수 없다")
+    from office_pdf import office_to_pdf  # MS Office 가 있으면 그것, 없으면 LibreOffice
     pptx = src.with_suffix(".pptx")
     shutil.copy(src, pptx)
-    subprocess.run([soffice, "--headless", "--convert-to", "pdf", "--outdir", str(workdir), str(pptx)],
-                   check=True, capture_output=True)
+    office_to_pdf(str(pptx), str(pptx.with_suffix(".pdf")))
     return pptx.with_suffix(".pdf")
 
 

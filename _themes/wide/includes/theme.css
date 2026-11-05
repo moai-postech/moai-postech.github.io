@@ -333,7 +333,7 @@ a.mentee-name:hover { color: var(--accent); }
 .list-intro { margin: 0 0 var(--space-4); color: var(--muted); }  /* one line under a group heading that says what the list is (Teaching: regular courses and the AI study, 교수 2026-10-27·2026-11-03) */
 .list-intro a { color: inherit; font-weight: var(--weight-regular); }
 .list-intro a:hover { color: var(--accent); }
-.section-photo img { display: block; width: 100%; height: var(--photo-height); object-fit: cover; object-position: 50% 25%; border-radius: var(--radius-2); filter: brightness(0.94) saturate(0.88) contrast(0.96); }
+.section-photo img { display: block; width: 100%; height: var(--photo-height); object-fit: cover; object-position: 50% 25%; border-radius: var(--radius-2); filter: brightness(1.04) saturate(0.72) contrast(0.92); }
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
 .topic-card h3 { margin: 0; }

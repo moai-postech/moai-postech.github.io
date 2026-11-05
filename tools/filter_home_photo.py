@@ -7,7 +7,6 @@ used as input. Run from any folder: python3 tools/filter_home_photo.py
 from pathlib import Path
 from io import BytesIO
 import hashlib
-import random
 import subprocess
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter
 
@@ -24,30 +23,23 @@ HEADS = [(123, 211, 232, 331), (375, 271, 478, 384),
 
 def filtered_photo(original):
     assert original.size == (1780, 933), 'Head protection requires original coordinates'
-    white = Image.new('RGB', original.size, 'white')
-    # Only pointwise colour/luminance changes: no resizing, warping, smoothing,
-    # painting, reconstruction, or generated features in the protected heads.
-    tone = ImageEnhance.Color(original).enhance(0.48)
-    tone = tone.point([round(255 * (v / 255) ** 0.80) for v in range(256)] * 3)
-    tone = Image.blend(tone, white, 0.18)
+    # Lift dark pigments without overlaying white lines across the people.
+    pigment = ImageEnhance.Color(original).enhance(0.60)
+    tone = pigment.point([round(110 + 142 * (v / 255) ** 0.82)
+                          for v in range(256)] * 3)
     gray = original.convert('L')
-    local = gray.filter(ImageFilter.GaussianBlur(5))
-    pencil = Image.new('L', gray.size)
-    pencil.putdata([min(255, int(a * 255 / max(1, b)))
-                    for a, b in zip(gray.getdata(), local.getdata())])
-    pencil = Image.blend(pencil, Image.new('L', gray.size, 255), 0.65)
-    pastel = Image.blend(tone, white, 0.34)
-    sketch = ImageChops.multiply(pastel, pencil.convert('RGB'))
-    # Fine diagonal hatching, stronger in dark areas of the original photo.
-    hatch = Image.new('L', original.size, 0)
-    draw = ImageDraw.Draw(hatch)
-    rng = random.Random(17)
-    for _ in range(115000):
-        x, y = rng.randrange(original.width), rng.randrange(original.height)
-        length = rng.randrange(2, 9)
-        draw.line((x, y, x + length, y + length * (-1 if rng.random() < 0.7 else 1)), fill=rng.randrange(20, 76))
-    ink = ImageChops.multiply(hatch, ImageChops.invert(gray))
-    sketch = Image.composite(Image.new('RGB', original.size, '#f8f5ef'), sketch, ink)
+
+    def contours(radius, strength):
+        local = gray.filter(ImageFilter.GaussianBlur(radius))
+        pencil = Image.new('L', gray.size)
+        pencil.putdata([min(255, round(a * 255 / max(1, b)))
+                        for a, b in zip(gray.tobytes(), local.tobytes())])
+        return Image.blend(Image.new('L', gray.size, 255), pencil, strength)
+
+    # Lines follow actual details in the photo at two scales. The previous
+    # random diagonal strokes obscured those details and looked like a mesh.
+    pencil = ImageChops.multiply(contours(1.3, 0.17), contours(5, 0.12))
+    sketch = ImageChops.multiply(tone, pencil.convert('RGB'))
     protect = Image.new('L', original.size, 0)
     draw = ImageDraw.Draw(protect)
     for box in HEADS:
@@ -57,7 +49,10 @@ def filtered_photo(original):
     draw = ImageDraw.Draw(protect)
     for left, top, right, bottom in HEADS:
         draw.ellipse((left+14, top+14, right-14, bottom-14), fill=255)
-    face_tone = tone
+    # Preserve enough contrast to read expressions and glasses in the pale
+    # scene. This is also strictly a pointwise colour/luminance transform.
+    face_tone = pigment.point([round(85 + 167 * (v / 255) ** 0.90)
+                               for v in range(256)] * 3)
     result = Image.composite(face_tone, sketch, protect)
     # Meaningful check: every fully protected pixel must equal the tone-only
     # original at the same coordinate before JPEG compression.

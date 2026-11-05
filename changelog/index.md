@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-05 | [홈 단체사진 색연필 톤](2026-11-05-home-photo-pencil.md) | Sangwoo Mo(sangwoomo) | Home 사진, index.md, AGENTS.md | 밝은 중간안 D 적용, 실제 홈 맥락에서 검토 |
 | 2026-11-05 | [12~15강 핵심 중심 개선](2026-11-05-lectures-twelve-fifteen-concepts.md) | Sangwoo Mo (sangwoomo) | Data Engineering12~15강 | 역사·개념·예제 중심154장 HTML·PDF 사이트 선배포 |
 | 2026-11-05 | [pptx·docx PDF 는 MS Office 로](2026-11-05-ms-office-pdf.md) | Sangwoo Mo(sangwoomo) | tools/office_pdf.py, seminar_sync.py, drive_pdf.py, AGENTS.md | 맥에서는 PowerPoint·Word 로 굽고 LibreOffice 는 없거나 실패할 때만 |
 | 2026-11-05 | [11강 핵심 개념 중심 정리](2026-11-05-lecture11-concepts.md) | Sangwoo Mo (sangwoomo) | Data Engineering 11강 | 역사·개념·예제 중심78장판 HTML·PDF 교체 |

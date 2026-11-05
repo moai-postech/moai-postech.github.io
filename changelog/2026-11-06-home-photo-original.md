@@ -22,4 +22,10 @@ POSTECH 요구사항: 영향 없음
 저장소 AGENTS.md, 상위 규칙, 전역 rules/memory-location.md·workflow.md, imagegen 스킬을 참조했다. 원본 바이트 일치와 Jekyll 빌드, Home 화면 및 push 검사로 검증한다.
 
 ## 남은 것
-생성 AI B안은 운영 사이트에 적용하지 않고 비교용으로 제시한다.
+사용자의 A/B 비교 선택 대기. 운영 사이트는 A안을 유지한다.
+
+## B안 비교 결과
+- built-in image_gen에 원본 사진을 직접 입력하고 여덟 얼굴·표정·안경·머리 형태 보존을 최우선으로 지시했다. 배경은 sage green·blue-gray·dusty rose의 절제된 파스텔 톤으로 요청했다.
+- 결과에서 일부 눈매·피부 질감·윤곽 변화가 관찰되어 원본 얼굴 불변 조건을 충족했다고 판단하지 않았다. 운영 사진에는 적용하지 않았다.
+- 비교 산출물은 로컬 `visual-review-bundle/photo-ab/`에 보관했다. `a-live.jpg`는 배포된 A안, `b-preview.jpg`는 같은 홈페이지 구도의 B안, `b-generated.png`는 생성 결과, `README.md`는 프롬프트 핵심과 판단이다.
+- A안 커밋 `cc615b3`의 빌드·배포가 성공했고 공개 사이트에서 원본 JPEG URL과 CSS 보정값, 이미지 로드를 확인했다.

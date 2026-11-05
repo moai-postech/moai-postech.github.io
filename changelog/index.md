@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-05 | [11강 핵심 개념 중심 정리](2026-11-05-lecture11-concepts.md) | Sangwoo Mo (sangwoomo) | Data Engineering 11강 | 역사·개념·예제 중심78장판 HTML·PDF 교체 |
 | 2026-11-05 | [11강 2025 시각자료·예제 보존](2026-11-05-lecture-eleven-superset.md) | Sangwoo Mo(sangwoomo) | 11강 HTML·PDF | 주요 원본 그림·예제와 코드·DAG 풀이를 포함한105장판 |
 | 2026-11-05 | [de-lecture-eleven](2026-11-05-de-lecture-eleven.md) | Sangwoo Mo(sangwoomo) | 11강 HTML·PDF | MapReduce·Spark 두 파트60장·도구 개발 배경 복원 |
 | 2026-11-05 | [schedule-tap-target](2026-11-05-schedule-tap-target.md) | Sangwoo Mo(sangwoomo) | 강의 스케줄 | 휴대폰 PDF·Lab 링크 터치 영역을 48px 높이로, 보이는 모양은 그대로 |

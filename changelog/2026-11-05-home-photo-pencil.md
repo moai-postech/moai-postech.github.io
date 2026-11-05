@@ -72,3 +72,10 @@ Jekyll 빌드 통과. 데스크톱 1440px·모바일 390px에서 이미지 로�
 - AGENTS.md의 일반 필터 한정을 최신 사용자 승인으로 갱신하고 기존 필터의 운영 사진 재적용을 막는 기준을 적었다. 이미지 URL도 갱신했다.
 - 원본·앞선 게시본은 Git 이력에 보존한다. 생성 원본은 Codex generated_images의 이 채팅 폴더에 있다(선택 파일: exec-f9fdafdc-4013-4e9c-80c3-adb231792039.png).
 - 읽은 규칙: 상위·저장소 AGENTS.md, imagegen/SKILL.md, rules/memory-location.md, rules/workflow.md. push 전 changelog·Jekyll 빌드 검사와 게시 후 Home 확인을 수행한다.
+
+## 같은 날 후속 수정: 눈부심 감소, 얼굴 재생성 금지
+- 교수: 너무 밝아 눈이 아프므로 톤을 낮추되 얼굴은 바꾸지 말라고 요청했다.
+- 생성형 편집 호출을 중단하고 결과를 적용하지 않았다. 게시 이미지 파일은 그대로 두고 Home 사진 CSS에 brightness(0.94), saturate(0.88), contrast(0.96)를 적용했다. 흰색은 약 235/255로 내려가며 형태·표정·구도는 그대로다.
+- 이후 단순 밝기·채도 조정에서 재생성하지 않는 기준을 AGENTS.md에 기록했다.
+- 기각: 톤 보정에 생성형 모델을 다시 쓰면 얼굴이 바뀔 수 있으므로 제외했다. 원본은 Git 이력에 보존한다.
+- 읽은 규칙: 저장소·상위 AGENTS.md와 앞선 회차의 공통 규칙. 이미지 파일 무변경을 Git diff로 확인하고 Jekyll·changelog 검사와 실제 화면을 확인한다.

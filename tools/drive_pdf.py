@@ -6,15 +6,13 @@
 
   - Google Slides(docs.google.com/presentation): Google 의 PDF 내보내기
   - Drive 의 PDF·그림: 그대로
-  - Drive 의 pptx·docx: Google 의 PDF 내보내기가 되면 그것, 안 되면 LibreOffice(soffice)로 굽는다
+  - Drive 의 pptx·docx: Google 의 PDF 내보내기가 되면 그것, 안 되면 MS Office(맥), 없으면 LibreOffice 로 굽는다(tools/office_pdf.py)
 
   python3 tools/drive_pdf.py <Drive 링크> <저장할 경로.pdf>
 """
 import json
 import os
 import re
-import shutil
-import subprocess
 import sys
 import tempfile
 import urllib.request
@@ -86,12 +84,11 @@ def fetch(url):
         except Exception:
             pass
         raise RuntimeError(f"내려받지 못함(공개 링크가 아니거나 지원하지 않는 형식): {url}")
-    soffice = shutil.which("soffice") or "/Applications/LibreOffice.app/Contents/MacOS/soffice"
+    from office_pdf import office_to_pdf  # MS Office 가 있으면 그것, 없으면 LibreOffice
     with tempfile.TemporaryDirectory() as d:
-        src = os.path.join(d, "deck.pptx")
+        src = os.path.join(d, "deck." + ("docx" if b"word/" in office else "pptx"))
         open(src, "wb").write(office)
-        subprocess.run([soffice, "--headless", "--convert-to", "pdf", "--outdir", d, src],
-                       check=True, capture_output=True, timeout=600)
+        office_to_pdf(src, os.path.join(d, "deck.pdf"))
         return open(os.path.join(d, "deck.pdf"), "rb").read(), "pdf"
 
 

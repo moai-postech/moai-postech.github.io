@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-05 | [pptx·docx PDF 는 MS Office 로](2026-11-05-ms-office-pdf.md) | Sangwoo Mo(sangwoomo) | tools/office_pdf.py, seminar_sync.py, drive_pdf.py, AGENTS.md | 맥에서는 PowerPoint·Word 로 굽고 LibreOffice 는 없거나 실패할 때만 |
 | 2026-11-05 | [11강 핵심 개념 중심 정리](2026-11-05-lecture11-concepts.md) | Sangwoo Mo (sangwoomo) | Data Engineering 11강 | 역사·개념·예제 중심78장판 HTML·PDF 교체 |
 | 2026-11-05 | [11강 2025 시각자료·예제 보존](2026-11-05-lecture-eleven-superset.md) | Sangwoo Mo(sangwoomo) | 11강 HTML·PDF | 주요 원본 그림·예제와 코드·DAG 풀이를 포함한105장판 |
 | 2026-11-05 | [de-lecture-eleven](2026-11-05-de-lecture-eleven.md) | Sangwoo Mo(sangwoomo) | 11강 HTML·PDF | MapReduce·Spark 두 파트60장·도구 개발 배경 복원 |

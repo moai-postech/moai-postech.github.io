@@ -15,7 +15,7 @@ sections:
   # 히어로 아래 랩 단체사진 띠(교수 2026-10-27). 사진은 assets/img/lab/, 높이와 자르는 위치는 theme.css 의 .section-photo
   - class: section-photo
     body: |
-      ![MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026.jpg?v=20261105-2)
+      ![MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026.jpg?v=20261105-3)
   - title: "Our focus in 2026"
     type: focus
   # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Publications > Map(Paper Stella 페이지, 교수 2026-11-03)

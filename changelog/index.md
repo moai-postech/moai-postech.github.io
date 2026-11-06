@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-06 | [홈 사진 원본 복구](2026-11-06-home-photo-original.md) | Sangwoo Mo(sangwoomo) | Home 사진, CSS, AGENTS.md | 원본 색감 보정 A안 선게시, 생성 B안 별도 비교 |
+| 2026-11-06 | [홈 사진 얼굴 보존](2026-11-06-home-photo-original.md) | Sangwoo Mo(sangwoomo) | Home 사진, 재현 도구, AGENTS.md | 여러 도구 비교 후 원본 얼굴을 유지하는 B안 선택·반영 |
 | 2026-11-05 | [홈 단체사진 색연필 톤](2026-11-05-home-photo-pencil.md) | Sangwoo Mo(sangwoomo) | Home 사진, index.md, AGENTS.md | 생성형 편집 폐기, 원본 얼굴을 유지하는 일반 연필 필터 적용 |
 | 2026-11-05 | [12~15강 핵심 중심 개선](2026-11-05-lectures-twelve-fifteen-concepts.md) | Sangwoo Mo (sangwoomo) | Data Engineering12~15강 | 역사·개념·예제 중심154장 HTML·PDF 사이트 선배포 |
 | 2026-11-05 | [pptx·docx PDF 는 MS Office 로](2026-11-05-ms-office-pdf.md) | Sangwoo Mo(sangwoomo) | tools/office_pdf.py, seminar_sync.py, drive_pdf.py, AGENTS.md | 맥에서는 PowerPoint·Word 로 굽고 LibreOffice 는 없거나 실패할 때만 |

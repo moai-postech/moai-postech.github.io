@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-07 | [Google 스케치 얼굴 수정](2026-11-07-google-sketch-faces.md) | Sangwoo Mo(sangwoomo) | Home 사진, AGENTS.md | Google API 두 방식 비교 후 스케치 얼굴 최종본 반영 |
 | 2026-11-06 | [홈 스케치 얼굴 수정](2026-11-06-home-photo-original.md) | Sangwoo Mo(sangwoomo) | Home 사진, 재현 도구, AGENTS.md | 스케치 유지, 원본 얼굴 확대 참조로 여덟 얼굴만 국소 수정 |
 | 2026-11-05 | [홈 단체사진 색연필 톤](2026-11-05-home-photo-pencil.md) | Sangwoo Mo(sangwoomo) | Home 사진, index.md, AGENTS.md | 생성형 편집 폐기, 원본 얼굴을 유지하는 일반 연필 필터 적용 |
 | 2026-11-05 | [12~15강 핵심 중심 개선](2026-11-05-lectures-twelve-fifteen-concepts.md) | Sangwoo Mo (sangwoomo) | Data Engineering12~15강 | 역사·개념·예제 중심154장 HTML·PDF 사이트 선배포 |

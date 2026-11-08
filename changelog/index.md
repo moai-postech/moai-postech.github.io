@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-08 | [12강 Cloud·Warehouse·Airflow 복원](2026-11-08-lecture-twelve-cloud-warehousing.md) | Sangwoo Mo (sangwoomo) | Data Engineering 12강 HTML·PDF | 작년 핵심 흐름을 74장으로 복원, 실습·전 장 검수 |
 | 2026-11-08 | [Home 실제 사진 색보정](2026-11-08-source-sketch.md) | Sangwoo Mo(sangwoomo) | Home 사진, AGENTS.md | 스케치를 실제 단체사진으로 교체하고 명암·초록색만 소폭 보정 |
 | 2026-11-07 | [Google 스케치 얼굴 수정](2026-11-07-google-sketch-faces.md) | Sangwoo Mo(sangwoomo) | Home 사진, AGENTS.md | 얼굴 특징을 두고 피부·명암·연필선을 자연스럽게 보정 |
 | 2026-11-06 | [홈 스케치 얼굴 수정](2026-11-06-home-photo-original.md) | Sangwoo Mo(sangwoomo) | Home 사진, 재현 도구, AGENTS.md | 스케치 유지, 원본 얼굴 확대 참조로 여덟 얼굴만 국소 수정 |

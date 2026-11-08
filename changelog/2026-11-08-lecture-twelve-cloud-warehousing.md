@@ -18,3 +18,9 @@ POSTECH 요구사항: 영향 없음
 
 ## 남은 것
 사이트 HTML·PDF만 먼저 배포하는 기존 지침 유지. Drive·PLMS는 교수 요청에 따라 후속 동기화.
+
+
+## 후속 시각 개편
+사용자 요청으로 Google 데이터센터 사진과 BigQuery·Cloud Storage·Airflow 공식 화면을 검색해 34장을 개편했다. 목차·갈래 지도 17장을 사진·제품 화면으로 바꿨고 SVG 포함 장은 31장에서 7장으로 줄였다. 기존 74장 범위와 실습을 유지하며 숫자 예제는 표·수식·비례 막대로 표현했다. 인물사진과 설명력이 낮은 home 화면은 제외했다.
+
+상위·사이트 AGENTS와 course README, 과목 presentation·documents·제작 규칙을 따랐다. deck-check 통과, lint 오류 0·경고 0, SQL 7조건·탐색 44개·모바일 포함 176조건 통과. HTML·PDF 74장 전수 렌더 검수 완료. 원본은 Git 이력과 과목 `_backup/2026-11-08-lecture12-visual/`에 보존했다. 사용자가 후속으로 push를 명시 승인해 사이트에 게시한다. Drive·PLMS는 기존 보류를 유지한다.

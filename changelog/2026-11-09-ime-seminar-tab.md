@@ -33,3 +33,4 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말·로고·`_config.yml` 
 - 필터 이름을 다시 Lab / Invited / IME Seminar 로 되돌렸다(교수). Lab Guest, Guest, Dept, IME Invited 를 검토했으나 어색하거나 모호했다. 원래 이름이 가장 바로 읽힌다. Lab Guest 커밋(d8a796f)은 push 전에 버렸다.
 - 저장소 정리: 중단된 커밋이 `.git/refs/heads/main.lock` 을 남겼고 iCloud 가 `.git/index 2` 충돌 사본을 만들어 main 이 옛 packed-ref(9e7565c)로 보였다. 둘을 `_backup/git-20261109/` 로 옮기고 main 을 origin/main(36dc66b)에 다시 맞췄다. 작업 트리는 건드리지 않았다.
 - IME Seminar 색을 코랄에서 중립 회색(tone-guest)으로 낮췄다(교수). 코랄은 POSTECH 빨강 계열이라 가장 덜 중요한 IME 가 가장 강조됐다. Invited 와 같은 따뜻한 계열로 묶던 효과는 포기한다.
+- Lab 색을 하늘(tone-p1)에서 세이지(tone-p2)로 바꿨다(교수). 하늘과 회색이 둘 다 푸른 기라 Lab 과 IME 행이 비슷해 보였다. 2026-11-02 의 "Lab 하늘" 결정을 대체한다. 기각: IME 를 채우지 않는 안(행 양식이 깨짐), Lab 하늘 유지(회색과 구별 안 됨).

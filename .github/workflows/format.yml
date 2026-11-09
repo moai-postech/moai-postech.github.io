@@ -41,6 +41,9 @@ jobs:
         run: bundle exec jekyll build
       - if: steps.build.outcome == 'failure'
         run: echo "::warning title=빌드 실패, 배포하지 않음::로그의 Build 단계를 보고 고친 뒤 다시 push 한다(AGENTS.md 검사와 배포)"
+      - name: Record published version
+        if: steps.build.outcome == 'success'
+        run: python3 tools/published_version.py write _site
       - uses: actions/upload-pages-artifact@v4
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && steps.build.outcome == 'success'
         with:
@@ -54,12 +57,49 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
     steps:
       - uses: actions/configure-pages@v5
       - name: Deploy
         id: deployment
+        continue-on-error: true
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 180000
+      - name: Retry a stalled deployment using the existing artifact
+        id: retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 180000
+      - name: Verify the public version
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, time, urllib.request
+          expected = os.environ['EXPECTED_SHA']
+          url = 'https://moai.postech.ac.kr/deployment.json'
+          for attempt in range(12):
+              try:
+                  request = urllib.request.Request(url + '?v=' + expected, headers={'Cache-Control': 'no-cache'})
+                  with urllib.request.urlopen(request, timeout=10) as response:
+                      manifest = json.load(response)
+                  if manifest.get('commit') == expected:
+                      for path, digest in manifest['files'].items():
+                          request = urllib.request.Request('https://moai.postech.ac.kr/' + path + '?v=' + expected, headers={'Cache-Control': 'no-cache'})
+                          with urllib.request.urlopen(request, timeout=15) as response:
+                              actual = hashlib.sha256(response.read()).hexdigest()
+                          if actual != digest:
+                              raise ValueError('Stale public file: ' + path)
+                      print('Public commit and course file hashes verified:', expected)
+                      break
+              except Exception as error:
+                  print(type(error).__name__)
+              time.sleep(5)
+          else:
+              raise SystemExit('Pages reported success, but the public version is still stale')
+          PY
   checks:  # 배포와 나란히 돈다. 실패하면 TODO.md 에 남기고 알린다(AGENTS.md "검사와 배포")
     runs-on: ubuntu-latest
     timeout-minutes: 15

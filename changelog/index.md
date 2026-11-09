@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-10 | [공개 게시 지연 복구](2026-11-10-deploy-recovery.md) | Sangwoo Mo (sangwoomo) | Pages workflow·공개 버전 검사 | 3분 제한·같은 artifact 재시도, 공개 커밋·강의 파일 해시 검사 |
 | 2026-11-10 | [12강 깊이 개편](2026-11-10-lecture-twelve-declutter.md) | Sangwoo Mo (sangwoomo) | Data Engineering 12강 HTML·PDF | 55장, row/column·BigQuery 구조·실제 Airflow 사례 복원 |
 | 2026-11-10 | [push 를 빠르게](2026-11-10-fast-push.md) | Sangwoo Mo(sangwoomo) | _config.yml, AGENTS.md | 큰 로컬 폴더 exclude, push 전 별도 빌드·CI 대기 없앰 |
 | 2026-11-10 | [Seminar 소속 기관 링크](2026-11-10-seminar-institution-links.md) | Sangwoo Mo(sangwoomo) | seminar.html, _data/institutions.yml, AGENTS.md | 소속 글자를 기관 공식 영문 사이트로 링크 |

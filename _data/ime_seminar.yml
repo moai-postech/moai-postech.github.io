@@ -1,16 +1,34 @@
-# Seminar 페이지의 IME Seminar 탭에 더할 학과 세미나 초청 연사 중, 강의 스케줄(_data/courses/*.yml)의 guest 행에 없는 것만 적는다.
-# 강의 guest 행은 템플릿이 자동으로 가져오므로 여기 다시 적지 않는다(교수 2026-11-09).
-# 칸은 강의 guest 행과 같다: date, kind: guest(필수), title(원문 그대로), speaker(영문), url(연사 프로필, 홈페이지 없으면 LinkedIn), affiliation.
+# Seminar 페이지의 IME Seminar 탭 목록. 교수가 산업경영공학과 세미나나 강의 guest lecture 로 직접 부른 연사만 적는다.
+# 강의 스케줄에서 자동으로 가져오지 않는다. 학과 세미나라도 교수가 부르지 않은 연사(예: 26S 수업 중 들은 Songyee Yoon)는 넣지 않는다(교수 2026-11-09).
+# 강의 행에 있는 연사면 그 행의 칸을 그대로 옮겨 적는다: date, kind: guest(필수), title(원문 그대로), speaker(영문), url(연사 프로필, 홈페이지 없으면 LinkedIn), affiliation.
 talks:
-  - date: "2026-04-23"
+  - date: "2026-11-18"
     kind: guest
-    title: "경계를 넘는 혁신: 과학자에서 글로벌 경영자로의 성장 여정"
-    speaker: "Songyee Yoon"
-    url: "https://www.linkedin.com/in/songyee-yoon-principal-venture-partners"
-    affiliation: "Principal Venture Partners"
+    title: "AI 시대의 경영 패러다임: 디맨드 드리븐 전략"
+    speaker: "Hyunkyu Lee"
+    url: "https://www.linkedin.com/in/hyunkyu-lee-9538551b/"
+    affiliation: "Google Korea"
+  - date: "2026-11-13"
+    kind: guest
+    title: "전략 컨설턴트의 일과 사고법, 산업 현장의 AI"
+    speaker: "Sungwon Yang"
+    url: "https://www.linkedin.com/in/sungwonyang/"
+    affiliation: "Bain & Company"
+  - date: "2026-09-18"
+    kind: guest
+    title: "금융권 AI 어디까지 왔나? 기술 및 정책 동향"
+    speaker: "Dae-Young Park"
+    url: "https://mainthread.notion.site/"
+    affiliation: "Financial Security Institute"
   - date: "2026-05-29"
     kind: guest
     title: "Agentic AI 시대의 Personalization AI"
     speaker: "Yeong-Hwan Jeon"
     url: "https://kr.linkedin.com/in/yeong-hwan-jeon-a7306020"
     affiliation: "LG U+"
+  - date: "2025-11-27"
+    kind: guest
+    title: "데이터, AI, 고객: 데이터가 가치있어 지는 방법과 우리의 할일"
+    speaker: "Ki-Young Shin"
+    url: "https://kr.linkedin.com/in/shinky"
+    affiliation: "CEO, Designovel"

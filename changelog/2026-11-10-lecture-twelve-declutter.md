@@ -23,3 +23,11 @@ POSTECH 요구사항: 영향 없음
 
 ## 남은 것
 Drive·PLMS 동기화는 기존 보류를 유지한다. 과목 쪽 상세 기록은 강의 폴더 `changelog/2026-11-10-lecture12-declutter.md`.
+
+## 후속: 2025 핵심 복원(53장)
+교수 질문("작년 콘텐츠와 좋은 그림이 빠지지 않았나")에 대조해 보니 원본 그림 일부가 빠져 있었다. 핵심만 복원했다.
+- 다시 넣은 장: Point Reads and Analytical Scans, Managed Fault Tolerance, Tasks·Operators·Sensors, Airflow Control and Workers, The Complete Workflow.
+- 원본 그림으로 바꾼 장: Serverless는 Aurora 비교 그림, BigQuery as a Managed Service는 네 동사 그림.
+- Snowflake·Redshift·Athena 이름은 BigQuery 장 노트로 옮겼다.
+- 복원하지 않은 것: Gantt, lakehouse 준비 그림, warehouse·mart·lake 비교표, 행·열 배치 반복 그림. 이유는 앞 장과 겹치거나 도구 세부라서다.
+- 검사: deck-check 통과, HTML 장 표시 N=53, PDF 53쪽.

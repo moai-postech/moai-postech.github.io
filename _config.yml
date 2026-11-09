@@ -79,4 +79,5 @@ exclude:
   - Gemfile.lock
   - vendor
   - node_modules
-  - "assets/publications/*_slides.pdf"   # 논문 slides 는 저장소 보관용. Pages 1 GB 한도 때문에 배포하지 않는다(교수 2026-11-09)
+  - assets/publications/22_iclr_digan_slides.pdf   # project·slides·poster 가 모두 있어 화면에 slides 를 안 내는 논문. 저장소 보관용(교수 2026-11-09)
+  - assets/publications/25_cvpr_oak_slides.pdf

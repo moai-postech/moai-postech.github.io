@@ -25,3 +25,12 @@ POSTECH 요구사항: 영향 없음
 ## 남은 것
 - Drive·웹에 poster 가 없는 논문: CVPR 2026 PRIS, EMNLP 2026 Idis, NeurIPS 2026 3편(Stay Fair, ToMA, CAFT), TMLR 2025 Simba, ICLR 2020 Lookahead(가상 학회라 poster 없음), WACV 2027, T-RO 2021, preprint.
 - NeurIPS 2026 poster 는 12월 학회 무렵 `neurips.cc/media/PosterPDFs/NeurIPS%202026/<id>.png` 에 올라온다(Stay Fair 149045, ToMA 153660).
+
+## 추가 수정(같은 날): slides 도 화면에
+교수 요청: 순서를 project, slides, poster, code 로 하고, 셋이 모두 있으면 slides 를 생략한다. project 가 없으면 slides, poster 가 함께 보인다.
+- 템플릿: `project,slides,poster,code` 순서. project·poster 가 있는 논문은 slides 를 건너뛴다. 해당 논문은 DIGAN, OAK 둘이고 화면에 slides 가 나오는 논문은 19편.
+- 배포 한도 때문에 3 MB 넘는 slides 의 그림을 PyMuPDF `rewrite_images`(150 dpi, JPEG 품질 80)로 다시 압축했다. InstaGAN 35→5.0 MB, SHED 44→6.9 MB, CSI 14→2.5 MB 등. 압축 전후 같은 쪽을 렌더해 비교했고 눈에 띄는 차이는 없었다. 원본은 직전 커밋과 Drive 에 있다.
+- FreezeD slides(10 MB)는 PDF 패턴 오류로 압축하지 못해 원본 그대로 둔다.
+- 화면에 나오는 slides 는 약 54 MB, poster 는 약 62 MB. 배포 대상은 약 845 MB.
+- `_config.yml` exclude 는 전체 slides 대신 화면에 안 나오는 DIGAN, OAK slides 두 파일만 남겼다.
+- 기각한 안: slides 를 압축 없이 모두 배포(약 960 MB 로 Pages 1 GB 한도에 닿음), slides 를 Drive 링크로 두는 안(자료를 저장소로 모으기로 함).

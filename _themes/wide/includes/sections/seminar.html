@@ -9,7 +9,7 @@
   IME Seminar 행은 _data/ime_seminar.yml 한 곳에서만 읽는다. 강의 스케줄의 guest·seminar 행을 자동으로 가져오지 않는다. 수업 시간에 들은 학과 세미나라도 교수가 부르지 않은 연사가 섞이기 때문이다. 교수가 부른 연사만 강의 행에서 칸을 옮겨 적는다(교수 2026-11-09).
   색은 Lab 세이지(tone-p2), Invited 버터(tone-logistics), IME Seminar 중립 회색(tone-guest)이다. 하늘(tone-p1)은 회색과 둘 다 푸른 기가 있어 Lab 과 IME 가 구별되지 않았다. 코랄(tone-p3)은 POSTECH 빨강 계열이라 가장 덜 중요한 IME 가 튀었다(교수 2026-11-09).
   특정 주제 발표가 아닌 회차(routine: Research Sync, Internal Review, Paper Review Session, 학회·도구 Sharing Session)는 같은 색 띠에 두되, 연사를 Lab members 로 통일하고(시트에는 담당자) 제목과 연사를 회색 보통 굵기로 낮춰 주제 발표 제목이 먼저 읽히게 한다(교수 2026-11-02).
-  소속이 없는 줄(랩 발표)은 제목 칸이 소속 칸까지 쓴다(colspan). 긴 제목이 빈 소속 칸 때문에 두 줄로 넘어가지 않게 한다(교수 2026-11-02).
+  소속은 따로 열을 두지 않고 제목 칸 안 오른쪽 끝에 붙인다. 소속 열은 가장 긴 소속에 맞춰 모든 행에 같은 폭을 잡아서, 짧은 소속(CAU) 행의 제목까지 일찍 줄바꿈시켰다. 이제 제목은 그 행의 소속이 남긴 폭을 다 쓴다(교수 2026-11-09, 2026-11-02 의 colspan 방식을 대체).
   다가오는 발표는 목록 맨 위(최신순)에 오고, 방문자 브라우저에서 날짜가 강조된다(scripts.html 의 is-upcoming). 교수 2026-10-23: Up next 카드는 빼고 이 상단 하이라이트만 둔다.
 {% endcomment %}
 {% assign ime = site.data.ime_seminar.talks %}{% assign talks = site.data.seminar.talks | concat: ime | sort: "date" | reverse %}
@@ -29,14 +29,13 @@
       {% if site.data.seminar.sheet %}<a class="filter-link" href="{{ site.data.seminar.sheet }}">Full schedule <span aria-hidden="true">↗</span></a>{% endif %}
     </div>
     <table class="schedule">
-      <colgroup><col class="col-date"><col class="col-title"><col class="col-aff"><col class="col-speaker"></colgroup>
+      <colgroup><col class="col-date"><col class="col-title"><col class="col-speaker"></colgroup>
       <tbody>
-      {% assign year = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y != year %}{% assign year = y %}<tr class="schedule-year" data-year="{{ y }}"><th colspan="4" scope="rowgroup">{{ y }}</th></tr>{% endif %}
+      {% assign year = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y != year %}{% assign year = y %}<tr class="schedule-year" data-year="{{ y }}"><th colspan="3" scope="rowgroup">{{ y }}</th></tr>{% endif %}
       {% if t.kind == "guest" %}{% assign tk = "ime" %}{% assign tt = "tone-guest" %}{% elsif t.invited %}{% assign tk = "invited" %}{% assign tt = "tone-logistics" %}{% else %}{% assign tk = "lab" %}{% assign tt = "tone-p2" %}{% endif %}
       <tr data-kind="{{ tk }}" class="{{ tt }}{% if t.routine %} is-routine{% endif %}" data-date="{{ t.date }}" data-year="{{ y }}">
         <td class="schedule-date">{{ t.date | date: "%m/%d" }}</td>
-        {% if t.invited %}{% assign doc = t.slides | default: t.paper %}{% else %}{% assign doc = t.slides %}{% endif %}<td class="schedule-title"{% unless t.affiliation %} colspan="2"{% endunless %}>{% if doc %}<a href="{{ doc }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</td>
-        {% if t.affiliation %}<td class="schedule-aff">{{ t.affiliation }}</td>{% endif %}
+        {% if t.invited %}{% assign doc = t.slides | default: t.paper %}{% else %}{% assign doc = t.slides %}{% endif %}<td class="schedule-title"><div class="schedule-title-row"><span class="schedule-title-text">{% if doc %}<a href="{{ doc }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</span>{% if t.affiliation %}<span class="schedule-aff">{{ t.affiliation }}</span>{% endif %}</div></td>
         {% assign href = t.url %}{% unless href or t.invited or t.kind == "guest" %}{% for g in site.data.members.groups %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "lab-members.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% for g in site.data.members.mentees %}{% for m in g.people %}{% if m.name == t.speaker %}{% assign slug = m.name | slugify %}{% assign href = "other-mentees.html#" | append: slug %}{% endif %}{% endfor %}{% endfor %}{% endunless %}
         <td class="schedule-speaker">{% if href %}<a href="{{ href }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}</td>
       </tr>

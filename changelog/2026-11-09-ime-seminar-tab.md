@@ -1,5 +1,5 @@
 # 2026-11-09 Seminar 페이지에 IME Seminar 탭 추가
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/sections/seminar.html`, `_data/ime_seminar.yml`, `_data/courses/25f-data-engineering.yml`, `seminar.md`, `AGENTS.md` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/sections/seminar.html`, `_data/ime_seminar.yml`, `_data/courses/25f-data-engineering.yml`, `_data/courses/26f-data-engineering.yml`, `_themes/wide/includes/theme.css`, `_themes/wide/includes/scripts.html`, `seminar.md`, `AGENTS.md` | 도구: Claude Code
 
 > **한줄 결론: Seminar 의 Lab / Invited 옆에 IME Seminar 를 두고, 강의 스케줄의 guest 연사를 자동으로 모아 보인다.**
 
@@ -35,3 +35,6 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말·로고·`_config.yml` 
 - IME Seminar 색을 코랄에서 중립 회색(tone-guest)으로 낮췄다(교수). 코랄은 POSTECH 빨강 계열이라 가장 덜 중요한 IME 가 가장 강조됐다. Invited 와 같은 따뜻한 계열로 묶던 효과는 포기한다.
 - Lab 색을 하늘(tone-p1)에서 세이지(tone-p2)로 바꿨다(교수). 하늘과 회색이 둘 다 푸른 기라 Lab 과 IME 행이 비슷해 보였다. 2026-11-02 의 "Lab 하늘" 결정을 대체한다. 기각: IME 를 채우지 않는 안(행 양식이 깨짐), Lab 하늘 유지(회색과 구별 안 됨).
 - 소속 칸에는 기관만 쓴다(교수). 신기영의 "CEO, Designovel" 을 "Designovel" 로 고쳤다(`ime_seminar.yml`, 25F 강의 행 둘 다). 규칙은 `AGENTS.md` 초청 행 항목과 `ime_seminar.yml` 주석에 적었다.
+- 세미나 표의 소속 열을 없애고 소속을 제목 칸 안 오른쪽 끝에 붙였다(교수). 소속 열은 가장 긴 소속에 맞춰 모든 행에 같은 폭을 잡아 CAU 행의 제목("Toward Spatial Intelligence...")까지 두 줄로 밀었다. 이제 1200px 화면에서 한 줄, 소속과 32px 떨어진다. 휴대폰은 `display: contents` 로 이름 뒤에 소속이 오는 기존 배치를 유지했다. 원본: `_backup/seminar.html.20261109b`, `_backup/theme.css.20261109`.
+- 소속 "Financial Security Institute" 를 "FSI" 로 줄였다(교수, `ime_seminar.yml`, 26F 강의 행). 랩 세미나 쪽도 CAU, KAIST 처럼 약칭을 쓴다.
+- 확인: 로컬 빌드를 1400px, 375px 로 열어 봄. test_design, check_format, check_postech, check_guest_titles 를 돌림.

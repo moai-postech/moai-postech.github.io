@@ -377,7 +377,9 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule-speaker a { color: var(--text); }
 .schedule-speaker a:hover { color: var(--accent); }
 .schedule tr.is-routine :is(.schedule-title, .schedule-speaker), .schedule tr.is-routine :is(.schedule-title, .schedule-speaker) a { color: var(--muted); font-weight: var(--weight-regular); }  /* not a topic talk (Monthly Sync, reviews, sharing sessions): title and name step back (교수 2026-11-02) */
-.schedule-aff { width: 1%; padding-left: var(--space-6) !important; color: var(--muted); font-size: var(--text-meta); text-align: right; white-space: nowrap; }  /* right-aligned so it sits next to the name */
+.schedule-title-row { display: flex; align-items: baseline; gap: var(--space-6); }  /* title, then the affiliation at the right end of the same cell: a short affiliation leaves its width to the title (교수 2026-11-09) */
+.schedule-title-text { flex: 1 1 auto; min-width: 0; }
+.schedule-aff { flex: none; margin-left: auto; color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-regular); white-space: nowrap; }  /* sits next to the name */
 .schedule [hidden] { display: none; }
 
 .sec-media a { color: var(--text); }  /* a whole headline in red was the heaviest red on Home; titles read as titles, hover shows the link */
@@ -528,10 +530,11 @@ a.person-name:hover { color: var(--accent); }
   .schedule tr[data-kind] > td, .schedule tr[data-kind] > td:first-child, .schedule tr[data-kind] > td:last-child { padding: 0 !important; background: none; box-shadow: none; border-radius: 0; }  /* the card carries fill and padding */
   .schedule td { padding: 0 !important; text-align: left; white-space: normal; }
   .schedule tr[data-kind]:not([hidden]) { display: flex; flex-wrap: wrap; align-items: baseline; }
-  .schedule td.schedule-date, .schedule td.schedule-title { flex-basis: 100%; }
-  .schedule td.schedule-speaker, .schedule td.schedule-aff { margin-top: 2px; }  /* name first, affiliation after it on one line, though the affiliation comes first in the row (td. beats .schedule td above) */
+  .schedule td.schedule-title, .schedule .schedule-title-row { display: contents; }  /* the title and affiliation become cards' own items, so the affiliation can follow the name */
+  .schedule td.schedule-date, .schedule .schedule-title-text { flex-basis: 100%; }
+  .schedule td.schedule-speaker, .schedule .schedule-aff { margin-top: 2px; }  /* name first, affiliation after it on one line, though the affiliation comes first in the row (td. beats .schedule td above) */
   .schedule td.schedule-speaker { order: 1; }
-  .schedule td.schedule-aff { order: 2; margin-left: var(--space-2); }
+  .schedule .schedule-aff { order: 2; margin-left: var(--space-2); }
   main { overflow-wrap: anywhere; }
 }
 @media (max-width: 380px) {  /* 360px phones (many Galaxy models): the tightest spacing that still keeps these rows on one line */

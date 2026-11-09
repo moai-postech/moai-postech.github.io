@@ -1,0 +1,179 @@
+# 2027 curriculum: lecture order is fixed; dates and logistics are unconfirmed.
+title: Programming for AX
+code: IMEN574 / IDSC574
+term: Spring 2027
+instructor:
+  name: Sangwoo Mo
+  url: faculty.html
+summary: Learn to program for AI transformation by using AI first, then reading, debugging, and evaluating the code
+  and models it produces. The course connects Python and classical machine learning to deep learning, foundation
+  models, and coding agents. Lecture dates and logistics will be announced before the semester.
+parts:
+- id: sw3
+  name: Software 3.0
+  title: Programming with AI
+  span: Lectures 2–4
+  text: 'Complete the AI workflow first: request work, build and check code in an IDE, and direct coding agents
+    with connected tools.'
+- id: sw1
+  name: Software 1.0
+  title: Python and Classical Machine Learning
+  span: Lectures 5–13
+  text: Read generated code, handle arrays and DataFrames, validate data, then choose and evaluate regression, classification,
+    ensembles, clustering, representations, and explanations.
+- id: sw2
+  name: Software 2.0
+  title: Deep Learning and Foundation Models
+  span: Lectures 14–22
+  text: Train small networks, use visual and language representations, and build checked AI workflows.
+schedule:
+- date: ''
+  kind: lecture
+  n: 1
+  title: Overview & Logistics
+  html: teaching/27s-programming-for-ax/slides/1_overview.html
+  pdf: teaching/27s-programming-for-ax/slides/1_overview.pdf
+  lab: teaching/27s-programming-for-ax/labs/1_overview.ipynb
+- part: sw3
+- date: ''
+  kind: lecture
+  n: 2
+  title: Working with AI
+- date: ''
+  kind: lecture
+  n: 3
+  title: AI-Assisted Programming
+- date: ''
+  kind: lecture
+  n: 4
+  title: Coding Agents
+- part: sw1
+- date: ''
+  kind: lecture
+  n: 5
+  title: Python for Data Work
+- date: ''
+  kind: lecture
+  n: 6
+  title: Arrays and DataFrames
+- date: ''
+  kind: lecture
+  n: 7
+  title: Data Validation and Evaluation
+- date: ''
+  kind: lecture
+  n: 8
+  title: Regression
+- date: ''
+  kind: lecture
+  n: 9
+  title: Classification
+- date: ''
+  kind: lecture
+  n: 10
+  title: Trees and Ensembles
+- date: ''
+  kind: lecture
+  n: 11
+  title: Clustering
+- date: ''
+  kind: lecture
+  n: 12
+  title: Dimensionality Reduction
+- date: ''
+  kind: lecture
+  n: 13
+  title: Interpretable ML
+- date: ''
+  kind: review
+  title: Review Session
+  html: teaching/27s-programming-for-ax/slides/review-session.html
+  pdf: teaching/27s-programming-for-ax/slides/review-session.pdf
+- part: sw2
+- date: ''
+  kind: lecture
+  n: 14
+  title: Deep Learning
+- date: ''
+  kind: lecture
+  n: 15
+  title: PyTorch
+- date: ''
+  kind: lecture
+  n: 16
+  title: Training and Generalization
+- date: ''
+  kind: lecture
+  n: 17
+  title: Visual Representations
+- date: ''
+  kind: lecture
+  n: 18
+  title: Dense Prediction
+- date: ''
+  kind: lecture
+  n: 19
+  title: Language Models
+- date: ''
+  kind: lecture
+  n: 20
+  title: Vision-Language Models
+- date: ''
+  kind: lecture
+  n: 21
+  title: Generative Models
+- date: ''
+  kind: lecture
+  n: 22
+  title: AI for Data Science
+other_terms:
+- name: Spring 2026
+  url: teaching/26s-programming-for-data-science/
+resources_title: References
+resources:
+- title: The Modern Software Developer
+  source: Stanford CS146S
+  url: https://themodernsoftware.dev/
+- title: Python Tutorial
+  source: Python Documentation
+  url: https://docs.python.org/3/tutorial/
+- title: User Guide
+  source: scikit-learn
+  url: https://scikit-learn.org/stable/user_guide.html
+- title: Learn the Basics
+  source: PyTorch Tutorials
+  url: https://docs.pytorch.org/tutorials/beginner/basics/intro.html
+project:
+  intro: false
+  summary: Choose a data science task, establish a reproducible baseline, and compare a checked improvement. Explain
+    AI assistance and its verification.
+  team_size: Up to 4 students
+  steps:
+  - name: Baseline
+    when: During the Semester
+    text: Define the task and split, establish a reproducible baseline, and record the AI assistance used.
+  - name: Final Presentation
+    when: End of the Semester
+    text: Explain the method, evaluate on held-out data, and share the code and experiment record.
+    presentation: 15 min (incl. Q&A)
+  evaluation:
+    team_label: Team Evaluation
+    team_reviewers: Instructor + other teams
+    individual_label: Individual
+    individual_reviewers: Teammates
+  criteria:
+  - name: Problem
+    text: Significance and definition of the task
+  - name: Method
+    text: Reasoning, originality, and reproducibility
+  - name: Results
+    text: Valid comparisons and analysis of failures
+  - name: Teamwork
+    individual: true
+    text: Contribution and shared responsibilities
+  - name: Presentation
+    text: Clear evidence and delivery
+  rounds:
+  - id: final
+    name: Final
+    date_placeholder: Date TBD

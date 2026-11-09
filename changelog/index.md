@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-10 | [programming-ax-2027](2026-11-10-programming-ax-2027.md) | Sangwoo Mo(sangwoomo) | Spring 2027 Programming for AX | AI 먼저 기획 유지, 강의 구조와 HTML 자료 게시 |
 | 2026-11-10 | [공개 게시 지연 복구](2026-11-10-deploy-recovery.md) | Sangwoo Mo (sangwoomo) | Pages workflow·공개 버전 검사 | 3분 제한·같은 artifact 재시도, 공개 커밋·강의 파일 해시 검사 |
 | 2026-11-10 | [12강 시각 실험 개편](2026-11-10-lecture-twelve-declutter.md) | Sangwoo Mo (sangwoomo) | Data Engineering 12강 HTML·PDF | 50장, 코드 대신 저장·ETL/ELT·snapshot·DAG 시각 실험4개 |
 | 2026-11-10 | [push 를 빠르게](2026-11-10-fast-push.md) | Sangwoo Mo(sangwoomo) | _config.yml, AGENTS.md | 큰 로컬 폴더 exclude, push 전 별도 빌드·CI 대기 없앰 |

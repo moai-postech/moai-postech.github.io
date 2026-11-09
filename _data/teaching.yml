@@ -13,5 +13,7 @@
   url: "teaching/programming-for-ax/"
   code: "IMEN574 / IDSC574"
   terms:
+    - name: "Spring 2027"
+      url: "teaching/27s-programming-for-ax/"
     - name: "Spring 2026"
       url: "teaching/26s-programming-for-data-science/"

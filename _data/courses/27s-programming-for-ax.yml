@@ -1,4 +1,4 @@
-# 2027 curriculum: lecture order is fixed; dates and logistics are unconfirmed.
+# Official 2027 academic calendar + planned Monday/Wednesday course allocation.
 title: Programming for AX
 code: IMEN574 / IDSC574
 term: Spring 2027
@@ -6,8 +6,8 @@ instructor:
   name: Sangwoo Mo
   url: faculty.html
 summary: Learn to program for AI transformation by using AI first, then reading, debugging, and evaluating the code
-  and models it produces. The course connects Python and classical machine learning to deep learning, foundation
-  models, and coding agents. Lecture dates and logistics will be announced before the semester.
+  and models it produces. The course connects Python and classical machine learning to deep learning and foundation
+  models.
 parts:
 - id: sw3
   name: Software 3.0
@@ -27,7 +27,7 @@ parts:
   span: Lectures 14–22
   text: Train small networks, use visual and language representations, and build checked AI workflows.
 schedule:
-- date: ''
+- date: '2027-03-03'
   kind: lecture
   n: 1
   title: Overview & Logistics
@@ -35,97 +35,124 @@ schedule:
   pdf: teaching/27s-programming-for-ax/slides/1_overview.pdf
   lab: teaching/27s-programming-for-ax/labs/1_overview.ipynb
 - part: sw3
-- date: ''
+- date: '2027-03-08'
   kind: lecture
   n: 2
   title: Working with AI
-- date: ''
+- date: '2027-03-10'
   kind: lecture
   n: 3
   title: AI-Assisted Programming
-- date: ''
+- date: '2027-03-15'
   kind: lecture
   n: 4
   title: Coding Agents
 - part: sw1
-- date: ''
+- date: '2027-03-17'
   kind: lecture
   n: 5
   title: Python for Data Work
-- date: ''
+- date: '2027-03-22'
   kind: lecture
   n: 6
   title: Arrays and DataFrames
-- date: ''
+- date: '2027-03-24'
   kind: lecture
   n: 7
   title: Data Validation and Evaluation
-- date: ''
+- date: '2027-03-29'
   kind: lecture
   n: 8
   title: Regression
-- date: ''
+- date: '2027-03-31'
   kind: lecture
   n: 9
   title: Classification
-- date: ''
+- date: '2027-04-05'
   kind: lecture
   n: 10
   title: Trees and Ensembles
-- date: ''
+- date: '2027-04-07'
   kind: lecture
   n: 11
   title: Clustering
-- date: ''
+- date: '2027-04-12'
   kind: lecture
   n: 12
   title: Dimensionality Reduction
-- date: ''
+- date: '2027-04-14'
   kind: lecture
   n: 13
   title: Interpretable ML
-- date: ''
+- date: '2027-04-19'
   kind: review
   title: Review Session
   html: teaching/27s-programming-for-ax/slides/review-session.html
   pdf: teaching/27s-programming-for-ax/slides/review-session.pdf
+- date: '2027-04-21'
+  kind: exam
+  title: Midterm Exam
+- date: '2027-04-26'
+  kind: break
+  title: No Class (Exam Period)
 - part: sw2
-- date: ''
+- date: '2027-04-28'
   kind: lecture
   n: 14
   title: Deep Learning
-- date: ''
+- date: '2027-05-03'
   kind: lecture
   n: 15
   title: PyTorch
-- date: ''
+- date: '2027-05-05'
+  kind: break
+  title: No Class (Children’s Day)
+- date: '2027-05-10'
   kind: lecture
   n: 16
   title: Training and Generalization
-- date: ''
+- date: '2027-05-12'
   kind: lecture
   n: 17
   title: Visual Representations
-- date: ''
+- date: '2027-05-17'
   kind: lecture
   n: 18
   title: Dense Prediction
-- date: ''
+- date: '2027-05-19'
   kind: lecture
   n: 19
   title: Language Models
-- date: ''
+- date: '2027-05-24'
   kind: lecture
   n: 20
   title: Vision-Language Models
-- date: ''
+- date: '2027-05-26'
   kind: lecture
   n: 21
   title: Generative Models
-- date: ''
+- date: '2027-05-31'
   kind: lecture
   n: 22
   title: AI for Data Science
+- date: '2027-06-02'
+  kind: outside
+  title: Project Preparation (Out of Class)
+- date: '2027-06-07'
+  kind: project
+  title: Project Presentation I
+- date: '2027-06-09'
+  kind: project
+  title: Project Presentation II
+- date: '2027-06-14'
+  kind: outside
+  title: Peer Evaluation (Out of Class)
+- date: '2027-06-16'
+  kind: break
+  title: No Class (Exam Period)
+- date: '2027-06-21'
+  kind: break
+  title: No Class (Exam Period)
 other_terms:
 - name: Spring 2026
   url: teaching/26s-programming-for-data-science/
@@ -143,6 +170,9 @@ resources:
 - title: Learn the Basics
   source: PyTorch Tutorials
   url: https://docs.pytorch.org/tutorials/beginner/basics/intro.html
+- title: Academic Calendar 2027
+  source: POSTECH
+  url: https://www.postech.ac.kr/kor/college-life/academic_schedule.do?mode=list&selectedYear=2027&siteId=kor
 project:
   intro: false
   summary: Choose a data science task, establish a reproducible baseline, and compare a checked improvement. Explain
@@ -153,7 +183,7 @@ project:
     when: During the Semester
     text: Define the task and split, establish a reproducible baseline, and record the AI assistance used.
   - name: Final Presentation
-    when: End of the Semester
+    when: Jun 7 & 9
     text: Explain the method, evaluate on held-out data, and share the code and experiment record.
     presentation: 15 min (incl. Q&A)
   evaluation:
@@ -177,3 +207,8 @@ project:
   - id: final
     name: Final
     date_placeholder: Date TBD
+  team_formation:
+    deadline: '2027-03-21'
+    text: Form a team and choose a task.
+meetings:
+  day: Mondays & Wednesdays

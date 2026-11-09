@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-10 | [push 를 빠르게](2026-11-10-fast-push.md) | Sangwoo Mo(sangwoomo) | _config.yml, AGENTS.md | 큰 로컬 폴더 exclude, push 전 별도 빌드·CI 대기 없앰 |
 | 2026-11-10 | [Seminar 소속 기관 링크](2026-11-10-seminar-institution-links.md) | Sangwoo Mo(sangwoomo) | seminar.html, _data/institutions.yml, AGENTS.md | 소속 글자를 기관 공식 영문 사이트로 링크 |
 | 2026-11-09 | [Seminar IME Seminar 탭](2026-11-09-ime-seminar-tab.md) | Sangwoo Mo(sangwoomo) | seminar.html, _data/ime_seminar.yml, seminar.md, AGENTS.md | Lab·Invited 옆에 IME Seminar 필터, 강의 guest 연사를 자동으로 모음 |
 | 2026-11-09 | [Publications poster 링크와 자료 사본](2026-11-09-publication-posters.md) | Sangwoo Mo(sangwoomo) | _data/publications.yml, publications.html, _config.yml, assets/publications/, AGENTS.md | 링크 순서 project·slides·poster·code(셋 다 있으면 slides 생략), poster·slides 40개를 저장소로, 큰 slides 압축 |

@@ -53,3 +53,4 @@ POSTECH 요구사항: 영향 없음
 - 방법: PyMuPDF `rewrite_images`(poster 200 dpi·JPEG 85, slide 150 dpi·80) 뒤 `garbage=4, deflate`. PNG 두 개는 Pillow 무손실 최적화(약 13%).
 - 확인: 페이지를 가로 2000 px 로 렌더해 원본과 비교했다. 배포되는 파일은 PSNR 45 dB 이상(눈으로 구분 안 됨)이다. DIGAN slide(배포 안 함)는 30.7 dB 로 사진 썸네일만 조금 달라지고 글자는 같다.
 - 그대로 둔 것: FreezeD slide(10 MB, PDF 패턴 오류로 그림 재압축 불가), OAK slide(29 MB, 재압축 중 PyMuPDF 가 죽고 무손실 저장은 효과 없음. 배포 안 하는 파일).
+- 교수 확인("이미지가 많아 큰 건 어쩔 수 없다. 화질이 우선"): 화질 우선을 규칙에 적고, PSNR 45 dB 미만이면 원본을 두는 것으로 바꿨다. 그래서 30.7 dB 였던 DIGAN slide 는 원본(7.6 MB)으로 되돌렸다.

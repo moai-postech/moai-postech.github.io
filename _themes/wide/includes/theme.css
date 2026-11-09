@@ -360,7 +360,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule { width: 100%; border-collapse: separate; border-spacing: 0 var(--space-1); }  /* rows are filled bands, a small gap apart (2026-11-02) */
 .schedule.is-locked { table-layout: fixed; }  /* column widths measured once over all talks (scripts.html), so filtering never moves a column */
 .schedule td { padding: var(--space-3) 0; vertical-align: baseline; }
-.schedule tr[data-kind] > td { background: var(--tone-row); box-shadow: 1px 0 0 var(--tone-row); }  /* the shadow covers the hairline between cells of one filled row, as on course schedules */  /* row colour by kind, two of the four course colours: lab sky, invited butter, the same weight */
+.schedule tr[data-kind] > td { background: var(--tone-row); box-shadow: 1px 0 0 var(--tone-row); }  /* the shadow covers the hairline between cells of one filled row, as on course schedules */  /* row colour by kind from the course palette: lab sage, invited butter, IME Seminar neutral grey (교수 2026-11-09) */
 .schedule tr[data-kind] > td:first-child { padding-left: var(--space-4); border-radius: var(--radius-1) 0 0 var(--radius-1); }
 .schedule tr[data-kind] > td:last-child { padding-right: var(--space-4) !important; border-radius: 0 var(--radius-1) var(--radius-1) 0; }
 .schedule-year th { line-height: var(--leading-group); padding: calc(var(--section-gap) - var(--space-1)) 0 calc(var(--space-4) - var(--space-1));  /* minus the gap between rows, so the year sits at the same gaps as every group heading */ color: var(--text); font-size: var(--text-group); font-weight: var(--weight-heading); text-align: left; }

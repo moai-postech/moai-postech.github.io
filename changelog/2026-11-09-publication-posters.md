@@ -39,3 +39,10 @@ POSTECH 요구사항: 영향 없음
 
 - 교수 요청으로 화면 링크 이름을 단수 `slide` 로 바꿨다(poster 와 맞춤). `publications.yml` 의 links 키도 `slides:` → `slide:`(21곳), 템플릿 순서 목록과 생략 조건, `AGENTS.md` 설명을 같이 고쳤다. 파일 이름(`*_slides.pdf`)과 `_config.yml` exclude 는 그대로 둔다.
 - 링크 최대 개수는 지금처럼 4개(arXiv 포함 5개 칸 중 slide 생략)를 유지한다. 5개를 모두 내는 안은 기각: 해당 논문이 DIGAN, OAK 둘뿐이고, project 페이지에 발표 자료가 이미 있어 slide 가 더하는 정보가 적으며 모바일에서 링크 줄이 길어진다.
+
+## 추가 수정(같은 날): 링크 최대 4개 확정, pre-push 빌드 단축
+
+- 교수가 링크를 arXiv 포함 최대 4개로 확정했다. `AGENTS.md` 의 Publications 규칙에 적었다.
+- pre-push 훅의 Jekyll 빌드가 push 마다 약 11분(679초) 걸렸다. 원인은 `github-pages` 에 든 `jekyll-github-metadata` 가 빌드마다 GitHub API 를 부르는 것이었다. 사이트는 `site.github` 를 쓰지 않는다. `tools/site_env.sh` 에 `PAGES_DISABLE_NETWORK=1` 을 넣어 로컬 빌드에서만 끄자 약 3초가 됐다. 결과물은 CSS 캐시 번호만 다르고 같다. CI 는 이 파일을 읽지 않아 그대로다.
+- 기각한 안: pre-push 에서 빌드를 빼는 것. 깨진 커밋을 막는 장치가 사라지고, 빌드가 빨라져 뺄 이유도 없다.
+- 읽은 규칙: 저장소 `AGENTS.md` "검사와 배포". 돌린 검사: pre-push 훅(changelog 검사, 빌드).

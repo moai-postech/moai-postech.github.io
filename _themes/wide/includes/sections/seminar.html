@@ -7,13 +7,13 @@
   제목에만 링크를 건다: 슬라이드(slides)가 있으면 그 파일, 초청 발표는 슬라이드 대신 연사의 해당 논문(paper). 랩 발표에 아직 슬라이드가 없으면 링크를 걸지 않는다(원 논문으로 보내지 않는다, 교수 2026-11-03). 제목 뒤에 slides·paper 같은 표시는 달지 않는다(교수 2026-10-26).
   색은 강의 색 템플릿(course.css 의 tone-*) 네 가지 중 둘을 쓴다: 랩 발표는 하늘색(tone-p1), 초청 발표는 버터 노랑(tone-logistics). 다수인 랩 행이 사이트의 푸른 회색 톤과 어울리고, 버터는 채도가 낮아 강조로 읽히지 않는다. 둘 중 하나를 강조하지 않고 같은 무게로 다르게 칠한다(교수 2026-11-02).
   구분은 랩 내부, 초청(랩 세미나에 초청), IME Seminar(교수가 산업경영공학과 세미나·강의에 초청한 연사) 세 가지다. 필터 버튼 앞 색 점이 범례다.
-  IME Seminar 행은 따로 적지 않고 강의 스케줄(_data/courses/*.yml)의 guest 행에서 가져온다(같은 내용은 한 곳에만). 강의 밖에서 초청한 학과 세미나만 _data/ime_seminar.yml 에 같은 칸(kind: guest)으로 적는다. 색은 강의 템플릿의 세이지(tone-p2)다(교수 2026-11-09).
+  IME Seminar 행은 _data/ime_seminar.yml 한 곳에서만 읽는다. 강의 스케줄의 guest·seminar 행을 자동으로 가져오지 않는다. 수업 시간에 들은 학과 세미나라도 교수가 부르지 않은 연사가 섞이기 때문이다. 교수가 부른 연사만 강의 행에서 칸을 옮겨 적는다(교수 2026-11-09).
+  색은 외부 연사 둘을 따뜻한 쪽, 랩 내부를 차가운 쪽으로 묶는다: Lab 하늘(tone-p1), Invited 버터(tone-logistics), IME Seminar 코랄(tone-p3). 세이지(tone-p2)는 하늘과 같은 차가운 계열이라 IME 가 Lab 의 짝처럼 읽혀서 쓰지 않는다(교수 2026-11-09).
   특정 주제 발표가 아닌 회차(routine: Research Sync, Internal Review, Paper Review Session, 학회·도구 Sharing Session)는 같은 색 띠에 두되, 연사를 Lab members 로 통일하고(시트에는 담당자) 제목과 연사를 회색 보통 굵기로 낮춰 주제 발표 제목이 먼저 읽히게 한다(교수 2026-11-02).
   소속이 없는 줄(랩 발표)은 제목 칸이 소속 칸까지 쓴다(colspan). 긴 제목이 빈 소속 칸 때문에 두 줄로 넘어가지 않게 한다(교수 2026-11-02).
   다가오는 발표는 목록 맨 위(최신순)에 오고, 방문자 브라우저에서 날짜가 강조된다(scripts.html 의 is-upcoming). 교수 2026-10-23: Up next 카드는 빼고 이 상단 하이라이트만 둔다.
 {% endcomment %}
-{% assign ime = "" | split: "" %}{% for c in site.data.courses %}{% for r in c[1].schedule %}{% if r.kind == "guest" %}{% assign ime = ime | push: r %}{% endif %}{% endfor %}{% endfor %}{% for r in site.data.ime_seminar.talks %}{% assign ime = ime | push: r %}{% endfor %}
-{% assign talks = site.data.seminar.talks | concat: ime | sort: "date" | reverse %}
+{% assign ime = site.data.ime_seminar.talks %}{% assign talks = site.data.seminar.talks | concat: ime | sort: "date" | reverse %}
 {% assign years = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% unless years contains y %}{% assign years = years | append: y | append: "," %}{% endunless %}{% endfor %}{% assign years = years | split: "," | sort | reverse %}{% assign latest = years | first %}
 {% assign shown = "" | split: "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y == latest %}{% assign shown = shown | push: t %}{% endif %}{% endfor %}{% assign invited = shown | where: "invited", true %}{% assign ime_shown = shown | where: "kind", "guest" %}
     <section class="content-section">
@@ -26,14 +26,14 @@
       <button type="button" class="filter-btn" data-show="all" aria-pressed="true">All <span>{{ shown.size }}</span></button>
       <button type="button" class="filter-btn" data-show="lab" aria-pressed="false"><i class="filter-swatch tone-p1" aria-hidden="true"></i>Lab <span>{{ shown.size | minus: invited.size | minus: ime_shown.size }}</span></button>
       <button type="button" class="filter-btn" data-show="invited" aria-pressed="false"><i class="filter-swatch tone-logistics" aria-hidden="true"></i>Invited <span>{{ invited.size }}</span></button>
-      <button type="button" class="filter-btn" data-show="ime" aria-pressed="false"><i class="filter-swatch tone-p2" aria-hidden="true"></i>IME Seminar <span>{{ ime_shown.size }}</span></button>
+      <button type="button" class="filter-btn" data-show="ime" aria-pressed="false"><i class="filter-swatch tone-p3" aria-hidden="true"></i>IME Seminar <span>{{ ime_shown.size }}</span></button>
       {% if site.data.seminar.sheet %}<a class="filter-link" href="{{ site.data.seminar.sheet }}">Full schedule <span aria-hidden="true">↗</span></a>{% endif %}
     </div>
     <table class="schedule">
       <colgroup><col class="col-date"><col class="col-title"><col class="col-aff"><col class="col-speaker"></colgroup>
       <tbody>
       {% assign year = "" %}{% for t in talks %}{% assign y = t.date | slice: 0, 4 %}{% if y != year %}{% assign year = y %}<tr class="schedule-year" data-year="{{ y }}"><th colspan="4" scope="rowgroup">{{ y }}</th></tr>{% endif %}
-      {% if t.kind == "guest" %}{% assign tk = "ime" %}{% assign tt = "tone-p2" %}{% elsif t.invited %}{% assign tk = "invited" %}{% assign tt = "tone-logistics" %}{% else %}{% assign tk = "lab" %}{% assign tt = "tone-p1" %}{% endif %}
+      {% if t.kind == "guest" %}{% assign tk = "ime" %}{% assign tt = "tone-p3" %}{% elsif t.invited %}{% assign tk = "invited" %}{% assign tt = "tone-logistics" %}{% else %}{% assign tk = "lab" %}{% assign tt = "tone-p1" %}{% endif %}
       <tr data-kind="{{ tk }}" class="{{ tt }}{% if t.routine %} is-routine{% endif %}" data-date="{{ t.date }}" data-year="{{ y }}">
         <td class="schedule-date">{{ t.date | date: "%m/%d" }}</td>
         {% if t.invited %}{% assign doc = t.slides | default: t.paper %}{% else %}{% assign doc = t.slides %}{% endif %}<td class="schedule-title"{% unless t.affiliation %} colspan="2"{% endunless %}>{% if doc %}<a href="{{ doc }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</td>

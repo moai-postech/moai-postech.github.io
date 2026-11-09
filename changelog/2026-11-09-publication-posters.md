@@ -34,3 +34,8 @@ POSTECH 요구사항: 영향 없음
 - 화면에 나오는 slides 는 약 54 MB, poster 는 약 62 MB. 배포 대상은 약 845 MB.
 - `_config.yml` exclude 는 전체 slides 대신 화면에 안 나오는 DIGAN, OAK slides 두 파일만 남겼다.
 - 기각한 안: slides 를 압축 없이 모두 배포(약 960 MB 로 Pages 1 GB 한도에 닿음), slides 를 Drive 링크로 두는 안(자료를 저장소로 모으기로 함).
+
+## 추가 수정(같은 날): 링크 이름 slides → slide
+
+- 교수 요청으로 화면 링크 이름을 단수 `slide` 로 바꿨다(poster 와 맞춤). `publications.yml` 의 links 키도 `slides:` → `slide:`(21곳), 템플릿 순서 목록과 생략 조건, `AGENTS.md` 설명을 같이 고쳤다. 파일 이름(`*_slides.pdf`)과 `_config.yml` exclude 는 그대로 둔다.
+- 링크 최대 개수는 지금처럼 4개(arXiv 포함 5개 칸 중 slide 생략)를 유지한다. 5개를 모두 내는 안은 기각: 해당 논문이 DIGAN, OAK 둘뿐이고, project 페이지에 발표 자료가 이미 있어 slide 가 더하는 정보가 적으며 모바일에서 링크 줄이 길어진다.

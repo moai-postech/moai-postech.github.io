@@ -1,8 +1,8 @@
 # Publications 페이지. section 이 절 제목(Preprints, 연도)이고 위에서부터 그대로 나온다.
 # authors: 쉼표로 구분. 이름 뒤 * 는 equal contribution, † 는 equal advising.
 # official 은 학회·저널 공식 페이지(제목 링크, 없으면 제목에 링크 없음). url 은 arXiv(arXiv 링크).
-# links 에는 그 밖의 자료를 둔다. 화면에는 arXiv, project, slides, poster, code 순서로 나온다. project·slides·poster 가 모두 있으면 slides 는 빼고 보인다(교수 2026-11-09).
-# poster·slides 는 Drive 링크가 아니라 이 저장소의 사본(assets/publications/{연도}_{학회}_{약칭}_{poster|slides}.확장자)을 가리킨다.
+# links 에는 그 밖의 자료를 둔다. 화면에는 arXiv, project, slide, poster, code 순서로 나온다. project·slide·poster 가 모두 있으면 slide 는 빼고 보인다(교수 2026-11-09).
+# poster·slide 는 Drive 링크가 아니라 이 저장소의 사본(assets/publications/{연도}_{학회}_{약칭}_{poster|slides}.확장자)을 가리킨다.
 # 원본은 교수 Drive 의 public/ 폴더(같은 이름 체계, 예: 26_icml_vap)와 학회 virtual 페이지이고, Drive 원본 짝은 tools/drive_sources.json 에 있다.
 # 새 논문은 poster 가 있으면 public/ 폴더에 올린 뒤 받아 넣는다. 학회 virtual 페이지(PosterPDFs)에 저자가 올린 poster 도 받아 넣는다.
 # venue 뒤 괄호: 트랙 (application), (industry), (findings) 는 venue 배지 안에, 발표 형식 (oral), (spotlight), (highlight) 는 배지 옆 강조색 글자로 나온다.
@@ -101,7 +101,7 @@
       authors: "Seung-Hyun Lee, Sangwoo Mo, Stella X. Yu"
       venue: "TMLR 2026"
       links:
-        slides: "assets/publications/26_tmlr_shed_slides.pdf"
+        slide: "assets/publications/26_tmlr_shed_slides.pdf"
 - section: "2025"
   papers:
     - title: "Open Ad-hoc Categorization with Contextualized Feature Learning"
@@ -113,7 +113,7 @@
         project: "https://oak-2025.github.io/"
         code: "https://github.com/Wayne2Wang/OAK"
         poster: "assets/publications/25_cvpr_oak_poster.pdf"
-        slides: "assets/publications/25_cvpr_oak_slides.pdf"
+        slide: "assets/publications/25_cvpr_oak_slides.pdf"
     - title: "Sparsified State-Space Models are Efficient Highway Networks"
       official: "https://openreview.net/forum?id=G1p0YwrX8X"
       url: "https://arxiv.org/abs/2505.20698"
@@ -130,7 +130,7 @@
       venue: "CVPR 2024 (highlight)"
       links:
         code: "https://github.com/alinlab/b2t"
-        slides: "assets/publications/24_cvpr_b2t_slides.pdf"
+        slide: "assets/publications/24_cvpr_b2t_slides.pdf"
         poster: "assets/publications/24_cvpr_b2t_poster.pdf"
     - title: "Learning Hierarchical Image Segmentation For Recognition and By Recognition"
       official: "https://openreview.net/forum?id=IRcv4yFX6z"
@@ -139,7 +139,7 @@
       venue: "ICLR 2024 (spotlight)"
       links:
         code: "https://github.com/twke18/CAST"
-        slides: "assets/publications/24_iclr_cast_slides.pdf"
+        slide: "assets/publications/24_iclr_cast_slides.pdf"
         poster: "assets/publications/24_iclr_cast_poster.pdf"
     - title: "SuRe: Summarizing Retrievals using Answer Candidates for Open-domain QA of LLMs"
       official: "https://openreview.net/forum?id=w4DW6qkRmt"
@@ -148,7 +148,7 @@
       venue: "ICLR 2024"
       links:
         code: "https://github.com/bbuing9/ICLR24_SuRe"
-        slides: "assets/publications/24_iclr_sure_slides.pdf"
+        slide: "assets/publications/24_iclr_sure_slides.pdf"
         poster: "assets/publications/24_iclr_sure_poster.pdf"
     - title: "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs"
       official: "https://openreview.net/forum?id=ulaUJFd96G"
@@ -157,7 +157,7 @@
       venue: "ICLR 2024"
       links:
         code: "https://github.com/alinlab/HOMER"
-        slides: "assets/publications/24_iclr_homer_slides.pdf"
+        slide: "assets/publications/24_iclr_homer_slides.pdf"
         poster: "assets/publications/24_iclr_homer_poster.pdf"
 - section: "2023"
   papers:
@@ -168,7 +168,7 @@
       venue: "NeurIPS 2023"
       links:
         code: "https://github.com/alinlab/s-clip"
-        slides: "assets/publications/23_neurips_s-clip_slides.pdf"
+        slide: "assets/publications/23_neurips_s-clip_slides.pdf"
         poster: "assets/publications/23_neurips_s-clip_poster.png"
     - title: "Diffusion Probabilistic Models for Structured Node Classification"
       official: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/65d32185f73cbf4535449a792c63926f-Abstract-Conference.html"
@@ -178,7 +178,7 @@
       links:
         code: "https://github.com/hsjang0/DPM-GSP"
         poster: "assets/publications/23_neurips_dpm-snc_poster.png"
-        slides: "assets/publications/23_neurips_dpm-snc_slides.pdf"
+        slide: "assets/publications/23_neurips_dpm-snc_slides.pdf"
     - title: "RoPAWS: Robust Semi-supervised Representation Learning from Uncurated Data"
       official: "https://openreview.net/forum?id=G1H4NSATlr"
       url: "https://arxiv.org/abs/2302.14483"
@@ -186,7 +186,7 @@
       venue: "ICLR 2023"
       links:
         code: "https://github.com/facebookresearch/suncet"
-        slides: "assets/publications/23_iclr_ropaws_slides.pdf"
+        slide: "assets/publications/23_iclr_ropaws_slides.pdf"
         poster: "assets/publications/23_iclr_ropaws_poster.pdf"
     - title: "Breaking the Spurious Causality of Conditional Generation via Fairness Intervention with Corrective Sampling"
       official: "https://openreview.net/forum?id=VV4zJwLwI7"
@@ -195,7 +195,7 @@
       venue: "TMLR 2023"
       links:
         code: "https://openreview.net/attachment?id=VV4zJwLwI7&name=supplementary_material"
-        slides: "assets/publications/23_tmlr_fics_slides.pdf"
+        slide: "assets/publications/23_tmlr_fics_slides.pdf"
         poster: "assets/publications/23_tmlr_fics_poster.pdf"
 - section: "2022"
   papers:
@@ -208,7 +208,7 @@
         project: "https://sihyun-yu.github.io/digan/"
         code: "https://github.com/sihyun-yu/digan"
         poster: "assets/publications/22_iclr_digan_poster.pdf"
-        slides: "assets/publications/22_iclr_digan_slides.pdf"
+        slide: "assets/publications/22_iclr_digan_slides.pdf"
     - title: "OAMixer: Object-aware Mixing Layer for Vision Transformers"
       url: "https://arxiv.org/abs/2212.06595"
       authors: "Hyunwoo Kang*, Sangwoo Mo*, Jinwoo Shin"
@@ -227,7 +227,7 @@
       note: "Qualcomm Innovation Fellowship Korea, 2021"
       links:
         code: "https://github.com/alinlab/object-aware-contrastive"
-        slides: "assets/publications/21_neurips_oacon_slides.pdf"
+        slide: "assets/publications/21_neurips_oacon_slides.pdf"
         poster: "assets/publications/21_neurips_oacon_poster.pdf"
     - title: "Layer-adaptive Sparsity for the Magnitude-based Pruning"
       official: "https://openreview.net/forum?id=H6ATjJ0TKdf"
@@ -236,7 +236,7 @@
       venue: "ICLR 2021"
       links:
         code: "https://github.com/jaeho-lee/layer-adaptive-sparsity"
-        slides: "assets/publications/21_iclr_lamp_slides.pdf"
+        slide: "assets/publications/21_iclr_lamp_slides.pdf"
         poster: "assets/publications/21_iclr_lamp_poster.png"
     - title: "MASKER: Masked Keyword Regularization for Reliable Text Classification"
       official: "https://ojs.aaai.org/index.php/AAAI/article/view/17601"
@@ -245,7 +245,7 @@
       venue: "AAAI 2021"
       links:
         code: "https://github.com/alinlab/MASKER"
-        slides: "assets/publications/21_aaai_masker_slides.pdf"
+        slide: "assets/publications/21_aaai_masker_slides.pdf"
         poster: "assets/publications/21_aaai_masker_poster.pdf"
     - title: "Deep Neural Network Based Electrical Impedance Tomographic Sensing Methodology for Large-Area Robotic Tactile Sensing"
       official: "https://ieeexplore.ieee.org/document/9376677"
@@ -256,7 +256,7 @@
       authors: "Sihyun Yu, Sangwoo Mo, Sungsoo Ahn, Jinwoo Shin"
       venue: "ICMLW 2021"
       links:
-        slides: "assets/publications/21_icmlw_logic-gen_slides.pdf"
+        slide: "assets/publications/21_icmlw_logic-gen_slides.pdf"
 - section: "2020"
   papers:
     - title: "CSI: Novelty Detection via Contrastive Learning on Distributionally Shifted Instances"
@@ -267,7 +267,7 @@
       note: "Qualcomm Innovation Fellowship Korea, 2020"
       links:
         code: "https://github.com/alinlab/CSI"
-        slides: "assets/publications/20_neurips_csi_slides.pdf"
+        slide: "assets/publications/20_neurips_csi_slides.pdf"
         poster: "assets/publications/20_neurips_csi_poster.pdf"
     - title: "Lookahead: A Far-sighted Alternative of Magnitude-based Pruning"
       official: "https://openreview.net/forum?id=ryl3ygHYDB"
@@ -276,14 +276,14 @@
       venue: "ICLR 2020"
       links:
         code: "https://github.com/alinlab/lookahead_pruning"
-        slides: "assets/publications/20_iclr_lookahead_slides.pdf"
+        slide: "assets/publications/20_iclr_lookahead_slides.pdf"
     - title: "Freeze the Discriminator: a Simple Baseline for Fine-Tuning GANs"
       url: "https://arxiv.org/abs/2002.10964"
       authors: "Sangwoo Mo, Minsu Cho, Jinwoo Shin"
       venue: "CVPRW 2020"
       links:
         code: "https://github.com/sangwoomo/FreezeD"
-        slides: "assets/publications/20_cvprw_freezed_slides.pdf"
+        slide: "assets/publications/20_cvprw_freezed_slides.pdf"
 - section: "2019"
   papers:
     - title: "Mining GOLD Samples for Conditional GANs"
@@ -293,14 +293,14 @@
       venue: "NeurIPS 2019"
       links:
         code: "https://github.com/sangwoomo/gold"
-        slides: "assets/publications/19_neurips_gold_slides.pdf"
+        slide: "assets/publications/19_neurips_gold_slides.pdf"
         poster: "assets/publications/19_neurips_gold_poster.pdf"
     - title: "Deep Neural Network Approach in Electrical Impedance Tomography-Based Real-Time Soft Tactile Sensor"
       official: "https://ieeexplore.ieee.org/document/8968532"
       authors: "Hyunkyu Park, Hyosang Lee, Kyungseo Park, Sangwoo Mo, Jung Kim"
       venue: "IROS 2019"
       links:
-        slides: "assets/publications/19_iros_dnn-eit_slides.pdf"
+        slide: "assets/publications/19_iros_dnn-eit_slides.pdf"
     - title: "InstaGAN: Instance-aware Image-to-Image Translation"
       official: "https://openreview.net/forum?id=ryxwJhC9YX"
       url: "https://arxiv.org/abs/1812.10889"
@@ -310,4 +310,4 @@
       links:
         code: "https://github.com/sangwoomo/instagan"
         poster: "assets/publications/19_iclr_instagan_poster.pdf"
-        slides: "assets/publications/19_iclr_instagan_slides.pdf"
+        slide: "assets/publications/19_iclr_instagan_slides.pdf"

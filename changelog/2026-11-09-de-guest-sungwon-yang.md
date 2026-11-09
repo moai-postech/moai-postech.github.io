@@ -1,5 +1,5 @@
 # 2026-11-09 Data Engineering 스케줄에 양성원 연사 초청 강연 추가
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/courses/26f-data-engineering.yml` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/courses/26f-data-engineering.yml`, `AGENTS.md` | 도구: Claude Code
 
 > **한줄 결론: 11/13(금) Bain & Company 양성원 연사 초청 강연을 Data Engineering 스케줄에 guest 행으로 넣었다.**
 
@@ -15,7 +15,12 @@ POSTECH 요구사항: 영향 없음
 - 영문 이름 `Sungwon Yang` 은 Bain 조직도(theorg.com)의 표기를 따랐다.
 
 ## 기각한 안과 이유
-- 연사 링크(url): 스케줄 규칙상 연사나 교수가 준 주소만 쓴다. 받은 주소가 없어 비웠다.
+- 연사 링크(url)를 비워 두는 안: 처음에는 "연사나 교수가 준 주소만 쓴다"는 규칙대로 비웠다. 교수가 연사 프로필 링크는 검색해서라도 반드시 넣으라고 해서 뒤집었다.
+
+## 연사 프로필 링크 추가 (같은 날)
+- 교수 지적: 게스트 렉처 행에 연사 프로필 링크가 들어가야 한다.
+- 연사 홈페이지가 없어 LinkedIn `https://www.linkedin.com/in/sungwonyang/` 을 `url` 에 넣었다. 포스터 경력(Bain Associate Partner, APAC AI Insights & Solutions, MIT, Ex-AWS)과 일치함을 확인했다.
+- 규칙 반영: `AGENTS.md` 의 "강의 스케줄의 초청 강연·세미나 행" 항목과 yml 머리 주석을 "검색해서 반드시 넣는다"로 바꿨다.
 
 ## 남은 것
-- 연사 홈페이지·LinkedIn 을 받으면 url 추가.
+- 없음.

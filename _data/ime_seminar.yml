@@ -1,6 +1,6 @@
 # Seminar 페이지의 IME Seminar 탭 목록. 교수가 산업경영공학과 세미나나 강의 guest lecture 로 직접 부른 연사만 적는다.
 # 강의 스케줄에서 자동으로 가져오지 않는다. 학과 세미나라도 교수가 부르지 않은 연사(예: 26S 수업 중 들은 Songyee Yoon)는 넣지 않는다(교수 2026-11-09).
-# 강의 행에 있는 연사면 그 행의 칸을 그대로 옮겨 적는다: date, kind: guest(필수), title(원문 그대로), speaker(영문), url(연사 프로필, 홈페이지 없으면 LinkedIn), affiliation.
+# 강의 행에 있는 연사면 그 행의 칸을 그대로 옮겨 적는다: date, kind: guest(필수), title(원문 그대로), speaker(영문), url(연사 프로필, 홈페이지 없으면 LinkedIn), affiliation(기관 이름만, CEO 같은 직함은 넣지 않는다).
 talks:
   - date: "2026-11-18"
     kind: guest
@@ -31,4 +31,4 @@ talks:
     title: "데이터, AI, 고객: 데이터가 가치있어 지는 방법과 우리의 할일"
     speaker: "Ki-Young Shin"
     url: "https://kr.linkedin.com/in/shinky"
-    affiliation: "CEO, Designovel"
+    affiliation: "Designovel"

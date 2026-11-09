@@ -185,6 +185,13 @@ schedule:
     reading:
       - text: "PDIS Lec 17"
         url: "https://web.stanford.edu/class/cs245/"
+  - date: "2026-11-13"
+    kind: guest
+    title: "전략 컨설턴트의 일과 사고법, 산업 현장의 AI"
+    speaker: "Sungwon Yang"
+    affiliation: "Bain & Company"
+    time: "15:30 – 17:00 KST"
+    location: "C5, Room 422-1"
   - part: "part-3"
   - date: "2026-11-17"
     kind: lecture

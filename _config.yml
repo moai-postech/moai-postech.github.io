@@ -79,5 +79,6 @@ exclude:
   - Gemfile.lock
   - vendor
   - node_modules
+  - visual-review-bundle   # 검수용 로컬 묶음(gitignore). 빼지 않으면 로컬 빌드가 153MB 를 iCloud 에서 읽어 5분 넘게 걸렸다(2026-11-10)
   - assets/publications/22_iclr_digan_slides.pdf   # project·slides·poster 가 모두 있어 화면에 slides 를 안 내는 논문. 저장소 보관용(교수 2026-11-09)
   - assets/publications/25_cvpr_oak_slides.pdf

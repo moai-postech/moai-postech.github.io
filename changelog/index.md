@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-09 | [Seminar IME Seminar 탭](2026-11-09-ime-seminar-tab.md) | Sangwoo Mo(sangwoomo) | seminar.html, _data/ime_seminar.yml, seminar.md, AGENTS.md | Lab·Invited 옆에 IME Seminar 필터, 강의 guest 연사를 자동으로 모음 |
 | 2026-11-09 | [Publications poster 링크와 자료 사본](2026-11-09-publication-posters.md) | Sangwoo Mo(sangwoomo) | _data/publications.yml, publications.html, _config.yml, assets/publications/, AGENTS.md | 링크 순서 project·slides·poster·code(셋 다 있으면 slides 생략), poster·slides 40개를 저장소로, 큰 slides 압축 |
 | 2026-11-09 | [DE 스케줄 양성원 초청 강연](2026-11-09-de-guest-sungwon-yang.md) | Sangwoo Mo(sangwoomo) | _data/courses/26f-data-engineering.yml | 11/13 Bain & Company 양성원 연사 guest 행 추가 |
 | 2026-11-08 | [12강 Cloud·Warehouse·Airflow 복원](2026-11-08-lecture-twelve-cloud-warehousing.md) | Sangwoo Mo (sangwoomo) | Data Engineering 12강 HTML·PDF | 핵심 흐름 74장 유지, 사진·제품 화면 34장 개편·검수 |

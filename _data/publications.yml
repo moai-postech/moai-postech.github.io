@@ -1,7 +1,7 @@
 # Publications 페이지. section 이 절 제목(Preprints, 연도)이고 위에서부터 그대로 나온다.
 # authors: 쉼표로 구분. 이름 뒤 * 는 equal contribution, † 는 equal advising.
 # official 은 학회·저널 공식 페이지(제목 링크, 없으면 제목에 링크 없음). url 은 arXiv(arXiv 링크).
-# links 에는 그 밖의 자료를 둔다. 화면에는 arXiv, project, poster, code 순서로 나온다. slides 는 데이터에만 둔다(교수 2026-11-09).
+# links 에는 그 밖의 자료를 둔다. 화면에는 arXiv, project, slides, poster, code 순서로 나온다. project·slides·poster 가 모두 있으면 slides 는 빼고 보인다(교수 2026-11-09).
 # poster·slides 는 Drive 링크가 아니라 이 저장소의 사본(assets/publications/{연도}_{학회}_{약칭}_{poster|slides}.확장자)을 가리킨다.
 # 원본은 교수 Drive 의 public/ 폴더(같은 이름 체계, 예: 26_icml_vap)와 학회 virtual 페이지이고, Drive 원본 짝은 tools/drive_sources.json 에 있다.
 # 새 논문은 poster 가 있으면 public/ 폴더에 올린 뒤 받아 넣는다. 학회 virtual 페이지(PosterPDFs)에 저자가 올린 poster 도 받아 넣는다.

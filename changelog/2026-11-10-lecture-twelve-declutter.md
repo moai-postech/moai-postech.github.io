@@ -54,3 +54,6 @@ Drive·PLMS 동기화는 기존 보류를 유지한다. 과목 쪽 상세 기록
 - 기각: 기초 판매 계산에 설명 노트만 추가하거나 작년 문법 장을 전부 복원하는 안. 저장·실행·진단의 원리를 중심으로 재배분했다.
 - 영향: 기존 주소와 yml 유지. 사용자 승인에 따라 Drive·시트·PLMS도 강의 프로젝트에서 같은 최종본으로 갱신한다. 다른 강의는 변경하지 않는다.
 - 읽은 규칙: 사이트·상위 AGENTS, 과목 AGENTS·POSTECH-STYLE·SLIDE-PLAYBOOK·presentation/documents/workflow. 기존 53장 사이트판은 Git 38fd04e로 복구할 수 있다.
+
+## ETL·ELT 선택 기준(56장)
+교수 요청으로29쪽정의바로뒤새30쪽에Choosing ETL or ELT를추가했다. 데이터경계·계산위치·분석변경필요로비교하고원본을보관하는ELT의접근통제전제를명시했다. 기존두파일주소유지. deck-check통과·HTML N=56·PDF56쪽전수렌더및새30쪽확인. 기각: ETL만안전/ELT항상빠름같은이분법. 과목AGENTS의현재판과기준갱신.

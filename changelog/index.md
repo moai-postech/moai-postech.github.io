@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- |
 | 2026-11-10 | [programming-ax-2027](2026-11-10-programming-ax-2027.md) | Sangwoo Mo(sangwoomo) | Spring 2027 Programming for AX | AI 먼저 기획 유지, 강의 구조와 HTML 자료 게시 |
 | 2026-11-10 | [공개 게시 지연 복구](2026-11-10-deploy-recovery.md) | Sangwoo Mo (sangwoomo) | Pages workflow·공개 버전 검사 | 3분 제한·같은 artifact 재시도, 공개 커밋·강의 파일 해시 검사 |
-| 2026-11-10 | [12강 시각 실험 개편](2026-11-10-lecture-twelve-declutter.md) | Sangwoo Mo (sangwoomo) | Data Engineering 12강 HTML·PDF | 50장, 코드 대신 저장·ETL/ELT·snapshot·DAG 시각 실험4개 |
+| 2026-11-10 | [12강 비교 모형·재처리 보완](2026-11-10-lecture-twelve-declutter.md) | Sangwoo Mo (sangwoomo) | Data Engineering 12강 HTML·PDF | 54장, 읽기량·grain·snapshot·DAG 검증과 안전한 재실행 |
 | 2026-11-10 | [push 를 빠르게](2026-11-10-fast-push.md) | Sangwoo Mo(sangwoomo) | _config.yml, AGENTS.md | 큰 로컬 폴더 exclude, push 전 별도 빌드·CI 대기 없앰 |
 | 2026-11-10 | [Seminar 소속 기관 링크](2026-11-10-seminar-institution-links.md) | Sangwoo Mo(sangwoomo) | seminar.html, _data/institutions.yml, AGENTS.md | 소속 글자를 기관 공식 영문 사이트로 링크 |
 | 2026-11-09 | [Seminar IME Seminar 탭](2026-11-09-ime-seminar-tab.md) | Sangwoo Mo(sangwoomo) | seminar.html, _data/ime_seminar.yml, seminar.md, AGENTS.md | Lab·Invited 옆에 IME Seminar 필터, 강의 guest 연사를 자동으로 모음 |

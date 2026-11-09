@@ -46,3 +46,10 @@ POSTECH 요구사항: 영향 없음
 - pre-push 훅의 Jekyll 빌드가 push 마다 약 11분(679초) 걸렸다. 원인은 `github-pages` 에 든 `jekyll-github-metadata` 가 빌드마다 GitHub API 를 부르는 것이었다. 사이트는 `site.github` 를 쓰지 않는다. `tools/site_env.sh` 에 `PAGES_DISABLE_NETWORK=1` 을 넣어 로컬 빌드에서만 끄자 약 3초가 됐다. 결과물은 CSS 캐시 번호만 다르고 같다. CI 는 이 파일을 읽지 않아 그대로다.
 - 기각한 안: pre-push 에서 빌드를 빼는 것. 깨진 커밋을 막는 장치가 사라지고, 빌드가 빨라져 뺄 이유도 없다.
 - 읽은 규칙: 저장소 `AGENTS.md` "검사와 배포". 돌린 검사: pre-push 훅(changelog 검사, 빌드).
+
+## 추가 수정(같은 날): 큰 poster·slide 압축
+
+- 교수 요청("화질 손실 없는 선에서 용량 줄이기")으로 3 MB 넘는 12개를 다시 압축했다. 10개를 바꿔 `assets/publications/` 가 146 MB 에서 121 MB 가 됐다. 큰 것: InstaGAN poster 11.0→2.2 MB, CSI poster 6.6→1.7, HoMER poster 4.9→1.0, DIGAN slide 7.6→3.7, VAP poster 7.1→5.0, OAK poster 5.8→4.0.
+- 방법: PyMuPDF `rewrite_images`(poster 200 dpi·JPEG 85, slide 150 dpi·80) 뒤 `garbage=4, deflate`. PNG 두 개는 Pillow 무손실 최적화(약 13%).
+- 확인: 페이지를 가로 2000 px 로 렌더해 원본과 비교했다. 배포되는 파일은 PSNR 45 dB 이상(눈으로 구분 안 됨)이다. DIGAN slide(배포 안 함)는 30.7 dB 로 사진 썸네일만 조금 달라지고 글자는 같다.
+- 그대로 둔 것: FreezeD slide(10 MB, PDF 패턴 오류로 그림 재압축 불가), OAK slide(29 MB, 재압축 중 PyMuPDF 가 죽고 무손실 저장은 효과 없음. 배포 안 하는 파일).

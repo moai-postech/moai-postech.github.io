@@ -13,10 +13,12 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말·로고·`_config.yml` 
 - 강의 밖에서 초청한 학과 세미나만 적을 `_data/ime_seminar.yml` 을 만들었다(지금은 비어 있음).
 - 필터 버튼 `IME Seminar`, 색은 강의 템플릿의 세이지(`tone-p2`). 연사 이름은 강의 행의 `url`(연사 프로필)로 건다. 제목에는 링크가 없다.
 - 지금 들어가는 연사: Ki-Young Shin(2025-11-27), Dae-Young Park(2026-09-18), Sungwon Yang(2026-11-13), Hyunkyu Lee(2026-11-18).
+- 교수 확인 후 26S Programming for Data Science 의 학과 세미나 연사 Songyee Yoon(2026-04-23), Yeong-Hwan Jeon(2026-05-29)을 `ime_seminar.yml` 에 더했다. 강의 행은 `kind: seminar` 그대로 둔다(강의 페이지 표시가 바뀌지 않게).
 - 페이지 소개 문장과 `AGENTS.md` 세미나 절에 IME Seminar 를 더했다. 템플릿 원본은 `_backup/seminar.html.20261109`.
 
 ## 기각한 안과 이유
-- 26S Programming for Data Science 의 `kind: seminar` 행(Songyee Yoon, Yeong-Hwan Jeon, 교수 본인): 수업 시간에 들은 학과 세미나라 교수가 초청한 guest lecture 가 아니어서 넣지 않았다. 교수가 초청한 것이면 `ime_seminar.yml` 에 적는다.
+- 26S 의 `kind: seminar` 행을 처음에는 guest lecture 가 아니라는 이유로 뺐으나, 교수가 넣으라고 해서 위처럼 더했다. 교수 본인 발표(2026-04-29)는 초청 연사가 아니라 넣지 않았다.
+- 26S 강의 행을 `kind: guest` 로 바꾸는 안: 강의 페이지에서 학과 세미나가 guest lecture 로 잘못 표시된다.
 - 연사 목록을 `_data/seminar.yml` 에 손으로 더하는 안: 그 파일은 시트 동기화가 덮어쓴다.
 
 ## 남은 것

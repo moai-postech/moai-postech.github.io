@@ -42,3 +42,15 @@ Drive·PLMS 동기화는 기존 보류를 유지한다. 과목 쪽 상세 기록
 - HTML·PDF를 함께 교체했다. deck-check 통과, SQL 7조건·지도 20곳 통과, HTML N=53 OK, PDF 53쪽 전수 렌더 확인.
 - 기각한 안과 이유: 순서 재구성과 장 추가는 큰 흐름을 바꿀 이유가 없어 채택하지 않았다.
 - 남은 것: 없음(이번 사이트 반영 범위). Drive·PLMS는 강의 작업의 기존 보류를 유지한다.
+
+## 후속 정정: 55장 깊이 개편
+
+교수 지적: warehouse가 기초 계산에 치우치고 작년 Airflow 사례가 축약됐다. 이전 큰 흐름 통과 판정을 깊이 측면에서 정정했다.
+
+- 기초 합계·JOIN 실습을 덜고 OLTP/OLAP와 row/column 저장의 비용·압축·pruning을 연결했다.
+- BigQuery 실제 구조·Dremel 부분 집계, lakehouse snapshot commit을 보강했다.
+- 작년 Airbnb 실험 화면·실제 DAG·Gantt를 복원하고 코드·interval·retry·backfill을 연결했다.
+- 55장 HTML·PDF. deck-check·HTML N=55·PDF55쪽, SQLite재실행5조건·목차20개·JS오류0, 전쪽 렌더 확인. Airflow 코드는 2.10과 common-sql1.26 기준이며 서버 실행은 하지 않았다.
+- 기각: 기초 판매 계산에 설명 노트만 추가하거나 작년 문법 장을 전부 복원하는 안. 저장·실행·진단의 원리를 중심으로 재배분했다.
+- 영향: 기존 주소와 yml 유지. 사용자 승인에 따라 Drive·시트·PLMS도 강의 프로젝트에서 같은 최종본으로 갱신한다. 다른 강의는 변경하지 않는다.
+- 읽은 규칙: 사이트·상위 AGENTS, 과목 AGENTS·POSTECH-STYLE·SLIDE-PLAYBOOK·presentation/documents/workflow. 기존 53장 사이트판은 Git 38fd04e로 복구할 수 있다.

@@ -79,3 +79,4 @@ exclude:
   - Gemfile.lock
   - vendor
   - node_modules
+  - "assets/publications/*_slides.pdf"   # 논문 slides 는 저장소 보관용. Pages 1 GB 한도 때문에 배포하지 않는다(교수 2026-11-09)

@@ -19,6 +19,7 @@ _data/               콘텐츠 데이터(YAML)
   talks.yml          Teaching > Talks
   ai_study.yml       학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트에서 만든다(GitHub Actions `ai-study-sync` 가 매일 06:30 KST, Actions 탭 Run workflow 로 바로). 손으로 고치지 않는다
   seminar.yml        Research > Seminar 의 발표 목록. tools/seminar_sync.py 가 랩 세미나 구글시트에서 만든다. 손으로 고치지 않는다(아래 "세미나 발표 올리기")
+  institutions.yml   기관 이름 → 공식 영문 사이트. Seminar 소속 글자의 링크(키는 affiliation 과 글자 그대로 같게)
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
 index.md 외 *.md     페이지 하나에 파일 하나(overview·seminar·funding, list-view·map-view, faculty·lab-members·other-mentees, courses·talks, contact, news). news.md 는 전체 뉴스 보관 페이지로 메뉴에 없다. 메뉴의 Research, Publications, People 은 하위 탭이 있다. 파일 이름(곧 주소)은 메뉴 탭 이름을 소문자·하이픈으로 쓴 것이다(Lab Members → `lab-members.html`, 교수 2026-11-03). front matter 에 소개글, 절 순서
 _themes/wide/        테마(현재 사용 중: 넓은 화면 전제, 12칸 격자, 전역 토큰)
@@ -107,7 +108,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 1. 슬라이드를 Drive 폴더의 그해 폴더에 올린다. PDF 를 권장한다(pptx 도 받지만 자동 동기화는 GitHub Actions 에서 LibreOffice 로 바꿔 글꼴이 달라질 수 있다. 맥에서 손으로 돌리면 `tools/office_pdf.py` 가 PowerPoint 로 굽는다). 파일 이름은 `yymmdd_짧은제목.pdf`.
 2. 시트의 그 날짜 행에 `topic`(발표 제목), `slide`(올린 파일 이름), `name_en`(영문 이름, `_data/members.yml` 과 같은 표기)을 채운다. **`name_en` 을 채운 행만 사이트에 나온다.** 시험, 휴식, 공개 전 연구(코드명)는 비워 둔다. 다 같이 하는 회차(Research Sync, Internal Review, 학회 공유)는 `name`·`name_en` 에 `everyone`·`Everyone` 을 넣는다. 사이트에서는 랩 발표와 같은 양식으로 나온다. 목록은 랩 내부와 초청 두 가지로만 가른다(교수 2026-11-02). 페이지는 연도별 탭(목록과 같은 최신순, 맨 앞 최신 해가 열린 채로)으로 나누고, 그 안에서 All / Lab / Invited / IME Seminar 로 거른다(교수 2026-11-03). IME Seminar 는 교수가 산업경영공학과 세미나·강의 guest lecture 로 직접 부른 연사만 `_data/ime_seminar.yml` 에 적는다. 강의 스케줄에서 자동으로 가져오지 않는다(교수가 부르지 않은 학과 세미나 연사가 섞인다). 강의에 교수가 부른 게스트를 넣으면 같은 칸을 이 파일에도 옮겨 적는다. 색은 Lab 세이지, Invited 버터, IME Seminar 중립 회색이다(교수 2026-11-09).
-3. 초청 발표는 `affiliation_en`(영문 소속), `slide` 칸에 연사 홈페이지, `paper` 에 연사의 해당 논문(arXiv 초록 주소, 여러 개면 연사가 1저자인 대표 하나)을 채운다. 외부 연사 슬라이드는 올리지 않는다. 랩 발표는 슬라이드에만 링크를 건다. 아직 슬라이드가 없으면 제목에 링크를 걸지 않고 원 논문(`paper`)으로도 보내지 않는다(교수 2026-11-03). 인턴처럼 People 에 없는 랩 발표자는 `homepage` 에 본인 홈페이지를 넣는다.
+3. 초청 발표는 `affiliation_en`(영문 소속, 처음 나오는 기관이면 `_data/institutions.yml` 에 공식 영문 사이트 한 줄을 더한다. 소속 글자가 그 사이트로 링크된다, 교수 2026-11-10), `slide` 칸에 연사 홈페이지, `paper` 에 연사의 해당 논문(arXiv 초록 주소, 여러 개면 연사가 1저자인 대표 하나)을 채운다. 외부 연사 슬라이드는 올리지 않는다. 랩 발표는 슬라이드에만 링크를 건다. 아직 슬라이드가 없으면 제목에 링크를 걸지 않고 원 논문(`paper`)으로도 보내지 않는다(교수 2026-11-03). 인턴처럼 People 에 없는 랩 발표자는 `homepage` 에 본인 홈페이지를 넣는다.
 4. 바로 보고 싶으면 GitHub 의 Actions > seminar-sync > Run workflow 를 누른다. 손으로 돌리면 바뀐 것이 없어도 배포까지 하고, 5분 안팎 뒤 반영된다. 슬라이드를 못 찾으면 실행 기록에 경고가 남는다.
 
 동기화는 슬라이드를 PDF 로 바꾸고, 모든 쪽을 16:9(960x540pt)로 맞추고(비율이 다른 쪽은 줄여서 가운데), 이름을 `날짜-제목별칭.pdf`(예: `2026-07-22-memeye.pdf`)로, PDF 정보에 제목과 발표자를 넣는다. 제목 별칭은 시트 `nickname` 칸에 적은 것, 비어 있으면 제목의 콜론 앞 짧은 이름(`MemEye`, `ESI-Bench`)이나 기능어를 뺀 앞 3단어다. 자동 별칭이 어색하면 `nickname` 을 채운다(교수 2026-10-26). 슬라이드 내용은 고치지 않는다. 바뀐 것이 있으면 `changelog/{날짜}-seminar-sync.md` 에 스스로 기록한다.
@@ -246,7 +247,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 
 - News와 Media 날짜는 `YYYY/MM`으로 쓴다. Media의 발행월은 기사 원문에서 확인한다. 사무실 전화의 표시 이름은 `Tel.:`다(교수 2026-10-28). 전화는 Faculty 에만 둔다(교수 2026-11-03).
 
-- **강의 스케줄의 초청 강연·세미나 행**: 1줄은 발표 제목, 2줄은 연사와 소속으로 모든 강의가 같은 양식이다. 제목은 학과 안내 메일·포스터, 교내회보, 연사가 보낸 강연자료처럼 원본에서 원문 그대로 가져온다. 원본을 찾지 못하면 제목을 지어 넣거나 연사 이름으로 대신하지 않고 비워 둔 채 교수에게 알린다. 제목이 빈 행이 있으면 `checks` 의 `check_guest_titles` 가 실패한다(교수 2026-11-02). 연사 이름에는 연사 프로필 링크(`url`)를 반드시 건다. 연사나 교수가 준 주소가 없으면 검색해서 넣는다. 홈페이지가 있으면 홈페이지, 없으면 LinkedIn 이다(교수 2026-11-09). `affiliation` 에는 기관 이름만 쓰고 CEO·팀장 같은 직함은 넣지 않는다(교수 2026-11-09). 교수가 직접 부른 연사면 `_data/ime_seminar.yml` 에도 같은 칸을 옮겨 적는다(Seminar 페이지 IME Seminar 탭).
+- **강의 스케줄의 초청 강연·세미나 행**: 1줄은 발표 제목, 2줄은 연사와 소속으로 모든 강의가 같은 양식이다. 제목은 학과 안내 메일·포스터, 교내회보, 연사가 보낸 강연자료처럼 원본에서 원문 그대로 가져온다. 원본을 찾지 못하면 제목을 지어 넣거나 연사 이름으로 대신하지 않고 비워 둔 채 교수에게 알린다. 제목이 빈 행이 있으면 `checks` 의 `check_guest_titles` 가 실패한다(교수 2026-11-02). 연사 이름에는 연사 프로필 링크(`url`)를 반드시 건다. 연사나 교수가 준 주소가 없으면 검색해서 넣는다. 홈페이지가 있으면 홈페이지, 없으면 LinkedIn 이다(교수 2026-11-09). `affiliation` 에는 기관 이름만 쓰고 CEO·팀장 같은 직함은 넣지 않는다(교수 2026-11-09). 교수가 직접 부른 연사면 `_data/ime_seminar.yml` 에도 같은 칸을 옮겨 적는다(Seminar 페이지 IME Seminar 탭). 새 기관이면 `_data/institutions.yml` 에 공식 영문 사이트도 더한다.
 
 - **Talks 수록 기준**: 교수 본인이 직접 수행한 연구를 발표한 자료가 기본이다. VLA tutorial처럼 학회 튜토리얼은 예외로 포함한다. 일반 AI 활용법 발표인 How to Use Agents는 추가하지 않는다(교수 2026-10-28).
 

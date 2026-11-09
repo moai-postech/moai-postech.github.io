@@ -1,0 +1,15 @@
+# 기관 공식 영문 사이트. Seminar 페이지의 소속(affiliation) 글자가 여기서 같은 이름을 찾아 링크한다.
+# 키는 _data/seminar.yml(시트 affiliation_en)·_data/ime_seminar.yml 의 affiliation 과 글자 그대로 같아야 한다.
+# 영문판이 따로 있으면 영문판 주소를 쓴다(교수 2026-11-10). 새 소속이 생기면 한 줄 더한다. 없는 소속은 링크 없이 글자만 나온다.
+"Bain & Company": "https://www.bain.com/"
+"Brown univ.": "https://www.brown.edu/"
+"CAU": "https://neweng.cau.ac.kr/"
+"Designovel": "https://designovel.com/en"
+"FSI": "https://www.fsec.or.kr/fseceng/index.do"
+"Georgia Tech": "https://www.gatech.edu/"
+"Google Korea": "https://about.google/"
+"KAIST": "https://www.kaist.ac.kr/en/"
+"LG U+": "https://www.lguplus.com/about/en"
+"Stanford": "https://www.stanford.edu/"
+"U Michigan": "https://umich.edu/"
+"UC Berkeley": "https://www.berkeley.edu/"

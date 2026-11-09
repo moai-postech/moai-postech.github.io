@@ -26,3 +26,11 @@ Pythonmanifest의고정입력·해시검증과workflow YAML파싱,실제push전c
 
 ## 남은 것
 공개55장HTML·PDF해시대조와새workflow게시결과확인. 읽은기준: 사이트·상위AGENTS, workflow규칙. 원본백업 `_backup/2026-11-10-deploy-recovery/`, Git이력으로도복구가능.
+
+## 공개 확인 결과
+
+- 기존42713614635는syncing_files에서10분대기후timeout,서버게시취소까지확인했다.
+- df5d710의42715334893은전체success. 게시job은07:51:13~46KST의33초, push뒤전체공개검증까지약1분50초였다.
+- 공개deployment.json의commit이df5d710과일치한다. 매개변수없는12강HTML/PDF의SHA-256이최종55장원본과일치했다.
+- 사용자Chrome의기존강의탭을reload해1/55,부분집계·AVG·Gantt제목확인.
+- 남은것: 이번공개반영없음. 서버장애가발생한경우즉시게시를보장할수는없지만대기시간을제한하고자동복구·공개검증하도록했다. 빠른검사는계속배포와병렬이다.

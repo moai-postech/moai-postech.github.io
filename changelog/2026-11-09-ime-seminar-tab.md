@@ -29,3 +29,6 @@ POSTECH 요구사항: 영향 없음(머리글·꼬리말·로고·`_config.yml` 
 - 색: IME Seminar 를 세이지(tone-p2)에서 코랄(tone-p3)로 바꿨다. Lab 하늘(차가운 계열) 대 Invited 버터·IME 코랄(따뜻한 계열)로 랩 내부와 외부 연사가 한눈에 갈린다. 세이지는 하늘과 같은 차가운 계열이라 IME 가 Lab 쪽으로 읽혔다.
 - 기각: IME 를 버터로 두고 Invited 를 다른 색으로 바꾸는 안. Invited 버터는 교수 2026-11-02 결정이다. 같은 색상의 진하기만 다른 노랑 두 개는 팔레트 밖의 새 색이 필요하고, 작은 색 점에서 구별이 어렵다.
 - 기각: 강의 yml 을 정본으로 두고 `invited_by_me` 같은 표시를 다는 안. 교수가 복붙 방식을 골랐다.
+- 필터 이름: Lab / Invited / IME Seminar 를 Lab / Lab Guest / IME Guest 로 바꿨다. 이전 이름은 기준이 섞였다(발표자, 초청 여부, 행사 이름). 누가 어디서 발표했는지로 맞췄다. 기각: Lab / Invited / Department(Department 가 학과 세미나로 바로 읽히지 않음). 데이터 키(`invited`, `ime`)는 그대로 둔다.
+- 필터 이름을 다시 Lab / Invited / IME Seminar 로 되돌렸다(교수). Lab Guest, Guest, Dept, IME Invited 를 검토했으나 어색하거나 모호했다. 원래 이름이 가장 바로 읽힌다. Lab Guest 커밋(d8a796f)은 push 전에 버렸다.
+- 저장소 정리: 중단된 커밋이 `.git/refs/heads/main.lock` 을 남겼고 iCloud 가 `.git/index 2` 충돌 사본을 만들어 main 이 옛 packed-ref(9e7565c)로 보였다. 둘을 `_backup/git-20261109/` 로 옮기고 main 을 origin/main(36dc66b)에 다시 맞췄다. 작업 트리는 건드리지 않았다.

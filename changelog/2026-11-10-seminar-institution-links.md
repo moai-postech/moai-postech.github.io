@@ -24,3 +24,11 @@
 - 교수 요청("문법 맞게 수정"). `_data/ime_seminar.yml`, `_data/courses/25f-data-engineering.yml` 의 2025-11-27 제목.
 - `가치있어 지는` → `가치 있어지는`(`-어지다` 는 붙여 쓰고 "가치 있다" 는 띄움), `할일` → `할 일`.
 - 원문 그대로 옮긴다는 규칙의 예외로 교수가 이 제목에 한해 정했다. 일반 규칙으로 넓히지 않았다.
+
+## 같은 날 추가: 링크를 브라우저로 직접 열어 확인
+
+- 교수 지적("FSI 링크가 잘못됐다"). curl 응답 코드만 보고 넣었던 12곳을 Chrome 으로 하나씩 열었다.
+- FSI: `fsec.or.kr/fseceng/index.do` 는 오류 페이지. 금융보안원 첫 화면의 언어 메뉴가 보내는 `https://www.fsec.or.kr/en` 으로 바꿈.
+- Google Korea: `about.google/` 은 한국에서 열면 한국어로 바뀜. `https://about.google/?hl=en` 으로 영문 고정.
+- 나머지 10곳(Bain, Brown, CAU, Designovel, Georgia Tech, KAIST, LG U+, Stanford, U Michigan, UC Berkeley)은 영문 첫 화면이 뜨는 것을 확인.
+- `_data/institutions.yml` 머리말에 "브라우저로 직접 열어 본다"를 넣었다.

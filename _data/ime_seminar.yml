@@ -1,4 +1,16 @@
 # Seminar 페이지의 IME Seminar 탭에 더할 학과 세미나 초청 연사 중, 강의 스케줄(_data/courses/*.yml)의 guest 행에 없는 것만 적는다.
 # 강의 guest 행은 템플릿이 자동으로 가져오므로 여기 다시 적지 않는다(교수 2026-11-09).
 # 칸은 강의 guest 행과 같다: date, kind: guest(필수), title(원문 그대로), speaker(영문), url(연사 프로필, 홈페이지 없으면 LinkedIn), affiliation.
-talks: []
+talks:
+  - date: "2026-04-23"
+    kind: guest
+    title: "경계를 넘는 혁신: 과학자에서 글로벌 경영자로의 성장 여정"
+    speaker: "Songyee Yoon"
+    url: "https://www.linkedin.com/in/songyee-yoon-principal-venture-partners"
+    affiliation: "Principal Venture Partners"
+  - date: "2026-05-29"
+    kind: guest
+    title: "Agentic AI 시대의 Personalization AI"
+    speaker: "Yeong-Hwan Jeon"
+    url: "https://kr.linkedin.com/in/yeong-hwan-jeon-a7306020"
+    affiliation: "LG U+"

@@ -32,3 +32,7 @@
 ## 갱신 2026-11-10 12:31
 
 - Paper covers: smaller author block so titles lead; LoC token budget note; takeaways wording
+
+## 갱신 2026-11-10 12:49
+
+- Takeaways: firmer LoC answer

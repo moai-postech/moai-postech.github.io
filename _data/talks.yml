@@ -4,6 +4,7 @@
 - year: "2026"
   talks:
     - title: "Multimodal Agents that Reason and Remember"
+      url: "assets/talks/2026-multimodal-agents-that-reason-and-remember.html"
       venues: ["KAIST", "Korea univ."]
     - title: "Towards Personalized Household Robots"
       url: "assets/talks/2026-towards-personalized-household-robots.pdf"

@@ -16,3 +16,7 @@
 ## 검사
 
 - 읽은 규칙: 저장소 `AGENTS.md`(Talks 수록 기준, 파일은 assets 로). `tools/check_changelog.py --who _data/talks.yml` 로 최근 수정 확인(되돌리기 아님).
+
+## 갱신 2026-11-10 10:57
+
+- favicon 404 제거, 40·41·56장 배치, 51장 차트 두 줄, 문장 다듬기

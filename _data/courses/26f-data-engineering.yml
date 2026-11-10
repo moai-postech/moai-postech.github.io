@@ -188,6 +188,7 @@ schedule:
   - date: "2026-11-13"
     kind: guest
     title: "전략 컨설턴트의 일과 사고법, 산업 현장의 AI"
+    poster: "teaching/26f-data-engineering/2026-11-13-sungwon-yang-poster.pdf"
     speaker: "Sungwon Yang"
     url: "https://www.linkedin.com/in/sungwonyang/"
     affiliation: "Bain & Company"

@@ -221,18 +221,18 @@ schedule:
   - date: "2026-11-24"
     kind: lecture
     n: 16
-    title: "RAG"
-    pdf: "teaching/26f-data-engineering/slides/16_rag.pdf"
-    html: "teaching/26f-data-engineering/slides/16_rag.html"
+    title: "Agents"
+    pdf: "teaching/26f-data-engineering/slides/16_agents.pdf"
+    html: "teaching/26f-data-engineering/slides/16_agents.html"
   - date: "2026-11-26"
     kind: event
     title: "IDS Capstone Workshop"
   - date: "2026-12-01"
     kind: lecture
     n: 17
-    title: "Agents"
-    pdf: "teaching/26f-data-engineering/slides/17_agents.pdf"
-    html: "teaching/26f-data-engineering/slides/17_agents.html"
+    title: "Data Agents"
+    pdf: "teaching/26f-data-engineering/slides/17_data-agents.pdf"
+    html: "teaching/26f-data-engineering/slides/17_data-agents.html"
   - date: "2026-12-03"
     kind: break
     title: "No Class (POSTECH Anniversary)"

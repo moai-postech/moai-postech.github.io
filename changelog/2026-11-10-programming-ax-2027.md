@@ -52,3 +52,14 @@ POSTECH 요구사항: 영향 없음. 기존 course 템플릿과 머리글·꼬�
 - 시간·장소·TA·평가 배점은 확정 뒤 반영. 이전 학기 운영 정보는 복사하지 않음
 - 읽은 규칙: 사이트 AGENTS, course README·COURSE, lecture AGENTS, presentation·workflow 규칙
 - 검사: strict prepare-site 전체 파일 확인, Jekyll build, 공개 파일 SHA256 대조
+
+## 원본 Lab 재대조와 수업 데모 통합
+
+- 원본 17~22 Lab 6개의 셀과 강의 코드·실습 장을 다시 대조. 누락된 실제 모델 경로는 Model Lab 패널과 notebook 6개로 보존
+- 22강과 복습에 주제별 입력·계산 Demo 48개 통합. 각 Demo 직후 같은 입력의 Answer 배치
+- Python은 내장 Skulpt, SQL은 내장 SQLite로 실제 실행. 수동 계산 모델과 pretrained 추론을 구분
+- tree split·boosting, PCA, clustering, attribution, backprop·optimizer, frozen probe, attention·mask, retrieval, noising·ODE, hold-out·backtest 계산 보강
+- CLIP dual encoders와 conditional guidance를 병렬 도식으로 수정. permutation MSE와 예제 입력 일치. 라벨 겹침·PDF 코드 잘림 수정
+- 전체 PDF 23개 1013쪽 시각 검수. deck-check 23개 및 문구 검사, notebook core 22개 실행, 실제 브라우저 48개 Demo 입력 조작 검증
+- pretrained GPU 추론·live AI/MCP 실행은 검증 결과로 주장하지 않음. 별도 Python/AI 클라이언트 실습 경로를 표시
+- 읽은 규칙: lecture/과목 AGENTS, presentation·documents·delegation·workflow, POSTECH-STYLE·SLIDE-PLAYBOOK, 사이트 AGENTS·course 문서

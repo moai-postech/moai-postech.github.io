@@ -33,7 +33,6 @@ schedule:
   title: Overview & Logistics
   html: teaching/27s-programming-for-ax/slides/1_overview.html
   pdf: teaching/27s-programming-for-ax/slides/1_overview.pdf
-  lab: teaching/27s-programming-for-ax/labs/1_overview.ipynb
 - part: sw3
 - date: '2027-03-08'
   kind: lecture
@@ -41,21 +40,18 @@ schedule:
   title: Working with AI
   html: teaching/27s-programming-for-ax/slides/2_working-with-ai.html
   pdf: teaching/27s-programming-for-ax/slides/2_working-with-ai.pdf
-  lab: teaching/27s-programming-for-ax/labs/2_working-with-ai.ipynb
 - date: '2027-03-10'
   kind: lecture
   n: 3
   title: AI-Assisted Programming
   html: teaching/27s-programming-for-ax/slides/3_ai-assisted-programming.html
   pdf: teaching/27s-programming-for-ax/slides/3_ai-assisted-programming.pdf
-  lab: teaching/27s-programming-for-ax/labs/3_ai-assisted-programming.ipynb
 - date: '2027-03-15'
   kind: lecture
   n: 4
   title: Coding Agents
   html: teaching/27s-programming-for-ax/slides/4_coding-agents.html
   pdf: teaching/27s-programming-for-ax/slides/4_coding-agents.pdf
-  lab: teaching/27s-programming-for-ax/labs/4_coding-agents.ipynb
 - part: sw1
 - date: '2027-03-17'
   kind: lecture
@@ -63,63 +59,54 @@ schedule:
   title: Python for Data Work
   html: teaching/27s-programming-for-ax/slides/5_python.html
   pdf: teaching/27s-programming-for-ax/slides/5_python.pdf
-  lab: teaching/27s-programming-for-ax/labs/5_python.ipynb
 - date: '2027-03-22'
   kind: lecture
   n: 6
   title: Arrays and DataFrames
   html: teaching/27s-programming-for-ax/slides/6_arrays-dataframes.html
   pdf: teaching/27s-programming-for-ax/slides/6_arrays-dataframes.pdf
-  lab: teaching/27s-programming-for-ax/labs/6_arrays-dataframes.ipynb
 - date: '2027-03-24'
   kind: lecture
   n: 7
   title: Data Validation and Evaluation
   html: teaching/27s-programming-for-ax/slides/7_validation.html
   pdf: teaching/27s-programming-for-ax/slides/7_validation.pdf
-  lab: teaching/27s-programming-for-ax/labs/7_validation.ipynb
 - date: '2027-03-29'
   kind: lecture
   n: 8
   title: Regression
   html: teaching/27s-programming-for-ax/slides/8_regression.html
   pdf: teaching/27s-programming-for-ax/slides/8_regression.pdf
-  lab: teaching/27s-programming-for-ax/labs/8_regression.ipynb
 - date: '2027-03-31'
   kind: lecture
   n: 9
   title: Classification
   html: teaching/27s-programming-for-ax/slides/9_classification.html
   pdf: teaching/27s-programming-for-ax/slides/9_classification.pdf
-  lab: teaching/27s-programming-for-ax/labs/9_classification.ipynb
 - date: '2027-04-05'
   kind: lecture
   n: 10
   title: Trees and Ensembles
   html: teaching/27s-programming-for-ax/slides/10_trees-ensembles.html
   pdf: teaching/27s-programming-for-ax/slides/10_trees-ensembles.pdf
-  lab: teaching/27s-programming-for-ax/labs/10_trees-ensembles.ipynb
 - date: '2027-04-07'
   kind: lecture
   n: 11
   title: Clustering
   html: teaching/27s-programming-for-ax/slides/11_clustering.html
   pdf: teaching/27s-programming-for-ax/slides/11_clustering.pdf
-  lab: teaching/27s-programming-for-ax/labs/11_clustering.ipynb
 - date: '2027-04-12'
   kind: lecture
   n: 12
   title: Dimensionality Reduction
   html: teaching/27s-programming-for-ax/slides/12_dimensionality-reduction.html
   pdf: teaching/27s-programming-for-ax/slides/12_dimensionality-reduction.pdf
-  lab: teaching/27s-programming-for-ax/labs/12_dimensionality-reduction.ipynb
 - date: '2027-04-14'
   kind: lecture
   n: 13
   title: Interpretable ML
   html: teaching/27s-programming-for-ax/slides/13_interpretable-ml.html
   pdf: teaching/27s-programming-for-ax/slides/13_interpretable-ml.pdf
-  lab: teaching/27s-programming-for-ax/labs/13_interpretable-ml.ipynb
 - date: '2027-04-19'
   kind: review
   title: Review Session
@@ -138,14 +125,12 @@ schedule:
   title: Deep Learning
   html: teaching/27s-programming-for-ax/slides/14_deep-learning.html
   pdf: teaching/27s-programming-for-ax/slides/14_deep-learning.pdf
-  lab: teaching/27s-programming-for-ax/labs/14_deep-learning.ipynb
 - date: '2027-05-03'
   kind: lecture
   n: 15
   title: PyTorch
   html: teaching/27s-programming-for-ax/slides/15_pytorch.html
   pdf: teaching/27s-programming-for-ax/slides/15_pytorch.pdf
-  lab: teaching/27s-programming-for-ax/labs/15_pytorch.ipynb
 - date: '2027-05-05'
   kind: break
   title: No Class (Children’s Day)
@@ -155,49 +140,42 @@ schedule:
   title: Training and Generalization
   html: teaching/27s-programming-for-ax/slides/16_training-generalization.html
   pdf: teaching/27s-programming-for-ax/slides/16_training-generalization.pdf
-  lab: teaching/27s-programming-for-ax/labs/16_training-generalization.ipynb
 - date: '2027-05-12'
   kind: lecture
   n: 17
   title: Visual Representations
   html: teaching/27s-programming-for-ax/slides/17_visual-representations.html
   pdf: teaching/27s-programming-for-ax/slides/17_visual-representations.pdf
-  lab: teaching/27s-programming-for-ax/labs/17_visual-representations.ipynb
 - date: '2027-05-17'
   kind: lecture
   n: 18
   title: Dense Prediction
   html: teaching/27s-programming-for-ax/slides/18_dense-prediction.html
   pdf: teaching/27s-programming-for-ax/slides/18_dense-prediction.pdf
-  lab: teaching/27s-programming-for-ax/labs/18_dense-prediction.ipynb
 - date: '2027-05-19'
   kind: lecture
   n: 19
   title: Language Models
   html: teaching/27s-programming-for-ax/slides/19_language-models.html
   pdf: teaching/27s-programming-for-ax/slides/19_language-models.pdf
-  lab: teaching/27s-programming-for-ax/labs/19_language-models.ipynb
 - date: '2027-05-24'
   kind: lecture
   n: 20
   title: Vision-Language Models
   html: teaching/27s-programming-for-ax/slides/20_vision-language.html
   pdf: teaching/27s-programming-for-ax/slides/20_vision-language.pdf
-  lab: teaching/27s-programming-for-ax/labs/20_vision-language.ipynb
 - date: '2027-05-26'
   kind: lecture
   n: 21
   title: Generative Models
   html: teaching/27s-programming-for-ax/slides/21_generative-models.html
   pdf: teaching/27s-programming-for-ax/slides/21_generative-models.pdf
-  lab: teaching/27s-programming-for-ax/labs/21_generative-models.ipynb
 - date: '2027-05-31'
   kind: lecture
   n: 22
   title: AI for Data Science
   html: teaching/27s-programming-for-ax/slides/22_ai-for-data-science.html
   pdf: teaching/27s-programming-for-ax/slides/22_ai-for-data-science.pdf
-  lab: teaching/27s-programming-for-ax/labs/22_ai-for-data-science.ipynb
 - date: '2027-06-02'
   kind: outside
   title: Project Preparation (Out of Class)

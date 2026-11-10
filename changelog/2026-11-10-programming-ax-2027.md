@@ -63,3 +63,15 @@ POSTECH 요구사항: 영향 없음. 기존 course 템플릿과 머리글·꼬�
 - 전체 PDF 23개 1013쪽 시각 검수. deck-check 23개 및 문구 검사, notebook core 22개 실행, 실제 브라우저 48개 Demo 입력 조작 검증
 - pretrained GPU 추론·live AI/MCP 실행은 검증 결과로 주장하지 않음. 별도 Python/AI 클라이언트 실습 경로를 표시
 - 읽은 규칙: lecture/과목 AGENTS, presentation·documents·delegation·workflow, POSTECH-STYLE·SLIDE-PLAYBOOK, 사이트 AGENTS·course 문서
+
+
+## HTML 코드와 Colab 직접 연결
+
+- 사용자 지시: demo 실행 검증은 뒤로 미루고 슬라이드 설명·코드 배치부터 수정. 학생 기기의 로컬 파일·패키지 설치 대신 Colab 사용
+- 17~22강의 개념 바로 뒤에 모델 demo 18개 배치. Code를 기본 화면으로 두고 핵심 코드와 Run in Colab 링크를 직접 표시
+- 별도 Model Lab 창과 L 단축키, Schedule의 Lab 열 제거. 원본 notebook 파일은 호환·재현용으로 보존
+- 주제별 Colab 18개와 고정 Oxford Pets subset(100개, 약 3MB) 게시. 필요한 helper·입력·실험을 해당 notebook 안에 포함하고 Demo code cell로 직접 연결
+- 기각: Colab 외부 iframe. 실제 GET의 X-Frame-Options: DENY 확인으로 공식 GitHub→Colab 연결 사용. 로컬 venv 설치를 학생 동선에 두는 안도 폐기
+- HTML·PDF 6개 갱신. 기존 월수 날짜와 AI-first 순서는 유지
+- 새 Colab 실행 전수 검증은 사용자 요청으로 보류. 기존에 성공한 실행 결과만 Recorded experiment로 표시하고 실패·미실행 결과는 성공으로 제시하지 않음
+- 읽은 규칙: 사이트 AGENTS와 course README, lecture/과목 AGENTS, presentation·documents·workflow 규칙. 이번 검사는 source 문법·연결 경로·산출물 확인이며 모델 재실행 검증은 아님

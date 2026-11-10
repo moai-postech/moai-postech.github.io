@@ -41,3 +41,14 @@ POSTECH 요구사항: 영향 없음. 기존 course 템플릿과 머리글·꼬�
 첫 수업은 3월 3일, Review는 4월 19일, 과목 Midterm은 4월 21일로 배정했다. 5월 5일은 휴강, 마지막 내용 강의는 5월 31일, 발표는 6월 7·9일이다. 6월 2일 준비와 14일 동료평가는 Out of Class로 둔다. 팀 구성은 첫 수업이 있는 주를 1주차로 센 3주차 일요일인 3월 21일이다. 이는 공식 학사일정 안에서 정한 과목별 계획이다.
 
 공식 근거: https://www.postech.ac.kr/kor/college-life/academic_schedule.do?mode=list&selectedYear=2027&siteId=kor
+
+## 전체 자료 게시
+
+- 22강과 복습 1개의 독립 HTML·PDF, 22개 실습, AI 코드 작성 starter ZIP 게시
+- Software 3.0 2~4강을 실제 AI 요청·IDE 작성·agent/MCP 사용 흐름으로 정리
+- 23개 덱 자동 검사, 전체 PDF 시각 검수 및 의심 페이지 재검수 완료
+- 22개 실습 core 실행 통과. torch·sklearn 선택 셀은 로컬 미설치로 실행하지 않음
+- 월수 일정은 POSTECH 2027 공식 달력 기준. 3월 3일 개강 수업, 5월 5일 휴강, 시험 기간 반영
+- 시간·장소·TA·평가 배점은 확정 뒤 반영. 이전 학기 운영 정보는 복사하지 않음
+- 읽은 규칙: 사이트 AGENTS, course README·COURSE, lecture AGENTS, presentation·workflow 규칙
+- 검사: strict prepare-site 전체 파일 확인, Jekyll build, 공개 파일 SHA256 대조

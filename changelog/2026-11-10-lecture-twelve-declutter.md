@@ -80,3 +80,9 @@ DAG 데모는 입력을 실제 조인·집계한다. 성공한 제품 적재에 
 사용자가 인공 데모와 세부 계산 확장 방향을 반려하고 사이트부터 빠르게 올리라고 요청했다. 원본2025의 핵심 시스템 흐름과 실제 화면 중심44장판으로 교체한다. 인공 데모4개·반복 계산을 제외하고 OLTP→row store/OLAP→column store 및 이유, BigQuery의 복제·복구, schema on read/write, task·operator·sensor와 입력 준비를 복원했다. ETL/ELT 선택 기준은29쪽이다.
 
 필수25개 화면 표기·HTML N=44 검사와 PDF44쪽 전수 렌더를 확인했다. 원본·개편판은 과목 백업에 보존했다. 기각: 버튼 모형을 더 정교하게 만드는 안. 시스템의 핵심 메시지를 밀어냈다. 사용자 요청에 따라 사이트 HTML·PDF를 먼저 반영하며 Drive·PLMS는 후속 처리한다.
+
+## 빠진 핵심 설명 복원, 사이트 우선 게시
+
+사용자가 추가 축소를 금지하고 빠진 설명 전체 복원을 요청했다. 기존44장 내용을 모두 보존하고 압축·읽기량·분산 집계 상태·fact/dimension·grain·snapshot과 동시 변경·입력 검사·재처리 설명17장을 복원해61장으로 교체했다. 인공 토글 데모는 제외하고 실제 BigQuery ELT 패턴, Iceberg compaction commit, Airbnb·Airflow 화면과 Gantt 사례를 연결했다.
+
+검증: 과목 deck-check 통과, PDF61쪽 전수 렌더 확인. HTML·PDF를 같은 주소로 함께 게시한다. 읽은 규칙: 과목 AGENTS·POSTECH-STYLE·SLIDE-PLAYBOOK, 전역 presentation·documents·workflow. 기각: 인공 데모 반려를 설명 장 삭제로 해석하는 안. 원본은 과목 _backup/2026-11-10-lecture12-core-restore/에 보존했다.

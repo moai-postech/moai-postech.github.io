@@ -28,3 +28,7 @@
 ## 갱신 2026-11-10 11:34
 
 - fresh eye 검토 반영, Takeaways 문구
+
+## 갱신 2026-11-10 12:31
+
+- Paper covers: smaller author block so titles lead; LoC token budget note; takeaways wording

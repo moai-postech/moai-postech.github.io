@@ -36,3 +36,7 @@
 ## 갱신 2026-11-10 12:49
 
 - Takeaways: firmer LoC answer
+
+## 갱신 2026-11-10 13:32
+
+- Paper covers: author spacing, uniform photo rings

@@ -86,3 +86,9 @@ DAG 데모는 입력을 실제 조인·집계한다. 성공한 제품 적재에 
 사용자가 추가 축소를 금지하고 빠진 설명 전체 복원을 요청했다. 기존44장 내용을 모두 보존하고 압축·읽기량·분산 집계 상태·fact/dimension·grain·snapshot과 동시 변경·입력 검사·재처리 설명17장을 복원해61장으로 교체했다. 인공 토글 데모는 제외하고 실제 BigQuery ELT 패턴, Iceberg compaction commit, Airbnb·Airflow 화면과 Gantt 사례를 연결했다.
 
 검증: 과목 deck-check 통과, PDF61쪽 전수 렌더 확인. HTML·PDF를 같은 주소로 함께 게시한다. 읽은 규칙: 과목 AGENTS·POSTECH-STYLE·SLIDE-PLAYBOOK, 전역 presentation·documents·workflow. 기각: 인공 데모 반려를 설명 장 삭제로 해석하는 안. 원본은 과목 _backup/2026-11-10-lecture12-core-restore/에 보존했다.
+
+## 61장 유지, 검수 지적 네 부분 보완
+
+18쪽 partition 정의·실제 스캔 비율·모형 가정,28~29쪽 날짜 원본과 집계 검산,36쪽 같은 입력·보존 조건의 ETL/ELT 비교를 보완했다. BigQuery raw→staging→mart의 같은 날짜를 검사·교체·재시도까지 연결했다. Airflow50·52·53쪽은 같은 maintenance DAG의 의존성·run 상태·DAG 집계를 구체 task로 읽는다. 다른 core_platforms Gantt는 별도 실제 사례로 명시하고 관측 가능한 시간 증거만 해석한다.
+
+내용·장수61장을 유지했다. deck-check·핵심42항목·HTML 단일 표시·PDF61쪽 전수 렌더를 검증했다. 원본은 과목 _backup/2026-11-10-lecture12-four-fixes/. 읽은 규칙은 과목AGENTS·POSTECH-STYLE·SLIDE-PLAYBOOK과 전역presentation·workflow·memory-location. 기각: 서로 다른 workflow 화면을 같은 실행으로 연결하거나 실제 서버 실행을 꾸미는 안. 사이트부터 같은 HTML·PDF 주소에 게시한다.

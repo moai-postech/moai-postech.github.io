@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-10 | [13강 visual·깊이 보강](2026-11-10-lecture-thirteen-depth.md) | Sangwoo Mo(sangwoomo) | Data Engineering 13강 HTML·PDF | 작년 그림 복원과 처리량·복구·watermark, 58장·데모2개 |
 | 2026-11-10 | [양성원 강연 포스터](2026-11-10-de-guest-poster.md) | Sangwoo Mo(sangwoomo) | Data Engineering Guest lecture | 제목에서 최종 포스터 PDF 열기 |
 | 2026-11-10 | [programming-ax-2027](2026-11-10-programming-ax-2027.md) | Sangwoo Mo(sangwoomo) | Spring 2027 Programming for AX | AI 먼저 기획 유지, 강의 구조와 HTML 자료 게시 |
 | 2026-11-10 | [공개 게시 지연 복구](2026-11-10-deploy-recovery.md) | Sangwoo Mo (sangwoomo) | Pages workflow·공개 버전 검사 | 3분 제한·같은 artifact 재시도, 공개 커밋·강의 파일 해시 검사 |

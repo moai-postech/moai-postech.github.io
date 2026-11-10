@@ -24,3 +24,7 @@
 ## 갱신 2026-11-10 11:20
 
 - 29·30장 순서, Multi-Error 장 복원, Personalized model 굵게
+
+## 갱신 2026-11-10 11:34
+
+- fresh eye 검토 반영, Takeaways 문구

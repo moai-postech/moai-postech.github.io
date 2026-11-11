@@ -96,6 +96,9 @@ terms:
           - { text: "3DGS", url: "https://arxiv.org/abs/2308.04079" }
         demos:
           - { text: "SuperSplat", url: "https://superspl.at/editor" }
+        materials:
+          - { text: "Slides 1", url: "teaching/ai-study/fall-2026/07-3d-representation-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/fall-2026/07-3d-representation-slides-2.pdf" }
       - n: "8"
         date: "2026-11-17"
         title: "3D reconstruction"

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-11 | [ai-study-sync](2026-11-11-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |
 | 2026-11-10 | [14~17강 visual·깊이 보강](2026-11-10-part-three-depth.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14~17강 | 작년 그림17개 추가, 49·46·61·43장 HTML·PDF와 현재 제목 반영 |
 | 2026-11-10 | [Talks: Multimodal Agents HTML](2026-11-10-talk-multimodal-agents-html.md) | Sangwoo Mo(sangwoomo) | _data/talks.yml, assets/talks | 세미나 덱을 자립형 HTML로 올려 Talks 제목에 링크 |
 | 2026-11-10 | [13강 visual·깊이 보강](2026-11-10-lecture-thirteen-depth.md) | Sangwoo Mo(sangwoomo) | Data Engineering 13강 HTML·PDF | 작년 그림 복원과 처리량·복구·watermark, 58장·데모2개 |

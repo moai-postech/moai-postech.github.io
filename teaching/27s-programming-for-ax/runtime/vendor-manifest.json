@@ -1,0 +1,31 @@
+{
+  "version": "3.8.1",
+  "source": "https://registry.npmjs.org/@huggingface/transformers/-/transformers-3.8.1.tgz",
+  "archiveSha256": "207714c36765b87accfd9b7b0672c3505805af97140990e0d9f8ac6e3cd5471e",
+  "files": [
+    {
+      "name": "transformers.web.min.js",
+      "packagePath": "dist/transformers.min.js",
+      "bytes": 888173,
+      "sha256": "aa5002b70e789798da263f5f99c62bd3e8fcd0c119258a493c40c180648365fa"
+    },
+    {
+      "name": "ort-wasm-simd-threaded.jsep.mjs",
+      "packagePath": "dist/ort-wasm-simd-threaded.jsep.mjs",
+      "bytes": 44484,
+      "sha256": "08fb86ec433c78bfb032c5d84a68b8e8e5a8d81268fa39e24314179a5767a5b9"
+    },
+    {
+      "name": "ort-wasm-simd-threaded.jsep.wasm",
+      "packagePath": "dist/ort-wasm-simd-threaded.jsep.wasm",
+      "bytes": 21596019,
+      "sha256": "c46655e8a94afc45338d4cb2b840475f88e5012d524509916e505079c00bfa39"
+    },
+    {
+      "name": "transformers-LICENSE",
+      "packagePath": "LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    }
+  ]
+}

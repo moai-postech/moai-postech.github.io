@@ -358,7 +358,7 @@ terms:
         demos:
           - { text: "OpenClaw", url: "https://openclaw.ai/" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/spring-2026/09-agent-slides.pdf" }
+          - { text: "Slides", url: "https://moai.postech.ac.kr/teaching/ai-study/spring-2026/09-agent-slides.pdf" }
   - id: "fall-2025"
     name: "Fall 2025"
     theme: "Foundation Models"
@@ -372,7 +372,7 @@ terms:
         papers:
           - { text: "MIT DL primer", url: "https://www.youtube.com/watch?v=alfdI7S6wCY" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2025/01-deep-learning-primer-slides.pdf" }
+          - { text: "Slides", url: "https://moai.postech.ac.kr/teaching/ai-study/fall-2025/01-deep-learning-primer-slides.pdf" }
       - n: "2"
         date: "2025-09-24"
         title: "Transformer"
@@ -383,7 +383,7 @@ terms:
         demos:
           - { text: "annotated transformer", url: "https://nlp.seas.harvard.edu/annotated-transformer/" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2025/02-transformer-slides.pdf" }
+          - { text: "Slides", url: "https://moai.postech.ac.kr/teaching/ai-study/fall-2025/02-transformer-slides.pdf" }
       - n: "3"
         date: "2025-10-01"
         title: "Visual perception"
@@ -395,7 +395,7 @@ terms:
         demos:
           - { text: "DINOv3 applications", url: "https://github.com/facebookresearch/dinov3?tab=readme-ov-file#getting-started" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2025/03-visual-perception-slides.pdf" }
+          - { text: "Slides", url: "https://moai.postech.ac.kr/teaching/ai-study/fall-2025/03-visual-perception-slides.pdf" }
       - n: "4"
         date: "2025-10-29"
         title: "Multimodal perception"
@@ -407,7 +407,7 @@ terms:
         demos:
           - { text: "CLIP semantic search", url: "https://colab.research.google.com/github/vivien000/clip-demo/blob/master/clip.ipynb" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2025/04-multimodal-perception-slides.pdf" }
+          - { text: "Slides", url: "https://moai.postech.ac.kr/teaching/ai-study/fall-2025/04-multimodal-perception-slides.pdf" }
       - n: "5"
         date: "2025-11-05"
         title: "Visual grounding"
@@ -421,7 +421,7 @@ terms:
           - { text: "SAM", url: "https://segment-anything.com/demo" }
           - { text: "SAM2", url: "https://sam2.metademolab.com/demo" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2025/05-visual-grounding-slides.pdf" }
+          - { text: "Slides", url: "https://moai.postech.ac.kr/teaching/ai-study/fall-2025/05-visual-grounding-slides.pdf" }
       - n: "6"
         date: "2025-11-12"
         title: "Image generation"
@@ -434,7 +434,7 @@ terms:
           - { text: "SD3", url: "https://huggingface.co/spaces/stabilityai/stable-diffusion-3-medium" }
           - { text: "Suno", url: "https://suno.com/" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2025/06-image-generation-slides.pdf" }
+          - { text: "Slides", url: "https://moai.postech.ac.kr/teaching/ai-study/fall-2025/06-image-generation-slides.pdf" }
       - n: "7"
         date: "2025-11-19"
         title: "Video generation"
@@ -460,7 +460,7 @@ terms:
         demos:
           - { text: "Qwen3", url: "https://huggingface.co/spaces/Qwen/Qwen3-Demo" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2025/08-llms-and-scaling-laws-slides.pdf" }
+          - { text: "Slides", url: "https://moai.postech.ac.kr/teaching/ai-study/fall-2025/08-llms-and-scaling-laws-slides.pdf" }
       - n: "9"
         date: "2025-12-03"
         title: "Multimodal LLM"
@@ -472,4 +472,4 @@ terms:
         demos:
           - { text: "Gemini 3", url: "https://deepmind.google/models/gemini/" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2025/09-multimodal-llm-slides.pdf" }
+          - { text: "Slides", url: "https://moai.postech.ac.kr/teaching/ai-study/fall-2025/09-multimodal-llm-slides.pdf" }

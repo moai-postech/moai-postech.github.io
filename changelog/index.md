@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-13 | [ai-study-sync](2026-11-13-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |
 | 2026-11-12 | [AX 브라우저 데모](2026-11-12-ax-browser-demos.md) | Sangwoo Mo(sangwoomo) | Programming for AX 2027 | 실제 모델 11개·교육용 계산 7개를 HTML 안에서 실행 |
 | 2026-11-11 | [ai-study-sync](2026-11-11-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |
 | 2026-11-10 | [14~17강 visual·깊이 보강](2026-11-10-part-three-depth.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14~17강 | 작년 그림17개 추가, 49·46·61·43장 HTML·PDF와 현재 제목 반영 |

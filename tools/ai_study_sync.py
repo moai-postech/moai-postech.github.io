@@ -35,6 +35,7 @@ SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit?usp=sharing
 HTML_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/htmlview/sheet?headers=true&gid={GID}"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_data", "ai_study.yml")
 SEASONS = {"Spring": "03", "Summer": "06", "Fall": "09", "Winter": "12"}
+OWN_SITE = ("https://moai.postech.ac.kr/", "https://moai-postech.github.io/")
 KEEP = {"ai", "llm", "llms", "vlm", "vla", "nn", "dl", "3d", "rl"}
 
 
@@ -205,6 +206,10 @@ def localize_all(terms):
             for field in ("papers", "materials"):
                 for l in s.get(field, []):
                     u = l.get("url", "")
+                    own = next((h for h in OWN_SITE if u.startswith(h)), None)
+                    if own:  # 시트에 이 사이트 주소를 넣었으면 다른 회차처럼 저장소 상대경로로 적는다(2026-11-13)
+                        l["url"] = u[len(own):]
+                        continue
                     if not drive_pdf.is_drive(u):
                         continue
                     tail = slug(l["storage_label"]) if field == "materials" else "ref-" + slug(l["text"])

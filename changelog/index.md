@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-13 | [스터디 링크 상대경로](2026-11-13-ai-study-own-links.md) | Sangwoo Mo(sangwoomo) | tools/ai_study_sync.py | 시트의 홈페이지 주소를 저장소 상대경로로 적음 |
 | 2026-11-13 | [ai-study-sync](2026-11-13-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |
 | 2026-11-12 | [AX 브라우저 데모](2026-11-12-ax-browser-demos.md) | Sangwoo Mo(sangwoomo) | Programming for AX 2027 | 실제 모델 11개·교육용 계산 7개를 HTML 안에서 실행 |
 | 2026-11-11 | [ai-study-sync](2026-11-11-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |

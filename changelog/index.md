@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-14 | [주간 홈페이지 검수](2026-11-14-site-weekly.md) | Sangwoo Mo(sangwoomo) | site-weekly, seminar-sync, ai-study-sync | 매일 도는 동기화 두 개를 월요일 한 번의 검수로 합침 |
 | 2026-11-14 | [pre-push 거부 메시지](2026-11-14-prepush-empty-refs.md) | Sangwoo Mo(sangwoomo) | .githooks/pre-push | 원격이 앞설 때 훅이 먼저 죽지 않고 git 의 거부 이유가 보이게 |
 | 2026-11-14 | [14강 현재 버전](2026-11-14-lecture-fourteen-current.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14강 HTML·PDF | 현재 로컬 버전 사이트 사본 반영 |
 | 2026-11-13 | [스터디 링크 상대경로](2026-11-13-ai-study-own-links.md) | Sangwoo Mo(sangwoomo) | tools/ai_study_sync.py | 시트의 홈페이지 주소를 저장소 상대경로로 적음 |

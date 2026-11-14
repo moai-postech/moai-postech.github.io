@@ -1,16 +1,20 @@
-# 랩 세미나 구글시트와 Drive 슬라이드 폴더를 읽어 Seminar 페이지(_data/seminar.yml, assets/seminar/)를 갱신한다.
-# 매일 06:00 KST 에 돌고, Actions 탭에서 "Run workflow" 로 바로 돌릴 수도 있다. 비밀값은 쓰지 않는다(시트와 폴더가 링크 공개).
-# 바뀐 것이 있으면 changelog/{날짜}-seminar-sync.md 에 기록하고 main 에 push 한 뒤 format 을 불러 배포한다. 절차는 tools/seminar_sync.py 머리말.
-name: seminar-sync
+# 주간 홈페이지 검수(교수 2026-11-14: 매일 도는 동기화 봇 두 개를 주 1회 하나로).
+# Drive·구글시트에 올라온 것을 사이트에 반영한다. 지금 항목은 둘이다.
+#   1) 랩 세미나 시트와 Drive 슬라이드 폴더 → Seminar 페이지(_data/seminar.yml, assets/seminar/). 절차는 tools/seminar_sync.py 머리말
+#   2) 학부생 AI 스터디 시트 → 스터디 페이지(_data/ai_study.yml, teaching/ai-study/). 절차는 tools/ai_study_sync.py 머리말
+# 월 06:00 KST 에 돌고, 급하면 Actions 탭 "Run workflow" 로 바로 돌린다. 비밀값은 쓰지 않는다(시트와 폴더가 링크 공개).
+# 바뀐 것이 있으면 각 스크립트가 changelog/{날짜}-{seminar,ai-study}-sync.md 에 기록하고, main 에 push 한 뒤 format 을 불러 배포한다.
+# 새 검수 항목은 봇을 따로 만들지 말고 여기에 단계로 더한다.
+name: site-weekly
 on:
   schedule:
-    - cron: "0 21 * * 0-6"  # cron 은 sangwoomo 가 마지막으로 고친다. 예약 실행의 실패 알림이 그 계정 설정(메일 끔)을 따른다(2026-11-02)
+    - cron: "0 21 * * 0"  # 월 06:00 KST. cron 은 sangwoomo 가 마지막으로 고친다. 예약 실행의 실패 알림이 그 계정 설정(메일 끔)을 따른다(2026-11-02)
   workflow_dispatch:
 permissions:
   contents: write
   actions: write  # 아래 format 실행용
 concurrency:
-  group: seminar-sync
+  group: site-weekly
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -22,18 +26,22 @@ jobs:
       - run: pip install pypdf
       # pptx 로 올린 슬라이드를 PDF 로 바꿀 때만 쓴다. 한글 슬라이드가 있어 CJK 글꼴도 넣는다
       - run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends libreoffice-impress fonts-noto-cjk
-      - run: python3 tools/seminar_sync.py --changelog
+      - name: sync
+        run: |
+          python3 tools/seminar_sync.py --changelog
+          python3 tools/ai_study_sync.py --changelog
       - name: commit and push
         id: push
         run: |
-          paths="_data/seminar.yml assets/seminar changelog"
+          # drive_pdf 를 불러오면 tools/__pycache__/ 가 생기므로 동기화 대상 경로만 본다
+          paths="_data/seminar.yml assets/seminar _data/ai_study.yml teaching/ai-study tools/drive_sources.json changelog"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 다른 push 와 겹쳐 changelog/index.md 등이 충돌하면 최신 main 에서 동기화를 다시 돌린다(2026-11-03, 충돌로 실패 메일이 감)
+          # 다른 push 와 겹쳐 changelog/index.md 등이 충돌하면 최신 main 에서 동기화를 다시 돌린다(2026-11-03)
           for i in 1 2 3; do
             if [ -z "$(git status --porcelain -- $paths)" ]; then echo "바뀐 것 없음"; exit 0; fi
             git add $paths
-            git commit -q -m "Seminar: sync from the lab seminar sheet"
+            git commit -q -m "Weekly: sync seminar and study sheets"
             if git pull --rebase -q origin main && git push -q origin HEAD:main; then
               echo "pushed=true" >> "$GITHUB_OUTPUT"; exit 0
             fi
@@ -41,6 +49,7 @@ jobs:
             git rebase --abort 2>/dev/null || true
             git fetch -q origin main && git reset -q --hard origin/main && git clean -fdq -- $paths
             python3 tools/seminar_sync.py --changelog
+            python3 tools/ai_study_sync.py --changelog
           done
           exit 1
       # GITHUB_TOKEN 으로 한 push 는 다른 워크플로를 깨우지 않아 format(빌드·배포)이 돌지 않는다. 바뀐 것이 있거나 손으로 돌렸을 때 직접 부른다

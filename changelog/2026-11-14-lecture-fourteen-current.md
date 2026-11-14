@@ -1,7 +1,7 @@
 # 2026-11-14 14강 현재 버전 사이트 게시 준비
 작성자: Sangwoo Mo(sangwoomo) | 대상: teaching/26f-data-engineering/slides/14_ml-systems.html, teaching/26f-data-engineering/slides/14_ml-systems.pdf | 도구: Codex
 
-> **한줄 결론: 사용자 요청으로 14강 현재 HTML·PDF를 로컬 원본 그대로 사이트 사본에 반영했다. push 대기.**
+> **한줄 결론: 사용자 요청으로 14강 현재 HTML·PDF를 로컬 원본 그대로 사이트 사본에 반영했다.**
 
 POSTECH 요구사항: 영향 없음
 
@@ -17,4 +17,4 @@ POSTECH 요구사항: 영향 없음
 없음.
 
 ## 남은 것
-현재 실행 환경에서 github.com DNS 해석 실패로 push 대기. 연결 가능한 환경에서 저장소의 pre-push 검사를 거쳐 push한다. 다른 프로세스의 전수 업데이트와 기존 미커밋 파일은 포함하지 않는다.
+2026-11-14 봇 커밋 위로 rebase 해 push 했다(`e7472cd`, [pre-push 거부 메시지](2026-11-14-prepush-empty-refs.md)). DNS 해석 실패는 그 실행 환경의 네트워크 제한이었다. 다른 프로세스의 전수 업데이트와 기존 미커밋 파일은 포함하지 않는다.

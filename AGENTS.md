@@ -17,7 +17,7 @@ _data/               콘텐츠 데이터(YAML)
   members.yml        People 의 Faculty(교수, 사진, Bio, 이력 cv), Lab Members(연구실 멤버), Other Mentees(연구실 밖에서 지도한 학생). 멤버의 focus 는 연구 방향 패널에 이름을 띄운다. 연구실 멤버(Postdocs 포함, Alumni 제외)는 모두 Home 의 세 연구 방향 중 하나에 들어가야 하고, focus 가 빠진 멤버가 있으면 교수에게 물어 채운다(교수 2026-10-26)
   teaching.yml       Teaching 의 정규 강의
   talks.yml          Teaching > Talks
-  ai_study.yml       학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트에서 만든다(GitHub Actions `ai-study-sync` 가 매일 06:30 KST, Actions 탭 Run workflow 로 바로). 손으로 고치지 않는다
+  ai_study.yml       학부생 AI 스터디 페이지(teaching/ai-study/)의 학기별 일정. tools/ai_study_sync.py 가 스터디 구글시트에서 만든다(GitHub Actions `site-weekly` 가 월 06:00 KST, Actions 탭 Run workflow 로 바로). 손으로 고치지 않는다
   seminar.yml        Research > Seminar 의 발표 목록. tools/seminar_sync.py 가 랩 세미나 구글시트에서 만든다. 손으로 고치지 않는다(아래 "세미나 발표 올리기")
   institutions.yml   기관 이름 → 공식 영문 사이트. Seminar 소속 글자의 링크(키는 affiliation 과 글자 그대로 같게)
   funding.yml        Research 맨 아래 Funding(과제명은 공식 명칭 원문)
@@ -35,7 +35,7 @@ students.html, mentees.html, research.html, publications.html, landscape.html, t
 POSTECH.md           정보기술팀이 요구한 POSTECH 필수 요소(P1~P9)와, 바꾸자는 요청을 그것에 비춰 보는 검토 절차
 changelog/           수정 기록(아래 규칙)
 discussions/         의견이 갈려 결정을 기다리는 안건(아래 규칙)
-tools/               검사 스크립트(check_changelog.py: 기록·안건·서로 되돌리기, check_format.js: 사이트 전체 형식, check_typography.js: 모든 페이지·숨은 상태의 크기·행간·자간·줄바꿈, check_postech.js: POSTECH 필수 요소, maintainers.txt: 결정 권한자), 세미나 동기화(seminar_sync.py, .github/workflows/seminar-sync.yml), 스터디 동기화(ai_study_sync.py, .github/workflows/ai-study-sync.yml), 슬라이드 사본(drive_pdf.py, localize_slides.py)
+tools/               검사 스크립트(check_changelog.py: 기록·안건·서로 되돌리기, check_format.js: 사이트 전체 형식, check_typography.js: 모든 페이지·숨은 상태의 크기·행간·자간·줄바꿈, check_postech.js: POSTECH 필수 요소, maintainers.txt: 결정 권한자), 세미나 동기화(seminar_sync.py)와 스터디 동기화(ai_study_sync.py). 둘 다 주간 검수 .github/workflows/site-weekly.yml 이 돌린다, 슬라이드 사본(drive_pdf.py, localize_slides.py)
 ```
 
 ### 무엇을 어디서 고치나
@@ -104,12 +104,12 @@ tools/               검사 스크립트(check_changelog.py: 기록·안건·서
 
 ## 세미나 발표 올리기
 
-Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` 의 `sheet`)와 랩 세미나 Drive 폴더다(교수 2026-10-26). 학생이 시트와 Drive 만 고치면 GitHub Actions(`seminar-sync`)가 매일 06:00 KST 에 사이트를 고치고, 바뀐 것이 있으면 `format` 을 불러 배포까지 한다. 저장소의 `_data/seminar.yml`, `assets/seminar/` 를 손으로 고치면 다음 동기화에 덮어쓰인다.
+Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` 의 `sheet`)와 랩 세미나 Drive 폴더다(교수 2026-10-26). 학생이 시트와 Drive 만 고치면 GitHub Actions(`site-weekly`, 주간 홈페이지 검수)가 월 06:00 KST 에 사이트를 고치고, 바뀐 것이 있으면 `format` 을 불러 배포까지 한다. 저장소의 `_data/seminar.yml`, `assets/seminar/` 를 손으로 고치면 다음 동기화에 덮어쓰인다.
 
 1. 슬라이드를 Drive 폴더의 그해 폴더에 올린다. PDF 를 권장한다(pptx 도 받지만 자동 동기화는 GitHub Actions 에서 LibreOffice 로 바꿔 글꼴이 달라질 수 있다. 맥에서 손으로 돌리면 `tools/office_pdf.py` 가 PowerPoint 로 굽는다). 파일 이름은 `yymmdd_짧은제목.pdf`.
 2. 시트의 그 날짜 행에 `topic`(발표 제목), `slide`(올린 파일 이름), `name_en`(영문 이름, `_data/members.yml` 과 같은 표기)을 채운다. **`name_en` 을 채운 행만 사이트에 나온다.** 시험, 휴식, 공개 전 연구(코드명)는 비워 둔다. 다 같이 하는 회차(Research Sync, Internal Review, 학회 공유)는 `name`·`name_en` 에 `everyone`·`Everyone` 을 넣는다. 사이트에서는 랩 발표와 같은 양식으로 나온다. 목록은 랩 내부와 초청 두 가지로만 가른다(교수 2026-11-02). 페이지는 연도별 탭(목록과 같은 최신순, 맨 앞 최신 해가 열린 채로)으로 나누고, 그 안에서 All / Lab / Invited / IME Seminar 로 거른다(교수 2026-11-03). IME Seminar 는 교수가 산업경영공학과 세미나·강의 guest lecture 로 직접 부른 연사만 `_data/ime_seminar.yml` 에 적는다. 강의 스케줄에서 자동으로 가져오지 않는다(교수가 부르지 않은 학과 세미나 연사가 섞인다). 강의에 교수가 부른 게스트를 넣으면 같은 칸을 이 파일에도 옮겨 적는다. 색은 Lab 세이지, Invited 버터, IME Seminar 중립 회색이다(교수 2026-11-09).
 3. 초청 발표는 `affiliation_en`(영문 소속, 처음 나오는 기관이면 `_data/institutions.yml` 에 공식 영문 사이트 한 줄을 더한다. 소속 글자가 그 사이트로 링크된다, 교수 2026-11-10), `slide` 칸에 연사 홈페이지, `paper` 에 연사의 해당 논문(arXiv 초록 주소, 여러 개면 연사가 1저자인 대표 하나)을 채운다. 외부 연사 슬라이드는 올리지 않는다. 랩 발표는 슬라이드에만 링크를 건다. 아직 슬라이드가 없으면 제목에 링크를 걸지 않고 원 논문(`paper`)으로도 보내지 않는다(교수 2026-11-03). 인턴처럼 People 에 없는 랩 발표자는 `homepage` 에 본인 홈페이지를 넣는다.
-4. 바로 보고 싶으면 GitHub 의 Actions > seminar-sync > Run workflow 를 누른다. 손으로 돌리면 바뀐 것이 없어도 배포까지 하고, 5분 안팎 뒤 반영된다. 슬라이드를 못 찾으면 실행 기록에 경고가 남는다.
+4. 바로 보고 싶으면 GitHub 의 Actions > site-weekly > Run workflow 를 누른다(스터디 시트도 같이 반영한다). 손으로 돌리면 바뀐 것이 없어도 배포까지 하고, 5분 안팎 뒤 반영된다. 슬라이드를 못 찾으면 실행 기록에 경고가 남는다.
 
 동기화는 슬라이드를 PDF 로 바꾸고, 모든 쪽을 16:9(960x540pt)로 맞추고(비율이 다른 쪽은 줄여서 가운데), 이름을 `날짜-제목별칭.pdf`(예: `2026-07-22-memeye.pdf`)로, PDF 정보에 제목과 발표자를 넣는다. 제목 별칭은 시트 `nickname` 칸에 적은 것, 비어 있으면 제목의 콜론 앞 짧은 이름(`MemEye`, `ESI-Bench`)이나 기능어를 뺀 앞 3단어다. 자동 별칭이 어색하면 `nickname` 을 채운다(교수 2026-10-26). 슬라이드 내용은 고치지 않는다. 바뀐 것이 있으면 `changelog/{날짜}-seminar-sync.md` 에 스스로 기록한다.
 
@@ -273,7 +273,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 평소에는 빠르게 빌드하고 올린다. 전체 형식은 교수가 요청할 때만 한꺼번에 본다(교수 2026-10-30).
 
 - **평소 push 와 PR**: `format` 이 빌드하면 바로 배포한다(1분 남짓). 빠른 검사(`test_design`, `check_postech`, `check_selection`, `check_study_members`, `check_guest_titles`, `check_study_terms`, `check_link_arrows`)는 같은 워크플로의 `checks` 가 배포와 나란히 돌린다. 시각 검토 기록은 push 를 막지 않는다.
-- **교수 계정 push 는 실패로 표시하지 않는다**(2026-11-02). 에이전트는 교수 계정으로 push 하므로, 실행이 실패하면 교수에게 GitHub 실패 메일이 간다. 그래서 `checks` 와 교수 계정의 `changelog` 검사는 문제를 실행 주석(warning)과 요약에만 남기고 성공으로 끝난다. 교수 계정 push 의 Jekyll 빌드가 깨져도 `format` 은 배포만 건너뛰고(이전 사이트 유지) 경고를 남긴 채 성공으로 끝난다(2026-11-03). 다른 사람의 push 와 PR 은 `changelog` 와 빌드가 그대로 실패한다. 세미나·스터디 동기화는 다른 push 와 겹쳐 충돌하면 최신 main 에서 다시 동기화해 최대 3번 시도하고, 그래도 안 되거나 동기화 자체가 고장 나면 그대로 실패 메일로 알린다.
+- **교수 계정 push 는 실패로 표시하지 않는다**(2026-11-02). 에이전트는 교수 계정으로 push 하므로, 실행이 실패하면 교수에게 GitHub 실패 메일이 간다. 그래서 `checks` 와 교수 계정의 `changelog` 검사는 문제를 실행 주석(warning)과 요약에만 남기고 성공으로 끝난다. 교수 계정 push 의 Jekyll 빌드가 깨져도 `format` 은 배포만 건너뛰고(이전 사이트 유지) 경고를 남긴 채 성공으로 끝난다(2026-11-03). 다른 사람의 push 와 PR 은 `changelog` 와 빌드가 그대로 실패한다. 주간 동기화(`site-weekly`)는 다른 push 와 겹쳐 충돌하면 최신 main 에서 다시 동기화해 최대 3번 시도하고, 그래도 안 되거나 동기화 자체가 고장 나면 그대로 실패 메일로 알린다.
 - **push 전 검사로 실패를 미리 막는다**(2026-11-03). `tools/setup.sh` 가 켜는 `.githooks/pre-push` 훅이 push 할 커밋마다 `check_changelog.py`(작성자 ID 는 `gh` 로그인 계정과 맞춰 봄)와 `jekyll build` 를 돌리고, 하나라도 실패하면 push 를 멈춘다. 작업 폴더가 아니라 커밋을 빌드하므로 다른 사람의 커밋 안 한 수정은 섞이지 않는다. 걸리면 고쳐서 다시 push 하고, `--no-verify` 로 건너뛰지 않는다. 그 맥에 빌드 환경이 없으면 훅이 `tools/setup.sh` 를 먼저 돌린다(처음 한 번 1분 남짓, 그 뒤 push 마다 10초 안팎). 빌드가 10초를 넘기면 원인을 찾아 고친다. Jekyll 은 gitignore 를 모르므로 작업 폴더에만 있는 큰 폴더는 `_config.yml` exclude 에 넣는다(`visual-review-bundle` 153MB 때문에 로컬 빌드가 5분 걸렸다, 2026-11-10). `tools/site_env.sh` 가 `PAGES_DISABLE_NETWORK=1` 로 GitHub API 호출을 끄는 것이 그 예다. 이것이 없으면 빌드마다 10분 넘게 걸렸다(교수 2026-11-09: 고치면 바로 push). 실패 메일을 경고로 바꾸는 CI 설정은 메일을 막을 뿐이고, 깨진 커밋이 올라가지 않게 하는 것은 이 훅이다.
 - **고쳤으면 커밋하고 바로 push 한다. 따로 빌드하거나 CI 를 기다리지 않는다**(교수 2026-11-10: "심플하게 빨리빨리 푸시"). push 전 훅이 2초 안팎에 빌드와 changelog 검사를 끝내므로 push 전에 `tools/jekyll.sh build` 를 따로 돌리지 않는다. 눈으로 볼 화면이 있을 때만 `serve` 로 본다. push 뒤 `gh run watch` 로 실행이 끝나기를 붙잡고 있지 않는다. 이번 실행 결과는 다음 작업을 시작할 때 `gh run list -L 3` 으로 한 번 보고, 경고가 있으면 그때 고친다. 그 세션에서 못 고치면 루트 `TODO.md` 에 한 줄(검사, 실행 링크, 원인)을 남기고 사용자에게 알린다.
 - **게시 지연 복구와 완료 판정(2026-11-10 사용자).** GitHub Pages 게시가 멈추면 10분 방치하지 않고 3분 제한 뒤 같은 artifact로 한 번 자동 재시도한다. 빌드에 `deployment.json`(커밋·강의 파일 해시)을 포함하고 게시 뒤 공개 도메인에서 커밋을 대조한다. 평소 작업은 push 직후 종료하되 이를 공개 반영 완료라고 표현하지 않는다. 사용자가 공개 반영 확인이나 지연 해결을 요청하면 실제 공개 파일까지 대조한다. 다른 배포처(Drive·구글 시트·PLMS)를 요청했으면 각 저장본도 확인한다. 서버 게시 대기 때문에 즉시 공개를 보장한다고 말하지 않는다.

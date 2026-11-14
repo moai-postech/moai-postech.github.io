@@ -11,7 +11,7 @@
   - _data/ai_study.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
 
   python3 tools/ai_study_sync.py               # 로컬에서 한 번
-  python3 tools/ai_study_sync.py --changelog   # GitHub Actions(ai-study-sync, 매일): 바뀐 것이 있으면 changelog 도 쓴다
+  python3 tools/ai_study_sync.py --changelog   # GitHub Actions(site-weekly, 월 06:00 KST): 바뀐 것이 있으면 changelog 도 쓴다
 
 필요한 것: Python 3.9+ (표준 라이브러리만).
 """
@@ -268,7 +268,7 @@ def write_changelog(summary):
             f"# {today} 학부생 AI 스터디 자동 동기화\n"
             "작성자: GitHub Actions(ai-study-sync) | 대상: `_data/ai_study.yml`, `teaching/ai-study/` | 도구: `tools/ai_study_sync.py`\n\n"
             "> **한줄 결론: 스터디 시트의 변경을 학부생 AI 스터디 페이지에 반영했다.**\n\n"
-            "## 요청\n교수 2026-10-27: 스터디 시트를 seminar-sync 처럼 매일 자동 동기화.\n"
+            "## 요청\n교수 2026-11-14: 주간 홈페이지 검수(site-weekly)에서 스터디 시트 동기화.\n"
             "## 반영 내역\n")
         index = os.path.join(root, "index.md")
         s = open(index, encoding="utf-8").read()

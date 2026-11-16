@@ -1,4 +1,5 @@
 # 2026-10-28 Bio 문장 흐름과 프로필 갱신 순서
+작성자: Sangwoo Mo(sangwoomo) | 대상: 이관 기록 | 도구: Claude, Codex
 
 - 연구실 Faculty와 개인 사이트 About의 Bio는 같은 한 문단으로 유지한다. 연구 설명 두 문장을 연결하고 학력·포스닥 경력의 연결을 다듬었다. 협업과 수상은 별도 문장으로 나눴다.
 - 연구실 사이트 변경·검증 기록: [faculty-bio-flow](https://github.com/moai-postech/moai-postech.github.io/blob/8bee00965cc0b48aa681eac8aec86c10a2fc1af3/changelog/2026-10-28-faculty-bio-flow.md), 원격 커밋 `8bee009`.

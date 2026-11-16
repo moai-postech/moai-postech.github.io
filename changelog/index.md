@@ -31,6 +31,18 @@
 | 2026-11-05 | [홈 단체사진 색연필 톤](2026-11-05-home-photo-pencil.md) | Sangwoo Mo(sangwoomo) | Home 사진, index.md, AGENTS.md | 생성형 편집 폐기, 원본 얼굴을 유지하는 일반 연필 필터 적용 |
 | 2026-11-05 | [12~15강 핵심 중심 개선](2026-11-05-lectures-twelve-fifteen-concepts.md) | Sangwoo Mo (sangwoomo) | Data Engineering12~15강 | 역사·개념·예제 중심154장 HTML·PDF 사이트 선배포 |
 | 2026-11-05 | [pptx·docx PDF 는 MS Office 로](2026-11-05-ms-office-pdf.md) | Sangwoo Mo(sangwoomo) | tools/office_pdf.py, seminar_sync.py, drive_pdf.py, AGENTS.md | 맥에서는 PowerPoint·Word 로 굽고 LibreOffice 는 없거나 실패할 때만 |
+| 2026-11-04 | [이관 기록](2026-11-04-site-worktree-cleanup.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-28 | [이관 기록](2026-10-28-profile-priority-bio.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-26 | [이관 기록](2026-10-26-moai-domain-connected.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-23 | [이관 기록](2026-10-23-postech-domain-design.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-21 | [이관 기록](2026-10-21-reviewer-award-removed.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-16 | [이관 기록](2026-10-16-talk-mentees.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-16 | [이관 기록](2026-10-16-loc-arxiv.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-15 | [이관 기록](2026-10-15-i2a-wacv.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-14 | [이관 기록](2026-10-14-chaewon-site.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-12 | [이관 기록](2026-10-12-member-sites.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-06 | [이관 기록](2026-10-06-idis-code-spacing.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
+| 2026-10-05 | [이관 기록](2026-10-05-shed-tmlr.md) | sangwoomo | moai-postech.github.io | 기존 공통 기록에서 이 작업의 이력 이관 |
 | 2026-11-05 | [11강 핵심 개념 중심 정리](2026-11-05-lecture11-concepts.md) | Sangwoo Mo (sangwoomo) | Data Engineering 11강 | 역사·개념·예제 중심78장판 HTML·PDF 교체 |
 | 2026-11-05 | [11강 2025 시각자료·예제 보존](2026-11-05-lecture-eleven-superset.md) | Sangwoo Mo(sangwoomo) | 11강 HTML·PDF | 주요 원본 그림·예제와 코드·DAG 풀이를 포함한105장판 |
 | 2026-11-05 | [de-lecture-eleven](2026-11-05-de-lecture-eleven.md) | Sangwoo Mo(sangwoomo) | 11강 HTML·PDF | MapReduce·Spark 두 파트60장·도구 개발 배경 복원 |

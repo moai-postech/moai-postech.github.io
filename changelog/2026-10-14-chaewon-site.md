@@ -1,4 +1,5 @@
 # 2026-10-14 박채원 개인 사이트 링크
+작성자: Sangwoo Mo(sangwoomo) | 대상: 이관 기록 | 도구: Claude, Codex
 
 - 연구실 사이트 `members.html`: 같은 링크, 다른 학생 항목과 같은 `<a>` 형식. 커밋 `2c91ab7`.
 

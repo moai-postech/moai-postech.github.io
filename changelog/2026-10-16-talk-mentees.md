@@ -1,4 +1,5 @@
 # 2026-10-16 Talks 추가와 Other mentees 순서
+작성자: Sangwoo Mo(sangwoomo) | 대상: 이관 기록 | 도구: Claude, Codex
 
 - 연구실 사이트 `members.html`: 같은 순서로 바꿔 push `8dc0d1e`, Pages `built`, 라이브 확인.
 - 연구실 사이트 `members.html` 같은 자리(커밋 `648927c`, Pages built 확인).

@@ -1,4 +1,5 @@
 # 2026-10-06 Idis code 링크, Research 세로 간격, PDS 이동, TEG 링크, 링크 밑줄 제거
+작성자: Sangwoo Mo(sangwoomo) | 대상: 이관 기록 | 도구: Claude, Codex
 
 - 연구실 사이트 publications.html 은 논문마다 code 링크를 두지 않는 형식이라 바꾸지 않았다. CV 도 code 링크를 싣지 않는다.
 - Research: 제목 아래 빈 문단(약 27px)을 지워 첫 라벨이 class 기본 여백 16px 을 받게 했다. 둘째 라벨부터 margin-top 6pt(8px). 논문 줄 사이는 0 그대로. 게시본 렌더에서 16 / 8 / 0px, 링크 33개, 라벨 글꼴 Roboto 를 확인했다.

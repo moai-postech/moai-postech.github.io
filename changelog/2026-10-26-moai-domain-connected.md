@@ -1,4 +1,5 @@
 # 2026-10-26 moai.postech.ac.kr 연결 마무리
+작성자: Sangwoo Mo(sangwoomo) | 대상: 이관 기록 | 도구: Claude, Codex
 
 > **한줄 결론: moai.postech.ac.kr 을 GitHub 연구실 사이트에 연결했고, 옛 Google Site 의 도메인 연결을 해제했다. 웹 취약성 점검 결과는 아직 없고, 정보기술팀에 보낼 회신은 초안까지 썼다.**
 

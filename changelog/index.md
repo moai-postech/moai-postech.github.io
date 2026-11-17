@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [스터디 일정 호버·시트 링크](2026-11-17-study-schedule-hover-sheet.md) | Sangwoo Mo(sangwoomo) | `study-schedule.html`, `course.css` | 다른 단계 호버 때 고정 색을 가리고, Study sheet 를 일정표 바로 위로 |
 | 2026-11-17 | [Talks 장소 링크, Invited Talks](2026-11-17-talks-venue-links.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml`, `invited-talks.md` | 기관은 공식 사이트, 행사는 행사 페이지로 링크. 탭 이름 Invited Talks |
 | 2026-11-17 | [Home Paper Stella 모바일 세로 균형](2026-11-17-home-stella-mobile.md) | Sangwoo Mo(sangwoomo) | `_themes/wide/includes/theme.css` | 휴대폰에서 미리보기 창을 줄여 구름 위아래 여백을 맞추고, 미리보기 배경 사각형을 띠 색에 녹임 |
 | 2026-11-17 | [Home 고해상도 스케치](2026-11-17-home-sketch-hires.md) | Sangwoo Mo(sangwoomo) | `index.md`, `assets/img/lab/` | 고해상도 원본 전체를 색연필 스케치로 바꿔 Home 사진 띠에 넣음 |

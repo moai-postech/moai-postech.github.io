@@ -26,7 +26,7 @@
 - year: "2025"
   talks:
     - title: "Foundation Models for Vision and Language (with Code)"
-      url: "assets/talks/2025-foundation-models-for-vision-and-language.pdf"
+      url: "https://drive.google.com/drive/folders/19osT0Bqy3FQe8BhhGCmPbgdaiyShyFRg"
       kind: education
       venues: [{name: "KSS Winter School", url: "https://kss.or.kr/"}]
     - title: "Foundation Models for Vision, Language, and Robotics"

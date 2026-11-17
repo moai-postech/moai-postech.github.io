@@ -148,23 +148,23 @@
     const fullPanel = element('div');
     fullPanel.append(summary(dept || 'Everyone', shown.length, !!dept));
     fullPanel.append(table(shown, dept ? dept + ' members' : 'All study members', false));
-    const tabs = [{ id: 'members-all', title: 'Full list', panel: fullPanel }];
+    const tabs = [{ id: 'members-all', title: 'Full list', note: 'All terms', panel: fullPanel }];
     for (const c of ordered) {
       const term = people.filter(p => p.participation.includes(c.number));
       const rep = representatives[c.term];
       term.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // representative first, the rest keep the sheet order
-      // One-line tab labels: 1기 large, (Fall 2025) small and light, no member counts (교수 2026-11-02).
+      // Two-line tab labels like the Schedule tabs: the term on top, the cohort under it, no member counts (교수 2026-11-18; one line '1기 (Fall 2025)' before, 2026-11-02).
       const panel = element('div');
       panel.append(summary(c.number + '기' + (c.term ? ' (' + c.term + ')' : ''), term.length, true),
         table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep));
-      tabs.push({ id: tabId(c.number), title: c.number + '기', note: c.term ? '(' + c.term + ')' : '', panel });
+      tabs.push({ id: tabId(c.number), title: c.term || c.number + '기', note: c.term ? c.number + '기' : '', panel });
     }
     const box = element('section', undefined, 'study-member-tabs');
     const tablist = element('div', undefined, 'study-tablist study-member-tablist'); tablist.setAttribute('role', 'tablist'); tablist.setAttribute('aria-label', 'Member lists');
     const buttons = tabs.map(tab => {
       const button = element('button'); button.type = 'button'; button.id = 'tab-' + tab.id; button.setAttribute('role', 'tab'); button.setAttribute('aria-controls', tab.id);
       button.append(element('strong', tab.title));
-      if (tab.note) button.append(element('span', tab.note));  // smaller and lighter on the same line
+      if (tab.note) button.append(element('span', tab.note));  // second, smaller line, as on Schedule
       tablist.append(button);
       return button;
     });
@@ -188,11 +188,11 @@
     fromHash();
     window.onhashchange = () => (/^#(dept|entry)=/.test(location.hash) || dept ? render(cohorts) : fromHash());  // #members-4 switches the tab; #dept= and #entry= re-filter
     box.append(tablist, ...panels);
-    // One line above the tabs says where the photos come from and how to change one (교수 2026-11-03).
+    // One line under the lists says where the photos come from and how to change one (교수 2026-11-03), so the tabs sit right under the title as on Schedule (교수 2026-11-18).
     const note = element('p', 'Photos come from POVIS and LinkedIn to help everyone put names to faces. If you\u2019d like a different photo, just let ', 'study-member-photo-note');
     const prof = element('a', 'Prof. Sangwoo Mo'); prof.href = 'faculty.html';
     note.append(prof, ' know.');
-    list.replaceChildren(note, box);
+    list.replaceChildren(box, note);
   }
   async function unlock(key, focus) {
     const plaintext = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: decode(data.iv) }, key, decode(data.ciphertext));

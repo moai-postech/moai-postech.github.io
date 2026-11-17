@@ -10,3 +10,9 @@
 - 남은 것: KSS Winter School(2026-02-25, Zoom)은 학회 행사 페이지(`kss.or.kr/event/winter26`)가 내려갔고 포스터도 없어 링크 없이 둠
 - 기각: Physical AI 포스터를 asset 으로 올리기(공식 안내 페이지가 있어 불필요)
 - POSTECH 요구사항: 영향 없음(_config.yml 은 Teaching 하위 탭 이름·주소만 바꿈. 머리글·꼬리말 P1~P9 요소는 그대로)
+
+## 수정(같은 날)
+
+- 교수: KSS Invited Talk 와 KSS Winter School 은 KSS 사이트로, KSIAM 도 기관 사이트로
+- KSS Invited Talk·KSS Winter School → `kss.or.kr`, KSIAM Invited Talk → `ksiam.org`. 둘 다 한글 첫 화면이다(KSS 영문 `eng.kss.or.kr` 은 꼬리말만 있는 빈 화면, KSIAM 은 영문판 없음)
+- KSS Tutorial 은 말씀이 없어 2025 동계학술논문발표회 안내 그대로 둠

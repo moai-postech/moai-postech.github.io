@@ -5,6 +5,8 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [꼬리말 All rights reserved](2026-11-17-footer-rights.md) | Sangwoo Mo(sangwoomo) | `_themes/wide/includes/footer.html` | 저작권 줄 끝에 All rights reserved 를 붙임 |
+| 2026-11-17 | [14~17강 PDF 새로 굽기](2026-11-17-lectures-14-17-pdf.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14~17강 PDF | 브라우저 렌더 PDF로 교체 |
 | 2026-11-17 | [16강 반복 정리](2026-11-17-lecture-sixteen-dedup.md) | Sangwoo Mo(sangwoomo) | Data Engineering 16강 HTML·PDF | 59장 판 사이트 반영 |
 | 2026-11-17 | [Talks에 AI:Q 자리 추가](2026-11-17-talks-aiq-placeholder.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml` | AI:Q 발표를 제목만 넣고, Talks 를 Research·Education 탭으로 나눔 |
 | 2026-11-17 | [9강 CAP 장 수정](2026-11-17-lecture-nine-cap.md) | Sangwoo Mo(sangwoomo) | Data Engineering 9강 HTML·PDF | CAP Theorem 장 두 단 배치판 사이트 반영 |

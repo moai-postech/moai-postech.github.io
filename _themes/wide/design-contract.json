@@ -261,7 +261,7 @@
       "style": {
         "fontSize": "var(--text-lead)",
         "fontWeight": "var(--weight-regular)",
-        "color": "var(--accent-soft)",
+        "color": "var(--accent)",
         "whiteSpace": "nowrap"
       }
     },

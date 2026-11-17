@@ -321,7 +321,7 @@ a.mentee-name:hover { color: var(--accent); }
 .mini-text br.wide-only { display: none; }  /* a line break that only wide screens keep (Home band: after "such as"), where the first line fits */
 @media (min-width: 1280px) { .mini-text br.wide-only { display: inline; } }
 .mini-text p { margin: 0; color: var(--white); font-size: var(--text-lead); line-height: var(--leading-paper); }
-.mini-text a { color: var(--accent-soft); white-space: nowrap; }  /* the accent red is too dark on the band */
+.mini-text a { color: var(--accent); white-space: nowrap; }  /* the site's accent like every emphasised link (교수 2026-11-17; was --accent-soft for contrast on the dark band) */
 .content-section.section-callout { padding-top: var(--space-5); }  /* a notice band right under the section it belongs to (Home: recruiting under Our focus, 2026-10-27) */
 .section-callout p { margin: 0; padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); }
 .section-callout strong { color: var(--accent); }

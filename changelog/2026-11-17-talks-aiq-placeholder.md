@@ -14,3 +14,4 @@
 - 모양은 Seminar 의 `filter-bar`·`filter-btn` 을 그대로 씀. 기본 선택은 Research. 거른 뒤 빈 연도 머리는 숨김(`scripts.html` 의 `[data-talk-filter]`)
 - 참고: 2025 KSS Winter School("Foundation Models for Vision and Language (with Code)")은 2026-10-21 교수 결정으로 KSS Tutorial 과 겹쳐 뺀 것(`2026-10-21-teaching-tabs.md`)
 - 첫 배포에서 거르기가 안 먹음: 목록 줄의 `display:flex` 가 `hidden` 속성을 이겨서. `[data-talk-filter] [hidden]{display:none}` 를 더해 고침
+- AGENTS.md 의 Talks 수록 기준을 두 탭 기준으로 고침

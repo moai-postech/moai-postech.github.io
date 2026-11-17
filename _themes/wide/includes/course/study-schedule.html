@@ -28,7 +28,7 @@
           <td class="cs-n">{{ s.n }}</td>
           <td class="cs-date">{% if s.date %}<time datetime="{{ s.date }}">{{ s.date | date: "%m/%d" }}</time>{% endif %}</td>
           <td class="cs-topic">{% if s.optional %}<span class="cs-tag">Optional</span>{% endif %}<span class="cs-title">{{ s.title }}</span>{% if s.keywords %}<span class="cs-speaker">{{ s.keywords }}</span>{% endif %}</td>
-          {% if lecture_format %}<td class="st-links st-lectures">{% comment %} One label, then numbers: "Lec 5, 6", like PDF 1, 2 in the slides cell (교수 2026-11-04). {% endcomment %}{% for l in s.lectures %}{% unless forloop.first %}, {% endunless %}<a href="{{ l.url }}">{% if forloop.first %}{{ l.text }}{% else %}{{ l.text | remove: "Lec " }}{% endif %}</a>{% endfor %}</td>{% else %}
+          {% if lecture_format %}<td class="st-links st-lectures" data-label="Lectures">{% comment %} One label, then numbers: "Lec 5, 6", like PDF 1, 2 in the slides cell (교수 2026-11-04). {% endcomment %}{% for l in s.lectures %}{% unless forloop.first %}, {% endunless %}<a href="{{ l.url }}">{% if forloop.first %}{{ l.text }}{% else %}{{ l.text | remove: "Lec " }}{% endif %}</a>{% endfor %}</td>{% else %}
           <td class="st-links" data-label="Papers">{% for l in s.papers %}{% if l.url %}<a href="{{ l.url }}">{{ l.text }}</a>{% else %}<span>{{ l.text }}</span>{% endif %}{% endfor %}</td>
           {% endif %}
           <td class="st-links" data-label="Demo">{% for l in s.demos %}<a href="{{ l.url }}">{{ l.text }}</a>{% endfor %}</td>

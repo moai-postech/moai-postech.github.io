@@ -50,6 +50,8 @@ nav:
     children:
       - title: Courses
         url: courses.html
+      - title: AI Study
+        url: ai-study.html
       - title: Talks
         url: talks.html
   - title: Contact

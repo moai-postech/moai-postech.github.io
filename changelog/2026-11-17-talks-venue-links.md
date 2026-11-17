@@ -23,3 +23,4 @@
 - 교수: POSTECH IME Seminar 는 POSTECH IME 를 링크. 행사를 걸려니 애매하다, 가능하면 기관을 거는 것을 원칙으로
 - POSTECH IME Seminar → `ime.postech.ac.kr`(영문판은 같은 주소의 번역 전환뿐이라 한글 첫 화면), POSTECH AI:Q·POSTECH Physical AI Workshop → POSTECH 영문 `postech.ac.kr/eng`
 - 규칙: `_data/talks.yml` 머리 주석과 `AGENTS.md` talks.yml 줄을 "행사 이름으로 쓴 장소도 주최 기관 사이트" 로 고침
+- 같은 날 이어서: Physical AI Workshop 은 산업경영공학과 행사 안내(articleNo=50164, 국영문, 프로그램과 발표자 수록)로 되돌림. 교수: 애매하면 행사 소개 링크가 나을지도. AI:Q 는 행사 페이지가 사전등록 양식뿐이라 POSTECH 그대로 둠. 규칙(머리 주석·AGENTS.md)에 예외 조건을 적음

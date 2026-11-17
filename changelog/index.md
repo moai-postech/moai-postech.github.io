@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [16·17강 보강판](2026-11-17-lecture-sixteen-seventeen.md) | Sangwoo Mo(sangwoomo) | Data Engineering 16·17강 HTML·PDF | AutoResearch·Text-to-SQL 추가판 사이트 반영 |
 | 2026-11-17 | [15강 최신판](2026-11-17-lecture-fifteen.md) | Sangwoo Mo(sangwoomo) | Data Engineering 15강 HTML·PDF | 11-14 146장 판 사이트 반영 |
 | 2026-11-17 | [14강 최신 HTML](2026-11-17-lecture-fourteen-html.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14강 HTML | 11-14 최신판 HTML 사이트 반영 |
 | 2026-11-14 | [주간 홈페이지 검수](2026-11-14-site-weekly.md) | Sangwoo Mo(sangwoomo) | site-weekly, seminar-sync, ai-study-sync | 매일 도는 동기화 두 개를 월요일 한 번의 검수로 합침 |

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [14강 두 파트 재편](2026-11-17-lecture-fourteen-restructure.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14강 HTML·PDF | ML Infrastructure·MLOps 45장 판 사이트 반영 |
 | 2026-11-17 | [16·17강 보강판](2026-11-17-lecture-sixteen-seventeen.md) | Sangwoo Mo(sangwoomo) | Data Engineering 16·17강 HTML·PDF | AutoResearch·Text-to-SQL 추가판 사이트 반영 |
 | 2026-11-17 | [15강 최신판](2026-11-17-lecture-fifteen.md) | Sangwoo Mo(sangwoomo) | Data Engineering 15강 HTML·PDF | 11-14 146장 판 사이트 반영 |
 | 2026-11-17 | [14강 최신 HTML](2026-11-17-lecture-fourteen-html.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14강 HTML | 11-14 최신판 HTML 사이트 반영 |

@@ -15,7 +15,7 @@ sections:
   # 히어로 아래 랩 단체 스케치(교수 2026-10-27, 스케치·전신·격자 전체 폭 2026-11-17). 그림은 assets/img/lab/, 배치는 theme.css 의 .section-photo
   - class: section-photo
     body: |
-      ![Colored-pencil sketch of MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026-sketch-hires.jpg?v=20261117-fit)
+      ![Colored-pencil sketch of MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026-sketch-hires.jpg?v=20261117-air)
   - title: "Our focus in 2026"
     type: focus
   # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Publications > Map(Paper Stella 페이지, 교수 2026-11-03)

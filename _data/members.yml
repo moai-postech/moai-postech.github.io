@@ -47,6 +47,7 @@ professor:
           items:
             - "**Conference**: NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, COLM, etc."
             - "**Journal**: TPAMI, TMLR, TNNLS, IJCV, etc."
+    # Honors & Awards 는 연도순이 아니라 중요도순이다. 최신순으로 바꾸지 않는다(교수 2026-11-18)
     - title: "Honors & Awards"
       groups:
         - title: "During PhD"
@@ -64,7 +65,7 @@ groups:
         url: "https://www.linkedin.com/in/hyunwoo-seo-844055280"
         degree: "PhD, UNIST"
         topic: "Time-Series Analysis"
-  - title: "PhD students"
+  - title: "PhD Students"
     people:
       - name: "Myeongsoo Kim"
         photo: assets/img/people/myeongsoo-kim.jpg
@@ -78,7 +79,7 @@ groups:
         url: "https://eunchanjo.github.io/"
         degree: "MS, POSTECH"
         topic: "Multimodal Agents"
-  - title: "Master students"
+  - title: "Master Students"
     people:
       - name: "Suchan Lee"
         photo: assets/img/people/suchan-lee.jpg
@@ -116,12 +117,13 @@ groups:
         url: "https://scholar.google.com/citations?user=kJv4LEAAAAAJ"
         degree: "BS, Catholic Univ."
         topic: "Physical Agents"
+  # 졸업생이 없어도 Alumni 절은 "Stay tuned :)" 와 함께 둔다(교수 2026-11-18)
   - title: "Alumni"
     people: []
     empty: "Stay tuned :)"
 # Mentees 페이지: 연구실 밖에서 지도한 학생. 시기별 묶음이 절이 된다.
 mentees:
-  - title: "During faculty"
+  - title: "During Faculty"
     people:
       - name: "Yoel Shin"
         url: "https://www.linkedin.com/in/yoel-shin"
@@ -135,7 +137,7 @@ mentees:
         url: "https://leesangoh.github.io/"
         affiliation: "PhD @ POSTECH, w/ Prof. [Wook-Shin Han](https://wscrony.github.io/)"
         papers: "[ICML'26](https://arxiv.org/abs/2512.20014)"
-  - title: "During postdoc"
+  - title: "During Postdoc"
     people:
       - name: "Byeongju Woo"
         url: "https://byeongju.me/"

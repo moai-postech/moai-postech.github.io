@@ -23,5 +23,8 @@ POSTECH 요구사항: 영향 없음
 - Honors & Awards 순서(교수: 중요도순이라 그대로): 바꾸지 않고, 같은 지적이 반복되지 않게 데이터에 주석만 남겼다.
 - 빈 Alumni 절(교수: 둬도 괜찮다): 그대로 두고 데이터에 주석만 남겼다.
 
+## 후속: During 묶음은 소문자로 되돌림
+교수: During XXX 는 뒷글자 소문자가 더 예쁘지 않나. 각 페이지 안에서는 통일성보다 예쁜 것을 우선하자. 판단: 동의. "During faculty" 는 이름표가 아니라 시기를 말하는 문장 조각이라 소문자가 자연스럽고, 그 페이지의 묶음 제목이 모두 During 이라 어긋남도 없다. "During Faculty"·"During Postdoc" 을 "During faculty"·"During postdoc" 으로 되돌렸다. Lab Members 의 "PhD Students"·"Master Students" 는 "Postdocs"·"Alumni" 같은 명사 이름표 옆이라 대문자로 둔다. 규칙은 `AGENTS.md` 콘텐츠 표기 규칙에 한 줄로 남겼다.
+
 ## 남은 것
 없음

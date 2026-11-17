@@ -256,6 +256,7 @@ Seminar 페이지의 정본은 랩 세미나 구글시트(`_data/seminar.yml` �
 - 논문 순서: 같은 연도 안에서 conference, journal, workshop 순. 각 묶음 안에서는 accept 통보일이 최신인 venue 가 위다.
 - 이메일은 `{first_name}.{last_name} [at] postech.ac.kr`, `id [at] domain` 처럼 가리고 mailto 링크를 걸지 않는다.
 - 링크에 밑줄을 넣지 않는다(hover 때만).
+- **절·묶음 제목의 대소문자는 페이지 안에서 보기 좋은 쪽을 고른다**(교수 2026-11-18: 각 페이지 안에서는 통일성보다 예쁜 것이 먼저). 명사 이름표(`PhD Students`, `Honors & Awards`)는 단어마다 대문자, 시기·상황을 말하는 문장 조각(`During faculty`)은 첫 단어만 대문자로 쓴다. 다른 페이지와 맞추려고 바꾸지 않는다.
 - 하이픈 단어의 대소문자: 단어마다 대문자로 시작하는 라벨(멤버 주제, 연구 분야·방향 이름, 절 제목)에서는 하이픈 뒤도 대문자로 쓴다(`Time-Series Analysis`, `Vision-Language Models`). 문장 안에서는 둘 다 소문자다(`time-series`, `real-world`, `test-time scaling`). 논문·발표·워크숍 제목, 사람 이름, 주소는 원문 그대로 둔다(교수 2026-10-26).
 - 교수 이름 링크는 그 교수의 개인 페이지나 연구실 사이트 안 교수 프로필로 건다.
 - Venue 의 track·발표 형식 표시(`(application)`, `(oral)`)는 Publications, News, Mentees 에만 붙인다. Research 는 `약칭 (학회'연도)` 만 쓴다.

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [9강 CAP 장 수정](2026-11-17-lecture-nine-cap.md) | Sangwoo Mo(sangwoomo) | Data Engineering 9강 HTML·PDF | CAP Theorem 장 두 단 배치판 사이트 반영 |
 | 2026-11-17 | [Seminar 연도 탭 제거](2026-11-17-seminar-drop-year-tabs.md) | Sangwoo Mo(sangwoomo) | `_themes/wide/includes/sections/seminar.html` | 연도 탭을 없애고 전체 스크롤로 바꿈 |
 | 2026-11-17 | [꼬리말 Last updated 삭제](2026-11-17-footer-drop-last-updated.md) | Sangwoo Mo(sangwoomo) | `_themes/wide/includes/footer.html` | 저작권 줄에서 Last updated 날짜 표시를 뺌 |
 | 2026-11-17 | [15강 반복 정리](2026-11-17-lecture-fifteen-dedup.md) | Sangwoo Mo(sangwoomo) | Data Engineering 15강 HTML·PDF | 114장 판, 이어 69장 판 사이트 반영 |

@@ -18,5 +18,10 @@ POSTECH 요구사항: 영향 없음
 ## 기각한 안과 이유
 - 모든 `page-intro` 다음 절에 적용: Seminar 등 다른 페이지까지 바뀐다(요청 범위 밖).
 
+## 후속: 내용 판단 세 가지
+- 묶음 제목 대소문자(교수: 알아서): `_data/members.yml` 의 "PhD students"·"Master students"·"During faculty"·"During postdoc" 을 "PhD Students"·"Master Students"·"During Faculty"·"During Postdoc" 으로. 같은 페이지의 "Honors & Awards", 사이트의 "단어마다 대문자로 시작하는 라벨(절 제목)" 규칙에 맞춘 것. Faculty 의 작은 소제목(`h3.sub`)은 화면에서 모두 대문자로 보여 그대로 둔다.
+- Honors & Awards 순서(교수: 중요도순이라 그대로): 바꾸지 않고, 같은 지적이 반복되지 않게 데이터에 주석만 남겼다.
+- 빈 Alumni 절(교수: 둬도 괜찮다): 그대로 두고 데이터에 주석만 남겼다.
+
 ## 남은 것
-내용 판단이 필요한 점 셋을 교수에게 물었다(Honors 순서, 빈 Alumni 절, 묶음 제목 대소문자).
+없음

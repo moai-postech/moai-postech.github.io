@@ -15,3 +15,4 @@
 - LG Electronics: `lg.com/global` 유지. LG전자의 글로벌 영문 첫 화면이다(LG그룹 사이트는 `lgcorp.com`)
 - `?` 커서: `.funding abbr` 의 `cursor: help` 때문. 기관명이 링크가 됐으므로 `cursor: inherit` 로 바꿔 링크 손가락 커서가 나오게 함
 - 규칙: `_data/institutions.yml` 머리 주석에 "기관명 그대로의 공식 첫 화면, 과제에 맞춰 사업부 사이트로 바꾸지 않는다"를 적음
+- 개인 사이트·CV: 기관명 링크는 반영하지 않는다(교수 2026-11-17: 여기는 안 해도 됨)

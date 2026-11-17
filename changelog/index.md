@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-18 | [People 점검](2026-11-18-people-review.md) | Sangwoo Mo(sangwoomo) | `theme.css` | 휴대폰 Other Mentees 소개→첫 묶음 제목 32px |
 | 2026-11-18 | [Invited Talks 간격](2026-11-18-invited-talks-spacing.md) | Sangwoo Mo(sangwoomo) | `invited-talks.md`, `theme.css` | 소개 줄 삭제, 필터→연도 32px, 휴대폰 하위 탭→필터 32px, 세 탭 오른쪽 정보 15px 통일 |
 | 2026-11-18 | [학수번호 AXGS501](2026-11-18-course-code-axgs501.md) | Sangwoo Mo(sangwoomo) | `_data/`, `teaching/26f-data-engineering/` | 학수번호 하이픈을 떼고 슬라이드 HTML·PDF 21벌도 고침 |
 | 2026-11-18 | [Courses 학기 한 줄](2026-11-18-courses-term-run.md) | Sangwoo Mo(sangwoomo) | `sections/teaching.html`, `theme.css` | 학기 칩을 오른쪽 끝 `Fall 2026 · 2025` 한 줄로 |

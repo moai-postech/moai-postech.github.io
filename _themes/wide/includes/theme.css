@@ -557,7 +557,7 @@ a.person-name:hover { color: var(--accent); }
 .page-faculty .profile-head .small { font-size: var(--text-body); }
 .page-other-mentees .mentee-aff { font-size: var(--text-body); }
 .page-overview .topic-card p { font-size: var(--text-body); }
-.page-courses .item-side { font-size: var(--text-control); }
+.page-courses .item-side, .page-ai-study .item-side { font-size: var(--text-control); }
 
 {% comment %}Course pages: their own folder so the template stays in one place{% endcomment %}
 {% include course/course.css %}

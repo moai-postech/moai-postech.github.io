@@ -155,7 +155,7 @@
       term.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // representative first, the rest keep the sheet order
       // Two-line tab labels like the Schedule tabs: the term on top, the cohort under it, no member counts (교수 2026-11-18; one line '1기 (Fall 2025)' before, 2026-11-02).
       const panel = element('div');
-      panel.append(summary(c.number + '기' + (c.term ? ' (' + c.term + ')' : ''), term.length, true),
+      panel.append(summary(c.term ? c.term + ' (' + c.number + '기)' : c.number + '기', term.length, true),  // term first, as on the tab
         table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep));
       tabs.push({ id: tabId(c.number), title: c.term || c.number + '기', note: c.term ? c.number + '기' : '', panel });
     }

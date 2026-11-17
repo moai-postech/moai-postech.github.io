@@ -129,9 +129,10 @@
     // Full list keeps the line too (no link) so the table starts at the same height in every tab.
     // The group name is the table's group heading, and Members sheet closes the line, right above the table it mirrors (교수 2026-11-17, like Schedule's Sessions line).
     const sheet = list.closest('[data-members-sheet]');
-    const summary = (label, count, reset) => {
+    const summary = (label, count, reset, cohort) => {
       const note = element('p', undefined, 'study-member-filter');
       const head = element('span', label, 'group-heading');
+      if (cohort) head.append(element('span', ' ' + cohort, 'study-member-count'));  // Fall 2025 1기, as on the tab (교수 2026-11-18)
       head.append(element('span', ' · ' + count + (count === 1 ? ' member' : ' members'), 'study-member-count'));
       note.append(head);
       if (reset) {
@@ -156,7 +157,7 @@
       term.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // representative first, the rest keep the sheet order
       // One-line tab labels: the term, then the cohort small and light on its right, no member counts (교수 2026-11-18; '1기 (Fall 2025)' before, 2026-11-02).
       const panel = element('div');
-      panel.append(summary(c.term ? c.term + ' (' + c.number + '기)' : c.number + '기', term.length, false),  // term first, as on the tab
+      panel.append(summary(c.term || c.number + '기', term.length, false, c.term ? c.number + '기' : ''),  // term first, cohort small, as on the tab
         table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep));
       tabs.push({ id: tabId(c.number), title: c.term || c.number + '기', note: c.term ? c.number + '기' : '', panel });
     }

@@ -583,6 +583,7 @@ a.cs-title:hover { color: var(--accent); }
   .study-term-card > a > :not(img) { grid-column: 2; }
   .study-term-tldr { padding-top: var(--space-2); }
   .study-cohort-label { white-space: nowrap; }
+  .study-cohort-label b { width: min-content; white-space: normal; text-align: center; line-height: 1.25; }  /* phones: season over year (Summer / 2026) in every column, so the term-first label fits a 77px bar (교수 2026-11-18) */
   .study-dept-map li.is-sliver > span:first-child { display: none; }  /* a sliver keeps only its number; the name stays in its tooltip */
   /* phones: the timeline runs down the left; cards sit right of the line, under their term label */
   .study-term-card { position: relative; }

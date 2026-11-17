@@ -52,8 +52,8 @@ nav:
         url: courses.html
       - title: AI Study
         url: ai-study.html
-      - title: Talks
-        url: talks.html
+      - title: Invited Talks
+        url: invited-talks.html
   - title: Contact
     url: contact.html
 

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [꼬리말 Last updated 삭제](2026-11-17-footer-drop-last-updated.md) | Sangwoo Mo(sangwoomo) | `_themes/wide/includes/footer.html` | 저작권 줄에서 Last updated 날짜 표시를 뺌 |
 | 2026-11-17 | [15강 반복 정리](2026-11-17-lecture-fifteen-dedup.md) | Sangwoo Mo(sangwoomo) | Data Engineering 15강 HTML·PDF | 114장 판, 이어 69장 판 사이트 반영 |
 | 2026-11-17 | [14강 두 파트 재편](2026-11-17-lecture-fourteen-restructure.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14강 HTML·PDF | ML Infrastructure·MLOps 52장 판 사이트 반영 |
 | 2026-11-17 | [16·17강 보강판](2026-11-17-lecture-sixteen-seventeen.md) | Sangwoo Mo(sangwoomo) | Data Engineering 16·17강 HTML·PDF | AutoResearch·Text-to-SQL 추가판 사이트 반영 |

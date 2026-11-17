@@ -12,3 +12,4 @@
 - `STUDY.md`: 열 규칙과 자료 열 규칙을 새 구성으로 고쳤다.
 - 모바일 카드에서는 빈 Demo 칸이 기존 규칙(`.st-links:empty`)으로 숨는다.
 - Lab 노트북 파일은 저장소에 그대로 있다. 화면에서 링크만 뺐다.
+- 휴대폰 카드에서 Papers·Demo 칸은 이름표가 붙는데 Summer 2026 의 Lectures 칸만 없어서 `data-label="Lectures"` 를 달았다(Schedule 전체 점검, 2026-11-18).

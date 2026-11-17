@@ -41,13 +41,13 @@ spring-2026:
   representative: { name: "Jian Choi", photo: "assets/img/people/jian-choi.jpg", email: "chjohn1105 [at] postech.ac.kr" }
 fall-2025:
   cohort: "1"
-  tldr: "How models build perception of images and text, generation lets them create images and videos, and unified models bring both into one."
+  tldr: "How models build perception of images and text, generation lets them create images and videos, and unified multimodal models bring both into one."
   icon: "assets/img/icons/study-foundation-models.svg"
   reference: { lead: "See also", courses: [ { title: "Stanford CS231n Deep Learning for Computer Vision", term: "Spring 2025", url: "https://cs231n.stanford.edu/2025/" }, { title: "MIT 6.S978 Deep Generative Models", term: "Fall 2024", url: "https://mit-6s978.github.io/" } ] }  # Perception·Multimodal 은 CS231n, Generation 은 6.S978(교수 2026-11-04)
   learning_path:
     - { start: 1, end: 5, title: "Perception", text: "How models **understand** what they see and read: the basics of networks and Transformers, then seeing images and linking them with text." }
     - { start: 6, end: 7, title: "Generation", text: "How models **create** new content: generating images, then videos, from a text prompt." }
-    - { start: 8, end: 9, title: "Unified Models", text: "How one model brings the two together: scaled-up LLMs, then multimodal LLMs that **unify** perception and generation." }
+    - { start: 8, end: 9, title: "Unified Multimodal Models", text: "How one model brings the two together: scaled-up LLMs, then multimodal LLMs that **unify** perception and generation." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Wednesdays", time: "22:00 – 23:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 307" }

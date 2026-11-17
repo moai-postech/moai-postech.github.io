@@ -514,6 +514,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-when { position: relative; padding: 0 var(--space-2); background: var(--bg); }  /* the line breaks on both sides of the label */
 .study-term-card.is-current .study-term-dot { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
 .study-term-card.is-current .study-term-when { color: var(--accent); font-weight: var(--weight-emphasis); }
+.study-term-cohort { margin-left: var(--space-1); opacity: .7; font-weight: var(--weight-regular); }  /* Fall 2025 1기, like the Members tabs (교수 2026-11-18) */
 .study-term-card > a { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--bg); color: var(--text); text-decoration: none; transition: border-color .15s; }
 .study-term-card > a:hover { border-color: var(--accent); text-decoration: none; color: var(--text); }  /* one hover per link on Home: the border turns accent (교수 2026-11-03) */
 .study-term-card.is-current > a { border-color: var(--callout-line); background: var(--callout-surface); }

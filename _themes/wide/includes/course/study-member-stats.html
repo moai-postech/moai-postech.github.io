@@ -21,7 +21,7 @@
             <span class="is-existing" style="flex-grow: {{ t.existing }}">{% if forloop.last and t.existing > 0 %}<span class="study-bar-key" aria-hidden="true">Returning</span>{% endif %}</span><span class="is-new" style="flex-grow: {{ t.new }}">{% if forloop.last and t.new > 0 %}<span class="study-bar-key" aria-hidden="true">New</span>{% endif %}</span>
           </span></span>
           <span class="study-cohort-label"><b>{{ t.term }}</b><span class="study-cohort-term">{{ t.number }}기</span></span>{% comment %}Term first, cohort second, as on the Schedule and Members tabs (교수 2026-11-18).{% endcomment %}
-          <span class="visually-hidden">{{ t.count }} members: {{ t.new }} new, {{ t.existing }} returning. Open the {{ t.number }}기 member list.</span>
+          <span class="visually-hidden">{{ t.count }} members: {{ t.new }} new, {{ t.existing }} returning. Open the {{ t.term }} ({{ t.number }}기) member list.</span>
         </a></li>{% endfor %}
       </ol>
     </figure>

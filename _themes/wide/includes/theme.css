@@ -368,6 +368,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule-year th { line-height: var(--leading-group); padding: calc(var(--section-gap) - var(--space-1)) 0 calc(var(--space-4) - var(--space-1));  /* minus the gap between rows, so the year sits at the same gaps as every group heading */ color: var(--text); font-size: var(--text-group); font-weight: var(--weight-heading); text-align: left; }
 .year-head { line-height: var(--leading-group); margin: var(--section-gap) 0 var(--space-4); font-size: var(--text-group); font-weight: var(--weight-heading); letter-spacing: normal; }  /* same year heading as the seminar list */
 .section-body > .year-head:first-child { margin-top: 0; }
+.filter-bar + .year-head { margin-top: 0; }  /* Talks: the first year sits right under the filter, not a section gap below it (교수 2026-11-17) */
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--tone, var(--faint)); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .filter-swatch { display: inline-block; width: .7em; height: .7em; margin-right: var(--space-2); border-radius: 3px; background: var(--tone-tint); }  /* the row colour of that kind, as a legend */

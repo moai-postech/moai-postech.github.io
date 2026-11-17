@@ -8,7 +8,7 @@ fall-2026:
   reference: { lead: "See also", courses: [ { title: "Berkeley CS 294-277 Robots That Learn", term: "Spring 2026", url: "https://robots-that-learn.github.io/" }, { title: "Berkeley CS 294-43 Large Scale Vision, Language, and Action Models", term: "Fall 2025", url: "https://cs294-43-fall2025.pages.dev/" } ] }  # 1부(사람의 기능 → 로봇 과제)는 Malik, 2부(VLA, world model)는 Darrell(교수 2026-11-04)
   learning_path:
     - { start: 1, end: 6, title: "Robot Embodiment", text: "How robot tasks mirror **human abilities**: arms that grasp, legs that walk, a sense of where to go, and humanoid bodies with dexterous hands, all learned from data." }
-    - { start: 7, end: 11, title: "Foundation Models for Robotics", text: "How **foundation models** help robots act: an understanding of 3D space, vision and language turned into action, and world models that bring perception and planning." }
+    - { start: 7, end: 11, title: "Foundation Models for Robotics", text: "How **foundation models** help robots act: an understanding of 3D space, vision and language turned into action, and world models that link perception to planning." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 302" }

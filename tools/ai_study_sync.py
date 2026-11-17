@@ -92,7 +92,7 @@ MINOR = {"a", "an", "and", "as", "at", "by", "for", "in", "of", "on", "or", "the
 
 
 def title(s):
-    """회차 주제는 Title Case(교수 2026-11-17). 첫 단어와 콜론 뒤를 빼고 짧은 기능어는 소문자, 이미 대문자가 섞인 약어(CoT, LLMs)는 그대로."""
+    """회차 주제와 논문·데모 링크 이름은 Title Case(교수 2026-11-17). 첫 단어와 콜론 뒤를 빼고 짧은 기능어는 소문자, 이미 대문자가 섞인 약어(CoT, LLMs)는 그대로."""
     out, start = [], True
     for w in s.split():
         parts = []
@@ -100,6 +100,8 @@ def title(s):
             core = p.lstrip("(")
             if core.lower() in MINOR and not (start and i == 0):
                 parts.append(p)
+            elif not core[:1].isascii():
+                parts.append(p)  # π0 같은 기호 이름은 그대로
             else:
                 k = len(p) - len(core)
                 parts.append(p[:k] + core[:1].upper() + core[1:])
@@ -191,6 +193,9 @@ def parse(rows):
             if any(d["text"] == "SAM2" for d in s["demos"]):
                 # SAM 데모는 SAM2 와 겹치고 옛 주소는 404 라 SAM2 만 둔다(교수 2026-11-17).
                 s["demos"] = [d for d in s["demos"] if d["text"] != "SAM"]
+        for k in ("papers", "demos"):
+            for l in s.get(k, []):
+                l["text"] = title(l["text"])
         if cells[5]["text"]:
             s["keywords"] = cells[5]["text"]
         if cells[6]["text"] and cells[6]["text"] != "-":

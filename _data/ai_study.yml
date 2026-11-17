@@ -40,7 +40,7 @@ terms:
         presenters: "진동환, 정윤"
         papers:
           - { text: "RMA", url: "https://arxiv.org/abs/2107.04034" }
-          - { text: "perceptive locomotion", url: "https://arxiv.org/abs/2201.08117" }
+          - { text: "Perceptive Locomotion", url: "https://arxiv.org/abs/2201.08117" }
         demos:
           - { text: "MuJoCo Playground", url: "https://playground.mujoco.org/" }
         materials:
@@ -155,8 +155,8 @@ terms:
         keywords: "domain randomization, system identification"
         optional: true
         papers:
-          - { text: "domain randomization", url: "https://arxiv.org/abs/1703.06907" }
-          - { text: "actuator network", url: "https://arxiv.org/abs/1901.08652" }
+          - { text: "Domain Randomization", url: "https://arxiv.org/abs/1703.06907" }
+          - { text: "Actuator Network", url: "https://arxiv.org/abs/1901.08652" }
       - n: "A3"
         title: "Control"
         keywords: "optimal control, MPC"
@@ -269,7 +269,7 @@ terms:
         title: "LLM Review"
         keywords: "Transformer and LLM basics"
         papers:
-          - { text: "why decoder-only?", url: "teaching/ai-study/spring-2026/01-llm-review-ref-why-decoder-only.pdf" }
+          - { text: "Why Decoder-Only?", url: "teaching/ai-study/spring-2026/01-llm-review-ref-why-decoder-only.pdf" }
       - n: "2"
         date: "2026-03-17"
         title: "CoT"
@@ -277,8 +277,8 @@ terms:
         presenters: "김승호, 정윤"
         papers:
           - { text: "CoT", url: "https://arxiv.org/abs/2201.11903" }
-          - { text: "zero-shot CoT", url: "https://arxiv.org/abs/2205.11916" }
-          - { text: "self-consistency", url: "https://arxiv.org/abs/2203.11171" }
+          - { text: "Zero-Shot CoT", url: "https://arxiv.org/abs/2205.11916" }
+          - { text: "Self-Consistency", url: "https://arxiv.org/abs/2203.11171" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/spring-2026/02-cot-slides.pdf" }
       - n: "3"
@@ -318,7 +318,7 @@ terms:
         keywords: "test-time scaling, reward model (verifier)"
         presenters: "고현민, 지은수"
         papers:
-          - { text: "test-time scale", url: "https://arxiv.org/abs/2408.03314" }
+          - { text: "Test-Time Scale", url: "https://arxiv.org/abs/2408.03314" }
           - { text: "PRM", url: "https://arxiv.org/abs/2305.20050" }
           - { text: "DeepSeek-R1", url: "https://arxiv.org/abs/2501.12948" }
         materials:
@@ -329,7 +329,7 @@ terms:
         keywords: "context extension, efficient attention, attention sink"
         presenters: "장세림, 정민호"
         papers:
-          - { text: "lost in the middle", url: "https://arxiv.org/abs/2307.03172" }
+          - { text: "Lost in the Middle", url: "https://arxiv.org/abs/2307.03172" }
           - { text: "StreamingLLM", url: "https://arxiv.org/abs/2309.17453" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/spring-2026/07-long-context-slides.pdf" }
@@ -340,7 +340,7 @@ terms:
         presenters: "최지안, 진동환"
         papers:
           - { text: "RAG", url: "https://arxiv.org/abs/2005.11401" }
-          - { text: "long-context vs RAG", url: "https://arxiv.org/abs/2407.16833" }
+          - { text: "Long-Context vs RAG", url: "https://arxiv.org/abs/2407.16833" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/spring-2026/08-rag-all.pdf" }
       - n: "9"
@@ -366,7 +366,7 @@ terms:
         keywords: "neural networks, loss functions, SGD"
         presenters: "박채원, 이현수"
         papers:
-          - { text: "MIT DL primer", url: "https://www.youtube.com/watch?v=alfdI7S6wCY" }
+          - { text: "MIT DL Primer", url: "https://www.youtube.com/watch?v=alfdI7S6wCY" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/01-deep-learning-primer-slides.pdf" }
       - n: "2"
@@ -377,7 +377,7 @@ terms:
         papers:
           - { text: "Transformer", url: "https://arxiv.org/abs/1706.03762" }
         demos:
-          - { text: "annotated transformer", url: "https://nlp.seas.harvard.edu/annotated-transformer/" }
+          - { text: "Annotated Transformer", url: "https://nlp.seas.harvard.edu/annotated-transformer/" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/02-transformer-slides.pdf" }
       - n: "3"
@@ -389,7 +389,7 @@ terms:
           - { text: "ViT", url: "https://arxiv.org/abs/2010.11929" }
           - { text: "DINOv3", url: "https://arxiv.org/abs/2508.10104" }
         demos:
-          - { text: "DINOv3 applications", url: "https://github.com/facebookresearch/dinov3?tab=readme-ov-file#getting-started" }
+          - { text: "DINOv3 Applications", url: "https://github.com/facebookresearch/dinov3?tab=readme-ov-file#getting-started" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/03-visual-perception-slides.pdf" }
       - n: "4"
@@ -401,7 +401,7 @@ terms:
           - { text: "CLIP", url: "https://arxiv.org/abs/2103.00020" }
           - { text: "BERT", url: "https://arxiv.org/abs/1810.04805" }
         demos:
-          - { text: "CLIP semantic search", url: "https://colab.research.google.com/github/vivien000/clip-demo/blob/master/clip.ipynb" }
+          - { text: "CLIP Semantic Search", url: "https://colab.research.google.com/github/vivien000/clip-demo/blob/master/clip.ipynb" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/04-multimodal-perception-slides.pdf" }
       - n: "5"
@@ -437,7 +437,7 @@ terms:
         presenters: "이수겸, 장승현"
         papers:
           - { text: "Sora", url: "https://openai.com/sora/" }
-          - { text: "Veo3 abilities", url: "https://video-zero-shot.github.io/" }
+          - { text: "Veo3 Abilities", url: "https://video-zero-shot.github.io/" }
         demos:
           - { text: "Veo3", url: "https://aistudio.google.com/models/veo-3" }
           - { text: "Genie3", url: "https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/" }
@@ -450,8 +450,8 @@ terms:
         presenters: "이민주, 이수겸"
         papers:
           - { text: "GPT-3", url: "https://arxiv.org/abs/2005.14165" }
-          - { text: "scaling law", url: "https://arxiv.org/abs/2001.08361" }
-          - { text: "emergent abilities", url: "https://arxiv.org/abs/2206.07682" }
+          - { text: "Scaling Law", url: "https://arxiv.org/abs/2001.08361" }
+          - { text: "Emergent Abilities", url: "https://arxiv.org/abs/2206.07682" }
         demos:
           - { text: "Qwen3", url: "https://huggingface.co/spaces/Qwen/Qwen3-Demo" }
         materials:

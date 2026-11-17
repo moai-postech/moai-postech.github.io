@@ -258,6 +258,10 @@ a.cs-title:hover { color: var(--accent); }
 .study-tablist button:hover { color: var(--accent); }
 .study-member-tablist button { flex-direction: row; align-items: baseline; gap: var(--space-2); }  /* one line: Fall 2025 1기 (교수 2026-11-18) */
 .study-member-tablist button span { opacity: .7; }
+@media (max-width: 680px) {
+  .study-member-tablist button { white-space: nowrap; padding-inline: var(--space-3); }  /* phones: Summer 2026 2.5기 stays on one line, so every tab is the same height (교수 2026-11-18) */
+  .study-member-filter .course-sheet { flex-basis: 100%; justify-content: flex-end; }  /* phones: Members sheet always takes its own row, so the table starts at the same height in every tab */
+}
 .study-tablist button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }  /* the same tint as the current subnav tab */
 .study-panel h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); margin-bottom: 0; }
 .study-panel h2 span { white-space: nowrap; color: var(--muted); font-size: var(--text-lead); font-weight: var(--weight-emphasis); }

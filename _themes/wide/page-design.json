@@ -111,9 +111,11 @@
     {
       "page": "courses.html",
       "template": "연구실 · 강의 목록",
-      "decision": "기본 유지",
-      "reason": "학기는 과목 아래 칩으로 모두 보인다(14px 메타데이터, 칩 바탕으로 누를 수 있음을 표시). 학기가 늘어도 줄바꿈으로 버틴다.",
-      "adjustments": []
+      "decision": "페이지 조정",
+      "reason": "학기는 오른쪽 끝에 최신부터 잇고 계절 이름은 바뀔 때만 쓴다(Fall 2026 · 2025). AI Study 와 같은 15px 학기 링크.",
+      "adjustments": [
+        "teaching-term-navigation"
+      ]
     },
     {
       "page": "ai-study.html",
@@ -302,6 +304,7 @@
     {
       "id": "teaching-term-navigation",
       "pages": [
+        "courses.html",
         "ai-study.html"
       ],
       "roles": [

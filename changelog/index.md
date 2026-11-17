@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-18 | [Courses 학기 한 줄](2026-11-18-courses-term-run.md) | Sangwoo Mo(sangwoomo) | `sections/teaching.html`, `theme.css` | 학기 칩을 오른쪽 끝 `Fall 2026 · 2025` 한 줄로 |
 | 2026-11-18 | [AI Study Home 학기 먼저](2026-11-18-study-home-term-first.md) | Sangwoo Mo(sangwoomo) | `study-overview.html`, `study-member-stats.html`, `assets/study-members.js` | 타임라인·막대·Members 줄을 `Fall 2025 · 1기` 처럼 학기 먼저로 |
 | 2026-11-18 | [AI Study 키워드 정리](2026-11-18-study-keywords.md) | Sangwoo Mo(sangwoomo) | 스터디 시트 F열, `_data/ai_study.yml` | Learning Goals 20칸을 고쳤다가 너무 지엽적이라 되돌림, VLA 의 flow matching 제거 |
 | 2026-11-18 | [AI Study Members 탭 통일](2026-11-18-study-members-tabs.md) | Sangwoo Mo(sangwoomo) | `assets/study-members.js`, `course.css`, `STUDY.md` | Schedule 과 같은 두 줄 탭(학기, 기수), 사진 안내는 목록 아래로 |

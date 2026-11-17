@@ -67,6 +67,8 @@ class Table(html.parser.HTMLParser):
             self.link = None
         elif tag == "td" and self.cell is not None:
             self.cell["text"] = re.sub(r"\s+", " ", self.cell["text"]).strip()
+            if not self.cell["links"]:  # 하이퍼링크 없이 주소 글자만 붙여 넣은 칸도 링크로 읽는다(2026-11-17, Fall 2026 8회차 슬라이드를 놓침)
+                self.cell["links"] = [[u, u] for u in re.findall(r"https?://\S+", self.cell["text"])]
             self.rows[-1].append(self.cell)
             self.cell = None
 

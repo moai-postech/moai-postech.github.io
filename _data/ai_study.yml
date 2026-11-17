@@ -110,7 +110,8 @@ terms:
         demos:
           - { text: "VGGT-Ω", url: "https://huggingface.co/spaces/facebook/vggt-omega" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/fall-2026/08-3d-reconstruction-slides.pdf" }
+          - { text: "Slides 1", url: "teaching/ai-study/fall-2026/08-3d-reconstruction-slides.pdf" }
+          - { text: "Slides 2", url: "teaching/ai-study/fall-2026/08-3d-reconstruction-slides-2.pdf" }
       - n: "9"
         date: "2026-11-24"
         title: "Spatial reasoning"

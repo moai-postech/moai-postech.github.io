@@ -13,3 +13,5 @@
 - 같은 sync 실행에서 시트에 새로 올라온 Fall 2026 8회차 슬라이드(`fall-2026/08-3d-reconstruction-slides.pdf`)도 함께 받음
 - 교수 후속: 탭으로 나눴으니 Courses 의 "Regular courses" 제목과 PLMS 소개 줄, AI Study 의 "Undergraduate AI Study" 제목과 소개 줄을 뺌(Talks 처럼 하위 탭 이름이 제목 역할). 스터디 학기 줄은 스터디 페이지 학기 탭으로 그대로 이어진다
 - 교수 후속: Talks 줄 색을 없애고 세로 간격을 줄임. 줄 바탕·Seminar 높이 규칙(`theme.css` 의 `[data-talk-filter] .item-list li[data-kind]`)과 버튼 색 점을 빼서 Courses 같은 일반 목록 간격(줄 사이 4px)으로 돌림. 필터 버튼은 그대로
+- 교수 후속(VGGT 누락): Fall 2026 8회차 첫 슬라이드(DUSt3R)가 시트에 하이퍼링크 없이 주소 글자로만 있어 동기화가 놓쳤다. `tools/ai_study_sync.py` 의 표 파서가 링크 없는 칸의 `https://` 주소 글자도 링크로 읽게 고침. 8회차는 `PDF 1`(DUSt3R, 25쪽), `PDF 2`(VGGT, 26쪽). 앞서 `08-3d-reconstruction-slides.pdf` 이름으로 받은 VGGT 는 `-slides-2.pdf` 로 옮겨 받음
+- 지난 학기 슬라이드 하나짜리 회차 점검: 시트 원본의 Slide 칸부터 오른쪽 칸 링크를 회차마다 대조함. 주소 글자로만 적힌 칸은 위 8회차 하나뿐이고, 나머지 하나짜리 회차(Fall 2025 전부, Spring 2026 2·4·6·7·9, Summer 2026 1·8·9)는 시트에도 자료가 하나뿐이다. Spring 2026 8회차의 그림 두 장(png)은 규칙대로 뺌

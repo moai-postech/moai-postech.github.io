@@ -332,6 +332,12 @@ a.mentee-name:hover { color: var(--accent); }
 .list-intro { margin: 0 0 var(--space-4); color: var(--muted); }  /* one line under a group heading that says what the list is (Teaching: regular courses and the AI study, 교수 2026-10-27·2026-11-03) */
 .list-intro a { color: var(--accent); font-weight: var(--weight-regular); }  /* Teaching AI Study 소개의 AI study group 링크는 강조색(교수 2026-11-17) */
 .list-intro a:hover { color: var(--accent); }
+/* Courses: every term as a small chip under the course, newest first, wrapping as terms pile up (교수 2026-11-17, instead of a growing run at the right) */
+.item-list li:has(.term-chips) { flex-wrap: wrap; }
+.item-list li:has(.term-chips):not(:last-child) { padding-bottom: var(--item-gap); }
+.item-list .term-chips { display: flex; flex-wrap: wrap; flex-basis: 100%; gap: var(--space-2); margin: var(--space-2) 0 0; text-align: left; }
+.term-chips > * { padding: 2px var(--space-2); border-radius: var(--radius-1); background: var(--surface); line-height: 1.5; }
+.term-chips a:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .section-photo img { display: block; width: 100%; height: auto; }  /* 격자 전체 폭, 전신 스케치. 위·아래만 흰 바탕으로 번지게 구워 상자·둥근 모서리 없이 둔다(교수 2026-11-17) */
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
@@ -557,7 +563,7 @@ a.person-name:hover { color: var(--accent); }
 .page-faculty .profile-head .small { font-size: var(--text-body); }
 .page-other-mentees .mentee-aff { font-size: var(--text-body); }
 .page-overview .topic-card p { font-size: var(--text-body); }
-.page-courses .item-side, .page-ai-study .item-side { font-size: var(--text-control); }
+.page-ai-study .item-side { font-size: var(--text-control); }
 
 {% comment %}Course pages: their own folder so the template stays in one place{% endcomment %}
 {% include course/course.css %}

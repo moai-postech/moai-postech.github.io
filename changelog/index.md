@@ -6,7 +6,7 @@
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
 | 2026-11-18 | [AI Study Home 학기 먼저](2026-11-18-study-home-term-first.md) | Sangwoo Mo(sangwoomo) | `study-overview.html`, `study-member-stats.html`, `assets/study-members.js` | 타임라인·막대·Members 줄을 `Fall 2025 · 1기` 처럼 학기 먼저로 |
-| 2026-11-18 | [AI Study 키워드 정리](2026-11-18-study-keywords.md) | Sangwoo Mo(sangwoomo) | 스터디 시트 F열, `_data/ai_study.yml` | Learning Goals 20칸에서 주제 되풀이·모델 이름을 빼고 개념 2~3개로 |
+| 2026-11-18 | [AI Study 키워드 정리](2026-11-18-study-keywords.md) | Sangwoo Mo(sangwoomo) | 스터디 시트 F열, `_data/ai_study.yml` | Learning Goals 20칸을 고쳤다가 너무 지엽적이라 되돌림, VLA 의 flow matching 제거 |
 | 2026-11-18 | [AI Study Members 탭 통일](2026-11-18-study-members-tabs.md) | Sangwoo Mo(sangwoomo) | `assets/study-members.js`, `course.css`, `STUDY.md` | Schedule 과 같은 두 줄 탭(학기, 기수), 사진 안내는 목록 아래로 |
 | 2026-11-18 | [스터디 Members 시트 링크·학생 대표 링크](2026-11-18-study-pages-sheet-links.md) | Sangwoo Mo(sangwoomo) | `study-members.js`, `study.html`, `study-tabs.html` | Members sheet 를 표 위 묶음 줄 끝으로, 학생 대표 링크를 연락처 칸으로 |
 | 2026-11-17 | [Home 띠 링크 대비](2026-11-17-home-band-link-contrast.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `design-contract.json` | Paper Stella 띠 링크를 밝힌 레드로 바꿨다가 11-18 에 예전 연분홍으로 되돌림 |

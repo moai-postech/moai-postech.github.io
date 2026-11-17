@@ -8,7 +8,7 @@
 | 2026-11-18 | [AI Study 키워드 정리](2026-11-18-study-keywords.md) | Sangwoo Mo(sangwoomo) | 스터디 시트 F열, `_data/ai_study.yml` | Learning Goals 20칸에서 주제 되풀이·모델 이름을 빼고 개념 2~3개로 |
 | 2026-11-18 | [AI Study Members 탭 통일](2026-11-18-study-members-tabs.md) | Sangwoo Mo(sangwoomo) | `assets/study-members.js`, `course.css`, `STUDY.md` | Schedule 과 같은 두 줄 탭(학기, 기수), 사진 안내는 목록 아래로 |
 | 2026-11-18 | [스터디 Members 시트 링크·학생 대표 링크](2026-11-18-study-pages-sheet-links.md) | Sangwoo Mo(sangwoomo) | `study-members.js`, `study.html`, `study-tabs.html` | Members sheet 를 표 위 묶음 줄 끝으로, 학생 대표 링크를 연락처 칸으로 |
-| 2026-11-17 | [Home 띠 링크 대비](2026-11-17-home-band-link-contrast.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `design-contract.json` | Paper Stella 띠 링크를 같은 레드를 밝게 한 색(대비 5.5:1)으로 |
+| 2026-11-17 | [Home 띠 링크 대비](2026-11-17-home-band-link-contrast.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `design-contract.json` | Paper Stella 띠 링크를 밝힌 레드로 바꿨다가 11-18 에 예전 연분홍으로 되돌림 |
 | 2026-11-18 | [AI Study 일정표 열 통일](2026-11-18-study-table-columns.md) | Sangwoo Mo(sangwoomo) | `study-schedule.html`, `course.css`, `STUDY.md` | 네 학기 같은 열, Summer 빈 Demo 열, Lab 제외 |
 | 2026-11-17 | [AI Study 주제 Title Case, 안내 줄 제거](2026-11-17-study-titles-notes.md) | Sangwoo Mo(sangwoomo) | `tools/ai_study_sync.py`, `_data/ai_study.yml`, `_data/ai_study_terms.yml` | 회차 주제 Title Case, Review 안내 줄 제거, Fall 2025 tldr 한 줄로 |
 | 2026-11-17 | [AI Study 5회 SAM 데모 정리](2026-11-17-study-sam-demo.md) | Sangwoo Mo(sangwoomo) | `_data/ai_study.yml` | SAM 과 SAM2 데모가 겹쳐 열리는 SAM2 하나만 남김 |

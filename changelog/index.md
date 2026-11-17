@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-18 | [AI Study Members 탭 통일](2026-11-18-study-members-tabs.md) | Sangwoo Mo(sangwoomo) | `assets/study-members.js`, `course.css`, `STUDY.md` | Schedule 과 같은 두 줄 탭(학기, 기수), 사진 안내는 목록 아래로 |
 | 2026-11-18 | [스터디 Members 시트 링크·학생 대표 링크](2026-11-18-study-pages-sheet-links.md) | Sangwoo Mo(sangwoomo) | `study-members.js`, `study.html`, `study-tabs.html` | Members sheet 를 표 위 묶음 줄 끝으로, 학생 대표 링크를 연락처 칸으로 |
 | 2026-11-17 | [Home 띠 링크 대비](2026-11-17-home-band-link-contrast.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `design-contract.json` | Paper Stella 띠 링크를 같은 레드를 밝게 한 색(대비 5.5:1)으로 |
 | 2026-11-18 | [AI Study 일정표 열 통일](2026-11-18-study-table-columns.md) | Sangwoo Mo(sangwoomo) | `study-schedule.html`, `course.css`, `STUDY.md` | 네 학기 같은 열, Summer 빈 Demo 열, Lab 제외 |

@@ -15,10 +15,10 @@
       venues: [{name: "POSTECH Physical AI Workshop", url: "https://ime.postech.ac.kr/ime/news/seminar.do?mode=view&articleNo=50164"}]
     - title: "Manufacturing Data Analysis via Time-Series Foundation Models"
       url: "assets/talks/2026-manufacturing-data-analysis-via-time-series.pdf"
-      venues: [{name: "KSS Invited Talk", url: "https://kss.or.kr/board/schedule/article/274079"}]
+      venues: [{name: "KSS Invited Talk", url: "https://kss.or.kr/"}]
     - title: "Aligning Vision and Language via Geometry and Topology"
       url: "assets/talks/2026-aligning-vision-and-language-via-geometry-and.pdf"
-      venues: [{name: "KSIAM Invited Talk", url: "https://ksiam.org/Conference/ConferenceView.asp?AC=0&CODE=CC20260301&B_CATE=BBC1"}]
+      venues: [{name: "KSIAM Invited Talk", url: "https://ksiam.org/"}]
     - title: "Opportunities in IME as an AI Researcher (and Vice Versa)"
       kind: education
       url: "assets/talks/2026-opportunities-in-ime-as-an-ai-researcher-and-vice.pdf"
@@ -28,7 +28,7 @@
     - title: "Foundation Models for Vision and Language (with Code)"
       url: "https://drive.google.com/drive/folders/128OAwpZ6hNG1ScD5SaTfLkcoQiTktdW_?usp=sharing"
       kind: education
-      venues: ["KSS Winter School"]
+      venues: [{name: "KSS Winter School", url: "https://kss.or.kr/"}]
     - title: "Foundation Models for Vision, Language, and Robotics"
       kind: education
       url: "assets/talks/2025-foundation-models-for-vision-language-and-robotics.pdf"

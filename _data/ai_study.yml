@@ -9,7 +9,7 @@ terms:
     sessions:
       - n: "1"
         date: "2026-09-15"
-        title: "Data sources"
+        title: "Data Sources"
         keywords: "teleoperation, simulation, human video"
         presenters: "최지안, 김하은"
         papers:
@@ -75,7 +75,7 @@ terms:
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/05-humanoid-slides-2.pdf" }
       - n: "6"
         date: "2026-11-03"
-        title: "Dexterous manipulation"
+        title: "Dexterous Manipulation"
         keywords: "in-hand manipulation, visuo-tactile"
         presenters: "이지윤, 윤서현"
         papers:
@@ -88,7 +88,7 @@ terms:
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/06-dexterous-manipulation-slides-2.pdf" }
       - n: "7"
         date: "2026-11-10"
-        title: "3D representation"
+        title: "3D Representation"
         keywords: "ray tracing, rasterization"
         presenters: "안준서, 김태하"
         papers:
@@ -101,7 +101,7 @@ terms:
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/07-3d-representation-slides-2.pdf" }
       - n: "8"
         date: "2026-11-17"
-        title: "3D reconstruction"
+        title: "3D Reconstruction"
         keywords: "multi-view geometry, feed-forward 3D"
         presenters: "김나령, 이유찬"
         papers:
@@ -114,7 +114,7 @@ terms:
           - { text: "Slides 2", url: "teaching/ai-study/fall-2026/08-3d-reconstruction-slides-2.pdf" }
       - n: "9"
         date: "2026-11-24"
-        title: "Spatial reasoning"
+        title: "Spatial Reasoning"
         keywords: "visual grounding, affordance"
         presenters: "최진현, 김태경"
         papers:
@@ -135,7 +135,7 @@ terms:
           - { text: "π0.7", url: "https://www.pi.website/blog/pi07" }
       - n: "11"
         date: "2026-12-08"
-        title: "World model"
+        title: "World Model"
         keywords: "model-based RL, latent dynamics"
         presenters: "진동환, 신예원"
         papers:
@@ -151,7 +151,7 @@ terms:
           - { text: "PPO", url: "https://arxiv.org/abs/1707.06347" }
           - { text: "SAC", url: "https://arxiv.org/abs/1801.01290" }
       - n: "A2"
-        title: "Sim-to-real"
+        title: "Sim-to-Real"
         keywords: "domain randomization, system identification"
         optional: true
         papers:
@@ -165,7 +165,7 @@ terms:
           - { text: "PETS", url: "https://arxiv.org/abs/1805.12114" }
           - { text: "TD-MPC2", url: "https://arxiv.org/abs/2310.16828" }
       - n: "A4"
-        title: "3D data structures"
+        title: "3D Data Structures"
         keywords: "point cloud, voxel, mesh, surfel"
         optional: true
         papers:
@@ -179,7 +179,7 @@ terms:
     sessions:
       - n: "1"
         date: "2026-06-23"
-        title: "Training neural networks"
+        title: "Training Neural Networks"
         keywords: "backpropagation, computational graph"
         presenters: "최지안"
         lectures:
@@ -202,14 +202,14 @@ terms:
           - { text: "Lec 6", url: "https://www.dropbox.com/scl/fi/yorf3fw3ovrptaaoyh441/6_transformers_2025.pdf?rlkey=zkjpma8flvy5ksjc333hxp9q8&e=1&st=v403dfgl&dl=0" }
       - n: "4"
         date: "2026-07-14"
-        title: "Representation Learning: Reconstruction-based"
+        title: "Representation Learning: Reconstruction-Based"
         keywords: "MAE, BERT"
         presenters: "진동환"
         lectures:
           - { text: "Lec 8", url: "https://www.dropbox.com/scl/fi/8p20mfl0w66df5pjf3z9c/8_representation_rec_2025.pdf?rlkey=8okp1xd19bq9ox59kpx93a94o&e=1&st=9butpzi3&dl=0" }
       - n: "5"
         date: "2026-07-21"
-        title: "Representation Learning: Similarity-based"
+        title: "Representation Learning: Similarity-Based"
         keywords: "contrastive learning"
         presenters: "장연종"
         lectures:
@@ -263,13 +263,10 @@ terms:
     name: "Spring 2026"
     theme: "Large Language Models"
     sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A36"
-    note:
-      label: "Review"
-      text: "Sessions 2 and 8 of Fall 2025 (Transformer, LLMs and scaling laws)"
     sessions:
       - n: "1"
         date: "2026-03-10"
-        title: "LLM review"
+        title: "LLM Review"
         keywords: "Transformer and LLM basics"
         papers:
           - { text: "why decoder-only?", url: "teaching/ai-study/spring-2026/01-llm-review-ref-why-decoder-only.pdf" }
@@ -307,7 +304,7 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/spring-2026/04-rlhf-slides.pdf" }
       - n: "5"
         date: "2026-04-21"
-        title: "RLAIF (rubric)"
+        title: "RLAIF (Rubric)"
         keywords: "alignment, rubric-based RL"
         presenters: "이수겸, 최주연"
         papers:
@@ -317,7 +314,7 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/spring-2026/05-rlaif-rubric-all.pdf" }
       - n: "6"
         date: "2026-04-28"
-        title: "Reasoning models"
+        title: "Reasoning Models"
         keywords: "test-time scaling, reward model (verifier)"
         presenters: "고현민, 지은수"
         papers:
@@ -328,7 +325,7 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/spring-2026/06-reasoning-models-slides.pdf" }
       - n: "7"
         date: "2026-05-12"
-        title: "Long context"
+        title: "Long Context"
         keywords: "context extension, efficient attention, attention sink"
         presenters: "장세림, 정민호"
         papers:
@@ -365,7 +362,7 @@ terms:
     sessions:
       - n: "1"
         date: "2025-09-17"
-        title: "Deep learning primer"
+        title: "Deep Learning Primer"
         keywords: "neural networks, loss functions, SGD"
         presenters: "박채원, 이현수"
         papers:
@@ -385,7 +382,7 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/02-transformer-slides.pdf" }
       - n: "3"
         date: "2025-10-01"
-        title: "Visual perception"
+        title: "Visual Perception"
         keywords: "image patches, self-supervised learning"
         presenters: "이현수, 최주연"
         papers:
@@ -397,7 +394,7 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/03-visual-perception-slides.pdf" }
       - n: "4"
         date: "2025-10-29"
-        title: "Multimodal perception"
+        title: "Multimodal Perception"
         keywords: "image-text encoder (CLIP), text encoder (BERT)"
         presenters: "최지안, 공현성"
         papers:
@@ -409,7 +406,7 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/04-multimodal-perception-slides.pdf" }
       - n: "5"
         date: "2025-11-05"
-        title: "Visual grounding"
+        title: "Visual Grounding"
         keywords: "open-world detection, segmentation"
         presenters: "박선영, 박채원"
         papers:
@@ -422,7 +419,7 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/05-visual-grounding-slides.pdf" }
       - n: "6"
         date: "2025-11-12"
-        title: "Image generation"
+        title: "Image Generation"
         keywords: "text-to-image generation, diffusion, flow matching"
         presenters: "박주연, 김유진"
         papers:
@@ -435,7 +432,7 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/06-image-generation-slides.pdf" }
       - n: "7"
         date: "2025-11-19"
-        title: "Video generation"
+        title: "Video Generation"
         keywords: "text-to-video generation, world models"
         presenters: "이수겸, 장승현"
         papers:
@@ -448,7 +445,7 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/07-video-generation-slides.pdf" }
       - n: "8"
         date: "2025-11-26"
-        title: "LLMs and scaling laws"
+        title: "LLMs and Scaling Laws"
         keywords: "scaling laws, emergent abilities, in-context learning"
         presenters: "이민주, 이수겸"
         papers:

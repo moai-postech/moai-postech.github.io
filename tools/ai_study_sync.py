@@ -88,6 +88,26 @@ def sentence(s):
     return s[:1].upper() + s[1:]
 
 
+MINOR = {"a", "an", "and", "as", "at", "by", "for", "in", "of", "on", "or", "the", "to", "vs"}
+
+
+def title(s):
+    """회차 주제는 Title Case(교수 2026-11-17). 첫 단어와 콜론 뒤를 빼고 짧은 기능어는 소문자, 이미 대문자가 섞인 약어(CoT, LLMs)는 그대로."""
+    out, start = [], True
+    for w in s.split():
+        parts = []
+        for i, p in enumerate(w.split("-")):
+            core = p.lstrip("(")
+            if core.lower() in MINOR and not (start and i == 0):
+                parts.append(p)
+            else:
+                k = len(p) - len(core)
+                parts.append(p[:k] + core[:1].upper() + core[1:])
+        out.append("-".join(parts))
+        start = w.endswith(":")
+    return " ".join(out)
+
+
 def links(cell):
     return [{"text": t, "url": u} for u, t in cell["links"] if t]
 
@@ -147,20 +167,14 @@ def parse(rows):
         if term is None or not topic or n in ("#",):
             continue
         if n == "0":
-            # 학기별 불필요한 안내는 사이트에서 제외한다(교수 2026-10-28).
-            if (term["id"], topic.lower().rstrip("!")) in {
-                ("fall-2026", "review"), ("summer-2026", "reference lecture")
-            }:
-                continue
-            note = {"label": sentence(topic.rstrip("!")), "text": cells[3]["text"], "links": links(cells[3])}
-            term["note"] = note
+            # 학기 안내 줄(Review, Reference lecture)은 사이트에 싣지 않는다(교수 2026-10-28, 2026-11-17 전 학기로 넓힘).
             continue
         s = {"n": n}
         m2 = re.fullmatch(r"(\d\d)/(\d\d)", date)
         if m2:
             s["date"] = f"{term['name'][-4:]}-{m2.group(1)}-{m2.group(2)}"
         optional = "(optional)" in topic
-        s["title"] = sentence(topic.replace("(optional)", "").strip())
+        s["title"] = title(topic.replace("(optional)", "").strip())
         if optional:
             s["optional"] = True
         if links(cells[3]):
@@ -174,6 +188,9 @@ def parse(rows):
             for demo in s["demos"]:
                 if demo["text"] == "Suno (audio)":
                     demo["text"] = "Suno"
+            if any(d["text"] == "SAM2" for d in s["demos"]):
+                # SAM 데모는 SAM2 와 겹치고 옛 주소는 404 라 SAM2 만 둔다(교수 2026-11-17).
+                s["demos"] = [d for d in s["demos"] if d["text"] != "SAM"]
         if cells[5]["text"]:
             s["keywords"] = cells[5]["text"]
         if cells[6]["text"] and cells[6]["text"] != "-":

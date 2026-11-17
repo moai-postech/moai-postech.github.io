@@ -2,7 +2,7 @@
     <ul class="plain item-list">
       {% for t in include.year.talks %}{% assign tk = t.kind | default: 'research' %}<li data-kind="{{ tk }}">
         <span class="item-main"><strong>{% if t.url %}<a href="{{ t.url }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</strong></span>
-        <span class="item-side">{{ t.venues | join: " · " }}</span>
+        <span class="item-side">{% for v in t.venues %}{% if v.name %}{% assign vn = v.name %}{% assign vu = v.url %}{% else %}{% assign vn = v %}{% assign vu = site.data.institutions[v] %}{% endif %}{% if vu %}<a href="{{ vu }}">{{ vn }}</a>{% else %}{{ vn }}{% endif %}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
       </li>
       {% endfor %}
     </ul>

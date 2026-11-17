@@ -127,7 +127,7 @@
       ]
     },
     {
-      "page": "talks.html",
+      "page": "invited-talks.html",
       "template": "연구실 · 발표 목록",
       "decision": "기본 유지",
       "reason": "제목16px·장소14px의 짧은 행. 두 줄로 접히는 모바일에서도 본문 위계를 유지.",

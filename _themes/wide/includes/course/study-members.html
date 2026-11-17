@@ -1,10 +1,9 @@
 <header class="course-head">
   <div class="course-heading-row">
     <h1>Members</h1>
-    {% if page.members_sheet %}{% include course/sheet-link.html url=page.members_sheet label="Members sheet" %}{% endif %}
   </div>
 </header>
-<section class="content-section study-full-list" aria-label="Member directory">
+<section class="content-section study-full-list" aria-label="Member directory"{% if page.members_sheet %} data-members-sheet="{{ page.members_sheet }}"{% endif %}>
   <form class="study-member-unlock" id="member-unlock-form">
     <p>Enter the study password once. This browser will remember access until you clear its data.</p>
     <div class="study-unlock-fields"><label for="member-password">Password</label><input type="password" id="member-password" autocomplete="current-password" required aria-describedby="member-unlock-message"><button type="submit" aria-controls="member-full-list" aria-expanded="false">Unlock</button></div>

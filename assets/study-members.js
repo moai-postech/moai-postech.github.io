@@ -126,13 +126,22 @@
     const shown = match ? people.filter(p => filter.of(p) === want) : people;
     // Every list opens with the same line, `<group> · N members  Show everyone`: a filter, a term tab, or everyone (교수 2026-11-03).
     // Full list keeps the line too (no link) so the table starts at the same height in every tab.
+    // The group name is the table's group heading, and Members sheet closes the line, right above the table it mirrors (교수 2026-11-17, like Schedule's Sessions line).
+    const sheet = list.closest('[data-members-sheet]');
     const summary = (label, count, reset) => {
       const note = element('p', undefined, 'study-member-filter');
-      note.append(element('span', label + ' · ' + count + (count === 1 ? ' member' : ' members')));
+      const head = element('span', label, 'group-heading');
+      head.append(element('span', ' · ' + count + (count === 1 ? ' member' : ' members'), 'study-member-count'));
+      note.append(head);
       if (reset) {
         const all = element('a', 'Show everyone'); all.href = location.pathname;
         all.addEventListener('click', e => { e.preventDefault(); history.replaceState(null, '', location.pathname); render(cohorts); });
         note.append(all);
+      }
+      if (sheet) {
+        const link = element('a', 'Members sheet ', 'course-sheet'); link.href = sheet.getAttribute('data-members-sheet');
+        const arrow = element('span', '↗'); arrow.setAttribute('aria-hidden', 'true'); link.append(arrow);
+        note.append(link);
       }
       return note;
     };

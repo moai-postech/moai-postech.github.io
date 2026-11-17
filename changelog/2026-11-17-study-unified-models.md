@@ -17,4 +17,4 @@
 - 이 맥에 Ruby 가 없어 로컬 Jekyll 빌드와 `check_study_terms` 를 새 빌드로 돌리지 못했다. push 후 CI 빠른 검사에 맡긴다.
 
 ## 후속(같은 날)
-- 교수: Unified Multimodal Models(UMMs)가 더 일반적인 표현이다. 단계 제목을 `Unified Multimodal Models`, tldr 셋째 구절을 `unified multimodal models bring both into one` 으로 바꿨다. 약어 UMMs 는 처음에 단계 제목이 길어져 뺐다가, 교수 요청으로 `Unified Multimodal Models (UMMs)` 로 괄호에 넣었다.
+- 교수: Unified Multimodal Models(UMMs)가 더 일반적인 표현이다. 단계 제목을 `Unified Multimodal Models`, tldr 셋째 구절을 `unified multimodal models bring both into one` 으로 바꿨다. 약어 UMMs 는 단계 제목이 길어져 넣지 않았다.

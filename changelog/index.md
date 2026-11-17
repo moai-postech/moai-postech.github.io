@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-18 | [AI Study 일정표 열 통일](2026-11-18-study-table-columns.md) | Sangwoo Mo(sangwoomo) | `study-schedule.html`, `course.css`, `STUDY.md` | 네 학기 같은 열, Summer 빈 Demo 열, Lab 제외 |
 | 2026-11-17 | [AI Study 주제 Title Case, 안내 줄 제거](2026-11-17-study-titles-notes.md) | Sangwoo Mo(sangwoomo) | `tools/ai_study_sync.py`, `_data/ai_study.yml`, `_data/ai_study_terms.yml` | 회차 주제 Title Case, Review 안내 줄 제거, Fall 2025 tldr 한 줄로 |
 | 2026-11-17 | [AI Study 5회 SAM 데모 정리](2026-11-17-study-sam-demo.md) | Sangwoo Mo(sangwoomo) | `_data/ai_study.yml` | SAM 과 SAM2 데모가 겹쳐 열리는 SAM2 하나만 남김 |
 | 2026-11-17 | [Winter School 자료 홈페이지로](2026-11-17-winter-school-slides.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml`, `assets/talks/` | 지워진 Drive 폴더 링크를 네 부를 이은 PDF 로 바꿈 |

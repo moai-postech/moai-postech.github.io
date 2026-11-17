@@ -1,9 +1,11 @@
 # Teaching > Talks(talks.md). 발표 전체를 둔다(연구실 사이트는 개인 사이트로 링크하지 않는다).
 # 위에서 두 묶음(올해, 작년)은 펼쳐 보이고 나머지는 "Earlier talks" 로 접는다(talks.md 절의 open).
+# kind: education 은 Education 탭(본인 연구가 아닌 발표: 튜토리얼, 학과·교육 행사). 없으면 Research 탭(교수 2026-11-17).
 # url 은 발표 자료(슬라이드)이고 제목이 그 링크가 된다. 장소는 부연 설명 없이 짧게(KSS Invited Talk). 내용은 개인 사이트 Talks 와 같게 맞춘다. 같은 발표의 장소가 여럿이면 venues 에 나열한다.
 - year: "2026"
   talks:
     - title: "Do We Need Professors in the Age of AI?"
+      kind: education
       venues: ["POSTECH AI:Q"]
     - title: "Multimodal Agents that Reason and Remember"
       url: "assets/talks/2026-multimodal-agents-that-reason-and-remember.html"
@@ -18,11 +20,13 @@
       url: "assets/talks/2026-aligning-vision-and-language-via-geometry-and.pdf"
       venues: ["KSIAM Invited Talk"]
     - title: "Opportunities in IME as an AI Researcher (and Vice Versa)"
+      kind: education
       url: "assets/talks/2026-opportunities-in-ime-as-an-ai-researcher-and-vice.pdf"
       venues: ["POSTECH IME Seminar"]
 - year: "2025"
   talks:
     - title: "Foundation Models for Vision, Language, and Robotics"
+      kind: education
       url: "assets/talks/2025-foundation-models-for-vision-language-and-robotics.pdf"
       venues: ["KSS Tutorial"]
     - title: "Revisiting the 3Rs in Computer Vision"

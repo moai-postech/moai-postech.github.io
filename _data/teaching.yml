@@ -3,7 +3,7 @@
 # url 은 학기 없는 고정 주소이며 terms 의 첫째(최신 학기)로 연결된다. 과목 이름과 Other Courses 는 이 주소를 공유한다(2026-11-03 교수).
 - title: "Data Engineering"
   url: "teaching/data-engineering/"
-  code: "IMEN891K / IDSC501 / AXGS-501"
+  code: "IMEN891K / IDSC501 / AXGS501"
   terms:
     - name: "Fall 2026"
       url: "teaching/26f-data-engineering/"

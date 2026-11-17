@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-18 | [학수번호 AXGS501](2026-11-18-course-code-axgs501.md) | Sangwoo Mo(sangwoomo) | `_data/`, `teaching/26f-data-engineering/` | 학수번호 하이픈을 떼고 슬라이드 HTML·PDF 21벌도 고침 |
 | 2026-11-18 | [Courses 학기 한 줄](2026-11-18-courses-term-run.md) | Sangwoo Mo(sangwoomo) | `sections/teaching.html`, `theme.css` | 학기 칩을 오른쪽 끝 `Fall 2026 · 2025` 한 줄로 |
 | 2026-11-18 | [AI Study Home 학기 먼저](2026-11-18-study-home-term-first.md) | Sangwoo Mo(sangwoomo) | `study-overview.html`, `study-member-stats.html`, `assets/study-members.js` | 타임라인·막대·Members 줄을 `Fall 2025 · 1기` 처럼 학기 먼저로 |
 | 2026-11-18 | [AI Study 키워드 정리](2026-11-18-study-keywords.md) | Sangwoo Mo(sangwoomo) | 스터디 시트 F열, `_data/ai_study.yml` | Learning Goals 20칸을 고쳤다가 너무 지엽적이라 되돌림, VLA 의 flow matching 제거 |

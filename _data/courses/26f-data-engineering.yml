@@ -1,7 +1,7 @@
 # 강의 페이지 /teaching/26f-data-engineering/ 의 내용. 모양은 _themes/wide/includes/course/ 가 정한다(그 폴더의 README.md).
 # 정본은 이 파일이다(2026-10-22부터 스케줄 구글시트를 대신한다). 슬라이드·발표 자료는 이 저장소의 teaching/26f-data-engineering/ 에 둔 파일을 사이트 루트 기준 경로로 가리킨다(2026-10-26, Drive 는 백업). 강의 저장소의 tools/publish-site.py 가 Drive 배포본을 이 폴더로 복사한다.
 title: "Data Engineering"
-code: "IMEN891K / IDSC501 / AXGS-501"
+code: "IMEN891K / IDSC501 / AXGS501"
 term: "Fall 2026"
 instructor:
   name: "Sangwoo Mo"

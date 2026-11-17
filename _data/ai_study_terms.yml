@@ -1,6 +1,20 @@
 # 학기별 학습 흐름과 운영 정보. learning_path 의 start·end 는 그 단계에 속한 회차 번호로 Schedule 에서 단계에 마우스를 올리면 그 행을 강조한다. tldr 은 학기 주제를 한 문장으로 줄인 요약으로 Home 학기 카드와 Schedule 학기 탭이 함께 쓴다. tldr 은 learning_path 단계마다 구절 하나를 단계 순서대로 두고, 각 구절은 그 단계 제목의 첫 단어를 쓴다(제목은 동사구나 테마가 드러나는 명사구, text 는 마크다운이라 **굵게** 가능). 단계 범위는 1회부터 마지막 번호 회차까지 빈틈·겹침 없이 잇는다. Optional 딱지가 붙은 번호 회차(Summer 2026 10회)도 넣고, A1 같은 선택 주제는 넣지 않는다(교수 2026-11-03). 검사: node tools/check_study_terms.js(교수 2026-11-02). icon 은 Home 학기 카드의 그림(학기 주제별 study-*.svg, Codex 제작 2026-11-02). 일정·자료는 ai_study.yml(시트 자동 동기화), 운영 정보는 이 파일에서 관리한다.
 # 시간 근거와 장소 변경 결정은 changelog/2026-10-28-ai-study-materials.md에 있다.
 # 장소 기본값: Fall 2026부터 공학4동 302호. 특별한 이슈가 없으면 새 학기도 302호를 사용한다(교수 2026-10-28).
+# upcoming: true 인 학기는 다음 학기다. 이번 학기(Home 의 일정 버튼·학생대표 링크·Now, Schedule 의 기본 탭)는 upcoming 이 아닌 가장 최신 학기다. 학기가 시작되면 upcoming 줄만 지운다.
+# demo_heading 은 Schedule 표의 Demo 열 머리를 그 학기만 바꾼다(Spring 2027 은 게임 이름이라 Game). 열 순서는 그대로다.
+spring-2027:
+  cohort: "4"
+  upcoming: true
+  demo_heading: "Game"
+  tldr: "How search wins board games, reinforcement learning plays Atari, and multi-agent play reaches open worlds."
+  icon: "assets/img/icons/study-games.svg"
+  learning_path:
+    - { start: 1, end: 2, title: "Search & Learning", text: "How AI masters board games: **search** that looks ahead and **learning** that supplies intuition, each improving the other through self-play." }
+    - { start: 3, end: 5, title: "Reinforcement Learning", text: "How AI learns video games from pixels and score alone: **trial and error**, then **exploration** where rewards are rare and far away." }
+    - { start: 6, end: 9, title: "Multi-Agent & Open Worlds", text: "How AI leaves solo games: **hidden information**, **competition** and **cooperation** with other players, then open worlds where goals are not given." }
+  advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
+  # meetings, location, representative 는 미정이다. 정해지면 아래 fall-2026 과 같은 꼴로 더한다.
 fall-2026:
   cohort: "3"
   tldr: "How robots learn to do what humans do with arms and legs, and foundation models help them perceive and plan."

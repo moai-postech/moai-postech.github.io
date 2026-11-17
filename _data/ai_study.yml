@@ -2,10 +2,90 @@
 # 이 파일을 손으로 고치지 말고 시트를 고친 뒤 스크립트를 돌린다. 소개글과 운영 정보는 teaching/ai-study/index.md 에 있다.
 sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit?usp=sharing"
 terms:
+  - id: "spring-2027"
+    name: "Spring 2027"
+    theme: "AI Plays Games"
+    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A3"
+    sessions:
+      - n: "1"
+        title: "Search & Learning"
+        keywords: "minimax, Monte Carlo tree search (MCTS), policy & value networks"
+        papers:
+          - { text: "Deep Blue", url: "https://doi.org/10.1016/S0004-3702(01)00129-1" }
+          - { text: "AlphaGo", url: "https://doi.org/10.1038/nature16961" }
+        demos:
+          - { text: "Chess", url: "https://en.wikipedia.org/wiki/Chess" }
+          - { text: "Go", url: "https://en.wikipedia.org/wiki/Go_(game)" }
+      - n: "2"
+        title: "Self-Play"
+        keywords: "self-play, policy improvement, learned model"
+        papers:
+          - { text: "AlphaZero", url: "https://doi.org/10.1126/science.aar6404" }
+          - { text: "MuZero", url: "https://arxiv.org/abs/1911.08265" }
+        demos:
+          - { text: "Board Games", url: "https://en.wikipedia.org/wiki/Board_game" }
+      - n: "3"
+        title: "Deep RL"
+        keywords: "Markov decision process (MDP), Q-learning, actor-critic"
+        papers:
+          - { text: "DQN", url: "https://doi.org/10.1038/nature14236" }
+          - { text: "A3C", url: "https://arxiv.org/abs/1602.01783" }
+        demos:
+          - { text: "Atari", url: "https://en.wikipedia.org/wiki/Atari_2600" }
+      - n: "4"
+        title: "Exploration I"
+        keywords: "curiosity, noisy TV"
+        papers:
+          - { text: "ICM", url: "https://arxiv.org/abs/1705.05363" }
+          - { text: "RND", url: "https://arxiv.org/abs/1810.12894" }
+        demos:
+          - { text: "Super Mario", url: "https://en.wikipedia.org/wiki/Super_Mario_Bros." }
+          - { text: "Noisy TV", url: "https://pathak22.github.io/large-scale-curiosity/" }
+      - n: "5"
+        title: "Exploration II"
+        keywords: "memory, bandit"
+        papers:
+          - { text: "Go-Explore", url: "https://arxiv.org/abs/2004.12919" }
+          - { text: "Agent57", url: "https://arxiv.org/abs/2003.13350" }
+        demos:
+          - { text: "Montezuma's Revenge", url: "https://en.wikipedia.org/wiki/Montezuma%27s_Revenge_(video_game)" }
+      - n: "6"
+        title: "Partial Observation"
+        keywords: "Nash equilibrium, counterfactual regret minimization (CFR)"
+        papers:
+          - { text: "DeepStack", url: "https://arxiv.org/abs/1701.01724" }
+          - { text: "Pluribus", url: "https://doi.org/10.1126/science.aay2400" }
+        demos:
+          - { text: "Poker", url: "https://en.wikipedia.org/wiki/Poker" }
+      - n: "7"
+        title: "Multi-Agent RL"
+        keywords: "centralized training with decentralized execution (CTDE)"
+        papers:
+          - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
+          - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
+        demos:
+          - { text: "StarCraft", url: "https://en.wikipedia.org/wiki/StarCraft_II" }
+      - n: "8"
+        title: "Cooperation"
+        keywords: "human-AI coordination, communication"
+        papers:
+          - { text: "Overcooked", url: "https://arxiv.org/abs/1910.05789" }
+          - { text: "Cicero", url: "https://doi.org/10.1126/science.ade9097" }
+        demos:
+          - { text: "Overcooked", url: "https://en.wikipedia.org/wiki/Overcooked" }
+          - { text: "Diplomacy", url: "https://en.wikipedia.org/wiki/Diplomacy_(game)" }
+      - n: "9"
+        title: "Open-World Agents"
+        keywords: "LLM coding agent, skill library, shared memory"
+        papers:
+          - { text: "Voyager", url: "https://arxiv.org/abs/2305.16291" }
+          - { text: "Gemini Team", url: "https://arxiv.org/abs/2610.22319" }
+        demos:
+          - { text: "Minecraft", url: "https://en.wikipedia.org/wiki/Minecraft" }
   - id: "fall-2026"
     name: "Fall 2026"
     theme: "Physical AI"
-    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A3"
+    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A15"
     sessions:
       - n: "1"
         date: "2026-09-15"
@@ -175,7 +255,7 @@ terms:
   - id: "summer-2026"
     name: "Summer 2026"
     theme: "Deep Learning"
-    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A22"
+    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A34"
     sessions:
       - n: "1"
         date: "2026-06-23"
@@ -262,7 +342,7 @@ terms:
   - id: "spring-2026"
     name: "Spring 2026"
     theme: "Large Language Models"
-    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A36"
+    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A48"
     sessions:
       - n: "1"
         date: "2026-03-10"
@@ -358,7 +438,7 @@ terms:
   - id: "fall-2025"
     name: "Fall 2025"
     theme: "Foundation Models"
-    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A49"
+    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A61"
     sessions:
       - n: "1"
         date: "2025-09-17"

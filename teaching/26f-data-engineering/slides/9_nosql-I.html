@@ -443,6 +443,248 @@ svg.dg text{font-family:var(--sans);fill:var(--ink-2)}
 
 /* Original lecture outlines reused by the review session. */
 
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
 .body{gap:18px}.fig svg{width:100%;max-height:100%}
 .sqlwork{display:grid;grid-template-columns:1.12fr 1fr;gap:42px;align-items:center;flex:1;min-height:0}
 .sqlcode{margin:0;white-space:pre-wrap;font:21px/1.62 var(--mono);color:var(--ink);background:#f8fafc;padding:24px 26px;border-left:3px solid var(--blue);overflow:visible;tab-size:2}
@@ -5610,6 +5852,187 @@ h1.t .sub{color:var(--ink-2)}
 [data-deck-target]{cursor:pointer;touch-action:manipulation}
 [data-deck-target]:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media print{[data-deck-target]:focus-visible{outline:none}}
+/* Lecture 12: sourced photography and product screens, with content-sized data figures. */
+.lec12-image-map.outline-list{width:1100px;max-width:100%;display:grid;gap:24px 30px;padding:0;margin:0}
+.lec12-image-map.four{grid-template-columns:1fr 1fr}
+.lec12-image-map.two{grid-template-columns:1fr 1fr}
+.lec12-image-map .o.lec12-map-card{display:block;min-width:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;text-align:left}
+.lec12-image-map .lec12-map-image{width:100%;height:145px;overflow:hidden;background:var(--paper-2)}
+.lec12-image-map.two .lec12-map-image{height:250px}
+.lec12-image-map .lec12-map-image img{display:block;width:100%;height:100%;max-height:none;max-width:none;object-fit:contain;object-position:center}
+.lec12-image-map .lec12-map-image.photo img{object-fit:cover}
+.lec12-image-map .lec12-map-label{display:flex;align-items:baseline;gap:12px;margin-top:12px}
+.lec12-image-map .o .num{font:600 18px var(--mono);color:var(--ink-3);width:auto}
+.lec12-image-map .o .nm{font:700 23px var(--sans);color:var(--ink);display:block}
+.lec12-image-map .o p{font:400 17px/1.3 var(--sans);color:var(--ink-3);margin:5px 0 0}
+.lec12-image-map.two .o .nm{font-size:26px}
+.lec12-image-map.two .o p{font-size:19px;margin-top:9px}
+.lec12-photo-hero{width:1120px;height:435px;overflow:hidden}
+.lec12-photo-hero img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;max-height:none!important;filter:saturate(.55)}
+.lec12-responsibility ul{margin:10px 0 0;padding-left:22px;font:400 22px/1.6 var(--sans);color:var(--ink-2)}
+.lec12-responsibility{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:40px;text-align:left}
+.lec12-responsibility img{width:100%;height:260px;object-fit:contain;display:block;background:var(--paper-2)}
+.lec12-responsibility>div:first-child img{object-fit:cover}
+.lec12-responsibility h3,.lec12-grains h3,.lec12-snapshots h3,.lec12-sums h3,.lec12-retry h3{font:700 25px/1.2 var(--sans);margin:18px 0 8px;color:var(--ink)}
+.lec12-responsibility p{font:400 21px/1.4 var(--sans);margin:0;color:var(--ink-2)}
+.lec12-snapshots{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:42px;text-align:left}
+.lec12-snapshots pre{font:500 21px/2 var(--mono);background:var(--paper-2);border:1px solid var(--line);padding:20px 14px;white-space:pre;margin:20px 0}
+.lec12-snapshots p{font:500 29px var(--mono);margin:20px 0}
+.lec12-snapshots p span,.lec12-sums span{color:var(--ink-3)}
+.lec12-snapshots mark{background:var(--orange-soft);color:var(--ink);padding:2px 0}
+.lec12-sums{width:1060px}
+.lec12-workers{display:grid;grid-template-columns:1fr 1fr;gap:60px;text-align:center}
+.lec12-workers p{font:500 32px var(--mono);margin:24px 0}
+.lec12-sums b{color:var(--blue-deep)}
+.lec12-combined{border-top:1px solid var(--line);margin-top:35px;padding-top:26px;text-align:center}
+.lec12-combined>span{font:500 20px var(--sans)}
+.lec12-combined p{font:500 42px var(--mono);margin:15px 0}
+.lec12-grains{width:1120px;display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:36px;text-align:left}
+.lec12-grains>div>span{font:400 18px var(--sans);color:var(--ink-3)}
+.lec12-grains table{border-collapse:collapse;width:100%;margin-top:24px;font:500 21px var(--mono)}
+.lec12-grains td{padding:12px 10px;border-bottom:1px solid var(--line)}
+.lec12-mini-bar{display:flex;align-items:center;gap:10px;height:75px;font:500 20px var(--mono)}
+.lec12-mini-bar b{width:65px;font-weight:500;flex-shrink:0}
+.lec12-mini-bar i{height:30px;display:block;background:var(--blue);min-width:0}
+.lec12-mini-bar.p2 i{background:var(--orange)}
+.lec12-mini-bar strong{font-weight:700;font-size:22px}
+.lec12-retry{width:850px;display:grid;grid-template-columns:1fr 1fr;gap:100px;text-align:center}
+.lec12-retry>div>b{font:700 34px var(--mono);display:block;margin:15px 0;color:var(--ink)}
+.lec12-bar-space{height:245px;display:flex;flex-direction:column;justify-content:flex-end;width:200px;margin:auto}
+.lec12-batch{height:115px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font:600 24px var(--mono)}
+.lec12-batch.repeated{background:var(--orange);color:var(--paper);border-bottom:2px solid var(--paper)}
+
+.lec12-product-screen{width:1120px;height:435px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lec12-product-screen img{width:100%;height:100%;object-fit:contain;max-height:none!important;display:block}
+.lec12-product-screen.query img,.lec12-image-map .lec12-map-image.query img{object-fit:cover;object-position:top}
+.lec12-responsibility>div:last-child img{object-fit:cover;object-position:top}
+.lec12-daily-sales .lec12-bar-space{height:280px}
+.lec12-daily-sales .lec12-batch{font-size:22px}
+.lec12-mini-bar{display:grid;grid-template-columns:65px 1fr 44px}
+.lec12-bar-track{display:block;height:30px;min-width:0}
+.lec12-spark-recap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;width:1100px;text-align:left}
+.lec12-spark-recap h3{font:700 26px var(--sans);margin:0 0 25px}
+.lec12-spark-recap pre{font:500 23px/1.7 var(--mono);margin:0;white-space:pre}
+.lec12-spark-recap img{width:100%;height:340px;object-fit:cover;max-height:none!important}
+
+/* Lecture 12: original storage diagrams enlarged in separate reading panels. */
+.lec12-storage-layout{display:grid;grid-template-columns:400px 315px 315px;gap:24px;align-items:center;width:1078px}
+.lec12-storage-layout h3{font:700 24px var(--sans);margin:0 0 14px;text-align:center}
+.lec12-storage-layout table{width:100%;font-size:22px}
+.lec12-storage-crop{width:315px;height:410px;background-repeat:no-repeat;background-size:754px 742px}
+.lec12-storage-crop.rows{width:300px;background-position:-38px -290px}
+.lec12-storage-crop.columns{background-position:-408px -290px}
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Two code representations of the same record have equal readable widths. */
+.row:has(> .fullcode):has(> .stack > .fullcode){display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:24px;align-items:center}
+.row:has(> .fullcode):has(> .stack > .fullcode)>*{min-width:0;max-width:100%}
+.row:has(> .fullcode):has(> .stack > .fullcode) .fullcode{min-width:0;width:100%}
+
+/* Concept-table headers use the same dark navy / white treatment in review and numbered lectures. */
+.review-deck :is(.review-table,.rev-table) th{font-size:23px;line-height:1.45;background:var(--blue-deep);color:#fff;font-weight:700;border-bottom:2px solid #0d2641}
+.review-deck .rev-table th{padding-top:11px;padding-bottom:11px}
+
+/* Cover typography (2026-11-14): the lecture title is the primary text.
+   These metrics are also read by tools/render-title-pdf.py for the static fallback.
+   Keep this block last so imported review styles cannot reintroduce 88px numbers. */
+:root{--cover-left:110px;--cover-top:176px;--cover-width:1060px;
+ --cover-course-size:17px;--cover-course-line:24px;--cover-course-track:.14;
+ --cover-heading-gap:32px;--cover-number-size:30px;--cover-number-line:36px;--cover-number-gap:18px;
+ --cover-title-size:52px;--cover-title-line:59.8px;--cover-title-track:-.035;
+ --cover-meta-gap:40px;--cover-meta-pad:20px;--cover-meta-size:19px;--cover-meta-line:30.4px;--cover-meta-width:560px}
+.slide.title:not(.mpr-close){justify-content:flex-start;background:var(--paper);color:var(--ink);padding:var(--cover-top) var(--cover-left) 0}
+.slide.title:not(.mpr-close) .course{font-size:var(--cover-course-size);line-height:var(--cover-course-line);font-weight:600;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase}
+.slide.title:not(.mpr-close) h1{font-size:52px;line-height:var(--cover-title-line);font-weight:800;letter-spacing:-.035em;margin:var(--cover-heading-gap) 0 0;max-width:var(--cover-width);color:var(--ink);text-wrap:balance}
+.slide.title:not(.mpr-close) h1 .num{display:block;font-size:var(--cover-number-size);line-height:var(--cover-number-line);font-weight:600;letter-spacing:0;margin-bottom:var(--cover-number-gap);color:var(--accent)}
+.slide.title:not(.mpr-close) h1:not(:has(.num)){padding-top:calc(var(--cover-number-line) + var(--cover-number-gap))}
+.slide.title:not(.mpr-close) h1 .ser{color:inherit}
+.slide.title:not(.mpr-close) .meta{font-size:var(--cover-meta-size);line-height:var(--cover-meta-line);font-weight:400;letter-spacing:0;color:var(--ink-3);margin-top:var(--cover-meta-gap);padding-top:var(--cover-meta-pad);border-top:1px solid var(--line);max-width:var(--cover-meta-width)}
+/* Same-slide reveals: keep layout and numbering fixed; print the complete state. */
+.slide .frag{transition:opacity .18s ease}
+.slide .frag:not(.vis){pointer-events:none}
+@media (prefers-reduced-motion:reduce){.slide .frag{transition:none}}
+@media print{.slide .frag{opacity:1!important;visibility:visible!important;transition:none!important}}
 /* DECK-THEME:END */
 </style>
 </head>
@@ -5660,9 +6083,11 @@ get(&quot;Gadgets&quot;)
 
 <section class="slide " data-title="Wide-Column Store" data-notes="둘째 계열, wide-column(column store). 표처럼 보이지만 행마다 열이 다르다."><h1 class="t">Wide-Column Store<span class="sub">Core idea</span></h1><div class="rule"></div><div class="body"><div class="fig"><svg class="dg" viewBox="0 0 1100 410" xmlns="http://www.w3.org/2000/svg" style="width:88%"><text x="200" y="46" style="font-size:26px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">SQL</text><rect x="110" y="80" width="60" height="50" rx="0" fill="#ddeaf8" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="80" width="60" height="50" rx="0" fill="#ddeaf8" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="80" width="60" height="50" rx="0" fill="#ddeaf8" stroke="#0f172a" stroke-width="1.5"/><rect x="110" y="130" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="130" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="130" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="110" y="180" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="180" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="180" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="110" y="230" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="230" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="230" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="200" y="310" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Relational</text><line x1="400" y1="30" x2="400" y2="370" stroke="#e2e8f0" stroke-width="2"/><text x="760" y="46" style="font-size:26px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">NoSQL</text><g opacity="0.28"><rect x="470" y="90" width="60" height="28" rx="3" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="500" y="109" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">K1</text><line x1="534" y1="104" x2="568" y2="104" stroke="#64748b" stroke-width="1.5"/><polygon points="568.0,104.0 559.9,107.9 559.9,100.1" fill="#64748b"/><ellipse cx="605" cy="104" rx="32" ry="14" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="605" y="109" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">V1</text><rect x="470" y="130" width="60" height="28" rx="3" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="500" y="149" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">K2</text><line x1="534" y1="144" x2="568" y2="144" stroke="#64748b" stroke-width="1.5"/><polygon points="568.0,144.0 559.9,147.9 559.9,140.1" fill="#64748b"/><ellipse cx="605" cy="144" rx="32" ry="14" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="605" y="149" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">V2</text><rect x="470" y="170" width="60" height="28" rx="3" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="500" y="189" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">K3</text><line x1="534" y1="184" x2="568" y2="184" stroke="#64748b" stroke-width="1.5"/><polygon points="568.0,184.0 559.9,187.9 559.9,180.1" fill="#64748b"/><ellipse cx="605" cy="184" rx="32" ry="14" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="605" y="189" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">V3</text><text x="555" y="240" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Key-value</text></g><g opacity="1"><rect x="760" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="84" width="30" height="28" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.2"/><rect x="820" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="112" width="30" height="28" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.2"/><rect x="850" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="140" width="30" height="28" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.2"/><rect x="850" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="168" width="30" height="28" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.2"/><rect x="910" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><text x="850" y="250" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Wide-column</text></g><g opacity="0.28"><line x1="520" y1="290" x2="470" y2="345" stroke="#64748b" stroke-width="1.8"/><polygon points="470.0,345.0 472.6,336.4 478.3,341.6" fill="#64748b"/><line x1="520" y1="290" x2="560" y2="360" stroke="#64748b" stroke-width="1.8"/><polygon points="560.0,360.0 552.6,354.9 559.4,351.0" fill="#64748b"/><line x1="610" y1="300" x2="560" y2="360" stroke="#64748b" stroke-width="1.8"/><polygon points="560.0,360.0 562.2,351.3 568.2,356.3" fill="#64748b"/><line x1="470" y1="345" x2="560" y2="360" stroke="#64748b" stroke-width="1.8"/><polygon points="560.0,360.0 551.4,362.5 552.6,354.8" fill="#64748b"/><circle cx="520" cy="290" r="13" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="470" cy="345" r="13" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="610" cy="300" r="13" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="560" cy="360" r="13" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><text x="545" y="392" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Graph</text></g><g opacity="0.28"><line x1="860" y1="285" x2="820" y2="325" stroke="#64748b" stroke-width="1.8"/><line x1="860" y1="285" x2="900" y2="325" stroke="#64748b" stroke-width="1.8"/><line x1="820" y1="325" x2="795" y2="365" stroke="#64748b" stroke-width="1.8"/><line x1="820" y1="325" x2="845" y2="365" stroke="#64748b" stroke-width="1.8"/><line x1="900" y1="325" x2="925" y2="365" stroke="#64748b" stroke-width="1.8"/><circle cx="860" cy="285" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="820" cy="325" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="900" cy="325" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="795" cy="365" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="845" cy="365" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="925" cy="365" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><text x="860" y="400" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Document</text></g></svg></div></div><div class="capt">Looks like a table, but every row may have <b>its own set of columns</b></div></section>
 
-<section class="slide clarity-slide" data-title="Sparse Cells Under a Row Key" data-notes="Bigtable 계열 설명용 두 row를 나란히 본다. row key로 찾고 선언된 family 안에 각 row의 qualifier가 다르게 존재할 수 있다. 빈칸을 모두 채운 고정 열 표와 차이를 보여준다. Cassandra CQL은 열을 선언하므로 같은 방식이라고 일반화하지 않는다. 다음 장의 제품별 모델 차이로 연결한다."><h1 class="t">Sparse Cells Under a Row Key<span class="sub">In a Bigtable-style model, rows can hold different column qualifiers</span></h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>user:1</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">Family: activity</th><th class="">Value</th></tr></thead><tbody><tr class=""><td class="nw">page:home</td><td class="nw">09:01</td></tr><tr class=""><td class="nw">page:product</td><td class="nw">09:03</td></tr><tr class=""><td class="nw">purchase:1</td><td class="nw">Laptop</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>user:2</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">Family: activity</th><th class="">Value</th></tr></thead><tbody><tr class=""><td class="nw">page:home</td><td class="nw">09:02</td></tr><tr class=""><td class="nw">purchase:2</td><td class="nw">TV</td></tr></tbody></table></div></div></div></div><div class="capt">Same column family, different populated cells</div></section>
+<section class="slide clarity-slide" data-reading-revision="2026-11-14" data-title="Sparse Cells Under a Row Key" data-notes="Bigtable 계열 설명용 두 row를 나란히 본다. row key로 찾고 선언된 family 안에 각 row의 qualifier가 다르게 존재할 수 있다. 빈칸을 모두 채운 고정 열 표와 차이를 보여준다. Cassandra CQL은 열을 선언하므로 같은 방식이라고 일반화하지 않는다. 다음 장의 제품별 모델 차이로 연결한다. 독립 열람을 위해 화면 해석을 보강했다. 근거: https://docs.cloud.google.com/bigtable/docs/overview"><h1 class="t">Sparse Cells Under a Row Key<span class="sub">In a Bigtable-style model, rows can hold different column qualifiers</span></h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>user:1</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">Family: activity</th><th class="">Value</th></tr></thead><tbody><tr class=""><td class="nw">page:home</td><td class="nw">09:01</td></tr><tr class=""><td class="nw">page:product</td><td class="nw">09:03</td></tr><tr class=""><td class="nw">purchase:1</td><td class="nw">Laptop</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>user:2</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">Family: activity</th><th class="">Value</th></tr></thead><tbody><tr class=""><td class="nw">page:home</td><td class="nw">09:02</td></tr><tr class=""><td class="nw">purchase:2</td><td class="nw">TV</td></tr></tbody></table></div></div></div><p class="clarity-statement" data-reading-support="true">The <b>row key</b> identifies a row. A <b>column family</b> groups columns; a <b>qualifier</b> names a column within that family.</p></div><div class="capt">Same column family, different populated cells</div></section>
 
-<section class="slide clarity-slide" data-title="Caveat: A Busy Partition Key" data-notes="기기ID를 분할 키로 정한 합성 센서 기록4개다. D1기록3개가 같은 파티션, D2기록1개가 다른 파티션으로 간다. 기기별 이력은 모여 읽기 편하지만 D1이 바쁘면 요청이 그 키로 몰린다. 파티션이 언제나 서버 하나와1:1이라는 뜻은 아니다. 구체 제품의 문법이나 내부 분할 방법을 일반화하지 않는다."><h1 class="t"><span class="pfx pfx-caveat">Caveat:</span> A Busy Partition Key</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Incoming readings</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="hl">device</th><th class="">time</th></tr></thead><tbody><tr class=""><td class="hl nw">D1</td><td class="nw">09:00</td></tr><tr class=""><td class="hl nw">D1</td><td class="nw">09:01</td></tr><tr class=""><td class="hl nw">D1</td><td class="nw">09:02</td></tr><tr class=""><td class="hl nw">D2</td><td class="nw">09:00</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>Partition A: key D1</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">time</th><th class="">device</th></tr></thead><tbody><tr class=""><td class="nw">09:00</td><td class="nw">D1</td></tr><tr class=""><td class="nw">09:01</td><td class="nw">D1</td></tr><tr class=""><td class="nw">09:02</td><td class="nw">D1</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>Partition B: key D2</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">time</th><th class="">device</th></tr></thead><tbody><tr class=""><td class="nw">09:00</td><td class="nw">D2</td></tr></tbody></table></div></div></div></div><div class="capt">The D1 key keeps three readings together and concentrates their requests in one partition</div></section>
+<section class="slide " data-source-2025="10:17" data-title="Bigtable Rows and Column Families" data-notes="2025 10_nosql-I 17쪽의 데이터 모델 설명을 복원했다. 바로 앞 user:1과 user:2의 sparse cell을 key-value 관점에서 읽는다. 행 키로 한 record를 읽거나, 행 키와 열 식별자의 조합으로 특정 cell 값을 읽는 모델이다. Bigtable과 HBase는 이 구조를 이해할 검색 단서다. 분석용 columnar 파일 배치와는 다른 뜻이며 Cassandra CQL의 열 선언 방식까지 모두 같다고 일반화하지 않는다. 이 모델을 먼저 배운 뒤 다음 장에서 한 키에 요청이 몰리는 경우를 본다."><h1 class="t">Bigtable Rows and Column Families<span class="sub">Data model: BigTable and HBase</span></h1><div class="rule"></div><div class="body"><ul class="pts "><li>Also called wide-column stores</li><li>Based on Google&rsquo;s BigTable</li><li>HBase is an open source implementation of BigTable</li><li>Data model:<ul><li>Variant 1: key = rowID, value = record</li><li>Variant 2: key = (rowID, columnID), value = field<ul><li>Or multiple columnIDs in the key</li></ul></li></ul></li></ul></div></section>
+
+<section class="slide clarity-slide" data-reading-revision="2026-11-14" data-title="Caveat: A Busy Partition Key" data-notes="기기ID를 분할 키로 정한 합성 센서 기록4개다. D1기록3개가 같은 파티션, D2기록1개가 다른 파티션으로 간다. 기기별 이력은 모여 읽기 편하지만 D1이 바쁘면 요청이 그 키로 몰린다. 파티션이 언제나 서버 하나와1:1이라는 뜻은 아니다. 구체 제품의 문법이나 내부 분할 방법을 일반화하지 않는다."><h1 class="t"><span class="pfx pfx-caveat">Caveat:</span> A Busy Partition Key</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Incoming readings</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="hl">device</th><th class="">time</th></tr></thead><tbody><tr class=""><td class="hl nw">D1</td><td class="nw">09:00</td></tr><tr class=""><td class="hl nw">D1</td><td class="nw">09:01</td></tr><tr class=""><td class="hl nw">D1</td><td class="nw">09:02</td></tr><tr class=""><td class="hl nw">D2</td><td class="nw">09:00</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>Partition A: key D1</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">time</th><th class="">device</th></tr></thead><tbody><tr class=""><td class="nw">09:00</td><td class="nw">D1</td></tr><tr class=""><td class="nw">09:01</td><td class="nw">D1</td></tr><tr class=""><td class="nw">09:02</td><td class="nw">D1</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>Partition B: key D2</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">time</th><th class="">device</th></tr></thead><tbody><tr class=""><td class="nw">09:00</td><td class="nw">D2</td></tr></tbody></table></div></div></div><p class="clarity-statement" data-reading-support="true">A <b>data partition</b> holds a subset of records. The partition key determines which records are placed together; requests for one busy key stay concentrated.</p></div><div class="capt">The D1 key keeps three readings together and concentrates their requests in one partition</div></section>
 
 <section class="slide " data-title="Graph Store" data-notes="셋째 계열, graph. 노드와 간선이 데이터다."><h1 class="t">Graph Store<span class="sub">Core idea</span></h1><div class="rule"></div><div class="body"><div class="fig"><svg class="dg" viewBox="0 0 1100 410" xmlns="http://www.w3.org/2000/svg" style="width:88%"><text x="200" y="46" style="font-size:26px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">SQL</text><rect x="110" y="80" width="60" height="50" rx="0" fill="#ddeaf8" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="80" width="60" height="50" rx="0" fill="#ddeaf8" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="80" width="60" height="50" rx="0" fill="#ddeaf8" stroke="#0f172a" stroke-width="1.5"/><rect x="110" y="130" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="130" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="130" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="110" y="180" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="180" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="180" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="110" y="230" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="230" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="230" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="200" y="310" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Relational</text><line x1="400" y1="30" x2="400" y2="370" stroke="#e2e8f0" stroke-width="2"/><text x="760" y="46" style="font-size:26px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">NoSQL</text><g opacity="0.28"><rect x="470" y="90" width="60" height="28" rx="3" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="500" y="109" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">K1</text><line x1="534" y1="104" x2="568" y2="104" stroke="#64748b" stroke-width="1.5"/><polygon points="568.0,104.0 559.9,107.9 559.9,100.1" fill="#64748b"/><ellipse cx="605" cy="104" rx="32" ry="14" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="605" y="109" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">V1</text><rect x="470" y="130" width="60" height="28" rx="3" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="500" y="149" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">K2</text><line x1="534" y1="144" x2="568" y2="144" stroke="#64748b" stroke-width="1.5"/><polygon points="568.0,144.0 559.9,147.9 559.9,140.1" fill="#64748b"/><ellipse cx="605" cy="144" rx="32" ry="14" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="605" y="149" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">V2</text><rect x="470" y="170" width="60" height="28" rx="3" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="500" y="189" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">K3</text><line x1="534" y1="184" x2="568" y2="184" stroke="#64748b" stroke-width="1.5"/><polygon points="568.0,184.0 559.9,187.9 559.9,180.1" fill="#64748b"/><ellipse cx="605" cy="184" rx="32" ry="14" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="605" y="189" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">V3</text><text x="555" y="240" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Key-value</text></g><g opacity="0.28"><rect x="760" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><text x="850" y="250" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Wide-column</text></g><g opacity="1"><line x1="520" y1="290" x2="470" y2="345" stroke="#64748b" stroke-width="1.8"/><polygon points="470.0,345.0 472.6,336.4 478.3,341.6" fill="#64748b"/><line x1="520" y1="290" x2="560" y2="360" stroke="#64748b" stroke-width="1.8"/><polygon points="560.0,360.0 552.6,354.9 559.4,351.0" fill="#64748b"/><line x1="610" y1="300" x2="560" y2="360" stroke="#64748b" stroke-width="1.8"/><polygon points="560.0,360.0 562.2,351.3 568.2,356.3" fill="#64748b"/><line x1="470" y1="345" x2="560" y2="360" stroke="#64748b" stroke-width="1.8"/><polygon points="560.0,360.0 551.4,362.5 552.6,354.8" fill="#64748b"/><circle cx="520" cy="290" r="13" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><circle cx="470" cy="345" r="13" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><circle cx="610" cy="300" r="13" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><circle cx="560" cy="360" r="13" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><text x="545" y="392" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Graph</text></g><g opacity="0.28"><line x1="860" y1="285" x2="820" y2="325" stroke="#64748b" stroke-width="1.8"/><line x1="860" y1="285" x2="900" y2="325" stroke="#64748b" stroke-width="1.8"/><line x1="820" y1="325" x2="795" y2="365" stroke="#64748b" stroke-width="1.8"/><line x1="820" y1="325" x2="845" y2="365" stroke="#64748b" stroke-width="1.8"/><line x1="900" y1="325" x2="925" y2="365" stroke="#64748b" stroke-width="1.8"/><circle cx="860" cy="285" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="820" cy="325" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="900" cy="325" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="795" cy="365" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="845" cy="365" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="925" cy="365" r="12" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><text x="860" y="400" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Document</text></g></svg></div></div><div class="capt">Nodes and edges are the data; <b>following an edge</b> replaces a join</div></section>
 
@@ -5678,7 +6103,7 @@ get(&quot;Gadgets&quot;)
 
 <section class="slide " data-title="Document Store" data-notes="넷째 계열, document. 값이 구조를 가진 key-value라고 보면 된다. 오늘의 나머지는 대부분 이 모델이다."><h1 class="t">Document Store<span class="sub">Core idea</span></h1><div class="rule"></div><div class="body"><div class="fig"><svg class="dg" viewBox="0 0 1100 410" xmlns="http://www.w3.org/2000/svg" style="width:88%"><text x="200" y="46" style="font-size:26px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">SQL</text><rect x="110" y="80" width="60" height="50" rx="0" fill="#ddeaf8" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="80" width="60" height="50" rx="0" fill="#ddeaf8" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="80" width="60" height="50" rx="0" fill="#ddeaf8" stroke="#0f172a" stroke-width="1.5"/><rect x="110" y="130" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="130" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="130" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="110" y="180" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="180" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="180" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="110" y="230" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="170" y="230" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="230" y="230" width="60" height="50" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="200" y="310" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Relational</text><line x1="400" y1="30" x2="400" y2="370" stroke="#e2e8f0" stroke-width="2"/><text x="760" y="46" style="font-size:26px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">NoSQL</text><g opacity="0.28"><rect x="470" y="90" width="60" height="28" rx="3" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="500" y="109" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">K1</text><line x1="534" y1="104" x2="568" y2="104" stroke="#64748b" stroke-width="1.5"/><polygon points="568.0,104.0 559.9,107.9 559.9,100.1" fill="#64748b"/><ellipse cx="605" cy="104" rx="32" ry="14" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="605" y="109" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">V1</text><rect x="470" y="130" width="60" height="28" rx="3" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="500" y="149" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">K2</text><line x1="534" y1="144" x2="568" y2="144" stroke="#64748b" stroke-width="1.5"/><polygon points="568.0,144.0 559.9,147.9 559.9,140.1" fill="#64748b"/><ellipse cx="605" cy="144" rx="32" ry="14" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="605" y="149" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">V2</text><rect x="470" y="170" width="60" height="28" rx="3" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="500" y="189" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">K3</text><line x1="534" y1="184" x2="568" y2="184" stroke="#64748b" stroke-width="1.5"/><polygon points="568.0,184.0 559.9,187.9 559.9,180.1" fill="#64748b"/><ellipse cx="605" cy="184" rx="32" ry="14" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="605" y="189" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">V3</text><text x="555" y="240" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Key-value</text></g><g opacity="0.28"><rect x="760" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="84" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="112" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="140" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="168" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="760" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="790" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="820" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="850" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="880" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><rect x="910" y="196" width="30" height="28" rx="0" fill="#fff" stroke="#0f172a" stroke-width="1.2"/><text x="850" y="250" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Wide-column</text></g><g opacity="0.28"><line x1="520" y1="290" x2="470" y2="345" stroke="#64748b" stroke-width="1.8"/><polygon points="470.0,345.0 472.6,336.4 478.3,341.6" fill="#64748b"/><line x1="520" y1="290" x2="560" y2="360" stroke="#64748b" stroke-width="1.8"/><polygon points="560.0,360.0 552.6,354.9 559.4,351.0" fill="#64748b"/><line x1="610" y1="300" x2="560" y2="360" stroke="#64748b" stroke-width="1.8"/><polygon points="560.0,360.0 562.2,351.3 568.2,356.3" fill="#64748b"/><line x1="470" y1="345" x2="560" y2="360" stroke="#64748b" stroke-width="1.8"/><polygon points="560.0,360.0 551.4,362.5 552.6,354.8" fill="#64748b"/><circle cx="520" cy="290" r="13" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="470" cy="345" r="13" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="610" cy="300" r="13" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><circle cx="560" cy="360" r="13" fill="#fff" stroke="#0f172a" stroke-width="1.8"/><text x="545" y="392" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Graph</text></g><g opacity="1"><line x1="860" y1="285" x2="820" y2="325" stroke="#64748b" stroke-width="1.8"/><line x1="860" y1="285" x2="900" y2="325" stroke="#64748b" stroke-width="1.8"/><line x1="820" y1="325" x2="795" y2="365" stroke="#64748b" stroke-width="1.8"/><line x1="820" y1="325" x2="845" y2="365" stroke="#64748b" stroke-width="1.8"/><line x1="900" y1="325" x2="925" y2="365" stroke="#64748b" stroke-width="1.8"/><circle cx="860" cy="285" r="12" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><circle cx="820" cy="325" r="12" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><circle cx="900" cy="325" r="12" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><circle cx="795" cy="365" r="12" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><circle cx="845" cy="365" r="12" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><circle cx="925" cy="365" r="12" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><text x="860" y="400" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:600;font-family:var(--sans)">Document</text></g></svg></div></div><div class="capt">A key-value store whose values have <b>structure the store can read</b></div></section>
 
-<section class="slide " data-title="Structure Inside a Value" data-notes="key-value에서 값이 복잡한 객체인 경우(앞 장의 Option 2: 제조사별 제품 목록)를 떠올리자. 저장소가 그 값을 그냥 바이트가 아니라 구조 있는 데이터(JSON, Protobuf, XML)로 알면 값 안을 묻고 일부만 바꿀 수 있다. 그것이 document store다. &quot;문서&quot;라고 부르지만 그냥 데이터다. 오늘은 JSON으로 본다. 2025의 Flights 예(Key = 2010/7/1)를 Product로 바꿨다."><h1 class="t">Structure Inside a Value<span class="sub">Values with structure</span></h1><div class="rule"></div><div class="body"><div class="stack c"><ul class="pts "><li>In key-value stores, the value is often a very complex object<ul><li>Key = <code>'GizmoWorks'</code>, Value = [all products of that company]</li></ul></li><li>Better: <em>value</em> to be structured data<ul><li>JSON or Protobuf or XML</li><li>Called a &ldquo;document&rdquo; but it&rsquo;s just data</li></ul></li></ul><div class="co q big">We will discuss JSON</div></div></div></section>
+<section class="slide " data-title="Structure Inside a Value" data-notes="앞의 Key-Value 계열에서 값으로 복잡한 객체를 보관할 수 있었음을 떠올리자. 저장소가 그 값을 그냥 바이트가 아니라 구조 있는 데이터(JSON, Protobuf, XML)로 알면 값 안을 묻고 일부만 바꿀 수 있다. 그것이 document store다. &quot;문서&quot;라고 부르지만 그냥 데이터다. 오늘은 JSON으로 본다. 2025의 Flights 예(Key = 2010/7/1)를 Product로 바꿨다."><h1 class="t">Structure Inside a Value<span class="sub">Values with structure</span></h1><div class="rule"></div><div class="body"><div class="stack c"><ul class="pts "><li>In key-value stores, the value is often a very complex object<ul><li>Key = <code>'GizmoWorks'</code>, Value = [all products of that company]</li></ul></li><li>Better: <em>value</em> to be structured data<ul><li>JSON or Protobuf or XML</li><li>Called a &ldquo;document&rdquo; but it&rsquo;s just data</li></ul></li></ul><div class="co q big">We will discuss JSON</div></div></div></section>
 
 <section class="slide clarity-slide" data-title="Documents Read Together" data-notes="2025 Person와Orders예를 사용한다. 왼쪽John하나와 가운데John주문둘을 오른쪽 한 사람 문서로 묶는다. 프로필을 열 때 주문도 필요하면 함께 읽기 편하다. 주문이나 공유 제품을 어디서 갱신할지는 별도 질문이며 이어지는 trees/tables에서 중첩과 복사 문제를 실제로 본다."><h1 class="t">Documents Read Together</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Person</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">name</th><th class="">phone</th></tr></thead><tbody><tr class=""><td class="nw">John</td><td class="nw">3634</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>Orders</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">person</th><th class="">date</th><th class="">product</th></tr></thead><tbody><tr class=""><td class="nw">John</td><td class="nw">2002</td><td class="nw">Gizmo</td></tr><tr class=""><td class="nw">John</td><td class="nw">2004</td><td class="nw">Gadget</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>One person document</h3><pre class="clarity-doc">{name: &quot;John&quot;,
  phone: 3634,
@@ -5764,7 +6189,7 @@ Phone:  (2, 1234)
 
 <section class="slide mapdiv" data-title="03 · Between Trees and Tables" data-notes="지금은 Between Trees and Tables 구간이다. 개요와 동일한 지도에서 현재 작업 하나만 강조하고 본문의 실제 예제로 넘어간다."><h1 class="t">03 · Between Trees and Tables</h1><div class="rule"></div><div class="body"><div class="clarity-outline"><div class="clarity-outline-row muted"><span>01</span><h3>Four Families of NoSQL</h3><p>choose a model by its access pattern</p></div><div class="clarity-outline-row muted"><span>02</span><h3>JSON and Semi-Structured Data</h3><p>read named fields and ordered arrays</p></div><div class="clarity-outline-row current"><span>03</span><h3>Between Trees and Tables</h3><p>convert nesting and repeated values</p></div><div class="clarity-outline-row muted"><span>04</span><h3>Why NoSQL</h3><p>check flexibility, scale and guarantees</p></div></div></div></section>
 
-<section class="slide " data-title="Rows as JSON Objects" data-notes="관계 → JSON은 쉽다. 표 하나는 객체의 배열이다: 행마다 객체, 열마다 키. 트리로 그리면 깊이 2의 평평한 트리. 키 이름이 행마다 반복되는 것이 보인다(앞 장의 self-describing)."><h1 class="t">Rows as JSON Objects<span class="sub">One table</span></h1><div class="rule"></div><div class="body"><div class="row c"><div class="stack "><div class="tbox sm"><div class="tname">Person</div><table class="sqltable"><thead><tr><th class="">name</th><th class="">phone</th></tr></thead><tbody><tr class=""><td class="nw">John</td><td class="nw">3634</td></tr><tr class=""><td class="nw">Sue</td><td class="nw">6343</td></tr><tr class=""><td class="nw">Dirk</td><td class="nw">6363</td></tr></tbody></table></div><div class="fullcode  sm"><pre class="sqlcode">{&quot;person&quot;: [
+<section class="slide " data-title="Rows as JSON Objects" data-notes="관계 → JSON은 쉽다. 표 하나는 객체의 배열이다: 행마다 객체, 열마다 키. 트리로 그리면 깊이 2의 평평한 트리. 키 이름이 행마다 반복되는 것이 보인다. 앞의 Semi-Structured Data에서 설명한 self-describing 성질이다."><h1 class="t">Rows as JSON Objects<span class="sub">One table</span></h1><div class="rule"></div><div class="body"><div class="row c"><div class="stack "><div class="tbox sm"><div class="tname">Person</div><table class="sqltable"><thead><tr><th class="">name</th><th class="">phone</th></tr></thead><tbody><tr class=""><td class="nw">John</td><td class="nw">3634</td></tr><tr class=""><td class="nw">Sue</td><td class="nw">6343</td></tr><tr class=""><td class="nw">Dirk</td><td class="nw">6363</td></tr></tbody></table></div><div class="fullcode  sm"><pre class="sqlcode">{&quot;person&quot;: [
   {&quot;name&quot;: &quot;John&quot;, &quot;phone&quot;: 3634},
   {&quot;name&quot;: &quot;Sue&quot;,  &quot;phone&quot;: 6343},
   {&quot;name&quot;: &quot;Dirk&quot;, &quot;phone&quot;: 6363}
@@ -5812,12 +6237,12 @@ Phone:  (2, 1234)
     &quot;phone&quot;: 2345}]
 }</pre></div><ul class="pts "><li>Nested collections</li><li>Heterogeneous collections</li><li><span style="color:var(--red);font-weight:700">These are difficult to represent in the relational model</span></li></ul></div></div></section>
 
-<section class="slide " data-title="Recap: The People Table" data-notes="2026년에 더한 장. 앞 세 장의 네 사람을 SQLite 표 한 장에 넣었다. 열은 둘: id와 person(JSON 문서가 든 텍스트). PostgreSQL이라면 jsonb 열이다. 다음 장의 창이 이 표에서 돈다. Storing JSON in RDBMS 장의 (1)번 길을 직접 해 보는 것이다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> The People Table</h1><div class="rule"></div><div class="body"><div class="stack "><div class="ex">The four people of the last three slides, as rows of one SQLite table. The whole document sits in a text column; SQLite reads it with its JSON functions.</div><div class="tsm"><div class="fulltable" data-sql="SELECT id, person FROM people" data-db="people"><table class="sqltable"><thead><tr><th>id</th><th>person</th></tr></thead><tbody><tr><td class="nw">1</td><td>{&quot;name&quot;: &quot;John&quot;, &quot;phone&quot;: 1234}</td></tr><tr><td class="nw">2</td><td>{&quot;name&quot;: &quot;Mary&quot;, &quot;phone&quot;: [1234, 5678]}</td></tr><tr><td class="nw">3</td><td>{&quot;name&quot;: &quot;Joe&quot;}</td></tr><tr><td class="nw">4</td><td>{&quot;name&quot;: {&quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Smith&quot;}, &quot;phone&quot;: 2345}</td></tr></tbody></table></div></div></div></div><div class="capt">One row per person; the <b>document is a column value</b></div></section>
+<section class="slide " data-title="The People Table" data-notes="2026년에 더한 장. 앞 세 장의 네 사람을 SQLite 표 한 장에 넣었다. 열은 둘: id와 person(JSON 문서가 든 텍스트). PostgreSQL이라면 jsonb 열이다. 다음 장의 창이 이 표에서 돈다. Storing JSON in RDBMS 장의 (1)번 길을 직접 해 보는 것이다."><h1 class="t">The People Table</h1><div class="rule"></div><div class="body"><div class="stack "><div class="ex">The four people of the last three slides, as rows of one SQLite table. The whole document sits in a text column; SQLite reads it with its JSON functions.</div><div class="tsm"><div class="fulltable" data-sql="SELECT id, person FROM people" data-db="people"><table class="sqltable"><thead><tr><th>id</th><th>person</th></tr></thead><tbody><tr><td class="nw">1</td><td>{&quot;name&quot;: &quot;John&quot;, &quot;phone&quot;: 1234}</td></tr><tr><td class="nw">2</td><td>{&quot;name&quot;: &quot;Mary&quot;, &quot;phone&quot;: [1234, 5678]}</td></tr><tr><td class="nw">3</td><td>{&quot;name&quot;: &quot;Joe&quot;}</td></tr><tr><td class="nw">4</td><td>{&quot;name&quot;: {&quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Smith&quot;}, &quot;phone&quot;: 2345}</td></tr></tbody></table></div></div></div></div><div class="capt">One row per person; the <b>document is a column value</b></div></section>
 
-<section class="slide trypad" data-title="Demo: JSON Inside a SQL Table" data-notes="2026년에 더한 SQL 창. (1) SELECT id, person -&gt;&gt; &#x27;$.name&#x27; AS name FROM people; 4번 행은 이름이 객체라 {&quot;first&quot;:&quot;John&quot;,&quot;last&quot;:&quot;Smith&quot;}가 텍스트로 나온다(타입이 다른 속성이 질의에서 어떻게 보이는지). (2) SELECT p.id, p.person -&gt;&gt; &#x27;$.name&#x27; AS name, j.value AS phone FROM people p, json_each(p.person, &#x27;$.phone&#x27;) j; Mary가 두 행이 되고 Joe는 사라진다. json_each는 배열을 행으로 펴며 7강에서 배운 조인으로 사람의 다른 필드를 함께 출력한다(스칼라 1234는 한 행). (3) SELECT id, person -&gt;&gt; &#x27;$.name&#x27; FROM people WHERE json_type(person, &#x27;$.phone&#x27;) IS NULL; Joe 하나. 빠진 속성은 NULL로 보인다(Mapping Semi-Structured Data to Relations 첫 장). 정답은 다음 장."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> JSON Inside a SQL Table<span class="sub">Storing JSON in RDBMS, made runnable (SQLite JSON functions)</span></h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Each person&rsquo;s name: <code>person -&gt;&gt; '$.name'</code>. What comes back for row 4?</li><li>One row per phone number: <code>FROM people p, json_each(p.person, '$.phone') j</code>. Who disappears, who doubles?</li><li>People with no phone at all: <code>json_type(person, '$.phone') IS NULL</code>.</li></ol><div class="sqlpad" data-seed="people" data-tables="people"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: JSON Inside a SQL Table" data-notes="2026년에 더한 SQL 창. (1) SELECT id, person -&gt;&gt; &#x27;$.name&#x27; AS name FROM people; 4번 행은 이름이 객체라 {&quot;first&quot;:&quot;John&quot;,&quot;last&quot;:&quot;Smith&quot;}가 텍스트로 나온다(타입이 다른 속성이 질의에서 어떻게 보이는지). (2) SELECT p.id, p.person -&gt;&gt; &#x27;$.name&#x27; AS name, j.value AS phone FROM people p, json_each(p.person, &#x27;$.phone&#x27;) j; Mary가 두 행이 되고 Joe는 사라진다. json_each는 배열을 행으로 펴며 7강에서 배운 조인으로 사람의 다른 필드를 함께 출력한다(스칼라 1234는 한 행). (3) SELECT id, person -&gt;&gt; &#x27;$.name&#x27; FROM people WHERE json_type(person, &#x27;$.phone&#x27;) IS NULL; Joe 하나. 빠진 속성은 NULL로 보인다(앞의 Missing Fields as NULL 장). 정답은 다음 장."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> JSON Inside a SQL Table<span class="sub">Storing JSON in RDBMS, made runnable (SQLite JSON functions)</span></h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Each person&rsquo;s name: <code>person -&gt;&gt; '$.name'</code>. What comes back for row 4?</li><li>One row per phone number: <code>FROM people p, json_each(p.person, '$.phone') j</code>. Who disappears, who doubles?</li><li>People with no phone at all: <code>json_type(person, '$.phone') IS NULL</code>.</li></ol><div class="sqlpad" data-seed="people" data-tables="people"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
-<section class="slide " data-title="Answer: JSON Inside a SQL Table" data-notes="정답(2번). json_each가 phone 값을 행으로 편다: 배열이면 원소마다 한 행, 스칼라면 한 행, 없으면 0행. Mary가 두 행, Joe는 없다. Mapping Semi-Structured Data to Relations 둘째 장의 &quot;표 한 장으로는 불가능&quot;이 &quot;표 두 장이면 된다&quot;로 바뀌는 순간이다. 1번과 3번의 정답은 앞 장 노트에."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> JSON Inside a SQL Table</h1><div class="rule"></div><div class="body"><div class="stack "><div class="wsm"><div class="sqlwork" data-db="people"><pre class="sqlcode"><span class="kw">SELECT</span> p.id, p.person -&gt;&gt; <span class="lit">&#x27;$.name&#x27;</span> <span class="kw">AS</span> name, j.value <span class="kw">AS</span> phone
-<span class="kw">FROM</span>   people p, json_each(p.person, <span class="lit">&#x27;$.phone&#x27;</span>) j;</pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>id</th><th>name</th><th>phone</th></tr></thead><tbody><tr><td class="nw">1</td><td class="nw">John</td><td class="nw">1234</td></tr><tr><td class="nw">2</td><td class="nw">Mary</td><td class="nw">1234</td></tr><tr><td class="nw">2</td><td class="nw">Mary</td><td class="nw">5678</td></tr><tr><td class="nw">4</td><td class="nw">{&quot;first&quot;:&quot;John&quot;,&quot;last&quot;:&quot;Smith&quot;}</td><td class="nw">2345</td></tr></tbody></table></div></div></div><div class="co ok"><code>json_each</code> turns the phone array into rows: Mary twice, Joe not at all. The relational answer to a repeated attribute is <b>a second table</b>, built here on the fly.</div></div></div><div class="capt">A repeated attribute becomes <b>one row per value</b>: the join is back</div></section>
+<section class="slide" data-notes="정답(2번). json_each가 phone 값을 행으로 편다: 배열이면 원소마다 한 행, 스칼라면 한 행, 없으면 0행. Mary가 두 행, Joe는 없다. 앞의 Repeated Values Need Rows에서 본, 반복값은 여러 행으로 표현해야 한다는 설명을 실제 질의 결과로 확인한다. 1번과 3번의 정답은 앞 장 노트에." data-reading-revision="2026-11-14" data-title="Answer: JSON Inside a SQL Table"><h1 class="t"><span class="pfx pfx-answer">Answer:</span> JSON Inside a SQL Table</h1><div class="rule"></div><div class="body"><div class="clarity-compare" data-reading-columns="true"><div class="clarity-panel"><div class="stack"><div class="wsm"><div class="sqlwork" data-db="people"><pre class="sqlcode"><span class="kw">SELECT</span> p.id, p.person -&gt;&gt; <span class="lit">&#x27;$.name&#x27;</span> <span class="kw">AS</span> name, j.value <span class="kw">AS</span> phone
+<span class="kw">FROM</span>   people p, json_each(p.person, <span class="lit">&#x27;$.phone&#x27;</span>) j;</pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>id</th><th>name</th><th>phone</th></tr></thead><tbody><tr><td class="nw">1</td><td class="nw">John</td><td class="nw">1234</td></tr><tr><td class="nw">2</td><td class="nw">Mary</td><td class="nw">1234</td></tr><tr><td class="nw">2</td><td class="nw">Mary</td><td class="nw">5678</td></tr><tr><td class="nw">4</td><td class="nw">{&quot;first&quot;:&quot;John&quot;,&quot;last&quot;:&quot;Smith&quot;}</td><td class="nw">2345</td></tr></tbody></table></div></div></div><div class="co ok"><code>json_each</code> turns the phone array into rows: Mary twice, Joe not at all. The relational answer to a repeated attribute is <b>a second table</b>, built here on the fly.</div></div></div><div class="clarity-panel"><p class="clarity-statement" data-reading-support="true"><b>Name query:</b> <code>SELECT id, person -&gt;&gt; '$.name' AS name FROM people;</code><br/>Row 4 returns the name object as text; the other names are John, Mary and Joe.</p><p class="clarity-statement" data-reading-support="true"><b>Missing-phone query:</b> <code>SELECT id FROM people WHERE json_type(person, '$.phone') IS NULL;</code><br/>Only Joe, <code>id = 3</code>, has no phone field.</p></div></div></div><div class="capt">A repeated attribute becomes <b>one row per value</b>: the join is back</div></section>
 
 <section class="slide " data-title="Discussion: Why Semi-Structured Data?" data-notes="왜 semi-structured인가. 원래는 프로그램 사이의 교환 형식이었다(XML, JSON, Protobuf). 2강의 API 응답, 앱 이벤트가 전부 이 모양으로 도착한다. 그런데 점점 DB의 데이터 모델 자체가 됐다: MongoDB와 CouchBase는 JSON 문서를 저장하고, Snowflake의 VARIANT 열, BigQuery의 중첩·반복 필드(Dremel)가 그렇다. 도착하는 모양 그대로 저장하면 번역 비용이 없다."><h1 class="t">Discussion: Why Semi-Structured Data?</h1><div class="rule"></div><div class="body"><ul class="pts "><li>Semi-structured data works well as <i>data exchange formats</i><ul><li>i.e., exchanging data between different apps</li><li>Examples: XML, JSON, Protobuf (protocol buffers)</li></ul></li><li>Increasingly, systems use them as a data model for DBs:<ul><li>SQL Server supports XML-valued relations</li><li>CouchBase, MongoDB, Snowflake: JSON</li><li>Dremel (BigQuery): Protobuf</li></ul></li></ul></div></section>
 
@@ -5858,7 +6283,7 @@ Follower: user 1, value 1
 
 <section class="slide " data-title="Asynchronous Leader–Follower Replication" data-notes="scale-out의 둘째 얼굴: 복제. 데이터를 나누기만 하면 서버 하나가 죽을 때 그 몫이 사라진다. 그래서 같은 데이터를 여러 서버에 복사해 둔다. 이 장의 예는 리더-팔로워(leader-follower, primary-replica): 쓰기는 리더 하나가 받고, 팔로워들은 리더의 변경 로그를 받아 다시 적용한다. 읽기는 팔로워에서도 할 수 있어 읽기 처리량이 는다. 문제는 로그가 도착하는 데 시간이 걸린다는 것: 복제 지연(replication lag). 그 사이 지연된 팔로워에서 읽으면 방금 쓴 값이 아니라 옛 값이 나온다. MongoDB의 replica set과 PostgreSQL의 streaming replication도 리더와 복제본을 쓴다. 복제본에서 방금 쓴 값을 읽을 수 있는지는 쓰기 확인·읽기 설정과 적용 시점에 달려 있다. 동기 복제는 지정한 복제 확인을 기다리므로 쓰기 지연과 보장 사이를 조정한다. 수신 확인만 기다린다고 모든 복제본 읽기가 즉시 최신이 되는 것은 아니다. 다른 방식도 있다: multi-leader는 리더가 여럿이고, leaderless(Dynamo, Cassandra)는 아무 복제본이나 쓰기를 받는다."><h1 class="t">Asynchronous Leader–Follower Replication<span class="sub">Followers replay the leader’s log asynchronously, so a follower read can return an older value</span></h1><div class="rule"></div><div class="body"><div class="fig"><svg class="dg" viewBox="0 0 1100 360" xmlns="http://www.w3.org/2000/svg" style="width:100%"><rect x="20" y="150" width="170" height="60" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/><text x="105" y="186" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">write x = 2</text><line x1="190" y1="180" x2="300" y2="180" stroke="#64748b" stroke-width="2"/><polygon points="300.0,180.0 291.9,183.9 291.9,176.1" fill="#64748b"/><path d="M310 120 v100 a70 22.400000000000002 0 0 0 140 0 v-100" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><ellipse cx="380" cy="120" rx="70" ry="22.400000000000002" fill="#fff" stroke="#24578f" stroke-width="1.8"/><text x="380" y="265" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans)">Leader</text><text x="380" y="182" style="font-size:17px;fill:#24578f;text-anchor:middle;font-weight:700;font-family:var(--mono)">x = 2</text><line x1="460" y1="160" x2="640" y2="90" stroke="#24578f" stroke-width="2"/><polygon points="640.0,90.0 633.9,96.6 631.0,89.3" fill="#24578f"/><line x1="460" y1="200" x2="640" y2="270" stroke="#24578f" stroke-width="2" stroke-dasharray="7 5"/><polygon points="640.0,270.0 631.0,270.7 633.9,263.4" fill="#24578f"/><text x="540" y="105" style="font-size:15px;fill:#24578f;text-anchor:middle;font-weight:650;font-family:var(--sans)">log</text><text x="540" y="270" style="font-size:15px;fill:#c27318;text-anchor:middle;font-weight:650;font-family:var(--sans)">log, delayed</text><path d="M660 40 v80 a60 19.2 0 0 0 120 0 v-80" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><ellipse cx="720" cy="40" rx="60" ry="19.2" fill="#fff" stroke="#24578f" stroke-width="1.8"/><text x="720" y="102" style="font-size:17px;fill:#24578f;text-anchor:middle;font-weight:700;font-family:var(--mono)">x = 2</text><text x="720" y="150" style="font-size:15px;fill:#64748b;text-anchor:middle;font-weight:600;font-family:var(--sans)">Follower 1</text><path d="M660 230 v80 a60 19.2 0 0 0 120 0 v-80" fill="#f8efe0" stroke="#c27318" stroke-width="1.8"/><ellipse cx="720" cy="230" rx="60" ry="19.2" fill="#fff" stroke="#c27318" stroke-width="1.8"/><text x="720" y="292" style="font-size:17px;fill:#c27318;text-anchor:middle;font-weight:700;font-family:var(--mono)">x = 1</text><text x="720" y="340" style="font-size:15px;fill:#c27318;text-anchor:middle;font-weight:600;font-family:var(--sans)">Follower 2 · lagging</text><line x1="950" y1="280" x2="800" y2="280" stroke="#64748b" stroke-width="2"/><polygon points="800.0,280.0 808.1,276.1 808.1,283.9" fill="#64748b"/><rect x="950" y="250" width="140" height="60" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/><text x="1020" y="286" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">read x</text><text x="1020" y="340" style="font-size:15px;fill:#c27318;text-anchor:middle;font-weight:650;font-family:var(--sans)">gets the old value</text></svg></div></div><div class="capt">A read from the <b>lagging follower</b> returns the old value</div></section>
 
-<section class="slide " data-title="CAP Theorem" data-notes="CAP 정리. 복제본 사이 네트워크가 끊기는 것(partition)은 분산 시스템에서 피할 수 없다. 정리의 내용: 분할이 난 동안 시스템은 linearizable한 동작(모든 연산이 하나의 최신 순서를 따르는 것처럼 보이는 것, CAP의 C)과 가용성(죽지 않은 노드는 모든 요청에 답한다, CAP의 A)을 동시에 보장할 수 없다. 그림의 예: replica 2에 읽기가 오면, C를 지키려는 시스템은 일관되게 답할 수 없는 연산을 막거나 기다리게 한다(모든 요청을 거절하는 것은 아니다). A를 지키려는 시스템은 답하되 linearizability를 보장하지 않는다(x = 1이 낡았을 수 있다). &quot;셋 중 둘&quot;이라는 흔한 설명보다 &quot;분할이 나면 C와 A 중 하나를 포기한다&quot;가 정확하다. Brewer가 2000년에 추측으로 내놓았고 Gilbert와 Lynch가 2002년에 증명했다. 화면 아래 줄은 PACELC(Abadi, 2012년 논문)다: 분할이 없을 때(Else)도 복제를 기다리면 느리고(Consistency) 안 기다리면 빠르다(Latency). 주의: CAP의 C는 ACID의 C(제약을 지키는 트랜잭션)와 다른 말이다. 다음 두 장의 ACID와 BASE는 트랜잭션 보장의 기본값 이야기이고, CAP의 선택과 같은 축이 아니다. BASE 쪽 시스템이 대개 분할 때 A를 고를 뿐이다."><h1 class="t">CAP Theorem<span class="sub">A partition forces a choice: block some operations, or answer without a consistency guarantee</span></h1><div class="rule"></div><div class="body"><div class="stack c"><div style="width:1000px"><div class="fig"><svg class="dg" viewBox="0 0 1100 345" xmlns="http://www.w3.org/2000/svg" style="width:100%"><path d="M190 70 v90 a70 22.400000000000002 0 0 0 140 0 v-90" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><ellipse cx="260" cy="70" rx="70" ry="22.400000000000002" fill="#fff" stroke="#24578f" stroke-width="1.8"/><text x="260" y="136" style="font-size:17px;fill:#24578f;text-anchor:middle;font-weight:700;font-family:var(--mono)">x = 2</text><text x="260" y="205" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--sans)">Replica 1</text><path d="M770 70 v90 a70 22.400000000000002 0 0 0 140 0 v-90" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"/><ellipse cx="840" cy="70" rx="70" ry="22.400000000000002" fill="#fff" stroke="#24578f" stroke-width="1.8"/><text x="840" y="136" style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono)">x = 1</text><text x="840" y="205" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--sans)">Replica 2</text><line x1="340" y1="115" x2="760" y2="115" stroke="#c27318" stroke-width="2.4" stroke-dasharray="8 6"/><text x="550" y="104" style="font-size:16px;fill:#c27318;text-anchor:middle;font-weight:700;font-family:var(--sans)">Network Partition</text><text x="550" y="128" style="font-size:30px;fill:#c27318;text-anchor:middle;font-weight:700;font-family:var(--sans)">&#215;</text><rect x="40" y="250" width="150" height="50" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/><text x="115" y="281" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">write x = 2</text><line x1="150" y1="250" x2="220" y2="190" stroke="#64748b" stroke-width="2"/><polygon points="220.0,190.0 216.4,198.2 211.3,192.3" fill="#64748b"/><rect x="940" y="250" width="120" height="50" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/><text x="1000" y="281" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)">read x</text><line x1="980" y1="250" x2="890" y2="190" stroke="#64748b" stroke-width="2"/><polygon points="890.0,190.0 898.9,191.2 894.6,197.8" fill="#64748b"/><rect x="250" y="230" width="600" height="46" rx="6" fill="#ddeaf8" stroke="#24578f" stroke-width="1.5"/><text x="550" y="259" style="font-size:15px;fill:#24578f;text-anchor:middle;font-weight:700;font-family:var(--sans)">Preserve C: block operations that cannot be answered consistently</text><rect x="250" y="288" width="600" height="46" rx="6" fill="#f8efe0" stroke="#c27318" stroke-width="1.5"/><text x="550" y="317" style="font-size:15px;fill:#c27318;text-anchor:middle;font-weight:700;font-family:var(--sans)">Preserve A: respond without guaranteeing linearizability</text></svg></div></div><div class="ex" style="font-size:19px;text-align:center">Without a partition, replication still trades <b>latency</b> against <b>consistency</b></div></div></div><div class="capt">During a partition, a system cannot guarantee both <b>linearizable operations</b> and <b>availability</b></div></section>
+<section class="slide" data-notes='CAP 정리. 복제본 사이 네트워크가 끊기는 것(partition)은 분산 시스템에서 피할 수 없다. 정리의 내용: 분할이 난 동안 시스템은 linearizable한 동작(모든 연산이 하나의 최신 순서를 따르는 것처럼 보이는 것, CAP의 C)과 가용성(죽지 않은 노드는 모든 요청에 답한다, CAP의 A)을 동시에 보장할 수 없다. 그림의 예: replica 2에 읽기가 오면, C를 지키려는 시스템은 일관되게 답할 수 없는 연산을 막거나 기다리게 한다(모든 요청을 거절하는 것은 아니다). A를 지키려는 시스템은 답하되 linearizability를 보장하지 않는다(x = 1이 낡았을 수 있다). "셋 중 둘"이라는 흔한 설명보다 "분할이 나면 C와 A 중 하나를 포기한다"가 정확하다. Brewer가 2000년에 추측으로 내놓았고 Gilbert와 Lynch가 2002년에 증명했다. 화면 아래 줄은 PACELC(Abadi, 2012년 논문)다: 분할이 없을 때(Else)도 복제를 기다리면 느리고(Consistency) 안 기다리면 빠르다(Latency). 주의: CAP의 C는 ACID의 C(제약을 지키는 트랜잭션)와 다른 말이다. 다음 두 장의 ACID와 BASE는 트랜잭션 보장의 기본값 이야기이고, CAP의 선택과 같은 축이 아니다. BASE 쪽 시스템이 대개 분할 때 A를 고를 뿐이다. 독립 열람을 위해 화면 해석을 보강했다. 근거: https://groups.csail.mit.edu/tds/papers/Gilbert/Brewer6.pdf' data-reading-revision="2026-11-14" data-title="CAP Theorem"><h1 class="t">CAP Theorem<span class="sub">A partition forces a choice: block some operations, or answer without a consistency guarantee</span></h1><div class="rule"></div><div class="body"><div class="clarity-compare" data-reading-columns="true"><div class="clarity-panel" style="flex:1.1;justify-content:center"><div class="stack c"><div style="width:100%"><div class="fig"><svg class="dg" style="width:100%" viewbox="0 0 1100 345" xmlns="http://www.w3.org/2000/svg"><path d="M190 70 v90 a70 22.400000000000002 0 0 0 140 0 v-90" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"></path><ellipse cx="260" cy="70" fill="#fff" rx="70" ry="22.400000000000002" stroke="#24578f" stroke-width="1.8"></ellipse><text style="font-size:17px;fill:#24578f;text-anchor:middle;font-weight:700;font-family:var(--mono)" x="260" y="136">x = 2</text><text style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--sans)" x="260" y="205">Replica 1</text><path d="M770 70 v90 a70 22.400000000000002 0 0 0 140 0 v-90" fill="#ddeaf8" stroke="#24578f" stroke-width="1.8"></path><ellipse cx="840" cy="70" fill="#fff" rx="70" ry="22.400000000000002" stroke="#24578f" stroke-width="1.8"></ellipse><text style="font-size:17px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono)" x="840" y="136">x = 1</text><text style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--sans)" x="840" y="205">Replica 2</text><line stroke="#c27318" stroke-dasharray="8 6" stroke-width="2.4" x1="340" x2="760" y1="115" y2="115"></line><text style="font-size:16px;fill:#c27318;text-anchor:middle;font-weight:700;font-family:var(--sans)" x="550" y="104">Network Partition</text><text style="font-size:30px;fill:#c27318;text-anchor:middle;font-weight:700;font-family:var(--sans)" x="550" y="128">×</text><rect fill="#fff" height="50" rx="6" stroke="#94a3b8" stroke-width="1.5" width="150" x="40" y="250"></rect><text style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)" x="115" y="281">write x = 2</text><line stroke="#64748b" stroke-width="2" x1="150" x2="220" y1="250" y2="190"></line><polygon fill="#64748b" points="220.0,190.0 216.4,198.2 211.3,192.3"></polygon><rect fill="#fff" height="50" rx="6" stroke="#94a3b8" stroke-width="1.5" width="120" x="940" y="250"></rect><text style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:650;font-family:var(--mono)" x="1000" y="281">read x</text><line stroke="#64748b" stroke-width="2" x1="980" x2="890" y1="250" y2="190"></line><polygon fill="#64748b" points="890.0,190.0 898.9,191.2 894.6,197.8"></polygon><rect fill="#ddeaf8" height="46" rx="6" stroke="#24578f" stroke-width="1.5" width="600" x="250" y="230"></rect><text style="font-size:15px;fill:#24578f;text-anchor:middle;font-weight:700;font-family:var(--sans)" x="550" y="259">Preserve C: block operations that cannot be answered consistently</text><rect fill="#f8efe0" height="46" rx="6" stroke="#c27318" stroke-width="1.5" width="600" x="250" y="288"></rect><text style="font-size:15px;fill:#c27318;text-anchor:middle;font-weight:700;font-family:var(--sans)" x="550" y="317">Preserve A: respond without guaranteeing linearizability</text></svg></div></div><div class="ex" style="font-size:19px;text-align:center">Without a partition, replication still trades <b>latency</b> against <b>consistency</b></div></div></div><div class="clarity-panel" style="justify-content:center"><p class="clarity-statement" data-reading-support="true"><b>P — network partition:</b> replicas cannot communicate. This differs from splitting data into storage partitions.<br/><b>C — linearizability:</b> operations appear in one order that respects real-time completion.<br/><b>A — availability:</b> every request to a nonfailed node eventually receives a response.</p><p class="clarity-statement" data-reading-support="true">CAP’s <b>C</b> concerns the observed order of operations; ACID’s <b>C</b> concerns the constraints of valid transactions.</p></div></div></div><div class="capt">During a partition, a system cannot guarantee both <b>linearizable operations</b> and <b>availability</b></div></section>
 
 <section class="slide " data-title="ACID Transaction Properties" data-notes="마지막 축, 트랜잭션 보장. 관계형은 ACID(6강): 원자성, 일관성, 고립성, 지속성. 금융처럼 정합성이 중요한 곳의 표준이다. 2025 문장을 90단어 안으로 줄였다."><h1 class="t">ACID Transaction Properties<span class="sub">ACID</span></h1><div class="rule"></div><div class="body"><div class="stack "><div class="ex"><b>SQL databases</b> are known for their robust support of <b>ACID transactions</b> (Lecture 6).</div><ul class="pts "><li><b>Atomicity</b>: a transaction is a single, indivisible unit. All of its operations succeed, or none are applied.</li><li><b>Consistency</b>: a transaction takes the database from one valid state to another, keeping constraints, triggers and types intact.</li><li><b>Isolation</b>: the isolation level defines which interactions concurrent transactions may observe.</li><li><b>Durability</b>: once committed, the result survives a crash.</li></ul><div class="ex">This makes SQL databases ideal where <b>data integrity</b> and <b>consistency</b> are critical, such as financial systems.</div></div></div></section>
 

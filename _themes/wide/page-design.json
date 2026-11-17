@@ -118,6 +118,15 @@
       ]
     },
     {
+      "page": "ai-study.html",
+      "template": "연구실 · 스터디 목록",
+      "decision": "페이지 조정",
+      "reason": "학기 링크는 스터디 일정의 그 학기로 가는 탐색 동작. Courses 와 같이 15px로 표시(2026-11-17 Courses 에서 분리).",
+      "adjustments": [
+        "teaching-term-navigation"
+      ]
+    },
+    {
       "page": "talks.html",
       "template": "연구실 · 발표 목록",
       "decision": "기본 유지",
@@ -295,7 +304,8 @@
     {
       "id": "teaching-term-navigation",
       "pages": [
-        "courses.html"
+        "courses.html",
+        "ai-study.html"
       ],
       "roles": [
         "metadata"

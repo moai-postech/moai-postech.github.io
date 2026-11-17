@@ -111,11 +111,9 @@
     {
       "page": "courses.html",
       "template": "연구실 · 강의 목록",
-      "decision": "페이지 조정",
-      "reason": "학기 선택은 실제 탐색 동작. 학수번호와 달리 15px로 표시.",
-      "adjustments": [
-        "teaching-term-navigation"
-      ]
+      "decision": "기본 유지",
+      "reason": "학기는 과목 아래 칩으로 모두 보인다(14px 메타데이터, 칩 바탕으로 누를 수 있음을 표시). 학기가 늘어도 줄바꿈으로 버틴다.",
+      "adjustments": []
     },
     {
       "page": "ai-study.html",
@@ -304,7 +302,6 @@
     {
       "id": "teaching-term-navigation",
       "pages": [
-        "courses.html",
         "ai-study.html"
       ],
       "roles": [

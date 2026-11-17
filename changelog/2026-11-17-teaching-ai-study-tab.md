@@ -19,3 +19,6 @@
 - 교수 후속: AI Study 소개의 weekly AI study group 링크가 회색 글자와 같아 안 보여 강조색으로 칠함(`theme.css` 의 `.list-intro a` 를 `color: inherit` 에서 강조색으로, AGENTS.md 강조 링크 목록에 추가). 색이 들어가 링크가 눈에 띄므로 weekly 는 링크에서 다시 빼고 AI study group 에만 건다(교수)
 - 디자인 점검(교수 요청, Teaching 세 탭): AI Study 학기 링크가 Courses 에서 분리되며 14px 로 작아진 회귀를 고침. Courses 학기 링크와 같은 탐색 링크라 15px(`page-design.json` 의 `teaching-term-navigation` 에 `ai-study.html` 추가, `page-design.md` 재생성). 세 탭의 본문 시작 높이(208px), 소개→목록 간격(16px), 제목 16px 는 같음을 확인. 로컬 `check_design.js` 는 iCloud node_modules 읽기에서 멈춰 CI 결과로 확인
 - 디자인 정리(교수: "최선으로"): Talks 에도 소개 한 줄("Research talks, tutorials, and seminars by Prof. Sangwoo Mo.", 이름은 줄바꿈 없는 공백)을 넣어 세 탭이 소개 → 목록 같은 흐름으로 시작한다. 필터 바로 아래 첫 연도 제목의 절 간격(64px)을 없애 필터 아래 24px 에 붙임(`.filter-bar + .year-head`). AI Study 링크는 강조색만 두고 굵게 하지 않음(교수: 굵게까지는 과함)
+- 교수: Courses 학기를 오른쪽에 "Fall 2026 · Fall 2025" 로 이어 붙이면 학기가 쌓일수록 길어진다. 히스토리는 다 보여 주고 싶다. 시안 넷(A 지금, B 연도 열 표, C 과목 아래 학기 칩, D 최신 학기 + "Earlier" 둘째 줄)을 5학기 가정으로 비교해 C 로 정함
+  - 구현: `sections/teaching.html` 의 학기를 `.item-side.term-chips` 칩으로(최신이 앞, 구분점 없음), 칩은 회색 바탕(`--surface`)·14px 메타데이터, hover 때 강조색 테두리(논문 칩과 같은 방식). 과목 사이 간격은 두 줄 항목과 같은 `--item-gap`. `page-design.json` 에서 Courses 의 15px 학기 조정을 빼고 기본 유지로(AI Study 만 15px 유지)
+  - 기각: B 연도 열 표(교수: 너무 지저분), D 최신 학기 + 둘째 줄(히스토리가 회색 보조 줄로 밀림), 최신 학기만(히스토리를 다 보여 주고 싶음)

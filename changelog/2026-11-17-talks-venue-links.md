@@ -17,3 +17,9 @@
 - KSS Invited Talk·KSS Winter School → `kss.or.kr`, KSIAM Invited Talk → `ksiam.org`. 둘 다 한글 첫 화면이다(KSS 영문 `eng.kss.or.kr` 은 꼬리말만 있는 빈 화면, KSIAM 은 영문판 없음)
 - KSS Tutorial 은 말씀이 없어 2025 동계학술논문발표회 안내 그대로 둠
 - KSS Tutorial 도 `kss.or.kr` 로 바꿈(교수: 네 개를 같은 방식으로)
+
+## 2026-11-18: 행사 대신 기관으로
+
+- 교수: POSTECH IME Seminar 는 POSTECH IME 를 링크. 행사를 걸려니 애매하다, 가능하면 기관을 거는 것을 원칙으로
+- POSTECH IME Seminar → `ime.postech.ac.kr`(영문판은 같은 주소의 번역 전환뿐이라 한글 첫 화면), POSTECH AI:Q·POSTECH Physical AI Workshop → POSTECH 영문 `postech.ac.kr/eng`
+- 규칙: `_data/talks.yml` 머리 주석과 `AGENTS.md` talks.yml 줄을 "행사 이름으로 쓴 장소도 주최 기관 사이트" 로 고침

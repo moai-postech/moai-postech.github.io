@@ -11,3 +11,4 @@
 - Participants by term 막대 아래: 굵은 `1기` 위·연한 `Fall 2025` 아래 → 굵은 `Fall 2025` 위·연한 `1기` 아래.
 - Members 기수 탭의 표 위 줄: `1기 (Fall 2025) · 12 members` → `Fall 2025 (1기) · 12 members`.
 - 그대로 둔 것: 히어로, 학기 카드(주제·회차 수·tldr), Who we learn with 의 `Meet the members →`(Schedule·Members 의 시트 링크와 같은 제목 줄 끝 링크), 학과 지도.
+- 휴대폰(375px)에서 굵은 학기명 `Summer 2026`(92px)이 막대 칸(77px)을 넘어 옆 칸에 겹쳐, 폰에서는 계절과 연도를 두 줄로 나눴다(`.study-cohort-label b { width: min-content }`). 네 칸 모두 두 줄이라 높이가 같다.

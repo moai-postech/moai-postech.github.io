@@ -19,3 +19,6 @@ POSTECH 요구사항: 영향 없음
 
 ## 남은 것
 없음. 관련: [Paper Stella 미니 도입](2026-11-03-home-paper-stella-mini.md)
+
+## 다시 반영 (같은 날)
+- 첫 커밋 6064d94 에 다른 세션의 Funding 변경이 함께 들어가고 정작 `index.md` 는 빠졌다(같은 작업 폴더에서 두 세션이 동시에 stage). live 에서 0.46 그대로임을 보고 `index.md` 만 다시 커밋함

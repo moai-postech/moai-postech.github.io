@@ -124,7 +124,8 @@
     const filter = match && FILTERS[match[1]], want = match && filter.value(decodeURIComponent(match[2]));
     const dept = match ? filter.label(want) : null;
     const shown = match ? people.filter(p => filter.of(p) === want) : people;
-    // Every list opens with the same line, `<group> · N members  Show everyone`: a filter, a term tab, or everyone (교수 2026-11-03).
+    // Every list opens with the same line, `<group> · N members`: a filter, a term tab, or everyone (교수 2026-11-03).
+    // Only a filtered Full list (#dept=, #entry=) adds Show everyone; a term tab already sits next to the Full list tab (교수 2026-11-18).
     // Full list keeps the line too (no link) so the table starts at the same height in every tab.
     // The group name is the table's group heading, and Members sheet closes the line, right above the table it mirrors (교수 2026-11-17, like Schedule's Sessions line).
     const sheet = list.closest('[data-members-sheet]');
@@ -155,7 +156,7 @@
       term.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // representative first, the rest keep the sheet order
       // Two-line tab labels like the Schedule tabs: the term on top, the cohort under it, no member counts (교수 2026-11-18; one line '1기 (Fall 2025)' before, 2026-11-02).
       const panel = element('div');
-      panel.append(summary(c.term ? c.term + ' (' + c.number + '기)' : c.number + '기', term.length, true),  // term first, as on the tab
+      panel.append(summary(c.term ? c.term + ' (' + c.number + '기)' : c.number + '기', term.length, false),  // term first, as on the tab
         table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep));
       tabs.push({ id: tabId(c.number), title: c.term || c.number + '기', note: c.term ? c.number + '기' : '', panel });
     }

@@ -13,3 +13,4 @@
 - 그대로 둔 것: 히어로, 학기 카드(주제·회차 수·tldr), Who we learn with 의 `Meet the members →`(Schedule·Members 의 시트 링크와 같은 제목 줄 끝 링크), 학과 지도.
 - 휴대폰(375px)에서 굵은 학기명 `Summer 2026`(92px)이 막대 칸(77px)을 넘어 옆 칸에 겹쳐, 폰에서는 계절과 연도를 두 줄로 나눴다(`.study-cohort-label b { width: min-content }`). 네 칸 모두 두 줄이라 높이가 같다.
 - 첫 수정에서 `width: min-content` 가 상위의 `overflow-wrap: anywhere` 를 물려받아 글자가 한 자씩 끊겼다. 같은 줄에 `overflow-wrap: normal; word-break: normal` 을 더해 낱말 단위로만 줄을 바꾼다.
+- 기수 탭 표 위 줄의 `Show everyone` 을 뺐다. 바로 옆 `Full list` 탭과 같은 일이다. 학과·입학연도로 걸러 본 Full list 에는 그대로 둔다(교수 2026-11-18).

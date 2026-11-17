@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-18 | [AI Study Spring 2027 추가](2026-11-18-study-spring-2027.md) | Sangwoo Mo(sangwoomo) | AI Study | Spring 2027 AI Plays Games 를 다음 학기로, 이번 학기는 Fall 2026 유지 |
 | 2026-11-18 | [Courses 봄학기 과목 위로](2026-11-18-courses-spring-first.md) | Sangwoo Mo(sangwoomo) | `_data/teaching.yml` | Programming for AX 를 Data Engineering 위로 |
 | 2026-11-18 | [People 점검](2026-11-18-people-review.md) | Sangwoo Mo(sangwoomo) | `theme.css` | 휴대폰 Other Mentees 소개→첫 묶음 제목 32px, Lab Members 묶음 제목 대문자(During 묶음은 소문자 유지) |
 | 2026-11-18 | [Invited Talks 간격](2026-11-18-invited-talks-spacing.md) | Sangwoo Mo(sangwoomo) | `invited-talks.md`, `theme.css` | 소개 줄 삭제, 필터→연도 32px, 휴대폰 하위 탭→필터 32px, 세 탭 오른쪽 정보 15px 통일 |

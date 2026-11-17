@@ -22,7 +22,13 @@
     });
   });
   var first = tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0];  /* the tab the page marked as current */
-  function fromHash() { var want = location.hash.slice(1); show(tabs.filter(function (t) { return t.getAttribute('aria-controls') === want; })[0] || first, false); }
+  function fromHash() {
+    var want = location.hash.slice(1), target = want && document.getElementById(want);
+    var panel = target && target.closest('[role="tabpanel"]');  /* a place inside a term (#fall-2026-representative from Home) opens that term too (교수 2026-11-17) */
+    var id = panel ? panel.id : want;
+    show(tabs.filter(function (t) { return t.getAttribute('aria-controls') === id; })[0] || first, false);
+    if (panel && target !== panel) target.scrollIntoView();  /* the browser jumped while the panel was still hidden */
+  }
   fromHash();
   window.addEventListener('hashchange', fromHash);  /* a link to #fall-2025 on this page, or Back/Forward, switches the term too, not only a fresh load (2026-11-04 검수) */
 })();

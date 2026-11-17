@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-18 | [스터디 Members 시트 링크·학생 대표 링크](2026-11-18-study-pages-sheet-links.md) | Sangwoo Mo(sangwoomo) | `study-members.js`, `study.html`, `study-tabs.html` | Members sheet 를 표 위 묶음 줄 끝으로, 학생 대표 링크를 연락처 칸으로 |
 | 2026-11-17 | [Home 띠 링크 대비](2026-11-17-home-band-link-contrast.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `design-contract.json` | Paper Stella 띠 링크를 같은 레드를 밝게 한 색(대비 5.5:1)으로 |
 | 2026-11-18 | [AI Study 일정표 열 통일](2026-11-18-study-table-columns.md) | Sangwoo Mo(sangwoomo) | `study-schedule.html`, `course.css`, `STUDY.md` | 네 학기 같은 열, Summer 빈 Demo 열, Lab 제외 |
 | 2026-11-17 | [AI Study 주제 Title Case, 안내 줄 제거](2026-11-17-study-titles-notes.md) | Sangwoo Mo(sangwoomo) | `tools/ai_study_sync.py`, `_data/ai_study.yml`, `_data/ai_study_terms.yml` | 회차 주제 Title Case, Review 안내 줄 제거, Fall 2025 tldr 한 줄로 |

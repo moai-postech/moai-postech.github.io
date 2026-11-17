@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [Home 고해상도 스케치](2026-11-17-home-sketch-hires.md) | Sangwoo Mo(sangwoomo) | `index.md`, `assets/img/lab/` | 고해상도 원본 전체를 색연필 스케치로 바꿔 Home 사진 띠에 넣음 |
 | 2026-11-17 | [Home Paper Stella 세로 균형](2026-11-17-home-stella-valign.md) | Sangwoo Mo(sangwoomo) | `index.md` | 별 구름을 띠 세로 가운데로 내림 |
 | 2026-11-17 | [Funding 기관명 링크](2026-11-17-funding-sponsor-links.md) | Sangwoo Mo(sangwoomo) | `_data/institutions.yml`, `funding-list.html` | Funding 기관명에 공식 영문 사이트 링크 |
 | 2026-11-17 | [Teaching AI Study 탭 분리](2026-11-17-teaching-ai-study-tab.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `ai-study.md` | Teaching 에 AI Study 탭을 따로 두고, Talks Research 를 초록으로, Fall 2026 밖 스터디 PDF 를 하나로 이어 가운데 정렬 |

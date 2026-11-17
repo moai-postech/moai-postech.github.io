@@ -215,7 +215,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-heading:has(+ .study-term-tldr-lead) { margin-bottom: var(--space-2); }
 .study-term-tldr-lead { margin: 0 0 var(--space-5); color: var(--muted); font-size: var(--text-lead); line-height: 1.5; }  /* the same one-sentence summary as the Home card */
 .study-term-heading h2 { margin-bottom: 0; }
-.study-sheet-row { display: flex; justify-content: flex-end; margin-bottom: var(--space-2); }  /* Study sheet right above the schedule table it mirrors (교수 2026-11-17) */
+.study-sessions-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2) var(--space-5); flex-wrap: wrap; margin: var(--section-gap) 0 var(--space-4); }  /* "Sessions" over the schedule table, Study sheet at the end of the same line (교수 2026-11-17) */
+.study-sessions-head .group-heading { margin: 0; }
 .study-term-details { display: grid; gap: var(--space-5); margin-bottom: var(--space-6); }
 .study-term-details .course-facts { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: var(--space-5); padding: var(--space-5) 0; background: none; border-radius: 0; border-block: 1px solid var(--line); }
 .study-term-details .course-fact { display: block; padding: 0; }

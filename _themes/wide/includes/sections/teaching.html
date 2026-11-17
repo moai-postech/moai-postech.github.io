@@ -13,7 +13,7 @@
     <ul class="plain item-list">
       {% for c in rows %}<li>
         <span class="item-main"><strong>{% if c.url %}<a href="{{ c.url }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</strong></span>{% if c.code %}<span class="item-sub">{{ c.code }}</span>{% endif %}
-        {% comment %}학기는 오른쪽에 이어 붙이지 않고 과목 아래 칩으로 모두 보인다. 학기가 늘어도 줄바꿈으로 버틴다(교수 2026-11-17){% endcomment %}<span class="item-side term-chips">{% for t in c.terms %}{% if t.url %}<a href="{{ t.url }}">{{ t.name }}</a>{% else %}<span>{{ t.name }}</span>{% endif %}{% endfor %}</span>
+        {% comment %}학기는 오른쪽 끝에 최신부터 잇되, 계절 이름은 바뀔 때만 쓴다(Fall 2026 · 2025 · Spring 2024). 연도마다 그 학기 페이지로 잇고, 줄바꿈은 학기 사이에서만 한다(교수 2026-11-18, 칩에서 바꿈){% endcomment %}<span class="item-side term-run">{% assign prev = "" %}{% for t in c.terms %}{% assign parts = t.name | split: " " %}{% assign season = parts | first %}{% assign year = parts | last %}{% if season == prev %}{% assign label = year %}{% else %}{% assign label = t.name %}{% endif %}{% assign prev = season %}{% unless forloop.first %} · {% endunless %}<span class="term">{% if t.url %}<a href="{{ t.url }}">{{ label }}</a>{% else %}{{ label }}{% endif %}</span>{% endfor %}</span>
       </li>
       {% endfor %}{% if include.section.study %}{% for t in site.data.ai_study.terms %}<li>
         <span class="item-main"><strong><a href="teaching/ai-study/schedule/#{{ t.id }}">{{ t.theme }}</a></strong></span>

@@ -271,14 +271,10 @@ a.cs-title:hover { color: var(--accent); }
 .study-table .sc-papers { width: 16%; }
 .study-table .sc-demo { width: 15%; }
 .study-table .sc-who { width: 10%; }  /* two Korean names fit on one line; widths re-balanced on all four terms at 1200px (교수 2026-11-03) */
-.study-table .sc-mat { width: 10.5em; }  /* Slides and Lab get their own room instead of the leftover, which squeezed Lab against the table edge (교수 2026-11-03) */
+.study-table .sc-mat { width: 7em; }  /* one Slides slot ("PDF 1, 2") in every term; Lab was dropped and lecture terms share these widths (교수 2026-11-18) */
 .study-table .st-links { font-size: var(--text-meta); line-height: 1.5; }  /* two lines of papers are as tall as title + keywords */
 .study-table .st-material-group { vertical-align: top; }
 .study-table td { overflow-wrap: anywhere; }
-.study-table-lectures .sc-topic { width: 44%; }
-.study-table-lectures .sc-lec { width: 15%; }
-.study-table-lectures .sc-who { width: 15%; }
-.study-table-lectures .sc-mat { width: 10.5em; }
 .study-table .cs-slides { width: auto; white-space: nowrap; }
 .study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: var(--space-3); text-align: center; }  /* centred with the same inset on both sides, so the last column does not touch the edge */  /* the column takes its width from the colgroup, not the 1% of course tables */
 .study-table .st-material-group { display: inline-grid; justify-items: center; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }

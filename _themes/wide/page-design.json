@@ -129,9 +129,11 @@
     {
       "page": "invited-talks.html",
       "template": "연구실 · 발표 목록",
-      "decision": "기본 유지",
-      "reason": "제목16px·장소14px의 짧은 행. 두 줄로 접히는 모바일에서도 본문 위계를 유지.",
-      "adjustments": []
+      "decision": "페이지 조정",
+      "reason": "제목 16px·장소 15px. Teaching 세 탭(Courses·AI Study·Invited Talks)의 오른쪽 정보를 같은 15px로 맞춰 탭을 오가도 크기가 바뀌지 않는다. 두 줄로 접히는 모바일에서도 위계 유지.",
+      "adjustments": [
+        "teaching-term-navigation"
+      ]
     },
     {
       "page": "contact.html",
@@ -305,7 +307,8 @@
       "id": "teaching-term-navigation",
       "pages": [
         "courses.html",
-        "ai-study.html"
+        "ai-study.html",
+        "invited-talks.html"
       ],
       "roles": [
         "metadata"
@@ -314,8 +317,8 @@
       "style": {
         "fontSize": "var(--text-control)"
       },
-      "change": "학기 이동 링크 14→15px. 학수번호는 14px 유지.",
-      "reason": "학기는 단순한 날짜가 아니라 해당 강의로 이동하는 선택지다. 짧은 강의 목록의 오른쪽 여백에 맞춰 한 단계 크게 표시."
+      "change": "Teaching 세 탭의 오른쪽 정보(학기·발표 장소) 14→15px. 학수번호는 14px 유지.",
+      "reason": "학기와 발표 장소는 해당 강의·기관으로 이동하는 선택지이고, 형제 탭끼리 오른쪽 정보 크기가 같아야 탭을 오갈 때 흔들리지 않는다(교수 2026-11-18)."
     }
   ]
 }

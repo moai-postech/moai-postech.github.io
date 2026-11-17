@@ -560,7 +560,7 @@ a.person-name:hover { color: var(--accent); }
 .page-faculty .profile-head .small { font-size: var(--text-body); }
 .page-other-mentees .mentee-aff { font-size: var(--text-body); }
 .page-overview .topic-card p { font-size: var(--text-body); }
-.page-courses .item-side, .page-ai-study .item-side { font-size: var(--text-control); }
+.page-courses .item-side, .page-ai-study .item-side, .page-invited-talks .item-side { font-size: var(--text-control); }  /* Teaching's three tabs share one 15px size on the right (교수 2026-11-18) */
 
 {% comment %}Course pages: their own folder so the template stays in one place{% endcomment %}
 {% include course/course.css %}

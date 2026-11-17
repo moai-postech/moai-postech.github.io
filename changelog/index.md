@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [15강 최신판](2026-11-17-lecture-fifteen.md) | Sangwoo Mo(sangwoomo) | Data Engineering 15강 HTML·PDF | 11-14 146장 판 사이트 반영 |
 | 2026-11-17 | [14강 최신 HTML](2026-11-17-lecture-fourteen-html.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14강 HTML | 11-14 최신판 HTML 사이트 반영 |
 | 2026-11-14 | [주간 홈페이지 검수](2026-11-14-site-weekly.md) | Sangwoo Mo(sangwoomo) | site-weekly, seminar-sync, ai-study-sync | 매일 도는 동기화 두 개를 월요일 한 번의 검수로 합침 |
 | 2026-11-14 | [pre-push 거부 메시지](2026-11-14-prepush-empty-refs.md) | Sangwoo Mo(sangwoomo) | .githooks/pre-push | 원격이 앞설 때 훅이 먼저 죽지 않고 git 의 거부 이유가 보이게 |

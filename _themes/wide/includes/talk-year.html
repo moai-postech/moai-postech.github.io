@@ -1,6 +1,6 @@
     <h3 class="year-head" data-year-head>{{ include.year.year }}</h3>
     <ul class="plain item-list">
-      {% for t in include.year.talks %}<li data-kind="{{ t.kind | default: 'research' }}">
+      {% for t in include.year.talks %}{% assign tk = t.kind | default: 'research' %}<li data-kind="{{ tk }}" class="{% if tk == 'education' %}tone-logistics{% else %}tone-p2{% endif %}">
         <span class="item-main"><strong>{% if t.url %}<a href="{{ t.url }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}</strong></span>
         <span class="item-side">{{ t.venues | join: " · " }}</span>
       </li>

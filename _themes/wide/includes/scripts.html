@@ -26,11 +26,11 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
   var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
   document.querySelectorAll('tr[data-date]').forEach(function (r) { if (r.getAttribute('data-date') >= today) r.classList.add('is-upcoming'); });
 })();
-// Talks: Research | Education buttons show list items by data-kind; a year heading hides when nothing under it is shown.
+// Talks: All | Research | Education buttons show list items by data-kind; a year heading hides when nothing under it is shown.
 document.querySelectorAll('[data-talk-filter]').forEach(function (box) {
   var btns = Array.prototype.slice.call(box.querySelectorAll('[data-show]'));
   function apply(kind) {
-    box.querySelectorAll('li[data-kind]').forEach(function (li) { li.hidden = li.getAttribute('data-kind') !== kind; });
+    box.querySelectorAll('li[data-kind]').forEach(function (li) { li.hidden = kind !== 'all' && li.getAttribute('data-kind') !== kind; });
     box.querySelectorAll('[data-year-head]').forEach(function (h) {
       var list = h.nextElementSibling, any = list && list.querySelector('li[data-kind]:not([hidden])');
       h.hidden = !any; if (list) list.hidden = !any;
@@ -39,7 +39,7 @@ document.querySelectorAll('[data-talk-filter]').forEach(function (box) {
     btns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-show') === kind ? 'true' : 'false'); });
   }
   btns.forEach(function (b) { b.addEventListener('click', function () { apply(b.getAttribute('data-show')); }); });
-  apply('research');
+  apply('all');
 });
 // Filters for [data-filter]: year tabs ([data-year] buttons) pick one year, buttons with data-show pick rows by data-kind within it.
 // The year rows are only for pages without scripts; the tabs name the year, so they hide here. The kind counts follow the chosen year.

@@ -278,9 +278,10 @@ a.cs-title:hover { color: var(--accent); }
 .study-table-lectures .sc-who { width: 15%; }
 .study-table-lectures .sc-mat { width: 10.5em; }
 .study-table .cs-slides { width: auto; white-space: nowrap; }
-.study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: var(--space-3); text-align: left; }  /* left-aligned, PDF 1 and PDF 1, 2 start on one line (교수 2026-11-17); was centred with the same inset on both sides, so the last column does not touch the edge */  /* the column takes its width from the colgroup, not the 1% of course tables */
-.study-table .st-material-group { display: inline-grid; justify-items: start; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
+.study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: var(--space-3); text-align: center; }  /* centred with the same inset on both sides, so the last column does not touch the edge */  /* the column takes its width from the colgroup, not the 1% of course tables */
+.study-table .st-material-group { display: inline-grid; justify-items: center; white-space: nowrap; color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-table .st-material-group + .st-material-group { margin-left: var(--space-5); }  /* Slides and Lab read as two columns, not one run of links (교수 2026-11-03) */
+.study-table .st-material-group.is-numbered { justify-items: start; }  /* numbered terms (PDF 1, PDF 1, 2) start on one left line inside the slot; plain PDF stays centred (교수 2026-11-17) */
 .study-table .st-material-group > * { grid-area: 1 / 1; }  /* the hidden widest entry sizes the slot, so a group starts at the same place in every row */
 .study-table th .st-material-head { color: inherit; font: inherit; }  /* heading labels (Slides, Lab) take the th style; the hidden entry under each sizes the slot to match the rows */
 .study-table th .st-material-head .cs-slot { text-transform: none; letter-spacing: normal; }

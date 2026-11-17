@@ -8,12 +8,13 @@
     teaching/ai-study/<학기>/<회차>-<주제>-<종류>.pdf 에 두고 사이트 파일을 가리킨다(Drive 대신, 교수 2026-10-26). 이미 받은 것은 건너뛴다.
     Drive 의 ipynb 노트북도 같은 자리에 .ipynb 로 받는다(교수 2026-10-30: 사이트의 파일은 전부 저장소 사본, 예외는 학생이 고치는 project sheet). Colab 주소는 파일이 아니라 그대로 둔다. 받은 사본과 원본 링크의 짝은 tools/drive_sources.json.
   - Summer 2026 은 References의 MIT 원 강의를 Lec으로, 학생의 추가 발표자료·필기만 Materials로 쓴다(교수 2026-10-28).
+  - Fall 2026 을 뺀 학기는 한 회차의 Slides·Notes PDF 가 둘 이상이면 순서대로 이어 <회차>-<주제>-all.pdf 하나로 만들고 그것만 링크한다(교수 2026-11-17: 지난 학기는 PDF 하나씩 가운데 정렬). 나눠 받은 원본도 저장소에 둔다(다시 합칠 때 쓴다).
   - _data/ai_study.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
 
   python3 tools/ai_study_sync.py               # 로컬에서 한 번
   python3 tools/ai_study_sync.py --changelog   # GitHub Actions(site-weekly, 월 06:00 KST): 바뀐 것이 있으면 changelog 도 쓴다
 
-필요한 것: Python 3.9+ (표준 라이브러리만).
+필요한 것: Python 3.9+, PDF 를 합칠 때만 pypdf.
 """
 import argparse
 import datetime
@@ -221,6 +222,36 @@ def localize_all(terms):
     return sorted(set(src) - before)
 
 
+KEEP_SPLIT_TERMS = {"fall-2026"}  # 회차의 PDF 를 나눈 채(PDF 1, 2) 두는 학기. 나머지는 하나로 잇는다(교수 2026-11-17)
+
+
+def merge_pdfs(terms):
+    """KEEP_SPLIT_TERMS 밖의 학기에서 한 회차의 Slides·Notes PDF 가 둘 이상이면 하나로 잇고 링크를 그 파일 하나로 바꾼다."""
+    for t in terms:
+        if t["id"] in KEEP_SPLIT_TERMS:
+            continue
+        for s in t["sessions"]:
+            mats = s.get("materials", [])
+            pdfs = [m for m in mats if m["text"].startswith(("Slides", "Notes")) and m.get("url", "").endswith(".pdf") and os.path.exists(os.path.join(drive_pdf.ROOT, m["url"]))]
+            if len(pdfs) < 2:
+                continue
+            rel = f"teaching/ai-study/{t['id']}/{s['n'].zfill(2)}-{slug(s['title'])}-all.pdf"
+            full = os.path.join(drive_pdf.ROOT, rel)
+            parts = [os.path.join(drive_pdf.ROOT, m["url"]) for m in pdfs]
+            if not os.path.exists(full) or os.path.getmtime(full) < max(os.path.getmtime(x) for x in parts):
+                from pypdf import PdfWriter  # 합칠 때만 필요하다
+                w = PdfWriter()
+                for x in parts:
+                    w.append(x)
+                w.add_metadata({"/Title": s["title"]})
+                with open(full, "wb") as f:
+                    w.write(f)
+            first = mats.index(pdfs[0])
+            kept = [m for m in mats if m not in pdfs]
+            kept.insert(first, {"text": "Notes" if all(m["text"].startswith("Notes") for m in pdfs) else "Slides", "url": rel})
+            s["materials"] = kept
+
+
 def q(s):
     return json.dumps(s, ensure_ascii=False)  # JSON 문자열은 YAML 의 큰따옴표 문자열과 같다
 
@@ -298,6 +329,7 @@ def main():
     if not terms:
         sys.exit("시트에서 학기를 찾지 못했다(시트 모양이 바뀌었나?)")
     new_files = localize_all(terms)
+    merge_pdfs(terms)
     text = dump(terms)
     old = open(OUT, encoding="utf-8").read() if os.path.exists(OUT) else ""
     if text == old:

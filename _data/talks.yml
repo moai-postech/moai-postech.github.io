@@ -32,7 +32,7 @@
     - title: "Foundation Models for Vision, Language, and Robotics"
       kind: education
       url: "assets/talks/2025-foundation-models-for-vision-language-and-robotics.pdf"
-      venues: [{name: "KSS Tutorial", url: "https://kss.or.kr/board/schedule/article/265740"}]
+      venues: [{name: "KSS Tutorial", url: "https://kss.or.kr/"}]
     - title: "Revisiting the 3Rs in Computer Vision"
       url: "assets/talks/2025-revisiting-the-3rs-in-computer-vision.pdf"
       venues: ["Korea univ.", "Kyunghee univ.", "POSTECH MINDS"]

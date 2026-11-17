@@ -487,8 +487,8 @@ a.person-name:hover { color: var(--accent); }
   .section-body.has-mini { display: block; min-height: 0; padding: var(--space-4); }  /* phones: text, then the preview under it */
   .mini-text { max-width: none; }
   .mini-preview { position: relative; inset: auto; aspect-ratio: 16 / 10; margin-top: var(--space-4); }
-  .mini-preview iframe { left: 0; width: 100%; }
-  .mini-preview.has-poster::before { left: 50%; top: 50%; }  /* the phone frame centres the map */
+  .mini-preview iframe { left: 0; width: 100%; top: 8%; height: 84%; }  /* the map fits the whole cloud to its frame height and ignores valign in a frame this narrow, so a shorter centred frame leaves equal room above and below (교수 2026-11-17) */
+  .mini-preview.has-poster::before { left: 50%; top: 50%; height: 78%; }  /* the phone frame centres the map; the poster cloud matches the live cloud's size in the shorter frame */
   :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); --page-start: var(--space-4); --subnav-start: var(--space-4); --card-padding: var(--space-4); --row-gap: var(--space-2); }
   .site-head { display: block; padding: var(--space-4) 0 var(--space-2); }
   .head-id { margin-bottom: var(--space-2); }

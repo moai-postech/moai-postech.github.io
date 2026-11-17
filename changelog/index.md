@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [Home Paper Stella 모바일 세로 균형](2026-11-17-home-stella-mobile.md) | Sangwoo Mo(sangwoomo) | `_themes/wide/includes/theme.css` | 휴대폰에서 미리보기 창을 줄여 구름 위아래 여백을 맞춤 |
 | 2026-11-17 | [Home 고해상도 스케치](2026-11-17-home-sketch-hires.md) | Sangwoo Mo(sangwoomo) | `index.md`, `assets/img/lab/` | 고해상도 원본 전체를 색연필 스케치로 바꿔 Home 사진 띠에 넣음 |
 | 2026-11-17 | [Home Paper Stella 세로 균형](2026-11-17-home-stella-valign.md) | Sangwoo Mo(sangwoomo) | `index.md` | 별 구름을 띠 세로 가운데로 내림 |
 | 2026-11-17 | [Funding 기관명 링크](2026-11-17-funding-sponsor-links.md) | Sangwoo Mo(sangwoomo) | `_data/institutions.yml`, `funding-list.html` | Funding 기관명에 공식 영문 사이트 링크 |

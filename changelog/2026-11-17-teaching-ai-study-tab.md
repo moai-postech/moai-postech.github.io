@@ -7,3 +7,8 @@
 - 교수: 스터디 일정의 Slides 칸을 하나여도 `PDF 1` 로 쓰고(여러 개면 `PDF 1, 2` 그대로) 전부 왼쪽 정렬. 머리글(SLIDES, LAB)도 같이 왼쪽 정렬된다. Lab 칸은 요청 범위 밖이라 하나면 `Lab` 그대로 둠
 - AGENTS.md(페이지 목록, Talks 색, 화살표 규칙의 링크 위치)와 `_themes/wide/includes/course/STUDY.md` 의 PDF 표기 규칙을 고침
 - POSTECH 요구사항: 영향 없음(`_config.yml` 은 Teaching 메뉴 하위 탭만 더함. `postech`·`footer` 값은 그대로)
+- 교수 후속: 모든 세션이 PDF 하나뿐인 학기는 번호 없이 `PDF` 로 되돌림. 한 세션이라도 둘 이상인 학기만 하나짜리도 `PDF 1` 로 쓴다. Lab 도 같은 규칙(지금은 세션마다 최대 하나라 늘 `Lab`)
+- 교수 후속: 번호 없는 `PDF` 학기는 예전처럼 가운데 정렬, 번호 붙는 학기만 왼쪽 정렬(`is-numbered` 클래스)
+- 교수 후속: Fall 2026 을 뺀 학기는 회차의 PDF 여럿을 하나로 이어 올려 `PDF` 하나를 가운데 정렬로 둔다("이때까지만 해도 1개인 게 2개인 것보다 많았다"). `tools/ai_study_sync.py` 에 `merge_pdfs`(pypdf, CI 에 이미 설치) 추가. 합친 파일: `spring-2026/03-sft-all.pdf`(20+34쪽), `05-rlaif-rubric-all.pdf`(22+22), `08-rag-all.pdf`(40+40), `summer-2026/06-generative-models-vae-and-gan-all.pdf`(82+77). 나눠 받은 원본은 다시 합칠 때 쓰므로 남김. Fall 2026 은 `PDF 1, 2` 왼쪽 정렬 그대로
+- 같은 sync 실행에서 시트에 새로 올라온 Fall 2026 8회차 슬라이드(`fall-2026/08-3d-reconstruction-slides.pdf`)도 함께 받음
+- 교수 후속: 탭으로 나눴으니 Courses 의 "Regular courses" 제목과 PLMS 소개 줄, AI Study 의 "Undergraduate AI Study" 제목과 소개 줄을 뺌(Talks 처럼 하위 탭 이름이 제목 역할). 스터디 학기 줄은 스터디 페이지 학기 탭으로 그대로 이어진다

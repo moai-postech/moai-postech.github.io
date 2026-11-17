@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="36 36 488 356" fill="none" stroke-linecap="round" stroke-linejoin="round" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" fill="none" stroke-linecap="round" stroke-linejoin="round" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
   <!-- links: modalities flow into the orchestrator, which drives agents, robots, factories -->
   <g stroke="#BAC4CF" stroke-width="4">
     <path d="M128 80C200 80 200 200 240 200"/>
@@ -34,8 +34,8 @@
     <rect x="432" y="280" width="88" height="80" rx="14" fill="#fff"/>
     <path d="M448 344v-24l14 8v-8l14 8v-8l14 8v-20h12v36z" fill="#ECEFF3" stroke-width="4"/>
   </g>
-  <g font-size="23" fill="#596574" stroke="none" text-anchor="middle">
-    <text x="84" y="145">Vision</text><text x="84" y="265">Language</text><text x="84" y="385">Sensors</text>
-    <text x="476" y="145">Agents</text><text x="476" y="265">Robots</text><text x="476" y="385">Factories</text>
+  <g font-size="13" fill="#596574" stroke="none" text-anchor="middle">
+    <text x="84" y="138">Vision</text><text x="84" y="258">Language</text><text x="84" y="378">Sensors</text>
+    <text x="476" y="138">Agents</text><text x="476" y="258">Robots</text><text x="476" y="378">Factories</text>
   </g>
 </svg>

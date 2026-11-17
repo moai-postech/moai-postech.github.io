@@ -10,7 +10,7 @@ sections:
     heading: "**M**ultimodal **O**rchestration of <br>**A**rtificial **I**ntelligence Lab"
     body: |
       We orchestrate foundation models across vision, language, and physical sensors to drive AI agents, robots, and automated factories.
-    image: assets/img/hero.svg?v=20261117
+    image: assets/img/hero.svg
     image_alt: "Vision, language, and sensor inputs flow into MOAI, which drives agents, robots, and manufacturing."
   # 히어로 아래 랩 단체 스케치(교수 2026-10-27, 스케치·전신·격자 전체 폭 2026-11-17). 그림은 assets/img/lab/, 배치는 theme.css 의 .section-photo
   - class: section-photo

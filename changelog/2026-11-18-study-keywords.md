@@ -20,3 +20,9 @@
 - 회차 주제: `Multimodal LLM`(단수)과 `DL Theory`(약어)는 고치면 자료 파일 이름(slug)이 바뀌어 이미 받은 PDF 경로가 달라진다. 사이트 표기는 Title Case 로 이미 맞다.
 - `chain-of-thought prompting`, `retrieval-augmented generation` 처럼 약어 주제를 풀어 쓴 키워드는 처음 보는 학생에게 필요해 남겼다.
 - 시트 4행의 한국어 안내(review!)는 사이트에 실리지 않는다.
+
+## 되돌림 (같은 날)
+- 교수: 원래 의도는 더 일반적인 목표인데, `promptable segmentation` 처럼 고친 것은 목표로 두기에 너무 지엽적이다. VLA 에 `flow matching` 이 들어간 것도 그렇다.
+- 위 20칸을 시트 원래 표현으로 모두 되돌렸다(백업 `schedule-AF-before.json` 에서 그대로 복사).
+- 원래부터 있던 VLA(시트 14행)의 `flow matching` 을 뺐다: `vision-language-action, action tokenization`.
+- 교훈: Learning Goals 는 그 회차의 큰 개념을 적는 칸이다. 세부 기법이나 논문 고유의 용어로 좁히지 않는다.

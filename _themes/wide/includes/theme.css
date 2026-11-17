@@ -501,6 +501,7 @@ a.person-name:hover { color: var(--accent); }
   .subnav a { padding-inline: var(--space-3); }  /* People's three tabs stay on one line on a phone instead of leaving Other Mentees alone below */
   .filter-bar { column-gap: var(--space-3); }  /* Seminar: All, Lab, Invited and Full schedule share one line on a phone */
   .page-invited-talks .section-body > .filter-bar:first-child { margin-top: var(--space-4); }  /* Invited Talks: with no intro line the filter would sit 16px under the sub-tabs and read as a second tab row; 32px keeps them apart (교수 2026-11-18) */
+  .page-other-mentees .page-intro + .content-section { padding-top: var(--space-6); }  /* Other Mentees: the first group heading sat 16px under the intro and 16px above its list; 32px ties it to its own list (교수 2026-11-18) */
   .person-photo { max-width: 120px; }
   .mentee-aff { display: block; margin-left: 0; }  /* phones: name, then affiliation, then papers */
   .mentee-list li { padding: var(--item-gap) 0; }  /* three lines per person, so the wider multi-line gap */

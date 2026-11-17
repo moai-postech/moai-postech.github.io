@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [AI Study 5회 SAM 데모 정리](2026-11-17-study-sam-demo.md) | Sangwoo Mo(sangwoomo) | `_data/ai_study.yml` | SAM 과 SAM2 데모가 겹쳐 열리는 SAM2 하나만 남김 |
 | 2026-11-17 | [Winter School 자료 홈페이지로](2026-11-17-winter-school-slides.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml`, `assets/talks/` | 지워진 Drive 폴더 링크를 네 부를 이은 PDF 로 바꿈 |
 | 2026-11-17 | [Home 띠 링크 강조색](2026-11-17-home-band-link-accent.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `design-contract.json`, `AGENTS.md` | Paper Stella 띠 링크를 연한 강조색에서 강조색으로 |
 | 2026-11-17 | [Foundation Models 셋째 단계 Unified Multimodal Models](2026-11-17-study-unified-models.md) | Sangwoo Mo(sangwoomo) | `_data/ai_study_terms.yml` | Perception, Generation 다음 단계 이름을 Multimodal LLMs 에서 Unified Multimodal Models 로 |

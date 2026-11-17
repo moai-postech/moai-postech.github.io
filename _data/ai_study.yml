@@ -417,7 +417,6 @@ terms:
           - { text: "SAM", url: "https://arxiv.org/abs/2304.02643" }
         demos:
           - { text: "GDINO", url: "https://huggingface.co/spaces/merve/Grounding_DINO_demo" }
-          - { text: "SAM", url: "https://segment-anything.com/demo" }
           - { text: "SAM2", url: "https://sam2.metademolab.com/demo" }
         materials:
           - { text: "Slides", url: "teaching/ai-study/fall-2025/05-visual-grounding-slides.pdf" }

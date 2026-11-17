@@ -1,14 +1,6 @@
-# Teaching 의 Courses(POSTECH 정규 강의만). 위가 최신이다. code 는 학수번호(크로스리스팅 포함, 과목 이름 아래 회색 줄).
+# Teaching 의 Courses(POSTECH 정규 강의만). 위가 최신이다(과목의 가장 최근 학기 기준, 그래서 Spring 2027 이 있는 Programming for AX 가 위, 교수 2026-11-18). code 는 학수번호(크로스리스팅 포함, 과목 이름 아래 회색 줄).
 # terms 는 개설 학기(최신이 앞)와 그 학기의 강의 페이지(url, teaching/<id>/).
 # url 은 학기 없는 고정 주소이며 terms 의 첫째(최신 학기)로 연결된다. 과목 이름과 Other Courses 는 이 주소를 공유한다(2026-11-03 교수).
-- title: "Data Engineering"
-  url: "teaching/data-engineering/"
-  code: "IMEN891K / IDSC501 / AXGS501"
-  terms:
-    - name: "Fall 2026"
-      url: "teaching/26f-data-engineering/"
-    - name: "Fall 2025"
-      url: "teaching/25f-data-engineering/"
 - title: "Programming for AX"
   url: "teaching/programming-for-ax/"
   code: "IMEN574 / IDSC574"
@@ -17,3 +9,11 @@
       url: "teaching/27s-programming-for-ax/"
     - name: "Spring 2026"
       url: "teaching/26s-programming-for-data-science/"
+- title: "Data Engineering"
+  url: "teaching/data-engineering/"
+  code: "IMEN891K / IDSC501 / AXGS501"
+  terms:
+    - name: "Fall 2026"
+      url: "teaching/26f-data-engineering/"
+    - name: "Fall 2025"
+      url: "teaching/25f-data-engineering/"

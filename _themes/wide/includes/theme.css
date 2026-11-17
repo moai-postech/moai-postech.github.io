@@ -349,6 +349,8 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .row h3 { margin: 0 0 2px; font-size: var(--text-body); line-height: 1.65; }
 .row p { margin: 0; }
 
+/* Talks filter: list items and year heads use display:flex/block, so the hidden attribute needs an explicit rule */
+[data-talk-filter] [hidden] { display: none; }
 /* Seminar: one list, newest first, filtered by kind. One row per talk: date, title (takes all spare width), affiliation, speaker at the far right */
 .filter-bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-5); margin-bottom: var(--space-5); }  /* no full-width rule: the only line on a page is the one under the menu */
 .filter-btn, .filter-link, .course-sheet, .study-sheet { font-size: var(--text-control); font-weight: var(--weight-emphasis); }

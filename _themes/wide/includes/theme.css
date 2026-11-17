@@ -270,7 +270,7 @@ a.mentee-name:hover { color: var(--accent); }
 .funding li { display: grid; grid-template-columns: 12em minmax(0, 1fr) auto; align-items: baseline; gap: var(--space-5); padding: var(--row-gap) 0; }  /* one project per line: sponsor column, title, years at the right end; titles line up across groups */
 .funding strong { font-weight: var(--weight-emphasis); }
 .funding time { white-space: nowrap; color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
-.funding abbr { text-decoration: none; cursor: help; }  /* the full agency name shows on hover; no dotted underline, the site uses none */
+.funding abbr { text-decoration: none; cursor: inherit; }  /* the full agency name shows on hover; no dotted underline, the site uses none. cursor inherits the link pointer, not the help "?" (교수 2026-11-17) */
 
 /* Research: three area cards across, then each area as rows (topic, summary and papers under it) */
 .research-overview .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); }

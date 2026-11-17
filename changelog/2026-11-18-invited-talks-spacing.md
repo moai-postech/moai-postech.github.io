@@ -20,3 +20,10 @@ POSTECH 요구사항: 영향 없음
 
 ## 남은 것
 없음
+
+## Teaching 세 탭 오른쪽 정보 15px 통일
+교수: 세 탭이 디자인적으로 완벽한 방향으로 알아서. 세 탭을 PC·휴대폰에서 실측해 보니 시작 높이·줄 간격·정렬은 맞고, 오른쪽 정보만 Courses·AI Study 학기 15px, Invited Talks 장소 14px 로 달랐다.
+
+반영: `theme.css` 의 학기 15px 규칙에 `.page-invited-talks .item-side` 를 더했다. `page-design.json` 의 `teaching-term-navigation` 조정에 `invited-talks.html` 을 넣고 Invited Talks 검토를 "페이지 조정"으로, `page-design.md` 재생성. 820px 태블릿에서 제목과 장소 사이 가장 좁은 줄 147px 로 부딪힘 없음.
+
+기각: 장소를 14px 로 두기(형제 탭을 오가면 오른쪽 글자 크기가 바뀌어 보인다. 장소에도 기관 링크가 걸려 있다).

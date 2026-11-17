@@ -5,7 +5,12 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | [Home Paper Stella 세로 균형](2026-11-17-home-stella-valign.md) | Sangwoo Mo(sangwoomo) | `index.md` | 별 구름을 띠 세로 가운데로 내림 |
+<<<<<<< HEAD
 | 2026-11-17 | [Teaching AI Study 탭 분리](2026-11-17-teaching-ai-study-tab.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `ai-study.md` | Teaching 에 AI Study 탭을 따로 두고, Talks Research 를 초록으로, Fall 2026 밖 스터디 PDF 를 하나로 이어 가운데 정렬 |
+=======
+| 2026-11-17 | [Funding 기관명 링크](2026-11-17-funding-sponsor-links.md) | Sangwoo Mo(sangwoomo) | `_data/institutions.yml`, `funding-list.html` | Funding 기관명에 공식 영문 사이트 링크 |
+>>>>>>> Funding: link sponsor names to their official English sites
 | 2026-11-17 | [꼬리말 All rights reserved](2026-11-17-footer-rights.md) | Sangwoo Mo(sangwoomo) | `_themes/wide/includes/footer.html` | 저작권 줄 끝에 All rights reserved 를 붙임 |
 | 2026-11-17 | [14~17강 PDF 새로 굽기](2026-11-17-lectures-14-17-pdf.md) | Sangwoo Mo(sangwoomo) | Data Engineering 14~17강 PDF | 브라우저 렌더 PDF로 교체 |
 | 2026-11-17 | [16강 반복 정리](2026-11-17-lecture-sixteen-dedup.md) | Sangwoo Mo(sangwoomo) | Data Engineering 16강 HTML·PDF | 59장 판 사이트 반영 |

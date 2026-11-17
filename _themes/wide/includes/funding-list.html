@@ -1,4 +1,4 @@
     <ul class="plain funding">
-      {% for f in include.projects %}<li><strong>{% if f.sponsor_full %}<abbr title="{{ f.sponsor_full }}">{{ f.sponsor }}</abbr>{% else %}{{ f.sponsor }}{% endif %}</strong><span lang="ko">{{ f.title }}</span><time>{{ f.years }}</time></li>
+      {% for f in include.projects %}<li><strong>{% assign sp_url = site.data.institutions[f.sponsor] %}{% if sp_url %}<a href="{{ sp_url }}">{% endif %}{% if f.sponsor_full %}<abbr title="{{ f.sponsor_full }}">{{ f.sponsor }}</abbr>{% else %}{{ f.sponsor }}{% endif %}{% if sp_url %}</a>{% endif %}</strong><span lang="ko">{{ f.title }}</span><time>{{ f.years }}</time></li>
       {% endfor %}
     </ul>

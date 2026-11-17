@@ -12,3 +12,4 @@
 - 교수 후속: Fall 2026 을 뺀 학기는 회차의 PDF 여럿을 하나로 이어 올려 `PDF` 하나를 가운데 정렬로 둔다("이때까지만 해도 1개인 게 2개인 것보다 많았다"). `tools/ai_study_sync.py` 에 `merge_pdfs`(pypdf, CI 에 이미 설치) 추가. 합친 파일: `spring-2026/03-sft-all.pdf`(20+34쪽), `05-rlaif-rubric-all.pdf`(22+22), `08-rag-all.pdf`(40+40), `summer-2026/06-generative-models-vae-and-gan-all.pdf`(82+77). 나눠 받은 원본은 다시 합칠 때 쓰므로 남김. Fall 2026 은 `PDF 1, 2` 왼쪽 정렬 그대로
 - 같은 sync 실행에서 시트에 새로 올라온 Fall 2026 8회차 슬라이드(`fall-2026/08-3d-reconstruction-slides.pdf`)도 함께 받음
 - 교수 후속: 탭으로 나눴으니 Courses 의 "Regular courses" 제목과 PLMS 소개 줄, AI Study 의 "Undergraduate AI Study" 제목과 소개 줄을 뺌(Talks 처럼 하위 탭 이름이 제목 역할). 스터디 학기 줄은 스터디 페이지 학기 탭으로 그대로 이어진다
+- 교수 후속: Talks 줄 색을 없애고 세로 간격을 줄임. 줄 바탕·Seminar 높이 규칙(`theme.css` 의 `[data-talk-filter] .item-list li[data-kind]`)과 버튼 색 점을 빼서 Courses 같은 일반 목록 간격(줄 사이 4px)으로 돌림. 필터 버튼은 그대로

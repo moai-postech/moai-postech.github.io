@@ -15,3 +15,4 @@
 - 교수 후속: Talks 줄 색을 없애고 세로 간격을 줄임. 줄 바탕·Seminar 높이 규칙(`theme.css` 의 `[data-talk-filter] .item-list li[data-kind]`)과 버튼 색 점을 빼서 Courses 같은 일반 목록 간격(줄 사이 4px)으로 돌림. 필터 버튼은 그대로
 - 교수 후속(VGGT 누락): Fall 2026 8회차 첫 슬라이드(DUSt3R)가 시트에 하이퍼링크 없이 주소 글자로만 있어 동기화가 놓쳤다. `tools/ai_study_sync.py` 의 표 파서가 링크 없는 칸의 `https://` 주소 글자도 링크로 읽게 고침. 8회차는 `PDF 1`(DUSt3R, 25쪽), `PDF 2`(VGGT, 26쪽). 앞서 `08-3d-reconstruction-slides.pdf` 이름으로 받은 VGGT 는 `-slides-2.pdf` 로 옮겨 받음
 - 지난 학기 슬라이드 하나짜리 회차 점검: 시트 원본의 Slide 칸부터 오른쪽 칸 링크를 회차마다 대조함. 주소 글자로만 적힌 칸은 위 8회차 하나뿐이고, 나머지 하나짜리 회차(Fall 2025 전부, Spring 2026 2·4·6·7·9, Summer 2026 1·8·9)는 시트에도 자료가 하나뿐이다. Spring 2026 8회차의 그림 두 장(png)은 규칙대로 뺌
+- 교수 후속: 두 탭이 비어 보여 소개 문장을 되돌림(절 제목은 빼 둔 채). Courses 는 PLMS 링크 없이 "Courses taught at POSTECH during the regular semesters.", AI Study 는 링크를 weekly 까지 넓혀 "A [weekly AI study group](teaching/ai-study/) with POSTECH undergraduates." 세 탭 모두 본문 첫 요소가 같은 높이(하위 탭 아래 48px)에서 시작함을 확인

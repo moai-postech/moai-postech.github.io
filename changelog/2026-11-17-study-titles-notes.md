@@ -15,3 +15,9 @@
 
 ## 기각한 안과 이유
 - 시트의 주제 칸을 직접 고치기: 학생이 함께 쓰는 원본이고, 사이트 표기 규칙은 이미 스크립트에 모여 있다.
+
+## 이어서: 전 탭 검토 (2026-11-18)
+- 요청: 교수가 다른 탭도 다 검토해 달라고 했다. Schedule 네 학기, Home, Members 를 1440px 실제 사이트에서 봤다.
+- 논문·데모 링크 이름도 회차 주제와 같은 Title Case 로 맞췄다(`why decoder-only?` → `Why Decoder-Only?`, `lost in the middle` → `Lost in the Middle` 등 17개). `π0` 처럼 ASCII 가 아닌 글자로 시작하는 이름과 이미 대문자가 섞인 약어는 그대로 둔다. URL 과 받은 파일 이름은 바뀌지 않았다.
+- Fall 2026 둘째 단계 설명 `world models that bring perception and planning` 은 문장이 끊겨 `link perception to planning` 으로 고쳤다.
+- 그대로 둔 것: Summer 2026 셋째 단계가 선택 회차 10회를 포함하는 것(단계 이름이 `Generalization and Theory`), Home 학과 칸이 작으면 영문 괄호를 숨기는 것(기존 설계), Members 명단의 한글 학과 약칭(교수 2026-11-02 결정).

@@ -17,3 +17,4 @@
 - AGENTS.md 의 Talks 수록 기준을 두 탭 기준으로 고침
 - 2025 KSS Winter School("Foundation Models for Vision and Language (with Code)")을 Education 탭에 다시 넣음(교수: Education 탭이 생겨 튜토리얼끼리 나란히 둬도 됨). 2026-10-21 에 뺀 항목을 git 이력(3579c2bb 이전)에서 그대로 복원. 자료가 Drive 폴더(파일 여러 개)라 `assets/talks/` 사본으로 바꾸지 않고 Drive 링크로 둠
 - Seminar 와 같게: All 버튼을 맨 앞에 두고 기본 선택. Research 세이지(tone-p2), Education 버터(tone-logistics) 줄 색과 버튼 색 점(교수)
+- 줄 높이를 Seminar 와 같게(위아래 12px, 줄 사이 4px). 연도 첫 줄과 끝 줄이 일반 목록의 first/last-child 여백 0 을 받아 짧던 것을 고침. 색은 Research 하늘(tone-p1), Education 회색(tone-guest)으로 바꿔 연구 발표가 먼저 읽히게 함(교수)

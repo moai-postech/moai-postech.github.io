@@ -5,6 +5,7 @@
     <section class="content-section">
     {% if include.section.title %}<h2{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>{{ include.section.title }}</h2>{% endif %}
     <div class="section-body" data-talk-filter>
+    {% if include.section.intro %}<p class="list-intro">{% include inline.html text=include.section.intro %}</p>{% endif %}
     <div class="filter-bar" role="group" aria-label="Show talks">
       <button type="button" class="filter-btn" data-show="all" aria-pressed="true">All <span>{{ n_all }}</span></button>
       <button type="button" class="filter-btn" data-show="research" aria-pressed="false">Research <span>{{ n_all | minus: n_edu }}</span></button>

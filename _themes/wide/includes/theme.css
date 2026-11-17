@@ -200,10 +200,10 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 
 /* Home hero: a full-width band, statement on the left, the orchestration picture on the right */
 .hero-band { margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); background: linear-gradient(180deg, var(--surface), var(--bg)); }
-.hero { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; padding: var(--space-6) 0; }  /* same 32px above and below the art: the photo sits right under it (교수 2026-11-03) */
+.hero { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; padding: var(--space-6) 0 var(--space-4); }  /* 32px under the menu, 16px above the sketch: the sketch's own top fade adds the rest, so the group fits head to toe in a ~845px laptop window (교수 2026-11-17) */
 .hero-band + .content-section { padding-top: var(--space-6); }  /* hero art to the first heading: 32 + 32 = the usual 64px section gap */
 .hero-copy { grid-column: span 7; }
-.hero-art { grid-column: span 5; width: 100%; height: auto; }
+.hero-art { grid-column: span 5; justify-self: end; width: auto; max-width: 100%; height: auto; max-height: 184px; }  /* as tall as the title and sentence beside it, right edge on the grid (교수 2026-11-17) */
 .eyebrow { margin: 0 0 var(--space-5); color: var(--muted); font-size: var(--text-body); font-weight: var(--weight-emphasis); text-wrap: balance; }
 .eyebrow strong { color: var(--accent); font-weight: var(--weight-heading); }
 .hero h1 { text-wrap: balance; }

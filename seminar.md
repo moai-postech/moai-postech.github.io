@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Seminar
-head_title: "Seminar · MOAI Lab"
+title: Lab Seminar
+head_title: "Lab Seminar · MOAI Lab"
 description: "The MOAI Lab seminar at POSTECH and the researchers we have invited."
 intro: |
   We hold a weekly lab seminar, host invited speakers, and bring industry speakers to the IME department seminar.

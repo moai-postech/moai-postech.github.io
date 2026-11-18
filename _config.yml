@@ -36,9 +36,9 @@ nav:
     children:
       - title: Overview
         url: overview.html
-      - title: Seminar
+      - title: Lab Seminar
         url: seminar.html
-      - title: Talks
+      - title: Invited Talks
         url: talks.html
       - title: Funding
         url: funding.html

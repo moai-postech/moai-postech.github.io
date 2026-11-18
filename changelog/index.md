@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-19 | [Lab Seminar / Invited Talks](2026-11-19-lab-seminar-invited-talks.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `seminar.md`, `talks.md`, `AGENTS.md` | Research 하위 탭 Seminar, Talks 를 Lab Seminar, Invited Talks 로 |
 | 2026-11-19 | [Data Engineering 15강 슬라이드 갱신](2026-11-19-lecture15-langchain-slides.md) | Sangwoo Mo(sangwoomo) | `teaching/26f-data-engineering/slides/15_llm-systems.{html,pdf}` | LangChain 설명 복원, RAG 중복 장 정리(69→77장) |
 | 2026-11-18 | [소개 뒤 간격 24px](2026-11-18-intro-gap.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `README.md`, `tools/check_design.js` | 소개→첫 내용을 `--intro-gap` 24px 로 사이트 전체 통일(기존 48/16), Other Mentees 예외 삭제 |
 | 2026-11-18 | [AI Study Home 중복 정리](2026-11-18-study-home-dedupe.md) | Sangwoo Mo(sangwoomo) | `teaching/ai-study/` Home | 히어로 지도교수 줄·버튼 삭제, How to join 을 일반 절로(연락은 버튼), Who we learn with 기수·학과·학번 세 칸, Members 탭 없애고 기수별 묶음 한 목록 |

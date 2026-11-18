@@ -2,8 +2,8 @@
 # 키는 _data/funding.yml 의 sponsor, _data/talks.yml 의 venues(글자 그대로 쓴 기관), _data/seminar.yml(시트 affiliation_en)·_data/ime_seminar.yml 의 affiliation 과 글자 그대로 같아야 한다.
 # 기관명 그대로의 공식 첫 화면으로 건다(과제 내용에 맞춰 사업부·계열사 사이트로 바꾸지 않는다, 교수 2026-11-17). 영문판이 따로 있으면 영문판 주소를 쓴다. 더하거나 바꾸면 브라우저로 직접 열어 영문 첫 화면이 뜨는지 본다(교수 2026-11-10). 새 소속이 생기면 한 줄 더한다. 없는 소속은 링크 없이 글자만 나온다.
 "Bain & Company": "https://www.bain.com/"
-"Brown univ.": "https://www.brown.edu/"
-"CAU": "https://neweng.cau.ac.kr/"
+"Brown Univ.": "https://www.brown.edu/"
+"Chung-Ang Univ.": "https://neweng.cau.ac.kr/"
 "Designovel": "https://designovel.com/en"
 "DGIST": "https://www.dgist.ac.kr/eng/main.do"
 "FSI": "https://www.fsec.or.kr/en"
@@ -13,8 +13,8 @@
 "KAIST": "https://www.kaist.ac.kr/en/"
 "KEIT": "https://www.keit.re.kr/index.es?sid=a2"
 "Korea Real Estate Board": "https://www.reb.or.kr/rebEng/main.do"
-"Korea univ.": "https://www.korea.edu/sites/en/index.do"
-"Kyunghee univ.": "https://www.khu.ac.kr/eng/user/main/view.do"
+"Korea Univ.": "https://www.korea.edu/sites/en/index.do"
+"Kyung-Hee Univ.": "https://www.khu.ac.kr/eng/user/main/view.do"
 "LG Electronics": "https://www.lg.com/global/"
 "LG U+": "https://www.lguplus.com/about/en"
 "NRF": "https://eng.nrf.re.kr/"

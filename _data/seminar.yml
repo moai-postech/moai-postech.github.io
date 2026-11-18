@@ -168,7 +168,7 @@ talks:
   - date: "2026-03-19"
     invited: true
     speaker: "Heejeong Nam"
-    affiliation: "Brown univ."
+    affiliation: "Brown Univ."
     url: "https://hazel-heejeong-nam.github.io/"
     title: "Causal-JEPA: Learning World Models through Object-Level Latent Interventions"
     paper: "https://arxiv.org/abs/2602.11389"
@@ -190,7 +190,7 @@ talks:
   - date: "2026-01-21"
     invited: true
     speaker: "Jongmin Lee"
-    affiliation: "CAU"
+    affiliation: "Chung-Ang Univ."
     url: "https://bluedream1121.github.io/"
     title: "Toward Spatial Intelligence: Learning Equivariant Features for Visual Correspondence and Pose Estimation"
     paper: "https://arxiv.org/abs/2303.15472"

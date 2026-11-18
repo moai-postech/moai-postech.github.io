@@ -291,6 +291,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-table th .st-material-head .cs-slot { text-transform: none; letter-spacing: normal; }
 .study-table td .st-slot-head { font-size: var(--text-small); text-transform: uppercase; letter-spacing: .06em; }  /* the hidden heading word in each row, so a slot is never narrower than its heading */
 .study-table .cs-slides a { display: inline-block; margin-right: 0; }  /* Keep all material links on one line. */
+.study-table .st-pending { color: var(--muted); }  /* upcoming term: grey, unlinked PDF in place of slides not yet posted (2026-11-18) */
+@media (max-width: 960px) { .study-table td.cs-slides:has(.st-pending) { display: none; } }  /* cards list only what exists, so the placeholder only fills the desktop column */
 .st-links a, .st-links span { display: inline-block; vertical-align: top; margin-right: var(--space-3); font-size: var(--text-meta); }  /* top, not baseline: a name that folds onto two lines in a narrow column (1024px) would otherwise put the row's baseline on its last line and push the rest of the row down */
 .st-links a { color: var(--text); }
 .st-links a:hover { color: var(--accent); }

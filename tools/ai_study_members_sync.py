@@ -140,6 +140,8 @@ def public_stats(cohorts):
     return dict(total=len(people), current=sum(latest in p['participation'] for p in people),
                  cohorts=len(cohorts), returning=sum(len(p['participation']) > 1 for p in people),
                  departments=[dict(name=n, count=c) for n, c in counts.most_common()],
+                 # 학번(입학 연도 두 자리)별 인원. Home 의 By entry year 막대, 오래된 학번이 왼쪽(교수 2026-11-18).
+                 years=[dict(year=f"20{y}", count=c) for y, c in sorted(Counter(str(p['entry_year']).zfill(2)[-2:] for p in people).items())],
                  terms=[dict(number=c['number'], term=c['term'],
                              count=sum(c['number'] in p['participation'] for p in people),
                              new=sum(p['cohort'] == c['number'] for p in people),

@@ -12,23 +12,19 @@
 })();
 </script>
     {% assign current = nil %}{% for ct in d.terms %}{% unless site.data.ai_study_terms[ct.id].upcoming %}{% assign current = ct %}{% break %}{% endunless %}{% endfor %}{% unless current %}{% assign current = d.terms | first %}{% endunless %}{% comment %}This term = the newest term not marked upcoming in ai_study_terms.yml; an upcoming term shows as Next (2026-11-18).{% endcomment %}{% assign latest = current %}{% assign now = site.data.ai_study_terms[latest.id] %}
-    {% comment %} One column: title, introduction, advisor, then two actions. How to join leads (accent) for prospective students; the box at the end holds the details (교수 2026-11-02: the this-term card and the orbit picture were not needed). {% endcomment %}
+    {% comment %} One column: title and introduction only. The advisor line and the two buttons (How to join, this term's schedule) repeated How to join below, the Now card, and the Schedule tab, so they were removed (교수 2026-11-18). {% endcomment %}
     <section class="hero-band study-home-band"><div class="hero study-home-hero">
     <header class="hero-copy study-intro">
       <h1>Undergraduate AI Study</h1>
       <p class="course-lead">{{ page.summary }}</p>
-      <p class="study-home-advisor">With <a href="{{ now.advisor.url }}">{{ now.advisor.name }}</a></p>
-      <p class="hero-actions"><a class="button primary" href="teaching/ai-study/#study-join">How to join →</a><a class="button" href="teaching/ai-study/schedule/#{{ latest.id }}">{{ latest.name }} schedule →</a></p>
     </header>
     </div></section>
 
 {% include course/study-overview.html %}
 {% include course/study-member-stats.html %}
 
-    {% if page.join %}<section class="content-section section-actions study-join study-home-join" aria-labelledby="study-join">
-      <div class="section-body">
-      <h2 id="study-join">{{ page.join.title }}</h2>
+    {% comment %} How to join is a section like What we study and Who we learn with: same heading level, contact link at the right of the heading, no callout box (교수 2026-11-18). {% endcomment %}
+    {% if page.join %}<section class="content-section study-home-join" aria-labelledby="study-join">
+      <div class="study-stat-head"><h2 id="study-join">{{ page.join.title }}</h2><a class="study-stat-members" href="teaching/ai-study/schedule/#{{ latest.id }}-representative">Contact the student representative →</a></div>
       {{ page.join.body | markdownify }}
-      <p class="study-join-next"><a href="teaching/ai-study/schedule/#{{ latest.id }}-representative">Contact the student representative →</a></p>
-      </div>
     </section>{% endif %}

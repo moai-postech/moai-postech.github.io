@@ -4,7 +4,7 @@ sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1f
 terms:
   - id: "spring-2027"
     name: "Spring 2027"
-    theme: "Game-Playing AI"
+    theme: "AI Plays Games"
     sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A3"
     sessions:
       - n: "1"

@@ -38,6 +38,6 @@ POSTECH 요구사항: 영향 없음 (`_config.yml` 은 메뉴만 바꿨고 머�
 - 기각: `Kyung Hee Univ.`(공식 표기 그대로). 학교마다 꼴이 달라져 교수가 하이픈 통일을 택함. `KSS Invited Talk` 정리는 페이지 이름이 Talks 가 되어 겹침이 사라졌고, 같은 KSS 의 Tutorial·Winter School 과 형식을 가르는 정보라 그대로 둠.
 
 ## 이어서: 스터디 주제 명사구, Talks 소개 줄
-- Spring 2027 주제 `AI Plays Games` → `Game-Playing AI`. 다른 학기(Physical AI, Deep Learning 등)처럼 명사구로 맞춤. 스터디 시트 schedule 탭 C3 을 `4: game-playing AI` 로 고치고 `tools/ai_study_sync.py` 로 다시 만듦. 동기화의 `label()` 이 하이픈 뒤도 대문자로 쓰게 고침(`Game-Playing`).
+- Spring 2027 주제를 `Game-Playing AI` 로 바꿨다가 같은 날 `AI Plays Games` 로 되돌렸다. 이 제목은 27S 기획(`2_lecture/27S_MOAI_AIStudy/syllabus/plan.md`, changelog 2026-11-17-plan.md "학기 제목 확정")에서 교수가 정한 것이다. 게임은 목적이 아니라 AI 개념을 배우는 수단이라 Game AI 계열을 쓰지 않고 AI 가 주어인 문장 꼴로 쓴다. 다른 학기와 문법을 맞추는 것보다 이 뜻이 먼저다. 시트 C3 은 `4: AI plays games` 로 복구했다. 동기화 `label()` 이 하이픈 뒤도 대문자로 쓰게 고친 것은 전역 하이픈 원칙에 맞아 남겼다.
 - Talks 에 Seminar 와 같은 꼴의 소개 줄(`.lede`)을 넣음. 같은 날 오전 "소개 줄 없이 필터부터" 결정을 교수가 Research 로 옮긴 뒤 되돌림. 그때 휴대폰에서 하위 탭과 필터를 떼려고 둔 Talks 전용 간격(32px)은 소개 줄 아래에서 간격을 두 배로 벌려 지움. 이제 Seminar 와 같이 소개 줄→필터 16px.
-- 기각: `Game AI`(게임 개발의 NPC AI 로도 읽힘), `AI for Games`(제목 대문자 변환에서 `For` 가 됨).
+- 기각: `Game-Playing AI`, `Game AI`(게임이 목적처럼 읽힌다, 교수). 다시 꺼내기 전에 27S 기획 changelog 의 학기 제목 절을 본다.

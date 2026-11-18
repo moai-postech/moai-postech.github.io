@@ -129,7 +129,8 @@
     const note = element('p', undefined, 'study-member-filter');
     const head = element('span', match ? filter.label(want) : 'Everyone', 'group-heading');
     if (termOf && termOf.term) head.append(element('span', ' ' + termOf.term, 'study-member-count'));
-    head.append(element('span', ' · ' + shown.length + (shown.length === 1 ? ' member' : ' members'), 'study-member-count'));
+    const noun = termOf ? ' participant' : ' member';  // a term list counts who took part that term, returning members included
+    head.append(element('span', ' · ' + shown.length + noun + (shown.length === 1 ? '' : 's'), 'study-member-count'));
     note.append(head);
     if (match) {
       const all = element('a', 'Show everyone'); all.href = location.pathname;

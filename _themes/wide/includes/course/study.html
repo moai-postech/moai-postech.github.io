@@ -23,8 +23,9 @@
 {% include course/study-overview.html %}
 {% include course/study-member-stats.html %}
 
-    {% comment %} How to join is a section like What we study and Who we learn with: same heading level, contact link at the right of the heading, no callout box (교수 2026-11-18). {% endcomment %}
+    {% comment %} How to join is a section like What we study and Who we learn with: same heading level, no callout box. The contact link is a button under the text: at the right end of the heading row visitors missed it (교수 2026-11-18). {% endcomment %}
     {% if page.join %}<section class="content-section study-home-join" aria-labelledby="study-join">
-      <div class="study-stat-head"><h2 id="study-join">{{ page.join.title }}</h2><a class="study-stat-members" href="teaching/ai-study/schedule/#{{ latest.id }}-representative">Contact the student representative →</a></div>
+      <h2 id="study-join">{{ page.join.title }}</h2>
       {{ page.join.body | markdownify }}
+      <p class="study-join-next"><a class="button primary" href="teaching/ai-study/schedule/#{{ latest.id }}-representative">Contact the student representative →</a></p>
     </section>{% endif %}

@@ -41,3 +41,9 @@ POSTECH 요구사항: 영향 없음 (`_config.yml` 은 메뉴만 바꿨고 머�
 - Spring 2027 주제를 `Game-Playing AI` 로 바꿨다가 같은 날 `AI Plays Games` 로 되돌렸다. 이 제목은 27S 기획(`2_lecture/27S_MOAI_AIStudy/syllabus/plan.md`, changelog 2026-11-17-plan.md "학기 제목 확정")에서 교수가 정한 것이다. 게임은 목적이 아니라 AI 개념을 배우는 수단이라 Game AI 계열을 쓰지 않고 AI 가 주어인 문장 꼴로 쓴다. 다른 학기와 문법을 맞추는 것보다 이 뜻이 먼저다. 시트 C3 은 `4: AI plays games` 로 복구했다. 동기화 `label()` 이 하이픈 뒤도 대문자로 쓰게 고친 것은 전역 하이픈 원칙에 맞아 남겼다.
 - Talks 에 Seminar 와 같은 꼴의 소개 줄(`.lede`)을 넣음. 같은 날 오전 "소개 줄 없이 필터부터" 결정을 교수가 Research 로 옮긴 뒤 되돌림. 그때 휴대폰에서 하위 탭과 필터를 떼려고 둔 Talks 전용 간격(32px)은 소개 줄 아래에서 간격을 두 배로 벌려 지움. 이제 Seminar 와 같이 소개 줄→필터 16px.
 - 기각: `Game-Playing AI`, `Game AI`(게임이 목적처럼 읽힌다, 교수). 다시 꺼내기 전에 27S 기획 changelog 의 학기 제목 절을 본다.
+
+## 이어서: Teaching 소개 줄을 페이지 소개로
+Courses·Study Group 소개 줄만 회색 목록 소개(`.list-intro`, 절 안)였고, 같은 자리의 Talks·Seminar·Funding 은 진한 페이지 소개(`.lede`)였다. 크기·위치는 같아 탭을 오가면 색만 바뀌었다. 교수 확인 뒤 두 페이지의 소개를 front matter `intro`(`.lede`)로 옮겼다.
+- 소개→목록 간격도 다른 페이지와 같아짐(넓은 화면 48px, 휴대폰 16px, Funding·Talks 와 같은 값). AI study group 링크는 `.lede` 링크라 강조색 그대로.
+- `tools/check_selection.js` 대상을 `.lede` 로, `AGENTS.md` 링크 강조 목록 문구 갱신. `.list-intro` 스타일과 절 `intro` 옵션은 템플릿 기능으로 남김(지금 쓰는 페이지 없음).
+- 기각: 340px 이하에서 하위 탭 간격을 줄여 320px 폰에서도 Research 탭 네 개를 한 줄로 두는 안. 사이트 기준 폭(360px)에서는 한 줄이고 대상 기기가 드물어 두기로 함.

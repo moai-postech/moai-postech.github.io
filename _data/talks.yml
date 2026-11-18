@@ -5,6 +5,7 @@
 - year: "2026"
   talks:
     - title: "Do We Need Professors in the Age of AI?"
+      url: "assets/talks/2026-do-we-need-professors-in-the-age-of-ai.html"
       kind: education
       venues: [{name: "POSTECH AI:Q", url: "https://helpreg.kr/aiq2026/"}]
     - title: "Multimodal Agents that Reason and Remember"

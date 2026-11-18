@@ -91,7 +91,7 @@
       "adjustments": []
     },
     {
-      "page": "lab-members.html",
+      "page": "members.html",
       "template": "연구실 · 인물 카드",
       "decision": "페이지 조정",
       "reason": "사진 카드에 여백이 충분하며 학력·소속은 핵심 정보. 이름과 상세의 크기 차이는 유지.",
@@ -245,7 +245,7 @@
     {
       "id": "student-card-reading",
       "pages": [
-        "lab-members.html"
+        "members.html"
       ],
       "roles": [
         "metadata",

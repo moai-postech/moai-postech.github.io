@@ -1,7 +1,7 @@
 # 2026-11-19 Data Engineering 15강 슬라이드 갱신 (LangChain 복원)
 작성자: Sangwoo Mo(sangwoomo) | 대상: `teaching/26f-data-engineering/slides/15_llm-systems.html`, `teaching/26f-data-engineering/slides/15_llm-systems.pdf` | 도구: Claude Code
 
-> **한줄 결론: 15강(LLM Systems) LangChain 설명을 복원하고 RAG 중복 장을 정리한 최신 슬라이드로 교체했다(69→77→91장).**
+> **한줄 결론: 15강(LLM Systems) LangChain 설명을 복원하고 RAG 중복 장을 정리한 최신 슬라이드로 교체했다(69→77→91→90장).**
 
 POSTECH 요구사항: 영향 없음 (슬라이드 파일만 교체, 머리글·꼬리말·`_config.yml` 변경 없음)
 
@@ -19,3 +19,6 @@ PLMS·Drive 교체는 아직. 교수 확인 뒤 처리.
 
 ## 이어서: 용어 표를 실제 2025 코드로 교체(같은 날)
 교수가 처음 복원한 9장짜리 용어 표를 "구리다"고 반려하고 작년 실제 강의 플로우를 그대로 쓰라고 지시했다. 과목 저장소에서 그 용어 표를 다시 빼고 실제 2025 LangChain 코드·출력 화면 24장으로 교체한 재빌드본(77→91장)을 같은 경로에 다시 복사했다. 경위는 과목 저장소 changelog 같은 파일에 이어서 기록했다.
+
+## 이어서: 전체 검토 후 중복 장 삭제(같은 날)
+교수 요청으로 91장 전체를 PDF로 훑어 검토했다. 2026년에 추가한 `Locating an Answer Failure`가 두 장 뒤의 실제 2025 원본 `RAG Evaluation Boundaries`와 같은 교훈을 반복하는 중복이라 뺐다(91→90장). 코드 화면 일부의 텍스트가 스크롤바에 가려 끝까지 안 보이는 것은 원본 2025 PDF 자체가 그렇게 캡처돼 있던 것이라 그대로 둔다. 재빌드본을 같은 경로에 다시 복사했다.

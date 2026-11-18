@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-18 | [AI Study Home 중복 정리](2026-11-18-study-home-dedupe.md) | Sangwoo Mo(sangwoomo) | `teaching/ai-study/` Home | 히어로 지도교수 줄·버튼 삭제, How to join 을 일반 절로, Who we learn with 기수·학과·학번 세 칸 |
 | 2026-11-18 | [Talks 를 Research 로](2026-11-18-talks-to-research.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `talks.md`, `study-group.md`, `members.md`, `_data/institutions.yml` | Invited Talks → Research > Talks, Teaching AI Study 탭 → Study Group, People Lab Members → Members, 대학 표기 Univ.·하이픈 통일, 스터디 주제 명사구 시도 후 AI Plays Games 복구, Talks 소개 줄, Teaching 소개 줄 .lede 통일, 옛 주소 리다이렉트 |
 | 2026-11-18 | [AI Study Spring 2027 추가](2026-11-18-study-spring-2027.md) | Sangwoo Mo(sangwoomo) | AI Study | Spring 2027 AI Plays Games 를 다음 학기로, 이번 학기는 Fall 2026 유지, Slides 열 회색 PDF 자리 표시 |
 | 2026-11-18 | [Courses 봄학기 과목 위로](2026-11-18-courses-spring-first.md) | Sangwoo Mo(sangwoomo) | `_data/teaching.yml` | Programming for AX 를 Data Engineering 위로 |

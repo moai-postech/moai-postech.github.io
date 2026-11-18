@@ -81,7 +81,8 @@ class Table(html.parser.HTMLParser):
 
 def label(s):
     """학기 주제처럼 단어마다 대문자로 쓰는 라벨. 약어(AI, LLM)는 대문자로 둔다."""
-    return " ".join(w.upper() if w.lower() in KEEP else w[:1].upper() + w[1:] for w in s.split())
+    cap = lambda w: w.upper() if w.lower() in KEEP else w[:1].upper() + w[1:]
+    return " ".join("-".join(cap(p) for p in w.split("-")) for w in s.split())  # 하이픈 뒤도 대문자(Game-Playing AI, 교수 2026-11-18)
 
 
 def sentence(s):

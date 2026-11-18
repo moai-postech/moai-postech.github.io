@@ -191,7 +191,7 @@ a.person-name:hover { color: var(--accent); }
 
 /* Contact: the joining note stands out once. */
 .page-contact #join + .section-body { padding: 22px 24px; background: var(--surface); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; }
-.page-lab-members .content-section:first-of-type, .page-other-mentees .content-section:first-of-type, .page-contact .content-section:first-of-type { border-top: 0; }
+.page-members .content-section:first-of-type, .page-other-mentees .content-section:first-of-type, .page-contact .content-section:first-of-type { border-top: 0; }
 
 .site-foot { margin-top: 32px; padding: 0 0 40px; color: var(--muted); font-size: var(--fs-xs); }
 .site-foot p { margin: 0; }

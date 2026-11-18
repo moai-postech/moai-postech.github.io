@@ -1,5 +1,5 @@
 # 2026-11-18 Talks 를 Research 로, AI Study 탭을 Study Group 으로
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_config.yml`, `talks.md`, `study-group.md` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_config.yml`, `talks.md`, `study-group.md`, `members.md` | 도구: Claude Code
 
 > **한줄 결론: Teaching > Invited Talks 를 Research > Talks 로 옮기고, Teaching > AI Study 탭 이름을 Study Group 으로 바꿨다.**
 
@@ -24,4 +24,10 @@ POSTECH 요구사항: 영향 없음 (`_config.yml` 은 메뉴만 바꿨고 머�
 ## 남은 것
 - Talks venue 표기 정리(`Korea univ.`, `Kyunghee univ.` → `Korea Univ.`, `Kyung Hee Univ.`, `KSS Invited Talk` 같은 형식 표기).
 - Study Group 학기 주제 `AI Plays Games` 만 문장형(시트에서 고칠 것).
-- People > Lab Members → Members 검토 중.
+
+
+## 이어서: People > Lab Members 를 Members 로
+교수가 같은 검토에서 `Lab` 은 연구실 사이트에서 당연한 말이라 빼기로 했다(Seminar 에 Lab 을 붙이지 않은 것과 같은 기준).
+- 메뉴와 제목 `Members`, 파일 `lab-members.md` → `members.md`. 옛 `members.html`(Faculty 로 넘기던 리다이렉트)은 지우고 그 주소를 Members 페이지로 쓴다. `lab-members.html` 과 `students.html` 은 `members.html` 로 넘긴다.
+- 페이지 클래스 `.page-members`(세 테마), Seminar 연사 이름 링크(`members.html#이름`), 검사 스크립트 4개, `page-design`, `members.yml` 주석, `AGENTS.md`.
+- 기각: `Other Mentees` 의 `Other` 도 빼는 안. 연구실 밖 학생을 가르는 데 꼭 필요하다.

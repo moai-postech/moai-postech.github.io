@@ -32,9 +32,9 @@ const { loadSyntheticDirectory, forgetAccess } = require('./lib/design-fixture')
     assert.deepEqual(await failures(),[], '드롭다운은 400 굵기로 통과해야 한다');
     await page.addStyleTag({content:'.site-nav .nav-menu a {font-weight:600 !important}'});
     assert((await failures()).some(f=>f.startsWith('dropdown-navigation: fontWeight')), '드롭다운이 상단 메뉴의 600을 상속하면 실패해야 한다');
-    await load('lab-members.html');
+    await load('members.html');
     assert.deepEqual(await failures(),[], '근거를 기록한 멤버 카드 조정은 기본 metadata 크기와 달라도 통과해야 한다');
-    await page.addStyleTag({content:'.page-lab-members .person-degree {font-size:14px !important}'});
+    await page.addStyleTag({content:'.page-members .person-degree {font-size:14px !important}'});
     assert((await failures()).some(f=>f.includes('student-card-reading') && f.includes('fontSize')), '조정한 학력 글자를 다시 작게 만들면 실패해야 한다');
     await load('seminar.html');
     assert.deepEqual(await failures(),[], '세미나 정상 템플릿이 통과해야 한다');

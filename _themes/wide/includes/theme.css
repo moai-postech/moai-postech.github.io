@@ -556,8 +556,8 @@ a.person-name:hover { color: var(--accent); }
 }
 
 /* Documented page adaptations. IDs, before/after and rationale: page-design.json. */
-.page-lab-members .person-aff, .page-lab-members .person-degree, .page-lab-members .person-topic,
-.page-lab-members .person-work, .page-lab-members .person .role { font-size: var(--text-body); }
+.page-members .person-aff, .page-members .person-degree, .page-members .person-topic,
+.page-members .person-work, .page-members .person .role { font-size: var(--text-body); }
 .page-faculty .profile-head .small { font-size: var(--text-body); }
 .page-other-mentees .mentee-aff { font-size: var(--text-body); }
 .page-overview .topic-card p { font-size: var(--text-body); }

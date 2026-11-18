@@ -55,6 +55,7 @@
 ## 자료 표시
 
 - 마지막 자료 열은 `Slides` 하나다(시트의 필기 `Notes` 도 여기에 든다). 학생 실습 노트북(Lab)은 싣지 않는다(교수 2026-11-18, 그 전에는 Slides·Lab 두 소제목). Fall 2026 을 뺀 학기는 한 회차의 PDF 가 여럿이면 동기화 도구가 하나로 이어 올리므로(`tools/ai_study_sync.py` 의 `KEEP_SPLIT_TERMS`) 늘 `PDF` 하나다. 그 학기 모든 세션이 하나씩이면 `PDF` 로 쓰고 가운데 정렬한다. 한 세션이라도 둘 이상이면 그 학기 전체에 번호를 붙여 하나는 `PDF 1`, 여럿은 `PDF 1, 2` 로 쓰고 왼쪽 정렬한다(교수 2026-11-17). 각 행의 PDF 는 같은 자리에서 시작한다.
+- 자료가 아직 없는 학기도 Slides 열 머리를 둔다. 다음 학기(`upcoming: true`)는 슬라이드가 없는 회차에 링크 없는 회색 `PDF` 를 자리 표시로 두고, 시트 Slide 칸에 파일이 올라와 동기화되면 그 회차는 진짜 링크로 바뀐다. 시트에 가짜 링크를 넣지 않는다. 카드 화면(960px 이하)은 있는 것만 보이므로 자리 표시를 숨긴다(교수 2026-11-18).
 - Papers·Demo 열은 읽을 논문과 외부 데모 도구, Slides 열은 발표자료다. 같은 링크를 중복 나열하지 않는다.
 - Summer 2026은 MIT 6.7960 Deep Learning, Fall 2025를 참고했다고 Overview에 명시하고 해당 연도 원 강의 페이지를 연결한다. Spring 2026은 Princeton COS 597R(Fall 2024)을 `See also` 로 연결한다. 그 강의를 그대로 따르지 않아 `Based on` 이 아니다(`reference.lead`, 교수 2026-11-03). Fall 2026은 Berkeley CS 294-277 Robots That Learn(Malik)과 CS 294-43(Darrell), Fall 2025는 Stanford CS231n과 MIT 6.S978 Deep Generative Models를 `See also` 로 연결한다(교수 2026-11-04). 참고 강의는 `reference.courses` 목록이고 여럿이면 한 줄에 `A (term) and B (term)` 으로 잇는다. Lectures에는 시트 References의 원 강의 슬라이드를, 자료 열에는 학생이 별도 업로드한 발표자료·필기만 표시한다. 학생 추가 자료가 없는 회차는 비워 둔다. 필기와 발표자료는 모두 Slides 로 보인다(교수 2026-11-03). 8회 Generalization 공개 사본도 학생 추가 자료로 보존한다.
 - 자료 사본과 동기화 경로는 저장소 `AGENTS.md`의 슬라이드 규칙을 따른다. 탭 전체 학기와 모바일에서 링크 잘림·가로 넘침·마감선 한 줄을 확인한다.

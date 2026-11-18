@@ -38,6 +38,8 @@ nav:
         url: overview.html
       - title: Seminar
         url: seminar.html
+      - title: Talks
+        url: talks.html
       - title: Funding
         url: funding.html
   - title: Publications
@@ -50,10 +52,8 @@ nav:
     children:
       - title: Courses
         url: courses.html
-      - title: AI Study
-        url: ai-study.html
-      - title: Invited Talks
-        url: invited-talks.html
+      - title: Study Group
+        url: study-group.html
   - title: Contact
     url: contact.html
 

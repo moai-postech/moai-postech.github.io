@@ -4,7 +4,7 @@ const path = require('path');
 const { chromium } = require('playwright');
 const { SITE, serve } = require('./lib/site');
 const LAB = ['/', 'overview.html', 'seminar.html', 'funding.html', 'list-view.html', 'map-view.html',
-  'faculty.html', 'lab-members.html', 'other-mentees.html', 'courses.html', 'invited-talks.html', 'contact.html', 'news.html', '404.html'];
+  'faculty.html', 'lab-members.html', 'other-mentees.html', 'courses.html', 'talks.html', 'contact.html', 'news.html', '404.html'];
 const COURSE = [];
 (function walk(dir) {
   for (const e of fs.readdirSync(path.join(SITE, dir), { withFileTypes: true })) {

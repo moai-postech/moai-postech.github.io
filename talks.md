@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Talks
-head_title: "Talks · MOAI Lab"
+title: Invited Talks
+head_title: "Invited Talks · MOAI Lab"
 description: "Talks by Prof. Sangwoo Mo: invited talks, tutorials, and seminars."
 intro: |
   We share our research in invited talks at universities and societies, and give tutorials at academic schools and events.

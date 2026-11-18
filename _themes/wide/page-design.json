@@ -118,7 +118,7 @@
       ]
     },
     {
-      "page": "ai-study.html",
+      "page": "study-group.html",
       "template": "연구실 · 스터디 목록",
       "decision": "페이지 조정",
       "reason": "학기 링크는 스터디 일정의 그 학기로 가는 탐색 동작. Courses 와 같이 15px로 표시(2026-11-17 Courses 에서 분리).",
@@ -127,10 +127,10 @@
       ]
     },
     {
-      "page": "invited-talks.html",
+      "page": "talks.html",
       "template": "연구실 · 발표 목록",
       "decision": "페이지 조정",
-      "reason": "제목 16px·장소 15px. Teaching 세 탭(Courses·AI Study·Invited Talks)의 오른쪽 정보를 같은 15px로 맞춰 탭을 오가도 크기가 바뀌지 않는다. 두 줄로 접히는 모바일에서도 위계 유지.",
+      "reason": "제목 16px·장소 15px. 세 목록 탭(Courses·Study Group·Talks)의 오른쪽 정보를 같은 15px로 맞춰 탭을 오가도 크기가 바뀌지 않는다. 두 줄로 접히는 모바일에서도 위계 유지.",
       "adjustments": [
         "teaching-term-navigation"
       ]
@@ -307,8 +307,8 @@
       "id": "teaching-term-navigation",
       "pages": [
         "courses.html",
-        "ai-study.html",
-        "invited-talks.html"
+        "study-group.html",
+        "talks.html"
       ],
       "roles": [
         "metadata"
@@ -317,7 +317,7 @@
       "style": {
         "fontSize": "var(--text-control)"
       },
-      "change": "Teaching 세 탭의 오른쪽 정보(학기·발표 장소) 14→15px. 학수번호는 14px 유지.",
+      "change": "세 목록 탭(Courses·Study Group·Talks)의 오른쪽 정보(학기·발표 장소) 14→15px. 학수번호는 14px 유지.",
       "reason": "학기와 발표 장소는 해당 강의·기관으로 이동하는 선택지이고, 형제 탭끼리 오른쪽 정보 크기가 같아야 탭을 오갈 때 흔들리지 않는다(교수 2026-11-18)."
     }
   ]

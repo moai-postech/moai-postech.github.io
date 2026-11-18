@@ -318,6 +318,8 @@ a.cs-title:hover { color: var(--accent); }
 .study-member-groups .study-member-filter { margin-bottom: var(--space-6); }
 .study-member-group + .study-member-group { margin-top: var(--space-7); }  /* one list grouped by cohort, no tabs (교수 2026-11-18) */
 .study-member-group h3 { margin: 0 0 var(--space-3); }
+.study-member-group + .study-member-group thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }  /* the column names show once, above the first group; later groups keep them for screen readers and share the same column widths */
+@media (min-width: 961px) { .study-member-group + .study-member-group tbody tr:first-child > * { border-top: 1px solid var(--text); } }  /* the rule under the hidden column names */
 .study-member-group h3 span { margin-left: var(--space-3); color: var(--muted); font-size: var(--text-meta); font-weight: var(--weight-regular); }  /* 1기 first, Fall 2025 small and light */
 .study-members-table tr.is-representative > * { background: var(--callout-surface); }  /* a term list (#term=) puts its student representative first (교수 2026-11-02) */
 .study-member-role { padding: 0 var(--space-2); border-radius: var(--radius-1); background: var(--accent-soft); color: var(--accent); font-size: var(--text-small); font-weight: var(--weight-emphasis); white-space: nowrap; }
@@ -500,11 +502,6 @@ a.cs-title:hover { color: var(--accent); }
 .study-home-hero { padding: var(--space-7) 0 var(--space-6); }
 .study-home-hero .study-intro { padding-top: 0; }
 .study-home-hero .hero-copy { grid-column: 1 / -1; }  /* one column, no picture */
-.study-home-hero .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0 0; }
-.study-home-hero .button { display: inline-flex; align-items: center; padding: var(--space-2) var(--space-5); border: 1px solid var(--accent); border-radius: var(--radius-1); color: var(--accent); background: var(--bg); font-size: var(--text-control); font-weight: var(--weight-emphasis); text-decoration: none; transition: background-color .15s; }
-.study-home-hero .button.primary { background: var(--accent); color: var(--white); }
-.study-home-hero .button:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; }
-.study-home-hero .button.primary:hover { background: color-mix(in srgb, var(--accent) 86%, var(--text)); color: var(--white); }
 /* Term timeline: oldest cohort on the left, the current term on the right. */
 .study-term-cards { display: grid; grid-template-columns: repeat(var(--study-terms, 4), minmax(0, 1fr)); gap: var(--space-5); }  /* one column per term, so the timeline stays one row as terms are added */
 .study-term-card { display: flex; flex-direction: column; gap: var(--space-3); }
@@ -582,7 +579,11 @@ a.cs-title:hover { color: var(--accent); }
 .study-dept-link:is(:hover, :focus-visible) { outline: 2px solid var(--text); outline-offset: -4px; }
 .study-dept-map:not(.is-drawn) li { position: static; }
 .study-home-community > h2 { font-size: var(--text-h2); }
+.study-home-join > h2 { margin-bottom: var(--space-4); }
 .study-home-join p { margin: 0; color: var(--muted); }
+.study-home-join .study-join-next { margin-top: var(--space-5); }
+.study-home-join .button { display: inline-flex; align-items: center; padding: var(--space-2) var(--space-5); border: 1px solid var(--accent); border-radius: var(--radius-1); background: var(--accent); color: var(--white); font-size: var(--text-control); font-weight: var(--weight-emphasis); text-decoration: none; transition: background-color .15s; }  /* the one action on the page, so it is a button (교수 2026-11-18) */
+.study-home-join .button:hover { background: color-mix(in srgb, var(--accent) 86%, var(--text)); color: var(--white); text-decoration: none; }
 @media (max-width: 1024px) {
   .study-term-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .study-term-card:nth-child(2n) .study-term-step::before { right: 0; }  /* a row's last line stops at its card edge */

@@ -76,6 +76,7 @@
   --tracking-display: -.025em;
   --page-start: var(--space-7);
   --subnav-start: var(--space-6);
+  --intro-gap: var(--space-5);  /* page intro to the content it introduces: 24px at every width. Closer than sub-tabs to intro (48px) and wider than a group heading to its list (16px), so the intro reads as the lead of what follows (교수 2026-11-18) */
   --card-padding: var(--space-5);
   --detail-gap: var(--space-1);
   --media-surface: #0b1220;
@@ -194,9 +195,9 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 }
 .page-intro { padding-top: var(--page-start); }
 .visually-hidden + .content-section { padding-top: var(--page-start); }
-.page-intro + .content-section { padding-top: var(--page-start); }  /* intros and the first block share the responsive page-start rhythm */
-.page-intro + .embed-section { padding-top: min(var(--space-5), var(--page-start)); }  /* an intro that describes the picture right below stays with it, like a caption (Paper Stella) */
-.page-intro + .stage-track > .research-area:first-child { padding-top: var(--page-start); }  /* Research Overview: the first stage follows the intro at the same page-start as every other page's first block */
+.page-intro + .content-section { padding-top: var(--intro-gap); }  /* the intro leads into the first block: 24px, not the 48px page start (교수 2026-11-18: 소개와 목록 사이가 너무 길다) */
+.page-intro + .embed-section { padding-top: var(--intro-gap); }  /* an intro that describes the picture right below stays with it, like a caption (Paper Stella) */
+.page-intro + .stage-track > .research-area:first-child { padding-top: var(--intro-gap); }  /* Research Overview: the first stage follows the intro at the same intro gap as every other page's first block */
 
 /* Home hero: a full-width band, statement on the left, the orchestration picture on the right */
 .hero-band { margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); background: linear-gradient(180deg, var(--surface), var(--bg)); }
@@ -288,7 +289,7 @@ a.mentee-name:hover { color: var(--accent); }
 .research-area { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
 .research-area { position: relative; }
 .research-area:not(:last-child)::before { content: ""; position: absolute; left: 17px; top: calc(var(--section-gap) + 36px); height: 100%; width: 2px; background: var(--faint); }  /* rail from this stage node to the next; it stops at the last node */
-.page-intro + .stage-track > .research-area:first-child::before { top: calc(var(--page-start) + 36px); height: calc(100% + var(--section-gap) - var(--page-start)); }  /* the first stage starts at page-start, so its rail starts higher and runs that much longer to reach node 2 */
+.page-intro + .stage-track > .research-area:first-child::before { top: calc(var(--intro-gap) + 36px); height: calc(100% + var(--section-gap) - var(--intro-gap)); }  /* the first stage starts at page-start, so its rail starts higher and runs that much longer to reach node 2 */
 .research-head { grid-column: span 4; align-self: start; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-4); }  /* fixed at the top of its stage; it does not follow the scroll (2026-10-26) */
 .research-head .stage-node { position: relative; margin-top: 18px; }  /* centred on the icon and stage-name row */
 .research-head .stage-title { display: flex; align-items: center; gap: var(--space-3); }  /* icon left of the stage name (2026-10-26) */
@@ -500,7 +501,6 @@ a.person-name:hover { color: var(--accent); }
   .course-nav { min-height: 44px; }  /* course and study menus have three links: one row, so no empty band sits between the menu and its rule */
   .subnav a { padding-inline: var(--space-3); }  /* People's three tabs stay on one line on a phone instead of leaving Other Mentees alone below */
   .filter-bar { column-gap: var(--space-3); }  /* Seminar: All, Lab, Invited and Full schedule share one line on a phone */
-  .page-other-mentees .page-intro + .content-section { padding-top: var(--space-6); }  /* Other Mentees: the first group heading sat 16px under the intro and 16px above its list; 32px ties it to its own list (교수 2026-11-18) */
   .person-photo { max-width: 120px; }
   .mentee-aff { display: block; margin-left: 0; }  /* phones: name, then affiliation, then papers */
   .mentee-list li { padding: var(--item-gap) 0; }  /* three lines per person, so the wider multi-line gap */

@@ -109,8 +109,9 @@ function inspect(contract) {
     if (!visible(e) || e.matches('.contact-join,.course-first,.course-summary,.study-join,.study-terms,.study-full-list,.section-photo') || e.closest('.stage-track')) continue;
     const previous = e.previousElementSibling;
     const first = previous && (previous.matches('h1.visually-hidden,.page-intro'));
-    // An intro that describes the embed right below it stays with it like a caption (theme.css .page-intro + .embed-section).
-    const target = e.matches('.section-next,.section-callout,.section-band') ? expected('paddingTop','var(--space-5)',e) : first && e.matches('.embed-section') ? expected('paddingTop','min(var(--space-5), var(--page-start))',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
+    const afterIntro = previous && previous.matches('.page-intro');
+    // The block right after a page intro (list, group heading or embed) sits --intro-gap under it (theme.css, 교수 2026-11-18).
+    const target = e.matches('.section-next,.section-callout,.section-band') ? expected('paddingTop','var(--space-5)',e) : afterIntro ? expected('paddingTop','var(--intro-gap)',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
     // Hero starts the first section with its own combined band rhythm.
     if (previous && previous.matches('.hero-band,.course-summary')) continue;
     if (!same(getComputedStyle(e).paddingTop,target)) failures.push(`절 위 간격 역할 위반: ${label(e)}`);

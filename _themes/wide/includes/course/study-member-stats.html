@@ -2,7 +2,7 @@
   Home 공개 통계: 제목 줄 오른쪽에 명단 링크, 요약 숫자 하나, 그 아래 같은 폭 세 칸. 기수별 막대(신규·기존을 쌓음, 시간순 왼쪽→오른쪽), 학과별 면적(treemap), 학번별 막대(오래된 학번 왼쪽).
   교수 2026-11-18: 기수별·학과별·학번별 세 가지로. 순서는 기수 → 학과 → 학번으로, 비슷한 두 막대 그림 사이에 면적 그림을 두어 서로 구분되게 했다.
   교수 2026-11-02: 정보가 눈에 안 들어온다, 기수도 시각화, 학과는 면적으로, Meet the members 링크가 혼자 떨어져 있다.
-  막대와 학과 칸은 Members 로 가는 링크다(기수 탭, 학과로 걸러 보기). hover 는 테두리 하나뿐이고 짝 강조·흐리기·글자 바꾸기는 없다(교수 2026-11-03).
+  막대와 학과 칸은 Members 로 가는 링크다(그 학기 참여자 #term=, 학과 #dept= 로 걸러 보기). hover 는 테두리 하나뿐이고 짝 강조·흐리기·글자 바꾸기는 없다(교수 2026-11-03).
 {% endcomment %}
 {% assign stats = site.data.ai_study_members %}
 {% assign max_count = 0 %}{% for t in stats.terms %}{% if t.count > max_count %}{% assign max_count = t.count %}{% endif %}{% endfor %}
@@ -16,7 +16,7 @@
     <figure class="study-stat-panel">
       <figcaption><h3>By term</h3></figcaption>
       <ol class="plain study-cohort-chart">
-        {% for t in stats.terms reversed %}{% assign h = t.count | times: 100.0 | divided_by: max_count %}<li data-term="{{ t.number }}"><a class="study-cohort-link" href="teaching/ai-study/members/#members-{{ t.number | replace: '.', '-' }}">
+        {% for t in stats.terms reversed %}{% assign h = t.count | times: 100.0 | divided_by: max_count %}<li data-term="{{ t.number }}"><a class="study-cohort-link" href="teaching/ai-study/members/#term={{ t.number }}">
           <span class="study-cohort-track"><span class="study-cohort-bar" style="height: {{ h }}%" title="{{ t.term }} · {{ t.number }}기: {{ t.new }} new, {{ t.existing }} returning">
             <span class="study-chart-value">{{ t.count }}</span>
             <span class="is-existing" style="flex-grow: {{ t.existing }}">{% if forloop.last and t.existing > 0 %}<span class="study-bar-key" aria-hidden="true">Returning</span>{% endif %}</span><span class="is-new" style="flex-grow: {{ t.new }}">{% if forloop.last and t.new > 0 %}<span class="study-bar-key" aria-hidden="true">New</span>{% endif %}</span>

@@ -9,7 +9,7 @@
       venues: [{name: "POSTECH AI:Q", url: "https://helpreg.kr/aiq2026/"}]
     - title: "Multimodal Agents that Reason and Remember"
       url: "assets/talks/2026-multimodal-agents-that-reason-and-remember.html"
-      venues: ["KAIST", "Korea univ."]
+      venues: ["KAIST", "Korea Univ."]
     - title: "Towards Personalized Household Robots"
       url: "assets/talks/2026-towards-personalized-household-robots.pdf"
       venues: [{name: "POSTECH Physical AI Workshop", url: "https://ime.postech.ac.kr/ime/news/seminar.do?mode=view&articleNo=50164"}]
@@ -35,7 +35,7 @@
       venues: [{name: "KSS Tutorial", url: "https://kss.or.kr/"}]
     - title: "Revisiting the 3Rs in Computer Vision"
       url: "assets/talks/2025-revisiting-the-3rs-in-computer-vision.pdf"
-      venues: ["Korea univ.", "Kyunghee univ.", "POSTECH MINDS"]
+      venues: ["Korea Univ.", "Kyung-Hee Univ.", "POSTECH MINDS"]
     - title: "Scalable Priors for Foundation Models"
       url: "assets/talks/2025-scalable-priors-for-foundation-models.pdf"
       venues: ["POSTECH", "UNIST", "DGIST"]

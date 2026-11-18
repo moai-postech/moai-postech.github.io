@@ -37,8 +37,8 @@
   // The Full List shows the sheet's Korean department name only (2026-11-02); old spellings are unified.
   const ALIASES = { 'IT융공': 'IT융합', 'Mueunjae': '무은재', 'Undeclared': '무은재' };
   const departmentLabel = name => ALIASES[name] || name;
-  // Tab ids and #hash links for a cohort: 2.5기 becomes members-2-5 (교수 2026-11-03: Summer 2026 is 2.5기).
-  const tabId = n => 'members-' + String(n).replace('.', '-');
+  // #term=2.5 lists everyone who took part in that term (Home cohort bars, Participation markers). Old #members-2-5 tab links open the same list.
+  const termHash = n => '#term=' + n;
   const entryYear = member => /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : String(member.entry_year);
   // Cohort, entry year, department and participation open the matching list, by the same #hash links as the Home department map (교수 2026-11-03).
   const listLink = (text, hash, className) => {
@@ -48,24 +48,23 @@
   const FILTERS = {
     dept: { label: v => v, of: p => departmentLabel(p.department), value: v => departmentLabel(v) },
     entry: { label: v => v + ' entry', of: entryYear, value: v => v },
+    term: { label: v => v + '기', of: p => p.participation, value: v => Number(v) },
   };
   // Each term's student representative, by POSTECH ID (public on the Schedule page).
   const representatives = JSON.parse(document.getElementById('member-representatives').textContent || '{}');
   // '#' numbers the rows so each table shows how many people it lists (교수 2026-11-02).
   // The column holds the POSTECH ID only, so it is named that way; LinkedIn links sit right of it (교수 2026-11-03).
-  const LABELS = ['#', 'Cohort', 'Entry', 'Department', 'Name', 'POSTECH ID', 'LinkedIn', 'Participation'];
-  function table(people, caption, termTab, rep) {
+  // No Cohort column: the group heading above each table names the cohort (교수 2026-11-18).
+  const LABELS = ['#', 'Entry', 'Department', 'Name', 'POSTECH ID', 'LinkedIn', 'Participation'];
+  const NAME = 3, LINKEDIN = 5, PARTICIPATION = 6;
+  function table(people, caption, start, rep) {
     const t = element('table', undefined, 'study-members-table');
     t.append(element('caption', caption, 'visually-hidden'));
-    // Term tables keep the Participation column slot empty so every column stays where it is in Full list.
+    // Every group's table has the same columns and widths, so the columns line up down the page.
     const cols = element('colgroup');
-    for (const name of ['n', 'cohort', 'year', 'department', 'name', 'email', 'linkedin', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
+    for (const name of ['n', 'year', 'department', 'name', 'email', 'linkedin', 'participation']) cols.append(element('col', undefined, 'sm-' + name));
     const head = element('thead'), header = element('tr');
-    LABELS.forEach((label, i) => {
-      const th = element('th', termTab && i === 7 ? '' : label); th.scope = 'col';
-      if (termTab && i === 7) th.setAttribute('aria-hidden', 'true');
-      header.append(th);
-    });
+    LABELS.forEach(label => { const th = element('th', label); th.scope = 'col'; header.append(th); });
     head.append(header); t.append(cols, head);
     const body = element('tbody');
     people.forEach((member, n) => {
@@ -73,14 +72,14 @@
       const row = element('tr', undefined, rep && id === rep ? 'is-representative' : undefined);
       const year = entryYear(member);
       const dept = departmentLabel(member.department);
-      const values = [String(n + 1), member.cohort + '기', year, dept, member.name, id];
-      const links = { 1: '#' + tabId(member.cohort), 2: '#entry=' + year, 3: '#dept=' + encodeURIComponent(dept) };
+      const values = [String(start + n + 1), year, dept, member.name, id];
+      const links = { 1: '#entry=' + year, 2: '#dept=' + encodeURIComponent(dept) };
       values.forEach((value, index) => {
-        const cell = element(index === 4 ? 'th' : 'td', links[index] || index === 4 ? undefined : value, index === 5 ? 'study-member-email' : index === 0 ? 'study-member-n' : undefined);
+        const cell = element(index === NAME ? 'th' : 'td', links[index] || index === NAME ? undefined : value, index === 4 ? 'study-member-email' : index === 0 ? 'study-member-n' : undefined);
         if (links[index]) cell.append(listLink(value, links[index], 'study-member-link'));
         // The term's representative shows a small 대표 chip in the # column, so the Name column only needs to fit names (교수 2026-11-04: Name and POSTECH ID were too far apart).
         if (index === 0 && row.className) { cell.textContent = ''; cell.append(element('span', '대표', 'study-member-role')); }
-        if (index === 4) {
+        if (index === NAME) {
           cell.scope = 'row';
           // The POVIS photo travels inside the same ciphertext, so it shows on hover or focus once the list is open (교수 2026-11-03).
           // Without a photo anywhere, the card shows the same default profile figure so every name behaves alike (교수 2026-11-03).
@@ -96,19 +95,17 @@
         }
         cell.dataset.label = LABELS[index]; row.append(cell);
       });
-      const linkedin = element('td', undefined, 'study-member-linkedin'); linkedin.dataset.label = LABELS[6];
+      const linkedin = element('td', undefined, 'study-member-linkedin'); linkedin.dataset.label = LABELS[LINKEDIN];
       if (member.linkedin) {
         const a = element('a', 'in', 'study-member-in'); a.href = 'https://www.linkedin.com/in/' + member.linkedin + '/';
         a.target = '_blank'; a.rel = 'noopener'; a.setAttribute('aria-label', member.name + ' on LinkedIn');
         linkedin.append(a);
       }
       row.append(linkedin);
-      const cell = element('td'); cell.dataset.label = LABELS[7];
-      if (!termTab) {
-        const markers = element('span', undefined, 'study-member-markers');
-        for (const n of member.participation) markers.append(listLink(n + '기', '#' + tabId(n), 'study-member-marker'));
-        cell.append(markers);
-      }
+      const cell = element('td'); cell.dataset.label = LABELS[PARTICIPATION];
+      const markers = element('span', undefined, 'study-member-markers');
+      for (const n of member.participation) markers.append(listLink(n + '기', termHash(n), 'study-member-marker'));
+      cell.append(markers);
       row.append(cell); body.append(row);
     });
     t.append(body);
@@ -118,90 +115,59 @@
     // The roster arrives in the sheet's row order (cohort, entry year, department, name).
     const ordered = [...cohorts].sort((a, b) => a.number - b.number);
     const people = ordered.flatMap(c => c.members.map(m => Object.assign({ cohort: c.number }, m)));
-    // Tabs: Full list, then one tab per term with the members who took part that term (교수 2026-11-02).
-    // #dept=산경 (Home department map, table) or #entry=2020 (table) narrows Full list, with a way back (교수 2026-11-02, 11-03).
-    const match = /^#(dept|entry)=(.+)$/.exec(location.hash);
+    // One list, no tabs: everyone grouped by the cohort they joined, cohort first and the term small beside it (교수 2026-11-18;
+    // term tabs before repeated returning members in several tabs). #dept=산경, #entry=2020 and #term=3 narrow the same list, with a way back.
+    const legacy = /^#members-(\d+(?:-\d+)?)$/.exec(location.hash);  // old term-tab links
+    const match = legacy ? ['', 'term', legacy[1].replace('-', '.')] : /^#(dept|entry|term)=(.+)$/.exec(location.hash);
     const filter = match && FILTERS[match[1]], want = match && filter.value(decodeURIComponent(match[2]));
-    const dept = match ? filter.label(want) : null;
-    const shown = match ? people.filter(p => filter.of(p) === want) : people;
-    // Every list opens with the same line, `<group> · N members`: a filter, a term tab, or everyone (교수 2026-11-03).
-    // Only a filtered Full list (#dept=, #entry=) adds Show everyone; a term tab already sits next to the Full list tab (교수 2026-11-18).
-    // Full list keeps the line too (no link) so the table starts at the same height in every tab.
-    // The group name is the table's group heading, and Members sheet closes the line, right above the table it mirrors (교수 2026-11-17, like Schedule's Sessions line).
+    const keep = p => { const v = filter.of(p); return Array.isArray(v) ? v.includes(want) : v === want; };
+    const shown = match ? people.filter(keep) : people;
+    const termOf = match && match[1] === 'term' ? ordered.find(c => c.number === want) : null;
+    const rep = termOf && representatives[termOf.term];
     const sheet = list.closest('[data-members-sheet]');
-    const summary = (label, count, reset, cohort) => {
-      const note = element('p', undefined, 'study-member-filter');
-      const head = element('span', label, 'group-heading');
-      if (cohort) head.append(element('span', ' ' + cohort, 'study-member-count'));  // Fall 2025 1기, as on the tab (교수 2026-11-18)
-      head.append(element('span', ' · ' + count + (count === 1 ? ' member' : ' members'), 'study-member-count'));
-      note.append(head);
-      if (reset) {
-        const all = element('a', 'Show everyone'); all.href = location.pathname;
-        all.addEventListener('click', e => { e.preventDefault(); history.replaceState(null, '', location.pathname); render(cohorts); });
-        note.append(all);
-      }
-      if (sheet) {
-        const link = element('a', 'Members sheet ', 'course-sheet'); link.href = sheet.getAttribute('data-members-sheet');
-        const arrow = element('span', '↗'); arrow.setAttribute('aria-hidden', 'true'); link.append(arrow);
-        note.append(link);
-      }
-      return note;
-    };
-    const fullPanel = element('div');
-    fullPanel.append(summary(dept || 'Everyone', shown.length, !!dept));
-    fullPanel.append(table(shown, dept ? dept + ' members' : 'All study members', false));
-    const tabs = [{ id: 'members-all', title: 'Everyone', panel: fullPanel }];  // the same word as the line above its table (교수 2026-11-18: Full list / All terms said little)
-    for (const c of ordered) {
-      const term = people.filter(p => p.participation.includes(c.number));
-      const rep = representatives[c.term];
-      term.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // representative first, the rest keep the sheet order
-      // One-line tab labels: the term, then the cohort small and light on its right, no member counts (교수 2026-11-18; '1기 (Fall 2025)' before, 2026-11-02).
-      const panel = element('div');
-      panel.append(summary(c.term || c.number + '기', term.length, false, c.term ? c.number + '기' : ''),  // term first, cohort small, as on the tab
-        table(term, c.number + '기 members' + (c.term ? ', ' + c.term : ''), true, rep));
-      tabs.push({ id: tabId(c.number), title: c.term || c.number + '기', note: c.term ? c.number + '기' : '', panel });
+    // The line above the groups: `Everyone · 39 members`, or the filter with Show everyone, then Members sheet (교수 2026-11-17, like Schedule's Sessions line).
+    const note = element('p', undefined, 'study-member-filter');
+    const head = element('span', match ? filter.label(want) : 'Everyone', 'group-heading');
+    if (termOf && termOf.term) head.append(element('span', ' ' + termOf.term, 'study-member-count'));
+    head.append(element('span', ' · ' + shown.length + (shown.length === 1 ? ' member' : ' members'), 'study-member-count'));
+    note.append(head);
+    if (match) {
+      const all = element('a', 'Show everyone'); all.href = location.pathname;
+      all.addEventListener('click', e => { e.preventDefault(); history.replaceState(null, '', location.pathname); render(cohorts); });
+      note.append(all);
     }
-    const box = element('section', undefined, 'study-member-tabs');
-    const tablist = element('div', undefined, 'study-tablist study-member-tablist'); tablist.setAttribute('role', 'tablist'); tablist.setAttribute('aria-label', 'Member lists');
-    const buttons = tabs.map(tab => {
-      const button = element('button'); button.type = 'button'; button.id = 'tab-' + tab.id; button.setAttribute('role', 'tab'); button.setAttribute('aria-controls', tab.id);
-      button.append(element('strong', tab.title));
-      if (tab.note) button.append(element('span', tab.note));  // smaller and lighter on the same line
-      tablist.append(button);
-      return button;
-    });
-    const panels = tabs.map(tab => {
-      const panel = element('div', undefined, 'study-panel'); panel.id = tab.id; panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', 'tab-' + tab.id);
-      panel.append(tab.panel); return panel;
-    });
-    const show = (i, push) => {
-      buttons.forEach((b, j) => { b.setAttribute('aria-selected', String(i === j)); b.tabIndex = i === j ? 0 : -1; panels[j].hidden = i !== j; });
-      if (push) history.replaceState(null, '', location.pathname + '#' + tabs[i].id);  // <base href="/"> would send a bare #hash to the site root
-    };
-    buttons.forEach((b, i) => {
-      b.addEventListener('click', () => show(i, true));
-      b.addEventListener('keydown', e => {
-        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        const n = e.key === 'Home' ? 0 : e.key === 'End' ? buttons.length - 1 : d ? (i + d + buttons.length) % buttons.length : -1;
-        if (n >= 0) { e.preventDefault(); show(n, true); buttons[n].focus(); }
-      });
-    });
-    const fromHash = () => { const want = tabs.findIndex(tab => tab.id === location.hash.slice(1)); show(want < 0 ? 0 : want, false); };
-    fromHash();
-    window.onhashchange = () => (/^#(dept|entry)=/.test(location.hash) || dept ? render(cohorts) : fromHash());  // #members-4 switches the tab; #dept= and #entry= re-filter
-    box.append(tablist, ...panels);
-    // One line under the lists says where the photos come from and how to change one (교수 2026-11-03), so the tabs sit right under the title as on Schedule (교수 2026-11-18).
-    const note = element('p', 'Photos come from POVIS and LinkedIn to help everyone put names to faces. If you\u2019d like a different photo, just let ', 'study-member-photo-note');
+    if (sheet) {
+      const link = element('a', 'Members sheet ', 'course-sheet'); link.href = sheet.getAttribute('data-members-sheet');
+      const arrow = element('span', '↗'); arrow.setAttribute('aria-hidden', 'true'); link.append(arrow);
+      note.append(link);
+    }
+    const box = element('section', undefined, 'study-member-groups'); box.id = 'members-all';
+    box.append(note);
+    let count = 0;
+    for (const c of ordered) {
+      const group = shown.filter(p => p.cohort === c.number);
+      if (!group.length) continue;
+      if (rep) group.sort((a, b) => (b.email.split('@')[0] === rep) - (a.email.split('@')[0] === rep));  // a term list puts its representative first
+      const section = element('div', undefined, 'study-member-group'); section.id = 'cohort-' + String(c.number).replace('.', '-');
+      const h = element('h3', c.number + '기', 'group-heading');
+      if (c.term) h.append(element('span', c.term));
+      section.append(h, table(group, c.number + '기 members' + (c.term ? ', ' + c.term : ''), count, rep));
+      count += group.length;
+      box.append(section);
+    }
+    window.onhashchange = () => render(cohorts);
+    // One line under the lists says where the photos come from and how to change one (교수 2026-11-03), so the list starts right under the title (교수 2026-11-18).
+    const photoNote = element('p', 'Photos come from POVIS and LinkedIn to help everyone put names to faces. If you\u2019d like a different photo, just let ', 'study-member-photo-note');
     const prof = element('a', 'Prof. Sangwoo Mo'); prof.href = 'faculty.html';
-    note.append(prof, ' know.');
-    list.replaceChildren(box, note);
+    photoNote.append(prof, ' know.');
+    list.replaceChildren(box, photoNote);
   }
   async function unlock(key, focus) {
     const plaintext = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: decode(data.iv) }, key, decode(data.ciphertext));
     render(JSON.parse(new TextDecoder().decode(plaintext)));
     input.value = ''; form.hidden = true; list.hidden = false;
     submit.setAttribute('aria-expanded', 'true'); message.textContent = '';
-    if (focus) list.querySelector('[role="tab"][aria-selected="true"]').focus();
+    if (focus) { const top = list.querySelector('.study-member-filter .group-heading'); top.tabIndex = -1; top.focus(); }
   }
   submit.disabled = true;
   (async () => {

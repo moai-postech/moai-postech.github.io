@@ -443,6 +443,248 @@ svg.dg text{font-family:var(--sans);fill:var(--ink-2)}
 
 /* Original lecture outlines reused by the review session. */
 
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
 .body{gap:18px}.fig svg{width:100%;max-height:100%}
 .sqlwork{display:grid;grid-template-columns:1.12fr 1fr;gap:42px;align-items:center;flex:1;min-height:0}
 .sqlcode{margin:0;white-space:pre-wrap;font:21px/1.62 var(--mono);color:var(--ink);background:#f8fafc;padding:24px 26px;border-left:3px solid var(--blue);overflow:visible;tab-size:2}
@@ -5610,6 +5852,187 @@ h1.t .sub{color:var(--ink-2)}
 [data-deck-target]{cursor:pointer;touch-action:manipulation}
 [data-deck-target]:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media print{[data-deck-target]:focus-visible{outline:none}}
+/* Lecture 12: sourced photography and product screens, with content-sized data figures. */
+.lec12-image-map.outline-list{width:1100px;max-width:100%;display:grid;gap:24px 30px;padding:0;margin:0}
+.lec12-image-map.four{grid-template-columns:1fr 1fr}
+.lec12-image-map.two{grid-template-columns:1fr 1fr}
+.lec12-image-map .o.lec12-map-card{display:block;min-width:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;text-align:left}
+.lec12-image-map .lec12-map-image{width:100%;height:145px;overflow:hidden;background:var(--paper-2)}
+.lec12-image-map.two .lec12-map-image{height:250px}
+.lec12-image-map .lec12-map-image img{display:block;width:100%;height:100%;max-height:none;max-width:none;object-fit:contain;object-position:center}
+.lec12-image-map .lec12-map-image.photo img{object-fit:cover}
+.lec12-image-map .lec12-map-label{display:flex;align-items:baseline;gap:12px;margin-top:12px}
+.lec12-image-map .o .num{font:600 18px var(--mono);color:var(--ink-3);width:auto}
+.lec12-image-map .o .nm{font:700 23px var(--sans);color:var(--ink);display:block}
+.lec12-image-map .o p{font:400 17px/1.3 var(--sans);color:var(--ink-3);margin:5px 0 0}
+.lec12-image-map.two .o .nm{font-size:26px}
+.lec12-image-map.two .o p{font-size:19px;margin-top:9px}
+.lec12-photo-hero{width:1120px;height:435px;overflow:hidden}
+.lec12-photo-hero img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;max-height:none!important;filter:saturate(.55)}
+.lec12-responsibility ul{margin:10px 0 0;padding-left:22px;font:400 22px/1.6 var(--sans);color:var(--ink-2)}
+.lec12-responsibility{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:40px;text-align:left}
+.lec12-responsibility img{width:100%;height:260px;object-fit:contain;display:block;background:var(--paper-2)}
+.lec12-responsibility>div:first-child img{object-fit:cover}
+.lec12-responsibility h3,.lec12-grains h3,.lec12-snapshots h3,.lec12-sums h3,.lec12-retry h3{font:700 25px/1.2 var(--sans);margin:18px 0 8px;color:var(--ink)}
+.lec12-responsibility p{font:400 21px/1.4 var(--sans);margin:0;color:var(--ink-2)}
+.lec12-snapshots{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:42px;text-align:left}
+.lec12-snapshots pre{font:500 21px/2 var(--mono);background:var(--paper-2);border:1px solid var(--line);padding:20px 14px;white-space:pre;margin:20px 0}
+.lec12-snapshots p{font:500 29px var(--mono);margin:20px 0}
+.lec12-snapshots p span,.lec12-sums span{color:var(--ink-3)}
+.lec12-snapshots mark{background:var(--orange-soft);color:var(--ink);padding:2px 0}
+.lec12-sums{width:1060px}
+.lec12-workers{display:grid;grid-template-columns:1fr 1fr;gap:60px;text-align:center}
+.lec12-workers p{font:500 32px var(--mono);margin:24px 0}
+.lec12-sums b{color:var(--blue-deep)}
+.lec12-combined{border-top:1px solid var(--line);margin-top:35px;padding-top:26px;text-align:center}
+.lec12-combined>span{font:500 20px var(--sans)}
+.lec12-combined p{font:500 42px var(--mono);margin:15px 0}
+.lec12-grains{width:1120px;display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:36px;text-align:left}
+.lec12-grains>div>span{font:400 18px var(--sans);color:var(--ink-3)}
+.lec12-grains table{border-collapse:collapse;width:100%;margin-top:24px;font:500 21px var(--mono)}
+.lec12-grains td{padding:12px 10px;border-bottom:1px solid var(--line)}
+.lec12-mini-bar{display:flex;align-items:center;gap:10px;height:75px;font:500 20px var(--mono)}
+.lec12-mini-bar b{width:65px;font-weight:500;flex-shrink:0}
+.lec12-mini-bar i{height:30px;display:block;background:var(--blue);min-width:0}
+.lec12-mini-bar.p2 i{background:var(--orange)}
+.lec12-mini-bar strong{font-weight:700;font-size:22px}
+.lec12-retry{width:850px;display:grid;grid-template-columns:1fr 1fr;gap:100px;text-align:center}
+.lec12-retry>div>b{font:700 34px var(--mono);display:block;margin:15px 0;color:var(--ink)}
+.lec12-bar-space{height:245px;display:flex;flex-direction:column;justify-content:flex-end;width:200px;margin:auto}
+.lec12-batch{height:115px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font:600 24px var(--mono)}
+.lec12-batch.repeated{background:var(--orange);color:var(--paper);border-bottom:2px solid var(--paper)}
+
+.lec12-product-screen{width:1120px;height:435px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lec12-product-screen img{width:100%;height:100%;object-fit:contain;max-height:none!important;display:block}
+.lec12-product-screen.query img,.lec12-image-map .lec12-map-image.query img{object-fit:cover;object-position:top}
+.lec12-responsibility>div:last-child img{object-fit:cover;object-position:top}
+.lec12-daily-sales .lec12-bar-space{height:280px}
+.lec12-daily-sales .lec12-batch{font-size:22px}
+.lec12-mini-bar{display:grid;grid-template-columns:65px 1fr 44px}
+.lec12-bar-track{display:block;height:30px;min-width:0}
+.lec12-spark-recap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;width:1100px;text-align:left}
+.lec12-spark-recap h3{font:700 26px var(--sans);margin:0 0 25px}
+.lec12-spark-recap pre{font:500 23px/1.7 var(--mono);margin:0;white-space:pre}
+.lec12-spark-recap img{width:100%;height:340px;object-fit:cover;max-height:none!important}
+
+/* Lecture 12: original storage diagrams enlarged in separate reading panels. */
+.lec12-storage-layout{display:grid;grid-template-columns:400px 315px 315px;gap:24px;align-items:center;width:1078px}
+.lec12-storage-layout h3{font:700 24px var(--sans);margin:0 0 14px;text-align:center}
+.lec12-storage-layout table{width:100%;font-size:22px}
+.lec12-storage-crop{width:315px;height:410px;background-repeat:no-repeat;background-size:754px 742px}
+.lec12-storage-crop.rows{width:300px;background-position:-38px -290px}
+.lec12-storage-crop.columns{background-position:-408px -290px}
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Two code representations of the same record have equal readable widths. */
+.row:has(> .fullcode):has(> .stack > .fullcode){display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:24px;align-items:center}
+.row:has(> .fullcode):has(> .stack > .fullcode)>*{min-width:0;max-width:100%}
+.row:has(> .fullcode):has(> .stack > .fullcode) .fullcode{min-width:0;width:100%}
+
+/* Concept-table headers use the same dark navy / white treatment in review and numbered lectures. */
+.review-deck :is(.review-table,.rev-table) th{font-size:23px;line-height:1.45;background:var(--blue-deep);color:#fff;font-weight:700;border-bottom:2px solid #0d2641}
+.review-deck .rev-table th{padding-top:11px;padding-bottom:11px}
+
+/* Cover typography (2026-11-14): the lecture title is the primary text.
+   These metrics are also read by tools/render-title-pdf.py for the static fallback.
+   Keep this block last so imported review styles cannot reintroduce 88px numbers. */
+:root{--cover-left:110px;--cover-top:176px;--cover-width:1060px;
+ --cover-course-size:17px;--cover-course-line:24px;--cover-course-track:.14;
+ --cover-heading-gap:32px;--cover-number-size:30px;--cover-number-line:36px;--cover-number-gap:18px;
+ --cover-title-size:52px;--cover-title-line:59.8px;--cover-title-track:-.035;
+ --cover-meta-gap:40px;--cover-meta-pad:20px;--cover-meta-size:19px;--cover-meta-line:30.4px;--cover-meta-width:560px}
+.slide.title:not(.mpr-close){justify-content:flex-start;background:var(--paper);color:var(--ink);padding:var(--cover-top) var(--cover-left) 0}
+.slide.title:not(.mpr-close) .course{font-size:var(--cover-course-size);line-height:var(--cover-course-line);font-weight:600;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase}
+.slide.title:not(.mpr-close) h1{font-size:52px;line-height:var(--cover-title-line);font-weight:800;letter-spacing:-.035em;margin:var(--cover-heading-gap) 0 0;max-width:var(--cover-width);color:var(--ink);text-wrap:balance}
+.slide.title:not(.mpr-close) h1 .num{display:block;font-size:var(--cover-number-size);line-height:var(--cover-number-line);font-weight:600;letter-spacing:0;margin-bottom:var(--cover-number-gap);color:var(--accent)}
+.slide.title:not(.mpr-close) h1:not(:has(.num)){padding-top:calc(var(--cover-number-line) + var(--cover-number-gap))}
+.slide.title:not(.mpr-close) h1 .ser{color:inherit}
+.slide.title:not(.mpr-close) .meta{font-size:var(--cover-meta-size);line-height:var(--cover-meta-line);font-weight:400;letter-spacing:0;color:var(--ink-3);margin-top:var(--cover-meta-gap);padding-top:var(--cover-meta-pad);border-top:1px solid var(--line);max-width:var(--cover-meta-width)}
+/* Same-slide reveals: keep layout and numbering fixed; print the complete state. */
+.slide .frag{transition:opacity .18s ease}
+.slide .frag:not(.vis){pointer-events:none}
+@media (prefers-reduced-motion:reduce){.slide .frag{transition:none}}
+@media print{.slide .frag{opacity:1!important;visibility:visible!important;transition:none!important}}
 /* DECK-THEME:END */
 </style>
 </head>
@@ -5664,9 +6087,9 @@ h1.t .sub{color:var(--ink-2)}
 <span class="kw">WHERE</span> category <span class="kw"><mark class="tk">IN</mark></span> (<span class="lit">&#x27;Gadgets&#x27;</span>,<span class="lit">&#x27;Photography&#x27;</span>);
   <span class="ann up">&uarr; any value in the list</span></pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>pname</th><th>category</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">Gadgets</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">Gadgets</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">Photography</td></tr></tbody></table></div></div></div></div><div class="capt">IN selects the three products in either named category</div></section>
 
-<section class="slide " data-title="Recap: The Product Table" data-notes="첫 창 앞에서 입력 네 행을 확인한다. Gadget 중 20 초과인 행은 PowerGizmo다. SELECT에 두 열을 쓰면 출력도 두 열이다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> The Product Table</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT * FROM Product" data-db="product"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td><td class="nw">Hitachi</td></tr></tbody></table></div></div><div class="capt">Predict the remaining rows and output columns before writing the query</div></section>
+<section class="slide " data-title="The Product Table" data-notes="첫 창 앞에서 입력 네 행을 확인한다. Gadget 중 20 초과인 행은 PowerGizmo다. SELECT에 두 열을 쓰면 출력도 두 열이다."><h1 class="t">The Product Table</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT * FROM Product" data-db="product"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td><td class="nw">Hitachi</td></tr></tbody></table></div></div><div class="capt">Predict the remaining rows and output columns before writing the query</div></section>
 
-<section class="slide trypad" data-title="Demo: Read the Product Table" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. SELECT pname,price FROM Product WHERE category=&#x27;Gadgets&#x27;; 다음은 AND price&gt;20을 더한다. 결과는 두 행에서 PowerGizmo 한 행으로 줄고 출력 열은 그대로 두 개다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Read the Product Table</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Return the name and price of every Gadget product</li><li>Keep only Gadget products priced above 20</li></ol><div class="sqlpad" data-seed="product" data-tables="Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Read the Product Table" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. SELECT pname,price FROM Product WHERE category=&#x27;Gadgets&#x27;; 다음은 AND price&gt;20을 더한다. 결과는 두 행에서 PowerGizmo 한 행으로 줄고 출력 열은 그대로 두 개다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Read the Product Table</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Return the name and price of every Gadget product</li><li>Keep only Gadget products priced above 20</li></ol><div class="sqlpad" data-seed="product" data-tables="Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Read the Product Table" data-notes="첫 질의는 Gizmo와 PowerGizmo다. 조건 하나를 더한 결과는 PowerGizmo 29.99다. SELECT는 열, WHERE는 행을 정한다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Read the Product Table</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="product"><pre class="sqlcode"><span class="kw">SELECT</span> pname,price <span class="kw">FROM</span> Product
 <span class="kw">WHERE</span> category=<span class="lit">&#x27;Gadgets&#x27;</span> <span class="kw">AND</span> price&gt;20;</pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>pname</th><th>price</th></tr></thead><tbody><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td></tr></tbody></table></div></div></div></div><div class="capt">Adding the price condition keeps PowerGizmo and removes Gizmo</div></section>
@@ -5684,9 +6107,9 @@ h1.t .sub{color:var(--ink-2)}
 <span class="kw">ORDER</span> <span class="kw">BY</span> price <span class="kw">DESC</span>, pname <span class="kw">ASC</span> <span class="kw"><mark class="tk">LIMIT</mark></span> 2;
   <span class="ann up">&uarr; first 2 rows after the sort</span></pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>pname</th><th>price</th></tr></thead><tbody><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td></tr></tbody></table></div></div></div></div><div class="capt">Sort before limiting; an explicit tie-breaker makes the chosen rows reproducible</div></section>
 
-<section class="slide " data-title="Recap: Categories and Prices" data-notes="정리 창에서는 같은 네 제품을 쓴다. Gadget 가격을 큰 순서로 비교하면 29.99가 19.99보다 먼저다. category는 Gadgets가 두 번 있다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Categories and Prices</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT pname,price,category FROM Product" data-db="product"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">Gadgets</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td></tr></tbody></table></div></div><div class="capt">The input repeats Gadgets twice; the two Gadget prices are different</div></section>
+<section class="slide " data-title="Categories and Prices" data-notes="정리 창에서는 같은 네 제품을 쓴다. Gadget 가격을 큰 순서로 비교하면 29.99가 19.99보다 먼저다. category는 Gadgets가 두 번 있다."><h1 class="t">Categories and Prices</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT pname,price,category FROM Product" data-db="product"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">Gadgets</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td></tr></tbody></table></div></div><div class="capt">The input repeats Gadgets twice; the two Gadget prices are different</div></section>
 
-<section class="slide trypad" data-title="Demo: Prepare a Price List" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT pname,price FROM Product WHERE category=&#x27;Gadgets&#x27; ORDER BY price DESC,pname LIMIT 1 → PowerGizmo. 2. SELECT DISTINCT category FROM Product → 세 종류. 첫 질의를 LIMIT 2로 바꾸거나 LIKE &#x27;%Gizmo%&#x27;를 써보는 것은 강의자 시연 한 번으로 충분하다. 추가 과제로 늘리지 않는다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Prepare a Price List</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>List Gadget names and prices, highest price first; return only the first product</li><li>List each category once with <code>DISTINCT</code></li></ol><div class="sqlpad" data-seed="product" data-tables="Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Prepare a Price List" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT pname,price FROM Product WHERE category=&#x27;Gadgets&#x27; ORDER BY price DESC,pname LIMIT 1 → PowerGizmo. 2. SELECT DISTINCT category FROM Product → 세 종류. 첫 질의를 LIMIT 2로 바꾸거나 LIKE &#x27;%Gizmo%&#x27;를 써보는 것은 강의자 시연 한 번으로 충분하다. 추가 과제로 늘리지 않는다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Prepare a Price List</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>List Gadget names and prices, highest price first; return only the first product</li><li>List each category once with <code>DISTINCT</code></li></ol><div class="sqlpad" data-seed="product" data-tables="Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Prepare a Price List" data-notes="정렬 기준은 가격 내림차순, 동률이면 이름이다. 가장 비싼 Gadget은 PowerGizmo다. LIMIT은 정렬 결과에서 한 행을 받는다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Prepare a Price List</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="product"><pre class="sqlcode"><span class="kw">SELECT</span> pname,price <span class="kw">FROM</span> Product
 <span class="kw">WHERE</span> category=<span class="lit">&#x27;Gadgets&#x27;</span>
@@ -5702,9 +6125,9 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide clarity-slide" data-title="Caveat: Missing Prices in a Filter" data-notes="PowerGizmo의 빈 가격 칸과 오른쪽에서 사라진 행을 직접 짚는다. 0원이라고 판정해서 빠진 것도, 20원 이하라고 확인한 것도 아니다. 가격 비교가 참이라고 확인된 행만 남는다. 다음 실습에서 OR price IS NULL을 붙여 남기려는 정책을 직접 표현한다."><h1 class="t"><span class="pfx pfx-caveat">Caveat:</span> Missing Prices in a Filter</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Missing-price input</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">pname</th><th class="">price</th></tr></thead><tbody><tr class=""><td class="nw">Gizmo</td><td class="nw">19.99</td></tr><tr class=""><td class="nw">PowerGizmo</td><td class="red"><span class="null">NULL</span></td></tr><tr class=""><td class="nw">SingleTouch</td><td class="nw">149.99</td></tr><tr class=""><td class="nw">MultiTouch</td><td class="nw">203.99</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>WHERE price > 20</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">pname</th><th class="">price</th></tr></thead><tbody><tr class=""><td class="nw">SingleTouch</td><td class="nw">149.99</td></tr><tr class=""><td class="nw">MultiTouch</td><td class="nw">203.99</td></tr></tbody></table></div></div></div><p class="clarity-statement"><b>PowerGizmo:</b> the price is unknown, so the comparison cannot be true</p></div><div class="capt">PowerGizmo disappears because its price is unknown; NULL does not become zero</div></section>
 
-<section class="slide " data-title="Recap: The Missing-Price Copy" data-notes="NULL 창에서는 이 사본이 입력이다. 원본 표 버튼도 같은 사본을 띄운다. 두 질의는 결측 가격을 찾아내고 원하는 정책으로 포함하는 것이다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> The Missing-Price Copy</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT * FROM Product" data-db="product_missing"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td><span class="null">NULL</span></td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td><td class="nw">Hitachi</td></tr></tbody></table></div></div><div class="capt">PowerGizmo is the only product with a missing price in this copy</div></section>
+<section class="slide " data-title="The Missing-Price Copy" data-notes="NULL 창에서는 이 사본이 입력이다. 원본 표 버튼도 같은 사본을 띄운다. 두 질의는 결측 가격을 찾아내고 원하는 정책으로 포함하는 것이다."><h1 class="t">The Missing-Price Copy</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT * FROM Product" data-db="product_missing"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td><span class="null">NULL</span></td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td><td class="nw">Hitachi</td></tr></tbody></table></div></div><div class="capt">PowerGizmo is the only product with a missing price in this copy</div></section>
 
-<section class="slide trypad" data-title="Demo: Handle Missing Prices" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT pname,price FROM Product WHERE price IS NULL → PowerGizmo. 2. SELECT pname,price FROM Product WHERE price&gt;20 OR price IS NULL → PowerGizmo, SingleTouch, MultiTouch. price=NULL로 쓰면 안 되는 이유를 실제 0행 결과로 한 번 확인한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Handle Missing Prices</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Find products with a missing price</li><li>Return products priced above 20, and also include products with a missing price</li></ol><div class="sqlpad" data-seed="product_missing" data-tables="Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Handle Missing Prices" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT pname,price FROM Product WHERE price IS NULL → PowerGizmo. 2. SELECT pname,price FROM Product WHERE price&gt;20 OR price IS NULL → PowerGizmo, SingleTouch, MultiTouch. price=NULL로 쓰면 안 되는 이유를 실제 0행 결과로 한 번 확인한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Handle Missing Prices</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Find products with a missing price</li><li>Return products priced above 20, and also include products with a missing price</li></ol><div class="sqlpad" data-seed="product_missing" data-tables="Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Handle Missing Prices" data-notes="조건을 만족하는 알려진 가격과 결측 가격을 함께 남겼다. Gizmo 19.99만 빠진다. OR는 두 조건 중 하나가 TRUE면 남긴다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Handle Missing Prices</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="product_missing"><pre class="sqlcode"><span class="kw">SELECT</span> pname,price <span class="kw">FROM</span> Product
 <span class="kw">WHERE</span> price&gt;20 <span class="kw">OR</span> price <span class="kw">IS</span> <span class="kw">NULL</span>;</pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>pname</th><th>price</th></tr></thead><tbody><tr><td class="nw">PowerGizmo</td><td><span class="null">NULL</span></td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td></tr></tbody></table></div></div></div></div><div class="capt">The explicit NULL condition includes PowerGizmo alongside the two known prices above 20</div></section>
@@ -5713,9 +6136,9 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide " data-title="Keys and References" data-notes="Product pname과 Company cname이 각각 행을 식별한다. manufacturer는 Company에 있는 cname을 가리킨다. FK는 표를 자동으로 join하는 명령이 아니라 쓰기의 제약이다. 1:N과 M:N을 실제 표로 옮기는 틀을 이어서 본다."><h1 class="t">Keys and References</h1><div class="rule"></div><div class="body"><div class="stack "><div class="row "><div class="fulltable" data-sql="SELECT * FROM Company" data-db="pc"><table class="sqltable"><thead><tr><th>cname</th><th>stockprice</th><th>country</th></tr></thead><tbody><tr><td class="nw">GizmoWorks</td><td class="nw">25.0</td><td class="nw">USA</td></tr><tr><td class="nw">Canon</td><td class="nw">65.0</td><td class="nw">Japan</td></tr><tr><td class="nw">Hitachi</td><td class="nw">15.0</td><td class="nw">Japan</td></tr></tbody></table></div><div class="fulltable" data-sql="SELECT pname,manufacturer FROM Product" data-db="pc"><table class="sqltable"><thead><tr><th>pname</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">Hitachi</td></tr></tbody></table></div></div><div class="co def">A primary key identifies a row; a foreign key requires an existing referenced key</div></div></div><div class="capt">Each product names one existing company; the key columns identify the referenced rows</div></section>
 
-<section class="slide " data-title="Entity–Relationship (ER) Diagram" data-notes="모델링 줄기의 첫 장. 표를 만들기 전에 개체(entity), 속성(attribute), 관계(relationship)를 그린다. 6강 첫머리의 Students-Courses 그림이 이것의 약식이었다. 여기서는 Chen 표기: 사각형이 개체, 타원이 속성, 마름모가 관계, 밑줄이 키. 선 위의 1과 N이 카디널리티다. 회사 하나가 제품 여럿을 만든다. 이 예에서는 모든 제품의 제조사가 정확히 하나라고 둔다(1:N 표기만으로는 제조사가 반드시 있어야 하는지까지 정해지지 않는다. 그것은 참여 제약으로 따로 표시한다).  질문: 이 그림을 표 두 개로 옮기면 &quot;makes&quot; 관계는 어디에 들어가나?"><h1 class="t">Entity–Relationship (ER) Diagram<span class="sub">An ER diagram describes entities, attributes and relationships before table design</span></h1><div class="rule"></div><div class="body"><div class="fig"><svg class="dg" viewBox="0 0 1100 340" xmlns="http://www.w3.org/2000/svg" style="width:1000px"><line x1="110" y1="50" x2="190" y2="140" stroke="#94a3b8" stroke-width="1.4"/><line x1="330" y1="50" x2="270" y2="140" stroke="#94a3b8" stroke-width="1.4"/><line x1="230" y1="300" x2="230" y2="204" stroke="#94a3b8" stroke-width="1.4"/><line x1="790" y1="50" x2="850" y2="140" stroke="#94a3b8" stroke-width="1.4"/><line x1="1010" y1="50" x2="930" y2="140" stroke="#94a3b8" stroke-width="1.4"/><line x1="870" y1="300" x2="870" y2="204" stroke="#94a3b8" stroke-width="1.4"/><line x1="330" y1="172" x2="470" y2="172" stroke="#0f172a" stroke-width="2"/><line x1="630" y1="172" x2="770" y2="172" stroke="#0f172a" stroke-width="2"/><rect x="130" y="140" width="200" height="64" rx="2" fill="#fff" stroke="#0f172a" stroke-width="2"/><text x="230" y="180" style="font-size:21px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">Company</text><rect x="770" y="140" width="200" height="64" rx="2" fill="#fff" stroke="#0f172a" stroke-width="2"/><text x="870" y="180" style="font-size:21px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">Product</text><polygon points="550,126.0 630.0,172 550,218.0 470.0,172" fill="#ddeaf8" stroke="#24578f" stroke-width="2"/><text x="550" y="178" style="font-size:17px;fill:#13385f;text-anchor:middle;font-weight:700;font-family:var(--sans)">makes</text><ellipse cx="110" cy="50" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="110" y="56" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans);text-decoration:underline">CName</text><ellipse cx="330" cy="50" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="330" y="56" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--sans)">StockPrice</text><ellipse cx="230" cy="300" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="230" y="306" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--sans)">Country</text><ellipse cx="790" cy="50" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="790" y="56" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans);text-decoration:underline">PName</text><ellipse cx="1010" cy="50" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="1010" y="56" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--sans)">Price</text><ellipse cx="870" cy="300" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="870" y="306" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--sans)">Category</text><text x="352" y="160" style="font-size:22px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">1</text><text x="748" y="160" style="font-size:22px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">N</text><text x="230" y="228" style="font-size:14px;fill:#64748b;text-anchor:middle;font-weight:600;font-family:var(--sans);font-style:italic">Entity</text><text x="550" y="240" style="font-size:14px;fill:#64748b;text-anchor:middle;font-weight:600;font-family:var(--sans);font-style:italic">Relationship</text><text x="1010" y="92" style="font-size:14px;fill:#64748b;text-anchor:middle;font-weight:600;font-family:var(--sans);font-style:italic">Attribute</text><text x="110" y="92" style="font-size:14px;fill:#64748b;text-anchor:middle;font-weight:600;font-family:var(--sans);font-style:italic">Key (Underlined)</text><text x="550" y="300" style="font-size:14px;fill:#c27318;text-anchor:middle;font-weight:700;font-family:var(--sans);font-style:italic">Cardinality 1 : N</text></svg></div></div><div class="capt">One company <b>makes</b> many products: <b>1</b> on one side, <b>N</b> on the other</div></section>
+<section class="slide " data-title="Entity–Relationship (ER) Diagram" data-notes="모델링 줄기의 첫 장. 표를 만들기 전에 개체(entity), 속성(attribute), 관계(relationship)를 그린다. 여기서는 Chen 표기: 사각형이 개체, 타원이 속성, 마름모가 관계, 밑줄이 키. 선 위의 1과 N이 카디널리티다. 회사 하나가 제품 여럿을 만든다. 이 예에서는 모든 제품의 제조사가 정확히 하나라고 둔다(1:N 표기만으로는 제조사가 반드시 있어야 하는지까지 정해지지 않는다. 그것은 참여 제약으로 따로 표시한다).  질문: 이 그림을 표 두 개로 옮기면 &quot;makes&quot; 관계는 어디에 들어가나?"><h1 class="t">Entity–Relationship (ER) Diagram<span class="sub">An ER diagram describes entities, attributes and relationships before table design</span></h1><div class="rule"></div><div class="body"><div class="fig"><svg class="dg" viewBox="0 0 1100 340" xmlns="http://www.w3.org/2000/svg" style="width:1000px"><line x1="110" y1="50" x2="190" y2="140" stroke="#94a3b8" stroke-width="1.4"/><line x1="330" y1="50" x2="270" y2="140" stroke="#94a3b8" stroke-width="1.4"/><line x1="230" y1="300" x2="230" y2="204" stroke="#94a3b8" stroke-width="1.4"/><line x1="790" y1="50" x2="850" y2="140" stroke="#94a3b8" stroke-width="1.4"/><line x1="1010" y1="50" x2="930" y2="140" stroke="#94a3b8" stroke-width="1.4"/><line x1="870" y1="300" x2="870" y2="204" stroke="#94a3b8" stroke-width="1.4"/><line x1="330" y1="172" x2="470" y2="172" stroke="#0f172a" stroke-width="2"/><line x1="630" y1="172" x2="770" y2="172" stroke="#0f172a" stroke-width="2"/><rect x="130" y="140" width="200" height="64" rx="2" fill="#fff" stroke="#0f172a" stroke-width="2"/><text x="230" y="180" style="font-size:21px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">Company</text><rect x="770" y="140" width="200" height="64" rx="2" fill="#fff" stroke="#0f172a" stroke-width="2"/><text x="870" y="180" style="font-size:21px;fill:#0f172a;text-anchor:middle;font-weight:750;font-family:var(--sans)">Product</text><polygon points="550,126.0 630.0,172 550,218.0 470.0,172" fill="#ddeaf8" stroke="#24578f" stroke-width="2"/><text x="550" y="178" style="font-size:17px;fill:#13385f;text-anchor:middle;font-weight:700;font-family:var(--sans)">makes</text><ellipse cx="110" cy="50" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="110" y="56" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans);text-decoration:underline">CName</text><ellipse cx="330" cy="50" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="330" y="56" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--sans)">StockPrice</text><ellipse cx="230" cy="300" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="230" y="306" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--sans)">Country</text><ellipse cx="790" cy="50" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="790" y="56" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans);text-decoration:underline">PName</text><ellipse cx="1010" cy="50" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="1010" y="56" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--sans)">Price</text><ellipse cx="870" cy="300" rx="74" ry="26" fill="#fff" stroke="#64748b" stroke-width="1.5"/><text x="870" y="306" style="font-size:16px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--sans)">Category</text><text x="352" y="160" style="font-size:22px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">1</text><text x="748" y="160" style="font-size:22px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">N</text><text x="230" y="228" style="font-size:14px;fill:#64748b;text-anchor:middle;font-weight:600;font-family:var(--sans);font-style:italic">Entity</text><text x="550" y="240" style="font-size:14px;fill:#64748b;text-anchor:middle;font-weight:600;font-family:var(--sans);font-style:italic">Relationship</text><text x="1010" y="92" style="font-size:14px;fill:#64748b;text-anchor:middle;font-weight:600;font-family:var(--sans);font-style:italic">Attribute</text><text x="110" y="92" style="font-size:14px;fill:#64748b;text-anchor:middle;font-weight:600;font-family:var(--sans);font-style:italic">Key (Underlined)</text><text x="550" y="300" style="font-size:14px;fill:#c27318;text-anchor:middle;font-weight:700;font-family:var(--sans);font-style:italic">Cardinality 1 : N</text></svg></div></div><div class="capt">One company <b>makes</b> many products: <b>1</b> on one side, <b>N</b> on the other</div></section>
 
-<section class="slide " data-title="ER to Tables" data-notes="규칙 둘. (1) 1:N이면 N 쪽 표에 1 쪽의 키를 foreign key로 넣는다. Product.Manufacturer가 Company.CName을 가리키는 것이 바로 앞 장들의 FK다. 이 평평한 관계형 설계에서는 Company에 제품 목록을 넣지 않고, 제품마다 제조사 참조 하나를 둔다(배열 열을 지원하는 DBMS도 있지만 여기서는 쓰지 않는다). (2) N:M이면 어느 쪽에도 넣을 수 없다. 제품 하나가 카테고리 여럿에, 카테고리 하나에 제품 여럿이 들어가면 짝마다 한 행을 갖는 연결 테이블(junction table)을 따로 만든다. 연결 테이블의 키는 두 FK의 조합이다(복습한 Enrolled(student_id, cid)가 바로 Students와 Courses의 연결 테이블이다)."><h1 class="t">ER to Tables<span class="sub">Each relationship becomes either a foreign key column or a table of its own</span></h1><div class="rule"></div><div class="body"><div class="fig"><svg class="dg" viewBox="0 0 1100 380" xmlns="http://www.w3.org/2000/svg" style="width:1060px"><text x="10" y="26" style="font-size:16px;fill:#0f172a;text-anchor:start;font-weight:750;font-family:var(--mono)">1 : N</text><line x1="120" y1="91" x2="160" y2="91" stroke="#0f172a" stroke-width="1.6"/><line x1="260" y1="91" x2="300" y2="91" stroke="#0f172a" stroke-width="1.6"/><rect x="10" y="69" width="110" height="44" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.6"/><text x="65" y="97" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans)">Company</text><rect x="300" y="69" width="110" height="44" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.6"/><text x="355" y="97" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans)">Product</text><polygon points="210,63.0 260.0,91 210,119.0 160.0,91" fill="#ddeaf8" stroke="#24578f" stroke-width="2"/><text x="210" y="97" style="font-size:17px;fill:#13385f;text-anchor:middle;font-weight:700;font-family:var(--sans)">makes</text><text x="140" y="83" style="font-size:17px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">1</text><text x="280" y="83" style="font-size:17px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">N</text><text x="470" y="100" style="font-size:30px;fill:#94a3b8;text-anchor:middle;font-weight:700;font-family:var(--sans)">⇒</text><text x="688" y="61" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">Company</text><rect x="700" y="40" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="757.5" y="60" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">CName</text><rect x="815" y="40" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="872.5" y="60" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">StockPrice</text><rect x="930" y="40" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="987.5" y="60" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Country</text><text x="548" y="131" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">Product</text><rect x="560" y="110" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="617.5" y="130" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">PName</text><rect x="675" y="110" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="732.5" y="130" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Price</text><rect x="790" y="110" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="847.5" y="130" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Category</text><rect x="905" y="110" width="115" height="30" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.3"/><text x="962.5" y="130" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Manufacturer</text><path d="M962 110 V91 H757 V80" stroke="#24578f" stroke-width="2" fill="none"/><polygon points="757,71 752,81 762,81" fill="#24578f"/><text x="962" y="166" style="font-size:14px;fill:#24578f;text-anchor:middle;font-weight:700;font-family:var(--sans)">Foreign Key on the N Side</text><line x1="10" y1="192" x2="1090" y2="192" stroke="#e2e8f0" stroke-width="1.2"/><text x="10" y="226" style="font-size:16px;fill:#0f172a;text-anchor:start;font-weight:750;font-family:var(--mono)">N : M</text><line x1="120" y1="290" x2="160" y2="290" stroke="#0f172a" stroke-width="1.6"/><line x1="260" y1="290" x2="300" y2="290" stroke="#0f172a" stroke-width="1.6"/><rect x="10" y="268" width="110" height="44" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.6"/><text x="65" y="296" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans)">Product</text><rect x="300" y="268" width="110" height="44" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.6"/><text x="355" y="296" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans)">Category</text><polygon points="210,262.0 260.0,290 210,318.0 160.0,290" fill="#ddeaf8" stroke="#24578f" stroke-width="2"/><text x="210" y="296" style="font-size:17px;fill:#13385f;text-anchor:middle;font-weight:700;font-family:var(--sans)">in</text><text x="140" y="282" style="font-size:17px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">N</text><text x="280" y="282" style="font-size:17px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">M</text><text x="470" y="300" style="font-size:30px;fill:#94a3b8;text-anchor:middle;font-weight:700;font-family:var(--sans)">⇒</text><text x="628" y="236" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">Product</text><rect x="640" y="215" width="110" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="695.0" y="235" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">PName</text><rect x="750" y="215" width="110" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="805.0" y="235" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Price</text><text x="628" y="296" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">ProductCategory</text><rect x="640" y="275" width="110" height="30" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.3"/><text x="695.0" y="295" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">PName</text><rect x="750" y="275" width="110" height="30" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.3"/><text x="805.0" y="295" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">CatName</text><text x="738" y="356" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">Category</text><rect x="750" y="335" width="110" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="805.0" y="355" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">CatName</text><rect x="860" y="335" width="110" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="915.0" y="355" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Department</text><line x1="695" y1="275" x2="695" y2="248" stroke="#24578f" stroke-width="2"/><polygon points="695.0,248.0 698.9,256.1 691.1,256.1" fill="#24578f"/><line x1="805" y1="305" x2="805" y2="333" stroke="#24578f" stroke-width="2"/><polygon points="805.0,333.0 801.1,324.9 808.9,324.9" fill="#24578f"/><text x="875" y="295" style="font-size:14px;fill:#24578f;text-anchor:start;font-weight:700;font-family:var(--sans)">Junction Table: One Row per Pair</text></svg></div></div><div class="capt">Use a <b>foreign key</b> for 1:N and a <b>junction table</b> for N:M</div></section>
+<section class="slide " data-title="ER to Tables" data-notes="규칙 둘. (1) 1:N이면 N 쪽 표에 1 쪽의 키를 foreign key로 넣는다. Product.Manufacturer가 Company.CName을 가리키는 것이 바로 앞 장들의 FK다. 이 평평한 관계형 설계에서는 Company에 제품 목록을 넣지 않고, 제품마다 제조사 참조 하나를 둔다(배열 열을 지원하는 DBMS도 있지만 여기서는 쓰지 않는다). (2) N:M이면 어느 쪽에도 넣을 수 없다. 제품 하나가 카테고리 여럿에, 카테고리 하나에 제품 여럿이 들어가면 짝마다 한 행을 갖는 연결 테이블(junction table)을 따로 만든다. 연결 테이블의 키는 두 FK의 조합이다(바로 다음 ProductCategory가 이 연결 테이블의 실제 예다)."><h1 class="t">ER to Tables<span class="sub">Each relationship becomes either a foreign key column or a table of its own</span></h1><div class="rule"></div><div class="body"><div class="fig"><svg class="dg" viewBox="0 0 1100 380" xmlns="http://www.w3.org/2000/svg" style="width:1060px"><text x="10" y="26" style="font-size:16px;fill:#0f172a;text-anchor:start;font-weight:750;font-family:var(--mono)">1 : N</text><line x1="120" y1="91" x2="160" y2="91" stroke="#0f172a" stroke-width="1.6"/><line x1="260" y1="91" x2="300" y2="91" stroke="#0f172a" stroke-width="1.6"/><rect x="10" y="69" width="110" height="44" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.6"/><text x="65" y="97" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans)">Company</text><rect x="300" y="69" width="110" height="44" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.6"/><text x="355" y="97" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans)">Product</text><polygon points="210,63.0 260.0,91 210,119.0 160.0,91" fill="#ddeaf8" stroke="#24578f" stroke-width="2"/><text x="210" y="97" style="font-size:17px;fill:#13385f;text-anchor:middle;font-weight:700;font-family:var(--sans)">makes</text><text x="140" y="83" style="font-size:17px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">1</text><text x="280" y="83" style="font-size:17px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">N</text><text x="470" y="100" style="font-size:30px;fill:#94a3b8;text-anchor:middle;font-weight:700;font-family:var(--sans)">⇒</text><text x="688" y="61" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">Company</text><rect x="700" y="40" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="757.5" y="60" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">CName</text><rect x="815" y="40" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="872.5" y="60" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">StockPrice</text><rect x="930" y="40" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="987.5" y="60" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Country</text><text x="548" y="131" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">Product</text><rect x="560" y="110" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="617.5" y="130" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">PName</text><rect x="675" y="110" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="732.5" y="130" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Price</text><rect x="790" y="110" width="115" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="847.5" y="130" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Category</text><rect x="905" y="110" width="115" height="30" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.3"/><text x="962.5" y="130" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Manufacturer</text><path d="M962 110 V91 H757 V80" stroke="#24578f" stroke-width="2" fill="none"/><polygon points="757,71 752,81 762,81" fill="#24578f"/><text x="962" y="166" style="font-size:14px;fill:#24578f;text-anchor:middle;font-weight:700;font-family:var(--sans)">Foreign Key on the N Side</text><line x1="10" y1="192" x2="1090" y2="192" stroke="#e2e8f0" stroke-width="1.2"/><text x="10" y="226" style="font-size:16px;fill:#0f172a;text-anchor:start;font-weight:750;font-family:var(--mono)">N : M</text><line x1="120" y1="290" x2="160" y2="290" stroke="#0f172a" stroke-width="1.6"/><line x1="260" y1="290" x2="300" y2="290" stroke="#0f172a" stroke-width="1.6"/><rect x="10" y="268" width="110" height="44" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.6"/><text x="65" y="296" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans)">Product</text><rect x="300" y="268" width="110" height="44" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.6"/><text x="355" y="296" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--sans)">Category</text><polygon points="210,262.0 260.0,290 210,318.0 160.0,290" fill="#ddeaf8" stroke="#24578f" stroke-width="2"/><text x="210" y="296" style="font-size:17px;fill:#13385f;text-anchor:middle;font-weight:700;font-family:var(--sans)">in</text><text x="140" y="282" style="font-size:17px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">N</text><text x="280" y="282" style="font-size:17px;fill:#c27318;text-anchor:middle;font-weight:800;font-family:var(--sans)">M</text><text x="470" y="300" style="font-size:30px;fill:#94a3b8;text-anchor:middle;font-weight:700;font-family:var(--sans)">⇒</text><text x="628" y="236" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">Product</text><rect x="640" y="215" width="110" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="695.0" y="235" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">PName</text><rect x="750" y="215" width="110" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="805.0" y="235" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Price</text><text x="628" y="296" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">ProductCategory</text><rect x="640" y="275" width="110" height="30" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.3"/><text x="695.0" y="295" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">PName</text><rect x="750" y="275" width="110" height="30" rx="0" fill="#ddeaf8" stroke="#24578f" stroke-width="1.3"/><text x="805.0" y="295" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">CatName</text><text x="738" y="356" style="font-size:15px;fill:#a65f12;text-anchor:end;font-weight:700;font-family:var(--sans)">Category</text><rect x="750" y="335" width="110" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="805.0" y="355" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono);text-decoration:underline">CatName</text><rect x="860" y="335" width="110" height="30" rx="0" fill="#fff" stroke="#94a3b8" stroke-width="1.3"/><text x="915.0" y="355" style="font-size:14px;fill:#0f172a;text-anchor:middle;font-weight:500;font-family:var(--mono)">Department</text><line x1="695" y1="275" x2="695" y2="248" stroke="#24578f" stroke-width="2"/><polygon points="695.0,248.0 698.9,256.1 691.1,256.1" fill="#24578f"/><line x1="805" y1="305" x2="805" y2="333" stroke="#24578f" stroke-width="2"/><polygon points="805.0,333.0 801.1,324.9 808.9,324.9" fill="#24578f"/><text x="875" y="295" style="font-size:14px;fill:#24578f;text-anchor:start;font-weight:700;font-family:var(--sans)">Junction Table: One Row per Pair</text></svg></div></div><div class="capt">Use a <b>foreign key</b> for 1:N and a <b>junction table</b> for N:M</div></section>
 
 <section class="slide " data-title="Junction Table" data-notes="90분 확장: 75분 수업에서는 이 장을 건너뛴다. 연결 테이블 예. 지금까지 Category는 Product의 열이었다. 제품마다 카테고리가 하나라는 가정이 있었기 때문이다. SingleTouch가 Photography와 Gadgets 둘에 속하면 그 가정이 깨지고, ProductCategory 표에 두 행으로 들어간다. Product 쪽은 한 행 그대로라 가격이나 제조사가 중복되지 않는다. 대가: &quot;SingleTouch는 어느 부서(Department) 상품인가&quot;를 물으려면 ProductCategory와 Category를 조인해야 하고, 가격이나 제조사 같은 제품 속성까지 필요하면 Product도 더한다. 여기서는 관계를 표와 외래 키로 표현하는 데까지 다룬다. (Department 값은 설명용으로 만든 것이다.)"><h1 class="t">Junction Table<span class="sub">If a product may sit in several categories, Category leaves Product and gets its own table</span></h1><div class="rule"></div><div class="body"><div class="row mid"><div class="tbox sm"><div class="tname">Product</div><table class="sqltable"><thead><tr><th class=""><u>PName</u></th><th class="">Manufacturer</th></tr></thead><tbody><tr class=""><td class="nw">Gizmo</td><td class="nw">GizmoWorks</td></tr><tr class=""><td class="nw">PowerGizmo</td><td class="nw">GizmoWorks</td></tr><tr class=""><td class="nw">SingleTouch</td><td class="nw">Canon</td></tr><tr class=""><td class="nw">MultiTouch</td><td class="nw">Hitachi</td></tr></tbody></table></div><div class="tbox sm"><div class="tname">ProductCategory</div><table class="sqltable"><thead><tr><th class=""><u>PName</u></th><th class=""><u>CatName</u></th></tr></thead><tbody><tr class=""><td class="nw">Gizmo</td><td class="nw">Gadgets</td></tr><tr class=""><td class="nw">PowerGizmo</td><td class="nw">Gadgets</td></tr><tr class=""><td class="nw">SingleTouch</td><td class="nw">Photography</td></tr><tr class="hl"><td class="nw">SingleTouch</td><td class="nw">Gadgets</td></tr><tr class=""><td class="nw">MultiTouch</td><td class="nw">Household</td></tr></tbody></table></div><div class="tbox sm"><div class="tname">Category</div><table class="sqltable"><thead><tr><th class=""><u>CatName</u></th><th class="">Department</th></tr></thead><tbody><tr class=""><td class="nw">Gadgets</td><td class="nw">Electronics</td></tr><tr class=""><td class="nw">Photography</td><td class="nw">Electronics</td></tr><tr class=""><td class="nw">Household</td><td class="nw">Home</td></tr></tbody></table></div></div><div style="text-align:center;font:16px var(--mono);color:#13385f;margin-top:14px">ProductCategory: PRIMARY KEY (PName, CatName) · PName → Product.PName · CatName → Category.CatName</div></div><div class="capt">SingleTouch has two <b>category links</b> but one product row</div></section>
 
@@ -5752,15 +6175,15 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide clarity-slide" data-title="Caveat: A Crash Between Two Writes" data-notes="입력 합은 35,000이고 중간 합은 32,000, 두 쓰기 후 합은 35,000이다. 화면에서 사라진 3,000을 짚는다. 독립적으로 커밋한 두 쓰기 사이의 crash가 문제다. 같은 transaction에 두 쓰기를 넣으면 전체를 커밋하거나 전체를 취소해야 한다. 단순히 성공한 전후 표만 비교하던 구성을 중간 실패 상태로 바꿨다."><h1 class="t"><span class="pfx pfx-caveat">Caveat:</span> A Crash Between Two Writes<span class="sub">Two separately committed writes can leave a half-finished transfer</span></h1><div class="rule"></div><div class="body"><div class="clarity-flow"><div class="clarity-panel"><h3>Before</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">Account</th><th class="">Balance</th></tr></thead><tbody><tr class=""><td class="nw">a10</td><td class="nw">20,000</td></tr><tr class=""><td class="nw">a20</td><td class="nw">15,000</td></tr></tbody></table></div></div><div class="clarity-arrow" aria-hidden="true">→</div><div class="clarity-panel"><h3>Debit only: crash</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">Account</th><th class="">Balance</th></tr></thead><tbody><tr class=""><td class="nw">a10</td><td class="red nw">17,000</td></tr><tr class=""><td class="nw">a20</td><td class="nw">15,000</td></tr></tbody></table></div></div><div class="clarity-arrow" aria-hidden="true">→</div><div class="clarity-panel"><h3>Both writes</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">Account</th><th class="">Balance</th></tr></thead><tbody><tr class=""><td class="nw">a10</td><td class="nw">17,000</td></tr><tr class=""><td class="nw">a20</td><td class="nw">18,000</td></tr></tbody></table></div></div></div></div><div class="capt">The debit-only state loses 3,000 from the combined balance</div></section>
 
-<section class="slide " data-title="BEGIN, COMMIT and ROLLBACK" data-notes="이번 SQL은 송금 대신 기존 가격 사본 하나를 바꾼다. BEGIN 뒤 24.99를 보고 ROLLBACK 뒤 19.99로 돌아오는 것을 확인한다. 변경을 유지하려면 COMMIT을 쓴다. COMMIT 후 ROLLBACK으로 취소하는 것은 아니다."><h1 class="t">BEGIN, COMMIT and ROLLBACK</h1><div class="rule"></div><div class="body"><div class="fullcode  sm"><pre class="sqlcode"><span class="kw">BEGIN</span>;
+<section class="slide " data-reading-revision="2026-11-14" data-title="BEGIN, COMMIT and ROLLBACK" data-notes="이번 SQL은 송금 대신 기존 가격 사본 하나를 바꾼다. BEGIN 뒤 24.99를 보고 ROLLBACK 뒤 19.99로 돌아오는 것을 확인한다. 변경을 유지하려면 COMMIT을 쓴다. COMMIT 후 ROLLBACK으로 취소하는 것은 아니다."><h1 class="t">BEGIN, COMMIT and ROLLBACK</h1><div class="rule"></div><div class="body"><div class="fullcode  sm"><pre class="sqlcode"><span class="kw">BEGIN</span>;
 <span class="kw">UPDATE</span> Product <span class="kw">SET</span> price=24.99 <span class="kw">WHERE</span> pname=<span class="lit">&#x27;Gizmo&#x27;</span>;
 <span class="kw">SELECT</span> pname,price <span class="kw">FROM</span> Product <span class="kw">WHERE</span> pname=<span class="lit">&#x27;Gizmo&#x27;</span>;
 <span class="kw"><mark class="tk">ROLLBACK</mark></span>;<span class="ann">undo everything since BEGIN</span>
-<span class="kw">SELECT</span> pname,price <span class="kw">FROM</span> Product <span class="kw">WHERE</span> pname=<span class="lit">&#x27;Gizmo&#x27;</span>;</pre></div></div></section>
+<span class="kw">SELECT</span> pname,price <span class="kw">FROM</span> Product <span class="kw">WHERE</span> pname=<span class="lit">&#x27;Gizmo&#x27;</span>;</pre></div><p class="clarity-statement" data-reading-support="true"><b>BEGIN</b> starts a transaction. <b>COMMIT</b> keeps its changes; <b>ROLLBACK</b> discards changes that have not been committed.</p></div></section>
 
-<section class="slide " data-title="Recap: Valid Writes" data-notes="쓰기 창은 NULL 가격 사본이 아니라 원래 네 제품과 세 회사다. Gizmo 가격은 19.99이고 Company에는 Google이 없다. 이 두 사실을 창의 결과와 대조한다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Valid Writes</h1><div class="rule"></div><div class="body"><div class="row "><div class="fulltable" data-sql="SELECT cname FROM Company" data-db="pc"><table class="sqltable"><thead><tr><th>cname</th></tr></thead><tbody><tr><td class="nw">Canon</td></tr><tr><td class="nw">GizmoWorks</td></tr><tr><td class="nw">Hitachi</td></tr></tbody></table></div><div class="fulltable" data-sql="SELECT pname,price,manufacturer FROM Product" data-db="pc"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Hitachi</td></tr></tbody></table></div></div></div><div class="capt">Gizmo starts at 19.99; Google is absent from Company</div></section>
+<section class="slide " data-title="Input for Safe Writes" data-notes="쓰기 창은 NULL 가격 사본이 아니라 원래 네 제품과 세 회사다. Gizmo 가격은 19.99이고 Company에는 Google이 없다. 이 두 사실을 창의 결과와 대조한다."><h1 class="t">Input for Safe Writes</h1><div class="rule"></div><div class="body"><div class="row "><div class="fulltable" data-sql="SELECT cname FROM Company" data-db="pc"><table class="sqltable"><thead><tr><th>cname</th></tr></thead><tbody><tr><td class="nw">Canon</td></tr><tr><td class="nw">GizmoWorks</td></tr><tr><td class="nw">Hitachi</td></tr></tbody></table></div><div class="fulltable" data-sql="SELECT pname,price,manufacturer FROM Product" data-db="pc"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Hitachi</td></tr></tbody></table></div></div></div><div class="capt">Gizmo starts at 19.99; Google is absent from Company</div></section>
 
-<section class="slide trypad" data-title="Demo: Change a Price Safely" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. BEGIN; UPDATE Product SET price=24.99 WHERE pname=&#x27;Gizmo&#x27;; SELECT price FROM Product WHERE pname=&#x27;Gizmo&#x27;; ROLLBACK; SELECT price FROM Product WHERE pname=&#x27;Gizmo&#x27;; 최종 19.99. 2. INSERT INTO Product VALUES(&#x27;NewGizmo&#x27;,10,&#x27;Gadgets&#x27;,&#x27;Google&#x27;); → FOREIGN KEY constraint failed. Run마다 새 사본이므로 첫 질의의 BEGIN부터 전체를 같은 창에 쓴다. WHERE를 생략할 때 전체 행에 영향을 주는 점은 기존 표를 다시 보며 설명한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Change a Price Safely</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Change Gizmo to 24.99 inside a transaction, inspect it, then roll back and inspect it again</li><li>Try inserting a product made by Google, which is absent from Company</li></ol><div class="sqlpad" data-seed="pc" data-tables="Product,Company"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Change a Price Safely" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. BEGIN; UPDATE Product SET price=24.99 WHERE pname=&#x27;Gizmo&#x27;; SELECT price FROM Product WHERE pname=&#x27;Gizmo&#x27;; ROLLBACK; SELECT price FROM Product WHERE pname=&#x27;Gizmo&#x27;; 최종 19.99. 2. INSERT INTO Product VALUES(&#x27;NewGizmo&#x27;,10,&#x27;Gadgets&#x27;,&#x27;Google&#x27;); → FOREIGN KEY constraint failed. Run마다 새 사본이므로 첫 질의의 BEGIN부터 전체를 같은 창에 쓴다. WHERE를 생략할 때 전체 행에 영향을 주는 점은 기존 표를 다시 보며 설명한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Change a Price Safely</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Change Gizmo to 24.99 inside a transaction, inspect it, then roll back and inspect it again</li><li>Try inserting a product made by Google, which is absent from Company</li></ol><div class="sqlpad" data-seed="pc" data-tables="Product,Company"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Roll Back a Price Change" data-notes="최종 출력은 rollback 후의 19.99다. 두 SELECT 중 먼저 실행한 결과는 변경 중 값 24.99다. SQL 창은 마지막 SELECT의 표를 표시하므로 먼저 조회만 실행한 버전도 한 번 보인다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Roll Back a Price Change</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="pc"><pre class="sqlcode"><span class="kw">BEGIN</span>;
 <span class="kw">UPDATE</span> Product <span class="kw">SET</span> price=24.99 <span class="kw">WHERE</span> pname=<span class="lit">&#x27;Gizmo&#x27;</span>;

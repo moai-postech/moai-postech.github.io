@@ -443,6 +443,248 @@ svg.dg text{font-family:var(--sans);fill:var(--ink-2)}
 
 /* Original lecture outlines reused by the review session. */
 
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
 .body{gap:18px}.fig svg{width:100%;max-height:100%}
 .sqlwork{display:grid;grid-template-columns:1.12fr 1fr;gap:42px;align-items:center;flex:1;min-height:0}
 .sqlcode{margin:0;white-space:pre-wrap;font:21px/1.62 var(--mono);color:var(--ink);background:#f8fafc;padding:24px 26px;border-left:3px solid var(--blue);overflow:visible;tab-size:2}
@@ -5633,6 +5875,187 @@ h1.t .sub{color:var(--ink-2)}
 [data-deck-target]{cursor:pointer;touch-action:manipulation}
 [data-deck-target]:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media print{[data-deck-target]:focus-visible{outline:none}}
+/* Lecture 12: sourced photography and product screens, with content-sized data figures. */
+.lec12-image-map.outline-list{width:1100px;max-width:100%;display:grid;gap:24px 30px;padding:0;margin:0}
+.lec12-image-map.four{grid-template-columns:1fr 1fr}
+.lec12-image-map.two{grid-template-columns:1fr 1fr}
+.lec12-image-map .o.lec12-map-card{display:block;min-width:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;text-align:left}
+.lec12-image-map .lec12-map-image{width:100%;height:145px;overflow:hidden;background:var(--paper-2)}
+.lec12-image-map.two .lec12-map-image{height:250px}
+.lec12-image-map .lec12-map-image img{display:block;width:100%;height:100%;max-height:none;max-width:none;object-fit:contain;object-position:center}
+.lec12-image-map .lec12-map-image.photo img{object-fit:cover}
+.lec12-image-map .lec12-map-label{display:flex;align-items:baseline;gap:12px;margin-top:12px}
+.lec12-image-map .o .num{font:600 18px var(--mono);color:var(--ink-3);width:auto}
+.lec12-image-map .o .nm{font:700 23px var(--sans);color:var(--ink);display:block}
+.lec12-image-map .o p{font:400 17px/1.3 var(--sans);color:var(--ink-3);margin:5px 0 0}
+.lec12-image-map.two .o .nm{font-size:26px}
+.lec12-image-map.two .o p{font-size:19px;margin-top:9px}
+.lec12-photo-hero{width:1120px;height:435px;overflow:hidden}
+.lec12-photo-hero img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;max-height:none!important;filter:saturate(.55)}
+.lec12-responsibility ul{margin:10px 0 0;padding-left:22px;font:400 22px/1.6 var(--sans);color:var(--ink-2)}
+.lec12-responsibility{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:40px;text-align:left}
+.lec12-responsibility img{width:100%;height:260px;object-fit:contain;display:block;background:var(--paper-2)}
+.lec12-responsibility>div:first-child img{object-fit:cover}
+.lec12-responsibility h3,.lec12-grains h3,.lec12-snapshots h3,.lec12-sums h3,.lec12-retry h3{font:700 25px/1.2 var(--sans);margin:18px 0 8px;color:var(--ink)}
+.lec12-responsibility p{font:400 21px/1.4 var(--sans);margin:0;color:var(--ink-2)}
+.lec12-snapshots{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:42px;text-align:left}
+.lec12-snapshots pre{font:500 21px/2 var(--mono);background:var(--paper-2);border:1px solid var(--line);padding:20px 14px;white-space:pre;margin:20px 0}
+.lec12-snapshots p{font:500 29px var(--mono);margin:20px 0}
+.lec12-snapshots p span,.lec12-sums span{color:var(--ink-3)}
+.lec12-snapshots mark{background:var(--orange-soft);color:var(--ink);padding:2px 0}
+.lec12-sums{width:1060px}
+.lec12-workers{display:grid;grid-template-columns:1fr 1fr;gap:60px;text-align:center}
+.lec12-workers p{font:500 32px var(--mono);margin:24px 0}
+.lec12-sums b{color:var(--blue-deep)}
+.lec12-combined{border-top:1px solid var(--line);margin-top:35px;padding-top:26px;text-align:center}
+.lec12-combined>span{font:500 20px var(--sans)}
+.lec12-combined p{font:500 42px var(--mono);margin:15px 0}
+.lec12-grains{width:1120px;display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:36px;text-align:left}
+.lec12-grains>div>span{font:400 18px var(--sans);color:var(--ink-3)}
+.lec12-grains table{border-collapse:collapse;width:100%;margin-top:24px;font:500 21px var(--mono)}
+.lec12-grains td{padding:12px 10px;border-bottom:1px solid var(--line)}
+.lec12-mini-bar{display:flex;align-items:center;gap:10px;height:75px;font:500 20px var(--mono)}
+.lec12-mini-bar b{width:65px;font-weight:500;flex-shrink:0}
+.lec12-mini-bar i{height:30px;display:block;background:var(--blue);min-width:0}
+.lec12-mini-bar.p2 i{background:var(--orange)}
+.lec12-mini-bar strong{font-weight:700;font-size:22px}
+.lec12-retry{width:850px;display:grid;grid-template-columns:1fr 1fr;gap:100px;text-align:center}
+.lec12-retry>div>b{font:700 34px var(--mono);display:block;margin:15px 0;color:var(--ink)}
+.lec12-bar-space{height:245px;display:flex;flex-direction:column;justify-content:flex-end;width:200px;margin:auto}
+.lec12-batch{height:115px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font:600 24px var(--mono)}
+.lec12-batch.repeated{background:var(--orange);color:var(--paper);border-bottom:2px solid var(--paper)}
+
+.lec12-product-screen{width:1120px;height:435px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lec12-product-screen img{width:100%;height:100%;object-fit:contain;max-height:none!important;display:block}
+.lec12-product-screen.query img,.lec12-image-map .lec12-map-image.query img{object-fit:cover;object-position:top}
+.lec12-responsibility>div:last-child img{object-fit:cover;object-position:top}
+.lec12-daily-sales .lec12-bar-space{height:280px}
+.lec12-daily-sales .lec12-batch{font-size:22px}
+.lec12-mini-bar{display:grid;grid-template-columns:65px 1fr 44px}
+.lec12-bar-track{display:block;height:30px;min-width:0}
+.lec12-spark-recap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;width:1100px;text-align:left}
+.lec12-spark-recap h3{font:700 26px var(--sans);margin:0 0 25px}
+.lec12-spark-recap pre{font:500 23px/1.7 var(--mono);margin:0;white-space:pre}
+.lec12-spark-recap img{width:100%;height:340px;object-fit:cover;max-height:none!important}
+
+/* Lecture 12: original storage diagrams enlarged in separate reading panels. */
+.lec12-storage-layout{display:grid;grid-template-columns:400px 315px 315px;gap:24px;align-items:center;width:1078px}
+.lec12-storage-layout h3{font:700 24px var(--sans);margin:0 0 14px;text-align:center}
+.lec12-storage-layout table{width:100%;font-size:22px}
+.lec12-storage-crop{width:315px;height:410px;background-repeat:no-repeat;background-size:754px 742px}
+.lec12-storage-crop.rows{width:300px;background-position:-38px -290px}
+.lec12-storage-crop.columns{background-position:-408px -290px}
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Two code representations of the same record have equal readable widths. */
+.row:has(> .fullcode):has(> .stack > .fullcode){display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:24px;align-items:center}
+.row:has(> .fullcode):has(> .stack > .fullcode)>*{min-width:0;max-width:100%}
+.row:has(> .fullcode):has(> .stack > .fullcode) .fullcode{min-width:0;width:100%}
+
+/* Concept-table headers use the same dark navy / white treatment in review and numbered lectures. */
+.review-deck :is(.review-table,.rev-table) th{font-size:23px;line-height:1.45;background:var(--blue-deep);color:#fff;font-weight:700;border-bottom:2px solid #0d2641}
+.review-deck .rev-table th{padding-top:11px;padding-bottom:11px}
+
+/* Cover typography (2026-11-14): the lecture title is the primary text.
+   These metrics are also read by tools/render-title-pdf.py for the static fallback.
+   Keep this block last so imported review styles cannot reintroduce 88px numbers. */
+:root{--cover-left:110px;--cover-top:176px;--cover-width:1060px;
+ --cover-course-size:17px;--cover-course-line:24px;--cover-course-track:.14;
+ --cover-heading-gap:32px;--cover-number-size:30px;--cover-number-line:36px;--cover-number-gap:18px;
+ --cover-title-size:52px;--cover-title-line:59.8px;--cover-title-track:-.035;
+ --cover-meta-gap:40px;--cover-meta-pad:20px;--cover-meta-size:19px;--cover-meta-line:30.4px;--cover-meta-width:560px}
+.slide.title:not(.mpr-close){justify-content:flex-start;background:var(--paper);color:var(--ink);padding:var(--cover-top) var(--cover-left) 0}
+.slide.title:not(.mpr-close) .course{font-size:var(--cover-course-size);line-height:var(--cover-course-line);font-weight:600;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase}
+.slide.title:not(.mpr-close) h1{font-size:52px;line-height:var(--cover-title-line);font-weight:800;letter-spacing:-.035em;margin:var(--cover-heading-gap) 0 0;max-width:var(--cover-width);color:var(--ink);text-wrap:balance}
+.slide.title:not(.mpr-close) h1 .num{display:block;font-size:var(--cover-number-size);line-height:var(--cover-number-line);font-weight:600;letter-spacing:0;margin-bottom:var(--cover-number-gap);color:var(--accent)}
+.slide.title:not(.mpr-close) h1:not(:has(.num)){padding-top:calc(var(--cover-number-line) + var(--cover-number-gap))}
+.slide.title:not(.mpr-close) h1 .ser{color:inherit}
+.slide.title:not(.mpr-close) .meta{font-size:var(--cover-meta-size);line-height:var(--cover-meta-line);font-weight:400;letter-spacing:0;color:var(--ink-3);margin-top:var(--cover-meta-gap);padding-top:var(--cover-meta-pad);border-top:1px solid var(--line);max-width:var(--cover-meta-width)}
+/* Same-slide reveals: keep layout and numbering fixed; print the complete state. */
+.slide .frag{transition:opacity .18s ease}
+.slide .frag:not(.vis){pointer-events:none}
+@media (prefers-reduced-motion:reduce){.slide .frag{transition:none}}
+@media print{.slide .frag{opacity:1!important;visibility:visible!important;transition:none!important}}
 /* DECK-THEME:END */
 </style>
 </head>
@@ -5672,6 +6095,9 @@ h1.t .sub{color:var(--ink-2)}
   ]
 }</pre></div><div class="clarity-panel"><h3>Levels inside it</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">Field</th><th class="">Value</th></tr></thead><tbody><tr class=""><td class="nw">qty</td><td class="nw">number</td></tr><tr class=""><td class="nw">size</td><td class="nw">nested object</td></tr><tr class=""><td class="nw">tags</td><td class="">array of strings</td></tr><tr class=""><td class="nw">instock</td><td class="">array of objects</td></tr></tbody></table></div></div></div></div><div class="capt">A field can hold one value, a nested object or an array</div></section>
 
+<section class="slide clarity-slide" data-source-2025="11:9" data-reading-revision="2026-11-14" data-title="Document Identity" data-notes="2025 11_nosql-II 9쪽의 _id 설명을 검색 전에 복원했다. 없던 _id가 삽입 때 생기는 과정을 읽는다. ObjectId 생략 표시는 실제 값이 아니다. _id는 문서 식별자이며 기본 인덱스가 있다. find에서는 기본적으로 결과에 남으므로 뒤 예제의 {_id:0}은 그것을 표시에서 빼는 설정이다. 집계의 $group 안 _id는 출력 그룹의 키를 정하는 자리라 원래 입력 문서 ID와 구분한다. 독립 열람을 위해 화면 해석을 보강했다. 근거: https://www.mongodb.com/docs/manual/core/document/"><h1 class="t">Document Identity</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Insert without _id</h3><pre class="clarity-doc">{ item: &quot;journal&quot;, qty: 25 }</pre></div><div class="clarity-panel"><h3>Stored document</h3><pre class="clarity-doc">{ _id: ObjectId(&quot;…&quot;),
+  item: &quot;journal&quot;, qty: 25 }</pre></div></div><p class="clarity-statement" data-reading-support="true"><b>_id</b> is the document’s unique identifier within its collection. When it is omitted, MongoDB supplies an <b>ObjectId</b>.</p></div><div class="capt">MongoDB adds _id when the inserted document does not supply it</div></section>
+
 <section class="slide clarity-slide" data-title="Three Query Tasks" data-notes="세 작업을 같은 inventory의 질문에 대응한다. 검색도 집계 단계로 표현할 수 있다. 출력은 문서 목록이고 집계는 문서의 구조도 바꾼다. 실제 호출은 db.inventory.find처럼 컬렉션 하나에서 시작한다."><h1 class="t">Three Query Tasks</h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">Task</th><th class="">Question</th><th class="">MQL entry point</th></tr></thead><tbody><tr class=""><td class="nw">Retrieve</td><td class="">Which items have status D?</td><td class="nw">find</td></tr><tr class=""><td class="nw">Aggregate</td><td class="">How much stock is at each location?</td><td class="nw">aggregate</td></tr><tr class=""><td class="nw">Update</td><td class="">Which widths must change?</td><td class="nw">updateMany</td></tr></tbody></table></div></div><div class="capt">The operation follows the question asked of the documents</div></section>
 
 <section class="slide clarity-slide" data-title="Dot Paths" data-notes="paper의 배열 위치 0과 1을 직접 보여준다. instock.1.qty를 왼쪽의 15까지 따라간다. 경로 instock.qty의 상세 결과는 사용 맥락에 따라 다르므로 마지막 줄은 값 목록을 단정하지 않고 의미만 적는다. 검색 술어에서는 어느 원소의 qty가 맞는지 검사하고 집계 필드 경로는 배열의 값들을 읽는다. 점이 든 키는 따옴표가 필요하다."><h1 class="t">Dot Paths</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>The array to read</h3><pre class="clarity-doc">instock: [
@@ -5683,10 +6109,10 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide mapdiv" data-title="02 · Finding Documents" data-notes="지금은 Finding Documents 구간이다. 개요와 동일한 지도에서 현재 작업 하나만 강조하고 본문의 실제 예제로 넘어간다."><h1 class="t">02 · Finding Documents</h1><div class="rule"></div><div class="body"><div class="clarity-outline"><div class="clarity-outline-row muted"><span>01</span><h3>Documents and Queries</h3><p>read fields, nesting and paths</p></div><div class="clarity-outline-row current"><span>02</span><h3>Finding Documents</h3><p>choose documents and output fields</p></div><div class="clarity-outline-row muted"><span>03</span><h3>Summarizing Documents</h3><p>transform documents through ordered stages</p></div><div class="clarity-outline-row muted"><span>04</span><h3>Updating Documents</h3><p>select write targets and verify changes</p></div></div></div></section>
 
-<section class="slide clarity-slide" data-title="Retrieving Documents" data-notes="find의 첫 문서는 조건, 둘째 문서는 출력 필드다. D 상태 paper와 planner 두 품목을 반환한다. 이 짧은 실행 예제로 일반 템플릿의 역할을 읽는다."><h1 class="t">Retrieving Documents<span class="sub">find(predicate, projection) chooses documents, then fields</span></h1><div class="rule"></div><div class="body"><div class="mqlwork" data-seed="inventory" data-dcls="clarity-result"><pre class="sqlcode js"><span class="fn">db.inventory.find</span>(
+<section class="slide clarity-slide" data-reading-revision="2026-11-14" data-title="Retrieving Documents" data-notes="find의 첫 문서는 조건, 둘째 문서는 출력 필드다. D 상태 paper와 planner 두 품목을 반환한다. 이 짧은 실행 예제로 일반 템플릿의 역할을 읽는다. 독립 열람을 위해 화면 해석을 보강했다. 근거: https://www.mongodb.com/docs/manual/reference/method/db.collection.find/"><h1 class="t">Retrieving Documents<span class="sub">find(predicate, projection) chooses documents, then fields</span></h1><div class="rule"></div><div class="body"><div class="mqlwork" data-seed="inventory" data-dcls="clarity-result"><pre class="sqlcode js"><span class="fn">db.inventory.find</span>(
   { status: <span class="lit">&quot;D&quot;</span> },
   { _id: 0, item: 1, qty: 1 }
-)</pre><div class="sqlresult"><div class="rlab">find result</div><pre class="docs clarity-result"><div class="doc">{ <span class="k">&quot;item&quot;</span>: <span class="lit">&quot;paper&quot;</span>, <span class="k">&quot;qty&quot;</span>: 100 }</div><div class="doc">{ <span class="k">&quot;item&quot;</span>: <span class="lit">&quot;planner&quot;</span>, <span class="k">&quot;qty&quot;</span>: 75 }</div></pre></div></div></div><div class="capt">The condition chooses two items; projection shows name and quantity</div></section>
+)</pre><div class="sqlresult"><div class="rlab">find result</div><pre class="docs clarity-result"><div class="doc">{ <span class="k">&quot;item&quot;</span>: <span class="lit">&quot;paper&quot;</span>, <span class="k">&quot;qty&quot;</span>: 100 }</div><div class="doc">{ <span class="k">&quot;item&quot;</span>: <span class="lit">&quot;planner&quot;</span>, <span class="k">&quot;qty&quot;</span>: 75 }</div></pre></div></div><p class="clarity-statement" data-reading-support="true">In this projection, <b>1 includes</b> a field and <b>0 hides</b> it. <b>_id</b> is included by default and may be hidden separately.</p></div><div class="capt">The condition chooses two items; projection shows name and quantity</div></section>
 
 <section class="slide clarity-slide" data-title="Matching Nested Fields" data-notes="경로를 사용해 중첩 size의 두 필드를 읽는다. planner가 남는다. 객체 전체 동등 비교는 값과 필드 순서까지 영향을 받으므로 전체 객체가 아니라 필요한 필드 경로를 묻는 것이 이 질문에 맞는다."><h1 class="t">Matching Nested Fields</h1><div class="rule"></div><div class="body"><div class="mqlwork" data-seed="inventory" data-dcls="clarity-result"><pre class="sqlcode js"><span class="fn">db.inventory.find</span>(
   { <span class="lit">&quot;size.uom&quot;</span>: <span class="lit">&quot;cm&quot;</span>, <span class="lit">&quot;size.h&quot;</span>: { <span class="op">$gt</span>: 14 } },
@@ -5710,7 +6136,7 @@ h1.t .sub{color:var(--ink-2)}
   {}, { _id: 0, item: 1, dim: 1 }
 )<span class="fn">.sort</span>({ <span class="lit">&quot;dim.0&quot;</span>: -1, item: 1 })<span class="fn">.limit</span>(2)</pre><div class="sqlresult"><div class="rlab">find result</div><pre class="docs clarity-result"><div class="doc">{ <span class="k">&quot;item&quot;</span>: <span class="lit">&quot;planner&quot;</span>, <span class="k">&quot;dim&quot;</span>: [ 22.85, 30 ] }</div><div class="doc">{ <span class="k">&quot;item&quot;</span>: <span class="lit">&quot;journal&quot;</span>, <span class="k">&quot;dim&quot;</span>: [ 14, 21 ] }</div></pre></div></div></div><div class="capt">Sort determines which two documents the limit keeps</div></section>
 
-<section class="slide clarity-slide" data-title="Recap: Inventory for Retrieval" data-notes="검색 창의 다섯 입력을 목적에 필요한 네 필드로 읽는다. 중첩 배열은 inventory 버튼으로 전체 문서를 확인할 수 있다. 출력 전에 어떤 품목이 남는지 예측한다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Inventory for Retrieval</h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">item</th><th class="">qty</th><th class="">status</th><th class="">tags</th></tr></thead><tbody><tr class=""><td class="nw">journal</td><td class="nw">25</td><td class="nw">A</td><td class="nw">blank, red</td></tr><tr class=""><td class="nw">notebook</td><td class="nw">50</td><td class="nw">A</td><td class="nw">red, blank</td></tr><tr class=""><td class="nw">paper</td><td class="nw">100</td><td class="nw">D</td><td class="">red, blank, plain</td></tr><tr class=""><td class="nw">planner</td><td class="nw">75</td><td class="nw">D</td><td class="nw">blank, red</td></tr><tr class=""><td class="nw">postcard</td><td class="nw">45</td><td class="nw">A</td><td class="nw">blue</td></tr></tbody></table></div></div><div class="capt">The same five items supply every retrieval exercise</div></section>
+<section class="slide clarity-slide" data-title="Inventory for Retrieval" data-notes="검색 창의 다섯 입력을 목적에 필요한 네 필드로 읽는다. 중첩 배열은 inventory 버튼으로 전체 문서를 확인할 수 있다. 출력 전에 어떤 품목이 남는지 예측한다."><h1 class="t">Inventory for Retrieval</h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">item</th><th class="">qty</th><th class="">status</th><th class="">tags</th></tr></thead><tbody><tr class=""><td class="nw">journal</td><td class="nw">25</td><td class="nw">A</td><td class="nw">blank, red</td></tr><tr class=""><td class="nw">notebook</td><td class="nw">50</td><td class="nw">A</td><td class="nw">red, blank</td></tr><tr class=""><td class="nw">paper</td><td class="nw">100</td><td class="nw">D</td><td class="">red, blank, plain</td></tr><tr class=""><td class="nw">planner</td><td class="nw">75</td><td class="nw">D</td><td class="nw">blank, red</td></tr><tr class=""><td class="nw">postcard</td><td class="nw">45</td><td class="nw">A</td><td class="nw">blue</td></tr></tbody></table></div></div><div class="capt">The same five items supply every retrieval exercise</div></section>
 
 <section class="slide clarity-slide" data-title="Caveat: A Location and a Quantity" data-notes="앞의 dim 함정을 객체 배열로 확장한다. B 장소는 두 번째 원소이고 30 이상은 첫째 원소다. 필드 조건 둘을 따로 쓰면 paper가 매치되지만 $elemMatch면 아니다. 전체 inventory에서는 B에 30 이상 재고인 품목이 없다."><h1 class="t"><span class="pfx pfx-caveat">Caveat:</span> A Location and a Quantity</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>paper stock entries</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">loc</th><th class="">qty</th><th class="">Condition met</th></tr></thead><tbody><tr class=""><td class="nw">A</td><td class="nw">60</td><td class="nw">qty ≥ 30</td></tr><tr class=""><td class="nw">B</td><td class="nw">15</td><td class="nw">loc = B</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>One entry must satisfy both</h3><div class="fullcode "><pre class="sqlcode js">{ instock: {
     <span class="op">$elemMatch</span>: {loc: <span class="lit">&quot;B&quot;</span>, qty: {<span class="op">$gte</span>: 30}}
@@ -5740,9 +6166,14 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide clarity-slide" data-title="The Zips Collection" data-notes="CA의같은네ZIP문서를세열로본다. LA가두번나오는것은중복오류가아니라우편번호가둘이기때문이다. 질문이도시인구라면먼저두ZIP을합쳐야한다. 이네행은뒤의도시평균과집계실습의입력이다."><h1 class="t">The Zips Collection<span class="sub">One record represents a ZIP code; Los Angeles has two records</span></h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">ZIP</th><th class="">city</th><th class="">pop</th></tr></thead><tbody><tr class=""><td class="nw">90001</td><td class="nw">LOS ANGELES</td><td class="nw">57110</td></tr><tr class=""><td class="nw">90002</td><td class="nw">LOS ANGELES</td><td class="nw">51223</td></tr><tr class=""><td class="nw">94110</td><td class="nw">SAN FRANCISCO</td><td class="nw">74633</td></tr><tr class=""><td class="nw">92101</td><td class="nw">SAN DIEGO</td><td class="nw">34560</td></tr></tbody></table></div></div><div class="capt">Four ZIP records represent only three cities</div></section>
 
+<section class="slide clarity-slide" data-source-2025="11:21" data-reading-revision="2026-11-14" data-title="Operators and Field References" data-notes="2025 11_nosql-II 16–21쪽의 달러 표기와 41–44쪽의 pipeline/grouping 선행 설명을 복원했다. $group과 $sum은 연산 이름, &quot;$state&quot;와 &quot;$pop&quot;은 현재 입력 문서에서 읽을 필드 참조다. 따옴표 안의 &quot;state&quot;라는 문자열과 &quot;$state&quot;라는 참조를 구분한다. $group의 _id가 같은 문서를 모을 그룹 키를 정하고 totalPop은 새 출력 필드 이름이다. 이 문서는 db.zips.aggregate([단계1, 단계2, ...])의 단계 하나다. 뒤의 주 합계와 도시 평균 코드에서 같은 구분을 사용한다. 원본의 모든 연산자 목록을 다시 가르치는 것이 아니라 예제를 읽는 데 필요한 순서를 복원한다. 독립 열람을 위해 화면 해석을 보강했다. 근거: https://www.mongodb.com/docs/manual/core/aggregation-pipeline/"><h1 class="t">Operators and Field References</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Input value</h3><pre class="clarity-doc">{ state: &quot;CA&quot;, pop: 51223 }</pre></div><div class="clarity-panel"><h3>Grouping expression</h3><div class="fullcode "><pre class="sqlcode js">{ <span class="op">$group</span>: {
+    _id: <span class="fld">&quot;$state&quot;</span>,
+    totalPop: { <span class="op">$sum</span>: <span class="fld">&quot;$pop&quot;</span> }
+} }</pre></div></div></div><p class="clarity-statement" data-reading-support="true"><b>$group</b> and <b>$sum</b> name operations. <b>"$state"</b> reads the input field; <b>"state"</b> alone is literal text.</p></div><div class="capt">_id selects the group; $state and $pop read input fields</div></section>
+
 <section class="slide clarity-slide" data-title="Group Totals by State" data-notes="전체20개ZIP을6개주로묶은실제결과다. 출력은긴JSON대신주이름과새합계두열로만읽는다. 위코드는aggregate배열에넣는한단계이며완성질의는실습과정답장에둔다. 기존pop과새totalPop을구별한다."><h1 class="t">Group Totals by State</h1><div class="rule"></div><div class="body"><div class="fullcode "><pre class="sqlcode js">{<span class="op">$group</span>: {_id: <span class="fld">&quot;$state&quot;</span>, totalPop: {<span class="op">$sum</span>: <span class="fld">&quot;$pop&quot;</span>}}}</pre></div><div class="tbox"><table class="sqltable"><thead><tr><th class="">state</th><th class="">totalPop</th></tr></thead><tbody><tr class=""><td class="nw">MA</td><td class="nw">34114</td></tr><tr class=""><td class="nw">CA</td><td class="nw">217526</td></tr><tr class=""><td class="nw">NY</td><td class="nw">331508</td></tr><tr class=""><td class="nw">TX</td><td class="nw">260264</td></tr><tr class=""><td class="nw">WI</td><td class="nw">87956</td></tr><tr class=""><td class="nw">IL</td><td class="nw">192310</td></tr></tbody></table></div></div><div class="capt">Twenty ZIP records produce six state totals; totalPop is a new field</div></section>
 
-<section class="slide clarity-slide" data-title="Filter the Group Totals" data-notes="앞장과같은여섯주에서어떤세주가남는지먼저예측한다. 조건은이전단계가만든totalPop을읽는다. 남은주가큰합계순서임도확인한다. match앞으로group을옮기면아직totalPop이없다는질문을던진다. 여기서는group완료뒤의문서조건이라는논리를읽는다."><h1 class="t">Filter the Group Totals</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>After grouping</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">state</th><th class="">totalPop</th></tr></thead><tbody><tr class=""><td class="nw">MA</td><td class="nw">34114</td></tr><tr class=""><td class="nw">CA</td><td class="nw">217526</td></tr><tr class=""><td class="nw">NY</td><td class="nw">331508</td></tr><tr class=""><td class="nw">TX</td><td class="nw">260264</td></tr><tr class=""><td class="nw">WI</td><td class="nw">87956</td></tr><tr class=""><td class="nw">IL</td><td class="nw">192310</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>totalPop ≥ 200,000</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">state</th><th class="">totalPop</th></tr></thead><tbody><tr class=""><td class="nw">NY</td><td class="nw">331508</td></tr><tr class=""><td class="nw">TX</td><td class="nw">260264</td></tr><tr class=""><td class="nw">CA</td><td class="nw">217526</td></tr></tbody></table></div></div></div><div class="fullcode "><pre class="sqlcode js">{<span class="op">$match</span>: {totalPop: {<span class="op">$gte</span>: 200000}}}</pre></div></div><div class="capt">The condition reads the new state totals and removes three groups</div></section>
+<section class="slide clarity-slide" data-title="Filter the Group Totals" data-notes="앞장과같은여섯주에서어떤세주가남는지먼저예측한다. 조건은이전단계가만든totalPop을읽는다. 남은주가큰합계순서임도확인한다. match를group앞으로옮기면아직totalPop이없다는질문을던진다. 여기서는group완료뒤의문서조건이라는논리를읽는다."><h1 class="t">Filter the Group Totals</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>After grouping</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">state</th><th class="">totalPop</th></tr></thead><tbody><tr class=""><td class="nw">MA</td><td class="nw">34114</td></tr><tr class=""><td class="nw">CA</td><td class="nw">217526</td></tr><tr class=""><td class="nw">NY</td><td class="nw">331508</td></tr><tr class=""><td class="nw">TX</td><td class="nw">260264</td></tr><tr class=""><td class="nw">WI</td><td class="nw">87956</td></tr><tr class=""><td class="nw">IL</td><td class="nw">192310</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>totalPop ≥ 200,000</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">state</th><th class="">totalPop</th></tr></thead><tbody><tr class=""><td class="nw">NY</td><td class="nw">331508</td></tr><tr class=""><td class="nw">TX</td><td class="nw">260264</td></tr><tr class=""><td class="nw">CA</td><td class="nw">217526</td></tr></tbody></table></div></div></div><div class="fullcode "><pre class="sqlcode js">{<span class="op">$match</span>: {totalPop: {<span class="op">$gte</span>: 200000}}}</pre></div></div><div class="capt">The condition reads the new state totals and removes three groups</div></section>
 
 <section class="slide clarity-slide" data-title="The Same Summary in SQL" data-notes="SQL은 표준 절 순서를 사용하고 MQL은 stage 문서 배열을 사용한다. 각각의 물리 실행이 반드시 쓰인 문자 순서라는 뜻은 아니다. 여기서 비교하는 것은 질의의 논리적 데이터 흐름이다. SQL은 이 창에서 실행하지 않으며 MQL 앞 장과 같은 논리 질의다."><h1 class="t">The Same Summary in SQL</h1><div class="rule"></div><div class="body"><div class="fullcode "><pre class="sqlcode"><span class="kw">SELECT</span> state, SUM(pop) <span class="kw">AS</span> totalPop
 <span class="kw">FROM</span> zips
@@ -5759,7 +6190,7 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide clarity-slide" data-title="Second Group: Average City Population" data-notes="같은CA세도시값을더하고3으로나눈다. 결과72508.667이다. 원래ZIP4개를직접평균내면54381.5가되며그것은다른질문이다. 직전단계출력의pop이도시단위라는점이중요하고달러기호철자를외우는것이목표는아니다."><h1 class="t">Second Group: Average City Population</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Three city totals</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">city</th><th class="">pop</th></tr></thead><tbody><tr class=""><td class="nw">LOS ANGELES</td><td class="nw">108333</td></tr><tr class=""><td class="nw">SAN FRANCISCO</td><td class="nw">74633</td></tr><tr class=""><td class="nw">SAN DIEGO</td><td class="nw">34560</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>Average the cities</h3><pre class="clarity-doc">(108,333 + 74,633 + 34,560) / 3</pre><div class="tbox"><table class="sqltable"><thead><tr><th class="">state</th><th class="">avgCityPop</th></tr></thead><tbody><tr class=""><td class="nw">CA</td><td class="nw">72508.667</td></tr></tbody></table></div></div></div><div class="fullcode "><pre class="sqlcode js">{<span class="op">$group</span>: {_id: <span class="fld">&quot;$_id.state&quot;</span>, avgCityPop: {<span class="op">$avg</span>: <span class="fld">&quot;$pop&quot;</span>}}}</pre></div></div><div class="capt">The denominator is three cities, even though the original input contained four ZIPs</div></section>
 
-<section class="slide clarity-slide" data-title="Recap: Zips for Aggregation" data-notes="실습전에설명에서쓴동일한CA네행을다시읽는다. LA두행을묶으면도시셋이된다고예측하고창에서확인한다. 전체주의합계는같은zips컬렉션전체를쓴다. 실습두과제는주합계와CA도시평균이다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Zips for Aggregation</h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">ZIP</th><th class="">city</th><th class="">pop</th></tr></thead><tbody><tr class=""><td class="nw">90001</td><td class="nw">LOS ANGELES</td><td class="nw">57110</td></tr><tr class=""><td class="nw">90002</td><td class="nw">LOS ANGELES</td><td class="nw">51223</td></tr><tr class=""><td class="nw">94110</td><td class="nw">SAN FRANCISCO</td><td class="nw">74633</td></tr><tr class=""><td class="nw">92101</td><td class="nw">SAN DIEGO</td><td class="nw">34560</td></tr></tbody></table></div></div><div class="capt">Use these same four CA records when calculating the average city population</div></section>
+<section class="slide clarity-slide" data-title="Zips for Aggregation" data-notes="실습전에설명에서쓴동일한CA네행을다시읽는다. LA두행을묶으면도시셋이된다고예측하고창에서확인한다. 전체주의합계는같은zips컬렉션전체를쓴다. 실습두과제는주합계와CA도시평균이다."><h1 class="t">Zips for Aggregation</h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">ZIP</th><th class="">city</th><th class="">pop</th></tr></thead><tbody><tr class=""><td class="nw">90001</td><td class="nw">LOS ANGELES</td><td class="nw">57110</td></tr><tr class=""><td class="nw">90002</td><td class="nw">LOS ANGELES</td><td class="nw">51223</td></tr><tr class=""><td class="nw">94110</td><td class="nw">SAN FRANCISCO</td><td class="nw">74633</td></tr><tr class=""><td class="nw">92101</td><td class="nw">SAN DIEGO</td><td class="nw">34560</td></tr></tbody></table></div></div><div class="capt">Use these same four CA records when calculating the average city population</div></section>
 
 <section class="slide trypad" data-title="Demo: Aggregation" data-notes="기본7분. 1. db.zips.aggregate([{$group:{_id:&quot;$state&quot;,totalPop:{$sum:&quot;$pop&quot;}}},{$match:{totalPop:{$gt:100000}}},{$sort:{totalPop:-1,_id:1}}])는 NY,TX,CA,IL이다. group만 먼저 실행해 중간 문서의 이름과 단위를 확인한다. 2. db.zips.aggregate([
   {$match: {state: &quot;CA&quot;}},
@@ -5794,7 +6225,7 @@ h1.t .sub{color:var(--ink-2)}
   {<span class="op">$group</span>: {_id: <span class="fld">&quot;$item&quot;</span>, totalQty: {<span class="op">$sum</span>: <span class="fld">&quot;$instock.qty&quot;</span>}}}
 ])</pre><div class="sqlresult"><div class="rlab">aggregate result</div><pre class="docs clarity-result"><div class="doc">{ <span class="k">&quot;_id&quot;</span>: <span class="lit">&quot;journal&quot;</span>, <span class="k">&quot;totalQty&quot;</span>: 20 }</div><div class="doc">{ <span class="k">&quot;_id&quot;</span>: <span class="lit">&quot;notebook&quot;</span>, <span class="k">&quot;totalQty&quot;</span>: 5 }</div><div class="doc">{ <span class="k">&quot;_id&quot;</span>: <span class="lit">&quot;paper&quot;</span>, <span class="k">&quot;totalQty&quot;</span>: 75 }</div><div class="doc">{ <span class="k">&quot;_id&quot;</span>: <span class="lit">&quot;planner&quot;</span>, <span class="k">&quot;totalQty&quot;</span>: 45 }</div><div class="doc">{ <span class="k">&quot;_id&quot;</span>: <span class="lit">&quot;postcard&quot;</span>, <span class="k">&quot;totalQty&quot;</span>: 50 }</div></pre></div></div></div><div class="capt">Unwind exposes the numbers; group recombines them by item</div></section>
 
-<section class="slide clarity-slide" data-title="Recap: Stock by Location" data-notes="이 표는 inventory의 실제 instock 배열을 장소별로 펼친 보기다. qty 필드는 장소별 합과 별도이므로 이 실습은 instock만 쓴다. A105,C55,B35를 눈으로 먼저 예측한다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Stock by Location</h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">item</th><th class="">A</th><th class="">B</th><th class="">C</th></tr></thead><tbody><tr class=""><td class="nw">journal</td><td class="nw">5</td><td class="nw">—</td><td class="nw">15</td></tr><tr class=""><td class="nw">notebook</td><td class="nw">—</td><td class="nw">—</td><td class="nw">5</td></tr><tr class=""><td class="nw">paper</td><td class="nw">60</td><td class="nw">15</td><td class="nw">—</td></tr><tr class=""><td class="nw">planner</td><td class="nw">40</td><td class="nw">5</td><td class="nw">—</td></tr><tr class=""><td class="nw">postcard</td><td class="nw">—</td><td class="nw">15</td><td class="nw">35</td></tr></tbody></table></div></div><div class="capt">Location-level quantities come from the instock entries</div></section>
+<section class="slide clarity-slide" data-title="Stock by Location" data-notes="이 표는 inventory의 실제 instock 배열을 장소별로 펼친 보기다. qty 필드는 장소별 합과 별도이므로 이 실습은 instock만 쓴다. A105,C55,B35를 눈으로 먼저 예측한다."><h1 class="t">Stock by Location</h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">item</th><th class="">A</th><th class="">B</th><th class="">C</th></tr></thead><tbody><tr class=""><td class="nw">journal</td><td class="nw">5</td><td class="nw">—</td><td class="nw">15</td></tr><tr class=""><td class="nw">notebook</td><td class="nw">—</td><td class="nw">—</td><td class="nw">5</td></tr><tr class=""><td class="nw">paper</td><td class="nw">60</td><td class="nw">15</td><td class="nw">—</td></tr><tr class=""><td class="nw">planner</td><td class="nw">40</td><td class="nw">5</td><td class="nw">—</td></tr><tr class=""><td class="nw">postcard</td><td class="nw">—</td><td class="nw">15</td><td class="nw">35</td></tr></tbody></table></div></div><div class="capt">Location-level quantities come from the instock entries</div></section>
 
 <section class="slide trypad" data-title="Demo: Stock by Location" data-notes="기본 7분. 1. db.inventory.aggregate([{$unwind:&quot;$instock&quot;}])는 5품목에서 9개 품목-장소 기록을 만든다. item과 원래 qty가 반복되는 점을 읽고 장소 합계에는 instock.qty를 써야 한다고 설명한다. 2. db.inventory.aggregate([{$unwind:&quot;$instock&quot;},{$group:{_id:&quot;$instock.loc&quot;,qty:{$sum:&quot;$instock.qty&quot;}}},{$sort:{qty:-1,_id:1}}])는 A105,C55,B35다. 입력·중간·출력의 한 문서 뜻을 매번 말한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Stock by Location<span class="sub">Inspect the changed grain before summing any quantities</span></h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Unwind instock and inspect the result: what does one document now represent?</li><li>Group those entries by location, sum their quantities and sort largest first</li></ol><div class="sqlpad mql" data-seed="inventory" data-tables="inventory"><div class="pad-edit"><textarea spellcheck="false" rows="9" aria-label="MQL editor" placeholder="// write a query here, then Run   e.g. db.inventory.find({ status: &quot;D&quot; })"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
 
@@ -5832,7 +6263,7 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide clarity-slide" data-title="Caveat: One Document or Many" data-notes="개별 문서 갱신과 연산 전체를 구분한다. 여러 문서가 모두 성공하거나 모두 취소돼야 한다면 transaction을 사용한다. 교육용 브라우저 엔진은 실제 서버 장애나 동시성 시험이 아니며 보장 설명을 데모 결과로 증명했다고 말하지 않는다."><h1 class="t"><span class="pfx pfx-caveat">Caveat:</span> One Document or Many</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Single document update</h3><p class="clarity-statement">Its field changes are<br><b>atomic together</b></p></div><div class="clarity-panel"><h3>updateMany</h3><p class="clarity-statement">Several document updates<br><b>are not one atomic unit</b></p></div></div></div><div class="capt">Use a transaction when all selected documents must change together</div></section>
 
-<section class="slide clarity-slide" data-title="Recap: Writes Start from a Fresh Copy" data-notes="이번 창은 inventory 다섯 문서가 들어 있는 새 사본에서 매 Run 시작한다. 조회→쓰기→검증을 같은 script에 둔다. 쓰기 성공 응답 외에도 바뀐 값과 바뀌지 않은 대상을 검증한다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Writes Start from a Fresh Copy</h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">Check</th><th class="">Expected result</th></tr></thead><tbody><tr class=""><td class="">Read status A before writing</td><td class="">journal, notebook, postcard</td></tr><tr class=""><td class="">Change A to Review</td><td class="">Three documents change</td></tr><tr class=""><td class="">Read status A after writing</td><td class="">No documents remain</td></tr></tbody></table></div></div><div class="capt">Preview, write and verify in the same script; each Run starts from the original inventory</div></section>
+<section class="slide clarity-slide" data-title="Writes Start from a Fresh Copy" data-notes="이번 창은 inventory 다섯 문서가 들어 있는 새 사본에서 매 Run 시작한다. 조회→쓰기→검증을 같은 script에 둔다. 쓰기 성공 응답 외에도 바뀐 값과 바뀌지 않은 대상을 검증한다."><h1 class="t">Writes Start from a Fresh Copy</h1><div class="rule"></div><div class="body"><div class="tbox"><table class="sqltable"><thead><tr><th class="">Check</th><th class="">Expected result</th></tr></thead><tbody><tr class=""><td class="">Read status A before writing</td><td class="">journal, notebook, postcard</td></tr><tr class=""><td class="">Change A to Review</td><td class="">Three documents change</td></tr><tr class=""><td class="">Read status A after writing</td><td class="">No documents remain</td></tr></tbody></table></div></div><div class="capt">Preview, write and verify in the same script; each Run starts from the original inventory</div></section>
 
 <section class="slide trypad" data-title="Demo: Writes" data-notes="기본7분. 주어진find는journal·notebook·postcard다. 같은script뒤에db.inventory.updateMany({status:&quot;A&quot;},{$set:{status:&quot;Review&quot;}});db.inventory.countDocuments({status:&quot;A&quot;});를추가하면0. 마지막을db.inventory.countDocuments({status:&quot;Review&quot;});로바꾸면3이다. 매Run은원래다섯문서에서시작한다. 출력의전체문서반복을줄이고앞장전후표와비교한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Writes<span class="sub">Preview the same records, change one field, then check the result</span></h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Preview status A items, then change their status to Review</li><li>Verify that status A has zero items and status Review has three</li></ol><div class="sqlpad mql" data-seed="inventory" data-tables="inventory"><div class="pad-edit"><textarea spellcheck="false" rows="7" aria-label="MQL editor" placeholder="// write a query here, then Run   e.g. db.inventory.find({ status: &quot;D&quot; })">db.inventory.find({status: &quot;A&quot;}, {_id: 0, item: 1, status: 1});</textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">find result</div><pre class="docs "><div class="doc">{ <span class="k">&quot;item&quot;</span>: <span class="lit">&quot;journal&quot;</span>, <span class="k">&quot;status&quot;</span>: <span class="lit">&quot;A&quot;</span> }</div><div class="doc">{ <span class="k">&quot;item&quot;</span>: <span class="lit">&quot;notebook&quot;</span>, <span class="k">&quot;status&quot;</span>: <span class="lit">&quot;A&quot;</span> }</div><div class="doc">{ <span class="k">&quot;item&quot;</span>: <span class="lit">&quot;postcard&quot;</span>, <span class="k">&quot;status&quot;</span>: <span class="lit">&quot;A&quot;</span> }</div></pre><!--/pad-out--></div></div></div></section>
 

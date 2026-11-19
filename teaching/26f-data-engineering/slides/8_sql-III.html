@@ -443,6 +443,248 @@ svg.dg text{font-family:var(--sans);fill:var(--ink-2)}
 
 /* Original lecture outlines reused by the review session. */
 
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
 .body{gap:18px}.fig svg{width:100%;max-height:100%}
 .sqlwork{display:grid;grid-template-columns:1.12fr 1fr;gap:42px;align-items:center;flex:1;min-height:0}
 .sqlcode{margin:0;white-space:pre-wrap;font:21px/1.62 var(--mono);color:var(--ink);background:#f8fafc;padding:24px 26px;border-left:3px solid var(--blue);overflow:visible;tab-size:2}
@@ -5610,6 +5852,187 @@ h1.t .sub{color:var(--ink-2)}
 [data-deck-target]{cursor:pointer;touch-action:manipulation}
 [data-deck-target]:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media print{[data-deck-target]:focus-visible{outline:none}}
+/* Lecture 12: sourced photography and product screens, with content-sized data figures. */
+.lec12-image-map.outline-list{width:1100px;max-width:100%;display:grid;gap:24px 30px;padding:0;margin:0}
+.lec12-image-map.four{grid-template-columns:1fr 1fr}
+.lec12-image-map.two{grid-template-columns:1fr 1fr}
+.lec12-image-map .o.lec12-map-card{display:block;min-width:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;text-align:left}
+.lec12-image-map .lec12-map-image{width:100%;height:145px;overflow:hidden;background:var(--paper-2)}
+.lec12-image-map.two .lec12-map-image{height:250px}
+.lec12-image-map .lec12-map-image img{display:block;width:100%;height:100%;max-height:none;max-width:none;object-fit:contain;object-position:center}
+.lec12-image-map .lec12-map-image.photo img{object-fit:cover}
+.lec12-image-map .lec12-map-label{display:flex;align-items:baseline;gap:12px;margin-top:12px}
+.lec12-image-map .o .num{font:600 18px var(--mono);color:var(--ink-3);width:auto}
+.lec12-image-map .o .nm{font:700 23px var(--sans);color:var(--ink);display:block}
+.lec12-image-map .o p{font:400 17px/1.3 var(--sans);color:var(--ink-3);margin:5px 0 0}
+.lec12-image-map.two .o .nm{font-size:26px}
+.lec12-image-map.two .o p{font-size:19px;margin-top:9px}
+.lec12-photo-hero{width:1120px;height:435px;overflow:hidden}
+.lec12-photo-hero img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;max-height:none!important;filter:saturate(.55)}
+.lec12-responsibility ul{margin:10px 0 0;padding-left:22px;font:400 22px/1.6 var(--sans);color:var(--ink-2)}
+.lec12-responsibility{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:40px;text-align:left}
+.lec12-responsibility img{width:100%;height:260px;object-fit:contain;display:block;background:var(--paper-2)}
+.lec12-responsibility>div:first-child img{object-fit:cover}
+.lec12-responsibility h3,.lec12-grains h3,.lec12-snapshots h3,.lec12-sums h3,.lec12-retry h3{font:700 25px/1.2 var(--sans);margin:18px 0 8px;color:var(--ink)}
+.lec12-responsibility p{font:400 21px/1.4 var(--sans);margin:0;color:var(--ink-2)}
+.lec12-snapshots{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:42px;text-align:left}
+.lec12-snapshots pre{font:500 21px/2 var(--mono);background:var(--paper-2);border:1px solid var(--line);padding:20px 14px;white-space:pre;margin:20px 0}
+.lec12-snapshots p{font:500 29px var(--mono);margin:20px 0}
+.lec12-snapshots p span,.lec12-sums span{color:var(--ink-3)}
+.lec12-snapshots mark{background:var(--orange-soft);color:var(--ink);padding:2px 0}
+.lec12-sums{width:1060px}
+.lec12-workers{display:grid;grid-template-columns:1fr 1fr;gap:60px;text-align:center}
+.lec12-workers p{font:500 32px var(--mono);margin:24px 0}
+.lec12-sums b{color:var(--blue-deep)}
+.lec12-combined{border-top:1px solid var(--line);margin-top:35px;padding-top:26px;text-align:center}
+.lec12-combined>span{font:500 20px var(--sans)}
+.lec12-combined p{font:500 42px var(--mono);margin:15px 0}
+.lec12-grains{width:1120px;display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:36px;text-align:left}
+.lec12-grains>div>span{font:400 18px var(--sans);color:var(--ink-3)}
+.lec12-grains table{border-collapse:collapse;width:100%;margin-top:24px;font:500 21px var(--mono)}
+.lec12-grains td{padding:12px 10px;border-bottom:1px solid var(--line)}
+.lec12-mini-bar{display:flex;align-items:center;gap:10px;height:75px;font:500 20px var(--mono)}
+.lec12-mini-bar b{width:65px;font-weight:500;flex-shrink:0}
+.lec12-mini-bar i{height:30px;display:block;background:var(--blue);min-width:0}
+.lec12-mini-bar.p2 i{background:var(--orange)}
+.lec12-mini-bar strong{font-weight:700;font-size:22px}
+.lec12-retry{width:850px;display:grid;grid-template-columns:1fr 1fr;gap:100px;text-align:center}
+.lec12-retry>div>b{font:700 34px var(--mono);display:block;margin:15px 0;color:var(--ink)}
+.lec12-bar-space{height:245px;display:flex;flex-direction:column;justify-content:flex-end;width:200px;margin:auto}
+.lec12-batch{height:115px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font:600 24px var(--mono)}
+.lec12-batch.repeated{background:var(--orange);color:var(--paper);border-bottom:2px solid var(--paper)}
+
+.lec12-product-screen{width:1120px;height:435px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lec12-product-screen img{width:100%;height:100%;object-fit:contain;max-height:none!important;display:block}
+.lec12-product-screen.query img,.lec12-image-map .lec12-map-image.query img{object-fit:cover;object-position:top}
+.lec12-responsibility>div:last-child img{object-fit:cover;object-position:top}
+.lec12-daily-sales .lec12-bar-space{height:280px}
+.lec12-daily-sales .lec12-batch{font-size:22px}
+.lec12-mini-bar{display:grid;grid-template-columns:65px 1fr 44px}
+.lec12-bar-track{display:block;height:30px;min-width:0}
+.lec12-spark-recap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;width:1100px;text-align:left}
+.lec12-spark-recap h3{font:700 26px var(--sans);margin:0 0 25px}
+.lec12-spark-recap pre{font:500 23px/1.7 var(--mono);margin:0;white-space:pre}
+.lec12-spark-recap img{width:100%;height:340px;object-fit:cover;max-height:none!important}
+
+/* Lecture 12: original storage diagrams enlarged in separate reading panels. */
+.lec12-storage-layout{display:grid;grid-template-columns:400px 315px 315px;gap:24px;align-items:center;width:1078px}
+.lec12-storage-layout h3{font:700 24px var(--sans);margin:0 0 14px;text-align:center}
+.lec12-storage-layout table{width:100%;font-size:22px}
+.lec12-storage-crop{width:315px;height:410px;background-repeat:no-repeat;background-size:754px 742px}
+.lec12-storage-crop.rows{width:300px;background-position:-38px -290px}
+.lec12-storage-crop.columns{background-position:-408px -290px}
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Two code representations of the same record have equal readable widths. */
+.row:has(> .fullcode):has(> .stack > .fullcode){display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:24px;align-items:center}
+.row:has(> .fullcode):has(> .stack > .fullcode)>*{min-width:0;max-width:100%}
+.row:has(> .fullcode):has(> .stack > .fullcode) .fullcode{min-width:0;width:100%}
+
+/* Concept-table headers use the same dark navy / white treatment in review and numbered lectures. */
+.review-deck :is(.review-table,.rev-table) th{font-size:23px;line-height:1.45;background:var(--blue-deep);color:#fff;font-weight:700;border-bottom:2px solid #0d2641}
+.review-deck .rev-table th{padding-top:11px;padding-bottom:11px}
+
+/* Cover typography (2026-11-14): the lecture title is the primary text.
+   These metrics are also read by tools/render-title-pdf.py for the static fallback.
+   Keep this block last so imported review styles cannot reintroduce 88px numbers. */
+:root{--cover-left:110px;--cover-top:176px;--cover-width:1060px;
+ --cover-course-size:17px;--cover-course-line:24px;--cover-course-track:.14;
+ --cover-heading-gap:32px;--cover-number-size:30px;--cover-number-line:36px;--cover-number-gap:18px;
+ --cover-title-size:52px;--cover-title-line:59.8px;--cover-title-track:-.035;
+ --cover-meta-gap:40px;--cover-meta-pad:20px;--cover-meta-size:19px;--cover-meta-line:30.4px;--cover-meta-width:560px}
+.slide.title:not(.mpr-close){justify-content:flex-start;background:var(--paper);color:var(--ink);padding:var(--cover-top) var(--cover-left) 0}
+.slide.title:not(.mpr-close) .course{font-size:var(--cover-course-size);line-height:var(--cover-course-line);font-weight:600;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase}
+.slide.title:not(.mpr-close) h1{font-size:52px;line-height:var(--cover-title-line);font-weight:800;letter-spacing:-.035em;margin:var(--cover-heading-gap) 0 0;max-width:var(--cover-width);color:var(--ink);text-wrap:balance}
+.slide.title:not(.mpr-close) h1 .num{display:block;font-size:var(--cover-number-size);line-height:var(--cover-number-line);font-weight:600;letter-spacing:0;margin-bottom:var(--cover-number-gap);color:var(--accent)}
+.slide.title:not(.mpr-close) h1:not(:has(.num)){padding-top:calc(var(--cover-number-line) + var(--cover-number-gap))}
+.slide.title:not(.mpr-close) h1 .ser{color:inherit}
+.slide.title:not(.mpr-close) .meta{font-size:var(--cover-meta-size);line-height:var(--cover-meta-line);font-weight:400;letter-spacing:0;color:var(--ink-3);margin-top:var(--cover-meta-gap);padding-top:var(--cover-meta-pad);border-top:1px solid var(--line);max-width:var(--cover-meta-width)}
+/* Same-slide reveals: keep layout and numbering fixed; print the complete state. */
+.slide .frag{transition:opacity .18s ease}
+.slide .frag:not(.vis){pointer-events:none}
+@media (prefers-reduced-motion:reduce){.slide .frag{transition:none}}
+@media print{.slide .frag{opacity:1!important;visibility:visible!important;transition:none!important}}
 /* DECK-THEME:END */
 </style>
 </head>
@@ -5652,9 +6075,9 @@ h1.t .sub{color:var(--ink-2)}
     <span class="ann up">&uarr; each item counts once</span>
 <span class="kw">FROM</span> batches;</pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>mean_of_means</th><th>combined_mean</th></tr></thead><tbody><tr><td class="nw">15.0</td><td class="nw">19.0</td></tr></tbody></table></div></div></div></div></div><div class="capt">Unequal group sizes require SUM and COUNT; averaging the two means gives the wrong answer</div></section>
 
-<section class="slide " data-title="Recap: Purchases for the Total" data-notes="첫 창은 전체와 bagel만의 매출을 계산한다. 두 bagel은 1×20과 1.5×20이므로 50이다. 출력이 한 행인지 먼저 확인한다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Purchases for the Total</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT * FROM Purchase" data-db="purchase"><table class="sqltable"><thead><tr><th>product</th><th>date</th><th>price</th><th>quantity</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">2005-10-21</td><td class="nw">1.0</td><td class="nw">20</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-03</td><td class="nw">0.5</td><td class="nw">10</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-10</td><td class="nw">1.0</td><td class="nw">10</td></tr><tr><td class="nw">bagel</td><td class="nw">2005-10-25</td><td class="nw">1.5</td><td class="nw">20</td></tr></tbody></table></div></div><div class="capt">The two bagel purchases contribute 20 and 30 to revenue</div></section>
+<section class="slide " data-title="Purchases for the Total" data-notes="첫 창은 전체와 bagel만의 매출을 계산한다. 두 bagel은 1×20과 1.5×20이므로 50이다. 출력이 한 행인지 먼저 확인한다."><h1 class="t">Purchases for the Total</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT * FROM Purchase" data-db="purchase"><table class="sqltable"><thead><tr><th>product</th><th>date</th><th>price</th><th>quantity</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">2005-10-21</td><td class="nw">1.0</td><td class="nw">20</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-03</td><td class="nw">0.5</td><td class="nw">10</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-10</td><td class="nw">1.0</td><td class="nw">10</td></tr><tr><td class="nw">bagel</td><td class="nw">2005-10-25</td><td class="nw">1.5</td><td class="nw">20</td></tr></tbody></table></div></div><div class="capt">The two bagel purchases contribute 20 and 30 to revenue</div></section>
 
-<section class="slide trypad" data-title="Demo: Calculate a Sales Total" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT COUNT(*) AS purchases,SUM(quantity) AS units,SUM(price*quantity) AS revenue FROM Purchase; → 4,60,65. 2. WHERE product=&#x27;bagel&#x27;을 더하면 50이다. AVG(price)는 구매별 단가 평균이며 수량 가중 평균은 SUM(price*quantity)/SUM(quantity)라 질문이 다름을 결과를 읽으며 한 줄로 설명한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Calculate a Sales Total</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Return purchase count, total units and total revenue in one row</li><li>Calculate revenue for bagel purchases only</li></ol><div class="sqlpad" data-seed="purchase" data-tables="Purchase"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Calculate a Sales Total" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT COUNT(*) AS purchases,SUM(quantity) AS units,SUM(price*quantity) AS revenue FROM Purchase; → 4,60,65. 2. WHERE product=&#x27;bagel&#x27;을 더하면 50이다. AVG(price)는 구매별 단가 평균이며 수량 가중 평균은 SUM(price*quantity)/SUM(quantity)라 질문이 다름을 결과를 읽으며 한 줄로 설명한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Calculate a Sales Total</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Return purchase count, total units and total revenue in one row</li><li>Calculate revenue for bagel purchases only</li></ol><div class="sqlpad" data-seed="purchase" data-tables="Purchase"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Sales Totals" data-notes="전체는 65, bagel만은 50이다. WHERE는 입력 구매를 먼저 고르고 aggregate는 남은 행을 요약한다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Sales Totals</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="purchase"><pre class="sqlcode"><span class="kw">SELECT</span> SUM(price*quantity) <span class="kw">AS</span> revenue
 <span class="kw">FROM</span> Purchase <span class="kw">WHERE</span> product=<span class="lit">&#x27;bagel&#x27;</span>;</pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>revenue</th></tr></thead><tbody><tr><td class="nw">50.0</td></tr></tbody></table></div></div></div></div><div class="capt">Filtering to bagel before SUM gives revenue of 50</div></section>
@@ -5713,9 +6136,9 @@ h1.t .sub{color:var(--ink-2)}
 <span class="kw">GROUP</span> <span class="kw">BY</span> product <span class="kw"><mark class="tk">HAVING</mark></span> SUM(quantity)&gt;20;
   <span class="ann up">&uarr; then groups</span></pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>product</th><th>units</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">40</td></tr></tbody></table></div></div></div></div><div class="capt">WHERE removes individual purchases; HAVING then removes a whole group</div></section>
 
-<section class="slide " data-title="Recap: Products and Quantities" data-notes="GROUP BY 창은 네 구매에서 제품마다 수량과 매출을 만든다. 두 그룹을 먼저 얻고 나서 수량 조건을 한 줄 추가한다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Products and Quantities</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT product,price,quantity FROM Purchase" data-db="purchase"><table class="sqltable"><thead><tr><th>product</th><th>price</th><th>quantity</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">1.0</td><td class="nw">20</td></tr><tr><td class="nw">banana</td><td class="nw">0.5</td><td class="nw">10</td></tr><tr><td class="nw">banana</td><td class="nw">1.0</td><td class="nw">10</td></tr><tr><td class="nw">bagel</td><td class="nw">1.5</td><td class="nw">20</td></tr></tbody></table></div></div><div class="capt">Bagel totals 40 units; banana totals 20 units</div></section>
+<section class="slide " data-title="Products and Quantities" data-notes="GROUP BY 창은 네 구매에서 제품마다 수량과 매출을 만든다. 두 그룹을 먼저 얻고 나서 수량 조건을 한 줄 추가한다."><h1 class="t">Products and Quantities</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT product,price,quantity FROM Purchase" data-db="purchase"><table class="sqltable"><thead><tr><th>product</th><th>price</th><th>quantity</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">1.0</td><td class="nw">20</td></tr><tr><td class="nw">banana</td><td class="nw">0.5</td><td class="nw">10</td></tr><tr><td class="nw">banana</td><td class="nw">1.0</td><td class="nw">10</td></tr><tr><td class="nw">bagel</td><td class="nw">1.5</td><td class="nw">20</td></tr></tbody></table></div></div><div class="capt">Bagel totals 40 units; banana totals 20 units</div></section>
 
-<section class="slide trypad" data-title="Demo: Build a Product Summary" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT product,SUM(quantity) AS units,SUM(price*quantity) AS revenue FROM Purchase GROUP BY product; → 두 행. 2. HAVING SUM(quantity)&gt;20 → bagel 한 행. 입력 행을 고르는 WHERE와 그룹을 고르는 HAVING을 학생에게 말로 구분하게 한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Build a Product Summary</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Return units and revenue per product</li><li>Keep only product groups with more than 20 units sold</li></ol><div class="sqlpad" data-seed="purchase" data-tables="Purchase"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Build a Product Summary" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT product,SUM(quantity) AS units,SUM(price*quantity) AS revenue FROM Purchase GROUP BY product; → 두 행. 2. HAVING SUM(quantity)&gt;20 → bagel 한 행. 입력 행을 고르는 WHERE와 그룹을 고르는 HAVING을 학생에게 말로 구분하게 한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Build a Product Summary</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Return units and revenue per product</li><li>Keep only product groups with more than 20 units sold</li></ol><div class="sqlpad" data-seed="purchase" data-tables="Purchase"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Product Summary" data-notes="bagel 수량 40, 매출 50이 남는다. banana는 수량이 정확히 20이라 &gt;20을 만족하지 않는다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Product Summary</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="purchase"><pre class="sqlcode"><span class="kw">SELECT</span> product,SUM(quantity) <span class="kw">AS</span> units,
   SUM(price*quantity) <span class="kw">AS</span> revenue <span class="kw">FROM</span> Purchase
@@ -5768,9 +6191,9 @@ h1.t .sub{color:var(--ink-2)}
 <span class="kw">WHERE</span> revenue&gt;(<span class="kw">SELECT</span> AVG(revenue) <span class="kw">FROM</span> totals);
   <span class="ann up">&uarr; compare with one number</span></pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>product</th><th>revenue</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">50.0</td></tr></tbody></table></div></div></div></div><div class="capt">The scalar average is 32.5; only bagel revenue exceeds it</div></section>
 
-<section class="slide " data-title="Recap: Two Summary Rows" data-notes="두 단계 요약 창에서는 첫 query block을 두 번 재사용한다. 평균 자체를 출력한 뒤 그 평균보다 큰 제품을 찾는다. 중간 두 행을 표 버튼의 원본 네 행과 구분해 보여 준다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Two Summary Rows</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT product,SUM(price*quantity) AS revenue FROM Purchase GROUP BY product" data-db="purchase"><table class="sqltable"><thead><tr><th>product</th><th>revenue</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">50.0</td></tr><tr><td class="nw">banana</td><td class="nw">15.0</td></tr></tbody></table></div></div><div class="capt">The next query reads two product summaries rather than four purchase rows</div></section>
+<section class="slide " data-title="Two Summary Rows" data-notes="두 단계 요약 창에서는 첫 query block을 두 번 재사용한다. 평균 자체를 출력한 뒤 그 평균보다 큰 제품을 찾는다. 중간 두 행을 표 버튼의 원본 네 행과 구분해 보여 준다."><h1 class="t">Two Summary Rows</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT product,SUM(price*quantity) AS revenue FROM Purchase GROUP BY product" data-db="purchase"><table class="sqltable"><thead><tr><th>product</th><th>revenue</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">50.0</td></tr><tr><td class="nw">banana</td><td class="nw">15.0</td></tr></tbody></table></div></div><div class="capt">The next query reads two product summaries rather than four purchase rows</div></section>
 
-<section class="slide trypad" data-title="Demo: Compare Product Summaries" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. WITH totals AS (SELECT product,SUM(price*quantity) AS revenue FROM Purchase GROUP BY product) SELECT AVG(revenue) FROM totals; →32.5. 같은 WITH를 두고 SELECT product,revenue FROM totals WHERE revenue&gt;(SELECT AVG(revenue) FROM totals); →bagel50. 먼저 WITH까지만 읽고 중간 표를 SELECT *로 보는 절차에 시간을 쓴다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Compare Product Summaries</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Use a named product-revenue summary to calculate mean product revenue</li><li>Return products whose revenue exceeds that mean</li></ol><div class="sqlpad" data-seed="purchase" data-tables="Purchase"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Compare Product Summaries" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. WITH totals AS (SELECT product,SUM(price*quantity) AS revenue FROM Purchase GROUP BY product) SELECT AVG(revenue) FROM totals; →32.5. 같은 WITH를 두고 SELECT product,revenue FROM totals WHERE revenue&gt;(SELECT AVG(revenue) FROM totals); →bagel50. 먼저 WITH까지만 읽고 중간 표를 SELECT *로 보는 절차에 시간을 쓴다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Compare Product Summaries</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Use a named product-revenue summary to calculate mean product revenue</li><li>Return products whose revenue exceeds that mean</li></ol><div class="sqlpad" data-seed="purchase" data-tables="Purchase"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Above-Mean Product Revenue" data-notes="입력 구매 네 행, 중간 제품 두 행, 최종 bagel 한 행의 순서다. 각 query block이 읽는 표를 말로 짚는다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Above-Mean Product Revenue</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="purchase"><pre class="sqlcode"><span class="kw">WITH</span> totals <span class="kw">AS</span> (
   <span class="kw">SELECT</span> product,SUM(price*quantity) <span class="kw">AS</span> revenue
@@ -5795,19 +6218,19 @@ h1.t .sub{color:var(--ink-2)}
     <span class="ann up">&uarr; rank inside each product</span>
 <span class="kw">FROM</span> Purchase <span class="kw">ORDER</span> <span class="kw">BY</span> product,position;</pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>product</th><th>date</th><th>price</th><th>position</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">2005-10-25</td><td class="nw">1.5</td><td class="nw">1</td></tr><tr><td class="nw">bagel</td><td class="nw">2005-10-21</td><td class="nw">1.0</td><td class="nw">2</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-10</td><td class="nw">1.0</td><td class="nw">1</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-03</td><td class="nw">0.5</td><td class="nw">2</td></tr></tbody></table></div></div></div></div><div class="capt">Partitioning restarts the row number for each product; ordering defines which purchase comes first</div></section>
 
-<section class="slide " data-title="Filter a Window Result" data-notes="ROW_NUMBER는 제품 안에서 가격 순번을 붙인다. 같은 block의 WHERE에서는 window 결과를 필터링하지 않으므로 WITH에 이름 붙이고 바깥에서 position=1을 고른다. 동률이면 date, 실제 데이터에서는 유일 purchase key까지 추가해 순서를 정한다."><h1 class="t">Filter a Window Result</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="purchase"><pre class="sqlcode"><span class="kw">WITH</span> ranked <span class="kw">AS</span> (
+<section class="slide " data-reading-revision="2026-11-14" data-title="Filter a Window Result" data-notes="ROW_NUMBER는 제품 안에서 가격 순번을 붙인다. 같은 block의 WHERE에서는 window 결과를 필터링하지 않으므로 WITH에 이름 붙이고 바깥에서 position=1을 고른다. 동률이면 date, 실제 데이터에서는 유일 purchase key까지 추가해 순서를 정한다. 독립 열람을 위해 화면 해석을 보강했다. 근거: https://www.postgresql.org/docs/current/tutorial-window.html"><h1 class="t">Filter a Window Result</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="purchase"><pre class="sqlcode"><span class="kw">WITH</span> ranked <span class="kw">AS</span> (
   <span class="kw">SELECT</span> product,date,price,ROW_NUMBER() <span class="kw">OVER</span> (
     <span class="kw">PARTITION</span> <span class="kw">BY</span> product <span class="kw">ORDER</span> <span class="kw">BY</span> price <span class="kw">DESC</span>,date) <span class="kw">AS</span> position
   <span class="kw">FROM</span> Purchase
 )
 <span class="kw">SELECT</span> product,date,price <span class="kw">FROM</span> ranked <span class="kw">WHERE</span> position=1;
-  <span class="ann up">&uarr; top row of each product</span></pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>product</th><th>date</th><th>price</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">2005-10-25</td><td class="nw">1.5</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-10</td><td class="nw">1.0</td></tr></tbody></table></div></div></div></div><div class="capt">Rank the original purchases first, then keep position 1 for each product</div></section>
+  <span class="ann up">&uarr; top row of each product</span></pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>product</th><th>date</th><th>price</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">2005-10-25</td><td class="nw">1.5</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-10</td><td class="nw">1.0</td></tr></tbody></table></div></div></div><p class="clarity-statement" data-reading-support="true">A window result is calculated <b>after WHERE</b> in the same query block. The outer query can filter the completed <b>position</b> column.</p></div><div class="capt">Rank the original purchases first, then keep position 1 for each product</div></section>
 
 <section class="slide " data-title="Analytical Queries Have Stages" data-notes="90분 확장: 75분 수업에서는 이 장을 건너뛴다. 논리적으로 window는 WHERE와 그룹 계산 뒤의 행을 본다. 그래서 같은 query block WHERE에서 window 결과를 쓸 수 없다. 두 block으로 나누는 이유를 전체 틀에서 회수한다."><h1 class="t">Analytical Queries Have Stages</h1><div class="rule"></div><div class="body"><div class="tbox sm"><table class="sqltable"><thead><tr><th class="">Stage</th><th class="">Result</th></tr></thead><tbody><tr class=""><td class="">FROM / JOIN → WHERE</td><td class="">Selected detail rows</td></tr><tr class=""><td class="">GROUP BY → HAVING</td><td class="">Selected group summaries</td></tr><tr class=""><td class="">Window expressions</td><td class="">Context on the remaining rows</td></tr><tr class=""><td class="">ORDER BY → LIMIT</td><td class="">Final display order and selected rows</td></tr></tbody></table></div></div><div class="capt">A later calculation needs another query block when an earlier filter must read its result</div></section>
 
-<section class="slide " data-title="Recap: Purchases for Window Calculations" data-notes="마지막 창도 같은 네 구매다. AVG OVER는 네 행을 유지하고 제품마다 가장 비싼 한 구매를 고르면 두 행이 남는다. GROUP BY처럼 처음부터 원래 행을 요약해 없애는 계산과 구별한다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Purchases for Window Calculations</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT * FROM Purchase ORDER BY product,date" data-db="purchase"><table class="sqltable"><thead><tr><th>product</th><th>date</th><th>price</th><th>quantity</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">2005-10-21</td><td class="nw">1.0</td><td class="nw">20</td></tr><tr><td class="nw">bagel</td><td class="nw">2005-10-25</td><td class="nw">1.5</td><td class="nw">20</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-03</td><td class="nw">0.5</td><td class="nw">10</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-10</td><td class="nw">1.0</td><td class="nw">10</td></tr></tbody></table></div></div><div class="capt">Window calculations keep each purchase available for comparison or ranking</div></section>
+<section class="slide " data-title="Purchases for Window Calculations" data-notes="마지막 창도 같은 네 구매다. AVG OVER는 네 행을 유지하고 제품마다 가장 비싼 한 구매를 고르면 두 행이 남는다. GROUP BY처럼 처음부터 원래 행을 요약해 없애는 계산과 구별한다."><h1 class="t">Purchases for Window Calculations</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT * FROM Purchase ORDER BY product,date" data-db="purchase"><table class="sqltable"><thead><tr><th>product</th><th>date</th><th>price</th><th>quantity</th></tr></thead><tbody><tr><td class="nw">bagel</td><td class="nw">2005-10-21</td><td class="nw">1.0</td><td class="nw">20</td></tr><tr><td class="nw">bagel</td><td class="nw">2005-10-25</td><td class="nw">1.5</td><td class="nw">20</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-03</td><td class="nw">0.5</td><td class="nw">10</td></tr><tr><td class="nw">banana</td><td class="nw">2005-10-10</td><td class="nw">1.0</td><td class="nw">10</td></tr></tbody></table></div></div><div class="capt">Window calculations keep each purchase available for comparison or ranking</div></section>
 
-<section class="slide trypad" data-title="Demo: Keep Purchases and Add Context" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT product,date,price,AVG(price) OVER(PARTITION BY product) AS product_mean FROM Purchase; →네 행, bagel1.25 banana0.75. 2. WITH ranked AS (SELECT product,date,price,ROW_NUMBER() OVER(PARTITION BY product ORDER BY price DESC,date) AS position FROM Purchase) SELECT product,date,price FROM ranked WHERE position=1; →bagel1.5 banana1.0. PARTITION BY와 GROUP BY의 결과 행 수 차이를 먼저 확인한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Keep Purchases and Add Context</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Add each product’s average price to every original purchase row</li><li>Return the highest-priced purchase per product using a row number and a named query</li></ol><div class="sqlpad" data-seed="purchase" data-tables="Purchase"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Keep Purchases and Add Context" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT product,date,price,AVG(price) OVER(PARTITION BY product) AS product_mean FROM Purchase; →네 행, bagel1.25 banana0.75. 2. WITH ranked AS (SELECT product,date,price,ROW_NUMBER() OVER(PARTITION BY product ORDER BY price DESC,date) AS position FROM Purchase) SELECT product,date,price FROM ranked WHERE position=1; →bagel1.5 banana1.0. PARTITION BY와 GROUP BY의 결과 행 수 차이를 먼저 확인한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Keep Purchases and Add Context</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Add each product’s average price to every original purchase row</li><li>Return the highest-priced purchase per product using a row number and a named query</li></ol><div class="sqlpad" data-seed="purchase" data-tables="Purchase"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Product Context on Purchases" data-notes="각 구매 가격은 그대로 남고 제품 평균을 붙인다. 네 행이 유지되는 것이 핵심이다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Product Context on Purchases</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="purchase"><pre class="sqlcode"><span class="kw">SELECT</span> product,date,price,
   AVG(price) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> product) <span class="kw">AS</span> product_mean

@@ -443,6 +443,248 @@ svg.dg text{font-family:var(--sans);fill:var(--ink-2)}
 
 /* Original lecture outlines reused by the review session. */
 
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
 .body{gap:18px}.fig svg{width:100%;max-height:100%}
 .sqlwork{display:grid;grid-template-columns:1.12fr 1fr;gap:42px;align-items:center;flex:1;min-height:0}
 .sqlcode{margin:0;white-space:pre-wrap;font:21px/1.62 var(--mono);color:var(--ink);background:#f8fafc;padding:24px 26px;border-left:3px solid var(--blue);overflow:visible;tab-size:2}
@@ -5610,6 +5852,187 @@ h1.t .sub{color:var(--ink-2)}
 [data-deck-target]{cursor:pointer;touch-action:manipulation}
 [data-deck-target]:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media print{[data-deck-target]:focus-visible{outline:none}}
+/* Lecture 12: sourced photography and product screens, with content-sized data figures. */
+.lec12-image-map.outline-list{width:1100px;max-width:100%;display:grid;gap:24px 30px;padding:0;margin:0}
+.lec12-image-map.four{grid-template-columns:1fr 1fr}
+.lec12-image-map.two{grid-template-columns:1fr 1fr}
+.lec12-image-map .o.lec12-map-card{display:block;min-width:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;text-align:left}
+.lec12-image-map .lec12-map-image{width:100%;height:145px;overflow:hidden;background:var(--paper-2)}
+.lec12-image-map.two .lec12-map-image{height:250px}
+.lec12-image-map .lec12-map-image img{display:block;width:100%;height:100%;max-height:none;max-width:none;object-fit:contain;object-position:center}
+.lec12-image-map .lec12-map-image.photo img{object-fit:cover}
+.lec12-image-map .lec12-map-label{display:flex;align-items:baseline;gap:12px;margin-top:12px}
+.lec12-image-map .o .num{font:600 18px var(--mono);color:var(--ink-3);width:auto}
+.lec12-image-map .o .nm{font:700 23px var(--sans);color:var(--ink);display:block}
+.lec12-image-map .o p{font:400 17px/1.3 var(--sans);color:var(--ink-3);margin:5px 0 0}
+.lec12-image-map.two .o .nm{font-size:26px}
+.lec12-image-map.two .o p{font-size:19px;margin-top:9px}
+.lec12-photo-hero{width:1120px;height:435px;overflow:hidden}
+.lec12-photo-hero img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;max-height:none!important;filter:saturate(.55)}
+.lec12-responsibility ul{margin:10px 0 0;padding-left:22px;font:400 22px/1.6 var(--sans);color:var(--ink-2)}
+.lec12-responsibility{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:40px;text-align:left}
+.lec12-responsibility img{width:100%;height:260px;object-fit:contain;display:block;background:var(--paper-2)}
+.lec12-responsibility>div:first-child img{object-fit:cover}
+.lec12-responsibility h3,.lec12-grains h3,.lec12-snapshots h3,.lec12-sums h3,.lec12-retry h3{font:700 25px/1.2 var(--sans);margin:18px 0 8px;color:var(--ink)}
+.lec12-responsibility p{font:400 21px/1.4 var(--sans);margin:0;color:var(--ink-2)}
+.lec12-snapshots{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:42px;text-align:left}
+.lec12-snapshots pre{font:500 21px/2 var(--mono);background:var(--paper-2);border:1px solid var(--line);padding:20px 14px;white-space:pre;margin:20px 0}
+.lec12-snapshots p{font:500 29px var(--mono);margin:20px 0}
+.lec12-snapshots p span,.lec12-sums span{color:var(--ink-3)}
+.lec12-snapshots mark{background:var(--orange-soft);color:var(--ink);padding:2px 0}
+.lec12-sums{width:1060px}
+.lec12-workers{display:grid;grid-template-columns:1fr 1fr;gap:60px;text-align:center}
+.lec12-workers p{font:500 32px var(--mono);margin:24px 0}
+.lec12-sums b{color:var(--blue-deep)}
+.lec12-combined{border-top:1px solid var(--line);margin-top:35px;padding-top:26px;text-align:center}
+.lec12-combined>span{font:500 20px var(--sans)}
+.lec12-combined p{font:500 42px var(--mono);margin:15px 0}
+.lec12-grains{width:1120px;display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:36px;text-align:left}
+.lec12-grains>div>span{font:400 18px var(--sans);color:var(--ink-3)}
+.lec12-grains table{border-collapse:collapse;width:100%;margin-top:24px;font:500 21px var(--mono)}
+.lec12-grains td{padding:12px 10px;border-bottom:1px solid var(--line)}
+.lec12-mini-bar{display:flex;align-items:center;gap:10px;height:75px;font:500 20px var(--mono)}
+.lec12-mini-bar b{width:65px;font-weight:500;flex-shrink:0}
+.lec12-mini-bar i{height:30px;display:block;background:var(--blue);min-width:0}
+.lec12-mini-bar.p2 i{background:var(--orange)}
+.lec12-mini-bar strong{font-weight:700;font-size:22px}
+.lec12-retry{width:850px;display:grid;grid-template-columns:1fr 1fr;gap:100px;text-align:center}
+.lec12-retry>div>b{font:700 34px var(--mono);display:block;margin:15px 0;color:var(--ink)}
+.lec12-bar-space{height:245px;display:flex;flex-direction:column;justify-content:flex-end;width:200px;margin:auto}
+.lec12-batch{height:115px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font:600 24px var(--mono)}
+.lec12-batch.repeated{background:var(--orange);color:var(--paper);border-bottom:2px solid var(--paper)}
+
+.lec12-product-screen{width:1120px;height:435px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lec12-product-screen img{width:100%;height:100%;object-fit:contain;max-height:none!important;display:block}
+.lec12-product-screen.query img,.lec12-image-map .lec12-map-image.query img{object-fit:cover;object-position:top}
+.lec12-responsibility>div:last-child img{object-fit:cover;object-position:top}
+.lec12-daily-sales .lec12-bar-space{height:280px}
+.lec12-daily-sales .lec12-batch{font-size:22px}
+.lec12-mini-bar{display:grid;grid-template-columns:65px 1fr 44px}
+.lec12-bar-track{display:block;height:30px;min-width:0}
+.lec12-spark-recap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;width:1100px;text-align:left}
+.lec12-spark-recap h3{font:700 26px var(--sans);margin:0 0 25px}
+.lec12-spark-recap pre{font:500 23px/1.7 var(--mono);margin:0;white-space:pre}
+.lec12-spark-recap img{width:100%;height:340px;object-fit:cover;max-height:none!important}
+
+/* Lecture 12: original storage diagrams enlarged in separate reading panels. */
+.lec12-storage-layout{display:grid;grid-template-columns:400px 315px 315px;gap:24px;align-items:center;width:1078px}
+.lec12-storage-layout h3{font:700 24px var(--sans);margin:0 0 14px;text-align:center}
+.lec12-storage-layout table{width:100%;font-size:22px}
+.lec12-storage-crop{width:315px;height:410px;background-repeat:no-repeat;background-size:754px 742px}
+.lec12-storage-crop.rows{width:300px;background-position:-38px -290px}
+.lec12-storage-crop.columns{background-position:-408px -290px}
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Two code representations of the same record have equal readable widths. */
+.row:has(> .fullcode):has(> .stack > .fullcode){display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:24px;align-items:center}
+.row:has(> .fullcode):has(> .stack > .fullcode)>*{min-width:0;max-width:100%}
+.row:has(> .fullcode):has(> .stack > .fullcode) .fullcode{min-width:0;width:100%}
+
+/* Concept-table headers use the same dark navy / white treatment in review and numbered lectures. */
+.review-deck :is(.review-table,.rev-table) th{font-size:23px;line-height:1.45;background:var(--blue-deep);color:#fff;font-weight:700;border-bottom:2px solid #0d2641}
+.review-deck .rev-table th{padding-top:11px;padding-bottom:11px}
+
+/* Cover typography (2026-11-14): the lecture title is the primary text.
+   These metrics are also read by tools/render-title-pdf.py for the static fallback.
+   Keep this block last so imported review styles cannot reintroduce 88px numbers. */
+:root{--cover-left:110px;--cover-top:176px;--cover-width:1060px;
+ --cover-course-size:17px;--cover-course-line:24px;--cover-course-track:.14;
+ --cover-heading-gap:32px;--cover-number-size:30px;--cover-number-line:36px;--cover-number-gap:18px;
+ --cover-title-size:52px;--cover-title-line:59.8px;--cover-title-track:-.035;
+ --cover-meta-gap:40px;--cover-meta-pad:20px;--cover-meta-size:19px;--cover-meta-line:30.4px;--cover-meta-width:560px}
+.slide.title:not(.mpr-close){justify-content:flex-start;background:var(--paper);color:var(--ink);padding:var(--cover-top) var(--cover-left) 0}
+.slide.title:not(.mpr-close) .course{font-size:var(--cover-course-size);line-height:var(--cover-course-line);font-weight:600;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase}
+.slide.title:not(.mpr-close) h1{font-size:52px;line-height:var(--cover-title-line);font-weight:800;letter-spacing:-.035em;margin:var(--cover-heading-gap) 0 0;max-width:var(--cover-width);color:var(--ink);text-wrap:balance}
+.slide.title:not(.mpr-close) h1 .num{display:block;font-size:var(--cover-number-size);line-height:var(--cover-number-line);font-weight:600;letter-spacing:0;margin-bottom:var(--cover-number-gap);color:var(--accent)}
+.slide.title:not(.mpr-close) h1:not(:has(.num)){padding-top:calc(var(--cover-number-line) + var(--cover-number-gap))}
+.slide.title:not(.mpr-close) h1 .ser{color:inherit}
+.slide.title:not(.mpr-close) .meta{font-size:var(--cover-meta-size);line-height:var(--cover-meta-line);font-weight:400;letter-spacing:0;color:var(--ink-3);margin-top:var(--cover-meta-gap);padding-top:var(--cover-meta-pad);border-top:1px solid var(--line);max-width:var(--cover-meta-width)}
+/* Same-slide reveals: keep layout and numbering fixed; print the complete state. */
+.slide .frag{transition:opacity .18s ease}
+.slide .frag:not(.vis){pointer-events:none}
+@media (prefers-reduced-motion:reduce){.slide .frag{transition:none}}
+@media print{.slide .frag{opacity:1!important;visibility:visible!important;transition:none!important}}
 /* DECK-THEME:END */
 </style>
 </head>
@@ -5636,7 +6059,7 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide " data-title="Case study: Stack Overflow" data-notes="Stack Overflow는 공개 콘텐츠를 덤프로 낸다. 운영 데이터베이스 전체가 아니라 공개된 글과 사용자 정보다(Internet Archive의 stackexchange 덤프, readme에 표마다 열이 적혀 있다), Stack Exchange Data Explorer라는 웹 도구에서 그 데이터에 SQL을 직접 돌릴 수 있다(SQL Server). 질문과 답은 같은 Posts 표에 있고 PostTypeId로 갈린다(1 질문, 2 답). 답은 ParentId로 질문을, 질문은 AcceptedAnswerId로 채택된 답을, 글은 OwnerUserId로 작성자를 가리킨다. Comments는 PostId와 UserId를 갖는다. 질문 한 페이지를 다시 그리려면 Posts, Users, Comments를 함께 써야 한다. 덤프는 XML이라 FK 제약이 선언돼 있지 않다. 그래서 그림에는 FK 대신 Ref(논리적 참조)라고 적었다. 사용자가 탈퇴하면 OwnerUserId가 비고 OwnerDisplayName만 남는 경우도 있어(readme), 모든 행에 대응하는 Users 행이 있다고 가정하면 안 된다. 출처: Stack Exchange data dump readme."><h1 class="t"><span class="pfx pfx-case-study">Case study:</span> Stack Overflow<span class="sub">One question page is spread over several tables linked by Id columns</span></h1><div class="rule"></div><div class="body"><div class="fig"><svg class="dg" viewBox="0 0 1100 320" xmlns="http://www.w3.org/2000/svg" style="width:1000px"><rect x="410" y="40" width="300" height="140" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="410" y="40" width="300" height="28" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.5"/><text x="560.0" y="59" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono)">Posts</text><text x="422" y="86" style="font-size:14px;fill:#0f172a;text-anchor:start;font-weight:650;font-family:var(--mono)">Id</text><text x="698" y="86" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)">PK</text><text x="422" y="108" style="font-size:14px;fill:#0f172a;text-anchor:start;font-weight:500;font-family:var(--mono)">PostTypeId</text><text x="698" y="108" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)"></text><text x="422" y="130" style="font-size:14px;fill:#24578f;text-anchor:start;font-weight:650;font-family:var(--mono)">ParentId</text><text x="698" y="130" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)">Ref</text><text x="422" y="152" style="font-size:14px;fill:#24578f;text-anchor:start;font-weight:650;font-family:var(--mono)">AcceptedAnswerId</text><text x="698" y="152" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)">Ref</text><text x="422" y="174" style="font-size:14px;fill:#24578f;text-anchor:start;font-weight:650;font-family:var(--mono)">OwnerUserId</text><text x="698" y="174" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)">Ref</text><rect x="820" y="40" width="260" height="96" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="820" y="40" width="260" height="28" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.5"/><text x="950.0" y="59" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono)">Users</text><text x="832" y="86" style="font-size:14px;fill:#0f172a;text-anchor:start;font-weight:650;font-family:var(--mono)">Id</text><text x="1068" y="86" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)">PK</text><text x="832" y="108" style="font-size:14px;fill:#0f172a;text-anchor:start;font-weight:500;font-family:var(--mono)">DisplayName</text><text x="1068" y="108" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)"></text><text x="832" y="130" style="font-size:14px;fill:#0f172a;text-anchor:start;font-weight:500;font-family:var(--mono)">Reputation</text><text x="1068" y="130" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)"></text><rect x="20" y="200" width="260" height="96" rx="2" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><rect x="20" y="200" width="260" height="28" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.5"/><text x="150.0" y="219" style="font-size:15px;fill:#0f172a;text-anchor:middle;font-weight:700;font-family:var(--mono)">Comments</text><text x="32" y="246" style="font-size:14px;fill:#0f172a;text-anchor:start;font-weight:650;font-family:var(--mono)">Id</text><text x="268" y="246" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)">PK</text><text x="32" y="268" style="font-size:14px;fill:#24578f;text-anchor:start;font-weight:650;font-family:var(--mono)">PostId</text><text x="268" y="268" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)">Ref</text><text x="32" y="290" style="font-size:14px;fill:#24578f;text-anchor:start;font-weight:650;font-family:var(--mono)">UserId</text><text x="268" y="290" style="font-size:12px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--mono)">Ref</text><path d="M710 169 H765 V81 H818" stroke="#24578f" stroke-width="1.8" fill="none"/><polygon points="818.0,81.0 809.9,84.9 809.9,77.1" fill="#24578f"/><path d="M280 263 H345 V86 H408" stroke="#24578f" stroke-width="1.8" fill="none"/><polygon points="408.0,86.0 399.9,89.9 399.9,82.1" fill="#24578f"/><path d="M280 285 H950 V140" stroke="#24578f" stroke-width="1.8" fill="none"/><polygon points="950.0,140.0 953.9,148.1 946.1,148.1" fill="#24578f"/><path d="M410 125 H380 V76 H408" stroke="#24578f" stroke-width="1.8" fill="none"/><polygon points="408.0,76.0 399.9,79.9 399.9,72.1" fill="#24578f"/><path d="M710 147 H740 V81 H712" stroke="#24578f" stroke-width="1.8" fill="none"/><polygon points="712.0,81.0 720.1,77.1 720.1,84.9" fill="#24578f"/><text x="372" y="112" style="font-size:13px;fill:#64748b;text-anchor:end;font-weight:600;font-family:var(--sans)">answer → its question</text><line x1="20" y1="40" x2="60" y2="40" stroke="#24578f" stroke-width="1.8"/><text x="70" y="45" style="font-size:14px;fill:#24578f;text-anchor:start;font-weight:650;font-family:var(--sans)">Logical References (not declared)</text></svg></div></div><div class="capt">Answers reference questions; reconstructing a page combines <b>posts, users and comments</b></div></section>
 
-<section class="slide " data-title="Recap: Product and Company" data-notes="Product 가격과 Company 국가를 함께 보려면 두 표를 읽어야 한다. Product manufacturer와 Company cname이 같은 행을 연결한다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Product and Company</h1><div class="rule"></div><div class="body"><div class="row "><div class="fulltable" data-sql="SELECT * FROM Product" data-db="pc"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td><td class="nw">Hitachi</td></tr></tbody></table></div><div class="fulltable" data-sql="SELECT * FROM Company" data-db="pc"><table class="sqltable"><thead><tr><th>cname</th><th>stockprice</th><th>country</th></tr></thead><tbody><tr><td class="nw">GizmoWorks</td><td class="nw">25.0</td><td class="nw">USA</td></tr><tr><td class="nw">Canon</td><td class="nw">65.0</td><td class="nw">Japan</td></tr><tr><td class="nw">Hitachi</td><td class="nw">15.0</td><td class="nw">Japan</td></tr></tbody></table></div></div></div><div class="capt">Price belongs to Product; country belongs to Company; manufacturer links the two</div></section>
+<section class="slide " data-title="Product and Company" data-notes="Product 가격과 Company 국가를 함께 보려면 두 표를 읽어야 한다. Product manufacturer와 Company cname이 같은 행을 연결한다."><h1 class="t">Product and Company</h1><div class="rule"></div><div class="body"><div class="row "><div class="fulltable" data-sql="SELECT * FROM Product" data-db="pc"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">Gadgets</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td><td class="nw">Hitachi</td></tr></tbody></table></div><div class="fulltable" data-sql="SELECT * FROM Company" data-db="pc"><table class="sqltable"><thead><tr><th>cname</th><th>stockprice</th><th>country</th></tr></thead><tbody><tr><td class="nw">GizmoWorks</td><td class="nw">25.0</td><td class="nw">USA</td></tr><tr><td class="nw">Canon</td><td class="nw">65.0</td><td class="nw">Japan</td></tr><tr><td class="nw">Hitachi</td><td class="nw">15.0</td><td class="nw">Japan</td></tr></tbody></table></div></div></div><div class="capt">Price belongs to Product; country belongs to Company; manufacturer links the two</div></section>
 
 <section class="slide clarity-slide" data-title="Matching a Product to Its Company" data-notes="2025 조인 예의 실제 두 입력을 동시에 둔다. Product의 GizmoWorks 두 칸이 Company의 한 칸을 가리킨다. Canon과 Hitachi도 각각 같은 키를 찾는다. 가격이나 국가는 연결 조건이 아니라 연결 뒤 읽을 속성이다. 다음 장에서 이 연결 조건을 코드로 쓴다."><h1 class="t">Matching a Product to Its Company</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Product</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">pname</th><th class="hl">manufacturer</th></tr></thead><tbody><tr class=""><td class="nw">Gizmo</td><td class="hl nw">GizmoWorks</td></tr><tr class=""><td class="nw">PowerGizmo</td><td class="hl nw">GizmoWorks</td></tr><tr class=""><td class="nw">SingleTouch</td><td class="hl nw">Canon</td></tr><tr class=""><td class="nw">MultiTouch</td><td class="hl nw">Hitachi</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>Company</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="hl">cname</th><th class="">country</th></tr></thead><tbody><tr class=""><td class="hl nw">GizmoWorks</td><td class="nw">USA</td></tr><tr class=""><td class="hl nw">Canon</td><td class="nw">Japan</td></tr><tr class=""><td class="hl nw">Hitachi</td><td class="nw">Japan</td></tr></tbody></table></div></div></div><p class="clarity-statement"><b>manufacturer = cname</b></p></div><div class="capt">Match the highlighted key columns; two products point to the same GizmoWorks row</div></section>
 
@@ -5663,11 +6086,11 @@ h1.t .sub{color:var(--ink-2)}
 <span class="kw">FROM</span> Company C <span class="kw">JOIN</span> Product P <span class="kw">ON</span> P.manufacturer=C.cname;
   <span class="ann up">&uarr; one row per matching product</span></pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>cname</th><th>pname</th></tr></thead><tbody><tr><td class="nw">GizmoWorks</td><td class="nw">Gizmo</td></tr><tr><td class="nw">GizmoWorks</td><td class="nw">PowerGizmo</td></tr><tr><td class="nw">Canon</td><td class="nw">SingleTouch</td></tr><tr><td class="nw">Hitachi</td><td class="nw">MultiTouch</td></tr></tbody></table></div></div></div></div><div class="capt">GizmoWorks appears twice because it matches two different products</div></section>
 
-<section class="slide " data-title="Recap: The Join Input" data-notes="첫 창은 원래 세 회사다. NewCo는 LEFT JOIN 단원부터 추가할 예정이다. 일본 제품 가격 목록의 행 수를 먼저 예측한다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> The Join Input</h1><div class="rule"></div><div class="body"><div class="row "><div class="fulltable" data-sql="SELECT pname,price,manufacturer FROM Product" data-db="pc"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Hitachi</td></tr></tbody></table></div><div class="fulltable" data-sql="SELECT cname,country FROM Company" data-db="pc"><table class="sqltable"><thead><tr><th>cname</th><th>country</th></tr></thead><tbody><tr><td class="nw">GizmoWorks</td><td class="nw">USA</td></tr><tr><td class="nw">Canon</td><td class="nw">Japan</td></tr><tr><td class="nw">Hitachi</td><td class="nw">Japan</td></tr></tbody></table></div></div></div><div class="capt">Two companies are in Japan; the price condition decides which products remain</div></section>
+<section class="slide " data-title="The Join Input" data-notes="첫 창은 원래 세 회사다. NewCo는 LEFT JOIN 단원부터 추가할 예정이다. 일본 제품 가격 목록의 행 수를 먼저 예측한다."><h1 class="t">The Join Input</h1><div class="rule"></div><div class="body"><div class="row "><div class="fulltable" data-sql="SELECT pname,price,manufacturer FROM Product" data-db="pc"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">GizmoWorks</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Canon</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Hitachi</td></tr></tbody></table></div><div class="fulltable" data-sql="SELECT cname,country FROM Company" data-db="pc"><table class="sqltable"><thead><tr><th>cname</th><th>country</th></tr></thead><tbody><tr><td class="nw">GizmoWorks</td><td class="nw">USA</td></tr><tr><td class="nw">Canon</td><td class="nw">Japan</td></tr><tr><td class="nw">Hitachi</td><td class="nw">Japan</td></tr></tbody></table></div></div></div><div class="capt">Two companies are in Japan; the price condition decides which products remain</div></section>
 
 <section class="slide clarity-slide" data-title="Caveat: A Match Needs the Right Meaning" data-notes="2강에서 쓴 동일한 부품·판정 사례다. ID만 맞추면 검사 두 건이 모두 연결된다. 정책은 해당 결정 뒤 처음 검사한 사건을 결과로 삼는 것이므로08:30검사는 그 결정의 결과가 될 수 없다. 같은 키가 있다고 의미상 올바른 연결이 완성되는 것은 아니라는 점을 실제 두 시각으로 설명한다."><h1 class="t"><span class="pfx pfx-caveat">Caveat:</span> A Match Needs the Right Meaning</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Decision</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">part</th><th class="">time</th></tr></thead><tbody><tr class=""><td class="nw">P-104</td><td class="nw">09:14</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>Inspections</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">part</th><th class="">time</th><th class="">result</th></tr></thead><tbody><tr class=""><td class="nw">P-104</td><td class="red nw">08:30</td><td class="nw">defect</td></tr><tr class=""><td class="nw">P-104</td><td class="nw">09:20</td><td class="nw">pass</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>This decision’s outcome</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">part</th><th class="">time</th><th class="">result</th></tr></thead><tbody><tr class=""><td class="nw">P-104</td><td class="nw">09:20</td><td class="nw">pass</td></tr></tbody></table></div></div></div></div><div class="capt">Matching only P-104 also attaches an inspection that happened before the decision</div></section>
 
-<section class="slide trypad" data-title="Demo: Match Products to Companies" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT P.pname,P.price FROM Product P JOIN Company C ON P.manufacturer=C.cname WHERE C.country=&#x27;Japan&#x27; AND P.price&lt;=200; → SingleTouch. 2. 마지막 가격 조건을 빼면 SingleTouch와 MultiTouch다. ON을 지웠을 때 왜 표가 불어나는지는 강의자가 한 번 시연한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Match Products to Companies</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Return names and prices of products made in Japan and priced at most 200</li><li>Remove the price limit and compare the rows</li></ol><div class="sqlpad" data-seed="pc" data-tables="Product,Company"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Match Products to Companies" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT P.pname,P.price FROM Product P JOIN Company C ON P.manufacturer=C.cname WHERE C.country=&#x27;Japan&#x27; AND P.price&lt;=200; → SingleTouch. 2. 마지막 가격 조건을 빼면 SingleTouch와 MultiTouch다. ON을 지웠을 때 왜 표가 불어나는지는 강의자가 한 번 시연한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Match Products to Companies</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Return names and prices of products made in Japan and priced at most 200</li><li>Remove the price limit and compare the rows</li></ol><div class="sqlpad" data-seed="pc" data-tables="Product,Company"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Japanese Products" data-notes="가격 조건을 빼면 Canon과 Hitachi의 제품 두 개가 남는다. 조건을 수정해도 매칭에 쓰는 ON은 유지한다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Japanese Products</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="pc"><pre class="sqlcode"><span class="kw">SELECT</span> P.pname,P.price <span class="kw">FROM</span> Product P
 <span class="kw">JOIN</span> Company C <span class="kw">ON</span> P.manufacturer=C.cname
@@ -5700,9 +6123,9 @@ h1.t .sub{color:var(--ink-2)}
 <span class="kw">WHERE</span> P.price&gt;100;
   <span class="ann up">&uarr; in WHERE: NULL rows are dropped</span></pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>cname</th><th>pname</th></tr></thead><tbody><tr><td class="nw">Canon</td><td class="nw">SingleTouch</td></tr><tr><td class="nw">Hitachi</td><td class="nw">MultiTouch</td></tr></tbody></table></div></div></div></div></div><div class="capt">ON limits matches while keeping companies; WHERE removes rows after the join</div></section>
 
-<section class="slide " data-title="Recap: The Unmatched Company" data-notes="LEFT JOIN 창에서는 NewCo를 포함한 네 회사다. 제품 네 행은 그대로다. 결과는 매칭 제품 둘 때문에 다섯 행일 수 있다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> The Unmatched Company</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT cname,country FROM Company" data-db="pc_unmatched"><table class="sqltable"><thead><tr><th>cname</th><th>country</th></tr></thead><tbody><tr><td class="nw">GizmoWorks</td><td class="nw">USA</td></tr><tr><td class="nw">Canon</td><td class="nw">Japan</td></tr><tr><td class="nw">Hitachi</td><td class="nw">Japan</td></tr><tr><td class="nw">NewCo</td><td class="nw">Korea</td></tr></tbody></table></div></div><div class="capt">Keep all four companies, including NewCo with no product match</div></section>
+<section class="slide " data-title="The Unmatched Company" data-notes="LEFT JOIN 창에서는 NewCo를 포함한 네 회사다. 제품 네 행은 그대로다. 결과는 매칭 제품 둘 때문에 다섯 행일 수 있다."><h1 class="t">The Unmatched Company</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT cname,country FROM Company" data-db="pc_unmatched"><table class="sqltable"><thead><tr><th>cname</th><th>country</th></tr></thead><tbody><tr><td class="nw">GizmoWorks</td><td class="nw">USA</td></tr><tr><td class="nw">Canon</td><td class="nw">Japan</td></tr><tr><td class="nw">Hitachi</td><td class="nw">Japan</td></tr><tr><td class="nw">NewCo</td><td class="nw">Korea</td></tr></tbody></table></div></div><div class="capt">Keep all four companies, including NewCo with no product match</div></section>
 
-<section class="slide trypad" data-title="Demo: Keep Companies Without Products" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT C.cname,P.pname FROM Company C LEFT JOIN Product P ON P.manufacturer=C.cname; → 다섯 행. 2. WHERE P.pname IS NULL을 더하면 NewCo 한 행. 먼저 NewCo가 어느 열에 NULL을 갖는지 결과 표를 읽고 조건을 쓴다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Keep Companies Without Products</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>List every company with its product names, including companies with no products</li><li>Keep only companies with no matching product</li></ol><div class="sqlpad" data-seed="pc_unmatched" data-tables="Company,Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Keep Companies Without Products" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. 1. SELECT C.cname,P.pname FROM Company C LEFT JOIN Product P ON P.manufacturer=C.cname; → 다섯 행. 2. WHERE P.pname IS NULL을 더하면 NewCo 한 행. 먼저 NewCo가 어느 열에 NULL을 갖는지 결과 표를 읽고 조건을 쓴다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Keep Companies Without Products</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>List every company with its product names, including companies with no products</li><li>Keep only companies with no matching product</li></ol><div class="sqlpad" data-seed="pc_unmatched" data-tables="Company,Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Companies Without Products" data-notes="NewCo만 남는다. 회사가 없다는 뜻이 아니라 그 회사에 제품 매칭이 없다는 뜻이다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Companies Without Products</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="pc_unmatched"><pre class="sqlcode"><span class="kw">SELECT</span> C.cname <span class="kw">FROM</span> Company C
 <span class="kw">LEFT</span> <span class="kw">JOIN</span> Product P <span class="kw">ON</span> P.manufacturer=C.cname
@@ -5720,11 +6143,11 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide clarity-slide" data-title="Pairs or One Company" data-notes="EXISTS를 코드를 읽기 전에 질문으로 구분한다. 제품마다 한 결과가 필요한가, 아니면 Gadget을 만드는 회사만 필요한가. JOIN은 두 매칭 쌍, EXISTS는 Company의 원래 한 행이다. 기존 질의의 실제 결과와 이어 확인한다."><h1 class="t">Pairs or One Company</h1><div class="rule"></div><div class="body"><div class="clarity-compare"><div class="clarity-panel"><h3>Two related product rows</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">manufacturer</th><th class="">pname</th></tr></thead><tbody><tr class=""><td class="nw">GizmoWorks</td><td class="nw">Gizmo</td></tr><tr class=""><td class="nw">GizmoWorks</td><td class="nw">PowerGizmo</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>JOIN: matching pairs</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">cname</th></tr></thead><tbody><tr class=""><td class="nw">GizmoWorks</td></tr><tr class=""><td class="nw">GizmoWorks</td></tr></tbody></table></div></div><div class="clarity-panel"><h3>EXISTS: keep the company</h3><div class="tbox"><table class="sqltable"><thead><tr><th class="">cname</th></tr></thead><tbody><tr class=""><td class="nw">GizmoWorks</td></tr></tbody></table></div></div></div></div><div class="capt">Two product matches can answer one company-level question</div></section>
 
-<section class="slide " data-title="EXISTS and Query Blocks" data-notes="subquery는 다른 질의 안의 SELECT다. EXISTS는 안쪽 결과에 행이 하나라도 있는지 검사한다. 안쪽 C.cname은 바깥 현재 회사를 가리키는 상관 참조다. SELECT 1의 값 자체는 중요하지 않고 행 존재가 중요하다. GizmoWorks는 Gadget 둘이어도 바깥 회사 한 행만 남는다."><h1 class="t">EXISTS and Query Blocks</h1><div class="rule"></div><div class="body"><div class="fullcode  sm"><pre class="sqlcode"><span class="kw">SELECT</span> C.cname <span class="kw">FROM</span> Company C
+<section class="slide " data-reading-revision="2026-11-14" data-title="EXISTS and Query Blocks" data-notes="subquery는 다른 질의 안의 SELECT다. EXISTS는 안쪽 결과에 행이 하나라도 있는지 검사한다. 안쪽 C.cname은 바깥 현재 회사를 가리키는 상관 참조다. SELECT 1의 값 자체는 중요하지 않고 행 존재가 중요하다. GizmoWorks는 Gadget 둘이어도 바깥 회사 한 행만 남는다. 독립 열람을 위해 화면 해석을 보강했다. 근거: https://www.postgresql.org/docs/current/functions-subquery.html"><h1 class="t">EXISTS and Query Blocks</h1><div class="rule"></div><div class="body"><div class="fullcode  sm"><pre class="sqlcode"><span class="kw">SELECT</span> C.cname <span class="kw">FROM</span> Company C
 <span class="kw">WHERE</span> <span class="kw"><mark class="tk">EXISTS</mark></span> (<span class="ann">true if the inner query returns a row</span>
   <span class="kw">SELECT</span> 1 <span class="kw">FROM</span> Product P
   <span class="kw">WHERE</span> P.manufacturer=C.cname <span class="kw">AND</span> P.category=<span class="lit">&#x27;Gadgets&#x27;</span>
-);</pre></div></div></section>
+);</pre></div><p class="clarity-statement" data-reading-support="true">A <b>subquery</b> is a query inside another query. For each outer company <b>C</b>, the inner query uses that company’s <b>C.cname</b>.</p><p class="clarity-statement" data-reading-support="true"><b>EXISTS</b> is true if the inner query returns a row. In <b>SELECT 1</b>, the value 1 does not matter; the existence of a row does.</p></div></section>
 
 <section class="slide " data-title="Inspect the Inner Result First" data-notes="안쪽 결과는 GizmoWorks 두 행이다. IN은 값 포함 여부를 묻기 때문에 바깥 회사는 한 번 남는다. JOIN의 쌍 출력과 구분한다."><h1 class="t">Inspect the Inner Result First</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="pc_unmatched"><pre class="sqlcode"><span class="kw">SELECT</span> manufacturer <span class="kw">FROM</span> Product <span class="kw">WHERE</span> category=<span class="lit">&#x27;Gadgets&#x27;</span>;</pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>manufacturer</th></tr></thead><tbody><tr><td class="nw">GizmoWorks</td></tr><tr><td class="nw">GizmoWorks</td></tr></tbody></table></div></div></div></div><div class="capt">Repeated candidate values do not repeat the outer company</div></section>
 
@@ -5743,9 +6166,9 @@ h1.t .sub{color:var(--ink-2)}
   <span class="kw">SELECT</span> 1 <span class="kw">FROM</span> Product P
   <span class="kw">WHERE</span> P.manufacturer=C.cname <span class="kw">AND</span> P.category=<span class="lit">&#x27;Gadgets&#x27;</span>);</pre><div class="sqlresult"><table class="sqltable"><thead><tr><th>cname</th></tr></thead><tbody><tr><td class="nw">Canon</td></tr><tr><td class="nw">Hitachi</td></tr><tr><td class="nw">NewCo</td></tr></tbody></table></div></div></div></div><div class="capt">NOT EXISTS keeps Canon, Hitachi and NewCo, which have no Gadget match</div></section>
 
-<section class="slide " data-title="Recap: Company-Level Questions" data-notes="창의 바깥 입력은 네 회사다. 출력 단위는 제품이 아니라 회사다. Gadget이 있는 회사와 없는 회사를 나눠 쓴다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Company-Level Questions</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT cname FROM Company" data-db="pc_unmatched"><table class="sqltable"><thead><tr><th>cname</th></tr></thead><tbody><tr><td class="nw">Canon</td></tr><tr><td class="nw">GizmoWorks</td></tr><tr><td class="nw">Hitachi</td></tr><tr><td class="nw">NewCo</td></tr></tbody></table></div></div><div class="capt">Each answer should contain company rows, without repeating a company per product</div></section>
+<section class="slide " data-title="Company-Level Questions" data-notes="창의 바깥 입력은 네 회사다. 출력 단위는 제품이 아니라 회사다. Gadget이 있는 회사와 없는 회사를 나눠 쓴다."><h1 class="t">Company-Level Questions</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT cname FROM Company" data-db="pc_unmatched"><table class="sqltable"><thead><tr><th>cname</th></tr></thead><tbody><tr><td class="nw">Canon</td></tr><tr><td class="nw">GizmoWorks</td></tr><tr><td class="nw">Hitachi</td></tr><tr><td class="nw">NewCo</td></tr></tbody></table></div></div><div class="capt">Each answer should contain company rows, without repeating a company per product</div></section>
 
-<section class="slide trypad" data-title="Demo: Ask Whether a Match Exists" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. EXISTS 결과는 GizmoWorks 한 행, NOT EXISTS는 Canon, Hitachi, NewCo 세 행이다. 안쪽 P.manufacturer=C.cname을 생략하면 모든 회사에 같은 답이 붙는 것을 강의자가 결과로 보여 준다. 학생에게 안쪽과 바깥 표의 별칭을 직접 짚게 한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Ask Whether a Match Exists</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Find companies that make a Gadget with <code>EXISTS</code></li><li>Find companies that make no Gadgets with <code>NOT EXISTS</code></li></ol><div class="sqlpad" data-seed="pc_unmatched" data-tables="Company,Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Ask Whether a Match Exists" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. EXISTS 결과는 GizmoWorks 한 행, NOT EXISTS는 Canon, Hitachi, NewCo 세 행이다. 안쪽 P.manufacturer=C.cname을 생략하면 모든 회사에 같은 답이 붙는 것을 강의자가 결과로 보여 준다. 학생에게 안쪽과 바깥 표의 별칭을 직접 짚게 한다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Ask Whether a Match Exists</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Find companies that make a Gadget with <code>EXISTS</code></li><li>Find companies that make no Gadgets with <code>NOT EXISTS</code></li></ol><div class="sqlpad" data-seed="pc_unmatched" data-tables="Company,Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Match Existence" data-notes="안쪽은 현재 회사의 Gadget을 찾는다. 같은 질문에서 NOT을 제거하면 Gadget이 있는 GizmoWorks다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Match Existence</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="pc_unmatched"><pre class="sqlcode"><span class="kw">SELECT</span> C.cname <span class="kw">FROM</span> Company C <span class="kw">WHERE</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> (
   <span class="kw">SELECT</span> 1 <span class="kw">FROM</span> Product P
@@ -5763,9 +6186,9 @@ h1.t .sub{color:var(--ink-2)}
 
 <section class="slide " data-title="Compatible Result Columns" data-notes="UNION 양쪽은 열 수가 같고 해당 위치의 타입도 호환되어야 한다. 대응은 열 이름이 아니라 위치다. 실제 작업에서는 SELECT *보다 열을 명시해 잘못된 결합을 줄인다."><h1 class="t">Compatible Result Columns</h1><div class="rule"></div><div class="body"><div class="tbox sm"><table class="sqltable"><thead><tr><th class="">First query</th><th class="">Second query</th><th class="">Combination</th></tr></thead><tbody><tr class=""><td class="nw">pname</td><td class="nw">pname</td><td class="">One name column</td></tr><tr class=""><td class="nw">pname, price</td><td class="nw">pname, price</td><td class="">Two corresponding columns</td></tr><tr class=""><td class="nw">pname, price</td><td class="nw">pname</td><td class="">Invalid: different column counts</td></tr></tbody></table></div></div><div class="capt">Stack corresponding columns in the same order</div></section>
 
-<section class="slide " data-title="Recap: Overlapping Product Lists" data-notes="Gadget 두 행과 200 미만 세 행은 Gizmo와 PowerGizmo가 겹친다. 따라서 UNION ALL은 다섯 행, UNION은 세 행이다."><h1 class="t"><span class="pfx pfx-recap">Recap:</span> Overlapping Product Lists</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT pname,price,category FROM Product" data-db="product"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">Gadgets</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td></tr></tbody></table></div></div><div class="capt">The Gadget list overlaps the below-200 list at Gizmo and PowerGizmo</div></section>
+<section class="slide " data-title="Overlapping Product Lists" data-notes="Gadget 두 행과 200 미만 세 행은 Gizmo와 PowerGizmo가 겹친다. 따라서 UNION ALL은 다섯 행, UNION은 세 행이다."><h1 class="t">Overlapping Product Lists</h1><div class="rule"></div><div class="body"><div class="fulltable" data-sql="SELECT pname,price,category FROM Product" data-db="product"><table class="sqltable"><thead><tr><th>pname</th><th>price</th><th>category</th></tr></thead><tbody><tr><td class="nw">Gizmo</td><td class="nw">19.99</td><td class="nw">Gadgets</td></tr><tr><td class="nw">PowerGizmo</td><td class="nw">29.99</td><td class="nw">Gadgets</td></tr><tr><td class="nw">SingleTouch</td><td class="nw">149.99</td><td class="nw">Photography</td></tr><tr><td class="nw">MultiTouch</td><td class="nw">203.99</td><td class="nw">Household</td></tr></tbody></table></div></div><div class="capt">The Gadget list overlaps the below-200 list at Gizmo and PowerGizmo</div></section>
 
-<section class="slide trypad" data-title="Demo: Stack Two Product Lists" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. SELECT pname FROM Product WHERE category=&#x27;Gadgets&#x27; UNION ALL SELECT pname FROM Product WHERE price&lt;200; 다섯 행. ALL을 빼면 세 행이다. 두 입력 표를 따로 실행한 뒤 합친 결과를 읽고 반복된 두 이름을 찾는다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Stack Two Product Lists</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Combine Gadget names and below-200 product names with <code>UNION ALL</code></li><li>Change it to <code>UNION</code> and explain the difference</li></ol><div class="sqlpad" data-seed="product" data-tables="Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run.</div><!--/pad-out--></div></div></div></section>
+<section class="slide trypad" data-title="Demo: Stack Two Product Lists" data-notes="기본 7분, 90분 수업에서는 8분을 쓴다. 결과 행과 열을 먼저 예측하고 첫 질의를 같이 타이핑한다. 결과를 읽은 뒤 조건 한 곳을 바꿔 두 번째 질의를 실행한다. 매 Run은 새 데이터 사본에서 시작한다. SELECT pname FROM Product WHERE category=&#x27;Gadgets&#x27; UNION ALL SELECT pname FROM Product WHERE price&lt;200; 다섯 행. ALL을 빼면 세 행이다. 두 입력 표를 따로 실행한 뒤 합친 결과를 읽고 반복된 두 이름을 찾는다."><h1 class="t"><span class="pfx pfx-demo">Demo:</span> Stack Two Product Lists</h1><div class="rule"></div><div class="body"><ol class="pad-tasks"><li>Combine Gadget names and below-200 product names with <code>UNION ALL</code></li><li>Change it to <code>UNION</code> and explain the difference</li></ol><div class="sqlpad" data-seed="product" data-tables="Product"><div class="pad-edit"><textarea spellcheck="false" rows="10" aria-label="SQL editor" placeholder="-- write your query here, then Run"></textarea><div class="pad-bar"><button type="button" class="pad-run">Run &#9654;</button><button type="button" class="pad-reset">Reset</button><span class="pad-msg">Ctrl/&#8984; + Enter</span></div></div><div class="pad-out"><div class="rlab">Query result</div><div class="pad-none">Write a query on the left, then Run</div><!--/pad-out--></div></div></div></section>
 
 <section class="slide " data-title="Answer: Stack Product Lists" data-notes="UNION은 Gizmo, PowerGizmo, SingleTouch를 한 번씩 남긴다. 반복을 보존해야 하는 event나 매출 행에는 UNION ALL이 맞을 수 있으므로 무조건 UNION이 낫다고 가르치지 않는다."><h1 class="t"><span class="pfx pfx-answer">Answer:</span> Stack Product Lists</h1><div class="rule"></div><div class="body"><div class="wsm"><div class="sqlwork" data-db="product"><pre class="sqlcode"><span class="kw">SELECT</span> pname <span class="kw">FROM</span> Product <span class="kw">WHERE</span> category=<span class="lit">&#x27;Gadgets&#x27;</span>
 <span class="kw">UNION</span>

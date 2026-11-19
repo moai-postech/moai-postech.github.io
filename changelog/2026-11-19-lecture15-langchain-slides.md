@@ -26,3 +26,4 @@ PLMS·Drive 교체는 아직. 교수 확인 뒤 처리.
 ## 68장 판(같은 날 4차)
 
 - `teaching/26f-data-engineering/slides/15_llm-systems.{html,pdf}` 교체. Models and Prompts → Chains → Memory → RAG 네 파트로 쌓아 가는 LangChain 지도 복원, RAG는 동기 3장과 큰 그림만 남겨 90장 → 68장. 경위는 과목 폴더 `changelog/2026-11-19-lecture15-langchain-restore.md`.
+- 16강(`16_agents.{html,pdf}`): 첫 본문 장의 2025 Agents 지도를 15강과 같은 양식의 마지막 단계 지도(앞 네 요소 + Agents & Tools 강조)로 교체. 59장 그대로.

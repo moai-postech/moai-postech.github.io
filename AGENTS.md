@@ -52,7 +52,7 @@ tools/               검사 스크립트(check_changelog.py: 기록·안건·서
 
 **모든 정규 강의의 과목명 링크는 학기 없는 고정 주소(`teaching/<과목명>/`)로 통일한다.** Teaching 목록과 Other Courses 에 같은 주소를 쓰고, 고정 주소는 최신 학기로 자동 연결한다. 학기 이름 링크는 해당 학기의 주소를 유지한다. 새 과목과 새 학기도 이 규칙을 따른다. 추가 절차는 [`_themes/wide/includes/course/COURSE.md`](_themes/wide/includes/course/COURSE.md)의 "새 강의 페이지 만들기"를 따른다(교수 2026-11-03).
 
-**기관·회사 이름은 약어만 듣고 바로 아는 곳(KAIST, POSTECH, UNIST, DGIST, LG U+ 처럼 널리 알려진 이름)이 아니면 영문 정식 명칭을 쓴다**(교수 2026-11-19: Seminar 소속 "FSI" 가 무엇인지 헷갈려 `Financial Security Institute` 로 바꿈. 2026-11-09 의 약칭 통일을 되돌림). 소속, 장소, 기관 칸 모두 같고, `_data/institutions.yml` 키도 같은 글자로 둔다.
+**기관·회사 이름은 약어만 듣고 바로 아는 곳(KAIST, POSTECH, UNIST, DGIST, LG U+, 과제 기관 NRF·KEIT·IITP 처럼 널리 쓰는 이름)이 아니면 영문 정식 명칭을 쓴다**(교수 2026-11-19: Seminar 소속 "FSI" 가 무엇인지 헷갈려 `Financial Security Institute` 로 바꿈. 2026-11-09 의 약칭 통일을 되돌림). 소속, 장소, 기관 칸 모두 같고, `_data/institutions.yml` 키도 같은 글자로 둔다.
 
 문장 안 링크와 강조는 마크다운으로 쓴다(`[글](주소)`). 문단에 CSS 클래스를 주려면 문단 바로 아랫줄에 `{: .muted}` 처럼 쓴다.
 

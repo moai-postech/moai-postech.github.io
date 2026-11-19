@@ -29,3 +29,4 @@ PLMS·Drive 교체는 아직. 교수 확인 뒤 처리.
 - 16강(`16_agents.{html,pdf}`): 첫 본문 장의 2025 Agents 지도를 15강과 같은 양식의 마지막 단계 지도(앞 네 요소 + Agents & Tools 강조)로 교체. 59장 그대로.
 - 17강(`17_data-agents.{html,pdf}`): Outline 뒤에 완성된 쌓기 지도 한 장(`The Full Stack in a Data Agent`, 각 요소의 데이터 에이전트 역할 표시)을 넣어 46장 → 47장. 같은 커밋에서 15·16강 지도의 LangChain 상자 위 작은 빨간 자국을 지운 판으로 다시 올렸다.
 - 14강(`14_ml-systems.{html,pdf}`): 11-17에 한 장만 남겼던 2025 파이프라인 단계 지도(데이터 소스 → feature → feature store → 학습 → 추론)를 각 단계 앞에 되살려 52장 → 56장.
+- 1~13강, Review Session, Midterm Review(29개 파일): 사용자 "지금 버전으로 사이트에 푸시". 11-18 학수번호 AXGS501 커밋(`918d837`) 뒤 로컬에서 같은 내용을 공통 테마까지 넣어 다시 빌드한 판으로 맞췄다. 내용(장 수·학수번호)은 같다.

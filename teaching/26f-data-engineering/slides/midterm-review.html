@@ -5601,6 +5601,203 @@ h1.t .sub{color:var(--ink-2)}
 #deck-page-dialog button[type=submit]{color:var(--paper);background:var(--accent);border-color:var(--accent)}
 @media screen and (pointer:coarse){#deck-touch-nav{display:flex}#stageWrap{bottom:64px}#hud,#help{display:none!important}}
 @media print{#deck-touch-nav,#deck-page-dialog{display:none!important}}
+/* Lecture 11 partition exercises. Shared design layer, scoped to this component. */
+.lec11-demo{width:100%;display:flex;flex-direction:column;gap:18px;min-height:0}
+.lec11-controls{display:flex;align-items:center;justify-content:center;gap:20px;font:600 19px var(--sans);flex-wrap:wrap}
+.lec11-controls label{display:flex;align-items:center;gap:10px}
+.lec11-controls input[type=range]{width:180px;accent-color:var(--blue)}
+.lec11-controls input[type=checkbox]{width:19px;height:19px;accent-color:var(--blue)}
+.lec11-controls output{font-family:var(--mono);min-width:36px}
+.lec11-controls button{font:650 19px var(--sans);padding:8px 18px;border:1.5px solid var(--blue);border-radius:3px;background:var(--blue-soft);color:var(--blue-deep);cursor:pointer}
+.lec11-controls button:disabled{opacity:.4;cursor:default}
+.lec11-demo .lec11-view{width:100%;min-height:0}
+.lec11-readout{font:500 20px/1.4 var(--sans);color:var(--ink-2);margin:0;text-align:center}
+
+/* Clickable outlines keep the authored geometry and palette. */
+[data-deck-target]{cursor:pointer;touch-action:manipulation}
+[data-deck-target]:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media print{[data-deck-target]:focus-visible{outline:none}}
+/* Lecture 12: sourced photography and product screens, with content-sized data figures. */
+.lec12-image-map.outline-list{width:1100px;max-width:100%;display:grid;gap:24px 30px;padding:0;margin:0}
+.lec12-image-map.four{grid-template-columns:1fr 1fr}
+.lec12-image-map.two{grid-template-columns:1fr 1fr}
+.lec12-image-map .o.lec12-map-card{display:block;min-width:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;text-align:left}
+.lec12-image-map .lec12-map-image{width:100%;height:145px;overflow:hidden;background:var(--paper-2)}
+.lec12-image-map.two .lec12-map-image{height:250px}
+.lec12-image-map .lec12-map-image img{display:block;width:100%;height:100%;max-height:none;max-width:none;object-fit:contain;object-position:center}
+.lec12-image-map .lec12-map-image.photo img{object-fit:cover}
+.lec12-image-map .lec12-map-label{display:flex;align-items:baseline;gap:12px;margin-top:12px}
+.lec12-image-map .o .num{font:600 18px var(--mono);color:var(--ink-3);width:auto}
+.lec12-image-map .o .nm{font:700 23px var(--sans);color:var(--ink);display:block}
+.lec12-image-map .o p{font:400 17px/1.3 var(--sans);color:var(--ink-3);margin:5px 0 0}
+.lec12-image-map.two .o .nm{font-size:26px}
+.lec12-image-map.two .o p{font-size:19px;margin-top:9px}
+.lec12-photo-hero{width:1120px;height:435px;overflow:hidden}
+.lec12-photo-hero img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;max-height:none!important;filter:saturate(.55)}
+.lec12-responsibility ul{margin:10px 0 0;padding-left:22px;font:400 22px/1.6 var(--sans);color:var(--ink-2)}
+.lec12-responsibility{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:40px;text-align:left}
+.lec12-responsibility img{width:100%;height:260px;object-fit:contain;display:block;background:var(--paper-2)}
+.lec12-responsibility>div:first-child img{object-fit:cover}
+.lec12-responsibility h3,.lec12-grains h3,.lec12-snapshots h3,.lec12-sums h3,.lec12-retry h3{font:700 25px/1.2 var(--sans);margin:18px 0 8px;color:var(--ink)}
+.lec12-responsibility p{font:400 21px/1.4 var(--sans);margin:0;color:var(--ink-2)}
+.lec12-snapshots{width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:42px;text-align:left}
+.lec12-snapshots pre{font:500 21px/2 var(--mono);background:var(--paper-2);border:1px solid var(--line);padding:20px 14px;white-space:pre;margin:20px 0}
+.lec12-snapshots p{font:500 29px var(--mono);margin:20px 0}
+.lec12-snapshots p span,.lec12-sums span{color:var(--ink-3)}
+.lec12-snapshots mark{background:var(--orange-soft);color:var(--ink);padding:2px 0}
+.lec12-sums{width:1060px}
+.lec12-workers{display:grid;grid-template-columns:1fr 1fr;gap:60px;text-align:center}
+.lec12-workers p{font:500 32px var(--mono);margin:24px 0}
+.lec12-sums b{color:var(--blue-deep)}
+.lec12-combined{border-top:1px solid var(--line);margin-top:35px;padding-top:26px;text-align:center}
+.lec12-combined>span{font:500 20px var(--sans)}
+.lec12-combined p{font:500 42px var(--mono);margin:15px 0}
+.lec12-grains{width:1120px;display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:36px;text-align:left}
+.lec12-grains>div>span{font:400 18px var(--sans);color:var(--ink-3)}
+.lec12-grains table{border-collapse:collapse;width:100%;margin-top:24px;font:500 21px var(--mono)}
+.lec12-grains td{padding:12px 10px;border-bottom:1px solid var(--line)}
+.lec12-mini-bar{display:flex;align-items:center;gap:10px;height:75px;font:500 20px var(--mono)}
+.lec12-mini-bar b{width:65px;font-weight:500;flex-shrink:0}
+.lec12-mini-bar i{height:30px;display:block;background:var(--blue);min-width:0}
+.lec12-mini-bar.p2 i{background:var(--orange)}
+.lec12-mini-bar strong{font-weight:700;font-size:22px}
+.lec12-retry{width:850px;display:grid;grid-template-columns:1fr 1fr;gap:100px;text-align:center}
+.lec12-retry>div>b{font:700 34px var(--mono);display:block;margin:15px 0;color:var(--ink)}
+.lec12-bar-space{height:245px;display:flex;flex-direction:column;justify-content:flex-end;width:200px;margin:auto}
+.lec12-batch{height:115px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font:600 24px var(--mono)}
+.lec12-batch.repeated{background:var(--orange);color:var(--paper);border-bottom:2px solid var(--paper)}
+
+.lec12-product-screen{width:1120px;height:435px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lec12-product-screen img{width:100%;height:100%;object-fit:contain;max-height:none!important;display:block}
+.lec12-product-screen.query img,.lec12-image-map .lec12-map-image.query img{object-fit:cover;object-position:top}
+.lec12-responsibility>div:last-child img{object-fit:cover;object-position:top}
+.lec12-daily-sales .lec12-bar-space{height:280px}
+.lec12-daily-sales .lec12-batch{font-size:22px}
+.lec12-mini-bar{display:grid;grid-template-columns:65px 1fr 44px}
+.lec12-bar-track{display:block;height:30px;min-width:0}
+.lec12-spark-recap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;width:1100px;text-align:left}
+.lec12-spark-recap h3{font:700 26px var(--sans);margin:0 0 25px}
+.lec12-spark-recap pre{font:500 23px/1.7 var(--mono);margin:0;white-space:pre}
+.lec12-spark-recap img{width:100%;height:340px;object-fit:cover;max-height:none!important}
+
+/* Lecture 12: original storage diagrams enlarged in separate reading panels. */
+.lec12-storage-layout{display:grid;grid-template-columns:400px 315px 315px;gap:24px;align-items:center;width:1078px}
+.lec12-storage-layout h3{font:700 24px var(--sans);margin:0 0 14px;text-align:center}
+.lec12-storage-layout table{width:100%;font-size:22px}
+.lec12-storage-crop{width:315px;height:410px;background-repeat:no-repeat;background-size:754px 742px}
+.lec12-storage-crop.rows{width:300px;background-position:-38px -290px}
+.lec12-storage-crop.columns{background-position:-408px -290px}
+
+
+/* Lecture 12 visual experiments. All appearance stays in the central theme. */
+.l12lab{width:1100px;font:500 20px/1.35 var(--sans);color:var(--ink)}
+.l12tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.l12tools label{display:flex;align-items:center;gap:7px;font-size:18px}
+.l12tools button,.l12tools select{font:600 18px var(--sans);padding:8px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.l12tools button:disabled{opacity:.4}
+.l12tools button:first-of-type{background:var(--blue);color:white;border-color:var(--blue)}
+.l12tools input{width:19px;height:19px;accent-color:var(--blue)}
+.l12lab h3{font:700 23px var(--sans);margin:0 0 10px}
+.l12lab h4{font:650 18px var(--sans);margin:0 0 7px}
+.l12lab p{margin:6px 0;font-size:19px}
+.l12lab small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.l12readout{font:600 20px/1.3 var(--sans);padding:10px 0;color:var(--blue);min-height:27px}
+.l12storage{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.l12cells{height:290px;display:flex;flex-direction:column;gap:6px}
+.l12block{display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center;min-height:36px}
+.l12block>span{font-size:16px;color:var(--muted)}
+.l12block>div{display:flex;border:1px solid var(--line);background:var(--paper2);min-height:32px}
+.l12block i{font:500 16px var(--mono);display:flex;align-items:center;justify-content:center;flex:1;min-width:0;padding:4px 1px;border-right:1px solid var(--line)}
+.l12block.read>div{background:var(--blue-soft);border-color:var(--blue)}
+.l12block.read i.needed{background:var(--blue);color:white}
+.l12data{border-collapse:collapse;width:100%;font:500 17px/1.25 var(--sans)}
+.l12data th{text-align:left;border-bottom:2px solid var(--blue);font-weight:700;color:var(--blue-deep);padding:6px}
+.l12data td{border-bottom:1px solid var(--line);padding:6px}
+.l12etl-lanes{display:grid;gap:15px}
+.l12etl-lane{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start}
+.l12etl-lane>h3{padding-top:20px}
+.l12etl-flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center}
+.l12etl-flow>div{min-height:133px;padding:8px;background:var(--paper2)}
+.l12etl-flow>div.active{background:var(--blue-soft)}
+.l12etl-flow>span{font-size:27px;color:var(--blue)}
+.l12etl-flow .l12data{font-size:15px}
+.l12etl-flow .l12data th,.l12etl-flow .l12data td{padding:3px}
+.l12etl-flow h4{font-size:17px}
+.l12etl-flow p{font-size:17px}
+.l12dagboard{position:relative;height:185px}
+.l12dagboard>svg{position:absolute;left:0;top:0;width:100%;height:185px;overflow:visible;color:var(--ink3)}
+.l12edge{fill:none;stroke:currentColor;stroke-width:1.6}
+.l12node{position:absolute;width:150px;height:58px;border:1.5px solid var(--line);background:var(--paper2);border-radius:5px;color:var(--ink);padding:5px;transform:translateY(-3px)}
+.l12node b{font:650 18px var(--sans);display:block}
+.l12node span{font:500 15px var(--sans);display:block;margin-top:4px}
+.l12node.running{background:var(--blue-soft);border-color:var(--blue)}
+.l12node.success{background:#e7f1e9;border-color:#3D7A52}
+.l12node.failed{background:var(--orange-soft);border-color:var(--orange)}
+.l12node.blocked{border-style:dashed;opacity:.65}
+.l12node.selected{outline:3px solid var(--blue);outline-offset:2px}
+.l12dag-bottom{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:7px}
+.l12gantt-row{display:grid;grid-template-columns:115px 1fr;gap:8px;height:19px;align-items:center;font-size:14px}
+.l12gantt-row>div{position:relative;height:16px;background:var(--paper2)}
+.l12gantt-row i{position:absolute;top:0;height:16px;background:var(--blue);color:white;font:500 12px var(--mono);text-align:center;min-width:20px}
+.l12gantt-row i.success{background:#3D7A52}
+.l12gantt-row i.failed{background:var(--orange)}
+.l12outcome p{font-size:18px}
+.l12snapshot{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:30px;min-height:285px;align-items:center}
+.l12snapshot-pointer{text-align:center}
+.l12snapshot-pointer strong{display:block;background:var(--blue-soft);padding:20px 10px;color:var(--blue);font-size:26px}
+.l12snapshot-pointer>span{display:block;font-size:38px;color:var(--blue)}
+.l12snapshot-total{font-weight:700;color:var(--blue)}
+
+/* Eight column segments must fit without covering the readout. */
+.l12cells{height:270px;gap:5px}
+.l12block{min-height:28px}
+.l12block>div{min-height:26px}
+.l12block i{padding:3px 1px}
+
+.l12block i{white-space:nowrap}
+
+/* Lecture 12: leave room for computed validation details in every DAG state. */
+#l12-dag .l12dagboard,#l12-dag .l12dagboard>svg{height:165px}
+#l12-dag .l12readout{min-height:26px;font-size:19px}
+#l12-dag .l12outcome p{font-size:17px;line-height:1.25}
+
+/* Editable event data exercise: input and computed results share the same stage. */
+.stream-lab{display:grid;grid-template-columns:390px 1fr;gap:28px;align-items:start;width:100%}
+.stream-lab textarea{display:block;box-sizing:border-box;width:100%;height:210px;resize:none;padding:14px;font:20px/1.5 var(--mono);color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px}
+.stream-lab .ctl{margin-top:12px;gap:10px}
+.stream-lab .readout{margin-top:18px;font-size:18px}
+.stream-lab .sqltable{width:100%;font-size:19px}
+.stream-lab .sqltable td,.stream-lab .sqltable th{padding:12px 10px}
+
+/* Two code representations of the same record have equal readable widths. */
+.row:has(> .fullcode):has(> .stack > .fullcode){display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:24px;align-items:center}
+.row:has(> .fullcode):has(> .stack > .fullcode)>*{min-width:0;max-width:100%}
+.row:has(> .fullcode):has(> .stack > .fullcode) .fullcode{min-width:0;width:100%}
+
+/* Concept-table headers use the same dark navy / white treatment in review and numbered lectures. */
+.review-deck :is(.review-table,.rev-table) th{font-size:23px;line-height:1.45;background:var(--blue-deep);color:#fff;font-weight:700;border-bottom:2px solid #0d2641}
+.review-deck .rev-table th{padding-top:11px;padding-bottom:11px}
+
+/* Cover typography (2026-11-14): the lecture title is the primary text.
+   These metrics are also read by tools/render-title-pdf.py for the static fallback.
+   Keep this block last so imported review styles cannot reintroduce 88px numbers. */
+:root{--cover-left:110px;--cover-top:176px;--cover-width:1060px;
+ --cover-course-size:17px;--cover-course-line:24px;--cover-course-track:.14;
+ --cover-heading-gap:32px;--cover-number-size:30px;--cover-number-line:36px;--cover-number-gap:18px;
+ --cover-title-size:52px;--cover-title-line:59.8px;--cover-title-track:-.035;
+ --cover-meta-gap:40px;--cover-meta-pad:20px;--cover-meta-size:19px;--cover-meta-line:30.4px;--cover-meta-width:560px}
+.slide.title:not(.mpr-close){justify-content:flex-start;background:var(--paper);color:var(--ink);padding:var(--cover-top) var(--cover-left) 0}
+.slide.title:not(.mpr-close) .course{font-size:var(--cover-course-size);line-height:var(--cover-course-line);font-weight:600;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase}
+.slide.title:not(.mpr-close) h1{font-size:52px;line-height:var(--cover-title-line);font-weight:800;letter-spacing:-.035em;margin:var(--cover-heading-gap) 0 0;max-width:var(--cover-width);color:var(--ink);text-wrap:balance}
+.slide.title:not(.mpr-close) h1 .num{display:block;font-size:var(--cover-number-size);line-height:var(--cover-number-line);font-weight:600;letter-spacing:0;margin-bottom:var(--cover-number-gap);color:var(--accent)}
+.slide.title:not(.mpr-close) h1:not(:has(.num)){padding-top:calc(var(--cover-number-line) + var(--cover-number-gap))}
+.slide.title:not(.mpr-close) h1 .ser{color:inherit}
+.slide.title:not(.mpr-close) .meta{font-size:var(--cover-meta-size);line-height:var(--cover-meta-line);font-weight:400;letter-spacing:0;color:var(--ink-3);margin-top:var(--cover-meta-gap);padding-top:var(--cover-meta-pad);border-top:1px solid var(--line);max-width:var(--cover-meta-width)}
+/* Same-slide reveals: keep layout and numbering fixed; print the complete state. */
+.slide .frag{transition:opacity .18s ease}
+.slide .frag:not(.vis){pointer-events:none}
+@media (prefers-reduced-motion:reduce){.slide .frag{transition:none}}
+@media print{.slide .frag{opacity:1!important;visibility:visible!important;transition:none!important}}
 /* DECK-THEME:END */
 </style>
 </head>
@@ -5812,6 +6009,83 @@ buildOverview();render();
    The theme intentionally installs no automatic body-sizing behaviour. */
 
 /* Shared navigation for every deck, including hand-written lectures. */
+/* Outline cards and section maps use exact, local destinations. No page-number guesses. */
+(() => {
+  if (typeof slides === 'undefined' || typeof goTo !== 'function') return;
+  const normalize = text => String(text || '').normalize('NFKC').replace(/\s+/g,' ').trim().toLowerCase();
+  const titleOf = slide => String(slide.dataset.title || '').replace(/^\d+\s*[·.]\s*/, '').replace(/^§\s*/, '').trim();
+  const targets = new Map();
+  slides.forEach((slide, index) => {
+    if (slide.classList.contains('cont')) return;
+    const key = normalize(titleOf(slide));
+    if (!targets.has(key)) targets.set(key, []);
+    targets.get(key).push({index, slide});
+  });
+  const destination = label => {
+    const matches = targets.get(normalize(label)) || [];
+    const dividers = matches.filter(m => m.slide.classList.contains('mapdiv'));
+    const choices = dividers.length ? dividers : matches;
+    return choices.length === 1 ? choices[0].index : null;
+  };
+  function bind(element, label, aliases) {
+    const name = aliases.get(normalize(label)) || label;
+    const index = destination(name);
+    if (index === null) return false;
+    element.dataset.deckTarget = String(index);
+    element.dataset.deckLabel = label;
+    element.setAttribute('role', 'link');
+    element.setAttribute('tabindex', '0');
+    element.setAttribute('aria-label', 'Go to ' + titleOf(slides[index]));
+    element.setAttribute('title', 'Go to ' + titleOf(slides[index]));
+    return true;
+  }
+  slides.forEach(slide => {
+    const title = slide.dataset.title || '';
+    if (!(slide.matches('.omap,.mapdiv') || /^Outline:/.test(title) || slide.hasAttribute('data-deck-jumps'))) return;
+    let mapping = {};
+    try { mapping = JSON.parse(slide.dataset.deckJumps || '{}'); } catch (_) { return; }
+    const aliases = new Map(Object.entries(mapping).map(([a,b]) => [normalize(a),b]));
+    slide.querySelectorAll('.clarity-outline-row, .outline-list > .o').forEach(row => {
+      const label = row.querySelector('h3,.nm');
+      if (label) bind(row, label.textContent, aliases);
+    });
+    // Named SVG cards cover lectures 3-5. Other decks use anonymous groups.
+    const groups = [...slide.querySelectorAll('svg g')].reverse();
+    groups.forEach(group => {
+      if (group.querySelector('[data-deck-target]')) return;
+      const named = group.querySelector('.oc-nm,.tr-bt');
+      if (named) { bind(group, named.textContent, aliases); return; }
+      const texts = [...group.querySelectorAll('text')].map(t => t.textContent.trim()).filter(Boolean);
+      if (/^\d+$/.test(texts[0] || '')) texts.shift();
+      // Wrapped card titles span several SVG text elements. Only a complete
+      // prefix of these elements can name a destination, never a substring.
+      let label = '';
+      for (const text of texts) {
+        label += (label ? ' ' : '') + text;
+        if (bind(group, label, aliases)) break;
+      }
+    });
+  });
+  const jump = (event, keyboard) => {
+    const element = event.target.closest('[data-deck-target]');
+    if (!element) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const target = Number(element.dataset.deckTarget);
+    if (!Number.isInteger(target) || target < 0 || target >= slides.length) return;
+    goTo(target);
+    if (keyboard) {
+      const heading = slides[target].querySelector('h1');
+      if (heading) { heading.setAttribute('tabindex','-1'); heading.focus({preventScroll:true}); }
+    }
+  };
+  // Capture is essential: Space/Enter and mobile click must not also advance.
+  document.addEventListener('click', event => jump(event, false), true);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') jump(event, true);
+  }, true);
+})();
+
 (() => {
   if (typeof slides === 'undefined' || typeof goTo !== 'function') return;
   const pages = slides.map((s, i) => s.classList.contains('cont') ? -1 : i).filter(i => i >= 0);
@@ -5883,7 +6157,7 @@ buildOverview();render();
   // Treat only a short, stationary, single-finger gesture as a tap.
   let gesture = null, tap = null;
   const blocked = target => target.closest('a,button,input,textarea,select,label,video,audio,canvas,' +
-    '[contenteditable], [role="button"], [data-interactive], #hud, #help, #ov, #notes,' +
+    '[contenteditable], [role="button"], [data-deck-target], [data-interactive], #hud, #help, #ov, #notes,' +
     '#deck-touch-nav, #deck-page-dialog, .pagenum, pre, .sqlpad, .mqlpad');
   document.addEventListener('pointerdown', e => {
     tap = null;

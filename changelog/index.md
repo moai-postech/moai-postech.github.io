@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-19 | [FSI 를 정식 명칭으로](2026-11-19-fsi-full-name.md) | Sangwoo Mo(sangwoomo) | `_data/`, `AGENTS.md` | 소속 FSI → Financial Security Institute, 잘 알려지지 않은 약어는 정식 명칭 원칙 |
 | 2026-11-19 | [AI:Q 발표 자료 공개](2026-11-19-talks-aiq-slides.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml`, `assets/talks/` | AI:Q 발표를 자립형 HTML 로 Talks 에 연결 |
 | 2026-11-19 | [Lab Seminar / Invited Talks](2026-11-19-lab-seminar-invited-talks.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `seminar.md`, `talks.md`, `AGENTS.md` | Research 하위 탭 Seminar, Talks 를 Lab Seminar, Invited Talks 로 |
 | 2026-11-19 | [Data Engineering 15강 슬라이드 갱신](2026-11-19-lecture15-langchain-slides.md) | Sangwoo Mo(sangwoomo) | `teaching/26f-data-engineering/slides/15_llm-systems.{html,pdf}` | LangChain 설명 복원, RAG 중복 장 정리(69→77장) |

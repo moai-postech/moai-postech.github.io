@@ -22,3 +22,7 @@ PLMS·Drive 교체는 아직. 교수 확인 뒤 처리.
 
 ## 이어서: 전체 검토 후 중복 장 삭제(같은 날)
 교수 요청으로 91장 전체를 PDF로 훑어 검토했다. 2026년에 추가한 `Locating an Answer Failure`가 두 장 뒤의 실제 2025 원본 `RAG Evaluation Boundaries`와 같은 교훈을 반복하는 중복이라 뺐다(91→90장). 코드 화면 일부의 텍스트가 스크롤바에 가려 끝까지 안 보이는 것은 원본 2025 PDF 자체가 그렇게 캡처돼 있던 것이라 그대로 둔다. 재빌드본을 같은 경로에 다시 복사했다.
+
+## 68장 판(같은 날 4차)
+
+- `teaching/26f-data-engineering/slides/15_llm-systems.{html,pdf}` 교체. Models and Prompts → Chains → Memory → RAG 네 파트로 쌓아 가는 LangChain 지도 복원, RAG는 동기 3장과 큰 그림만 남겨 90장 → 68장. 경위는 과목 폴더 `changelog/2026-11-19-lecture15-langchain-restore.md`.

@@ -502,12 +502,58 @@
 <g data-build-step="1"><text font-size="29.33" font-weight="600" fill="#8A8A8A" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="640.0" y="397.0">AI does it</tspan></text></g>
 </svg>
 </section>
-<section class="slide" id="slide-15" data-slide="15" data-title="Outline: Connect with the Decider" data-notes="마지막 세 번째 주제입니다. AI가 만든 결과를 받아서 실제로 결정을 내리는 사람, 그 사람과의 관계를 이야기해 보겠습니다.
+<section class="slide" id="slide-15" data-slide="15" data-title="Case Study: Rank 1 on Kaggle with an AI Agent" data-notes="AI를 마음껏 쓰게 하면 실제로 무엇이 나올까요. 지난 학기 Programming for Data Science의 1팀 사례입니다. 이 팀은 송전선 고장 탐지라는 Kaggle 문제를 골랐습니다. 처음에는 평범한 BiLSTM 모델로 0.6537에서 시작했습니다. [클릭] 그다음 학생들은 모델을 직접 하나씩 고치는 대신, 스스로 계획을 세우고 모델을 학습하고 평가해 다음 시도에 반영하는 AI agent를 만들었습니다. 48시간 동안 여섯 단계를 거치며 점수가 0.7202까지 올랐고, 리더보드 1,446팀 가운데 1위에 해당하는 점수입니다. 대회가 끝난 뒤 제출한 late submission이라 공식 우승은 아닙니다. 그래도 학부·대학원생 네 명이 한 학기 수업 안에서 이런 결과를 냈다는 것이 곱하기의 실제 모습입니다. 어떤 문제를 풀지, 무엇을 시도할지는 학생이 정했고, How는 AI가 반복했습니다.
+
+이 장의 주장: AI를 마음껏 쓰게 한 팀 프로젝트에서, 한 팀이 스스로 실험하는 AI agent를 만들어 48시간 만에 Kaggle 1,446팀 중 1위 점수를 냈다
+근거: 9_code/academic-profile/moai-postech.github.io/_data/courses/26s-programming-for-data-science.yml, project.highlights (Rank 1 on Kaggle with an Autonomous Research Agent); teaching/26s-programming-for-data-science/project/highlights/2026-kaggle-score-progression.svg; project/final/final_team01.pdf" data-builds="1">
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif">
+<text font-size="42.67" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="638.4" y="74.9">Case Study: Rank 1 on Kaggle with an AI Agent</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">15</tspan></text>
+<text font-size="24.00" font-weight="400" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="640.0" y="140.0">Team 1 · VSB Power Line Fault Detection · Spring 2026</tspan></text>
+<line x1="200.0" y1="440.0" x2="1000.0" y2="440.0" stroke="#E6E6E6" stroke-width="1.5" stroke-linecap="round"/>
+<text font-size="18.67" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="186.0" y="440.0">0.66</tspan></text>
+<line x1="200.0" y1="380.0" x2="1000.0" y2="380.0" stroke="#E6E6E6" stroke-width="1.5" stroke-linecap="round"/>
+<text font-size="18.67" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="186.0" y="380.0">0.68</tspan></text>
+<line x1="200.0" y1="320.0" x2="1000.0" y2="320.0" stroke="#E6E6E6" stroke-width="1.5" stroke-linecap="round"/>
+<text font-size="18.67" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="186.0" y="320.0">0.70</tspan></text>
+<line x1="200.0" y1="260.0" x2="1000.0" y2="260.0" stroke="#E6E6E6" stroke-width="1.5" stroke-linecap="round"/>
+<text font-size="18.67" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="186.0" y="260.0">0.72</tspan></text>
+<text font-size="18.67" font-weight="400" fill="#666666" text-anchor="start" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="120.0" y="194.0">Private score</tspan></text>
+<line x1="200.0" y1="500.0" x2="1000.0" y2="500.0" stroke="#666666" stroke-width="1.5" stroke-linecap="round"/>
+<text font-size="20.00" font-weight="400" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="260.0" y="526.0">BiLSTM</tspan></text>
+<text font-size="20.00" font-weight="400" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="396.0" y="526.0">Transformer</tspan><tspan x="396.0" y="550.0">variants</tspan></text>
+<text font-size="20.00" font-weight="400" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="532.0" y="526.0">TimesNet</tspan></text>
+<text font-size="20.00" font-weight="400" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="668.0" y="526.0">Pulse-</tspan><tspan x="668.0" y="550.0">Transformer</tspan></text>
+<text font-size="20.00" font-weight="400" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="804.0" y="526.0">Joint</tspan><tspan x="804.0" y="550.0">fusion</tspan></text>
+<text font-size="20.00" font-weight="400" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="940.0" y="526.0">Post-process</tspan><tspan x="940.0" y="550.0">rule</tspan></text>
+<ellipse cx="260.0" cy="458.9000000000002" rx="8.0" ry="8.0" fill="#666666" stroke="#FFFFFF" stroke-width="2.67"/>
+<text font-size="24.00" font-weight="600" fill="#171717" text-anchor="start" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="274.0" y="469.9">0.6537</tspan></text>
+<g data-build-step="1"><line x1="260.0" y1="458.9" x2="396.0" y2="390.8" stroke="#A61955" stroke-width="5" stroke-linecap="round"/></g>
+<g data-build-step="1"><line x1="396.0" y1="390.8" x2="532.0" y2="281.6" stroke="#A61955" stroke-width="5" stroke-linecap="round"/></g>
+<g data-build-step="1"><line x1="532.0" y1="281.6" x2="668.0" y2="263.9" stroke="#A61955" stroke-width="5" stroke-linecap="round"/></g>
+<g data-build-step="1"><line x1="668.0" y1="263.9" x2="804.0" y2="263.9" stroke="#A61955" stroke-width="5" stroke-linecap="round"/></g>
+<g data-build-step="1"><line x1="804.0" y1="263.9" x2="940.0" y2="259.4" stroke="#A61955" stroke-width="5" stroke-linecap="round"/></g>
+<g data-build-step="1"><ellipse cx="396.0" cy="390.8" rx="7.0" ry="7.0" fill="#A61955" stroke="#FFFFFF" stroke-width="2.67"/></g>
+<g data-build-step="1"><ellipse cx="532.0" cy="281.6" rx="7.0" ry="7.0" fill="#A61955" stroke="#FFFFFF" stroke-width="2.67"/></g>
+<g data-build-step="1"><ellipse cx="668.0" cy="263.8999999999999" rx="7.0" ry="7.0" fill="#A61955" stroke="#FFFFFF" stroke-width="2.67"/></g>
+<g data-build-step="1"><ellipse cx="804.0" cy="263.8999999999999" rx="7.0" ry="7.0" fill="#A61955" stroke="#FFFFFF" stroke-width="2.67"/></g>
+<g data-build-step="1"><ellipse cx="940.0" cy="259.4000000000001" rx="11.0" ry="11.0" fill="#A61955" stroke="#FFFFFF" stroke-width="2.67"/></g>
+<g data-build-step="1"><text font-size="26.67" font-weight="600" fill="#A61955" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="940.0" y="226.4">0.7202</tspan></text></g>
+<g data-build-step="1"><rect x="1040" y="210" width="180" height="120" rx="9.6" fill="#A61955"/></g>
+<g data-build-step="1"><text font-size="40.00" font-weight="600" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="1130.0" y="248.0">Rank 1</tspan></text></g>
+<g data-build-step="1"><text font-size="24.00" font-weight="600" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="1130.0" y="289.0">of 1,446 teams</tspan></text></g>
+<g data-build-step="1"><rect x="1040" y="350" width="180" height="160" rx="12.8" fill="#F7EDF2"/></g>
+<g data-build-step="1"><text font-size="29.33" font-weight="600" fill="#A61955" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="1130.0" y="385.0">AI agent</tspan></text></g>
+<g data-build-step="1"><text font-size="22.67" font-weight="400" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1130.0" y="421.8">Plans, trains,</tspan><tspan x="1130.0" y="449.0">evaluates,</tspan><tspan x="1130.0" y="476.2">learns</tspan></text></g>
+<g data-build-step="1"><text font-size="24.00" font-weight="400" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="640.0" y="618.0">48 hours, late submission</tspan></text></g>
+</svg>
+</section>
+<section class="slide" id="slide-16" data-slide="16" data-title="Outline: Connect with the Decider" data-notes="마지막 세 번째 주제입니다. AI가 만든 결과를 받아서 실제로 결정을 내리는 사람, 그 사람과의 관계를 이야기해 보겠습니다.
 
 이 장의 주장: 
 근거: 발표자의 해석" data-builds="0" data-nav="Connect with the Decider">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif">
-<text font-size="13.33" font-weight="400" fill="#FFFFFF" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">15</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#FFFFFF" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">16</tspan></text>
 <rect x="0" y="0" width="1280" height="720" fill="#A61955"/>
 <text font-size="48.00" font-weight="600" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="640.0" y="175.0">Do We Need Professors in the Age of AI?</tspan></text>
 <rect x="590" y="240" width="100" height="3" fill="#E4BACC"/>
@@ -517,16 +563,16 @@
 <text font-size="40.00" font-weight="600" fill="#E4BACC" text-anchor="start" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="460.0" y="415.0">Multiply Your Expertise</tspan></text>
 <text font-size="37.33" font-weight="600" fill="#FFFFFF" text-anchor="end" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="430.0" y="500.0">03</tspan></text>
 <text font-size="40.00" font-weight="600" fill="#FFFFFF" text-anchor="start" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="460.0" y="500.0">Connect with the Decider</tspan></text>
-<text font-size="13.33" font-weight="400" fill="#FFFFFF" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">15</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#FFFFFF" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">16</tspan></text>
 </svg>
 </section>
-<section class="slide" id="slide-16" data-slide="16" data-title="Humans Act on the Result" data-notes="AI는 분석도 하고 결과물도 만들어 줍니다. 하지만 그 결과를 받아들일지, 실제 행동으로 옮길지는 결국 사람이 결정합니다. 그 뒤에 따르는 책임도 사람이 집니다. 그래서 정말 중요한 것은 결과물보다 그 결과를 보고 결정하는 사람입니다. 그리고 AI 덕분에 결과물이 다 비슷해질수록, 결정하는 사람은 결국 믿을 수 있는 사람을 고르게 됩니다.
+<section class="slide" id="slide-17" data-slide="17" data-title="Humans Act on the Result" data-notes="AI는 분석도 하고 결과물도 만들어 줍니다. 하지만 그 결과를 받아들일지, 실제 행동으로 옮길지는 결국 사람이 결정합니다. 그 뒤에 따르는 책임도 사람이 집니다. 그래서 정말 중요한 것은 결과물보다 그 결과를 보고 결정하는 사람입니다. 그리고 AI 덕분에 결과물이 다 비슷해질수록, 결정하는 사람은 결국 믿을 수 있는 사람을 고르게 됩니다.
 
 이 장의 주장: AI가 분석과 결과를 만들어도, 그것을 받아들이고 행동으로 옮기며 책임지는 주체는 인간이다
 근거: 발표자의 해석" data-builds="1">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif">
 <text font-size="42.67" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="638.4" y="74.9">Humans Act on the Result</tspan></text>
-<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">16</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">17</tspan></text>
 <rect x="80" y="274" width="320" height="220" rx="17.6" fill="#F7EDF2"/>
 <text font-size="29.33" font-weight="600" fill="#A61955" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="240.0" y="325.0">AI</tspan></text>
 <text font-size="40.00" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="240.0" y="384.0">Produces</tspan><tspan x="240.0" y="432.0">the result</tspan></text>
@@ -540,13 +586,13 @@
 <g data-build-step="1"><text font-size="40.00" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="1040.0" y="384.0">A human</tspan><tspan x="1040.0" y="432.0">owns it</tspan></text></g>
 </svg>
 </section>
-<section class="slide" id="slide-17" data-slide="17" data-title="From Rankings to Referrals" data-notes="이 변화는 커리어에서 어떻게 나타날까요? 그동안 한국은 시험으로 줄을 세우는 문화였습니다. 공채로 뽑고, 점수와 순위가 기준이었습니다. 반면 미국은 네트워킹, 즉 사람을 통해 들어가는 문화가 이미 자리 잡아 있습니다. 이제 AI 덕분에 누구나 그럴듯한 결과물과 점수를 낼 수 있습니다. 그러면 결정하는 사람은 결국 자기가 아는 사람, 믿을 수 있는 사람을 고르게 됩니다. 그래서 저는 한국도 공채에서 추천 채용으로 점점 넘어갈 것이라고 봅니다. 물론 통계로 확인된 추세라기보다 제 전망입니다.
+<section class="slide" id="slide-18" data-slide="18" data-title="From Rankings to Referrals" data-notes="이 변화는 커리어에서 어떻게 나타날까요? 그동안 한국은 시험으로 줄을 세우는 문화였습니다. 공채로 뽑고, 점수와 순위가 기준이었습니다. 반면 미국은 네트워킹, 즉 사람을 통해 들어가는 문화가 이미 자리 잡아 있습니다. 이제 AI 덕분에 누구나 그럴듯한 결과물과 점수를 낼 수 있습니다. 그러면 결정하는 사람은 결국 자기가 아는 사람, 믿을 수 있는 사람을 고르게 됩니다. 그래서 저는 한국도 공채에서 추천 채용으로 점점 넘어갈 것이라고 봅니다. 물론 통계로 확인된 추세라기보다 제 전망입니다.
 
 이 장의 주장: 취업과 커리어는 시험으로 줄 세우는 공채에서, 사람을 통해 들어가는 추천 채용으로 옮겨 갈 것이다
 근거: 발표자의 전망(2026-11-19 사용자). 측정된 추세로 소개하지 않음" data-builds="1">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif">
 <text font-size="42.67" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="638.4" y="74.9">From Rankings to Referrals</tspan></text>
-<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">17</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">18</tspan></text>
 <rect x="80" y="168" width="480" height="400" rx="32.0" fill="#F7EDF2"/>
 <text font-size="24.00" font-weight="600" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="320.0" y="206.0">Korea, so far</tspan></text>
 <text font-size="37.33" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="320.0" y="246.0">Exam-based hiring</tspan></text>
@@ -581,13 +627,13 @@
 <g data-build-step="1"><ellipse cx="960.0" cy="388.0" rx="24.0" ry="24.0" fill="#FFFFFF" stroke="#E8B8CA" stroke-width="4.00"/></g>
 </svg>
 </section>
-<section class="slide" id="slide-18" data-slide="18" data-title="Your Work Is the Entry Ticket" data-notes="물론 이 네트워크에 들어가려면 기본 실력이 있어야 합니다. 다만 공부하고 연구하는 목적이 바뀝니다. 예전에는 실력을 쌓고, 연구라면 논문 개수를 늘리는 것 자체가 목표였습니다. 저는 학생들에게 논문은 입장권이라고 이야기합니다. 논문을 써서 그 분야 사람들의 커뮤니티, 그들의 리그에 들어가는 것입니다. 그리고 그 안에서 동료들과 함께 성장하는 것, 이것이 새로운 목표입니다.
+<section class="slide" id="slide-19" data-slide="19" data-title="Your Work Is the Entry Ticket" data-notes="물론 이 네트워크에 들어가려면 기본 실력이 있어야 합니다. 다만 공부하고 연구하는 목적이 바뀝니다. 예전에는 실력을 쌓고, 연구라면 논문 개수를 늘리는 것 자체가 목표였습니다. 저는 학생들에게 논문은 입장권이라고 이야기합니다. 논문을 써서 그 분야 사람들의 커뮤니티, 그들의 리그에 들어가는 것입니다. 그리고 그 안에서 동료들과 함께 성장하는 것, 이것이 새로운 목표입니다.
 
 이 장의 주장: 공부의 목적은 실력 자체가 아니라, 실력으로 네트워크에 들어가 그 안에서 성장하는 것이다. 논문은 개수가 아니라 커뮤니티로 들어가는 입장권이다
 근거: 발표자의 해석" data-builds="1">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif">
 <text font-size="42.67" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="638.4" y="74.9">Your Work Is the Entry Ticket</tspan></text>
-<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">18</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">19</tspan></text>
 <rect x="80" y="160" width="1120" height="186" rx="14.9" fill="#F6F6F6"/>
 <text font-size="29.33" font-weight="600" fill="#666666" text-anchor="start" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="104.0" y="189.0">Old goal</tspan></text>
 <rect x="104" y="218" width="220" height="74" rx="5.9" fill="#FFFFFF"/>
@@ -614,12 +660,12 @@
 <g data-build-step="1"><text font-size="24.00" font-weight="600" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="1054.0" y="538.0">With your peers</tspan></text></g>
 </svg>
 </section>
-<section class="slide" id="slide-19" data-slide="19" data-title="Universities Are Communities" data-notes="교수 다음은 대학 이야기입니다. AI 시대에 대학을 꼭 가야 하느냐는 질문을 많이 받습니다. 사실 이 질문은 온라인 공개 강의인 MOOC가 나왔을 때부터 있었습니다. 교과서에서 MOOC, 이제 ChatGPT까지, 지식은 점점 모두에게 열리고 있습니다. 앞에서 말씀드린 것처럼 배우는 일 자체는 여전히 중요합니다. 다만 지식만 놓고 보면 대학이 꼭 필요하지는 않습니다. 대학의 진짜 가치는 커뮤니티에 있습니다. 사람들이 실제로 만나는 공간이자, 서로를 자극해 주는 선발된 동료들이 모인 곳입니다. 앞에서 말씀드린 리그가 바로 여기서 시작됩니다.
+<section class="slide" id="slide-20" data-slide="20" data-title="Universities Are Communities" data-notes="교수 다음은 대학 이야기입니다. AI 시대에 대학을 꼭 가야 하느냐는 질문을 많이 받습니다. 사실 이 질문은 온라인 공개 강의인 MOOC가 나왔을 때부터 있었습니다. 교과서에서 MOOC, 이제 ChatGPT까지, 지식은 점점 모두에게 열리고 있습니다. 앞에서 말씀드린 것처럼 배우는 일 자체는 여전히 중요합니다. 다만 지식만 놓고 보면 대학이 꼭 필요하지는 않습니다. 대학의 진짜 가치는 커뮤니티에 있습니다. 사람들이 실제로 만나는 공간이자, 서로를 자극해 주는 선발된 동료들이 모인 곳입니다. 앞에서 말씀드린 리그가 바로 여기서 시작됩니다.
 
 이 장의 주장: 교육 자체는 점점 오픈소스가 되지만, 물리적 공간이자 선발된 집단인 커뮤니티로서 대학은 여전히 가치가 있다
 근거: MOOC 확산(2012), ChatGPT 공개(2022). 대학의 역할은 발표자의 해석" data-builds="1">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif">
-<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">19</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">20</tspan></text>
 <rect x="52.8" y="41.28" width="1171.2" height="67.2" fill="#FFFFFF"/>
 <text font-size="42.67" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="638.4" y="74.9">Do We Still Need Universities?</tspan></text>
 <rect x="80" y="150" width="1120" height="170" rx="13.6" fill="#F6F6F6"/>
@@ -647,13 +693,13 @@
 <g data-build-step="1"><text font-size="32.00" font-weight="400" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="914.0" y="526.0">Peers who push you</tspan></text></g>
 </svg>
 </section>
-<section class="slide" id="slide-20" data-slide="20" data-title="The First Link Is a Professor" data-notes="그러면 학생은 그 리그에 처음 어떻게 발을 들일까요? 논문이라는 입장권이 있어도 처음 문을 열어 주는 사람이 필요합니다. 그 역할을 하는 사람이 바로 교수입니다. 교수는 학생의 실력과 일하는 방식을 가장 가까이서 지켜봅니다. 그리고 그 학생을 보증하며 리그의 사람들에게 이어 줍니다. 그래서 교수와 학생의 관계는 수업 시간으로 끝나지 않습니다. 학생의 판단과 성장을 가까이서 지켜보는 이 관계가 추천의 시대에는 가장 중요한 자산이 됩니다.
+<section class="slide" id="slide-21" data-slide="21" data-title="The First Link Is a Professor" data-notes="그러면 학생은 그 리그에 처음 어떻게 발을 들일까요? 논문이라는 입장권이 있어도 처음 문을 열어 주는 사람이 필요합니다. 그 역할을 하는 사람이 바로 교수입니다. 교수는 학생의 실력과 일하는 방식을 가장 가까이서 지켜봅니다. 그리고 그 학생을 보증하며 리그의 사람들에게 이어 줍니다. 그래서 교수와 학생의 관계는 수업 시간으로 끝나지 않습니다. 학생의 판단과 성장을 가까이서 지켜보는 이 관계가 추천의 시대에는 가장 중요한 자산이 됩니다.
 
 이 장의 주장: 추천으로 들어가는 시대에, 학생이 리그로 들어가는 첫 연결고리는 그 학생을 잘 아는 교수다
 근거: 발표자의 해석" data-builds="1">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif">
 <text font-size="42.67" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="638.4" y="74.9">The First Link Is a Professor</tspan></text>
-<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">20</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">21</tspan></text>
 <rect x="80" y="320" width="240" height="120" rx="9.6" fill="#F6F6F6"/>
 <text font-size="37.33" font-weight="600" fill="#171717" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="200.0" y="380.0">Student</tspan></text>
 <text font-size="24.00" font-weight="600" fill="#666666" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="200.0" y="465.0">Has the ticket</tspan></text>
@@ -679,12 +725,12 @@
 <g data-build-step="1"><line x1="724" y1="380" x2="865.0" y2="357.8" stroke="#A61955" stroke-width="4.00"/><polygon points="882.7372055837117,355.00000000000006 866.6,368.1 863.3,347.5" fill="#A61955"/></g>
 </svg>
 </section>
-<section class="slide" id="slide-21" data-slide="21" data-title="Yes, We Still Need Professors" data-notes="정리하겠습니다. AI 시대에도 교수가 필요한가. 제 답은 &#x27;그렇다&#x27;입니다. Why를 묻게 하고, 전문성을 키워 AI로 곱하게 하고, 학생을 결정하는 사람들과 이어 주는 사람으로서입니다. 그리고 처음에 말씀드렸듯, 이건 교수만의 이야기가 아니라 AI와 함께 일하는 모든 사람의 이야기입니다. 감사합니다.
+<section class="slide" id="slide-22" data-slide="22" data-title="Yes, We Still Need Professors" data-notes="정리하겠습니다. AI 시대에도 교수가 필요한가. 제 답은 &#x27;그렇다&#x27;입니다. Why를 묻게 하고, 전문성을 키워 AI로 곱하게 하고, 학생을 결정하는 사람들과 이어 주는 사람으로서입니다. 그리고 처음에 말씀드렸듯, 이건 교수만의 이야기가 아니라 AI와 함께 일하는 모든 사람의 이야기입니다. 감사합니다.
 
 이 장의 주장: 세 꼭지로 답한다. 교수는 여전히 필요하다
 근거: 발표자의 해석" data-builds="0">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif">
-<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">21</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#666666" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">22</tspan></text>
 <rect x="0" y="0" width="1280" height="720" fill="#A61955"/>
 <text font-size="48.00" font-weight="600" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="640.0" y="175.0">Yes, We Still Need Professors</tspan></text>
 <rect x="590" y="240" width="100" height="3" fill="#E4BACC"/>
@@ -694,7 +740,7 @@
 <text font-size="40.00" font-weight="600" fill="#FFFFFF" text-anchor="start" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="460.0" y="415.0">Multiply Your Expertise</tspan></text>
 <text font-size="37.33" font-weight="600" fill="#FFFFFF" text-anchor="end" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="430.0" y="500.0">03</tspan></text>
 <text font-size="40.00" font-weight="600" fill="#FFFFFF" text-anchor="start" dominant-baseline="central" letter-spacing="-0.53" xml:space="preserve"><tspan x="460.0" y="500.0">Connect with the Decider</tspan></text>
-<text font-size="13.33" font-weight="400" fill="#FFFFFF" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">21</tspan></text>
+<text font-size="13.33" font-weight="400" fill="#FFFFFF" text-anchor="end" dominant-baseline="central" letter-spacing="0" xml:space="preserve"><tspan x="1227.2" y="693.1">22</tspan></text>
 </svg>
 </section>
 </div></main>

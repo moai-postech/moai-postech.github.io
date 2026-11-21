@@ -50,7 +50,7 @@ terms:
           - { text: "Montezuma's Revenge", url: "https://www.youtube.com/watch?v=xnvzgQXY9CI" }
       - n: "6"
         title: "Game Theory"
-        keywords: "Markov game, Nash equilibrium, regret minimization"
+        keywords: "zero-sum game, Nash equilibrium, regret minimization"
         papers:
           - { text: "CFR", url: "https://proceedings.neurips.cc/paper/2007/hash/08d98638c6fcd194a4b1e6992063e944-Abstract.html" }
           - { text: "DeepNash", url: "https://arxiv.org/abs/2206.15378" }
@@ -66,7 +66,7 @@ terms:
           - { text: "Poker", url: "https://www.youtube.com/watch?v=luFFSi4IDUk" }
       - n: "8"
         title: "Multi-Agent RL I: Competition"
-        keywords: "non-stationarity, fictitious self-play, autocurriculum"
+        keywords: "Markov game, non-stationarity, fictitious self-play"
         papers:
           - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
           - { text: "Hide-and-Seek", url: "https://arxiv.org/abs/1909.07528" }

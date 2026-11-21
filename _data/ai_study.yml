@@ -72,7 +72,6 @@ terms:
           - { text: "Hide-and-Seek", url: "https://arxiv.org/abs/1909.07528" }
         demos:
           - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
-          - { text: "Hide-and-Seek", url: "https://www.youtube.com/watch?v=kopoLzvh5jY" }
       - n: "9"
         title: "Multi-Agent RL II: Cooperation"
         keywords: "centralized training with decentralized execution (CTDE), value decomposition, communication"

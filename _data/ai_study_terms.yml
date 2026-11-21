@@ -9,7 +9,7 @@ spring-2027:
   demo_heading: "Game"
   tldr: "How search masters board games, deep RL beats video games, and complex games add other players and open goals."
   icon: "assets/img/icons/study-games.svg"
-  reference: { lead: "See also", courses: [ { title: "Deep RL Bootcamp", term: "2017", url: "https://sites.google.com/view/deep-rl-bootcamp/lectures" } ] }  # Deep RL 단계(3–5강)의 바탕 강의(교수 2026-11-21)
+  reference: { lead: "See also", courses: [ { title: "Berkeley Deep RL Bootcamp", term: "Summer 2017", url: "https://sites.google.com/view/deep-rl-bootcamp/lectures" } ] }  # Deep RL 단계(3–5강)의 바탕 강의(교수 2026-11-21)
   learning_path:
     - { start: 1, end: 2, title: "Search & Learning", text: "How AI masters board games: **search** that looks ahead and **learning** that supplies intuition, each improving the other through self-play." }
     - { start: 3, end: 5, title: "Deep RL", text: "How AI learns video games from pixels and score alone: **trial and error**, then **exploration** where rewards are rare and far away." }

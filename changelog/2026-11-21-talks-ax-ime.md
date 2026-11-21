@@ -18,5 +18,7 @@ POSTECH 요구사항: 영향 없음
 기각한 안: Education 탭에 남기는 안(위 근거로 기각). 앞으로 IMEN100 같은 학내 수업 회차는 Invited Talks 에 올리지 않는다.
 ## Opportunities in IME 를 Research 탭으로 (같은 날)
 교수 지시로 "Opportunities in IME as an AI Researcher (and Vice Versa)"(260429)의 `kind: education` 을 지워 Research 탭으로 옮김. 교수 본인의 연구 방향을 소개하는 발표라 Education(튜토리얼, 학과·교육 행사)이 아님.
+## 올리지 않기로 한 발표 (같은 날)
+교수 결정: `3_seminar/archive/260921_ai-use` "How to Use Agents"(2026-09-21)는 Invited Talks 에 올리지 않는다. 홈페이지에 없는 발표를 대조할 때 다시 후보로 꺼내지 않는다.
 ## 남은 것
 없음

@@ -20,5 +20,6 @@ POSTECH 요구사항: 영향 없음
 교수 지시로 "Opportunities in IME as an AI Researcher (and Vice Versa)"(260429)의 `kind: education` 을 지워 Research 탭으로 옮김. 교수 본인의 연구 방향을 소개하는 발표라 Education(튜토리얼, 학과·교육 행사)이 아님.
 ## 올리지 않기로 한 발표 (같은 날)
 교수 결정: `3_seminar/archive/260921_ai-use` "How to Use Agents"(2026-09-21)는 Invited Talks 에 올리지 않는다. 홈페이지에 없는 발표를 대조할 때 다시 후보로 꺼내지 않는다.
+- `260410_FM`(2026-04-10)은 2025 KSS Tutorial "Foundation Models for Vision, Language, and Robotics" 와 같은 항목으로 보고 따로 올리거나 장소를 더하지 않는다(교수 결정).
 ## 남은 것
 없음

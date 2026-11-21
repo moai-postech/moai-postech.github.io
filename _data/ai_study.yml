@@ -58,7 +58,7 @@ terms:
           - { text: "Poker", url: "https://www.youtube.com/watch?v=luFFSi4IDUk" }
       - n: "7"
         title: "Multi-Agent RL I: Competition"
-        keywords: "self-play, league training, autocurriculum"
+        keywords: "Markov game, self-play, league training, autocurriculum"
         papers:
           - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
           - { text: "Hide-and-Seek", url: "https://arxiv.org/abs/1909.07528" }

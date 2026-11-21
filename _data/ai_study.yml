@@ -49,23 +49,32 @@ terms:
         demos:
           - { text: "Montezuma's Revenge", url: "https://www.youtube.com/watch?v=xnvzgQXY9CI" }
       - n: "6"
+        title: "Game Theory"
+        keywords: "Nash equilibrium, regret minimization, fictitious play, Markov game"
+        papers:
+          - { text: "CFR", url: "https://proceedings.neurips.cc/paper/2007/hash/08d98638c6fcd194a4b1e6992063e944-Abstract.html" }
+          - { text: "PSRO", url: "https://arxiv.org/abs/1711.00832" }
+        demos:
+          - { text: "Rock-Paper-Scissors", url: "https://www.youtube.com/watch?v=eduakhDwN0A" }
+          - { text: "Kuhn Poker", url: "https://www.youtube.com/watch?v=gjcLvVF1KQE" }
+      - n: "7"
         title: "Partial Observation"
-        keywords: "Nash equilibrium, counterfactual regret minimization (CFR)"
+        keywords: "public belief state, subgame solving"
         papers:
           - { text: "DeepStack", url: "https://arxiv.org/abs/1701.01724" }
           - { text: "Pluribus", url: "https://doi.org/10.1126/science.aay2400" }
         demos:
           - { text: "Poker", url: "https://www.youtube.com/watch?v=luFFSi4IDUk" }
-      - n: "7"
+      - n: "8"
         title: "Multi-Agent RL I: Competition"
-        keywords: "Markov game, self-play, league training, autocurriculum"
+        keywords: "self-play, league training, autocurriculum"
         papers:
           - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
           - { text: "Hide-and-Seek", url: "https://arxiv.org/abs/1909.07528" }
         demos:
           - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
           - { text: "Hide-and-Seek", url: "https://www.youtube.com/watch?v=kopoLzvh5jY" }
-      - n: "8"
+      - n: "9"
         title: "Multi-Agent RL II: Cooperation"
         keywords: "centralized training with decentralized execution (CTDE), value decomposition, communication"
         papers:
@@ -74,7 +83,7 @@ terms:
         demos:
           - { text: "StarCraft Team Play", url: "https://www.youtube.com/watch?v=ijdO3UNL4Bs" }
           - { text: "Diplomacy", url: "https://www.youtube.com/watch?v=u5192bvUS7k" }
-      - n: "9"
+      - n: "10"
         title: "Open-World Agents"
         keywords: "LLM coding agent, skill library, shared memory"
         papers:
@@ -85,7 +94,7 @@ terms:
   - id: "fall-2026"
     name: "Fall 2026"
     theme: "Physical AI"
-    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A15"
+    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A16"
     sessions:
       - n: "1"
         date: "2026-09-15"
@@ -255,7 +264,7 @@ terms:
   - id: "summer-2026"
     name: "Summer 2026"
     theme: "Deep Learning"
-    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A34"
+    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A35"
     sessions:
       - n: "1"
         date: "2026-06-23"
@@ -342,7 +351,7 @@ terms:
   - id: "spring-2026"
     name: "Spring 2026"
     theme: "Large Language Models"
-    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A48"
+    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A49"
     sessions:
       - n: "1"
         date: "2026-03-10"
@@ -438,7 +447,7 @@ terms:
   - id: "fall-2025"
     name: "Fall 2025"
     theme: "Foundation Models"
-    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A61"
+    sheet: "https://docs.google.com/spreadsheets/d/1Oh-MEYrJ2Srkqjcrl0lnnI4kZCINeL1frAxYBeBBUrA/edit#gid=719507979&range=A62"
     sessions:
       - n: "1"
         date: "2025-09-17"

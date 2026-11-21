@@ -189,7 +189,7 @@ terms:
       - n: "8"
         date: "2026-11-17"
         title: "3D Reconstruction"
-        keywords: "multi-view geometry, feed-forward 3D"
+        keywords: "multi-view geometry, feed-forward 3D prediction"
         presenters: "김나령, 이유찬"
         papers:
           - { text: "DUSt3R", url: "https://arxiv.org/abs/2312.14132" }

@@ -7,12 +7,12 @@ spring-2027:
   cohort: "4"
   upcoming: true
   demo_heading: "Game"
-  tldr: "How search masters board games, learning from reward beats video games, and complex worlds add other players and open goals."
+  tldr: "How search masters board games, deep RL beats video games, and complex games add other players and open goals."
   icon: "assets/img/icons/study-games.svg"
   learning_path:
     - { start: 1, end: 2, title: "Search & Learning", text: "How AI masters board games: **search** that looks ahead and **learning** that supplies intuition, each improving the other through self-play." }
-    - { start: 3, end: 5, title: "Learning from Reward", text: "How AI learns video games from pixels and score alone: **trial and error**, then **exploration** where rewards are rare and far away." }
-    - { start: 6, end: 9, title: "Complex Worlds", text: "How AI plays beyond a single player and a fixed goal: **hidden information**, **competition** and **cooperation** with other players, then open worlds where goals are not given." }
+    - { start: 3, end: 5, title: "Deep RL", text: "How AI learns video games from pixels and score alone: **trial and error**, then **exploration** where rewards are rare and far away." }
+    - { start: 6, end: 9, title: "Complex Games", text: "How AI plays beyond a single player and a fixed goal: **hidden information**, **competition** and **cooperation** with other players, then open worlds where goals are not given." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   # meetings, location, representative 는 미정이다. 정해지면 아래 fall-2026 과 같은 꼴로 더한다.
 fall-2026:

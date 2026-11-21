@@ -33,7 +33,7 @@ terms:
         demos:
           - { text: "Atari", url: "https://www.youtube.com/watch?v=eG1Ed8PTJ18" }
       - n: "4"
-        title: "Exploration I"
+        title: "Exploration I: Curiosity"
         keywords: "curiosity, noisy TV"
         papers:
           - { text: "ICM", url: "https://arxiv.org/abs/1705.05363" }
@@ -41,7 +41,7 @@ terms:
         demos:
           - { text: "Super Mario", url: "https://www.youtube.com/watch?v=oUTU3P11e3E" }
       - n: "5"
-        title: "Exploration II"
+        title: "Exploration II: Memory"
         keywords: "memory, bandit"
         papers:
           - { text: "Go-Explore", url: "https://arxiv.org/abs/2004.12919" }
@@ -57,22 +57,21 @@ terms:
         demos:
           - { text: "Poker", url: "https://www.youtube.com/watch?v=luFFSi4IDUk" }
       - n: "7"
-        title: "Multi-Agent RL I"
+        title: "Multi-Agent RL I: Competition"
         keywords: "self-play, league training, autocurriculum"
         papers:
           - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
           - { text: "Hide-and-Seek", url: "https://arxiv.org/abs/1909.07528" }
         demos:
-          - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
-          - { text: "Hide-and-Seek", url: "https://www.youtube.com/watch?v=kopoLzvh5jY" }
+          - { text: "StarCraft", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
       - n: "8"
-        title: "Multi-Agent RL II"
+        title: "Multi-Agent RL II: Cooperation"
         keywords: "centralized training with decentralized execution (CTDE), value decomposition, communication"
         papers:
           - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
           - { text: "Cicero", url: "https://doi.org/10.1126/science.ade9097" }
         demos:
-          - { text: "Diplomacy", url: "https://www.youtube.com/watch?v=u5192bvUS7k" }
+          - { text: "StarCraft Team Play", url: "https://www.youtube.com/watch?v=ijdO3UNL4Bs" }
       - n: "9"
         title: "Open-World Agents"
         keywords: "LLM coding agent, skill library, shared memory"

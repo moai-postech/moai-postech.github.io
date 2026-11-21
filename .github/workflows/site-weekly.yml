@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pypdf
+      - run: pip install pypdf pymupdf pillow
       # pptx 로 올린 슬라이드를 PDF 로 바꿀 때만 쓴다. 한글 슬라이드가 있어 CJK 글꼴도 넣는다
       - run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends libreoffice-impress fonts-noto-cjk
       - name: sync

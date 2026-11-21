@@ -26,5 +26,10 @@ bundler=$(awk '/^BUNDLED WITH/{getline; print $1}' Gemfile.lock)
 gem list -i bundler -v "$bundler" >/dev/null 2>&1 || gem install -N "bundler:$bundler" >/dev/null
 bundle check >/dev/null 2>&1 || { echo "gem 설치 중(처음 한 번, 1분 남짓)"; bundle install --quiet; }
 
+"$MOAI_PY" -c "import fitz, PIL" 2>/dev/null || {
+  echo "PDF 압축 도구(pymupdf) 설치 중"
+  python3 -m venv "$MOAI_CACHE/py" && "$MOAI_CACHE/py/bin/pip" install -q pymupdf pillow pypdf
+}
+
 git config core.hooksPath .githooks
 echo "준비됨: $(ruby -v | cut -d' ' -f1-2), push 전 검사 훅 켜짐"

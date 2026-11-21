@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-21 | [PDF 고화질 압축 일괄 적용](2026-11-21-pdf-compression.md) | Sangwoo Mo(sangwoomo) | `tools/compress_pdf.py`, PDF 154개, 동기화 스크립트, `.githooks/pre-push`, `AGENTS.md` | 300 dpi·JPEG 92 로 PDF 869→702 MB, 앞으로 넣는 PDF 도 자동 압축 |
 | 2026-11-20 | [AI:Q 덱에 Kaggle 사례 장 추가](2026-11-20-talks-aiq-kaggle-slide.md) | Sangwoo Mo(sangwoomo) | `assets/talks/` | 15쪽 Kaggle AI agent 사례 추가(23→24장), 팀 번호·late submission 빼고 문구 정리 |
 | 2026-11-19 | [FSI 를 정식 명칭으로](2026-11-19-fsi-full-name.md) | Sangwoo Mo(sangwoomo) | `_data/`, `AGENTS.md` | 소속 FSI → Financial Security Institute, 잘 알려지지 않은 약어는 정식 명칭 원칙, 강의 일정 소속은 중간에서 안 끊기게 |
 | 2026-11-19 | [AI:Q 발표 자료 공개](2026-11-19-talks-aiq-slides.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml`, `assets/talks/` | AI:Q 발표를 자립형 HTML 로 Talks 에 연결 |

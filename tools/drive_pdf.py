@@ -114,6 +114,9 @@ def localize(url, path_no_ext, sources):
     full = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full, "wb").write(data)
+    if ext == "pdf":
+        from compress_pdf import shrink  # 올리는 PDF 는 모두 화질을 지키며 줄인다(교수 2026-11-20)
+        shrink(full)
     sources[rel] = url
     return rel
 
@@ -126,4 +129,7 @@ if __name__ == "__main__":
     if not out.endswith("." + ext):
         out = out.rsplit(".", 1)[0] + "." + ext
     open(out, "wb").write(data)
-    print(out, len(data))
+    if ext == "pdf":
+        from compress_pdf import shrink
+        shrink(out)
+    print(out, os.path.getsize(out))

@@ -271,6 +271,8 @@ def merge_pdfs(terms):
                 w.add_metadata({"/Title": s["title"]})
                 with open(full, "wb") as f:
                     w.write(f)
+                from compress_pdf import shrink  # 화질을 지키며 줄인다(교수 2026-11-20)
+                shrink(full)
             first = mats.index(pdfs[0])
             kept = [m for m in mats if m not in pdfs]
             kept.insert(first, {"text": "Notes" if all(m["text"].startswith("Notes") for m in pdfs) else "Slides", "url": rel})

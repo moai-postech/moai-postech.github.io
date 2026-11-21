@@ -9,7 +9,7 @@ terms:
     sessions:
       - n: "1"
         title: "Search & Learning"
-        keywords: "minimax, Monte Carlo tree search (MCTS), policy & value networks"
+        keywords: "minimax search, MCTS, policy & value networks"
         papers:
           - { text: "Deep Blue", url: "https://doi.org/10.1016/S0004-3702(01)00129-1" }
           - { text: "AlphaGo", url: "https://doi.org/10.1038/nature16961" }
@@ -18,7 +18,7 @@ terms:
           - { text: "Go", url: "https://www.youtube.com/watch?v=WXuK6gekU1Y" }
       - n: "2"
         title: "Self-Play"
-        keywords: "tabula rasa learning, policy improvement, model-based planning"
+        keywords: "policy iteration, model-based planning"
         papers:
           - { text: "AlphaZero", url: "https://doi.org/10.1126/science.aar6404" }
           - { text: "MuZero", url: "https://arxiv.org/abs/1911.08265" }
@@ -26,7 +26,7 @@ terms:
           - { text: "Board Games", url: "https://www.youtube.com/watch?v=7L2sUGcOgh0" }
       - n: "3"
         title: "Deep RL"
-        keywords: "Markov decision process (MDP), Q-learning, actor-critic"
+        keywords: "MDP, Q-learning, actor-critic"
         papers:
           - { text: "DQN", url: "https://doi.org/10.1038/nature14236" }
           - { text: "A3C", url: "https://arxiv.org/abs/1602.01783" }
@@ -58,7 +58,7 @@ terms:
           - { text: "Stratego", url: "https://www.youtube.com/watch?v=TrkYuUEmOEU" }
       - n: "7"
         title: "Partial Observation"
-        keywords: "information set, belief state, bluffing"
+        keywords: "information set, belief state"
         papers:
           - { text: "DeepStack", url: "https://arxiv.org/abs/1701.01724" }
           - { text: "Pluribus", url: "https://doi.org/10.1126/science.aay2400" }
@@ -66,7 +66,7 @@ terms:
           - { text: "Poker", url: "https://www.youtube.com/watch?v=luFFSi4IDUk" }
       - n: "8"
         title: "Multi-Agent RL I: Competition"
-        keywords: "non-stationarity, population-based training, autocurriculum"
+        keywords: "non-stationarity, fictitious self-play, autocurriculum"
         papers:
           - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
           - { text: "Hide-and-Seek", url: "https://arxiv.org/abs/1909.07528" }
@@ -74,7 +74,7 @@ terms:
           - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
       - n: "9"
         title: "Multi-Agent RL II: Cooperation"
-        keywords: "multi-agent credit assignment, centralized training with decentralized execution (CTDE), communication"
+        keywords: "multi-agent credit assignment, CTDE, communication"
         papers:
           - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
           - { text: "Cicero", url: "https://doi.org/10.1126/science.ade9097" }
@@ -83,7 +83,7 @@ terms:
           - { text: "Diplomacy", url: "https://www.youtube.com/watch?v=u5192bvUS7k" }
       - n: "10"
         title: "Open-World Agents"
-        keywords: "foundation model agent, open-ended learning, code as action"
+        keywords: "foundation model agent, open-ended learning, long-horizon planning"
         papers:
           - { text: "Voyager", url: "https://arxiv.org/abs/2305.16291" }
           - { text: "Gemini Team", url: "https://arxiv.org/abs/2610.22319" }

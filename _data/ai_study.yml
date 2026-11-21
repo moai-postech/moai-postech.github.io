@@ -18,7 +18,7 @@ terms:
           - { text: "Go", url: "https://www.youtube.com/watch?v=WXuK6gekU1Y" }
       - n: "2"
         title: "Self-Play"
-        keywords: "self-play, policy improvement, learned model"
+        keywords: "tabula rasa learning, policy improvement, model-based planning"
         papers:
           - { text: "AlphaZero", url: "https://doi.org/10.1126/science.aar6404" }
           - { text: "MuZero", url: "https://arxiv.org/abs/1911.08265" }
@@ -34,7 +34,7 @@ terms:
           - { text: "Atari", url: "https://www.youtube.com/watch?v=eG1Ed8PTJ18" }
       - n: "4"
         title: "Exploration I: Curiosity"
-        keywords: "curiosity, noisy TV"
+        keywords: "sparse reward, intrinsic motivation"
         papers:
           - { text: "ICM", url: "https://arxiv.org/abs/1705.05363" }
           - { text: "RND", url: "https://arxiv.org/abs/1810.12894" }
@@ -42,7 +42,7 @@ terms:
           - { text: "Super Mario", url: "https://www.youtube.com/watch?v=oUTU3P11e3E" }
       - n: "5"
         title: "Exploration II: Memory"
-        keywords: "memory, bandit"
+        keywords: "delayed reward, multi-armed bandit"
         papers:
           - { text: "Go-Explore", url: "https://arxiv.org/abs/2004.12919" }
           - { text: "Agent57", url: "https://arxiv.org/abs/2003.13350" }
@@ -50,7 +50,7 @@ terms:
           - { text: "Montezuma's Revenge", url: "https://www.youtube.com/watch?v=xnvzgQXY9CI" }
       - n: "6"
         title: "Game Theory"
-        keywords: "Nash equilibrium, regret minimization, regularized Nash dynamics (R-NaD), Markov game"
+        keywords: "Markov game, Nash equilibrium, regret minimization"
         papers:
           - { text: "CFR", url: "https://proceedings.neurips.cc/paper/2007/hash/08d98638c6fcd194a4b1e6992063e944-Abstract.html" }
           - { text: "DeepNash", url: "https://arxiv.org/abs/2206.15378" }
@@ -58,7 +58,7 @@ terms:
           - { text: "Stratego", url: "https://www.youtube.com/watch?v=TrkYuUEmOEU" }
       - n: "7"
         title: "Partial Observation"
-        keywords: "public belief state, subgame solving"
+        keywords: "information set, belief state, bluffing"
         papers:
           - { text: "DeepStack", url: "https://arxiv.org/abs/1701.01724" }
           - { text: "Pluribus", url: "https://doi.org/10.1126/science.aay2400" }
@@ -66,7 +66,7 @@ terms:
           - { text: "Poker", url: "https://www.youtube.com/watch?v=luFFSi4IDUk" }
       - n: "8"
         title: "Multi-Agent RL I: Competition"
-        keywords: "self-play, league training, autocurriculum"
+        keywords: "non-stationarity, population-based training, autocurriculum"
         papers:
           - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
           - { text: "Hide-and-Seek", url: "https://arxiv.org/abs/1909.07528" }
@@ -74,7 +74,7 @@ terms:
           - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
       - n: "9"
         title: "Multi-Agent RL II: Cooperation"
-        keywords: "centralized training with decentralized execution (CTDE), value decomposition, communication"
+        keywords: "multi-agent credit assignment, centralized training with decentralized execution (CTDE), communication"
         papers:
           - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
           - { text: "Cicero", url: "https://doi.org/10.1126/science.ade9097" }
@@ -83,7 +83,7 @@ terms:
           - { text: "Diplomacy", url: "https://www.youtube.com/watch?v=u5192bvUS7k" }
       - n: "10"
         title: "Open-World Agents"
-        keywords: "LLM coding agent, skill library, shared memory"
+        keywords: "foundation model agent, open-ended learning, code as action"
         papers:
           - { text: "Voyager", url: "https://arxiv.org/abs/2305.16291" }
           - { text: "Gemini Team", url: "https://arxiv.org/abs/2610.22319" }

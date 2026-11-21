@@ -7,13 +7,13 @@ spring-2027:
   cohort: "4"
   upcoming: true
   demo_heading: "Game"
-  tldr: "How search masters board games, deep RL beats video games, and complex games add other players and open goals."
+  tldr: "How search masters board games, deep RL beats video games, and multi-player games add rivals, teammates, and open worlds."
   icon: "assets/img/icons/study-games.svg"
   reference: { lead: "See also", courses: [ { title: "Berkeley Deep RL Bootcamp", term: "Summer 2017", url: "https://sites.google.com/view/deep-rl-bootcamp/lectures" }, { title: "MIT 6.S890 Topics in Multiagent Learning", term: "Fall 2024", url: "https://www.mit.edu/~gfarina/6S890/" } ] }  # Deep RL(3–5강)은 Bootcamp, 게임 이론·multi-agent(6–8강)는 6.S890(교수 2026-11-21)
   learning_path:
     - { start: 1, end: 2, title: "Search & Learning", text: "How AI masters board games: **search** that looks ahead and **learning** that supplies intuition, each improving the other through self-play." }
     - { start: 3, end: 5, title: "Deep RL", text: "How AI learns video games from pixels and score alone: **trial and error**, then **exploration** where rewards are rare and far away." }
-    - { start: 6, end: 10, title: "Complex Games", text: "How AI plays with and against others: **equilibrium** first, then hidden information, **competition**, **cooperation**, and open worlds without given goals." }
+    - { start: 6, end: 10, title: "Multi-Player Games", text: "How AI plays with and against others: **equilibrium** first, then hidden information, **competition**, **cooperation**, and a team of agents in an open world." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   # meetings, location, representative 는 미정이다. 정해지면 아래 fall-2026 과 같은 꼴로 더한다.
 fall-2026:

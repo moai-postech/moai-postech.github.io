@@ -53,10 +53,10 @@ terms:
         keywords: "Nash equilibrium, regret minimization, fictitious play, Markov game"
         papers:
           - { text: "CFR", url: "https://proceedings.neurips.cc/paper/2007/hash/08d98638c6fcd194a4b1e6992063e944-Abstract.html" }
-          - { text: "PSRO", url: "https://arxiv.org/abs/1711.00832" }
+          - { text: "DeepNash", url: "https://arxiv.org/abs/2206.15378" }
         demos:
           - { text: "Rock-Paper-Scissors", url: "https://www.youtube.com/watch?v=eduakhDwN0A" }
-          - { text: "Kuhn Poker", url: "https://www.youtube.com/watch?v=gjcLvVF1KQE" }
+          - { text: "Stratego", url: "https://www.youtube.com/watch?v=TrkYuUEmOEU" }
       - n: "7"
         title: "Partial Observation"
         keywords: "public belief state, subgame solving"

@@ -110,7 +110,7 @@ terms:
       - n: "2"
         date: "2026-09-21"
         title: "Manipulation"
-        keywords: "imitation learning, action chunking, diffusion policy"
+        keywords: "imitation learning, action chunking, generative policy"
         presenters: "김재원, 고정윤"
         papers:
           - { text: "ALOHA", url: "https://arxiv.org/abs/2304.13705" }
@@ -137,7 +137,7 @@ terms:
       - n: "4"
         date: "2026-10-06"
         title: "Navigation"
-        keywords: "goal-conditioned navigation, topological map, SLAM"
+        keywords: "goal-conditioned policy, topological map, SLAM"
         presenters: "이수겸, 유소은"
         papers:
           - { text: "Active Neural SLAM", url: "https://arxiv.org/abs/2004.05155" }
@@ -163,7 +163,7 @@ terms:
       - n: "6"
         date: "2026-11-03"
         title: "Dexterous Manipulation"
-        keywords: "in-hand manipulation, visuo-tactile"
+        keywords: "in-hand reorientation, tactile sensing"
         presenters: "이지윤, 윤서현"
         papers:
           - { text: "Visual Dexterity", url: "https://arxiv.org/abs/2211.11744" }
@@ -212,7 +212,7 @@ terms:
       - n: "10"
         date: "2026-12-01"
         title: "VLA"
-        keywords: "vision-language-action, action tokenization"
+        keywords: "language-conditioned policy, action tokenization"
         presenters: "최지안, 정윤"
         papers:
           - { text: "SayCan", url: "https://arxiv.org/abs/2204.01691" }
@@ -253,7 +253,7 @@ terms:
           - { text: "TD-MPC2", url: "https://arxiv.org/abs/2310.16828" }
       - n: "A4"
         title: "3D Data Structures"
-        keywords: "point cloud, voxel, mesh, surfel"
+        keywords: "point cloud, voxel, mesh"
         optional: true
         papers:
           - { text: "PointNet", url: "https://arxiv.org/abs/1612.00593" }
@@ -290,7 +290,7 @@ terms:
       - n: "4"
         date: "2026-07-14"
         title: "Representation Learning: Reconstruction-Based"
-        keywords: "MAE, BERT"
+        keywords: "masked modeling, autoencoder"
         presenters: "진동환"
         lectures:
           - { text: "Lec 8", url: "https://www.dropbox.com/scl/fi/8p20mfl0w66df5pjf3z9c/8_representation_rec_2025.pdf?rlkey=8okp1xd19bq9ox59kpx93a94o&e=1&st=9butpzi3&dl=0" }
@@ -305,7 +305,7 @@ terms:
       - n: "6"
         date: "2026-07-28"
         title: "Generative Models: VAE and GAN"
-        keywords: "VAE, GAN"
+        keywords: "latent variable model, adversarial training"
         presenters: "오승준"
         lectures:
           - { text: "Lec 13", url: "https://www.dropbox.com/scl/fi/7jswvwe1c8rtherjaboh9/lec13_gen_intro.pdf?rlkey=vqx2mjujz2hc93eny55a761ij&e=1&st=mnagglkh&dl=0" }
@@ -315,7 +315,7 @@ terms:
       - n: "7"
         date: "2026-08-04"
         title: "Generative Models: Diffusion and Flows"
-        keywords: "diffusion, flow"
+        keywords: "denoising, score matching"
         presenters: "최지안"
         lectures:
           - { text: "Lec 16", url: "https://www.dropbox.com/scl/fi/aoaddpf7wjcv28xtbwe12/lec16_diffusion.pdf?rlkey=k9op9towe7u2d4k9q4n2wu1xz&e=1&st=g8zsdbui&dl=0" }
@@ -354,13 +354,13 @@ terms:
       - n: "1"
         date: "2026-03-10"
         title: "LLM Review"
-        keywords: "Transformer and LLM basics"
+        keywords: "decoder-only Transformer, pretraining"
         papers:
           - { text: "Why Decoder-Only?", url: "teaching/ai-study/spring-2026/01-llm-review-ref-why-decoder-only.pdf" }
       - n: "2"
         date: "2026-03-17"
         title: "CoT"
-        keywords: "chain-of-thought"
+        keywords: "prompting, step-by-step reasoning, self-consistency"
         presenters: "김승호, 정윤"
         papers:
           - { text: "CoT", url: "https://arxiv.org/abs/2201.11903" }
@@ -371,7 +371,7 @@ terms:
       - n: "3"
         date: "2026-03-24"
         title: "SFT"
-        keywords: "instruction fine-tuning"
+        keywords: "instruction following, data quality"
         presenters: "박채원, 임성은"
         papers:
           - { text: "FLAN", url: "https://arxiv.org/abs/2109.01652" }
@@ -382,7 +382,7 @@ terms:
       - n: "4"
         date: "2026-03-31"
         title: "RLHF"
-        keywords: "reinforcement learning, human feedback"
+        keywords: "preference learning, reward model"
         presenters: "양광모, 안준서"
         papers:
           - { text: "RLHF", url: "https://arxiv.org/abs/1706.03741" }
@@ -402,7 +402,7 @@ terms:
       - n: "6"
         date: "2026-04-28"
         title: "Reasoning Models"
-        keywords: "test-time scaling, reward model (verifier)"
+        keywords: "test-time scaling, verifier"
         presenters: "고현민, 지은수"
         papers:
           - { text: "Test-Time Scale", url: "https://arxiv.org/abs/2408.03314" }
@@ -413,7 +413,7 @@ terms:
       - n: "7"
         date: "2026-05-12"
         title: "Long Context"
-        keywords: "context extension, efficient attention, attention sink"
+        keywords: "positional extrapolation, efficient attention"
         presenters: "장세림, 정민호"
         papers:
           - { text: "Lost in the Middle", url: "https://arxiv.org/abs/2307.03172" }
@@ -423,7 +423,7 @@ terms:
       - n: "8"
         date: "2026-05-19"
         title: "RAG"
-        keywords: "retrieval-augmented generation"
+        keywords: "dense retrieval, grounding"
         presenters: "최지안, 진동환"
         papers:
           - { text: "RAG", url: "https://arxiv.org/abs/2005.11401" }
@@ -433,7 +433,7 @@ terms:
       - n: "9"
         date: "2026-05-26"
         title: "Agent"
-        keywords: "tool-augmented LLM, autonomous agent"
+        keywords: "tool use, planning"
         presenters: "이현수, 박선영"
         papers:
           - { text: "ReAct", url: "https://arxiv.org/abs/2210.03629" }
@@ -482,7 +482,7 @@ terms:
       - n: "4"
         date: "2025-10-29"
         title: "Multimodal Perception"
-        keywords: "image-text encoder (CLIP), text encoder (BERT)"
+        keywords: "contrastive pretraining, joint embedding space"
         presenters: "최지안, 공현성"
         papers:
           - { text: "CLIP", url: "https://arxiv.org/abs/2103.00020" }
@@ -507,7 +507,7 @@ terms:
       - n: "6"
         date: "2025-11-12"
         title: "Image Generation"
-        keywords: "text-to-image generation, diffusion, flow matching"
+        keywords: "text conditioning, diffusion, flow matching"
         presenters: "박주연, 김유진"
         papers:
           - { text: "SD3", url: "https://arxiv.org/abs/2403.03206" }
@@ -520,7 +520,7 @@ terms:
       - n: "7"
         date: "2025-11-19"
         title: "Video Generation"
-        keywords: "text-to-video generation, world models"
+        keywords: "temporal consistency, world models"
         presenters: "이수겸, 장승현"
         papers:
           - { text: "Sora", url: "https://openai.com/sora/" }
@@ -533,7 +533,7 @@ terms:
       - n: "8"
         date: "2025-11-26"
         title: "LLMs and Scaling Laws"
-        keywords: "scaling laws, emergent abilities, in-context learning"
+        keywords: "emergent abilities, in-context learning"
         presenters: "이민주, 이수겸"
         papers:
           - { text: "GPT-3", url: "https://arxiv.org/abs/2005.14165" }
@@ -546,7 +546,7 @@ terms:
       - n: "9"
         date: "2025-12-03"
         title: "Multimodal LLM"
-        keywords: "unified perception and generation"
+        keywords: "visual instruction tuning, unified perception & generation"
         presenters: "최지안, 최주연"
         papers:
           - { text: "Cambrian-1", url: "https://arxiv.org/abs/2406.16860" }

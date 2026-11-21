@@ -14,8 +14,8 @@ terms:
           - { text: "Deep Blue", url: "https://doi.org/10.1016/S0004-3702(01)00129-1" }
           - { text: "AlphaGo", url: "https://doi.org/10.1038/nature16961" }
         demos:
-          - { text: "Chess", url: "https://en.wikipedia.org/wiki/Chess" }
-          - { text: "Go", url: "https://en.wikipedia.org/wiki/Go_(game)" }
+          - { text: "Chess", url: "https://www.youtube.com/watch?v=5tUZpeYsgVk" }
+          - { text: "Go", url: "https://www.youtube.com/watch?v=WXuK6gekU1Y" }
       - n: "2"
         title: "Self-Play"
         keywords: "self-play, policy improvement, learned model"
@@ -23,7 +23,7 @@ terms:
           - { text: "AlphaZero", url: "https://doi.org/10.1126/science.aar6404" }
           - { text: "MuZero", url: "https://arxiv.org/abs/1911.08265" }
         demos:
-          - { text: "Board Games", url: "https://en.wikipedia.org/wiki/Board_game" }
+          - { text: "Shogi", url: "https://www.youtube.com/watch?v=uU03Bj2VR0c" }
       - n: "3"
         title: "Deep RL"
         keywords: "Markov decision process (MDP), Q-learning, actor-critic"
@@ -31,7 +31,7 @@ terms:
           - { text: "DQN", url: "https://doi.org/10.1038/nature14236" }
           - { text: "A3C", url: "https://arxiv.org/abs/1602.01783" }
         demos:
-          - { text: "Atari", url: "https://en.wikipedia.org/wiki/Atari_2600" }
+          - { text: "Atari", url: "https://www.youtube.com/watch?v=eG1Ed8PTJ18" }
       - n: "4"
         title: "Exploration I"
         keywords: "curiosity, noisy TV"
@@ -39,8 +39,7 @@ terms:
           - { text: "ICM", url: "https://arxiv.org/abs/1705.05363" }
           - { text: "RND", url: "https://arxiv.org/abs/1810.12894" }
         demos:
-          - { text: "Super Mario", url: "https://en.wikipedia.org/wiki/Super_Mario_Bros." }
-          - { text: "Noisy TV", url: "https://pathak22.github.io/large-scale-curiosity/" }
+          - { text: "Super Mario", url: "https://www.youtube.com/watch?v=oUTU3P11e3E" }
       - n: "5"
         title: "Exploration II"
         keywords: "memory, bandit"
@@ -48,7 +47,7 @@ terms:
           - { text: "Go-Explore", url: "https://arxiv.org/abs/2004.12919" }
           - { text: "Agent57", url: "https://arxiv.org/abs/2003.13350" }
         demos:
-          - { text: "Montezuma's Revenge", url: "https://en.wikipedia.org/wiki/Montezuma%27s_Revenge_(video_game)" }
+          - { text: "Montezuma's Revenge", url: "https://www.youtube.com/watch?v=xnvzgQXY9CI" }
       - n: "6"
         title: "Partial Observation"
         keywords: "Nash equilibrium, counterfactual regret minimization (CFR)"
@@ -56,24 +55,26 @@ terms:
           - { text: "DeepStack", url: "https://arxiv.org/abs/1701.01724" }
           - { text: "Pluribus", url: "https://doi.org/10.1126/science.aay2400" }
         demos:
-          - { text: "Poker", url: "https://en.wikipedia.org/wiki/Poker" }
+          - { text: "Poker", url: "https://www.youtube.com/watch?v=luFFSi4IDUk" }
       - n: "7"
-        title: "Multi-Agent RL"
-        keywords: "centralized training with decentralized execution (CTDE)"
+        title: "Competition"
+        keywords: "self-play at scale, league training, imitation then reinforcement learning"
         papers:
           - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
-          - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
+          - { text: "OpenAI Five", url: "https://arxiv.org/abs/1912.06680" }
         demos:
-          - { text: "StarCraft", url: "https://en.wikipedia.org/wiki/StarCraft_II" }
+          - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
+          - { text: "Dota 2", url: "https://www.youtube.com/watch?v=LVrpWrvHVNE" }
       - n: "8"
         title: "Cooperation"
-        keywords: "human-AI coordination, communication"
+        keywords: "credit assignment, human-AI coordination, communication"
         papers:
+          - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
           - { text: "Overcooked", url: "https://arxiv.org/abs/1910.05789" }
           - { text: "Cicero", url: "https://doi.org/10.1126/science.ade9097" }
         demos:
-          - { text: "Overcooked", url: "https://en.wikipedia.org/wiki/Overcooked" }
-          - { text: "Diplomacy", url: "https://en.wikipedia.org/wiki/Diplomacy_(game)" }
+          - { text: "Overcooked", url: "https://www.youtube.com/watch?v=0ZK7veYPEJQ" }
+          - { text: "Diplomacy", url: "https://www.youtube.com/watch?v=u5192bvUS7k" }
       - n: "9"
         title: "Open-World Agents"
         keywords: "LLM coding agent, skill library, shared memory"
@@ -81,7 +82,7 @@ terms:
           - { text: "Voyager", url: "https://arxiv.org/abs/2305.16291" }
           - { text: "Gemini Team", url: "https://arxiv.org/abs/2610.22319" }
         demos:
-          - { text: "Minecraft", url: "https://en.wikipedia.org/wiki/Minecraft" }
+          - { text: "Minecraft", url: "https://www.youtube.com/watch?v=i6f51aVaK3g" }
   - id: "fall-2026"
     name: "Fall 2026"
     theme: "Physical AI"

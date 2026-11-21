@@ -15,8 +15,8 @@
 빌드와 검사는 CI와 같은 UTC 환경에서 실행해 로컬 시간대 때문에 날짜가 달라지지 않게 한다. 저장소 루트에서 Ruby 3.3, Bundler와 Playwright 1.48.2 Chromium을 준비한다. 훅 설치는 필요 없다.
 
 ```sh
-node tools/visual_review.js prepare --out .agent-memory/visual-review/candidate-001 --implementer implementation-session-id
-node tools/visual_review.js serve --bundle .agent-memory/visual-review/candidate-001
+node tools/visual_review.js prepare --out visual-review-bundle/visual-review/candidate-001 --implementer implementation-session-id
+node tools/visual_review.js serve --bundle visual-review-bundle/visual-review/candidate-001
 ```
 
 `prepare`는 빌드와 전체 자동 검사를 실행하고, 소스 지문·실제 생성 파일·폰트 응답의 해시·브라우저 버전·캡처 시각을 기록한다. 기본 화면은 모든 공통 템플릿 페이지의 1440·768·390·320px에서 만든다. 기본 높이는 900px이며, 짧은 랩 페이지는 1080px 높이도 별도로 찍어 Footer 위 여백을 확인한다. 전체 페이지를 축소한 그림 대신 실제 크기의 겹치는 스크롤 타일과 컴포넌트 확대 화면을 제공한다. 탭·필터·드롭다운·hover·focus·오류·가상 명단 해제 상태도 별도로 찍는다. 가상 명단에는 실제 개인정보와 암호를 쓰지 않는다.
@@ -39,8 +39,8 @@ node tools/visual_review.js serve --bundle .agent-memory/visual-review/candidate
 검토자가 생성된 `review.json`에 실제 ID와 독립 검토 방식, 검토 시각, 질문별 관찰·이미지 ID, 단위별 관찰·모든 요구 이미지 ID를 채운다. `findings`는 `id`, `observation`, `evidence`, `status`를 가진다. 해결은 `verification`, 의도적으로 남길 판단은 `rationale`과 `acceptedBy`를 요구한다. 열린 문제는 통과할 수 없다. 최종 `verdict`는 `pass` 또는 `pass-with-notes`이며 자동으로 채우지 않는다.
 
 ```sh
-node tools/visual_review.js verify --bundle .agent-memory/visual-review/candidate-001 --review .agent-memory/visual-review/candidate-001/review.json
-node tools/visual_review.js record --bundle .agent-memory/visual-review/candidate-001 --review .agent-memory/visual-review/candidate-001/review.json
+node tools/visual_review.js verify --bundle visual-review-bundle/visual-review/candidate-001 --review visual-review-bundle/visual-review/candidate-001/review.json
+node tools/visual_review.js record --bundle visual-review-bundle/visual-review/candidate-001 --review visual-review-bundle/visual-review/candidate-001/review.json
 ```
 
 검증한 기록은 `_qa/visual-review/reviews/<sourceFingerprint>.json`에 커밋한다. 원본 캡처 폴더는 지우지 않는다. 다른 기기에서는 같은 증거를 준비하거나 새로 고정하고 검토해야 한다. 검토자 이름과 관찰 기록은 진술이며 도구가 신원이나 실제 열람을 인증하는 것은 아니다. 테스트 fixture는 실제 승인으로 쓰지 않는다.

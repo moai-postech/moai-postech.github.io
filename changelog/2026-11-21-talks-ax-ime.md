@@ -16,5 +16,7 @@ POSTECH 요구사항: 영향 없음
 ## 되돌림 (같은 날)
 교수가 다시 보고 빼자고 함. 근거: 초청 발표가 아니라 IMEN100 수업 안의 학과 소개 회차이고, 같은 수업 2025 판(251104)도 올리지 않았고, 같은 장소의 "Opportunities in IME as an AI Researcher" 와 주제가 겹침. `_data/talks.yml` 항목과 `assets/talks/2026-ax-revolution-with-ime.pdf` 를 지움. index 충돌 표시 정리는 그대로 둠.
 기각한 안: Education 탭에 남기는 안(위 근거로 기각). 앞으로 IMEN100 같은 학내 수업 회차는 Invited Talks 에 올리지 않는다.
+## Opportunities in IME 를 Research 탭으로 (같은 날)
+교수 지시로 "Opportunities in IME as an AI Researcher (and Vice Versa)"(260429)의 `kind: education` 을 지워 Research 탭으로 옮김. 교수 본인의 연구 방향을 소개하는 발표라 Education(튜토리얼, 학과·교육 행사)이 아님.
 ## 남은 것
 없음

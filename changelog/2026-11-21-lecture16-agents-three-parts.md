@@ -16,3 +16,6 @@ POSTECH 요구사항: 영향 없음 (슬라이드 파일만 교체, 머리글·�
 
 ## 2차 반영 (같은 날)
 교수가 16강 3파트에 Karpathy 강연과 코딩 에이전트 실무를 더 담고 쓸모없는 데모를 빼 달라고 했고, 17강도 같은 방식으로 세 파트로 다시 짜 달라고 한 뒤 둘 다 배포를 승인했다. 과목 저장소의 `tools/publish-site.py --lectures 16 17`로 16강(65장)·17강(48장) HTML·PDF를 복사하고 PDF는 `tools/compress_pdf.py`로 줄였다(16강 2.5→1.9MB, 17강 0.7→0.5MB). 경위와 검사는 과목 저장소 `changelog/2026-11-21-lecture16-three-parts.md`.
+
+## 3차 반영 (같은 날)
+교수 요청으로 마무리 검수한 판을 다시 올렸다. 17강 표만 있던 4장을 그림으로 바꾸고, 전 장 검수에서 찾은 상자 정렬·표 머리글 잘림 등을 고쳤다. `publish-site.py --lectures 16 17` 후 `compress_pdf.py`로 압축했다. 경위는 과목 저장소 `changelog/2026-11-21-lecture16-three-parts.md`의 3차 절.

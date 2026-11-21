@@ -50,12 +50,11 @@ terms:
           - { text: "Montezuma's Revenge", url: "https://www.youtube.com/watch?v=xnvzgQXY9CI" }
       - n: "6"
         title: "Game Theory"
-        keywords: "Nash equilibrium, regret minimization, fictitious play, Markov game"
+        keywords: "Nash equilibrium, regret minimization, regularized Nash dynamics (R-NaD), Markov game"
         papers:
           - { text: "CFR", url: "https://proceedings.neurips.cc/paper/2007/hash/08d98638c6fcd194a4b1e6992063e944-Abstract.html" }
           - { text: "DeepNash", url: "https://arxiv.org/abs/2206.15378" }
         demos:
-          - { text: "Rock-Paper-Scissors", url: "https://www.youtube.com/watch?v=eduakhDwN0A" }
           - { text: "Stratego", url: "https://www.youtube.com/watch?v=TrkYuUEmOEU" }
       - n: "7"
         title: "Partial Observation"
@@ -81,7 +80,7 @@ terms:
           - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
           - { text: "Cicero", url: "https://doi.org/10.1126/science.ade9097" }
         demos:
-          - { text: "StarCraft Team Play", url: "https://www.youtube.com/watch?v=ijdO3UNL4Bs" }
+          - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=ijdO3UNL4Bs" }
           - { text: "Diplomacy", url: "https://www.youtube.com/watch?v=u5192bvUS7k" }
       - n: "10"
         title: "Open-World Agents"

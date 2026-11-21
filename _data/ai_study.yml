@@ -83,7 +83,7 @@ terms:
           - { text: "Diplomacy", url: "https://www.youtube.com/watch?v=u5192bvUS7k" }
       - n: "10"
         title: "Open-World Agents"
-        keywords: "foundation model agent, open-ended learning, long-horizon planning"
+        keywords: "open-ended learning, long-horizon planning"
         papers:
           - { text: "Voyager", url: "https://arxiv.org/abs/2305.16291" }
           - { text: "Gemini Team", url: "https://arxiv.org/abs/2610.22319" }

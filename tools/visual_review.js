@@ -189,7 +189,7 @@ function record() {
   const review=JSON.parse(fs.readFileSync(file,'utf8')),manifest=JSON.parse(fs.readFileSync(path.join(bundle,'manifest.json'),'utf8'));
   const errors=[...vr.validateBundle(bundle,manifest,vr.sourceFingerprint()),...vr.validateReview(review,vr.sourceFingerprint(),manifest)];
   if(errors.length)throw Error(errors.join('\n'));
-  const relative=path.relative(ROOT,bundle);if(relative.startsWith('..')||path.isAbsolute(relative))throw Error('최종 증거는 저장소의 .agent-memory/visual-review 안에 보관한다.');
+  const relative=path.relative(ROOT,bundle);if(relative.startsWith('..')||path.isAbsolute(relative))throw Error('최종 증거는 저장소의 visual-review-bundle/visual-review 안에 보관한다.');
   review.localEvidence=relative;
   const dest=path.join(ROOT,'_qa/visual-review/reviews',review.sourceFingerprint+'.json');fs.mkdirSync(path.dirname(dest),{recursive:true});write(dest,review);console.log(path.relative(ROOT,dest));
 }

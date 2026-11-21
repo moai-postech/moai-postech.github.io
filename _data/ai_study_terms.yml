@@ -13,7 +13,7 @@ spring-2027:
   learning_path:
     - { start: 1, end: 2, title: "Search & Learning", text: "How AI masters board games: **search** that looks ahead and **learning** that supplies intuition, each improving the other through self-play." }
     - { start: 3, end: 5, title: "Deep RL", text: "How AI learns video games from pixels and score alone: **trial and error**, then **exploration** where rewards are rare and far away." }
-    - { start: 6, end: 10, title: "Multi-Player Games", text: "How AI plays with and against others: **equilibrium** first, then search under hidden information, **competition**, **cooperation**, and a team of agents in an open world." }
+    - { start: 6, end: 10, title: "Multi-Player Games", text: "How AI plays with and against others: **equilibrium** and hidden information, then competition, cooperation, and an **open world**." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   # meetings, location, representative 는 미정이다. 정해지면 아래 fall-2026 과 같은 꼴로 더한다.
 fall-2026:
@@ -23,7 +23,7 @@ fall-2026:
   reference: { lead: "See also", courses: [ { title: "Berkeley CS 294-277 Robots That Learn", term: "Spring 2026", url: "https://robots-that-learn.github.io/" }, { title: "Berkeley CS 294-43 Large Scale Vision, Language, and Action Models", term: "Fall 2025", url: "https://cs294-43-fall2025.pages.dev/" } ] }  # 1부(사람의 기능 → 로봇 과제)는 Malik, 2부(VLA, world model)는 Darrell(교수 2026-11-04)
   learning_path:
     - { start: 1, end: 6, title: "Robot Embodiment", text: "How robot tasks mirror **human abilities**: arms that grasp, legs that walk, a sense of where to go, and humanoid bodies with dexterous hands, all learned from data." }
-    - { start: 7, end: 11, title: "Foundation Models for Robotics", text: "How **foundation models** help robots act: an understanding of 3D space, vision and language turned into action, and world models that link perception to planning." }
+    - { start: 7, end: 11, title: "Foundation Models for Robotics", text: "How foundation models help robots act: an understanding of **3D space**, vision and language turned into **action**, and **world models** that link perception to planning." }
   advisor: { name: "Prof. Sangwoo Mo", url: "faculty.html", affiliation: "POSTECH IME", photo: "assets/img/people/sangwoo-mo.jpg" }
   meetings: { day: "Tuesdays", time: "21:00 – 22:00 KST" }
   location: { building: "Science Building 4", rooms: "Room 302" }

@@ -383,10 +383,11 @@ a.cs-title:hover { color: var(--accent); }
   .study-members-table th, .study-members-table td { display: block; padding: 0; border: 0; text-align: left; }
   .study-members-table .study-member-n { order: 0; min-width: 2.75em; font-size: var(--text-meta); }  /* room for the 대표 chip */
   .study-members-table tbody th { order: 1; flex: 1 1 calc(100% - 3.75em); }
+  .study-members-table :is(th, td):nth-child(4) { padding-left: 0; }  /* the desktop gap after a centred column would push the name 24px right of the line under it (2026-11-21) */
   .study-members-table td:is(:nth-child(2), :nth-child(3), :nth-child(5), :nth-child(6)) { order: 2; color: var(--muted); font-size: var(--text-meta); }
   .study-members-table td:nth-child(2) { margin-left: calc(2.75em + var(--space-2)); }
   .study-members-table td:is(:nth-child(2), :nth-child(3))::after { content: "\00b7"; margin-left: var(--space-2); }
-  .study-members-table td:last-child { order: 3; flex-basis: 100%; padding-left: calc(2.75em + var(--space-2)); }
+  .study-members-table td:last-child { order: 3; flex-basis: 100%; padding-left: calc(2.75 * var(--text-meta) + var(--space-2)); }  /* the # column is 2.75em of meta-size text; measure in that size so the chips start under the name (2026-11-21) */
   .study-members-table td:empty { display: none; }
   .study-members-table tr.is-representative { padding-inline: var(--space-3); background: var(--callout-surface); }
   .study-members-table tr.is-representative > * { background: none; }
@@ -522,6 +523,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-now { position: relative; padding: 2px var(--space-2); border-radius: 999px; line-height: 18px; background: var(--accent); color: var(--white); font-size: var(--text-small); font-weight: var(--weight-emphasis); }  /* 22px tall: fits the 24px step row so the current card starts on the same line as the others */
 .study-term-next { position: relative; padding: 1px var(--space-2); border: 1px solid var(--line); border-radius: 999px; line-height: 18px; background: var(--bg); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); }  /* the upcoming term: same 22px as Now, quiet */
 .study-term-card .study-term-title { margin: 0; font-size: var(--text-body); font-weight: var(--weight-emphasis); line-height: 1.4; letter-spacing: normal; }  /* the shared card-heading role */
+@media (min-width: 1025px) { .study-term-card .study-term-title { min-height: 2.8em; } }  /* one row of term cards: two lines for every title, so a wrapped one (Large Language Models) does not push its sessions line and summary below the others. Narrower layouts fit titles on one line (2026-11-21) */
 .study-term-count { color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
 .study-term-tldr { padding-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); line-height: var(--leading-card); }  /* the term in one sentence (tldr), shared with the Schedule tab; starts right under the count so the four cards' sentences begin on one line */
 

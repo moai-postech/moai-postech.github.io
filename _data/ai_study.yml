@@ -284,6 +284,7 @@ terms:
         date: "2026-07-07"
         title: "Architectures: Sequence"
         keywords: "RNN, Transformer"
+        presenters: "박채원"
         lectures:
           - { text: "Lec 5", url: "https://www.dropbox.com/scl/fi/lu2osug2lswj8gqyyuxut/5_mem_seq_2025.pdf?rlkey=z0o79n6suzrhanv9wzqo89bbs&e=1&st=3tpzzlec&dl=0" }
           - { text: "Lec 6", url: "https://www.dropbox.com/scl/fi/yorf3fw3ovrptaaoyh441/6_transformers_2025.pdf?rlkey=zkjpma8flvy5ksjc333hxp9q8&e=1&st=v403dfgl&dl=0" }

@@ -391,14 +391,14 @@ terms:
           - { text: "Slides", url: "teaching/ai-study/spring-2026/04-rlhf-slides.pdf" }
       - n: "5"
         date: "2026-04-21"
-        title: "RLAIF (Rubric)"
+        title: "RLAIF"
         keywords: "alignment, rubric-based RL"
         presenters: "이수겸, 최주연"
         papers:
           - { text: "HH", url: "https://arxiv.org/abs/2204.05862" }
           - { text: "Constitutional AI", url: "https://arxiv.org/abs/2212.08073" }
         materials:
-          - { text: "Slides", url: "teaching/ai-study/spring-2026/05-rlaif-rubric-all.pdf" }
+          - { text: "Slides", url: "teaching/ai-study/spring-2026/05-rlaif-all.pdf" }
       - n: "6"
         date: "2026-04-28"
         title: "Reasoning Models"

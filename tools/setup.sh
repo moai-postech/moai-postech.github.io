@@ -30,6 +30,12 @@ bundle check >/dev/null 2>&1 || { echo "gem 설치 중(처음 한 번, 1분 남�
   echo "PDF 압축 도구(pymupdf) 설치 중"
   python3 -m venv "$MOAI_CACHE/py" && "$MOAI_CACHE/py/bin/pip" install -q pymupdf pillow pypdf
 }
+# 시트 동기화(tools/ai_study_sync.py, seminar_sync.py)는 머리말대로 시스템 python3 로 돈다. 거기에도 같은 패키지를 넣어야
+# 회차 PDF 를 합칠 때 압축이 빠지지 않는다(2026-11-21: 없어서 지난 학기 PDF 4개가 동기화마다 압축이 풀린 채 다시 만들어졌다). CI 는 워크플로가 따로 설치한다.
+python3 -c "import fitz, PIL, pypdf" 2>/dev/null || {
+  echo "시스템 python3 에 pymupdf·pillow·pypdf 설치 중"
+  python3 -m pip install --user -q --no-warn-script-location pymupdf pillow pypdf
+}
 
 git config core.hooksPath .githooks
 echo "준비됨: $(ruby -v | cut -d' ' -f1-2), push 전 검사 훅 켜짐"

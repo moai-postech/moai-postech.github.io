@@ -57,7 +57,7 @@ terms:
         demos:
           - { text: "Poker", url: "https://www.youtube.com/watch?v=luFFSi4IDUk" }
       - n: "7"
-        title: "Competition"
+        title: "Multi-Agent RL I"
         keywords: "self-play at scale, league training, imitation then reinforcement learning"
         papers:
           - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
@@ -66,15 +66,13 @@ terms:
           - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
           - { text: "Dota 2", url: "https://www.youtube.com/watch?v=LVrpWrvHVNE" }
       - n: "8"
-        title: "Cooperation"
-        keywords: "credit assignment, human-AI coordination, communication"
+        title: "Multi-Agent RL II"
+        keywords: "credit assignment, value decomposition, human-AI coordination"
         papers:
           - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
           - { text: "Overcooked", url: "https://arxiv.org/abs/1910.05789" }
-          - { text: "Cicero", url: "https://doi.org/10.1126/science.ade9097" }
         demos:
           - { text: "Overcooked", url: "https://www.youtube.com/watch?v=0ZK7veYPEJQ" }
-          - { text: "Diplomacy", url: "https://www.youtube.com/watch?v=u5192bvUS7k" }
       - n: "9"
         title: "Open-World Agents"
         keywords: "LLM coding agent, skill library, shared memory"

@@ -10,6 +10,7 @@
   - Game 링크를 위키피디아에서 YouTube 영상으로(교수 요청). 2강 Board games → Shogi(AlphaZero 가 다룬 게임)
   - 4강 Game 에서 Noisy TV 삭제(게임이 아니고 Large-Scale Curiosity 연구 페이지가 걸려 있었음). noisy TV 는 키워드에 남김. 읽기는 ICM, RND 유지
 - 같은 날 후속: 2·3단계 이름을 다시 `Deep RL`, `Complex Games` 로(교수 결정). tldr 도 "deep RL beats video games, and complex games add …" 로 고침. 3강 회차 제목도 `Deep RL` 이라 단계와 이름이 겹치지만 그대로 둠
-- 기각한 안: 3단계 이름 Beyond Solo Play, Expanding the Game, From Solo Play to Open Worlds, Wider Worlds, Scaling Up Play(교수가 Complex Games 를 고름). 8강에 Cicero 를 빼고 두 편만 두는 안. 교수가 고른 Diplomacy·communication 을 잃어서 세 편으로 둠(무거우면 Cicero 를 뺀다)
+- 같은 날 후속 2: 7·8강 제목을 `multi-agent RL I`, `II` 로(교수 결정, 4·5강 Exploration I·II 와 같은 꼴). 논문은 회차당 두 편만(교수). 7강 AlphaStar, OpenAI Five / StarCraft II, Dota 2(경쟁, 리그 self-play). 8강 QMIX, Overcooked / Overcooked / credit assignment, value decomposition, human-AI coordination(협력, AI 끼리와 사람과). Cicero·Diplomacy 는 뺌
+- 기각한 안: 7강 AlphaStar·QMIX(StarCraft 로 묶음) / 8강 Overcooked·Cicero 안(교수가 앞서 AlphaStar 와 QMIX 의 결이 다르다고 함). 8강에서 QMIX 대신 Cicero 를 두는 안(MARL 회차에 대표 MARL 알고리즘이 빠짐). 3단계 이름 Beyond Solo Play, Expanding the Game, From Solo Play to Open Worlds, Wider Worlds, Scaling Up Play(교수가 Complex Games 를 고름). (오전) 8강을 두 편으로 줄이는 안은 처음에 기각했으나 후속 2에서 교수가 회차당 두 편으로 정함
 - 로컬 빌드는 iCloud 의 `_site` 쓰기가 시간 초과로 실패해 scratchpad 로 `-d` 빌드해 데스크톱·태블릿·휴대폰 폭에서 확인
 - POSTECH 요구사항: 영향 없음

@@ -23,7 +23,7 @@ terms:
           - { text: "AlphaZero", url: "https://doi.org/10.1126/science.aar6404" }
           - { text: "MuZero", url: "https://arxiv.org/abs/1911.08265" }
         demos:
-          - { text: "Shogi", url: "https://www.youtube.com/watch?v=uU03Bj2VR0c" }
+          - { text: "Board Games", url: "https://www.youtube.com/watch?v=7L2sUGcOgh0" }
       - n: "3"
         title: "Deep RL"
         keywords: "Markov decision process (MDP), Q-learning, actor-critic"

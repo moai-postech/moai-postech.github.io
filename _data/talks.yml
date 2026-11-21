@@ -14,10 +14,6 @@
     - title: "Towards Personalized Household Robots"
       url: "assets/talks/2026-towards-personalized-household-robots.pdf"
       venues: [{name: "POSTECH Physical AI Workshop", url: "https://ime.postech.ac.kr/ime/news/seminar.do?mode=view&articleNo=50164"}]
-    - title: "AX Revolution with IME"
-      kind: education
-      url: "assets/talks/2026-ax-revolution-with-ime.pdf"
-      venues: [{name: "POSTECH IME Seminar", url: "https://ime.postech.ac.kr/"}]
     - title: "Manufacturing Data Analysis via Time-Series Foundation Models"
       url: "assets/talks/2026-manufacturing-data-analysis-via-time-series.pdf"
       venues: [{name: "KSS Invited Talk", url: "https://kss.or.kr/"}]

@@ -13,5 +13,8 @@ POSTECH 요구사항: 영향 없음
 - `changelog/index.md`: 75a21ce 에 커밋된 stash 충돌 표시(`<<<<<<<`, `=======`, `>>>>>>>`)를 지우고 세 줄을 모두 살림
 ## 기각한 안과 이유
 - 기존 "Opportunities in IME as an AI Researcher" 항목의 PDF 를 바꾸는 안: 표지와 생성일을 대조하니 2026-04-29 의 다른 발표라 새 항목으로 둠
+## 되돌림 (같은 날)
+교수가 다시 보고 빼자고 함. 근거: 초청 발표가 아니라 IMEN100 수업 안의 학과 소개 회차이고, 같은 수업 2025 판(251104)도 올리지 않았고, 같은 장소의 "Opportunities in IME as an AI Researcher" 와 주제가 겹침. `_data/talks.yml` 항목과 `assets/talks/2026-ax-revolution-with-ime.pdf` 를 지움. index 충돌 표시 정리는 그대로 둠.
+기각한 안: Education 탭에 남기는 안(위 근거로 기각). 앞으로 IMEN100 같은 학내 수업 회차는 Invited Talks 에 올리지 않는다.
 ## 남은 것
 없음

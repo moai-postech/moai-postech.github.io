@@ -74,7 +74,7 @@ terms:
           - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
       - n: "9"
         title: "Multi-Agent RL II: Cooperation"
-        keywords: "multi-agent credit assignment, CTDE, communication"
+        keywords: "credit assignment, CTDE, communication"
         papers:
           - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
           - { text: "Cicero", url: "https://doi.org/10.1126/science.ade9097" }
@@ -150,7 +150,7 @@ terms:
       - n: "5"
         date: "2026-10-12"
         title: "Humanoid"
-        keywords: "whole-body control, motion retargeting, tracking"
+        keywords: "whole-body control, motion retargeting, motion tracking"
         presenters: "최원준, 윤서현"
         papers:
           - { text: "DeepMimic", url: "https://arxiv.org/abs/1804.02717" }
@@ -297,7 +297,7 @@ terms:
       - n: "5"
         date: "2026-07-21"
         title: "Representation Learning: Similarity-Based"
-        keywords: "contrastive learning"
+        keywords: "contrastive learning, data augmentation"
         presenters: "장연종"
         lectures:
           - { text: "Lec 9", url: "https://www.dropbox.com/scl/fi/grbb1avecuwal4wndihrd/9_similarity_2025.pdf?rlkey=77916kh9nlw3b8n2m27p5otb7&e=1&st=qbd43cd5&dl=0" }
@@ -322,7 +322,7 @@ terms:
       - n: "8"
         date: "2026-08-11"
         title: "Generalization"
-        keywords: "distribution shift"
+        keywords: "overfitting, distribution shift"
         presenters: "김도연"
         lectures:
           - { text: "Lec 17", url: "https://www.dropbox.com/scl/fi/pk81c0p4mk68lli60sikl/17_ood_2025.pdf?rlkey=4ddc1nkqwpuc74130pi2wuvpy&e=1&st=7ko1cc6p&dl=0" }
@@ -360,7 +360,7 @@ terms:
       - n: "2"
         date: "2026-03-17"
         title: "CoT"
-        keywords: "prompting, step-by-step reasoning, self-consistency"
+        keywords: "prompting, step-by-step reasoning"
         presenters: "김승호, 정윤"
         papers:
           - { text: "CoT", url: "https://arxiv.org/abs/2201.11903" }
@@ -460,7 +460,7 @@ terms:
       - n: "2"
         date: "2025-09-24"
         title: "Transformer"
-        keywords: "attention, next token prediction, language modeling"
+        keywords: "attention, next-token prediction"
         presenters: "고현민, 지은수"
         papers:
           - { text: "Transformer", url: "https://arxiv.org/abs/1706.03762" }
@@ -495,7 +495,7 @@ terms:
       - n: "5"
         date: "2025-11-05"
         title: "Visual Grounding"
-        keywords: "open-world detection, segmentation"
+        keywords: "open-vocabulary detection, segmentation"
         presenters: "박선영, 박채원"
         papers:
           - { text: "GroundingDINO", url: "https://arxiv.org/abs/2303.05499" }

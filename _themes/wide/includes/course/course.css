@@ -521,9 +521,13 @@ a.cs-title:hover { color: var(--accent); }
 .study-term-now { position: relative; padding: 2px var(--space-2); border-radius: 999px; line-height: 18px; background: var(--accent); color: var(--white); font-size: var(--text-small); font-weight: var(--weight-emphasis); }  /* 22px tall: fits the 24px step row so the current card starts on the same line as the others */
 .study-term-next { position: relative; padding: 1px var(--space-2); border: 1px solid var(--line); border-radius: 999px; line-height: 18px; background: var(--bg); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); }  /* the upcoming term: same 22px as Now, quiet */
 .study-term-card .study-term-title { margin: 0; font-size: var(--text-body); font-weight: var(--weight-emphasis); line-height: 1.4; letter-spacing: normal; }  /* the shared card-heading role */
-@media (min-width: 1025px) { .study-term-card .study-term-title { min-height: 2.8em; } }  /* one row of term cards: two lines for every title, so a wrapped one (Large Language Models) does not push its sessions line and summary below the others. Narrower layouts fit titles on one line (2026-11-21) */
+@media (min-width: 1025px) {  /* one row of term cards. Subgrid rows line up the step, icon, title, sessions line and summary across all five cards: a title that wraps (Large Language Models at narrower widths) moves every card's sessions line down together, and no card keeps an empty line when nothing wraps. The 16px side padding (24px elsewhere) gives the narrow cards a wider summary column (2026-11-21) */
+  .study-term-card { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; }
+  .study-term-card .study-term-step { margin-bottom: var(--space-3); }
+  .study-term-card > a { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: var(--space-2); padding-inline: var(--space-4); }
+}
 .study-term-count { color: var(--accent); font-size: var(--text-meta); font-weight: var(--weight-emphasis); }
-.study-term-tldr { padding-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); line-height: var(--leading-card); }  /* the term in one sentence (tldr), shared with the Schedule tab; starts right under the count so the four cards' sentences begin on one line */
+.study-term-tldr { text-wrap: pretty; padding-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); line-height: var(--leading-card); }  /* the term in one sentence (tldr), shared with the Schedule tab; starts right under the count so the four cards' sentences begin on one line */
 
 /* Member statistics: one panel row of summary numbers, then cohort bars and a department treemap side by side. */
 .study-stat-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-5); }

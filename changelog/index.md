@@ -5,12 +5,10 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-<<<<<<< Updated upstream
+| 2026-11-21 | [IME 소개 발표를 Invited Talks 에](2026-11-21-talks-ax-ime.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml`, `assets/talks/`, `changelog/index.md` | 261006 IMEN100 "AX Revolution with IME" 를 POSTECH IME Seminar(Education)로 추가, index 충돌 표시 정리 |
+| 2026-11-21 | [AI Study 통계 균형, AI Plays Games 일정](2026-11-21-study-stats-games.md) | Sangwoo Mo(sangwoomo) | `teaching/ai-study/` Home·Schedule, `_data/ai_study*.yml` | 학과 면적 그림을 막대 그림 영역에 맞춤(폭 4:3.5:4.5), 빈 PDF 자리 표시 삭제, 2·3단계 이름 일반화, 7·8강 competition·cooperation 재구성, 게임 링크 YouTube |
 | 2026-11-21 | [PDF 고화질 압축 일괄 적용](2026-11-21-pdf-compression.md) | Sangwoo Mo(sangwoomo) | `tools/compress_pdf.py`, PDF 154개, 동기화 스크립트, `.githooks/pre-push`, `AGENTS.md` | 300 dpi·JPEG 92 로 PDF 869→702 MB, 앞으로 넣는 PDF 도 자동 압축 |
 | 2026-11-20 | [AI:Q 덱에 Kaggle 사례 장 추가](2026-11-20-talks-aiq-kaggle-slide.md) | Sangwoo Mo(sangwoomo) | `assets/talks/` | 15쪽 Kaggle AI agent 사례 추가(23→24장), 팀 번호·late submission 빼고 문구 정리 |
-=======
-| 2026-11-21 | [AI Study 통계 균형, AI Plays Games 일정](2026-11-21-study-stats-games.md) | Sangwoo Mo(sangwoomo) | `teaching/ai-study/` Home·Schedule, `_data/ai_study*.yml` | 학과 면적 그림을 막대 그림 영역에 맞춤(폭 4:3.5:4.5), 빈 PDF 자리 표시 삭제, 2·3단계 이름 일반화, 7·8강 competition·cooperation 재구성, 게임 링크 YouTube |
->>>>>>> Stashed changes
 | 2026-11-20 | [Data Engineering 16·17강 리팩토링](2026-11-20-data-engineering-agents-refactor.md) | Sangwoo Mo(sangwoomo) | `teaching/26f-data-engineering/slides/` 11·12·15·16·17강 | 16·17강 중복 정리(55·41장), 2025 출처 표시 삭제 |
 | 2026-11-19 | [FSI 를 정식 명칭으로](2026-11-19-fsi-full-name.md) | Sangwoo Mo(sangwoomo) | `_data/`, `AGENTS.md` | 소속 FSI → Financial Security Institute, 잘 알려지지 않은 약어는 정식 명칭 원칙, 강의 일정 소속은 중간에서 안 끊기게 |
 | 2026-11-19 | [AI:Q 발표 자료 공개](2026-11-19-talks-aiq-slides.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml`, `assets/talks/` | AI:Q 발표를 자립형 HTML 로 Talks 에 연결 |

@@ -4,6 +4,7 @@ MOAI_RUBY_VERSION=3.4.5
 MOAI_RUBY_SHA256=20fa657858e44a4b39171d6e4111f8a9716eb62a78ebbd1491d94f90bb7b830a  # Homebrew portable-ruby 3.4.5 arm64_big_sur
 MOAI_RUBY_DIR="$HOME/.rubies/portable-ruby/$MOAI_RUBY_VERSION"
 MOAI_CACHE="$HOME/.cache/moai-site"
+MOAI_PY="$MOAI_CACHE/py/bin/python3"  # PDF 압축 검사(tools/compress_pdf.py)용 파이썬. tools/setup.sh 가 만든다
 export GEM_HOME="$MOAI_CACHE/gems"
 export BUNDLE_PATH="$MOAI_CACHE/bundle"
 export BUNDLE_APP_CONFIG="$MOAI_CACHE/bundle-config"

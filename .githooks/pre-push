@@ -13,7 +13,7 @@ if [ -x "$hook_dir/pre-push.before-visual-review" ]; then
 fi
 
 . tools/site_env.sh
-if [ ! -x "$MOAI_RUBY_DIR/bin/ruby" ] || ! bundle check >/dev/null 2>&1; then
+if [ ! -x "$MOAI_RUBY_DIR/bin/ruby" ] || ! bundle check >/dev/null 2>&1 || ! "$MOAI_PY" -c "import fitz, PIL" 2>/dev/null; then
   echo "[pre-push] 이 맥에 빌드 환경이 없어 tools/setup.sh 를 먼저 돌린다"
   sh tools/setup.sh </dev/null
 fi
@@ -47,6 +47,14 @@ while read -r local_ref local_sha remote_ref remote_sha; do
     git worktree add -q --detach "$wt" "$local_sha" </dev/null
   else
     git -C "$wt" checkout -q --detach -f "$local_sha"
+  fi
+  # 새로 넣거나 바꾼 PDF 가 화질을 지키며 더 줄어들 수 있으면 멈춘다(교수 2026-11-20). 고치는 법은 메시지에 나온다
+  if [ -n "$base" ] && [ "$base" != "$local_sha" ]; then
+    pdfs=$(git diff --name-only --diff-filter=AM "$base" "$local_sha" -- '*.pdf')
+    if [ -n "$pdfs" ]; then
+      echo "[pre-push] PDF 압축 검사"
+      (cd "$wt" && printf '%s\n' "$pdfs" | tr '\n' '\0' | xargs -0 "$MOAI_PY" tools/compress_pdf.py --check) </dev/null || fail=1
+    fi
   fi
   echo "[pre-push] ${local_sha%"${local_sha#???????}"} 빌드 중"
   if ! (cd "$wt" && bundle exec jekyll build -q -d "$MOAI_CACHE/prepush-site" >"$MOAI_CACHE/prepush-build.log" 2>&1); then

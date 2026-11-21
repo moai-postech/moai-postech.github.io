@@ -228,6 +228,8 @@ def normalize(src, dest, title, author, date):
     writer.compress_identical_objects()
     with open(dest, "wb") as f:
         writer.write(f)
+    from compress_pdf import shrink  # 화질을 지키며 줄인다(교수 2026-11-20)
+    shrink(dest)
 
 
 def q(s):

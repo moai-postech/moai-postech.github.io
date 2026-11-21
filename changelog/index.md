@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-21 | [16강 세 파트 재구성](2026-11-21-lecture16-agents-three-parts.md) | Sangwoo Mo(sangwoomo) | Data Engineering 16강 HTML·PDF | Agent 개념 / LangChain·LangGraph / 실무 세 파트, 60장 |
 | 2026-11-21 | [IME 소개 발표 추가 후 되돌림](2026-11-21-talks-ax-ime.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml`, `assets/talks/`, `changelog/index.md` | 261006 IMEN100 "AX Revolution with IME" 를 추가했다가 같은 날 뺌(수업 회차라 초청 발표 아님), Opportunities in IME 는 Research 탭으로, index 충돌 표시 정리 |
 | 2026-11-21 | [AI Study 통계 균형, AI Plays Games 일정](2026-11-21-study-stats-games.md) | Sangwoo Mo(sangwoomo) | `teaching/ai-study/` Home·Schedule, `_data/ai_study*.yml` | 학과 면적 그림을 막대 그림 영역에 맞춤(폭 4:3.5:4.5), 빈 PDF 자리 표시 삭제, 2·3단계 이름 Deep RL·Multi-Player Games, 6강 Game Theory(CFR·DeepNash) 추가로 10회, 8·9강 Multi-Agent RL I·II(AlphaStar·Hide-and-Seek, QMIX·Cicero, 게임 StarCraft 와 짝 게임), 회차 부제, See also Berkeley Deep RL Bootcamp·MIT 6.S890, Sessions 위 여백 48px, 게임 링크 YouTube |
 | 2026-11-21 | [PDF 고화질 압축 일괄 적용](2026-11-21-pdf-compression.md) | Sangwoo Mo(sangwoomo) | `tools/compress_pdf.py`, PDF 154개, 동기화 스크립트, `.githooks/pre-push`, `AGENTS.md` | 300 dpi·JPEG 92 로 PDF 869→702 MB, 앞으로 넣는 PDF 도 자동 압축 |

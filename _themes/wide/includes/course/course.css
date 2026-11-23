@@ -273,7 +273,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-tablist button img { grid-row: span 2; width: 36px; height: 36px; }
 .study-tablist button strong { color: var(--text); font-weight: var(--weight-emphasis); }  /* the theme is what a student picks, so it leads; the term follows */
 .study-tablist button span { color: var(--muted); font-size: var(--text-meta); }
-.study-tablist button em { margin-left: var(--space-1); color: var(--accent); font-style: normal; font-weight: var(--weight-emphasis); }  /* Now = this term, Next = the upcoming one */
+.study-tablist button em { margin-left: var(--space-1); color: var(--accent); font-style: normal; font-weight: var(--weight-emphasis); }  /* Now marks this term; the upcoming term is not flagged (교수 2026-11-23) */
 .study-track.is-ordered .study-tablist button:not(:last-child)::after { content: "\2192"; position: absolute; top: 50%; right: calc(-1 * var(--track-gap)); width: var(--track-gap); transform: translateY(-50%); color: var(--faint); text-align: center; }  /* Basic is a sequence: one arrow in each gap */
 .study-tablist button:hover { color: var(--accent); }
 /* phones: Members sheet stays on the heading row when it fits (Everyone · 39 members) and wraps, still right-aligned by its margin-left: auto, only when the row is long (a term or department filter). It used to take its own row every time (2026-11-21) */

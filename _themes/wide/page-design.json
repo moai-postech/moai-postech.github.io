@@ -153,7 +153,7 @@
       "page": "teaching/25f-data-engineering/index.html",
       "template": "강의 · Home",
       "decision": "공통 컴포넌트 조정",
-      "reason": "소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
+      "reason": "소개18px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
       "adjustments": []
     },
     {
@@ -174,7 +174,7 @@
       "page": "teaching/26f-data-engineering/index.html",
       "template": "강의 · Home",
       "decision": "공통 컴포넌트 조정",
-      "reason": "소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
+      "reason": "소개18px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
       "adjustments": []
     },
     {
@@ -195,7 +195,7 @@
       "page": "teaching/26s-programming-for-data-science/index.html",
       "template": "강의 · Home",
       "decision": "공통 컴포넌트 조정",
-      "reason": "소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
+      "reason": "소개18px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
       "adjustments": []
     },
     {
@@ -216,7 +216,7 @@
       "page": "teaching/27s-programming-for-ax/index.html",
       "template": "강의 · Home",
       "decision": "공통 컴포넌트 조정",
-      "reason": "소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
+      "reason": "소개18px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
       "adjustments": []
     },
     {
@@ -244,7 +244,7 @@
       "page": "teaching/ai-study/schedule/index.html",
       "template": "스터디 · Schedule",
       "decision": "공통 컴포넌트 조정",
-      "reason": "긴 표는16/14/13px 위계 유지. 운영 정보16px·학기 선택16/14px로 읽기 쉽게 조정. 정적 학습 흐름은 운영 정보와 일정 사이에 표시. 학기 선택은 Basic·Advanced 묶음(작은 대문자 이름표 h3.sub)으로 나누고 묶음 안은 배우는 순서(교수 2026-11-23). 그 뒤 커리큘럼 지도로 다시 짰다: 줄 이름 열 + 줄마다 학기 카드(아이콘, 주제, 학기, Now·Next), 두 줄 열 맞춤, Basic 은 화살표, 태블릿은 줄 이름이 위, 휴대폰은 한 줄 카드(교수 2026-11-23).",
+      "reason": "긴 표는16/14/13px 위계 유지. 운영 정보16px·학기 선택16/14px로 읽기 쉽게 조정. 정적 학습 흐름은 운영 정보와 일정 사이에 표시. 학기 선택은 Basic·Advanced 묶음(작은 대문자 이름표 h3.sub)으로 나누고 묶음 안은 배우는 순서(교수 2026-11-23). 그 뒤 커리큘럼 지도로 다시 짰다: 줄 이름 열 + 줄마다 학기 카드(아이콘, 주제, 학기, 이번 학기에만 Now), 두 줄 열 맞춤, Basic 은 화살표, 태블릿은 줄 이름이 위, 휴대폰은 한 줄 카드(교수 2026-11-23).",
       "adjustments": []
     },
     {

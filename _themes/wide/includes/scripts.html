@@ -21,6 +21,23 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
   });
   show(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0]);
 });
+// Home focus rings: two lines from the top and bottom of the chosen ring to the left corners of its box, so the ring reads as opening into the box.
+document.querySelectorAll('.focus-explorer').forEach(function (box) {
+  var rings = box.querySelector('.focus-rings'), link = box.querySelector('.focus-link');
+  if (!rings || !link) return;
+  function draw() {
+    var g = box.querySelector('.focus-ring[aria-selected="true"]'), panel = g && document.getElementById(g.getAttribute('aria-controls')), path = link.querySelector('path');
+    if (!panel || getComputedStyle(link).display === 'none') return;
+    var b = box.getBoundingClientRect(), r = rings.getBoundingClientRect(), p = panel.getBoundingClientRect(), s = r.width / 400, rad = +g.getAttribute('data-r');
+    var x = r.left - b.left + 200 * s, top = r.top - b.top + (200 - rad) * s, bottom = r.top - b.top + (200 + rad) * s, px = p.left - b.left, pt = p.top - b.top, pb = p.bottom - b.top;
+    link.setAttribute('viewBox', '0 0 ' + b.width + ' ' + b.height);
+    path.setAttribute('d', 'M' + x + ' ' + top + 'L' + px + ' ' + pt + 'M' + x + ' ' + bottom + 'L' + px + ' ' + pb);
+  }
+  new MutationObserver(draw).observe(rings, { subtree: true, attributeFilter: ['aria-selected'] });
+  window.addEventListener('resize', draw);
+  if (document.fonts) document.fonts.ready.then(draw);
+  draw();
+});
 // Talks dated after today read as upcoming (checked in the visitor's browser, so it never goes stale between builds).
 (function () {
   var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);

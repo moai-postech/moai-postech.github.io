@@ -87,7 +87,7 @@
     },
     {
       "id": "featured-title",
-      "selector": ".paper-chip .paper-title",
+      "selector": ".paper-chip .paper-title, .focus-paper .paper-title",
       "style": {
         "fontSize": "var(--text-featured-paper)",
         "fontWeight": "var(--weight-emphasis)",

@@ -20,7 +20,7 @@
   --white: #ffffff;
 
   --fs-control: 15px;  /* compact navigation keeps a readable step between table metadata and prose */
-  --fs-1: 13px;  --fs-2: 14px;  --fs-3: 16px;  --fs-4: 19px;  --fs-5: 26px;  --fs-6: clamp(32px, 4vw, 46px);  /* display shrinks with the screen so the two-line headline holds */
+  --fs-1: 13px;  --fs-2: 14px;  --fs-3: 16px;  --fs-4: 18px;  --fs-5: 26px;  --fs-6: clamp(32px, 4vw, 46px);  /* display shrinks with the screen so the two-line headline holds */
   --space-1: 4px;  --space-2: 8px;  --space-3: 12px;  --space-4: 16px;  --space-5: 24px;
   --space-6: 32px; --space-7: 48px; --space-8: 64px;  --space-9: 96px;
   --radius-1: 6px; --radius-2: 12px;
@@ -65,7 +65,7 @@
   --text-body: var(--fs-3);
   --text-lead: var(--fs-4);
   --text-h2: var(--fs-5);   /* a section of its own: Home, Contact, the Research stages, the Faculty name */
-  --text-group: 20px;  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27). 20px is the geometric middle of the 16px item names and the 26px section heading (1.25x each way), so it leads its list without competing with a section heading; 22px did (교수 2026-11-23) */
+  --text-group: 20px;  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27). One step above --fs-4 (18px lead text, card names, h3) and below the section heading, on every screen: 16 / 18 / 20 / 26 (phones 24). 19 and 20 side by side read as a mistake, and 22 competed with the section heading (교수 2026-11-23) */
   --text-display: var(--fs-6);
   --text-brand: 23px;  /* the header name and the grey school part after it */
   --brand-pair: .43em;  /* header: between the two parts of one name (IMEN891K Data Engineering, MOAI Lab AI Study), 10px at 23px; in em so phones keep the same proportion */
@@ -226,7 +226,9 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 /* Focus rings (교수 2026-11-23): concentric circles on the left, core (Agentic) to application (Manufacturing).
    Each ring is a tab; the chosen ring is filled with the soft accent and its directions' papers and people open on the right.
    Rings sit apart by a thin white gap so each one keeps its own outline. */
-.focus-explorer { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
+.focus-figure { padding: var(--space-6) var(--space-7) var(--space-7); border: 1px solid var(--line); border-radius: var(--radius-2); }  /* title, rings and box read as one figure (교수 2026-11-23) */
+.focus-figure > h2 { margin-bottom: var(--space-6); text-align: center; }
+.focus-explorer { position: relative; display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
 .focus-rings { grid-column: span 5; width: 100%; max-width: 460px; height: auto; overflow: visible; }
 .focus-ring { cursor: pointer; outline: none; }
 .focus-ring .ring-shape { fill: var(--surface); stroke: var(--line); stroke-width: 1; transition: fill .2s, stroke .2s; }
@@ -238,17 +240,20 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .focus-ring[aria-selected="true"] .ring-shape { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
 .focus-ring[aria-selected="true"] .ring-label { fill: var(--accent); font-weight: var(--weight-heading); }
 .focus-ring:focus-visible .ring-shape { stroke: var(--accent); stroke-width: 3; }
-.focus-panels { grid-column: span 7; }
+.focus-panels { position: relative; z-index: 1; grid-column: span 7; align-self: center; }  /* the box sits on the rings' vertical centre so the two lines open symmetrically; only its height changes between rings, never its left edge */
+.focus-panel { padding: var(--space-5); border: 1.5px solid var(--accent); border-radius: var(--radius-2); background: var(--bg); }  /* the chosen ring opens into this box */
+.focus-link { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; overflow: visible; pointer-events: none; }  /* two lines from the top and bottom of the chosen ring to the box's left corners; drawn by scripts.html */
+.focus-link path { fill: none; stroke: var(--accent); stroke-width: 1.5; }
 .focus-panels > .focus-panel[hidden] { display: none; }  /* each panel is as tall as its own content (교수 2026-10-22: no stretching to the tallest) */
 .focus-panel + .focus-panel { margin-top: var(--section-gap); }  /* without JavaScript all panels show, one after another */
 .focus-head { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-5); }
 .focus-head img { width: 48px; height: 48px; flex-shrink: 0; }
 .focus-head h3 { margin: 0; }  /* the direction name groups its papers and people: the shared group-heading role */
-.focus-papers { display: grid; gap: var(--item-gap); }  /* one paper per row beside the rings */
-.paper-chip { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); color: var(--text); }
-a.paper-chip:hover { color: var(--accent); text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
-.paper-chip .venue { align-self: flex-start; background: var(--bg); font-size: var(--text-featured-meta); }  /* the card is already grey, so its badge is white */
-.paper-chip .paper-title { font-size: var(--text-featured-paper); font-weight: var(--weight-emphasis); line-height: 1.4; }
+.focus-papers { display: grid; gap: var(--item-gap); }
+.focus-paper { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); column-gap: var(--space-4); align-items: baseline; color: var(--text); }  /* one row per paper inside the box: badge column of fixed width so every title starts on one line; no grey card, the box is already the frame (교수 2026-11-23) */
+a.focus-paper:hover { color: var(--accent); text-decoration: none; }
+.focus-paper .venue { justify-self: start; font-size: var(--text-featured-meta); }
+.focus-paper .paper-title { font-size: var(--text-featured-paper); font-weight: var(--weight-emphasis); line-height: 1.4; }
 .focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); margin: var(--space-5) 0 0; font-size: var(--text-meta); font-weight: var(--weight-regular); }
 .focus-people .label { margin-right: var(--space-1); color: var(--faint); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }
 .focus-people a, .focus-people span:not(.label) { color: var(--text); }
@@ -501,6 +506,8 @@ a.person-name:hover { color: var(--accent); }
   .hero-copy, .hero-art { grid-column: 1 / -1; }
   .hero-art { display: none; }  /* tablets keep the statement and lab photo without a second tall illustration */
   .focus-rings, .focus-panels { grid-column: 1 / -1; }
+  .focus-link { display: none; }  /* stacked: the box sits right under the rings, so no lines */
+  .focus-figure { padding: var(--space-5); }
   .focus-rings { justify-self: center; max-width: 380px; margin-bottom: var(--space-6); }  /* tablets and phones: rings on top, the chosen direction below */
   .research-overview .cards { grid-template-columns: 1fr; gap: var(--space-5); }
   .research-head, .topic-cards { grid-column: 1 / -1; }
@@ -532,6 +539,8 @@ a.person-name:hover { color: var(--accent); }
   .eyebrow { font-size: var(--text-meta); }
   .focus-rings { max-width: 340px; margin-bottom: var(--space-5); }
   .focus-head img { width: 40px; height: 40px; }
+  .focus-panel { padding: var(--space-5); }
+  .focus-paper { grid-template-columns: 1fr; row-gap: var(--space-1); }  /* phones: badge above the title */
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
   .profile { gap: var(--space-5); }
   .contact-step { grid-template-columns: 32px minmax(0, 1fr); align-items: center; }

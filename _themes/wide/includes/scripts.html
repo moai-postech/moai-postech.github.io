@@ -107,6 +107,15 @@ document.querySelectorAll('[data-filter]').forEach(function (box) {
 <script>
 // Home Paper Stella band: the band keeps the clicks for its own link, so it tells the embedded map where
 // the pointer is. The map uses this to open a short TL;DR beside the name under the pointer.
+// Embedded maps: a click lifts the cover so the map takes the wheel and drags; leaving it or clicking outside covers it again.
+document.querySelectorAll('.embed').forEach(function (box) {
+  var shield = box.querySelector('.embed-shield'), frame = box.querySelector('iframe');
+  if (!shield) return;
+  function cover() { box.classList.remove('is-active'); }
+  shield.addEventListener('click', function () { box.classList.add('is-active'); frame.focus({ preventScroll: true }); });
+  box.addEventListener('mouseleave', cover);
+  document.addEventListener('pointerdown', function (e) { if (!box.contains(e.target)) cover(); });
+});
 document.querySelectorAll('.has-mini').forEach(function (band) {
   var frame = band.querySelector('.mini-preview iframe');
   if (!frame) return;

@@ -31,3 +31,10 @@ POSTECH 요구사항: 영향 없음(`_config.yml` 은 메뉴만 바꿈. 머리�
 - 반영: `overview.md` 의 분야별 절 아래, 맺음 줄 위에 `embed` 절 `Paper Stella`(id `paper-stella`, 16:10, 설명 한 줄과 `Open in full screen ↗` 를 캡션으로). `landscape.md` 를 지우고 메뉴에서 Landscape 탭을 뺐다(Research = Overview, Publications, Funding). `landscape.html`, `map-view.html`, `map.html` 은 `overview.html#paper-stella` 로 넘긴다. Home Paper Stella 띠도 같은 위치로. 검사 목록(`check_postech.js`, `check_interaction.js`)과 `page-design` 에서 landscape 페이지를 뺐다.
 - 기각: Publications 맨 위에 지도. 논문을 찾으러 온 방문자가 큰 지도를 지나 스크롤해야 하고, 지도 서버가 내려가면 가장 많이 찾는 페이지 맨 위가 빈다. "정돈된 분류를 위에, 탐색용 그림은 아래" 원칙(2026-10-21)에도 어긋난다.
 - 기각: Landscape 탭 유지. 지도는 분야 설명 바로 아래에서 "이 분야들이 전체 지형의 어디에 있나"를 보여 줄 때 뜻이 산다. 탭이 하나 줄어 메뉴도 간단해진다.
+
+## 추가(같은 날): 지도 위에서 페이지 스크롤이 멈추지 않게
+
+- 교수: Overview 중간에 들어간 지도 위에서 휠을 굴리면 페이지가 내려가지 않고 지도만 확대되는 문제를 고친다.
+- 반영: `embed.html` 에 지도를 덮는 투명한 덮개 버튼(`embed-shield`)을 둔다. 덮인 동안 휠과 손가락 스크롤은 페이지를 내리고, 마우스를 올리면 가운데에 `Click to explore` 가 뜬다. 누르면 덮개가 걷혀 지도를 확대·이동하고, 마우스가 지도 밖으로 나가거나 바깥을 누르면 다시 덮인다(`scripts.html`). 누를 때 페이지가 지도 쪽으로 튀지 않게 `focus({ preventScroll: true })`. 스타일은 `theme.css` 의 `.embed-shield`, `.embed-hint`(기존 토큰만).
+- 확인: 로컬에서 덮인 상태의 휠은 페이지를 내리고, 누른 뒤의 휠은 페이지를 움직이지 않으며, 밖으로 나가면 다시 덮였다.
+- 기각: 지도 높이를 줄이기(지도가 작아지고 문제는 남는다), 지도 서버(paper-stella) 쪽에서 휠 확대를 Ctrl+휠로 바꾸기(공개판 전체 화면 보기의 동작까지 바뀐다).

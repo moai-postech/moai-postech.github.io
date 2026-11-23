@@ -21,17 +21,28 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
   });
   show(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0]);
 });
-// Home focus rings: two lines from the top and bottom of the chosen ring to the left corners of its box, so the ring reads as opening into the box.
+// Home focus rings: a soft beam from the chosen ring to its box. Its two edges are the tangents from the box's left corners
+// to the ring, so the beam leaves the ring's outline smoothly and lands on the box's rounded corners.
 document.querySelectorAll('.focus-explorer').forEach(function (box) {
   var rings = box.querySelector('.focus-rings'), link = box.querySelector('.focus-link');
   if (!rings || !link) return;
+  var beam = link.querySelector('.beam'), edge = link.querySelector('.edge');
+  function tangent(cx, cy, R, px, py, upper) {
+    var dx = px - cx, dy = py - cy, d = Math.sqrt(dx * dx + dy * dy), a = Math.atan2(dy, dx), t = Math.acos(Math.min(1, R / d));
+    var p1 = [cx + R * Math.cos(a - t), cy + R * Math.sin(a - t)], p2 = [cx + R * Math.cos(a + t), cy + R * Math.sin(a + t)];
+    return (upper ? p1[1] < p2[1] : p1[1] > p2[1]) ? p1 : p2;
+  }
   function draw() {
-    var g = box.querySelector('.focus-ring[aria-selected="true"]'), panel = g && document.getElementById(g.getAttribute('aria-controls')), path = link.querySelector('path');
+    var g = box.querySelector('.focus-ring[aria-selected="true"]'), panel = g && document.getElementById(g.getAttribute('aria-controls'));
     if (!panel || getComputedStyle(link).display === 'none') return;
-    var b = box.getBoundingClientRect(), r = rings.getBoundingClientRect(), p = panel.getBoundingClientRect(), s = r.width / 400, rad = +g.getAttribute('data-r');
-    var x = r.left - b.left + 200 * s, top = r.top - b.top + (200 - rad) * s, bottom = r.top - b.top + (200 + rad) * s, px = p.left - b.left, pt = p.top - b.top, pb = p.bottom - b.top;
+    var b = box.getBoundingClientRect(), r = rings.getBoundingClientRect(), p = panel.getBoundingClientRect(), s = r.width / 400;
+    var R = +g.getAttribute('data-r') * s, cx = r.left - b.left + 200 * s, cy = r.top - b.top + 200 * s;
+    var k = (parseFloat(getComputedStyle(panel).borderTopLeftRadius) || 0) * 0.293;  // land on the rounded corner itself
+    var px = p.left - b.left + k, pt = p.top - b.top + k, pb = p.bottom - b.top - k;
+    var t1 = tangent(cx, cy, R, px, pt, true), t2 = tangent(cx, cy, R, px, pb, false), f = function (v) { return v.toFixed(1); };
     link.setAttribute('viewBox', '0 0 ' + b.width + ' ' + b.height);
-    path.setAttribute('d', 'M' + x + ' ' + top + 'L' + px + ' ' + pt + 'M' + x + ' ' + bottom + 'L' + px + ' ' + pb);
+    beam.setAttribute('d', 'M' + f(t1[0]) + ' ' + f(t1[1]) + 'L' + f(px) + ' ' + f(pt) + 'L' + f(px) + ' ' + f(pb) + 'L' + f(t2[0]) + ' ' + f(t2[1]) + 'A' + f(R) + ' ' + f(R) + ' 0 0 0 ' + f(t1[0]) + ' ' + f(t1[1]) + 'Z');
+    edge.setAttribute('d', 'M' + f(t1[0]) + ' ' + f(t1[1]) + 'L' + f(px) + ' ' + f(pt) + 'M' + f(t2[0]) + ' ' + f(t2[1]) + 'L' + f(px) + ' ' + f(pb));
   }
   new MutationObserver(draw).observe(rings, { subtree: true, attributeFilter: ['aria-selected'] });
   window.addEventListener('resize', draw);

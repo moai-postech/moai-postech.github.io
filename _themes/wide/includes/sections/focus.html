@@ -4,7 +4,7 @@
   그 방향의 대표 논문(papers), 사람(_data/members.yml 에서 focus 가 같은 사람)이 뜬다.
   기본 선택은 첫 항목(안쪽 원). 탭 동작은 scripts.html 의 [data-tabs] 를 그대로 쓴다.
   자바스크립트가 없으면 패널이 모두 펼쳐진 채로 보인다. 패널마다 자기 내용만큼의 높이다(교수 2026-10-22).
-  고른 원의 맨 위·맨 아래에서 오른쪽 박스의 위·아래 왼쪽 모서리로 선 두 개를 그어(.focus-link, scripts.html 이 위치를 잰다) 원이 박스로 펼쳐지는 모양을 만든다(교수 2026-11-23).
+  고른 원의 위·아래 접선을 따라 오른쪽 박스의 위·아래 왼쪽 모서리까지 연한 분홍 빛줄기(그라데이션 면과 가는 가장자리)를 그려 원이 박스로 펼쳐지는 모양을 만든다(.focus-link, scripts.html 이 위치를 잰다, 교수 2026-11-23: 선 두 개만은 빈약하다).
   원 사이에는 흰 틈을 두어 각 원의 테두리가 따로 보이게 한다. 도식 크기는 viewBox 400 기준이다.
   id="focus" 는 연구 방향으로 바로 이동할 수 있는 안정된 앵커다.
 {% endcomment %}
@@ -25,7 +25,7 @@
       </g>
       {% endfor %}
     </svg>
-    <svg class="focus-link" aria-hidden="true" focusable="false"><path/></svg>
+    <svg class="focus-link" aria-hidden="true" focusable="false"><defs><linearGradient id="focus-beam-{{ sid }}" x1="0" x2="1" y1="0" y2="0"><stop offset="0" class="beam-near"/><stop offset="1" class="beam-far"/></linearGradient></defs><path class="beam" fill="url(#focus-beam-{{ sid }})"/><path class="edge"/></svg>
     <div class="focus-panels">
     {% for f in site.data.focus %}{% assign fid = f.name | slugify %}<div class="focus-panel" role="tabpanel" id="panel-{{ sid }}-{{ fid }}" aria-labelledby="tab-{{ sid }}-{{ fid }}">
       <div class="focus-head">

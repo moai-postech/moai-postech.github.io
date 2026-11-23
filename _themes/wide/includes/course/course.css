@@ -259,17 +259,20 @@ a.cs-title:hover { color: var(--accent); }
 .study-overview .study-reference { margin-top: var(--space-4); font-size: var(--text-meta); }
 .study-reference a { color: var(--accent); font-weight: var(--weight-emphasis); }
 /* Curriculum map (교수 2026-11-23): a label column, then one row of term cards per track whose columns line up across rows (subgrid). */
-.study-tracks { --track-label: 7.5rem; --track-gap: var(--space-6); display: grid; grid-template-columns: var(--track-label) repeat(var(--track-cols), minmax(0, 1fr)); column-gap: var(--track-gap); row-gap: var(--space-3); grid-auto-rows: 1fr; margin-bottom: var(--space-7); }  /* every row as tall as the tallest, so Basic and Advanced cards match */
+.study-tracks { --track-label: 5.5rem; --track-gap: var(--space-6); display: grid; grid-template-columns: var(--track-label) repeat(var(--track-cols), minmax(0, 1fr)); column-gap: var(--track-gap); row-gap: var(--space-3); grid-auto-rows: 1fr; margin-bottom: var(--space-7); padding: var(--card-padding); border-radius: var(--radius-2); background: var(--surface); }  /* one panel holds the whole map, so picking a term reads apart from the term below (교수 2026-11-23); every row as tall as the tallest */
 .study-track { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; }
 .study-track .study-track-label { align-self: center; margin: 0; }
 @media (max-width: 1000px) and (min-width: 681px) {  /* tablets: the label goes above its row so three cards keep their width */
   .study-tracks { grid-template-columns: repeat(var(--track-cols), minmax(0, 1fr)); grid-auto-rows: auto; }
+  .study-tracks { --track-gap: var(--space-4); row-gap: var(--space-5); }  /* a label sits clearly closer to its own row than to the row above; narrower gaps give the cards room */
   .study-track { row-gap: var(--space-2); }
+  .study-tablist button { grid-template-columns: 28px minmax(0, 1fr); padding-inline: var(--space-3); column-gap: var(--space-2); }  /* smaller picture and inner spacing so Large Language Models wraps to two lines at most */
+  .study-tablist button img { width: 28px; height: 28px; }
   .study-track .study-track-label, .study-track .study-tablist { grid-column: 1 / -1; }
   .study-tablist button { min-height: calc(2 * var(--space-3) + 2 * 1.4em + 1.4 * var(--text-meta) + 2px); }  /* room for a two-line theme (Large Language Models), so every card in both rows is the same height */
 }
 .study-tablist { grid-column: 2 / -1; display: grid; grid-template-columns: subgrid; }
-.study-tablist button { position: relative; display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: var(--space-3); align-items: center; align-content: center; row-gap: 2px; padding: var(--space-3) var(--space-4); border: 0; border-radius: var(--radius-2); background: var(--surface); color: var(--muted); font: inherit; font-size: var(--text-body); line-height: 1.4; text-align: left; cursor: pointer; }
+.study-tablist button { position: relative; display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: var(--space-3); align-items: center; align-content: center; row-gap: 2px; padding: var(--space-3) var(--space-4); border: 0; border-radius: var(--radius-1); background: var(--bg); box-shadow: 0 0 0 1px var(--line); color: var(--muted); font: inherit; font-size: var(--text-body); line-height: 1.4; text-align: left; cursor: pointer; }
 .study-tablist button img { grid-row: span 2; width: 36px; height: 36px; }
 .study-tablist button strong { color: var(--text); font-weight: var(--weight-emphasis); }  /* the theme is what a student picks, so it leads; the term follows */
 .study-tablist button span { color: var(--muted); font-size: var(--text-meta); }
@@ -277,7 +280,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-track.is-ordered .study-tablist button:not(:last-child)::after { content: "\2192"; position: absolute; top: 50%; right: calc(-1 * var(--track-gap)); width: var(--track-gap); transform: translateY(-50%); color: var(--faint); text-align: center; }  /* Basic is a sequence: one arrow in each gap */
 .study-tablist button:hover { color: var(--accent); }
 /* phones: Members sheet stays on the heading row when it fits (Everyone · 39 members) and wraps, still right-aligned by its margin-left: auto, only when the row is long (a term or department filter). It used to take its own row every time (2026-11-21) */
-.study-tablist button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
+.study-tablist button[aria-selected="true"] { background: var(--accent-soft); box-shadow: 0 0 0 1px var(--accent); color: var(--accent); }  /* the selected term is the one card with an accent outline */
 .study-tablist button:hover strong, .study-tablist button[aria-selected="true"] strong { color: var(--accent); }  /* the theme carries the hover and selected colour, as the whole label did before */  /* the same tint as the current subnav tab */
 .study-panel h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); margin-bottom: 0; }
 .study-panel h2 span { white-space: nowrap; color: var(--muted); font-size: var(--text-lead); font-weight: var(--weight-emphasis); }
@@ -421,7 +424,7 @@ a.cs-title:hover { color: var(--accent); }
 @media (max-width: 960px) {
   .study-table .sc-topic { width: 20%; }
   .study-table .sc-papers { width: 11%; }
-  .study-table .st-links[data-label] { position: relative; padding-left: 5.2em !important; }  /* cards drop the table heading, so Papers and Demo name themselves; the label sits in its own gutter, so wrapped links start under the first one (교수 2026-11-04) */
+  .study-table .st-links[data-label] { position: relative; padding-left: 6.4em !important; }  /* cards drop the table heading, so Papers and Demo name themselves; the label sits in its own gutter, so wrapped links start under the first one (교수 2026-11-04) */
   .study-table .st-links[data-label]::before { content: attr(data-label); position: absolute; left: 0; top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; line-height: calc(1.5 * var(--text-meta)); }
   .course-parts, .course-grading { grid-template-columns: 1fr; gap: var(--space-3); }
   .course-hero { grid-template-columns: 1fr; gap: var(--space-6); }
@@ -434,7 +437,7 @@ a.cs-title:hover { color: var(--accent); }
   .course-lead { font-size: var(--text-body); }
   .course-brand { flex-wrap: wrap; }
   .course-meta span + span::before, .course-eyebrow span + span::before { content: none; }
-  .study-tracks { display: block; margin-bottom: var(--space-6); }  /* phones: each track is its label, then its terms one under another in learning order */
+  .study-tracks { display: block; margin-bottom: var(--space-6); padding: var(--space-4); }  /* phones: each track is its label, then its terms one under another in learning order */
   .study-track { display: block; }
   .study-track + .study-track { margin-top: var(--space-5); }
   .study-track .study-track-label { margin-bottom: var(--space-2); }

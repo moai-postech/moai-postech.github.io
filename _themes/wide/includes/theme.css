@@ -392,7 +392,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .filter-bar + .year-head { margin-top: var(--space-6); }  /* Talks: the first year sits under the filter (교수 2026-11-17) at 32px (it collapses with the filter's 24px), so the heading stays closer to its own list (16px) than to the filter's underline (교수 2026-11-18) */
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--tone, var(--faint)); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.filter-swatch { display: inline-block; width: .7em; height: .7em; margin-right: var(--space-2); border-radius: 3px; background: var(--tone-mark, var(--tone-tint)); }  /* the row colour of that kind, as a legend */
+.filter-swatch { display: inline-block; width: .7em; height: .7em; margin-right: .4em;  /* 6px at 15px: the same gap as label to count (2px + a space), so swatch, label and count read as one unit and 24px separates the buttons (교수 2026-11-23) */ border-radius: 3px; background: var(--tone-mark, var(--tone-tint)); }  /* the row colour of that kind, as a legend */
 .schedule-title { font-weight: var(--weight-medium); line-height: 1.5; }  /* every title one medium weight; the speaker matches it in size and weight (교수 2026-11-02) */
 .is-upcoming .schedule-date { color: var(--accent); font-weight: var(--weight-emphasis); }  /* talks still to come: the date alone turns accent */
 .schedule-title a { color: var(--text); }

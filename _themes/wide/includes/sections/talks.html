@@ -8,8 +8,8 @@
     {% if include.section.intro %}<p class="list-intro">{% include inline.html text=include.section.intro %}</p>{% endif %}
     <div class="filter-bar" role="group" aria-label="Show talks">
       <button type="button" class="filter-btn" data-show="all" aria-pressed="true">All <span>{{ n_all }}</span></button>
-      <button type="button" class="filter-btn" data-show="research" aria-pressed="false"><i class="filter-swatch tone-p2" aria-hidden="true"></i>Research <span>{{ n_all | minus: n_edu }}</span></button>
-      <button type="button" class="filter-btn" data-show="education" aria-pressed="false"><i class="filter-swatch tone-guest" aria-hidden="true"></i>Education <span>{{ n_edu }}</span></button>
+      <button type="button" class="filter-btn" data-show="research" aria-pressed="false">Research <span>{{ n_all | minus: n_edu }}</span></button>
+      <button type="button" class="filter-btn" data-show="education" aria-pressed="false">Education <span>{{ n_edu }}</span></button>
     </div>
     {% for y in site.data.talks limit: open %}{% include talk-year.html year=y %}{% endfor %}
     {% if site.data.talks.size > open %}<details class="more-news">

@@ -52,10 +52,22 @@ def git(*args):
     return subprocess.run(["git", *args], cwd=ROOT, check=True, capture_output=True, text=True).stdout
 
 
+def resolve_base(base, head):
+    """CI base for BASE..HEAD. A new branch (ZERO) or a force push (before-commit no longer in
+    the history, so git diff fails with 128) falls back to HEAD~1: only the pushed commit is checked."""
+    if not (base and head):
+        return base
+    if base == ZERO:  # first push of a new branch
+        return git("rev-parse", f"{head}~1").strip()
+    known = subprocess.run(["git", "merge-base", "--is-ancestor", base, head], cwd=ROOT, capture_output=True).returncode == 0
+    if not known:
+        print(f"알림: base {base[:7]} 가 HEAD 이력에 없다(강제 push). HEAD~1 과 비교한다.")
+        return git("rev-parse", f"{head}~1").strip()
+    return base
+
+
 def changed_files(base, head):
     if base and head:
-        if base == ZERO:  # first push of a new branch
-            base = git("rev-parse", f"{head}~1").strip()
         return git("diff", "--name-only", f"{base}...{head}").split()
     files = set(git("diff", "--name-only", "origin/main").split())
     files |= set(git("ls-files", "--others", "--exclude-standard").split())
@@ -244,6 +256,7 @@ def main():
     if len(sys.argv) == 3 and sys.argv[1] == "--who":
         return who(sys.argv[2])
     base, head = (sys.argv[1], sys.argv[2]) if len(sys.argv) == 3 else (None, None)
+    base = resolve_base(base, head)
     files = changed_files(base, head)
     if not files:
         print("변경 없음")
@@ -256,8 +269,6 @@ def main():
     errors += check_entries(files, "changelog", ENTRY)
     errors += check_entries(files, "discussions", TOPIC)
     errors += check_discussions(files)
-    if base == ZERO and head:
-        base = git("rev-parse", f"{head}~1").strip()
     touched = [f for f in files if f.startswith(POSTECH_FILES)]
     if touched and entries:
         texts = [(ROOT / f).read_text(encoding="utf-8") for f in entries if (ROOT / f).exists()]

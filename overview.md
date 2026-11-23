@@ -3,21 +3,20 @@ layout: page
 title: Overview
 head_title: "Research · MOAI Lab"
 description: "Research of MOAI Lab at POSTECH: vision and multimodal, language and reasoning, robotics and embodied AI; current focus on agentic, physical, and manufacturing AI."
-intro: |
-  **Paper Stella** is a map of the papers we read. Each dot is a paper, and papers on similar topics sit close
-  together. Our own papers are highlighted, so you can see where our work sits in the field.
-  {: .lede}
 sections:
-  # Paper Stella 지도를 먼저, 그 아래 분야별 구조(교수 2026-11-23: Landscape 탭을 합친 뒤 순서를 바꿈)
-  # 지도 설명은 페이지 소개(intro)가 맡아 절 제목을 두지 않는다(교수 2026-11-23)
+  # 두 부분을 절 제목으로 나눈다: 위는 지도(Research Landscape), 아래는 세 단계(Research Areas)(교수 2026-11-23).
+  # 지도를 설명하는 문장은 두지 않는다. 지도 안의 제목 막대와 범례가 이미 보여 준다(교수 2026-11-23)
   - type: embed
+    title: Research Landscape
     id: paper-stella
     url: "https://moai-lab.duckdns.org/paper-stella-public/"
     label: "Paper Stella: our papers in the landscape of the papers we read"
-    ratio: "16 / 10"
+    ratio: "2 / 1"
     next: "[Open in full screen ↗](https://moai-lab.duckdns.org/paper-stella-public/)"
-  # 단계 구조의 머리말. 세 단계(perceives, reasons, acts)를 소개하므로 지도가 아니라 단계 바로 위에 둔다(교수 2026-11-23)
-  - class: section-lead
+  # 세 단계의 머리말. perceives, reasons, acts 가 아래 레일을 연다(교수 2026-11-23)
+  - title: Research Areas
+    id: research-areas
+    class: section-lead
     body: |
       We design **scalable priors** for AI. Foundation models learn mostly from data, but data alone misses much
       of what we already know about the world. We build that knowledge into every step of an intelligent system:

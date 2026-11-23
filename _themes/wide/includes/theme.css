@@ -241,7 +241,8 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .focus-ring[aria-selected="true"] .ring-label { fill: var(--accent); font-weight: var(--weight-heading); }
 .focus-ring:focus-visible .ring-shape { stroke: var(--accent); stroke-width: 3; }
 .focus-panels { position: relative; z-index: 1; grid-column: span 7; align-self: center; }  /* the box sits on the rings' vertical centre so the two lines open symmetrically; only its height changes between rings, never its left edge */
-.focus-panel { padding: var(--space-5); border: 1.5px solid var(--accent); border-radius: var(--radius-2); background: var(--bg); }  /* the chosen ring opens into this box */
+.focus-panel { padding: var(--space-5) var(--space-6); border: 1.5px solid var(--accent); border-radius: var(--radius-2); background: var(--callout-surface); }  /* the chosen ring opens into this box: same pink family as the chosen ring, so the box reads as that ring enlarged */
+.focus-panel .venue { background: var(--bg); }  /* white badge on the pink box */
 .focus-link { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; overflow: visible; pointer-events: none; }  /* two lines from the top and bottom of the chosen ring to the box's left corners; drawn by scripts.html */
 .focus-link path { fill: none; stroke: var(--accent); stroke-width: 1.5; }
 .focus-panels > .focus-panel[hidden] { display: none; }  /* each panel is as tall as its own content (교수 2026-10-22: no stretching to the tallest) */
@@ -316,7 +317,7 @@ a.mentee-name:hover { color: var(--accent); }
 .research-head .stage-node { position: relative; margin-top: 18px; }  /* centred on the icon and stage-name row */
 .research-head .stage-title { display: flex; align-items: center; gap: var(--space-3); }  /* icon left of the stage name (2026-10-26) */
 .research-head .area-icon { display: block; flex-shrink: 0; width: 72px; height: 72px; object-fit: contain; }  /* the same size as before 2026-10-26: pictures before words */
-.research-head h2 { margin: 0; }
+.research-head h3 { margin: 0; font-size: var(--text-group); font-weight: var(--weight-heading); line-height: var(--leading-group); letter-spacing: normal; }  /* stage name: the group-heading role under the part heading Research Areas (교수 2026-11-23) */
 .research-head p { margin: 0; }
 .research-head .area-name { margin-top: var(--space-3); font-weight: var(--weight-heading); }
 .research-head .area-blurb { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-meta); }
@@ -360,8 +361,8 @@ a.mentee-name:hover { color: var(--accent); }
 .section-photo img { display: block; width: 100%; height: auto; }  /* 격자 전체 폭, 전신 스케치. 위·아래만 흰 바탕으로 번지게 구워 상자·둥근 모서리 없이 둔다(교수 2026-11-17) */
 .topic-cards { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }  /* one card per row: topics read down the stage like the rail (2026-10-26) */
 .topic-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
-.topic-card h3 { margin: 0; }
-.topic-card h3, .step-body h3, .study-overview h3, .study-learning-path h4, .course-parts strong, .study-step-title, .study-stat-breakdowns h3 { font-size: var(--text-body); font-weight: var(--weight-emphasis); line-height: var(--leading-card); letter-spacing: normal; }
+.topic-card h4 { margin: 0; }
+.topic-card h4, .step-body h3, .study-overview h3, .study-learning-path h4, .course-parts strong, .study-step-title, .study-stat-breakdowns h3 { font-size: var(--text-body); font-weight: var(--weight-emphasis); line-height: var(--leading-card); letter-spacing: normal; }
 .topic-card p { margin: 0 0 var(--space-2); color: var(--muted); font-size: var(--text-meta); line-height: 1.5; }
 .paper-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }  /* chips follow the lead paper; a shorter card keeps its spare room at the bottom */
 .chip { display: inline-flex; align-items: baseline; gap: var(--space-1); padding: 2px var(--space-2); background: var(--bg); border-radius: var(--radius-1); color: var(--text); font-size: var(--text-meta); font-weight: var(--weight-emphasis); white-space: nowrap; }

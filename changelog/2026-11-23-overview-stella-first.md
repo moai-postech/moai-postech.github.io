@@ -32,3 +32,28 @@
 - `Paper Stella` 절 제목을 두고 캡션에 설명을 남기는 안: 제목만 보고는 무엇인지 모르고, 작은 캡션은 지도 아래라 먼저 읽히지 않는다.
 - scalable priors 문단을 페이지 소개로 두고 지도 설명을 그 뒤에 잇는 안: 첫 화면이 지도인데 소개가 세 단계 이야기를 하면 소개와 바로 아래 내용이 어긋난다.
 - 세 단계 앞에 `Research Areas` 같은 절 제목을 더하는 안: 머리말 문단과 단계마다 번호·h2 가 있어 제목이 겹친다.
+
+## 3차: 절 제목 두 개로 나눔(같은 날)
+
+- 교수: 소개 문장("Paper Stella is a map of the papers we read...")은 별로다. 페이지의 최선 구조를 고민하라. 위는 landscape, 아래는 by topic 처럼 소제목으로 나누는 게 낫지 않나.
+- 계획 역할 모델(Fable)에 기획을 맡겨 1440·390px 캡처로 진단받았다. 약점: 제목이 없어 두 부분이 안 보임, 소개 문장이 지도 안 제목 막대·숫자·범례와 겹침, 논지(scalable priors)가 제목 없이 떠 캡션처럼 읽힘, 페이지에서 가장 큰 글자가 단계 이름이라 위계가 뒤집힘.
+- 반영:
+  - 페이지 소개(intro)를 없애고 절 제목 두 개로 나눴다. 위 `Research Landscape`(Paper Stella 지도, `#paper-stella` 는 이 제목에), 아래 `Research Areas`(`#research-areas`, scalable priors 문단 → 세 단계). 두 낱말 명사로 짝을 맞췄고 Home 의 `Research Focus` 와 같은 꼴이다.
+  - 지도를 설명하는 문장은 두지 않는다. 지도 제목 막대(이름, 논문 수)와 범례가 이미 보여 준다.
+  - 지도 비율 16/10 → 2/1. 1440x900 첫 화면에 지도 틀 전체가 들어오고, 실제 Chrome 캡처로 별 구름이 잘리지 않는 것을 확인했다.
+  - 단계 이름을 h2(26px) → h3(묶음 제목 역할 20px), 주제 카드 이름을 h3 → h4 로 내렸다. 문서 구조가 절(h2) > 단계(h3) > 주제(h4)가 된다. 번호 마디와 72px 아이콘은 그대로라 세 단계는 여전히 눈에 띈다. `research.html`, `theme.css`, `design-contract.json`(group-heading, card-heading 선택자).
+  - `AGENTS.md` Overview 설명 두 곳, `_themes/wide/README.md` 역할표 세 줄을 고쳤다.
+- 확인: 1440px·390px 실제 Chrome 캡처(지도 포함), 단계 번호 마디가 아이콘 가운데에 맞음.
+
+### 기각한 안과 이유
+
+- `Landscape` / `By Topic`: 짝이 안 맞고, By Topic 은 옛 Publications 필터 이름이며 아래는 주제가 아니라 단계다.
+- 첫 절 제목을 `Paper Stella`: 처음 온 사람에게 뜻이 없는 고유명사다. 이름은 지도 제목 막대에 나온다.
+- 지도 위 한 줄(`Paper Stella maps the papers we read. Stars mark our own.`): 교수가 설명 문장을 원하지 않았고, 지도 범례가 같은 정보를 준다.
+- scalable priors 를 페이지 소개로 두고 두 부분에 작은 묶음 제목: 20px 제목 아래 26px 단계 이름이 와 위계가 뒤집힌다.
+- 2차에서 기각한 "Research Areas 제목은 단계 h2 와 겹친다"는 단계 이름을 한 단계 내려 풀었다.
+
+### 이슈(보고만)
+
+- 지도 안 UI 에 한국어가 남아 있다(검색 칸, 별 이름, 태그, 지도 모드, 조작 안내). 지도 제목이 `Paper Stella (Public)` 이다. Paper Stella 저장소 쪽 일이다.
+- `node tools/test_design.js` 가 이번 수정 전부터 실패한다(`theme.css: .focus-ring .ring-label 글자 크기는 역할 토큰 사용`). 다른 세션의 수정이다.

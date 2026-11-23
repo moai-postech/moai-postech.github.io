@@ -17,8 +17,8 @@
 | 역할 | 예 | 글자 | 간격 |
 | --- | --- | --- | --- |
 | 큰 표시 제목 | Home hero, 강의 페이지 h1 | `--text-display`(연속 크기 변화), 굵기 700, 행간 1.1, `--tracking-display`(-.025em) | 화면 폭이 커질 때 크기가 역전되거나 경계에서 급변하지 않는다 |
-| 한 절인 제목 | Home 의 Research Focus(틀 안 가운데)·News, Contact 의 Join us, Research 의 Perception, Faculty 이름 | `--text-h2` | 절 사이 `--section-gap` |
-| 목록을 묶는 제목 | 연도(Publications, Seminar, Talks), Funding 기관 묶음, 멤버·멘티 묶음, Courses 의 Spring·Fall Semester, Faculty 의 Bio·Appointments | `--text-group`, 굵기 700, `--leading-group`(1.3), 정상 자간 | 위 `--section-gap`(앞 묶음의 마지막 줄부터), 아래 `--space-4` |
+| 한 절인 제목 | Home 의 Research Focus(틀 안 가운데)·News, Contact 의 Join us, Overview 의 Research Landscape·Research Areas, Faculty 이름 | `--text-h2` | 절 사이 `--section-gap` |
+| 목록을 묶는 제목 | 연도(Publications, Seminar, Talks), Overview 의 단계 이름(Perception·Reasoning·Action, h3, 교수 2026-11-23), Funding 기관 묶음, 멤버·멘티 묶음, Courses 의 Spring·Fall Semester, Faculty 의 Bio·Appointments | `--text-group`, 굵기 700, `--leading-group`(1.3), 정상 자간 | 위 `--section-gap`(앞 묶음의 마지막 줄부터), 아래 `--space-4` |
 | 목록 한 줄 | 뉴스, 과제, 강의, 발표 | `--text-body`, 무엇은 굵게 | 줄 사이 `--row-gap`·`--item-gap`. 목록의 첫 줄 위와 마지막 줄 아래에는 줄 간격을 두지 않는다(제목·다음 묶음과의 간격은 위 규칙만 따른다) |
 | 절을 닫는 안내 줄 | Overview 의 Full publication list | `--text-body`, 링크만 보통 굵기(400) 강조색(`.section-next`) | 위 내용에 붙여 위 `--space-5`(24px), 다음 절은 `--section-gap`. embed는 설명 `caption`과 탐색 `next`를 구분하고 next에 이 역할 적용 |
 | 묶음 행동 안내 | Home 의 실적·모집 두 문장 | 본문 크기, 링크 400·강조색. 문장 뒤 인라인 링크. Home 모집만 `Join us! 🚀`, 논문 목록 이동은 `See our publications →`. 새 절 제목 없음 | 옅은 강조색 배경·얇은 테두리·왼쪽 강조선·약한 그림자의 카드(`--callout-*`). 공통 카드 패딩, 문단 사이 12px. 두 문장은 세로로 두고 링크 문구는 중간에서 나누지 않음 |
@@ -30,7 +30,7 @@
 | 논문 저자 | Publications 저자 이름 | `--text-author`(보조정보 크기), 굵기 400, 행간 1.5. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
 | 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(보조정보 크기). Home 대표 카드 배지는 `--text-featured-meta`(보조정보 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. 논문 목록 venue는 600, 자료 링크는 400, 목록 배지의 세로 패딩은 0. Home 대표 카드 venue와 발표 형식은 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
 | 페이지 시작 | 하위 탭 뒤 첫 내용(소개가 있으면 소개, 없으면 첫 절) | | `--page-start`(넓은 화면 48px, 휴대폰 16px) |
-| 소개 뒤 첫 내용 | 소개 바로 뒤의 목록·묶음 제목·필터·삽입 화면(Paper Stella)·Overview 첫 단계. 페이지 중간에서 다음 부분을 여는 소개 문단(`class: section-lead`, Overview 의 scalable priors 문단, 교수 2026-11-23)도 소개와 같이 다음 내용과 이 간격을 둔다 | | `--intro-gap`(24px, 모든 폭). 하위 탭→소개(48)보다 가깝고 묶음 제목→목록(16)보다 넓어 소개가 아래 내용의 머리말로 읽힌다(교수 2026-11-18) |
+| 소개 뒤 첫 내용 | 소개 바로 뒤의 목록·묶음 제목·필터·삽입 화면(Paper Stella)·Overview 첫 단계. 절 제목 아래에서 다음 부분을 여는 소개 문단(`class: section-lead`, Overview 의 Research Areas 아래 scalable priors 문단, 교수 2026-11-23)도 소개와 같이 다음 내용과 이 간격을 둔다 | | `--intro-gap`(24px, 모든 폭). 하위 탭→소개(48)보다 가깝고 묶음 제목→목록(16)보다 넓어 소개가 아래 내용의 머리말로 읽힌다(교수 2026-11-18) |
 | 카드 안 여백 | Home 논문, Research 주제, Contact 단계 카드 | | `--card-padding`(데스크톱 24px, 모바일 16px) |
 | 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
 | 작은 머리 | Faculty 의 FACULTY POSITIONS | `--text-small` | |

@@ -49,7 +49,7 @@
     },
     {
       "id": "group-heading",
-      "selector": "main .group-heading, main .year-head, main .schedule-year th",
+      "selector": "main .group-heading, main .year-head, main .schedule-year th, main .research-head h3",
       "style": {
         "fontSize": "var(--text-group)",
         "fontWeight": "var(--weight-heading)",
@@ -68,7 +68,7 @@
     },
     {
       "id": "card-heading",
-      "selector": ".topic-card h3, .step-body h3, .study-overview h3, .study-learning-path h4, .course-parts strong, .study-step-title, .study-stat-breakdowns h3, .study-term-title",
+      "selector": ".topic-card h4, .step-body h3, .study-overview h3, .study-learning-path h4, .course-parts strong, .study-step-title, .study-stat-breakdowns h3, .study-term-title",
       "style": {
         "fontSize": "var(--text-body)",
         "fontWeight": "var(--weight-emphasis)",

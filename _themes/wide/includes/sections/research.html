@@ -8,6 +8,7 @@
   카드: 주제 이름, 문장 하나, 논문 칩(약칭 + venue, 마우스를 올리면 전체 제목). 한 편만 앞세우지 않는다(교수 2026-10-22).
   칩은 옛 논문이 먼저다(교수 2026-10-26). 데이터는 최신이 위라 여기서 reverse 로 뒤집는다.
   전체 제목은 publications.yml(정본)에서 url 이 같은 논문, url 이 없으면 제목이 match 를 담은 논문에서 가져온다.
+  제목 단계: 페이지의 절 제목(Research Areas, h2) 아래 단계 이름 h3(묶음 제목 크기), 주제 카드 이름 h4(교수 2026-11-23, Overview 를 두 부분으로 나누며).
 {% endcomment %}
 <div class="stage-track">
 {% for area in site.data.research %}
@@ -17,7 +18,7 @@
       <div class="research-head-body">
         <div class="stage-title">
           {% if area.icon %}<img class="area-icon" src="assets/img/icons/{{ area.icon }}.png" alt="">{% endif %}
-          <h2>{{ area.stage | default: area.area }}</h2>
+          <h3>{{ area.stage | default: area.area }}</h3>
         </div>
         {% if area.stage %}<p class="area-name">{{ area.area }}</p>{% endif %}
         {% if area.blurb %}<p class="area-blurb">{{ area.blurb }}</p>{% endif %}
@@ -30,7 +31,7 @@
         {% if pub %}{% assign pt = pub.title %}{% endif %}
         {% assign titles = titles | push: pt %}
       {% endfor %}<div class="topic-card">
-        <h3>{{ t.name }}</h3>
+        <h4>{{ t.name }}</h4>
         <p>{{ t.summary }}</p>
         <div class="paper-chips">{% for p in papers %}{% assign pt = titles[forloop.index0] %}{% if p.url %}<a class="chip" href="{{ p.url }}"{% if pt != "" %} title="{{ pt | escape }}"{% endif %}>{% else %}<span class="chip"{% if pt != "" %} title="{{ pt | escape }}"{% endif %}>{% endif %}{{ p.short }} <small>{{ p.venue }}</small>{% if p.url %}</a>{% else %}</span>{% endif %}{% endfor %}</div>
       </div>

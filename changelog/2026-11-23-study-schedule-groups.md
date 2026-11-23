@@ -35,3 +35,4 @@ POSTECH 요구사항: 영향 없음
 - 이어서 Fable(계획 역할 모델)에게 작성 경위 없이 화면·규칙만 주고 독립 검토를 맡겼다(1280·960·768·375px, 모든 학기 탭). 맞는 제안만 반영: 선택한 학기 카드에 강조색 1px 테두리(강조 면적은 그대로), 줄 이름 열 7.5rem→5.5rem(카드가 본문 왼쪽 선에 가깝게), 태블릿 폭에서 줄 사이 24px(줄 이름이 자기 줄에 붙게)과 카드 사이 16px·그림 28px(Large Language Models 가 두 줄 안에 들어가 두 줄 카드 높이가 같게), 휴대폰 세션 카드의 Papers·Demo·Lectures 이름표 칸 5.2em→6.4em(`LECTURES` 가 값에 붙던 것).
 - 반영하지 않은 제안: 운영 정보 위쪽 선 빼기(2026-10-28 회색 상자를 없애며 얇은 위아래 선으로 구분하기로 한 결정), 휴대폰 카드 글자 15px(학기 카드 주제는 16px 역할이라 디자인 계약 위반).
 - 확인: 디자인 계약 검사 함수를 Schedule(두 학기 상태), Study Group, AI Study Home 에 10개 폭으로 돌려 위반 0건. 카드 높이는 데스크톱 68px, 태블릿 90px 으로 모두 같고, 휴대폰은 한 열(Large Language Models 만 두 줄).
+- 이어서 교수: Advanced 순서를 Physical AI → AI Plays Games 로(개설 순서와도 맞음). `_data/ai_study_groups.yml` 한 곳만 바꿔 Study Group 과 Schedule 이 함께 바뀐다.

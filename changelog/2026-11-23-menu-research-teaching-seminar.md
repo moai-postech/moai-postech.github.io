@@ -44,3 +44,4 @@ POSTECH 요구사항: 영향 없음(`_config.yml` 은 메뉴만 바꿈. 머리�
 - 휴대폰은 마우스를 올릴 수 없어 지도 안내 `Click to explore` 가 보이지 않았다. 마우스가 없는 화면(`hover: none`)에서는 안내를 늘 보인다(`theme.css`).
 - 옛 메뉴 설명 정리: `talks.md` 주석(Research > Talks → Seminar > Invited Talks), `_themes/wide/README.md` 역할표(Courses 묶음 제목, Open in full screen 은 이제 지도 캡션이라 안내 줄 예시에서 뺌), 지도 페이지가 없어져 쓰이지 않는 `.page-intro + .embed-section` 규칙 삭제.
 - 확인: 375px 폭에서 메뉴 두 줄(Home·People·Research / Teaching·Seminar·Contact), Courses 묶음, Invited Talks 필터 사각형, Overview 지도와 가로 넘침 없음.
+- 검토 중 본 기존 검사 실패 세 건(Programming for AX 2027 runtime 꼬리말, 같은 강의 page-design 근거, 스터디 명단 묶음 제목)은 메뉴 개편 전부터 있었고 다른 작업 영역이라 고치지 않고 `TODO.md` 에 남겼다.

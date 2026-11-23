@@ -28,7 +28,7 @@
     {% for f in site.data.focus %}{% assign fid = f.name | slugify %}<div class="focus-panel" role="tabpanel" id="panel-{{ sid }}-{{ fid }}" aria-labelledby="tab-{{ sid }}-{{ fid }}">
       <div class="focus-head">
         {% if f.icon %}<img src="assets/img/icons/{{ f.icon }}.svg" alt="">{% endif %}
-        <div>{% if f.layer %}<p class="focus-layer">{{ f.layer }}</p>{% endif %}<h3>{{ f.name }}</h3></div>
+        <div>{% if f.layer %}<p class="focus-layer">{{ f.layer }}</p>{% endif %}<h3 class="group-heading">{{ f.name }}</h3></div>
       </div>
       {% if f.papers %}<div class="focus-papers">
         {% for p in f.papers limit: 3 %}{% if p.url %}<a class="paper-chip" href="{{ p.url }}">{% else %}<div class="paper-chip">{% endif %}

@@ -65,7 +65,7 @@ async function capture(out,manifest) {
         const planned=await page.evaluate(({tallHeight})=>{
           const states=[{state:'default',full:true}];
           if(innerWidth>=768&&document.querySelector('.site-foot')&&document.documentElement.scrollHeight<=tallHeight)states.push({state:'tall-viewport',full:false});
-          for(const selector of ['.focus-tab','.filter-btn','.study-tablist button']) [...document.querySelectorAll(selector)].forEach((e,i)=>{
+          for(const selector of ['.focus-ring','.filter-btn','.study-tablist button']) [...document.querySelectorAll(selector)].forEach((e,i)=>{
             states.push({state:`${selector}:${i}`,full:selector==='.study-tablist button'});
           });
           if(document.querySelector('details'))states.push({state:'details-open',full:true});
@@ -108,7 +108,7 @@ async function capture(out,manifest) {
         }
         await snap('default',true);
         if(planned.some(s=>s.state==='tall-viewport')){await page.setViewportSize({width,height:vr.policy.tallHeight});await snap('tall-viewport');await page.setViewportSize({width,height:vr.policy.height});}
-        for(const selector of ['.focus-tab','.filter-btn','.study-tablist button']) {
+        for(const selector of ['.focus-ring','.filter-btn','.study-tablist button']) {
           const controls=page.locator(selector);
           for(let i=0;i<await controls.count();i++) {
             await controls.nth(i).click();await page.mouse.move(0,0);await snap(`${selector}:${i}`,selector==='.study-tablist button');

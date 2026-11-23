@@ -30,7 +30,7 @@ function inspect() {
     }
   }
   // 넘침이 없어도 단어 중간 줄바꿈이나 짧은 연결어만 남는 제목은 부자연스럽다.
-  for (const e of main.querySelectorAll('.focus-tab span, h1')) {
+  for (const e of main.querySelectorAll('.focus-head h3, h1')) {
     if (!visible(e)) continue;
     const lines = new Map(), words = document.createTreeWalker(e, NodeFilter.SHOW_TEXT);
     let wordNode;
@@ -85,7 +85,7 @@ function inspect() {
       for (const name of PAGES) {
         await page.goto(`http://localhost:${srv.address().port}/${name}`);
         await page.evaluate(() => document.fonts.ready);
-        const states = page.locator('.focus-tab, .filter-btn, .study-tablist button');
+        const states = page.locator('.focus-ring, .filter-btn, .study-tablist button');
         const count = await states.count();
         for (let i = 0; i < Math.max(1, count); i++) {
           if (count) await states.nth(i).click();

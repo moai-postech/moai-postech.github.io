@@ -509,6 +509,8 @@ a.person-name:hover { color: var(--accent); }
 @media (max-width: 1199px) {
   .hero h1 br { display: none; }  /* avoid an orphaned "of" in the narrower desktop column */
   .focus-rings { --ring-text: var(--text-body); }  /* smaller rings: the names step down to body size so they stay inside their bands */
+  .focus-rings { grid-column: 1 / span 5; }  /* narrower desktops: four columns made the rings ~250px and the names spilled out of their bands; five keep them near 330–360px */
+  .focus-explorer > h2, .focus-panels { grid-column: 6 / -1; }
 }
 @media (max-width: 960px) {
   :root { --gutter: var(--space-6); --page-margin: 32px; }

@@ -17,7 +17,7 @@ sections:
     body: |
       ![Colored-pencil sketch of MOAI Lab members making an M with their hands in front of a POSTECH building](assets/img/lab/group-2026-sketch-hires.jpg?v=20261117-air)
   # 연구 방향 동심원. 제목은 원·박스와 한 틀 안 가운데에 둔다(교수 2026-11-23)
-  - title: "Research Focus"
+  - title: "Research Focus in 2026"
     type: focus
   # 실적 문장과 Paper Stella 미니(?mini=1, 별만 천천히 돈다)를 한 어두운 띠로 묶는다. 띠를 누르면 Research > Overview 의 Paper Stella 절(교수 2026-11-03, 2026-11-23 Overview 로 합침)
   - class: section-band

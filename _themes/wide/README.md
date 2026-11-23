@@ -17,7 +17,7 @@
 | 역할 | 예 | 글자 | 간격 |
 | --- | --- | --- | --- |
 | 큰 표시 제목 | Home hero, 강의 페이지 h1 | `--text-display`(연속 크기 변화), 굵기 700, 행간 1.1, `--tracking-display`(-.025em) | 화면 폭이 커질 때 크기가 역전되거나 경계에서 급변하지 않는다 |
-| 한 절인 제목 | Home 의 Research Focus(틀 안 가운데)·News, Contact 의 Join us, Overview 의 Research Landscape·Research Areas, Faculty 이름 | `--text-h2` | 절 사이 `--section-gap` |
+| 한 절인 제목 | Home 의 Research Focus in 2026(분홍 카드 머리)·News, Contact 의 Join us, Overview 의 Research Landscape·Research Areas, Faculty 이름 | `--text-h2` | 절 사이 `--section-gap` |
 | 목록을 묶는 제목 | 연도(Publications, Seminar, Talks), Overview 의 단계 이름(Perception·Reasoning·Action, h3, 교수 2026-11-23), Funding 기관 묶음, 멤버·멘티 묶음, Courses 의 Spring·Fall Semester, Faculty 의 Bio·Appointments | `--text-group`, 굵기 700, `--leading-group`(1.3), 정상 자간 | 위 `--section-gap`(앞 묶음의 마지막 줄부터), 아래 `--space-4` |
 | 목록 한 줄 | 뉴스, 과제, 강의, 발표 | `--text-body`, 무엇은 굵게 | 줄 사이 `--row-gap`·`--item-gap`. 목록의 첫 줄 위와 마지막 줄 아래에는 줄 간격을 두지 않는다(제목·다음 묶음과의 간격은 위 규칙만 따른다) |
 | 절을 닫는 안내 줄 | Overview 의 Full publication list | `--text-body`, 링크만 보통 굵기(400) 강조색(`.section-next`) | 위 내용에 붙여 위 `--space-5`(24px), 다음 절은 `--section-gap`. embed는 설명 `caption`과 탐색 `next`를 구분하고 next에 이 역할 적용 |
@@ -25,7 +25,7 @@
 | 알림 띠 | 특별 공지(현재 사용 없음) | `--text-body`, 연한 강조색 바탕(`--accent-soft`), 링크 보통 굵기(400) 강조색(`class: section-callout`). 머리말을 굵게 쓰면 강조색 | 위 절에 붙여 위 `--space-5`, 아래 `--section-gap`. 사이트에 하나만 둔다 |
 | 논문 목록 제목 | Publications 목록 | `--text-paper`(본문 크기), 굵기 600, `--leading-paper`(1.5), 정상 자간 | 목록의 제목·저자·venue 줄 사이는 `--detail-gap`(4px), 목록의 논문 사이는 `--item-gap`의 위아래 합(24px) |
 | 필터 도구 모음 | Seminar의 All·Lab·Invited·Full schedule | `--text-control`, 버튼과 이동 링크 모두 굵기 600. 개수만 400 | 버튼·링크에 공통 역할 스타일 적용 |
-| 연구 방향 동심원 | Home 의 세 분야(안쪽 Agentic → Physical → 바깥 Manufacturing) | SVG 안 이름 17(viewBox 400 기준, 폭에 따라 함께 줄어듦). 고른 원은 `--accent-soft` 바탕·강조색 테두리 | 왼쪽 5칸에 원, 오른쪽 7칸에 고른 분야의 이름(목록을 묶는 제목)·논문·사람. 960px 이하는 원 위, 패널 아래 |
+| 연구 방향 동심원 | Home 의 세 분야(안쪽 Agentic → Physical → 바깥 Manufacturing) | SVG 안 이름은 화면에서 `--text-lead`(18px), 1024px 이하 `--text-body`(16px). `scripts.html` 이 `--ring-k`(viewBox 단위/px)를 걸어 SVG 배율을 지운다(교수 2026-11-23). 고른 원은 `--accent-soft` 바탕·강조색 테두리 | 왼쪽 5칸에 원, 오른쪽 7칸에 분홍 카드(절 제목, 고른 분야 이름, 논문, 사람). 고른 원에서 카드로 분홍 빛줄기. 카드 중심 = 원 중심, 카드 크기·위치는 원을 바꿔도 같음. 원 이름은 화면에서 늘 `--text-lead`(휴대폰 `--text-body`). 960px 이하는 원 위, 카드 아래 |
 | 대표 논문 카드 제목 | Home 연구 방향 박스의 논문 줄(왼쪽 고정 폭 배지, 오른쪽 제목. 회색 카드 없음) | `--text-featured-paper`(본문 크기), 굵기 600, 행간 1.4 | 배지와 제목 사이 `--space-3`, 카드 패딩은 공통 카드 역할 |
 | 논문 저자 | Publications 저자 이름 | `--text-author`(보조정보 크기), 굵기 400, 행간 1.5. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
 | 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(보조정보 크기). Home 대표 카드 배지는 `--text-featured-meta`(보조정보 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. 논문 목록 venue는 600, 자료 링크는 400, 목록 배지의 세로 패딩은 0. Home 대표 카드 venue와 발표 형식은 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |

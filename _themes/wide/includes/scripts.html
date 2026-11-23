@@ -21,30 +21,40 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
   });
   show(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0]);
 });
-// Home focus rings: a soft beam from the chosen ring to its box. Its two edges are the tangents from the box's left corners
-// to the ring, so the beam leaves the ring's outline smoothly and lands on the box's rounded corners.
+// Home focus rings: the chosen ring opens into its card. The beam's two edges are the tangents from the card's near corners
+// to the ring, and its inner end follows the ring's own outline, so ring, beam and card read as one shape.
+// Side by side the beam opens to the right; stacked (narrow screens) it opens downward.
 document.querySelectorAll('.focus-explorer').forEach(function (box) {
-  var rings = box.querySelector('.focus-rings'), link = box.querySelector('.focus-link');
-  if (!rings || !link) return;
-  var beam = link.querySelector('.beam'), edge = link.querySelector('.edge');
-  function tangent(cx, cy, R, px, py, upper) {
-    var dx = px - cx, dy = py - cy, d = Math.sqrt(dx * dx + dy * dy), a = Math.atan2(dy, dx), t = Math.acos(Math.min(1, R / d));
-    var p1 = [cx + R * Math.cos(a - t), cy + R * Math.sin(a - t)], p2 = [cx + R * Math.cos(a + t), cy + R * Math.sin(a + t)];
-    return (upper ? p1[1] < p2[1] : p1[1] > p2[1]) ? p1 : p2;
-  }
+  var rings = box.querySelector('.focus-rings'), link = box.querySelector('.focus-link'), card = box.querySelector('.focus-panels');
+  if (!rings || !link || !card) return;
+  var beam = link.querySelector('.beam'), grad = link.querySelector('linearGradient'), TAU = Math.PI * 2;
+  function mod(v) { return ((v % TAU) + TAU) % TAU; }
   function draw() {
-    var g = box.querySelector('.focus-ring[aria-selected="true"]'), panel = g && document.getElementById(g.getAttribute('aria-controls'));
-    if (!panel || getComputedStyle(link).display === 'none') return;
-    var b = box.getBoundingClientRect(), r = rings.getBoundingClientRect(), p = panel.getBoundingClientRect(), s = r.width / 400;
+    var g = box.querySelector('.focus-ring[aria-selected="true"]');
+    if (!g || !rings.getBoundingClientRect().width) return;
+    var b = box.getBoundingClientRect(), r = rings.getBoundingClientRect(), p = card.getBoundingClientRect(), s = r.width / 400;
+    rings.style.setProperty('--ring-k', (1 / s).toFixed(4));  // ring names keep a type-scale size in pixels (theme.css)
     var R = +g.getAttribute('data-r') * s, cx = r.left - b.left + 200 * s, cy = r.top - b.top + 200 * s;
-    var k = (parseFloat(getComputedStyle(panel).borderTopLeftRadius) || 0) * 0.293;  // land on the rounded corner itself
-    var px = p.left - b.left + k, pt = p.top - b.top + k, pb = p.bottom - b.top - k;
-    var t1 = tangent(cx, cy, R, px, pt, true), t2 = tangent(cx, cy, R, px, pb, false), f = function (v) { return v.toFixed(1); };
+    var k = parseFloat(getComputedStyle(card).borderTopLeftRadius) || 0, down = p.top - b.top >= cy;
+    // the two card corners the beam lands on, just inside the rounded corner (the card covers the rest)
+    // c1 then c2 run clockwise as seen from the ring: top then bottom corner, or right then left corner when stacked
+    var c1 = down ? [p.right - b.left, p.top - b.top + k] : [p.left - b.left + k, p.top - b.top];
+    var c2 = down ? [p.left - b.left, p.top - b.top + k] : [p.left - b.left + k, p.bottom - b.top];
+    function tangent(c, sign) {  // the tangent point on the outer side of the beam
+      var a = Math.atan2(c[1] - cy, c[0] - cx), d = Math.sqrt(Math.pow(c[0] - cx, 2) + Math.pow(c[1] - cy, 2));
+      return a + sign * Math.acos(Math.min(1, R / d));
+    }
+    var a1 = tangent(c1, -1), a2 = tangent(c2, 1);
+    var span = mod(a2 - a1), f = function (v) { return v.toFixed(1); };
+    var t1 = [cx + R * Math.cos(a1), cy + R * Math.sin(a1)], t2 = [cx + R * Math.cos(a2), cy + R * Math.sin(a2)];
     link.setAttribute('viewBox', '0 0 ' + b.width + ' ' + b.height);
-    beam.setAttribute('d', 'M' + f(t1[0]) + ' ' + f(t1[1]) + 'L' + f(px) + ' ' + f(pt) + 'L' + f(px) + ' ' + f(pb) + 'L' + f(t2[0]) + ' ' + f(t2[1]) + 'A' + f(R) + ' ' + f(R) + ' 0 0 0 ' + f(t1[0]) + ' ' + f(t1[1]) + 'Z');
-    edge.setAttribute('d', 'M' + f(t1[0]) + ' ' + f(t1[1]) + 'L' + f(px) + ' ' + f(pt) + 'M' + f(t2[0]) + ' ' + f(t2[1]) + 'L' + f(px) + ' ' + f(pb));
+    grad.setAttribute('x1', f(down ? 0 : cx + R)); grad.setAttribute('y1', f(down ? cy + R : 0));
+    grad.setAttribute('x2', f(down ? 0 : c1[0])); grad.setAttribute('y2', f(down ? c1[1] : 0));
+    beam.setAttribute('d', 'M' + f(t1[0]) + ' ' + f(t1[1]) + 'L' + f(c1[0]) + ' ' + f(c1[1]) + 'L' + f(c2[0]) + ' ' + f(c2[1]) + 'L' + f(t2[0]) + ' ' + f(t2[1])
+      + 'A' + f(R) + ' ' + f(R) + ' 0 ' + (span > Math.PI ? 1 : 0) + ' 0 ' + f(t1[0]) + ' ' + f(t1[1]) + 'Z');
   }
   new MutationObserver(draw).observe(rings, { subtree: true, attributeFilter: ['aria-selected'] });
+  if (window.ResizeObserver) new ResizeObserver(draw).observe(box);
   window.addEventListener('resize', draw);
   if (document.fonts) document.fonts.ready.then(draw);
   draw();

@@ -258,7 +258,9 @@ a.cs-title:hover { color: var(--accent); }
 .study-overview p { margin: 0; color: var(--muted); }
 .study-overview .study-reference { margin-top: var(--space-4); font-size: var(--text-meta); }
 .study-reference a { color: var(--accent); font-weight: var(--weight-emphasis); }
-.study-tablist { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+.study-tabgroups { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--space-5) var(--space-7); margin-bottom: var(--space-6); }  /* Basic and Advanced side by side, each a labelled row of terms (교수 2026-11-23) */
+.study-tabgroup .study-tabgroup-label { margin: 0 0 var(--space-2); }  /* the small uppercase label (h3.sub, like Advisor and Location & Time below) sits right on its terms */
+.study-tablist { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .study-tablist button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: var(--space-2) var(--space-5); border: 0; border-radius: var(--radius-2); background: var(--surface); color: var(--muted); font: inherit; font-size: var(--text-body); line-height: 1.4; text-align: left; cursor: pointer; }
 .study-tablist button strong { font-weight: var(--weight-emphasis); }
 .study-tablist button span { font-size: var(--text-meta); }
@@ -420,6 +422,7 @@ a.cs-title:hover { color: var(--accent); }
   .course-lead { font-size: var(--text-body); }
   .course-brand { flex-wrap: wrap; }
   .course-meta span + span::before, .course-eyebrow span + span::before { content: none; }
+  .study-tabgroups { display: grid; gap: var(--space-5); }  /* phones: Basic above Advanced, each group its own two-column grid */
   .study-tablist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; }  /* every term button as tall as the tallest, so a two-line theme (Large Language Models) does not make one row taller than the rest (2026-11-21) */
   .study-term-heading { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
   .study-term-heading .course-sheet { margin-left: 0; }  /* the term name, then Study sheet under it on every term; a long name used to push the link alone to the right end of its own line */

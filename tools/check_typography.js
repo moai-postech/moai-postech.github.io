@@ -24,10 +24,10 @@ function inspect() {
     for (const e of document.querySelectorAll('.course-brand span, .study-panel:not([hidden]) h2 span')) {
       check(e.getBoundingClientRect().height <= parseFloat(css(e).lineHeight) + 1, '학기 이름이 여러 줄로 갈라진다');
     }
-    const tabs = [...document.querySelectorAll('.study-tablist button')];
-    if (tabs.length >= 4) {
-      const r = tabs.map(e => e.getBoundingClientRect());
-      check(Math.abs(r[0].top-r[1].top)<1 && Math.abs(r[2].top-r[3].top)<1 && r[2].top>r[0].top, '모바일 학기 탭이 두 열로 정돈되지 않았다');
+    for (const list of document.querySelectorAll('.study-tablist')) {  // each group (Basic, Advanced) is its own two-column grid (2026-11-23)
+      const r = [...list.querySelectorAll('button')].map(e => e.getBoundingClientRect());
+      if (r.length >= 2) check(Math.abs(r[0].top-r[1].top)<1 && Math.abs(r[0].height-r[1].height)<1, '모바일 학기 탭이 두 열로 정돈되지 않았다');
+      if (r.length >= 3) check(r[2].top>r[0].top && Math.abs(r[2].left-r[0].left)<1, '모바일 학기 탭이 두 열로 정돈되지 않았다');
     }
   }
   // 넘침이 없어도 단어 중간 줄바꿈이나 짧은 연결어만 남는 제목은 부자연스럽다.

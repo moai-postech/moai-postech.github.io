@@ -5,11 +5,11 @@
   학기(언제)를 오른쪽에 두고, 둘 다 스터디 페이지의 그 학기 탭(teaching/ai-study/schedule/#<id>)으로 잇는다. 학기는 _data/ai_study.yml(최신이 위)(2026-10-27 교수).
   intro 가 있으면 제목과 목록 사이에 한 줄 소개(마크다운, 회색)를 둔다(교수 2026-10-27).
 {% endcomment %}
-{% if include.section.study and include.section.groups %}
-{% comment %}학부생 AI 스터디는 study-group.md 의 groups(기초 Basic, 심화 Advanced)마다 절 하나로 나누고, 묶음 안은 groups 에 적은 순서다(교수 2026-11-23).
+{% if include.section.study and include.section.grouped %}
+{% comment %}학부생 AI 스터디는 _data/ai_study_groups.yml 의 묶음(기초 Basic, 심화 Advanced)마다 절 하나로 나누고, 묶음 안은 groups 에 적은 순서다(교수 2026-11-23).
   어느 묶음에도 없는 학기는 마지막 묶음 끝에 붙여 사라지지 않게 한다.{% endcomment %}
-{% assign listed = "" | split: "" %}{% for g in include.section.groups %}{% assign listed = listed | concat: g.terms %}{% endfor %}
-{% for g in include.section.groups %}
+{% assign listed = "" | split: "" %}{% for g in site.data.ai_study_groups %}{% assign listed = listed | concat: g.terms %}{% endfor %}
+{% for g in site.data.ai_study_groups %}
     <section class="content-section">
     <h2 class="group-heading">{{ g.title }}</h2>
     <div class="section-body">

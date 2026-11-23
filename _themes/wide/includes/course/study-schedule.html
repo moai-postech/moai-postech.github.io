@@ -4,8 +4,15 @@
 </header>
 
     <section class="content-section study-terms" data-study-tabs>
-    <div class="study-tablist" role="tablist" aria-label="Terms">
-      {% comment %} Oldest term on the left, like the Home timeline and Members tabs; this term (the newest not marked upcoming) opens by default (교수 2026-11-04, 2026-11-18). {% endcomment %}{% for t in d.terms reversed %}<button type="button" role="tab" id="tab-{{ t.id }}" aria-controls="{{ t.id }}" aria-selected="{% if t.id == current.id %}true{% else %}false{% endif %}"{% unless t.id == current.id %} tabindex="-1"{% endunless %}><strong>{{ t.name }}</strong><span>{{ t.theme }}</span></button>{% endfor %}
+    {% comment %} Terms in two groups, Basic and Advanced, each in learning order (_data/ai_study_groups.yml, the same groups as Teaching > Study Group, 교수 2026-11-23; oldest-first in one row before).
+      This term (the newest not marked upcoming) opens by default. A term in no group joins the last group. {% endcomment %}{% assign listed = "" | split: "" %}{% for g in site.data.ai_study_groups %}{% assign listed = listed | concat: g.terms %}{% endfor %}
+    <div class="study-tabgroups">
+      {% for g in site.data.ai_study_groups %}{% assign gid = g.title | slugify %}<div class="study-tabgroup">
+        <h3 class="sub study-tabgroup-label" id="terms-{{ gid }}">{{ g.title }}</h3>
+        <div class="study-tablist" role="tablist" aria-labelledby="terms-{{ gid }}">
+          {% assign group_terms = "" | split: "" %}{% for id in g.terms %}{% assign found = d.terms | where: "id", id | first %}{% if found %}{% assign group_terms = group_terms | push: found %}{% endif %}{% endfor %}{% if forloop.last %}{% for ut in d.terms %}{% unless listed contains ut.id %}{% assign group_terms = group_terms | push: ut %}{% endunless %}{% endfor %}{% endif %}{% for t in group_terms %}<button type="button" role="tab" id="tab-{{ t.id }}" aria-controls="{{ t.id }}" aria-selected="{% if t.id == current.id %}true{% else %}false{% endif %}"{% unless t.id == current.id %} tabindex="-1"{% endunless %}><strong>{{ t.name }}</strong><span>{{ t.theme }}</span></button>{% endfor %}
+        </div>
+      </div>{% endfor %}
     </div>
     {% for t in d.terms reversed %}<div class="study-panel" role="tabpanel" id="{{ t.id }}" aria-labelledby="tab-{{ t.id }}"{% unless t.id == current.id %} hidden{% endunless %}>
       {% assign info = site.data.ai_study_terms[t.id] %}

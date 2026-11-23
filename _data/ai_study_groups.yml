@@ -1,0 +1,6 @@
+# 학부생 AI 스터디 학기의 기초·심화 묶음. Teaching > Study Group 과 스터디 Schedule 의 학기 탭이 함께 쓴다(교수 2026-11-23).
+# 묶음 안 순서는 배우는 순서다. 새 학기는 terms 에 id(_data/ai_study.yml 의 id)를 더한다. 어느 묶음에도 없는 학기는 마지막 묶음 끝에 붙는다.
+- title: Basic
+  terms: [summer-2026, fall-2025, spring-2026]   # Deep Learning, Foundation Models, Large Language Models
+- title: Advanced
+  terms: [spring-2027, fall-2026]                # AI Plays Games, Physical AI

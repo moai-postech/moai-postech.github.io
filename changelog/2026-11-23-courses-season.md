@@ -40,3 +40,4 @@ POSTECH 요구사항: 영향 없음
 - 기준: 묶음마다 한 줄 항목 몇 개뿐인(제목 포함 약 170px 이하) 목록 페이지는 64px 이 내용보다 커 보여 48px. Courses, Study Group, Funding, Other Mentees 에 `theme.css` 한 줄로 `--section-gap: var(--space-7)`. `AGENTS.md` 세로 간격 규칙과 `page-design` 근거에 적었다.
 - 그대로 64px: Talks(2026 묶음 234px 이고, 형제 탭 Lab Seminar 의 연도 묶음과 같게), Faculty, Members, Publications.
 - 묶음 이름: Basics 보다 Fundamentals 를 유지했다. Basics 는 입문·맛보기로 읽히고, Fundamentals 는 심화(Advanced)의 바탕이 되는 핵심이라는 뜻이라 짝이 맞다. Foundations 는 묶음 안의 Foundation Models 와 겹친다.
+- 이어서 교수: 기초 묶음 이름은 Basic 으로. `study-group.md` 의 묶음 제목을 `Basic` 으로 바꾸고 `AGENTS.md`, `page-design`, 템플릿 주석도 맞췄다(Basic · Advanced, 형용사 짝). 위의 Fundamentals 권고는 교수 결정으로 바꿨다.

@@ -13,7 +13,7 @@ sections:
   - type: teaching
     study: true
     groups:
-      - title: Fundamentals
+      - title: Basic
         terms: [summer-2026, fall-2025, spring-2026]   # Deep Learning, Foundation Models, Large Language Models
       - title: Advanced
         terms: [spring-2027, fall-2026]                # AI Plays Games, Physical AI

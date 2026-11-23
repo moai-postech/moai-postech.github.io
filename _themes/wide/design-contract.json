@@ -165,7 +165,7 @@
     },
     {
       "id": "toolbar-action",
-      "selector": ".filter-btn, .filter-bar > a, .course-heading-row > a, .study-term-heading > a",
+      "selector": ".filter-btn, .filter-bar > a, .course-heading-row > a, .study-sessions-head > a",
       "style": {
         "fontSize": "var(--text-control)",
         "fontWeight": "var(--weight-emphasis)"
@@ -442,7 +442,7 @@
     },
     {
       "id": "toolbar-link",
-      "selector": ".filter-bar > a, .course-heading-row > a, .study-term-heading > a",
+      "selector": ".filter-bar > a, .course-heading-row > a, .study-sessions-head > a",
       "style": {
         "color": "var(--accent)"
       }

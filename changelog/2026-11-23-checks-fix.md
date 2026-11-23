@@ -20,3 +20,8 @@ POSTECH 요구사항: P5, P8 확인(사이트 틀 없는 페이지를 배포에�
 
 ## 남은 것
 없음. 로컬에서는 Playwright 브라우저가 실행되지 않아 세 검사는 push 뒤 Actions `checks` 결과로 확인한다.
+
+## 추가(같은 날): 가려져 있던 두 단계
+- 첫 push 뒤 check_postech 는 통과했다. test_design 과 check_study_members 는 처음 걸리던 단계를 넘어 그 뒤에서 다시 멈췄다(앞 단계 실패에 가려 있던 것).
+- test_design: AI Study Schedule 의 Study sheet 링크는 2026-11-17 에 학기 제목 줄에서 Sessions 머리 줄(`.study-sessions-head`)로 옮겼는데, 디자인 계약의 동작 링크 역할(`toolbar-action`, 두 곳)과 그 회귀 검사가 옛 자리 `.study-term-heading > a` 를 보고 있었다. 둘 다 `.study-sessions-head > a` 로 바꿨다. 링크 스타일(15px, 600)은 이미 그 역할과 같다.
+- check_study_members: 명단의 입학연도·학과·기수 링크가 `location.pathname + #hash` 로 만들어져 주소의 `?` 뒤를 버렸다. 그래서 검사용 가짜 명단(`?design-fixture=1`)에서 누르면 실제 잠긴 페이지로 새로 넘어갔다. 실제 사이트에서도 `?` 가 붙은 주소로 들어온 사람은 누를 때마다 다시 잠겼다. `location.search` 를 넣어 같은 페이지 안에서 걸러지게 했다(`assets/study-members.js`).

@@ -45,7 +45,7 @@ const { loadSyntheticDirectory, forgetAccess } = require('./lib/design-fixture')
     await page.addStyleTag({content:'.course-nav a[aria-current] {font-weight:400 !important}'});
     assert((await failures()).some(f=>f.startsWith('current-navigation: fontWeight')), '현재 메뉴의 굵기 회귀를 검출해야 한다');
     await load('teaching/ai-study/schedule/index.html');
-    await page.addStyleTag({content:'.study-term-heading > a {font-weight:400 !important}'});
+    await page.addStyleTag({content:'.study-sessions-head > a {font-weight:400 !important}'});
     assert((await failures()).some(f=>f.startsWith('toolbar-action: fontWeight')), '클래스명이 달라도 헤더의 동작 링크 회귀를 검출해야 한다');
     await load('publications.html');
     await page.addStyleTag({content:'.group-heading {line-height:1.2 !important}'});

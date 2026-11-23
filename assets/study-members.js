@@ -42,7 +42,7 @@
   const entryYear = member => /^\d{2}$/.test(member.entry_year) ? '20' + member.entry_year : String(member.entry_year);
   // Cohort, entry year, department and participation open the matching list, by the same #hash links as the Home department map (교수 2026-11-03).
   const listLink = (text, hash, className) => {
-    const a = element('a', text, className); a.href = location.pathname + hash;  // <base href="/"> would send a bare #hash to the site root
+    const a = element('a', text, className); a.href = location.pathname + location.search + hash;  // <base href="/"> would send a bare #hash to the site root; keeping ?query keeps the click on this page, so an unlocked list stays unlocked
     return a;
   };
   const FILTERS = {

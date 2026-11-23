@@ -1,22 +1,35 @@
 {% comment %}
-  연구 방향 버튼. 누르면 그 방향의 대표 논문(_data/focus.yml 의 papers)과
-  사람(_data/members.yml 에서 focus 가 같은 사람)이 아래 패널에 펼쳐진다.
-  자바스크립트가 없으면 패널이 모두 펼쳐진 채로 보인다.
-  패널마다 자기 내용만큼의 높이다(가장 긴 패널에 맞춰 늘리지 않는다, 교수 2026-10-22).
+  연구 방향 도식(교수 2026-11-23). 왼쪽은 동심원 셋이다. _data/focus.yml 의 순서대로 안쪽부터 바깥으로
+  (Agentic → Physical → Manufacturing, core → application). 원 하나가 탭 하나이고, 누르면 오른쪽 패널에
+  그 방향의 층 이름(layer), 대표 논문(papers), 사람(_data/members.yml 에서 focus 가 같은 사람)이 뜬다.
+  기본 선택은 첫 항목(안쪽 원). 탭 동작은 scripts.html 의 [data-tabs] 를 그대로 쓴다.
+  자바스크립트가 없으면 패널이 모두 펼쳐진 채로 보인다. 패널마다 자기 내용만큼의 높이다(교수 2026-10-22).
+  원 사이에는 흰 틈을 두어 각 원의 테두리가 따로 보이게 한다. 도식 크기는 viewBox 400 기준이다.
   id="focus" 는 연구 방향으로 바로 이동할 수 있는 안정된 앵커다.
 {% endcomment %}
 {% assign sid = include.section.title | slugify %}
+{% assign n = site.data.focus.size %}
     <section class="content-section sec-focus" id="focus">
     <h2>{{ include.section.title }}</h2>
     <div class="section-body focus-explorer" data-tabs>
-    <div class="focus-tabs" role="tablist">
-      {% for f in site.data.focus %}{% assign fid = f.name | slugify %}<button type="button" class="focus-tab" role="tab" id="tab-{{ sid }}-{{ fid }}" aria-controls="panel-{{ sid }}-{{ fid }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
-        {% if f.icon %}<img src="assets/img/icons/{{ f.icon }}.svg" alt="">{% endif %}<span>{{ f.name }}</span>
-      </button>
+    <svg class="focus-rings" viewBox="0 0 400 400" role="tablist" aria-label="Research directions, from core to application">
+      {% comment %} 바깥 원부터 그린다. i 는 안쪽부터 0, 1, 2. 바깥 반지름 74 + 61i, 띠 두께 55(원 사이 틈 6). 이름은 띠 위쪽 가운데. {% endcomment %}
+      {% for f in site.data.focus reversed %}{% assign fid = f.name | slugify %}{% assign i = n | minus: 1 | minus: forloop.index0 %}{% assign level = i | plus: 1 %}
+      {% assign outer = i | times: 61 | plus: 74 %}{% assign inner = outer | minus: 55 %}
+      {% if i == 0 %}{% assign label_y = 200 %}{% else %}{% assign label_y = outer | plus: inner | divided_by: 2 | minus: 200 | abs %}{% endif %}
+      <g class="focus-ring{% if level == 1 %} is-core{% endif %}" role="tab" tabindex="0" aria-label="{{ f.name }}{% if f.layer %} ({{ f.layer }}){% endif %}" id="tab-{{ sid }}-{{ fid }}" aria-controls="panel-{{ sid }}-{{ fid }}" aria-selected="{% if level == 1 %}true{% else %}false{% endif %}">
+        {% if level == 1 %}<circle class="ring-shape" cx="200" cy="200" r="{{ outer }}"/>{% else %}<path class="ring-shape" fill-rule="evenodd" d="M200 {{ 200 | minus: outer }}a{{ outer }} {{ outer }} 0 1 0 0.01 0zM200 {{ 200 | minus: inner }}a{{ inner }} {{ inner }} 0 1 0 0.01 0z"/>{% endif %}
+        {% if f.layer %}<text class="ring-layer" x="200" y="{{ label_y | minus: 11 }}" text-anchor="middle" dominant-baseline="central">{{ f.layer }}</text>{% endif %}
+        <text class="ring-label" x="200" y="{% if f.layer %}{{ label_y | plus: 8 }}{% else %}{{ label_y }}{% endif %}" text-anchor="middle" dominant-baseline="central">{{ f.name }}</text>
+      </g>
       {% endfor %}
-    </div>
+    </svg>
     <div class="focus-panels">
     {% for f in site.data.focus %}{% assign fid = f.name | slugify %}<div class="focus-panel" role="tabpanel" id="panel-{{ sid }}-{{ fid }}" aria-labelledby="tab-{{ sid }}-{{ fid }}">
+      <div class="focus-head">
+        {% if f.icon %}<img src="assets/img/icons/{{ f.icon }}.svg" alt="">{% endif %}
+        <div>{% if f.layer %}<p class="focus-layer">{{ f.layer }}</p>{% endif %}<h3>{{ f.name }}</h3></div>
+      </div>
       {% if f.papers %}<div class="focus-papers">
         {% for p in f.papers limit: 3 %}{% if p.url %}<a class="paper-chip" href="{{ p.url }}">{% else %}<div class="paper-chip">{% endif %}
           <span class="venue">{{ p.short }} · {{ p.venue }}</span>

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-23 | [명단 이력 정리](2026-11-23-history-rewrite.md) | Sangwoo Mo(sangwoomo) | Git 이력, `TODO.md` | AI Study 명단 평문과 기록 속 학생 세부를 모든 브랜치 이력에서 지우고 강제 push |
 | 2026-11-23 | [스터디 Schedule 묶음](2026-11-23-study-schedule-groups.md) | Sangwoo Mo(sangwoomo) | `study-schedule.html`, `_data/ai_study_groups.yml` | 학기 탭을 Basic·Advanced 묶음으로, Study Group 과 같은 묶음 데이터 |
 | 2026-11-23 | [종류 색 팔레트](2026-11-23-kind-palette.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `course.css`, `AGENTS.md` | 강의 파트·Seminar·Talks 의 종류 색을 검증한 팔레트 한 벌(파랑·초록·주황·노랑 + 회색)로 통일 |
 | 2026-11-23 | [Actions Node 24](2026-11-23-actions-node24.md) | Sangwoo Mo(sangwoomo) | `.github/workflows/`, `TODO.md` | 공통 action 을 Node 24 버전으로 올려 Node.js 20 경고 해소 |

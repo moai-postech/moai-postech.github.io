@@ -12,14 +12,14 @@ jobs:
       LANG: C.UTF-8
       LC_ALL: C.UTF-8
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
           bundler-cache: true
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
       - run: npm install --no-save --no-package-lock playwright@1.48.2
@@ -30,7 +30,7 @@ jobs:
         run: node tools/visual_review.js prepare --out visual-review-bundle --implementer full-audit
       - if: steps.audit.outcome == 'failure'
         run: echo "::warning title=전수 검사 실패::artifact 의 logs 와 갤러리를 본다"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: full-audit-${{ github.run_id }}

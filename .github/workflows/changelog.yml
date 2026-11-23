@@ -8,7 +8,7 @@ jobs:
   changelog:  # 브랜치 보호의 필수 검사 이름(tools/setup_main_ruleset.sh)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - run: python3 tools/check_changelog.py "$BASE" "$HEAD"

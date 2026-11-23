@@ -55,5 +55,5 @@
 
 ### 이슈(보고만)
 
-- 지도 안 UI 에 한국어가 남아 있다(검색 칸, 별 이름, 태그, 지도 모드, 조작 안내). 지도 제목이 `Paper Stella (Public)` 이다. Paper Stella 저장소 쪽 일이다.
+- 지도 안 UI 에 한국어가 남아 있다(검색 칸, 별 이름, 태그, 지도 모드, 조작 안내). 지도 제목이 `Paper Stella (Public)` 이다. Paper Stella 저장소 쪽 일이다. → 교수가 둘 다 그대로 두기로 했다(2026-11-23). `AGENTS.md` 에 "Paper Stella 지도 안의 화면은 검토 대상이 아니다" 규칙을 더했다.
 - `node tools/test_design.js` 가 이번 수정 전부터 실패한다(`theme.css: .focus-ring .ring-label 글자 크기는 역할 토큰 사용`). 다른 세션의 수정이다.

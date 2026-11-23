@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 const { SITE, serve } = require('./lib/site');
-const LAB = ['/', 'overview.html', 'seminar.html', 'funding.html', 'list-view.html', 'map-view.html',
+const LAB = ['/', 'overview.html', 'seminar.html', 'funding.html', 'publications.html', 'landscape.html',
   'faculty.html', 'members.html', 'other-mentees.html', 'courses.html', 'talks.html', 'contact.html', 'news.html', '404.html'];
 const COURSE = [];
 (function walk(dir) {
@@ -104,7 +104,7 @@ async function checkStudyOverview(page, base) {
     const popupReady = context.waitForEvent('page', { timeout: 5000 });
     await link.click({ modifiers: [process.platform === 'darwin' ? 'Meta' : 'Control'] });
     const popup = await popupReady;
-    await popup.waitForURL('**/list-view.html');
+    await popup.waitForURL('**/publications.html');
     check(new URL(page.url()).pathname === '/', 'modified click replaced the current page');
     await context.close();
     // The old 680/681 split inserted over 500px of extra content. Keep the transition gradual.

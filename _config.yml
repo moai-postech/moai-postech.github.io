@@ -36,24 +36,24 @@ nav:
     children:
       - title: Overview
         url: overview.html
-      - title: Lab Seminar
-        url: seminar.html
-      - title: Invited Talks
-        url: talks.html
+      - title: Publications
+        url: publications.html
+      - title: Landscape
+        url: landscape.html
       - title: Funding
         url: funding.html
-  - title: Publications
-    children:
-      - title: List View
-        url: list-view.html
-      - title: Map View
-        url: map-view.html
   - title: Teaching
     children:
       - title: Courses
         url: courses.html
       - title: Study Group
         url: study-group.html
+  - title: Seminar
+    children:
+      - title: Lab Seminar
+        url: seminar.html
+      - title: Invited Talks
+        url: talks.html
   - title: Contact
     url: contact.html
 

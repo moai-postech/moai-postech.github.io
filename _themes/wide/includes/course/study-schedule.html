@@ -4,13 +4,14 @@
 </header>
 
     <section class="content-section study-terms" data-study-tabs>
-    {% comment %} Terms in two groups, Basic and Advanced, each in learning order (_data/ai_study_groups.yml, the same groups as Teaching > Study Group, 교수 2026-11-23; oldest-first in one row before).
-      This term (the newest not marked upcoming) opens by default. A term in no group joins the last group. {% endcomment %}{% assign listed = "" | split: "" %}{% for g in site.data.ai_study_groups %}{% assign listed = listed | concat: g.terms %}{% endfor %}
-    <div class="study-tabgroups">
-      {% for g in site.data.ai_study_groups %}{% assign gid = g.title | slugify %}<div class="study-tabgroup">
-        <h3 class="sub study-tabgroup-label" id="terms-{{ gid }}">{{ g.title }}</h3>
+    {% comment %} Terms as a curriculum map (교수 2026-11-23): one row per track, Basic then Advanced (_data/ai_study_groups.yml, the same groups as Teaching > Study Group),
+      terms left to right in learning order, Basic joined by arrows. Each term shows its picture, theme first, then the term (Now = this term, Next = upcoming).
+      Columns line up across rows. This term (the newest not marked upcoming) opens by default; a term in no group joins the last row. {% endcomment %}{% assign listed = "" | split: "" %}{% assign most = 1 %}{% for g in site.data.ai_study_groups %}{% assign listed = listed | concat: g.terms %}{% if g.terms.size > most %}{% assign most = g.terms.size %}{% endif %}{% endfor %}
+    <div class="study-tracks" style="--track-cols: {{ most }}">
+      {% for g in site.data.ai_study_groups %}{% assign gid = g.title | slugify %}<div class="study-track{% if forloop.first %} is-ordered{% endif %}">
+        <h3 class="sub study-track-label" id="terms-{{ gid }}">{{ g.title }}</h3>
         <div class="study-tablist" role="tablist" aria-labelledby="terms-{{ gid }}">
-          {% assign group_terms = "" | split: "" %}{% for id in g.terms %}{% assign found = d.terms | where: "id", id | first %}{% if found %}{% assign group_terms = group_terms | push: found %}{% endif %}{% endfor %}{% if forloop.last %}{% for ut in d.terms %}{% unless listed contains ut.id %}{% assign group_terms = group_terms | push: ut %}{% endunless %}{% endfor %}{% endif %}{% for t in group_terms %}<button type="button" role="tab" id="tab-{{ t.id }}" aria-controls="{{ t.id }}" aria-selected="{% if t.id == current.id %}true{% else %}false{% endif %}"{% unless t.id == current.id %} tabindex="-1"{% endunless %}><strong>{{ t.name }}</strong><span>{{ t.theme }}</span></button>{% endfor %}
+          {% assign group_terms = "" | split: "" %}{% for id in g.terms %}{% assign found = d.terms | where: "id", id | first %}{% if found %}{% assign group_terms = group_terms | push: found %}{% endif %}{% endfor %}{% if forloop.last %}{% for ut in d.terms %}{% unless listed contains ut.id %}{% assign group_terms = group_terms | push: ut %}{% endunless %}{% endfor %}{% endif %}{% for t in group_terms %}{% assign tinfo = site.data.ai_study_terms[t.id] %}<button type="button" role="tab" id="tab-{{ t.id }}" aria-controls="{{ t.id }}" aria-selected="{% if t.id == current.id %}true{% else %}false{% endif %}"{% unless t.id == current.id %} tabindex="-1"{% endunless %}>{% if tinfo.icon %}<img src="{{ tinfo.icon }}" alt="" width="36" height="36">{% endif %}<strong>{{ t.theme }}</strong><span>{{ t.name }}{% if t.id == current.id %} <em>Now</em>{% elsif tinfo.upcoming %} <em>Next</em>{% endif %}</span></button>{% endfor %}
         </div>
       </div>{% endfor %}
     </div>

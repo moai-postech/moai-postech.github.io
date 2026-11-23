@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-23 | [글자 크기 단계](2026-11-23-type-scale.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `page-design` | 소개·카드 이름 19→18px 로 본문 16 / 소개 18 / 묶음 20 / 절 26 단계 정리 |
 | 2026-11-23 | [Home 연구 방향 동심원](2026-11-23-focus-rings.md) | Sangwoo Mo(sangwoomo) | `focus.html`, `theme.css`, `_data/focus.yml` | Our focus 의 가로 탭을 왼쪽 동심원(core → application) + 오른쪽 상세 패널로. 층 이름(Core 등)은 같은 날 뺌. 고른 원의 위·아래에서 박스로 선 두 개. 제목 Research Focus 와 함께 한 틀로 묶음 |
 | 2026-11-23 | [필터 간격·Talks 사각형](2026-11-23-filter-spacing.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `talks.html`, `AGENTS.md` | 필터 버튼 안 간격을 6px 로 통일, 줄에 색이 없는 Talks 버튼의 색 사각형을 뺌 |
 | 2026-11-23 | [묶음 제목 크기](2026-11-23-group-heading-size.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `tools/check_format.js` | 묶음 제목을 19px → 20px(22px 를 거쳐)로 키워 항목·묶음·절 위계를 크기로 가름 |

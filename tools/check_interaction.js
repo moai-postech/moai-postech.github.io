@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 const { SITE, serve } = require('./lib/site');
-const LAB = ['/', 'overview.html', 'seminar.html', 'funding.html', 'publications.html', 'landscape.html',
+const LAB = ['/', 'overview.html', 'seminar.html', 'funding.html', 'publications.html',
   'faculty.html', 'members.html', 'other-mentees.html', 'courses.html', 'talks.html', 'contact.html', 'news.html', '404.html'];
 const COURSE = [];
 (function walk(dir) {

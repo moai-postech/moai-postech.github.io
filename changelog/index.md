@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-23 | [메뉴 Research·Teaching·Seminar](2026-11-23-menu-research-teaching-seminar.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `publications.md`, `landscape.md`, 리다이렉트, `AGENTS.md` | 상위 메뉴를 Research·Teaching·Seminar 로 묶고 Publications(목록)·Landscape(Paper Stella)를 Research 아래로 |
+| 2026-11-23 | [메뉴 Research·Teaching·Seminar](2026-11-23-menu-research-teaching-seminar.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `publications.md`, `overview.md`, 리다이렉트, `AGENTS.md` | 상위 메뉴를 Research·Teaching·Seminar 로 묶고 Publications 를 Research 아래로, Paper Stella 지도는 Overview 아래쪽에 합침 |
 | 2026-11-23 | [16·17강 파트 순서 변경](2026-11-23-data-engineering-agents-harness-loop-graph.md) | Sangwoo Mo(sangwoomo) | Data Engineering 16·17강 HTML·PDF | 02를 Harness, Loop, Graph로 둔 16강 64장·17강 48장 판 |
 | 2026-11-21 | [16·17강 세 파트 재구성](2026-11-21-lecture16-agents-three-parts.md) | Sangwoo Mo(sangwoomo) | Data Engineering 16·17강 HTML·PDF | 16강 세 파트(2차 Karpathy·코딩 에이전트 실무, 65장), 17강 세 파트 48장 |
 | 2026-11-21 | [IME 소개 발표 추가 후 되돌림](2026-11-21-talks-ax-ime.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml`, `assets/talks/`, `changelog/index.md` | 261006 IMEN100 "AX Revolution with IME" 를 추가했다가 같은 날 뺌(수업 회차라 초청 발표 아님), Opportunities in IME 는 Research 탭으로, index 충돌 표시 정리 |

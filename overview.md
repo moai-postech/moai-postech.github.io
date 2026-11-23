@@ -11,6 +11,14 @@ intro: |
 sections:
   # _data/research.yml 의 분야마다 절 하나씩, 단계 이름이 절 제목
   - type: research
+  # 분야 아래 Paper Stella 지도. 정돈된 분류를 위에, 탐색용 그림은 그 아래(교수 2026-11-23, Landscape 탭을 합침)
+  - type: embed
+    title: Paper Stella
+    id: paper-stella
+    url: "https://moai-lab.duckdns.org/paper-stella-public/"
+    label: "Paper Stella: our papers in the landscape of the papers we read"
+    ratio: "16 / 10"
+    caption: "A map of the papers we read, grouped by topic, with our own papers highlighted. [Open in full screen ↗](https://moai-lab.duckdns.org/paper-stella-public/)"
   # 맺음: 올해 응용을 요약한 뒤 관련 논문을 보는 한 경로로 닫는다
   - class: section-next
     body: |

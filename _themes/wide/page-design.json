@@ -68,13 +68,6 @@
       "adjustments": []
     },
     {
-      "page": "landscape.html",
-      "template": "연구실 · 외부 지도",
-      "decision": "기본 유지",
-      "reason": "지도는 독립된 삽입 화면. 주변 탐색과 전체 화면 링크는 사이트 템플릿, 지도 내부는 원 화면 유지.",
-      "adjustments": []
-    },
-    {
       "page": "faculty.html",
       "template": "연구실 · 교수 프로필/CV",
       "decision": "페이지 조정",

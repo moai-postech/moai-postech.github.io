@@ -33,3 +33,10 @@ POSTECH 요구사항: 영향 없음
 - 교수: Study Group 도 기초와 심화로 나눈다. 기초는 Deep Learning, Foundation Models, Large Language Models 순, 심화는 AI Plays Games, Physical AI 순(처음에 Physical AI 먼저라고 했다가 바꿈).
 - 반영: `study-group.md` 의 `groups`(Fundamentals, Advanced 와 학기 id 순서)를 `teaching.html` 이 묶음 절로 그린다. 학기 한 줄은 `includes/study-term-row.html` 로 나눠 두 곳이 같이 쓴다. 어느 묶음에도 없는 새 학기는 Advanced 끝에 붙어 사라지지 않는다. 묶음 사이는 사이트 기본 64px(묶음마다 2–3줄).
 - 묶음 이름은 영어 사이트라 Fundamentals, Advanced.
+
+## 추가(같은 날): 짧은 묶음 페이지는 48px
+- 교수: Study Group 은 Courses 와 같은 포맷으로. 다른 탭도 48px 이 나은 곳이 있는지 전수 검토.
+- 전수 측정(1280px, 묶음 제목부터 마지막 줄까지 높이): Courses 66·66, Study Group 133·100, Funding 167·100·66, Other Mentees 133·133·167, Talks 234·167, Faculty 155–361, Members 315–638(사진 카드), Publications 115–801(여러 줄 논문). Overview 는 단계 절이라 묶음 목록이 아니다.
+- 기준: 묶음마다 한 줄 항목 몇 개뿐인(제목 포함 약 170px 이하) 목록 페이지는 64px 이 내용보다 커 보여 48px. Courses, Study Group, Funding, Other Mentees 에 `theme.css` 한 줄로 `--section-gap: var(--space-7)`. `AGENTS.md` 세로 간격 규칙과 `page-design` 근거에 적었다.
+- 그대로 64px: Talks(2026 묶음 234px 이고, 형제 탭 Lab Seminar 의 연도 묶음과 같게), Faculty, Members, Publications.
+- 묶음 이름: Basics 보다 Fundamentals 를 유지했다. Basics 는 입문·맛보기로 읽히고, Fundamentals 는 심화(Advanced)의 바탕이 되는 핵심이라는 뜻이라 짝이 맞다. Foundations 는 묶음 안의 Foundation Models 와 겹친다.

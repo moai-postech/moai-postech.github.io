@@ -56,8 +56,8 @@
     {
       "page": "funding.html",
       "template": "연구실 · 과제 목록",
-      "decision": "기본 유지",
-      "reason": "기관·과제명이 본문 크기이며, 짧은 연도는 보조 크기여도 식별 가능. 열 정렬과 목록 밀도 유지.",
+      "decision": "페이지 조정",
+      "reason": "기관·과제명이 본문 크기이며, 짧은 연도는 보조 크기여도 식별 가능. 열 정렬과 목록 밀도 유지. 묶음이 한 줄 항목 몇 개뿐이라(제목 포함 약 170px 이하) 묶음 사이를 64→48px(--section-gap 을 --space-7, 휴대폰 값과 같음)로 줄인다(교수 2026-11-23).",
       "adjustments": []
     },
     {
@@ -96,7 +96,7 @@
       "page": "other-mentees.html",
       "template": "연구실 · 멘티 목록",
       "decision": "페이지 조정",
-      "reason": "학위·소속은 관계를 설명하는 본문, 성과와 연도는 보조정보로 구분.",
+      "reason": "학위·소속은 관계를 설명하는 본문, 성과와 연도는 보조정보로 구분. 묶음이 한 줄 항목 몇 개뿐이라(제목 포함 약 170px 이하) 묶음 사이를 64→48px(--section-gap 을 --space-7, 휴대폰 값과 같음)로 줄인다(교수 2026-11-23).",
       "adjustments": [
         "mentee-affiliation-reading"
       ]
@@ -114,7 +114,7 @@
       "page": "study-group.html",
       "template": "연구실 · 스터디 목록",
       "decision": "페이지 조정",
-      "reason": "학기 링크는 스터디 일정의 그 학기로 가는 탐색 동작. Courses 와 같이 15px로 표시(2026-11-17 Courses 에서 분리). 기초(Fundamentals)·심화(Advanced) 묶음으로 나누고 묶음 안은 배우는 순서(교수 2026-11-23).",
+      "reason": "학기 링크는 스터디 일정의 그 학기로 가는 탐색 동작. Courses 와 같이 15px로 표시(2026-11-17 Courses 에서 분리). 기초(Fundamentals)·심화(Advanced) 묶음으로 나누고 묶음 안은 배우는 순서(교수 2026-11-23). 묶음이 한 줄 항목 몇 개뿐이라(제목 포함 약 170px 이하) 묶음 사이를 64→48px(--section-gap 을 --space-7, 휴대폰 값과 같음)로 줄인다(교수 2026-11-23).",
       "adjustments": [
         "teaching-term-navigation"
       ]

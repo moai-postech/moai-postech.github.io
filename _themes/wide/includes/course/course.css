@@ -1,17 +1,23 @@
 /* Course sites (layout: course). A course runs as its own small site: its own header and menu, the lab only in the footer.
    Template: includes/course/README.md */
 
-/* Colour template, one set for every course (2026-10-28). Parts take their colour from their position, never per course:
-   sky blue, mint and coral; logistics (overview, exams, project days, grading) use butter yellow.
-   Distinct pastel fills share a lightness range, with darker matching labels. Guest lectures and seminars use the logistics yellow on the course schedule;
-   no-class days use a quiet grey fill. POSTECH Red stays on navigation and materials.
-   --tone is text (4.5:1 or more on its row), --tone-tint bars and borders, --tone-row rows and cards. */
-.tone-p1 { --tone:#4c6480; --tone-tint:#cbd7e4; --tone-row:#edf3f9; }
-.tone-p2 { --tone:#4e6c5a; --tone-tint:#cadbd0; --tone-row:#edf5f0; }
-.tone-p3 { --tone:#8a5d57; --tone-tint:#e3cbc6; --tone-row:#f8eeec; }
-.tone-logistics { --tone:#7b683f; --tone-tint:#e2d6b5; --tone-row:#faf5e8; }
-.tone-guest     { --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
-.tone-none      { --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
+/* Kind colours (2026-10-28, palette unified 2026-11-23). Parts take their colour from their position, never per course:
+   parts 1–3 use --kind-1..3 (blue, green, orange); logistics (overview, exams, project days, grading, guest lectures and seminars) use --kind-4 (yellow);
+   no-class days and quiet rows use the neutral. The hues are the site-wide --kind-* tokens in theme.css. POSTECH Red stays on navigation and materials.
+   Each kind derives four steps from its one hue: --tone-mark small marks and legend swatches (the hue itself), --tone-tint bars and borders,
+   --tone-row rows and cards, --tone text on its row (darkened toward ink, 4.5:1 or more). */
+.tone-p1, .tone-p2, .tone-p3, .tone-logistics {
+  --tone-mark: var(--kind);
+  --tone-tint: color-mix(in oklab, var(--kind) 30%, white);
+  --tone-row: color-mix(in oklab, var(--kind) 8%, white);
+  --tone: color-mix(in oklab, var(--kind) 50%, var(--ink-900));
+}
+.tone-p1 { --kind: var(--kind-1); }
+.tone-p2 { --kind: var(--kind-2); }
+.tone-p3 { --kind: var(--kind-3); }
+.tone-logistics { --kind: var(--kind-4); }
+.tone-guest     { --tone-mark: var(--kind-none); --tone: var(--muted); --tone-tint: var(--line); --tone-row: #f8f9fb; }
+.tone-none      { --tone-mark: var(--kind-none); --tone: var(--muted); --tone-tint: var(--line); --tone-row: var(--surface); }
 
 .study-lab-brand img { width: auto; height: 28px; }
 

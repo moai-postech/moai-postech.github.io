@@ -44,6 +44,16 @@
   --muted: var(--ink-600);
   --faint: var(--muted);  /* one secondary grey: --faint is kept as an alias so older rules read the same (2026-10-22) */
   --line: var(--gray-200);
+  /* Kind colours: one categorical palette for every page that colours things by kind (course parts and logistics,
+     Lab Seminar kinds, Invited Talks kinds). Four hues in this fixed order, validated with the dataviz skill's
+     validate_palette.js (all pairs, light surface: CVD ΔE ≥ 8.8, normal-vision ΔE ≥ 15.8), plus one neutral for
+     "no kind / least prominent". Each kind derives its own row fill, tint and text from its hue (.tone-* in course.css),
+     so a kind keeps one colour everywhere. POSTECH Red stays the only accent (교수 2026-11-23). */
+  --kind-1: #2a78d6;  /* blue */
+  --kind-2: #1baf7a;  /* green */
+  --kind-3: #eb6834;  /* orange */
+  --kind-4: #d9a90f;  /* yellow */
+  --kind-none: #b9c1ca;  /* neutral grey, apart from all four (normal-vision ΔE ≥ 15) */
   --accent: var(--red-700);
   --accent-soft: var(--red-100);
   --callout-surface: color-mix(in srgb, var(--accent-soft) 45%, var(--bg));
@@ -373,7 +383,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .filter-bar + .year-head { margin-top: var(--space-6); }  /* Talks: the first year sits under the filter (교수 2026-11-17) at 32px (it collapses with the filter's 24px), so the heading stays closer to its own list (16px) than to the filter's underline (교수 2026-11-18) */
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--tone, var(--faint)); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.filter-swatch { display: inline-block; width: .7em; height: .7em; margin-right: var(--space-2); border-radius: 3px; background: var(--tone-tint); }  /* the row colour of that kind, as a legend */
+.filter-swatch { display: inline-block; width: .7em; height: .7em; margin-right: var(--space-2); border-radius: 3px; background: var(--tone-mark, var(--tone-tint)); }  /* the row colour of that kind, as a legend */
 .schedule-title { font-weight: var(--weight-medium); line-height: 1.5; }  /* every title one medium weight; the speaker matches it in size and weight (교수 2026-11-02) */
 .is-upcoming .schedule-date { color: var(--accent); font-weight: var(--weight-emphasis); }  /* talks still to come: the date alone turns accent */
 .schedule-title a { color: var(--text); }

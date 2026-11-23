@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-23 | [종류 색 팔레트](2026-11-23-kind-palette.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `course.css`, `AGENTS.md` | 강의 파트·Seminar·Talks 의 종류 색을 검증한 팔레트 한 벌(파랑·초록·주황·노랑 + 회색)로 통일 |
 | 2026-11-23 | [Actions Node 24](2026-11-23-actions-node24.md) | Sangwoo Mo(sangwoomo) | `.github/workflows/`, `TODO.md` | 공통 action 을 Node 24 버전으로 올려 Node.js 20 경고 해소 |
 | 2026-11-23 | [빠른 검사 세 건](2026-11-23-checks-fix.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `page-design`, `tools/lib/design-fixture.js` | runtime 개발 메모를 배포에서 빼고, AX 2027 디자인 근거와 명단 검사 데이터의 학기를 채움 |
 | 2026-11-23 | [Spring 2027 논문 이름·링크](2026-11-23-study-spring-2027-papers.md) | Sangwoo Mo(sangwoomo) | 스터디 시트, `_data/ai_study.yml` | DeepBlue 로 붙이고 Semantic Scholar 로 잇기, Gemini Team 을 Argon Agents 로 |

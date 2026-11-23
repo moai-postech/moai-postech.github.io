@@ -227,9 +227,9 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
    Each ring is a tab. The chosen ring, the beam and the card are one borderless pink shape: the ring opens into the card,
    which lists that direction's papers and people. The card is as tall as the rings and never moves or resizes between rings.
    Rings sit apart by a thin white gap so each one stays its own shape. */
-.focus-explorer { position: relative; display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: stretch; --focus-pad: var(--space-7); --focus-title: calc(var(--text-h2) * 1.3); }
-.focus-explorer > h2 { position: relative; z-index: 2; grid-column: 6 / -1; grid-row: 1; align-self: start; margin: var(--space-6) var(--focus-pad) 0; }  /* the section title is the card's own heading: it shares the card's grid cell, so the figure has no caption floating above it */
-.focus-rings { grid-column: 1 / span 5; grid-row: 1; align-self: center; width: 100%; max-width: 460px; height: auto; overflow: visible; }
+.focus-explorer { position: relative; display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: stretch; --focus-pad: var(--space-6); --focus-title: calc(var(--text-h2) * 1.3); }
+.focus-explorer > h2 { position: relative; z-index: 2; grid-column: 5 / -1; grid-row: 1; align-self: start; margin: var(--space-5) var(--focus-pad) 0; }  /* the section title is the card's own heading: it shares the card's grid cell, so the figure has no caption floating above it */
+.focus-rings { grid-column: 1 / span 4; grid-row: 1; align-self: center; width: 100%; max-width: 360px; height: auto; overflow: visible; }
 .focus-ring { cursor: pointer; outline: none; }  /* ring names render at a type-scale size at every width: scripts.html sets --ring-k (viewBox units per pixel) on the svg, so the size does not scale with the drawing */
 .focus-ring .ring-shape { fill: color-mix(in srgb, var(--line) 25%, var(--surface)); stroke: none; transition: fill .2s; }
 .focus-ring:last-of-type .ring-shape { fill: var(--surface); }  /* outer ring palest, core deepest: a quiet core-to-application gradient */
@@ -240,7 +240,7 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .focus-ring[aria-selected="true"] .ring-shape { fill: var(--accent-soft); }
 .focus-ring[aria-selected="true"] .ring-label { fill: var(--accent); font-weight: var(--weight-heading); }
 .focus-ring:focus-visible .ring-shape { stroke: var(--accent); stroke-width: 2; }
-.focus-panels { position: relative; z-index: 1; grid-column: 6 / -1; grid-row: 1; display: flex; flex-direction: column; padding: calc(var(--space-6) + var(--focus-title) + var(--space-1)) var(--focus-pad) var(--space-6); border-radius: var(--radius-2); background: var(--callout-surface); }  /* the top padding leaves the title's line free */
+.focus-panels { position: relative; z-index: 1; grid-column: 5 / -1; grid-row: 1; display: flex; flex-direction: column; padding: calc(var(--space-5) + var(--focus-title) + var(--space-1)) var(--focus-pad) var(--space-5); border-radius: var(--radius-2); background: var(--callout-surface); }  /* the top padding leaves the title's line free */
 .focus-panel { position: relative; flex: 1; display: flex; flex-direction: column; }
 .focus-panel .venue { background: var(--bg); }  /* white badge on the pink card */
 .focus-link { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }  /* the beam from the chosen ring to the card: over the rings, under the card; drawn by scripts.html */
@@ -253,15 +253,15 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
   .focus-panels:has(> .focus-panel[hidden]) > .focus-panel[hidden] { display: flex; visibility: hidden; }
 }
 .focus-panel:not([hidden]) ~ .focus-panel:not([hidden]) { margin-top: var(--section-gap); }  /* without JavaScript all panels show, one after another */
-.focus-head { margin-bottom: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid var(--callout-line); }
-.focus-head img { position: absolute; top: calc(-1 * var(--focus-title) - var(--space-1)); right: 0; width: 56px; height: 56px; }  /* beside the title and the direction name, at the card's right end */
+.focus-head { margin-bottom: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid var(--callout-line); }
+.focus-head img { position: absolute; top: calc(-1 * var(--focus-title) - var(--space-1)); right: 0; width: 48px; height: 48px; }  /* beside the title and the direction name, at the card's right end */
 .focus-head h3 { margin: 0; color: var(--accent); }  /* the chosen direction, in the accent like its ring's name; the shared group-heading role */
-.focus-papers { display: grid; gap: var(--space-4); margin-bottom: var(--space-5); }
-.focus-paper { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); column-gap: var(--space-4); align-items: baseline; color: var(--text); }  /* one row per paper: badge column of fixed width so every title starts on one line */
+.focus-papers { display: grid; gap: var(--space-3); margin-bottom: var(--space-4); }  /* compact: the figure should not take more height than it needs (교수 2026-11-23) */
+.focus-paper { display: grid; grid-template-columns: 8.5em minmax(0, 1fr); column-gap: var(--space-4); align-items: baseline; color: var(--text); }  /* one row per paper: badge column of fixed width so every title starts on one line */
 a.focus-paper:hover { color: var(--accent); text-decoration: none; }
 .focus-paper .venue { justify-self: start; font-size: var(--text-featured-meta); }
 .focus-paper .paper-title { font-size: var(--text-featured-paper); font-weight: var(--weight-emphasis); line-height: 1.4; }
-.focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); margin: auto 0 0; padding-top: var(--space-4); border-top: 1px solid var(--callout-line); font-size: var(--text-meta); font-weight: var(--weight-regular); }  /* the card's foot: always on its bottom edge */
+.focus-people { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); margin: auto 0 0; padding-top: var(--space-3); border-top: 1px solid var(--callout-line); font-size: var(--text-meta); font-weight: var(--weight-regular); }  /* the card's foot: always on its bottom edge */
 .focus-people .label { margin-right: var(--space-1); color: var(--faint); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }
 .focus-people a, .focus-people span:not(.label) { color: var(--text); }
 .focus-people a:hover { color: var(--accent); }
@@ -515,7 +515,7 @@ a.person-name:hover { color: var(--accent); }
   .hero-copy, .hero-art { grid-column: 1 / -1; }
   .hero-art { display: none; }  /* tablets keep the statement and lab photo without a second tall illustration */
   .focus-explorer { --focus-pad: var(--space-6); }
-  .focus-rings { grid-column: 1 / -1; justify-self: center; max-width: 380px; margin-bottom: var(--space-7); }  /* tablets and phones: rings on top, the card below; the beam opens downward */
+  .focus-rings { grid-column: 1 / -1; justify-self: center; max-width: 340px; margin-bottom: var(--space-6); }  /* tablets and phones: rings on top, the card below; the beam opens downward */
   .focus-explorer > h2, .focus-panels { grid-column: 1 / -1; grid-row: 2; }
   .research-overview .cards { grid-template-columns: 1fr; gap: var(--space-5); }
   .research-head, .topic-cards { grid-column: 1 / -1; }
@@ -546,7 +546,7 @@ a.person-name:hover { color: var(--accent); }
   .hero-art { display: none; }  /* phones: the hero sentence already says what the picture shows, so the lab photo comes right under it (교수 2026-10-27) */
   .eyebrow { font-size: var(--text-meta); }
   .focus-explorer { --focus-pad: var(--space-5); }
-  .focus-rings { max-width: 340px; margin-bottom: var(--space-6); }
+  .focus-rings { max-width: 320px; margin-bottom: var(--space-5); }
   .focus-explorer > h2 { margin-top: var(--space-5); }
   .focus-panels { padding-top: calc(var(--space-5) + var(--focus-title) + var(--space-1)); padding-bottom: var(--space-5); }
   .focus-head img { display: none; }  /* phones: the title needs the whole line */

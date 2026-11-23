@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-23 | [.jekyll-metadata 제외](2026-11-23-jekyll-metadata.md) | Sangwoo Mo(sangwoomo) | `.gitignore` | 빌드 캐시 `.jekyll-metadata` 를 git 에서 제외(원격 파일은 48ad276 이 이미 지움) |
 | 2026-11-23 | [글자 크기 단계](2026-11-23-type-scale.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `page-design` | 소개·카드 이름 19→18px 로 본문 16 / 소개 18 / 묶음 20 / 절 26 단계 정리 |
 | 2026-11-23 | [Home 연구 방향 동심원](2026-11-23-focus-rings.md) | Sangwoo Mo(sangwoomo) | `focus.html`, `theme.css`, `_data/focus.yml` | Our focus 의 가로 탭을 왼쪽 동심원(core → application) + 오른쪽 상세 패널로. 층 이름(Core 등)은 같은 날 뺌. 고른 원의 위·아래에서 박스로 선 두 개. 분홍 빛줄기로 원→카드를 한 그림으로, 제목 Research Focus in 2026, 랩 사진 3:1 |
 | 2026-11-23 | [필터 간격·Talks 사각형](2026-11-23-filter-spacing.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `talks.html`, `AGENTS.md` | 필터 버튼 안 간격을 6px 로 통일, 줄에 색이 없는 Talks 버튼의 색 사각형을 뺌 |

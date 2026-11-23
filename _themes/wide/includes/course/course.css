@@ -278,7 +278,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-tablist button:hover { color: var(--accent); }
 /* phones: Members sheet stays on the heading row when it fits (Everyone · 39 members) and wraps, still right-aligned by its margin-left: auto, only when the row is long (a term or department filter). It used to take its own row every time (2026-11-21) */
 .study-tablist button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
-.study-tablist button[aria-selected="true"] strong { color: var(--accent); }  /* the same tint as the current subnav tab */
+.study-tablist button:hover strong, .study-tablist button[aria-selected="true"] strong { color: var(--accent); }  /* the theme carries the hover and selected colour, as the whole label did before */  /* the same tint as the current subnav tab */
 .study-panel h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); margin-bottom: 0; }
 .study-panel h2 span { white-space: nowrap; color: var(--muted); font-size: var(--text-lead); font-weight: var(--weight-emphasis); }
 .study-note { margin-bottom: var(--space-4); color: var(--muted); font-size: var(--text-meta); }

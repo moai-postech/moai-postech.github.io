@@ -174,7 +174,7 @@ async function run() {
         entry.header = header;
 
 
-        for (const selector of ['.focus-tab','.filter-btn','.study-tablist button']) {
+        for (const selector of ['.focus-ring','.filter-btn','.study-tablist button']) {
           const controls = page.locator(selector);
           for (let i=0; i<await controls.count(); i++) {
             await controls.nth(i).click(); await page.mouse.move(0,0); await check(`${selector}[${i}]`);

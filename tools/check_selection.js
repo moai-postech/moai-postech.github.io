@@ -4,7 +4,7 @@ const { serve } = require('./lib/site');
 const CASES = [
   ['index', '.content-section.section-next p'], ['index', '.content-section.section-next a'],
   ['index', '.mini-text p'], ['index', '.mini-text a'],
-  ['index', '.focus-tab span'], ['index', '.sec-media .media-source'],
+  ['index', '.focus-head h3'], ['index', '.sec-media .media-source'],
   ['courses', '.lede'], ['study-group', '.lede a'], ['overview', '.section-next a'],
   ['contact', '.step-body a'], ['teaching/ai-study/index', '.course-lead'],
 ];

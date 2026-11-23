@@ -25,7 +25,7 @@
 | 알림 띠 | 특별 공지(현재 사용 없음) | `--text-body`, 연한 강조색 바탕(`--accent-soft`), 링크 보통 굵기(400) 강조색(`class: section-callout`). 머리말을 굵게 쓰면 강조색 | 위 절에 붙여 위 `--space-5`, 아래 `--section-gap`. 사이트에 하나만 둔다 |
 | 논문 목록 제목 | Publications 목록 | `--text-paper`(본문 크기), 굵기 600, `--leading-paper`(1.5), 정상 자간 | 목록의 제목·저자·venue 줄 사이는 `--detail-gap`(4px), 목록의 논문 사이는 `--item-gap`의 위아래 합(24px) |
 | 필터 도구 모음 | Seminar의 All·Lab·Invited·Full schedule | `--text-control`, 버튼과 이동 링크 모두 굵기 600. 개수만 400 | 버튼·링크에 공통 역할 스타일 적용 |
-| 연구 방향 동심원 | Home 의 세 분야(안쪽 Agentic → Physical → 바깥 Manufacturing) | SVG 안 이름 17, 층 이름 11.5(viewBox 400 기준, 폭에 따라 함께 줄어듦). 고른 원은 `--accent-soft` 바탕·강조색 테두리 | 왼쪽 5칸에 원, 오른쪽 7칸에 고른 분야의 층 이름·이름(목록을 묶는 제목)·논문·사람. 960px 이하는 원 위, 패널 아래 |
+| 연구 방향 동심원 | Home 의 세 분야(안쪽 Agentic → Physical → 바깥 Manufacturing) | SVG 안 이름 17(viewBox 400 기준, 폭에 따라 함께 줄어듦). 고른 원은 `--accent-soft` 바탕·강조색 테두리 | 왼쪽 5칸에 원, 오른쪽 7칸에 고른 분야의 이름(목록을 묶는 제목)·논문·사람. 960px 이하는 원 위, 패널 아래 |
 | 대표 논문 카드 제목 | Home 연구 방향 카드(한 줄에 한 편씩 쌓음) | `--text-featured-paper`(본문 크기), 굵기 600, 행간 1.4 | 배지와 제목 사이 `--space-3`, 카드 패딩은 공통 카드 역할 |
 | 논문 저자 | Publications 저자 이름 | `--text-author`(보조정보 크기), 굵기 400, 행간 1.5. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
 | 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(보조정보 크기). Home 대표 카드 배지는 `--text-featured-meta`(보조정보 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. 논문 목록 venue는 600, 자료 링크는 400, 목록 배지의 세로 패딩은 0. Home 대표 카드 venue와 발표 형식은 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |

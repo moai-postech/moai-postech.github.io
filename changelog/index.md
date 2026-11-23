@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-23 | [Home 연구 방향 동심원](2026-11-23-focus-rings.md) | Sangwoo Mo(sangwoomo) | `focus.html`, `theme.css`, `_data/focus.yml` | Our focus 의 가로 탭을 왼쪽 동심원(core → application) + 오른쪽 상세 패널로 |
+| 2026-11-23 | [Home 연구 방향 동심원](2026-11-23-focus-rings.md) | Sangwoo Mo(sangwoomo) | `focus.html`, `theme.css`, `_data/focus.yml` | Our focus 의 가로 탭을 왼쪽 동심원(core → application) + 오른쪽 상세 패널로. 층 이름(Core 등)은 같은 날 뺌 |
 | 2026-11-23 | [필터 간격·Talks 사각형](2026-11-23-filter-spacing.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `talks.html`, `AGENTS.md` | 필터 버튼 안 간격을 6px 로 통일, 줄에 색이 없는 Talks 버튼의 색 사각형을 뺌 |
 | 2026-11-23 | [묶음 제목 크기](2026-11-23-group-heading-size.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `tools/check_format.js` | 묶음 제목을 19px → 22px 로 키워 아래 굵은 항목 이름과 위계를 크기로 가름 |
 | 2026-11-23 | [Overview Paper Stella 먼저](2026-11-23-overview-stella-first.md) | Sangwoo Mo(sangwoomo) | `overview.md`, `AGENTS.md`, `theme.css` | Overview 에서 Paper Stella 를 설명과 함께 맨 위로, scalable priors 문단은 세 단계 바로 위 머리말(`section-lead`)로 |

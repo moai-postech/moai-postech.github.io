@@ -9,7 +9,7 @@ GitHub Actions가 push 때마다 Jekyll로 빌드하고 검수 성공 뒤 GitHub
 ```
 _config.yml          사이트 이름, 메뉴, 사용할 테마
 _data/               콘텐츠 데이터(YAML)
-  focus.yml          연구 방향(Home 의 동심원, 안쪽 core 부터 바깥 application 순)과 방향별 층 이름·대표 논문. Home 에만 나온다
+  focus.yml          연구 방향(Home 의 동심원, 안쪽 core 부터 바깥 application 순)과 방향별 대표 논문. Home 에만 나온다
   news.yml           Home 의 Research news
   media.yml          Home 의 Media
   research.yml       Research 의 분야별 표

@@ -394,7 +394,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .embed { position: relative; width: 100%; min-height: 360px; overflow: hidden; border-radius: var(--radius-2); background: var(--media-surface); border: 1px solid var(--line); }
 .embed::before { content: "Loading the map\2026"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--media-placeholder); font-size: var(--text-meta); }  /* shows until the map paints over it */
 .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.embed-shield { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; padding: 0; border: 0; background: transparent; cursor: pointer; }  /* covers the map until clicked, so scrolling over it moves the page (교수 2026-11-23) */
+.embed-shield { position: absolute; inset: 0; z-index: 1; display: flex; font: inherit; align-items: center; justify-content: center; padding: 0; border: 0; background: transparent; cursor: pointer; }  /* covers the map until clicked, so scrolling over it moves the page (교수 2026-11-23) */
 .embed-hint { padding: var(--space-2) var(--space-3); border-radius: var(--radius-1); background: var(--media-surface); color: var(--bg); font-size: var(--text-small); opacity: 0; transition: opacity .2s; }
 .embed-shield:hover .embed-hint, .embed-shield:focus-visible .embed-hint { opacity: 1; }
 .embed.is-active .embed-shield { display: none; }

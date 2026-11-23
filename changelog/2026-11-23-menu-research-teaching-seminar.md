@@ -45,3 +45,10 @@ POSTECH 요구사항: 영향 없음(`_config.yml` 은 메뉴만 바꿈. 머리�
 - 옛 메뉴 설명 정리: `talks.md` 주석(Research > Talks → Seminar > Invited Talks), `_themes/wide/README.md` 역할표(Courses 묶음 제목, Open in full screen 은 이제 지도 캡션이라 안내 줄 예시에서 뺌), 지도 페이지가 없어져 쓰이지 않는 `.page-intro + .embed-section` 규칙 삭제.
 - 확인: 375px 폭에서 메뉴 두 줄(Home·People·Research / Teaching·Seminar·Contact), Courses 묶음, Invited Talks 필터 사각형, Overview 지도와 가로 넘침 없음.
 - 검토 중 본 기존 검사 실패 세 건(Programming for AX 2027 runtime 꼬리말, 같은 강의 page-design 근거, 스터디 명단 묶음 제목)은 메뉴 개편 전부터 있었고 다른 작업 영역이라 고치지 않고 `TODO.md` 에 남겼다.
+
+## 추가(같은 날): 디자인 전수 검토
+- 교수: 오늘 많이 바꿨으니 각 탭의 세로 간격 등 디자인을 꼼꼼히 검토. 교수 요청이라 Actions `audit` 를 한 번 돌렸다([실행](https://github.com/moai-postech/moai-postech.github.io/actions/runs/45139237862)).
+- 직접 잰 것(1280px, 375px): 메뉴 링크 위치는 모든 페이지에서 1px 도 다르지 않고, 하위 탭 위치(아래 끝 160px)와 소개 줄 시작(208px)도 하위 탭 페이지마다 같다. 본문 끝에서 꼬리말까지 64–69px. 묶음 간격은 데스크톱에서 정한 대로(짧은 묶음 네 페이지 48px, 나머지 64px), 휴대폰은 모두 48px. 가로 넘침 없음. Overview 는 마지막 단계 카드 → Paper Stella 제목 64px(단계 절과 같은 절 간격), 지도 → 캡션 12px, 캡션 → 맺음 줄 24px.
+- audit 결과 check_format, check_typography, check_interaction, check_selection, check_postech 등은 통과, 두 건 실패:
+  - check_design: 지도 덮개 버튼 안 `Click to explore` 가 시스템 글꼴로 나왔다. 브라우저가 버튼에는 글꼴을 물려주지 않아서다. `.embed-shield` 에 `font: inherit`. 로컬에서 검사 함수를 7개 폭으로 다시 돌려 위반 0건.
+  - test_visual_review: push 전 훅 회귀 테스트의 가짜 환경에 11-21 PDF 압축 검사가 쓰는 `MOAI_PY` 가 없어 훅이 시작부터 멈췄다. 화면과는 무관하다. 테스트 가짜 환경에 python3 대역과 `MOAI_PY` 를 넣었다(`tools/test_visual_review.js`). 로컬 통과.

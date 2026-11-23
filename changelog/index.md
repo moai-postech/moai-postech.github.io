@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- |
 | 2026-11-23 | [필터 간격·Talks 사각형](2026-11-23-filter-spacing.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `talks.html`, `AGENTS.md` | 필터 버튼 안 간격을 6px 로 통일, 줄에 색이 없는 Talks 버튼의 색 사각형을 뺌 |
 | 2026-11-23 | [묶음 제목 크기](2026-11-23-group-heading-size.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `tools/check_format.js` | 묶음 제목을 19px → 22px 로 키워 아래 굵은 항목 이름과 위계를 크기로 가름 |
-| 2026-11-23 | [Overview Paper Stella 먼저](2026-11-23-overview-stella-first.md) | Sangwoo Mo(sangwoomo) | `overview.md`, `AGENTS.md` | Overview 에서 Paper Stella 지도를 맨 위로, 분야별 단계 구조는 그 아래로 |
+| 2026-11-23 | [Overview Paper Stella 먼저](2026-11-23-overview-stella-first.md) | Sangwoo Mo(sangwoomo) | `overview.md`, `AGENTS.md`, `theme.css` | Overview 에서 Paper Stella 를 설명과 함께 맨 위로, scalable priors 문단은 세 단계 바로 위 머리말(`section-lead`)로 |
 | 2026-11-23 | [묶음 제목 강조색](2026-11-23-group-heading-red.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `design-contract.json`, `AGENTS.md` | 목록 묶음 제목을 POSTECH Red 로 바꿨다가 강조색이 과해 같은 날 본문색으로 되돌림 |
 | 2026-11-23 | [명단 이력 정리](2026-11-23-history-rewrite.md) | Sangwoo Mo(sangwoomo) | Git 이력, `TODO.md` | AI Study 명단 평문과 기록 속 학생 세부를 모든 브랜치 이력에서 지우고 강제 push |
 | 2026-11-23 | [스터디 Schedule 묶음](2026-11-23-study-schedule-groups.md) | Sangwoo Mo(sangwoomo) | `study-schedule.html`, `_data/ai_study_groups.yml` | 학기 탭을 Basic·Advanced 커리큘럼 지도(줄 이름, 주제 카드, 순서 화살표, Now·Next)로, Study Group 과 같은 묶음 데이터 |

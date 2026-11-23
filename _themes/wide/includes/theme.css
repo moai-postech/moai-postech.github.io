@@ -206,8 +206,9 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 }
 .page-intro { padding-top: var(--page-start); }
 .visually-hidden + .content-section { padding-top: var(--page-start); }
-.page-intro + .content-section { padding-top: var(--intro-gap); }  /* the intro leads into the first block: 24px, not the 48px page start (교수 2026-11-18: 소개와 목록 사이가 너무 길다) */
-.page-intro + .stage-track > .research-area:first-child { padding-top: var(--intro-gap); }  /* Research Overview: the first stage follows the intro at the same intro gap as every other page's first block */
+.page-intro + .content-section { padding-top: var(--intro-gap); }
+.section-lead + .content-section { padding-top: var(--intro-gap); }  /* .section-lead: a mid-page lead paragraph that opens the next part, spaced like a page intro (Overview: scalable priors above the stages, 교수 2026-11-23) */  /* the intro leads into the first block: 24px, not the 48px page start (교수 2026-11-18: 소개와 목록 사이가 너무 길다) */
+.page-intro + .stage-track > .research-area:first-child, .section-lead + .stage-track > .research-area:first-child { padding-top: var(--intro-gap); }  /* Research Overview: the first stage follows the intro at the same intro gap as every other page's first block */
 
 /* Home hero: a full-width band, statement on the left, the orchestration picture on the right */
 .hero-band { margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); background: linear-gradient(180deg, var(--surface), var(--bg)); }
@@ -308,7 +309,7 @@ a.mentee-name:hover { color: var(--accent); }
 .research-area { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
 .research-area { position: relative; }
 .research-area:not(:last-child)::before { content: ""; position: absolute; left: 17px; top: calc(var(--section-gap) + 36px); height: 100%; width: 2px; background: var(--faint); }  /* rail from this stage node to the next; it stops at the last node */
-.page-intro + .stage-track > .research-area:first-child::before { top: calc(var(--intro-gap) + 36px); height: calc(100% + var(--section-gap) - var(--intro-gap)); }  /* the first stage starts at page-start, so its rail starts higher and runs that much longer to reach node 2 */
+.page-intro + .stage-track > .research-area:first-child::before, .section-lead + .stage-track > .research-area:first-child::before { top: calc(var(--intro-gap) + 36px); height: calc(100% + var(--section-gap) - var(--intro-gap)); }  /* the first stage starts at page-start, so its rail starts higher and runs that much longer to reach node 2 */
 .research-head { grid-column: span 4; align-self: start; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-4); }  /* fixed at the top of its stage; it does not follow the scroll (2026-10-26) */
 .research-head .stage-node { position: relative; margin-top: 18px; }  /* centred on the icon and stage-name row */
 .research-head .stage-title { display: flex; align-items: center; gap: var(--space-3); }  /* icon left of the stage name (2026-10-26) */

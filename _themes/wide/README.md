@@ -30,7 +30,7 @@
 | 논문 저자 | Publications 저자 이름 | `--text-author`(보조정보 크기), 굵기 400, 행간 1.5. 연구실 저자는 본문색, 다른 저자는 보조색 | 이름 단위로 줄바꿈, 제목·보조정보와 `--detail-gap` |
 | 논문 보조정보 | Publications·Home 의 venue, arXiv·project·code | `--text-paper-meta`(보조정보 크기). Home 대표 카드 배지는 `--text-featured-meta`(보조정보 크기). 목록의 metadata wrapper는 행간 1.5, 배지 내부는 1.4. 논문 목록 venue는 600, 자료 링크는 400, 목록 배지의 세로 패딩은 0. Home 대표 카드 venue와 발표 형식은 600. Oral 등은 강조색 | venue·발표 형식과 자료 링크를 각각 묶고 묶음 사이 `--space-4`, 세로선 없음 |
 | 페이지 시작 | 하위 탭 뒤 첫 내용(소개가 있으면 소개, 없으면 첫 절) | | `--page-start`(넓은 화면 48px, 휴대폰 16px) |
-| 소개 뒤 첫 내용 | 소개 바로 뒤의 목록·묶음 제목·필터·삽입 화면(Paper Stella)·Overview 첫 단계 | | `--intro-gap`(24px, 모든 폭). 하위 탭→소개(48)보다 가깝고 묶음 제목→목록(16)보다 넓어 소개가 아래 내용의 머리말로 읽힌다(교수 2026-11-18) |
+| 소개 뒤 첫 내용 | 소개 바로 뒤의 목록·묶음 제목·필터·삽입 화면(Paper Stella)·Overview 첫 단계. 페이지 중간에서 다음 부분을 여는 소개 문단(`class: section-lead`, Overview 의 scalable priors 문단, 교수 2026-11-23)도 소개와 같이 다음 내용과 이 간격을 둔다 | | `--intro-gap`(24px, 모든 폭). 하위 탭→소개(48)보다 가깝고 묶음 제목→목록(16)보다 넓어 소개가 아래 내용의 머리말로 읽힌다(교수 2026-11-18) |
 | 카드 안 여백 | Home 논문, Research 주제, Contact 단계 카드 | | `--card-padding`(데스크톱 24px, 모바일 16px) |
 | 카드 안 제목 | Research 주제 카드, Contact 단계 카드 | `--text-body`, 굵기 600 | |
 | 작은 머리 | Faculty 의 FACULTY POSITIONS | `--text-small` | |

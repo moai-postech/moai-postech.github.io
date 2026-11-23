@@ -5,17 +5,28 @@
   학기(언제)를 오른쪽에 두고, 둘 다 스터디 페이지의 그 학기 탭(teaching/ai-study/schedule/#<id>)으로 잇는다. 학기는 _data/ai_study.yml(최신이 위)(2026-10-27 교수).
   intro 가 있으면 제목과 목록 사이에 한 줄 소개(마크다운, 회색)를 둔다(교수 2026-10-27).
 {% endcomment %}
-{% if include.section.study %}
+{% if include.section.study and include.section.groups %}
+{% comment %}학부생 AI 스터디는 study-group.md 의 groups(기초 Fundamentals, 심화 Advanced)마다 절 하나로 나누고, 묶음 안은 groups 에 적은 순서다(교수 2026-11-23).
+  어느 묶음에도 없는 학기는 마지막 묶음 끝에 붙여 사라지지 않게 한다.{% endcomment %}
+{% assign listed = "" | split: "" %}{% for g in include.section.groups %}{% assign listed = listed | concat: g.terms %}{% endfor %}
+{% for g in include.section.groups %}
+    <section class="content-section">
+    <h2 class="group-heading">{{ g.title }}</h2>
+    <div class="section-body">
+    <ul class="plain item-list">
+      {% for id in g.terms %}{% assign t = site.data.ai_study.terms | where: "id", id | first %}{% if t %}{% include study-term-row.html term=t %}{% endif %}{% endfor %}
+      {% if forloop.last %}{% for t in site.data.ai_study.terms %}{% unless listed contains t.id %}{% include study-term-row.html term=t %}{% endunless %}{% endfor %}{% endif %}
+    </ul>
+    </div>
+    </section>
+{% endfor %}
+{% elsif include.section.study %}
     <section class="content-section">
     {% if include.section.title %}<h2 class="group-heading">{{ include.section.title }}</h2>{% endif %}
     <div class="section-body">
     {% if include.section.intro %}<p class="list-intro">{% include inline.html text=include.section.intro %}</p>{% endif %}
     <ul class="plain item-list">
-      {% for t in site.data.ai_study.terms %}<li>
-        <span class="item-main"><strong><a href="teaching/ai-study/schedule/#{{ t.id }}">{{ t.theme }}</a></strong></span>
-        <span class="item-side"><a href="teaching/ai-study/schedule/#{{ t.id }}">{{ t.name }}</a></span>
-      </li>
-      {% endfor %}
+      {% for t in site.data.ai_study.terms %}{% include study-term-row.html term=t %}{% endfor %}
     </ul>
     </div>
     </section>

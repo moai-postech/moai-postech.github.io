@@ -105,7 +105,7 @@
       "page": "courses.html",
       "template": "연구실 · 강의 목록",
       "decision": "페이지 조정",
-      "reason": "계절 묶음(Spring Semester, Fall Semester)으로 나누고 학기는 오른쪽 끝에 최신부터 연도만 잇는다(2027 · 2026). 계절이 섞인 과목만 바뀔 때 계절을 쓴다. AI Study 와 같은 15px 학기 링크.",
+      "reason": "계절 묶음(Spring Semester, Fall Semester)으로 나누고 학기는 오른쪽 끝에 최신부터 연도만 잇는다(2027 · 2026). 계절이 섞인 과목만 바뀔 때 계절을 쓴다. 묶음마다 과목이 한 줄이라 묶음 사이를 64→48px(--section-gap 을 이 페이지만 --space-7, 휴대폰 값과 같음)로 줄인다(교수 2026-11-23). AI Study 와 같은 15px 학기 링크.",
       "adjustments": [
         "teaching-term-navigation"
       ]
@@ -114,7 +114,7 @@
       "page": "study-group.html",
       "template": "연구실 · 스터디 목록",
       "decision": "페이지 조정",
-      "reason": "학기 링크는 스터디 일정의 그 학기로 가는 탐색 동작. Courses 와 같이 15px로 표시(2026-11-17 Courses 에서 분리).",
+      "reason": "학기 링크는 스터디 일정의 그 학기로 가는 탐색 동작. Courses 와 같이 15px로 표시(2026-11-17 Courses 에서 분리). 기초(Fundamentals)·심화(Advanced) 묶음으로 나누고 묶음 안은 배우는 순서(교수 2026-11-23).",
       "adjustments": [
         "teaching-term-navigation"
       ]

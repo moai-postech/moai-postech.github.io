@@ -23,3 +23,13 @@ POSTECH 요구사항: 영향 없음
 - 교수: 계절은 소절(Spring semester 등)로 넣으라는 뜻이었다. 위의 "학수번호 뒤 계절" 안을 바꾼다.
 - 반영: `teaching.html` 이 과목을 최신 학기의 계절로 묶어 묶음마다 절 하나(`Spring Semester`, `Fall Semester`, Funding 기관 묶음과 같은 묶음 제목 `group-heading`)로 그린다. 묶음 순서는 최근 학기순(Spring 2027 이 있어 Spring 이 위). 학수번호 줄의 계절은 뺐고, 오른쪽은 연도만. 계절이 섞인 과목은 그 과목만 계절을 바뀔 때 쓴다. `AGENTS.md`, `page-design` 설명도 맞췄다.
 - 위 "기각한 안"의 Spring·Fall 소절은 교수 결정으로 채택. 과목 하나뿐인 묶음이 제목만큼 무거운 점은 과목이 늘면 해소된다.
+
+## 추가(같은 날): Courses 묶음 사이 48px
+- 교수: Courses 간격 검토. 자간과 글자 크기는 사이트 공통 값 그대로였고(모두 normal), 세로 간격도 Funding·Publications·Talks·Other Mentees 와 같은 24·16·64px 였다. 묶음마다 과목이 한 줄이라 묶음 사이 64px 이 내용보다 커 보였다.
+- 반영: `theme.css` 에서 이 페이지만 `--section-gap` 을 `--space-7`(48px, 휴대폰 값과 같음)로. 토큰으로 바꿔 `check_format` 이 같은 값을 기준으로 잰다. `page-design` 의 Courses 근거에 적었다. 꼬리말 위 간격(64px)은 그대로.
+- 기각: 사이트 전체 `--section-gap` 을 줄이기(여러 줄 묶음 페이지는 64px 이 맞다).
+
+## 추가(같은 날): Study Group 기초·심화 묶음
+- 교수: Study Group 도 기초와 심화로 나눈다. 기초는 Deep Learning, Foundation Models, Large Language Models 순, 심화는 AI Plays Games, Physical AI 순(처음에 Physical AI 먼저라고 했다가 바꿈).
+- 반영: `study-group.md` 의 `groups`(Fundamentals, Advanced 와 학기 id 순서)를 `teaching.html` 이 묶음 절로 그린다. 학기 한 줄은 `includes/study-term-row.html` 로 나눠 두 곳이 같이 쓴다. 어느 묶음에도 없는 새 학기는 Advanced 끝에 붙어 사라지지 않는다. 묶음 사이는 사이트 기본 64px(묶음마다 2–3줄).
+- 묶음 이름은 영어 사이트라 Fundamentals, Advanced.

@@ -164,6 +164,7 @@ h3.sub:first-child { margin-top: 0; }
 main { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); }
 main > * { grid-column: 1 / -1; }
 .content-section { padding: var(--section-gap) 0 0; }
+.page-courses { --section-gap: var(--space-7); }  /* Courses: each semester group holds a single course line, so 64px between groups outweighed the content; 48px, the phone value (교수 2026-11-23) */
 main { padding-bottom: var(--space-8); }  /* breathing room before the site footer, on main itself: a page whose last child is a script (course and study schedules) used to lose it and end flush on the footer */
 main { text-wrap: pretty; }  /* no single word left alone on a last line, on every page (교수 2026-11-02 for courses and study; the lab pages the same since 2026-11-03) */
 

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-23 | [Courses 계절 표기](2026-11-23-courses-season.md) | Sangwoo Mo(sangwoomo) | `teaching.html`, `AGENTS.md` | 계절은 학수번호 뒤에 한 번(· Spring), 오른쪽 학기 링크는 연도만 |
 | 2026-11-23 | [Talks 필터 색 사각형](2026-11-23-talks-filter-swatch.md) | Sangwoo Mo(sangwoomo) | `talks.html`, `AGENTS.md` | Invited Talks 의 Research·Education 버튼 앞에 Lab Seminar 와 같은 색 사각형, 줄 색은 넣지 않음 |
 | 2026-11-23 | [메뉴 Research·Teaching·Seminar](2026-11-23-menu-research-teaching-seminar.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `publications.md`, `overview.md`, 리다이렉트, `AGENTS.md` | 상위 메뉴를 Research·Teaching·Seminar 로 묶고 Publications 를 Research 아래로, Paper Stella 지도는 Overview 아래쪽에 합침 |
 | 2026-11-23 | [16·17강 파트 순서 변경](2026-11-23-data-engineering-agents-harness-loop-graph.md) | Sangwoo Mo(sangwoomo) | Data Engineering 16·17강 HTML·PDF | 02를 Harness, Loop, Graph로 둔 16강 64장·17강 48장 판 |

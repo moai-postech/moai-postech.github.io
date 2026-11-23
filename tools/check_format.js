@@ -29,10 +29,10 @@ function measure({ TOL, adjustments }) {
     const size = parseFloat(getComputedStyle(probe).fontSize);
     probe.remove(); return size;
   };
-  const tok = { h2: px('--fs-5'), group: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'), featuredPaper: font('--text-featured-paper'), featuredMeta: font('--text-featured-meta'), author: font('--text-author'), paperMeta: font('--text-paper-meta'),
+  const tok = { h2: px('--fs-5'), group: px('--text-group'), lead: px('--fs-4'), body: px('--fs-3'), meta: px('--fs-2'), small: px('--fs-1'), paper: font('--text-paper'), featuredPaper: font('--text-featured-paper'), featuredMeta: font('--text-featured-meta'), author: font('--text-author'), paperMeta: font('--text-paper-meta'),
     sectionGap: parseFloat(getComputedStyle(document.body).getPropertyValue('--section-gap')) || px('--section-gap'),
     below: px('--space-4') };
-  const allowed = [tok.h2, tok.group, tok.body, tok.meta, tok.small];
+  const allowed = [tok.h2, tok.group, tok.lead, tok.body, tok.meta, tok.small];
   // 간격은 CSS 가 정하는 상자 사이(내용 상자 기준, 안쪽 여백 제외)로 잰다. 글줄 높이의 위아래 여유는 포함한다
   const content = el => { const r = el.getBoundingClientRect(), s = getComputedStyle(el);
     return { top: r.top + parseFloat(s.paddingTop) + parseFloat(s.borderTopWidth), bottom: r.bottom - parseFloat(s.paddingBottom) - parseFloat(s.borderBottomWidth) }; };

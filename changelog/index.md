@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-23 | [묶음 제목 크기](2026-11-23-group-heading-size.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `tools/check_format.js` | 묶음 제목을 19px → 22px 로 키워 아래 굵은 항목 이름과 위계를 크기로 가름 |
 | 2026-11-23 | [Overview Paper Stella 먼저](2026-11-23-overview-stella-first.md) | Sangwoo Mo(sangwoomo) | `overview.md`, `AGENTS.md` | Overview 에서 Paper Stella 지도를 맨 위로, 분야별 단계 구조는 그 아래로 |
 | 2026-11-23 | [묶음 제목 강조색](2026-11-23-group-heading-red.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `design-contract.json`, `AGENTS.md` | 목록 묶음 제목을 POSTECH Red 로 바꿨다가 강조색이 과해 같은 날 본문색으로 되돌림 |
 | 2026-11-23 | [명단 이력 정리](2026-11-23-history-rewrite.md) | Sangwoo Mo(sangwoomo) | Git 이력, `TODO.md` | AI Study 명단 평문과 기록 속 학생 세부를 모든 브랜치 이력에서 지우고 강제 push |

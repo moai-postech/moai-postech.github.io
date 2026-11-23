@@ -65,7 +65,7 @@
   --text-body: var(--fs-3);
   --text-lead: var(--fs-4);
   --text-h2: var(--fs-5);   /* a section of its own: Home, Contact, the Research stages, the Faculty name */
-  --text-group: var(--fs-4);  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27) */
+  --text-group: 22px;  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27). Between --fs-4 and --fs-5 so it clearly leads the bold 16px item names under it, yet stays below a section heading (교수 2026-11-23) */
   --text-display: var(--fs-6);
   --text-brand: 23px;  /* the header name and the grey school part after it */
   --brand-pair: .43em;  /* header: between the two parts of one name (IMEN891K Data Engineering, MOAI Lab AI Study), 10px at 23px; in em so phones keep the same proportion */

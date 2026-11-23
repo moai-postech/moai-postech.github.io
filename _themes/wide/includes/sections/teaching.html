@@ -5,23 +5,38 @@
   학기(언제)를 오른쪽에 두고, 둘 다 스터디 페이지의 그 학기 탭(teaching/ai-study/schedule/#<id>)으로 잇는다. 학기는 _data/ai_study.yml(최신이 위)(2026-10-27 교수).
   intro 가 있으면 제목과 목록 사이에 한 줄 소개(마크다운, 회색)를 둔다(교수 2026-10-27).
 {% endcomment %}
-{% if include.section.study %}{% assign rows = "" | split: "" %}{% else %}{% assign rows = site.data.teaching %}{% endif %}
+{% if include.section.study %}
     <section class="content-section">
     {% if include.section.title %}<h2 class="group-heading">{{ include.section.title }}</h2>{% endif %}
     <div class="section-body">
     {% if include.section.intro %}<p class="list-intro">{% include inline.html text=include.section.intro %}</p>{% endif %}
     <ul class="plain item-list">
-      {% for c in rows %}<li>
-        {% comment %}한 과목의 학기가 모두 같은 계절이면 계절은 학수번호 뒤에 한 번만 쓰고(IMEN574 / IDSC574 · Spring), 오른쪽은 연도만 둔다(교수 2026-11-23).
-          계절이 섞인 과목은 오른쪽에 최신부터 잇되 계절 이름은 바뀔 때만 쓴다(Fall 2026 · 2025 · Spring 2024, 교수 2026-11-18).{% endcomment %}{% assign seasons = "" | split: "" %}{% for t in c.terms %}{% assign sn = t.name | split: " " | first %}{% assign seasons = seasons | push: sn %}{% endfor %}{% assign seasons = seasons | uniq %}{% if seasons.size == 1 %}{% assign one = seasons | first %}{% else %}{% assign one = "" %}{% endif %}
-        <span class="item-main"><strong>{% if c.url %}<a href="{{ c.url }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</strong></span>{% if c.code or one != "" %}<span class="item-sub">{{ c.code }}{% if c.code and one != "" %} · {% endif %}{{ one }}</span>{% endif %}
-        {% comment %}연도마다 그 학기 페이지로 잇고, 줄바꿈은 학기 사이에서만 한다{% endcomment %}<span class="item-side term-run">{% assign prev = one %}{% for t in c.terms %}{% assign parts = t.name | split: " " %}{% assign season = parts | first %}{% assign year = parts | last %}{% if season == prev %}{% assign label = year %}{% else %}{% assign label = t.name %}{% endif %}{% assign prev = season %}{% unless forloop.first %} · {% endunless %}<span class="term">{% if t.url %}<a href="{{ t.url }}">{{ label }}</a>{% else %}{{ label }}{% endif %}</span>{% endfor %}</span>
-      </li>
-      {% endfor %}{% if include.section.study %}{% for t in site.data.ai_study.terms %}<li>
+      {% for t in site.data.ai_study.terms %}<li>
         <span class="item-main"><strong><a href="teaching/ai-study/schedule/#{{ t.id }}">{{ t.theme }}</a></strong></span>
         <span class="item-side"><a href="teaching/ai-study/schedule/#{{ t.id }}">{{ t.name }}</a></span>
       </li>
-      {% endfor %}{% endif %}
+      {% endfor %}
     </ul>
     </div>
     </section>
+{% else %}
+{% comment %}정규 강의는 계절 묶음(Spring Semester, Fall Semester)마다 절 하나로 나누고(Funding 의 기관 묶음과 같은 묶음 제목), 오른쪽 학기는 연도만 둔다(교수 2026-11-23).
+  과목은 최신 학기의 계절 묶음에 들고, 묶음 순서는 _data/teaching.yml 에서 그 계절 과목이 처음 나오는 순서(최근 학기순)다.
+  한 과목에 다른 계절 학기가 섞이면 그 과목만 계절 이름을 바뀔 때 쓴다(Fall 2026 · 2025 · Spring 2024, 교수 2026-11-18).{% endcomment %}
+{% assign groups = "" | split: "" %}{% for c in site.data.teaching %}{% assign g = c.terms[0].name | split: " " | first %}{% assign groups = groups | push: g %}{% endfor %}{% assign groups = groups | uniq %}
+{% for g in groups %}
+    <section class="content-section">
+    <h2 class="group-heading">{{ g }} Semester</h2>
+    <div class="section-body">
+    {% if forloop.first and include.section.intro %}<p class="list-intro">{% include inline.html text=include.section.intro %}</p>{% endif %}
+    <ul class="plain item-list">
+      {% for c in site.data.teaching %}{% assign cg = c.terms[0].name | split: " " | first %}{% if cg == g %}<li>
+        <span class="item-main"><strong>{% if c.url %}<a href="{{ c.url }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</strong></span>{% if c.code %}<span class="item-sub">{{ c.code }}</span>{% endif %}
+        {% comment %}연도마다 그 학기 페이지로 잇고, 줄바꿈은 학기 사이에서만 한다{% endcomment %}<span class="item-side term-run">{% assign prev = g %}{% for t in c.terms %}{% assign parts = t.name | split: " " %}{% assign season = parts | first %}{% assign year = parts | last %}{% if season == prev %}{% assign label = year %}{% else %}{% assign label = t.name %}{% endif %}{% assign prev = season %}{% unless forloop.first %} · {% endunless %}<span class="term">{% if t.url %}<a href="{{ t.url }}">{{ label }}</a>{% else %}{{ label }}{% endif %}</span>{% endfor %}</span>
+      </li>
+      {% endif %}{% endfor %}
+    </ul>
+    </div>
+    </section>
+{% endfor %}
+{% endif %}

@@ -38,3 +38,9 @@ POSTECH 요구사항: 영향 없음(`_config.yml` 은 메뉴만 바꿈. 머리�
 - 반영: `embed.html` 에 지도를 덮는 투명한 덮개 버튼(`embed-shield`)을 둔다. 덮인 동안 휠과 손가락 스크롤은 페이지를 내리고, 마우스를 올리면 가운데에 `Click to explore` 가 뜬다. 누르면 덮개가 걷혀 지도를 확대·이동하고, 마우스가 지도 밖으로 나가거나 바깥을 누르면 다시 덮인다(`scripts.html`). 누를 때 페이지가 지도 쪽으로 튀지 않게 `focus({ preventScroll: true })`. 스타일은 `theme.css` 의 `.embed-shield`, `.embed-hint`(기존 토큰만).
 - 확인: 로컬에서 덮인 상태의 휠은 페이지를 내리고, 누른 뒤의 휠은 페이지를 움직이지 않으며, 밖으로 나가면 다시 덮였다.
 - 기각: 지도 높이를 줄이기(지도가 작아지고 문제는 남는다), 지도 서버(paper-stella) 쪽에서 휠 확대를 Ctrl+휠로 바꾸기(공개판 전체 화면 보기의 동작까지 바뀐다).
+
+## 추가(같은 날): 최종 검토에서 고친 것
+- 교수: 오늘 바꾼 것 전체를 꼼꼼히 최종 검토.
+- 휴대폰은 마우스를 올릴 수 없어 지도 안내 `Click to explore` 가 보이지 않았다. 마우스가 없는 화면(`hover: none`)에서는 안내를 늘 보인다(`theme.css`).
+- 옛 메뉴 설명 정리: `talks.md` 주석(Research > Talks → Seminar > Invited Talks), `_themes/wide/README.md` 역할표(Courses 묶음 제목, Open in full screen 은 이제 지도 캡션이라 안내 줄 예시에서 뺌), 지도 페이지가 없어져 쓰이지 않는 `.page-intro + .embed-section` 규칙 삭제.
+- 확인: 375px 폭에서 메뉴 두 줄(Home·People·Research / Teaching·Seminar·Contact), Courses 묶음, Invited Talks 필터 사각형, Overview 지도와 가로 넘침 없음.

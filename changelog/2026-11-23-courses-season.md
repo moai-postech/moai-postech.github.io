@@ -1,7 +1,7 @@
 # 2026-11-23 Courses 계절은 학수번호 뒤에, 학기는 연도만
 작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/sections/teaching.html`, `page-design`, `AGENTS.md` | 도구: Claude Code
 
-> **한줄 결론: Courses 에서 계절(Spring, Fall)을 학수번호 뒤에 한 번만 쓰고, 오른쪽 학기 링크는 연도만 둔다.**
+> **한줄 결론: Courses 를 Spring Semester, Fall Semester 묶음으로 나누고, 오른쪽 학기 링크는 연도만 둔다.**
 
 POSTECH 요구사항: 영향 없음
 
@@ -18,3 +18,8 @@ POSTECH 요구사항: 영향 없음
 
 ## 남은 것
 없음
+
+## 추가(같은 날): Spring·Fall 묶음으로
+- 교수: 계절은 소절(Spring semester 등)로 넣으라는 뜻이었다. 위의 "학수번호 뒤 계절" 안을 바꾼다.
+- 반영: `teaching.html` 이 과목을 최신 학기의 계절로 묶어 묶음마다 절 하나(`Spring Semester`, `Fall Semester`, Funding 기관 묶음과 같은 묶음 제목 `group-heading`)로 그린다. 묶음 순서는 최근 학기순(Spring 2027 이 있어 Spring 이 위). 학수번호 줄의 계절은 뺐고, 오른쪽은 연도만. 계절이 섞인 과목은 그 과목만 계절을 바뀔 때 쓴다. `AGENTS.md`, `page-design` 설명도 맞췄다.
+- 위 "기각한 안"의 Spring·Fall 소절은 교수 결정으로 채택. 과목 하나뿐인 묶음이 제목만큼 무거운 점은 과목이 늘면 해소된다.

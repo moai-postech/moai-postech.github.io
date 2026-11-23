@@ -196,7 +196,6 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .page-intro { padding-top: var(--page-start); }
 .visually-hidden + .content-section { padding-top: var(--page-start); }
 .page-intro + .content-section { padding-top: var(--intro-gap); }  /* the intro leads into the first block: 24px, not the 48px page start (교수 2026-11-18: 소개와 목록 사이가 너무 길다) */
-.page-intro + .embed-section { padding-top: var(--intro-gap); }  /* an intro that describes the picture right below stays with it, like a caption (Paper Stella) */
 .page-intro + .stage-track > .research-area:first-child { padding-top: var(--intro-gap); }  /* Research Overview: the first stage follows the intro at the same intro gap as every other page's first block */
 
 /* Home hero: a full-width band, statement on the left, the orchestration picture on the right */
@@ -398,6 +397,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .embed-hint { padding: var(--space-2) var(--space-3); border-radius: var(--radius-1); background: var(--media-surface); color: var(--bg); font-size: var(--text-small); opacity: 0; transition: opacity .2s; }
 .embed-shield:hover .embed-hint, .embed-shield:focus-visible .embed-hint { opacity: 1; }
 .embed.is-active .embed-shield { display: none; }
+@media (hover: none) { .embed-hint { opacity: 1; } }  /* phones have no hover, so the hint stays visible until the map is tapped */
 .embed-caption { margin-top: var(--space-3); color: var(--muted); font-size: var(--text-meta); }
 .embed-next { margin-top: var(--space-5); }  /* navigation after a visual follows the same body-size closing-link role */
 

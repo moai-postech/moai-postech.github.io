@@ -105,7 +105,7 @@
       "page": "courses.html",
       "template": "연구실 · 강의 목록",
       "decision": "페이지 조정",
-      "reason": "학기는 오른쪽 끝에 최신부터 연도만 잇고, 계절은 학수번호 뒤에 한 번 쓴다(IMEN574 / IDSC574 · Spring, 2027 · 2026). 계절이 섞인 과목만 바뀔 때 계절을 쓴다. AI Study 와 같은 15px 학기 링크.",
+      "reason": "계절 묶음(Spring Semester, Fall Semester)으로 나누고 학기는 오른쪽 끝에 최신부터 연도만 잇는다(2027 · 2026). 계절이 섞인 과목만 바뀔 때 계절을 쓴다. AI Study 와 같은 15px 학기 링크.",
       "adjustments": [
         "teaching-term-navigation"
       ]

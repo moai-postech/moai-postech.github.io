@@ -66,6 +66,7 @@
   --text-lead: var(--fs-4);
   --text-h2: var(--fs-5);   /* a section of its own: Home, Contact, the Research stages, the Faculty name */
   --text-group: var(--fs-4);  /* a heading that groups a list: years, Funding sponsors, member and mentee groups, courses, profile lists (2026-10-27) */
+  --group-color: var(--accent);  /* every list-grouping heading is POSTECH Red; section headings (--text-h2) stay ink (교수 2026-11-23) */
   --text-display: var(--fs-6);
   --text-brand: 23px;  /* the header name and the grey school part after it */
   --brand-pair: .43em;  /* header: between the two parts of one name (IMEN891K Data Engineering, MOAI Lab AI Study), 10px at 23px; in em so phones keep the same proportion */
@@ -377,8 +378,8 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .schedule tr[data-kind] > td { background: var(--tone-row); box-shadow: 1px 0 0 var(--tone-row); }  /* the shadow covers the hairline between cells of one filled row, as on course schedules */  /* row colour by kind from the course palette: lab sage, invited butter, IME Seminar neutral grey (교수 2026-11-09) */
 .schedule tr[data-kind] > td:first-child { padding-left: var(--space-4); border-radius: var(--radius-1) 0 0 var(--radius-1); }
 .schedule tr[data-kind] > td:last-child { padding-right: var(--space-4) !important; border-radius: 0 var(--radius-1) var(--radius-1) 0; }
-.schedule-year th { line-height: var(--leading-group); padding: calc(var(--section-gap) - var(--space-1)) 0 calc(var(--space-4) - var(--space-1));  /* minus the gap between rows, so the year sits at the same gaps as every group heading */ color: var(--text); font-size: var(--text-group); font-weight: var(--weight-heading); text-align: left; }
-.year-head { line-height: var(--leading-group); margin: var(--section-gap) 0 var(--space-4); font-size: var(--text-group); font-weight: var(--weight-heading); letter-spacing: normal; }  /* same year heading as the seminar list */
+.schedule-year th { line-height: var(--leading-group); padding: calc(var(--section-gap) - var(--space-1)) 0 calc(var(--space-4) - var(--space-1));  /* minus the gap between rows, so the year sits at the same gaps as every group heading */ color: var(--group-color); font-size: var(--text-group); font-weight: var(--weight-heading); text-align: left; }
+.year-head { line-height: var(--leading-group); margin: var(--section-gap) 0 var(--space-4); color: var(--group-color); font-size: var(--text-group); font-weight: var(--weight-heading); letter-spacing: normal; }  /* same year heading as the seminar list */
 .section-body > .year-head:first-child { margin-top: 0; }
 .filter-bar + .year-head { margin-top: var(--space-6); }  /* Talks: the first year sits under the filter (교수 2026-11-17) at 32px (it collapses with the filter's 24px), so the heading stays closer to its own list (16px) than to the filter's underline (교수 2026-11-18) */
 .schedule tbody > .schedule-year:first-child th { padding-top: 0; }
@@ -413,7 +414,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .embed-next { margin-top: var(--space-5); }  /* navigation after a visual follows the same body-size closing-link role */
 
 /* Publications: title, authors, then venue and links under them */
-.group-heading { margin-bottom: var(--space-4); font-size: var(--text-group); font-weight: var(--weight-heading); line-height: var(--leading-group); letter-spacing: normal; }
+.group-heading { margin-bottom: var(--space-4); color: var(--group-color); font-size: var(--text-group); font-weight: var(--weight-heading); line-height: var(--leading-group); letter-spacing: normal; }
 .page-publications sup { line-height: 0; }  /* the equal-contribution marks no longer push their author line 2.5px taller than the others */
 .pubs li { display: grid; grid-template-columns: 2.25em minmax(0, 1fr); gap: var(--detail-gap) var(--space-3); padding: var(--item-gap) 0; }  /* title, authors and metadata share the detail gap; padding separates papers by twice --item-gap */
 .pubs li > * { grid-column: 2; }

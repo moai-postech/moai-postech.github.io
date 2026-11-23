@@ -29,3 +29,10 @@ POSTECH 요구사항: 영향 없음
 ## 남은 것
 - 17px 가 한 군데 남았다: Home 연구 방향 동심원 SVG 의 고리 이름. 다른 세션이 작업 중(`2026-11-23-focus-rings.md`)이라 손대지 않았다. 18 이나 16 으로 맞추면 단계에서 벗어나는 크기가 사라진다.
 - 로컬 `check_design`·`check_typography` 는 이 맥에서 Playwright 내장 Chromium 이 실행되지 않아(spawn -88) 돌리지 못했다. 실측은 시스템 Chrome 으로 했다.
+
+## 후속: 마감 검수(같은 날)
+교수: 계속 돌면서 꼼꼼하게 디자인 검수, 마감이 가장 중요.
+- 15쪽(Home, Overview, Publications, Funding, Faculty, Members, Other Mentees, Courses, Study Group, Lab Seminar, Invited Talks, Contact, News, AI Study, 강의 Home)을 1440px·390px 전체 화면으로 캡처하고, 하위 탭→소개→첫 묶음, 마지막 내용→꼬리말 간격을 쟀다. 하위 탭 아래 48px(휴대폰 16px), 소개 아래 24px, 꼬리말 앞 64px 로 모든 페이지가 같다.
+- 고침: Members 카드의 연구 주제가 굵어(16/600) 이름(18/600)보다 진해 보였다. 주제를 보통 굵기로 낮춰 이름 → 주제(본문색) → 학력(회색) 세 층이 갈린다. 계약(`person-card-secondary`)은 크기만 정해 그대로 맞는다.
+- 기각: 이름만 굵기 700 으로 올리기(묶음 제목 700 과 같아져 `PhD Students` 와 다툼), 주제를 회색으로(학력과 같아져 층이 둘로 줄어듦).
+- 이슈로 보고만 함: Faculty 의 Honors & Awards 는 오래된 것부터(2019→2022), 같은 페이지 Appointments 는 최신부터다. 순서는 콘텐츠 결정이라 손대지 않았다. Home 의 `Research Focus` 제목만 가운데 정렬이고 아래 상자에 빈 공간이 크다. 다른 세션이 작업 중(`2026-11-23-focus-rings.md`)이라 손대지 않았다.

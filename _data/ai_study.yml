@@ -11,7 +11,7 @@ terms:
         title: "Search & Learning"
         keywords: "minimax search, MCTS, policy & value networks"
         papers:
-          - { text: "Deep Blue", url: "https://doi.org/10.1016/S0004-3702(01)00129-1" }
+          - { text: "DeepBlue", url: "https://www.semanticscholar.org/paper/ce7f4f9708b96c21aa0cd78d7e15f22235d9664f" }
           - { text: "AlphaGo", url: "https://doi.org/10.1038/nature16961" }
         demos:
           - { text: "Chess", url: "https://www.youtube.com/watch?v=5tUZpeYsgVk" }
@@ -86,7 +86,7 @@ terms:
         keywords: "open-ended learning, long-horizon planning"
         papers:
           - { text: "Voyager", url: "https://arxiv.org/abs/2305.16291" }
-          - { text: "Gemini Team", url: "https://arxiv.org/abs/2610.22319" }
+          - { text: "Argon Agents", url: "https://arxiv.org/abs/2610.22319" }
         demos:
           - { text: "Minecraft", url: "https://www.youtube.com/watch?v=i6f51aVaK3g" }
   - id: "fall-2026"

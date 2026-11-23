@@ -51,7 +51,6 @@
       "id": "group-heading",
       "selector": "main .group-heading, main .year-head, main .schedule-year th",
       "style": {
-        "color": "var(--group-color)",
         "fontSize": "var(--text-group)",
         "fontWeight": "var(--weight-heading)",
         "lineHeight": "1.3",

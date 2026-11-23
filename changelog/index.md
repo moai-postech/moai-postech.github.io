@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-23 | [빠른 검사 세 건](2026-11-23-checks-fix.md) | Sangwoo Mo(sangwoomo) | `_config.yml`, `page-design`, `tools/lib/design-fixture.js` | runtime 개발 메모를 배포에서 빼고, AX 2027 디자인 근거와 명단 검사 데이터의 학기를 채움 |
 | 2026-11-23 | [Spring 2027 논문 이름·링크](2026-11-23-study-spring-2027-papers.md) | Sangwoo Mo(sangwoomo) | 스터디 시트, `_data/ai_study.yml` | DeepBlue 로 붙이고 Semantic Scholar 로 잇기, Gemini Team 을 Argon Agents 로 |
 | 2026-11-23 | [Courses 계절 표기](2026-11-23-courses-season.md) | Sangwoo Mo(sangwoomo) | `teaching.html`, `AGENTS.md` | Spring Semester·Fall Semester 묶음으로 나누고 오른쪽 학기 링크는 연도만 |
 | 2026-11-23 | [Talks 필터 색 사각형](2026-11-23-talks-filter-swatch.md) | Sangwoo Mo(sangwoomo) | `talks.html`, `AGENTS.md` | Invited Talks 의 Research·Education 버튼 앞에 Lab Seminar 와 같은 색 사각형, 줄 색은 넣지 않음 |

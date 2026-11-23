@@ -213,6 +213,27 @@
       "adjustments": []
     },
     {
+      "page": "teaching/27s-programming-for-ax/index.html",
+      "template": "강의 · Home",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "소개19px·본문16px 유지. 운영 정보는16px로 읽기 쉽게 확대하고 3열 파트 카드 설명14px은 밀도에 맞춰 유지.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/27s-programming-for-ax/schedule/index.html",
+      "template": "강의 · Schedule",
+      "decision": "공통 컴포넌트 조정",
+      "reason": "행 수가 많은 일정 표는 제목16px·날짜14px·표 머리13px 유지. 자료 동작15px와 초청 연사 이름16px로 식별 강화. 초청 일정도 Project와 같은 스티커를 사용하고 연사와 시간·장소를 묶어 배치.",
+      "adjustments": []
+    },
+    {
+      "page": "teaching/27s-programming-for-ax/project/index.html",
+      "template": "강의 · Project",
+      "decision": "기본 유지",
+      "reason": "Timeline 본문16px·설명14px, 팀 제목16px·팀원14px의 위계 유지. 시트 이동은 공통 동작15px 적용. Timeline은 세 블록 가로 배치, 발표 열은 가운데 정렬.  평가 방식은 합산 흐름, 기준은 카드로 구조화.",
+      "adjustments": []
+    },
+    {
       "page": "teaching/ai-study/index.html",
       "template": "스터디 · Home",
       "decision": "공통 컴포넌트 조정",

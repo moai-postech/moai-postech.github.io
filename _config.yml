@@ -71,6 +71,7 @@ exclude:
   - CLAUDE.md
   - GEMINI.md
   - README.md
+  - teaching/27s-programming-for-ax/runtime/README.md   # 데모 런타임 개발 메모. 빼지 않으면 GitHub Pages 가 사이트 틀 없는 runtime/index.html 로 올려 POSTECH 꼬리말 검사가 실패했다(2026-11-23)
   - TODO.md
   - changelog
   - discussions

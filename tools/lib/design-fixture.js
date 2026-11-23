@@ -8,7 +8,7 @@ function syntheticDirectoryHTML(site = SITE, options = {}) {
   const salt=Buffer.alloc(16,2), iv=Buffer.alloc(12,1), iterations=1000;
   const key=crypto.pbkdf2Sync(options.password || PASSWORD,salt,iterations,32,'sha256');
   const cipher=crypto.createCipheriv('aes-256-gcm',key,iv);
-  const data=options.data || [{number:4,members:[{name:'Example Student',department:'Example department',entry_year:'2026',email:'example@postech.ac.kr',participation:[3,4]}]}];
+  const data=options.data || [{number:4,term:'Spring 2027',members:[{name:'Example Student',department:'Example department',entry_year:'2026',email:'example@postech.ac.kr',participation:[3,4]}]}];
   const ciphertext=Buffer.concat([cipher.update(JSON.stringify(data),'utf8'),cipher.final(),cipher.getAuthTag()]);
   const payload={salt:salt.toString('base64'),iv:iv.toString('base64'),iterations,ciphertext:ciphertext.toString('base64')};
   return fs.readFileSync(path.join(site,'teaching/ai-study/members/index.html'),'utf8')

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-25 | [단체사진 휴대폰 크롭](2026-11-25-photo-mobile-crop.md) | Sangwoo Mo(sangwoomo) | Home 단체사진 | 휴대폰도 웹과 같은 3:1 크롭 |
 | 2026-11-25 | [site-weekly 화요일 밤](2026-11-25-site-weekly-tuesday.md) | Sangwoo Mo(sangwoomo) | `.github/workflows/site-weekly.yml` | 동기화 예약을 월 06:00 에서 화 21:00 KST 로 |
 | 2026-11-25 | [ai-study-sync](2026-11-25-ai-study-sync.md) | GitHub Actions(ai-study-sync) | AI Study | 스터디 시트에서 자동 동기화 |
 | 2026-11-25 | [스터디 open?id= 링크 받기](2026-11-25-study-slides-open-links.md) | Sangwoo Mo(sangwoomo) | `tools/drive_pdf.py`, 스터디 자료 | 동기화가 `open?id=` 꼴 Drive 링크를 건너뛰어 Fall 2026 9회 둘째 슬라이드가 Drive 링크로 남던 것 |

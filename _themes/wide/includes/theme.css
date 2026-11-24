@@ -506,7 +506,7 @@ a.person-name:hover { color: var(--accent); }
   .contact-join .contact-art { grid-column: 1 / -1; max-width: 400px; margin: var(--space-6) auto 0; }
 }
 @media (max-width: 680px) {
-  .section-photo img { aspect-ratio: auto; -webkit-mask-image: none; mask-image: none; }  /* phones: the whole sketch, a 3:1 strip would make faces too small */
+  .section-photo img { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--space-5)), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - var(--space-5)), transparent); }  /* phones: the same 3:1 head-to-knee crop as desktop, a shorter fade for the shorter strip (교수 2026-11-25, 전신 배치를 대체) */
   .page-contact main > .contact-join { padding: var(--space-5); }
   .contact-step { padding: var(--card-padding); gap: var(--space-3); }
 }

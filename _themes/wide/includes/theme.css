@@ -255,10 +255,9 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .focus-panel:not([hidden]) ~ .focus-panel:not([hidden]) { margin-top: var(--section-gap); }  /* without JavaScript all panels show, one after another */
 .focus-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-5); margin-bottom: var(--space-4); }  /* direction name to its papers: the group-heading gap (16px). No rule here: the name already heads the list, and the height it took now pads the card evenly (32px on all sides) inside the same 360px */
 .focus-head h3 { margin: 0; color: var(--accent); }  /* the chosen direction, in the accent like its ring's name; the shared group-heading role */
-.focus-flow { position: absolute; top: calc(-1 * var(--focus-title) - var(--space-2)); right: 0; height: var(--focus-title); display: flex; align-items: center; margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }  /* the flow hint Brain → Body → Impact at the right end of the card's title line, the same place in every panel so it never moves (phones: under the name), in the site's small-caps label (PEOPLE, h3.sub); the chosen step in the accent like its name (교수 2026-11-24: not inside the rings) */
+.focus-flow { display: flex; align-items: baseline; margin: 0 0 0 auto; padding: 0; list-style: none; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }  /* the flow hint Brain → Body → Impact at the right end of the direction name's line: the accent step sits on the accent name's baseline, so the pair reads together, and the right edge holds it still whichever direction is chosen (phones: under the name), in the site's small-caps label (PEOPLE, h3.sub); the chosen step in the accent like its name (교수 2026-11-24: not inside the rings) */
 .focus-flow li + li::before { content: "→"; margin: 0 var(--space-2); color: var(--muted); letter-spacing: 0; }
 .focus-flow [aria-current="step"] { color: var(--accent); }
-@media (min-width: 961px) and (max-width: 1099px) { .focus-flow { position: static; flex-basis: 100%; height: auto; } }  /* narrow laptops: the 7-column card is too narrow for the title and the trail on one line (they met at 961px), so the trail goes under the name as on phones */
 .focus-papers { display: grid; gap: var(--space-3); margin-bottom: var(--space-4); }  /* compact: the figure should not take more height than it needs (교수 2026-11-23) */
 .focus-paper { display: grid; grid-template-columns: 8.5em minmax(0, 1fr); column-gap: var(--space-4); align-items: baseline; color: var(--text); }  /* one row per paper: badge column of fixed width so every title starts on one line */
 a.focus-paper:hover { color: var(--accent); text-decoration: none; }
@@ -552,7 +551,7 @@ a.person-name:hover { color: var(--accent); }
   .eyebrow { font-size: var(--text-meta); }
   .focus-explorer { --focus-pad: var(--space-5); }
   .focus-rings { max-width: 320px; margin-bottom: var(--space-5); }
-  .focus-flow { position: static; flex-basis: 100%; height: auto; }  /* phones: the step trail always on its own line under the name, so it does not jump between lines as the direction changes */
+  .focus-flow { flex-basis: 100%; margin-left: 0; }  /* phones: the step trail always on its own line under the name, so it does not jump between lines as the direction changes */
   .focus-paper { grid-template-columns: 1fr; row-gap: var(--space-1); }  /* phones: badge above the title */
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
   .profile { gap: var(--space-5); }

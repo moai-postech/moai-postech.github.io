@@ -8,7 +8,7 @@
 name: site-weekly
 on:
   schedule:
-    - cron: "0 21 * * 0"  # 월 06:00 KST. cron 은 sangwoomo 가 마지막으로 고친다. 예약 실행의 실패 알림이 그 계정 설정(메일 끔)을 따른다(2026-11-02)
+    - cron: "0 12 * * 2"  # 화 21:00 KST(2026-11-25 사용자). cron 은 sangwoomo 가 마지막으로 고친다. 예약 실행의 실패 알림이 그 계정 설정(메일 끔)을 따른다(2026-11-02)
   workflow_dispatch:
 permissions:
   contents: write

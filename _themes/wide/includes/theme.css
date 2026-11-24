@@ -227,9 +227,9 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
    Each ring is a tab. The chosen ring, the beam and the card are one borderless pink shape: the ring opens into the card,
    which lists that direction's papers and people. The card is as tall as the rings and never moves or resizes between rings.
    Rings sit apart by a thin white gap so each one stays its own shape. */
-.focus-explorer { position: relative; display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: stretch; --focus-pad: var(--space-6); --focus-title: calc(var(--text-h2) * 1.3); }
-.focus-explorer > h2 { position: relative; z-index: 2; grid-column: 5 / -1; grid-row: 1; align-self: start; margin: var(--focus-pad) var(--focus-pad) 0; }  /* the section title is the card's own heading: it shares the card's grid cell, so the figure has no caption floating above it */
-.focus-rings { grid-column: 1 / span 4; grid-row: 1; align-self: center; width: 100%; max-width: 360px; height: auto; overflow: visible; }
+.focus-explorer { position: relative; display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); grid-template-rows: 1fr auto 1fr; column-gap: var(--gutter); align-items: stretch; --focus-pad: var(--space-6); --focus-title: calc(var(--text-h2) * 1.3); }  /* desktop: rows 1fr | card | 1fr with the rings spanning all three, so the card takes its content height (the tallest panel) and sits on the rings' vertical centre; a 360px card left 60–100px empty above People (교수 2026-11-24) */
+.focus-explorer > h2 { position: relative; z-index: 2; grid-column: 5 / -1; grid-row: 2; align-self: start; margin: var(--focus-pad) var(--focus-pad) 0; }  /* the section title is the card's own heading: it shares the card's grid cell, so the figure has no caption floating above it */
+.focus-rings { grid-column: 1 / span 4; grid-row: 1 / 4; align-self: center; width: 100%; max-width: 360px; height: auto; overflow: visible; }
 .focus-ring { cursor: pointer; outline: none; }  /* ring names render at a type-scale size at every width: scripts.html sets --ring-k (viewBox units per pixel) on the svg, so the size does not scale with the drawing */
 .focus-ring .ring-shape { fill: color-mix(in srgb, var(--line) 25%, var(--surface)); stroke: none; transition: fill .2s; }
 .focus-ring:last-of-type .ring-shape { fill: var(--surface); }  /* outer ring palest, core deepest: a quiet core-to-application gradient */
@@ -240,7 +240,7 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .focus-ring[aria-selected="true"] .ring-shape { fill: var(--accent-soft); }
 .focus-ring[aria-selected="true"] .ring-label { fill: var(--accent); font-weight: var(--weight-heading); }
 .focus-ring:focus-visible .ring-shape { stroke: var(--accent); stroke-width: 2; }
-.focus-panels { position: relative; z-index: 1; grid-column: 5 / -1; grid-row: 1; display: flex; flex-direction: column; padding: calc(var(--focus-pad) + var(--focus-title) + var(--space-2)) var(--focus-pad) var(--focus-pad); border-radius: var(--radius-2); background: var(--callout-surface); }  /* the top padding leaves the title's line free; one --focus-pad on all four sides, 8px from the title to the direction name */
+.focus-panels { position: relative; z-index: 1; grid-column: 5 / -1; grid-row: 2; display: flex; flex-direction: column; padding: calc(var(--focus-pad) + var(--focus-title) + var(--space-2)) var(--focus-pad) var(--focus-pad); border-radius: var(--radius-2); background: var(--callout-surface); }  /* the top padding leaves the title's line free; one --focus-pad on all four sides, 8px from the title to the direction name */
 .focus-panel { position: relative; flex: 1; display: flex; flex-direction: column; }
 .focus-link { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; mix-blend-mode: multiply; }  /* the beam from the chosen ring to the card: over the rings, under the card; drawn by scripts.html. multiply tints what lies under it instead of veiling it, so a ring name the beam crosses (Physical AI) keeps its full ink */
 .focus-link .beam-near { stop-color: color-mix(in srgb, var(--accent) 17%, var(--bg)); stop-opacity: .62; }  /* on white this equals the chosen ring's pink; the other rings show through faintly */
@@ -250,6 +250,9 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
   .focus-panels:has(> .focus-panel[hidden]) { display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); }
   .focus-panels:has(> .focus-panel[hidden]) > .focus-panel { grid-area: 1 / 1; }
   .focus-panels:has(> .focus-panel[hidden]) > .focus-panel[hidden] { display: flex; visibility: hidden; }
+  .focus-panels:has(> .focus-panel[hidden]) { background: none; }  /* the cell stays as tall as the tallest panel, so the title and the card's top never move; the pink face is painted only as long as the chosen panel (--card-h from scripts.html), so a shorter direction leaves no gap above People (교수 2026-11-24) */
+  .focus-panels:has(> .focus-panel[hidden])::before { content: ""; position: absolute; inset: 0 0 auto; z-index: -1; height: var(--card-h, 100%); border-radius: inherit; background: var(--callout-surface); }
+  .focus-panels:has(> .focus-panel[hidden]) .focus-people { margin-top: 0; }  /* People follows the papers at the list's own 16px instead of sinking to the cell's floor */
 }
 .focus-panel:not([hidden]) ~ .focus-panel:not([hidden]) { margin-top: var(--section-gap); }  /* without JavaScript all panels show, one after another */
 .focus-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-5); margin-bottom: var(--space-4); }  /* direction name to its papers: the group-heading gap (16px). No rule here: the name already heads the list, and the height it took now pads the card evenly (32px on all sides) inside the same 360px */
@@ -518,7 +521,8 @@ a.person-name:hover { color: var(--accent); }
   .hero-copy, .hero-art { grid-column: 1 / -1; }
   .hero-art { display: none; }  /* tablets keep the statement and lab photo without a second tall illustration */
   .focus-explorer { --focus-pad: var(--space-6); }
-  .focus-rings { grid-column: 1 / -1; justify-self: center; max-width: 340px; margin-bottom: var(--space-6); }  /* tablets and phones: rings on top, the card below; the beam opens downward */
+  .focus-explorer { grid-template-rows: none; }
+  .focus-rings { grid-column: 1 / -1; grid-row: 1; justify-self: center; max-width: 340px; margin-bottom: var(--space-6); }  /* tablets and phones: rings on top, the card below; the beam opens downward */
   .focus-explorer > h2, .focus-panels { grid-column: 1 / -1; grid-row: 2; }
   .research-overview .cards { grid-template-columns: 1fr; gap: var(--space-5); }
   .research-head, .topic-cards { grid-column: 1 / -1; }

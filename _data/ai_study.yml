@@ -211,7 +211,7 @@ terms:
           - { text: "MolmoPoint", url: "https://huggingface.co/spaces/allenai/MolmoPoint-8B-Demo" }
         materials:
           - { text: "Slides 1", url: "teaching/ai-study/fall-2026/09-spatial-reasoning-slides.pdf" }
-          - { text: "Slides 2", url: "https://drive.google.com/open?id=1dzdaUdjOhdL55wp8M3jiY81GsVL6yt_F" }
+          - { text: "Slides 2", url: "teaching/ai-study/fall-2026/09-spatial-reasoning-slides-2.pdf" }
       - n: "10"
         date: "2026-12-01"
         title: "VLA"

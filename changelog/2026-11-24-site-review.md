@@ -24,4 +24,5 @@ POSTECH 요구사항: 영향 없음
 - 강의 범위를 보통 공백으로 맞추기: 연도·과제 기간 등 사이트 다른 범위가 모두 좁은 공백이다.
 
 ## 남은 것(교수 확인)
-- `univ.` 표기: 상위 규칙(academic-profile `AGENTS.md` 공통 표기 원칙)은 `Korea univ.` 처럼 소문자인데 사이트는 `Korea Univ.`, `Catholic Univ.`, `Brown Univ.`, `Chung-Ang Univ.`, `Kyung-Hee Univ.` 로 대문자다(Members, Talks, Seminar). 규칙과 사이트 중 어느 쪽을 따를지 교수가 정한다.
+- (해결, 2026-11-24) 교수가 `Univ.` 대문자로 정함. 상위 규칙을 고침(academic-profile `changelog/2026-11-24-univ-actper.md`).
+- 원래 이슈 `univ.` 표기: 상위 규칙(academic-profile `AGENTS.md` 공통 표기 원칙)은 `Korea univ.` 처럼 소문자인데 사이트는 `Korea Univ.`, `Catholic Univ.`, `Brown Univ.`, `Chung-Ang Univ.`, `Kyung-Hee Univ.` 로 대문자다(Members, Talks, Seminar). 규칙과 사이트 중 어느 쪽을 따를지 교수가 정한다.

@@ -32,6 +32,9 @@
       venue: "arXiv'26"
       title: "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models"
       url: "https://arxiv.org/abs/2608.23478"
+    - short: "ActPer"
+      venue: "arXiv'26"
+      title: "Rethinking Active Perception with Passive VLMs"
 - name: "Manufacturing AI"
   hint: "Impact"
   icon: manufacturing

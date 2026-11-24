@@ -11,6 +11,8 @@
 # 순서 규칙(같은 연도 안에서 venue 통보일 최신순 등)은 AGENTS.md.
 - section: "Preprints"
   papers:
+    - title: "Rethinking Active Perception with Passive VLMs"
+      authors: "Sangoh Lee, Sangwoo Mo, Wook-Shin Han"
     - title: "PRISM: Interpreting Time-series Foundation Models via Zero-shot Basis Decoding"
       authors: "Sanghyung Lee*, Chaewon Park*, Suchan Lee, Sangwoo Mo"
     - title: "Loud and Clear: Making Visual Evidence Count in Multimodal Document RAG"

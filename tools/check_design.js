@@ -111,7 +111,8 @@ function inspect(contract) {
     const first = previous && (previous.matches('h1.visually-hidden,.page-intro'));
     const afterIntro = previous && previous.matches('.page-intro');
     // The block right after a page intro (list, group heading or embed) sits --intro-gap under it (theme.css, 교수 2026-11-18).
-    const target = e.matches('.section-next,.section-callout,.section-band') ? expected('paddingTop','var(--space-5)',e) : afterIntro ? expected('paddingTop','var(--intro-gap)',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
+    // The Home band (.section-band) keeps the plain section gap from the focus figure above it (교수 2026-11-23); only closing lines and callouts attach at --space-5.
+    const target = e.matches('.section-next,.section-callout') ? expected('paddingTop','var(--space-5)',e) : afterIntro ? expected('paddingTop','var(--intro-gap)',e) : expected('paddingTop',first ? 'var(--page-start)' : 'var(--section-gap)',e);
     // Hero starts the first section with its own combined band rhythm.
     if (previous && previous.matches('.hero-band,.course-summary')) continue;
     if (!same(getComputedStyle(e).paddingTop,target)) failures.push(`절 위 간격 역할 위반: ${label(e)}`);
@@ -177,7 +178,7 @@ async function run() {
         for (const selector of ['.focus-ring','.filter-btn','.study-tablist button']) {
           const controls = page.locator(selector);
           for (let i=0; i<await controls.count(); i++) {
-            await controls.nth(i).click(); await page.mouse.move(0,0); await check(`${selector}[${i}]`);
+            await controls.nth(i).dispatchEvent('click');  /* a dispatched click: the outer focus rings' centre is covered by the inner ring, so a pointer click at the element centre never reaches them */ await page.mouse.move(0,0); await check(`${selector}[${i}]`);
 
           }
         }

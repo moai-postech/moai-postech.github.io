@@ -19,7 +19,8 @@ function checkStyleSources() {
     const source = fs.readFileSync(path.join(ROOT, file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');  // 주석이 다음 선택자에 붙지 않게
     for (const m of source.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
       const size = m[2].match(/font-size:\s*([^;]+)/);
-      if (size && !/^(var\(|inherit$)/.test(size[1].trim())) failures.push(`${file}: ${m[1].trim()} 글자 크기는 역할 토큰 사용`);
+      // a role token times --ring-k is still a role token: the Home ring names cancel the SVG scale to stay at a type-scale size on screen (README 연구 방향 동심원, 교수 2026-11-23)
+      if (size && !/^(var\(|inherit$|calc\(var\([^;]*\) \* var\(--ring-k, 1\)\)$)/.test(size[1].trim())) failures.push(`${file}: ${m[1].trim()} 글자 크기는 역할 토큰 사용`);
     }
     if (/font-weight:\s*(400|600|700)\b/.test(source)) failures.push(`${file}: 굵기 역할 토큰 대신 숫자 사용`);
   }

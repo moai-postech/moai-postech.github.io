@@ -88,7 +88,7 @@ function inspect() {
         const states = page.locator('.focus-ring, .filter-btn, .study-tablist button');
         const count = await states.count();
         for (let i = 0; i < Math.max(1, count); i++) {
-          if (count) await states.nth(i).click();
+          if (count) await states.nth(i).dispatchEvent('click');  // dispatched: the outer focus rings' centre is covered by the inner ring
           const result = await page.evaluate(inspect);
           nodes += result.nodes; views++;
           for (const problem of result.problems) failures.push(`${width}px ${name} state${i}: ${problem}`);

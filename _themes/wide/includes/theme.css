@@ -228,7 +228,7 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
    which lists that direction's papers and people. The card is as tall as the rings and never moves or resizes between rings.
    Rings sit apart by a thin white gap so each one stays its own shape. */
 .focus-explorer { position: relative; display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); align-items: stretch; --focus-pad: var(--space-6); --focus-title: calc(var(--text-h2) * 1.3); }
-.focus-explorer > h2 { position: relative; z-index: 2; grid-column: 5 / -1; grid-row: 1; align-self: start; margin: var(--space-5) var(--focus-pad) 0; }  /* the section title is the card's own heading: it shares the card's grid cell, so the figure has no caption floating above it */
+.focus-explorer > h2 { position: relative; z-index: 2; grid-column: 5 / -1; grid-row: 1; align-self: start; margin: var(--focus-pad) var(--focus-pad) 0; }  /* the section title is the card's own heading: it shares the card's grid cell, so the figure has no caption floating above it */
 .focus-rings { grid-column: 1 / span 4; grid-row: 1; align-self: center; width: 100%; max-width: 360px; height: auto; overflow: visible; }
 .focus-ring { cursor: pointer; outline: none; }  /* ring names render at a type-scale size at every width: scripts.html sets --ring-k (viewBox units per pixel) on the svg, so the size does not scale with the drawing */
 .focus-ring .ring-shape { fill: color-mix(in srgb, var(--line) 25%, var(--surface)); stroke: none; transition: fill .2s; }
@@ -240,10 +240,10 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .focus-ring[aria-selected="true"] .ring-shape { fill: var(--accent-soft); }
 .focus-ring[aria-selected="true"] .ring-label { fill: var(--accent); font-weight: var(--weight-heading); }
 .focus-ring:focus-visible .ring-shape { stroke: var(--accent); stroke-width: 2; }
-.focus-panels { position: relative; z-index: 1; grid-column: 5 / -1; grid-row: 1; display: flex; flex-direction: column; padding: calc(var(--space-5) + var(--focus-title) + var(--space-1)) var(--focus-pad) var(--space-5); border-radius: var(--radius-2); background: var(--callout-surface); }  /* the top padding leaves the title's line free */
+.focus-panels { position: relative; z-index: 1; grid-column: 5 / -1; grid-row: 1; display: flex; flex-direction: column; padding: calc(var(--focus-pad) + var(--focus-title) + var(--space-2)) var(--focus-pad) var(--focus-pad); border-radius: var(--radius-2); background: var(--callout-surface); }  /* the top padding leaves the title's line free; one --focus-pad on all four sides, 8px from the title to the direction name */
 .focus-panel { position: relative; flex: 1; display: flex; flex-direction: column; }
 .focus-panel .venue { background: var(--bg); }  /* white badge on the pink card */
-.focus-link { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }  /* the beam from the chosen ring to the card: over the rings, under the card; drawn by scripts.html */
+.focus-link { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; mix-blend-mode: multiply; }  /* the beam from the chosen ring to the card: over the rings, under the card; drawn by scripts.html. multiply tints what lies under it instead of veiling it, so a ring name the beam crosses (Physical AI) keeps its full ink */
 .focus-link .beam-near { stop-color: color-mix(in srgb, var(--accent) 17%, var(--bg)); stop-opacity: .62; }  /* on white this equals the chosen ring's pink; the other rings show through faintly */
 .focus-link .beam-far { stop-color: var(--callout-surface); }  /* the card's own colour where the beam meets it, so there is no seam */
 .focus-panels > .focus-panel[hidden] { display: none; }
@@ -253,8 +253,8 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
   .focus-panels:has(> .focus-panel[hidden]) > .focus-panel[hidden] { display: flex; visibility: hidden; }
 }
 .focus-panel:not([hidden]) ~ .focus-panel:not([hidden]) { margin-top: var(--section-gap); }  /* without JavaScript all panels show, one after another */
-.focus-head { margin-bottom: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid var(--callout-line); }
-.focus-head img { position: absolute; top: calc(-1 * var(--focus-title) - var(--space-1)); right: 0; width: 48px; height: 48px; }  /* beside the title and the direction name, at the card's right end */
+.focus-head { margin-bottom: var(--space-4); }  /* direction name to its papers: the group-heading gap (16px). No rule here: the name already heads the list, and the height it took now pads the card evenly (32px on all sides) inside the same 360px */
+.focus-head img { position: absolute; top: calc(-1 * var(--focus-title) - var(--space-2)); right: 0; width: 48px; height: 48px; }  /* beside the title and the direction name, at the card's right end */
 .focus-head h3 { margin: 0; color: var(--accent); }  /* the chosen direction, in the accent like its ring's name; the shared group-heading role */
 .focus-papers { display: grid; gap: var(--space-3); margin-bottom: var(--space-4); }  /* compact: the figure should not take more height than it needs (교수 2026-11-23) */
 .focus-paper { display: grid; grid-template-columns: 8.5em minmax(0, 1fr); column-gap: var(--space-4); align-items: baseline; color: var(--text); }  /* one row per paper: badge column of fixed width so every title starts on one line */
@@ -346,7 +346,7 @@ a.mentee-name:hover { color: var(--accent); }
 .mini-preview:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: -2px; border-radius: var(--radius-2); }
 .mini-caption { position: absolute; right: var(--space-4); bottom: var(--space-3); z-index: 2; color: var(--bg); opacity: 0; font-size: var(--text-small); transition: opacity .2s; }  /* shown on hover or focus only, so the band shows one link at rest (교수 2026-11-03) */
 .mini-preview:hover .mini-caption, .mini-preview:focus-visible .mini-caption { opacity: 1; }
-.content-section.section-band { padding-top: var(--space-5); }  /* attaches to Our focus above, like a closing line (교수 2026-11-03: 붙어 있는 편이 낫다) */
+.content-section.section-band { padding-top: var(--section-gap); }  /* the focus figure is a filled card of its own, so the band keeps the section gap from it; 24px stacked three boxes too tightly (교수 2026-11-23, replacing the 24px of 11-03). The recruiting callout stays attached to the band at 24px */
 .mini-text { position: relative; z-index: 2; max-width: 40%; }  /* only the text box sits above the link; the map keeps names right of it (index.md mini.url clear=0.42) */
 .mini-text br.wide-only { display: none; }  /* a line break that only wide screens keep (Home band: after "such as"), where the first line fits */
 @media (min-width: 1280px) { .mini-text br.wide-only { display: inline; } }
@@ -400,7 +400,7 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 .year-head { line-height: var(--leading-group); margin: var(--section-gap) 0 var(--space-4); font-size: var(--text-group); font-weight: var(--weight-heading); letter-spacing: normal; }  /* same year heading as the seminar list */
 .section-body > .year-head:first-child { margin-top: 0; }
 .filter-bar + .year-head { margin-top: var(--space-6); }  /* Talks: the first year sits under the filter (교수 2026-11-17) at 32px (it collapses with the filter's 24px), so the heading stays closer to its own list (16px) than to the filter's underline (교수 2026-11-18) */
-.schedule tbody > .schedule-year:first-child th { padding-top: 0; }
+.schedule tbody > .schedule-year:first-child th { padding-top: var(--space-1); }  /* filter to the first year: 24 + the 4px row spacing + 4 = 32px, the same as Invited Talks (.filter-bar + .year-head), so the year does not jump 4px between the two Seminar tabs */
 .schedule-date { width: 1%; padding-right: var(--space-5) !important; color: var(--tone, var(--faint)); font-size: var(--text-meta); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .filter-swatch { display: inline-block; width: .7em; height: .7em; margin-right: .4em;  /* 6px at 15px: the same gap as label to count (2px + a space), so swatch, label and count read as one unit and 24px separates the buttons (교수 2026-11-23) */ border-radius: 3px; background: var(--tone-mark, var(--tone-tint)); }  /* the row colour of that kind, as a legend */
 .schedule-title { font-weight: var(--weight-medium); line-height: 1.5; }  /* every title one medium weight; the speaker matches it in size and weight (교수 2026-11-02) */
@@ -539,7 +539,7 @@ a.person-name:hover { color: var(--accent); }
   .site-nav > a, .site-nav .nav-group > a, .course-nav > a { justify-content: center; width: 100%; min-height: 44px; }  /* six links form two even rows, with full touch targets */
   .course-nav { min-height: 44px; }  /* course and study menus have three links: one row, so no empty band sits between the menu and its rule */
   .subnav a { padding-inline: var(--space-3); }  /* People's three tabs stay on one line on a phone instead of leaving Other Mentees alone below */
-  .filter-bar { column-gap: var(--space-3); }  /* Seminar: All, Lab, Invited and Full schedule share one line on a phone */
+  .filter-bar { column-gap: var(--space-3); row-gap: var(--space-2); }  /* Seminar: the four filters share one line on a phone; Full schedule wraps under them, 8px below the filter's underline instead of a detached 24px */
   .person-photo { max-width: 120px; }
   .mentee-aff { display: block; margin-left: 0; }  /* phones: name, then affiliation, then papers */
   .mentee-list li { padding: var(--item-gap) 0; }  /* three lines per person, so the wider multi-line gap */
@@ -549,8 +549,6 @@ a.person-name:hover { color: var(--accent); }
   .eyebrow { font-size: var(--text-meta); }
   .focus-explorer { --focus-pad: var(--space-5); }
   .focus-rings { max-width: 320px; margin-bottom: var(--space-5); }
-  .focus-explorer > h2 { margin-top: var(--space-5); }
-  .focus-panels { padding-top: calc(var(--space-5) + var(--focus-title) + var(--space-1)); padding-bottom: var(--space-5); }
   .focus-head img { display: none; }  /* phones: the title needs the whole line */
   .focus-paper { grid-template-columns: 1fr; row-gap: var(--space-1); }  /* phones: badge above the title */
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
@@ -573,6 +571,7 @@ a.person-name:hover { color: var(--accent); }
   .schedule tr[hidden] { display: none; }
   .schedule tr:not(.schedule-year) { margin-bottom: var(--space-1); padding: var(--space-3); border-radius: var(--radius-1); background: var(--tone-row); }
   .schedule-year th { line-height: var(--leading-group); padding: calc(var(--section-gap) - var(--space-1)) 0 var(--space-4); }  /* cards here: the card above already leaves its --space-1 margin, so the year keeps the plain group gaps from card edge to card edge */
+  .schedule tbody > .schedule-year:first-child th { padding-top: var(--space-2); }  /* no row spacing in the card layout, so 24 + 8 keeps the same 32px from the filter as Invited Talks */
   .schedule tr[data-kind] > td, .schedule tr[data-kind] > td:first-child, .schedule tr[data-kind] > td:last-child { padding: 0 !important; background: none; box-shadow: none; border-radius: 0; }  /* the card carries fill and padding */
   .schedule td { padding: 0 !important; text-align: left; white-space: normal; }
   .schedule tr[data-kind]:not([hidden]) { display: flex; flex-wrap: wrap; align-items: baseline; }

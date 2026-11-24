@@ -11,8 +11,8 @@ terms:
         title: "Search & Learning"
         keywords: "minimax search, MCTS, policy & value networks"
         papers:
-          - { text: "DeepBlue", url: "https://www.semanticscholar.org/paper/ce7f4f9708b96c21aa0cd78d7e15f22235d9664f" }
-          - { text: "AlphaGo", url: "https://doi.org/10.1038/nature16961" }
+          - { text: "DeepBlue", url: "https://www.sciencedirect.com/science/article/pii/S0004370201001291" }
+          - { text: "AlphaGo", url: "https://www.nature.com/articles/nature16961" }
         demos:
           - { text: "Chess", url: "https://www.youtube.com/watch?v=5tUZpeYsgVk" }
           - { text: "Go", url: "https://www.youtube.com/watch?v=WXuK6gekU1Y" }
@@ -20,15 +20,15 @@ terms:
         title: "Self-Play"
         keywords: "policy iteration, model-based planning"
         papers:
-          - { text: "AlphaZero", url: "https://doi.org/10.1126/science.aar6404" }
-          - { text: "MuZero", url: "https://arxiv.org/abs/1911.08265" }
+          - { text: "AlphaZero", url: "https://www.science.org/doi/10.1126/science.aar6404" }
+          - { text: "MuZero", url: "https://www.nature.com/articles/s41586-020-03051-4" }
         demos:
           - { text: "Board Games", url: "https://www.youtube.com/watch?v=7L2sUGcOgh0" }
       - n: "3"
         title: "Deep RL"
         keywords: "MDP, Q-learning, actor-critic"
         papers:
-          - { text: "DQN", url: "https://doi.org/10.1038/nature14236" }
+          - { text: "DQN", url: "https://www.nature.com/articles/nature14236" }
           - { text: "A3C", url: "https://arxiv.org/abs/1602.01783" }
         demos:
           - { text: "Atari", url: "https://www.youtube.com/watch?v=eG1Ed8PTJ18" }
@@ -44,7 +44,7 @@ terms:
         title: "Exploration II: Memory"
         keywords: "delayed reward, multi-armed bandit"
         papers:
-          - { text: "Go-Explore", url: "https://arxiv.org/abs/2004.12919" }
+          - { text: "Go-Explore", url: "https://www.nature.com/articles/s41586-020-03157-9" }
           - { text: "Agent57", url: "https://arxiv.org/abs/2003.13350" }
         demos:
           - { text: "Montezuma's Revenge", url: "https://www.youtube.com/watch?v=xnvzgQXY9CI" }
@@ -53,22 +53,22 @@ terms:
         keywords: "zero-sum game, Nash equilibrium, regret minimization"
         papers:
           - { text: "CFR", url: "https://proceedings.neurips.cc/paper/2007/hash/08d98638c6fcd194a4b1e6992063e944-Abstract.html" }
-          - { text: "DeepNash", url: "https://arxiv.org/abs/2206.15378" }
+          - { text: "DeepNash", url: "https://www.science.org/doi/10.1126/science.add4679" }
         demos:
           - { text: "Stratego", url: "https://www.youtube.com/watch?v=TrkYuUEmOEU" }
       - n: "7"
         title: "Partial Observation"
         keywords: "information set, belief state"
         papers:
-          - { text: "DeepStack", url: "https://arxiv.org/abs/1701.01724" }
-          - { text: "Pluribus", url: "https://doi.org/10.1126/science.aay2400" }
+          - { text: "DeepStack", url: "https://www.science.org/doi/10.1126/science.aam6960" }
+          - { text: "Pluribus", url: "https://www.science.org/doi/10.1126/science.aay2400" }
         demos:
           - { text: "Poker", url: "https://www.youtube.com/watch?v=luFFSi4IDUk" }
       - n: "8"
         title: "Multi-Agent RL I: Competition"
         keywords: "Markov game, non-stationarity, fictitious self-play"
         papers:
-          - { text: "AlphaStar", url: "https://doi.org/10.1038/s41586-019-1724-z" }
+          - { text: "AlphaStar", url: "https://www.nature.com/articles/s41586-019-1724-z" }
           - { text: "Hide-and-Seek", url: "https://arxiv.org/abs/1909.07528" }
         demos:
           - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=cUTMhmVh1qs" }
@@ -77,7 +77,7 @@ terms:
         keywords: "credit assignment, CTDE, communication"
         papers:
           - { text: "QMIX", url: "https://arxiv.org/abs/1803.11485" }
-          - { text: "Cicero", url: "https://doi.org/10.1126/science.ade9097" }
+          - { text: "Cicero", url: "https://www.science.org/doi/10.1126/science.ade9097" }
         demos:
           - { text: "StarCraft II", url: "https://www.youtube.com/watch?v=ijdO3UNL4Bs" }
           - { text: "Diplomacy", url: "https://www.youtube.com/watch?v=u5192bvUS7k" }
@@ -209,6 +209,9 @@ terms:
           - { text: "RoboPoint", url: "https://arxiv.org/abs/2406.10721" }
         demos:
           - { text: "MolmoPoint", url: "https://huggingface.co/spaces/allenai/MolmoPoint-8B-Demo" }
+        materials:
+          - { text: "Slides 1", url: "teaching/ai-study/fall-2026/09-spatial-reasoning-slides.pdf" }
+          - { text: "Slides 2", url: "https://drive.google.com/open?id=1dzdaUdjOhdL55wp8M3jiY81GsVL6yt_F" }
       - n: "10"
         date: "2026-12-01"
         title: "VLA"

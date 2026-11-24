@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- |
 | 2026-11-24 | [스터디 MARL 참고 강의](2026-11-24-study-marl-reference.md) | Sangwoo Mo(sangwoomo) | `_data/ai_study_terms.yml` | Spring 2027 See also 를 IIIA-CSIC MARL 강좌로 바꿨다가 MIT 6.S890 으로 되돌림(대안 검토 기록) |
 | 2026-11-24 | [스터디 논문 공식 링크](2026-11-24-study-official-links.md) | Sangwoo Mo(sangwoomo) | 스터디 시트, `_data/ai_study.yml`, `AGENTS.md` | Spring 2027 논문 11편을 Nature·Science 본지 공식, 그 밖 arXiv, 없으면 공식 venue 로 |
-| 2026-11-24 | [Research Focus 세로 여백](2026-11-24-focus-spacing.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `scripts.html` | 카드를 360px 고정에서 내용 높이로, 분홍 면은 고른 방향 길이만, People 위 빈칸 제거 |
+| 2026-11-24 | [Research Focus 세로 여백](2026-11-24-focus-spacing.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `scripts.html` | 카드를 360px 고정에서 내용 높이로, 분홍 면은 고른 방향 길이만, People 위 빈칸 제거. 안쪽 간격 24/16/24 로 한 단계 넓힘 |
 | 2026-11-24 | [ActPer 추가](2026-11-24-actper.md) | Sangwoo Mo(sangwoomo) | `_data/publications.yml`, `_data/focus.yml`, `_data/research.yml`, `focus.html`, `theme.css` | active perception 논문을 Preprints·Physical AI·Overview VLA & World Models 에, 저자 Mo†·Han†. Research Focus 논문 줄의 약칭 배지 뺌 |
 | 2026-11-24 | [전 탭 디자인 검수](2026-11-24-site-review.md) | Sangwoo Mo(sangwoomo) | `_data/courses/*.yml`, `tools/check_format.js` | 21개 화면 1440·390px 검수, 큰 문제 없음. 강의 숫자 범위 공백 통일, 형식 검사가 제목 머리 덩어리를 인식 |
 | 2026-11-24 | [Research Focus 흐름](2026-11-24-focus-flow.md) | Sangwoo Mo(sangwoomo) | `focus.html`, `theme.css`, `_data/focus.yml`, `AGENTS.md` | 원은 이름만 두고, 카드 방향 이름 줄 오른쪽에 `BRAIN → BODY → IMPACT`(고른 단계 강조)로 흐름 힌트. 카드 아이콘 뺌. 꺾쇠·원 안 힌트·가로 흐름은 기각 |

@@ -1,6 +1,6 @@
 # 2026-11-24 Research Focus 카드 세로 여백
 
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/theme.css`, `_themes/wide/includes/scripts.html`, `AGENTS.md` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/theme.css`, `_themes/wide/includes/scripts.html`, `_themes/wide/page-design.json`, `page-design.md`, `AGENTS.md` | 도구: Claude Code
 
 > **한줄 결론: 데스크톱 카드를 원과 같은 360px 고정에서 내용 높이로 바꾸고 분홍 면을 고른 방향 길이만큼만 칠해, 논문과 People 사이의 62~96px 빈칸을 없앴다.**
 
@@ -24,6 +24,14 @@ POSTECH 요구사항: 영향 없음
 - 카드 360px 유지하고 논문 묶음을 세로 가운데로: 빈칸이 위아래로 나뉠 뿐 없어지지 않는다.
 - 카드를 고른 패널 높이로 줄이고 원 가운데에 다시 맞추기: 방향을 바꿀 때마다 제목이 위아래로 움직인다.
 - 이름→목록·논문 사이 간격을 키워 빈칸 메우기: 사이트 간격 규칙(묶음 제목 16)과 어긋나고 빈칸이 줄 뿐이다.
+
+## 후속: 카드 안 간격을 한 단계씩 넓힘
+교수: 이건 밸런스 맞아? 위아래로 너무 붙어 있지 않아? 이어서 "왜 내가 말해야지만 고치는거야?" 카드를 내용 높이로 줄인 뒤 숫자가 토큰과 맞는지만 보고 줄어든 카드 전체의 밀도를 다시 보지 않았다.
+- 방향 이름(+ BRAIN → BODY → IMPACT) → 첫 논문 16→24px, 논문 사이 12→16px, 마지막 논문 → People 선 16→24px. 글자 기준 실측 1440px: 위 33 / 제목→이름 11 / 이름→목록 26 / 논문 사이 16 / 목록→선 24 / 선→People 13 / 아래 32. 카드 300·338·316px 로 원(360px)보다 작다. 모든 폭 같은 리듬.
+- 방향 이름 아래는 사이트 묶음 제목 기본(16px)과 다르므로 `page-design.json` 에 `focus-card-rhythm` 으로 등록하고 `page-design.md` 갱신.
+- 검사: `check_design`(29페이지, 553 상태, 위반 0), `check_format`, `check_typography` 통과. 같은 날 앞 회차들에 적은 로컬 `check_design` 통과는 시스템 Chrome 래퍼가 `require` 로 불러 본체가 돌지 않은 것이었다. 이번에 `node -r` 미리 불러오기로 실제로 돌렸고 지금 코드(앞 회차 변경 포함)에서 통과.
+
+기각한 안: 방향 이름 아래를 사이트 기본 16px 로 두고 논문 사이만 16px(이름→목록과 논문 사이가 같아져 묶음이 갈리지 않는다).
 
 ## 남은 것
 - 없음.

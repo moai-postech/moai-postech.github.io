@@ -12,19 +12,19 @@ parts:
 - id: sw3
   name: Software 3.0
   title: Programming with AI
-  span: Lectures 2–4
+  span: "Lectures 2 – 4"
   text: 'Complete the AI workflow first: request work, build and check code in an IDE, and direct coding agents
     with connected tools.'
 - id: sw1
   name: Software 1.0
   title: Python and Classical Machine Learning
-  span: Lectures 5–13
+  span: "Lectures 5 – 13"
   text: Read generated code, handle arrays and DataFrames, validate data, then choose and evaluate regression, classification,
     ensembles, clustering, representations, and explanations.
 - id: sw2
   name: Software 2.0
   title: Deep Learning and Foundation Models
-  span: Lectures 14–22
+  span: "Lectures 14 – 22"
   text: Train small networks, use visual and language representations, and build checked AI workflows.
 schedule:
 - date: '2027-03-03'

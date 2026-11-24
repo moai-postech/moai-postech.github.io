@@ -9,7 +9,7 @@ instructor:
 # Home 의 운영 정보. 요일·시각은 교수 캘린더, 강의실은 실제로 쓴 302호(교수 2026-10-26, 캘린더의 배정 강의실과 다르다)
 location: { building: "Science Building 4", rooms: "Room 302" }
 meetings: { day: "Tuesdays & Thursdays", time: "9:30 – 10:45 KST" }
-office_hours: "Thursdays 11:00 – 12:00, Room 319"
+office_hours: "Thursdays 11:00 – 12:00, Room 319"
 summary: >-
   This course covers the data side of AI systems: how data is collected and prepared, how it is stored and processed at scale,
   and how models and LLM applications run on it. In a team project, students go through an end-to-end data engineering pipeline.
@@ -17,17 +17,17 @@ parts:
   - id: "part-1"
     name: "Part I"
     title: "Collection and Preparation"
-    span: "Lectures 2 – 6"
+    span: "Lectures 2 – 6"
     text: "Collect data, explore it, and clean, integrate, transform and reduce it."
   - id: "part-2"
     name: "Part II"
     title: "Storage"
-    span: "Lectures 7 – 15"
+    span: "Lectures 7 – 15"
     text: "Store and query it with SQL and NoSQL, then process it with MapReduce, Spark, BigQuery, Airflow and streams."
   - id: "part-3"
     name: "Part III"
     title: "Monitoring and Updates"
-    span: "Lectures 16 – 19"
+    span: "Lectures 16 – 19"
     text: "Run models on the data: ML systems, LLM systems, RAG and agents."
 
 schedule:

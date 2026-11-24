@@ -56,8 +56,10 @@ function measure({ TOL, adjustments }) {
     if (!h.matches('.group-heading, .year-head, .schedule-year th')) continue;
     if (adjusted(h,['marginTop','marginBottom','paddingTop','paddingBottom'])) continue;
     // 묶음 제목: 아래 첫 항목과 --space-4, 앞 묶음의 마지막 항목과 --section-gap
-    const hb = content(h);
-    const after = leaves.find(l => !h.contains(l) && !l.contains(h) && (h.compareDocumentPosition(l) & Node.DOCUMENT_POSITION_FOLLOWING));
+    // 제목에 딸린 머리 줄(data-heading-block: Home 연구 방향의 BRAIN → BODY → IMPACT)은 제목과 한 덩어리로 보고, 그 덩어리 아래 첫 항목까지 잰다
+    const hblock = h.closest('[data-heading-block]') || h;
+    const hb = content(hblock);
+    const after = leaves.find(l => !hblock.contains(l) && !l.contains(hblock) && (hblock.compareDocumentPosition(l) & Node.DOCUMENT_POSITION_FOLLOWING));
     if (after) { const below = (edge(after,'top') ?? Math.min(...group(after).map(l => content(l).top))) - hb.bottom;
       if (Math.abs(below - tok.below) > TOL) problems.push(`"${name}" 아래 간격 ${Math.round(below)}px (규칙 ${tok.below}px)`); }
     const before = [...leaves].reverse().find(l => !h.contains(l) && !l.contains(h) && (h.compareDocumentPosition(l) & Node.DOCUMENT_POSITION_PRECEDING));

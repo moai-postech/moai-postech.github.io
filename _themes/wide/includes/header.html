@@ -1,4 +1,4 @@
-{% assign current = page.url | remove_first: "/" %}{% if current == "" %}{% assign current = "index.html" %}{% endif %}
+{% assign current = page.url | remove_first: "/" %}{% if current == "" %}{% assign current = "index.html" %}{% endif %}{% if page.nav_current %}{% assign current = page.nav_current %}{% endif %}
   <header class="site-head">
     {% include header-brand.html %}
     <nav class="site-nav">

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: News
+nav_current: index.html  # 메뉴에 없는 Home 의 News 보관 페이지라 상단 메뉴는 Home 을 현재 위치로 보인다
 head_title: "News · MOAI Lab"
 description: "All news from MOAI Lab at POSTECH."
 intro: |

@@ -44,7 +44,7 @@
         {% endfor %}
       </div>{% endif %}
       {% assign people = "" | split: "" %}{% for g in site.data.members.groups %}{% for person in g.people %}{% if person.focus == f.name %}{% assign people = people | push: person %}{% endif %}{% endfor %}{% endfor %}
-      {% if people.size > 0 %}<p class="focus-people"><span class="label">People</span>{% for person in people %}{% if person.url %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}<span>{{ person.name }}</span>{% endif %}{% endfor %}</p>{% endif %}
+      {% if people.size > 0 %}<p class="focus-people"><span class="label">People</span><span class="focus-people-names">{% for person in people %}{% if person.url %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}<span>{{ person.name }}</span>{% endif %}{% endfor %}</span></p>{% endif %}
     </div>
     {% endfor %}
     </div>

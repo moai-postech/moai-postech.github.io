@@ -12,7 +12,7 @@ professor:
   contact: "{first_name}.{last_name} [at] postech.ac.kr"
   links: "[Google Scholar](https://scholar.google.com/citations?user=Sq9y3NMAAAAJ) / [GitHub](https://github.com/sangwoomo) / [CV](https://www.overleaf.com/read/yhzsgvyrfsvj) / [X (Twitter)](https://twitter.com/sangwoomo)"
   bio: |
-    Sangwoo Mo is an Assistant Professor of [Industrial and Management Engineering](https://ime.postech.ac.kr/) at POSTECH, where he leads the MOAI Lab. His research focuses on multimodal foundation models for vision, language, and robotics, with a particular interest in scalable priors that improve their performance, reliability, and interpretability. His work has appeared at leading ML venues such as NeurIPS, ICML, and ICLR. He received his PhD from [KAIST](https://www.kaist.ac.kr/en/) under the supervision of Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html) and subsequently held a postdoctoral fellowship at the [University of Michigan](https://umich.edu/) with Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/). He has collaborated with teams at Google, Meta, and NVIDIA. His honors include the Qualcomm Innovation Fellowship and the Samsung Humantech&nbsp;Paper&nbsp;Award.
+    Sangwoo Mo is an Assistant Professor of [Industrial and Management Engineering](https://ime.postech.ac.kr/) at POSTECH, where he leads the MOAI Lab. His research focuses on multimodal foundation models for vision, language, and robotics, with a particular interest in scalable priors that improve their performance, reliability, and interpretability. His work has appeared at leading ML venues such as NeurIPS, ICML, and ICLR. He received his PhD from [KAIST](https://www.kaist.ac.kr/en/) under the supervision of Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html) and subsequently held a postdoctoral fellowship at the [University of Michigan](https://umich.edu/) with Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/). He has collaborated with teams at Google, Meta, and NVIDIA. His honors include the Qualcomm Innovation Fellowship and the Samsung Humantech&nbsp;Paper&nbsp;Award.
   # Faculty 페이지 Bio 아래 절들. 개인 사이트 About 의 Appointments, Education, Services, Honors & Awards 와 같은 내용.
   cv:   # 항목은 문자열, 또는 { text: 무엇, side: 언제·어디, detail: 딸린 한 줄 } (side 는 오른쪽 끝, detail 은 text 아래 작은 회색 줄)
     - title: "Appointments"
@@ -22,16 +22,16 @@ professor:
             - { text: "**POSTECH**, Assistant Professor", side: "2025 – present" }
         - title: "Research positions"
           items:
-            - { text: "**U Michigan**, Postdoctoral Fellow (host: Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/))", side: "2023 – 2025" }
-            - { text: "**NVIDIA AI**, Research Intern (host: Dr. [Weili Nie](https://weilinie.github.io/))", side: "2022 Winter" }
-            - { text: "**Meta AI**, Research Intern (host: Dr. [Jong-Chyi Su](https://jongchyisu.github.io/))", side: "2022 Summer" }
-            - { text: "**Naver AI**, Collaborator (host: Dr. [Jung-Woo Ha](https://aidljwha.wordpress.com/))", side: "2021 Summer" }
-            - { text: "**Google AI**, Collaborator (host: Dr. [Kihyuk Sohn](https://sites.google.com/site/kihyuksml/))", side: "2020 Winter" }
-            - { text: "**Kakao Brain**, Research Intern (host: Dr. [Sungwoong Kim](https://sites.google.com/view/swkim))", side: "2019 Spring" }
+            - { text: "**U Michigan**, Postdoctoral Fellow (host: Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/))", side: "2023 – 2025" }
+            - { text: "**NVIDIA AI**, Research Intern (host: Dr. [Weili Nie](https://weilinie.github.io/))", side: "2022 Winter" }
+            - { text: "**Meta AI**, Research Intern (host: Dr. [Jong-Chyi Su](https://jongchyisu.github.io/))", side: "2022 Summer" }
+            - { text: "**Naver AI**, Collaborator (host: Dr. [Jung-Woo Ha](https://aidljwha.wordpress.com/))", side: "2021 Summer" }
+            - { text: "**Google AI**, Collaborator (host: Dr. [Kihyuk Sohn](https://sites.google.com/site/kihyuksml/))", side: "2020 Winter" }
+            - { text: "**Kakao Brain**, Research Intern (host: Dr. [Sungwoong Kim](https://sites.google.com/view/swkim))", side: "2019 Spring" }
     - title: "Education"
       groups:
         - items:
-            - { text: "**KAIST**, MS/PhD in Electrical Engineering (advisor: Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html))", detail: "PhD thesis: [Learning Visual Representations from Uncurated Data](https://koasas.kaist.ac.kr/handle/10203/320934)", side: "2023" }
+            - { text: "**KAIST**, MS/PhD in Electrical Engineering (advisor: Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html))", detail: "PhD thesis: [Learning Visual Representations from Uncurated Data](https://koasas.kaist.ac.kr/handle/10203/320934)", side: "2023" }
             - { text: "**POSTECH**, BS in Mathematics & Industrial Engineering (minor), summa cum laude", detail: "Visiting student: [UC Berkeley](https://www.berkeley.edu), [Peking University](https://english.pku.edu.cn)", side: "2016" }
     - title: "Services"
       groups:
@@ -128,45 +128,45 @@ mentees:
     people:
       - name: "Yoel Shin"
         url: "https://www.linkedin.com/in/yoel-shin"
-        affiliation: "MS @ POSTECH, w/ Prof. [Byung-In Kim](https://plogistics.postech.ac.kr/members/professor)"
+        affiliation: "MS @ POSTECH, w/ Prof. [Byung-In Kim](https://plogistics.postech.ac.kr/members/professor)"
         papers: "WACV'27 (application)"
       - name: "Jiyun Bae"
         url: "https://www.linkedin.com/in/jiyun-bae-33568221a/"
-        affiliation: "PhD @ POSTECH, w/ Prof. [Jaeho Lee](https://jaeho-lee.github.io/)"
+        affiliation: "PhD @ POSTECH, w/ Prof. [Jaeho Lee](https://jaeho-lee.github.io/)"
         papers: "[EMNLP'26 (oral)](https://arxiv.org/abs/2511.21397)"
       - name: "Sangoh Lee"
         url: "https://leesangoh.github.io/"
-        affiliation: "PhD @ POSTECH, w/ Prof. [Wook-Shin Han](https://wscrony.github.io/)"
+        affiliation: "PhD @ POSTECH, w/ Prof. [Wook-Shin Han](https://wscrony.github.io/)"
         papers: "[ICML'26](https://arxiv.org/abs/2512.20014)"
   - title: "During postdoc"
     people:
       - name: "Byeongju Woo"
         url: "https://byeongju.me/"
-        affiliation: "PhD @ UMich, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
+        affiliation: "PhD @ UMich, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
         papers: "[NeurIPS'26](https://arxiv.org/abs/2602.02977)"
       - name: "Seung-Hyun Lee"
         url: "https://lsh3163.github.io/seunghyunlee/"
-        affiliation: "PhD @ UMich, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
+        affiliation: "PhD @ UMich, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
         papers: "[TMLR'26](https://www.arxiv.org/abs/2601.22529)"
       - name: "Zilin Wang"
         url: "https://wayne2wang.github.io/"
-        affiliation: "PhD @ UMich, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
+        affiliation: "PhD @ UMich, w/ Prof. [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)"
         papers: "[CVPR'25](https://arxiv.org/abs/2512.16202)"
   - title: "During PhD"
     people:
       - name: "Woomin Song"
         url: "https://woominsong.github.io/"
-        affiliation: "PhD @ KAIST, w/ Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html)"
+        affiliation: "PhD @ KAIST, w/ Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html)"
         papers: "[ICLR'24](https://openreview.net/forum?id=ulaUJFd96G), [TMLR'25](https://arxiv.org/abs/2505.20698)"
       - name: "Younghyun Kim"
         url: "https://openreview.net/profile?id=~Younghyun_Kim3"
-        affiliation: "MS @ KAIST, w/ Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html)"
+        affiliation: "MS @ KAIST, w/ Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html)"
         papers: "[CVPR'24 (highlight)](https://arxiv.org/abs/2301.11104)"
       - name: "Hyunwoo Kang"
         url: "https://www.linkedin.com/in/hyunwoo-kang-4b6716194/"
-        affiliation: "MS @ KAIST, w/ Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html)"
+        affiliation: "MS @ KAIST, w/ Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html)"
         papers: "[NeurIPS'21](https://arxiv.org/abs/2108.00049), [CVPRW'22](https://arxiv.org/abs/2212.06595)"
       - name: "Seung-Jun Moon"
         url: "https://sites.google.com/view/seungjunmoon"
-        affiliation: "MS @ KAIST, w/ Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html)"
+        affiliation: "MS @ KAIST, w/ Prof. [Jinwoo Shin](https://alinlab.kaist.ac.kr/shin.html)"
         papers: "[AAAI'21](https://arxiv.org/abs/2012.09392)"

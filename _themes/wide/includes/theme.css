@@ -530,7 +530,7 @@ a.person-name:hover { color: var(--accent); }
   .research-overview .cards { grid-template-columns: 1fr; gap: var(--space-5); }
   .research-head, .topic-cards { grid-column: 1 / -1; }
   .research-head { position: static; margin-bottom: var(--space-5); }
-  .research-area::before { display: none; }  /* stacked stages: the node beside each heading is enough */
+  .research-area .topic-cards { margin-left: calc(36px + var(--space-4)); }  /* stacked stages keep the desktop rail: the cards sit right of it, under the stage name (교수 2026-11-25, 웹과 통일) */
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 680px) {
@@ -550,7 +550,10 @@ a.person-name:hover { color: var(--accent); }
   .subnav a { padding-inline: var(--space-3); }  /* People's three tabs stay on one line on a phone instead of leaving Other Mentees alone below */
   .filter-bar { column-gap: var(--space-3); row-gap: var(--space-2); }  /* Seminar: the four filters share one line on a phone; Full schedule wraps under them, 8px below the filter's underline instead of a detached 24px */
   .person-photo { max-width: 120px; }
-  .mentee-aff { display: block; margin-left: 0; }  /* phones: name, then affiliation, then papers */
+  .mentee-aff { display: block; margin-left: 0; }  /* phones: name and papers on the first line, the affiliation under them at full width */
+  .mentee-list .item-main { display: contents; }
+  .mentee-list .mentee-name { grid-column: 1; }
+  .mentee-list .mentee-aff { grid-column: 1 / -1; }
   .mentee-list li { padding: var(--item-gap) 0; }  /* three lines per person, so the wider multi-line gap */
   .nav-menu { display: none !important; }
   .hero { padding: var(--space-7) 0 var(--space-6); }
@@ -562,16 +565,15 @@ a.person-name:hover { color: var(--accent); }
   .focus-paper { grid-template-columns: 1fr; row-gap: var(--space-1); }  /* phones: the venue on the next line under the title */
   .news li, .profile { grid-template-columns: 1fr; gap: 2px; }
   .profile { gap: var(--space-5); }
-  .contact-step { grid-template-columns: 32px minmax(0, 1fr); align-items: center; }
-  .step-body { display: contents; }
-  .step-body h3 { margin: 0; }
-  .step-body p { grid-column: 1 / -1; margin: 0; }
+  .contact-step { grid-template-columns: 32px minmax(0, 1fr); }  /* the same hanging indent as desktop: title and text right of the number (교수 2026-11-25) */
   .pubs li { grid-template-columns: 2.25em minmax(0, 1fr); }
-  .item-list li { flex-wrap: wrap; gap: 2px var(--space-3); padding: var(--space-2) 0; }  /* on phones one-line items wrap to two or three lines, so they need the wider gap */
+  .item-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 2px var(--space-3); padding: var(--space-2) 0; }  /* on phones one-line items wrap to two or three lines, so they need the wider gap */
+  .item-list li > * { grid-column: 1 / -1; }
+  .item-list li > .item-main { grid-column: 1; }
+  .item-list li > .item-side { grid-column: 2; grid-row: 1; }  /* the year or venue stays at the right end of the first line, as on desktop and Funding (교수 2026-11-25) */
   .funding li { grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--space-3); }
   .funding li span { grid-column: 1 / -1; grid-row: 2; }
-  .item-side { margin-left: 0; text-align: left; flex-basis: 100%; }
-  .item-sub { flex-basis: 100%; }
+  .item-side { margin-left: 0; text-align: right; }
   .item-sub { margin-left: 0; }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); }
   .profile-photo { width: 140px; height: 140px; }

@@ -15,6 +15,8 @@ POSTECH 요구사항: 영향 없음
 - Paper Stella 가 첫 캡처에서 빈 화면이었으나 8초 기다려 로컬과 공개 사이트 모두 별이 그려짐을 확인(캡처 시점 문제).
 - 바꾼 뒤 로컬에서 `check_format`(14페이지 × 5폭), `check_design`, `check_typography`(29페이지, 212 상태·폭) 통과(시스템 Chrome).
 
+> 정정(같은 날): 아래 "로컬 `check_design` 통과"는 시스템 Chrome 래퍼가 스크립트를 `require` 로 불러 본체가 돌지 않은 결과였다. `audit`(CI)의 `check_design` 통과와, 뒤에 `node -r` 로 실제로 돌린 통과(`2026-11-24-focus-spacing.md` 후속)가 유효한 근거다.
+
 ## 반영 내역
 - `check_format.js`: 묶음 제목 아래 간격을 잴 때 `data-heading-block` 으로 표시한 머리 덩어리(제목 + 딸린 줄) 아래부터 잰다. Research Focus 의 `BRAIN → BODY → IMPACT` 가 제목 옆(데스크톱)이나 바로 아래(휴대폰)에 있어 -61px·4px 로 잡혔다. `focus.html` 의 `.focus-head` 에 `data-heading-block`. 덩어리 아래 논문까지는 16px 그대로다.
 - `_data/courses/*.yml`: 숫자 범위의 en dash 양옆을 좁은 공백(U+2009)으로 통일(15줄). Programming for AX 만 `Lectures 2–4`(공백 없음), 다른 강의는 `Lectures 2 – 5`(보통 공백)이고, 같은 강의 안에서도 시간이 보통 공백과 좁은 공백으로 섞여 간격이 달랐다. 사이트 규칙(범위의 en dash 양옆 좁은 공백)에 맞췄다. 제목·링크는 원문이라 두었다.

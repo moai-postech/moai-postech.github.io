@@ -240,6 +240,7 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .focus-ring[aria-selected="true"] .ring-shape { fill: var(--accent-soft); }
 .focus-ring[aria-selected="true"] .ring-label { fill: var(--accent); font-weight: var(--weight-heading); }
 .focus-ring:focus-visible .ring-shape { stroke: var(--accent); stroke-width: 2; }
+.ring-flow path { fill: none; stroke: color-mix(in srgb, var(--faint) 60%, transparent); stroke-width: calc(1.5px * var(--ring-k, 1)); stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }  /* core → application: one small outward chevron in each white gap on the axis where the names stand (교수 2026-11-24) */
 .focus-panels { position: relative; z-index: 1; grid-column: 5 / -1; grid-row: 1; display: flex; flex-direction: column; padding: calc(var(--focus-pad) + var(--focus-title) + var(--space-2)) var(--focus-pad) var(--focus-pad); border-radius: var(--radius-2); background: var(--callout-surface); }  /* the top padding leaves the title's line free; one --focus-pad on all four sides, 8px from the title to the direction name */
 .focus-panel { position: relative; flex: 1; display: flex; flex-direction: column; }
 .focus-panel .venue { background: var(--bg); }  /* white badge on the pink card */

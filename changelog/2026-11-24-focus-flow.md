@@ -1,6 +1,6 @@
 # 2026-11-24 Research Focus 동심원에 안 → 밖 흐름
 
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/sections/focus.html`, `_themes/wide/includes/theme.css` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/sections/focus.html`, `_themes/wide/includes/theme.css`, `AGENTS.md` | 도구: Claude Code
 
 > **한줄 결론: 원 이름이 늘어선 위쪽 축의 흰 틈 두 곳에 바깥을 향한 작은 꺾쇠를 넣어 Agentic → Physical → Manufacturing 흐름을 살짝 보이게 했다.**
 
@@ -20,6 +20,11 @@ POSTECH 요구사항: 영향 없음
 - 원이 안에서 밖으로 차례로 퍼지는 애니메이션: 한 번 지나가면 못 보고, 움직임이 첫 화면을 산만하게 한다.
 - 축 전체를 잇는 화살표 선: 원 이름 사이를 가로질러 글자와 부딪히고 도식이 무거워진다.
 - 꺾쇠를 이름과 같은 진하기로: 접기·펼치기 버튼처럼 읽힌다.
+
+## 후속: 원 유지 결정
+교수: 원 대신 가로 흐름(agent → physical → manufacturing)이 나은지 물은 뒤, 원이 더 예쁘다고 정함. 가로 화살표는 단계·로드맵으로 읽혀 Agentic 이 지나간 일처럼 보일 수 있다는 판단도 같았다. `AGENTS.md` 에 한 줄로 남겼다.
+
+기각한 안: 가로 흐름 배치(위 이유).
 
 ## 남은 것
 - 없음.

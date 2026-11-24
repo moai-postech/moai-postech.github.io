@@ -92,7 +92,7 @@
 .course-schedule td:not(:last-child) { box-shadow: 1px 0 0 var(--tone-row); }  /* covers the hairline between cells of one filled row */
 .course-schedule td:first-child { border-radius: var(--radius-1) 0 0 var(--radius-1); }
 .course-schedule td:last-child { border-radius: 0 var(--radius-1) var(--radius-1) 0; }
-.course-schedule tr.tone-none td { box-shadow: inset 0 -1px 0 var(--line); border-radius: 0; }
+/* days off (No Class) and optional study sessions are grey rows with the same rounded ends and 3px gap as every other row; the hairline under each one stacked into several rules when they ran together (2026-11-24 review) */
 .course-schedule td:last-child { padding-right: var(--space-3); }  /* text keeps off the edge of a filled row */
 .course-schedule th:last-child { padding-right: 0; }
 .course-part-row th { padding: var(--space-6) 0 var(--space-2); box-shadow: inset 0 -2px 0 var(--tone-tint); color: var(--tone); font-size: var(--text-meta); font-weight: var(--weight-heading); text-align: left; }
@@ -162,7 +162,7 @@ a.cs-speaker-name:hover { color: var(--accent); }
 }
 @media (min-width: 1000px) { .project-teams { --cs-end: 64px; } }
 @media (min-width: 1000px) {
-  .lecture-schedule { --cs-reading: 168px; --cs-end: 64px; }  /* PDF text to Reading text about 54px, 64px end margin */
+  .lecture-schedule { --cs-reading: 176px; --cs-end: 64px; }  /* PDF text to Reading text about 54px, 64px end margin; 176px holds "MLSD Lec 1 – 2" with thin-space ranges (2026-11-24) */
 }
 
 a.cs-title { color: var(--text); }  /* project days lead to the project page */
@@ -193,7 +193,7 @@ a.cs-title:hover { color: var(--accent); }
 .course-sheet { display: inline-flex; align-items: baseline; gap: var(--space-1); margin-left: auto; color: var(--accent); white-space: nowrap; }
 .project-teams .cs-n { padding-left: var(--space-3); }
 .project-sheet-note { margin: 0 0 var(--space-5); padding: var(--space-4) var(--space-5); background: var(--accent-soft); border-radius: var(--radius-2); font-size: var(--text-body); }  /* students act here, so it reads as a notice */
-.project-sheet-note a { color: var(--accent); font-weight: var(--weight-heading); }
+.project-sheet-note a { color: var(--accent); font-weight: var(--weight-heading);  white-space: nowrap; }
 .project-round { width: 1%; white-space: nowrap; }
 @media (min-width: 681px) {
   .project-teams .project-round { min-width: calc(var(--text-meta) * 8); padding-inline: var(--space-4); }
@@ -457,7 +457,7 @@ a.cs-title:hover { color: var(--accent); }
   .course-schedule, .course-schedule tbody, .course-schedule tr { display: block; width: auto; }
   .course-schedule tr:not(.course-part-row) { display: grid; grid-template-columns: minmax(1.4em, auto) minmax(0, 1fr); gap: 2px var(--space-3); margin-bottom: 3px; padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }
   .course-schedule tr.tone-none { background: var(--surface); }  /* a day off is a grey card with the same corners and 3px gap as every other card; the hairline under it doubled up with the table rule when breaks ran together (2026-11-24 review) */
-  .course-part-row th { display: block; }
+  .course-part-row th { display: block; margin-bottom: var(--space-2); }  /* phones: the part rule stands clear of its first card instead of touching it (2026-11-24 review) */
   .course-schedule td { display: block; width: auto; padding: 0 !important; border: 0; background: none; white-space: normal; }
   .course-schedule tr.tone-none td { box-shadow: none; }
   .is-next { box-shadow: inset 0 0 0 2px var(--accent) !important; }
@@ -475,6 +475,7 @@ a.cs-title:hover { color: var(--accent); }
   .cs-session { display: block; }
   .cs-session-meta { margin-top: var(--space-1); text-align: left; }  /* on a phone, place and time follow the speaker */
   .project-round { grid-column: 1 / -1; }
+  .project-teams .cs-n:not(:empty) ~ .project-round { grid-column: 2; }  /* PROPOSAL and FINAL start under the team title like PDF under a lecture title (2026-11-24 review) */
   .project-round:empty { display: none !important; }
   .project-round a { display: inline; margin: 0 0 0 var(--space-3); }  /* phones keep one line per round */
   .project-round::before { display: inline-block; min-width: 6.5em; content: attr(data-round); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }
@@ -485,6 +486,7 @@ a.cs-title:hover { color: var(--accent); }
   .st-links:empty, .st-who:empty { display: none !important; }
   .study-table .st-material-group:has(> span:first-child:empty) { display: none; }
   .study-table .st-material-group, .study-table .st-material-group + .st-material-group { margin: 0 var(--space-2) 0 0; }
+  .study-table .cs-slides a { padding: 12px 6px; margin: -12px -6px; }  /* a thumb-sized target around "1", "2" without moving the text (2026-11-24 review) */
   .study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: 0; text-align: left; }  /* cards read left: PDF and Lab start at the card edge like the papers, not centred in the card */  /* cards read left: PDF and Lab start at the card edge like the papers, not centred in the card */
 }
 

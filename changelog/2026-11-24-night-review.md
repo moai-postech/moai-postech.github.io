@@ -54,6 +54,26 @@ POSTECH 요구사항: 영향 없음(머리글의 메뉴 표시만 바꿈. 로고
 
 - 3차: 휴대폰·태블릿 스터디 일정 카드에서 발표자와 PDF 줄이 라벨 없이 카드 끝에 붙어 발표자가 Lectures 값처럼 읽혔다. 발표자에 `PRESENTERS` 라벨(데스크톱 표 머리와 같은 말)을 달고, 라벨 칸을 가장 긴 라벨에 맞춰 7.6em(보조 글자 크기 기준)으로 넓혀 Lectures·Papers·Demo·Presenters·PDF 가 한 값 열에서 시작.
 
+## 2회차(새 검토자 둘: 데스크톱, 휴대폰) 반영
+- 데스크톱 강의·스터디 일정표: No Class 행과 Optional 행만 각진 면에 아래 선이 있어 이어지면 선이 여러 줄 쌓였다. 다른 행과 같은 둥근 끝·3px 틈의 회색 행으로(1회차는 휴대폰만 고쳤다).
+- 읽을거리 칸: 1회차에 범위를 좁은 공백으로 바꾸며 `MLSD Lec 1 – 2` 가 칸 오른쪽 끝을 4px 넘었다. 칸 168 → 176px.
+- 휴대폰: Project Teams 의 PROPOSAL·FINAL 줄을 팀 제목 열로, 강의 일정표 Part 머리 선과 첫 카드 사이 8px, Publications 링크와 스터디 PDF 1·2 의 터치 영역을 글자 위치는 그대로 두고 위아래로 넓힘, `project sheet ↗` 한 덩어리.
+- Faculty: `(host: / Prof. …)` 처럼 괄호 라벨만 줄 끝에 남지 않게 `host:`·`advisor:` 뒤를 줄바꿈 없는 공백으로.
+- Research Focus People: 이름 사이 12 → 16px(이름끼리 이어져 읽히지 않게).
+- 검사: `check_design`, `check_typography`, `check_format`, `check_interaction`, `check_selection`, `test_design`, `check_link_arrows` 통과.
+
+## 2회차에서 기각한 지적
+- 강의 일정표 DATE 머리와 날짜의 시작선이 다르다: 날짜는 짧은 값이라 가운데 정렬 규칙이고 머리와 값이 각자 가운데에 있다.
+- News 페이지 제목 없음: 연구실 페이지는 페이지 제목을 숨기는 테마 계약.
+- Perception 아이콘, Overview 단계 머리, 스터디 학습 순서·화살표, 제목 대소문자, Oral·(application) 표기: 이미 정한 것.
+- 하이픈·괄호에서의 줄바꿈 전반: 일반 조판 동작이고 `text-wrap: pretty` 로 마지막 줄만 다듬었다.
+- 스터디 통계 그래프 색 셋, 면적 그래프 2px, 휴대폰 면적 그래프를 막대 목록으로: 11-02·11-18 교수가 정한 세 칸 구성.
+
+## 교수 확인이 필요한 것 추가
+- Lab Seminar 10/07 제목 "From Reasoning to Intuition: Jev and System I Models" 의 `Jev`, `System I` 가 맞는지(JEPA, System 1?). 세미나 시트가 정본.
+- 스터디 학과 면적 그래프에 영문이 있는 학과(산경 (IME), 컴공 (CSE))와 없는 학과(무은재, IT융합, 수학, 물리, 전전)가 섞여 있다(명단 시트의 학과 이름).
+- Physical AI 스터디 아이콘이 다른 학기 아이콘보다 작고 선이 가늘다(아이콘 교체는 교수 판단).
+
 ## 2차에서 기각한 지적
 - 스터디 Schedule 이 지난 학기로 열린다: 캡처 스크립트가 탭을 다 눌러 본 뒤 첫 탭으로 돌려 찍은 착시. 주소에 학기가 없으면 Fall 2026 이 열린다(확인).
 - 표 끝 마감선: 10-28 규칙(표 마감선 1px).

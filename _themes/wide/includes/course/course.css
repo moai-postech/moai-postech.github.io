@@ -426,8 +426,9 @@ a.cs-title:hover { color: var(--accent); }
 @media (max-width: 960px) {
   .study-table .sc-topic { width: 20%; }
   .study-table .sc-papers { width: 11%; }
-  .study-table .st-links[data-label] { position: relative; padding-left: 6.4em !important; }  /* cards drop the table heading, so Papers and Demo name themselves; the label sits in its own gutter, so wrapped links start under the first one (교수 2026-11-04) */
-  .study-table .st-links[data-label]::before { content: attr(data-label); position: absolute; left: 0; top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; line-height: calc(1.5 * var(--text-meta)); }
+  .study-table :is(.st-links, .st-who)[data-label] { position: relative; padding-left: 7.6em !important; }
+  .study-table td.cs-slides { padding-left: calc(7.6 * var(--text-meta)) !important; }  /* cards: Lectures, Papers, Demo, Presenters and the PDF all start in one value column after a gutter wide enough for PRESENTERS (2026-11-24 review: presenters and PDF sat unlabelled at the card edge) */  /* cards drop the table heading, so Papers and Demo name themselves; the label sits in its own gutter, so wrapped links start under the first one (교수 2026-11-04) */
+  .study-table :is(.st-links, .st-who)[data-label]::before { content: attr(data-label); position: absolute; left: 0; top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; line-height: calc(1.5 * var(--text-meta)); }
   .course-parts, .course-grading { grid-template-columns: 1fr; gap: var(--space-3); }
   .course-hero { grid-template-columns: 1fr; gap: var(--space-6); }
 }
@@ -484,7 +485,7 @@ a.cs-title:hover { color: var(--accent); }
   .st-links:empty, .st-who:empty { display: none !important; }
   .study-table .st-material-group:has(> span:first-child:empty) { display: none; }
   .study-table .st-material-group, .study-table .st-material-group + .st-material-group { margin: 0 var(--space-2) 0 0; }
-  .study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: 0; text-align: left; }  /* cards read left: PDF and Lab start at the card edge like the papers, not centred in the card */
+  .study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: 0; text-align: left; }  /* cards read left: PDF and Lab start at the card edge like the papers, not centred in the card */  /* cards read left: PDF and Lab start at the card edge like the papers, not centred in the card */
 }
 
 /* Study schedules have more columns than course schedules; stack them at tablet width. */

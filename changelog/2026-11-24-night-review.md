@@ -52,6 +52,8 @@ POSTECH 요구사항: 영향 없음(머리글의 메뉴 표시만 바꿈. 로고
 - 범위 표기: 학습 흐름 `Sessions 1–3` 과 읽을거리 `DMS Lec 1-2` 를 사이트 규칙 `1 – 3`(en dash, 좁은 공백)으로. `check_interaction` 의 라벨 정규식도 좁은 공백을 받게 고침(옛 `Topics n–m` 을 막는 목적은 그대로).
 - 검사: `check_design`(위반 0), `check_typography`, `check_format`, `check_interaction`, `test_design` 통과.
 
+- 3차: 휴대폰·태블릿 스터디 일정 카드에서 발표자와 PDF 줄이 라벨 없이 카드 끝에 붙어 발표자가 Lectures 값처럼 읽혔다. 발표자에 `PRESENTERS` 라벨(데스크톱 표 머리와 같은 말)을 달고, 라벨 칸을 가장 긴 라벨에 맞춰 7.6em(보조 글자 크기 기준)으로 넓혀 Lectures·Papers·Demo·Presenters·PDF 가 한 값 열에서 시작.
+
 ## 2차에서 기각한 지적
 - 스터디 Schedule 이 지난 학기로 열린다: 캡처 스크립트가 탭을 다 눌러 본 뒤 첫 탭으로 돌려 찍은 착시. 주소에 학기가 없으면 Fall 2026 이 열린다(확인).
 - 표 끝 마감선: 10-28 규칙(표 마감선 1px).

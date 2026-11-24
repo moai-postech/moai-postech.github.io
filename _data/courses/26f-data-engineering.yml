@@ -97,7 +97,7 @@ schedule:
     pdf: "teaching/26f-data-engineering/slides/6_sql-I.pdf"
     html: "teaching/26f-data-engineering/slides/6_sql-I.html"
     reading:
-      - text: "DMS Lec 1-2"
+      - text: "DMS Lec 1 – 2"
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2026-10-01"
     kind: lecture
@@ -106,7 +106,7 @@ schedule:
     pdf: "teaching/26f-data-engineering/slides/7_sql-II.pdf"
     html: "teaching/26f-data-engineering/slides/7_sql-II.html"
     reading:
-      - text: "DMS Lec 2-3"
+      - text: "DMS Lec 2 – 3"
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2026-10-06"
     kind: lecture
@@ -115,7 +115,7 @@ schedule:
     pdf: "teaching/26f-data-engineering/slides/8_sql-III.pdf"
     html: "teaching/26f-data-engineering/slides/8_sql-III.html"
     reading:
-      - text: "DMS Lec 3-4"
+      - text: "DMS Lec 3 – 4"
         url: "https://thodrek.github.io/cs564-fall17/"
   - date: "2026-10-08"
     kind: lecture
@@ -202,7 +202,7 @@ schedule:
     pdf: "teaching/26f-data-engineering/slides/14_ml-systems.pdf"
     html: "teaching/26f-data-engineering/slides/14_ml-systems.html"
     reading:
-      - text: "MLSD Lec 1-2"
+      - text: "MLSD Lec 1 – 2"
         url: "https://stanford-cs329s.github.io/syllabus.html"
   - date: "2026-11-18"
     kind: guest

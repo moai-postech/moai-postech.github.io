@@ -41,8 +41,8 @@ async function checkStudyOverview(page, base) {
       const id = await tabs.nth(i).getAttribute('aria-controls'), panel = page.locator('#' + id);
       check(await panel.locator('.study-learning-path li').count() >= 2, `${id}: learning flow missing`);  // two or three parts per term (Physical AI and LLMs have two, 2026-11-03)
       check(await panel.locator('a.study-step,button.study-step,.study-step[data-start]').count() === 0, `${id}: overview still acts as a filter`);
-      // Labels are the stage number plus its session range, `01 · Sessions 1–6` (2026-11-02 study-path-trim); the old `Topics n–m` form must not come back.
-      check((await panel.locator('.study-step-label').allTextContents()).every(s => /^\d{2}( · Sessions? \d+(–\d+)?)?$/.test(s.trim())), `${id}: stage label is not "01 · Sessions n–m"`);
+      // Labels are the stage number plus its session range, `01 · Sessions 1 – 6` with thin spaces like every range on the site (2026-11-02 study-path-trim, spacing 2026-11-24); the old `Topics n–m` form must not come back.
+      check((await panel.locator('.study-step-label').allTextContents()).every(s => /^\d{2}( · Sessions? \d+( ?– ?\d+)?)?$/.test(s.trim())), `${id}: stage label is not "01 · Sessions n–m"`);
       check(await panel.locator('a[href*="part="]').count() === 0, `${id}: part-selection link remains`);
       const table = panel.locator('.course-schedule tbody');
       const before = await table.count() ? await table.innerHTML() : null;

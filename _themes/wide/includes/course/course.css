@@ -200,6 +200,7 @@ a.cs-title:hover { color: var(--accent); }
 }
 .project-when { color: var(--muted); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
 .project-teams td { vertical-align: middle; }  /* title and members on the left, one line per round on the right */
+.project-teams td.project-round { vertical-align: top; }  /* both rounds start on the same line: "Date TBD" sat half a line below "10/20 · #7" when only Proposal had a PDF under it (2026-11-24 review) */
 .project-highlights { display: grid; gap: var(--item-gap); margin: 0; padding: 0; list-style: none; }  /* one card per award: photo left, what and who right */
 .project-highlights > li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: var(--space-5); align-items: center; padding: var(--card-padding); background: var(--surface); border-radius: var(--radius-2); }
 .project-highlights img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 35%; border-radius: var(--radius-1); }  /* every highlight image uses the 16:9 slide frame */
@@ -454,7 +455,7 @@ a.cs-title:hover { color: var(--accent); }
   .course-schedule thead { display: none; }
   .course-schedule, .course-schedule tbody, .course-schedule tr { display: block; width: auto; }
   .course-schedule tr:not(.course-part-row) { display: grid; grid-template-columns: minmax(1.4em, auto) minmax(0, 1fr); gap: 2px var(--space-3); margin-bottom: 3px; padding: var(--space-3); background: var(--tone-row); border-radius: var(--radius-1); }
-  .course-schedule tr.tone-none { box-shadow: inset 0 -1px 0 var(--line); border-radius: 0; }
+  .course-schedule tr.tone-none { background: var(--surface); }  /* a day off is a grey card with the same corners and 3px gap as every other card; the hairline under it doubled up with the table rule when breaks ran together (2026-11-24 review) */
   .course-part-row th { display: block; }
   .course-schedule td { display: block; width: auto; padding: 0 !important; border: 0; background: none; white-space: normal; }
   .course-schedule tr.tone-none td { box-shadow: none; }
@@ -465,6 +466,7 @@ a.cs-title:hover { color: var(--accent); }
   .cs-n:empty { display: none !important; }  /* the number column is at least two digits wide (1.4em), so titles line up from 9 to 10 */
   .cs-n:empty + .cs-topic { grid-column: 1 / -1; }
   .cs-slides, .cs-reading { grid-column: 1 / -1; }
+  .lecture-schedule .cs-n:not(:empty) ~ :is(.cs-slides, .cs-reading) { grid-column: 2; }  /* numbered lectures: PDF and reading start under the title, on the same line as a guest's affiliation and place, instead of back at the card edge (2026-11-24 review) */
   .cs-slot { display: none; }
   .cs-mat > span:not(:empty) + span:not(:empty) { margin-left: var(--space-3); }  /* phones: PDF and Lab sit side by side with the usual gap (each link is now in its own column span) */
   .cs-mat a { display: inline-block; padding: 13px 6px; margin: -13px -6px; }  /* a thumb-sized target (about 44px tall) around the same text; the negative margin keeps every line where it was (교수 2026-11-05) */
@@ -474,7 +476,7 @@ a.cs-title:hover { color: var(--accent); }
   .project-round { grid-column: 1 / -1; }
   .project-round:empty { display: none !important; }
   .project-round a { display: inline; margin: 0 0 0 var(--space-3); }  /* phones keep one line per round */
-  .project-round::before { content: attr(data-round) "\00a0\00a0"; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }
+  .project-round::before { display: inline-block; min-width: 6.5em; content: attr(data-round); color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; }
 
   .study-table colgroup { display: none; }
   .study-table .cs-date { order: -1; }  /* cards open like the course cards: date, then number and title on one line */
@@ -607,7 +609,7 @@ a.cs-title:hover { color: var(--accent); }
 .study-dept-map li small { margin-left: 2px; font-size: var(--text-small); font-weight: var(--weight-regular); opacity: .85; }
 .study-dept-map li.is-small small { display: none; }
 .study-dept-map li.is-small { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; gap: 0 var(--space-1); padding: var(--space-1); font-size: var(--text-small); text-align: center; }
-.study-dept-map li.is-small span { max-width: 100%; white-space: nowrap; text-overflow: ellipsis; }
+.study-dept-map li.is-small span { max-width: 100%; word-break: keep-all; line-height: 1.2; }  /* a narrow tile wraps the name at a word edge (IT / 융합, a <wbr> after a Latin prefix) instead of cutting it to "IT융..." (2026-11-24 review) */
 .study-dept-map li.is-small .study-chart-value { font-size: var(--text-meta); }
 .study-dept-map li.is-tiny { flex-direction: column; flex-wrap: nowrap; gap: var(--space-1); }  /* name over count, centred, in a thin tile */
 .study-dept-map:not(.is-drawn) { height: auto; }

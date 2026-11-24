@@ -29,7 +29,7 @@
     <figure class="study-stat-panel">
       <figcaption><h3>By department</h3></figcaption>
       <ul class="plain study-dept-map" data-total="{{ stats.total }}">
-        {% for d in stats.departments %}{% assign ko = d.name | split: "(" | first %}{% assign en = d.name | remove_first: ko | remove: "(" | remove: ")" %}<li data-count="{{ d.count }}" title="{{ d.name }}: {{ d.count }}"><span>{{ ko }}{% if en != "" %}<small>({{ en }})</small>{% endif %}</span><span class="study-chart-value">{{ d.count }}</span><a class="study-dept-link" href="teaching/ai-study/members/#dept={{ ko | url_encode }}" aria-label="{{ d.name }}: {{ d.count }} members. Show them in the member list."></a></li>{% endfor %}
+        {% for d in stats.departments %}{% assign ko = d.name | split: "(" | first %}{% assign en = d.name | remove_first: ko | remove: "(" | remove: ")" %}<li data-count="{{ d.count }}" title="{{ d.name }}: {{ d.count }}"><span>{{ ko | replace: "IT", "IT<wbr>" }}{% if en != "" %}<small>({{ en }})</small>{% endif %}</span><span class="study-chart-value">{{ d.count }}</span><a class="study-dept-link" href="teaching/ai-study/members/#dept={{ ko | url_encode }}" aria-label="{{ d.name }}: {{ d.count }} members. Show them in the member list."></a></li>{% endfor %}
       </ul>
     </figure>
     {% assign max_year = 0 %}{% for y in stats.years %}{% if y.count > max_year %}{% assign max_year = y.count %}{% endif %}{% endfor %}

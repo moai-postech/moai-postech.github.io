@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-24 | [전 사이트 디자인 마감 검수](2026-11-24-night-review.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `header.html`, `focus.html`, `_data/members.yml` 외 | 독립 검토자 셋의 지적을 규칙과 대조해 반영(메뉴 현재 위치, 휴대폰 밑줄, 줄바꿈 등) |
+| 2026-11-24 | [전 사이트 디자인 마감 검수](2026-11-24-night-review.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `header.html`, `focus.html`, `_data/members.yml` 외 | 독립 검토자 셋의 지적을 규칙과 대조해 반영(메뉴 현재 위치, 휴대폰 밑줄, 줄바꿈, 휴대폰 강의 카드, Teams 정렬, 학과 그래프 등) |
 | 2026-11-24 | [스터디 MARL 참고 강의](2026-11-24-study-marl-reference.md) | Sangwoo Mo(sangwoomo) | `_data/ai_study_terms.yml` | Spring 2027 See also 를 IIIA-CSIC MARL 강좌로 바꿨다가 MIT 6.S890 으로 되돌림(대안 검토 기록) |
 | 2026-11-24 | [스터디 논문 공식 링크](2026-11-24-study-official-links.md) | Sangwoo Mo(sangwoomo) | 스터디 시트, `_data/ai_study.yml`, `AGENTS.md` | Spring 2027 논문 11편을 Nature·Science 본지 공식, 그 밖 arXiv, 없으면 공식 venue 로 |
 | 2026-11-24 | [Research Focus 세로 여백](2026-11-24-focus-spacing.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `scripts.html` | 카드를 360px 고정에서 내용 높이로, 분홍 면은 고른 방향 길이만, People 위 빈칸 제거. 안쪽 간격 24/16/24 로 한 단계 넓힘 |

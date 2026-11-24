@@ -235,6 +235,8 @@ main { text-wrap: pretty; }  /* no single word left alone on a last line, on eve
 .focus-ring:last-of-type .ring-shape { fill: var(--surface); }  /* outer ring palest, core deepest: a quiet core-to-application gradient */
 .focus-ring.is-core .ring-shape { fill: color-mix(in srgb, var(--line) 55%, var(--surface)); }
 .focus-ring .ring-label { fill: var(--muted); font-size: calc(var(--ring-text, var(--text-lead)) * var(--ring-k, 1)); font-weight: var(--weight-emphasis); pointer-events: none; transition: fill .2s; }
+.focus-ring .ring-hint { fill: var(--muted); font-size: calc(var(--text-small) * var(--ring-k, 1)); font-weight: var(--weight-regular); letter-spacing: .02em; }  /* the flow hint above each name (Brain → Body → Impact): small, regular, grey in every state (교수 2026-11-24) */
+.focus-ring[aria-selected="true"] .ring-hint { fill: var(--muted); font-weight: var(--weight-regular); }
 .focus-ring:hover .ring-shape { fill: color-mix(in srgb, var(--accent-soft) 55%, var(--bg)); }
 .focus-ring:hover .ring-label { fill: var(--text); }
 .focus-ring[aria-selected="true"] .ring-shape { fill: var(--accent-soft); }

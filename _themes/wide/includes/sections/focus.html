@@ -18,13 +18,13 @@
     <div class="section-body focus-explorer" data-tabs>
     <h2>{{ include.section.title }}</h2>
     <svg class="focus-rings" viewBox="0 0 400 400" role="tablist" aria-label="Research directions, from core to application">
-      {% comment %} 고리끼리 겹치지 않으므로 focus.yml 순서(안쪽부터) 그대로 그린다. 키보드 화살표도 core → application 순서다. i 는 안쪽부터 0, 1, 2. 바깥 반지름 74 + 61i, 띠 두께 55(원 사이 틈 6). 이름은 띠 위쪽 가운데에서 3 만큼 안쪽(글자 모서리가 바깥 호를 넘지 않게). 글자 크기는 화면 픽셀 기준이다(theme.css 의 --ring-k). {% endcomment %}
+      {% comment %} 고리끼리 겹치지 않으므로 focus.yml 순서(안쪽부터) 그대로 그린다. 키보드 화살표도 core → application 순서다. i 는 안쪽부터 0, 1, 2. 바깥 반지름 74 + 61i, 띠 두께 55(원 사이 틈 6). 이름은 띠 위쪽 가운데에서 3 만큼 안쪽(글자 모서리가 바깥 호를 넘지 않게). 글자 크기는 화면 픽셀 기준이다(theme.css 의 --ring-k). hint 가 있으면 이름 위에 작은 회색 글씨로 둔다(교수 2026-11-24, Brain → Body → Impact). 위에 두는 까닭: 띠는 위쪽 가운데가 가장 좁아서, 짧은 hint 를 위에, 긴 이름(Manufacturing AI)을 아래에 두어야 18px 이름이 바깥 호에 닿지 않는다. {% endcomment %}
       {% for f in site.data.focus %}{% assign fid = f.name | slugify %}{% assign i = forloop.index0 %}{% assign level = i | plus: 1 %}
       {% assign outer = i | times: 61 | plus: 74 %}{% assign inner = outer | minus: 55 %}
       {% if i == 0 %}{% assign label_y = 200 %}{% else %}{% assign label_y = outer | plus: inner | divided_by: 2 | minus: 203 | abs %}{% endif %}
       <g class="focus-ring{% if level == 1 %} is-core{% endif %}" data-r="{{ outer }}" role="tab" tabindex="0" aria-label="{{ f.name }}" id="tab-{{ sid }}-{{ fid }}" aria-controls="panel-{{ sid }}-{{ fid }}" aria-selected="{% if level == 1 %}true{% else %}false{% endif %}">
         {% if level == 1 %}<circle class="ring-shape" cx="200" cy="200" r="{{ outer }}"/>{% else %}<path class="ring-shape" fill-rule="evenodd" d="M200 {{ 200 | minus: outer }}a{{ outer }} {{ outer }} 0 1 0 0.01 0zM200 {{ 200 | minus: inner }}a{{ inner }} {{ inner }} 0 1 0 0.01 0z"/>{% endif %}
-        <text class="ring-label" x="200" y="{{ label_y }}" text-anchor="middle" dominant-baseline="central">{{ f.name }}</text>
+        <text class="ring-label" x="200" y="{{ label_y }}" text-anchor="middle" dominant-baseline="central">{% if f.hint %}<tspan class="ring-hint" x="200" dy="-0.9em">{{ f.hint }}</tspan><tspan class="ring-name" x="200" dy="1em">{{ f.name }}</tspan>{% else %}{{ f.name }}{% endif %}</text>
       </g>
       {% endfor %}
     </svg>

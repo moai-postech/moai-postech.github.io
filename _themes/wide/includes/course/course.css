@@ -427,7 +427,9 @@ a.cs-title:hover { color: var(--accent); }
   .study-table .sc-topic { width: 20%; }
   .study-table .sc-papers { width: 11%; }
   .study-table :is(.st-links, .st-who)[data-label] { position: relative; padding-left: 7.6em !important; }
-  .study-table td.cs-slides { padding-left: calc(7.6 * var(--text-meta)) !important; }  /* cards: Lectures, Papers, Demo, Presenters and the PDF all start in one value column after a gutter wide enough for PRESENTERS (2026-11-24 review: presenters and PDF sat unlabelled at the card edge) */  /* cards drop the table heading, so Papers and Demo name themselves; the label sits in its own gutter, so wrapped links start under the first one (교수 2026-11-04) */
+  .study-table td.cs-slides { padding-left: calc(7.6 * var(--text-meta)) !important; }
+  .study-table td.cs-slides { position: relative; }
+  .study-table td.cs-slides:has(a)::before { content: "Materials"; position: absolute; left: 0; top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; line-height: inherit; }  /* the PDF line carries a label like Papers, Demo and Presenters; Materials covers slides, notes and labs */  /* cards: Lectures, Papers, Demo, Presenters and the PDF all start in one value column after a gutter wide enough for PRESENTERS (2026-11-24 review: presenters and PDF sat unlabelled at the card edge) */  /* cards drop the table heading, so Papers and Demo name themselves; the label sits in its own gutter, so wrapped links start under the first one (교수 2026-11-04) */
   .study-table :is(.st-links, .st-who)[data-label]::before { content: attr(data-label); position: absolute; left: 0; top: 0; color: var(--muted); font-size: var(--text-small); font-weight: var(--weight-emphasis); text-transform: uppercase; letter-spacing: .06em; line-height: calc(1.5 * var(--text-meta)); }
   .course-parts, .course-grading { grid-template-columns: 1fr; gap: var(--space-3); }
   .course-hero { grid-template-columns: 1fr; gap: var(--space-6); }
@@ -440,6 +442,7 @@ a.cs-title:hover { color: var(--accent); }
   .course-lead { font-size: var(--text-body); }
   .course-brand { flex-wrap: wrap; }
   .course-meta span + span::before, .course-eyebrow span + span::before { content: none; }
+  .course-meta, .course-eyebrow { flex-direction: column; }  /* phones: course name, codes and term one per line, so the pieces never run together once the "·" separators are gone (2026-11-24 review, raised by every reviewer) */
   .study-tracks { display: block; margin-bottom: var(--space-6); padding: var(--space-4); }  /* phones: each track is its label, then its terms one under another in learning order */
   .study-track { display: block; }
   .study-track + .study-track { margin-top: var(--space-5); }

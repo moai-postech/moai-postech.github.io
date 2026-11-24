@@ -28,7 +28,10 @@ def drive_id(url):
 
 
 def is_drive(url):
-    return bool(url) and re.match(r"https://(drive|docs)\.google\.com/(file|presentation|document)/", url) is not None
+    # /file/d/…, /presentation/d/…, /document/d/… and the share forms drive.google.com/open?id=… and uc?id=… (a student pasted
+    # an open?id= link, which the old pattern skipped silently, 2026-11-25)
+    return bool(url) and (re.match(r"https://(drive|docs)\.google\.com/(file|presentation|document)/", url) is not None
+                          or re.match(r"https://drive\.google\.com/(open|uc)\?(.*&)?id=[\w-]+", url) is not None)
 
 
 def get(url):

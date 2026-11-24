@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-25 | [스터디 open?id= 링크 받기](2026-11-25-study-slides-open-links.md) | Sangwoo Mo(sangwoomo) | `tools/drive_pdf.py`, 스터디 자료 | 동기화가 `open?id=` 꼴 Drive 링크를 건너뛰어 Fall 2026 9회 둘째 슬라이드가 Drive 링크로 남던 것 |
 | 2026-11-25 | [(oral) 크림슨, Talks 회색 사각형](2026-11-25-oral-swatches.md) | Sangwoo Mo(sangwoomo) | `publications.html`, `talks.html`, `AGENTS.md` | 발표 형식을 괄호형 소문자 크림슨으로, Invited Talks 필터에 Lab Seminar 같은 회색 사각형 |
 | 2026-11-24 | [전 사이트 디자인 마감 검수](2026-11-24-night-review.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `header.html`, `focus.html`, `_data/members.yml` 외 | 독립 검토자 셋의 지적을 규칙과 대조해 반영(메뉴 현재 위치, 휴대폰 밑줄, 줄바꿈, 휴대폰 강의 카드, Teams 정렬, 학과 그래프 등) |
 | 2026-11-24 | [스터디 MARL 참고 강의](2026-11-24-study-marl-reference.md) | Sangwoo Mo(sangwoomo) | `_data/ai_study_terms.yml` | Spring 2027 See also 를 IIIA-CSIC MARL 강좌로 바꿨다가 MIT 6.S890 으로 되돌림(대안 검토 기록) |

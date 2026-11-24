@@ -38,8 +38,8 @@
       </div>
       {% if f.papers %}<div class="focus-papers">
         {% for p in f.papers limit: 3 %}{% if p.url %}<a class="focus-paper" href="{{ p.url }}">{% else %}<div class="focus-paper">{% endif %}
-          <span class="venue">{{ p.short }} · {{ p.venue }}</span>
           <span class="paper-title">{{ p.title }}</span>
+          <span class="focus-venue">{{ p.venue }}</span>
         {% if p.url %}</a>{% else %}</div>{% endif %}
         {% endfor %}
       </div>{% endif %}

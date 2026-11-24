@@ -78,6 +78,7 @@
     - name: "VLA & World Models"
       summary: "Behavioral priors for robots that understand the people they serve."
       papers:
+        - { short: "ActPer", venue: "arXiv'26", match: "Rethinking Active Perception with Passive VLMs" }
         - { short: "INDI", venue: "arXiv'26", url: "https://arxiv.org/abs/2608.23478" }
         - { short: "VAP", venue: "ICML'26", url: "https://arxiv.org/abs/2512.20014" }
     - name: "Multisensory Learning"

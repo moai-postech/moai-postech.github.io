@@ -441,8 +441,10 @@ a.cs-title:hover { color: var(--accent); }
   .study-term-details .course-fact + .course-fact { border-top: 1px solid var(--line); padding-top: var(--space-4); }
   .course-lead { font-size: var(--text-body); }
   .course-brand { flex-wrap: wrap; }
-  .course-meta span + span::before, .course-eyebrow span + span::before { content: none; }
-  .course-meta, .course-eyebrow { flex-direction: column; }  /* phones: course name, codes and term one per line, so the pieces never run together once the "·" separators are gone (2026-11-24 review, raised by every reviewer) */
+  .course-meta > span:first-child { flex-basis: 100%; }  /* phones: the course name on its own line, then codes · term (교수 2026-11-25, replacing the one-per-line stack of 11-24) */
+  .course-meta, .course-eyebrow { overflow: hidden; column-gap: calc(2 * var(--space-3) + .3em); }  /* the desktop spacing: 12px, the dot, 12px */
+  .course-meta > span, .course-eyebrow > span { position: relative; }
+  .course-meta > span::before, .course-eyebrow > span::before { content: "\00b7"; position: absolute; right: 100%; margin: 0 var(--space-3) 0 0; color: var(--muted); font-weight: var(--weight-regular); }  /* the same "·" as desktop sits in the gap before each piece; a piece that starts a line has its dot outside the box, clipped, so no line starts with a dot */
   .study-tracks { display: block; margin-bottom: var(--space-6); padding: var(--space-4); }  /* phones: each track is its label, then its terms one under another in learning order */
   .study-track { display: block; }
   .study-track + .study-track { margin-top: var(--space-5); }
@@ -573,7 +575,7 @@ a.cs-title:hover { color: var(--accent); }
 /* Member statistics: one panel row of summary numbers, then cohort bars and a department treemap side by side. */
 .study-stat-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-5); }
 .study-stat-head h2 { margin: 0; }
-.study-stat-members { color: var(--accent); font-size: var(--text-control); }
+.study-stat-members { color: var(--accent); font-size: var(--text-control); margin-left: auto; }  /* the right end of the heading row; when it wraps on a phone it stays at the right, like Seminar's Full schedule (교수 2026-11-25) */
 .study-stat-summary { margin: 0; }
 .study-stat-summary > div { display: flex; align-items: baseline; gap: var(--space-2); }  /* 39 members since Fall 2025 */
 .study-stat-summary dt { color: var(--muted); font-size: var(--text-meta); }
@@ -637,11 +639,6 @@ a.cs-title:hover { color: var(--accent); }
 }
 @media (max-width: 680px) {
   .study-term-cards { grid-template-columns: 1fr; gap: var(--space-4); }
-  /* phones: icon beside the text so four terms do not make a long scroll */
-  .study-term-card > a { display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: var(--space-4); row-gap: var(--space-1); align-items: start; }
-  .study-term-card > a img { grid-row: 1 / span 3; width: 48px; height: 48px; margin: 0; }
-  .study-term-card > a > :not(img) { grid-column: 2; }
-  .study-term-tldr { padding-top: var(--space-2); }
   .study-dept-map li.is-sliver > span:first-child { display: none; }  /* a sliver keeps only its number; the name stays in its tooltip */
   /* phones: the timeline runs down the left; cards sit right of the line, under their term label */
   .study-term-card { position: relative; }

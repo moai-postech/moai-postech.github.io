@@ -19,7 +19,11 @@ function inspect() {
   }
   if (innerWidth <= 680) {
     for (const e of document.querySelectorAll('.course-meta span + span, .course-eyebrow span + span')) {
-      if (visible(e)) check(['none', 'normal', '""'].includes(getComputedStyle(e, '::before').content), '모바일 강의 정보에 줄머리 구분점이 남는다');
+      if (!visible(e) || ['none', 'normal', '""'].includes(getComputedStyle(e, '::before').content)) continue;
+      // a dot may stay only where it cannot show at a line start: placed outside the piece and clipped by the line box (교수 2026-11-25)
+      const box = e.parentElement, br = box.getBoundingClientRect(), er = e.getBoundingClientRect();
+      const startsLine = Math.abs(er.left - br.left) < 2;
+      check(!startsLine || (getComputedStyle(e, '::before').position === 'absolute' && getComputedStyle(box).overflow === 'hidden'), '모바일 강의 정보에 줄머리 구분점이 남는다');
     }
     for (const e of document.querySelectorAll('.course-brand span, .study-panel:not([hidden]) h2 span')) {
       check(e.getBoundingClientRect().height <= parseFloat(css(e).lineHeight) + 1, '학기 이름이 여러 줄로 갈라진다');

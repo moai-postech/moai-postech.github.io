@@ -521,8 +521,6 @@ a.person-name:hover { color: var(--accent); }
 }
 @media (max-width: 960px) {
   :root { --gutter: var(--space-6); --page-margin: 32px; }
-  .hero-copy, .hero-art { grid-column: 1 / -1; }
-  .hero-art { display: none; }  /* tablets keep the statement and lab photo without a second tall illustration */
   .focus-explorer { --focus-pad: var(--space-6); }
   .focus-explorer { grid-template-rows: none; }
   .focus-rings { grid-column: 1 / -1; grid-row: 1; justify-self: center; max-width: 340px; margin-bottom: var(--space-6); }  /* tablets and phones: rings on top, the card below; the beam opens downward */
@@ -540,7 +538,7 @@ a.person-name:hover { color: var(--accent); }
   .mini-preview iframe { left: 0; width: 100%; top: 8%; height: 84%; }  /* the map fits the whole cloud to its frame height and ignores valign in a frame this narrow, so a shorter centred frame leaves equal room above and below (교수 2026-11-17) */
   .mini-preview.has-poster::before { left: 50%; top: 50%; height: 78%; }  /* the phone frame centres the map; the poster cloud matches the live cloud's size in the shorter frame */
   .mini-preview iframe { mix-blend-mode: lighten; }  /* the map's own background (lighter middle, darker rim) would show as a box on the band; lighten lets the band colour win wherever the map is darker, so only the glow and the stars show (교수 2026-11-17) */
-  :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); --page-start: var(--space-4); --subnav-start: var(--space-4); --card-padding: var(--space-4); --row-gap: var(--space-2); }
+  :root { --fs-3: 16px; --fs-4: 18px; --fs-5: 24px; --page-margin: 16px; --section-gap: var(--space-7); --gutter: var(--space-4); --page-start: var(--space-6); --subnav-start: var(--space-4); --card-padding: var(--space-4); --row-gap: var(--space-2); }
   .site-head { display: block; padding: var(--space-4) 0 var(--space-2); }
   .head-id { margin-bottom: var(--space-2); }
   .site-nav, .course-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 44px; min-height: 88px; align-content: start; gap: 0 var(--space-3); }
@@ -557,7 +555,8 @@ a.person-name:hover { color: var(--accent); }
   .mentee-list li { padding: var(--item-gap) 0; }  /* three lines per person, so the wider multi-line gap */
   .nav-menu { display: none !important; }
   .hero { padding: var(--space-7) 0 var(--space-6); }
-  .hero-art { display: none; }  /* phones: the hero sentence already says what the picture shows, so the lab photo comes right under it (교수 2026-10-27) */
+  .hero-copy, .hero-art { grid-column: 1 / -1; }
+  .hero-art { max-width: 280px; margin: var(--space-5) auto 0; }  /* tablets keep the desktop two columns; phones put the orchestration picture under the statement instead of hiding it (교수 2026-11-25, replacing the 10-27 hiding). 280px keeps the 680/681 height step under the interaction check's 180px */
   .eyebrow { font-size: var(--text-meta); }
   .focus-explorer { --focus-pad: var(--space-5); }
   .focus-rings { max-width: 320px; margin-bottom: var(--space-5); }
@@ -589,8 +588,9 @@ a.person-name:hover { color: var(--accent); }
   .schedule td.schedule-title, .schedule .schedule-title-row { display: contents; }  /* the title and affiliation become cards' own items, so the affiliation can follow the name */
   .schedule td.schedule-date, .schedule .schedule-title-text { flex-basis: 100%; }
   .schedule td.schedule-speaker, .schedule .schedule-aff { margin-top: 2px; }  /* name first, affiliation after it on one line, though the affiliation comes first in the row (td. beats .schedule td above) */
-  .schedule td.schedule-speaker { order: 1; }
-  .schedule .schedule-aff { order: 2; margin-left: var(--space-2); }
+  .schedule .schedule-aff { order: 1; margin-left: auto; }
+  .schedule td.schedule-speaker { order: 2; margin-left: var(--space-2); }
+  .schedule tr:not(:has(.schedule-aff)) td.schedule-speaker { margin-left: auto; }  /* phones: affiliation then speaker at the right end, as on desktop (교수 2026-11-25) */
   main { overflow-wrap: anywhere; }
 }
 @media (max-width: 380px) {  /* 360px phones (many Galaxy models): the tightest spacing that still keeps these rows on one line */

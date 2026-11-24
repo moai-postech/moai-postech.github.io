@@ -1,6 +1,6 @@
 # 2026-11-25 휴대폰 화면을 웹과 같은 꼴로
 
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/theme.css`, `_themes/wide/includes/course/course.css`, `AGENTS.md` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/theme.css`, `_themes/wide/includes/course/course.css`, `AGENTS.md`, `tools/check_typography.js` | 도구: Claude Code
 
 교수가 "모바일이랑 웹이랑 통일감 안 드는 거 더 없나" 물었다. 21쪽을 1440·390px 로 찍고 새 검토자에게 쌍으로 비교하게 했다.
 
@@ -14,3 +14,15 @@
   - Home 히어로 그림 숨김: 2026-10-27 교수 결정
   - AI Study 홈 카드 구도, `Meet the members →`·`Full schedule ↗` 위치, Seminar 의 소속·이름 순서, 탭과 첫 제목 사이 간격: 작은 차이라 이번에는 두었다
 - 검사: 390px 캡처로 6쪽 확인, check_design·format·typography·interaction·selection, test_design 통과
+
+## 2차: 남은 차이와 예외도 웹에 맞춤
+
+교수가 "그것도 맞춰", "디자인 바꼈으니까 다시 검토해봐" 했다. 1차에서 예외로 둔 두 곳도 지금 디자인으로 다시 봤다.
+
+- Home 히어로 그림: 휴대폰·태블릿에서 숨기던 것(10-27)을 되살렸다. 태블릿(681–960px)은 웹과 같은 두 열(문장 7칸, 그림 5칸), 휴대폰은 문장 아래 가운데 280px. 처음 시안(태블릿도 쌓기, 휴대폰 320px)은 `check_interaction` 의 폭 경계 높이 검사(180px 이내)에 걸렸다. 280px 이면 680/681px 차이가 172px 다
+- 강의 메타 줄: 한 줄에 하나씩 쌓던 것(11-24)을 과목명 한 줄 뒤 `코드 · 학기` 로 바꿔 웹과 eyebrow 의 `·` 를 살렸다. 11-24 에 `·` 를 뺀 이유(줄 첫머리에 `·` 가 남음)는 점을 각 조각 왼쪽 바깥에 두고 상자 밖은 잘라 숨기는 방식으로 풀었다. 320px 에서 학기가 다음 줄로 넘어가도 점이 남지 않는다
+- AI Study 학기 카드: 휴대폰의 아이콘 왼쪽·글 오른쪽 배치를 웹처럼 아이콘 위·글 아래로. 스크롤은 카드마다 조금 길어진다
+- Seminar 일정 카드: 휴대폰의 이름 → 소속을 웹처럼 오른쪽 끝에 소속 → 연사로
+- `Meet the members →`: 줄이 넘어가면 왼쪽으로 가던 것을 Seminar 의 `Full schedule ↗` 처럼 오른쪽 끝에. 두 링크 모두 휴대폰 폭에서는 제목·필터와 한 줄에 들어가지 않아 다음 줄 오른쪽에 둔다
+- `check_typography`: 휴대폰 강의 정보의 `·` 를 금지하던 검사를, 줄 첫머리 조각의 점이 상자 밖에서 잘리는지 보는 검사로 바꿨다
+- 탭·머리글과 첫 내용 사이(`--page-start`): 휴대폰 16px 를 32px 로. 웹 48px 와 비율을 맞춘 값이다

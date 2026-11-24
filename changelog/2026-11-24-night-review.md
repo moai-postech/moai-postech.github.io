@@ -62,6 +62,8 @@ POSTECH 요구사항: 영향 없음(머리글의 메뉴 표시만 바꿈. 로고
 - Research Focus People: 이름 사이 12 → 16px(이름끼리 이어져 읽히지 않게).
 - 검사: `check_design`, `check_typography`, `check_format`, `check_interaction`, `check_selection`, `test_design`, `check_link_arrows` 통과.
 
+- 3회차 캡처에서 휴대폰 스터디 일정의 `PDF 1, 2` 줄이 발표자 줄에 바짝 붙었다(겹침 측정). 2회차 터치 영역을 음수 여백으로 넓힌 것이 줄을 끌어올렸다. 링크 둘레의 보이지 않는 덧칸(`::after`, `inset: -12px -6px`)으로 바꿔 배치는 그대로, 터치 영역만 넓힘. Publications 링크도 같은 방식. 다시 잰 겹침 0건(Home 첫 제목 줄 상자는 글자가 닿지 않음).
+
 ## 2회차에서 기각한 지적
 - 강의 일정표 DATE 머리와 날짜의 시작선이 다르다: 날짜는 짧은 값이라 가운데 정렬 규칙이고 머리와 값이 각자 가운데에 있다.
 - News 페이지 제목 없음: 연구실 페이지는 페이지 제목을 숨기는 테마 계약.

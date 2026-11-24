@@ -486,7 +486,8 @@ a.cs-title:hover { color: var(--accent); }
   .st-links:empty, .st-who:empty { display: none !important; }
   .study-table .st-material-group:has(> span:first-child:empty) { display: none; }
   .study-table .st-material-group, .study-table .st-material-group + .st-material-group { margin: 0 var(--space-2) 0 0; }
-  .study-table .cs-slides a { padding: 12px 6px; margin: -12px -6px; }  /* a thumb-sized target around "1", "2" without moving the text (2026-11-24 review) */
+  .study-table .cs-slides a { position: relative; }
+  .study-table .cs-slides a::after { content: ""; position: absolute; inset: -12px -6px; }  /* a thumb-sized target around "1", "2"; an invisible box, so no line moves (a negative-margin version pulled the PDF line up against the presenters) */
   .study-table :is(th, td).cs-slides, .study-table :is(th, td).cs-slides:last-child { padding-inline: 0; text-align: left; }  /* cards read left: PDF and Lab start at the card edge like the papers, not centred in the card */  /* cards read left: PDF and Lab start at the card edge like the papers, not centred in the card */
 }
 

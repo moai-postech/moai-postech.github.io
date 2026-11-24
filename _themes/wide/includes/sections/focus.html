@@ -18,13 +18,13 @@
     <div class="section-body focus-explorer" data-tabs>
     <h2>{{ include.section.title }}</h2>
     <svg class="focus-rings" viewBox="0 0 400 400" role="tablist" aria-label="Research directions, from core to application">
-      {% comment %} 고리끼리 겹치지 않으므로 focus.yml 순서(안쪽부터) 그대로 그린다. 키보드 화살표도 core → application 순서다. i 는 안쪽부터 0, 1, 2. 바깥 반지름 74 + 61i, 띠 두께 55(원 사이 틈 6). 이름은 띠 위쪽 가운데에서 3 만큼 안쪽(글자 모서리가 바깥 호를 넘지 않게). 글자 크기는 화면 픽셀 기준이다(theme.css 의 --ring-k). hint 가 있으면 이름 위에 작은 회색 글씨로 둔다(교수 2026-11-24, Brain → Body → Impact). 위에 두는 까닭: 띠는 위쪽 가운데가 가장 좁아서, 짧은 hint 를 위에, 긴 이름(Manufacturing AI)을 아래에 두어야 18px 이름이 바깥 호에 닿지 않는다. {% endcomment %}
+      {% comment %} 고리끼리 겹치지 않으므로 focus.yml 순서(안쪽부터) 그대로 그린다. 키보드 화살표도 core → application 순서다. i 는 안쪽부터 0, 1, 2. 바깥 반지름 74 + 61i, 띠 두께 55(원 사이 틈 6). 이름은 띠 위쪽 가운데에서 3 만큼 안쪽(글자 모서리가 바깥 호를 넘지 않게). 글자 크기는 화면 픽셀 기준이다(theme.css 의 --ring-k). {% endcomment %}
       {% for f in site.data.focus %}{% assign fid = f.name | slugify %}{% assign i = forloop.index0 %}{% assign level = i | plus: 1 %}
       {% assign outer = i | times: 61 | plus: 74 %}{% assign inner = outer | minus: 55 %}
       {% if i == 0 %}{% assign label_y = 200 %}{% else %}{% assign label_y = outer | plus: inner | divided_by: 2 | minus: 203 | abs %}{% endif %}
       <g class="focus-ring{% if level == 1 %} is-core{% endif %}" data-r="{{ outer }}" role="tab" tabindex="0" aria-label="{{ f.name }}" id="tab-{{ sid }}-{{ fid }}" aria-controls="panel-{{ sid }}-{{ fid }}" aria-selected="{% if level == 1 %}true{% else %}false{% endif %}">
         {% if level == 1 %}<circle class="ring-shape" cx="200" cy="200" r="{{ outer }}"/>{% else %}<path class="ring-shape" fill-rule="evenodd" d="M200 {{ 200 | minus: outer }}a{{ outer }} {{ outer }} 0 1 0 0.01 0zM200 {{ 200 | minus: inner }}a{{ inner }} {{ inner }} 0 1 0 0.01 0z"/>{% endif %}
-        <text class="ring-label" x="200" y="{{ label_y }}" text-anchor="middle" dominant-baseline="central">{% if f.hint %}<tspan class="ring-hint" x="200" dy="-0.9em">{{ f.hint }}</tspan><tspan class="ring-name" x="200" dy="1em">{{ f.name }}</tspan>{% else %}{{ f.name }}{% endif %}</text>
+        <text class="ring-label" x="200" y="{{ label_y }}" text-anchor="middle" dominant-baseline="central">{{ f.name }}</text>
       </g>
       {% endfor %}
     </svg>
@@ -32,8 +32,9 @@
     <div class="focus-panels">
     {% for f in site.data.focus %}{% assign fid = f.name | slugify %}<div class="focus-panel" role="tabpanel" id="panel-{{ sid }}-{{ fid }}" aria-labelledby="tab-{{ sid }}-{{ fid }}">
       <div class="focus-head">
-        {% if f.icon %}<img src="assets/img/icons/{{ f.icon }}.svg" alt="">{% endif %}
         <h3 class="group-heading">{{ f.name }}</h3>
+        {% comment %} 흐름의 힌트(교수 2026-11-24): 세 방향의 hint 를 안쪽부터 차례로 늘어놓고 지금 고른 방향만 강조한다. 원 안에는 두지 않는다(원이 지저분해진다). 데스크톱은 카드 제목 줄 오른쪽 끝에 고정(방향을 바꿔도 제자리), 휴대폰은 방향 이름 아래 줄. 이 자리에 있던 방향 아이콘은 이름을 되풀이할 뿐이라 뺐다(아이콘 자체는 Research 에서 쓴다). {% endcomment %}
+        <ol class="focus-flow" aria-label="From core to application">{% for g in site.data.focus %}{% if g.hint %}<li{% if g.name == f.name %} aria-current="step"{% endif %}>{{ g.hint }}</li>{% endif %}{% endfor %}</ol>
       </div>
       {% if f.papers %}<div class="focus-papers">
         {% for p in f.papers limit: 3 %}{% if p.url %}<a class="focus-paper" href="{{ p.url }}">{% else %}<div class="focus-paper">{% endif %}

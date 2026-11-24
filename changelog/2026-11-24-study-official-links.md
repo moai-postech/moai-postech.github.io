@@ -14,7 +14,7 @@ POSTECH 요구사항: 영향 없음
 - 스터디 시트 `schedule` 탭 D4·D5·D6·D8·D9·D10·D11·D12 를 하이퍼링크로 다시 씀(외부 주소라 칩 아님). Crossref 로 DOI·제목·학술지를 모두 확인.
   - arXiv → 본지: MuZero(Nature 2020), Go-Explore(Nature 2021), DeepNash(Science 2022), DeepStack(Science 2017).
   - doi.org → 본지 페이지 주소: AlphaGo, DQN, AlphaStar(Nature), AlphaZero, Pluribus, Cicero(Science). 가리키는 곳은 같고 주소 꼴만 MuZero 예시와 맞춤.
-  - Semantic Scholar → 공식 venue: DeepBlue(Artificial Intelligence 2002, arXiv 없음) `sciencedirect.com/science/article/pii/S0004370201001291`.
+  - DeepBlue(Artificial Intelligence 2002, arXiv 없음): 처음에 ScienceDirect 로 바꿨다가 아래 후속에서 Semantic Scholar 로 되돌림.
   - 그대로: A3C, ICM, RND, Agent57, Hide-and-Seek, QMIX, Voyager, Argon agents(arXiv), CFR(NeurIPS 2007 초록 페이지).
 - `tools/ai_study_sync.py` 로 동기화. 같은 실행이 Fall 2026 9회에 학생이 올린 슬라이드를 함께 받았다(`09-spatial-reasoning-slides.pdf`, 둘째 파일은 받을 수 없어 Drive 링크로 남음, 원본 짝 `tools/drive_sources.json`).
 - 규칙: `AGENTS.md` 의 `ai_study.yml` 줄. 학기 계획의 링크 표는 `2_lecture/27S_MOAI_AIStudy/syllabus/plan.md`.
@@ -23,5 +23,10 @@ POSTECH 요구사항: 영향 없음
 - doi.org 주소 유지: 같은 곳을 가리키지만 교수가 준 예시(`nature.com/articles/…`)와 꼴을 맞춤.
 - Science Robotics 논문도 공식 페이지로: 교수 규칙은 본지만이다.
 
+## 후속: ScienceDirect 는 최하위
+교수: ScienceDirect 는 싫다, Semantic Scholar 로 되돌리고 ScienceDirect 를 가장 낮은 우선순위로. DeepBlue 를 시트 D4 에서 Semantic Scholar 로 되돌리고 동기화했다. `AGENTS.md` 규칙을 우선순위 다섯 단계로 고침: Nature·Science 본지 공식 → arXiv → 공식 venue(ScienceDirect 제외) → Semantic Scholar → ScienceDirect. DeepBlue 의 공식 venue(Artificial Intelligence, Elsevier)는 논문 페이지가 ScienceDirect 뿐이라 Semantic Scholar 다.
+
+기각한 안: ScienceDirect(교수가 싫다고 함), 저널 홈페이지 `journals.elsevier.com/artificial-intelligence`(논문 페이지가 아님).
+
 ## 남은 것
-- DeepBlue: 2026-11-23 에 교수가 "ScienceDirect 로 가는 것은 다른 곳으로" 해서 Semantic Scholar 로 바꿨던 링크다(`2026-11-23-study-spring-2027-papers.md`). 오늘 규칙(arXiv 없으면 공식 venue)대로 ScienceDirect 로 되돌렸으니 교수 확인.
+- 없음.

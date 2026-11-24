@@ -570,6 +570,7 @@ a.person-name:hover { color: var(--accent); }
   .item-list li > * { grid-column: 1 / -1; }
   .item-list li > .item-main { grid-column: 1; }
   .item-list li > .item-side { grid-column: 2; grid-row: 1; }  /* the year or venue stays at the right end of the first line, as on desktop and Funding (교수 2026-11-25) */
+  .page-talks .item-list li > .item-side { grid-column: 1 / -1; grid-row: auto; text-align: left; }  /* Talks: venues can list three hosts, too long for the right end of a phone line; they go under the title for every talk (2026-11-25 final review: a title collapsed to one word per line) */
   .funding li { grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--space-3); }
   .funding li span { grid-column: 1 / -1; grid-row: 2; }
   .item-side { margin-left: 0; text-align: right; }

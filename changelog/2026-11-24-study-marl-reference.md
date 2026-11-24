@@ -2,7 +2,7 @@
 
 작성자: Sangwoo Mo(sangwoomo) | 대상: `_data/ai_study_terms.yml` | 도구: Claude Code
 
-> **한줄 결론: Spring 2027 See also 의 MIT 6.S890 을 Stefano Albrecht 의 IIIA-CSIC Multi-Agent Reinforcement Learning 강좌(Fall 2024, YouTube 4회)로 바꿨다.**
+> **한줄 결론: Spring 2027 See also 의 MIT 6.S890 을 IIIA-CSIC MARL 강좌로 바꿨다가, 교수 판단으로 MIT 6.S890 으로 되돌렸다(최종 변경 없음).**
 
 POSTECH 요구사항: 영향 없음
 
@@ -18,6 +18,11 @@ POSTECH 요구사항: 영향 없음
 - CMU 15-888 Computational Game Solving: 게임 이론·CFR·Pluribus 에는 맞지만 대학원 이론이고 영상과 협력(QMIX) 부분이 없다.
 - MARL book 자체: 강의가 낫다(교수). 책은 강좌 교재로 따라온다.
 - Hugging Face Deep RL Course 7단원: 축구 실습 하나라 6~9회 범위와 맞지 않고 관리가 멈췄다.
+
+## 후속: MIT 로 되돌림
+교수: IIIA-CSIC 는 근본 있는 학교가 아니다, 차라리 MIT 원래 것을 두는 게 낫다. `spring-2027` reference 를 MIT 6.S890 으로 되돌렸다. See also 는 보조 자료이고 6~9회 수업은 회차 논문(CFR, DeepStack, AlphaStar, QMIX 등)이 이끈다.
+
+기각한 안 추가: IIIA-CSIC MARL 강좌(내용은 맞지만 대학이 아닌 연구소 이름이 앞에 서서 무게가 덜 실린다, 교수).
 
 ## 남은 것
 - 없음.

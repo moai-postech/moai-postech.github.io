@@ -9,7 +9,7 @@ spring-2027:
   demo_heading: "Game"
   tldr: "How board games are won by search and learning, video games by deep RL, and multi-player games by game theory and multi-agent RL."
   icon: "assets/img/icons/study-games.svg"
-  reference: { lead: "See also", courses: [ { title: "Berkeley Deep RL Bootcamp", term: "Summer 2017", url: "https://sites.google.com/view/deep-rl-bootcamp/lectures" }, { title: "IIIA-CSIC Multi-Agent Reinforcement Learning", term: "Fall 2024", url: "https://www.youtube.com/playlist?list=PLkoCa1tf0XjCU6GkAfRCkChOOSH6-JC_2" } ] }  # Deep RL(3–5강)은 Bootcamp, 게임 이론·multi-agent(6–9강)는 Albrecht 의 MARL 강좌(CTDE, VDN·QMIX, self-play). MIT 6.S890 은 대학원 이론이라 바꿈(교수 2026-11-24)
+  reference: { lead: "See also", courses: [ { title: "Berkeley Deep RL Bootcamp", term: "Summer 2017", url: "https://sites.google.com/view/deep-rl-bootcamp/lectures" }, { title: "MIT 6.S890 Topics in Multiagent Learning", term: "Fall 2024", url: "https://www.mit.edu/~gfarina/6S890/" } ] }  # Deep RL(3–5강)은 Bootcamp, 게임 이론·multi-agent(6–9강)는 6.S890(교수 2026-11-21). 2026-11-24 이론적이라 IIIA-CSIC MARL 강좌로 바꿨다가 이름 있는 학교가 낫다며 되돌림
   learning_path:
     - { start: 1, end: 2, title: "Board Games", text: "How AI masters board games: **search** that looks ahead and **learning** that supplies intuition, each improving the other through self-play." }
     - { start: 3, end: 5, title: "Video Games", text: "How AI learns video games from pixels and score alone: **deep RL** by trial and error, then **exploration** where rewards are rare and far away." }

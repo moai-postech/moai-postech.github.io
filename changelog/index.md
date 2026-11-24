@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-24 | [Research Focus 흐름](2026-11-24-focus-flow.md) | Sangwoo Mo(sangwoomo) | `focus.html`, `theme.css` | 동심원 위쪽 축의 흰 틈 두 곳에 바깥 방향 꺾쇠, Agentic → Physical → Manufacturing 흐름을 옅게 |
+| 2026-11-24 | [Research Focus 흐름](2026-11-24-focus-flow.md) | Sangwoo Mo(sangwoomo) | `focus.html`, `theme.css`, `AGENTS.md` | 바깥 방향 꺾쇠를 넣었다가 교수가 별로라 같은 날 뺌. 원 유지(가로 흐름 기각)를 `AGENTS.md` 에 기록 |
 | 2026-11-24 | [초청 연사 소속 줄바꿈](2026-11-24-guest-affiliation-phone.md) | Sangwoo Mo(sangwoomo) | `course/schedule.html`, `course.css` | 휴대폰에서 소속을 이름 아래 줄에 쉼표 없이, 데스크톱은 `이름, 소속` 그대로 |
 | 2026-11-24 | [changelog 검사 강제 push 처리](2026-11-24-changelog-check-force-push.md) | Sangwoo Mo(sangwoomo) | `tools/check_changelog.py` | 강제 push 뒤 before 커밋이 없어 검사가 죽던 것을 HEAD~1 비교로 고침 |
 | 2026-11-23 | [전 페이지 디자인 검수](2026-11-23-design-review.md) | Sangwoo Mo(sangwoomo) | `theme.css`, `AGENTS.md`, `page-design`, `tools/check_*.js` | Home 연구 방향 도식 위아래 64px·카드 여백 32px, 단체사진 3:1 유지, Seminar 두 탭 첫 연도 위치 맞춤 |

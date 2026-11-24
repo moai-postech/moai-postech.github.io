@@ -27,8 +27,6 @@
         <text class="ring-label" x="200" y="{{ label_y }}" text-anchor="middle" dominant-baseline="central">{{ f.name }}</text>
       </g>
       {% endfor %}
-      {% comment %} 안에서 밖으로 가는 흐름(교수 2026-11-24): 이름이 늘어선 위쪽 축에서, 원 사이 흰 틈마다 바깥을 향한 작은 꺾쇠 하나. 글자(층 이름)는 사족이라 쓰지 않는다. 틈의 가운데 반지름 = 바깥 반지름 74 + 61i 에 3 을 더한 값. {% endcomment %}
-      <g class="ring-flow" aria-hidden="true">{% for f in site.data.focus %}{% unless forloop.last %}{% assign gap_r = forloop.index0 | times: 61 | plus: 77 %}{% assign cy = 200 | minus: gap_r %}<path d="M194 {{ cy | plus: 3 }}l6 -6l6 6"/>{% endunless %}{% endfor %}</g>
     </svg>
     <svg class="focus-link" aria-hidden="true" focusable="false"><defs><linearGradient id="focus-beam-{{ sid }}" gradientUnits="userSpaceOnUse"><stop offset="0" class="beam-near"/><stop offset="1" class="beam-far"/></linearGradient></defs><path class="beam" fill="url(#focus-beam-{{ sid }})"/></svg>
     <div class="focus-panels">

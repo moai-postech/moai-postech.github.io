@@ -31,87 +31,59 @@ schedule:
   kind: lecture
   n: 1
   title: Overview & Logistics
-  html: teaching/27s-programming-for-ax/slides/1_overview.html
-  pdf: teaching/27s-programming-for-ax/slides/1_overview.pdf
 - part: sw3
 - date: '2027-03-08'
   kind: lecture
   n: 2
   title: Working with AI
-  html: teaching/27s-programming-for-ax/slides/2_working-with-ai.html
-  pdf: teaching/27s-programming-for-ax/slides/2_working-with-ai.pdf
 - date: '2027-03-10'
   kind: lecture
   n: 3
   title: AI-Assisted Programming
-  html: teaching/27s-programming-for-ax/slides/3_ai-assisted-programming.html
-  pdf: teaching/27s-programming-for-ax/slides/3_ai-assisted-programming.pdf
 - date: '2027-03-15'
   kind: lecture
   n: 4
   title: Coding Agents
-  html: teaching/27s-programming-for-ax/slides/4_coding-agents.html
-  pdf: teaching/27s-programming-for-ax/slides/4_coding-agents.pdf
 - part: sw1
 - date: '2027-03-17'
   kind: lecture
   n: 5
   title: Python for Data Work
-  html: teaching/27s-programming-for-ax/slides/5_python.html
-  pdf: teaching/27s-programming-for-ax/slides/5_python.pdf
 - date: '2027-03-22'
   kind: lecture
   n: 6
   title: Arrays and DataFrames
-  html: teaching/27s-programming-for-ax/slides/6_arrays-dataframes.html
-  pdf: teaching/27s-programming-for-ax/slides/6_arrays-dataframes.pdf
 - date: '2027-03-24'
   kind: lecture
   n: 7
   title: Data Validation and Evaluation
-  html: teaching/27s-programming-for-ax/slides/7_validation.html
-  pdf: teaching/27s-programming-for-ax/slides/7_validation.pdf
 - date: '2027-03-29'
   kind: lecture
   n: 8
   title: Regression
-  html: teaching/27s-programming-for-ax/slides/8_regression.html
-  pdf: teaching/27s-programming-for-ax/slides/8_regression.pdf
 - date: '2027-03-31'
   kind: lecture
   n: 9
   title: Classification
-  html: teaching/27s-programming-for-ax/slides/9_classification.html
-  pdf: teaching/27s-programming-for-ax/slides/9_classification.pdf
 - date: '2027-04-05'
   kind: lecture
   n: 10
   title: Trees and Ensembles
-  html: teaching/27s-programming-for-ax/slides/10_trees-ensembles.html
-  pdf: teaching/27s-programming-for-ax/slides/10_trees-ensembles.pdf
 - date: '2027-04-07'
   kind: lecture
   n: 11
   title: Clustering
-  html: teaching/27s-programming-for-ax/slides/11_clustering.html
-  pdf: teaching/27s-programming-for-ax/slides/11_clustering.pdf
 - date: '2027-04-12'
   kind: lecture
   n: 12
   title: Dimensionality Reduction
-  html: teaching/27s-programming-for-ax/slides/12_dimensionality-reduction.html
-  pdf: teaching/27s-programming-for-ax/slides/12_dimensionality-reduction.pdf
 - date: '2027-04-14'
   kind: lecture
   n: 13
   title: Interpretable ML
-  html: teaching/27s-programming-for-ax/slides/13_interpretable-ml.html
-  pdf: teaching/27s-programming-for-ax/slides/13_interpretable-ml.pdf
 - date: '2027-04-19'
   kind: review
   title: Review Session
-  html: teaching/27s-programming-for-ax/slides/review-session.html
-  pdf: teaching/27s-programming-for-ax/slides/review-session.pdf
 - date: '2027-04-21'
   kind: exam
   title: Midterm Exam
@@ -123,14 +95,10 @@ schedule:
   kind: lecture
   n: 14
   title: Deep Learning
-  html: teaching/27s-programming-for-ax/slides/14_deep-learning.html
-  pdf: teaching/27s-programming-for-ax/slides/14_deep-learning.pdf
 - date: '2027-05-03'
   kind: lecture
   n: 15
   title: PyTorch
-  html: teaching/27s-programming-for-ax/slides/15_pytorch.html
-  pdf: teaching/27s-programming-for-ax/slides/15_pytorch.pdf
 - date: '2027-05-05'
   kind: break
   title: No Class (Children’s Day)
@@ -138,44 +106,30 @@ schedule:
   kind: lecture
   n: 16
   title: Training and Generalization
-  html: teaching/27s-programming-for-ax/slides/16_training-generalization.html
-  pdf: teaching/27s-programming-for-ax/slides/16_training-generalization.pdf
 - date: '2027-05-12'
   kind: lecture
   n: 17
   title: Visual Representations
-  html: teaching/27s-programming-for-ax/slides/17_visual-representations.html
-  pdf: teaching/27s-programming-for-ax/slides/17_visual-representations.pdf
 - date: '2027-05-17'
   kind: lecture
   n: 18
   title: Dense Prediction
-  html: teaching/27s-programming-for-ax/slides/18_dense-prediction.html
-  pdf: teaching/27s-programming-for-ax/slides/18_dense-prediction.pdf
 - date: '2027-05-19'
   kind: lecture
   n: 19
   title: Language Models
-  html: teaching/27s-programming-for-ax/slides/19_language-models.html
-  pdf: teaching/27s-programming-for-ax/slides/19_language-models.pdf
 - date: '2027-05-24'
   kind: lecture
   n: 20
   title: Vision-Language Models
-  html: teaching/27s-programming-for-ax/slides/20_vision-language.html
-  pdf: teaching/27s-programming-for-ax/slides/20_vision-language.pdf
 - date: '2027-05-26'
   kind: lecture
   n: 21
   title: Generative Models
-  html: teaching/27s-programming-for-ax/slides/21_generative-models.html
-  pdf: teaching/27s-programming-for-ax/slides/21_generative-models.pdf
 - date: '2027-05-31'
   kind: lecture
   n: 22
   title: AI for Data Science
-  html: teaching/27s-programming-for-ax/slides/22_ai-for-data-science.html
-  pdf: teaching/27s-programming-for-ax/slides/22_ai-for-data-science.pdf
 - date: '2027-06-02'
   kind: outside
   title: Project Preparation (Out of Class)

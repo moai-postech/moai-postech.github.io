@@ -3,7 +3,7 @@ layout: page
 title: Contact
 description: "Contact MOAI Lab at POSTECH, and how to join as a graduate student or undergraduate intern."
 sections:
-  - title: "Join us"
+  - title: "Join Us"
     type: contact-block
     id: join
     image: assets/img/contact-join.svg
@@ -11,11 +11,11 @@ sections:
     body: |
       We mainly recruit **undergraduate interns**, so that we can grow together over the long term. Above all, we look for a **genuine passion for AI**, backed by clear logical thinking; both count far more than a long CV. Planning to apply? **Contact us first.**
     steps:
-      - title: "Check the background we expect"
+      - title: "Check the Background We Expect"
         body: |
           Look through our [undergraduate AI study](teaching/ai-study/).
           It meets weekly during the semester; reach out to its organizer to join.
-      - title: "Contact us before you apply"
+      - title: "Contact Us Before You Apply"
         body: |
           Email your CV and transcript to [Prof. Sangwoo Mo](faculty.html), for an internship or before applying to graduate school.
 ---

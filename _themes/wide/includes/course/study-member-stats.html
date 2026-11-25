@@ -7,14 +7,14 @@
 {% assign stats = site.data.ai_study_members %}
 {% assign max_count = 0 %}{% for t in stats.terms %}{% if t.count > max_count %}{% assign max_count = t.count %}{% endif %}{% endfor %}
 <section class="content-section study-member-stats study-home-community" aria-labelledby="member-statistics">
-  <div class="study-stat-head"><h2 id="member-statistics">Who we learn with</h2><a class="study-stat-members" href="teaching/ai-study/members/">Meet the members →</a></div>
+  <div class="study-stat-head"><h2 id="member-statistics">Who We Learn With</h2><a class="study-stat-members" href="teaching/ai-study/members/">Meet the members →</a></div>
   {% comment %} One total; this term's count and the number of cohorts already read from the bars (교수 2026-11-02: Home 을 미니멀하게). {% endcomment %}
   <dl class="study-stat-summary">
     <div><dd>{{ stats.total }}</dd><dt>members since {{ stats.terms.last.term }}</dt></div>
   </dl>
   <div class="study-stat-breakdowns">
     <figure class="study-stat-panel">
-      <figcaption><h3>By term</h3></figcaption>
+      <figcaption><h3>By Term</h3></figcaption>
       <ol class="plain study-cohort-chart">
         {% for t in stats.terms reversed %}{% assign h = t.count | times: 100.0 | divided_by: max_count %}<li data-term="{{ t.number }}"><a class="study-cohort-link" href="teaching/ai-study/members/#term={{ t.number }}">
           <span class="study-cohort-track"><span class="study-cohort-bar" style="height: {{ h }}%" title="{{ t.term }} · {{ t.number }}기: {{ t.new }} new, {{ t.existing }} returning">
@@ -27,14 +27,14 @@
       </ol>
     </figure>
     <figure class="study-stat-panel">
-      <figcaption><h3>By department</h3></figcaption>
+      <figcaption><h3>By Department</h3></figcaption>
       <ul class="plain study-dept-map" data-total="{{ stats.total }}">
         {% for d in stats.departments %}{% assign ko = d.name | split: "(" | first %}{% assign en = d.name | remove_first: ko | remove: "(" | remove: ")" %}<li data-count="{{ d.count }}" title="{{ d.name }}: {{ d.count }}"><span>{{ ko | replace: "IT", "IT<wbr>" }}{% if en != "" %}<small>({{ en }})</small>{% endif %}</span><span class="study-chart-value">{{ d.count }}</span><a class="study-dept-link" href="teaching/ai-study/members/#dept={{ ko | url_encode }}" aria-label="{{ d.name }}: {{ d.count }} members. Show them in the member list."></a></li>{% endfor %}
       </ul>
     </figure>
     {% assign max_year = 0 %}{% for y in stats.years %}{% if y.count > max_year %}{% assign max_year = y.count %}{% endif %}{% endfor %}
     <figure class="study-stat-panel">
-      <figcaption><h3>By entry year</h3></figcaption>
+      <figcaption><h3>By Entry Year</h3></figcaption>
       <ol class="plain study-cohort-chart study-year-chart" style="--study-years: {{ stats.years.size }}">
         {% for y in stats.years %}{% assign h = y.count | times: 100.0 | divided_by: max_year %}<li>
           <span class="study-cohort-track"><span class="study-cohort-bar" style="height: {{ h }}%"><span class="study-chart-value">{{ y.count }}</span><span class="is-year"></span></span></span>

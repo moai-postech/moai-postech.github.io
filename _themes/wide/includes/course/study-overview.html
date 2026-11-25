@@ -5,7 +5,7 @@
 {% endcomment %}
 {% assign d = site.data.ai_study %}{% assign current = nil %}{% for ct in d.terms %}{% unless site.data.ai_study_terms[ct.id].upcoming %}{% assign current = ct %}{% break %}{% endunless %}{% endfor %}{% unless current %}{% assign current = d.terms | first %}{% endunless %}{% comment %}This term = the newest term not marked upcoming in ai_study_terms.yml; an upcoming term shows as Next (2026-11-18).{% endcomment %}
 <section class="content-section study-home-overview" aria-labelledby="study-overview-title">
-  <h2 id="study-overview-title">What we study</h2>
+  <h2 id="study-overview-title">What We Study</h2>
   <ol class="plain study-term-cards study-term-directory" style="--study-terms: {{ d.terms.size }}">
     {% for t in d.terms reversed %}{% assign info = site.data.ai_study_terms[t.id] %}{% comment %}Numbered sessions count, even one tagged Optional (Summer 2026 session 10); lettered topics (A1 …) do not (교수 2026-11-03).{% endcomment %}{% assign regular = "" | split: "" %}{% for s in t.sessions %}{% assign num = s.n | plus: 0 %}{% if num > 0 %}{% assign regular = regular | push: s %}{% endif %}{% endfor %}
     <li class="study-term-card{% if t.id == current.id %} is-current{% elsif info.upcoming %} is-upcoming{% endif %}" data-term="{{ info.cohort | default: forloop.index }}">

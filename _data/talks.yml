@@ -5,7 +5,7 @@
 - year: "2027"
   talks:
     - title: "TBD"  # IPIU 2027 신진연구자 발표. 제목·자료가 정해지면 바꾸고 url 을 단다(교수 2026-11-26)
-      venues: [{name: "IPIU Young Researcher Session", url: "https://www.ipiu.or.kr/"}]
+      venues: [{name: "IPIU Young Researcher", url: "https://www.ipiu.or.kr/"}]
 - year: "2026"
   talks:
     - title: "Do We Need Professors in the Age of AI?"

@@ -349,7 +349,7 @@ project:
     - title: "5th Place, 2026 DATA·AI Analysis Competition"
       when: "Korea Coast Guard Commissioner's Award"
       photo: "teaching/26f-data-engineering/project/highlights/2026-data-ai-competition.jpg"
-      photo_alt: "Team 1's live highway icing risk map, from their project proposal"
+      photo_alt: "Team 1's icing risk control dashboard and driver radio app, from their final competition slides"
       text: "Team 1 took their project, an AI-based highway icing risk map, to a national data analysis competition hosted by KISTI. Their model estimates road ice every 100 m along the Jeonbuk expressways, including stretches with no road sensor. They placed 5th out of 1,099 participants."
   teams:
     - n: 1

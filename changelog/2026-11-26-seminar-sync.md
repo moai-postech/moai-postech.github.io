@@ -7,6 +7,7 @@
 교수 2026-10-26: 세미나 시트와 Drive 를 기준으로 사이트를 자동 갱신.
 ## 반영 내역
 - 11:11 KST: 발표 목록 갱신
+- 15:44 KST: 슬라이드 2026-11-25-deepseek-agent.pdf ← 261125_DeepSeek_Open_Agent_Stack.pdf; 슬라이드 2026-11-18-diffusion-will-be.pdf ← 261118_diffusion_will_be_everywhere.pptx; 발표 목록 갱신
 ## 기각한 안과 이유
 없음
 ## 남은 것

@@ -25,9 +25,11 @@ talks:
   - date: "2026-11-25"
     speaker: "Seounghyun Jang"
     title: "DeepSeek Open Agent Stack"
+    slides: "assets/seminar/2026-11-25-deepseek-agent.pdf"
   - date: "2026-11-18"
     speaker: "Suchan Lee"
     title: "Diffusion Will Be Everywhere"
+    slides: "assets/seminar/2026-11-18-diffusion-will-be.pdf"
   - date: "2026-11-12"
     routine: true
     speaker: "Lab members"

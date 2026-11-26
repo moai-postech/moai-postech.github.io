@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-26 | [강의 출처 대비](2026-11-26-source-label-contrast.md) | Sangwoo Mo(sangwoomo) | `teaching/26f-data-engineering/slides/` | 본문·자산 보존, 공통 출처색 적용 |
 | 2026-11-26 | [Data Engineering 수상 Highlights](2026-11-26-de-highlight-data-ai.md) | Sangwoo Mo(sangwoomo) | `_data/courses/26f-data-engineering.yml` | 26F 팀 1의 DATA·AI 분석 경진대회 5위(해양경찰청장상)를 Highlights 에 추가 |
 | 2026-11-26 | [외부 교육 제외](2026-11-26-talks-no-external-training.md) | Sangwoo Mo(sangwoomo) | `AGENTS.md` | Invited Talks 에 기업·기관 외부 교육 강의는 넣지 않음 |
 | 2026-11-26 | [IPIU 2027 자리](2026-11-26-talks-ipiu-2027.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml` | Invited Talks 2027 에 IPIU 신진연구자 발표를 제목 TBD 로 |

@@ -12,7 +12,7 @@
   - _data/ai_study.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
 
   python3 tools/ai_study_sync.py               # 로컬에서 한 번
-  python3 tools/ai_study_sync.py --changelog   # GitHub Actions(site-weekly, 화 21:00 KST): 바뀐 것이 있으면 changelog 도 쓴다
+  python3 tools/ai_study_sync.py --changelog   # GitHub Actions(site-weekly, 수 21:00 KST): 바뀐 것이 있으면 changelog 도 쓴다
 
 필요한 것: Python 3.9+, PDF 를 합칠 때만 pypdf.
 """

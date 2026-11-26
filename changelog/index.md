@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-26 | [site-weekly 수요일](2026-11-26-site-weekly-wednesday.md) | Sangwoo Mo(sangwoomo) | `site-weekly.yml`, `AGENTS.md` | 동기화 예약을 화 21:00 에서 수 21:00 KST 로 |
 | 2026-11-26 | [pypdf 7 대응](2026-11-26-pypdf7-seminar-sync.md) | Sangwoo Mo(sangwoomo) | `tools/seminar_sync.py`, `AGENTS.md` | pypdf 7.0 에서 멈춘 슬라이드 16:9 변환을 고침. slide 칸이 비면 날짜로 파일을 찾음 |
 | 2026-11-26 | [Talks Research·Education 위계](2026-11-26-talks-swatch-color.md) | Sangwoo Mo(sangwoomo) | `talks.html`, `talk-year.html`, `theme.css`, `page-design.json`, `AGENTS.md` | Seminar 두 탭 띠: 10px 여백(46px), 범례 색 14% 바탕, Research 초록·Education 회색 |
 | 2026-11-26 | [seminar-sync](2026-11-26-seminar-sync.md) | GitHub Actions(seminar-sync) | Seminar | 랩 세미나 시트에서 자동 동기화 |

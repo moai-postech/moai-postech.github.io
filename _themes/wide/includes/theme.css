@@ -388,7 +388,10 @@ a.chip:hover { text-decoration: none; box-shadow: 0 0 0 1.5px var(--accent); }
 
 /* Talks filter: list items and year heads use display:flex/block, so the hidden attribute needs an explicit rule */
 [data-talk-filter] [hidden] { display: none; }
-[data-talk-filter] li[data-kind="education"] .item-main, [data-talk-filter] li[data-kind="education"] .item-main a { color: var(--muted); }  /* Invited Talks: Research stays bold ink, Education steps back to regular grey, so research reads first without row fills (교수 2026-11-26) */
+[data-talk-filter] li[data-kind] { position: relative; padding-left: 1.25em; }  /* Invited Talks: each row carries the same square as its filter button, so the legend points at something (교수 2026-11-26) */
+[data-talk-filter] li[data-kind]::before { content: ""; position: absolute; left: 0; top: .42em; width: .7em; height: .7em; border-radius: 3px; background: var(--kind-2); }  /* hangs left of the title, so a wrapped title and the venue line under it on phones line up with the first line */
+[data-talk-filter] li[data-kind="education"]::before { background: var(--kind-none); }
+[data-talk-filter] li[data-kind="education"] .item-main, [data-talk-filter] li[data-kind="education"] .item-main a { color: var(--muted); }  /* Research stays bold ink, Education steps back to regular grey (교수 2026-11-26) */
 [data-talk-filter] li[data-kind="education"] .item-main strong { font-weight: var(--weight-regular); }
 /* Seminar: one list, newest first, filtered by kind. One row per talk: date, title (takes all spare width), affiliation, speaker at the far right */
 .filter-bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-5); margin-bottom: var(--space-5); }  /* no full-width rule: the only line on a page is the one under the menu */

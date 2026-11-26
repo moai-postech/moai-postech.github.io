@@ -5,6 +5,7 @@
   - name_en 칸을 채운 행만 사이트에 나온다(시험, 휴식, 비공개 발표는 비워 둔다).
   - affiliation_en 이 있으면 초청 발표다. 초청 연사 슬라이드는 공개하지 않는다.
   - 랩 발표의 slide 칸 파일 이름을 슬라이드 폴더에서 찾아 받고, PDF 로 바꿔 assets/seminar/ 에 둔다.
+    칸이 비어 있으면 폴더에서 발표일 YYMMDD_ 로 시작하는 파일이 하나뿐일 때 그것을 쓴다(정기 회차 제외, 교수 2026-11-26).
     모든 쪽을 16:9(960x540pt)로 맞추고(비율이 다르면 줄여서 가운데), 이름은 날짜-제목별칭.pdf, PDF 정보에 제목과 발표자를 넣는다.
     제목 별칭은 시트 nickname 칸, 비면 nickname() 규칙(콜론 앞 짧은 이름, 아니면 기능어를 뺀 앞 3단어).
   - _data/seminar.yml 을 통째로 다시 쓴다. 이 파일을 손으로 고치지 말고 시트를 고친다.
@@ -161,11 +162,13 @@ def parse_talks(head, rows):
             "url": get(r, "homepage") or (slide_cell if invited and slide_cell.startswith("http") else ""),
             "title": get(r, "topic"),
             "slide_name": "" if invited or slide_cell.startswith("http") else slide_cell,
+            "slide_by_date": not invited and not slide_cell,  # 칸이 비면 폴더에서 YYMMDD_ 로 시작하는 파일을 찾는다(교수 2026-11-26)
             "paper": get(r, "paper") if invited else "",  # 랩 발표는 슬라이드만 건다
             "nickname": slug(get(r, "nickname")) or nickname(get(r, "topic")),
             "group": get(r, "name_en") == GROUP_SPEAKER,
             "routine": get(r, "name_en") == GROUP_SPEAKER or bool(ROUTINE_TITLE.search(get(r, "topic"))),
         }
+        t["slide_by_date"] = t["slide_by_date"] and not t["routine"]
         talks.append(t)
     talks.sort(key=lambda t: t["date"], reverse=True)  # 같은 날은 시트 순서 그대로
     return talks
@@ -303,7 +306,14 @@ def main():
         tmp = Path(tmp)
         for t in talks:
             if not t["slide_name"]:
-                continue
+                if not t.get("slide_by_date"):
+                    continue
+                key = t["date"][2:].replace("-", "")  # 2026-11-18 → 261118
+                same = [k for k in files if k.startswith(key + "_")]
+                if len(same) != 1:
+                    continue  # 없거나 여러 개면 시트를 기다린다
+                t["slide_name"] = same[0]
+                t["found_by_date"] = True
             name, fid = find_slide(t["slide_name"], files)
             if not fid:
                 name, fid = from_manifest(t["date"], manifest, files)
@@ -328,7 +338,7 @@ def main():
                 src = to_pdf(raw, tmp)
             normalize(src, PDF_DIR / out, t["title"].replace("\xa0", " "), t["speaker"], t["date"])
             manifest[out] = {"drive_id": fid, "source": name}
-            summary.append(f"슬라이드 {out} ← {name}")
+            summary.append(f"슬라이드 {out} ← {name}" + (" (시트 slide 칸이 비어 날짜로 찾음)" if t.get("found_by_date") else ""))
 
     for p in PDF_DIR.glob("*.pdf"):
         if p.name not in keep:

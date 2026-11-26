@@ -19,6 +19,7 @@ POSTECH 요구사항: 영향 없음
   - `theme.css`: 줄 바탕 `--tone-row`, 안쪽 12·16px(휴대폰 12px), 줄 사이 4px, 모서리 `--radius-1`, 제목 500. 목록 첫·끝 줄 안쪽 여백을 깎던 `.section-body > .plain > li:first/last-child` 규칙에서 `li[data-kind]` 를 뺐다(채운 띠는 제 여백을 지킨다).
   - 측정: 데스크톱 줄 높이 50px, 연도→첫 줄 16px, 묶음 사이 64px, 필터 258px·첫 줄 368px 로 Lab Seminar 와 같다. 휴대폰 카드 안쪽 12px, 연도→카드 16px 도 같다.
   - 디자인 계약: 제목 500 이 `list-title`·`inline-emphasis`(600)와 달라 `page-design.json` 에 페이지 조정 `talks-seminar-bands` 를 두고 `page-design.md` 를 다시 만들었다. `check_design`(위반 0), `check_typography`, `check_interaction` 통과.
+- 교수 후속(세로로 두꺼워졌다, 디자인 비판): 목록 전체 높이를 재니 띠 없는 목록 434px, Seminar 와 같은 띠 634px(+46%)였다. 한 줄에 제목과 장소뿐인 항목에 일정표용 띠 두께는 과하다. 데스크톱 띠 안쪽 위아래를 12→8px(`--space-2`)로 줄여 줄 42px, 목록 554px(+28%). 첫 줄 위치(368px)와 휴대폰 카드(12px)는 그대로라 탭을 오가도 움직이지 않는다. `check_design` 위반 0.
 - Lab Seminar 는 줄 바탕색을 그대로 둔다. 날짜·발표자·제목 칸이 있는 일정표라 바탕이 한 줄을 묶어 주고, 세 종류 사이에 위계가 없어 색 면적이 커도 된다. Invited Talks 는 한 줄 목록이고 Research 가 위라서 사각형과 회색 글자로 충분하다.
 - `talks.html` 주석, `AGENTS.md` 의 팔레트 규칙과 Talks 수록 기준을 고침.
 - 확인: 로컬 빌드 데스크톱과 375px 에서 화면 확인.
@@ -34,6 +35,8 @@ POSTECH 요구사항: 영향 없음
 - 모두 같은 굵은 검정: Research 와 Education 이 구별되지 않는다.
 - 진한·옅은 글자색과 남색·회색 사각형(035a008): 사각형이 Lab Seminar 의 색 사각형 옆에서 거칠고, 형제 탭과 시각 언어가 달랐다.
 - 띠 안 제목 600: 띠 안에서 무겁고 Lab Seminar 제목(500)과 달랐다.
+- 띠를 Seminar 와 똑같은 두께(12px, 50px)로 유지: 같은 가족이라는 이점보다 짧은 목록이 46% 길어지는 손해가 컸다.
+- 띠 없는 목록으로 되돌리기: 짧지만 Research·Education 구별과 버튼 사각형의 범례가 사라진다.
 
 ## 남은 것
 없음

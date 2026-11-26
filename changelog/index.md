@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-26 | [seminar-sync](2026-11-26-seminar-sync.md) | GitHub Actions(seminar-sync) | Seminar | 랩 세미나 시트에서 자동 동기화 |
 | 2026-11-25 | [검수 후속](2026-11-25-review-followup.md) | Sangwoo Mo(sangwoomo) | Programming for AX, 제목 전체 | AX 슬라이드 html·pdf 내림, 제목 단어마다 대문자로 통일, 이슈 제외 목록 |
 | 2026-11-25 | [휴대폰을 웹과 같은 꼴로](2026-11-25-mobile-unity.md) | Sangwoo Mo(sangwoomo) | Faculty, Courses, Study Group, Other Mentees, Overview, Contact, AI Study | 연도 오른쪽 끝, 단계 레일, 들여쓰기, Slides 라벨. 2차: 히어로 그림, 강의 메타 `·`, AI Study 카드, Seminar 연사 순서, 위 여백 |
 | 2026-11-25 | [단체사진 휴대폰 크롭](2026-11-25-photo-mobile-crop.md) | Sangwoo Mo(sangwoomo) | Home 단체사진 | 휴대폰도 웹과 같은 3:1 크롭 |

@@ -10,7 +10,7 @@
 
 sheet: "https://docs.google.com/spreadsheets/d/1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U/edit"
 talks:
-  - date: "2026-12-23"
+  - date: "2026-12-22"
     group: true
     routine: true
     speaker: "Lab members"
@@ -20,8 +20,8 @@ talks:
     speaker: "Lab members"
     title: "NeurIPS Sharing Session"
   - date: "2026-12-02"
-    speaker: "Eunchan Jo"
-    title: "Proving and Improving the Platonic Representation Hypothesis with JEPAs"
+    speaker: "Hyunwoo Seo"
+    title: "Doctoral Research (Title TBD)"
   - date: "2026-11-25"
     speaker: "Seounghyun Jang"
     title: "DeepSeek Open Agent Stack"

@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-26 | [리뷰 원본 대응 복구](2026-11-26-review-reuse.md) | Sangwoo Mo(sangwoomo) | 리뷰 HTML·PDF | 현재 원본 대응·자체 설명 구분,99장 교체본 준비 |
 | 2026-11-26 | [강의 출처 대비](2026-11-26-source-label-contrast.md) | Sangwoo Mo(sangwoomo) | `teaching/26f-data-engineering/slides/` | 본문·자산 보존, 공통 출처색 적용 |
 | 2026-11-26 | [Data Engineering 수상 Highlights](2026-11-26-de-highlight-data-ai.md) | Sangwoo Mo(sangwoomo) | `_data/courses/26f-data-engineering.yml` | 26F 팀 1의 DATA·AI 분석 경진대회 5위(해양경찰청장상)를 Highlights 에 추가 |
 | 2026-11-26 | [외부 교육 제외](2026-11-26-talks-no-external-training.md) | Sangwoo Mo(sangwoomo) | `AGENTS.md` | Invited Talks 에 기업·기관 외부 교육 강의는 넣지 않음 |

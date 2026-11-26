@@ -4,8 +4,8 @@
 # url 은 발표 자료(슬라이드)이고 제목이 그 링크가 된다. venues 의 기관은 이름만 쓰면 _data/institutions.yml 이 공식 사이트로 링크하고, 행사 이름으로 쓴 장소도 {name, url} 로 주최 기관 사이트를 단다. 장소 이름이 가리키는 가장 구체적인 대상으로 건다(MINDS 는 POSTECH 이 아니라 센터). 행사는 공식 행사 사이트가 있으면 그것(AI:Q), 없으면 주최 측 공식 안내 페이지(Physical AI Workshop), 둘 다 없으면 주최 기관을 건다(교수 2026-11-18). 장소는 부연 설명 없이 짧게(KSS Invited Talk). 내용은 개인 사이트 Talks 와 같게 맞춘다. 같은 발표의 장소가 여럿이면 venues 에 나열한다.
 - year: "2027"
   talks:
-    - title: "TBD"  # IPIU 2027 신진연구자 발표. 제목·자료가 정해지면 바꾸고 url 을 단다(교수 2026-11-26). IPIU 공식 사이트를 못 찾아 장소 링크 없음
-      venues: ["IPIU Invited Talk"]
+    - title: "TBD"  # IPIU 2027 신진연구자 발표. 제목·자료가 정해지면 바꾸고 url 을 단다(교수 2026-11-26)
+      venues: [{name: "IPIU Invited Talk", url: "https://www.ipiu.or.kr/"}]
 - year: "2026"
   talks:
     - title: "Do We Need Professors in the Age of AI?"

@@ -1,6 +1,6 @@
 {% comment %}연도 묶음 중 앞의 open 개는 펼쳐 두고 나머지는 "Earlier talks" 로 접는다{% endcomment %}
 {% assign open = include.section.open | default: site.data.talks.size %}
-{% comment %}All | Research | Education 버튼으로 거른다. kind 가 없으면 research. 줄 색 없이 Courses 같은 일반 목록 간격으로 두고(교수 2026-11-17), 버튼 사각형은 Research 초록(tone-p2), Education 회색(tone-guest)이고, Education 줄 제목은 보통 굵기 회색으로 낮춰 Research 가 먼저 읽히게 한다(교수 2026-11-26, theme.css){% endcomment %}
+{% comment %}All | Research | Education 버튼으로 거른다. kind 가 없으면 research. 줄 색 없이 Courses 같은 일반 목록 간격으로 두고(교수 2026-11-17), 버튼 사각형은 Research 진한 회색(tone-strong), Education 연한 회색(tone-guest)이고, Education 줄 제목은 보통 굵기 회색으로 낮춰 Research 가 먼저 읽히게 한다. 줄에는 사각형도 바탕색도 두지 않는다(교수 2026-11-26, theme.css){% endcomment %}
 {% assign n_all = 0 %}{% assign n_edu = 0 %}{% for y in site.data.talks %}{% for t in y.talks %}{% assign n_all = n_all | plus: 1 %}{% if t.kind == "education" %}{% assign n_edu = n_edu | plus: 1 %}{% endif %}{% endfor %}{% endfor %}
     <section class="content-section">
     {% if include.section.title %}<h2{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>{{ include.section.title }}</h2>{% endif %}
@@ -8,7 +8,7 @@
     {% if include.section.intro %}<p class="list-intro">{% include inline.html text=include.section.intro %}</p>{% endif %}
     <div class="filter-bar" role="group" aria-label="Show talks">
       <button type="button" class="filter-btn" data-show="all" aria-pressed="true">All <span>{{ n_all }}</span></button>
-      <button type="button" class="filter-btn" data-show="research" aria-pressed="false"><i class="filter-swatch tone-p2" aria-hidden="true"></i>Research <span>{{ n_all | minus: n_edu }}</span></button>
+      <button type="button" class="filter-btn" data-show="research" aria-pressed="false"><i class="filter-swatch tone-strong" aria-hidden="true"></i>Research <span>{{ n_all | minus: n_edu }}</span></button>
       <button type="button" class="filter-btn" data-show="education" aria-pressed="false"><i class="filter-swatch tone-guest" aria-hidden="true"></i>Education <span>{{ n_edu }}</span></button>
     </div>
     {% for y in site.data.talks limit: open %}{% include talk-year.html year=y %}{% endfor %}

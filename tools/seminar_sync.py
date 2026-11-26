@@ -32,7 +32,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-from pypdf import PdfReader, PdfWriter, Transformation
+from pypdf import PdfWriter, Transformation
 from pypdf.generic import NameObject, RectangleObject
 
 SHEET_ID = "1v4tmcNFKdu7yXRQPeWw_bYEG8dzf6nbvQlo40gjWp8U"
@@ -198,9 +198,8 @@ def to_pdf(src, workdir):
 
 def normalize(src, dest, title, author, date):
     """모든 쪽을 960x540 으로 맞추고(비율 유지, 가운데) PDF 정보를 채운다."""
-    reader = PdfReader(str(src))
-    writer = PdfWriter()
-    for page in reader.pages:
+    writer = PdfWriter(clone_from=str(src))  # pypdf 7 부터 쪽을 writer 에 붙인 뒤에만 고칠 수 있다(2026-11-26)
+    for page in writer.pages:
         box = page.mediabox
         x0, y0 = float(box.left), float(box.bottom)
         w, h = float(box.width), float(box.height)
@@ -222,7 +221,7 @@ def normalize(src, dest, title, author, date):
         for k in ("/TrimBox", "/BleedBox", "/ArtBox"):
             if k in page:
                 del page[k]
-        writer.add_page(page).compress_content_streams()
+        page.compress_content_streams()
     writer.add_metadata({"/Title": title, "/Author": author,
                          "/Subject": f"MOAI Lab Seminar, {date}", "/Creator": "moai-postech.github.io"})
     writer.compress_identical_objects()

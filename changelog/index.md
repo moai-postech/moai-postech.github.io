@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-26 | [pypdf 7 대응](2026-11-26-pypdf7-seminar-sync.md) | Sangwoo Mo(sangwoomo) | `tools/seminar_sync.py` | pypdf 7.0 에서 멈춘 슬라이드 16:9 변환을 고침 |
 | 2026-11-26 | [Talks Research·Education 위계](2026-11-26-talks-swatch-color.md) | Sangwoo Mo(sangwoomo) | `talks.html`, `talk-year.html`, `theme.css`, `page-design.json`, `AGENTS.md` | Seminar 두 탭 띠: 10px 여백(46px), 범례 색 14% 바탕, Research 초록·Education 회색 |
 | 2026-11-26 | [seminar-sync](2026-11-26-seminar-sync.md) | GitHub Actions(seminar-sync) | Seminar | 랩 세미나 시트에서 자동 동기화 |
 | 2026-11-25 | [검수 후속](2026-11-25-review-followup.md) | Sangwoo Mo(sangwoomo) | Programming for AX, 제목 전체 | AX 슬라이드 html·pdf 내림, 제목 단어마다 대문자로 통일, 이슈 제외 목록 |

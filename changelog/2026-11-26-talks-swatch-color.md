@@ -1,5 +1,5 @@
 # 2026-11-26 Invited Talks: Lab Seminar 와 같은 띠, Research 초록·Education 회색
-작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/sections/talks.html`, `_themes/wide/includes/theme.css`, `AGENTS.md` | 도구: Claude Code
+작성자: Sangwoo Mo(sangwoomo) | 대상: Seminar 두 탭, `_themes/wide/includes/sections/talks.html`, `_themes/wide/includes/theme.css`, `AGENTS.md` | 도구: Claude Code
 
 > **한줄 결론: Invited Talks 줄을 Lab Seminar 와 같은 띠로 바꿨다. Research 는 초록 띠, Education 은 회색 띠, 제목은 모두 500 굵기이고 필터 사각형이 그 범례다.**
 
@@ -20,6 +20,7 @@ POSTECH 요구사항: 영향 없음
   - 측정: 데스크톱 줄 높이 50px, 연도→첫 줄 16px, 묶음 사이 64px, 필터 258px·첫 줄 368px 로 Lab Seminar 와 같다. 휴대폰 카드 안쪽 12px, 연도→카드 16px 도 같다.
   - 디자인 계약: 제목 500 이 `list-title`·`inline-emphasis`(600)와 달라 `page-design.json` 에 페이지 조정 `talks-seminar-bands` 를 두고 `page-design.md` 를 다시 만들었다. `check_design`(위반 0), `check_typography`, `check_interaction` 통과.
 - 교수 후속(세로로 두꺼워졌다, 디자인 비판): 목록 전체 높이를 재니 띠 없는 목록 434px, Seminar 와 같은 띠 634px(+46%)였다. 한 줄에 제목과 장소뿐인 항목에 일정표용 띠 두께는 과하다. 데스크톱 띠 안쪽 위아래를 12→8px(`--space-2`)로 줄여 줄 42px, 목록 554px(+28%). 첫 줄 위치(368px)와 휴대폰 카드(12px)는 그대로라 탭을 오가도 움직이지 않는다. `check_design` 위반 0.
+- 교수 후속(Lab Seminar 띠 두께도 괜찮나): Lab Seminar 도 데스크톱에서 한 줄짜리 45줄이라 12px 띠면 표가 2728px 다. `.schedule td` 위아래를 8px 로 줄여 줄 42px, 표 2368px(-360px). 두 탭 줄 높이(42px)와 첫 줄 위치(368px)가 같고, 필터를 바꿔도 칸 가로 위치가 그대로다. 휴대폰 카드(12px)는 그대로. `check_design` 위반 0, `check_typography` 통과.
 - Lab Seminar 는 줄 바탕색을 그대로 둔다. 날짜·발표자·제목 칸이 있는 일정표라 바탕이 한 줄을 묶어 주고, 세 종류 사이에 위계가 없어 색 면적이 커도 된다. Invited Talks 는 한 줄 목록이고 Research 가 위라서 사각형과 회색 글자로 충분하다.
 - `talks.html` 주석, `AGENTS.md` 의 팔레트 규칙과 Talks 수록 기준을 고침.
 - 확인: 로컬 빌드 데스크톱과 375px 에서 화면 확인.

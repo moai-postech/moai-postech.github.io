@@ -550,7 +550,8 @@ a.person-name:hover { color: var(--accent); }
   .site-nav .nav-group { display: flex; justify-content: center; }
   .course-nav { min-height: 44px; }  /* course and study menus have three links: one row, so no empty band sits between the menu and its rule */
   .subnav a { padding-inline: var(--space-3); }  /* People's three tabs stay on one line on a phone instead of leaving Other Mentees alone below */
-  .filter-bar { column-gap: var(--space-3); row-gap: var(--space-2); }  /* Seminar: the four filters share one line on a phone; Full schedule wraps under them, 8px below the filter's underline instead of a detached 24px */
+  .filter-bar { position: relative; column-gap: var(--space-3); row-gap: var(--space-2); }  /* Seminar: the four filters share one line on a phone */
+  .filter-link { position: absolute; right: 0; top: calc(100% + var(--space-6) + var(--space-1) / 2); }  /* phones: Full schedule leaves the filter line and sits at the right end of the first year heading, on its baseline, so the filter line is one row on both Seminar tabs and the first year does not jump 24px when switching tabs (교수 2026-11-26) */
   .person-photo { max-width: 120px; }
   .mentee-aff { display: block; margin-left: 0; }  /* phones: name and papers on the first line, the affiliation under them at full width */
   .mentee-list .item-main { display: contents; }

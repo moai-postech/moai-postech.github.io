@@ -5,6 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
+| 2026-11-26 | [Data Engineering 수상 Highlights](2026-11-26-de-highlight-data-ai.md) | Sangwoo Mo(sangwoomo) | `_data/courses/26f-data-engineering.yml` | 26F 팀 1의 DATA·AI 분석 경진대회 5위(해양경찰청장상)를 Highlights 에 추가 |
 | 2026-11-26 | [외부 교육 제외](2026-11-26-talks-no-external-training.md) | Sangwoo Mo(sangwoomo) | `AGENTS.md` | Invited Talks 에 기업·기관 외부 교육 강의는 넣지 않음 |
 | 2026-11-26 | [IPIU 2027 자리](2026-11-26-talks-ipiu-2027.md) | Sangwoo Mo(sangwoomo) | `_data/talks.yml` | Invited Talks 2027 에 IPIU 신진연구자 발표를 제목 TBD 로 |
 | 2026-11-26 | [site-weekly 수요일](2026-11-26-site-weekly-wednesday.md) | Sangwoo Mo(sangwoomo) | `site-weekly.yml`, `AGENTS.md` | 동기화 예약을 화 21:00 에서 수 21:00 KST 로 |

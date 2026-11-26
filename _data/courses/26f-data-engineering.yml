@@ -344,6 +344,13 @@ project:
     - id: "final"
       name: "Final"
       date_placeholder: "TBD"
+  # Highlights: 25F 와 같은 꼴(상 이름 title, 수여 기관장상 when, 팀 번호로 쓴 영문 설명). 기사가 나오면 url 을, 시상 사진이 오면 photo 를 바꾼다.
+  highlights:
+    - title: "5th Place, 2026 DATA·AI Analysis Competition"
+      when: "Korea Coast Guard Commissioner's Award"
+      photo: "teaching/26f-data-engineering/project/highlights/2026-data-ai-competition.jpg"
+      photo_alt: "Team 1's live highway icing risk map, from their project proposal"
+      text: "Team 1 took their project, an AI-based highway icing risk map, to a national data analysis competition hosted by KISTI. Their model estimates road ice every 100 m along the Jeonbuk expressways, including stretches with no road sensor. They placed 5th out of 1,099 participants."
   teams:
     - n: 1
       title: "AI-based highway icing risk map integrating weather and road conditions"

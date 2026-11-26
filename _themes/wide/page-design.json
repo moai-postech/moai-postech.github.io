@@ -125,9 +125,10 @@
       "page": "talks.html",
       "template": "연구실 · 발표 목록",
       "decision": "페이지 조정",
-      "reason": "제목 16px·장소 15px. 세 목록 탭(Courses·Study Group·Talks)의 오른쪽 정보를 같은 15px로 맞춰 탭을 오가도 크기가 바뀌지 않는다. 두 줄로 접히는 모바일에서도 위계 유지.",
+      "reason": "제목 16px·장소 15px. 세 목록 탭(Courses·Study Group·Talks)의 오른쪽 정보를 같은 15px로 맞춰 탭을 오가도 크기가 바뀌지 않는다. 두 줄로 접히는 모바일에서도 위계 유지. 줄은 Lab Seminar 와 같은 띠, 제목은 같은 500(교수 2026-11-26).",
       "adjustments": [
-        "teaching-term-navigation"
+        "teaching-term-navigation",
+        "talks-seminar-bands"
       ]
     },
     {
@@ -350,6 +351,22 @@
       },
       "change": "Research Focus 카드: 방향 이름(h3) 자체 여백은 0, 방향 이름과 BRAIN → BODY → IMPACT 를 묶은 머리 덩어리(.focus-head) 아래를 묶음 제목 기본 16px 대신 24px 로. 논문 사이 12→16px, 목록→People 선 16→24px.",
       "reason": "카드가 원 높이(360px) 고정에서 내용 높이로 바뀌어 남는 여백이 사라졌다. 논문 사이 16px 보다 한 단계 큰 24px 로 머리와 목록, 목록과 People 을 갈라 위계가 서고 위아래로 붙어 보이지 않는다(교수 2026-11-24). 카드는 여전히 원보다 작다."
+    },
+    {
+      "id": "talks-seminar-bands",
+      "pages": [
+        "talks.html"
+      ],
+      "roles": [
+        "list-title",
+        "inline-emphasis"
+      ],
+      "selector": "[data-talk-filter] .item-list li[data-kind] .item-main strong",
+      "style": {
+        "fontWeight": "var(--weight-medium)"
+      },
+      "change": "Invited Talks 줄을 Lab Seminar 와 같은 띠(Research 초록, Education 회색)로 두고 제목을 600→500.",
+      "reason": "Seminar 두 탭이 한 가족으로 읽히게 Lab Seminar 의 띠와 제목 굵기(seminar-title 500)를 그대로 쓴다. 띠 안에서 600 은 무겁다(교수 2026-11-26)."
     }
   ]
 }

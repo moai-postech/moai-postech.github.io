@@ -1,7 +1,7 @@
-# 2026-11-26 Invited Talks: 모두 굵게, Education 만 옅은 글자색으로 위계
+# 2026-11-26 Invited Talks: Lab Seminar 와 같은 띠, Research 초록·Education 회색
 작성자: Sangwoo Mo(sangwoomo) | 대상: `_themes/wide/includes/sections/talks.html`, `_themes/wide/includes/theme.css`, `AGENTS.md` | 도구: Claude Code
 
-> **한줄 결론: 제목을 모두 굵게 두고 Education 줄만 한 단계 옅은 글자색(`--ink-500`)으로 해 Research 가 먼저 읽히게 했다. 필터 사각형은 그 두 글자색이고, 줄에는 색도 사각형도 없다.**
+> **한줄 결론: Invited Talks 줄을 Lab Seminar 와 같은 띠로 바꿨다. Research 는 초록 띠, Education 은 회색 띠, 제목은 모두 500 굵기이고 필터 사각형이 그 범례다.**
 
 POSTECH 요구사항: 영향 없음
 
@@ -14,6 +14,11 @@ POSTECH 요구사항: 영향 없음
 - 교수 후속(위 사각형과 안 맞는다): 줄 제목 왼쪽에 버튼과 같은 사각형(Research `--kind-2`, Education `--kind-none`)을 매달았다(`theme.css`). 줄 전체를 1.25em 들여 휴대폰에서 두 줄로 넘친 제목과 아래 발표처 줄도 첫 줄과 맞는다.
 - 교수 후속(줄 앞 사각형은 별로): 줄 사각형을 빼고, 버튼 사각형을 Research 진한 회색(`--ink-600`, `talks.html` 의 `tone-strong`), Education 연한 회색(`tone-guest`)으로 바꿨다. 사각형이 아래 줄 글자(굵은 검정, 회색)와 같은 명암이라 범례가 맞는다.
 - 교수 후속(연한 글씨가 별로, 모두 굵게 하고 색만 바꾸면): Education 제목도 굵게 두고 글자색만 `--ink-500` 으로. 사각형은 Research `--ink-900`(`tone-strong`), Education `--ink-500`(`tone-soft`)로 아래 글자색과 똑같다. 보통 굵기 연한 회색은 굵은 줄 사이에서 비활성처럼 보이고 줄의 리듬이 깨졌다.
+- 교수 후속("디자인적으로 제일 예쁜 것을 꼼꼼히"): 두 Seminar 탭을 나란히 보니 Lab Seminar 는 색 띠와 500 제목, Invited Talks 는 띠 없는 목록과 600 제목, 남색 사각형이라 같은 메뉴의 형제 탭이 다른 언어로 보였다. 그래서 Invited Talks 를 Lab Seminar 의 띠 체계로 맞췄다.
+  - `talk-year.html`: 줄에 `tone-p2`(Research)·`tone-guest`(Education) class. `talks.html`: 사각형도 같은 두 class.
+  - `theme.css`: 줄 바탕 `--tone-row`, 안쪽 12·16px(휴대폰 12px), 줄 사이 4px, 모서리 `--radius-1`, 제목 500. 목록 첫·끝 줄 안쪽 여백을 깎던 `.section-body > .plain > li:first/last-child` 규칙에서 `li[data-kind]` 를 뺐다(채운 띠는 제 여백을 지킨다).
+  - 측정: 데스크톱 줄 높이 50px, 연도→첫 줄 16px, 묶음 사이 64px, 필터 258px·첫 줄 368px 로 Lab Seminar 와 같다. 휴대폰 카드 안쪽 12px, 연도→카드 16px 도 같다.
+  - 디자인 계약: 제목 500 이 `list-title`·`inline-emphasis`(600)와 달라 `page-design.json` 에 페이지 조정 `talks-seminar-bands` 를 두고 `page-design.md` 를 다시 만들었다. `check_design`(위반 0), `check_typography`, `check_interaction` 통과.
 - Lab Seminar 는 줄 바탕색을 그대로 둔다. 날짜·발표자·제목 칸이 있는 일정표라 바탕이 한 줄을 묶어 주고, 세 종류 사이에 위계가 없어 색 면적이 커도 된다. Invited Talks 는 한 줄 목록이고 Research 가 위라서 사각형과 회색 글자로 충분하다.
 - `talks.html` 주석, `AGENTS.md` 의 팔레트 규칙과 Talks 수록 기준을 고침.
 - 확인: 로컬 빌드 데스크톱과 375px 에서 화면 확인.
@@ -27,6 +32,8 @@ POSTECH 요구사항: 영향 없음
 - Research 초록 사각형: 아래 줄이 검정이라 범례가 맞지 않는다.
 - Education 보통 굵기 연한 회색 제목(8f8e2f3~0794004): 비활성처럼 보인다(교수).
 - 모두 같은 굵은 검정: Research 와 Education 이 구별되지 않는다.
+- 진한·옅은 글자색과 남색·회색 사각형(035a008): 사각형이 Lab Seminar 의 색 사각형 옆에서 거칠고, 형제 탭과 시각 언어가 달랐다.
+- 띠 안 제목 600: 띠 안에서 무겁고 Lab Seminar 제목(500)과 달랐다.
 
 ## 남은 것
 없음

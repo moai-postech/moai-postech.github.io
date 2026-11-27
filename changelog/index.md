@@ -5,7 +5,7 @@
 
 | 날짜 | 회차 | 작성자 | 대상 | 한 줄 요약 |
 | --- | --- | --- | --- | --- |
-| 2026-11-27 | [Data Agents 기업 데이터 강의](2026-11-27-data-agent-governance.md) | Sangwoo Mo(sangwoomo) | Data Engineering 17강 | 기업 사례 60장 HTML·PDF, 정책 실습·발표 흐름과 디자인 검수 |
+| 2026-11-27 | [Data Agents 기업 데이터 강의](2026-11-27-data-agent-governance.md) | Sangwoo Mo(sangwoomo) | Data Engineering 17강 | 기업 사례 60장 HTML·PDF, 정책 실습·발표 디자인·75분 수업 리허설 |
 | 2026-11-26 | [강의 원본 재사용 대응](2026-11-26-course-source-reuse.md) | Sangwoo Mo(sangwoomo) | HTML6·PDF7 | 원본 대응 검수한 HTML6·PDF7 수정본 반영 |
 | 2026-11-26 | [리뷰 원본 대응 복구](2026-11-26-review-reuse.md) | Sangwoo Mo(sangwoomo) | 리뷰 HTML·PDF | 현재 원본 대응·자체 설명 구분,99장 교체본 준비 |
 | 2026-11-26 | [강의 출처 대비](2026-11-26-source-label-contrast.md) | Sangwoo Mo(sangwoomo) | `teaching/26f-data-engineering/slides/` | 본문·자산 보존, 공통 출처색 적용 |
